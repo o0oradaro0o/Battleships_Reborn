@@ -2,7 +2,7 @@
 require("timers")
 require('physics')
 require('notifications')
-require('lib.statcollection')
+
 if CBattleship8D == nil then
 	CBattleship8D = class({})
 end
@@ -632,6 +632,21 @@ function CBattleship8D:OnThink()
 		if GameRules:GetGameTime() ~= LAST_TIME then
 			if THINK_TICKS == 5 then
 		-- Load Stat collection (statcollection should be available from any script scope)
+			local statCollection = require('lib.statcollection')
+			local Testing = false
+
+			-- Check if we are testing / building the mod
+			if not Testing then
+				-- We are not testing, do the actual stat collection
+
+				-- Init stat collection
+				statCollection:init({
+					modIdentifier = '28ed93c9d232295e180a3628e60a492e', -- GET THIS FROM http://getdotastats.com/#d2mods__my_mods
+					customSchema = 'none' --This will make StatsCollection load statcollection/example.lua as the custom schema
+				})
+				print( "Stats loaded ")
+			end
+		
 		Timers:CreateTimer( 300, function()
 			spawnTide()
 		end)
