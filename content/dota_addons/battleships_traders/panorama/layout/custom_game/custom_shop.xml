@@ -1,0 +1,489 @@
+<root>
+    <styles>
+       <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+        <include src="file://{resources}/styles/custom_game/custom_shop.css" />
+		<include src="file://{resources}/styles/custom_game/overthrow_scoreboard.css" />
+		 <include src="file://{resources}/styles/custom_game/barebones_hud_base.css" />
+	</styles>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/custom_shop.js" />
+	 </scripts>
+	
+    <Panel hittest="false" class="custom_shop_holder">
+	
+	
+
+	<Panel class="ScoreboardLeft" id="scorePanel">
+		<Panel class="VictoryPanel">
+			<Label id="Goal" text="#invest" />
+			<Label id="VictoryPoints" text="100,000G" />
+		</Panel>
+	</Panel>
+	
+	
+	
+	<Panel class="timerRight" id="timerPanel">
+		<Panel class="timersHolder">
+		<Panel class="timerRowTop">
+				<Label id="GameTime" text="#game" class="timerLabelt"/>
+				<Label id="GameTimeVal" text="" class="timerLabelValt"/>
+			</Panel>
+			<Panel class="timerRow">
+				<Label id="CreepSpawn" text="#creep_spawn_in" class="timerLabel"/>
+				<Label id="CreepSpawnVal" text="" class="timerLabelVal"/>
+			</Panel>
+			<Panel class="timerRow">
+				<Label id="EmpireGold" text="#emp_gold_in" class="timerLabel" />
+				<Label id="EmpireGoldVal" text="" class="timerLabelVal"/>
+			</Panel>
+		</Panel>
+	</Panel>
+	<Panel class="empireRight" id="empirePanel">
+		<Panel class="empireRight">
+			<Panel class="timerRowEmpL">
+				<Label id="SouthEmp" text="#south_gold_each" class="timerLabelEmp"/>
+				<Label id="SouthEmpVal"  class="empLabelVal" text=""/>
+			</Panel>
+			<Panel class="timerRowEmpR">
+				<Label id="NorthEmp" text="#north_gold_each" class="timerLabelEmp"/>
+				<Label id="NorthEmpVal"  class="empLabelVal" text=""/>
+			</Panel>
+		</Panel>
+	</Panel>
+	<Panel hittest="false" class="zoomHiderButton" id="ZoomButton" onload="setZoom()">
+        <Button class="zoomHider" onactivate="toggleZoom()">
+             <Image class="item_image" src="file://{images}/custom_game/mag.png" />
+        </Button>
+	</Panel>
+	<Panel hittest="false" class="zoomSliderBorder" id="ZoomSliderBox">
+		<Button class="zoomSliderholder">
+			<Panel class="SliderRow">
+				<Label id="zoomLbl" text="#zoom_lbl" class="ZoomLabel"/>
+				<Label id="zoomLblVal" text="" class="ZoomLabelVal"/>
+			</Panel>
+			<DOTASettingsSlider hittest="false" id="ZoomSlider" >
+			</DOTASettingsSlider>
+		</Button>
+	</Panel>
+	
+    <Panel hittest="false" class="BarebonesTopNotifications">
+      <Panel hittest="false" id="TopNotifications">
+      </Panel>
+    </Panel>
+    <Panel hittest="false" class="BarebonesBottomNotifications">
+      <Panel hittest="false" id="BottomNotifications">
+      </Panel>
+    </Panel>
+	
+
+		<Panel hittest="false" id="ConstStatusRow1">
+			<Label hittest="false" id="totalScore1" text=""/>
+		</Panel>
+		<Panel hittest="false" id="TempStatusRow1">
+			<Label hittest="false" id="RecentScore1" text=""/>
+		</Panel>
+		
+		<Panel hittest="false" id="ConstStatusRow2">
+			<Label hittest="false" id="totalScore2" text=""/>
+		</Panel>
+		<Panel hittest="false" id="TempStatusRow2">
+			<Label hittest="false" id="RecentScore2" text=""/>
+		</Panel>
+	
+	
+	<Panel hittest="false" class="panalHiderHolder" id="missionButton">
+        <Button class="panalHider" onactivate="fillAndShow()">
+            <Label hittest="false" id="shop_text" text="#trade" />
+			
+        </Button>
+	</Panel>
+        <Label hittest="false" id="out_of_contracts" text="#Out_Of_Contracts" />
+        <Panel hittest="false" id="custom_shop" oncancel="hideShop()">
+            /* left_bot_shop */
+            <Panel hittest="false" id="left_bot_shop" class="shop_guts">
+                <Image class="bkg_image" src="file://{images}/custom_game/bot_left.png" />
+                <Panel class="shop_content_holder">
+                    <Label hittest="false" class="trade_text_title" text="#Left_Bot_Missions" />
+                    <Panel hittest="false" id="mission_hider_1" class="mission_guts">
+                        <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
+                        <Panel hittest="false" class="mission_guts">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                                <Label hittest="false" class="shop_btn_text" text="#easy" />
+                            </Button>
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                                <Label hittest="false" class="shop_btn_text" text="#medium" />
+                            </Button>
+                        </Panel>
+                    </Panel>
+                    <Label hittest="false" class="trade_text_subtitle" text="#Submit" />
+                    <Panel hittest="false" class="retire_guts">
+                        <Button class="TradeBtn" onactivate="donate('100')">
+                            <Label hittest="false" class="shop_btn_text" text="#One_Hundred" />
+                        </Button>
+                        <Button class="TradeBtn" onactivate="donate('500')">
+                            <Label hittest="false" class="shop_btn_text" text="#Five_Hundred" />
+                        </Button>
+                    </Panel>
+                    <Label hittest="false" class="trade_text_subtitle" text="#supply" />
+                    <Panel hittest="false" class="supply_guts">
+                        <Panel hittest="false" class="supply_row">
+                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_mango', 25)">
+                                <Image class="item_image" src="file://{images}/custom_game/enchanted_mango.png" />
+								 <Label hittest="false" class="gold_cost_text" text="25  G" />
+								 <Label hittest="false" class="item_desc_text" text="#mango_desc"/>
+                            </Button>
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_ham', 50)">
+                                <Image class="item_image" src="file://{images}/custom_game/winter_ham.png" />
+								 <Label hittest="false" class="gold_cost_text" text="50  G" />
+								 <Label hittest="false" class="item_desc_text" text="#ham_desc"/>
+                            </Button>
+                        </Panel>
+                    </Panel>
+                </Panel>
+            </Panel>
+			 /* left_mid_shop */
+            <Panel hittest="false" id="left_mid_shop" class="shop_guts">
+                <Image class="bkg_image" src="file://{images}/custom_game/mid_top.png" />
+                <Panel class="shop_content_holder">
+                    <Label hittest="false" class="trade_text_title" text="#Left_Mid_Missions" />
+                    <Panel hittest="false" id="mission_hider_2" class="mission_guts">
+                        <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
+                        <Panel hittest="false" class="mission_guts">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                                <Label hittest="false" class="shop_btn_text" text="#easy" />
+                            </Button>
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                                <Label hittest="false" class="shop_btn_text" text="#medium" />
+                            </Button>
+                        </Panel>
+                    </Panel>
+                    <Label hittest="false" class="trade_text_subtitle" text="#Submit" />
+                    <Panel hittest="false" class="retire_guts">
+                        <Button class="TradeBtn" onactivate="donate('100')">
+                            <Label hittest="false" class="shop_btn_text" text="#One_Hundred" />
+                        </Button>
+                        <Button class="TradeBtn" onactivate="donate('500')">
+                            <Label hittest="false" class="shop_btn_text" text="#Five_Hundred" />
+                        </Button>
+                    </Panel>
+					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
+                    <Panel hittest="false" class="supply_guts">
+                        <Panel hittest="false" class="supply_row">
+							
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_sand', 50 )">
+                                <Image class="item_image" src="file://{images}/custom_game/dust.png" />
+								 <Label hittest="false" class="gold_cost_text" text="50  G" />
+								 <Label hittest="false" class="item_desc_text" text="#dust_desc"/>
+                            </Button>
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_luck', 77 )">
+                                <Image class="item_image" src="file://{images}/custom_game/luck.png" />
+								 <Label hittest="false" class="gold_cost_text" text="77  G" />
+								 <Label hittest="false" class="item_desc_text" text="#luck_desc"/>
+                            </Button>
+							
+                        </Panel>
+                    </Panel>
+                </Panel>
+            </Panel>
+			 /* left_top_shop */
+            <Panel hittest="false" id="left_top_shop" class="shop_guts">
+                <Image class="bkg_image" src="file://{images}/custom_game/left_top.png" />
+                <Panel class="shop_content_holder">
+                    <Label hittest="false" class="trade_text_title" text="#Left_Top_Missions" />
+                    <Panel hittest="false" id="mission_hider_3" class="mission_guts">
+                        <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
+                        <Panel hittest="false" class="mission_guts">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                                <Label hittest="false" class="shop_btn_text" text="#easy" />
+                            </Button>
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                                <Label hittest="false" class="shop_btn_text" text="#medium" />
+                            </Button>
+                        </Panel>
+                    </Panel>
+                    <Label hittest="false" class="trade_text_subtitle" text="#Submit" />
+                    <Panel hittest="false" class="retire_guts">
+                        <Button class="TradeBtn" onactivate="donate('100')">
+                            <Label hittest="false" class="shop_btn_text" text="#One_Hundred" />
+                        </Button>
+                        <Button class="TradeBtn" onactivate="donate('500')">
+                            <Label hittest="false" class="shop_btn_text" text="#Five_Hundred" />
+                        </Button>
+                    </Panel>
+					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
+                    <Panel hittest="false" class="supply_guts">
+                        <Panel hittest="false" class="supply_row">
+                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_info', 50)">
+                                <Image class="item_image" src="file://{images}/custom_game/recipe_scroll.png" />
+								 <Label hittest="false" class="gold_cost_text" text="50 G  " />
+								 <Label hittest="false" class="item_desc_text" text="#info_desc"/>
+                            </Button>
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_firecrackers', 80 )">
+                                <Image class="item_image" src="file://{images}/custom_game/firecrackers.png" />
+								 <Label hittest="false" class="gold_cost_text" text="80  G" />
+								 <Label hittest="false" class="item_desc_text" text="#firecrackers_desc"/>
+                            </Button>
+                        </Panel>
+                    </Panel>
+                </Panel>
+            </Panel>
+			/* mid_bot_shop */
+            <Panel hittest="false" id="mid_bot_shop" class="shop_guts">
+                <Image class="bkg_image" src="file://{images}/custom_game/mid_bot.png" />
+                <Panel class="shop_content_holder">
+                    <Label hittest="false" class="trade_text_title" text="#Mid_Bot_Missions" />
+                    <Panel hittest="false" id="mission_hider_4" class="mission_guts">
+                        <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
+                        <Panel hittest="false" class="mission_guts">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                                <Label hittest="false" class="shop_btn_text" text="#easy" />
+                            </Button>
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                                <Label hittest="false" class="shop_btn_text" text="#medium" />
+                            </Button>
+                        </Panel>
+                    </Panel>
+                    <Label hittest="false" class="trade_text_subtitle" text="#Submit" />
+                    <Panel hittest="false" class="retire_guts">
+                        <Button class="TradeBtn" onactivate="donate('100')">
+                            <Label hittest="false" class="shop_btn_text" text="#One_Hundred" />
+                        </Button>
+                        <Button class="TradeBtn" onactivate="donate('500')">
+                            <Label hittest="false" class="shop_btn_text" text="#Five_Hundred" />
+                        </Button>
+                    </Panel>
+					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
+                    <Panel hittest="false" class="supply_guts">
+                        <Panel hittest="false" class="supply_row">
+                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_brew', 80 )">
+                                <Image class="item_image" src="file://{images}/custom_game/brew.png" />
+								 <Label hittest="false" class="gold_cost_text" text="80  G" />
+								 <Label hittest="false" class="item_desc_text" text="#brew_desc"/>
+                            </Button>
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_power', 150)">
+                                <Image class="item_image" src="file://{images}/custom_game/flask.png" />
+								 <Label hittest="false" class="gold_cost_text" text="150 G" />
+								 <Label hittest="false" class="item_desc_text" text="#flask_desc"/>
+                            </Button>
+                        </Panel>
+                        
+                    </Panel>
+                </Panel>
+            </Panel>
+			/* mid_mid_shop */
+            <Panel hittest="false" id="mid_mid_shop" class="shop_guts">
+                <Image class="bkg_image" src="file://{images}/custom_game/mid_mid.png" />
+                <Panel class="shop_content_holder">
+                    <Label hittest="false" class="trade_text_title" text="#Mid_Mid_Missions" />
+                    <Panel hittest="false" id="mission_hider_5" class="mission_guts">
+                        <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
+                        <Panel hittest="false" class="mission_guts">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                                <Label hittest="false" class="shop_btn_text" text="#easy" />
+                            </Button>
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                                <Label hittest="false" class="shop_btn_text" text="#medium" />
+                            </Button>
+                        </Panel>
+                    </Panel>
+                    <Label hittest="false" class="trade_text_subtitle" text="#Submit" />
+                    <Panel hittest="false" class="retire_guts">
+                        <Button class="TradeBtn" onactivate="donate('100')">
+                            <Label hittest="false" class="shop_btn_text" text="#One_Hundred" />
+                        </Button>
+                        <Button class="TradeBtn" onactivate="donate('500')">
+                            <Label hittest="false" class="shop_btn_text" text="#Five_Hundred" />
+                        </Button>
+                    </Panel>
+					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
+                    <Panel hittest="false" class="supply_guts">
+                        <Panel hittest="false" class="supply_row">
+                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_good_stuff', 120 )">
+                                <Image class="item_image" src="file://{images}/custom_game/good_stuff.png" />
+								 <Label hittest="false" class="gold_cost_text" text="120  G" />
+								 <Label hittest="false" class="item_desc_text" text="#good_stuff_desc"/>
+                            </Button>
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_booze', 40 )">
+                                <Image class="item_image" src="file://{images}/custom_game/booze.png" />
+								 <Label hittest="false" class="gold_cost_text" text="40  G" />
+								 <Label hittest="false" class="item_desc_text" text="#booze_desc"/>
+                            </Button>
+                        </Panel>
+                        
+                    </Panel>
+                </Panel>
+            </Panel>
+			/* mid_top_shop */
+            <Panel hittest="false" id="mid_top_shop" class="shop_guts">
+                <Image class="bkg_image" src="file://{images}/custom_game/mid_top.png" />
+                <Panel class="shop_content_holder">
+                    <Label hittest="false" class="trade_text_title" text="#Mid_Top_Missions" />
+                    <Panel hittest="false" id="mission_hider_6" class="mission_guts">
+                        <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
+                        <Panel hittest="false" class="mission_guts">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                                <Label hittest="false" class="shop_btn_text" text="#easy" />
+                            </Button>
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                                <Label hittest="false" class="shop_btn_text" text="#medium" />
+                            </Button>
+                        </Panel>
+                    </Panel>
+                    <Label hittest="false" class="trade_text_subtitle" text="#Submit" />
+                    <Panel hittest="false" class="retire_guts">
+                        <Button class="TradeBtn" onactivate="donate('100')">
+                            <Label hittest="false" class="shop_btn_text" text="#One_Hundred" />
+                        </Button>
+                        <Button class="TradeBtn" onactivate="donate('500')">
+                            <Label hittest="false" class="shop_btn_text" text="#Five_Hundred" />
+                        </Button>
+                    </Panel>
+					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
+                    <Panel hittest="false" class="supply_guts">
+                        <Panel hittest="false" class="supply_row">
+                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_camo', 60 )">
+                                <Image class="item_image" src="file://{images}/custom_game/cloak.png" />
+								 <Label hittest="false" class="gold_cost_text" text="60  G" />
+								 <Label hittest="false" class="item_desc_text" text="#camo_desc"/>
+                            </Button>
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_scope', 40 )">
+                                <Image class="item_image" src="file://{images}/custom_game/scope.png" />
+								 <Label hittest="false" class="gold_cost_text" text="40  G" />
+								 <Label hittest="false" class="item_desc_text" text="#scope_desc"/>
+                            </Button>
+                        </Panel>
+                    </Panel>
+                </Panel>
+            </Panel>
+			/* right_bot_shop */
+            <Panel hittest="false" id="right_bot_shop" class="shop_guts">
+                <Image class="bkg_image" src="file://{images}/custom_game/Bot_right.png" />
+                <Panel class="shop_content_holder">
+                    <Label hittest="false" class="trade_text_title" text="#Right_Bot_Missions" />
+                    <Panel hittest="false" id="mission_hider_7" class="mission_guts">
+                        <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
+                        <Panel hittest="false" class="mission_guts">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                                <Label hittest="false" class="shop_btn_text" text="#easy" />
+                            </Button>
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                                <Label hittest="false" class="shop_btn_text" text="#medium" />
+                            </Button>
+                        </Panel>
+                    </Panel>
+                    <Label hittest="false" class="trade_text_subtitle" text="#Submit" />
+                    <Panel hittest="false" class="retire_guts">
+                        <Button class="TradeBtn" onactivate="donate('100')">
+                            <Label hittest="false" class="shop_btn_text" text="#One_Hundred" />
+                        </Button>
+                        <Button class="TradeBtn" onactivate="donate('500')">
+                            <Label hittest="false" class="shop_btn_text" text="#Five_Hundred" />
+                        </Button>
+                    </Panel>
+					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
+                    <Panel hittest="false" class="supply_guts">
+                        <Panel hittest="false" class="supply_row">
+                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_fish', 60 )">
+                                <Image class="item_image" src="file://{images}/custom_game/winter_greevil_treat.png" />
+								 <Label hittest="false" class="gold_cost_text" text="60  G" />
+								 <Label hittest="false" class="item_desc_text" text="#fish_desc"/>
+                            </Button>
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_line', 80 )">
+                                <Image class="item_image" src="file://{images}/custom_game/line.png" />
+								 <Label hittest="false" class="gold_cost_text" text="80  G" />
+								 <Label hittest="false" class="item_desc_text" text="#line_desc"/>
+                            </Button>
+                        </Panel>
+                    </Panel>
+                </Panel>
+            </Panel>
+			/* right_mid_shop */
+            <Panel hittest="false" id="right_mid_shop" class="shop_guts">
+                <Image class="bkg_image" src="file://{images}/custom_game/mid_right.png" />
+                <Panel class="shop_content_holder">
+                    <Label hittest="false" class="trade_text_title" text="#Right_Mid_Missions" />
+                    <Panel hittest="false" id="mission_hider_8" class="mission_guts">
+                        <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
+                        <Panel hittest="false" class="mission_guts">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                                <Label hittest="false" class="shop_btn_text" text="#easy" />
+                            </Button>
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                                <Label hittest="false" class="shop_btn_text" text="#medium" />
+                            </Button>
+                        </Panel>
+                    </Panel>
+                    <Label hittest="false" class="trade_text_subtitle" text="#Submit" />
+                    <Panel hittest="false" class="retire_guts">
+                        <Button class="TradeBtn" onactivate="donate('100')">
+                            <Label hittest="false" class="shop_btn_text" text="#One_Hundred" />
+                        </Button>
+                        <Button class="TradeBtn" onactivate="donate('500')">
+                            <Label hittest="false" class="shop_btn_text" text="#Five_Hundred" />
+                        </Button>
+                    </Panel>
+					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
+                    <Panel hittest="false" class="supply_guts">
+                        <Panel hittest="false" class="supply_row">
+                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_trap', 90 )">
+                                <Image class="item_image" src="file://{images}/custom_game/trap.png" />
+								 <Label hittest="false" class="gold_cost_text" text="90  G" />
+								 <Label hittest="false" class="item_desc_text" text="#trap_desc"/>
+                            </Button>
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_chain', 80 )">
+                                <Image class="item_image" src="file://{images}/custom_game/chain.png" />
+								 <Label hittest="false" class="gold_cost_text" text="80  G" />
+								 <Label hittest="false" class="item_desc_text" text="#chain_desc"/>
+                            </Button>
+                        </Panel>
+                    </Panel>
+                </Panel>
+            </Panel>
+			/* right_top_shop */
+            <Panel hittest="false" id="right_top_shop" class="shop_guts">
+                <Image class="bkg_image" src="file://{images}/custom_game/right_top.png" />
+                <Panel class="shop_content_holder">
+                    <Label hittest="false" class="trade_text_title" text="#Right_Top_Missions" />
+                    <Panel hittest="false" id="mission_hider_9" class="mission_guts">
+                        <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
+                        <Panel hittest="false" class="mission_guts">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                                <Label hittest="false" class="shop_btn_text" text="#easy" />
+                            </Button>
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                                <Label hittest="false" class="shop_btn_text" text="#medium" />
+                            </Button>
+                        </Panel>
+                    </Panel>
+                    <Label hittest="false" class="trade_text_subtitle" text="#Submit" />
+                    <Panel hittest="false" class="retire_guts">
+                        <Button class="TradeBtn" onactivate="donate('100')">
+                            <Label hittest="false" class="shop_btn_text" text="#One_Hundred" />
+                        </Button>
+                        <Button class="TradeBtn" onactivate="donate('500')">
+                            <Label hittest="false" class="shop_btn_text" text="#Five_Hundred" />
+                        </Button>
+                    </Panel>
+					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
+                    <Panel hittest="false" class="supply_guts">
+                        <Panel hittest="false" class="supply_row">
+                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_earth', 70 )">
+                                <Image class="item_image" src="file://{images}/custom_game/gem_of_true_sight.png" />
+								 <Label hittest="false" class="gold_cost_text" text="70  G" />
+								 <Label hittest="false" class="item_desc_text" text="#earth_desc"/>
+                            </Button>
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_sun_screen', 40 )">
+                                <Image class="item_image" src="file://{images}/custom_game/greater_clarity.png" />
+								 <Label hittest="false" class="gold_cost_text" text="40  G" />
+								 <Label hittest="false" class="item_desc_text" text="#screen_desc"/>
+                            </Button>
+                        </Panel>
+                    </Panel>
+                </Panel>
+            </Panel>
+            <Panel hittest="false" id="empty_guts" oncancel="hideShop()">
+                <Label hittest="false" id="no_trade_text" text="#no_trade" />
+            </Panel>
+        </Panel>
+    </Panel>
+</root>

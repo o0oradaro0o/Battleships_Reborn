@@ -1,0 +1,14 @@
+<root>
+<script>
+		GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY, false );
+	</script>
+	<Panel>
+	
+		<CustomUIElement type="Hud"					layoutfile="file://{resources}/layout/custom_game/custom_shop.xml" />
+		<CustomUIElement type="GameInfo" 			layoutfile="file://{resources}/layout/custom_game/overthrow_game_info.xml" />
+		
+	</Panel>
+	
+</root>
+
+

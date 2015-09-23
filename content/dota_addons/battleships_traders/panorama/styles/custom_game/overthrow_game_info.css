@@ -1,0 +1,174 @@
+.OverthrowGameInfo
+{
+    width:100%;
+    flow-children: down;
+}
+ 
+Label
+{
+    font-size: 18px;
+    color: #999999;
+    vertical-align: top;
+}
+ 
+#Title
+{
+    flow-children: right;
+}
+
+#TitleName
+{
+    color: #dddddd;
+    font-size: 64px;
+    font-weight: bold;
+    margin-left: 10%;
+    margin-top: -64px;
+    margin-right: 10%;
+    text-transform: uppercase;
+    vertical-align: center;
+}
+
+.Header
+{
+	font-size: 24px;
+    font-weight: bold;
+	margin-top: 36px;
+}
+
+#ObjectiveHeader
+{
+    width: 100%;
+	margin-top: 18px;
+    margin-left: -10px;
+    margin-bottom: 36px;
+}
+
+#TipsHeader
+{
+	margin-top: -18px;
+}
+
+#TipsRow
+{
+	flow-children: down;
+	margin-right: 92px;
+	margin-top: 18px;
+}
+
+.TipText
+{
+	margin-left: 0px;
+    margin-top: 16px;
+    margin-right:16px;
+}
+
+.InfoRow
+{
+    flow-children: right;
+    text-align: left;
+    width: 100%;
+    margin-left:-20px;
+    padding-bottom: 5px;
+    border-bottom-width: 1px;
+    border-bottom-color: #777777;
+    border-bottom-style: solid;
+}
+
+Label .midas_throne,
+Label .overboss,
+Label .treasure
+{
+    color: #cccccc;
+    font-weight: bold;
+}
+
+Label .items,
+Label .gold,
+Label .xp
+{
+    color: #fcaf3d;
+    font-weight: bold;
+}
+
+
+#Bases {
+    flow-children: right;
+}
+
+#NorthCastle {
+    margin-top: -20px;
+    width: 33%;
+    height: 150px;
+}
+#SouthCastle {
+    margin-top: -20px;
+    width: 33%;
+    height: 150px;
+}
+.DockPanel {
+    flow-children: down;
+    margin-top: -19px;
+    width: 33%;
+    height: 150px;
+}
+#TopDock {
+    height:50%;
+}
+#BottomDock {
+    height:100%;
+}
+
+#HowToWin {
+    flow-children: right;
+    text-align: left;
+    width: 100%;
+    margin-left:-10px;
+    margin-right:20px;
+}
+#HowToWeapons {
+    flow-children: right;
+    text-align: left;
+    width: 40%;
+    margin-top: 5px;
+    margin-left:10px;
+    margin-right:20px;
+}
+#HowToShips {
+    flow-children: right;
+    text-align: left;
+    width: 40%;
+    margin-top: 5px;
+    margin-left:10px;
+    margin-right:20px;
+}
+
+.BattleshipsGameInfo
+{
+    width:100%;
+    flow-children: down;
+}
+
+#WeaponsHeader
+{
+    width: 100%;
+    margin-top: 18px;
+    margin-left: -10px;
+    margin-bottom: 36px;
+}
+
+
+#ShipsHeader
+{
+    width: 100%;
+    margin-top: 18px;
+    margin-left: -10px;
+    margin-bottom: 36px;
+}
+
+#WeaponsChart {
+    margin-top:-5px;
+    margin-left: 0px;
+}
+#ShipsChart {
+    margin-top: -5px;
+}
