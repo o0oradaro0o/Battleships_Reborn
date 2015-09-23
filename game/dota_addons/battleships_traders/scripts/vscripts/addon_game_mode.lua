@@ -74,6 +74,24 @@ TIDE_LEVEL = 0
 
 TICKS_SINCE_EMP_GOLD = 0
 
+tideArray={}
+function GetTideKillArray()
+{
+	return tideArray
+}
+empGoldArray={}
+function empGoldArray()
+{
+	return tideArray
+}
+playerItemArray={}
+function GetItemArray(playerID)
+{
+	if playerItemArray[playerID]~=nil then
+		return playerItemArray[playerID]
+	end
+	return 0;
+}
 
 herokills = {}
 herohp = {}
@@ -422,7 +440,11 @@ function CBattleship8D:handleEmpGold()
 			Notifications:TopToAll({text="#south_gets", duration=5.0, style={color="#B2B2B2",  fontSize="30px;"}})
 			Notifications:TopToAll({text=tostring(math.floor(goodGoldEach+0.5)) .. " ", duration=5.0, style={color="#FFD700",  fontSize="30px;"}, continue=true})
 			Notifications:TopToAll({text="#for_each_player", duration=5.0, style={color="#B2B2B2",  fontSize="30px;"}, continue=true})
-			
+			 table.insert(empGoldArray,{
+			 Emp_Gold_Number=EMP_GOLD_NUMBER,
+			 South_Gold=goodGoldEach,
+			 North_gold=badGoldEach,
+			 })
 			
 			for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 				if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and not hero:HasModifier("pergatory_perm") then
@@ -642,7 +664,7 @@ function CBattleship8D:OnThink()
 				-- Init stat collection
 				statCollection:init({
 					modIdentifier = '28ed93c9d232295e180a3628e60a492e', -- GET THIS FROM http://getdotastats.com/#d2mods__my_mods
-					customSchema = 'none' --This will make StatsCollection load statcollection/example.lua as the custom schema
+					customSchema = 'boats' --This will make StatsCollection load statcollection/example.lua as the custom schema
 				})
 				print( "Stats loaded ")
 			end
@@ -1180,13 +1202,20 @@ function CBattleship8D:OnEntityKilled( keys )
 		GameRules:SendCustomMessage("#north_tide", DOTA_TEAM_GOODGUYS, 0)
 		Notifications:TopToAll({hero="npc_dota_hero_tidehunter", imagestyle="portrait", continue=true})
 		Notifications:TopToAll({text="#north_tide", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
-		
+		table.insert(tideArray, {
+			Tide_Killer = "North",
+			Game_Time = GameRules:GetGameTime(),
+		})
 	end
 	if  killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 		CBattleship8D:quickSpawn("south","right", "four", 1, CREEP_NUM_HUGE+1)
 		CBattleship8D:quickSpawn("south","left", "four", 1, CREEP_NUM_HUGE+1)
 		Notifications:TopToAll({hero="npc_dota_hero_tidehunter", imagestyle="portrait", continue=true})
 		Notifications:TopToAll({text="#south_tide", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
+		table.insert(tideArray, {
+			Tide_Killer = "South",
+			Game_Time = GameRules:GetGameTime(),
+		})
 	end
 		Timers:CreateTimer( 300, function()
 		TIDE_LEVEL = TIDE_LEVEL+1
@@ -1421,8 +1450,15 @@ function CBattleship8D:OnItemPurchased( keys )
 		end
     end
 
-	    local itemName = keys.itemname 
-	  
+	local itemName = keys.itemname 
+	if playerItemArray[casterUnit:GetPlayerID()]~=nil then
+		 playerItemArray[casterUnit:GetPlayerID()]={}
+	end
+	  table.insert(playerItemArray[casterUnit:GetPlayerID()])
+	  {
+			Item_Name=itemName,
+			Game_Time=GameRules:GetGameTime(),
+	  })
   	if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
 		
 		
