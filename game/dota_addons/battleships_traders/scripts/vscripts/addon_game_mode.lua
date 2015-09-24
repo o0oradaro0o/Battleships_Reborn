@@ -45,6 +45,8 @@ CREEP_NUM_BIG = 3
 CREEP_NUM_HUGE = 2
 EMP_GOLD_NUMBER = 1
 
+statCollection=0
+
 BAD_GOLD_TOTAL_MOD = 0
 GOOD_GOLD_TOTAL_MOD = 0
 
@@ -80,10 +82,7 @@ function GetTideKillArray()
 	return tideArray
 }
 empGoldArray={}
-function empGoldArray()
-{
-	return tideArray
-}
+
 playerItemArray={}
 function GetItemArray(playerID)
 {
@@ -129,7 +128,52 @@ model_lookup["npc_dota_hero_pugna"] = "models/ice_boat.vmdl"
 model_lookup["npc_dota_hero_windrunner"] = "models/const_boat.vmdl"
 model_lookup["npc_dota_hero_tusk"] = "models/battleship_boat0.vmdl"
 
+name_lookup = {}
+name_lookup["npc_dota_hero_zuus"] = "barrel"
+name_lookup["npc_dota_hero_ancient_apparition"] = "zodiac"
+name_lookup["npc_dota_hero_tidehunter"] = "pontoon"
+name_lookup["npc_dota_hero_crystal_maiden"] = "canoe"
+name_lookup["npc_dota_hero_phantom_lancer"] = "seaplane"
+name_lookup["npc_dota_hero_rattletrap"] = "cat"
+name_lookup["npc_dota_hero_jakiro"] = "galleon"
+name_lookup["npc_dota_hero_nevermore"] = "plane"
+name_lookup["npc_dota_hero_meepo"] = "house"
+name_lookup["npc_dota_hero_disruptor"] = "coast"
+name_lookup["npc_dota_hero_morphling"] = "speed"
+name_lookup["npc_dota_hero_storm_spirit"] = "junk"
+name_lookup["npc_dota_hero_lion"] = "yacht"
+name_lookup["npc_dota_hero_ember_spirit"] = "tug"
+name_lookup["npc_dota_hero_slark"] = "viking"
+name_lookup["npc_dota_hero_sniper"] = "sub"
+name_lookup["npc_dota_hero_visage"] = "noah"
+name_lookup["npc_dota_hero_ursa"] = "Aircraft"
+name_lookup["npc_dota_hero_pugna"] = "ice"
+name_lookup["npc_dota_hero_windrunner"] = "const"
+name_lookup["npc_dota_hero_tusk"] = "battleship"
+function GetHeroName(playerID)
+{
 
+    for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+			if hero:GetPlayerID() == pID then
+				return name_lookup[hero:GetName()]
+			end
+		end
+	end
+	return "failed"
+}
+function GetHeroLevel(playerID)
+{
+
+    for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+			if hero:GetPlayerID() == pID then
+				return hero:GetLevel()
+			end
+		end
+	end
+	return 0
+}
       
 function Precache( context )
 		for ind = 0, 11, 1 do 
@@ -387,6 +431,11 @@ end
 
 function CBattleship8D:handleEmpGold()
 			GameRules:SetTimeOfDay(0.25)
+			
+			statCollection:submitRound({})
+			playerItemArray={}		
+			tideArray={}
+			
 			inturest()
 			TICKS_SINCE_EMP_GOLD = 0
 			local goodGold = 0
@@ -654,7 +703,7 @@ function CBattleship8D:OnThink()
 		if GameRules:GetGameTime() ~= LAST_TIME then
 			if THINK_TICKS == 5 then
 		-- Load Stat collection (statcollection should be available from any script scope)
-			local statCollection = require('lib.statcollection')
+			statCollection = require('lib.statcollection')
 			local Testing = false
 
 			-- Check if we are testing / building the mod
