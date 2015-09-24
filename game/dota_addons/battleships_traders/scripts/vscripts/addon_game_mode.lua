@@ -77,20 +77,10 @@ TIDE_LEVEL = 0
 TICKS_SINCE_EMP_GOLD = 0
 
 tideArray={}
-function GetTideKillArray()
-{
-	return tideArray
-}
+
 empGoldArray={}
 
-playerItemArray={}
-function GetItemArray(playerID)
-{
-	if playerItemArray[playerID]~=nil then
-		return playerItemArray[playerID]
-	end
-	return 0;
-}
+playerItemHist={}
 
 herokills = {}
 herohp = {}
@@ -103,6 +93,7 @@ heroids = {}
 DISCONNECT_MESSAGE_DESPLAYED = 0
 LastLocs = {}
 LastLocs2 ={}
+GoodWon=true
 
 
 model_lookup = {}
@@ -133,7 +124,7 @@ name_lookup["npc_dota_hero_zuus"] = "barrel"
 name_lookup["npc_dota_hero_ancient_apparition"] = "zodiac"
 name_lookup["npc_dota_hero_tidehunter"] = "pontoon"
 name_lookup["npc_dota_hero_crystal_maiden"] = "canoe"
-name_lookup["npc_dota_hero_phantom_lancer"] = "seaplane"
+name_lookup["npc_dota_hero_phantom_lancer"] = "airboat"
 name_lookup["npc_dota_hero_rattletrap"] = "cat"
 name_lookup["npc_dota_hero_jakiro"] = "galleon"
 name_lookup["npc_dota_hero_nevermore"] = "plane"
@@ -150,31 +141,7 @@ name_lookup["npc_dota_hero_ursa"] = "Aircraft"
 name_lookup["npc_dota_hero_pugna"] = "ice"
 name_lookup["npc_dota_hero_windrunner"] = "const"
 name_lookup["npc_dota_hero_tusk"] = "battleship"
-function GetHeroName(playerID)
-{
 
-    for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-			if hero:GetPlayerID() == pID then
-				return name_lookup[hero:GetName()]
-			end
-		end
-	end
-	return "failed"
-}
-function GetHeroLevel(playerID)
-{
-
-    for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-			if hero:GetPlayerID() == pID then
-				return hero:GetLevel()
-			end
-		end
-	end
-	return 0
-}
-      
 function Precache( context )
 		for ind = 0, 11, 1 do 
 			isDisconnected[ind] = 0 
@@ -428,13 +395,10 @@ if BOAT_JUST_BAUGHT ==0 then
   end
 end
 
-
 function CBattleship8D:handleEmpGold()
 			GameRules:SetTimeOfDay(0.25)
-			
-			statCollection:submitRound({})
-			playerItemArray={}		
-			tideArray={}
+		
+			statSend(1)
 			
 			inturest()
 			TICKS_SINCE_EMP_GOLD = 0
@@ -776,7 +740,6 @@ function CBattleship8D:OnThink()
 			BAD_GOLD_PER_TICK = BAD_GOLD_PER_TICK + 1
 			i=i+1
 			end
-
 		end
 		
 		
@@ -1181,6 +1144,9 @@ function CBattleship8D:OnEntityKilled( keys )
 			if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS then
 				
 				if DOCK_NORTH_LEFT+DOCK_NORTH_RIGHT==1 then
+					GoodWon=true
+					statSend(0)
+					
 					GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 					GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
 					GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
@@ -1200,6 +1166,8 @@ function CBattleship8D:OnEntityKilled( keys )
 				
 			elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
 				if DOCK_SOUTH_LEFT+DOCK_SOUTH_RIGHT==1 then
+					GoodWon=false
+					statSend(0)
 					GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 					GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
 					GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
@@ -1223,11 +1191,16 @@ function CBattleship8D:OnEntityKilled( keys )
 		if string.match(killedUnit:GetUnitName(), "base") then
 			print( "MATCHED BASE IS TRUE" )
 			if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS then
+					GoodWon=true
+					statSend(0)
 				GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 				GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
 				GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
 				GameRules:SetSafeToLeave( true )
 			elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
+				GoodWon=false
+					statSend(0)
+				
 				GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 				GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
 				GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
@@ -1500,14 +1473,12 @@ function CBattleship8D:OnItemPurchased( keys )
     end
 
 	local itemName = keys.itemname 
-	if playerItemArray[casterUnit:GetPlayerID()]~=nil then
-		 playerItemArray[casterUnit:GetPlayerID()]={}
+	if playerItemHist[casterUnit:GetPlayerID()]==nil then
+		 playerItemHist[casterUnit:GetPlayerID()]=""
+		 print("Created Array")
 	end
-	  table.insert(playerItemArray[casterUnit:GetPlayerID()])
-	  {
-			Item_Name=itemName,
-			Game_Time=GameRules:GetGameTime(),
-	  })
+	  playerItemHist[casterUnit:GetPlayerID()]=playerItemHist[casterUnit:GetPlayerID()] .. ", " .. itemName
+	  
   	if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
 		
 		
@@ -2538,6 +2509,142 @@ function HandleShopChecks(hero)
 							
 end
 
+-- Stat colection in addongamemode.lua
+
+
+
+--seg: South Empire Gold
+--neg  North Empire Gold
+--tk: Tidehunter Killed
+--shp: Ship Name
+--kls: Kills
+--dth: deaths
+--afk: kicked status
+--i1: item slot 1
+--bo: Buid Order
+function statSend(round)
+
+	local winnerData = {}
+	
+	local empGoldSouth = getEmpGoldForTeam(DOTA_TEAM_GOODGUYS)
+	local empGoldNorth = getEmpGoldForTeam(DOTA_TEAM_BADGUYS)
+	local current_winner_team = DOTA_TEAM_GOODGUYS
+	
+	if empGoldSouth<empGoldNorth and round ~=0 then
+		current_winner_team=DOTA_TEAM_BADGUYS
+	elseif round==0 and not GoodWon then
+		current_winner_team=DOTA_TEAM_BADGUYS
+	end
+    for playerID = 0, DOTA_MAX_PLAYERS do
+        if PlayerResource:IsValidPlayerID(playerID) then
+            if not PlayerResource:IsBroadcaster(playerID) then
+                winnerData[PlayerResource:GetSteamAccountID(playerID)] = (PlayerResource:GetTeam(playerID) == current_winner_team) and 1 or 0
+            end
+        end
+    end
+	
+	local gameData={
+	seg = empGoldSouth,
+	neg = empGoldNorth,
+	tk = GetTideKill(),
+	}
+
+	local playerData = {}
+			
+    for playerID = 0, DOTA_MAX_PLAYERS do
+        if PlayerResource:IsValidPlayerID(playerID) then
+            if not PlayerResource:IsBroadcaster(playerID) then
+                table.insert(playerData, {
+                    --steamID32 required in here
+                    steamID32 = PlayerResource:GetSteamAccountID(playerID),
+                    shp= GetHeroName(playerID),
+                    kls = PlayerResource:GetKills(playerID),
+                    dth = PlayerResource:GetDeaths(playerID),
+                    lvl = GetHeroLevel(playerID),
+					
+					afk = DisconnectKicked[hero],
+
+                    i1 = GetItemInSlot(playerID, 0), --item slot1
+                    i2 = GetItemInSlot(playerID, 1),
+                    i3 = GetItemInSlot(playerID, 2),
+                    i4 = GetItemInSlot(playerID, 3),
+                    i5 = GetItemInSlot(playerID, 4),
+                    i6 = GetItemInSlot(playerID, 5),
+					
+					bo=playerItemHist[playerID],
+                })
+            end
+        end
+    end
+			local roundsLeft = round
+			local roundData={
+			winner_data = winnerData,
+			game_data = gameData,
+			player_data = playerData,
+			rounds_left = roundsLeft,
+			}
+			PrintTable(roundData)
+			statCollection:submitRound(roundData)
+			playerItemHist={}		
+			tideArray={}
+end
+
+function GetItemInSlot(playerID,itemSlot)
+local casterUnit = nil
+for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+			if hero:GetPlayerID() == playerID then
+				casterUnit=hero
+			end
+		end
+	end
+	if casterUnit ~= nil then
+		if casterUnit:IsRealHero() then 
+					local Item = casterUnit:GetItemInSlot( itemSlot )
+					if Item ~= nil then
+						return Item:GetName()
+				end
+		end
+	end
+	return "No_Item"
+end
+
+function GetHeroName(playerID)
+    for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+			if hero:GetPlayerID() == playerID then
+				return name_lookup[hero:GetName()]
+			end
+		end
+	end
+	return "failed"
+end
+
+function GetHeroLevel(playerID)
+print(playerID)
+    for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+			if hero:GetPlayerID() == playerID then
+				return hero:GetLevel()
+			end
+		end
+	end
+	return 0
+end
+
+function GetItemArray(playerID)
+
+	if playerItemArray[playerID]~=nil then
+		return playerItemArray[playerID]
+	end
+	return 0;
+end
+
+function GetTideKill()
+
+	return tideArray
+end
+      
 
 
 
