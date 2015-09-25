@@ -210,6 +210,15 @@ function hideTride()
 	{
 		GameEvents.SendCustomGameEventToServer( "GiveMedium", { "text": 'fooBar',}); 
 	}
+	
+	function Unstick(data)
+	{
+			$.Msg("in unstick");
+		GameEvents.SendCustomGameEventToServer( "Unstick", { "text": 'fooBar',}); 
+	
+	}
+	
+	
 	var ticksSinceChanged=0
 	function handleZoom()
 	{

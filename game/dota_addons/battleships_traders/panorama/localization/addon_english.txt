@@ -20,6 +20,8 @@
 
 	"bs_Thanks"					"We'd like to give special thanks to the Dota2Modding IRC channel, in particular BMD, Myll, Crazyloon, Hewdrw, JimmyDorry, and Noya for their help. <br /><br />Russian Translations by React and Al1en. <br /><br /> Thanks for playing Battleships! Good Luck, Have Fun, and Don't Die! <br />- radar, WeAreAllBritons, Frood, borgel, and zentrix"
 	
+	"unstick"						"Unstick"
+	
 	"game" "Game:"
 	"emp_gold_in" "Emp Gold:"
 	"creep_spawn_in" "Creeps:"

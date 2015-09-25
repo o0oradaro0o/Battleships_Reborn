@@ -76,7 +76,7 @@ TIDE_LEVEL = 0
 
 TICKS_SINCE_EMP_GOLD = 0
 
-tideArray={}
+tideKiller="none"
 
 empGoldArray={}
 
@@ -94,7 +94,104 @@ DISCONNECT_MESSAGE_DESPLAYED = 0
 LastLocs = {}
 LastLocs2 ={}
 GoodWon=true
+testingStats=false
 
+item_code_lookup={}
+item_code_lookup["item_coal_bow"] = "CO"
+item_code_lookup["item_fire_bow"] = "FO"
+item_code_lookup["item_plasma_bow"] = "PO"
+item_code_lookup["item_poison_bow"] = "OO"
+item_code_lookup["item_light_bow"] = "LO"
+item_code_lookup["item_ice_bow"] = "IO"
+item_code_lookup["item_wind_bow"] = "WO"
+
+item_code_lookup["item_coal_two_bow"] = "CT"
+item_code_lookup["item_fire_two_bow"] = "FT"
+item_code_lookup["item_plasma_two_bow"] = "PT"
+item_code_lookup["item_poison_two_bow"] = "OT"
+item_code_lookup["item_light_two_bow"] = "LT"
+item_code_lookup["item_ice_two_bow"] = "IT"
+item_code_lookup["item_wind_two_bow"] = "WT"
+
+item_code_lookup["item_coal_three_bow"] = "CH"
+item_code_lookup["item_fire_three_bow"] = "FH"
+item_code_lookup["item_plasma_three_bow"] = "PH"
+item_code_lookup["item_poison_three_bow"] = "OH"
+item_code_lookup["item_light_three_bow"] = "LH"
+item_code_lookup["item_ice_three_bow"] = "IH"
+item_code_lookup["item_wind_three_bow"] = "WH"
+item_code_lookup["item_recipe_coal_ult_bow"] = "CU"
+
+item_code_lookup["item_recipe_fire_ult_bow"] = "FU"
+item_code_lookup["item_recipe_plasma_ult_bow"] = "PU"
+item_code_lookup["item_recipe_poison_ult_bow"] = "OU"
+item_code_lookup["item_recipe_light_ult_bow"] = "LU"
+item_code_lookup["item_recipe_ice_ult_bow"] = "IU"
+item_code_lookup["item_recipe_wind_ult_bow"] = "WU"
+
+item_code_lookup["item_hull_one"] = "HO"
+item_code_lookup["item_hull_two"] = "HT"
+item_code_lookup["item_hull_three"] = "HH"
+item_code_lookup["item_hull_four"] = "HF"
+item_code_lookup["item_sail_one"] = "SU"
+item_code_lookup["item_sail_two"] = "SO"
+item_code_lookup["item_sail_three"] = "ST"
+item_code_lookup["item_sail_four"] = "SH"
+item_code_lookup["item_repair_one"] = "RF"
+item_code_lookup["item_repair_two"] = "RU"
+item_code_lookup["item_repair_three"] = "RO"
+item_code_lookup["item_repair_four"] = "RT"
+item_code_lookup["item_wood_one"] = "DH"
+item_code_lookup["item_wood_two"] = "DF"
+item_code_lookup["item_wood_three"] = "DU"
+item_code_lookup["item_wood_four"] = "DO"
+
+item_code_lookup["item_tower_debuff"] = "EG"
+item_code_lookup["item_tower_healer"] = "EB"
+item_code_lookup["item_nut_spawner"] = "EN"
+
+
+
+item_code_lookup["item_puck_replacement_boat"] = "BZ"
+--Zodiac
+item_code_lookup["item_rubick_replacement_boat"] = "BC"
+--Catamaran
+item_code_lookup["item_tidehunter_replacement_boat"] = "BP"
+--Pontoon
+item_code_lookup["item_phantom_lancer_replacement_boat"] = "BA"
+--Airboat
+item_code_lookup["item_morphling_replacement_boat"] = "BS"
+--Speedboat
+item_code_lookup["item_nevermore_replacement_boat"] = "BL"
+--Plane
+item_code_lookup["item_kunkka_replacement_boat"] = "BH"
+--Shore Guard
+item_code_lookup["item_zuus_replacement_boat"] = "BT"
+--Tug Boat
+item_code_lookup["item_brewmaster_replacement_boat"] = "BH"
+--Houseboat
+item_code_lookup["item_magnus_replacement_boat"] = "BV"
+--Viking
+item_code_lookup["item_jakiro_replacement_boat"] = "BG"
+--Galleon
+item_code_lookup["item_shredder_replacement_boat"] = "BU"
+--Submarine
+item_code_lookup["item_treant_replacement_boat"] = "BO"
+--Construction
+item_code_lookup["item_spectre_replacement_boat"] = "BB"
+--Battleship
+item_code_lookup["item_visage_replacement_boat"] = "BN"
+--Noah's Ark
+item_code_lookup["item_wisp_replacement_boat"] = "BI"
+--Icebreaker
+item_code_lookup["item_gyrocopter_replacement_boat"] = "BR"
+--Aircraft Carrier
+item_code_lookup["item_lion_replacement_boat"] = "BY"
+--Yacht
+item_code_lookup["item_crystal_maiden_replacement_boat"] = "BN"
+--Canoe
+item_code_lookup["item_storm_spirit_replacement_boat"] = "BJ"
+--Junk
 
 model_lookup = {}
 model_lookup["npc_dota_hero_zuus"] = "models/barrel_boat.vmdl"
@@ -120,27 +217,27 @@ model_lookup["npc_dota_hero_windrunner"] = "models/const_boat.vmdl"
 model_lookup["npc_dota_hero_tusk"] = "models/battleship_boat0.vmdl"
 
 name_lookup = {}
-name_lookup["npc_dota_hero_zuus"] = "barrel"
-name_lookup["npc_dota_hero_ancient_apparition"] = "zodiac"
-name_lookup["npc_dota_hero_tidehunter"] = "pontoon"
-name_lookup["npc_dota_hero_crystal_maiden"] = "canoe"
-name_lookup["npc_dota_hero_phantom_lancer"] = "airboat"
-name_lookup["npc_dota_hero_rattletrap"] = "cat"
-name_lookup["npc_dota_hero_jakiro"] = "galleon"
-name_lookup["npc_dota_hero_nevermore"] = "plane"
-name_lookup["npc_dota_hero_meepo"] = "house"
-name_lookup["npc_dota_hero_disruptor"] = "coast"
-name_lookup["npc_dota_hero_morphling"] = "speed"
-name_lookup["npc_dota_hero_storm_spirit"] = "junk"
-name_lookup["npc_dota_hero_lion"] = "yacht"
-name_lookup["npc_dota_hero_ember_spirit"] = "tug"
-name_lookup["npc_dota_hero_slark"] = "viking"
-name_lookup["npc_dota_hero_sniper"] = "sub"
-name_lookup["npc_dota_hero_visage"] = "noah"
-name_lookup["npc_dota_hero_ursa"] = "Aircraft"
-name_lookup["npc_dota_hero_pugna"] = "ice"
-name_lookup["npc_dota_hero_windrunner"] = "const"
-name_lookup["npc_dota_hero_tusk"] = "battleship"
+name_lookup["npc_dota_hero_zuus"] = "Barrel"
+name_lookup["npc_dota_hero_ancient_apparition"] = "Zodiac"
+name_lookup["npc_dota_hero_tidehunter"] = "Pontoon Boat"
+name_lookup["npc_dota_hero_crystal_maiden"] = "Canoe"
+name_lookup["npc_dota_hero_phantom_lancer"] = "Airboat"
+name_lookup["npc_dota_hero_rattletrap"] = "Catamaran"
+name_lookup["npc_dota_hero_jakiro"] = "Galleon"
+name_lookup["npc_dota_hero_nevermore"] = "Broken Sea Plane"
+name_lookup["npc_dota_hero_meepo"] = "House Boat"
+name_lookup["npc_dota_hero_disruptor"] = "Shore Guard"
+name_lookup["npc_dota_hero_morphling"] = "Speed Boat"
+name_lookup["npc_dota_hero_storm_spirit"] = "Junk Ship"
+name_lookup["npc_dota_hero_lion"] = "Yacht"
+name_lookup["npc_dota_hero_ember_spirit"] = "Tug Boat"
+name_lookup["npc_dota_hero_slark"] = "Viking Warship"
+name_lookup["npc_dota_hero_sniper"] = "Submarine"
+name_lookup["npc_dota_hero_visage"] = "Noah's Ark"
+name_lookup["npc_dota_hero_ursa"] = "Aircraft Carrier"
+name_lookup["npc_dota_hero_pugna"] = "Ice Breaker"
+name_lookup["npc_dota_hero_windrunner"] = "Construction Ship"
+name_lookup["npc_dota_hero_tusk"] = "Battleship"
 
 function Precache( context )
 		for ind = 0, 11, 1 do 
@@ -279,15 +376,6 @@ function CBattleship8D:InitGameMode()
 	print( "Template addon is loaded." )
 	
 	--register the 'UnstickMe' command in our console
-	Convars:RegisterCommand( "UnstickMe", function(name, p)
-		--get the player that sent the command
-		local cmdPlayer = Convars:GetCommandClient()
-		if cmdPlayer then 
-			--if the player is valid, execute PlayerBuyAbilityPoint
-			return self:UnstickPlayer( cmdPlayer, p ) 
-		end
-	end, "A player buys an ability point", 0 )
-	
 	GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( CBattleship8D, "OrderExecutionFilter" ), self )
 	
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
@@ -306,6 +394,7 @@ function CBattleship8D:InitGameMode()
 	CustomGameEventManager:RegisterListener("GiveEasy", GiveEasy);
 	CustomGameEventManager:RegisterListener("GiveMedium", GiveMedium);
 	CustomGameEventManager:RegisterListener("buyItem", buyItem);
+	CustomGameEventManager:RegisterListener("Unstick", UnstickPlayer);
 	
   mode = GameRules:GetGameModeEntity()
 mode:SetHUDVisible(12, false)
@@ -328,7 +417,6 @@ function CBattleship8D:OrderExecutionFilter(keys)
   -- this clip is about 9 seconds long
   local rand = math.random(1, 10000)
   if rand > 9500 then
-  print("[BATTLESHIPS] lets make some noise")
     EmitSoundOnClient("battleships_traders.wooden_ship_creaking_waterslosh", player) --PlayerResource:GetPlayer(playerID))
   end
 
@@ -398,7 +486,7 @@ end
 function CBattleship8D:handleEmpGold()
 			GameRules:SetTimeOfDay(0.25)
 		
-			statSend(1)
+			
 			
 			inturest()
 			TICKS_SINCE_EMP_GOLD = 0
@@ -681,14 +769,18 @@ function CBattleship8D:OnThink()
 				})
 				print( "Stats loaded ")
 			end
+		Timers:CreateTimer( 900, function()
+			statSend(1)
+		end)
+		Timers:CreateTimer( 1800, function()
+			statSend(1)
+		end)
 		
 		Timers:CreateTimer( 300, function()
 			spawnTide()
 		end)
 			for _,tower in pairs( Entities:FindAllByClassname( "npc_dota_tow*")) do
-			      print( "tower name! " .. tower:GetName())
 					if tower ~= nil and string.match(tower:GetName(),"tower") then
-						 print( "tower name! was a tower that needed range." .. tower:GetName())
 						if tower:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 							creature = CreateUnitByName( "npc_dota_rng_ind" , tower:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_GOODGUYS )
 						
@@ -926,11 +1018,30 @@ function CBattleship8D:OnThink()
 								ApplyDamage(damageTable)
 							end
 						else
-						if LastLocs[hero]~=nil then
-							LastLocs2[hero] = LastLocs[hero]
-						end
-						LastLocs[hero] = hero:GetOrigin()
-						end
+							if LastLocs[hero]~=nil then
+								if LastLocs2[hero] ~=nil and (LastLocs[hero] - hero:GetOrigin()):Length() >20 then
+									LastLocs2[hero] = LastLocs[hero]
+									--print("update ll2")
+								elseif LastLocs2[hero]==nil then
+									LastLocs2[hero] = LastLocs[hero]
+								--	print("irst time ll2")
+								else
+								--	print("no update ll2")
+								end
+							end
+							if  LastLocs[hero]~=nil and (LastLocs[hero] - hero:GetOrigin()):Length() >20 then
+								--print((LastLocs[hero] - hero:GetOrigin()):Length())
+								LastLocs[hero] = hero:GetOrigin()
+							elseif LastLocs[hero]==nil then
+							--	print("first time")
+								LastLocs[hero] = hero:GetOrigin()
+								--print((LastLocs[hero] - hero:GetOrigin()):Length())
+								else
+							--	print("no update ll")
+							end
+							
+							
+							end
 					--gives gold per tick
 					local herogold = hero:GetGold()
 					if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
@@ -1224,20 +1335,14 @@ function CBattleship8D:OnEntityKilled( keys )
 		GameRules:SendCustomMessage("#north_tide", DOTA_TEAM_GOODGUYS, 0)
 		Notifications:TopToAll({hero="npc_dota_hero_tidehunter", imagestyle="portrait", continue=true})
 		Notifications:TopToAll({text="#north_tide", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
-		table.insert(tideArray, {
-			Tide_Killer = "North",
-			Game_Time = GameRules:GetGameTime(),
-		})
+		tideKiller="North"
 	end
 	if  killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 		CBattleship8D:quickSpawn("south","right", "four", 1, CREEP_NUM_HUGE+1)
 		CBattleship8D:quickSpawn("south","left", "four", 1, CREEP_NUM_HUGE+1)
 		Notifications:TopToAll({hero="npc_dota_hero_tidehunter", imagestyle="portrait", continue=true})
 		Notifications:TopToAll({text="#south_tide", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
-		table.insert(tideArray, {
-			Tide_Killer = "South",
-			Game_Time = GameRules:GetGameTime(),
-		})
+		tideKiller="South"
 	end
 		Timers:CreateTimer( 300, function()
 		TIDE_LEVEL = TIDE_LEVEL+1
@@ -1477,8 +1582,11 @@ function CBattleship8D:OnItemPurchased( keys )
 		 playerItemHist[casterUnit:GetPlayerID()]=""
 		 print("Created Array")
 	end
-	  playerItemHist[casterUnit:GetPlayerID()]=playerItemHist[casterUnit:GetPlayerID()] .. ", " .. itemName
+	if item_code_lookup[itemName]~=nil then
+	
+	  playerItemHist[casterUnit:GetPlayerID()]=playerItemHist[casterUnit:GetPlayerID()] .. math.floor(GameRules:GetGameTime()/60+0.5) .. item_code_lookup[itemName]
 	  
+  end
   	if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
 		
 		
@@ -1806,13 +1914,13 @@ print('[ItemFunctions] dubuffTower started!')
 		end
 	end
 	for _,curTower in pairs( Entities:FindAllByClassname( "npc_dota_tow*")) do
-				 print('[ItemFunctions] dubuffTower found a tower!')
+			--	 print('[ItemFunctions] dubuffTower found a tower!')
 				local curArmor = curTower:GetPhysicalArmorBaseValue()
 				if curTower ~= nil and curTower:IsTower() then
-				print('[ItemFunctions] dubuffTower really found a tower! cur armor is' .. curArmor)
+			--	print('[ItemFunctions] dubuffTower really found a tower! cur armor is' .. curArmor)
 					if curTower:GetTeamNumber() ~=  casterUnit:GetTeamNumber()  then
 						curTower:SetPhysicalArmorBaseValue(curArmor-1.0)
-						print('[ItemFunctions] dubuffTower found an enamy tower.  new armor is' .. curArmor-1.0)
+				--		print('[ItemFunctions] dubuffTower found an enamy tower.  new armor is' .. curArmor-1.0)
 					end
 				end
 			
@@ -1831,14 +1939,14 @@ print('[ItemFunctions] healTowers started!')
 		end
 	end
 	for _,curTower in pairs( Entities:FindAllByClassname( "npc_dota_tow*")) do
-				 print('[ItemFunctions] healTowers found a tower!')
+				-- print('[ItemFunctions] healTowers found a tower!')
 				local curArmor = curTower:GetPhysicalArmorBaseValue()
 				if curTower ~= nil and curTower:IsTower() then
-				print('[ItemFunctions] healTowers really found a tower!')
+				--print('[ItemFunctions] healTowers really found a tower!')
 					if curTower:GetTeamNumber() ==  casterUnit:GetTeamNumber()  then
 						local hp1 = (curTower:GetMaxHealth()-curTower:GetHealth())*.1
 						curTower:SetHealth(curTower:GetHealth()+hp1)
-						print('[ItemFunctions] healTowers found an ally tower.')
+				--		print('[ItemFunctions] healTowers found an ally tower.')
 					end
 				end
 			
@@ -1953,12 +2061,10 @@ end
 
 
 
-function CBattleship8D:UnstickPlayer( player, p)
-    --NOTE: p contains our parameter (the '1') now (as a string not a number), we just don't use it
-    
-    
-    --get the player's ID
-    local pID = player:GetPlayerID()
+function UnstickPlayer(eventSourceIndex, args)
+print("in unstick")
+	  local pID = args.PlayerID
+
     for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 			print("unsticking" .. hero:GetName())
@@ -1966,14 +2072,15 @@ function CBattleship8D:UnstickPlayer( player, p)
 			if herogold>0 then
 				if hero:GetPlayerID() == pID then
 					if false == hero:HasModifier("pergatory_3") then
-						local direction =  hero:GetForwardVector()
-						local vec = direction:Normalized() * 31.0
-						local vecorig = hero:GetOrigin()
-						hero:SetOrigin(vecorig+vec)
+						 if LastLocs2[hero]~= nil and (LastLocs2[hero] - hero:GetOrigin()):Length() <1000 then
+							local vecorig = LastLocs2[hero]
+							hero:SetOrigin(vecorig)
+						end
 					end
 					local item = CreateItem( "item_spawn_stunner", hero, hero)
 					item:ApplyDataDrivenModifier(hero, hero, "pergatory_3", nil)
 					hero:RemoveItem(item)
+
 				end
 			end
 		end
@@ -2523,7 +2630,6 @@ end
 --i1: item slot 1
 --bo: Buid Order
 function statSend(round)
-
 	local winnerData = {}
 	
 	local empGoldSouth = getEmpGoldForTeam(DOTA_TEAM_GOODGUYS)
@@ -2546,7 +2652,7 @@ function statSend(round)
 	local gameData={
 	seg = empGoldSouth,
 	neg = empGoldNorth,
-	tk = GetTideKill(),
+	tk = tideKiller,
 	}
 
 	local playerData = {}
@@ -2562,7 +2668,7 @@ function statSend(round)
                     dth = PlayerResource:GetDeaths(playerID),
                     lvl = GetHeroLevel(playerID),
 					
-					afk = DisconnectKicked[hero],
+					afk = GetDisconnectState(playerID),
 
                     i1 = GetItemInSlot(playerID, 0), --item slot1
                     i2 = GetItemInSlot(playerID, 1),
@@ -2571,7 +2677,7 @@ function statSend(round)
                     i5 = GetItemInSlot(playerID, 4),
                     i6 = GetItemInSlot(playerID, 5),
 					
-					bo=playerItemHist[playerID],
+					bo=GetPlayerHist(playerID),
                 })
             end
         end
@@ -2586,9 +2692,32 @@ function statSend(round)
 			PrintTable(roundData)
 			statCollection:submitRound(roundData)
 			playerItemHist={}		
-			tideArray={}
+			tidekiller="none"
+
 end
 
+function GetPlayerHist(playerID)
+if playerItemHist[playerID] ~= nil then
+return playerItemHist[playerID]
+end
+return "none"
+end
+function GetDisconnectState(playerID)
+	print("getDisconnect")
+	for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+				if hero:GetPlayerID() == playerID then
+					if DisconnectKicked[hero]~= nil then
+						return DisconnectKicked[hero]
+						else
+						return 0
+					end
+					
+				end
+			end
+		end
+		return 0
+	end
 function GetItemInSlot(playerID,itemSlot)
 local casterUnit = nil
 for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
@@ -2640,11 +2769,6 @@ function GetItemArray(playerID)
 	return 0;
 end
 
-function GetTideKill()
-
-	return tideArray
-end
-      
 
 
 

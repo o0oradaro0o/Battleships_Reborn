@@ -55,6 +55,13 @@
              <Image class="item_image" src="file://{images}/custom_game/mag.png" />
         </Button>
 	</Panel>
+	
+		<Panel hittest="false" id="UnstickButton" onload="setZoom()">
+        <Button class="unstickbox" onactivate="Unstick()">
+             <Label text="#unstick" class="UnstickLabel"/>
+		 </Button>
+	</Panel>
+	
 	<Panel hittest="false" class="zoomSliderBorder" id="ZoomSliderBox">
 		<Button class="zoomSliderholder">
 			<Panel class="SliderRow">
@@ -65,6 +72,7 @@
 			</DOTASettingsSlider>
 		</Button>
 	</Panel>
+
 	
     <Panel hittest="false" class="BarebonesTopNotifications">
       <Panel hittest="false" id="TopNotifications">
