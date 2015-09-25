@@ -756,7 +756,7 @@ function CBattleship8D:OnThink()
 			if THINK_TICKS == 5 then
 		-- Load Stat collection (statcollection should be available from any script scope)
 			statCollection = require('lib.statcollection')
-			local Testing = false
+			local Testing = true
 
 			-- Check if we are testing / building the mod
 			if not Testing then
@@ -1843,7 +1843,7 @@ function become_boat(casterUnit, heroname)
 					local id = hero:GetPlayerOwnerID()
 					
 					if id == plyID then
-					--RemoveWearables( hero )
+					RemoveWearables( hero )
 						print("this is the new hero, put items in " .. hero:GetName())
 						hero:SetGold(gold, true)
 						hero:SetGold(0, false)
@@ -2022,42 +2022,24 @@ end
 function RemoveWearables( hero )
       -- Setup variables
 	  Timers:CreateTimer( 0.1, function()
-      local model_name = ""
 
-      -- Check if npc is hero
-      if not hero:IsHero() then return end
-
-      -- Getting model name
-      if model_lookup[ hero:GetName() ] ~= nil and hero:GetModelName() ~= model_lookup[ hero:GetName() ] then
-        model_name = model_lookup[ hero:GetName() ]
-      else
-        return nil
-      end
-
-      -- Never got changed before
-      local toRemove = {}
-      local wearable = hero:FirstMoveChild()
-      while wearable ~= nil do
-        if wearable:GetClassname() == "dota_item_wearable" then
-          table.insert( toRemove, wearable )
+	hero.hiddenWearables = {} -- Keep every wearable handle in a table to show them later
+    local model = hero:FirstMoveChild()
+    while model ~= nil do
+        if model:GetClassname() == "dota_item_wearable" then
+            model:AddEffects(EF_NODRAW) -- Set model hidden
+            table.insert(hero.hiddenWearables, model)
         end
-        wearable = wearable:NextMovePeer()
-      end
+        model = model:NextMovePeer()
+    end
 
-      -- Remove wearables
-      for k, v in pairs( toRemove ) do
-        --v:SetModel( "models/development/invisiblebox.vmdl" )
-        v:RemoveSelf()
-      end
-	
-      -- Set model
-      hero:SetModel( model_name )
-      hero:SetOriginalModel( model_name )
-      hero:MoveToPosition( hero:GetAbsOrigin() )
-	  end
-	  )
 end
 
+
+
+
+	  )
+end
 
 
 

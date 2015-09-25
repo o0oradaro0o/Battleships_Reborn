@@ -64,6 +64,12 @@
 				"ItemDef" "0"
 			}
 		}
+	"RenderablePortrait"
+	{
+		"Particles"
+		{
+		}
+	}
 		
 		"ItemSlots" {}
 		
