@@ -66,7 +66,7 @@ function gunningIt(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')
 		local casterUnit = args.caster
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
-	if not IsPhysicsUnit(casterUnit) then
+		if not IsPhysicsUnit(casterUnit) then
 			Physics:Unit(casterUnit)
 		end
 	--print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
@@ -81,6 +81,15 @@ function gunningIt(args) -- keys is the information sent by the ability
 		GunTicks[casterUnit:GetOwner():GetPlayerID()]=1
 	end
 end
+
+function startGunningIt(args) -- keys is the information sent by the ability
+--print('[ItemFunctions] gunning_it started! ')
+local casterUnit = args.caster
+		GunTicks[casterUnit:GetOwner():GetPlayerID()]=1
+end
+
+
+
 function rammingIt(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')
 		local casterUnit = args.caster
@@ -101,9 +110,10 @@ end
 function gunningItDamage(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')
 	
+	local casterUnit = args.caster
+if GunTicks[casterUnit:GetOwner():GetPlayerID()]~=nil and GunTicks[casterUnit:GetOwner():GetPlayerID()]>0 then
 	
-
-		local casterUnit = args.caster
+		
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 		local abil = casterUnit:GetAbilityByIndex(2)
 		local level = abil:GetLevel()
@@ -117,6 +127,11 @@ function gunningItDamage(args) -- keys is the information sent by the ability
 		}
  
 		ApplyDamage(damageTable)
+		else
+			casterUnit:RemoveModifierByName("wreaking_it")
+			casterUnit:RemoveModifierByName("remove_wreaking_it")			
+		end
+		
 end
 function gunningItDamageRemove(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')

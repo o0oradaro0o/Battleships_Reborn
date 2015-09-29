@@ -432,7 +432,7 @@ if BOAT_JUST_BAUGHT ==0 then
 			npc:SetOriginalModel( "models/noah_boat.vmdl" )
 		end
 	if npc:IsRealHero() then
-	
+		stopPhysics(npc)
 		npc:SetBaseStrength(1)
 		print("hero level is" .. npc:GetLevel())
 		local item = CreateItem( "item_spawn_stunner", npc, npc)
@@ -770,10 +770,10 @@ function CBattleship8D:OnThink()
 				print( "Stats loaded ")
 			end
 		Timers:CreateTimer( 900, function()
-			statSend(1)
+			--statSend(1)
 		end)
 		Timers:CreateTimer( 1800, function()
-			statSend(1)
+			--statSend(1)
 		end)
 		
 		Timers:CreateTimer( 300, function()
@@ -1256,7 +1256,7 @@ function CBattleship8D:OnEntityKilled( keys )
 				
 				if DOCK_NORTH_LEFT+DOCK_NORTH_RIGHT==1 then
 					GoodWon=true
-					statSend(0)
+					--statSend(0)
 					
 					GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 					GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
@@ -1265,9 +1265,6 @@ function CBattleship8D:OnEntityKilled( keys )
 				elseif string.match(killedUnit:GetUnitName(), "left") then
 					DOCK_NORTH_LEFT = 0
 					Notifications:TopToAll({text="#left_north_harbor_died", duration=5.0, style={color="#FF6600",  fontSize="50px;"}})
-			
-		
-					
 				elseif string.match(killedUnit:GetUnitName(), "right") then
 					DOCK_NORTH_RIGHT = 0
 					Notifications:TopToAll({text="#right_north_harbor_died", duration=5.0, style={color="#FF6600",  fontSize="50px;"}})
@@ -1278,7 +1275,7 @@ function CBattleship8D:OnEntityKilled( keys )
 			elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
 				if DOCK_SOUTH_LEFT+DOCK_SOUTH_RIGHT==1 then
 					GoodWon=false
-					statSend(0)
+					--statSend(0)
 					GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 					GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
 					GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
@@ -1303,14 +1300,14 @@ function CBattleship8D:OnEntityKilled( keys )
 			print( "MATCHED BASE IS TRUE" )
 			if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS then
 					GoodWon=true
-					statSend(0)
+					--statSend(0)
 				GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 				GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
 				GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
 				GameRules:SetSafeToLeave( true )
 			elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
 				GoodWon=false
-					statSend(0)
+					--statSend(0)
 				
 				GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 				GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
@@ -1800,13 +1797,12 @@ function become_boat(casterUnit, heroname)
     local a = 0
     local plyID = casterUnit:GetPlayerOwnerID()
     local itemlist = {}
+	local droppeditemlist = {}
 	local itemstacks = {}
     if casterUnit:IsHero() or casterUnit:HasInventory() then 
     	for itemSlot = 0, 11, 1 do 
             if casterUnit ~= nil then
                 local Item = casterUnit:GetItemInSlot( itemSlot )
-				
-				
 				if Item ~= nil and not string.match(Item:GetName(), "boat") then
 					print("Item in slot is: " .. Item:GetName())
 					itemlist[itemSlot] = Item:GetName()
@@ -1824,13 +1820,20 @@ function become_boat(casterUnit, heroname)
 					itemlist[itemSlot] = "item_fluff"
 					
 				end
-				
-				
-				
-				
             end
 		end
     end
+	for _,item in pairs( Entities:FindAllByName("item_*")) do
+								print("found an item")
+
+				if item~=nil and item:GetName()~=nil and item:GetName()~=""then
+				print("found an item with a name")
+					if item:GetPurchaser() == casterUnit then
+						print("insertingItem")
+						table.insert(droppeditemlist, item)
+					end
+				end
+	end
 	if heroname ~= casterUnit:GetName() then
 			local gold = casterUnit:GetGold()
 			local xp = casterUnit:GetCurrentXP()
@@ -1856,6 +1859,13 @@ function become_boat(casterUnit, heroname)
 								if itemstacks[b] then
 									newItem:SetCurrentCharges(itemstacks[b])
 								end
+							end
+						end
+						for itemnum= 0, #droppeditemlist, 1 do
+							PrintTable(droppeditemlist)
+							if droppeditemlist[itemnum] ~= nil then
+								local DroppedItem=droppeditemlist[itemnum]
+									DroppedItem:SetPurchaser(hero)
 							end
 						end
 						if hero:IsHero() or hero:HasInventory() then 
@@ -2022,7 +2032,6 @@ end
 function RemoveWearables( hero )
       -- Setup variables
 	  Timers:CreateTimer( 0.1, function()
-
 	hero.hiddenWearables = {} -- Keep every wearable handle in a table to show them later
     local model = hero:FirstMoveChild()
     while model ~= nil do
@@ -2032,16 +2041,29 @@ function RemoveWearables( hero )
         end
         model = model:NextMovePeer()
     end
-
+	modelSwap(hero)
+	
 end
-
-
-
-
 	  )
 end
+function modelSwap(hero)
+      -- Check if npc is hero
+	  Timers:CreateTimer( 0.1, function()
+	  local model_name = ""
+      if not hero:IsHero() then return end
 
-
+      -- Getting model name
+      if model_lookup[ hero:GetName() ] ~= nil and hero:GetModelName() ~= model_lookup[ hero:GetName() ] then
+        model_name = model_lookup[ hero:GetName() ]
+      else
+        return nil
+      end
+	     hero:SetModel( model_name )
+      hero:SetOriginalModel( model_name )
+      hero:MoveToPosition( hero:GetAbsOrigin() )
+	  end
+	  )
+end
 
 function UnstickPlayer(eventSourceIndex, args)
 print("in unstick")
@@ -2057,12 +2079,13 @@ print("in unstick")
 						 if LastLocs2[hero]~= nil and (LastLocs2[hero] - hero:GetOrigin()):Length() <1000 then
 							local vecorig = LastLocs2[hero]
 							hero:SetOrigin(vecorig)
+							stopPhysics(hero)
 						end
 					end
 					local item = CreateItem( "item_spawn_stunner", hero, hero)
 					item:ApplyDataDrivenModifier(hero, hero, "pergatory_3", nil)
 					hero:RemoveItem(item)
-
+					
 				end
 			end
 		end

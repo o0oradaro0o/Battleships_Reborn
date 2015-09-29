@@ -1672,6 +1672,11 @@
 					"Target" "CASTER"
 					"ModifierName" "remove_wreaking_it"
 			}
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"startGunningIt"
+			}
 			
 		}
 		"OnToggleOff"
