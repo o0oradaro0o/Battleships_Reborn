@@ -448,6 +448,70 @@ margin-top:90px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #856363 ), color-stop( 0.25, #802A2A ), color-stop( 0.5, #8B6969 ), color-stop( 0.75, #A52A2A ), to( #8E2323 ) );
 }
 
+
+
+
+.shipPanalHiderHolder
+{
+	horizontal-align: right;
+	vertical-align: bottom;
+	width: 76px;
+	height: 30px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #c88423 ), color-stop( 0.25, #c88423 ), color-stop( 0.5, #fffb84 ), color-stop( 0.75, #c88423 ), to( #9a6717 ) );
+    margin-bottom:227px;
+	 margin-right:130px;
+	 z-index:50;
+}
+.shipPanalHiderHolder:hover
+{
+	horizontal-align: right;
+	vertical-align: bottom;
+	width: 78px;
+	height: 32px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #c88423 ), color-stop( 0.25, #c88423 ), color-stop( 0.5, #fffb84 ), color-stop( 0.75, #c88423 ), to( #9a6717 ) );
+    margin-bottom:226px;
+	 margin-right:129px;
+	 z-index:50;
+}
+
+.shipPanalHiderHolder:active
+{
+	horizontal-align: right;
+	vertical-align: bottom;
+	width: 78px;
+	height: 32px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #c88423 ), color-stop( 0.25, #c88423 ), color-stop( 0.5, #fffb84 ), color-stop( 0.75, #c88423 ), to( #9a6717 ) );
+    margin-bottom:226px;
+	 margin-right:129px;
+	 z-index:50;
+}
+
+.shipPanalHider
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 70px;
+	height: 24px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #8B4726 ), color-stop( 0.25, #b99276 ), color-stop( 0.5, #97694F ), color-stop( 0.75, #5E2605 ), to( #6B4226 ) );
+}
+.shipPanalHider:hover
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 70px;
+	height: 24px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #9B5736 ), color-stop( 0.25, #c9a286 ), color-stop( 0.5, #a7595F ), color-stop( 0.75, #6E3615 ), to( #7B5236 ) );
+}
+.shipPanalHider:active
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 70px;
+	height: 24px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #856363 ), color-stop( 0.25, #802A2A ), color-stop( 0.5, #8B6969 ), color-stop( 0.75, #A52A2A ), to( #8E2323 ) );
+}
+
+
 .TradeBtn
 {
 	horizontal-align: center;
@@ -480,6 +544,7 @@ margin-top:90px;
 	 border: 3px solid white;
 	 margin: 15px;
 }
+
 
 .TradeBtn:hover
 {
@@ -596,9 +661,11 @@ horizontal-align: center;
 	width: 500px;
 	height: 850px;
 	border: 0px solid black;
-   
+   background-color: gradient( linear, 0% 0%, 0% 100%, from( #90858500 ), color-stop( 0.25, #62696e44 ), color-stop( 0.5, #AA959566 ), color-stop( 0.75, #62696e ), to( #908585 ) );
 	horizontal-align: right;
 	visibility: collapse;
+	margin-right: -10px;
+		 border-radius: 10px;
 }
 .retire_guts
 {
@@ -640,17 +707,75 @@ margin-bottom: -200px;
 width: 490px;
 height: 500px;
  }
+ .ship_bkg_image
+{
+horizontal-align: right;
+	
+margin-top: 10px;
+margin-right: 0px;
+margin-bottom: -50px;
+width: 490px;
+height: 200px;
+border-radius: 10px;
+ }
 .shop_content_holder
 {
 	flow-children: down;
 	width: 500px;
 	height: 700px;
 	border: 0px solid black;
-   margin-right: -10px;
+
 	horizontal-align: right;
     background-color: gradient( linear, 0% 50%, 0% 100%, from( #42494ecc ), to( #252525ff ) );
 	 border-radius: 10px;
+	margin: 5px;
 }
+.ship_shop_content_holder
+{
+	flow-children: down;
+	width: 500px;
+	height: 850px;
+	border: 0px solid black;
+
+	horizontal-align: right;
+    background-color: gradient( linear, 0% 50%, 0% 100%, from( #42494ecc ), to( #252525ff ) );
+	 border-radius: 10px;
+	margin: 5px;
+}
+.ship_shop_tier_tab
+{
+	horizontal-align: center;
+	width: 400px;
+	height: 40px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #252525 ), to( #42494e ) );
+	 border: 3px solid white;
+	 margin: 15px;
+	  border-radius: 10px;
+}
+.ship_shop_tier_tab:hover
+{
+	horizontal-align: center;
+	width: 400px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #404040 ), to( #60606e ) );
+	 border: 2px solid white;
+	 margin: 15px;
+}
+.expanded
+{
+	height: 400px;
+    animation-name: expand;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+}
+
+
+#one_ks
+{
+
+	height: 0px;
+	transition: height 0.5s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
+}
+
 #out_of_contracts
 {
 	width: 600px;
@@ -680,6 +805,20 @@ height: 500px;
 	visibility: collapse;
 	
 }
+
+@keyframes 'expand' {
+  from {
+
+   transform: scaleX(0) scaleY(0);
+   opacity:0;
+  }
+
+  to {
+		 transform: scaleX(1) scaleY(1);
+		 opacity:1;
+  }
+}
+
 .Toggled
 {
 	visibility: collapse;

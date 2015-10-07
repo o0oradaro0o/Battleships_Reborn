@@ -29,8 +29,15 @@
 	"south_gold_each" "South Emp Gold Each:"
 	"zoom_lbl"	"Zoom"
 	
+	"Ships"					"Ships"
+	"ship_shop"					"Ship Shop"
+	"left_click"					"Left click for additional details, Right click to buy."
+	
+	"one_ks"	"1000 gold ships"
+	"ancient_apparition"	"Zodiac"
+	
 	"trade"	"Trade"
-	"no_trade" "You are not close enough to the trade-post"
+	"no_trade" "You must be in a trade ship and near a trading post (white dots on map)"
 	"Trade_Missions" "Trading Post"	
 	"Left_Bot_Missions" "Farmer's Trading Post"
 	"Left_Mid_Missions" "Coastal Trading Post"

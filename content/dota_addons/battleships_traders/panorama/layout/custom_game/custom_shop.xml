@@ -9,7 +9,7 @@
         <include src="file://{resources}/scripts/custom_game/custom_shop.js" />
 	 </scripts>
 	
-    <Panel hittest="false" class="custom_shop_holder">
+    <Panel hittest="false" class="custom_shop_holder" oncancel="hideShop()">
 	
 	
 
@@ -105,8 +105,50 @@
 			
         </Button>
 	</Panel>
+	
+	<Panel hittest="false" class="shipPanalHiderHolder" id="shipsButton">
+        <Button class="shipPanalHider" onactivate="showShips()">
+            <Label hittest="false" id="shop_text" text="#Ships" />
+			
+        </Button>
+	</Panel>
+	
+	
+	<Panel hittest="false" id="ancient_apparition">
+	
+		<Image class="item_image" src="file://{images}/custom_game/boats/ancient_apparition.png" />
+									
+	</Panel>
+	
+
         <Label hittest="false" id="out_of_contracts" text="#Out_Of_Contracts" />
-        <Panel hittest="false" id="custom_shop" oncancel="hideShop()">
+     <Panel hittest="false" id="custom_shop" oncancel="hideShop()">
+		/* ship shop */
+		<Panel hittest="false" id="ship_shop" class="shop_guts">
+			  <Image class="ship_bkg_image" src="file://{images}/custom_game/Kunkka.png" />
+                <Panel class="ship_shop_content_holder">
+					<Label hittest="false" class="trade_text_title" text="#ship_shop" />
+                   
+					<Panel id="one_ks_tab" class="ship_shop_tier_tab" onactivate="show1ks()">
+						<Label hittest="false" class="shop_btn_text" text="#one_ks"/>
+					</Panel>
+					<Panel id="one_ks" class="supply_guts">
+							<Panel hittest="false" class="supply_row">
+								 <Button class="TradeBtnItm"  onactivate="showDetails('ancient_apparition')" oncontextmenu="buyBoat('ancient_apparition', 1000)">
+									<Image class="item_image" src="file://{images}/custom_game/boats/ancient_apparition.png" />
+									 <Label hittest="false" class="gold_cost_text" text="#ancient_apparition" />
+									<Label hittest="false" class="item_desc_text" text="#left_click"/>
+								</Button>
+								
+
+							</Panel>
+						</Panel>
+					
+			 </Panel>
+		</Panel>
+		
+		
+		
             /* left_bot_shop */
             <Panel hittest="false" id="left_bot_shop" class="shop_guts">
                 <Image class="bkg_image" src="file://{images}/custom_game/bot_left.png" />
@@ -178,12 +220,12 @@
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
 							
-							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_sand', 50 )">
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_sand', 50 )" oncontextmenu="buyItem('oneshot_sand', 50 )" >
                                 <Image class="item_image" src="file://{images}/custom_game/dust.png" />
 								 <Label hittest="false" class="gold_cost_text" text="50  G" />
 								 <Label hittest="false" class="item_desc_text" text="#dust_desc"/>
                             </Button>
-							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_luck', 77 )">
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_luck', 77 )" oncontextmenu="buyItem('oneshot_luck', 77 )">
                                 <Image class="item_image" src="file://{images}/custom_game/luck.png" />
 								 <Label hittest="false" class="gold_cost_text" text="77  G" />
 								 <Label hittest="false" class="item_desc_text" text="#luck_desc"/>
@@ -221,12 +263,12 @@
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
-                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_info', 50)">
+                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_info', 50)"  oncontextmenu="buyItem('oneshot_info', 50)">
                                 <Image class="item_image" src="file://{images}/custom_game/recipe_scroll.png" />
 								 <Label hittest="false" class="gold_cost_text" text="50 G  " />
 								 <Label hittest="false" class="item_desc_text" text="#info_desc"/>
                             </Button>
-							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_firecrackers', 80 )">
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_firecrackers', 80 )" oncontextmenu="buyItem('oneshot_firecrackers', 80 )">
                                 <Image class="item_image" src="file://{images}/custom_game/firecrackers.png" />
 								 <Label hittest="false" class="gold_cost_text" text="80  G" />
 								 <Label hittest="false" class="item_desc_text" text="#firecrackers_desc"/>
@@ -263,12 +305,12 @@
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
-                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_brew', 80 )">
+                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_brew', 80 )" oncontextmenu="buyItem('oneshot_brew', 80 )">
                                 <Image class="item_image" src="file://{images}/custom_game/brew.png" />
 								 <Label hittest="false" class="gold_cost_text" text="80  G" />
 								 <Label hittest="false" class="item_desc_text" text="#brew_desc"/>
                             </Button>
-							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_power', 150)">
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_power', 150)" oncontextmenu="buyItem('oneshot_power', 150)">
                                 <Image class="item_image" src="file://{images}/custom_game/flask.png" />
 								 <Label hittest="false" class="gold_cost_text" text="150 G" />
 								 <Label hittest="false" class="item_desc_text" text="#flask_desc"/>
@@ -306,12 +348,12 @@
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
-                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_good_stuff', 120 )">
+                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_good_stuff', 120 )" oncontextmenu="buyItem('oneshot_good_stuff', 120 )">
                                 <Image class="item_image" src="file://{images}/custom_game/good_stuff.png" />
 								 <Label hittest="false" class="gold_cost_text" text="120  G" />
 								 <Label hittest="false" class="item_desc_text" text="#good_stuff_desc"/>
                             </Button>
-							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_booze', 40 )">
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_booze', 40 )" oncontextmenu="buyItem('oneshot_booze', 40 )">
                                 <Image class="item_image" src="file://{images}/custom_game/booze.png" />
 								 <Label hittest="false" class="gold_cost_text" text="40  G" />
 								 <Label hittest="false" class="item_desc_text" text="#booze_desc"/>
@@ -349,12 +391,12 @@
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
-                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_camo', 60 )">
+                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_camo', 60 )" oncontextmenu="buyItem('oneshot_camo', 60 )">
                                 <Image class="item_image" src="file://{images}/custom_game/cloak.png" />
 								 <Label hittest="false" class="gold_cost_text" text="60  G" />
 								 <Label hittest="false" class="item_desc_text" text="#camo_desc"/>
                             </Button>
-							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_scope', 40 )">
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_scope', 40 )" oncontextmenu="buyItem('oneshot_scope', 40 )">
                                 <Image class="item_image" src="file://{images}/custom_game/scope.png" />
 								 <Label hittest="false" class="gold_cost_text" text="40  G" />
 								 <Label hittest="false" class="item_desc_text" text="#scope_desc"/>
@@ -391,12 +433,12 @@
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
-                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_fish', 60 )">
+                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_fish', 60 )" oncontextmenu="buyItem('oneshot_fish', 60 )">
                                 <Image class="item_image" src="file://{images}/custom_game/winter_greevil_treat.png" />
 								 <Label hittest="false" class="gold_cost_text" text="60  G" />
 								 <Label hittest="false" class="item_desc_text" text="#fish_desc"/>
                             </Button>
-							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_line', 80 )">
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_line', 80 )" oncontextmenu="buyItem('oneshot_line', 80 )">
                                 <Image class="item_image" src="file://{images}/custom_game/line.png" />
 								 <Label hittest="false" class="gold_cost_text" text="80  G" />
 								 <Label hittest="false" class="item_desc_text" text="#line_desc"/>
@@ -433,12 +475,12 @@
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
-                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_trap', 90 )">
+                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_trap', 90 )" oncontextmenu="buyItem('oneshot_trap', 90 )">
                                 <Image class="item_image" src="file://{images}/custom_game/trap.png" />
 								 <Label hittest="false" class="gold_cost_text" text="90  G" />
 								 <Label hittest="false" class="item_desc_text" text="#trap_desc"/>
                             </Button>
-							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_chain', 80 )">
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_chain', 80 )"  oncontextmenu="buyItem('oneshot_chain', 80 )">
                                 <Image class="item_image" src="file://{images}/custom_game/chain.png" />
 								 <Label hittest="false" class="gold_cost_text" text="80  G" />
 								 <Label hittest="false" class="item_desc_text" text="#chain_desc"/>
@@ -475,12 +517,12 @@
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
-                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_earth', 70 )">
+                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_earth', 70 )" oncontextmenu="buyItem('oneshot_earth', 70 )">
                                 <Image class="item_image" src="file://{images}/custom_game/gem_of_true_sight.png" />
 								 <Label hittest="false" class="gold_cost_text" text="70  G" />
 								 <Label hittest="false" class="item_desc_text" text="#earth_desc"/>
                             </Button>
-							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_sun_screen', 40 )">
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_sun_screen', 40 )" oncontextmenu="buyItem('oneshot_sun_screen', 40 )">
                                 <Image class="item_image" src="file://{images}/custom_game/greater_clarity.png" />
 								 <Label hittest="false" class="gold_cost_text" text="40  G" />
 								 <Label hittest="false" class="item_desc_text" text="#screen_desc"/>

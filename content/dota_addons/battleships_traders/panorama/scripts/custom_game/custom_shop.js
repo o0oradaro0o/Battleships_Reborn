@@ -3,7 +3,7 @@ var hidden=true;
 var showMission=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 var firstcall=true;
 var starttime=0;
-function hideTride()
+function hideTrade()
 {
 	var numbuildings=0;
 	var i=0;
@@ -32,6 +32,56 @@ function hideTride()
 	
 	$.Msg("buildings: "+numbuildings);
 }
+
+
+
+
+
+function showShips()
+{
+	if(	hidden)
+		{
+			$( "#ship_shop" ).style.visibility="visible";
+			hidden=false;
+		}
+	else
+		{
+			hideShop();
+		}
+	
+	
+}
+
+function show1ks()
+{
+	$.Msg($( "#one_ks" ).style.height);
+	if ($( "#one_ks" ).style.height=="400.0px")
+	{
+		$( "#one_ks" ).style.height = "0px";
+
+	}
+	else
+	{
+		$( "#one_ks" ).style.height = "400px";
+	}
+}
+
+function showDetails(BoatName)
+{
+	
+}
+
+function buyBoat(BoatName, cost)
+{
+	GameEvents.SendCustomGameEventToServer( "buyBoat", { "text": BoatName, "cost": cost}); 
+	
+}
+
+
+
+
+
+
 	function fillAndShow()
 	{
 		$.Msg("inside fillAndShow");
@@ -120,7 +170,8 @@ function hideTride()
 					}
 					else
 					{
-						$( "#empty_guts" ).style.visibility="visible";
+						hidden=true;
+						showShips();
 						hidden=false;
 					}
 				}
@@ -152,6 +203,7 @@ function hideTride()
 		$( "#mid_bot_shop" ).style.visibility="collapse";
 		$( "#mid_mid_shop" ).style.visibility="collapse";
 		$( "#empty_guts" ).style.visibility="collapse";
+		$( "#ship_shop" ).style.visibility="collapse";
 		Game.EmitSound("ui.chat_close");
 		
 	}
@@ -278,7 +330,7 @@ function hideTride()
 	
 	
 	(function () {
-		hideTride();
+		hideTrade();
 	$.Msg("in subscribe");
 	GameEvents.Subscribe( "Hero_Near_Shop", NearShop );
 	GameEvents.Subscribe( "Hero_Left_Shop", LeftShop );
