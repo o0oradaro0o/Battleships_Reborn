@@ -3137,6 +3137,8 @@
 	"precache"
 			{
 			"model"						"models/items/alchemist/prison_ballchain.vmdl"
+			"model"						"models/heroes/shopkeeper_dire/shopkeeper_dire.vmdl"
+			
 			"particle_folder"	 "particles/basic_projectile"
 			}
 		// General
@@ -3216,14 +3218,14 @@
 	
 	
 		//=================================================================================	
-	// Tower: mid mid shop
+	// Tower: ship
 	//=================================================================================
 	"npc_dota_shop_ship"
 		{
 			// General
 			//
 			"BaseClass"					"npc_dota_building"	// Class of entity of link to.
-			"Model"							"models/items/courier/jumo/jumo.vmdl"// Model.
+			"Model"							"models/heroes/shopkeeper_dire/shopkeeper_dire.vmdl"// Model.
 			"ModelScale" 				"1.0"
 			"SoundSet"					"Tower.Water"		// Name of sound set.
 			"MinimapIcon"				""

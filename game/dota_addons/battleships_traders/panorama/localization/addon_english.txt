@@ -29,12 +29,72 @@
 	"south_gold_each" "South Emp Gold Each:"
 	"zoom_lbl"	"Zoom"
 	
+	"ancient_apparition"	"Zodiac"
+	"ancient_apparition_desc"	"A simple, maneuverable ship that can dive beneath attacks."
+	
+		"ember_spirit"												"Tug Boat"
+		"ancient_apparition"												"Zodiac"
+		"disruptor"												"Shore Guard"
+		"morphling"											"Speed Boat"
+		"storm_spirit"											"Junk Ship"
+		"jakiro"												"Galleon"
+		"tidehunter"											"Pontoon Boat"
+		"meepo"											"House Boat"
+		"zuus"										"Barrel"
+		"ursa"										"Aircraft Carrier"
+		"slark"										"Viking Warship"
+		"lion"										"Yacht"
+		"tusk"										"Battleship"
+		"visage"										"Noah's Ark"
+		"nevermore"										"Broken Sea Plane"
+		"rattletrap"										"Catamaran"
+		"windrunner"										"Construction Ship"
+		"sniper"										"Submarine"
+		"crystal_maiden"										"Canoe"
+		"phantom_lancer"										"Airboat"
+				"pugna"							"Ice Breaker"
+		
+		"phantom_lancer_desc"				"The Airboat it a fast and sturdy ship with some dangerous damage abilities."		
+		"pugna_desc"							"The Ice Breaker survives the cold better than any other ship and brings with it all the power of frost."
+		"ember_spirit_desc"					"Charge headlong into combat. Snag foes and drag them to their doom."
+		"disruptor_desc"						"Enforce the law on the High Seas and control the movement of vessels in your domain."	
+		"morphling_desc"						"Speed in and out of combat using dynamic movement and regeneration."
+		"storm_spirit_desc"					"Use fireworks and call upon thunderclouds to reveal your enemies and strike them down."
+		"jakiro_desc"							"Dominate the seas with devastating ranged attacks."
+		"tidehunter_desc"						"A sturdy boat that can hold its ground with defensive abilities."			
+		"meepo_desc"							"The party boat; fun to be around and the life of any party!"
+		"ursa_desc"								"Strong tanky ship that dispatches fighters and bombers."
+		"slark_desc"								"Scour the fjords in this quick, heavy-hitting berserker. Neither you nor your enemies will last long."			
+		"lion_desc"								"Light and fast, this ship can drop a small pleasure craft to absorb extra damage."	
+		"tusk_desc"								"Solid fighting vessel with missiles and powerful AOE nukes."
+		"visage_desc"							"Survive the flood in this ancient vessel and strand your enemies on the mountaintops."
+		"nevermore_desc"					"Navigate the seas in this pontooned and marooned plane; it's more nimble than you'd imagine. Watch what happens when you try to turn on your engines!"		
+		"rattletrap_desc"						"Light and fast, the Catamaran jumps out of reach and fires a deadly arrow."
+		"windrunner_desc"					"he construction ship is a floating dock, capable of using the scrap around it to repair itself, protect its allies and even construct ships for the empire."
+		"crystal_maiden_desc"				"The Canoe is a very simple boat whose crew gains heart from one another and inspires their allies."			
+		"sniper_desc"				"This submarine is less of a submarine and more of a boat.  the sub is powerful and even more powerful when submerged but has a hull breach and must surface or have its crew drown."			
+	
+
+	
+	
 	"Ships"					"Ships"
 	"ship_shop"					"Ship Shop"
 	"left_click"					"Left click for additional details, Right click to buy."
+	"hp"	"Hit Points:"
+	"ms"	"Move Speed:"
+	"regen"	"HP Regeneration/s:"
 	
-	"one_ks"	"1000 gold ships"
-	"ancient_apparition"	"Zodiac"
+	
+	"buy" "Buy this boat:"
+	"description" "Summary"
+	"abilities"		"Abilities"
+	"ship_stats"	"Ship Stats"
+	
+	"one_ks"	"1,000 gold ships"
+	"three_ks" "3,000 gold ships"
+	"six_ks" "6,000 gold ships"
+	"ten_ks" "10,000 gold ships"
+	
 	
 	"trade"	"Trade"
 	"no_trade" "You must be in a trade ship and near a trading post (white dots on map)"
@@ -164,6 +224,347 @@
 	//kil self
 	"kill_self_one"	"Do not kill yourself oponants awareded "
 	"kill_self_two"	"to be distributed with empire gold. "
+	
+	
+
+"pistols_battleship"							"Pistols"
+"pistols_battleship_Description"				"Your crew fires pistols rapidly at random nearby targets. \n\nHigher levels increase damage
+DURATION: 5.0 5.0 5.0 5.0
+BASE DAMAGE: 85.0 170.0 255.0 340.0
+PERCENTAGE MAX HP AS DAMAGE: 0.05 0.1 0.15 0.2
+RANGE: 600"
+
+"bail_water"								"Bail Water"
+"bail_water_Description"					"Your crew works a little harder to keep the vessel afloat, temporarily increasing movement speed. \n\nHigher levels increase speed bonus.
+MOVE SPEED: 50 75 100 125
+DURATION: 6.0 6.0 6.0 6.0"
+
+"tighten_hoop"								"Tighten Hoops"
+"tighten_hoop_Description"					"Strengthens the structural integrity of your vessel to provide an armor bonus and health regen bonus. \n\nHigher levels increase armor and regen bonuses.
+ARMOR: 1 2 4 7
+HEALTH REGEN: 4.0 6.0 8.0 10.0"
+
+"go_home_battleship"									"Go Home"
+"go_home_battleship_Description"						"Teleports you home after a short channel time. if Channel is interrupted you will not go home. \n \nHigher levels decrease cooldown.
+CHANNEL TIME: 4.5 4.5 4.5"
+
+"dive_battleship"								"Dive"
+"dive_battleship_Description"					"Momentarily dive underwater, avoiding any incoming projectile, and losing vision of your surroundings. \n\nHigher levels increase duration and cooldown.
+DURATION: 0.6 0.8 1.0 1.2"
+
+"batten_hatches"								"Batten Down the Hatches"
+"batten_hatches_Description"					"Strengthens the structural integrity of your vessel to provide an armor bonus and health regen bonus. \n\nHigher levels increase regen and armor.
+ARMOR: 2 4 7
+HEALTH REGEN: 6.0 8.0 10.0"
+
+"panic_battleship"							"Panic!"
+"panic_battleship_Description"				"Your panic drives you.  Gain move speed for every 10 percent of your health you are missing.\n Higher levels increase move speed bonus range.
+BONUS SPEED: 20 25 30 35"
+
+"war_drumbs_battleship"									"War Drums"
+"war_drumbs_battleship_Description"						"The Canoe's crew beats their drums in a hypnotic rhythm to increase their rower's speed as well as the speed of the ships around them. \n \nHigher levels decrease cooldown, increase speed bonus, and increase duration.
+DURATION: 2.5 2.8 3.1 3.4
+BONUS MOVE SPEED: 90 110 130 150"
+
+"might_battleship"									"Might of the Tribe"
+"might_battleship_Description"						"The Canoe gains strength from nearby allies, increasing its maximum health and regeneration for a short time. \n \nHigher levels decrease cooldown.
+DURATION: 18.0 18.0 18.0 18.0
+BONUS HP/ALLY NEARBY: 57"
+
+"swamp_gas_battleship"									"Swamp Gas"
+"swamp_gas_battleship_Description"						"Shoot some swamp gas into their ship to slowly eat away at their hull for a while. \n \nHigher levels decrease cooldown, and increase damage.
+DAMAGE PER TICK: 25 33 42 50
+TOTAL DAMAGE: 25 33 42 50
+DURATION: 6.0"
+
+"fan_blast_battleship"									"Fan Blast"
+"fan_blast_battleship_Description"						"Let the fan blade fly from your ship damaging and slowing pursuing opponents. \n \nHigher levels decrease cooldown, increase slow, and increase damage.
+SLOW: -50 -60 -70 -80
+DAMAGE: 90 110 130 150
+DURATION: 3.0"
+
+"head_above_water_battleship"								"Head Above Water"
+"head_above_water_battleship_Description"					"Focus the crews' efforts on defence, completely eliminating movement and casting in exchange for a massive armor bonus. Breaking the channel ends this armor bonus. \n\nHigher levels increase armor bonus.
+DURATION: 4.0 5.0 6.0 7.0
+ARMOR: 16 19 22 25
+MAGIC ARMOR: 50"
+
+"meepo_earthbind_battleship"								"Net"
+"meepo_earthbind_battleship_Description"					"Immobilize units in an area for a short time. \n\nHigher levels decrease cool down and increase speed.
+DURATION: 2.0
+NET SPEED: 1400"
+
+"mirana_leap_battlsehip"									"Gusted"
+"mirana_leap_battlsehip_Description"					"Tilt your sails to take advantage of the wind! The Catamaran will leap in the direction it is facing, airborn for a moment. Nearby allies receive a small movement speed bonus. This ability also disjoints. Be careful not to land on walls!\n\nHigher levels increase leap distance and speed bonus.
+LEAP DISTANCE: 800 900 1000 1100
+LEAP SPEED: 2000.0
+LEAP ALLIED SPEED BOOST: 2000.0
+LEAP SPEED BONUS AREA: 775"
+
+"windrunner_powershot_battleship"									"Steady Shot"
+"windrunner_powershot_battleship_Description"					"The Catamaran's pontoons steady it on the open ocean. After channeling, release a long-range arrow that does damage to each target it passes through. Damage diminishes as it passes through each target. Steady Shot can be fired early for reduced damage. \n\nHigher levels increase damage.
+ARROW WIDTH: 150 150 150 150
+RANGE: 2325
+VISION RADIUS: 500 500 500 500
+VISION DURATION: 1.3 1.3 1.3 1.3"
+
+"kunkka_torrent_bships"								"Restricted Area"
+"kunkka_torrent_bships_Description"					"Designate an area as restricted. Any enemies remaining in the restricted area units are launched upward on a torrent of water after a short delay, dealing damage, slowing them and applying a mini stun.  \n\n
+SLOW DURATION: 1.0 2.0 3.0 4.0
+STUN: .5 .5 .5 .5
+DELAY: 1.6 1.6 1.6 1.6"
+
+"kunkka_x_marks_the_spot_bships"								"Stop Right There!"
+"kunkka_x_marks_the_spot_bships_Description"					"After a short delay, recalls target unit to the its initial position from when the spell was cast.\n\nHigher levels decrease cooldown.
+DURATION: 2.5 2.5 2.5
+ALLY DURATION: 2.5 2.5 2.5
+RANGE: 800 900 1000 1100"
+
+"kunkka_ghostship_bships"								"Toss Repossessed Vessel"
+"kunkka_ghostship_bships_Description"					"Summon a repossessed ship which charges at a large area and stuns. n\nHigher levels increases damage and stun duration.
+RANGE: 1000 1100 1200
+SHIP WIDTH: 425 425 425
+MOVEMENT SPEED BONUS: 10 20 30
+STUN: 1.5 1.5 1.5
+SHIP SPEED: 1300 1400 1500"
+
+"morphling_waveform_battleship"								"Big Wake"
+"morphling_waveform_battleship_Description"					"Rev your engine for a short burst, thrust forward, and splash enemies with a powerful wake. \n\nHigher levels increase range and damage.
+WAVE SPEED: 1450
+MOVEMENT SPEED REDUCTION: 1450
+WAVE WIDTH: 200"
+
+"gun_it"								"Overcharge!"
+"gun_it_Description"					"Overcharge your engine, increasing acceleration at the cost of health. Damage continues until the engine cools off. (momentum continues through stuns and holds)\n\nHigher levels increase base speed bonus.
+BASE SPEED BONUS: 300.0 350.0 400.5 450.0
+ACCELERATION: 100"
+
+"swim_battleship"									"Swim Break!"
+"swim_battleship_Description"					"Relax, take a dip, enjoy the water, and freshen up. Quickly heals your ship as long as you do not take damage and remain still. Any damage taken will leave you stranded in the water, stunned for 3 seconds.\n\nHigher levels increase percentage healing rate.
+REGEN PERCENTAGE: 4.5 5.0 5.5
+STUN DURATION: 3"
+
+"dragon_battleship"									"Cloud Dragon"
+"dragon_battleship_Description"				"Flying a red flag is said to bring the favor of the dragon who lives in the clouds. Mark his target and he will attack ships near his target for a time. \n \nHigher levels decrease cooldown.
+DAMAGE: 60 70 80 90
+DURATION: 3.0 4.0 5.0 6.0"
+
+"firework_battleship"									"Firework Flare"
+"firework_battleship_Description"						"Launch fireworks over an area to give vision of it for a short time. \n \nHigher levels decrease cooldown.
+DURATION: 3 4 5 6"
+
+"nav_hack_battleship"									"Compass disruption"
+"nav_hack_battleship_Description"						"The Junk ship is equipped with a superior compass. Activate the compass disruption, and all enemy ships in the area will be forced to face away from you for a moment. \n \nHigher levels decrease cooldown.
+DURATION: 2.0 2.5 3.0"
+
+"plane_fly_battleship"									"Short Flight"
+"plane_fly_battleship_Description"					"Attempt to take off, and fly for a short time. Spews flaming oil that damages enemies. If your flight ends on land, you will crash and die. (momentum continues through stuns and holds) \n\nHigher levels increase duration, damage, and damage radius.
+DPS: 50 60 70 80
+AREA: 150 200 250 300
+DURATION: 4.0 4.0 4.0 4.0
+SPEED BONUS: 150 150 150 150"
+
+"mayday_battleship"									"Mayday"
+"mayday_battleship_Description"					"The control tower knows where you are. They'll send you care packages to keep you alive at sea. \n \n Higher levels will increase health gained per package. 
+HEAL AMOUNT: 400.0 500.0 600.0
+DELAY: 10.0"
+
+"ruse_battleship"									"It's a ruse"
+"ruse_battleship_Description"						"Select a target and after 2 seconds deal a percentage of damage that was done to you since casting to that target while healing for the same amount. breaks on death. \n \nHigher levels decrease cooldown. and increase damage percentage
+DURATION: 2.0
+PRECENT DAMAGE REFLECTED: 0.4 0.6 0.8 1.0"
+
+"drop_craft"									"Deploy Pleasure Cruiser."
+"drop_craft_Description"					"Drop a small, controllable pleasure cruiser to scout and soak up damage. \n\nHigher levels decrease cooldown.
+DURATION: 15"
+
+
+
+
+"doom_bringer_scorched_earth_battleship"				"The Ultimate Tan"
+"doom_bringer_scorched_earth_battleship_Description"					"Soak up the sun! Channel UV radiation around you, causing damage to enemy ships but doing wonders for your skin! \n \n Higher levels increase damage, and your tan.
+DPS / HEAL PER SECOND: 40 50 60 70
+RADIUS: 600 600 600 600
+MOVEMENT BONUS PERCENTAGE: 20 23 25 27
+DURATION: 6.0 6.5 7.0 7.5"
+
+"keeping_up_battleship"									"Keeping up with the Joneses"
+"keeping_up_battleship_Description"					"Link yourself to a unit.  Every second, for the duration of this link, your and your targets hit point percentages will be moved toward their average by 2 percent.\n\nHigher levels increase duration.
+DURATION: 2.5 3.0 3.5 4.0"
+
+"discoship_battleship"								"Disco Ship!"
+"discoship_battleship_Description"					"Grants allies pulsing vision of the surrounding area, and allows all enemy ships to see you. Gain an armor bonus because no one can touch you while you boogie \n\nHigher levels increase your vision area and evasion.
+VISION RANGE: 800 1000 1200 1600
+ARMOR BONUS: 2 3 4 5"
+
+"fun_battleship"								"Fun!"
+"fun_battleship_Description"					"You are fun to be around, granting allies bonus movement and regeneration. \n\nHigher levels increase aura AOE and potency.
+HEALTH REGEN: 9.0 18.0 27.0 36.0
+MOVEMENT SPEED BONUS: 8 12 16 20"
+
+"riki_blink_strike_battleship"								"Join the party!"
+"riki_blink_strike_battleship_Description"					"Teleport to target friend or foe and join the battle! \n\nHigher levels increase damage.
+RANGE: 800"
+
+"sniper_shrapnel_battleship"								"Fire Mortars"
+"sniper_shrapnel_battleship_Description"					"Rain mortars down on target area, dealing damage and providing vision.  \n\nHigher levels increase duration and damage.
+MOVEMENT SLOW: -15 -20 -25 -30
+AREA: 400
+DURATION: 3.0
+SLOW DURATION: 3.0"
+
+"sniper_assassinate_battleship"								"Long Nines"
+"sniper_assassinate_battleship_Description"					"Stop your ship to fire a powerful cannon at long range. \n\nHigher levels increase range and damage.
+PROJECTILE SPEED: 2500 2500 2500
+RANGE: 1500 1700 1900"
+
+
+
+
+"hit_battleship"									"Flare"
+"hit_battleship_Description"					"Launches a flare at a random enemy hero, providing vision as it flies. \n\nHigher levels decrease cooldown and increase projectile vision.
+VISION RADIUS: 1000 1100 1200 1300"
+
+"pudge_meat_hook_battleship"								"Grab"
+"pudge_meat_hook_battleship_Description"					"Shoots out a line and pulls in the first ship it hits. \n\nHigher levels increase damage and range while decreasing cooldown.
+HOOK SPEED: 1600.0
+RANGE: 700 900 1100 1300"
+
+"batrider_flaming_lasso_battleship"								"Tug!"
+"batrider_flaming_lasso_battleship_Description"					"Snag an enemy unit and pull them along with you while dealing damage. \n\nHigher levels increase duration.
+DURATION: 1.0 1.5 2.0
+DRAG DISTANCE: 100 100 100
+CHAIN BREAK DISTANCE: 400 400 400"
+
+"shove_battleship"								"Shove"
+"shove_battleship_Description"					"Stuns a unit and pushes it away from the tugboat. \n\nHigher levels increase push distance and duration of stun.
+DURATION: 0.9 1.0 1.1 1.2"
+
+"spirit_breaker_charge_of_darkness_battleship"								"Into the Fray!"
+"spirit_breaker_charge_of_darkness_battleship_Description"					"Charge to the target, increasing your speed along with your excitement for the upcoming battle. Upon reaching the target, they will be stunned for a brief duration. \n\nHigher levels increase duration and speed of charge.
+MOVEMENT SPEED: 580 590 600 610
+STUN: 0.2 0.2 0.2 0.2
+TARGET VISION RADUS: 400 400 400 400"
+
+"Pillage"									"Pillage"
+"Pillage_Description"						"Target an enemy building to reduce its armor; the Vikings aboard your ship will attack it, dealing damage while the skill is active. \n \n Higher levels increase de-armor effect and damage.
+BUILDING ARMOR REDUCTION: -3 -6 -9 -12
+BUILDING DPS: -3 -6 -9 -12"
+
+"big_boom"									"Visions of Valhalla!"
+"big_boom_Description"					"Valhalla awaits! Activate to deal damage to all nearby boats (friend, foe, and yourself) after five seconds. \n \n Higher levels decrease the cooldown.
+DAMAGE: 1500 1800 2100"
+
+"tidehunter_gush_battleship"								"Bilging"
+"tidehunter_gush_battleship_Description"					"Fire a blast of water at an enemy ship dealing damage, de-armoring, and slowing for a short time \n\nHigher levels increase damage and potency.
+SLOW: -100 -100 -100 -100
+DEARMOR: -2 -3 -4 -5
+DAMAGE: 600 650 700 750
+DURATION: 2.0"
+
+"submerge_battleship"							"Submerge"
+"submerge_battleship_Description"					"Dive into the comforting embrace of the sea! Let the water shield you from harm, granting you an armor bonus. Fully submerge your propeller, granting you a move speed bonus. \n\nAlas, you need to breathe keep an eye on your air (mana) or you may start to drown.  Quickly... \n\nHigher levels increase all bonuses.
+MOVE SPEED BONUS: 100 120 140
+ARMOR BONUS: 9 11 13
+MANA DRAIN: -50.0"
+
+"terrorblade_conjure_image_battleship"									"Two by Two!"
+"terrorblade_conjure_image_battleship_Description"					"Creates a duplicate of your ship, weapons included, that takes increased damage from foes. \n\nHigher levels decrease the damage taken by the ship. 
+INCOMING DAMAGE MAGNIFICATION: 375.0 350.0 325.0 300.0
+ILLUSION DURATION: 5.0"
+
+"rainbow_battleship"									"Rainbow to End the Storm"
+"rainbow_battleship_Description"					"Upon your death, heroes around you are healed up to 4000 if they are within 2500 of you. \n\nHigher levels increase healing.
+HEAL: 1000 2000 3000 4000
+RANGE: 2500 2500 2500 2500"
+
+"mountain_battleship"									"Stuck on a Mountain"
+"mountain_battleship_Description"					"End the flood. Immobilizes you and all units around you in a large radius. \n\nHigher levels increase duration.
+DURATION: 3.0 4.0 5.0"
+
+"monkey_buisness"									"Monkey Buisness"
+"monkey_buisness_Description"					"Your monkeys jump to a nearby enamy ship, do as much damage as they can, then escape to an allied ship.  Monkeys continue until they have no where to jump, alternating between allies and enemies.\n\nHigher levels increase damage and jump range.
+MONKEY JUMP RANGE: 600 700 800 900
+MONKEY ATTACK DAMAGE: 200 300 400 500"
+
+"launch_craft"									"Launch Bomber"
+"launch_craft_Description"					"Launch a powerful bomber loaded with a payload that damages all units and buildings in a line away from and then back to it's launch site..\n\n Higher levels decrease cooldown.
+DAMAGE: 600"
+
+"launch_all"									"To The Skies"
+"launch_all_Description"					"Launch five fighter jets! Command them to attack your enemies. \n\n Higher levels increase flight time and decrease cooldown.
+DURATION: 15 17 19 21"
+
+"Over_And_Out"									"Over and Out"
+"Over_And_Out_Description"					"The aircraft carrier shoots forward even over terrain grabbs any units encountered and pulls them back out to where it started. (pulled units cannot move over terrain\n\n Higher levels increase duration.
+DURATION: 2.25 2.5 2.75"
+
+"gyrocopter_call_down_battleship"									"Hit!"
+"gyrocopter_call_down_battleship_Description"					"Fire a long ranged nuclear strike followed by a less powerful aftershock. \n\n Higher levels increases damage and reduce cooldown.
+FIRST NUKE SLOW DURATION: 2
+SECOND NUKE SLOW DURATION: 3
+FIRST NUKE DAMAGE: 600 800 1000
+SECOND NUKE DAMAGE: 400 600 800
+FIRST NUKE SLOW: 50
+SECOND NUKE SLOW: 20
+AREA: 550"
+
+"miss_battleship"									"Miss"
+"miss_battleship_Description"					"G-7. Grants armor to you and nearby allies. \n\nHigher levels increase armor. 
+armor: 1.0 2.0 3.0 4.0"
+
+"antimage_blink_battleship"											"Cheat"
+"antimage_blink_battleship_Description"								"Short distance teleportation that allows battleship to shift around the board.
+RANGE: 900 1000 1100 1200"
+
+"puck_waning_rift_battleship"								"Hack their system!"
+"puck_waning_rift_battleship_Description"					"Disables the use of abilities on all units in the area and deals damage to them. \n\nHigher levels increase damage and duration.
+DURATION: 3.0 3.5 4.0 4.5"
+
+"abaddon_aphotic_shield_battleship"							"Scrap Armor"
+"abaddon_aphotic_shield_battleship_Description"	"Creates junk armor around an ally unit, forming a shield that absorbs a set amount of damage before expiring. When the shield is destroyed it will burst and deal damage equal to the amount it could absorb to an area around it. Removes certain types of negative buffs and stuns on cast.
+DURATION: 15.0
+MAX DAMAGE ABSORBED: 500.0 600.0 700.0 800.0
+BURST RADIUS: 1000"
+
+"into_the_hold"			"Into The Hold"				
+"into_the_hold_Description" "Construct anempire ship and carry it in your hold while constructing it and shielding it.  this ship will divide fire. \n\nHigher levels increase time in hold, armor bonus and ally regen speed
+DURATION: 5.0 6.0 7.0 8.0
+RANGE: 2 3 4 5
+HEALTH REGEN: 50 60 70 80"
+
+"salvage_battleship"							"Salvage"
+"salvage_battleship_Description"					"Utilize the wreckage around you. Each ship you kill heals your ship for a percentage of the total health of the killed ship. \n\nHigher levels increase range and damage.
+HEAL PERCENTAGE HERO: 6.0 7.0 8.0 9.0
+HEAL PERCENTAGE OTHER: 6.0 7.0 8.0 9.0"
+
+"shadow_shaman_shackles_battleship"									"Hoist"
+"shadow_shaman_shackles_battleship_Description"						"CHANNELED - Binds an enemy unit so that it cannot move or attack, while dealing damage over time.
+CHANNEL DURATION: 3.25 3.5 3.75
+TOTAL DAMAGE: 550 600 650"
+
+"iceberg_battleship"									"Iceberg"
+"iceberg_battleship_Description"						"Hide an iceberg (invisible to enemy team). The first enemy ship to run into it will take considerable damage. \n \nHigher levels decrease cooldown.
+DURATION: 120
+DAMAGE: 1000"
+
+"jakiro_ice_path_battleship"								"Ice Path"
+"jakiro_ice_path_battleship_Description"					"Creates a path of ice that stuns and damages enemies that touch it. \n Higher levels increase damage and stun duration and decrease cooldown
+DURATION:
+DAMAGE: 200
+RANGE: 1600"
+
+"crystal_maiden_freezing_field_battleship"							"Freezing Field"
+"crystal_maiden_freezing_field_battleship_Description"				"Summons forth the frozen north and all it's random icy explosions that slow enemies and deal massive damage.  Lasts %duration_tooltip% seconds.\n Higher levels increase damage and stun duration and decrease cooldown.
+The slow is applied on all enemies in the radius, even if they aren't hit by an explosion (lasts 1 second). 685 685 685
+RADIUS: 685 685 685
+EXPLOSION RADIUS: 685 685 685
+%MOVEMENT SLOW: -30
+DAMAGE: 205 270 350"
+
+"icy_waters_battleship"									"Icy Waters"
+"icy_waters_battleship_Description"						"All nearby Enemy ships are slowed. \n \nHigher levels increase slowing effect.
+SLOW: -30 -35 -40 -45"
 
 }
 

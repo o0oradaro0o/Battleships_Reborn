@@ -46,7 +46,10 @@
 	{
 		"Player_ID"		"short"
 	}
-	
+	"Hero_Near_Ship_Shop"
+	{
+		"Player_ID"		"short"
+	}
 	"Team_Can_Buy"
 	{
 		"Player_ID"		"short"

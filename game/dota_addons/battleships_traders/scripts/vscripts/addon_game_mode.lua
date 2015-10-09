@@ -2609,7 +2609,21 @@ function HandleShopChecks(hero)
 		if WasNearShop[hero]==nil then
 			WasNearShop[hero] = true
 		end
-		if ShopDist:Length()<600 then
+			local targetUnitOne = Entities:FindByName( nil, "south_boat_shop")
+			local targetUnitTwo = Entities:FindByName( nil, "north_boat_shop")
+			local directionOne =  casterPos - targetUnitOne:GetAbsOrigin()
+			local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
+			if (directionOne:Length() < 600 or directionTwo:Length() < 600) then
+
+				local data =
+				{
+					Player_ID = hero:GetOwner():GetPlayerID()
+				}
+				FireGameEvent("Hero_Near_Ship_Shop",data)
+			end
+			
+			
+		if ShopDist:Length()<600 and (directionOne:Length() > 700 and directionTwo:Length() > 700) then
 			
 			if WasNearShop[hero]==false then
 				print("sending entershop")

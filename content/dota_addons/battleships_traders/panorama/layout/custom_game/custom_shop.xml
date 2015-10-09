@@ -113,13 +113,1229 @@
         </Button>
 	</Panel>
 	
-	
-	<Panel hittest="false" id="ancient_apparition">
-	
-		<Image class="item_image" src="file://{images}/custom_game/boats/ancient_apparition.png" />
-									
+
+	<Panel hittest="false" id="ancient_apparition">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#ancient_apparition" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/ancient_apparition.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#ancient_apparition_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="750" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="300" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="5" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('ancient_apparition','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('ancient_apparition','dive_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/dive_battleship_puck.png" />
+                       <Label hittest="false" class="ability_name" text="#dive_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('ancient_apparition','panic_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/ramming_speed_battleship.png" />
+                       <Label hittest="false" class="ability_name" text="#panic_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('ancient_apparition','batten_hatches')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/hatches.png" />
+                       <Label hittest="false" class="ability_name" text="#batten_hatches"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="ancient_apparition_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="ancient_apparition_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('ancient_apparition', 1000)" oncontextmenu="buyBoat('ancient_apparition', 1000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="1000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+	<Panel hittest="false" id="crystal_maiden">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#crystal_maiden" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/crystal_maiden.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#crystal_maiden_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="800" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="260" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="5" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('crystal_maiden','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('crystal_maiden','war_drumbs_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/earthshaker_aftershock.png" />
+                       <Label hittest="false" class="ability_name" text="#war_drumbs_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('crystal_maiden','might_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/earthshaker_enchant_totem.png" />
+                       <Label hittest="false" class="ability_name" text="#might_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('crystal_maiden','batten_hatches')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/hatches.png" />
+                       <Label hittest="false" class="ability_name" text="#batten_hatches"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="crystal_maiden_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="crystal_maiden_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('crystal_maiden', 1000)" oncontextmenu="buyBoat('crystal_maiden', 1000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="1000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+	<Panel hittest="false" id="phantom_lancer">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#phantom_lancer" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/phantom_lancer.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#phantom_lancer_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="900" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="310" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="6" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('phantom_lancer','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('phantom_lancer','swamp_gas_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/alchemist_acid_spray.png" />
+                       <Label hittest="false" class="ability_name" text="#swamp_gas_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('phantom_lancer','fan_blast_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/brewmaster_storm_cyclone.png" />
+                       <Label hittest="false" class="ability_name" text="#fan_blast_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('phantom_lancer','batten_hatches')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/hatches.png" />
+                       <Label hittest="false" class="ability_name" text="#batten_hatches"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="phantom_lancer_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="phantom_lancer_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('phantom_lancer', 1000)" oncontextmenu="buyBoat('phantom_lancer', 1000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="1000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+	<Panel hittest="false" id="tidehunter">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#tidehunter" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/tidehunter.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#tidehunter_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="1150" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="250" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="6" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('tidehunter','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('tidehunter','head_above_water_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/head_above_water_battleship.png" />
+                       <Label hittest="false" class="ability_name" text="#head_above_water_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('tidehunter','meepo_earthbind_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/meepo_earthbind.png" />
+                       <Label hittest="false" class="ability_name" text="#meepo_earthbind_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('tidehunter','batten_hatches')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/hatches.png" />
+                       <Label hittest="false" class="ability_name" text="#batten_hatches"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="tidehunter_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="tidehunter_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('tidehunter', 1000)" oncontextmenu="buyBoat('tidehunter', 1000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="1000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
 	</Panel>
 	
+
+	<Panel hittest="false" id="rattletrap">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#rattletrap" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/rattletrap.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#rattletrap_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="650" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="275" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="8" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('rattletrap','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('rattletrap','mirana_leap_battlsehip')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/mirana_leap_battlsehip.png" />
+                       <Label hittest="false" class="ability_name" text="#mirana_leap_battlsehip"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('rattletrap','windrunner_powershot_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/windrunner_powershot.png" />
+                       <Label hittest="false" class="ability_name" text="#windrunner_powershot_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('rattletrap','batten_hatches')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/hatches.png" />
+                       <Label hittest="false" class="ability_name" text="#batten_hatches"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="rattletrap_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="rattletrap_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('rattletrap', 1000)" oncontextmenu="buyBoat('rattletrap', 1000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="1000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+	<Panel hittest="false" id="disruptor">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#disruptor" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/disruptor.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#disruptor_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="2700" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="300" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="17" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('disruptor','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('disruptor','kunkka_torrent_bships')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/kunkka_torrent.png" />
+                       <Label hittest="false" class="ability_name" text="#kunkka_torrent_bships"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('disruptor','kunkka_x_marks_the_spot_bships')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/kunkka_x_marks_the_spot.png" />
+                       <Label hittest="false" class="ability_name" text="#kunkka_x_marks_the_spot_bships"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('disruptor','kunkka_ghostship_bships')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/kunkka_ghostship.png" />
+                       <Label hittest="false" class="ability_name" text="#kunkka_ghostship_bships"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="disruptor_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="disruptor_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('disruptor', 3000)" oncontextmenu="buyBoat('disruptor', 3000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="3000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+	<Panel hittest="false" id="morphling">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#morphling" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/morphling.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#morphling_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="2400" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="350" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="15" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('morphling','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('morphling','morphling_waveform_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/morphling_waveform.png" />
+                       <Label hittest="false" class="ability_name" text="#morphling_waveform_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('morphling','gun_it')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/keeper_of_the_light_chakra_magic.png" />
+                       <Label hittest="false" class="ability_name" text="#gun_it"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('morphling','swim_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/elder_titan_echo_stomp.png" />
+                       <Label hittest="false" class="ability_name" text="#swim_battleship"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="morphling_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="morphling_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('morphling', 3000)" oncontextmenu="buyBoat('morphling', 3000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="3000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+	<Panel hittest="false" id="storm_spirit">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#storm_spirit" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/storm_spirit.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#storm_spirit_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="2400" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="330" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="14" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('storm_spirit','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('storm_spirit','dragon_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/lina_dragon_slave_alt1.png" />
+                       <Label hittest="false" class="ability_name" text="#dragon_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('storm_spirit','firework_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/puck_illusory_orb_merry.png" />
+                       <Label hittest="false" class="ability_name" text="#firework_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('storm_spirit','nav_hack_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/techies_focused_detonate.png" />
+                       <Label hittest="false" class="ability_name" text="#nav_hack_battleship"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="storm_spirit_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="storm_spirit_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('storm_spirit', 3000)" oncontextmenu="buyBoat('storm_spirit', 3000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="3000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+	<Panel hittest="false" id="nevermore">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#nevermore" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/nevermore.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#nevermore_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="2250" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="320" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="16" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('nevermore','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('nevermore','plane_fly_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/batrider_firefly.png" />
+                       <Label hittest="false" class="ability_name" text="#plane_fly_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('nevermore','ruse_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/necronomicon_warrior_sight.png" />
+                       <Label hittest="false" class="ability_name" text="#ruse_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('nevermore','mayday_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/mayday.png" />
+                       <Label hittest="false" class="ability_name" text="#mayday_battleship"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="nevermore_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="nevermore_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('nevermore', 3000)" oncontextmenu="buyBoat('nevermore', 3000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="3000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+	<Panel hittest="false" id="lion">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#lion" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/lion.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#lion_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="2600" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="330" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="12" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('lion','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('lion','doom_bringer_scorched_earth_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/doom_bringer_scorched_earth_battleship.png" />
+                       <Label hittest="false" class="ability_name" text="#doom_bringer_scorched_earth_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('lion','keeping_up_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/joanses_up.png" />
+                       <Label hittest="false" class="ability_name" text="#keeping_up_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('lion','drop_craft')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/drop_craft.png" />
+                       <Label hittest="false" class="ability_name" text="#drop_craft"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="lion_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="lion_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('lion', 3000)" oncontextmenu="buyBoat('lion', 3000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="3000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+	<Panel hittest="false" id="meepo">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#meepo" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/meepo.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#meepo_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="5800" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="350" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="20" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('meepo','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('meepo','discoship_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/keeper_of_the_light_chakra_magic.png" />
+                       <Label hittest="false" class="ability_name" text="#discoship_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('meepo','fun_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/meepo_divided_we_stand.png" />
+                       <Label hittest="false" class="ability_name" text="#fun_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('meepo','riki_blink_strike_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/riki_blink_strike.png" />
+                       <Label hittest="false" class="ability_name" text="#riki_blink_strike_battleship"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="meepo_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="meepo_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('meepo', 6000)" oncontextmenu="buyBoat('meepo', 6000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="6000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+	<Panel hittest="false" id="jakiro">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#jakiro" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/jakiro.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#jakiro_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="5700" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="360" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="20" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('jakiro','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('jakiro','sniper_shrapnel_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_shrapnel.png" />
+                       <Label hittest="false" class="ability_name" text="#sniper_shrapnel_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('jakiro','hit_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/gyrocopter_homing_missile.png" />
+                       <Label hittest="false" class="ability_name" text="#hit_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('jakiro','sniper_assassinate_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_headshot.png" />
+                       <Label hittest="false" class="ability_name" text="#sniper_assassinate_battleship"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="jakiro_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="jakiro_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('jakiro', 6000)" oncontextmenu="buyBoat('jakiro', 6000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="6000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+	<Panel hittest="false" id="ember_spirit">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#ember_spirit" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/ember_spirit.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#ember_spirit_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="6000" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="340" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="20" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('ember_spirit','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('ember_spirit','pudge_meat_hook_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/pudge_meat_hook.png" />
+                       <Label hittest="false" class="ability_name" text="#pudge_meat_hook_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('ember_spirit','shove_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/shove_battleship.png" />
+                       <Label hittest="false" class="ability_name" text="#shove_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('ember_spirit','batrider_flaming_lasso_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/batrider_flaming_lasso.png" />
+                       <Label hittest="false" class="ability_name" text="#batrider_flaming_lasso_battleship"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="ember_spirit_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="ember_spirit_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('ember_spirit', 6000)" oncontextmenu="buyBoat('ember_spirit', 6000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="6000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+	<Panel hittest="false" id="slark">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#slark" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/slark.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#slark_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="4800" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="350" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="60" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('slark','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('slark','spirit_breaker_charge_of_darkness_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/spirit_breaker_charge_of_darkness.png" />
+                       <Label hittest="false" class="ability_name" text="#spirit_breaker_charge_of_darkness_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('slark','Pillage')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/Pillage.png" />
+                       <Label hittest="false" class="ability_name" text="#Pillage"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('slark','big_boom')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/brewmaster_storm_wind_walk.png" />
+                       <Label hittest="false" class="ability_name" text="#big_boom"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="slark_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="slark_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('slark', 6000)" oncontextmenu="buyBoat('slark', 6000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="6000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+	<Panel hittest="false" id="sniper">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#sniper" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/sniper.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#sniper_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="4700" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="270" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="20" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('sniper','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('sniper','tidehunter_gush_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/tidehunter_gush.png" />
+                       <Label hittest="false" class="ability_name" text="#tidehunter_gush_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('sniper','peak_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/keeper_of_the_light_blinding_light.png" />
+                       <Label hittest="false" class="ability_name" text="#peak_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('sniper','submerge_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/submerge.png" />
+                       <Label hittest="false" class="ability_name" text="#submerge_battleship"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="sniper_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="sniper_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('sniper', 6000)" oncontextmenu="buyBoat('sniper', 6000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="6000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+	<Panel hittest="false" id="visage">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#visage" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/visage.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#visage_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="110000" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="390" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="20" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('visage','monkey_buisness')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/monkey_buisness.png" />	
+                       <Label hittest="false" class="ability_name" text="#monkey_buisness"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('visage','terrorblade_conjure_image_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/terrorblade_conjure_image.png" />
+                       <Label hittest="false" class="ability_name" text="#terrorblade_conjure_image_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('visage','rainbow_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/rainbow.png" />
+                       <Label hittest="false" class="ability_name" text="#rainbow_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('visage','mountain_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/greevil_ice_wall.png" />
+                       <Label hittest="false" class="ability_name" text="#mountain_battleship"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="visage_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="visage_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('visage', 10000)" oncontextmenu="buyBoat('visage', 10000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="10000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+	<Panel hittest="false" id="ursa">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#ursa" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/ursa.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#ursa_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="12000" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="360" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="20" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('ursa','turret_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/TurretIcon.png" />	
+                       <Label hittest="false" class="ability_name" text="#turret_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('ursa','launch_craft')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/gyrocopter_homing_missile.png" />
+                       <Label hittest="false" class="ability_name" text="#launch_craft"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('ursa','launch_all')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/gyrocopter_flak_cannon.png" />
+                       <Label hittest="false" class="ability_name" text="#launch_all"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('ursa','Over_And_Out')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/over_and_out.png" />
+                       <Label hittest="false" class="ability_name" text="#Over_And_Out"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="ursa_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="ursa_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('ursa', 10000)" oncontextmenu="buyBoat('ursa', 10000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="10000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+	<Panel hittest="false" id="tusk">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#tusk" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/tusk.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#tusk_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="100000" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="400" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="20" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('tusk','antimage_blink_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/antimage_blink.png" />	
+                       <Label hittest="false" class="ability_name" text="#antimage_blink_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('tusk','miss_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/faceless_void_backtrack.png" />
+                       <Label hittest="false" class="ability_name" text="#miss_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('tusk','puck_waning_rift_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/puck_waning_rift.png" />
+                       <Label hittest="false" class="ability_name" text="#puck_waning_rift_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('tusk','gyrocopter_call_down_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/lina_light_strike_array.png" />
+                       <Label hittest="false" class="ability_name" text="#gyrocopter_call_down_battleship"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="tusk_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="tusk_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('tusk', 10000)" oncontextmenu="buyBoat('tusk', 10000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="10000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+	<Panel hittest="false" id="windrunner">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#windrunner" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/windrunner.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#windrunner_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="9000" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="380" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="20" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('windrunner','into_the_hold')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/into_the_hold.png" />	
+                       <Label hittest="false" class="ability_name" text="#into_the_hold"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('windrunner','abaddon_aphotic_shield_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/abaddon_aphotic_shield.png" />
+                       <Label hittest="false" class="ability_name" text="#abaddon_aphotic_shield_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('windrunner','salvage_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/mayday.png" />
+                       <Label hittest="false" class="ability_name" text="#salvage_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('windrunner','shadow_shaman_shackles_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/shadow_shaman_shackles.png" />
+                       <Label hittest="false" class="ability_name" text="#shadow_shaman_shackles_battleship"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="windrunner_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="windrunner_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('windrunner', 10000)" oncontextmenu="buyBoat('windrunner', 10000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="10000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+	<Panel hittest="false" id="pugna">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#pugna" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/pugna.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#pugna_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="9200" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="380" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="20" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('pugna','jakiro_ice_path_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/jakiro_ice_path.png" />	
+                       <Label hittest="false" class="ability_name" text="#jakiro_ice_path_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('pugna','iceberg_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/invoker_ice_wall.png" />
+                       <Label hittest="false" class="ability_name" text="#iceberg_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('pugna','icy_waters_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/tusk_ice_shards.png" />
+                       <Label hittest="false" class="ability_name" text="#icy_waters_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('pugna','crystal_maiden_freezing_field_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/crystal_maiden_freezing_field.png" />
+                       <Label hittest="false" class="ability_name" text="#crystal_maiden_freezing_field_battleship"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="pugna_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="pugna_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('pugna', 10000)" oncontextmenu="buyBoat('pugna', 10000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="10000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+
+
 
         <Label hittest="false" id="out_of_contracts" text="#Out_Of_Contracts" />
      <Panel hittest="false" id="custom_shop" oncancel="hideShop()">
@@ -127,26 +1343,136 @@
 		<Panel hittest="false" id="ship_shop" class="shop_guts">
 			  <Image class="ship_bkg_image" src="file://{images}/custom_game/Kunkka.png" />
                 <Panel class="ship_shop_content_holder">
-					<Label hittest="false" class="trade_text_title" text="#ship_shop" />
-                   
+					<Label hittest="false" class="trade_text_title" text="#ship_shop" />  
+					<Label hittest="false" class="trade_text_footer" text="#left_click" />  
+					
 					<Panel id="one_ks_tab" class="ship_shop_tier_tab" onactivate="show1ks()">
 						<Label hittest="false" class="shop_btn_text" text="#one_ks"/>
 					</Panel>
 					<Panel id="one_ks" class="supply_guts">
 							<Panel hittest="false" class="supply_row">
-								 <Button class="TradeBtnItm"  onactivate="showDetails('ancient_apparition')" oncontextmenu="buyBoat('ancient_apparition', 1000)">
-									<Image class="item_image" src="file://{images}/custom_game/boats/ancient_apparition.png" />
-									 <Label hittest="false" class="gold_cost_text" text="#ancient_apparition" />
-									<Label hittest="false" class="item_desc_text" text="#left_click"/>
+								 <Button class="boat_btn_item"  onactivate="showDetails('ancient_apparition')" oncontextmenu="buyBoat('ancient_apparition', 1000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/ancient_apparition.png" />
+									 <Label hittest="false" class="boat_name_text" text="#ancient_apparition" />
 								</Button>
-								
+								 <Button class="boat_btn_item"  onactivate="showDetails('phantom_lancer')" oncontextmenu="buyBoat('phantom_lancer', 1000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/phantom_lancer.png" />
+									 <Label hittest="false" class="boat_name_text" text="#phantom_lancer" />
+								</Button>
+								<Button class="boat_btn_item"  onactivate="showDetails('crystal_maiden')" oncontextmenu="buyBoat('crystal_maiden', 1000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/crystal_maiden.png" />
+									 <Label hittest="false" class="boat_name_text" text="#crystal_maiden" />
+								</Button>
+							</Panel>
+							<Panel hittest="false" class="supply_row">
+								 <Button class="boat_btn_item"  onactivate="showDetails('tidehunter')" oncontextmenu="buyBoat('tidehunter', 1000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/tidehunter.png" />
+									 <Label hittest="false" class="boat_name_text" text="#tidehunter" />
+								</Button>
+								 <Button class="boat_btn_item"  onactivate="showDetails('rattletrap')" oncontextmenu="buyBoat('rattletrap', 1000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/rattletrap.png" />
+									 <Label hittest="false" class="boat_name_text" text="#rattletrap" />
+								</Button>
+							</Panel>
+						</Panel>
+					<Panel id="three_ks_tab" class="ship_shop_tier_tab" onactivate="show3ks()">
+					<Label hittest="false" class="shop_btn_text" text="#three_ks"/>
+					</Panel>
+					<Panel id="three_ks" class="supply_guts">
+							<Panel hittest="false" class="supply_row">
+								 <Button class="boat_btn_item"  onactivate="showDetails('nevermore')" oncontextmenu="buyBoat('nevermore', 3000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/nevermore.png" />
+									 <Label hittest="false" class="boat_name_text" text="#nevermore" />
+								</Button>
+								<Button class="boat_btn_item"  onactivate="showDetails('disruptor')" oncontextmenu="buyBoat('disruptor', 3000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/disruptor.png" />
+									 <Label hittest="false" class="boat_name_text" text="#disruptor" />
+								</Button>
+								<Button class="boat_btn_item"  onactivate="showDetails('morphling')" oncontextmenu="buyBoat('morphling', 3000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/morphling.png" />
+									 <Label hittest="false" class="boat_name_text" text="#morphling" />
+								</Button>
+							</Panel>
+							<Panel hittest="false" class="supply_row">
+								 <Button class="boat_btn_item"  onactivate="showDetails('storm_spirit')" oncontextmenu="buyBoat('storm_spirit', 3000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/storm_spirit.png" />
+									 <Label hittest="false" class="boat_name_text" text="#storm_spirit" />
+								</Button>
+								<Button class="boat_btn_item"  onactivate="showDetails('lion')" oncontextmenu="buyBoat('lion', 3000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/lion.png" />
+									 <Label hittest="false" class="boat_name_text" text="#lion" />
+								</Button>
+							</Panel>
+						</Panel>
+							
+						
+						<Panel id="six_ks_tab" class="ship_shop_tier_tab" onactivate="show6ks()">
+					<Label hittest="false" class="shop_btn_text" text="#six_ks"/>
+					</Panel>
+					<Panel id="six_ks" class="supply_guts">
+							<Panel hittest="false" class="supply_row">
+								 <Button class="boat_btn_item"  onactivate="showDetails('jakiro')" oncontextmenu="buyBoat('jakiro', 6000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/jakiro.png" />
+									 <Label hittest="false" class="boat_name_text" text="#jakiro" />
+								</Button>
+								<Button class="boat_btn_item"  onactivate="showDetails('ember_spirit')" oncontextmenu="buyBoat('ember_spirit', 6000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/ember_spirit.png" />
+									 <Label hittest="false" class="boat_name_text" text="#ember_spirit" />
+								</Button>
+								<Button class="boat_btn_item"  onactivate="showDetails('meepo')" oncontextmenu="buyBoat('meepo', 6000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/meepo.png" />
+									 <Label hittest="false" class="boat_name_text" text="#meepo" />
+								</Button>
+
+							</Panel>
+							<Panel hittest="false" class="supply_row">
+								 <Button class="boat_btn_item"  onactivate="showDetails('slark')" oncontextmenu="buyBoat('slark', 6000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/slark.png" />
+									 <Label hittest="false" class="boat_name_text" text="#slark" />
+								</Button>
+								<Button class="boat_btn_item"  onactivate="showDetails('sniper')" oncontextmenu="buyBoat('sniper', 6000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/sniper.png" />
+									 <Label hittest="false" class="boat_name_text" text="#sniper" />
+								</Button>
+		
 
 							</Panel>
 						</Panel>
-					
+						<Panel id="ten_ks_tab" class="ship_shop_tier_tab" onactivate="show10ks()">
+					<Label hittest="false" class="shop_btn_text" text="#ten_ks"/>
+					</Panel>
+					<Panel id="ten_ks" class="supply_guts">
+							<Panel hittest="false" class="supply_row">
+								 <Button class="boat_btn_item"  onactivate="showDetails('pugna')" oncontextmenu="buyBoat('pugna', 10000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/pugna.png" />
+									 <Label hittest="false" class="boat_name_text" text="#pugna" />
+										</Button>
+								
+								<Button class="boat_btn_item"  onactivate="showDetails('visage')" oncontextmenu="buyBoat('visage', 10000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/visage.png" />
+									 <Label hittest="false" class="boat_name_text" text="#visage" />
+								</Button>
+								
+								<Button class="boat_btn_item"  onactivate="showDetails('windrunner')" oncontextmenu="buyBoat('windrunner', 10000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/windrunner.png" />
+									 <Label hittest="false" class="boat_name_text" text="#windrunner" />
+								</Button>
+							</Panel>
+							<Panel hittest="false" class="supply_row">
+								 <Button class="boat_btn_item"  onactivate="showDetails('tusk')" oncontextmenu="buyBoat('tusk', 10000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/tusk.png" />
+									 <Label hittest="false" class="boat_name_text" text="#tusk" />
+								</Button>
+								
+								<Button class="boat_btn_item"  onactivate="showDetails('ursa')" oncontextmenu="buyBoat('ursa', 10000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/ursa.png" />
+									 <Label hittest="false" class="boat_name_text" text="#ursa" />
+								</Button>
+							</Panel>
+						</Panel>
+						
 			 </Panel>
 		</Panel>
-		
 		
 		
             /* left_bot_shop */
