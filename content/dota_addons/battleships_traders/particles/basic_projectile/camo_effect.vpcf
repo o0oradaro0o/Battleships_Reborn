@@ -95,5 +95,8 @@
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_winter_wyvern/wyvern_winters_curse_ring_dust.vpcf"
 		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_slark/slark_shadow_dance_soft_outer.vpcf"
+		},
 	]
 }

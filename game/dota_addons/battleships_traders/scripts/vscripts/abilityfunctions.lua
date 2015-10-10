@@ -1187,7 +1187,28 @@ for itemSlot = 0, 5, 1 do
 end
 			
 end
-
+function RemoveWeps(args) -- keys is the information sent by the ability
+		local casterUnit = args.caster
+	local hero = args.caster
+		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+for itemSlot = 0, 5, 1 do 
+	if hero ~= nil then
+		local Item = hero:GetItemInSlot( itemSlot )
+		if Item ~= nil and string.match(Item:GetName(),"doubled") then -- makes sure that the item exists and making sure it is the correct item
+			local doubledstring = string.gsub(Item:GetName(),"_bow", "_bow_shooting")
+			while  hero:HasModifier(doubledstring) do
+				hero:RemoveModifierByName(doubledstring)
+			end
+		elseif Item ~= nil and string.match(Item:GetName(),"bow") then -- makes sure that the item exists and making sure it is the correct item
+			while  hero:HasModifier(Item:GetName() .. "_shooting") do
+				hero:RemoveModifierByName(Item:GetName() .. "_shooting")
+			end
+			print( "bow found." )
+		end
+	end
+end
+			
+end
 
 
 

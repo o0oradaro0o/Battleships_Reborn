@@ -11359,6 +11359,23 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"15"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"RemoveWeps"
+			}
+			
+		}
+		OnChannelFinish
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"RemoveDD"
+			}
+		}
 		"OnChannelSucceeded"
 		{
 				
@@ -12702,7 +12719,15 @@
 					"Target" "CASTER"
 					"ModifierName" "target_mod"
 				}
+
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+					"Function"			"RemoveWeps"
+				}
+
 				SpendCharge {}	
+				
 		}
 		 
 		"Modifiers"
@@ -12716,7 +12741,15 @@
 					"MODIFIER_STATE_INVISIBLE" "MODIFIER_STATE_VALUE_ENABLED"
 				}
 				"EffectName"     "particles/basic_projectile/camo_effect.vpcf"
-					"EffectAttachType"	"follow_origin"
+				"EffectAttachType"	"follow_origin"
+				OnDestroy
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"RemoveDD"
+					}
+				}
 			}
 			
 		}

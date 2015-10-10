@@ -459,8 +459,8 @@ margin-top:90px;
 	width: 76px;
 	height: 30px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #c88423 ), color-stop( 0.25, #c88423 ), color-stop( 0.5, #fffb84 ), color-stop( 0.75, #c88423 ), to( #9a6717 ) );
-    margin-bottom:227px;
-	 margin-right:130px;
+    margin-bottom:260px;
+	 margin-right:10px;
 	 z-index:50;
 }
 .shipPanalHiderHolder:hover
@@ -470,8 +470,8 @@ margin-top:90px;
 	width: 78px;
 	height: 32px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #c88423 ), color-stop( 0.25, #c88423 ), color-stop( 0.5, #fffb84 ), color-stop( 0.75, #c88423 ), to( #9a6717 ) );
-    margin-bottom:226px;
-	 margin-right:129px;
+    margin-bottom:259px;
+	 margin-right:9px;
 	 z-index:50;
 }
 

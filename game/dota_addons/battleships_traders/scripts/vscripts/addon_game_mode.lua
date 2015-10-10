@@ -1330,16 +1330,16 @@ function CBattleship8D:OnEntityKilled( keys )
  
   if string.match(killedUnit:GetUnitName(), "creature_tidehunter") then
 	if killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-		CBattleship8D:quickSpawn("north","right", "four", 1, CREEP_NUM_HUGE+1)
-		CBattleship8D:quickSpawn("north","left", "four", 1, CREEP_NUM_HUGE+1)
+		CBattleship8D:quickSpawn("north","right", "four", 1, CREEP_NUM_HUGE+2)
+		CBattleship8D:quickSpawn("north","left", "four", 1, CREEP_NUM_HUGE+2)
 		GameRules:SendCustomMessage("#north_tide", DOTA_TEAM_GOODGUYS, 0)
 		Notifications:TopToAll({hero="npc_dota_hero_tidehunter", imagestyle="portrait", continue=true})
 		Notifications:TopToAll({text="#north_tide", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
 		tideKiller="North"
 	end
 	if  killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-		CBattleship8D:quickSpawn("south","right", "four", 1, CREEP_NUM_HUGE+1)
-		CBattleship8D:quickSpawn("south","left", "four", 1, CREEP_NUM_HUGE+1)
+		CBattleship8D:quickSpawn("south","right", "four", 1, CREEP_NUM_HUGE+2)
+		CBattleship8D:quickSpawn("south","left", "four", 1, CREEP_NUM_HUGE+2)
 		Notifications:TopToAll({hero="npc_dota_hero_tidehunter", imagestyle="portrait", continue=true})
 		Notifications:TopToAll({text="#south_tide", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
 		tideKiller="South"
@@ -1501,15 +1501,15 @@ function CBattleship8D:OnEntityKilled( keys )
 		print ("NUM_GOOD_PLAYERS: " .. NUM_GOOD_PLAYERS .. " -- good dead: " .. goodDead)
 		print ("NUM_BAD_PLAYERS: " .. NUM_BAD_PLAYERS .. " -- bad dead: " .. badDead)
 		if goodDead == NUM_GOOD_PLAYERS and killedUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS and NUM_GOOD_PLAYERS>1 then
-			CBattleship8D:quickSpawn("north","right", "four", 1, CREEP_NUM_HUGE+1)
-			CBattleship8D:quickSpawn("north","left", "four", 1, CREEP_NUM_HUGE+1)
+			CBattleship8D:quickSpawn("north","right", "four", 1, CREEP_NUM_HUGE+2)
+			CBattleship8D:quickSpawn("north","left", "four", 1, CREEP_NUM_HUGE+2)
 			Notifications:TopToAll({text="#team_wipe_north", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
 
 						
 		end
 		if badDead == NUM_BAD_PLAYERS and killedUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS and NUM_BAD_PLAYERS>1 then
-			CBattleship8D:quickSpawn("south","right", "four", 1, CREEP_NUM_HUGE+1)
-			CBattleship8D:quickSpawn("south","left", "four", 1, CREEP_NUM_HUGE+1)
+			CBattleship8D:quickSpawn("south","right", "four", 1, CREEP_NUM_HUGE+2)
+			CBattleship8D:quickSpawn("south","left", "four", 1, CREEP_NUM_HUGE+2)
 			Notifications:TopToAll({text="#team_wipe_north", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
 
 		end

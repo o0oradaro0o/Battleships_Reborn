@@ -2471,7 +2471,7 @@
 			//
 			"BaseClass"					"npc_dota_building"	// Class of entity of link to.
 			"Model"							"models/items/courier/jumo/jumo.vmdl"// Model.
-			"ModelScale" 				"1.0"
+			"ModelScale" 				".7"
 			"SoundSet"					"Tower.Water"		// Name of sound set.
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
