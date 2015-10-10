@@ -451,3 +451,11 @@ end
 
 -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
 -- makes sure that the item exists and making sure it is the correct item
+
+function poisonSound(keys)
+
+local casterUnit = keys.caster
+EmitSoundOnClient("Hero_VenomancerWard.Attack", PlayerResource:GetPlayer(casterUnit:GetPlayerID()) --PlayerResource:GetPlayer(playerID))
+
+end
+
