@@ -1333,6 +1333,67 @@
 					</Panel>
 		</Panel>	
 	</Panel>
+	
+	
+	<Panel hittest="false" id="dazzle">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#dazzle" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/dazzle.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#dazzle_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="750" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="300" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="5.0" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="ability" onmouseover="showText('dazzle','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('dazzle','estab_route')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/windrunner_windrun_sylvan.png" />
+                       <Label hittest="false" class="ability_name" text="#estab_route"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('dazzle','cease_fire')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/oracle_fates_edict.png" />
+                       <Label hittest="false" class="ability_name" text="#cease_fire"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('dazzle','batten_hatches')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/hatches.png" />
+                       <Label hittest="false" class="ability_name" text="#batten_hatches"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="dazzle_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="dazzle_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('dazzle', 1000)" oncontextmenu="buyBoat('dazzle', 1000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="1000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
 
 
 
@@ -1465,6 +1526,19 @@
 								<Button class="boat_btn_item"  onactivate="showDetails('ursa')" oncontextmenu="buyBoat('ursa', 10000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/ursa.png" />
 									 <Label hittest="false" class="boat_name_text" text="#ursa" />
+								</Button>
+							</Panel>
+						</Panel>
+						
+						<Panel id="traders_tab" class="ship_shop_tier_tab" onactivate="showtraders()">
+						
+					<Label hittest="false" class="shop_btn_text" text="#trader_ships"/>
+					</Panel>
+					<Panel id="trader_ships" class="supply_guts">
+							<Panel hittest="false" class="supply_row">
+								 <Button class="boat_btn_item"  onactivate="showDetails('dazzle')" oncontextmenu="buyBoat('dazzle', 1000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/nevermore.png" />
+									 <Label hittest="false" class="boat_name_text" text="#nevermore" />
 								</Button>
 							</Panel>
 						</Panel>

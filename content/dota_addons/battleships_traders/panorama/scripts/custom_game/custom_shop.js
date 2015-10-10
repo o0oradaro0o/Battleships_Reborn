@@ -72,6 +72,7 @@ function show1ks()
 		$( "#three_ks" ).style.height = "0px";
 		$( "#six_ks" ).style.height = "0px";
 		$( "#ten_ks" ).style.height = "0px";
+			$( "#trader_ships" ).style.height = "0px";
 	}
 }
 
@@ -90,6 +91,7 @@ function show3ks()
 		$( "#one_ks" ).style.height = "0px";
 		$( "#six_ks" ).style.height = "0px";
 		$( "#ten_ks" ).style.height = "0px";
+			$( "#trader_ships" ).style.height = "0px";
 	}
 }
 function show6ks()
@@ -106,6 +108,7 @@ function show6ks()
 			$( "#one_ks" ).style.height = "0px";
 		$( "#three_ks" ).style.height = "0px";
 		$( "#ten_ks" ).style.height = "0px";
+			$( "#trader_ships" ).style.height = "0px";
 	}
 }
 function show10ks()
@@ -122,8 +125,28 @@ function show10ks()
 			$( "#one_ks" ).style.height = "0px";
 		$( "#three_ks" ).style.height = "0px";
 		$( "#six_ks" ).style.height = "0px";
+			$( "#trader_ships" ).style.height = "0px";
 	}
 }
+function showtraders()
+{
+	$.Msg($( "#trader_ships" ).style.height);
+	if ($( "#trader_ships" ).style.height=="180.0px")
+	{
+		$( "#trader_ships" ).style.height = "0px";
+
+	}
+	else
+	{
+		$( "#trader_ships" ).style.height = "180px";
+			$( "#one_ks" ).style.height = "0px";
+		$( "#three_ks" ).style.height = "0px";
+		$( "#six_ks" ).style.height = "0px";
+			$( "#ten_ks" ).style.height = "0px";
+	}
+}
+
+
 
 function showText(BoatName,AbilityName)
 {
@@ -161,6 +184,8 @@ function showDetails(BoatName)
 		$("#tidehunter").style.height = "0px";
 		$("#crystal_maiden").style.height = "0px";
 		$("#phantom_lancer").style.height = "0px";
+		$("#dazzle").style.height = "0px";
+		
 
 	}
 	else
@@ -186,6 +211,7 @@ function showDetails(BoatName)
 		$("#tidehunter").style.height = "0px";
 		$("#crystal_maiden").style.height = "0px";
 		$("#phantom_lancer").style.height = "0px";
+			$("#dazzle").style.height = "0px";
 		$(  "#"+BoatName ).style.height = "650px";
 	}
 	
@@ -347,6 +373,7 @@ function buyBoat(BoatName, cost)
 		$("#tidehunter").style.height = "0px";
 		$("#crystal_maiden").style.height = "0px";
 		$("#phantom_lancer").style.height = "0px";
+			$("#dazzle").style.height = "0px";
 		Game.EmitSound("ui.chat_close");
 		
 		

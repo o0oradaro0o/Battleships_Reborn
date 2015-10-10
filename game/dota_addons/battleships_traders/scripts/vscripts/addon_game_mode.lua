@@ -738,7 +738,10 @@ local hero = casterUnit
 							hero:SetGold(herogold + 750, true)
 							hero:SetGold(0, false)
 							print ( '[BAREBONES] player was phantom_lancer and got 750')
-						end
+						elseif string.match(hero:GetName(),"dazzle") then
+							hero:SetGold(herogold + 750, true)
+							hero:SetGold(0, false)
+					end
 end
 
 function CBattleship8D:OnThink()
@@ -2253,6 +2256,8 @@ function buyBoat(eventSourceIndex, args)
 					become_boat(casterUnit, "npc_dota_hero_phantom_lancer")
 				elseif string.match(itemName,"pugna") then
 					become_boat(casterUnit, "npc_dota_hero_pugna")
+				elseif string.match(itemName,"dazzle") then
+					become_boat(casterUnit, "npc_dota_hero_dazzle")
 			end
 			local data =
 				{

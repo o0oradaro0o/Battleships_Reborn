@@ -94,6 +94,7 @@
 	"three_ks" "3,000 gold ships"
 	"six_ks" "6,000 gold ships"
 	"ten_ks" "10,000 gold ships"
+	"trader_ships" "Trading Ships"
 	
 	
 	"trade"	"Trade"

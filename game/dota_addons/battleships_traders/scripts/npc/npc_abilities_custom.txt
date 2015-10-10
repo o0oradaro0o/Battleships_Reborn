@@ -7065,6 +7065,172 @@
 	}
 	
 	
+	//=================================================================================================================
+	// establish route
+	//=================================================================================================================
+	"estab_route"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"windrunner_windrun_sylvan"
+		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20.0 20.0 20.0 20.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "route_set"
+			}
+		}
+		
+		"Modifiers"
+		{
+			
+			
+			"route_set"
+			{
+				"OnOrder"
+				{
+						"RemoveModifier"
+						{
+							"Target" "CASTER"
+							"ModifierName" "route_set"
+						}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%path_bonus_move_speed"
+
+				}
+				"Duration" "%path_duration"
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"EffectName"    "particles/basic_projectile/speed_effect.vpcf" 
+				"EffectAttachType"	"follow_origin"
+			}
+			
+		}
+
+		
+		
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"path_bonus_move_speed"	"60 90 120 150"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"path_duration"				"15.0"
+			}
+		}
+}
+
+	//=================================================================================================================
+	// cease_fire
+	//=================================================================================================================
+	"cease_fire"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"oracle_fates_edict"
+		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20.0 20.0 20.0 20.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+				{
+					"Target" "CASTER"
+					"ModifierName" "cease_fire_mod"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+					"Function"			"RemoveWeps"
+				}
+				
+		}
+		 
+		"Modifiers"
+		{
+		
+			"cease_fire_mod"
+			{
+				"Duration"  "%duration"
+				 "States"
+				{
+					"MODIFIER_STATE_ATTACK_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"EffectName"     "particles/basic_projectile/camo_effect.vpcf"
+				"EffectAttachType"	"follow_origin"
+				OnDestroy
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"RemoveDD"
+					}
+				}
+			}
+			
+		}
+		
+		
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 3.5 4.0 4.5"
+			}
+		}
+}
+	
+	
 	
 	
 	//=================================================================================================================
@@ -7344,7 +7510,8 @@
 			}
 		}
 	}
-
+	
+	
 
 	
 }
