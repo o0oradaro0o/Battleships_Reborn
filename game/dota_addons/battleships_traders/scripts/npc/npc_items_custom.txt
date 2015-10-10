@@ -2886,6 +2886,11 @@
 				"ThinkInterval"		"%fire_rate"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"poisonSound"
+					}
 					"TrackingProjectile"
 					{
 						"Target"
@@ -5032,6 +5037,7 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+
 					"TrackingProjectile"
 					{
 						"Target"
