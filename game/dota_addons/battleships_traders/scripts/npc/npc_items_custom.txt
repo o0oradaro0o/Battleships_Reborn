@@ -2871,30 +2871,25 @@
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		
-		
-		
 		"Modifiers"
-		{
-			
-			
+		{	
 			"item_poison_bow_shooting"
-			{
-			
-			
+			{			
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive"	 "1"
 				"ThinkInterval"		"%fire_rate"
 				"OnIntervalThink"
-				{
+				{			
 					"RunScript"
 					{
 						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
 						"Function"			"poisonSound"
-					}
+					}	
+					
 					"TrackingProjectile"
 					{
 						"Target"
-						{
+						{							
 							"Center" "CASTER"
 							"Radius" "900"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -2902,15 +2897,13 @@
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS"
 							"MaxTargets" "1"
 							"Random" "1"
-						}
+						}						
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/poison_one_projectile.vpcf" 
-					}
-					
-					
-					
+						"EffectName"    "particles/basic_projectile/poison_one_projectile.vpcf" 
+				
+					}							
 				}
 				
 			}
