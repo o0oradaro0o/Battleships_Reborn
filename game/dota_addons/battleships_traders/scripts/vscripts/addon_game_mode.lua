@@ -2206,9 +2206,9 @@ function buyBoat(eventSourceIndex, args)
 			
 			if (directionOne:Length() < 600 or directionTwo:Length() < 600) and herogold>cost-1 then
 				boat=true
-				sellBoat(casterUnit)
 				casterUnit:SetGold(herogold-cost,true)
 				casterUnit:SetGold(0,false)
+				sellBoat(casterUnit)
 				EmitSoundOnClient("General.Buy",PlayerResource:GetPlayer(pID))
 			Timers:CreateTimer( .1, function()
 			--statSend(1)
@@ -2254,6 +2254,11 @@ function buyBoat(eventSourceIndex, args)
 				elseif string.match(itemName,"pugna") then
 					become_boat(casterUnit, "npc_dota_hero_pugna")
 			end
+			local data =
+				{
+					Player_ID = hero:GetOwner():GetPlayerID()
+				}
+				FireGameEvent("Hero_Near_Ship_Shop",data)
 			end)
 		elseif(directionOne:Length() > 599 and directionTwo:Length() > 599) then
 		
@@ -2613,15 +2618,7 @@ function HandleShopChecks(hero)
 			local targetUnitTwo = Entities:FindByName( nil, "north_boat_shop")
 			local directionOne =  casterPos - targetUnitOne:GetAbsOrigin()
 			local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
-			if (directionOne:Length() < 600 or directionTwo:Length() < 600) then
 
-				local data =
-				{
-					Player_ID = hero:GetOwner():GetPlayerID()
-				}
-				FireGameEvent("Hero_Near_Ship_Shop",data)
-			end
-			
 			
 		if ShopDist:Length()<600 and (directionOne:Length() > 700 and directionTwo:Length() > 700) then
 			

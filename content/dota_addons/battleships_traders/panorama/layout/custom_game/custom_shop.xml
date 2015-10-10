@@ -13,12 +13,12 @@
 	
 	
 
-	<Panel class="ScoreboardLeft" id="scorePanel">
+	<!--<Panel class="ScoreboardLeft" id="scorePanel">
 		<Panel class="VictoryPanel">
 			<Label id="Goal" text="#invest" />
 			<Label id="VictoryPoints" text="100,000G" />
 		</Panel>
-	</Panel>
+	</Panel>-->
 	
 	
 	
@@ -83,7 +83,7 @@
       </Panel>
     </Panel>
 	
-
+<!--
 		<Panel hittest="false" id="ConstStatusRow1">
 			<Label hittest="false" id="totalScore1" text=""/>
 		</Panel>
@@ -97,7 +97,7 @@
 		<Panel hittest="false" id="TempStatusRow2">
 			<Label hittest="false" id="RecentScore2" text=""/>
 		</Panel>
-	
+	-->
 	
 	<Panel hittest="false" class="panalHiderHolder" id="missionButton">
         <Button class="panalHider" onactivate="fillAndShow()">
@@ -1337,10 +1337,8 @@
 
 
 
-        <Label hittest="false" id="out_of_contracts" text="#Out_Of_Contracts" />
-     <Panel hittest="false" id="custom_shop" oncancel="hideShop()">
 		/* ship shop */
-		<Panel hittest="false" id="ship_shop" class="shop_guts">
+		<Panel hittest="false" id="ship_shop" class="ship_shop_guts">
 			  <Image class="ship_bkg_image" src="file://{images}/custom_game/Kunkka.png" />
                 <Panel class="ship_shop_content_holder">
 					<Label hittest="false" class="trade_text_title" text="#ship_shop" />  
@@ -1473,6 +1471,10 @@
 						
 			 </Panel>
 		</Panel>
+	
+        <Label hittest="false" id="out_of_contracts" text="#Out_Of_Contracts" />
+     <Panel hittest="false" id="custom_shop" oncancel="hideShop()">
+	
 		
 		
             /* left_bot_shop */
@@ -1491,15 +1493,7 @@
                             </Button>
                         </Panel>
                     </Panel>
-                    <Label hittest="false" class="trade_text_subtitle" text="#Submit" />
-                    <Panel hittest="false" class="retire_guts">
-                        <Button class="TradeBtn" onactivate="donate('100')">
-                            <Label hittest="false" class="shop_btn_text" text="#One_Hundred" />
-                        </Button>
-                        <Button class="TradeBtn" onactivate="donate('500')">
-                            <Label hittest="false" class="shop_btn_text" text="#Five_Hundred" />
-                        </Button>
-                    </Panel>
+                   
                     <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1533,15 +1527,7 @@
                             </Button>
                         </Panel>
                     </Panel>
-                    <Label hittest="false" class="trade_text_subtitle" text="#Submit" />
-                    <Panel hittest="false" class="retire_guts">
-                        <Button class="TradeBtn" onactivate="donate('100')">
-                            <Label hittest="false" class="shop_btn_text" text="#One_Hundred" />
-                        </Button>
-                        <Button class="TradeBtn" onactivate="donate('500')">
-                            <Label hittest="false" class="shop_btn_text" text="#Five_Hundred" />
-                        </Button>
-                    </Panel>
+                   
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1577,15 +1563,7 @@
                             </Button>
                         </Panel>
                     </Panel>
-                    <Label hittest="false" class="trade_text_subtitle" text="#Submit" />
-                    <Panel hittest="false" class="retire_guts">
-                        <Button class="TradeBtn" onactivate="donate('100')">
-                            <Label hittest="false" class="shop_btn_text" text="#One_Hundred" />
-                        </Button>
-                        <Button class="TradeBtn" onactivate="donate('500')">
-                            <Label hittest="false" class="shop_btn_text" text="#Five_Hundred" />
-                        </Button>
-                    </Panel>
+                   
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1619,15 +1597,7 @@
                             </Button>
                         </Panel>
                     </Panel>
-                    <Label hittest="false" class="trade_text_subtitle" text="#Submit" />
-                    <Panel hittest="false" class="retire_guts">
-                        <Button class="TradeBtn" onactivate="donate('100')">
-                            <Label hittest="false" class="shop_btn_text" text="#One_Hundred" />
-                        </Button>
-                        <Button class="TradeBtn" onactivate="donate('500')">
-                            <Label hittest="false" class="shop_btn_text" text="#Five_Hundred" />
-                        </Button>
-                    </Panel>
+                   
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1645,6 +1615,7 @@
                         
                     </Panel>
                 </Panel>
+				
             </Panel>
 			/* mid_mid_shop */
             <Panel hittest="false" id="mid_mid_shop" class="shop_guts">
@@ -1662,15 +1633,8 @@
                             </Button>
                         </Panel>
                     </Panel>
-                    <Label hittest="false" class="trade_text_subtitle" text="#Submit" />
-                    <Panel hittest="false" class="retire_guts">
-                        <Button class="TradeBtn" onactivate="donate('100')">
-                            <Label hittest="false" class="shop_btn_text" text="#One_Hundred" />
-                        </Button>
-                        <Button class="TradeBtn" onactivate="donate('500')">
-                            <Label hittest="false" class="shop_btn_text" text="#Five_Hundred" />
-                        </Button>
-                    </Panel>
+					
+                   
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1705,15 +1669,7 @@
                             </Button>
                         </Panel>
                     </Panel>
-                    <Label hittest="false" class="trade_text_subtitle" text="#Submit" />
-                    <Panel hittest="false" class="retire_guts">
-                        <Button class="TradeBtn" onactivate="donate('100')">
-                            <Label hittest="false" class="shop_btn_text" text="#One_Hundred" />
-                        </Button>
-                        <Button class="TradeBtn" onactivate="donate('500')">
-                            <Label hittest="false" class="shop_btn_text" text="#Five_Hundred" />
-                        </Button>
-                    </Panel>
+                   
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1747,15 +1703,7 @@
                             </Button>
                         </Panel>
                     </Panel>
-                    <Label hittest="false" class="trade_text_subtitle" text="#Submit" />
-                    <Panel hittest="false" class="retire_guts">
-                        <Button class="TradeBtn" onactivate="donate('100')">
-                            <Label hittest="false" class="shop_btn_text" text="#One_Hundred" />
-                        </Button>
-                        <Button class="TradeBtn" onactivate="donate('500')">
-                            <Label hittest="false" class="shop_btn_text" text="#Five_Hundred" />
-                        </Button>
-                    </Panel>
+                   
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1789,15 +1737,7 @@
                             </Button>
                         </Panel>
                     </Panel>
-                    <Label hittest="false" class="trade_text_subtitle" text="#Submit" />
-                    <Panel hittest="false" class="retire_guts">
-                        <Button class="TradeBtn" onactivate="donate('100')">
-                            <Label hittest="false" class="shop_btn_text" text="#One_Hundred" />
-                        </Button>
-                        <Button class="TradeBtn" onactivate="donate('500')">
-                            <Label hittest="false" class="shop_btn_text" text="#Five_Hundred" />
-                        </Button>
-                    </Panel>
+                   
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1831,15 +1771,7 @@
                             </Button>
                         </Panel>
                     </Panel>
-                    <Label hittest="false" class="trade_text_subtitle" text="#Submit" />
-                    <Panel hittest="false" class="retire_guts">
-                        <Button class="TradeBtn" onactivate="donate('100')">
-                            <Label hittest="false" class="shop_btn_text" text="#One_Hundred" />
-                        </Button>
-                        <Button class="TradeBtn" onactivate="donate('500')">
-                            <Label hittest="false" class="shop_btn_text" text="#Five_Hundred" />
-                        </Button>
-                    </Panel>
+                   
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">

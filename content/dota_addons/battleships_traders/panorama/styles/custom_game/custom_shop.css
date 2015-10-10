@@ -13,6 +13,7 @@ padding-top: 0px;
 	visibility: visible;
 	horizontal-align: right;
 	vertical-align: top;
+	margin-top:60px;
 }
 
 #scorePanel
@@ -642,7 +643,7 @@ horizontal-align: center;
 {
 		horizontal-align: center;
 	color: white;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     margin: 3px;
 	text-shadow: 4px 4px 4px #121212;
@@ -668,6 +669,18 @@ horizontal-align: center;
 	text-shadow: 4px 4px 4px #121212;
 }
 .shop_guts
+{
+	flow-children: down;
+	width: 500px;
+	height: 700px;
+	border: 0px solid black;
+   background-color: gradient( linear, 0% 0%, 0% 100%, from( #90858500 ), color-stop( 0.25, #62696e44 ), color-stop( 0.5, #AA959566 ), color-stop( 0.75, #62696e ), to( #908585 ) );
+	horizontal-align: right;
+	visibility: collapse;
+	margin-right: -10px;
+		 border-radius: 10px;
+}
+.ship_shop_guts
 {
 	flow-children: down;
 	width: 500px;
@@ -1099,7 +1112,7 @@ border-radius: 10px;
 	border-radius: 10px;
 	height: 90px;
 	width: 100px;
-		border: 1px solid red;
+		border: 3px solid green;
 }
 
 .buy_text
@@ -1203,6 +1216,18 @@ border-radius: 10px;
 	 vertical-align: center;
 	 margin: 15px;
 }
+.boat_btn_item:active
+{
+horizontal-align: center;
+	height: 65px;
+	width: 120px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #252525 ), to( #42494e ) );
+	
+	 border: 2px solid red;
+	 vertical-align: center;
+	 margin: 15px;
+}
+
 
 .boat_image
 {

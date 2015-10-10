@@ -17,8 +17,6 @@ function hideTrade()
 	}
 	if (numbuildings<15)
 	{
-		
-		$( "#scorePanel" ).style.visibility="collapse";
 		$( "#missionButton" ).style.visibility="collapse";
 		$( "#ConstStatusRow1" ).style.visibility="collapse";
 		$( "#TempStatusRow1" ).style.visibility="collapse";
@@ -26,7 +24,6 @@ function hideTrade()
 		$( "#TempStatusRow2" ).style.visibility="collapse";
 	}
 	else{
-		$( "#scorePanel" ).style.visibility="visible";
 		$( "#missionButton" ).style.visibility="visible";
 	}
 	
@@ -138,7 +135,12 @@ function showText(BoatName,AbilityName)
 }
 function showDetails(BoatName)
 {
-	$("#ancient_apparition").style.height = "0px";
+	
+	$.Msg(BoatName);
+	if ($( "#"+BoatName ).style.height=="650.0px")
+	{
+		$(  "#"+BoatName ).style.height = "0px";
+		$("#ancient_apparition").style.height = "0px";
 		$("#crystal_maiden").style.height = "0px";
 		$("#disruptor").style.height = "0px";
 		$("#morphling").style.height = "0px";
@@ -159,14 +161,31 @@ function showDetails(BoatName)
 		$("#tidehunter").style.height = "0px";
 		$("#crystal_maiden").style.height = "0px";
 		$("#phantom_lancer").style.height = "0px";
-	$.Msg(BoatName);
-	if ($( "#"+BoatName ).style.height=="650.0px")
-	{
-		$(  "#"+BoatName ).style.height = "0px";
 
 	}
 	else
 	{
+		$("#ancient_apparition").style.height = "0px";
+		$("#crystal_maiden").style.height = "0px";
+		$("#disruptor").style.height = "0px";
+		$("#morphling").style.height = "0px";
+		$("#storm_spirit").style.height = "0px";
+		$("#nevermore").style.height = "0px";
+		$("#lion").style.height = "0px";
+		$("#meepo").style.height = "0px";
+		$("#jakiro").style.height = "0px";
+		$("#ember_spirit").style.height = "0px";
+		$("#slark").style.height = "0px";
+		$("#sniper").style.height = "0px";
+		$("#visage").style.height = "0px";
+		$("#ursa").style.height = "0px";
+		$("#tusk").style.height = "0px";
+		$("#windrunner").style.height = "0px";
+		$("#pugna").style.height = "0px";
+		$("#rattletrap").style.height = "0px";
+		$("#tidehunter").style.height = "0px";
+		$("#crystal_maiden").style.height = "0px";
+		$("#phantom_lancer").style.height = "0px";
 		$(  "#"+BoatName ).style.height = "650px";
 	}
 	
@@ -179,7 +198,6 @@ function buyBoat(BoatName, cost)
 {
 	GameEvents.SendCustomGameEventToServer( "buyBoat", { "text": BoatName, "cost": cost}); 
 	$(  "#"+BoatName ).style.height = "0px";
-	hideShop();
 }
 
 
@@ -328,7 +346,7 @@ function buyBoat(BoatName, cost)
 		$("#rattletrap").style.height = "0px";
 		$("#tidehunter").style.height = "0px";
 		$("#crystal_maiden").style.height = "0px";
-		
+		$("#phantom_lancer").style.height = "0px";
 		Game.EmitSound("ui.chat_close");
 		
 		
@@ -459,7 +477,7 @@ function buyBoat(BoatName, cost)
 		hideTrade();
 	$.Msg("in subscribe");
 	GameEvents.Subscribe( "Hero_Near_Shop", NearShop );
-	GameEvents.Subscribe( "Hero_Near_Ship_Shop", NearShipShop );
+	GameEvents.Subscribe( "Hero_Near_Ship_Shop", hideShop );
 	GameEvents.Subscribe( "Hero_Left_Shop", LeftShop );
 	GameEvents.Subscribe( "Team_Can_Buy", CanBuy );
     GameEvents.Subscribe( "Team_Cannot_Buy", CannotBuy );
@@ -517,8 +535,9 @@ function buyBoat(BoatName, cost)
 		{
 			 fillAndShow();
 		 }
-	var showtime1=0
+	
 	}
+	var showtime1=0
 	var showtime2=0
 	function OnInvestEvent( data )
 	{

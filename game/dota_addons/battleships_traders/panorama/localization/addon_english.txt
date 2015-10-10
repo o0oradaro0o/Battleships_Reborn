@@ -59,7 +59,7 @@
 		"ember_spirit_desc"					"Charge headlong into combat. Snag foes and drag them to their doom."
 		"disruptor_desc"						"Enforce the law on the High Seas and control the movement of vessels in your domain."	
 		"morphling_desc"						"Speed in and out of combat using dynamic movement and regeneration."
-		"storm_spirit_desc"					"Use fireworks and call upon thunderclouds to reveal your enemies and strike them down."
+		"storm_spirit_desc"					"Use fireworks and call upon thunderclouds to reveal your enemies and strike them down in this traditional style ship made for the South China Sea."
 		"jakiro_desc"							"Dominate the seas with devastating ranged attacks."
 		"tidehunter_desc"						"A sturdy boat that can hold its ground with defensive abilities."			
 		"meepo_desc"							"The party boat; fun to be around and the life of any party!"
@@ -72,14 +72,14 @@
 		"rattletrap_desc"						"Light and fast, the Catamaran jumps out of reach and fires a deadly arrow."
 		"windrunner_desc"					"he construction ship is a floating dock, capable of using the scrap around it to repair itself, protect its allies and even construct ships for the empire."
 		"crystal_maiden_desc"				"The Canoe is a very simple boat whose crew gains heart from one another and inspires their allies."			
-		"sniper_desc"				"This submarine is less of a submarine and more of a boat.  the sub is powerful and even more powerful when submerged but has a hull breach and must surface or have its crew drown."			
+		"sniper_desc"				"This submarine is less of a submarine and more of a boat.  The sub is powerful, and even more powerful when submerged. But be wary, or you'll run out of oxygen!"			
 	
 
 	
 	
 	"Ships"					"Ships"
 	"ship_shop"					"Ship Shop"
-	"left_click"					"Left click for additional details, Right click to buy."
+	"left_click"					"Left click for additional details. Right click to buy."
 	"hp"	"Hit Points:"
 	"ms"	"Move Speed:"
 	"regen"	"HP Regeneration/s:"
@@ -353,7 +353,7 @@ DURATION: 3.0 4.0 5.0 6.0"
 "firework_battleship_Description"						"Launch fireworks over an area to give vision of it for a short time. \n \nHigher levels decrease cooldown.
 DURATION: 3 4 5 6"
 
-"nav_hack_battleship"									"Compass disruption"
+"nav_hack_battleship"									"Compass Disruption"
 "nav_hack_battleship_Description"						"The Junk ship is equipped with a superior compass. Activate the compass disruption, and all enemy ships in the area will be forced to face away from you for a moment. \n \nHigher levels decrease cooldown.
 DURATION: 2.0 2.5 3.0"
 
@@ -369,12 +369,12 @@ SPEED BONUS: 150 150 150 150"
 HEAL AMOUNT: 400.0 500.0 600.0
 DELAY: 10.0"
 
-"ruse_battleship"									"It's a ruse"
+"ruse_battleship"									"It's a Ruse"
 "ruse_battleship_Description"						"Select a target and after 2 seconds deal a percentage of damage that was done to you since casting to that target while healing for the same amount. breaks on death. \n \nHigher levels decrease cooldown. and increase damage percentage
 DURATION: 2.0
 PRECENT DAMAGE REFLECTED: 0.4 0.6 0.8 1.0"
 
-"drop_craft"									"Deploy Pleasure Cruiser."
+"drop_craft"									"Deploy Pleasure Cruiser"
 "drop_craft_Description"					"Drop a small, controllable pleasure cruiser to scout and soak up damage. \n\nHigher levels decrease cooldown.
 DURATION: 15"
 
@@ -517,7 +517,7 @@ armor: 1.0 2.0 3.0 4.0"
 "antimage_blink_battleship_Description"								"Short distance teleportation that allows battleship to shift around the board.
 RANGE: 900 1000 1100 1200"
 
-"puck_waning_rift_battleship"								"Hack their system!"
+"puck_waning_rift_battleship"								"Hack Their System!"
 "puck_waning_rift_battleship_Description"					"Disables the use of abilities on all units in the area and deals damage to them. \n\nHigher levels increase damage and duration.
 DURATION: 3.0 3.5 4.0 4.5"
 
@@ -565,6 +565,13 @@ DAMAGE: 205 270 350"
 "icy_waters_battleship"									"Icy Waters"
 "icy_waters_battleship_Description"						"All nearby Enemy ships are slowed. \n \nHigher levels increase slowing effect.
 SLOW: -30 -35 -40 -45"
+
+"peak_battleship"									"Sonar Ping"
+		"peak_battleship_Description"					"Ping the map to see where enemy ships are. \n\nHigher levels decrease cooldown."
+
+		"turret_battleship"								"Deploy Turret!"
+		"turret_battleship_Description"					"Deploy Turret that deals 500 dmg per attack in a very short range \n\nHigher levels decrease cooldown."
+
 
 }
 
