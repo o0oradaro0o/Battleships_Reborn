@@ -454,8 +454,19 @@ end
 
 function poisonSound(keys)
 
-local casterUnit = keys.caster
-EmitSoundOnClient("Hero_VenomancerWard.Attack", PlayerResource:GetPlayer(casterUnit:GetPlayerID()) --PlayerResource:GetPlayer(playerID))
-
+	local casterUnit = keys.caster
+	
+	local enemies = FindUnitsInRadius(casterUnit:GetTeamNumber(), 
+		casterUnit:GetOrigin(), 
+		nil, 
+		900, 
+		DOTA_UNIT_TARGET_TEAM_ENEMY, 
+		DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING + DOTA_UNIT_TARGET_MECHANICAL + DOTA_UNIT_TARGET_HERO, 
+		DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS, 
+		0, 
+		false)
+		
+	if #enemies > 0 then
+		EmitSoundOnClient("Hero_VenomancerWard.Attack", PlayerResource:GetPlayer(casterUnit:GetPlayerID())) --PlayerResource:GetPlayer(playerID)
+	end	
 end
-
