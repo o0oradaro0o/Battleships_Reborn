@@ -12373,7 +12373,7 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"15"
-		"OnSpellStart"
+			"OnSpellStart"
 		{
 			"ApplyModifier"
 				{
@@ -12381,12 +12381,10 @@
 					"ModifierName" "good_stuff"
 				}
 				"RunScript"
-			{
-				"ScriptFile"			"scripts/vscripts/abilityFunctions.lua"
-				"Function"			"killCd"
-			}
-			
-				
+				{
+					"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+					"Function"			"ApplyDD"
+				}
 				SpendCharge {}	
 		}
 		 
@@ -12398,12 +12396,31 @@
 				"Duration"  "%duration"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_COOLDOWN_REDUCTION_CONSTANT" "85"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"-10"
                 }
-				"EffectName"     "particles/basic_projectile/good_stuff_effect.vpcf"
-					"EffectAttachType"	"follow_overhead"
+				OnDestroy
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"RemoveDD"
+					}
+				}
 			}
 			
+		}
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5.0"
+			}
+
 		}
 	
 		// Special

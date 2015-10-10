@@ -3,7 +3,7 @@ var hidden=true;
 var showMission=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 var firstcall=true;
 var starttime=0;
-function hideTride()
+function hideTrade()
 {
 	var numbuildings=0;
 	var i=0;
@@ -17,8 +17,6 @@ function hideTride()
 	}
 	if (numbuildings<15)
 	{
-		
-		$( "#scorePanel" ).style.visibility="collapse";
 		$( "#missionButton" ).style.visibility="collapse";
 		$( "#ConstStatusRow1" ).style.visibility="collapse";
 		$( "#TempStatusRow1" ).style.visibility="collapse";
@@ -26,12 +24,187 @@ function hideTride()
 		$( "#TempStatusRow2" ).style.visibility="collapse";
 	}
 	else{
-		$( "#scorePanel" ).style.visibility="visible";
 		$( "#missionButton" ).style.visibility="visible";
 	}
 	
 	$.Msg("buildings: "+numbuildings);
 }
+
+
+
+
+
+function showShips()
+{
+	if(	hidden)
+		{
+			$( "#ship_shop" ).style.visibility="visible";
+			hidden=false;
+		}
+	else
+		{
+			hideShop();
+		}
+	
+}
+
+function showShipsNoHide()
+{
+	if(	hidden)
+		{
+			$( "#ship_shop" ).style.visibility="visible";
+			hidden=false;
+		}
+
+}
+
+function show1ks()
+{
+	$.Msg($( "#one_ks" ).style.height);
+	if ($( "#one_ks" ).style.height=="180.0px")
+	{
+		$( "#one_ks" ).style.height = "0px";
+
+	}
+	else
+	{
+		$( "#one_ks" ).style.height = "180px";
+		$( "#three_ks" ).style.height = "0px";
+		$( "#six_ks" ).style.height = "0px";
+		$( "#ten_ks" ).style.height = "0px";
+	}
+}
+
+
+function show3ks()
+{
+	$.Msg($( "#three_ks" ).style.height);
+	if ($( "#three_ks" ).style.height=="180.0px")
+	{
+		$( "#three_ks" ).style.height = "0px";
+
+	}
+	else
+	{
+		$( "#three_ks" ).style.height = "180px";
+		$( "#one_ks" ).style.height = "0px";
+		$( "#six_ks" ).style.height = "0px";
+		$( "#ten_ks" ).style.height = "0px";
+	}
+}
+function show6ks()
+{
+	$.Msg($( "#six_ks" ).style.height);
+	if ($( "#six_ks" ).style.height=="180.0px")
+	{
+		$( "#six_ks" ).style.height = "0px";
+
+	}
+	else
+	{
+		$( "#six_ks" ).style.height = "180px";
+			$( "#one_ks" ).style.height = "0px";
+		$( "#three_ks" ).style.height = "0px";
+		$( "#ten_ks" ).style.height = "0px";
+	}
+}
+function show10ks()
+{
+	$.Msg($( "#ten_ks" ).style.height);
+	if ($( "#ten_ks" ).style.height=="180.0px")
+	{
+		$( "#ten_ks" ).style.height = "0px";
+
+	}
+	else
+	{
+		$( "#ten_ks" ).style.height = "180px";
+			$( "#one_ks" ).style.height = "0px";
+		$( "#three_ks" ).style.height = "0px";
+		$( "#six_ks" ).style.height = "0px";
+	}
+}
+
+function showText(BoatName,AbilityName)
+{
+	$.Msg(AbilityName);
+	$( "#"+BoatName+"_ability" ).text=$.Localize("#"+AbilityName);
+	$( "#"+BoatName+"_ability_desc" ).text=$.Localize("#"+AbilityName+"_Description");
+	
+	
+}
+function showDetails(BoatName)
+{
+	
+	$.Msg(BoatName);
+	if ($( "#"+BoatName ).style.height=="650.0px")
+	{
+		$(  "#"+BoatName ).style.height = "0px";
+		$("#ancient_apparition").style.height = "0px";
+		$("#crystal_maiden").style.height = "0px";
+		$("#disruptor").style.height = "0px";
+		$("#morphling").style.height = "0px";
+		$("#storm_spirit").style.height = "0px";
+		$("#nevermore").style.height = "0px";
+		$("#lion").style.height = "0px";
+		$("#meepo").style.height = "0px";
+		$("#jakiro").style.height = "0px";
+		$("#ember_spirit").style.height = "0px";
+		$("#slark").style.height = "0px";
+		$("#sniper").style.height = "0px";
+		$("#visage").style.height = "0px";
+		$("#ursa").style.height = "0px";
+		$("#tusk").style.height = "0px";
+		$("#windrunner").style.height = "0px";
+		$("#pugna").style.height = "0px";
+		$("#rattletrap").style.height = "0px";
+		$("#tidehunter").style.height = "0px";
+		$("#crystal_maiden").style.height = "0px";
+		$("#phantom_lancer").style.height = "0px";
+
+	}
+	else
+	{
+		$("#ancient_apparition").style.height = "0px";
+		$("#crystal_maiden").style.height = "0px";
+		$("#disruptor").style.height = "0px";
+		$("#morphling").style.height = "0px";
+		$("#storm_spirit").style.height = "0px";
+		$("#nevermore").style.height = "0px";
+		$("#lion").style.height = "0px";
+		$("#meepo").style.height = "0px";
+		$("#jakiro").style.height = "0px";
+		$("#ember_spirit").style.height = "0px";
+		$("#slark").style.height = "0px";
+		$("#sniper").style.height = "0px";
+		$("#visage").style.height = "0px";
+		$("#ursa").style.height = "0px";
+		$("#tusk").style.height = "0px";
+		$("#windrunner").style.height = "0px";
+		$("#pugna").style.height = "0px";
+		$("#rattletrap").style.height = "0px";
+		$("#tidehunter").style.height = "0px";
+		$("#crystal_maiden").style.height = "0px";
+		$("#phantom_lancer").style.height = "0px";
+		$(  "#"+BoatName ).style.height = "650px";
+	}
+	
+}
+
+
+
+
+function buyBoat(BoatName, cost)
+{
+	GameEvents.SendCustomGameEventToServer( "buyBoat", { "text": BoatName, "cost": cost}); 
+	$(  "#"+BoatName ).style.height = "0px";
+}
+
+
+
+
+
+
 	function fillAndShow()
 	{
 		$.Msg("inside fillAndShow");
@@ -152,7 +325,30 @@ function hideTride()
 		$( "#mid_bot_shop" ).style.visibility="collapse";
 		$( "#mid_mid_shop" ).style.visibility="collapse";
 		$( "#empty_guts" ).style.visibility="collapse";
+		$( "#ship_shop" ).style.visibility="collapse";
+		$("#ancient_apparition").style.height = "0px";
+		$("#crystal_maiden").style.height = "0px";
+		$("#disruptor").style.height = "0px";
+		$("#morphling").style.height = "0px";
+		$("#storm_spirit").style.height = "0px";
+		$("#nevermore").style.height = "0px";
+		$("#lion").style.height = "0px";
+		$("#meepo").style.height = "0px";
+		$("#jakiro").style.height = "0px";
+		$("#ember_spirit").style.height = "0px";
+		$("#slark").style.height = "0px";
+		$("#sniper").style.height = "0px";
+		$("#visage").style.height = "0px";
+		$("#ursa").style.height = "0px";
+		$("#tusk").style.height = "0px";
+		$("#windrunner").style.height = "0px";
+		$("#pugna").style.height = "0px";
+		$("#rattletrap").style.height = "0px";
+		$("#tidehunter").style.height = "0px";
+		$("#crystal_maiden").style.height = "0px";
+		$("#phantom_lancer").style.height = "0px";
 		Game.EmitSound("ui.chat_close");
+		
 		
 	}
 	function hideMissionsIfNeeded()
@@ -278,9 +474,10 @@ function hideTride()
 	
 	
 	(function () {
-		hideTride();
+		hideTrade();
 	$.Msg("in subscribe");
 	GameEvents.Subscribe( "Hero_Near_Shop", NearShop );
+	GameEvents.Subscribe( "Hero_Near_Ship_Shop", hideShop );
 	GameEvents.Subscribe( "Hero_Left_Shop", LeftShop );
 	GameEvents.Subscribe( "Team_Can_Buy", CanBuy );
     GameEvents.Subscribe( "Team_Cannot_Buy", CannotBuy );
@@ -321,6 +518,15 @@ function hideTride()
 	{
 		GameEvents.SendCustomGameEventToServer( "buyItem", { "text": itemName, "cost": cost}); 
 	}
+	function NearShipShop(data)
+	{
+	
+		$.Msg("in near ship");
+		if (Players.GetLocalPlayer() == data.Player_ID)
+		{
+			 showShipsNoHide();
+		 }
+	}
 	function NearShop(data)
 	{
 	
@@ -329,6 +535,7 @@ function hideTride()
 		{
 			 fillAndShow();
 		 }
+	
 	}
 	var showtime1=0
 	var showtime2=0
@@ -533,6 +740,7 @@ function AddNotification(msg, panel) {
     });
   }
 
+  
   if (msg.hero != null){
     notification.heroimagestyle = msg.imagestyle || "icon";
     notification.heroname = msg.hero

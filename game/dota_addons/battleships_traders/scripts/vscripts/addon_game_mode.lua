@@ -395,6 +395,8 @@ function CBattleship8D:InitGameMode()
 	CustomGameEventManager:RegisterListener("GiveEasy", GiveEasy);
 	CustomGameEventManager:RegisterListener("GiveMedium", GiveMedium);
 	CustomGameEventManager:RegisterListener("buyItem", buyItem);
+	CustomGameEventManager:RegisterListener("buyBoat", buyBoat);
+	
 	CustomGameEventManager:RegisterListener("Unstick", UnstickPlayer);
 	
   mode = GameRules:GetGameModeEntity()
@@ -746,6 +748,7 @@ function CBattleship8D:OnThink()
 				for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 					if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 						NUM_PLAYERS=NUM_PLAYERS+1
+						RemoveWearables( hero )
 					end
 				end
 			end
@@ -2172,6 +2175,105 @@ function HasQuest(hero)
 end
 
 
+function buyBoat(eventSourceIndex, args)
+
+
+	local pID = args.PlayerID
+	local teamNum=PlayerResource:GetTeam(pID)
+	local casterUnit
+	PrintTable(args)
+		--get list of heroes on this team
+		local i=0
+		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+					if hero:GetPlayerID() == pID then
+						casterUnit= hero
+						print("assignedHero")
+					end
+			end
+		end
+		local itemName=args.text
+		if casterUnit~=nil then
+		
+			local cost=tonumber(args.cost)
+			local herogold = casterUnit:GetGold()
+			local casterPos = casterUnit:GetAbsOrigin()
+			
+			local targetUnitOne = Entities:FindByName( nil, "south_boat_shop")
+			local targetUnitTwo = Entities:FindByName( nil, "north_boat_shop")
+			local directionOne =  casterPos - targetUnitOne:GetAbsOrigin()
+			local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
+			
+			
+			if (directionOne:Length() < 600 or directionTwo:Length() < 600) and herogold>cost-1 then
+				boat=true
+				casterUnit:SetGold(herogold-cost,true)
+				casterUnit:SetGold(0,false)
+				sellBoat(casterUnit)
+				EmitSoundOnClient("General.Buy",PlayerResource:GetPlayer(pID))
+			Timers:CreateTimer( .1, function()
+			--statSend(1)
+		
+			if string.match(itemName,"disruptor") then
+				become_boat(casterUnit, "npc_dota_hero_disruptor")
+				elseif string.match(itemName,"ursa") then
+					become_boat(casterUnit, "npc_dota_hero_ursa")
+				elseif string.match(itemName,"meepo") then
+					become_boat(casterUnit, "npc_dota_hero_meepo")
+				elseif string.match(itemName,"tidehunter") then
+					become_boat(casterUnit, "npc_dota_hero_tidehunter")
+				elseif string.match(itemName,"ancient_apparition") then
+					become_boat(casterUnit, "npc_dota_hero_ancient_apparition")
+				elseif string.match(itemName,"morphling") then
+					become_boat(casterUnit, "npc_dota_hero_morphling")
+				elseif string.match(itemName,"storm_spirit") then
+					become_boat(casterUnit, "npc_dota_hero_storm_spirit")
+				elseif string.match(itemName,"ember_spirit") then
+					become_boat(casterUnit, "npc_dota_hero_ember_spirit")
+				elseif string.match(itemName,"slark") then
+					become_boat(casterUnit, "npc_dota_hero_slark")
+				elseif string.match(itemName,"jakiro") then
+					become_boat(casterUnit, "npc_dota_hero_jakiro")
+				elseif string.match(itemName,"lion") then
+					become_boat(casterUnit, "npc_dota_hero_lion")
+				elseif string.match(itemName,"tusk") then
+					become_boat(casterUnit, "npc_dota_hero_tusk")
+				elseif string.match(itemName,"visage") then
+					become_boat(casterUnit, "npc_dota_hero_visage")
+				elseif string.match(itemName,"nevermore") then
+					become_boat(casterUnit, "npc_dota_hero_nevermore")
+				elseif string.match(itemName,"rattletrap") then
+					become_boat(casterUnit, "npc_dota_hero_rattletrap")
+				elseif string.match(itemName,"sniper") then
+					become_boat(casterUnit, "npc_dota_hero_sniper")
+				elseif string.match(itemName,"windrunner") then
+					become_boat(casterUnit, "npc_dota_hero_windrunner")
+				elseif string.match(itemName,"crystal") then
+					become_boat(casterUnit, "npc_dota_hero_crystal_maiden")
+				elseif string.match(itemName,"phantom") then
+					become_boat(casterUnit, "npc_dota_hero_phantom_lancer")
+				elseif string.match(itemName,"pugna") then
+					become_boat(casterUnit, "npc_dota_hero_pugna")
+			end
+			local data =
+				{
+					Player_ID = hero:GetOwner():GetPlayerID()
+				}
+				FireGameEvent("Hero_Near_Ship_Shop",data)
+			end)
+		elseif(directionOne:Length() > 599 and directionTwo:Length() > 599) then
+		
+		 Notifications:Top(casterUnit:GetPlayerID(), {text="#to_base", duration=3.0, style={color="#800000",  fontSize="50px;"}})
+		 EmitSoundOnClient("ui.contract_fail",PlayerResource:GetPlayer(pID))
+		else
+					 EmitSoundOnClient("ui.contract_fail",PlayerResource:GetPlayer(pID))
+			
+			
+		end
+	end
+end
+
+
 function buyItem(eventSourceIndex, args)
 	local pID = args.PlayerID
 	local teamNum=PlayerResource:GetTeam(pID)
@@ -2502,7 +2604,7 @@ local hasinvested={}
 end
 
 function HandleShopChecks(hero)
-	if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 then
+	if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 then -- and string.match(hero:GetName(),"*trade*") then
 		local casterPos = hero:GetAbsOrigin()
 		local nearestShop= Entities:FindByNameNearest("npc_dota_buil*",casterPos,0)
 		if nearestShop then
@@ -2513,7 +2615,13 @@ function HandleShopChecks(hero)
 		if WasNearShop[hero]==nil then
 			WasNearShop[hero] = true
 		end
-		if ShopDist:Length()<600 then
+			local targetUnitOne = Entities:FindByName( nil, "south_boat_shop")
+			local targetUnitTwo = Entities:FindByName( nil, "north_boat_shop")
+			local directionOne =  casterPos - targetUnitOne:GetAbsOrigin()
+			local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
+
+			
+		if ShopDist:Length()<600 and (directionOne:Length() > 700 and directionTwo:Length() > 700) then
 			
 			if WasNearShop[hero]==false then
 				print("sending entershop")
