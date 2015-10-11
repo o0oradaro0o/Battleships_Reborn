@@ -94,7 +94,7 @@ DISCONNECT_MESSAGE_DESPLAYED = 0
 LastLocs = {}
 LastLocs2 ={}
 GoodWon=true
-testingStats=false
+
 
 item_code_lookup={}
 item_code_lookup["item_coal_bow"] = "CO"
@@ -757,29 +757,7 @@ function CBattleship8D:OnThink()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		
 		if GameRules:GetGameTime() ~= LAST_TIME then
-			if THINK_TICKS == 5 then
-		-- Load Stat collection (statcollection should be available from any script scope)
-			statCollection = require('lib.statcollection')
-			local Testing = false
-
-			-- Check if we are testing / building the mod
-			if not Testing then
-				-- We are not testing, do the actual stat collection
-
-				-- Init stat collection
-				statCollection:init({
-					modIdentifier = '28ed93c9d232295e180a3628e60a492e', -- GET THIS FROM http://getdotastats.com/#d2mods__my_mods
-					customSchema = 'boats' --This will make StatsCollection load statcollection/example.lua as the custom schema
-				})
-				print( "Stats loaded ")
-			end
-		Timers:CreateTimer( 900, function()
-			--statSend(1)
-		end)
-		Timers:CreateTimer( 1800, function()
-			--statSend(1)
-		end)
-		
+			
 		Timers:CreateTimer( 300, function()
 			spawnTide()
 		end)
@@ -1260,11 +1238,12 @@ function CBattleship8D:OnEntityKilled( keys )
 				
 				if DOCK_NORTH_LEFT+DOCK_NORTH_RIGHT==1 then
 					GoodWon=true
-					statSend(0)
+
 					
 					GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
-					GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
 					GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+					GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
+					
 					GameRules:SetSafeToLeave( true )
 				elseif string.match(killedUnit:GetUnitName(), "left") then
 					DOCK_NORTH_LEFT = 0
@@ -1279,10 +1258,11 @@ function CBattleship8D:OnEntityKilled( keys )
 			elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
 				if DOCK_SOUTH_LEFT+DOCK_SOUTH_RIGHT==1 then
 					GoodWon=false
-					statSend(0)
+
 					GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
-					GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
 					GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
+					GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
+					
 					GameRules:SetSafeToLeave( true )
 				elseif string.match(killedUnit:GetUnitName(), "left") then
 					DOCK_SOUTH_LEFT = 0
@@ -1304,18 +1284,20 @@ function CBattleship8D:OnEntityKilled( keys )
 			print( "MATCHED BASE IS TRUE" )
 			if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS then
 					GoodWon=true
-					statSend(0)
+
 				GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
-				GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
 				GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+				GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
+				
 				GameRules:SetSafeToLeave( true )
 			elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
 				GoodWon=false
-					statSend(0)
+
 				
 				GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
-				GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
 				GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
+				GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
+				
 				GameRules:SetSafeToLeave( true )
 			end
 		end
@@ -2656,86 +2638,6 @@ end
 		end
 		end	
 							
-end
-
--- Stat colection in addongamemode.lua
-
-
-
---seg: South Empire Gold
---neg  North Empire Gold
---tk: Tidehunter Killed
---shp: Ship Name
---kls: Kills
---dth: deaths
---afk: kicked status
---i1: item slot 1
---bo: Buid Order
-function statSend(round)
-	local winnerData = {}
-	
-	local empGoldSouth = getEmpGoldForTeam(DOTA_TEAM_GOODGUYS)
-	local empGoldNorth = getEmpGoldForTeam(DOTA_TEAM_BADGUYS)
-	local current_winner_team = DOTA_TEAM_GOODGUYS
-	
-	if empGoldSouth<empGoldNorth and round ~=0 then
-		current_winner_team=DOTA_TEAM_BADGUYS
-	elseif round==0 and not GoodWon then
-		current_winner_team=DOTA_TEAM_BADGUYS
-	end
-    for playerID = 0, DOTA_MAX_PLAYERS do
-        if PlayerResource:IsValidPlayerID(playerID) then
-            if not PlayerResource:IsBroadcaster(playerID) then
-                winnerData[PlayerResource:GetSteamAccountID(playerID)] = (PlayerResource:GetTeam(playerID) == current_winner_team) and 1 or 0
-            end
-        end
-    end
-	
-	local gameData={
-	seg = empGoldSouth,
-	neg = empGoldNorth,
-	tk = tideKiller,
-	}
-
-	local playerData = {}
-			
-    for playerID = 0, DOTA_MAX_PLAYERS do
-        if PlayerResource:IsValidPlayerID(playerID) then
-            if not PlayerResource:IsBroadcaster(playerID) then
-                table.insert(playerData, {
-                    --steamID32 required in here
-                    steamID32 = PlayerResource:GetSteamAccountID(playerID),
-                    shp= GetHeroName(playerID),
-                    kls = PlayerResource:GetKills(playerID),
-                    dth = PlayerResource:GetDeaths(playerID),
-                    lvl = GetHeroLevel(playerID),
-					
-					afk = GetDisconnectState(playerID),
-
-                    i1 = GetItemInSlot(playerID, 0), --item slot1
-                    i2 = GetItemInSlot(playerID, 1),
-                    i3 = GetItemInSlot(playerID, 2),
-                    i4 = GetItemInSlot(playerID, 3),
-                    i5 = GetItemInSlot(playerID, 4),
-                    i6 = GetItemInSlot(playerID, 5),
-					
-					bo=GetPlayerHist(playerID),
-                })
-            end
-        end
-    end
-			local roundsLeft = round
-			local roundData={
-			winner_data = winnerData,
-			game_data = gameData,
-			player_data = playerData,
-			rounds_left = roundsLeft,
-			}
-			PrintTable(roundData)
-			statCollection:submitRound(roundData)
-			playerItemHist={}		
-			tidekiller="none"
-
 end
 
 function GetPlayerHist(playerID)
