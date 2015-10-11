@@ -1,4 +1,5 @@
 -- Generated from template
+
 require("timers")
 require('physics')
 require('notifications')
@@ -77,11 +78,13 @@ TIDE_LEVEL = 0
 
 TICKS_SINCE_EMP_GOLD = 0
 
-tideKiller="none"
+tideKiller=""
 
 empGoldArray={}
+empGoldHist=""
 
 playerItemHist={}
+tideKillerArray={}
 
 herokills = {}
 herohp = {}
@@ -522,11 +525,13 @@ function CBattleship8D:handleEmpGold()
 				badGoldEach = badGoldEach + GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
 				BAD_GOLD_TOTAL_MOD = 0
 				GOOD_GOLD_TOTAL_MOD = GoldDif
+				empGoldHist=empGoldHist .. "N:" .. EMP_GOLD_NUMBER .. "L:S "
 			elseif BAD_GOLD_TOTAL_MOD > GOOD_GOLD_TOTAL_MOD then
 				GoldDif = BAD_GOLD_TOTAL_MOD - GOOD_GOLD_TOTAL_MOD
 				goodGoldEach = goodGoldEach + GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
 				BAD_GOLD_TOTAL_MOD = GoldDif
 				GOOD_GOLD_TOTAL_MOD = 0
+				empGoldHist=empGoldHist .. "N:" .. EMP_GOLD_NUMBER .. "L:N "
 			end
 			if NUM_GOOD_PLAYERS ~= 0 and NUM_BAD_PLAYERS ~= 0 then
 				goodGoldEach = goodGoldEach / NUM_GOOD_PLAYERS
@@ -1318,14 +1323,22 @@ function CBattleship8D:OnEntityKilled( keys )
 		GameRules:SendCustomMessage("#north_tide", DOTA_TEAM_GOODGUYS, 0)
 		Notifications:TopToAll({hero="npc_dota_hero_tidehunter", imagestyle="portrait", continue=true})
 		Notifications:TopToAll({text="#north_tide", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
-		tideKiller="North"
+			 table.insert(tideKillerArray,{
+			 Killer_Team="North",
+			 Game_time=GameRules:GetGameTime()/60+0.5,
+			 })
+			 tideKiller=tideKiller .. "N" .. math.floor(GameRules:GetGameTime()/60+0.5)
 	end
 	if  killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 		CBattleship8D:quickSpawn("south","right", "four", 1, CREEP_NUM_HUGE+2)
 		CBattleship8D:quickSpawn("south","left", "four", 1, CREEP_NUM_HUGE+2)
 		Notifications:TopToAll({hero="npc_dota_hero_tidehunter", imagestyle="portrait", continue=true})
 		Notifications:TopToAll({text="#south_tide", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
-		tideKiller="South"
+		 table.insert(tideKillerArray,{
+			 Killer_Team="South",
+			 Game_time=GameRules:GetGameTime()/60+0.5,
+			 })
+			  tideKiller=tideKiller .. "S" .. math.floor(GameRules:GetGameTime()/60+0.5)
 	end
 		Timers:CreateTimer( 300, function()
 		TIDE_LEVEL = TIDE_LEVEL+1
