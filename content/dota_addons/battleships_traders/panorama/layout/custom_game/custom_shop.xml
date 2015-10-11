@@ -1538,7 +1538,10 @@
 							<Panel hittest="false" class="supply_row">
 								 <Button class="boat_btn_item"  onactivate="showDetails('dazzle')" oncontextmenu="buyBoat('dazzle', 1000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/nevermore.png" />
-									 <Label hittest="false" class="boat_name_text" text="#nevermore" />
+									
+									<Label hittest="false" class="boat_gold_text" text="750" />					
+									<Label hittest="false" class="boat_name_text" text="#nevermore" />
+									
 								</Button>
 							</Panel>
 						</Panel>
@@ -1567,7 +1570,8 @@
                             </Button>
                         </Panel>
                     </Panel>
-                   
+                     <Label hittest="false"  id="must_be_trader_1" class="no_trade_text_subtitle" text="#must_be_trader" />
+				
                     <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1601,7 +1605,8 @@
                             </Button>
                         </Panel>
                     </Panel>
-                   
+                     <Label hittest="false"  id="must_be_trader_2" class="no_trade_text_subtitle" text="#must_be_trader" />
+				
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1637,7 +1642,8 @@
                             </Button>
                         </Panel>
                     </Panel>
-                   
+                     <Label hittest="false"  id="must_be_trader_3" class="no_trade_text_subtitle" text="#must_be_trader" />
+				
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1671,7 +1677,7 @@
                             </Button>
                         </Panel>
                     </Panel>
-                   
+                   <Label hittest="false"  id="must_be_trader_4" class="no_trade_text_subtitle" text="#must_be_trader" />
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1708,7 +1714,8 @@
                         </Panel>
                     </Panel>
 					
-                   
+                     <Label hittest="false"  id="must_be_trader_5" class="no_trade_text_subtitle" text="#must_be_trader" />
+				
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1743,7 +1750,8 @@
                             </Button>
                         </Panel>
                     </Panel>
-                   
+                     <Label hittest="false"  id="must_be_trader_6" class="no_trade_text_subtitle" text="#must_be_trader" />
+				
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1777,7 +1785,8 @@
                             </Button>
                         </Panel>
                     </Panel>
-                   
+                     <Label hittest="false"  id="must_be_trader_7" class="no_trade_text_subtitle" text="#must_be_trader" />
+				
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1811,7 +1820,8 @@
                             </Button>
                         </Panel>
                     </Panel>
-                   
+                     <Label hittest="false"  id="must_be_trader_8" class="no_trade_text_subtitle" text="#must_be_trader" />
+				
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1845,7 +1855,8 @@
                             </Button>
                         </Panel>
                     </Panel>
-                   
+                     <Label hittest="false"  id="must_be_trader_9" class="no_trade_text_subtitle" text="#must_be_trader" />
+				
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">

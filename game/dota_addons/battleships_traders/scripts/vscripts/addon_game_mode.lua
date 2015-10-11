@@ -390,8 +390,6 @@ function CBattleship8D:InitGameMode()
 	ListenToGameEvent('player_connect_full', Dynamic_Wrap(CBattleship8D, 'OnConnectFull'), self)
   ListenToGameEvent('player_disconnect', Dynamic_Wrap(CBattleship8D, 'OnDisconnect'), self)
   
-  CustomGameEventManager:RegisterListener("donate_100", donate100);
-	CustomGameEventManager:RegisterListener("donate_500", donate500);
 	CustomGameEventManager:RegisterListener("GiveEasy", GiveEasy);
 	CustomGameEventManager:RegisterListener("GiveMedium", GiveMedium);
 	CustomGameEventManager:RegisterListener("buyItem", buyItem);
@@ -491,7 +489,6 @@ function CBattleship8D:handleEmpGold()
 		
 			
 			
-			inturest()
 			TICKS_SINCE_EMP_GOLD = 0
 			local goodGold = 0
 			local badGold = 0
@@ -763,7 +760,7 @@ function CBattleship8D:OnThink()
 			if THINK_TICKS == 5 then
 		-- Load Stat collection (statcollection should be available from any script scope)
 			statCollection = require('lib.statcollection')
-			local Testing = true
+			local Testing = false
 
 			-- Check if we are testing / building the mod
 			if not Testing then
@@ -790,10 +787,10 @@ function CBattleship8D:OnThink()
 					if tower ~= nil and string.match(tower:GetName(),"tower") then
 						if tower:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 							creature = CreateUnitByName( "npc_dota_rng_ind" , tower:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_GOODGUYS )
-						
+							creature:SetOrigin( tower:GetAbsOrigin()* Vector(1,1,0))
 						elseif  tower:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 							creature = CreateUnitByName( "npc_dota_rng_ind" , tower:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_BADGUYS )
-						
+							creature:SetOrigin(creature:GetOrigin() * Vector(1,1,0))
 						end
 						
 				end
@@ -1263,7 +1260,7 @@ function CBattleship8D:OnEntityKilled( keys )
 				
 				if DOCK_NORTH_LEFT+DOCK_NORTH_RIGHT==1 then
 					GoodWon=true
-					--statSend(0)
+					statSend(0)
 					
 					GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 					GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
@@ -1282,7 +1279,7 @@ function CBattleship8D:OnEntityKilled( keys )
 			elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
 				if DOCK_SOUTH_LEFT+DOCK_SOUTH_RIGHT==1 then
 					GoodWon=false
-					--statSend(0)
+					statSend(0)
 					GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 					GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
 					GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
@@ -1307,14 +1304,14 @@ function CBattleship8D:OnEntityKilled( keys )
 			print( "MATCHED BASE IS TRUE" )
 			if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS then
 					GoodWon=true
-					--statSend(0)
+					statSend(0)
 				GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 				GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
 				GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
 				GameRules:SetSafeToLeave( true )
 			elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
 				GoodWon=false
-					--statSend(0)
+					statSend(0)
 				
 				GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 				GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
@@ -1806,21 +1803,20 @@ function become_boat(casterUnit, heroname)
     local itemlist = {}
 	local droppeditemlist = {}
 	local itemstacks = {}
-    if casterUnit:IsHero() or casterUnit:HasInventory() then 
+    if (casterUnit:IsHero() or casterUnit:HasInventory()) and heroname ~= casterUnit:GetName() then 
     	for itemSlot = 0, 11, 1 do 
             if casterUnit ~= nil then
                 local Item = casterUnit:GetItemInSlot( itemSlot )
-				if Item ~= nil and not string.match(Item:GetName(), "boat") then
+				if Item ~= nil and not string.match(Item:GetName(), "boat") and not string.match(Item:GetName(), "trade_") and not string.match(Item:GetName(), "contract") then
 					print("Item in slot is: " .. Item:GetName())
 					itemlist[itemSlot] = Item:GetName()
 					 itemstacks[itemSlot]  = Item:GetCurrentCharges()
-					if string.match(Item:GetName(), "contract") then
 						casterUnit:RemoveItem(Item)
-					end
 					
-				elseif Item ~= nil and string.match(Item:GetName(), "boat") then
-					print("Item in slot is: filler")
+				elseif Item ~= nil and (string.match(Item:GetName(), "boat")  or string.match(Item:GetName(), "trade_") or string.match(Item:GetName(), "contract")) then
+					print("Item in slot is: trade_manifest")
 					itemlist[itemSlot] = "item_fluff"
+					casterUnit:RemoveItem(Item)
 				
 				else
 					print("Item in slot is: filler")
@@ -1861,8 +1857,36 @@ function become_boat(casterUnit, heroname)
 						for b = 0, 11, 1 do 
 							local newItem = CreateItem(itemlist[b], hero, hero)
 							if newItem ~= nil then                   -- makes sure that the item exists and making sure it is the correct item
-								print("Item Is: " .. newItem:GetName() )
-								hero:AddItem(newItem)
+								
+								if b==5 and string.match(heroname,"dazzle") then
+								local newItem2 = CreateItem("item_trade_manifest", hero, hero)
+									hero:AddItem(newItem2)
+									local data =
+									{
+										Player_ID = hero:GetOwner():GetPlayerID();
+										Ally_ID = allyteamnumber;
+									}
+									FireGameEvent("Team_Can_Buy",data)
+									elseif  b==5 then
+									local data =
+									{
+										Player_ID = hero:GetOwner():GetPlayerID();
+										Ally_ID = -1;
+										x = 99999999;
+										y =  99999999;
+										z =  99999999;
+									}
+									FireGameEvent("Team_Cannot_Buy",data)
+
+								end
+								if b<5 and  string.match(itemlist[b],"fluff") then
+									hero:AddItem(newItem)
+								elseif not  string.match(itemlist[b],"fluff") then
+									hero:AddItem(newItem)
+								else
+										hero:RemoveItem(newItem)
+								end
+								
 								if itemstacks[b] then
 									newItem:SetCurrentCharges(itemstacks[b])
 								end
@@ -1885,7 +1909,7 @@ function become_boat(casterUnit, heroname)
 										
 									elseif activateItem ~= nil and string.match(activateItem:GetName(), "fluff") then
 										print("Item in slot is: filler")
-										activateItem:ToggleAbility()
+										hero:RemoveItem(activateItem)
 									end
 								end
 							end
@@ -2207,15 +2231,14 @@ function buyBoat(eventSourceIndex, args)
 			local directionOne =  casterPos - targetUnitOne:GetAbsOrigin()
 			local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
 			
-			
-			if (directionOne:Length() < 600 or directionTwo:Length() < 600) and herogold>cost-1 then
+			print(itemName .. " vs " .. casterUnit:GetName())
+			if (directionOne:Length() < 600 or directionTwo:Length() < 600) and herogold>cost-1 and not string.match(casterUnit:GetName(),itemName ) then
 				boat=true
 				casterUnit:SetGold(herogold-cost,true)
 				casterUnit:SetGold(0,false)
 				sellBoat(casterUnit)
 				EmitSoundOnClient("General.Buy",PlayerResource:GetPlayer(pID))
 			Timers:CreateTimer( .1, function()
-			--statSend(1)
 		
 			if string.match(itemName,"disruptor") then
 				become_boat(casterUnit, "npc_dota_hero_disruptor")
@@ -2262,7 +2285,7 @@ function buyBoat(eventSourceIndex, args)
 			end
 			local data =
 				{
-					Player_ID = hero:GetOwner():GetPlayerID()
+					Player_ID = casterUnit:GetPlayerID()
 				}
 				FireGameEvent("Hero_Near_Ship_Shop",data)
 			end)
@@ -2358,7 +2381,7 @@ print("in give easy")
 				
 				while chosenMission==nil do
 					local i = RandomInt( 1, #missionPool )
-					if missionPool[i]~=nearestShop then
+					if missionPool[i]~=nearestShop and not string.match(missionPool[i]:GetUnitName(),"ship") then
 						chosenMission=missionPool[i]
 					end
 				end
@@ -2385,13 +2408,12 @@ print("in give easy")
 					print("Item Is: " .. newItem:GetName() )
 					
 					heroBuying:AddItem(newItem)
-					local allyteamnumber=heroBuying:GetOwner():GetPlayerID()
 					EmitSoundOnClient("ui.npe_objective_given",PlayerResource:GetPlayer(heroBuying:GetOwner():GetPlayerID()))
 					
 					local data =
 					{
 						Player_ID = heroBuying:GetOwner():GetPlayerID();
-						Ally_ID = allyteamnumber;
+						Ally_ID = 0;
 						x =  chosenMission:GetAbsOrigin().x;
 						y =  chosenMission:GetAbsOrigin().y;
 						z =  chosenMission:GetAbsOrigin().z;
@@ -2436,7 +2458,7 @@ print("in give medium")
 				while chosenMission==nil do
 					local i = RandomInt( 1, #missionPool )
 					missionDist =  missionPool[i]:GetAbsOrigin() - nearestShop:GetAbsOrigin()
-					if missionPool[i]~=nearestShop and missionDist:Length()>6000 then
+					if missionPool[i]~=nearestShop and missionDist:Length()>6000 and not string.match(missionPool[i]:GetUnitName(),"ship") then
 						chosenMission=missionPool[i]
 					end
 				end
@@ -2459,13 +2481,12 @@ print("in give medium")
 					print("Item Is: " .. newItem:GetName() )
 					heroBuying:AddItem(newItem)
 					
-					local allyteamnumber=heroBuying:GetOwner():GetPlayerID()
 					EmitSoundOnClient("ui.npe_objective_given",PlayerResource:GetPlayer(heroBuying:GetOwner():GetPlayerID()))
 											
 					local data =
 					{
 						Player_ID = heroBuying:GetOwner():GetPlayerID();
-						Ally_ID = allyteamnumber;
+						Ally_ID = 0;
 						x =  chosenMission:GetAbsOrigin().x;
 						y =  chosenMission:GetAbsOrigin().y;
 						z =  chosenMission:GetAbsOrigin().z;
@@ -2477,139 +2498,23 @@ print("in give medium")
 end
 
 
-function donate100(eventSourceIndex, args)
-    local pID = args.PlayerID
-    for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-			print("donating" .. hero:GetName())
-			local herogold = hero:GetGold()
-			if herogold>0 then
-				if hero:GetPlayerID() == pID then
-					if herogold>99 then
-						hero:SetGold(herogold-100,true)
-						hero:SetGold(0,false)
-						if teamScores[hero:GetTeamNumber()]~=nil then
-							 teamScores[hero:GetTeamNumber()] = teamScores[hero:GetTeamNumber()]+100
-						else
-							teamScores[hero:GetTeamNumber()] = 100
-						end
-						
-						local PlayerID = pID
-						local nTeamID = hero:GetTeamNumber()
-						local nTeamKills = teamScores[hero:GetTeamNumber()]
-						local nKillsRemaining = score_to_win - nTeamKills
-						local broadcast_invest_event =
-						{
-							player_id = PlayerID,
-							team_id = nTeamID,
-							team_gold = nTeamKills,
-							gold_remaining = nKillsRemaining,
-							invest_amount = 100,
-						}
 
-						if nKillsRemaining <= 0 then
-							GameRules:SetGameWinner( nTeamID )
-						end
 
-						FireGameEvent( "invest_event", broadcast_invest_event )
-						EmitSoundOnClient("Quickbuy.Available",PlayerResource:GetPlayer(pID))
-					end
-				end
-			end
-		end
-	end
-end
-function donate500(eventSourceIndex, args)
-     local pID = args.PlayerID
-    for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-			print("donating" .. hero:GetName())
-			local herogold = hero:GetGold()
-			if herogold>0 then
-				if hero:GetPlayerID() == pID then
-					if herogold>499 then
-						hero:SetGold(herogold-500,true)
-						hero:SetGold(0,false)
-						if teamScores[hero:GetTeamNumber()]~=nil then
-							 teamScores[hero:GetTeamNumber()] = teamScores[hero:GetTeamNumber()]+500
-						else
-							teamScores[hero:GetTeamNumber()] = 500
-						end
-						
-						
-						local PlayerID = pID
-						local nTeamID = hero:GetTeamNumber()
-						local nTeamKills = teamScores[hero:GetTeamNumber()]
-						local nKillsRemaining = score_to_win - nTeamKills
-						
-							
-							local broadcast_invest_event =
-						{
-							player_id = PlayerID,
-							team_id = nTeamID,
-							team_gold = nTeamKills,
-							gold_remaining = nKillsRemaining,
-							invest_amount = 500,
-						}
-
-						if nKillsRemaining <= 0 then
-							GameRules:SetGameWinner( nTeamID )
-						end
-
-						FireGameEvent( "invest_event", broadcast_invest_event )
-						EmitSoundOnClient("Quickbuy.Available",PlayerResource:GetPlayer(pID))
-						
-						
-					end
-				end
-			end
-		end
-	end
-
-	
-end
-
-function inturest()
-
-local hasinvested={}
-    for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-				 local bonus = 0
-			
-				if teamScores[hero:GetTeamNumber()]~=nil then
-					 bonus=math.floor(teamScores[hero:GetTeamNumber()]*.05+0.5)
-					 teamScores[hero:GetTeamNumber()] = teamScores[hero:GetTeamNumber()]+bonus
-				else
-					teamScores[hero:GetTeamNumber()] = 0
-				end
-				local PlayerID = 0
-				local nTeamID = hero:GetTeamNumber()
-				local nTeamKills = teamScores[hero:GetTeamNumber()]
-				local nKillsRemaining = score_to_win - nTeamKills
-				
-					if hasinvested[nTeamID]==nil then
-						hasinvested[nTeamID]=1
-							local broadcast_invest_event =
-							{
-								player_id = PlayerID,
-								team_id = nTeamID,
-								team_gold = nTeamKills,
-								gold_remaining = nKillsRemaining,
-								invest_amount = bonus,
-							}
-
-							if nKillsRemaining <= 0 then
-								GameRules:SetGameWinner( nTeamID )
-							end
-
-							FireGameEvent( "invest_event", broadcast_invest_event )
-					end
-		end
-	end			
-end
 
 function HandleShopChecks(hero)
-	if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 then -- and string.match(hero:GetName(),"*trade*") then
+
+local cotinue=0
+if hero ~= nil then
+
+		for itemSlot = 0, 5, 1 do 
+			local Item = hero:GetItemInSlot( itemSlot )
+			if Item ~= nil and  string.match(Item:GetName(), "trade_manifest") then
+				cotinue=1
+			end		
+		end
+end
+					
+	if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and cotinue==1 then -- and string.match(hero:GetName(),"*trade*") then
 		local casterPos = hero:GetAbsOrigin()
 		local nearestShop= Entities:FindByNameNearest("npc_dota_buil*",casterPos,0)
 		if nearestShop then
@@ -2626,7 +2531,7 @@ function HandleShopChecks(hero)
 			local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
 
 			
-		if ShopDist:Length()<600 and (directionOne:Length() > 700 and directionTwo:Length() > 700) then
+		if ShopDist:Length()<600 and (directionOne:Length() > 1000 and directionTwo:Length() > 1000) then
 			
 			if WasNearShop[hero]==false then
 				print("sending entershop")

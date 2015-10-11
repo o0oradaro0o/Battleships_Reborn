@@ -12920,7 +12920,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"AbilityTextureName"			"recipe_scroll"
+		"AbilityTextureName"			"item_recipe_scroll"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
@@ -12940,7 +12940,6 @@
 		"ItemAliases"					"mana;mb"
 		"ItemDroppable"					"0"
 		"ItemStackable"					"1"
-		"ItemInitialCharges"			"1"
 		"ItemPermanent" 				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		// Casting
@@ -12949,61 +12948,7 @@
 		"AbilityCastPoint"				"0.3"
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15"
-		"OnSpellStart"
-		{
-			"ApplyModifier"
-				{
-					"Target" "CASTER"
-					"ModifierName" "target_mod"
-				}
-
-				"RunScript"
-				{
-					"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
-					"Function"			"RemoveWeps"
-				}
-
-				SpendCharge {}	
-				
-		}
-		 
-		"Modifiers"
-		{
 		
-			"target_mod"
-			{
-				"Duration"  "%duration"
-				 "States"
-				{
-					"MODIFIER_STATE_INVISIBLE" "MODIFIER_STATE_VALUE_ENABLED"
-				}
-				"EffectName"     "particles/basic_projectile/camo_effect.vpcf"
-				"EffectAttachType"	"follow_origin"
-				OnDestroy
-				{
-					"RunScript"
-					{
-						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
-						"Function"			"RemoveDD"
-					}
-				}
-			}
-			
-		}
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"4.0"
-			}
-
-		}
 	}
 	
 

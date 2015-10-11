@@ -1205,17 +1205,18 @@ border-radius: 10px;
 
 .boat_btn_item
 {
-	horizontal-align: center;
-	flow-children: right;
+	flow-children: down;
+	horizontal-align: left;
 	height: 65px;
 	width: 120px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #252525 ), to( #42494e ) );
-	  border: 4px solid gray;
+	 border: 4px solid gray;
 	 vertical-align: center;
 	 margin: 15px;
 }
 .boat_btn_item:hover
 {
+	flow-children: down;
 	horizontal-align: center;
 	height: 65px;
 	width: 120px;
@@ -1227,6 +1228,8 @@ border-radius: 10px;
 }
 .boat_btn_item:active
 {
+	
+	flow-children: down;
 horizontal-align: center;
 	height: 65px;
 	width: 120px;
@@ -1243,6 +1246,17 @@ horizontal-align: center;
 
 }
 
+.no_trade_text_subtitle
+{
+	horizontal-align: center;
+	color: #FF2222;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 3px;
+		 vertical-align: center;
+	text-shadow: 4px 4px 4px #121212;
+		text-align: center;
+}
 .ability_name
 {
 	vertical-align: center;
@@ -1258,7 +1272,18 @@ horizontal-align: center;
 }
 .boat_name_text
 {
-	margin-left:-110px;
+	margin-top:-50px;
+	color: #FFFF99;
+    font-size: 14px;
+    font-weight: bold;
+	vertical-align: bottom;
+	text-shadow: 2px 2px 2px #000000;
+}
+
+
+.boat_gold_text
+{
+	margin-top:-60px;
 	color: #FFFF99;
     font-size: 14px;
     font-weight: bold;
@@ -1294,6 +1319,44 @@ horizontal-align: center;
 {
 
 	height: 0px;
+	transition: height 0.5s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
+}
+
+#mission_hider_1
+{
+	transition: height 0.5s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
+}
+#mission_hider_2
+{
+	transition: height 0.5s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
+}
+#mission_hider_3
+{
+	transition: height 0.5s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
+}
+#mission_hider_4
+{
+	transition: height 0.5s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
+}
+#mission_hider_5
+{
+	transition: height 0.5s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
+}
+#mission_hider_6
+{
+	transition: height 0.5s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
+}
+#mission_hider_7
+{
+	transition: height 0.5s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
+}
+#mission_hider_8
+{
+	transition: height 0.5s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
+}
+
+#mission_hider_9
+{
 	transition: height 0.5s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
 }
 

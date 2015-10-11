@@ -1,6 +1,6 @@
 "use strict";
 var hidden=true;
-var showMission=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+var showMission=[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]
 var firstcall=true;
 var starttime=0;
 function hideTrade()
@@ -385,28 +385,51 @@ function buyBoat(BoatName, cost)
 		$.Msg(showMission[Players.GetLocalPlayer()]);
 		if(showMission[Players.GetLocalPlayer()]==1)
 		{
-			$( "#mission_hider_1" ).style.opacity="1";
-			$( "#mission_hider_2" ).style.opacity="1";
-			$( "#mission_hider_3" ).style.opacity="1";
-			$( "#mission_hider_4" ).style.opacity="1";
-			$( "#mission_hider_5" ).style.opacity="1";
-			$( "#mission_hider_6" ).style.opacity="1";
-			$( "#mission_hider_7" ).style.opacity="1";
-			$( "#mission_hider_8" ).style.opacity="1";
-			$( "#mission_hider_9" ).style.opacity="1";
+			$( "#mission_hider_1" ).style.height="200px";
+			$( "#mission_hider_2" ).style.height="200px";
+			$( "#mission_hider_3" ).style.height="200px";
+			$( "#mission_hider_4" ).style.height="200px";
+			$( "#mission_hider_5" ).style.height="200px";
+			$( "#mission_hider_6" ).style.height="200px";
+			$( "#mission_hider_7" ).style.height="200px";
+			$( "#mission_hider_8" ).style.height="200px";
+			$( "#mission_hider_9" ).style.height="200px";
 		}
 		else
 		{	
 	
-			$( "#mission_hider_1" ).style.opacity=".0";
-			$( "#mission_hider_2" ).style.opacity=".0";
-			$( "#mission_hider_3" ).style.opacity=".0";
-			$( "#mission_hider_4" ).style.opacity=".0";
-			$( "#mission_hider_5" ).style.opacity=".0";
-			$( "#mission_hider_6" ).style.opacity=".0";
-			$( "#mission_hider_7" ).style.opacity=".0";
-			$( "#mission_hider_8" ).style.opacity=".0";
-			$( "#mission_hider_9" ).style.opacity=".0";
+			$( "#mission_hider_1" ).style.height="0px";
+			$( "#mission_hider_2" ).style.height="0px";
+			$( "#mission_hider_3" ).style.height="0px";
+			$( "#mission_hider_4" ).style.height="0px";
+			$( "#mission_hider_5" ).style.height="0px";
+			$( "#mission_hider_6" ).style.height="0px";
+			$( "#mission_hider_7" ).style.height="0px";
+			$( "#mission_hider_8" ).style.height="0px";
+			$( "#mission_hider_9" ).style.height="0px";
+		}
+		if (showMission[Players.GetLocalPlayer()]==-1)
+		{
+			$( "#must_be_trader_1" ).style.height="200px";
+			$( "#must_be_trader_2" ).style.height="200px";
+			$( "#must_be_trader_3" ).style.height="200px";
+			$( "#must_be_trader_4" ).style.height="200px";
+			$( "#must_be_trader_5" ).style.height="200px";
+			$( "#must_be_trader_6" ).style.height="200px";
+			$( "#must_be_trader_7" ).style.height="200px";
+			$( "#must_be_trader_8" ).style.height="200px";
+			$( "#must_be_trader_9" ).style.height="200px";
+		}
+		else{
+			$( "#must_be_trader_1" ).style.height="0px";
+			$( "#must_be_trader_2" ).style.height="0px";
+			$( "#must_be_trader_3" ).style.height="0px";
+			$( "#must_be_trader_4" ).style.height="0px";
+			$( "#must_be_trader_5" ).style.height="0px";
+			$( "#must_be_trader_6" ).style.height="0px";
+			$( "#must_be_trader_7" ).style.height="0px";
+			$( "#must_be_trader_8" ).style.height="0px";
+			$( "#must_be_trader_9" ).style.height="0px";
 		}
 		
 	}
@@ -509,7 +532,6 @@ function buyBoat(BoatName, cost)
 	GameEvents.Subscribe( "Team_Can_Buy", CanBuy );
     GameEvents.Subscribe( "Team_Cannot_Buy", CannotBuy );
 	GameEvents.Subscribe( "ping_loc", PingLoc );
-	GameEvents.Subscribe( "invest_event", OnInvestEvent );
 	GameEvents.Subscribe( "bsui_timer_data", OnBsuiTimer );
 	
 	GameEvents.Subscribe( "top_notification", TopNotification );
@@ -543,7 +565,11 @@ function buyBoat(BoatName, cost)
 	
 	function buyItem(itemName, cost)
 	{
-		GameEvents.SendCustomGameEventToServer( "buyItem", { "text": itemName, "cost": cost}); 
+		if(showMission[Players.GetLocalPlayer()]>-1)
+		{
+			GameEvents.SendCustomGameEventToServer( "buyItem", { "text": itemName, "cost": cost}); 
+		}
+
 	}
 	function NearShipShop(data)
 	{
@@ -564,75 +590,6 @@ function buyBoat(BoatName, cost)
 		 }
 	
 	}
-	var showtime1=0
-	var showtime2=0
-	function OnInvestEvent( data )
-	{
-		$.Msg("in invest "+data.team_id);
-		if (data.team_id==2)
-		{
-			var recentScore = $( "#RecentScore1" ).GetAttributeInt( "recent_score_count", 0 );
-			$( "#totalScore1" ).text="Invested: "+data.team_gold;
-			 
-			$( "#RecentScore1" ).SetAttributeInt( "recent_score_count", data.invest_amount+recentScore );
-			$( "#RecentScore1" ).SetHasClass( "recent_score", true );
-			$( "#RecentScore1" ).SetHasClass( "no_recent_score", false );
-			showtime1=10
-		}
-		
-		if (data.team_id==3)
-		{
-			var recentScore = $( "#RecentScore2" ).GetAttributeInt( "recent_score_count", 0 );
-			
-			$( "#totalScore2" ).text="Invested: "+data.team_gold;
-			$( "#RecentScore2" ).text=data.invest_amount;
-			$( "#RecentScore2" ).SetAttributeInt( "recent_score_count", data.invest_amount +recentScore);
-			$( "#RecentScore2" ).SetHasClass( "no_recent_score", false );
-			showtime2=10
-		}
-		UpdateRecentScore();
-		$.Schedule( .1, UpdateRecentScore );
-
-	}
-	
-	function UpdateRecentScore()
-{
-	var recentScore =0;
-	if ( showtime1 <1 )
-	{
-		
-			$( "#RecentScore1" ).SetHasClass( "recent_score", false );
-		$( "#RecentScore1" ).SetHasClass( "no_recent_score", true );
-		$( "#RecentScore1" ).SetAttributeInt( "recent_score_count", 0 );
-	}
-	else
-	{
-		recentScore = $( "#RecentScore1" ).GetAttributeInt( "recent_score_count", 0 );
-		$( "#RecentScore1" ).SetHasClass( "recent_score", true );
-		$( "#RecentScore1" ).SetHasClass( "no_recent_score", false );
-		$( "#RecentScore1" ).text=recentScore;
-		showtime1--;
-		$.Schedule( .3, UpdateRecentScore );
-	}
-	if ( showtime2 <1)
-	{
-		
-		$( "#RecentScore2" ).SetHasClass( "recent_score", false );
-		$( "#RecentScore2" ).SetHasClass( "no_recent_score", true );
-		$( "#RecentScore2" ).SetAttributeInt( "recent_score_count", 0 );
-	}
-	else
-	{
-		recentScore = $( "#RecentScore2" ).GetAttributeInt( "recent_score_count", 0 );
-		$( "#RecentScore2" ).SetHasClass( "recent_score", true );
-		$( "#RecentScore2" ).SetHasClass( "no_recent_score", false );
-		$( "#RecentScore2" ).text=recentScore;
-		showtime2--;
-		$.Schedule( .3, UpdateRecentScore );
-	}
-	
-	
-}
 	
 
 	
@@ -666,10 +623,16 @@ function buyBoat(BoatName, cost)
 			{
 				$.Msg(data);
 				var v=[data.x,data.y,data.z]
+				if(data.x<999999)
+				{
 				GameUI.PingMinimapAtLocation(v);
-				showMission[Players.GetLocalPlayer()]=-1;
-				$( "#out_of_contracts" ).style.visibility="visible";
-				$.Schedule( 1.5, reHideOutOfContracts );
+				}
+				showMission[Players.GetLocalPlayer()]=data.Ally_ID;
+				if(data.Ally_ID == 0)
+				{
+					$( "#out_of_contracts" ).style.visibility="visible";
+					$.Schedule( 1.5, reHideOutOfContracts );
+				}
 			}
 		
 	}
