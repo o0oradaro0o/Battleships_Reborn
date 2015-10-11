@@ -2,6 +2,7 @@
 require("timers")
 require('physics')
 require('notifications')
+require('statcollection/init')
 
 if CBattleship8D == nil then
 	CBattleship8D = class({})
@@ -755,9 +756,9 @@ function CBattleship8D:OnThink()
 		end
 			 
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		
 		if GameRules:GetGameTime() ~= LAST_TIME then
 			
+					if THINK_TICKS == 5 then
 		Timers:CreateTimer( 300, function()
 			spawnTide()
 		end)
@@ -780,7 +781,6 @@ function CBattleship8D:OnThink()
 		 Notifications:TopToAll({text="#inst_four", duration=6.0, style={color="#58ACFA",  fontSize="18px;"}, continue=true})
 		
 		
-	
 		end
 		if THINK_TICKS == 7 then	
 		 Notifications:TopToAll({text="#inst_five", duration=6.0, style={color="#07C300",  fontSize="18px;"}})
