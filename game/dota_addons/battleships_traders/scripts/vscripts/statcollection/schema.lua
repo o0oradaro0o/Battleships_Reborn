@@ -1,4 +1,5 @@
 customSchema = class({})
+require('storage')
 
 function customSchema:init()
 
@@ -30,12 +31,13 @@ end
 
 -- Returns a table with our custom game tracking.
 function BuildGameArray()
+	
     local game = {}
-	game.eh=empGoldHist
-	game.th=tideKiller
+	game.eh=storage:GetEmpGoldHist()
+	game.wn=storage:getWinner()
+	--game.th=storage:GetTideKillers()
     return game
 end
-
 -- Returns a table containing data for every player in the game
 function BuildPlayersArray()
     local players = {}
@@ -44,19 +46,20 @@ function BuildPlayersArray()
             if not PlayerResource:IsBroadcaster(playerID) then
 
                 local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-
+				
+				
                 table.insert(players, {
                     --steamID32 required in here
                     steamID32 = PlayerResource:GetSteamAccountID(playerID),
-
+					tm=hero:GetTeamNumber(),
                     -- Example functions of generic stats (keep, delete or change any that you don't need)
-                    shp = GetHeroName(playerID), --Hero by its short name
+                    shp = storage:GetHeroName(playerID), --Hero by its short name
                     kls  = hero:GetKills(),   --Number of kills of this players hero
                     dth  = hero:GetDeaths(),  --Number of deaths of this players hero
-					 lvl = GetHeroLevel(playerID),
-					afk = GetDisconnectState(playerID),
+					 lvl = hero:GetLevel(),
+					afk = storage:GetDisconnectState(playerID),
                     -- Item List
-                    bo=GetPlayerHist(playerID),
+                    bo=storage:GetPlayerHist(playerID),
                 })
             end
         end

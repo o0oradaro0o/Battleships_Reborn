@@ -3,7 +3,9 @@
 require("timers")
 require('physics')
 require('notifications')
+require('storage')
 require('statcollection/init')
+
 
 if CBattleship8D == nil then
 	CBattleship8D = class({})
@@ -78,12 +80,9 @@ TIDE_LEVEL = 0
 
 TICKS_SINCE_EMP_GOLD = 0
 
-tideKiller=""
 
 empGoldArray={}
-empGoldHist=""
 
-playerItemHist={}
 tideKillerArray={}
 
 herokills = {}
@@ -219,29 +218,10 @@ model_lookup["npc_dota_hero_ursa"] = "models/Aircraft_boat.vmdl"
 model_lookup["npc_dota_hero_pugna"] = "models/ice_boat.vmdl"
 model_lookup["npc_dota_hero_windrunner"] = "models/const_boat.vmdl"
 model_lookup["npc_dota_hero_tusk"] = "models/battleship_boat0.vmdl"
+model_lookup["npc_dota_hero_dazzle"] = "models/trade_one_boat.vmdl"
 
-name_lookup = {}
-name_lookup["npc_dota_hero_zuus"] = "Barrel"
-name_lookup["npc_dota_hero_ancient_apparition"] = "Zodiac"
-name_lookup["npc_dota_hero_tidehunter"] = "Pontoon Boat"
-name_lookup["npc_dota_hero_crystal_maiden"] = "Canoe"
-name_lookup["npc_dota_hero_phantom_lancer"] = "Airboat"
-name_lookup["npc_dota_hero_rattletrap"] = "Catamaran"
-name_lookup["npc_dota_hero_jakiro"] = "Galleon"
-name_lookup["npc_dota_hero_nevermore"] = "Broken Sea Plane"
-name_lookup["npc_dota_hero_meepo"] = "House Boat"
-name_lookup["npc_dota_hero_disruptor"] = "Shore Guard"
-name_lookup["npc_dota_hero_morphling"] = "Speed Boat"
-name_lookup["npc_dota_hero_storm_spirit"] = "Junk Ship"
-name_lookup["npc_dota_hero_lion"] = "Yacht"
-name_lookup["npc_dota_hero_ember_spirit"] = "Tug Boat"
-name_lookup["npc_dota_hero_slark"] = "Viking Warship"
-name_lookup["npc_dota_hero_sniper"] = "Submarine"
-name_lookup["npc_dota_hero_visage"] = "Noah's Ark"
-name_lookup["npc_dota_hero_ursa"] = "Aircraft Carrier"
-name_lookup["npc_dota_hero_pugna"] = "Ice Breaker"
-name_lookup["npc_dota_hero_windrunner"] = "Construction Ship"
-name_lookup["npc_dota_hero_tusk"] = "Battleship"
+
+
 
 function Precache( context )
 		for ind = 0, 11, 1 do 
@@ -526,12 +506,14 @@ function CBattleship8D:handleEmpGold()
 				BAD_GOLD_TOTAL_MOD = 0
 				GOOD_GOLD_TOTAL_MOD = GoldDif
 				empGoldHist=empGoldHist .. "N:" .. EMP_GOLD_NUMBER .. "L:S "
+				storage:SetEmpGoldHist(empGoldHist)
 			elseif BAD_GOLD_TOTAL_MOD > GOOD_GOLD_TOTAL_MOD then
 				GoldDif = BAD_GOLD_TOTAL_MOD - GOOD_GOLD_TOTAL_MOD
 				goodGoldEach = goodGoldEach + GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
 				BAD_GOLD_TOTAL_MOD = GoldDif
 				GOOD_GOLD_TOTAL_MOD = 0
 				empGoldHist=empGoldHist .. "N:" .. EMP_GOLD_NUMBER .. "L:N "
+				storage:SetEmpGoldHist(empGoldHist)
 			end
 			if NUM_GOOD_PLAYERS ~= 0 and NUM_BAD_PLAYERS ~= 0 then
 				goodGoldEach = goodGoldEach / NUM_GOOD_PLAYERS
@@ -922,7 +904,7 @@ function CBattleship8D:OnThink()
 											local herogold = hero:GetGold()
 										if (DisconnectKicked[hero] == 1 and NUM_PLAYERS>1 or hero:HasOwnerAbandoned()) and herogold > 30 and false == hero:HasModifier("pergatory_perm") and NUM_PLAYERS>1 then
 											GameRules:SendCustomMessage("#remove_player", DOTA_TEAM_GOODGUYS, 0)
-											
+											storage:SetDisconnectState(DisconnectKicked)
 											--not sure if syntax in following line is right
 											sellBoat(hero)
 											for itemSlot = 0, 11, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
@@ -1246,6 +1228,7 @@ function CBattleship8D:OnEntityKilled( keys )
 
 					
 					GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
+					storage:SetWinner("S")
 					GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
 					GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
 					
@@ -1265,6 +1248,7 @@ function CBattleship8D:OnEntityKilled( keys )
 					GoodWon=false
 
 					GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
+					storage:SetWinner("N")
 					GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
 					GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
 					
@@ -1289,7 +1273,7 @@ function CBattleship8D:OnEntityKilled( keys )
 			print( "MATCHED BASE IS TRUE" )
 			if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS then
 					GoodWon=true
-
+				storage:SetWinner("S")
 				GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 				GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
 				GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
@@ -1298,7 +1282,7 @@ function CBattleship8D:OnEntityKilled( keys )
 			elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
 				GoodWon=false
 
-				
+				storage:SetWinner("N")
 				GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 				GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
 				GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
@@ -1328,6 +1312,7 @@ function CBattleship8D:OnEntityKilled( keys )
 			 Game_time=GameRules:GetGameTime()/60+0.5,
 			 })
 			 tideKiller=tideKiller .. "N" .. math.floor(GameRules:GetGameTime()/60+0.5)
+			 storage:SetTideKillers(tideKiller)
 	end
 	if  killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 		CBattleship8D:quickSpawn("south","right", "four", 1, CREEP_NUM_HUGE+2)
@@ -1339,6 +1324,7 @@ function CBattleship8D:OnEntityKilled( keys )
 			 Game_time=GameRules:GetGameTime()/60+0.5,
 			 })
 			  tideKiller=tideKiller .. "S" .. math.floor(GameRules:GetGameTime()/60+0.5)
+			  storage:SetTideKillers(tideKiller)
 	end
 		Timers:CreateTimer( 300, function()
 		TIDE_LEVEL = TIDE_LEVEL+1
@@ -1590,17 +1576,11 @@ function CBattleship8D:OnItemPurchased( keys )
             end
 		end
     end
-
-	local itemName = keys.itemname 
-	if playerItemHist[casterUnit:GetPlayerID()]==nil then
-		 playerItemHist[casterUnit:GetPlayerID()]=""
-		 print("Created Array")
-	end
-	if item_code_lookup[itemName]~=nil then
-	
-	  playerItemHist[casterUnit:GetPlayerID()]=playerItemHist[casterUnit:GetPlayerID()] .. math.floor(GameRules:GetGameTime()/60+0.5) .. item_code_lookup[itemName]
-	  
-  end
+local itemName = keys.itemname 
+if item_code_lookup[itemName] ~= nil then
+print(item_code_lookup[itemName])
+	  storage:AddToPlayerItemHist(casterUnit:GetPlayerID(),item_code_lookup[itemName])--math.floor(GameRules:GetGameTime()/60+0.5) .. item_code_lookup[itemName])
+end	  
   	if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
 		
 		
@@ -2695,16 +2675,7 @@ for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 	return "No_Item"
 end
 
-function GetHeroName(playerID)
-    for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-			if hero:GetPlayerID() == playerID then
-				return name_lookup[hero:GetName()]
-			end
-		end
-	end
-	return "failed"
-end
+
 
 function GetHeroLevel(playerID)
 print(playerID)
@@ -2718,13 +2689,6 @@ print(playerID)
 	return 0
 end
 
-function GetItemArray(playerID)
-
-	if playerItemArray[playerID]~=nil then
-		return playerItemArray[playerID]
-	end
-	return 0;
-end
 
 
 

@@ -53,6 +53,7 @@
 		"crystal_maiden"										"Canoe"
 		"phantom_lancer"										"Airboat"
 				"pugna"							"Ice Breaker"
+					"dazzle"							"Phoenician Trader"
 		
 		"phantom_lancer_desc"				"The Airboat it a fast and sturdy ship with some dangerous damage abilities."		
 		"pugna_desc"							"The Ice Breaker survives the cold better than any other ship and brings with it all the power of frost."
@@ -73,6 +74,7 @@
 		"windrunner_desc"					"he construction ship is a floating dock, capable of using the scrap around it to repair itself, protect its allies and even construct ships for the empire."
 		"crystal_maiden_desc"				"The Canoe is a very simple boat whose crew gains heart from one another and inspires their allies."			
 		"sniper_desc"				"This submarine is less of a submarine and more of a boat.  The sub is powerful, and even more powerful when submerged. But be wary, or you'll run out of oxygen!"			
+	"dazzle_desc"				"A weak but speedy ship that comes with a trading manifest."			
 	
 
 	

@@ -1537,10 +1537,10 @@
 					<Panel id="trader_ships" class="supply_guts">
 							<Panel hittest="false" class="supply_row">
 								 <Button class="boat_btn_item"  onactivate="showDetails('dazzle')" oncontextmenu="buyBoat('dazzle', 1000)">
-									<Image class="boat_image" src="file://{images}/custom_game/boats/nevermore.png" />
+									<Image class="boat_image" src="file://{images}/custom_game/boats/dazzle.png" />
 									
 									<Label hittest="false" class="boat_gold_text" text="750" />					
-									<Label hittest="false" class="boat_name_text" text="#nevermore" />
+									<Label hittest="false" class="boat_name_text" text="#dazzle" />
 									
 								</Button>
 							</Panel>
@@ -1548,6 +1548,7 @@
 						
 			 </Panel>
 		</Panel>
+		
 	
         <Label hittest="false" id="out_of_contracts" text="#Out_Of_Contracts" />
      <Panel hittest="false" id="custom_shop" oncancel="hideShop()">
@@ -1856,6 +1857,7 @@
                         </Panel>
                     </Panel>
                      <Label hittest="false"  id="must_be_trader_9" class="no_trade_text_subtitle" text="#must_be_trader" />
+				
 				
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
