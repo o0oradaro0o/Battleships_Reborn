@@ -1379,7 +1379,25 @@ function CBattleship8D:OnEntityKilled( keys )
 		end
   end
   if killedUnit:IsRealHero() then
-  killedUnit:SetOrigin(Vector(8000,8000,0))
+		  if killedUnit ~= nil then
+
+				for itemSlot = 0, 5, 1 do 
+					local Item = killedUnit:GetItemInSlot( itemSlot )
+					if Item ~= nil and  string.match(Item:GetName(), "trade_manifest") then
+						local data =
+									{
+										Player_ID = hero:GetOwner():GetPlayerID();
+										Ally_ID = -1;
+										x = 99999999;
+										y =  99999999;
+										z =  99999999;
+									}
+									FireGameEvent("Team_Cannot_Buy",data)
+					end		
+				end
+		end
+
+  									
   ProjectileManager:ProjectileDodge(killedUnit)
   end
 
