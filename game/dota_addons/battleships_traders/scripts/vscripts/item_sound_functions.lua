@@ -10,7 +10,6 @@ local enemies = FindUnitsInRadius(casterUnit:GetTeamNumber(),
 		handles.flags, 
 		0, 
 		false)
-
 	return enemies
 end
 
@@ -29,9 +28,9 @@ function fireSoundFire(keys)
 		if string.match(item, "two") then--level-2 fire-type
 			EmitSoundOn("Hero_Lina.attack", casterUnit) 
 		elseif string.match(item, "three") then--level-3 fire-type
-			EmitSoundOn("Hero_Clinkz.SearingArrows", casterUnit)
-		elseif string.match(item, "ult") then--ultimate fire-type
 			EmitSoundOn("hero_jakiro.attack", casterUnit)
+		elseif string.match(item, "ult") then--ultimate fire-type
+			EmitSoundOn("Hero_Phoenix.Attack", casterUnit)
 		else --level-1 fire-type
 			EmitSoundOn("hero_jakiro.wing_movement", casterUnit)
 		end		
@@ -56,6 +55,37 @@ function fireAuraBurn(keys)
 	end
 
 end
+
+function plasmaSoundFire(keys)
+--Play sound for firing plasma-type weapons
+	
+	local casterUnit = keys.caster
+	local item = keys.ability:GetAbilityName() --ability is how item name is passed in
+	local range = 800	 
+	local handles = {}
+	handles.team = DOTA_UNIT_TARGET_TEAM_ENEMY
+	handles.types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING + DOTA_UNIT_TARGET_MECHANICAL + DOTA_UNIT_TARGET_HERO
+	handles.flags = DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
+		
+	if #getEnemies(casterUnit,range,handles) > 0 then
+		if string.match(item, "two") then--level-2 plasma-type
+			EmitSoundOn("Hero_VengefulSpirit.Attack", casterUnit) 
+		elseif string.match(item, "three") then--level-3 plasma-type
+			EmitSoundOn("Hero_Terrorblade_Morphed.Attack", casterUnit)
+		elseif string.match(item, "ult") then--ultimate plasma-type
+			EmitSoundOn("Hero_Zuus.ArcLightning.Target", casterUnit)
+		else --level-1 plasma-type
+			EmitSoundOn("Hero_Bane.Attack", casterUnit)
+		end		
+	end		
+end
+
+function plasmaSoundImpact(keys)
+--Play sound for impacting plasma-type weapons
+	local targetUnit = keys.target	
+	--Very simple now. All plasma-type impacts have the same sound. 
+	EmitSoundOn("Hero_VengefulSpirit.ProjectileImpact", targetUnit)	
+end 
 
 function poisonSoundFire(keys)
 --Play sound for firing poison-type weapons
@@ -84,9 +114,14 @@ end
 function poisonSoundImpact(keys)
 --Play sound for impacting poison-type weapons
 
---Very simple now. All poison-type impacts have the same sound. 	
 	local targetUnit = keys.target
-	EmitSoundOn("Hero_VenomancerWard.ProjectileImpact", targetUnit)
+	local item = keys.ability:GetAbilityName() --ability is how item name is passed in
+	
+	if string.match(item, "ult") then --ultimate poison-type has a special impact
+		EmitSoundOn("hero_viper.CorrosiveSkin", targetUnit)
+	else --all other poison-type weapons share the same impact sound
+		EmitSoundOn("Hero_VenomancerWard.ProjectileImpact", targetUnit)
+	end
 
 end 
 

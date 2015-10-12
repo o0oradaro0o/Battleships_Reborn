@@ -3411,6 +3411,12 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}
+					
 					"TrackingProjectile"
 					{
 						"Target"
@@ -3436,16 +3442,22 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}
+		
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+				
+		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -4036,6 +4048,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}				
 					"TrackingProjectile"
 					{
 						"Target"
@@ -4051,7 +4068,7 @@
 						"MoveSpeed" "750"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/plasma_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/plasma_two_projectile.vpcf" 
 					}
 					
 					
@@ -4061,16 +4078,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}		
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+				
+		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -4653,6 +4675,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}							
 					"TrackingProjectile"
 					{
 						"Target"
@@ -4668,7 +4695,7 @@
 						"MoveSpeed" "750"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/plasma_three_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/plasma_three_projectile.vpcf" 
 					}
 					
 					
@@ -4678,16 +4705,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}		
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+				"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+				"Damage"                                "%dmg"
+				"Target"                                "TARGET"
+			}
+				
+		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -5396,6 +5428,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}				
 					"TrackingProjectile"
 					{
 						"Target"
@@ -5411,7 +5448,7 @@
 						"MoveSpeed" "750"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/plasma_one_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/plasma_one_projectile.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -5428,7 +5465,7 @@
 						"MoveSpeed" "750"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/plasma_one_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/plasma_one_projectile.vpcf" 
 					}
 					
 					
@@ -5438,16 +5475,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                 "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}				
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+				"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+				 "Damage"                                "%dmg"
+				"Target"                                "TARGET"
+			}
                         
-                }
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -6136,6 +6178,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}				
 					"TrackingProjectile"
 					{
 						"Target"
@@ -6151,7 +6198,7 @@
 						"MoveSpeed" "750"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/plasma_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/plasma_two_projectile.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -6168,7 +6215,7 @@
 						"MoveSpeed" "750"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/plasma_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/plasma_two_projectile.vpcf" 
 					}
 					
 					
@@ -6178,16 +6225,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}		
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+				"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+				"Damage"                                "%dmg"
+				"Target"                                "TARGET"
+			}
+				
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -6880,6 +6932,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}							
 					"TrackingProjectile"
 					{
 						"Target"
@@ -6895,7 +6952,7 @@
 						"MoveSpeed" "750"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/plasma_three_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/plasma_three_projectile.vpcf" 
 					}
 					
 					"TrackingProjectile"
@@ -6913,7 +6970,7 @@
 						"MoveSpeed" "750"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/plasma_three_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/plasma_three_projectile.vpcf" 
 					}
 					
 					
@@ -6923,16 +6980,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}		
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+				"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+				"Damage"                                "%dmg"
+				"Target"                                "TARGET"
+			}
+				
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -7700,6 +7762,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}									
 					"TrackingProjectile"
 					{
 						"Target"
@@ -7717,7 +7784,6 @@
 						"Dodgeable" "1" 
                    "EffectName"    "particles/basic_projectile/plasma_ult_projectile.vpcf" 
 					}
-					
 					
 					
 				}
@@ -7741,20 +7807,25 @@
 			
 		}
 		"OnProjectileHitUnit"
+		{
+			"RunScript"
 			{
-					"DeleteOnHit"                           "false"
-					"Damage"
-					{
-							"Type"                                  "DAMAGE_TYPE_PHYSICAL"
-							"Damage"                                "%dmg"
-							"Target"                                "TARGET"
-					}
-					"ApplyModifier"
-					{
-						"Target"				"TARGET"
-						"ModifierName" "item_plasma_ult_bow_dearmored"
-					}
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
 			}
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+				"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+				"Damage"                                "%dmg"
+				"Target"                                "TARGET"
+			}
+			"ApplyModifier"
+			{
+				"Target"				"TARGET"
+				"ModifierName" "item_plasma_ult_bow_dearmored"
+			}
+		}
 			"AbilitySpecial"
 		{
 			"01"
