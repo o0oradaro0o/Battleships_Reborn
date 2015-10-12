@@ -53,6 +53,7 @@
 		"crystal_maiden"										"Canoe"
 		"phantom_lancer"										"Airboat"
 				"pugna"							"Ice Breaker"
+					"dazzle"							"Phoenician Trader"
 		
 		"phantom_lancer_desc"				"The Airboat it a fast and sturdy ship with some dangerous damage abilities."		
 		"pugna_desc"							"The Ice Breaker survives the cold better than any other ship and brings with it all the power of frost."
@@ -73,6 +74,7 @@
 		"windrunner_desc"					"he construction ship is a floating dock, capable of using the scrap around it to repair itself, protect its allies and even construct ships for the empire."
 		"crystal_maiden_desc"				"The Canoe is a very simple boat whose crew gains heart from one another and inspires their allies."			
 		"sniper_desc"				"This submarine is less of a submarine and more of a boat.  The sub is powerful, and even more powerful when submerged. But be wary, or you'll run out of oxygen!"			
+	"dazzle_desc"				"A weak but speedy ship that comes with a trading manifest."			
 	
 
 	
@@ -141,6 +143,7 @@
 	
 	
 	"supply" "purchase mission supplies"
+	"must_be_trader" "I will only sell goods and give missions to Licensed Trade ships."
 	"Out_Of_Contracts" "You have accepted a trade contract!"
 	"PointsToWin"									"+{d:points_to_win} more"
 	"PointsToWin_CloseToVictory"					"+{d:points_to_win} more"
@@ -562,6 +565,15 @@ RADIUS: 685 685 685
 EXPLOSION RADIUS: 685 685 685
 %MOVEMENT SLOW: -30
 DAMAGE: 205 270 350"
+
+
+"estab_route"									"Established Route"
+"estab_route_Description"						"Gain segnificant move speed speed for the duration or untill a new order is given. \n \nHigher levels increase speed effect.
+DURATION: 60 90 120 150"
+
+"cease_fire"									"Cease Fire"
+"cease_fire_Description"						"Stop fireing and stop being fired at for the duration. \n \nHigher levels increase duration.
+DURATION: 3.0 3.5 4.0 4.5"
 
 "icy_waters_battleship"									"Icy Waters"
 "icy_waters_battleship_Description"						"All nearby Enemy ships are slowed. \n \nHigher levels increase slowing effect.
