@@ -1274,6 +1274,7 @@
 					</Panel>
 		</Panel>	
 	</Panel>
+	
 
 	<Panel hittest="false" id="pugna">	
 		<Panel hittest="false" class="ship_details_holder" >

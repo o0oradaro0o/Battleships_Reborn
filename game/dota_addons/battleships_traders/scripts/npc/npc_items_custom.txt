@@ -12908,7 +12908,7 @@
 			"ApplyModifier"
 				{
 					"Target" "CASTER"
-					"ModifierName" "target_mod"
+					"ModifierName" "cease_fire_mod"
 				}
 
 				"RunScript"
@@ -12916,20 +12916,18 @@
 					"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 					"Function"			"RemoveWeps"
 				}
-
-				SpendCharge {}	
 				
 		}
 		 
 		"Modifiers"
 		{
 		
-			"target_mod"
+			"cease_fire_mod"
 			{
 				"Duration"  "%duration"
 				 "States"
 				{
-					"MODIFIER_STATE_INVISIBLE" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
 				}
 				"EffectName"     "particles/basic_projectile/camo_effect.vpcf"
 				"EffectAttachType"	"follow_origin"
@@ -12944,20 +12942,17 @@
 			}
 			
 		}
-	
-		// Special
+			// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
-
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"4.0"
 			}
-
 		}
-	}
+}
 	
 	"item_oneshot_scope"
 	{

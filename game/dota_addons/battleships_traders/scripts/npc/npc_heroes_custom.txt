@@ -1451,7 +1451,7 @@
 		"AbilityLayout"				"3"
 		"Ability1"					"pistols_battleship"
 		"Ability2"					"estab_route"
-		"Ability3"					"cease_fire"
+		"Ability3"					"slark_shadow_dance_battleship"
 		"Ability4"					"batten_hatches"
         "ModelScale"        "0.6"
 		"RingRadius"				"100"
