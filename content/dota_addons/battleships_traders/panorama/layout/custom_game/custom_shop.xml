@@ -101,15 +101,17 @@
 	
 	<Panel hittest="false" class="panalHiderHolder" id="missionButton">
         <Button class="panalHider" onactivate="fillAndShow()">
-            <Label hittest="false" id="shop_text" text="#trade" />
-			
+		<Panel hittest="false" class="move_up">
+            <Label hittest="false" class="shop_text" text="#trade" />
+			</Panel>
         </Button>
 	</Panel>
 	
 	<Panel hittest="false" class="shipPanalHiderHolder" id="shipsButton">
         <Button class="shipPanalHider" onactivate="showShips()">
-            <Label hittest="false" id="shop_text" text="#Ships" />
-			
+		<Panel hittest="false" class="move_up">           
+		   <Label hittest="false" class="shop_text" text="#Ships" />
+			</Panel>
         </Button>
 	</Panel>
 	
@@ -1350,7 +1352,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="750" />
+							<Label hittest="false" class="boat_stat_label_val" text="450" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
@@ -1387,9 +1389,9 @@
 					</Panel>
 			</Panel>
 					<Panel hittest="false" class="buy_box" >
-						<Button class="buy_ship_button" onactivate="buyBoat('dazzle', 1000)" oncontextmenu="buyBoat('dazzle', 1000)">
+						<Button class="buy_ship_button" onactivate="buyBoat('dazzle', 750)" oncontextmenu="buyBoat('dazzle', 1000)">
 							<Label hittest="false" class="buy_text" text="#buy" />
-							<Label hittest="false" class="buy_text_g" text="1000 G" />
+							<Label hittest="false" class="buy_text_g" text="750 G" />
 						</Button>
 					</Panel>
 		</Panel>	
@@ -1563,10 +1565,10 @@
                     <Panel hittest="false" id="mission_hider_1" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
                         <Panel hittest="false" class="mission_guts">
-                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()" oncontextmenu="GiveEasy()">
                                 <Label hittest="false" class="shop_btn_text" text="#easy" />
                             </Button>
-                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()" oncontextmenu="GiveMedium()">
                                 <Label hittest="false" class="shop_btn_text" text="#medium" />
                             </Button>
                         </Panel>
@@ -1598,10 +1600,10 @@
                     <Panel hittest="false" id="mission_hider_2" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
                         <Panel hittest="false" class="mission_guts">
-                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()" oncontextmenu="GiveEasy()">
                                 <Label hittest="false" class="shop_btn_text" text="#easy" />
                             </Button>
-                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()" oncontextmenu="GiveMedium()">
                                 <Label hittest="false" class="shop_btn_text" text="#medium" />
                             </Button>
                         </Panel>
@@ -1635,10 +1637,10 @@
                     <Panel hittest="false" id="mission_hider_3" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
                         <Panel hittest="false" class="mission_guts">
-                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()" oncontextmenu="GiveEasy()">
                                 <Label hittest="false" class="shop_btn_text" text="#easy" />
                             </Button>
-                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()" oncontextmenu="GiveMedium()">
                                 <Label hittest="false" class="shop_btn_text" text="#medium" />
                             </Button>
                         </Panel>
@@ -1670,10 +1672,10 @@
                     <Panel hittest="false" id="mission_hider_4" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
                         <Panel hittest="false" class="mission_guts">
-                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()" oncontextmenu="GiveEasy()">
                                 <Label hittest="false" class="shop_btn_text" text="#easy" />
                             </Button>
-                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()" oncontextmenu="GiveMedium()">
                                 <Label hittest="false" class="shop_btn_text" text="#medium" />
                             </Button>
                         </Panel>
@@ -1706,14 +1708,15 @@
                     <Panel hittest="false" id="mission_hider_5" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
                         <Panel hittest="false" class="mission_guts">
-                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()" oncontextmenu="GiveEasy()">
                                 <Label hittest="false" class="shop_btn_text" text="#easy" />
                             </Button>
-                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()" oncontextmenu="GiveMedium()">
                                 <Label hittest="false" class="shop_btn_text" text="#medium" />
                             </Button>
                         </Panel>
                     </Panel>
+					
 					
                      <Label hittest="false"  id="must_be_trader_5" class="no_trade_text_subtitle" text="#must_be_trader" />
 				
@@ -1743,10 +1746,10 @@
                     <Panel hittest="false" id="mission_hider_6" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
                         <Panel hittest="false" class="mission_guts">
-                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()" oncontextmenu="GiveEasy()">
                                 <Label hittest="false" class="shop_btn_text" text="#easy" />
                             </Button>
-                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()" oncontextmenu="GiveMedium()">
                                 <Label hittest="false" class="shop_btn_text" text="#medium" />
                             </Button>
                         </Panel>
@@ -1778,10 +1781,10 @@
                     <Panel hittest="false" id="mission_hider_7" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
                         <Panel hittest="false" class="mission_guts">
-                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()" oncontextmenu="GiveEasy()">
                                 <Label hittest="false" class="shop_btn_text" text="#easy" />
                             </Button>
-                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()" oncontextmenu="GiveMedium()">
                                 <Label hittest="false" class="shop_btn_text" text="#medium" />
                             </Button>
                         </Panel>
@@ -1813,10 +1816,10 @@
                     <Panel hittest="false" id="mission_hider_8" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
                         <Panel hittest="false" class="mission_guts">
-                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()" oncontextmenu="GiveEasy()">
                                 <Label hittest="false" class="shop_btn_text" text="#easy" />
                             </Button>
-                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()" oncontextmenu="GiveMedium()">
                                 <Label hittest="false" class="shop_btn_text" text="#medium" />
                             </Button>
                         </Panel>
@@ -1848,10 +1851,10 @@
                     <Panel hittest="false" id="mission_hider_9" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
                         <Panel hittest="false" class="mission_guts">
-                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()" oncontextmenu="GiveEasy()">
                                 <Label hittest="false" class="shop_btn_text" text="#easy" />
                             </Button>
-                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()" oncontextmenu="GiveMedium()">
                                 <Label hittest="false" class="shop_btn_text" text="#medium" />
                             </Button>
                         </Panel>

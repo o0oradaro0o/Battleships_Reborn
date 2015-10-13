@@ -8705,7 +8705,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -8755,7 +8755,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -8808,7 +8808,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -8859,7 +8859,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -8910,7 +8910,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -8963,7 +8963,7 @@
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
-		
+		"ItemPurchasable"				"0"
 		
 		"OnSpellStart"
 		{
@@ -9010,7 +9010,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -9060,7 +9060,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -9111,7 +9111,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -9161,7 +9161,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -9211,7 +9211,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -9262,7 +9262,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -9314,7 +9314,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -9367,7 +9367,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -9419,7 +9419,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -9472,7 +9472,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -9526,7 +9526,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -9579,7 +9579,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -9631,7 +9631,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -9682,7 +9682,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -9722,7 +9722,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_one"
+		"AbilityTextureName"			"item_contract_one"
 
 
 
@@ -9740,6 +9740,15 @@
 		"ItemDroppable"					"0"
 		
 		"ItemPurchasable"				"0"
+		OnEquip
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+				"Function"			"sendMission"
+			}
+		}
+		
 	}
 "item_contract_easy_right_bot"
 	{
@@ -9749,7 +9758,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_one"
+		"AbilityTextureName"			"item_contract_one"
 
 
 
@@ -9794,7 +9803,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_one"
+		"AbilityTextureName"			"item_contract_one"
 
 
 
@@ -9835,7 +9844,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_one"
+		"AbilityTextureName"			"item_contract_one"
 
 
 
@@ -9877,7 +9886,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_one"
+		"AbilityTextureName"			"item_contract_one"
 
 
 
@@ -9918,7 +9927,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_one"
+		"AbilityTextureName"			"item_contract_one"
 
 
 
@@ -9959,7 +9968,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_one"
+		"AbilityTextureName"			"item_contract_one"
 
 
 
@@ -10000,7 +10009,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_one"
+		"AbilityTextureName"			"item_contract_one"
 
 
 
@@ -10041,7 +10050,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_one"
+		"AbilityTextureName"			"item_contract_one"
 
 
 
@@ -10082,7 +10091,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_one"
+		"AbilityTextureName"			"item_contract_one"
 
 
 
@@ -10124,7 +10133,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_two"
+		"AbilityTextureName"			"item_contract_two"
 
 
 
@@ -10165,7 +10174,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_two"
+		"AbilityTextureName"			"item_contract_two"
 
 
 
@@ -10206,7 +10215,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_two"
+		"AbilityTextureName"			"item_contract_two"
 
 
 
@@ -10248,7 +10257,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_two"
+		"AbilityTextureName"			"item_contract_two"
 
 
 
@@ -10289,7 +10298,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_two"
+		"AbilityTextureName"			"item_contract_two"
 
 
 
@@ -10330,7 +10339,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_two"
+		"AbilityTextureName"			"item_contract_two"
 
 
 
@@ -10371,7 +10380,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_two"
+		"AbilityTextureName"			"item_contract_two"
 
 
 
@@ -10412,7 +10421,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_two"
+		"AbilityTextureName"			"item_contract_two"
 
 
 
@@ -10453,7 +10462,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_two"
+		"AbilityTextureName"			"item_contract_two"
 
 
 
@@ -10497,7 +10506,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_three"
+		"AbilityTextureName"			"item_contract_three"
 
 
 
@@ -10538,7 +10547,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_three"
+		"AbilityTextureName"			"item_contract_three"
 
 
 
@@ -10580,7 +10589,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_three"
+		"AbilityTextureName"			"item_contract_three"
 
 
 
@@ -10621,7 +10630,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_three"
+		"AbilityTextureName"			"item_contract_three"
 
 
 
@@ -10662,7 +10671,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_three"
+		"AbilityTextureName"			"item_contract_three"
 
 
 
@@ -10703,7 +10712,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_three"
+		"AbilityTextureName"			"item_contract_three"
 
 
 
@@ -10744,7 +10753,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_three"
+		"AbilityTextureName"			"item_contract_three"
 
 
 
@@ -10785,7 +10794,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_three"
+		"AbilityTextureName"			"item_contract_three"
 
 
 
@@ -10826,7 +10835,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_sail_three"
+		"AbilityTextureName"			"item_contract_three"
 
 
 
@@ -11279,7 +11288,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"AbilityTextureName"			"item_recipe_scroll"
+		"AbilityTextureName"			"item_info"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
@@ -11366,12 +11375,12 @@
 		"ItemAlertable"					"1"
 		"ItemAliases"					"mana;mb"
 		"ItemDroppable"					"0"
-		"ItemStackable"					"0"
+		"ItemStackable"					"1"
 		"ItemPurchasable"				"0"
 		"ItemInitialCharges"			"1"
 		"ItemPermanent" 				"0"
 		"ItemSellable"					"0"
-		"ItemHideCharges"				"1"
+
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -11453,7 +11462,7 @@
 		"ItemAlertable"					"1"
 		"ItemAliases"					"mana;mb"
 		"ItemDroppable"					"0"
-		"ItemStackable"					"0"
+		"ItemStackable"					"1"
 		"ItemSellable"					"0"
 		"ItemPurchasable"				"0"
 		"ItemInitialCharges"			"1"
@@ -11527,12 +11536,12 @@
 		"ItemAlertable"					"1"
 		"ItemAliases"					"mana;mb"
 		"ItemDroppable"					"0"
-		"ItemStackable"					"0"
+		"ItemStackable"					"1"
 		"ItemInitialCharges"			"1"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemPermanent" 				"0"
-		"ItemHideCharges"				"1"
+
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -11650,12 +11659,12 @@
 		"ItemAlertable"					"1"
 		"ItemAliases"					"mana;mb"
 		"ItemDroppable"					"0"
-		"ItemStackable"					"0"
+		"ItemStackable"					"1"
 		"ItemInitialCharges"			"1"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemPermanent" 				"0"
-		"ItemHideCharges"				"1"
+
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -11842,12 +11851,12 @@
 		"ItemAlertable"					"1"
 		"ItemAliases"					"mana;mb"
 		"ItemDroppable"					"0"
-		"ItemStackable"					"0"
+		"ItemStackable"					"1"
 		"ItemInitialCharges"			"1"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemPermanent" 				"0"
-		"ItemHideCharges"				"1"
+
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -12935,7 +12944,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"AbilityTextureName"			"item_recipe_scroll"
+		"AbilityTextureName"			"item_manifest"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"

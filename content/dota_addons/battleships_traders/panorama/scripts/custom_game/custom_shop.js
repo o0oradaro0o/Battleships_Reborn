@@ -336,7 +336,13 @@ function buyBoat(BoatName, cost)
 			hideShop();
 		}
 	}
-	
+	function hideShipShop(data)
+	{
+		if (Players.GetLocalPlayer() == data.splitscreenplayer)
+		{
+			 hideShop();
+		 }
+	}
 	function hideShop()
 	{
 		hidden=true;
@@ -527,12 +533,13 @@ function buyBoat(BoatName, cost)
 		hideTrade();
 	$.Msg("in subscribe");
 	GameEvents.Subscribe( "Hero_Near_Shop", NearShop );
-	GameEvents.Subscribe( "Hero_Near_Ship_Shop", hideShop );
+	GameEvents.Subscribe( "Hero_Near_Ship_Shop", hideShipShop );
 	GameEvents.Subscribe( "Hero_Left_Shop", LeftShop );
 	GameEvents.Subscribe( "Team_Can_Buy", CanBuy );
     GameEvents.Subscribe( "Team_Cannot_Buy", CannotBuy );
 	GameEvents.Subscribe( "ping_loc", PingLoc );
 	GameEvents.Subscribe( "bsui_timer_data", OnBsuiTimer );
+
 	
 	GameEvents.Subscribe( "top_notification", TopNotification );
 	GameEvents.Subscribe( "bottom_notification", BottomNotification );
@@ -542,6 +549,12 @@ function buyBoat(BoatName, cost)
 	
 })();
 
+	function test(data)
+	{
+			$.Msg("data");
+	$.Msg(data);
+	
+	}
 	function OnBsuiTimer(eventData)
 	{
 		if(firstcall)

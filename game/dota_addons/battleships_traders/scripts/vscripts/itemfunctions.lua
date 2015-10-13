@@ -1,3 +1,5 @@
+require('notifications')
+
 if itemFunctions == nil then
 	print ( '[ItemFunctions] creating itemFunctions' )
 	itemFunctions = {} -- Creates an array to let us beable to index itemFunctions when creating new functions
@@ -32,9 +34,11 @@ function toggle_item(keys) -- keys is the information sent by the ability
 		end
 	end
 end
-
-
-
+function sendMission(keys) 
+local casterUnit = keys.caster
+ Notifications:Top(casterUnit:GetPlayerID(), {text="#mission_empty", duration=5.0, style={ color=" #226622;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
+						
+end
 
 function del_fluff(keys) -- keys is the information sent by the ability
 	print( '[ItemFunctions] itemfluff  Called' )

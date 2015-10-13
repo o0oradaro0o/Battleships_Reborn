@@ -142,7 +142,7 @@
 	"invest" "invest"
 	
 	
-	"supply" "purchase mission supplies"
+	"supply" "Purchase Mission Supplies"
 	"must_be_trader" "I will only sell goods and give missions to Licensed Trade ships."
 	"Out_Of_Contracts" "You have accepted a trade contract!"
 	"PointsToWin"									"+{d:points_to_win} more"
@@ -568,11 +568,11 @@ DAMAGE: 205 270 350"
 
 
 "estab_route"									"Established Route"
-"estab_route_Description"						"Gain segnificant move speed speed for the duration or untill a new order is given. \n \nHigher levels increase speed effect.
+"estab_route_Description"						"Gain significant move speed speed for the duration or untill a new order is given. \n \nHigher levels increase speed effect.
 DURATION: 60 90 120 150"
 
 "cease_fire"									"Cease Fire"
-"cease_fire_Description"						"Stop fireing and stop being fired at for the duration. \n \nHigher levels increase duration.
+"cease_fire_Description"						"Stop firing and stop being fired at for the duration. \n \nHigher levels increase duration.
 DURATION: 3.0 3.5 4.0 4.5"
 
 "icy_waters_battleship"									"Icy Waters"
@@ -585,6 +585,9 @@ SLOW: -30 -35 -40 -45"
 		"turret_battleship"								"Deploy Turret!"
 		"turret_battleship_Description"					"Deploy Turret that deals 500 dmg per attack in a very short range \n\nHigher levels decrease cooldown."
 
+		"mission_done" "Mission Complete! earned yourself "
+		"mission_done_team" "Earned each of your teammates "
+		"mission_empty" "Found Goods.  Take them to any trade post for reward!"
 
 }
 

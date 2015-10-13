@@ -20,6 +20,13 @@ function battleshipHealth(args)
 		
 end
 
+function route(args)
+PrintTable(args ) 
+			args.caster:MoveToPositionAggressive(args.target_points[1] )
+end
+
+
+
 function removeAircrafts(keys)
 	local casterUnit = keys.caster
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
@@ -1119,9 +1126,11 @@ function FirstAid(args) -- keys is the information sent by the ability
 
 end
 
+modle_scales={}
 function grow(args) -- keys is the information sent by the ability
 		local casterUnit = args.caster
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+		modle_scales[casterUnit]=casterUnit:GetModelScale()
 casterUnit:SetModelScale(1.5)
 			
 end
@@ -1131,9 +1140,14 @@ end
 function shrink(args) -- keys is the information sent by the ability
 		local casterUnit = args.caster
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+		if modle_scales[casterUnit]~=nil then
+casterUnit:SetModelScale(modle_scales[casterUnit])
+else
 casterUnit:SetModelScale(1)
+end
 			
 end
+
 
 
 function ApplyDD(args) -- keys is the information sent by the ability
@@ -1273,4 +1287,44 @@ function DropEmptyOnDeath(keys) -- keys is the information sent by the ability
 	FireGameEvent("Team_Can_Buy",data)
 end
 
+
+
+
+function PrintTable(t, indent, done)
+	--print ( string.format ('PrintTable type %s', type(keys)) )
+    if type(t) ~= "table" then return end
+
+    done = done or {}
+    done[t] = true
+    indent = indent or 0
+
+    local l = {}
+    for k, v in pairs(t) do
+        table.insert(l, k)
+    end
+
+    table.sort(l)
+    for k, v in ipairs(l) do
+        -- Ignore FDesc
+        if v ~= 'FDesc' then
+            local value = t[v]
+
+            if type(value) == "table" and not done[value] then
+                done [value] = true
+                print(string.rep ("\t", indent)..tostring(v)..":")
+                PrintTable (value, indent + 2, done)
+            elseif type(value) == "userdata" and not done[value] then
+                done [value] = true
+                print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
+                PrintTable ((getmetatable(value) and getmetatable(value).__index) or getmetatable(value), indent + 2, done)
+            else
+                if t.FDesc and t.FDesc[v] then
+                    print(string.rep ("\t", indent)..tostring(t.FDesc[v]))
+                else
+                    print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
+                end
+            end
+        end
+    end
+end
 

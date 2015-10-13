@@ -4,7 +4,7 @@ require("timers")
 require('physics')
 require('notifications')
 require('storage')
-require('statcollection/init')
+--require('statcollection/init')
 
 
 if CBattleship8D == nil then
@@ -262,6 +262,7 @@ function Precache( context )
 PrecacheUnitByNameSync("npc_dota_hero_zuus", context)
 PrecacheUnitByNameSync("npc_dota_hero_tiny", context)
 	PrecacheUnitByNameSync("npc_dota_hero_kunkka", context)
+	PrecacheUnitByNameSync("npc_dota_hero_dazzle", context)
 	PrecacheUnitByNameSync("npc_dota_hero_brewmaster", context)
 	PrecacheUnitByNameSync("npc_dota_hero_puck", context)
 	PrecacheUnitByNameSync("npc_dota_hero_tidehunter", context)
@@ -369,6 +370,8 @@ function CBattleship8D:InitGameMode()
 	GameRules:SetSameHeroSelectionEnabled(true)
 
 	ListenToGameEvent('dota_item_purchased', Dynamic_Wrap(CBattleship8D, 'OnItemPurchased'), self)
+
+	
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(CBattleship8D, 'OnEntityKilled'), self)
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(CBattleship8D, 'OnNPCSpawned'), self)
 	ListenToGameEvent('player_connect_full', Dynamic_Wrap(CBattleship8D, 'OnConnectFull'), self)
@@ -385,6 +388,8 @@ function CBattleship8D:InitGameMode()
 mode:SetHUDVisible(12, false)
   
 end
+
+
 
 function CBattleship8D:OrderExecutionFilter(keys)
   
@@ -829,35 +834,35 @@ function CBattleship8D:OnThink()
 							local casterUnit = hero
 							--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 							--print('[AbilityFunctions] battleshipHealth started!')
-							if casterUnit:IsAlive() and hero:IsOwnedByAnyPlayer() and herohp[casterUnit:GetOwner():GetPlayerID()] == nil then
-								herohp[casterUnit:GetOwner():GetPlayerID()] = casterUnit:GetHealthPercent() 
+							if casterUnit:IsAlive() and hero:IsOwnedByAnyPlayer() and herohp[casterUnit:GetPlayerID()] == nil then
+								herohp[casterUnit:GetPlayerID()] = casterUnit:GetHealthPercent() 
 								casterUnit:SetModel("models/battleship_boat0")
 								casterUnit:SetOriginalModel("models/battleship_boat0")
 							end
 							if casterUnit:IsAlive() and hero:IsOwnedByAnyPlayer() then
-								if casterUnit:GetHealthPercent() < 7  and herohp[casterUnit:GetOwner():GetPlayerID()] > 6 then
+								if casterUnit:GetHealthPercent() < 7  and herohp[casterUnit:GetPlayerID()] > 6 then
 									casterUnit:SetModel("models/battleship_boat4")
 									casterUnit:SetOriginalModel("models/battleship_boat4")
 								--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
-								elseif casterUnit:GetHealthPercent() < 25 and herohp[casterUnit:GetOwner():GetPlayerID()] > 24 then
+								elseif casterUnit:GetHealthPercent() < 25 and herohp[casterUnit:GetPlayerID()] > 24 then
 									casterUnit:SetModel("models/battleship_boat3")
 									casterUnit:SetOriginalModel("models/battleship_boat3")
 									--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
-								elseif casterUnit:GetHealthPercent() < 50 and herohp[casterUnit:GetOwner():GetPlayerID()] > 49 then
+								elseif casterUnit:GetHealthPercent() < 50 and herohp[casterUnit:GetPlayerID()] > 49 then
 									casterUnit:SetModel("models/battleship_boat2")
 									casterUnit:SetOriginalModel("models/battleship_boat2")
 									--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
-								elseif casterUnit:GetHealthPercent() < 75 and herohp[casterUnit:GetOwner():GetPlayerID()] > 74 then
+								elseif casterUnit:GetHealthPercent() < 75 and herohp[casterUnit:GetPlayerID()] > 74 then
 									casterUnit:SetModel("models/battleship_boat1")
 									casterUnit:SetOriginalModel("models/battleship_boat1")
 									--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
-								elseif casterUnit:GetHealthPercent() > 74 and herohp[casterUnit:GetOwner():GetPlayerID()] < 75 then
+								elseif casterUnit:GetHealthPercent() > 74 and herohp[casterUnit:GetPlayerID()] < 75 then
 									casterUnit:SetModel("models/battleship_boat0")
 									casterUnit:SetOriginalModel("models/battleship_boat0")
 									--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
 								--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
 								end
-									herohp[casterUnit:GetOwner():GetPlayerID()] = casterUnit:GetHealthPercent() 
+									herohp[casterUnit:GetPlayerID()] = casterUnit:GetHealthPercent() 
 							end
 						end
 						
@@ -1228,7 +1233,7 @@ function CBattleship8D:OnEntityKilled( keys )
 
 					
 					GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
-					storage:SetWinner("S")
+					storage:SetWinner("South")
 					GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
 					GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
 					
@@ -1248,7 +1253,7 @@ function CBattleship8D:OnEntityKilled( keys )
 					GoodWon=false
 
 					GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
-					storage:SetWinner("N")
+					storage:SetWinner("North")
 					GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
 					GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
 					
@@ -1273,7 +1278,7 @@ function CBattleship8D:OnEntityKilled( keys )
 			print( "MATCHED BASE IS TRUE" )
 			if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS then
 					GoodWon=true
-				storage:SetWinner("S")
+				storage:SetWinner("South")
 				GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 				GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
 				GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
@@ -1282,7 +1287,7 @@ function CBattleship8D:OnEntityKilled( keys )
 			elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
 				GoodWon=false
 
-				storage:SetWinner("N")
+				storage:SetWinner("North")
 				GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 				GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
 				GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
@@ -1361,21 +1366,31 @@ function CBattleship8D:OnEntityKilled( keys )
   end
   if killedUnit:IsRealHero() then
 		  if killedUnit ~= nil then
-
+				local continue=0
 				for itemSlot = 0, 5, 1 do 
 					local Item = killedUnit:GetItemInSlot( itemSlot )
 					if Item ~= nil and  string.match(Item:GetName(), "trade_manifest") then
-						local data =
-									{
-										Player_ID = hero:GetOwner():GetPlayerID();
-										Ally_ID = -1;
-										x = 99999999;
-										y =  99999999;
-										z =  99999999;
-									}
-									FireGameEvent("Team_Cannot_Buy",data)
+							continue=1
 					end		
 				end
+				if continue==0 then
+						local data =
+							{
+								Player_ID = killedUnit:GetPlayerID();
+								Ally_ID = -1;
+								x = 99999999;
+								y =  99999999;
+								z =  99999999;
+							}
+							FireGameEvent("Team_Cannot_Buy",data)
+						else
+							local data =
+							{
+								Player_ID = killedUnit:GetPlayerID();
+								Ally_ID = allyteamnumber;
+							}
+							FireGameEvent("Team_Can_Buy",data)
+						end
 		end
 
   									
@@ -1386,20 +1401,20 @@ function CBattleship8D:OnEntityKilled( keys )
 	if killerEntity:IsRealHero() then
 	  
 	  if killedUnit:IsRealHero() then 
-	  if herokills[killedUnit:GetOwner():GetPlayerID()] > 2 then
+	  if herokills[killedUnit:GetPlayerID()] > 2 then
 		if killerEntity ~= nil and killerEntity:IsOwnedByAnyPlayer() then
 			local herogold = killerEntity:GetGold()
 			if killerEntity:GetTeamNumber() ~= killedUnit:GetTeam()  then
-				killerEntity:SetGold(herogold + herokills[killedUnit:GetOwner():GetPlayerID()] * 100, true)
+				killerEntity:SetGold(herogold + herokills[killedUnit:GetPlayerID()] * 100, true)
 				killerEntity:SetGold(0, false)
 				if killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-					GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + herokills[killedUnit:GetOwner():GetPlayerID()] * 100
+					GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + herokills[killedUnit:GetPlayerID()] * 100
 					Notifications:BottomToAll({text="#streak_end_one_n", duration=5.0, style={color="#A70606",  fontSize="30px;"}})
 					Notifications:BottomToAll({text=tostring(killerEntity:GetStreak() * 100) .. " ", duration=5.0, style={color="#FFD700",  fontSize="30px;"}, continue=true})
 					Notifications:BottomToAll({text="#streak_end_two_n", duration=5.0, style={color="#A70606",  fontSize="30px;"}, continue=true})
 				
 				elseif  killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-					BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + herokills[killedUnit:GetOwner():GetPlayerID()] * 100
+					BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + herokills[killedUnit:GetPlayerID()] * 100
 					Notifications:BottomToAll({text="#streak_end_one_s", duration=5.0, style={color="#A70606",  fontSize="30px;"}})
 					Notifications:BottomToAll({text=tostring(killerEntity:GetStreak() * 100) .. " ", duration=5.0, style={color="#FFD700",  fontSize="30px;"}, continue=true})
 					Notifications:BottomToAll({text="#streak_end_two_s", duration=5.0, style={color="#A70606",  fontSize="30px;"}, continue=true})
@@ -1407,10 +1422,10 @@ function CBattleship8D:OnEntityKilled( keys )
 				end
 			end
 		end
-			herokills[killedUnit:GetOwner():GetPlayerID()] = 0
+			herokills[killedUnit:GetPlayerID()] = 0
 	   end
 -- handle awarding kill streak gold
-	herokills[killerEntity:GetOwner():GetPlayerID()] = herokills[killerEntity:GetOwner():GetPlayerID()] + 1
+	herokills[killerEntity:GetPlayerID()] = herokills[killerEntity:GetPlayerID()] + 1
 		print ("KILLEDKILLER: " .. killedUnit:GetName() .. " -- " .. killerEntity:GetName())
 		if killerEntity:GetStreak() > 2 and killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber()  then
 			for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
@@ -1856,14 +1871,14 @@ function become_boat(casterUnit, heroname)
 									hero:AddItem(newItem2)
 									local data =
 									{
-										Player_ID = hero:GetOwner():GetPlayerID();
+										Player_ID = hero:GetPlayerID();
 										Ally_ID = allyteamnumber;
 									}
 									FireGameEvent("Team_Can_Buy",data)
 									elseif  b==5 then
 									local data =
 									{
-										Player_ID = hero:GetOwner():GetPlayerID();
+										Player_ID = hero:GetPlayerID();
 										Ally_ID = -1;
 										x = 99999999;
 										y =  99999999;
@@ -2276,11 +2291,13 @@ function buyBoat(eventSourceIndex, args)
 				elseif string.match(itemName,"dazzle") then
 					become_boat(casterUnit, "npc_dota_hero_dazzle")
 			end
+			Timers:CreateTimer( .1, function()
 			local data =
 				{
 					Player_ID = casterUnit:GetPlayerID()
 				}
 				FireGameEvent("Hero_Near_Ship_Shop",data)
+				end)
 			end)
 		elseif(directionOne:Length() > 599 and directionTwo:Length() > 599) then
 		
@@ -2311,7 +2328,7 @@ function buyItem(eventSourceIndex, args)
 			end
 		end
 		
-		if heroBuying~=nil then
+		if heroBuying~=nil and heroBuying:IsAlive() then
 			
 			 local tempItem = CreateItem("item_" .. tostring(args.text), hero, hero)
 			 local continue=false
@@ -2363,7 +2380,7 @@ print("in give easy")
 					end
 			end
 		end
-		if heroBuying~=nil and not CheckInvFull(heroBuying,1) and not HasQuest(heroBuying) then
+		if heroBuying~=nil and heroBuying:IsAlive() and not CheckInvFull(heroBuying,1) and not HasQuest(heroBuying) then
 			local nearestShop= Entities:FindByNameNearest("npc_dota_buil*",heroBuying:GetOrigin(),0)
 			local casterPos = heroBuying:GetAbsOrigin()
 			local ShopDist =  casterPos - nearestShop:GetAbsOrigin()
@@ -2401,11 +2418,11 @@ print("in give easy")
 					print("Item Is: " .. newItem:GetName() )
 					
 					heroBuying:AddItem(newItem)
-					EmitSoundOnClient("ui.npe_objective_given",PlayerResource:GetPlayer(heroBuying:GetOwner():GetPlayerID()))
+					EmitSoundOnClient("ui.npe_objective_given",PlayerResource:GetPlayer(heroBuying:GetPlayerID()))
 					
 					local data =
 					{
-						Player_ID = heroBuying:GetOwner():GetPlayerID();
+						Player_ID = heroBuying:GetPlayerID();
 						Ally_ID = 0;
 						x =  chosenMission:GetAbsOrigin().x;
 						y =  chosenMission:GetAbsOrigin().y;
@@ -2439,7 +2456,7 @@ print("in give medium")
 					end
 			end
 		end
-		if heroBuying~=nil and not CheckInvFull(heroBuying,1) and not HasQuest(heroBuying) then
+		if heroBuying~=nil and heroBuying:IsAlive() and not CheckInvFull(heroBuying,1) and not HasQuest(heroBuying) then
 			local nearestShop= Entities:FindByNameNearest("npc_dota_buil*",heroBuying:GetOrigin(),0)
 			local casterPos = heroBuying:GetAbsOrigin()
 			local ShopDist =  casterPos - nearestShop:GetAbsOrigin()
@@ -2474,11 +2491,11 @@ print("in give medium")
 					print("Item Is: " .. newItem:GetName() )
 					heroBuying:AddItem(newItem)
 					
-					EmitSoundOnClient("ui.npe_objective_given",PlayerResource:GetPlayer(heroBuying:GetOwner():GetPlayerID()))
+					EmitSoundOnClient("ui.npe_objective_given",PlayerResource:GetPlayer(heroBuying:GetPlayerID()))
 											
 					local data =
 					{
-						Player_ID = heroBuying:GetOwner():GetPlayerID();
+						Player_ID = heroBuying:GetPlayerID();
 						Ally_ID = 0;
 						x =  chosenMission:GetAbsOrigin().x;
 						y =  chosenMission:GetAbsOrigin().y;
@@ -2531,7 +2548,7 @@ end
 				WasNearShop[hero]=true
 				local data =
 				{
-					Player_ID = hero:GetOwner():GetPlayerID()
+					Player_ID = hero:GetPlayerID()
 				}
 				FireGameEvent("Hero_Near_Shop",data)
 			end
@@ -2554,14 +2571,33 @@ end
 								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 50
 							end
 						
-							local allyteamnumber=hero:GetOwner():GetPlayerID()
+							local allyteamnumber=hero:GetPlayerID()
 							local data =
 							{
-								Player_ID = hero:GetOwner():GetPlayerID();
+								Player_ID = hero:GetPlayerID();
 								Ally_ID = allyteamnumber;
 							}
 							FireGameEvent("Team_Can_Buy",data)
-							EmitSoundOnClient("ui.npe_objective_complete",PlayerResource:GetPlayer(hero:GetOwner():GetPlayerID()))
+							EmitSoundOnClient("ui.npe_objective_complete",PlayerResource:GetPlayer(hero:GetPlayerID()))
+							
+							for _,otherHero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+								if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
+									local herogold = otherHero:GetGold()
+									if otherHero:GetTeamNumber() == hero:GetTeam()  and otherHero~=hero then
+										otherHero:SetGold(herogold + 16*EMP_GOLD_NUMBER/2, true)
+										otherHero:SetGold(0, false)
+										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 16*EMP_GOLD_NUMBER/2
+										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 16*EMP_GOLD_NUMBER/2
+										end
+									end
+								end
+							end
+						 Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #226622;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
+						Notifications:Top(hero:GetPlayerID(),{text=100*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #226622;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
+						Notifications:Top(hero:GetPlayerID(),{text=16*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 						elseif string.match(nearestShop:GetUnitName(),itemStrippedMedium) then
 							hero:RemoveItem(Item)
@@ -2576,17 +2612,35 @@ end
 							end
 							
 							hero:AddExperience(xp_to_level[hero:GetLevel()]*.33,0,false,true)
-							
-							local allyteamnumber=hero:GetOwner():GetPlayerID()
+							for _,otherHero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+								if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
+									local herogold = otherHero:GetGold()
+									if otherHero:GetTeamNumber() == hero:GetTeam()  and otherHero~=hero then
+										otherHero:SetGold(herogold + 26*EMP_GOLD_NUMBER/2, true)
+										otherHero:SetGold(0, false)
+										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 26*EMP_GOLD_NUMBER/2
+										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 26*EMP_GOLD_NUMBER/2
+										end
+									end
+								end
+							end
+							local allyteamnumber=hero:GetPlayerID()
 							
 							local data =
 							{
-								Player_ID = hero:GetOwner():GetPlayerID();
-								Player_ID = hero:GetOwner():GetPlayerID();
+								Player_ID = hero:GetPlayerID();
+								Player_ID = hero:GetPlayerID();
 								Ally_ID = allyteamnumber;
 							}
 							FireGameEvent("Team_Can_Buy",data)
-							EmitSoundOnClient("ui.npe_objective_complete",PlayerResource:GetPlayer(hero:GetOwner():GetPlayerID()))
+							EmitSoundOnClient("ui.npe_objective_complete",PlayerResource:GetPlayer(hero:GetPlayerID()))
+							 Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #226622;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
+						Notifications:Top(hero:GetPlayerID(),{text=200*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #226622;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
+						Notifications:Top(hero:GetPlayerID(),{text=26*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
+						
 						elseif string.match(nearestShop:GetUnitName(),itemStrippedHard) then
 							hero:RemoveItem(Item)
 							hero:SetGold(hero:GetGold()+400*EMP_GOLD_NUMBER/2,true)
@@ -2598,21 +2652,41 @@ end
 								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 200
 							end
 						
-							local allyteamnumber=hero:GetOwner():GetPlayerID()
-							
+							local allyteamnumber=hero:GetPlayerID()
+							for _,otherHero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+								if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
+									local herogold = otherHero:GetGold()
+									if otherHero:GetTeamNumber() == hero:GetTeam()  and otherHero~=hero then
+										otherHero:SetGold(herogold + 36*EMP_GOLD_NUMBER/2, true)
+										otherHero:SetGold(0, false)
+										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 36*EMP_GOLD_NUMBER/2
+										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 36*EMP_GOLD_NUMBER/2
+										end
+									end
+								end
+							end
 							local data =
 							{
-								Player_ID = hero:GetOwner():GetPlayerID();
+								Player_ID = hero:GetPlayerID();
 								Ally_ID = allyteamnumber;
 							}
 							FireGameEvent("Team_Can_Buy",data)
-							EmitSoundOnClient("ui.npe_objective_complete",PlayerResource:GetPlayer(hero:GetOwner():GetPlayerID()))
+							EmitSoundOnClient("ui.npe_objective_complete",PlayerResource:GetPlayer(hero:GetPlayerID()))
+						 Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #226622;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
+						 Notifications:Top(hero:GetPlayerID(),{text=400*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #226622;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
+						Notifications:Top(hero:GetPlayerID(),{text=35*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 							elseif string.match(Item:GetName(),"contract_empty") then
 							hero:RemoveItem(Item)
-							hero:SetGold(hero:GetGold()+200,true)
+							hero:SetGold(hero:GetGold()+100*EMP_GOLD_NUMBER/2,true)
 							hero:SetGold(0,false)
 							hero:AddExperience(200,0,false,true)
+							Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={ color=" #226622;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
+							Notifications:Top(hero:GetPlayerID(),{text=100*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+							
 						end
 					end
 				end
@@ -2622,7 +2696,7 @@ end
 				WasNearShop[hero]=false
 				local data =
 				{
-					Player_ID = hero:GetOwner():GetPlayerID()
+					Player_ID = hero:GetPlayerID()
 				}
 				FireGameEvent("Hero_Left_Shop",data)
 			end

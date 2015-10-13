@@ -7072,8 +7072,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityTextureName"				"windrunner_windrun_sylvan"
 		
 		
@@ -7086,7 +7085,7 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20.0 20.0 20.0 20.0"
-
+"AbilityCastRange"				"20000"
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
@@ -7094,6 +7093,13 @@
 		
 		"OnSpellStart"
 		{
+
+			"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"route"
+							"Target"            "POINT"
+					}
 			"ApplyModifier"
 			{
 				"Target" "CASTER"
@@ -7103,10 +7109,11 @@
 		
 		"Modifiers"
 		{
-			
+		
 			
 			"route_set"
 			{
+
 				"OnOrder"
 				{
 						"RemoveModifier"

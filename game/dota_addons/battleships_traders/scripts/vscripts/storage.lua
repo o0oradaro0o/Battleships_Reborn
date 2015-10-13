@@ -66,6 +66,10 @@ function storage:SetTideKillers(tk)
 	 tideKiller=tk
 end
 
+function storage:GetVersion()
+return "2.0.1"
+end
+
 function storage:AddToPlayerItemHist(pid, ic)
 
 	if playerItemHist[pid]==nil then
