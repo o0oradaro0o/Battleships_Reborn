@@ -24,19 +24,18 @@ function toggle_item(keys) -- keys is the information sent by the ability
 	local itemName = tostring(keys.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. keys.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
 	if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
 		for itemSlot = 0, 5, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
-	        	if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
-                		-- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
-                		if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
-                			Item:ToggleAbility()
-							
-                		end
-	        	end
+			if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
+				-- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
+				if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
+					tem:ToggleAbility()
+				end
+			end
 		end
 	end
 end
 function sendMission(keys) 
 local casterUnit = keys.caster
- Notifications:Top(casterUnit:GetPlayerID(), {text="#mission_empty", duration=5.0, style={ color=" #226622;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
+ Notifications:Top(casterUnit:GetPlayerID(), {text="#mission_empty", duration=5.0, style={ color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
 						
 end
 
