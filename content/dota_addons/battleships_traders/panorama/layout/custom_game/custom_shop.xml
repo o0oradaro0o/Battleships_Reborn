@@ -99,16 +99,16 @@
 		</Panel>
 	-->
 	
-	<Panel hittest="false" class="panalHiderHolder" id="missionButton">
-        <Button class="panalHider" onactivate="fillAndShow()">
+	<Panel hittest="false" class="panelHiderHolder" id="missionButton">
+        <Button class="panelHider" onactivate="fillAndShow()">
 		<Panel hittest="false" class="move_up">
             <Label hittest="false" class="shop_text" text="#trade" />
 			</Panel>
         </Button>
 	</Panel>
 	
-	<Panel hittest="false" class="shipPanalHiderHolder" id="shipsButton">
-        <Button class="shipPanalHider" onactivate="showShips()">
+	<Panel hittest="false" class="shipPanelHiderHolder" id="shipsButton">
+        <Button class="shipPanelHider" onactivate="showShips()">
 		<Panel hittest="false" class="move_up">           
 		   <Label hittest="false" class="shop_text" text="#Ships" />
 			</Panel>
@@ -1498,7 +1498,7 @@
 		
 
 							</Panel>
-						</Panel>
+						</Panel> 
 						<Panel id="ten_ks_tab" class="ship_shop_tier_tab" onactivate="show10ks()">
 					<Label hittest="false" class="shop_btn_text" text="#ten_ks"/>
 					</Panel>
@@ -1507,7 +1507,7 @@
 								 <Button class="boat_btn_item"  onactivate="showDetails('pugna')" oncontextmenu="buyBoat('pugna', 10000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/pugna.png" />
 									 <Label hittest="false" class="boat_name_text" text="#pugna" />
-										</Button>
+										</Button> 
 								
 								<Button class="boat_btn_item"  onactivate="showDetails('visage')" oncontextmenu="buyBoat('visage', 10000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/visage.png" />

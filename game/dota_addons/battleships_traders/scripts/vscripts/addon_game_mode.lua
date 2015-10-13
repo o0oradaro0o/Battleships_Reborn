@@ -2218,320 +2218,300 @@ function HasQuest(hero)
 	return false
 end
 
-
 function buyBoat(eventSourceIndex, args)
-
-
 	local pID = args.PlayerID
 	local teamNum=PlayerResource:GetTeam(pID)
 	local casterUnit
 	PrintTable(args)
-		--get list of heroes on this team
-		local i=0
-		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-					if hero:GetPlayerID() == pID then
-						casterUnit= hero
-						print("assignedHero")
-					end
-			end
+	--get list of heroes on this team
+	local i=0
+	for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+				if hero:GetPlayerID() == pID then
+					casterUnit= hero
+					print("assignedHero")
+				end
 		end
-		local itemName=args.text
-		if casterUnit~=nil then
+	end
+	local itemName=args.text
+	if casterUnit~=nil then
+	
+		local cost=tonumber(args.cost)
+		local herogold = casterUnit:GetGold()
+		local casterPos = casterUnit:GetAbsOrigin()
 		
-			local cost=tonumber(args.cost)
-			local herogold = casterUnit:GetGold()
-			local casterPos = casterUnit:GetAbsOrigin()
-			
-			local targetUnitOne = Entities:FindByName( nil, "south_boat_shop")
-			local targetUnitTwo = Entities:FindByName( nil, "north_boat_shop")
-			local directionOne =  casterPos - targetUnitOne:GetAbsOrigin()
-			local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
-			
-			print(itemName .. " vs " .. casterUnit:GetName())
-			if (directionOne:Length() < 600 or directionTwo:Length() < 600) and herogold>cost-1 and not string.match(casterUnit:GetName(),itemName ) then
-				boat=true
-				casterUnit:SetGold(herogold-cost,true)
-				casterUnit:SetGold(0,false)
-				sellBoat(casterUnit)
-				EmitSoundOnClient("General.Buy",PlayerResource:GetPlayer(pID))
-			Timers:CreateTimer( .1, function()
+		local targetUnitOne = Entities:FindByName( nil, "south_boat_shop")
+		local targetUnitTwo = Entities:FindByName( nil, "north_boat_shop")
+		local directionOne =  casterPos - targetUnitOne:GetAbsOrigin()
+		local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
 		
-			if string.match(itemName,"disruptor") then
-				become_boat(casterUnit, "npc_dota_hero_disruptor")
-				elseif string.match(itemName,"ursa") then
-					become_boat(casterUnit, "npc_dota_hero_ursa")
-				elseif string.match(itemName,"meepo") then
-					become_boat(casterUnit, "npc_dota_hero_meepo")
-				elseif string.match(itemName,"tidehunter") then
-					become_boat(casterUnit, "npc_dota_hero_tidehunter")
-				elseif string.match(itemName,"ancient_apparition") then
-					become_boat(casterUnit, "npc_dota_hero_ancient_apparition")
-				elseif string.match(itemName,"morphling") then
-					become_boat(casterUnit, "npc_dota_hero_morphling")
-				elseif string.match(itemName,"storm_spirit") then
-					become_boat(casterUnit, "npc_dota_hero_storm_spirit")
-				elseif string.match(itemName,"ember_spirit") then
-					become_boat(casterUnit, "npc_dota_hero_ember_spirit")
-				elseif string.match(itemName,"slark") then
-					become_boat(casterUnit, "npc_dota_hero_slark")
-				elseif string.match(itemName,"jakiro") then
-					become_boat(casterUnit, "npc_dota_hero_jakiro")
-				elseif string.match(itemName,"lion") then
-					become_boat(casterUnit, "npc_dota_hero_lion")
-				elseif string.match(itemName,"tusk") then
-					become_boat(casterUnit, "npc_dota_hero_tusk")
-				elseif string.match(itemName,"visage") then
-					become_boat(casterUnit, "npc_dota_hero_visage")
-				elseif string.match(itemName,"nevermore") then
-					become_boat(casterUnit, "npc_dota_hero_nevermore")
-				elseif string.match(itemName,"rattletrap") then
-					become_boat(casterUnit, "npc_dota_hero_rattletrap")
-				elseif string.match(itemName,"sniper") then
-					become_boat(casterUnit, "npc_dota_hero_sniper")
-				elseif string.match(itemName,"windrunner") then
-					become_boat(casterUnit, "npc_dota_hero_windrunner")
-				elseif string.match(itemName,"crystal") then
-					become_boat(casterUnit, "npc_dota_hero_crystal_maiden")
-				elseif string.match(itemName,"phantom") then
-					become_boat(casterUnit, "npc_dota_hero_phantom_lancer")
-				elseif string.match(itemName,"pugna") then
-					become_boat(casterUnit, "npc_dota_hero_pugna")
-				elseif string.match(itemName,"dazzle") then
-					become_boat(casterUnit, "npc_dota_hero_dazzle")
-			end
-			Timers:CreateTimer( .1, function()
-			local data =
-				{
-					Player_ID = casterUnit:GetPlayerID()
-				}
-				FireGameEvent("Hero_Near_Ship_Shop",data)
-				end)
-			end)
-		elseif(directionOne:Length() > 599 and directionTwo:Length() > 599) then
+		print(itemName .. " vs " .. casterUnit:GetName())
+		if (directionOne:Length() < 600 or directionTwo:Length() < 600) and herogold>cost-1 and not string.match(casterUnit:GetName(),itemName ) then
+			boat=true
+			casterUnit:SetGold(herogold-cost,true)
+			casterUnit:SetGold(0,false)
+			sellBoat(casterUnit)
+			EmitSoundOnClient("General.Buy",PlayerResource:GetPlayer(pID))
+		Timers:CreateTimer( .1, function()
+	
+		if string.match(itemName,"disruptor") then
+			become_boat(casterUnit, "npc_dota_hero_disruptor")
+			elseif string.match(itemName,"ursa") then
+				become_boat(casterUnit, "npc_dota_hero_ursa")
+			elseif string.match(itemName,"meepo") then
+				become_boat(casterUnit, "npc_dota_hero_meepo")
+			elseif string.match(itemName,"tidehunter") then
+				become_boat(casterUnit, "npc_dota_hero_tidehunter")
+			elseif string.match(itemName,"ancient_apparition") then
+				become_boat(casterUnit, "npc_dota_hero_ancient_apparition")
+			elseif string.match(itemName,"morphling") then
+				become_boat(casterUnit, "npc_dota_hero_morphling")
+			elseif string.match(itemName,"storm_spirit") then
+				become_boat(casterUnit, "npc_dota_hero_storm_spirit")
+			elseif string.match(itemName,"ember_spirit") then
+				become_boat(casterUnit, "npc_dota_hero_ember_spirit")
+			elseif string.match(itemName,"slark") then
+				become_boat(casterUnit, "npc_dota_hero_slark")
+			elseif string.match(itemName,"jakiro") then
+				become_boat(casterUnit, "npc_dota_hero_jakiro")
+			elseif string.match(itemName,"lion") then
+				become_boat(casterUnit, "npc_dota_hero_lion")
+			elseif string.match(itemName,"tusk") then
+				become_boat(casterUnit, "npc_dota_hero_tusk")
+			elseif string.match(itemName,"visage") then
+				become_boat(casterUnit, "npc_dota_hero_visage")
+			elseif string.match(itemName,"nevermore") then
+				become_boat(casterUnit, "npc_dota_hero_nevermore")
+			elseif string.match(itemName,"rattletrap") then
+				become_boat(casterUnit, "npc_dota_hero_rattletrap")
+			elseif string.match(itemName,"sniper") then
+				become_boat(casterUnit, "npc_dota_hero_sniper")
+			elseif string.match(itemName,"windrunner") then
+				become_boat(casterUnit, "npc_dota_hero_windrunner")
+			elseif string.match(itemName,"crystal") then
+				become_boat(casterUnit, "npc_dota_hero_crystal_maiden")
+			elseif string.match(itemName,"phantom") then
+				become_boat(casterUnit, "npc_dota_hero_phantom_lancer")
+			elseif string.match(itemName,"pugna") then
+				become_boat(casterUnit, "npc_dota_hero_pugna")
+			elseif string.match(itemName,"dazzle") then
+				become_boat(casterUnit, "npc_dota_hero_dazzle")
+		end
+		Timers:CreateTimer( .1, function()
+		local data =
+			{
+				Player_ID = casterUnit:GetPlayerID()
+			}
+			FireGameEvent("Hero_Near_Ship_Shop",data)
+		end)
+	end)
+	elseif(directionOne:Length() > 599 and directionTwo:Length() > 599) then
 		
-		 Notifications:Top(casterUnit:GetPlayerID(), {text="#to_base", duration=3.0, style={color="#800000",  fontSize="50px;"}})
-		 EmitSoundOnClient("ui.contract_fail",PlayerResource:GetPlayer(pID))
-		else
-					 EmitSoundOnClient("ui.contract_fail",PlayerResource:GetPlayer(pID))
-			
-			
+	Notifications:Top(casterUnit:GetPlayerID(), {text="#to_base", duration=3.0, style={color="#800000",  fontSize="50px;"}})
+	EmitSoundOnClient("ui.contract_fail",PlayerResource:GetPlayer(pID))
+	else
+		EmitSoundOnClient("ui.contract_fail",PlayerResource:GetPlayer(pID)) 
 		end
 	end
 end
-
 
 function buyItem(eventSourceIndex, args)
 	local pID = args.PlayerID
 	local teamNum=PlayerResource:GetTeam(pID)
 	local heroBuying
 	PrintTable(args)
-		--get list of heroes on this team
-		local i=0
-		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-					if hero:GetPlayerID() == pID then
-						heroBuying= hero
-						print("assignedHero")
-					end
+	--get list of heroes on this team
+	local i=0
+	for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+			if hero:GetPlayerID() == pID then
+				heroBuying= hero
+				print("assignedHero")
 			end
 		end
+	end
+	
+	if heroBuying~=nil and heroBuying:IsAlive() then
 		
-		if heroBuying~=nil and heroBuying:IsAlive() then
-			
-			 local tempItem = CreateItem("item_" .. tostring(args.text), hero, hero)
-			 local continue=false
-			 if tempItem:IsStackable() then
-				 for itemSlot = 0, 5, 1 do 
-						local Item = heroBuying:GetItemInSlot( itemSlot )
-						if Item ~= nil and Item:GetName()==tempItem:GetName()  then
-							continue=true
-						end
-				end
-			end
-			if continue or not CheckInvFull(heroBuying,1) then
-				 
-				 local cost=tonumber(args.cost)
-				local herogold = heroBuying:GetGold()
-				if herogold>cost-1 then
-					EmitSoundOnClient("General.Buy",PlayerResource:GetPlayer(pID))
-					print(tempItem:GetName())
-					heroBuying:AddItem(tempItem)
-					heroBuying:SetGold(herogold-cost,true)
-					heroBuying:SetGold(0,false)
-					else
-						EmitSoundOnClient("ui.contract_fail",PlayerResource:GetPlayer(pID))
+		 local tempItem = CreateItem("item_" .. tostring(args.text), hero, hero)
+		 local continue=false
+		 if tempItem:IsStackable() then
+			 for itemSlot = 0, 5, 1 do 
+				local Item = heroBuying:GetItemInSlot( itemSlot )
+				if Item ~= nil and Item:GetName()==tempItem:GetName()  then
+					continue=true
 				end
 			end
 		end
-
+		if continue or not CheckInvFull(heroBuying,1) then
+			local cost=tonumber(args.cost)
+			local herogold = heroBuying:GetGold()
+			if herogold>cost-1 then
+				EmitSoundOnClient("General.Buy",PlayerResource:GetPlayer(pID))
+				print(tempItem:GetName())
+				heroBuying:AddItem(tempItem)
+				heroBuying:SetGold(herogold-cost,true)
+				heroBuying:SetGold(0,false)
+			else
+				EmitSoundOnClient("ui.contract_fail",PlayerResource:GetPlayer(pID))
+			end
+		end
+	end 
 end
 
-
-
 function GiveEasy(eventSourceIndex, args)
-print("in give easy")
+	print("in give easy")
 	local pID = args.PlayerID
 	local teamNum=PlayerResource:GetTeam(pID)
 	local heroBuying
 	local allyhero
-		--get list of heroes on this team
-		local i=0
-		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-					if hero:GetPlayerID() == pID then
-						heroBuying= hero
-						print("assignedHero")
-					end
-					if hero:GetTeamNumber() == teamNum then
-						allyhero = hero
-						print("allyHero")
-					end
-			end
-		end
-		if heroBuying~=nil and heroBuying:IsAlive() and not CheckInvFull(heroBuying,1) and not HasQuest(heroBuying) then
-			local nearestShop= Entities:FindByNameNearest("npc_dota_buil*",heroBuying:GetOrigin(),0)
-			local casterPos = heroBuying:GetAbsOrigin()
-			local ShopDist =  casterPos - nearestShop:GetAbsOrigin()
-			if ShopDist:Length()<600 then
-				print("inrange")
-				local missionPool=Entities:FindAllByNameWithin("npc_dota_buil*", nearestShop:GetAbsOrigin(), 12000)
-				local chosenMission
-				
-				while chosenMission==nil do
-					local i = RandomInt( 1, #missionPool )
-					if missionPool[i]~=nearestShop and not string.match(missionPool[i]:GetUnitName(),"ship") then
-						chosenMission=missionPool[i]
-					end
+	--get list of heroes on this team
+	local i=0
+	for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+				if hero:GetPlayerID() == pID then
+					heroBuying= hero
+					print("assignedHero")
 				end
-				local missionDist =  chosenMission:GetAbsOrigin() - nearestShop:GetAbsOrigin()
-				print("unitname" .. chosenMission:GetUnitName())
-				print("journey dist " .. missionDist:Length())
-					local newItem 
-				if missionDist:Length()<7500 then
-				
-					if heroBuying:GetTeamNumber() == DOTA_TEAM_GOODGUYS and  string.match(chosenMission:GetUnitName(),"top")  then
-						 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
-				
-					elseif  heroBuying:GetTeamNumber() == DOTA_TEAM_BADGUYS and  string.match(chosenMission:GetUnitName(),"bot") then
-						 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
-					else
-						newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_easy"), hero, hero)
-					end
-					
+				if hero:GetTeamNumber() == teamNum then
+					allyhero = hero
+					print("allyHero")
+				end
+		end
+	end
+	if heroBuying~=nil and heroBuying:IsAlive() and not CheckInvFull(heroBuying,1) and not HasQuest(heroBuying) then
+		local nearestShop= Entities:FindByNameNearest("npc_dota_buil*",heroBuying:GetOrigin(),0)
+		local casterPos = heroBuying:GetAbsOrigin()
+		local ShopDist =  casterPos - nearestShop:GetAbsOrigin()
+		if ShopDist:Length()<600 then
+			print("inrange")
+			local missionPool=Entities:FindAllByNameWithin("npc_dota_buil*", nearestShop:GetAbsOrigin(), 12000)
+			local chosenMission
+			
+			while chosenMission==nil do
+				local i = RandomInt( 1, #missionPool )
+				if missionPool[i]~=nearestShop and not string.match(missionPool[i]:GetUnitName(),"ship") then
+					chosenMission=missionPool[i]
+				end
+			end
+			local missionDist =  chosenMission:GetAbsOrigin() - nearestShop:GetAbsOrigin()
+			print("unitname" .. chosenMission:GetUnitName())
+			print("journey dist " .. missionDist:Length())
+				local newItem 
+			if missionDist:Length()<7500 then 
+				if heroBuying:GetTeamNumber() == DOTA_TEAM_GOODGUYS and  string.match(chosenMission:GetUnitName(),"top")  then
+					 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
+			
+				elseif  heroBuying:GetTeamNumber() == DOTA_TEAM_BADGUYS and  string.match(chosenMission:GetUnitName(),"bot") then
+					 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
 				else
-				 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
+					newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_easy"), hero, hero)
+				end
 				
-				end
-				if newItem ~= nil then                   -- makes sure that the item exists and making sure it is the correct item
-					print("Item Is: " .. newItem:GetName() )
-					
-					heroBuying:AddItem(newItem)
-					EmitSoundOnClient("ui.npe_objective_given",PlayerResource:GetPlayer(heroBuying:GetPlayerID()))
-					
-					local data =
-					{
-						Player_ID = heroBuying:GetPlayerID();
-						Ally_ID = 0;
-						x =  chosenMission:GetAbsOrigin().x;
-						y =  chosenMission:GetAbsOrigin().y;
-						z =  chosenMission:GetAbsOrigin().z;
-					}
-					FireGameEvent("Team_Cannot_Buy",data)
-					
-				end
+			else
+				newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero) 
+			end
+			if newItem ~= nil then -- makes sure that the item exists and making sure it is the correct item
+				print("Item Is: " .. newItem:GetName() )
+				
+				heroBuying:AddItem(newItem)
+				EmitSoundOnClient("ui.npe_objective_given",PlayerResource:GetPlayer(heroBuying:GetPlayerID()))
+				
+				local data =
+				{
+					Player_ID = heroBuying:GetPlayerID();
+					Ally_ID = 0;
+					x =  chosenMission:GetAbsOrigin().x;
+					y =  chosenMission:GetAbsOrigin().y;
+					z =  chosenMission:GetAbsOrigin().z;
+				}
+				FireGameEvent("Team_Cannot_Buy",data) 
 			end
 		end
+	end
 end
-
 
 function GiveMedium(eventSourceIndex, args)
-print("in give medium")
-	  local pID = args.PlayerID
-	 local teamNum=PlayerResource:GetTeam(pID)
+	print("in give medium")
+	local pID = args.PlayerID
+	local teamNum=PlayerResource:GetTeam(pID)
 	local heroBuying
 	local allyhero
-		--get list of heroes on this team
-		local i=0
-		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-					if hero:GetPlayerID() == pID then
-						heroBuying= hero
-						print("assignedHero")
-					end
-					if hero:GetTeamNumber() == teamNum then
-						allyhero = hero
-						print("allyHero")
-					end
+	--get list of heroes on this team
+	local i=0
+	for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+			if hero:GetPlayerID() == pID then
+				heroBuying= hero
+				print("assignedHero")
+			end
+			if hero:GetTeamNumber() == teamNum then
+				allyhero = hero
+				print("allyHero")
 			end
 		end
-		if heroBuying~=nil and heroBuying:IsAlive() and not CheckInvFull(heroBuying,1) and not HasQuest(heroBuying) then
-			local nearestShop= Entities:FindByNameNearest("npc_dota_buil*",heroBuying:GetOrigin(),0)
-			local casterPos = heroBuying:GetAbsOrigin()
-			local ShopDist =  casterPos - nearestShop:GetAbsOrigin()
-			if ShopDist:Length()<600 then
-				print("inrange")
-				local missionPool=Entities:FindAllByName("npc_dota_buil*")
-				local chosenMission
-				local missionDist
-				while chosenMission==nil do
-					local i = RandomInt( 1, #missionPool )
-					missionDist =  missionPool[i]:GetAbsOrigin() - nearestShop:GetAbsOrigin()
-					if missionPool[i]~=nearestShop and missionDist:Length()>6000 and not string.match(missionPool[i]:GetUnitName(),"ship") then
-						chosenMission=missionPool[i]
-					end
+	end
+	if heroBuying~=nil and heroBuying:IsAlive() and not CheckInvFull(heroBuying,1) and not HasQuest(heroBuying) then
+		local nearestShop= Entities:FindByNameNearest("npc_dota_buil*",heroBuying:GetOrigin(),0)
+		local casterPos = heroBuying:GetAbsOrigin()
+		local ShopDist =  casterPos - nearestShop:GetAbsOrigin()
+		if ShopDist:Length()<600 then
+			print("inrange")
+			local missionPool=Entities:FindAllByName("npc_dota_buil*")
+			local chosenMission
+			local missionDist
+			while chosenMission==nil do
+				local i = RandomInt( 1, #missionPool )
+				missionDist =  missionPool[i]:GetAbsOrigin() - nearestShop:GetAbsOrigin()
+				if missionPool[i]~=nearestShop and missionDist:Length()>6000 and not string.match(missionPool[i]:GetUnitName(),"ship") then
+					chosenMission=missionPool[i]
 				end
-				 print("unitname" .. chosenMission:GetUnitName())
-					local newItem
-					print("journey dist " .. missionDist:Length())
-				if missionDist:Length()>12000 then
-				
-					if heroBuying:GetTeamNumber() == DOTA_TEAM_GOODGUYS and  string.match(chosenMission:GetUnitName(),"bot")  then
-						 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
-					elseif  heroBuying:GetTeamNumber() == DOTA_TEAM_BADGUYS and  string.match(chosenMission:GetUnitName(),"top") then
-						 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
-					else
-						 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_hard"), hero, hero)
-					end
-				else
+			end
+			print("unitname" .. chosenMission:GetUnitName())
+			local newItem
+			print("journey dist " .. missionDist:Length())
+			if missionDist:Length()>12000 then 
+				if heroBuying:GetTeamNumber() == DOTA_TEAM_GOODGUYS and  string.match(chosenMission:GetUnitName(),"bot")  then
 					 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
+				elseif  heroBuying:GetTeamNumber() == DOTA_TEAM_BADGUYS and  string.match(chosenMission:GetUnitName(),"top") then
+					 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
+				else
+					 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_hard"), hero, hero)
 				end
-				if newItem ~= nil then                   -- makes sure that the item exists and making sure it is the correct item
-					print("Item Is: " .. newItem:GetName() )
-					heroBuying:AddItem(newItem)
-					
-					EmitSoundOnClient("ui.npe_objective_given",PlayerResource:GetPlayer(heroBuying:GetPlayerID()))
-											
-					local data =
-					{
-						Player_ID = heroBuying:GetPlayerID();
-						Ally_ID = 0;
-						x =  chosenMission:GetAbsOrigin().x;
-						y =  chosenMission:GetAbsOrigin().y;
-						z =  chosenMission:GetAbsOrigin().z;
-					}
-					FireGameEvent("Team_Cannot_Buy",data)
-				end
+			else
+				 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
+			end
+			if newItem ~= nil then                   -- makes sure that the item exists and making sure it is the correct item
+				print("Item Is: " .. newItem:GetName() )
+				heroBuying:AddItem(newItem)
+				
+				EmitSoundOnClient("ui.npe_objective_given",PlayerResource:GetPlayer(heroBuying:GetPlayerID()))
+										
+				local data =
+				{
+					Player_ID = heroBuying:GetPlayerID();
+					Ally_ID = 0;
+					x =  chosenMission:GetAbsOrigin().x;
+					y =  chosenMission:GetAbsOrigin().y;
+					z =  chosenMission:GetAbsOrigin().z;
+				}
+				FireGameEvent("Team_Cannot_Buy",data)
 			end
 		end
+	end
 end
-
-
-
-
 
 function HandleShopChecks(hero)
+	local cotinue=0
+	if hero ~= nil then
 
-local cotinue=0
-if hero ~= nil then
-
-		for itemSlot = 0, 5, 1 do 
-			local Item = hero:GetItemInSlot( itemSlot )
-			if Item ~= nil and  string.match(Item:GetName(), "trade_manifest") then
-				cotinue=1
-			end		
-		end
-end
+			for itemSlot = 0, 5, 1 do 
+				local Item = hero:GetItemInSlot( itemSlot )
+				if Item ~= nil and  string.match(Item:GetName(), "trade_manifest") then
+					cotinue=1
+				end		
+			end
+	end
 					
 	if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and cotinue==1 then -- and string.match(hero:GetName(),"*trade*") then
 		local casterPos = hero:GetAbsOrigin()
@@ -2603,10 +2583,10 @@ end
 									end
 								end
 							end
-						 Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #226622;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(),{text=100*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
-						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #226622;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(),{text=16*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
+						Notifications:Top(hero:GetPlayerID(), {text=100*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
+						Notifications:Top(hero:GetPlayerID(), {text=16*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 						elseif string.match(nearestShop:GetUnitName(),itemStrippedMedium) then
 							hero:RemoveItem(Item)
@@ -2645,9 +2625,9 @@ end
 							}
 							FireGameEvent("Team_Can_Buy",data)
 							EmitSoundOnClient("ui.npe_objective_complete",PlayerResource:GetPlayer(hero:GetPlayerID()))
-							 Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #226622;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
+							 Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
 						Notifications:Top(hero:GetPlayerID(),{text=200*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
-						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #226622;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
+						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
 						Notifications:Top(hero:GetPlayerID(),{text=26*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 						elseif string.match(nearestShop:GetUnitName(),itemStrippedHard) then
@@ -2683,9 +2663,9 @@ end
 							}
 							FireGameEvent("Team_Can_Buy",data)
 							EmitSoundOnClient("ui.npe_objective_complete",PlayerResource:GetPlayer(hero:GetPlayerID()))
-						 Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #226622;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
+						 Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
 						 Notifications:Top(hero:GetPlayerID(),{text=400*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
-						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #226622;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
+						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
 						Notifications:Top(hero:GetPlayerID(),{text=35*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 							elseif string.match(Item:GetName(),"contract_empty") then
@@ -2693,7 +2673,7 @@ end
 							hero:SetGold(hero:GetGold()+100*EMP_GOLD_NUMBER/2,true)
 							hero:SetGold(0,false)
 							hero:AddExperience(200,0,false,true)
-							Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={ color=" #226622;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
+							Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={ color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
 							Notifications:Top(hero:GetPlayerID(),{text=100*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 							
 						end
@@ -2708,39 +2688,38 @@ end
 					Player_ID = hero:GetPlayerID()
 				}
 				FireGameEvent("Hero_Left_Shop",data)
-			end
-			
-			
+			end 
 		end
-		end	
-							
+	end	 						
 end
 
 function GetPlayerHist(playerID)
-if playerItemHist[playerID] ~= nil then
-return playerItemHist[playerID]
+	if playerItemHist[playerID] ~= nil then
+		return playerItemHist[playerID]
+	end
+	return "none"
 end
-return "none"
-end
+
 function GetDisconnectState(playerID)
 	print("getDisconnect")
 	for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-				if hero:GetPlayerID() == playerID then
-					if DisconnectKicked[hero]~= nil then
-						return DisconnectKicked[hero]
-						else
-						return 0
-					end
-					
+		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+			if hero:GetPlayerID() == playerID then
+				if DisconnectKicked[hero]~= nil then
+					return DisconnectKicked[hero]
+					else
+					return 0
 				end
+				
 			end
 		end
-		return 0
 	end
+	return 0
+end
+
 function GetItemInSlot(playerID,itemSlot)
-local casterUnit = nil
-for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+	local casterUnit = nil
+	for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 			if hero:GetPlayerID() == playerID then
 				casterUnit=hero
@@ -2758,10 +2737,8 @@ for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 	return "No_Item"
 end
 
-
-
 function GetHeroLevel(playerID)
-print(playerID)
+	print(playerID)
     for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 			if hero:GetPlayerID() == playerID then
@@ -2771,8 +2748,4 @@ print(playerID)
 	end
 	return 0
 end
-
-
-
-
 
