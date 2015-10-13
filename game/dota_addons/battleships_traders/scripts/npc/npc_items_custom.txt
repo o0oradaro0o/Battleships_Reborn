@@ -2870,16 +2870,13 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		
-		
+				
 		
 		"Modifiers"
 		{
-			
-			
+						
 			"item_poison_bow_shooting"
-			{
-			
+			{	
 			
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Passive"	 "1"
@@ -2888,8 +2885,8 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"			"scripts/vscripts/item_sound_functions.lua"
-						"Function"			"poisonSound1"
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"poisonSoundFire"
 					}
 					"TrackingProjectile"
 					{
@@ -2906,27 +2903,26 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/poison_one_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/poison_one_projectile.vpcf" 
 					}
-					
-					
-					
 				}
-				
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
-				
+        {
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"poisonSoundImpact"
+			}                        
+		}				
 		"AbilitySpecial"
 		{
 			"01"
@@ -2977,6 +2973,11 @@
 				"ThinkInterval"		"%fire_rate"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"fireSoundFire"
+					}
 					"TrackingProjectile"
 					{
 						"Target"
@@ -2993,25 +2994,28 @@
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
                         "EffectName"    "particles/basic_projectile/fire_one_projectile.vpcf" 
-					}
-					
-					
+					}							
 					
 				}
 				
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"fireSoundImpact"
+			}						
+				
+		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -3407,6 +3411,12 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}
+					
 					"TrackingProjectile"
 					{
 						"Target"
@@ -3432,16 +3442,22 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}
+		
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+				
+		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -3499,8 +3515,8 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"			"scripts/vscripts/item_sound_functions.lua"
-						"Function"			"poisonSound2"
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"poisonSoundFire"
 					}
 					"TrackingProjectile"
 					{
@@ -3517,7 +3533,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/poison_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/poison_two_projectile.vpcf" 
 					}
 					
 					
@@ -3527,16 +3543,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"poisonSoundImpact"
+			}          
+				
+		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -3588,7 +3609,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
-						
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"fireSoundFire"
+					}						
 					"TrackingProjectile"
 					{
 						"Target"
@@ -3604,7 +3629,7 @@
 						"MoveSpeed" "1000"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/fire_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/fire_two_projectile.vpcf" 
 					}
 					
 					
@@ -3614,16 +3639,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"fireSoundImpact"
+			}						
+				
+		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -4018,6 +4048,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}				
 					"TrackingProjectile"
 					{
 						"Target"
@@ -4033,7 +4068,7 @@
 						"MoveSpeed" "750"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/plasma_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/plasma_two_projectile.vpcf" 
 					}
 					
 					
@@ -4043,16 +4078,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}		
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+				
+		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -4107,6 +4147,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"poisonSoundFire"
+					}
 					"TrackingProjectile"
 					{
 						"Target"
@@ -4122,26 +4167,28 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/poison_three_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/poison_three_projectile.vpcf" 
 					}
-					
-					
-					
 				}
 				
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"poisonSoundImpact"
+			}        
+				
+		}
 			"AbilitySpecial"
 		{
 			"01"
@@ -4179,14 +4226,10 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		
-		
-	
-		
+				
 		"Modifiers"
 		{
-			
-			
+						
 			"item_fire_three_bow_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
@@ -4194,6 +4237,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"fireSoundFire"
+					}				
 					"TrackingProjectile"
 					{
 						"Target"
@@ -4209,26 +4257,27 @@
 						"MoveSpeed" "1000"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/fire_three_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/fire_three_projectile.vpcf" 
 					}
-					
-					
-					
 				}
 				
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"fireSoundImpact"
+			}			               
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -4626,6 +4675,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}							
 					"TrackingProjectile"
 					{
 						"Target"
@@ -4641,7 +4695,7 @@
 						"MoveSpeed" "750"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/plasma_three_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/plasma_three_projectile.vpcf" 
 					}
 					
 					
@@ -4651,16 +4705,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}		
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+				"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+				"Damage"                                "%dmg"
+				"Target"                                "TARGET"
+			}
+				
+		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -4729,8 +4788,8 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"			"scripts/vscripts/item_sound_functions.lua"
-						"Function"			"poisonSound1"
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"poisonSoundFire"
 					}
 					"TrackingProjectile"
 					{
@@ -4747,7 +4806,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/poison_one_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/poison_one_projectile.vpcf" 
 					}
 					
 					"TrackingProjectile"
@@ -4765,7 +4824,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/poison_one_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/poison_one_projectile.vpcf" 
 					}
 					
 					
@@ -4774,16 +4833,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+			"RunScript"
+				{
+					"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+					"Function"			"poisonSoundImpact"
+				}        
+				
+		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -4837,22 +4901,10 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
-					"TrackingProjectile"
+					"RunScript"
 					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "700"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1000"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/fire_one_projectile.vpcf" 
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"fireSoundFire"
 					}
 					"TrackingProjectile"
 					{
@@ -4869,7 +4921,24 @@
 						"MoveSpeed" "1000"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/fire_one_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/fire_one_projectile.vpcf" 
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "700"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "1000"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/fire_one_projectile.vpcf" 
 					}
 					
 					
@@ -4878,16 +4947,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"fireSoundImpact"
+			}
+				
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -4901,7 +4975,6 @@
 				"dmg"	"12"
 			}
 		}
-
 		
 	}
 
@@ -5355,6 +5428,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}				
 					"TrackingProjectile"
 					{
 						"Target"
@@ -5370,7 +5448,7 @@
 						"MoveSpeed" "750"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/plasma_one_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/plasma_one_projectile.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -5387,7 +5465,7 @@
 						"MoveSpeed" "750"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/plasma_one_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/plasma_one_projectile.vpcf" 
 					}
 					
 					
@@ -5397,16 +5475,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                 "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}				
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+				"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+				 "Damage"                                "%dmg"
+				"Target"                                "TARGET"
+			}
                         
-                }
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -5465,8 +5548,8 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"			"scripts/vscripts/item_sound_functions.lua"
-						"Function"			"poisonSound2"
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"poisonSoundFire"
 					}
 					"TrackingProjectile"
 					{
@@ -5483,7 +5566,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/poison_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/poison_two_projectile.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -5500,7 +5583,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/poison_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/poison_two_projectile.vpcf" 
 					}
 					
 
@@ -5510,16 +5593,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                 "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					 "Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"poisonSoundImpact"
+			}          
+				
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -5571,22 +5659,10 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
-					"TrackingProjectile"
+					"RunScript"
 					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "700"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1000"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/fire_two_projectile.vpcf" 
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"fireSoundFire"
 					}
 					"TrackingProjectile"
 					{
@@ -5603,7 +5679,24 @@
 						"MoveSpeed" "1000"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/fire_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/fire_two_projectile.vpcf" 
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "700"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "1000"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/fire_two_projectile.vpcf" 
 					}
 					
 					
@@ -5612,17 +5705,22 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
-				"AbilitySpecial"
+		{
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"fireSoundImpact"
+			}						
+				
+		}
+		"AbilitySpecial"
 		{
 			"01"
 			{
@@ -6080,6 +6178,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}				
 					"TrackingProjectile"
 					{
 						"Target"
@@ -6095,7 +6198,7 @@
 						"MoveSpeed" "750"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/plasma_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/plasma_two_projectile.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -6112,7 +6215,7 @@
 						"MoveSpeed" "750"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/plasma_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/plasma_two_projectile.vpcf" 
 					}
 					
 					
@@ -6122,16 +6225,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}		
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+				"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+				"Damage"                                "%dmg"
+				"Target"                                "TARGET"
+			}
+				
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -6189,22 +6297,10 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
-					"TrackingProjectile"
+					"RunScript"
 					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "900"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "700"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/poison_three_projectile.vpcf" 
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"poisonSoundFire"
 					}
 					"TrackingProjectile"
 					{
@@ -6221,26 +6317,44 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/poison_three_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/poison_three_projectile.vpcf" 
 					}
-					
-					
-				}
-				
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "900"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "700"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/poison_three_projectile.vpcf" 
+					}					
+				}				
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                               "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
-				"AbilitySpecial"
+		{
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+				"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+				"Damage"                                "%dmg"
+				"Target"                                "TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"poisonSoundImpact"
+			}   			
+		}
+		"AbilitySpecial"
 		{
 			"01"
 			{
@@ -6291,22 +6405,10 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
-					"TrackingProjectile"
+					"RunScript"
 					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "700"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1000"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/fire_three_projectile.vpcf" 
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"fireSoundFire"
 					}
 					"TrackingProjectile"
 					{
@@ -6323,7 +6425,24 @@
 						"MoveSpeed" "1000"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/fire_three_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/fire_three_projectile.vpcf" 
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "700"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "1000"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/fire_three_projectile.vpcf" 
 					}
 					
 					
@@ -6332,16 +6451,20 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                               "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+				   "Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"fireSoundImpact"
+			}	
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -6809,6 +6932,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}							
 					"TrackingProjectile"
 					{
 						"Target"
@@ -6824,7 +6952,7 @@
 						"MoveSpeed" "750"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/plasma_three_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/plasma_three_projectile.vpcf" 
 					}
 					
 					"TrackingProjectile"
@@ -6842,7 +6970,7 @@
 						"MoveSpeed" "750"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/plasma_three_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/plasma_three_projectile.vpcf" 
 					}
 					
 					
@@ -6852,16 +6980,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}		
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+				"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+				"Damage"                                "%dmg"
+				"Target"                                "TARGET"
+			}
+				
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -6922,6 +7055,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"poisonSoundFire"
+					}
 					"TrackingProjectile"
 					{
 						"Target"
@@ -6937,10 +7075,8 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
 					}
-					
-					
 					
 				}
 				
@@ -6970,14 +7106,19 @@
 		
 				"OnProjectileHitUnit"
                 {
-                        "DeleteOnHit"                           "false"
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
+					"DeleteOnHit"                           "false"
+					"DeleteOnHit"                           "false"
+					"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+							"Damage"                                "%dmg"
+							"Target"                                "TARGET"
+					}
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"poisonSoundImpact"
+					}   						
 					 "ApplyModifier"
 					{
 						"Target"				"TARGET"
@@ -7025,8 +7166,6 @@
 		
 		"Modifiers"
 		{
-			
-			
 			"item_fire_ult_bow_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
@@ -7034,6 +7173,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"fireSoundFire"
+					}
 					"TrackingProjectile"
 					{
 						"Target"
@@ -7049,89 +7193,97 @@
 						"MoveSpeed" "1000"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/fire_ult_projectile.vpcf" 
-					}
-					
-					
+						"EffectName"    "particles/basic_projectile/fire_ult_projectile.vpcf" 
+					}			
 					
 				}
 				
 			}
 		
 
-        "fire_area"
-        {
-			"IsHidden"	 "1"
-			"Passive"	 "1"
-            "Aura" "create_fire_area_aura"
-            "Aura_Radius" "%radius"
-            "Aura_Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-            "Aura_Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
-        }
-        "create_fire_area_aura"
-        {
-            "IsDebuff" "1"
-            "IsPurgable" "0"
-            "EffectName" "particles/basic_projectile/fire_burn_effect.vpcf"                
-            "ThinkInterval" ".5"
-            "OnIntervalThink"
-            {
-                "Damage"
-                {
-                    "Type"   "DAMAGE_TYPE_COMPOSITE"
-                    "Damage" "%damage"
-                    "Target" "TARGET"
-                }
-            }
-        }
-    }
+			"fire_area"
+			{
+				"IsHidden"	 "1"
+				"Passive"	 "1"
+				"Aura" "create_fire_area_aura"
+				"Aura_Radius" "%radius"
+				"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+			}
+			"create_fire_area_aura"
+			{
+				"IsDebuff" "1"
+				"IsPurgable" "0"
+				"EffectName" "particles/basic_projectile/fire_burn_effect.vpcf"
+				"ThinkInterval" ".5"
+				"OnIntervalThink"
+				{	
+				"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"fireAuraBurn"
+					}				
+					"Damage"
+					{
+						"Type"   "DAMAGE_TYPE_PHYSICAL"
+						"Damage" "%damage"
+						"Target" "TARGET"
+					}
+				}
+			}
+		}
 
 		
 		
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-								"Target" "TARGET"
+		{
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target" "TARGET"
 
-                        }
-                    
-                }
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"fireSoundImpact"
+			}
+		
+		}
 				
 				
-    // Special    
-    //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-        "01"
-        {
-            "var_type"                "FIELD_INTEGER"
-            "radius"                "700"
-        }
-        "02"
-        {
-            "var_type"                "FIELD_FLOAT"
-            "duration"                "4.0"
-        }
-        "03"
-        {
-            "var_type"                "FIELD_INTEGER"
-            "damage"                "30"
-        }
-		"04"
-        {
-            "var_type"                "FIELD_INTEGER"
-            "dmg"                "200"
-        }
-		"05"
-        {
-            "var_type"                "FIELD_FLOAT"
-            "fire_rate"                "0.4"
-        }
-    }
+		// Special    
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"                "FIELD_INTEGER"
+				"radius"                "700"
+			}
+			"02"
+			{
+				"var_type"                "FIELD_FLOAT"
+				"duration"                "4.0"
+			}
+			"03"
+			{
+				"var_type"                "FIELD_INTEGER"
+				"damage"                "30"
+			}
+			"04"
+			{
+				"var_type"                "FIELD_INTEGER"
+				"dmg"                "200"
+			}
+			"05"
+			{
+				"var_type"                "FIELD_FLOAT"
+				"fire_rate"                "0.4"
+			}
+		}
 	}
 	
 	//===============================================
@@ -7610,6 +7762,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}									
 					"TrackingProjectile"
 					{
 						"Target"
@@ -7627,7 +7784,6 @@
 						"Dodgeable" "1" 
                    "EffectName"    "particles/basic_projectile/plasma_ult_projectile.vpcf" 
 					}
-					
 					
 					
 				}
@@ -7651,20 +7807,25 @@
 			
 		}
 		"OnProjectileHitUnit"
+		{
+			"RunScript"
 			{
-					"DeleteOnHit"                           "false"
-					"Damage"
-					{
-							"Type"                                  "DAMAGE_TYPE_PHYSICAL"
-							"Damage"                                "%dmg"
-							"Target"                                "TARGET"
-					}
-					"ApplyModifier"
-					{
-						"Target"				"TARGET"
-						"ModifierName" "item_plasma_ult_bow_dearmored"
-					}
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
 			}
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+				"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+				"Damage"                                "%dmg"
+				"Target"                                "TARGET"
+			}
+			"ApplyModifier"
+			{
+				"Target"				"TARGET"
+				"ModifierName" "item_plasma_ult_bow_dearmored"
+			}
+		}
 			"AbilitySpecial"
 		{
 			"01"
@@ -12974,8 +13135,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		
 	}
-	
-
 	
 	
 }
