@@ -12838,9 +12838,9 @@
 					"SpawnUnit"
 					{
 						"Target"            "POINT"
-						"UnitName"              "npc_dota_chain"
+						"UnitName"              "coast_oneshot"
 						"UnitCount"             "1"
-						"Duration"				"20"
+						"Duration"				"5"
 					}
 				
 						SpendCharge {}		
@@ -12873,7 +12873,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"AbilityTextureName"			"item_cloak"
+		"AbilityTextureName"			"item_cease"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
@@ -12916,6 +12916,7 @@
 					"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 					"Function"			"RemoveWeps"
 				}
+				SpendCharge {}	
 				
 		}
 		 

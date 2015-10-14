@@ -289,7 +289,83 @@ function panic(args) -- keys is the information sent by the ability
  
 		
 end
+function SwapMission(args)
 
+local olditem=""
+local diff=0
+	local heroBuying=args.caster
+		for itemSlot = 0, 5, 1 do 
+				if heroBuying ~= nil then
+					local Item = heroBuying:GetItemInSlot( itemSlot )
+					if Item ~= nil then
+					
+						local itemStrippedEasy=string.gsub(Item:GetName(),"item_contract_easy","")
+						local itemStrippedMedium=string.gsub(Item:GetName(),"item_contract_medium","")
+						local itemStrippedHard=string.gsub(Item:GetName(),"item_contract_hard","")
+						if  string.match(nearestShop:GetUnitName(),itemStrippedEasy) then
+							olditem=itemStrippedEasy
+							diff=1
+							heroBuying:RemoveItem(Item)
+						end
+						if  string.match(nearestShop:GetUnitName(),itemStrippedMedium) then
+							olditem=itemStrippedMedium
+							diff=2
+							heroBuying:RemoveItem(Item)
+						end
+						if  string.match(nearestShop:GetUnitName(),itemStrippedHard) then
+							olditem=itemStrippedMedium
+							diff=3
+							heroBuying:RemoveItem(Item)
+						end
+					end
+				end
+			end
+	
+	if diff~=0 then
+			print("inrange")
+			local missionPool=Entities:FindAllByName("npc_dota_buil*")
+			local chosenMission
+			local missionDist
+			while chosenMission==nil do
+				local i = RandomInt( 1, #missionPool )
+				missionDist =  missionPool[i]:GetAbsOrigin() - nearestShop:GetAbsOrigin()
+				if not string.match(missionPool[i]:GetUnitName(),olditem)  and not string.match(missionPool[i]:GetUnitName(),"ship") then
+					chosenMission=missionPool[i]
+				end
+			end
+			print("unitname" .. chosenMission:GetUnitName())
+			local newItem
+			print("journey dist " .. missionDist:Length())
+			if missionDist:Length()>12000 then 
+				if heroBuying:GetTeamNumber() == DOTA_TEAM_GOODGUYS and  string.match(chosenMission:GetUnitName(),"bot")  then
+					 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
+				elseif  heroBuying:GetTeamNumber() == DOTA_TEAM_BADGUYS and  string.match(chosenMission:GetUnitName(),"top") then
+					 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
+				else
+					 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_hard"), hero, hero)
+				end
+			else
+				 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
+			end
+			if newItem ~= nil then                   -- makes sure that the item exists and making sure it is the correct item
+				print("Item Is: " .. newItem:GetName() )
+				heroBuying:AddItem(newItem)
+				
+				EmitSoundOnClient("ui.npe_objective_given",PlayerResource:GetPlayer(heroBuying:GetPlayerID()))
+										
+				local data =
+				{
+					Player_ID = heroBuying:GetPlayerID();
+					Ally_ID = 0;
+					x =  chosenMission:GetAbsOrigin().x;
+					y =  chosenMission:GetAbsOrigin().y;
+					z =  chosenMission:GetAbsOrigin().z;
+				}
+				FireGameEvent("Team_Cannot_Buy",data)
+				
+				end
+		end
+end
 
 
 function CallBatFly(args) -- keys is the information sent by the ability
@@ -314,6 +390,31 @@ function CallBatFly(args) -- keys is the information sent by the ability
 		local abil3 = casterUnit:GetAbilityByIndex(3)
 		abil3:SetLevel(level2)
 end
+
+
+function CallSlarkInvis(args) -- keys is the information sent by the ability
+		print('[ItemFunctions] CallPuckDive started! ')
+
+		local casterUnit = args.caster
+		local ability = "slark_shadow_dance_battleship"
+		
+		local abil = casterUnit:GetAbilityByIndex(2)
+		local level = abil:GetLevel()
+		
+		local abil1 = casterUnit:GetAbilityByIndex(3)
+			local level2 = abil1:GetLevel()
+		casterUnit:RemoveAbility(abil1:GetAbilityName())
+		casterUnit:AddAbility(ability)
+		
+		local abil2 = casterUnit:GetAbilityByIndex(3)
+		abil2:SetLevel(level)
+		abil2:CastAbility()
+		casterUnit:RemoveAbility(abil2:GetAbilityName())
+		casterUnit:AddAbility("batten_hatches")
+		local abil3 = casterUnit:GetAbilityByIndex(3)
+		abil3:SetLevel(level2)
+end
+
 
 function checkCliff(args) -- keys is the information sent by the ability
 

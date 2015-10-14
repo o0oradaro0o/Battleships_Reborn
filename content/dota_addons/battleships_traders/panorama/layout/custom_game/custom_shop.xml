@@ -1374,15 +1374,16 @@
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/windrunner_windrun_sylvan.png" />
                        <Label hittest="false" class="ability_name" text="#estab_route"/>"
 					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('dazzle','cease_fire')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/oracle_fates_edict.png" />
-                       <Label hittest="false" class="ability_name" text="#cease_fire"/>"
+					<Panel hittest="false" class="ability" onmouseover="showText('dazzle','Trade_hide_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/slark_shadow_dance.png" />
+                       <Label hittest="false" class="ability_name" text="#Trade_hide_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('dazzle','batten_hatches')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/hatches.png" />
                        <Label hittest="false" class="ability_name" text="#batten_hatches"/>"
 					</Panel>
 				</Panel>
+				
 				<Panel hittest="false" class="boat_row">
 					<Panel hittest="false" class="abilities_details_holder"  >
 						<Label hittest="false" class="ship_desc_title" text=" "  id="dazzle_ability"/>
@@ -1397,6 +1398,7 @@
 					</Panel>
 		</Panel>	
 	</Panel>
+	
 
 
 
@@ -1729,9 +1731,9 @@
 								 <Label hittest="false" class="gold_cost_text" text="120  G" />
 								 <Label hittest="false" class="item_desc_text" text="#good_stuff_desc"/>
                             </Button>
-							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_booze', 40 )" oncontextmenu="buyItem('oneshot_booze', 40 )">
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_booze', 40 )" oncontextmenu="buyItem('oneshot_booze', 200 )">
                                 <Image class="item_image" src="file://{images}/custom_game/booze.png" />
-								 <Label hittest="false" class="gold_cost_text" text="40  G" />
+								 <Label hittest="false" class="gold_cost_text" text="200 G" />
 								 <Label hittest="false" class="item_desc_text" text="#booze_desc"/>
                             </Button>
                         </Panel>

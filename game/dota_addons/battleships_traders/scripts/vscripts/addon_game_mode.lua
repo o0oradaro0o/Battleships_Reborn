@@ -262,6 +262,8 @@ function Precache( context )
 PrecacheUnitByNameSync("npc_dota_hero_zuus", context)
 PrecacheUnitByNameSync("npc_dota_hero_tiny", context)
 	PrecacheUnitByNameSync("npc_dota_hero_kunkka", context)
+	PrecacheUnitByNameSync("npc_dota_hero_earthshaker", context)
+	
 	PrecacheUnitByNameSync("npc_dota_hero_dazzle", context)
 	PrecacheUnitByNameSync("npc_dota_hero_brewmaster", context)
 	PrecacheUnitByNameSync("npc_dota_hero_puck", context)

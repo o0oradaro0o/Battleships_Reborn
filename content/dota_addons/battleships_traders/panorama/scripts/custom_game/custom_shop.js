@@ -1,5 +1,6 @@
 "use strict";
 var hidden=true;
+var hiddenship=true;
 var showMission=[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]
 var firstcall=true;
 var starttime=0;
@@ -36,24 +37,26 @@ function hideTrade()
 
 function showShips()
 {
-	if(	hidden)
+	hideShop()
+	if(	hiddenship)
 		{
 			$( "#ship_shop" ).style.visibility="visible";
-			hidden=false;
+			hiddenship=false;
 		}
 	else
 		{
-			hideShop();
+			hideShipShop();
 		}
 	
 }
 
 function showShipsNoHide()
 {
-	if(	hidden)
+	hideShop()
+	if(	hiddenship)
 		{
 			$( "#ship_shop" ).style.visibility="visible";
-			hidden=false;
+			hiddenship=false;
 		}
 
 }
@@ -234,6 +237,7 @@ function buyBoat(BoatName, cost)
 	function fillAndShow()
 	{
 		$.Msg("inside fillAndShow");
+		hideShipShop()
 		if(	hidden)
 		{
 			var heroloc = Entities.GetAbsOrigin(Players.GetPlayerHeroEntityIndex(Players.GetLocalPlayer()));
@@ -357,6 +361,16 @@ function buyBoat(BoatName, cost)
 		$( "#mid_bot_shop" ).style.visibility="collapse";
 		$( "#mid_mid_shop" ).style.visibility="collapse";
 		$( "#empty_guts" ).style.visibility="collapse";
+
+		Game.EmitSound("ui.chat_close");
+		
+		
+	}
+	
+		function hideShipShop()
+	{
+		hiddenship=true;
+		$.Msg("inhide");
 		$( "#ship_shop" ).style.visibility="collapse";
 		$("#ancient_apparition").style.height = "0px";
 		$("#crystal_maiden").style.height = "0px";
@@ -856,6 +870,107 @@ function AddNotificationbot(msg, panel) {
     }
   }
 }
+
+
+
+
+
+
+var CONSUME_EVENT = true;
+var CONTINUE_PROCESSING_EVENT = false;
+
+// Handle Left Button events
+function OnLeftButtonPressed()
+{
+	//$.Msg("LEFT BUTTON CAST")
+}
+
+
+
+// Handle Right Button events
+// Find any entities right-clicked on
+// if the units are invuln, modify the right-click behaviour
+function OnRightButtonPressed()
+{
+	//$.Msg("RIGHT BUTTON CAST")
+	var localHeroIndex = Players.GetPlayerHeroEntityIndex( Players.GetLocalPlayer() );
+	var mouseEntities = GameUI.FindScreenEntities( GameUI.GetCursorPosition() );
+	mouseEntities = mouseEntities.filter( function(e) { return e.entityIndex != localHeroIndex; } );
+
+	var accurateEntities = mouseEntities.filter( function( e ) { return e.accurateCollision; } );
+	if ( accurateEntities.length > 0 )
+	{
+		for ( var e of accurateEntities )
+		{
+			$.Msg("ACCURATE ENTITY")
+			if ( Entities.IsDisarmed( e.entityIndex ) )
+			{
+				//$.Msg("INVULNERABLE UNIT CLICKED")
+				fillAndShow();
+				return CONSUME_EVENT;
+			}
+			if ( Entities.IsHexed( e.entityIndex ) )
+			{
+				//$.Msg("INVULNERABLE UNIT CLICKED")
+				showShips();
+				return CONSUME_EVENT;
+			}
+		}
+	}
+
+	if ( mouseEntities.length > 0 )
+	{
+		//$.Msg("ENTITY")
+		var e = mouseEntities[0];
+		if ( Entities.IsFrozen( e.entityIndex ) )
+			{
+				//$.Msg("INVULNERABLE UNIT CLICKED")
+				fillAndShow();
+				return CONSUME_EVENT;
+			}
+			if ( Entities.IsHexed( e.entityIndex ) )
+			{
+				//$.Msg("INVULNERABLE UNIT CLICKED")
+				showShips();
+				return CONSUME_EVENT;
+			}
+	}
+
+	return CONTINUE_PROCESSING_EVENT;
+}
+
+
+// Main mouse event callback
+GameUI.SetMouseCallback( function( eventName, arg ) {
+
+	$.Msg("MOUSE: ", eventName, " -- ", arg, " -- ", GameUI.GetClickBehaviors())
+
+	if ( GameUI.GetClickBehaviors() !== CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE )
+		return CONTINUE_PROCESSING_EVENT;
+
+	if ( eventName === "pressed" )		
+	{
+		//$.Msg("MOUSE: ", eventName, " -- ", arg, " -- ", GameUI.GetClickBehaviors())
+		if ( arg === 0 )
+		{	
+			//$.Msg("RIGHT BUTTON CAST")
+			return OnRightButtonPressed();
+		}
+		// on right click, call the right-click function
+		if ( arg === 1 )
+		{	
+			//$.Msg("RIGHT BUTTON CAST")
+			return OnRightButtonPressed();
+		}
+	}
+	return CONTINUE_PROCESSING_EVENT;
+} );
+
+(function() {
+	if (GameUI.CustomUIConfig().DebugMessagesEnabled == true)
+		$.Msg("Right Click Override JS Loaded.");
+	
+})();
 	
 	
 	

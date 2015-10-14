@@ -136,7 +136,7 @@
 	"firecrackers_desc" "Firecrackers: Silence all enemies in large area around you."
 	"booze_desc" "Still Booze: Clears all ability cooldowns"
 	"trap_desc" "Bear Trap: lays a trap that does 90 damage and stuns for 5 sec"
-	"chain_desc" "Ball and Chain: encumber target with attackable bonds.  Slowing by 200 until killed."
+	"chain_desc" "Unlawful Augmentation: Despatch a shore guard against target ship for 5 s"
 	"camo_desc" "Camouflage Cloak: 4 second invisibility. (disables weapons)"
 	"scope_desc" "Scope: Grants 1000 vision for 6 seconds"
 	"invest" "invest"
@@ -566,10 +566,14 @@ EXPLOSION RADIUS: 685 685 685
 %MOVEMENT SLOW: -30
 DAMAGE: 205 270 350"
 
+"Trade_hide_battleship"					"Mist and Sahdows"
+		"Trade_hide_battleship_Description"					"When used, the Phoenician Trader hides in a cloud of mist, becoming immune to detection. weapons will cease to fire but abilities can still be used.
+DURATION: 4.0"
 
 "estab_route"									"Established Route"
 "estab_route_Description"						"Gain significant move speed speed for the duration or untill a new order is given. \n \nHigher levels increase speed effect.
-DURATION: 60 90 120 150"
+DURATION: 15.0
+Speed: 60 90 120 150"
 
 "cease_fire"									"Cease Fire"
 "cease_fire_Description"						"Stop firing and stop being fired at for the duration. \n \nHigher levels increase duration.
