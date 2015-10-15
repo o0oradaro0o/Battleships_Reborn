@@ -45,7 +45,7 @@ function fireSoundImpact(keys)
 	EmitSoundOn("Hero_Lina.ProjectileImpact", targetUnit)	
 end 
 
-function fireAuraBurn(keys)
+function fireSoundAura(keys)
 --Play sound on units affected by fire ultimate burn.
 	local casterUnit = keys.caster
 	local targetUnit = keys.target
@@ -125,3 +125,26 @@ function poisonSoundImpact(keys)
 
 end 
 
+function lightSoundFire(keys)
+--Play sound for firing light-type weapons
+	
+	local casterUnit = keys.caster
+	local item = keys.ability:GetAbilityName() --ability is how item name is passed in
+	local range = 1000	 
+	local handles = {}
+	handles.team = DOTA_UNIT_TARGET_TEAM_ENEMY
+	handles.types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING + DOTA_UNIT_TARGET_MECHANICAL + DOTA_UNIT_TARGET_HERO
+	handles.flags = DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
+		
+	if #getEnemies(casterUnit,range,handles) > 0 then
+		if string.match(item, "two") then--level-2 light-type
+			EmitSoundOn("Hero_Puck.Attack", casterUnit) 			
+		elseif string.match(item, "three") then--level-3 light-type
+			EmitSoundOn("Hero_KeeperOfTheLight.Attack", casterUnit)
+		elseif string.match(item, "ult") then--ultimate light-type
+			EmitSoundOn("Hero_SkywrathMage.Attack", casterUnit)
+		else --level-1 light-type
+			EmitSoundOn("ShadowShaman_Ward.Attack", casterUnit)
+		end		
+	end		
+end

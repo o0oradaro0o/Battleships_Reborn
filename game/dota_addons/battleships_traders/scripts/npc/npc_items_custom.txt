@@ -3242,6 +3242,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"lightSoundFire"
+					}				
 					"TrackingProjectile"
 					{
 						"Target"
@@ -3257,10 +3262,8 @@
 						"MoveSpeed" "800"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/pink_one_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/pink_one_projectile.vpcf" 
 					}
-					
-					
 					
 				}
 				
@@ -3878,6 +3881,12 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"lightSoundFire"
+					}				
+				
 					"TrackingProjectile"
 					{
 						"Target"
@@ -3893,7 +3902,7 @@
 						"MoveSpeed" "800"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/pink_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/pink_two_projectile.vpcf" 
 					}
 					
 					
@@ -4490,8 +4499,7 @@
 		
 		
 		"Modifiers"
-		{
-			
+		{		
 			
 			"item_light_three_bow_shooting"
 			{
@@ -4500,6 +4508,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"lightSoundFire"
+					}					
 					"TrackingProjectile"
 					{
 						"Target"
@@ -4517,8 +4530,6 @@
 						"Dodgeable" "1" 
                    "EffectName"    "particles/basic_projectile/pink_three_projectile.vpcf" 
 					}
-					
-					
 					
 				}
 				
@@ -5211,8 +5222,6 @@
 		"ItemPurchasable"				"0"
 		
 		
-		
-		
 		"Modifiers"
 		{
 			
@@ -5224,6 +5233,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"lightSoundFire"
+					}						
 					"TrackingProjectile"
 					{
 						"Target"
@@ -5239,7 +5253,7 @@
 						"MoveSpeed" "800"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/pink_one_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/pink_one_projectile.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -5256,10 +5270,9 @@
 						"MoveSpeed" "800"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/pink_one_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/pink_one_projectile.vpcf" 
 					}
-					
-					
+										
 				}
 				
 			}
@@ -5965,9 +5978,7 @@
 		"ItemPurchasable"				"0"
 	
 		"Modifiers"
-		{
-			
-			
+		{	
 			"item_light_two_bow_shooting_doubled"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
@@ -5975,6 +5986,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"lightSoundFire"
+					}						
 					"TrackingProjectile"
 					{
 						"Target"
@@ -5990,7 +6006,7 @@
 						"MoveSpeed" "800"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/pink_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/pink_two_projectile.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -6007,10 +6023,9 @@
 						"MoveSpeed" "800"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/pink_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/pink_two_projectile.vpcf" 
 					}
-					
-					
+										
 				}
 				
 			}
@@ -6716,8 +6731,7 @@
 		
 		"Modifiers"
 		{
-			
-			
+						
 			"item_light_three_bow_shooting_doubled"
 			{
 				
@@ -6726,6 +6740,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"lightSoundFire"
+					}					
 					"TrackingProjectile"
 					{
 						"Target"
@@ -7221,7 +7240,7 @@
 				"RunScript"
 					{
 						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-						"Function"			"fireAuraBurn"
+						"Function"			"fireSoundAura"
 					}				
 					"Damage"
 					{
@@ -7563,6 +7582,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"lightSoundFire"
+					}					
 					"TrackingProjectile"
 					{
 						"Target"
