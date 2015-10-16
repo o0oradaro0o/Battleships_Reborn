@@ -7595,7 +7595,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityTextureName"				"oracle_fates_edict"
+		"AbilityTextureName"				"chaos_knight_chaos_strike"
 		
 		
 		"BaseClass" 					"ability_datadriven"
@@ -7606,7 +7606,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20.0 20.0 20.0 20.0"
+		"AbilityCooldown"				"30.0 25.0 20.0 15.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -7626,6 +7626,391 @@
 		 
 }
 
+
+	//=================================================================================================================
+	// swap_mission
+	//=================================================================================================================
+	"go_daralect"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"naga_siren_mirror_image"
+		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30.0 25.0 20.0 15.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		
+		"OnSpellStart"
+		{
+
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+					"Function"			"DropOrGo"
+				}
+				
+		}
+		 
+}
+
+	"ghost_ship"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"modifier_illusion"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		"BaseClass" 					"ability_datadriven"
+		"MaxLevel"						"3"
+		"LevelsBetweenUpgrades"					"3"
+		"RequiredLevel"						"2"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+
+
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		
+		"OnUpgrade"
+		{
+			"RemoveModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "ghost_ship"
+			}
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "ghost_ship"
+			}
+		}
+		
+		"OnOwnerSpawned"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "ghost_ship"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"ghost_ship"
+			{
+			
+				"Passive"	"1"
+				"IsHidden"	"1"
+	
+				"ThinkInterval"	"0.5"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"scripts/vscripts/abilityfunctions.lua"
+						"Function"		"Blur"
+					}
+				}
+				"States"
+				{
+					"MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"EffectName"     "particles/basic_projectile/ghost_effect.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
+			
+			"unghost_ship"
+			{
+			"ThinkInterval"	"0.5"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"scripts/vscripts/abilityfunctions.lua"
+						"Function"		"Blur"
+					}
+				}
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"EffectName"     "particles/basic_projectile/ghost_effect.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"States"
+				{
+					"MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES"		"MODIFIER_STATE_VALUE_DISABLED"
+				}
+				
+			}
+			
+		}
+
+		
+		
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"2500 2000 1500 1000"
+			}
+		}
+
+	}
+	
+	
+	"ghost_ship_creep"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"hatches"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		"BaseClass" 					"ability_datadriven"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		"Modifiers"
+		{
+			"ghost_ship_creep"
+			{
+				"Passive" "1"
+				"EffectName"     "particles/basic_projectile/ghost_effect.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%hoop_bonus_armor"
+					 "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen"
+
+				}
+				"States"
+				{
+					"MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
+
+					"MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+					
+				}
+				"ThinkInterval"		"10"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"moveToRandomTradePost"
+					}
+				}
+				
+			}
+			
+		}
+
+		
+		
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hoop_bonus_armor"	"2 4 7"
+			}
+			"02"
+			{
+					"var_type"                                      "FIELD_FLOAT"
+					"health_regen"                          "6.0 8.0 10.0"
+			}
+		}
+
+	}
+
+
+	"instill_terror"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"AbilityTextureName"				"abaddon_borrowed_time"
+
+
+		
+		"BaseClass" 					"ability_datadriven"	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700 800 900 1000"
+		"AbilityCooldown"				"28.0 26.0 24.0 22.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0 0 0"
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "terror"
+			}
+			
+		}
+		
+		"Modifiers"
+		{
+			"terror"
+			{
+					"Duration"	"%duration"
+				"EffectName"     "particles/basic_projectile/terror_effect.vpcf"
+				"EffectAttachType"	"follow_overhead"
+				
+						"States"
+				{
+					"MODIFIER_STATE_SILENCED" "MODIFIER_STATE_VALUE_ENABLED"
+				} 
+				"ThinkInterval"		".1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"moveToRandom"
+					}
+				}
+			}
+			
+		
+			
+		}
+		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"	"2.5 3.0 3.5 4.0"
+			}
+		}
+	}
+
+
+	"dump_cargo"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"drop_item"
+			"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"						"3"
+		"LevelsBetweenUpgrades"					"3"
+		"RequiredLevel"						"2"
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"21.0 17.0 13.0"
+		"AbilityCastPoint"				"0 0 0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"							"0 0 0"
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "ramming_speed"
+			}
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"dumpingItem"
+			}
+		}
+			
+		
+
+		"Modifiers"
+		{
+			"ramming_speed"
+			{
+				"Duration"  "%duration"
+				"ThinkInterval"		"0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"dumpingIt"
+					}
+				}
+				OnDestroy
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"clearDir"
+					}
+				}
+			}
+		}
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"0.5 0.6 0.7 0.8"
+			
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"base_speed"				"300.0 350.0 400.5 450.0"
+			
+			}
+		}
+	
+	}
 	
 	
 	

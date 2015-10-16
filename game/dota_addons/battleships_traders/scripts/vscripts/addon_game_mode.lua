@@ -4,7 +4,7 @@ require("timers")
 require('physics')
 require('notifications')
 require('storage')
---require('statcollection/init')
+require('statcollection/init')
 
 
 if CBattleship8D == nil then
@@ -219,6 +219,9 @@ model_lookup["npc_dota_hero_pugna"] = "models/ice_boat.vmdl"
 model_lookup["npc_dota_hero_windrunner"] = "models/const_boat.vmdl"
 model_lookup["npc_dota_hero_tusk"] = "models/battleship_boat0.vmdl"
 model_lookup["npc_dota_hero_dazzle"] = "models/trade_one_boat.vmdl"
+model_lookup["npc_dota_hero_earthshaker"] = "models/trade_boat_two.vmdl"
+model_lookup["npc_dota_hero_enigma"] = "models/trade_three_boat.vmdl"
+
 
 
 
@@ -299,6 +302,7 @@ PrecacheUnitByNameSync("npc_dota_hero_tiny", context)
 	PrecacheUnitByNameSync("npc_dota_hero_rattletrap", context)
 	PrecacheUnitByNameSync("npc_dota_hero_antimage", context)
 	PrecacheUnitByNameSync("npc_dota_hero_riki", context)
+		PrecacheUnitByNameSync("npc_dota_hero_enigma", context)
 	PrecacheUnitByNameSync("npc_dota_hero_shredder", context)
 	PrecacheUnitByNameSync("npc_dota_hero_silencer", context)
 	PrecacheUnitByNameSync("npc_dota_hero_treant", context)
@@ -633,7 +637,7 @@ end
 
 function reapplyWP()
 	for _,creep in pairs( Entities:FindAllByClassname( "npc_dota_cre*" )) do
-		if creep:HasGroundMovementCapability() and not creep:IsAncient() then
+		if creep:HasGroundMovementCapability() and not creep:IsAncient() and not creep:HasModifier("ghost_ship_creep") then
 			local waypoint =nil
 				if creep~=nil then
 					if creep:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
@@ -743,6 +747,13 @@ local hero = casterUnit
 						elseif string.match(hero:GetName(),"dazzle") then
 							hero:SetGold(herogold + 750, true)
 							hero:SetGold(0, false)
+						elseif string.match(hero:GetName(),"enigma") then
+							hero:SetGold(herogold + 3000, true)
+							hero:SetGold(0, false)
+						elseif string.match(hero:GetName(),"earthshaker") then
+							hero:SetGold(herogold + 5000, true)
+							hero:SetGold(0, false)
+							
 					end
 end
 
@@ -1877,7 +1888,7 @@ function become_boat(casterUnit, heroname)
 							local newItem = CreateItem(itemlist[b], hero, hero)
 							if newItem ~= nil then                   -- makes sure that the item exists and making sure it is the correct item
 								
-								if b==5 and string.match(heroname,"dazzle") then
+								if b==5 and (string.match(heroname,"dazzle") or string.match(heroname,"enigma") or string.match(heroname,"earthshaker")) then
 								local newItem2 = CreateItem("item_trade_manifest", hero, hero)
 									hero:AddItem(newItem2)
 									local data =
@@ -2298,6 +2309,10 @@ function buyBoat(eventSourceIndex, args)
 				become_boat(casterUnit, "npc_dota_hero_pugna")
 			elseif string.match(itemName,"dazzle") then
 				become_boat(casterUnit, "npc_dota_hero_dazzle")
+			elseif string.match(itemName,"enigma") then
+				become_boat(casterUnit, "npc_dota_hero_enigma")
+			elseif string.match(itemName,"earthshaker") then
+				become_boat(casterUnit, "npc_dota_hero_earthshaker")
 		end
 		Timers:CreateTimer( .1, function()
 		local data =

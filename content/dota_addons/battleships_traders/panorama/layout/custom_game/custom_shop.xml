@@ -1400,6 +1400,127 @@
 	</Panel>
 	
 
+	
+	<Panel hittest="false" id="enigma">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#enigma" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/enigma.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#enigma_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="5500" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="360" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="18.0" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="ability" onmouseover="showText('enigma','instill_terror')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/abaddon_borrowed_time.png" />	
+                       <Label hittest="false" class="ability_name" text="#instill_terror"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('enigma','estab_route')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/windrunner_windrun_sylvan.png" />
+                       <Label hittest="false" class="ability_name" text="#estab_route"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('enigma','go_daralect')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/naga_siren_mirror_image.png" />
+                       <Label hittest="false" class="ability_name" text="#go_daralect"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('enigma','ghost_ship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/modifier_illusion.png" />
+                       <Label hittest="false" class="ability_name" text="#ghost_ship"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="enigma_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="enigma_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('enigma', 7000)" oncontextmenu="buyBoat('enigma', 1000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="7000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+	<Panel hittest="false" id="earthshaker">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#earthshaker" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/earthshaker.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#earthshaker_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="2200" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="325" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="10.0" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+			
+					<Panel hittest="false" class="ability" onmouseover="showText('earthshaker','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('earthshaker','estab_route')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/windrunner_windrun_sylvan.png" />
+                       <Label hittest="false" class="ability_name" text="#estab_route"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('earthshaker','swap_mission')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/chaos_knight_chaos_strike.png" />
+                       <Label hittest="false" class="ability_name" text="#swap_mission"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('earthshaker','dump_cargo')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/drop_item.png" />
+                       <Label hittest="false" class="ability_name" text="#dump_cargo"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="earthshaker_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="earthshaker_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('earthshaker', 4000)" oncontextmenu="buyBoat('earthshaker', 4000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="4000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
 
 
 
@@ -1541,22 +1662,36 @@
 					</Panel>
 					<Panel id="trader_ships" class="supply_guts">
 							<Panel hittest="false" class="supply_row">
-								 <Button class="boat_btn_item"  onactivate="showDetails('dazzle')" oncontextmenu="buyBoat('dazzle', 1000)">
+								 <Button class="boat_btn_item"  onactivate="showDetails('dazzle')" oncontextmenu="buyBoat('dazzle', 750)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/dazzle.png" />
 									
 									<Label hittest="false" class="boat_gold_text" text="750" />					
 									<Label hittest="false" class="boat_name_text" text="#dazzle" />
 									
 								</Button>
+								<Button class="boat_btn_item"  onactivate="showDetails('earthshaker')" oncontextmenu="buyBoat('earthshaker', 4000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/earthshaker.png" />
+									
+									<Label hittest="false" class="boat_gold_text" text="4000" />					
+									<Label hittest="false" class="boat_name_text" text="#earthshaker" />
+									
+								</Button>
+								<Button class="boat_btn_item"  onactivate="showDetails('enigma')" oncontextmenu="buyBoat('enigma', 7000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/enigma.png" />
+									
+									<Label hittest="false" class="boat_gold_text" text="7000" />					
+									<Label hittest="false" class="boat_name_text" text="#enigma" />
+									
+								</Button>
 							</Panel>
 						</Panel>
-						
 			 </Panel>
 		</Panel>
 		
-	
+		
         <Label hittest="false" id="out_of_contracts" text="#Out_Of_Contracts" />
-     <Panel hittest="false" id="custom_shop" oncancel="hideShop()">
+	 
+	 <Panel hittest="false" id="custom_shop" oncancel="hideShop()">
 	
 		
 		
@@ -1882,9 +2017,12 @@
                     </Panel>
                 </Panel>
             </Panel>
-            <Panel hittest="false" id="empty_guts" oncancel="hideShop()">
+		<Panel hittest="false" id="empty_guts">
+            <Panel hittest="false" id="empty_guts_content" oncancel="hideShop()">
                 <Label hittest="false" id="no_trade_text" text="#no_trade" />
             </Panel>
+		 </Panel>
+		 
         </Panel>
     </Panel>
 </root>

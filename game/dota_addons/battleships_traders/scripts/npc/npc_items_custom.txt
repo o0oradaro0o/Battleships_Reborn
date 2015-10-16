@@ -12445,12 +12445,12 @@
 
 			// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"BaseClass"						"item_datadriven"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"AbilityTextureName"			"item_talisman_of_evasion"
+			"AbilityTextureName"			"item_talisman_of_evasion"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
@@ -12479,14 +12479,14 @@
 		"AbilityCastPoint"				"0.3"
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"3"
+		"AbilityCooldown"				"20"
 		"OnSpellStart"
 		{
-			"RunScript"
-			{
-				"ScriptFile"			"scripts/vscripts/abilityFunctions.lua"
-				"Function"			"ApplyLuck"
-			}
+			"ApplyModifier"
+				{
+					"Target" "TARGET"
+					"ModifierName" "luck_mod"
+				}
 			
 			
 				SpendCharge {}	
@@ -12497,19 +12497,16 @@
 		
 			"luck_mod"
 			{
-				"Duration"  "%duration"
-				"Properties"
-						{
-							"MODIFIER_PROPERTY_MIN_HEALTH"	"7"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityFunctions.lua"
+						"Function"			"ApplyLuck"
 					}
+				}
+				"Duration"  "4.0"
 				"EffectName"     "particles/basic_projectile/luck_effect.vpcf"
-					"EffectAttachType"	"follow_overhead"
-			}
-			"luck_fail"
-			{
-				"Duration"  "2"
-				
-				"EffectName"     "particles/basic_projectile/luck_start.vpcf"
 					"EffectAttachType"	"follow_overhead"
 			}
 			
@@ -12520,16 +12517,7 @@
 		"AbilitySpecial"
 		{
 
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"7.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"min_hp"				"7.0"
-			}
+
 
 		}
 	}
@@ -13130,6 +13118,48 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		
+	}
+	
+	"item_bag_of_gold_battleships"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"3821"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_gameplay/gold_coin001.vmdl"
+		"ItemKillable"					"0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"99999"
+		"ItemPurchasable"				"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemKillable"					"0"
+		"ItemCastOnPickup"				"1"
+		"OnSpellStart"
+		{
+				"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/abilityFunctions.lua"
+				"Function"			"giveGold"
+			}
+			
+				
+				SpendCharge {}	
+		}
 	}
 	
 	

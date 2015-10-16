@@ -188,6 +188,8 @@ function showDetails(BoatName)
 		$("#crystal_maiden").style.height = "0px";
 		$("#phantom_lancer").style.height = "0px";
 		$("#dazzle").style.height = "0px";
+		$("#earthshaker").style.height = "0px";
+		$("#enigma").style.height = "0px";
 		
 
 	}
@@ -215,6 +217,8 @@ function showDetails(BoatName)
 		$("#crystal_maiden").style.height = "0px";
 		$("#phantom_lancer").style.height = "0px";
 			$("#dazzle").style.height = "0px";
+			$("#earthshaker").style.height = "0px";
+			$("#enigma").style.height = "0px";
 		$(  "#"+BoatName ).style.height = "650px";
 	}
 	
@@ -394,6 +398,9 @@ function buyBoat(BoatName, cost)
 		$("#crystal_maiden").style.height = "0px";
 		$("#phantom_lancer").style.height = "0px";
 			$("#dazzle").style.height = "0px";
+			$("#earthshaker").style.height = "0px";
+			$("#enigma").style.height = "0px";
+			
 		Game.EmitSound("ui.chat_close");
 		
 		
@@ -658,7 +665,7 @@ function buyBoat(BoatName, cost)
 				if(data.Ally_ID == 0)
 				{
 					$( "#out_of_contracts" ).style.visibility="visible";
-					$.Schedule( 1.5, reHideOutOfContracts );
+					$.Schedule( 4, reHideOutOfContracts );
 				}
 			}
 		
@@ -943,7 +950,7 @@ function OnRightButtonPressed()
 // Main mouse event callback
 GameUI.SetMouseCallback( function( eventName, arg ) {
 
-	$.Msg("MOUSE: ", eventName, " -- ", arg, " -- ", GameUI.GetClickBehaviors())
+	//$.Msg("MOUSE: ", eventName, " -- ", arg, " -- ", GameUI.GetClickBehaviors())
 
 	if ( GameUI.GetClickBehaviors() !== CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE )
 		return CONTINUE_PROCESSING_EVENT;
