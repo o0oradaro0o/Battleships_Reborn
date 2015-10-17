@@ -3270,16 +3270,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"lightSoundImpact"
+			}	
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+				
+		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -3912,16 +3917,20 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"lightSoundImpact"
+			}								
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}			
+		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -4536,16 +4545,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"lightSoundImpact"
+			}								
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}			
+        }
+		
 		"AbilitySpecial"
 		{
 			"01"
@@ -5278,16 +5292,20 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                 "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"lightSoundImpact"
+			}					
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					 "Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}			
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -6031,16 +6049,20 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"lightSoundImpact"
+			}												
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}                        
+        }
 				"AbilitySpecial"
 		{
 			"01"
@@ -6786,17 +6808,22 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
-				"AbilitySpecial"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"lightSoundImpact"
+			}								
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}			
+		}
+		
+		"AbilitySpecial"
 		{
 			"01"
 			{
