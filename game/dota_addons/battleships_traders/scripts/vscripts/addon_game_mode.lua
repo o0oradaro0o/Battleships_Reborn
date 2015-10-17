@@ -218,8 +218,8 @@ model_lookup["npc_dota_hero_ursa"] = "models/Aircraft_boat.vmdl"
 model_lookup["npc_dota_hero_pugna"] = "models/ice_boat.vmdl"
 model_lookup["npc_dota_hero_windrunner"] = "models/const_boat.vmdl"
 model_lookup["npc_dota_hero_tusk"] = "models/battleship_boat0.vmdl"
-model_lookup["npc_dota_hero_dazzle"] = "models/trade_one_boat.vmdl"
-model_lookup["npc_dota_hero_earthshaker"] = "models/trade_boat_two.vmdl"
+model_lookup["npc_dota_hero_vengefulspirit"] = "models/trade_one_boat.vmdl"
+model_lookup["npc_dota_hero_bane"] = "models/trade_boat_two.vmdl"
 model_lookup["npc_dota_hero_enigma"] = "models/trade_three_boat.vmdl"
 
 
@@ -265,9 +265,9 @@ function Precache( context )
 PrecacheUnitByNameSync("npc_dota_hero_zuus", context)
 PrecacheUnitByNameSync("npc_dota_hero_tiny", context)
 	PrecacheUnitByNameSync("npc_dota_hero_kunkka", context)
-	PrecacheUnitByNameSync("npc_dota_hero_earthshaker", context)
+	PrecacheUnitByNameSync("npc_dota_hero_bane", context)
 	
-	PrecacheUnitByNameSync("npc_dota_hero_dazzle", context)
+	PrecacheUnitByNameSync("npc_dota_hero_vengefulspirit", context)
 	PrecacheUnitByNameSync("npc_dota_hero_brewmaster", context)
 	PrecacheUnitByNameSync("npc_dota_hero_puck", context)
 	PrecacheUnitByNameSync("npc_dota_hero_tidehunter", context)
@@ -387,7 +387,7 @@ function CBattleship8D:InitGameMode()
 	GameRules:GetGameModeEntity():SetRecommendedItemsDisabled(true)
 	GameRules:GetGameModeEntity():SetBuybackEnabled(false)
 	GameRules:SetSameHeroSelectionEnabled(true)
-
+	SendToServerConsole( "dota_combine_models 0" ) 
 	ListenToGameEvent('dota_item_purchased', Dynamic_Wrap(CBattleship8D, 'OnItemPurchased'), self)
 
 	
@@ -441,6 +441,7 @@ if BOAT_JUST_BAUGHT ==0 then
 			npc:SetOriginalModel( "models/noah_boat.vmdl" )
 		end
 	if npc:IsRealHero() then
+		RemoveWearables( npc )
 		stopPhysics(npc)
 		npc:SetBaseStrength(1)
 		print("hero level is" .. npc:GetLevel())
@@ -748,13 +749,13 @@ local hero = casterUnit
 							hero:SetGold(herogold + 750, true)
 							hero:SetGold(0, false)
 							print ( '[BAREBONES] player was phantom_lancer and got 750')
-						elseif string.match(hero:GetName(),"dazzle") then
+						elseif string.match(hero:GetName(),"vengefulspirit") then
 							hero:SetGold(herogold + 750, true)
 							hero:SetGold(0, false)
 						elseif string.match(hero:GetName(),"enigma") then
 							hero:SetGold(herogold + 3000, true)
 							hero:SetGold(0, false)
-						elseif string.match(hero:GetName(),"earthshaker") then
+						elseif string.match(hero:GetName(),"bane") then
 							hero:SetGold(herogold + 5000, true)
 							hero:SetGold(0, false)
 							
@@ -1877,6 +1878,7 @@ function become_boat(casterUnit, heroname)
 			print("calling replace hero")
 			BOAT_JUST_BAUGHT=1
 			local hero = PlayerResource:ReplaceHeroWith( casterUnit:GetPlayerID(), heroname , 0, 0 )
+			SendToServerConsole( "dota_combine_models 0" ) 
 			
 				print("called replace hero")
 				if hero ~= nil then
@@ -1892,7 +1894,7 @@ function become_boat(casterUnit, heroname)
 							local newItem = CreateItem(itemlist[b], hero, hero)
 							if newItem ~= nil then                   -- makes sure that the item exists and making sure it is the correct item
 								
-								if b==5 and (string.match(heroname,"dazzle") or string.match(heroname,"enigma") or string.match(heroname,"earthshaker")) then
+								if b==5 and (string.match(heroname,"vengefulspirit") or string.match(heroname,"enigma") or string.match(heroname,"bane")) then
 								local newItem2 = CreateItem("item_trade_manifest", hero, hero)
 									hero:AddItem(newItem2)
 									local data =
@@ -2106,29 +2108,11 @@ function RemoveWearables( hero )
         end
         model = model:NextMovePeer()
     end
-	modelSwap(hero)
 	
 end
 	  )
 end
-function modelSwap(hero)
-      -- Check if npc is hero
-	  Timers:CreateTimer( 0.1, function()
-	  local model_name = ""
-      if not hero:IsHero() then return end
 
-      -- Getting model name
-      if model_lookup[ hero:GetName() ] ~= nil and hero:GetModelName() ~= model_lookup[ hero:GetName() ] then
-        model_name = model_lookup[ hero:GetName() ]
-      else
-        return nil
-      end
-	     hero:SetModel( model_name )
-      hero:SetOriginalModel( model_name )
-      hero:MoveToPosition( hero:GetAbsOrigin() )
-	  end
-	  )
-end
 
 function UnstickPlayer(eventSourceIndex, args)
 print("in unstick")
@@ -2311,12 +2295,12 @@ function buyBoat(eventSourceIndex, args)
 				become_boat(casterUnit, "npc_dota_hero_phantom_lancer")
 			elseif string.match(itemName,"pugna") then
 				become_boat(casterUnit, "npc_dota_hero_pugna")
-			elseif string.match(itemName,"dazzle") then
-				become_boat(casterUnit, "npc_dota_hero_dazzle")
+			elseif string.match(itemName,"vengefulspirit") then
+				become_boat(casterUnit, "npc_dota_hero_vengefulspirit")
 			elseif string.match(itemName,"enigma") then
 				become_boat(casterUnit, "npc_dota_hero_enigma")
-			elseif string.match(itemName,"earthshaker") then
-				become_boat(casterUnit, "npc_dota_hero_earthshaker")
+			elseif string.match(itemName,"bane") then
+				become_boat(casterUnit, "npc_dota_hero_bane")
 		end
 		Timers:CreateTimer( .1, function()
 		local data =

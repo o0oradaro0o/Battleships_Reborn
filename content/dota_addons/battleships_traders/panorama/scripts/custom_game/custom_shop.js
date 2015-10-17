@@ -187,8 +187,8 @@ function showDetails(BoatName)
 		$("#tidehunter").style.height = "0px";
 		$("#crystal_maiden").style.height = "0px";
 		$("#phantom_lancer").style.height = "0px";
-		$("#dazzle").style.height = "0px";
-		$("#earthshaker").style.height = "0px";
+		$("#vengefulspirit").style.height = "0px";
+		$("#bane").style.height = "0px";
 		$("#enigma").style.height = "0px";
 		
 
@@ -216,8 +216,8 @@ function showDetails(BoatName)
 		$("#tidehunter").style.height = "0px";
 		$("#crystal_maiden").style.height = "0px";
 		$("#phantom_lancer").style.height = "0px";
-			$("#dazzle").style.height = "0px";
-			$("#earthshaker").style.height = "0px";
+			$("#vengefulspirit").style.height = "0px";
+			$("#bane").style.height = "0px";
 			$("#enigma").style.height = "0px";
 		$(  "#"+BoatName ).style.height = "650px";
 	}
@@ -348,7 +348,7 @@ function buyBoat(BoatName, cost)
 	{
 		if (Players.GetLocalPlayer() == data.splitscreenplayer)
 		{
-			 hideShop();
+			 hideShipShop();
 		 }
 	}
 	function hideShop()
@@ -397,8 +397,8 @@ function buyBoat(BoatName, cost)
 		$("#tidehunter").style.height = "0px";
 		$("#crystal_maiden").style.height = "0px";
 		$("#phantom_lancer").style.height = "0px";
-			$("#dazzle").style.height = "0px";
-			$("#earthshaker").style.height = "0px";
+			$("#vengefulspirit").style.height = "0px";
+			$("#bane").style.height = "0px";
 			$("#enigma").style.height = "0px";
 			
 		Game.EmitSound("ui.chat_close");

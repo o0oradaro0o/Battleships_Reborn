@@ -53,8 +53,8 @@
 		"crystal_maiden"										"Canoe"
 		"phantom_lancer"										"Airboat"
 				"pugna"							"Ice Breaker"
-					"dazzle"							"Phoenician Trader"
-					"earthshaker"							"Cargo Ship"
+					"vengefulspirit"							"Phoenician Trader"
+					"bane"							"Cargo Ship"
 					"enigma"							"Ghost Ship"
 		
 		"phantom_lancer_desc"				"The Airboat it a fast and sturdy ship with some dangerous damage abilities."		
@@ -76,9 +76,10 @@
 		"windrunner_desc"					"he construction ship is a floating dock, capable of using the scrap around it to repair itself, protect its allies and even construct ships for the empire."
 		"crystal_maiden_desc"				"The Canoe is a very simple boat whose crew gains heart from one another and inspires their allies."			
 		"sniper_desc"				"This submarine is less of a submarine and more of a boat.  The sub is powerful, and even more powerful when submerged. But be wary, or you'll run out of oxygen!"			
-		"earthshaker_desc"				"The strongest fastest trader in the seas. Might be radioactive... nobody's sure"			
+		"bane_desc"				"The strongest fastest trader in the seas. Might be radioactive... nobody's sure"			
 		"enigma_desc"							"The SS Baychimo has been lost and abandoned in 1931.  This ghost ship was last seen in 1969... untill now."
-
+"vengefulspirit_desc"							"Phoenician Trader a simple but fully licensed ship."
+				
 	
 	
 	"Ships"					"Ships"
@@ -593,13 +594,13 @@ DURATION: 4.0"
 
 "dump_cargo"									"Dump Cargo"
 "dump_cargo_Description"						"Toss Goods off the back of your ship to gain massive short lived speed boost.\nDrops a random consumable item or gold piecein your wake. \n \nHigher levels increase duration.
-DURATION: 0.5 0.6 0.7
+DURATION: 0.6 0.7 0.8
 Speed Bonus 350 400 500"
 
 
 "ghost_ship"									"Ghost Ship"
 "ghost_ship_Description"						"This ship is lost a sea and does not appear on the mini map unless it draws within close range of its foes. \n \nHigher levels decrease range.
-SIGHTING RANGE: 2500 2000 1500 1000"
+SIGHTING RANGE: 2000 1500 1000"
 
 "instill_terror"									"Instill Terror"
 "instill_terror_Description"						"Silence target ship and throw them into a panic where their ship moves erratically. \n \nHigher levels increase duration.

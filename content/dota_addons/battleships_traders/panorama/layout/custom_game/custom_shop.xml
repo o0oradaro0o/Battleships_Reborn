@@ -211,11 +211,11 @@
                        <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('crystal_maiden','war_drumbs_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/earthshaker_aftershock.png" />
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/bane_aftershock.png" />
                        <Label hittest="false" class="ability_name" text="#war_drumbs_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('crystal_maiden','might_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/earthshaker_enchant_totem.png" />
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/bane_enchant_totem.png" />
                        <Label hittest="false" class="ability_name" text="#might_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('crystal_maiden','batten_hatches')" >
@@ -1338,14 +1338,14 @@
 	</Panel>
 	
 	
-	<Panel hittest="false" id="dazzle">	
+	<Panel hittest="false" id="vengefulspirit">	
 		<Panel hittest="false" class="ship_details_holder" >
-		<Label hittest="false" class="boat_title" text="#dazzle" />
+		<Label hittest="false" class="boat_title" text="#vengefulspirit" />
 			<Panel hittest="false" class="boat_row">
-				<Image class="boat_img" src="file://{images}/custom_game/boats/dazzle.png" />
+				<Image class="boat_img" src="file://{images}/custom_game/boats/vengefulspirit.png" />
 				<Panel hittest="false" class="ship_desc_holder" >
 					<Label hittest="false" class="ship_desc_title" text="#description" />
-					<Label hittest="false" class="boat_stat_label" text="#dazzle_desc" />
+					<Label hittest="false" class="boat_stat_label" text="#vengefulspirit_desc" />
 				</Panel>
 				<Panel hittest="false" class="ship_stats_holder" >
 				<Panel hittest="false" class="boat_row">
@@ -1366,19 +1366,19 @@
 				</Panel>	
 			</Panel>	
 			<Panel hittest="false" class="boat_row">
-					<Panel hittest="false" class="ability" onmouseover="showText('dazzle','pistols_battleship')" >
+					<Panel hittest="false" class="ability" onmouseover="showText('vengefulspirit','pistols_battleship')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
                        <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
 					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('dazzle','estab_route')" >
+					<Panel hittest="false" class="ability" onmouseover="showText('vengefulspirit','estab_route')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/windrunner_windrun_sylvan.png" />
                        <Label hittest="false" class="ability_name" text="#estab_route"/>"
 					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('dazzle','Trade_hide_battleship')" >
+					<Panel hittest="false" class="ability" onmouseover="showText('vengefulspirit','Trade_hide_battleship')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/slark_shadow_dance.png" />
                        <Label hittest="false" class="ability_name" text="#Trade_hide_battleship"/>"
 					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('dazzle','batten_hatches')" >
+					<Panel hittest="false" class="ability" onmouseover="showText('vengefulspirit','batten_hatches')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/hatches.png" />
                        <Label hittest="false" class="ability_name" text="#batten_hatches"/>"
 					</Panel>
@@ -1386,12 +1386,12 @@
 				
 				<Panel hittest="false" class="boat_row">
 					<Panel hittest="false" class="abilities_details_holder"  >
-						<Label hittest="false" class="ship_desc_title" text=" "  id="dazzle_ability"/>
-						<Label hittest="false" class="boat_stat_label" text=" "  id="dazzle_ability_desc"/>
+						<Label hittest="false" class="ship_desc_title" text=" "  id="vengefulspirit_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="vengefulspirit_ability_desc"/>
 					</Panel>
 			</Panel>
 					<Panel hittest="false" class="buy_box" >
-						<Button class="buy_ship_button" onactivate="buyBoat('dazzle', 750)" oncontextmenu="buyBoat('dazzle', 1000)">
+						<Button class="buy_ship_button" onactivate="buyBoat('vengefulspirit', 750)" oncontextmenu="buyBoat('vengefulspirit', 1000)">
 							<Label hittest="false" class="buy_text" text="#buy" />
 							<Label hittest="false" class="buy_text_g" text="750 G" />
 						</Button>
@@ -1461,14 +1461,14 @@
 		</Panel>	
 	</Panel>
 
-	<Panel hittest="false" id="earthshaker">	
+	<Panel hittest="false" id="bane">	
 		<Panel hittest="false" class="ship_details_holder" >
-		<Label hittest="false" class="boat_title" text="#earthshaker" />
+		<Label hittest="false" class="boat_title" text="#bane" />
 			<Panel hittest="false" class="boat_row">
-				<Image class="boat_img" src="file://{images}/custom_game/boats/earthshaker.png" />
+				<Image class="boat_img" src="file://{images}/custom_game/boats/bane.png" />
 				<Panel hittest="false" class="ship_desc_holder" >
 					<Label hittest="false" class="ship_desc_title" text="#description" />
-					<Label hittest="false" class="boat_stat_label" text="#earthshaker_desc" />
+					<Label hittest="false" class="boat_stat_label" text="#bane_desc" />
 				</Panel>
 				<Panel hittest="false" class="ship_stats_holder" >
 				<Panel hittest="false" class="boat_row">
@@ -1490,31 +1490,31 @@
 			</Panel>	
 			<Panel hittest="false" class="boat_row">
 			
-					<Panel hittest="false" class="ability" onmouseover="showText('earthshaker','pistols_battleship')" >
+					<Panel hittest="false" class="ability" onmouseover="showText('bane','pistols_battleship')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
                        <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
 					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('earthshaker','estab_route')" >
+					<Panel hittest="false" class="ability" onmouseover="showText('bane','estab_route')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/windrunner_windrun_sylvan.png" />
                        <Label hittest="false" class="ability_name" text="#estab_route"/>"
 					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('earthshaker','swap_mission')" >
+					<Panel hittest="false" class="ability" onmouseover="showText('bane','swap_mission')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/chaos_knight_chaos_strike.png" />
                        <Label hittest="false" class="ability_name" text="#swap_mission"/>"
 					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('earthshaker','dump_cargo')" >
+					<Panel hittest="false" class="ability" onmouseover="showText('bane','dump_cargo')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/drop_item.png" />
                        <Label hittest="false" class="ability_name" text="#dump_cargo"/>"
 					</Panel>
 				</Panel>
 				<Panel hittest="false" class="boat_row">
 					<Panel hittest="false" class="abilities_details_holder"  >
-						<Label hittest="false" class="ship_desc_title" text=" "  id="earthshaker_ability"/>
-						<Label hittest="false" class="boat_stat_label" text=" "  id="earthshaker_ability_desc"/>
+						<Label hittest="false" class="ship_desc_title" text=" "  id="bane_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="bane_ability_desc"/>
 					</Panel>
 			</Panel>
 					<Panel hittest="false" class="buy_box" >
-						<Button class="buy_ship_button" onactivate="buyBoat('earthshaker', 4000)" oncontextmenu="buyBoat('earthshaker', 4000)">
+						<Button class="buy_ship_button" onactivate="buyBoat('bane', 4000)" oncontextmenu="buyBoat('bane', 4000)">
 							<Label hittest="false" class="buy_text" text="#buy" />
 							<Label hittest="false" class="buy_text_g" text="4000 G" />
 						</Button>
@@ -1662,18 +1662,18 @@
 					</Panel>
 					<Panel id="trader_ships" class="supply_guts">
 							<Panel hittest="false" class="supply_row">
-								 <Button class="boat_btn_item"  onactivate="showDetails('dazzle')" oncontextmenu="buyBoat('dazzle', 750)">
-									<Image class="boat_image" src="file://{images}/custom_game/boats/dazzle.png" />
+								 <Button class="boat_btn_item"  onactivate="showDetails('vengefulspirit')" oncontextmenu="buyBoat('vengefulspirit', 750)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/vengefulspirit.png" />
 									
 									<Label hittest="false" class="boat_gold_text" text="750" />					
-									<Label hittest="false" class="boat_name_text" text="#dazzle" />
+									<Label hittest="false" class="boat_name_text" text="#vengefulspirit" />
 									
 								</Button>
-								<Button class="boat_btn_item"  onactivate="showDetails('earthshaker')" oncontextmenu="buyBoat('earthshaker', 4000)">
-									<Image class="boat_image" src="file://{images}/custom_game/boats/earthshaker.png" />
+								<Button class="boat_btn_item"  onactivate="showDetails('bane')" oncontextmenu="buyBoat('bane', 4000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/bane.png" />
 									
 									<Label hittest="false" class="boat_gold_text" text="4000" />					
-									<Label hittest="false" class="boat_name_text" text="#earthshaker" />
+									<Label hittest="false" class="boat_name_text" text="#bane" />
 									
 								</Button>
 								<Button class="boat_btn_item"  onactivate="showDetails('enigma')" oncontextmenu="buyBoat('enigma', 7000)">

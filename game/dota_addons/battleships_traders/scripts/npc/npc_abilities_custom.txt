@@ -162,7 +162,6 @@
 
 				}
 				"Duration" "%bail_duration"
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 			
 		}
@@ -7129,7 +7128,7 @@
 
 				}
 				"Duration" "%path_duration"
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
 				"EffectName"    "particles/basic_projectile/speed_effect.vpcf" 
 				"EffectAttachType"	"follow_origin"
 			}
@@ -7735,7 +7734,6 @@
 				{
 					"MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES"		"MODIFIER_STATE_VALUE_ENABLED"
 				}
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"EffectName"     "particles/basic_projectile/ghost_effect.vpcf"
 				"EffectAttachType"	"follow_origin"
 			}
@@ -7751,7 +7749,6 @@
 						"Function"		"Blur"
 					}
 				}
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"EffectName"     "particles/basic_projectile/ghost_effect.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"States"
@@ -7773,7 +7770,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"2500 2000 1500 1000"
+				"radius"					"2000 1500 1000"
 			}
 		}
 
@@ -7940,9 +7937,7 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"drop_item"
 			"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"MaxLevel"						"3"
-		"LevelsBetweenUpgrades"					"3"
-		"RequiredLevel"						"2"
+
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"21.0 17.0 13.0"
@@ -7999,13 +7994,13 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"0.5 0.6 0.7 0.8"
+				"duration"				"0.6 0.7 0.8"
 			
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"base_speed"				"300.0 350.0 400.5 450.0"
+				"base_speed"				"350.0 400.5 450.0"
 			
 			}
 		}
