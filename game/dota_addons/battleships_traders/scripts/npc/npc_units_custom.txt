@@ -2399,7 +2399,7 @@
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
 			"Level"						"1"
-			"Ability1"					"building_unselectable"			// Ability 1
+			"Ability1"					"building_frozen"			// Ability 1
 			
 			// Armor
 			//----------------------------------------------------------------
@@ -2471,7 +2471,7 @@
 			//
 			"BaseClass"					"npc_dota_building"	// Class of entity of link to.
 			"Model"							"models/items/courier/jumo/jumo.vmdl"// Model.
-			"ModelScale" 				"1.0"
+			"ModelScale" 				".7"
 			"SoundSet"					"Tower.Water"		// Name of sound set.
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
@@ -2480,7 +2480,7 @@
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"30"		// Physical protection.
 			"MagicalResistance"			"0"			// Magical protection.
-			"Ability1"					"building_unselectable"			// Ability 1
+			"Ability1"					"building_frozen"			// Ability 1
 			
 			// Attack
 			//----------------------------------------------------------------
@@ -2549,7 +2549,7 @@
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
 			"Level"						"1"
-			"Ability1"					"building_unselectable"			// Ability 1
+			"Ability1"					"building_frozen"			// Ability 1
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"30"		// Physical protection.
@@ -2621,7 +2621,7 @@
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
 			"Level"						"1"
-			"Ability1"					"building_unselectable"			// Ability 1
+			"Ability1"					"building_frozen"			// Ability 1
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"30"		// Physical protection.
@@ -2693,7 +2693,7 @@
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
 			"Level"						"1"
-			"Ability1"					"building_unselectable"			// Ability 1
+			"Ability1"					"building_frozen"			// Ability 1
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"30"		// Physical protection.
@@ -2765,7 +2765,7 @@
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
 			"Level"						"1"
-			"Ability1"					"building_unselectable"			// Ability 1
+			"Ability1"					"building_frozen"			// Ability 1
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"30"		// Physical protection.
@@ -2838,7 +2838,7 @@
 			"MinimapIconSize"			"0"
 			"Level"						"1"
 			
-			"Ability1"					"building_unselectable"			// Ability 1
+			"Ability1"					"building_frozen"			// Ability 1
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"30"		// Physical protection.
@@ -2910,7 +2910,7 @@
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
 			"Level"						"1"
-			"Ability1"					"building_unselectable"			// Ability 1
+			"Ability1"					"building_frozen"			// Ability 1
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"30"		// Physical protection.
@@ -2982,7 +2982,7 @@
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
 			"Level"						"1"
-			"Ability1"					"building_unselectable"			// Ability 1
+			"Ability1"					"building_frozen"			// Ability 1
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"30"		// Physical protection.
@@ -3106,8 +3106,8 @@
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
-		"VisionNighttimeRange"		"600"		// Range of vision at night time.
+		"VisionDaytimeRange"		"10"		// Range of vision during day light.
+		"VisionNighttimeRange"		"10"		// Range of vision at night time.
 
 		// Team
 		//----------------------------------------------------------------
@@ -3231,7 +3231,7 @@
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
 			"Level"						"1"
-			"Ability1"					"building_unselectable"			// Ability 1
+			"Ability1"					"building_hexed"			// Ability 1
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"30"		// Physical protection.
@@ -3300,6 +3300,177 @@
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
 	"Ability1"					"dummy_passive_fly"
 }
+
+
+
+	//=================================================================================	
+	// Creature: coast_oneshot
+	//=================================================================================
+	"coast_oneshot"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/coast_boat.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_Ranged"
+		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"Level"						"1"
+		"ModelScale" 				".25"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"2"			// Physical protection.
+		"MagicalResistance"			"70"			// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"26"		// Damage range min.
+		"AttackDamageMax"			"28"		// Damage range max.
+		"AttackRate"				"1.0"		// Speed of attack.
+		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+		"AttackRange"				"600"		// Range within a target can be attacked.
+		"ProjectileModel"			 "particles/basic_projectile/ranged_badguy_two.vpcf"  // Particle system model for projectile.
+		"ProjectileSpeed"			"800"		// Speed of projectile.		     
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"40"
+		"HealthBarOffset"			"170"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"60"		// Experience earn.
+		"BountyGoldMin"				"79"		// Gold earned min.
+		"BountyGoldMax"				"81"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"150"		// Speed.			
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"650"		// Base health.
+		"StatusHealthRegen"			"1.0"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"600"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	"Creature"
+		{
+
+			//Level Up
+			"HPGain"					"65"
+			"DamageGain"				"2"
+			"ArmorGain"					"1.5"
+			"MagicResistGain"			"0.0"
+			"MoveSpeedGain"				"10"
+			"BountyGain"				"10"
+			"XPGain"					"7"
+		}
+	}
+	
+	"daralect_vessle"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/trade_three_boat.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_Ranged"
+		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"Level"						"1"
+		"ModelScale" 				"1"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"ghost_ship_creep"			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"2"			// Physical protection.
+		"MagicalResistance"			"70"			// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"26"		// Damage range min.
+		"AttackDamageMax"			"28"		// Damage range max.
+		"AttackRate"				"1.0"		// Speed of attack.
+		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+		"AttackRange"				"600"		// Range within a target can be attacked.
+		"ProjectileModel"			 "particles/basic_projectile/ranged_badguy_two.vpcf"  // Particle system model for projectile.
+		"ProjectileSpeed"			"800"		// Speed of projectile.		     
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"40"
+		"HealthBarOffset"			"170"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"60"		// Experience earn.
+		"BountyGoldMin"				"79"		// Gold earned min.
+		"BountyGoldMax"				"81"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"150"		// Speed.			
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"650"		// Base health.
+		"StatusHealthRegen"			"1.0"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"10"		// Range of vision during day light.
+		"VisionNighttimeRange"		"10"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	"Creature"
+		{
+
+			//Level Up
+			"HPGain"					"65"
+			"DamageGain"				"2"
+			"ArmorGain"					"1.5"
+			"MagicResistGain"			"0.0"
+			"MoveSpeedGain"				"10"
+			"BountyGain"				"10"
+			"XPGain"					"7"
+		}
+	}
 	
 	
 }

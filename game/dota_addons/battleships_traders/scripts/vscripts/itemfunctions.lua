@@ -1,3 +1,5 @@
+require('notifications')
+
 if itemFunctions == nil then
 	print ( '[ItemFunctions] creating itemFunctions' )
 	itemFunctions = {} -- Creates an array to let us beable to index itemFunctions when creating new functions
@@ -22,19 +24,20 @@ function toggle_item(keys) -- keys is the information sent by the ability
 	local itemName = tostring(keys.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. keys.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
 	if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
 		for itemSlot = 0, 5, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
-	        	if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
-                		-- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
-                		if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
-                			Item:ToggleAbility()
-							
-                		end
-	        	end
+			if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
+				-- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
+				if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
+					tem:ToggleAbility()
+				end
+			end
 		end
 	end
 end
-
-
-
+function sendMission(keys) 
+local casterUnit = keys.caster
+ Notifications:Top(casterUnit:GetPlayerID(), {text="#mission_empty", duration=5.0, style={ color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
+						
+end
 
 function del_fluff(keys) -- keys is the information sent by the ability
 	print( '[ItemFunctions] itemfluff  Called' )
@@ -451,30 +454,3 @@ end
 
 -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
 -- makes sure that the item exists and making sure it is the correct item
-
-function poisonSound(keys)
-
-	local casterUnit = keys.caster
-	
-	local enemies = FindUnitsInRadius(casterUnit:GetTeamNumber(), 
-		casterUnit:GetOrigin(), 
-		nil, 
-		900, 
-		DOTA_UNIT_TARGET_TEAM_ENEMY, 
-		DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING + DOTA_UNIT_TARGET_MECHANICAL + DOTA_UNIT_TARGET_HERO, 
-		DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS, 
-		0, 
-		false)
-		
-	if #enemies > 0 then
-		EmitSoundOnClient("Hero_VenomancerWard.Attack", PlayerResource:GetPlayer(casterUnit:GetPlayerID())) --PlayerResource:GetPlayer(playerID)
-	end			
-	
-end
-
-
-
-
-
-
-

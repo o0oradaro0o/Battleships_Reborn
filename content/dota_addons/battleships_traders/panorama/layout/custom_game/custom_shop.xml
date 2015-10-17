@@ -99,17 +99,19 @@
 		</Panel>
 	-->
 	
-	<Panel hittest="false" class="panalHiderHolder" id="missionButton">
-        <Button class="panalHider" onactivate="fillAndShow()">
-            <Label hittest="false" id="shop_text" text="#trade" />
-			
+	<Panel hittest="false" class="panelHiderHolder" id="missionButton">
+        <Button class="panelHider" onactivate="fillAndShow()">
+		<Panel hittest="false" class="move_up">
+            <Label hittest="false" class="shop_text" text="#trade" />
+			</Panel>
         </Button>
 	</Panel>
 	
-	<Panel hittest="false" class="shipPanalHiderHolder" id="shipsButton">
-        <Button class="shipPanalHider" onactivate="showShips()">
-            <Label hittest="false" id="shop_text" text="#Ships" />
-			
+	<Panel hittest="false" class="shipPanelHiderHolder" id="shipsButton">
+        <Button class="shipPanelHider" onactivate="showShips()">
+		<Panel hittest="false" class="move_up">           
+		   <Label hittest="false" class="shop_text" text="#Ships" />
+			</Panel>
         </Button>
 	</Panel>
 	
@@ -209,11 +211,11 @@
                        <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('crystal_maiden','war_drumbs_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/earthshaker_aftershock.png" />
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/bane_aftershock.png" />
                        <Label hittest="false" class="ability_name" text="#war_drumbs_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('crystal_maiden','might_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/earthshaker_enchant_totem.png" />
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/bane_enchant_totem.png" />
                        <Label hittest="false" class="ability_name" text="#might_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('crystal_maiden','batten_hatches')" >
@@ -1272,6 +1274,7 @@
 					</Panel>
 		</Panel>	
 	</Panel>
+	
 
 	<Panel hittest="false" id="pugna">	
 		<Panel hittest="false" class="ship_details_holder" >
@@ -1333,7 +1336,191 @@
 					</Panel>
 		</Panel>	
 	</Panel>
+	
+	
+	<Panel hittest="false" id="vengefulspirit">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#vengefulspirit" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/vengefulspirit.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#vengefulspirit_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="450" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="300" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="5.0" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="ability" onmouseover="showText('vengefulspirit','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('vengefulspirit','estab_route')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/windrunner_windrun_sylvan.png" />
+                       <Label hittest="false" class="ability_name" text="#estab_route"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('vengefulspirit','Trade_hide_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/slark_shadow_dance.png" />
+                       <Label hittest="false" class="ability_name" text="#Trade_hide_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('vengefulspirit','batten_hatches')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/hatches.png" />
+                       <Label hittest="false" class="ability_name" text="#batten_hatches"/>"
+					</Panel>
+				</Panel>
+				
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="vengefulspirit_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="vengefulspirit_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('vengefulspirit', 750)" oncontextmenu="buyBoat('vengefulspirit', 1000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="750 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+	
 
+	
+	<Panel hittest="false" id="enigma">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#enigma" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/enigma.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#enigma_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="5500" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="360" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="18.0" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="ability" onmouseover="showText('enigma','instill_terror')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/abaddon_borrowed_time.png" />	
+                       <Label hittest="false" class="ability_name" text="#instill_terror"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('enigma','estab_route')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/windrunner_windrun_sylvan.png" />
+                       <Label hittest="false" class="ability_name" text="#estab_route"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('enigma','go_daralect')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/naga_siren_mirror_image.png" />
+                       <Label hittest="false" class="ability_name" text="#go_daralect"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('enigma','ghost_ship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/modifier_illusion.png" />
+                       <Label hittest="false" class="ability_name" text="#ghost_ship"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="enigma_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="enigma_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('enigma', 7000)" oncontextmenu="buyBoat('enigma', 1000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="7000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+	<Panel hittest="false" id="bane">	
+		<Panel hittest="false" class="ship_details_holder" >
+		<Label hittest="false" class="boat_title" text="#bane" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/bane.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#bane_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="2200" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="325" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="10.0" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+			
+					<Panel hittest="false" class="ability" onmouseover="showText('bane','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('bane','estab_route')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/windrunner_windrun_sylvan.png" />
+                       <Label hittest="false" class="ability_name" text="#estab_route"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('bane','swap_mission')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/chaos_knight_chaos_strike.png" />
+                       <Label hittest="false" class="ability_name" text="#swap_mission"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('bane','dump_cargo')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/drop_item.png" />
+                       <Label hittest="false" class="ability_name" text="#dump_cargo"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="bane_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="bane_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('bane', 4000)" oncontextmenu="buyBoat('bane', 4000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="4000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
 
 
 
@@ -1435,7 +1622,7 @@
 		
 
 							</Panel>
-						</Panel>
+						</Panel> 
 						<Panel id="ten_ks_tab" class="ship_shop_tier_tab" onactivate="show10ks()">
 					<Label hittest="false" class="shop_btn_text" text="#ten_ks"/>
 					</Panel>
@@ -1444,7 +1631,7 @@
 								 <Button class="boat_btn_item"  onactivate="showDetails('pugna')" oncontextmenu="buyBoat('pugna', 10000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/pugna.png" />
 									 <Label hittest="false" class="boat_name_text" text="#pugna" />
-										</Button>
+										</Button> 
 								
 								<Button class="boat_btn_item"  onactivate="showDetails('visage')" oncontextmenu="buyBoat('visage', 10000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/visage.png" />
@@ -1469,11 +1656,42 @@
 							</Panel>
 						</Panel>
 						
+						<Panel id="traders_tab" class="ship_shop_tier_tab" onactivate="showtraders()">
+						
+					<Label hittest="false" class="shop_btn_text" text="#trader_ships"/>
+					</Panel>
+					<Panel id="trader_ships" class="supply_guts">
+							<Panel hittest="false" class="supply_row">
+								 <Button class="boat_btn_item"  onactivate="showDetails('vengefulspirit')" oncontextmenu="buyBoat('vengefulspirit', 750)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/vengefulspirit.png" />
+									
+									<Label hittest="false" class="boat_gold_text" text="750" />					
+									<Label hittest="false" class="boat_name_text" text="#vengefulspirit" />
+									
+								</Button>
+								<Button class="boat_btn_item"  onactivate="showDetails('bane')" oncontextmenu="buyBoat('bane', 4000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/bane.png" />
+									
+									<Label hittest="false" class="boat_gold_text" text="4000" />					
+									<Label hittest="false" class="boat_name_text" text="#bane" />
+									
+								</Button>
+								<Button class="boat_btn_item"  onactivate="showDetails('enigma')" oncontextmenu="buyBoat('enigma', 7000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/enigma.png" />
+									
+									<Label hittest="false" class="boat_gold_text" text="7000" />					
+									<Label hittest="false" class="boat_name_text" text="#enigma" />
+									
+								</Button>
+							</Panel>
+						</Panel>
 			 </Panel>
 		</Panel>
-	
+		
+		
         <Label hittest="false" id="out_of_contracts" text="#Out_Of_Contracts" />
-     <Panel hittest="false" id="custom_shop" oncancel="hideShop()">
+	 
+	 <Panel hittest="false" id="custom_shop" oncancel="hideShop()">
 	
 		
 		
@@ -1485,15 +1703,16 @@
                     <Panel hittest="false" id="mission_hider_1" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
                         <Panel hittest="false" class="mission_guts">
-                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()" oncontextmenu="GiveEasy()">
                                 <Label hittest="false" class="shop_btn_text" text="#easy" />
                             </Button>
-                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()" oncontextmenu="GiveMedium()">
                                 <Label hittest="false" class="shop_btn_text" text="#medium" />
                             </Button>
                         </Panel>
                     </Panel>
-                   
+                     <Label hittest="false"  id="must_be_trader_1" class="no_trade_text_subtitle" text="#must_be_trader" />
+				
                     <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1519,15 +1738,16 @@
                     <Panel hittest="false" id="mission_hider_2" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
                         <Panel hittest="false" class="mission_guts">
-                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()" oncontextmenu="GiveEasy()">
                                 <Label hittest="false" class="shop_btn_text" text="#easy" />
                             </Button>
-                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()" oncontextmenu="GiveMedium()">
                                 <Label hittest="false" class="shop_btn_text" text="#medium" />
                             </Button>
                         </Panel>
                     </Panel>
-                   
+                     <Label hittest="false"  id="must_be_trader_2" class="no_trade_text_subtitle" text="#must_be_trader" />
+				
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1555,15 +1775,16 @@
                     <Panel hittest="false" id="mission_hider_3" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
                         <Panel hittest="false" class="mission_guts">
-                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()" oncontextmenu="GiveEasy()">
                                 <Label hittest="false" class="shop_btn_text" text="#easy" />
                             </Button>
-                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()" oncontextmenu="GiveMedium()">
                                 <Label hittest="false" class="shop_btn_text" text="#medium" />
                             </Button>
                         </Panel>
                     </Panel>
-                   
+                     <Label hittest="false"  id="must_be_trader_3" class="no_trade_text_subtitle" text="#must_be_trader" />
+				
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1589,15 +1810,15 @@
                     <Panel hittest="false" id="mission_hider_4" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
                         <Panel hittest="false" class="mission_guts">
-                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()" oncontextmenu="GiveEasy()">
                                 <Label hittest="false" class="shop_btn_text" text="#easy" />
                             </Button>
-                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()" oncontextmenu="GiveMedium()">
                                 <Label hittest="false" class="shop_btn_text" text="#medium" />
                             </Button>
                         </Panel>
                     </Panel>
-                   
+                   <Label hittest="false"  id="must_be_trader_4" class="no_trade_text_subtitle" text="#must_be_trader" />
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1625,16 +1846,18 @@
                     <Panel hittest="false" id="mission_hider_5" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
                         <Panel hittest="false" class="mission_guts">
-                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()" oncontextmenu="GiveEasy()">
                                 <Label hittest="false" class="shop_btn_text" text="#easy" />
                             </Button>
-                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()" oncontextmenu="GiveMedium()">
                                 <Label hittest="false" class="shop_btn_text" text="#medium" />
                             </Button>
                         </Panel>
                     </Panel>
 					
-                   
+					
+                     <Label hittest="false"  id="must_be_trader_5" class="no_trade_text_subtitle" text="#must_be_trader" />
+				
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1643,9 +1866,9 @@
 								 <Label hittest="false" class="gold_cost_text" text="120  G" />
 								 <Label hittest="false" class="item_desc_text" text="#good_stuff_desc"/>
                             </Button>
-							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_booze', 40 )" oncontextmenu="buyItem('oneshot_booze', 40 )">
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_booze', 40 )" oncontextmenu="buyItem('oneshot_booze', 200 )">
                                 <Image class="item_image" src="file://{images}/custom_game/booze.png" />
-								 <Label hittest="false" class="gold_cost_text" text="40  G" />
+								 <Label hittest="false" class="gold_cost_text" text="200 G" />
 								 <Label hittest="false" class="item_desc_text" text="#booze_desc"/>
                             </Button>
                         </Panel>
@@ -1661,15 +1884,16 @@
                     <Panel hittest="false" id="mission_hider_6" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
                         <Panel hittest="false" class="mission_guts">
-                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()" oncontextmenu="GiveEasy()">
                                 <Label hittest="false" class="shop_btn_text" text="#easy" />
                             </Button>
-                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()" oncontextmenu="GiveMedium()">
                                 <Label hittest="false" class="shop_btn_text" text="#medium" />
                             </Button>
                         </Panel>
                     </Panel>
-                   
+                     <Label hittest="false"  id="must_be_trader_6" class="no_trade_text_subtitle" text="#must_be_trader" />
+				
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1695,15 +1919,16 @@
                     <Panel hittest="false" id="mission_hider_7" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
                         <Panel hittest="false" class="mission_guts">
-                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()" oncontextmenu="GiveEasy()">
                                 <Label hittest="false" class="shop_btn_text" text="#easy" />
                             </Button>
-                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()" oncontextmenu="GiveMedium()">
                                 <Label hittest="false" class="shop_btn_text" text="#medium" />
                             </Button>
                         </Panel>
                     </Panel>
-                   
+                     <Label hittest="false"  id="must_be_trader_7" class="no_trade_text_subtitle" text="#must_be_trader" />
+				
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1729,15 +1954,16 @@
                     <Panel hittest="false" id="mission_hider_8" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
                         <Panel hittest="false" class="mission_guts">
-                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()" oncontextmenu="GiveEasy()">
                                 <Label hittest="false" class="shop_btn_text" text="#easy" />
                             </Button>
-                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()" oncontextmenu="GiveMedium()">
                                 <Label hittest="false" class="shop_btn_text" text="#medium" />
                             </Button>
                         </Panel>
                     </Panel>
-                   
+                     <Label hittest="false"  id="must_be_trader_8" class="no_trade_text_subtitle" text="#must_be_trader" />
+				
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1763,15 +1989,17 @@
                     <Panel hittest="false" id="mission_hider_9" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
                         <Panel hittest="false" class="mission_guts">
-                            <Button class="tradeBtnMission" onactivate="GiveEasy()">
+                            <Button class="tradeBtnMission" onactivate="GiveEasy()" oncontextmenu="GiveEasy()">
                                 <Label hittest="false" class="shop_btn_text" text="#easy" />
                             </Button>
-                            <Button class="tradeBtnMission" onactivate="GiveMedium()">
+                            <Button class="tradeBtnMission" onactivate="GiveMedium()" oncontextmenu="GiveMedium()">
                                 <Label hittest="false" class="shop_btn_text" text="#medium" />
                             </Button>
                         </Panel>
                     </Panel>
-                   
+                     <Label hittest="false"  id="must_be_trader_9" class="no_trade_text_subtitle" text="#must_be_trader" />
+				
+				
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
@@ -1789,9 +2017,14 @@
                     </Panel>
                 </Panel>
             </Panel>
-            <Panel hittest="false" id="empty_guts" oncancel="hideShop()">
+		<Panel hittest="false" id="empty_guts">
+            <Panel hittest="false" id="empty_guts_content" oncancel="hideShop()">
                 <Label hittest="false" id="no_trade_text" text="#no_trade" />
+				 <Image  src="file://{images}/custom_game/map.png" />
+								
             </Panel>
+		 </Panel>
+		 
         </Panel>
     </Panel>
 </root>

@@ -86,7 +86,7 @@
         "override_hero"             "npc_dota_hero_ancient_apparition"          // Hero to override
 
 
-       // "Model" "models/zodiac_boat.vmdl"     // Model.
+       "Model" "models/zodiac_boat.vmdl"     // Model.
         "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
 		
 		
@@ -153,7 +153,7 @@
         "override_hero"             "npc_dota_hero_crystal_maiden"          // Hero to override
 
 
-		// "Model" "models/canoe_boat.vmdl"  // Model.
+		"Model" "models/canoe_boat.vmdl"  // Model.
         "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
 		
 		
@@ -221,7 +221,7 @@
         "override_hero"             "npc_dota_hero_phantom_lancer"          // Hero to override
 
 
-      //  "Model" "models/air_boat.vmdl"        // Model.
+       "Model" "models/air_boat.vmdl"        // Model.
         "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
 		
 		
@@ -290,7 +290,7 @@
         "override_hero"             "npc_dota_hero_tidehunter"          // Hero to override
 
 
-      //  "Model" "models/pontoon_boat.vmdl"   // Model.
+      "Model" "models/pontoon_boat.vmdl"   // Model.
                "SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
@@ -358,7 +358,7 @@
 
         "override_hero"             "npc_dota_hero_rattletrap"          // Hero to override
 
-		// "Model" "models/cat_boat.vmdl"   // Model.
+		 "Model" "models/cat_boat.vmdl"   // Model.
 		        "SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
@@ -428,7 +428,7 @@
         "override_hero"             "npc_dota_hero_disruptor"          // Hero to override
         "SoundSet"          "Hero_Kunkka"  
 
-		// "Model" "models/coast_boat.vmdl"   // Model. // Model.
+		"Model" "models/coast_boat.vmdl"   // Model. // Model.
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
@@ -492,7 +492,7 @@
 
         "override_hero"             "npc_dota_hero_morphling"          // Hero to override
         "SoundSet"          "Hero_Kunkka"  
-        // "Model" "models/speed_boat.vmdl"  // Model.
+        "Model" "models/speed_boat.vmdl"  // Model.
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
 	    "AttributeBaseStrength"     "1"                                     // Base strength
@@ -557,7 +557,7 @@
 
         "override_hero"             "npc_dota_hero_storm_spirit"          // Hero to override
         "SoundSet"          "Hero_Kunkka"  
-        //"Model" "models/junk_boat.vmdl"   // Model.
+        "Model" "models/junk_boat.vmdl"   // Model.
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
 	    "AttributeBaseStrength"     "1"                                     // Base strength
@@ -623,7 +623,7 @@
 
         "override_hero"             "npc_dota_hero_nevermore"          // Hero to override
 
-       //  "Model"             "models/plane_boat.vmdl"     // Model.
+       "Model"             "models/plane_boat.vmdl"     // Model.
 		        "SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
@@ -690,7 +690,7 @@
 
         "override_hero"             "npc_dota_hero_lion"          // Hero to override
 
-        // "Model" "models/yacht_boat.vmdl"   // Model.
+        "Model" "models/yacht_boat.vmdl"   // Model.
         "SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
@@ -756,7 +756,7 @@
 
         "override_hero"             "npc_dota_hero_meepo"          // Hero to override
 
-     //"Model" "models/house_boat.vmdl"    // Model.	        "SoundSet"          "Hero_Kunkka"  
+     "Model" "models/house_boat.vmdl"    // Model.	        "SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
 	    "AttributeBaseStrength"     "1"                                     // Base strength
@@ -819,7 +819,7 @@
 
         "override_hero"             "npc_dota_hero_jakiro"          // Hero to override
 
-        // "Model" "models/galleon_boat.vmdl"  // Model.
+        "Model" "models/galleon_boat.vmdl"  // Model.
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
@@ -884,7 +884,7 @@
 
         "override_hero"             "npc_dota_hero_ember_spirit"          // Hero to override
 
-       //  "Model" "models/tug_boat.vmdl"   // Model.
+       "Model" "models/tug_boat.vmdl"   // Model.
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
@@ -949,7 +949,7 @@
 
         "override_hero"             "npc_dota_hero_slark"          // Hero to override
 
-  //"Model" "models/viking_boat.vmdl"   // Model.
+  "Model" "models/viking_boat.vmdl"   // Model.
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
@@ -1012,7 +1012,7 @@
 
         "override_hero"             "npc_dota_hero_sniper"          // Hero to override
 
-       //  "Model" "models/sub_boat.vmdl"   // Model.
+        "Model" "models/sub_boat.vmdl"   // Model.
 		 "SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
@@ -1138,7 +1138,7 @@
 
         "override_hero"             "npc_dota_hero_visage"          // Hero to override
 
-       //  "Model" "models/noah_boat.vmdl"    // Model.
+        "Model" "models/noah_boat.vmdl"    // Model.
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
@@ -1203,7 +1203,7 @@
 
         "override_hero"             "npc_dota_hero_ursa"          // Hero to override
 
-       //  "Model" "models/Aircraft_boat.vmdl"   // Model.
+       "Model" "models/Aircraft_boat.vmdl"   // Model.
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
@@ -1270,7 +1270,7 @@
 
         "override_hero"             "npc_dota_hero_tusk"          // Hero to override
 
-         //"Model" "models/battleship_boat4.vmdl"    // Model.
+         "Model" "models/battleship_boat4.vmdl"    // Model.
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
@@ -1339,7 +1339,7 @@
 
         "override_hero"             "npc_dota_hero_windrunner"          // Hero to override
 
-        // "Model" "models/const_boat.vmdl"    // Model.
+        "Model" "models/const_boat.vmdl"    // Model.
 		 "SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
@@ -1382,7 +1382,7 @@
 
         "override_hero"             "npc_dota_hero_pugna"          // Hero to override
 
-      //  "Model" "models/ice_boat.vmdl"    // Model.
+      "Model" "models/trade_one_boat.vmdl"    // Model.
 		 "SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
@@ -1415,6 +1415,210 @@
 		"ItemSlots"  {}
 		"BountyGoldMin"				"1490"		// Gold earned min.
 		"BountyGoldMax"				"1510"		// Gold earned max.
+	}
+	
+	//=================================================================================================================
+    // HERO: phinician
+    //=================================================================================================================
+    "npc_dota_hero_vengefulspirit_battleship8d" 
+    {
+
+        "override_hero"             "npc_dota_hero_vengefulspirit"          // Hero to override
+
+
+       "Model" "models/trade_one_boat.vmdl"     // Model.
+        "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
+		
+		
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		
+	    "AttributeBaseStrength"     "1"                                     // Base strength
+		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
+		"AttributeBaseIntelligence" "1"                                     // Base intelligence
+		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
+		"AttributeBaseAgility"      "1"                                     // Base agility
+		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
+		
+		"MovementSpeed"				"300"									// Speed.
+		"MovementTurnRate"			"0.7"									// Turning rate.
+		
+		"StatusHealth"				"450"		// Base health.
+		"StatusHealthRegen"			"5.0"		// Health regeneration rate.
+		
+				"ArmorPhysical"				"0"
+		"MagicalResistance"				"0"
+		
+		"AbilityLayout"				"3"
+		"Ability1"					"pistols_battleship"
+		"Ability2"					"estab_route"
+		"Ability3"					"Trade_hide_battleship"
+		"Ability4"					"batten_hatches"
+        "ModelScale"        "0.6"
+		"RingRadius"				"100"
+		"AttachWearables"
+		{
+			"Wearable1"
+			{
+				"ItemDef" "0"
+			}
+			"Wearable2"
+			{
+				"ItemDef" "0"
+			}
+			"Wearable3"
+			{
+				"ItemDef" "0"
+			}
+			"Wearable4"
+			{
+				"ItemDef" "0"
+			}
+			"Wearable5"
+			{
+				"ItemDef" "0"
+			}
+		}
+		"ItemSlots" {}
+		"AttachWearables" {}
+		"BountyGoldMin"				"340"		// Gold earned min.
+		"BountyGoldMax"				"360"		// Gold earned max.
+		
+	}
+	
+		//=================================================================================================================
+    // HERO: ghost
+    //=================================================================================================================
+    "npc_dota_hero_enigma_battleship8d" 
+    {
+
+        "override_hero"             "npc_dota_hero_enigma"          // Hero to override
+
+
+       "Model" "models/trade_three_boat.vmdl"     // Model.
+        "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
+		
+		
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		
+	    "AttributeBaseStrength"     "1"                                     // Base strength
+		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
+		"AttributeBaseIntelligence" "1"                                     // Base intelligence
+		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
+		"AttributeBaseAgility"      "1"                                     // Base agility
+		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
+		
+	
+		"MovementSpeed"				"360"									// Speed.
+		"MovementTurnRate"			"0.7"									// Turning rate.
+		
+		"StatusHealth"				"5500"		// Base health.
+		"StatusHealthRegen"			"18.0"		// Health regeneration rate.
+		
+				"ArmorPhysical"				"0"
+		"MagicalResistance"				"0"
+		
+		"AbilityLayout"				"3"
+		"Ability1"					"instill_terror"
+		"Ability2"					"estab_route"
+		"Ability3"					"go_daralect"
+		"Ability4"					"ghost_ship"
+        "ModelScale"        "1"
+		"RingRadius"				"100"
+		"AttachWearables"
+		{
+			"Wearable1"
+			{
+				"ItemDef" "0"
+			}
+			"Wearable2"
+			{
+				"ItemDef" "0"
+			}
+			"Wearable3"
+			{
+				"ItemDef" "0"
+			}
+			"Wearable4"
+			{
+				"ItemDef" "0"
+			}
+			"Wearable5"
+			{
+				"ItemDef" "0"
+			}
+		}
+		"ItemSlots" {}
+		"AttachWearables" {}
+		"BountyGoldMin"				"599"		// Gold earned min.
+		"BountyGoldMax"				"601"		// Gold earned max.
+		
+	}
+	
+		//=================================================================================================================
+    // HERO: cargo
+    //=================================================================================================================
+    "npc_dota_hero_bane_battleship8d" 
+    {
+
+        "override_hero"             "npc_dota_hero_bane"          // Hero to override
+
+
+       "Model" "models/trade_boat_two.vmdl"     // Model.
+        "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
+		
+		
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		
+	    "AttributeBaseStrength"     "1"                                     // Base strength
+		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
+		"AttributeBaseIntelligence" "1"                                     // Base intelligence
+		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
+		"AttributeBaseAgility"      "1"                                     // Base agility
+		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
+		
+		"MovementSpeed"				"325"									// Speed.
+		"MovementTurnRate"			"0.7"									// Turning rate.
+		
+		"StatusHealth"				"2200"		// Base health.
+		"StatusHealthRegen"			"10.0"		// Health regeneration rate.
+		
+				"ArmorPhysical"				"0"
+		"MagicalResistance"				"0"
+		
+		"AbilityLayout"				"3"
+		"Ability1"					"pistols_battleship"
+		"Ability2"					"estab_route"
+		"Ability3"					"swap_mission"
+		"Ability4"					"dump_cargo"
+		"RingRadius"				"100"
+		"AttachWearables"
+		{
+			"Wearable1"
+			{
+				"ItemDef" "0"
+			}
+			"Wearable2"
+			{
+				"ItemDef" "0"
+			}
+			"Wearable3"
+			{
+				"ItemDef" "0"
+			}
+			"Wearable4"
+			{
+				"ItemDef" "0"
+			}
+			"Wearable5"
+			{
+				"ItemDef" "0"
+			}
+		}
+		"ItemSlots" {}
+		"AttachWearables" {}
+		"BountyGoldMin"				"1490"		// Gold earned min.
+		"BountyGoldMax"				"1510"		// Gold earned max.
+		
 	}
 	
 	

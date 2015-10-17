@@ -13,7 +13,13 @@
 		</Panel>
 
 		<Panel id="AuthorPanel">
-			<Label id="AuthorTitle" text="Presented By: radar, WeAreAllBritons, Frood, borgel, and zentrix" />
+			<Label class="AuthorTitle" text="Presented By: radar, WeAreAllBritons, Frood, Multiplex, and zentrix" />
+		</Panel>
+		<Panel id="ArtistPanel">
+				<Label class="AuthorTitle" text="Origional Artwork By: Taterfish" />
+		</Panel>
+		<Panel id="HeroPanel">
+				<Label class="heroTitle" text="IRC heroes: Noya, BMD, Myll, Hewdraw, Wigguno, Jimmydorry, Crazyloon, and SinZ " />
 		</Panel>
 
 	</Panel>

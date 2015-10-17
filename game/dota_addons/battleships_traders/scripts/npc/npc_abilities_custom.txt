@@ -162,7 +162,6 @@
 
 				}
 				"Duration" "%bail_duration"
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 			
 		}
@@ -3265,8 +3264,8 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"CallBatFly"
+				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 			}
 
 		}
@@ -7065,12 +7064,322 @@
 	}
 	
 	
+	//=================================================================================================================
+	// establish route
+	//=================================================================================================================
+	"estab_route"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"				"windrunner_windrun_sylvan"
+		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20.0 20.0 20.0 20.0"
+"AbilityCastRange"				"20000"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		
+		"OnSpellStart"
+		{
+
+			"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"route"
+							"Target"            "POINT"
+					}
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "route_set"
+			}
+		}
+		
+		"Modifiers"
+		{
+		
+			
+			"route_set"
+			{
+
+				"OnOrder"
+				{
+						"RemoveModifier"
+						{
+							"Target" "CASTER"
+							"ModifierName" "route_set"
+						}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%path_bonus_move_speed"
+
+				}
+				"Duration" "%path_duration"
+
+				"EffectName"    "particles/basic_projectile/speed_effect.vpcf" 
+				"EffectAttachType"	"follow_origin"
+			}
+			
+		}
+
+		
+		
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"path_bonus_move_speed"	"60 90 120 150"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"path_duration"				"15.0"
+			}
+		}
+}
+
+	//=================================================================================================================
+	// cease_fire
+	//=================================================================================================================
+	"cease_fire"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"oracle_fates_edict"
+		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20.0 20.0 20.0 20.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+				{
+					"Target" "CASTER"
+					"ModifierName" "cease_fire_mod"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+					"Function"			"RemoveWeps"
+				}
+				
+		}
+		 
+		"Modifiers"
+		{
+		
+			"cease_fire_mod"
+			{
+				"Duration"  "%duration"
+				 "States"
+				{
+					"MODIFIER_STATE_ATTACK_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"EffectName"     "particles/basic_projectile/camo_effect.vpcf"
+				"EffectAttachType"	"follow_origin"
+				OnDestroy
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"RemoveDD"
+					}
+				}
+			}
+			
+		}
+		
+		
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 3.5 4.0 4.5"
+			}
+		}
+}
+
+
+	"Trade_hide_battleship"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+
+		
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"			"slark_shadow_dance"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0 0 0 0"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"35 32 29 26"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"		
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0 0 0 0"
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "stop_shooting"
+			}
+			"RunScript"
+			{
+				"Function"			"CallSlarkInvis"
+				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+			}
+
+		"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"RemoveWeps"
+			}
+				
+		}
+		 
+		"Modifiers"
+		{
+		
+			"cease_fire_mod"
+			{
+				"Duration"  "%duration"
+				"EffectAttachType"	"follow_origin"
+				OnDestroy
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"RemoveDD"
+					}
+				}
+			}
+			
+		}
+				
+			
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"4.0"
+			}
+		}
+		
+	}
+
+	//=================================================================================================================
+	// Slark Shadow Dance
+	//=================================================================================================================
+	"slark_shadow_dance_battleship"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+			"BaseClass" 					"slark_shadow_dance"					// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"4"
+		"LevelsBetweenUpgrades"					"2"
+		"RequiredLevel"						"1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+			"AbilityCooldown"				"35 32 29 26"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0 0 0 0"			
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"4.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"fade_time"					"0.0 0.0 0.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_movement_speed"		"5 10 15 20"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_regen_pct"			"1 2 3 4"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"activation_delay"			"0.5 0.5 0.5"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"neutral_disable"			"2.0 2.0 2.0"
+			}
+			
+		}
+	}
+	
+	
 	
 	
 	//=================================================================================================================
 	// building unselectable
 	//=================================================================================================================
-	"building_unselectable"
+	"building_frozen"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -7103,7 +7412,56 @@
         
 					 "States"
 					{
-						"MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_SOFT_DISARMED" "MODIFIER_STATE_VALUE_ENABLED"
+					}
+
+							
+                }
+               
+        }
+       
+  
+	}
+	
+		//=================================================================================================================
+	// building unselectable
+	//=================================================================================================================
+	"building_hexed"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"phantom_assassin_blur"
+		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+
+		
+		 "Modifiers"
+        {
+                "cant_select"
+                {
+                           "IsHidden"                              "0"
+                        "Passive"                               "1"
+        
+					 "States"
+					{
+						"MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_HEXED" "MODIFIER_STATE_VALUE_ENABLED"
 					}
 
 							
@@ -7226,6 +7584,449 @@
                 }
 	}
 	
+	
+	//=================================================================================================================
+	// swap_mission
+	//=================================================================================================================
+	"swap_mission"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"chaos_knight_chaos_strike"
+		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30.0 25.0 20.0 15.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		
+		"OnSpellStart"
+		{
+
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+					"Function"			"SwapMission"
+				}
+				
+		}
+		 
+}
+
+
+	//=================================================================================================================
+	// go_daralect
+	//=================================================================================================================
+	"go_daralect"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"naga_siren_mirror_image"
+		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30.0 25.0 20.0 15.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		
+		"OnSpellStart"
+		{
+
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+					"Function"			"DropOrGo"
+				}
+				"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "has_ghost_ship"
+			}
+				
+		}
+		
+			
+		"Modifiers"
+		{
+			"has_ghost_ship"
+			{
+			
+
+			}
+			
+			
+			
+		}
+}
+
+	"ghost_ship"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"modifier_illusion"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		"BaseClass" 					"ability_datadriven"
+		"MaxLevel"						"3"
+		"LevelsBetweenUpgrades"					"3"
+		"RequiredLevel"						"2"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+
+
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		
+		"OnUpgrade"
+		{
+			"RemoveModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "ghost_ship"
+			}
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "ghost_ship"
+			}
+		}
+		
+		"OnOwnerSpawned"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "ghost_ship"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"ghost_ship"
+			{
+			
+				"Passive"	"1"
+				"IsHidden"	"1"
+	
+				"ThinkInterval"	"0.5"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"scripts/vscripts/abilityfunctions.lua"
+						"Function"		"Blur"
+					}
+				}
+				"States"
+				{
+					"MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"EffectName"     "particles/basic_projectile/ghost_effect.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
+			
+			"unghost_ship"
+			{
+			"ThinkInterval"	"0.5"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"scripts/vscripts/abilityfunctions.lua"
+						"Function"		"Blur"
+					}
+				}
+				"EffectName"     "particles/basic_projectile/ghost_effect.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"States"
+				{
+					"MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES"		"MODIFIER_STATE_VALUE_DISABLED"
+				}
+				
+			}
+			
+		}
+
+		
+		
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"2000 1500 1000"
+			}
+		}
+
+	}
+	
+	
+	"ghost_ship_creep"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"hatches"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		"BaseClass" 					"ability_datadriven"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		"Modifiers"
+		{
+			"ghost_ship_creep"
+			{
+				"Passive" "1"
+				"EffectName"     "particles/basic_projectile/ghost_effect.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%hoop_bonus_armor"
+					 "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen"
+
+				}
+				"States"
+				{
+					"MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
+
+					"MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
+						"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+					
+				}
+				"ThinkInterval"		"10"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"moveToRandomTradePost"
+					}
+				}
+				
+			}
+			
+		}
+
+		
+		
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hoop_bonus_armor"	"2 4 7"
+			}
+			"02"
+			{
+					"var_type"                                      "FIELD_FLOAT"
+					"health_regen"                          "6.0 8.0 10.0"
+			}
+		}
+
+	}
+
+
+	"instill_terror"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"AbilityTextureName"				"abaddon_borrowed_time"
+
+
+		
+		"BaseClass" 					"ability_datadriven"	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700 800 900 1000"
+		"AbilityCooldown"				"28.0 26.0 24.0 22.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0 0 0"
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "terror"
+			}
+			
+		}
+		
+		"Modifiers"
+		{
+			"terror"
+			{
+					"Duration"	"%duration"
+				"EffectName"     "particles/basic_projectile/terror_effect.vpcf"
+				"EffectAttachType"	"follow_overhead"
+				
+						"States"
+				{
+					"MODIFIER_STATE_SILENCED" "MODIFIER_STATE_VALUE_ENABLED"
+				} 
+				"ThinkInterval"		".1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"moveToRandom"
+					}
+				}
+			}
+			
+		
+			
+		}
+		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"	"2.5 3.0 3.5 4.0"
+			}
+		}
+	}
+
+
+	"dump_cargo"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"drop_item"
+			"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"21.0 17.0 13.0"
+		"AbilityCastPoint"				"0 0 0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"							"0 0 0"
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "ramming_speed"
+			}
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"dumpingItem"
+			}
+		}
+			
+		
+
+		"Modifiers"
+		{
+			"ramming_speed"
+			{
+				"Duration"  "%duration"
+				"ThinkInterval"		"0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"dumpingIt"
+					}
+				}
+				OnDestroy
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"clearDir"
+					}
+				}
+			}
+		}
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"0.6 0.7 0.8"
+			
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"base_speed"				"350.0 400.5 450.0"
+			
+			}
+		}
+	
+	}
+	
+	
+	
+	
 	"root_chain"
 	{
 		// General
@@ -7344,7 +8145,8 @@
 			}
 		}
 	}
-
+	
+	
 
 	
 }
