@@ -621,13 +621,13 @@ function getEmpGoldForTeam(team)
 			local goldEach = 500 * EMP_GOLD_NUMBER
 			local GoldDif = 0
 			
-			if GOOD_GOLD_TOTAL_MOD > BAD_GOLD_TOTAL_MOD and team == DOTA_TEAM_GOODGUYS then
+			if GOOD_GOLD_TOTAL_MOD > BAD_GOLD_TOTAL_MOD then
 				GoldDif = GOOD_GOLD_TOTAL_MOD - BAD_GOLD_TOTAL_MOD
 				goldEach = goldEach + GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
 				BAD_GOLD_TOTAL_MOD = 0
 				GOOD_GOLD_TOTAL_MOD = GoldDif
 			end
-			if BAD_GOLD_TOTAL_MOD > GOOD_GOLD_TOTAL_MOD and team == DOTA_TEAM_BADGUYS then
+			if BAD_GOLD_TOTAL_MOD > GOOD_GOLD_TOTAL_MOD then
 				GoldDif = BAD_GOLD_TOTAL_MOD - GOOD_GOLD_TOTAL_MOD
 				goldEach = goldEach + GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
 				BAD_GOLD_TOTAL_MOD = GoldDif
@@ -2518,7 +2518,7 @@ function HandleShopChecks(hero)
 			end
 	end
 					
-	if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and cotinue==1 then -- and string.match(hero:GetName(),"*trade*") then
+	if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 then -- and string.match(hero:GetName(),"*trade*") then
 		local casterPos = hero:GetAbsOrigin()
 		local nearestShop= Entities:FindByNameNearest("npc_dota_buil*",casterPos,0)
 		if nearestShop then
@@ -2533,9 +2533,24 @@ function HandleShopChecks(hero)
 			local targetUnitTwo = Entities:FindByName( nil, "north_boat_shop")
 			local directionOne =  casterPos - targetUnitOne:GetAbsOrigin()
 			local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
+			
+			for itemSlot = 0, 5, 1 do 
+				local Item = hero:GetItemInSlot( itemSlot )
+				if Item ~= nil  and string.match(Item:GetName(),"contract_empty") and ShopDist:Length()<600 then	
+							hero:RemoveItem(Item)
+							hero:SetGold(hero:GetGold()+100*EMP_GOLD_NUMBER/2,true)
+							hero:SetGold(0,false)
+							hero:AddExperience(200,0,false,true)
+							Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={ color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
+							Notifications:Top(hero:GetPlayerID(),{text=100*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+
+				end		
+			end
+			
+		
 
 			
-		if ShopDist:Length()<600 and (directionOne:Length() > 1000 and directionTwo:Length() > 1000) then
+		if ShopDist:Length()<600 and (directionOne:Length() > 1000 and directionTwo:Length() > 1000) and cotinue==1 then
 			
 			if WasNearShop[hero]==false then
 				print("sending entershop")
@@ -2673,15 +2688,7 @@ function HandleShopChecks(hero)
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
 						Notifications:Top(hero:GetPlayerID(),{text=35*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
-							elseif string.match(Item:GetName(),"contract_empty") then
-							hero:RemoveItem(Item)
-							hero:SetGold(hero:GetGold()+100*EMP_GOLD_NUMBER/2,true)
-							hero:SetGold(0,false)
-							hero:AddExperience(200,0,false,true)
-							Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={ color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-							Notifications:Top(hero:GetPlayerID(),{text=100*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
-							
-						end
+							end
 					end
 				end
 			end

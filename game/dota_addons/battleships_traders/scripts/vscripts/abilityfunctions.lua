@@ -1304,6 +1304,7 @@ function Blur( keys )
 
 	if #enemyHeroes>0 then
 		ability:ApplyDataDrivenModifier(caster, caster, "unghost_ship", {})
+		caster:RemoveModifierByName("ghost_ship")
 	else
 		if caster:HasModifier("unghost_ship") then
 		Timers:CreateTimer( 0.1, function()
@@ -1315,6 +1316,7 @@ function Blur( keys )
 		 end )
 			
 		end
+		
 	end
 end
 
@@ -1323,7 +1325,8 @@ daralectArray={}
 function DropOrGo(args)
 	local casterUnit = args.caster
 	local hasDaralect=false
-	if daralectArray[casterUnit]~=nil then
+	if daralectArray[casterUnit]~=nil and not daralectArray[casterUnit]:IsNull() then
+	
 			creepDirection=daralectArray[casterUnit]:GetForwardVector()
 			creepOri=daralectArray[casterUnit]:GetOrigin()
 			
@@ -1340,7 +1343,7 @@ function DropOrGo(args)
 	local missionPool=Entities:FindAllByName("npc_dota_buil*")
 
 	
-	if daralectArray[casterUnit]==nil then
+
 		if casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 				creature = CreateUnitByName( "daralect_vessle" , casterUnit:GetOrigin() , true, casterUnit:GetOwner(), nil, DOTA_TEAM_GOODGUYS )
 				local chosenMission
@@ -1373,7 +1376,6 @@ function DropOrGo(args)
 			print(chosenMission:GetOrigin())
 				end)
 		end
-	end
 end
 
 function killDaralect(args)

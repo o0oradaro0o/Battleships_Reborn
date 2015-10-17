@@ -55,7 +55,7 @@
 				"pugna"							"Ice Breaker"
 					"vengefulspirit"							"Phoenician Trader"
 					"bane"							"Cargo Ship"
-					"enigma"							"Ghost Ship"
+					"enigma"							"Ghost Trader"
 		
 		"phantom_lancer_desc"				"The Airboat it a fast and sturdy ship with some dangerous damage abilities."		
 		"pugna_desc"							"The Ice Breaker survives the cold better than any other ship and brings with it all the power of frost."
@@ -103,7 +103,7 @@
 	
 	
 	"trade"	"Trade"
-	"no_trade" "You must be in a trade ship and near a trading post (white dots on map)"
+	"no_trade" "You must be in a trade ship and near a trading post to trade."
 	"Trade_Missions" "Trading Post"	
 	"Left_Bot_Missions" "Farmer's Trading Post"
 	"Left_Mid_Missions" "Coastal Trading Post"
@@ -112,7 +112,7 @@
 	"Right_Mid_Missions" "Mountain Trading Post"	
 	"Right_Top_Missions" "Wasteland Trading Post"
 	"Mid_Bot_Missions" "Swampland Trading Post"
-	"Mid_Mid_Missions" "Central City Trading Post"
+	"Mid_Mid_Missions" "Central Cove Trading Post"
 	"Mid_Top_Missions" "Forest Camp Trading Post"
 	"Submit" "Invest Amount in Retirement Fund"
 	"One_Hundred" "100"

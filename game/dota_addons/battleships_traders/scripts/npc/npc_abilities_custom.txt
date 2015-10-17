@@ -7627,7 +7627,7 @@
 
 
 	//=================================================================================================================
-	// swap_mission
+	// go_daralect
 	//=================================================================================================================
 	"go_daralect"
 	{
@@ -7661,9 +7661,26 @@
 					"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 					"Function"			"DropOrGo"
 				}
+				"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "has_ghost_ship"
+			}
 				
 		}
-		 
+		
+			
+		"Modifiers"
+		{
+			"has_ghost_ship"
+			{
+			
+
+			}
+			
+			
+			
+		}
 }
 
 	"ghost_ship"

@@ -2020,6 +2020,8 @@
 		<Panel hittest="false" id="empty_guts">
             <Panel hittest="false" id="empty_guts_content" oncancel="hideShop()">
                 <Label hittest="false" id="no_trade_text" text="#no_trade" />
+				 <Image  src="file://{images}/custom_game/map.png" />
+								
             </Panel>
 		 </Panel>
 		 

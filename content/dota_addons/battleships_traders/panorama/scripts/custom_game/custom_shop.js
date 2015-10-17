@@ -329,6 +329,7 @@ function buyBoat(BoatName, cost)
 					{
 						$( "#empty_guts" ).style.visibility="visible";
 						hidden=false;
+						$.Schedule( 4.0, hideShop );
 					}
 				}
 				hideMissionsIfNeeded();
@@ -337,6 +338,7 @@ function buyBoat(BoatName, cost)
 			{
 				$( "#empty_guts" ).style.visibility="visible";
 				hidden=false;
+				$.Schedule( 4.0, hideShop );
 			}
 		}
 		else
