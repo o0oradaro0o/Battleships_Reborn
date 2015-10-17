@@ -111,8 +111,80 @@ function rammingIt(args) -- keys is the information sent by the ability
         local vec = direction:Normalized() * (30 * level +80)
 		casterUnit:AddPhysicsVelocity(vec)
 end
+dumpingItDir={}
+function dumpingIt(args) -- keys is the information sent by the ability
+--print('[ItemFunctions] gunning_it started! ')
 
+		local casterUnit = args.caster
+		if dumpingItDir[casterUnit]==nil or dumpingItDir[casterUnit]==0 then
+			dumpingItDir[casterUnit]=casterUnit:GetForwardVector()
+		
+		end
+		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+		if not IsPhysicsUnit(casterUnit) then
+			Physics:Unit(casterUnit)
+		end
+	--print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+        local direction =  casterUnit:GetForwardVector()
+		local abil = casterUnit:GetAbilityByIndex(3)
+		local level = abil:GetLevel()
+        local vec = direction:Normalized() * (100 * level +300)
+		casterUnit:SetPhysicsVelocity(vec)
+end
+function clearDir(args)
+local casterUnit = args.caster
+ dumpingItDir[casterUnit]=0
+end
 
+oneshots={
+		"item_oneshot_mango",
+		"item_oneshot_scope",
+		"item_oneshot_camo",
+		"item_oneshot_chain",
+		"item_oneshot_trap",
+		"item_oneshot_booze",
+		"item_oneshot_good_stuff",
+		"item_oneshot_luck",
+		"item_oneshot_firecrackers",
+		"item_oneshot_sun_screen",
+		"item_oneshot_earth",
+		"item_oneshot_line",
+		"item_oneshot_fish",
+		"item_oneshot_power",
+		"item_oneshot_brew",
+		"item_oneshot_ham",
+		"item_oneshot_info",
+		"item_oneshot_net",
+		"item_oneshot_sand"
+		}
+function dumpingItem(args)
+local casterUnit = args.caster
+	local a=RandomInt( 1, 3 )
+	if a==1 then
+		local newItem = CreateItem( "item_bag_of_gold_battleships", nil, nil )
+		local drop = CreateItemOnPositionForLaunch( casterUnit:GetOrigin(), newItem )
+		local direction=casterUnit:GetForwardVector()
+		 local vec = direction:Normalized() * -200
+		newItem:LaunchLootInitialHeight( false, 0, 300, 0.75, casterUnit:GetOrigin() + vec )
+
+	elseif a==2 then
+		
+		local newItem = CreateItem( oneshots[RandomInt( 1, #oneshots )], nil, nil )
+		local drop = CreateItemOnPositionForLaunch( casterUnit:GetOrigin(), newItem )
+		local direction=casterUnit:GetForwardVector()
+		 local vec = direction:Normalized() * -200
+		newItem:LaunchLootInitialHeight( false, 0, 300, 0.75, casterUnit:GetOrigin() + vec )
+
+	else
+	
+	end
+end
+function giveGold(args)
+local casterUnit = args.caster
+local herogold = casterUnit:GetGold()
+casterUnit:SetGold(herogold+100,true)
+casterUnit:SetGold(0,false)
+end
 	
 function gunningItDamage(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')
@@ -298,22 +370,16 @@ local diff=0
 				if heroBuying ~= nil then
 					local Item = heroBuying:GetItemInSlot( itemSlot )
 					if Item ~= nil then
-					
-						local itemStrippedEasy=string.gsub(Item:GetName(),"item_contract_easy","")
-						local itemStrippedMedium=string.gsub(Item:GetName(),"item_contract_medium","")
-						local itemStrippedHard=string.gsub(Item:GetName(),"item_contract_hard","")
-						if  string.match(nearestShop:GetUnitName(),itemStrippedEasy) then
-							olditem=itemStrippedEasy
+						olditem=Item:GetName()
+						if  string.match(olditem,"item_contract_easy") then
 							diff=1
 							heroBuying:RemoveItem(Item)
 						end
-						if  string.match(nearestShop:GetUnitName(),itemStrippedMedium) then
-							olditem=itemStrippedMedium
+						if  string.match(olditem,"item_contract_medium") then
 							diff=2
 							heroBuying:RemoveItem(Item)
 						end
-						if  string.match(nearestShop:GetUnitName(),itemStrippedHard) then
-							olditem=itemStrippedMedium
+						if  string.match(olditem,"item_contract_hard") then
 							diff=3
 							heroBuying:RemoveItem(Item)
 						end
@@ -328,25 +394,21 @@ local diff=0
 			local missionDist
 			while chosenMission==nil do
 				local i = RandomInt( 1, #missionPool )
-				missionDist =  missionPool[i]:GetAbsOrigin() - nearestShop:GetAbsOrigin()
 				if not string.match(missionPool[i]:GetUnitName(),olditem)  and not string.match(missionPool[i]:GetUnitName(),"ship") then
 					chosenMission=missionPool[i]
 				end
 			end
-			print("unitname" .. chosenMission:GetUnitName())
+
 			local newItem
-			print("journey dist " .. missionDist:Length())
-			if missionDist:Length()>12000 then 
-				if heroBuying:GetTeamNumber() == DOTA_TEAM_GOODGUYS and  string.match(chosenMission:GetUnitName(),"bot")  then
-					 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
-				elseif  heroBuying:GetTeamNumber() == DOTA_TEAM_BADGUYS and  string.match(chosenMission:GetUnitName(),"top") then
+
+				if diff==1  then
+					 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_easy"), hero, hero)
+				elseif  diff==2 then
 					 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
 				else
 					 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_hard"), hero, hero)
 				end
-			else
-				 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
-			end
+
 			if newItem ~= nil then                   -- makes sure that the item exists and making sure it is the correct item
 				print("Item Is: " .. newItem:GetName() )
 				heroBuying:AddItem(newItem)
@@ -366,6 +428,9 @@ local diff=0
 				end
 		end
 end
+
+
+
 
 
 function CallBatFly(args) -- keys is the information sent by the ability
@@ -413,6 +478,10 @@ function CallSlarkInvis(args) -- keys is the information sent by the ability
 		casterUnit:AddAbility("batten_hatches")
 		local abil3 = casterUnit:GetAbilityByIndex(3)
 		abil3:SetLevel(level2)
+		
+		Timers:CreateTimer( 4, function()
+		 RemoveDD(args)
+	end)
 end
 
 
@@ -1202,20 +1271,133 @@ function OilDmg(args)
 		ApplyDamage(damageTable)
 end
 
+function moveToRandom(args)
+	local targetUnit = args.target
+	local vec = RandomVector( RandomFloat( 100, 200 ))
+	targetUnit:MoveToPosition(targetUnit:GetOrigin()+vec )
+end
+
+function moveToRandomTradePost(args)
+	local casterUnit = args.caster
+	local missionPool=Entities:FindAllByName("npc_dota_buil*")
+	local chosenMission
+	
+		while chosenMission==nil do
+				local i = RandomInt( 1, #missionPool )
+				if  not string.match(missionPool[i]:GetUnitName(),"ship") then
+					chosenMission=missionPool[i]
+						print(chosenMission:GetOrigin())
+				end
+			end
+	casterUnit:MoveToPosition(chosenMission:GetOrigin() )
+	if daralectOwnerArray[creature]==nil or not daralectOwnerArray[creature]:IsAlive() then
+		casterUnit:RemoveSelf()
+	end
+end
+
+function Blur( keys )
+	local caster = keys.caster
+	local ability = keys.ability
+	local casterLocation = caster:GetAbsOrigin()
+	local radius = ability:GetLevelSpecialValueFor("radius", (ability:GetLevel() - 1))
+	local enemyHeroes = FindUnitsInRadius(caster:GetTeam(), casterLocation, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 0, 0, false)
+
+	if #enemyHeroes>0 then
+		ability:ApplyDataDrivenModifier(caster, caster, "unghost_ship", {})
+		caster:RemoveModifierByName("ghost_ship")
+	else
+		if caster:HasModifier("unghost_ship") then
+		Timers:CreateTimer( 0.1, function()
+		caster:RemoveModifierByName("unghost_ship")
+		  end)
+	
+			Timers:CreateTimer( 0.2, function()
+		ability:ApplyDataDrivenModifier(caster, caster, "ghost_ship", {})
+		 end )
+			
+		end
+		
+	end
+end
+
+daralectOwnerArray={}
+daralectArray={}
+function DropOrGo(args)
+	local casterUnit = args.caster
+	local hasDaralect=false
+	if daralectArray[casterUnit]~=nil and not daralectArray[casterUnit]:IsNull() then
+	
+			creepDirection=daralectArray[casterUnit]:GetForwardVector()
+			creepOri=daralectArray[casterUnit]:GetOrigin()
+			
+			casterUnitDirection=casterUnit:GetForwardVector()
+			casterOri=casterUnit:GetOrigin()
+			
+			casterUnit:SetForwardVector(creepDirection)
+			casterUnit:SetOrigin(creepOri)
+			daralectArray[casterUnit]:SetForwardVector(casterUnitDirection)
+			daralectArray[casterUnit]:SetOrigin(casterOri)
+			return
+	end
+	
+	local missionPool=Entities:FindAllByName("npc_dota_buil*")
+
+	
+
+		if casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+				creature = CreateUnitByName( "daralect_vessle" , casterUnit:GetOrigin() , true, casterUnit:GetOwner(), nil, DOTA_TEAM_GOODGUYS )
+				local chosenMission
+				while chosenMission==nil do
+						local i = RandomInt( 1, #missionPool )
+						if  not string.match(missionPool[i]:GetUnitName(),"ship") then
+							chosenMission=missionPool[i]
+						end
+					end
+					daralectOwnerArray[creature]=casterUnit
+					daralectArray[casterUnit]=creature
+					Timers:CreateTimer( 0.03, function()
+	
+			creature:MoveToPositionAggressive(chosenMission:GetOrigin() )
+			print(chosenMission:GetOrigin())
+			end)
+		else
+			 creature = CreateUnitByName( "daralect_vessle" , casterUnit:GetOrigin() , true, casterUnit:GetOwner(), nil, DOTA_TEAM_BADGUYS )
+				local chosenMission
+				while chosenMission==nil do
+						local i = RandomInt( 1, #missionPool )
+						if  not string.match(missionPool[i]:GetUnitName(),"ship") then
+							chosenMission=missionPool[i]
+						end
+					end
+					daralectOwnerArray[creature]=casterUnit
+					daralectArray[casterUnit]=creature
+						Timers:CreateTimer( 0.03, function()
+			creature:MoveToPositionAggressive(chosenMission:GetOrigin() )
+			print(chosenMission:GetOrigin())
+				end)
+		end
+end
+
+function killDaralect(args)
+print(daralectArray[casterUnit])
+	if daralectArray[casterUnit]~=nil then
+		daralectArray[casterUnit]:RemoveSelf()
+	end
+end
 
 function pullToCaster(keys)
-
+if not IsPhysicsUnit(keys.target) then
+			Physics:Unit(keys.target)
+		end
 		local targetPos = keys.target:GetAbsOrigin()
 		local targetUnit = keys.target
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
         local casterPos = keys.caster:GetAbsOrigin()
 	--print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
         local direction =  casterPos - targetPos
-        local vec = direction:Normalized() * 10.0
-		local height
 		if direction:Length()>150 then
-			targetUnit:SetOrigin(targetUnit:GetOrigin()+vec)
-			end
+			targetUnit:SetPhysicsVelocity(direction:Normalized() * 400.0)
+		end
 end
 
 
@@ -1341,17 +1523,26 @@ function ApplyStun(args) -- keys is the information sent by the ability
 end
 
 function ApplyLuck(args) -- keys is the information sent by the ability
-		local casterUnit = args.caster
+		local weps={}
+				local hero = args.caster
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
-		local item = CreateItem( "item_oneshot_luck", casterUnit, casterUnit)
-		if RandomInt( 1, 10 ) < 8 then
-			item:ApplyDataDrivenModifier(casterUnit, casterUnit, "luck_mod", nil)
-			else
-			item:ApplyDataDrivenModifier(casterUnit, casterUnit, "luck_fail", nil)
-			
+	for itemSlot = 0, 5, 1 do 
+		if hero ~= nil then
+			local Item = hero:GetItemInSlot( itemSlot )
+			if Item ~= nil and string.match(Item:GetName(),"doubled") then -- makes sure that the item exists and making sure it is the correct item
+				local doubledstring = string.gsub(Item:GetName(),"_bow", "_bow_shooting")
+					weps[#weps+1]=doubledstring
+			elseif Item ~= nil and string.match(Item:GetName(),"bow") then -- makes sure that the item exists and making sure it is the correct item
+					weps[#weps+1]=Item:GetName() .. "_shooting"
+			end
 		end
+	end
+PrintTable(weps)
+	hero:RemoveModifierByName(weps[RandomInt( 1, #weps )])
+	Timers:CreateTimer( 4, function()
+		 RemoveDD(args)
+	end)
 		
-		casterUnit:RemoveItem(item)
 end
 
 

@@ -4,7 +4,7 @@ require("timers")
 require('physics')
 require('notifications')
 require('storage')
---require('statcollection/init')
+require('statcollection/init')
 
 
 if CBattleship8D == nil then
@@ -218,7 +218,10 @@ model_lookup["npc_dota_hero_ursa"] = "models/Aircraft_boat.vmdl"
 model_lookup["npc_dota_hero_pugna"] = "models/ice_boat.vmdl"
 model_lookup["npc_dota_hero_windrunner"] = "models/const_boat.vmdl"
 model_lookup["npc_dota_hero_tusk"] = "models/battleship_boat0.vmdl"
-model_lookup["npc_dota_hero_dazzle"] = "models/trade_one_boat.vmdl"
+model_lookup["npc_dota_hero_vengefulspirit"] = "models/trade_one_boat.vmdl"
+model_lookup["npc_dota_hero_bane"] = "models/trade_boat_two.vmdl"
+model_lookup["npc_dota_hero_enigma"] = "models/trade_three_boat.vmdl"
+
 
 
 
@@ -262,9 +265,9 @@ function Precache( context )
 PrecacheUnitByNameSync("npc_dota_hero_zuus", context)
 PrecacheUnitByNameSync("npc_dota_hero_tiny", context)
 	PrecacheUnitByNameSync("npc_dota_hero_kunkka", context)
-	PrecacheUnitByNameSync("npc_dota_hero_earthshaker", context)
+	PrecacheUnitByNameSync("npc_dota_hero_bane", context)
 	
-	PrecacheUnitByNameSync("npc_dota_hero_dazzle", context)
+	PrecacheUnitByNameSync("npc_dota_hero_vengefulspirit", context)
 	PrecacheUnitByNameSync("npc_dota_hero_brewmaster", context)
 	PrecacheUnitByNameSync("npc_dota_hero_puck", context)
 	PrecacheUnitByNameSync("npc_dota_hero_tidehunter", context)
@@ -299,6 +302,7 @@ PrecacheUnitByNameSync("npc_dota_hero_tiny", context)
 	PrecacheUnitByNameSync("npc_dota_hero_rattletrap", context)
 	PrecacheUnitByNameSync("npc_dota_hero_antimage", context)
 	PrecacheUnitByNameSync("npc_dota_hero_riki", context)
+		PrecacheUnitByNameSync("npc_dota_hero_enigma", context)
 	PrecacheUnitByNameSync("npc_dota_hero_shredder", context)
 	PrecacheUnitByNameSync("npc_dota_hero_silencer", context)
 	PrecacheUnitByNameSync("npc_dota_hero_treant", context)
@@ -383,7 +387,7 @@ function CBattleship8D:InitGameMode()
 	GameRules:GetGameModeEntity():SetRecommendedItemsDisabled(true)
 	GameRules:GetGameModeEntity():SetBuybackEnabled(false)
 	GameRules:SetSameHeroSelectionEnabled(true)
-
+	SendToServerConsole( "dota_combine_models 0" ) 
 	ListenToGameEvent('dota_item_purchased', Dynamic_Wrap(CBattleship8D, 'OnItemPurchased'), self)
 
 	
@@ -437,6 +441,7 @@ if BOAT_JUST_BAUGHT ==0 then
 			npc:SetOriginalModel( "models/noah_boat.vmdl" )
 		end
 	if npc:IsRealHero() then
+		RemoveWearables( npc )
 		stopPhysics(npc)
 		npc:SetBaseStrength(1)
 		print("hero level is" .. npc:GetLevel())
@@ -616,13 +621,13 @@ function getEmpGoldForTeam(team)
 			local goldEach = 500 * EMP_GOLD_NUMBER
 			local GoldDif = 0
 			
-			if GOOD_GOLD_TOTAL_MOD > BAD_GOLD_TOTAL_MOD and team == DOTA_TEAM_GOODGUYS then
+			if GOOD_GOLD_TOTAL_MOD > BAD_GOLD_TOTAL_MOD then
 				GoldDif = GOOD_GOLD_TOTAL_MOD - BAD_GOLD_TOTAL_MOD
 				goldEach = goldEach + GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
 				BAD_GOLD_TOTAL_MOD = 0
 				GOOD_GOLD_TOTAL_MOD = GoldDif
 			end
-			if BAD_GOLD_TOTAL_MOD > GOOD_GOLD_TOTAL_MOD and team == DOTA_TEAM_BADGUYS then
+			if BAD_GOLD_TOTAL_MOD > GOOD_GOLD_TOTAL_MOD then
 				GoldDif = BAD_GOLD_TOTAL_MOD - GOOD_GOLD_TOTAL_MOD
 				goldEach = goldEach + GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
 				BAD_GOLD_TOTAL_MOD = GoldDif
@@ -637,7 +642,7 @@ end
 
 function reapplyWP()
 	for _,creep in pairs( Entities:FindAllByClassname( "npc_dota_cre*" )) do
-		if creep:HasGroundMovementCapability() and not creep:IsAncient() then
+		if creep:HasGroundMovementCapability() and not creep:IsAncient() and not creep:HasModifier("ghost_ship_creep") then
 			local waypoint =nil
 				if creep~=nil then
 					if creep:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
@@ -744,9 +749,16 @@ local hero = casterUnit
 							hero:SetGold(herogold + 750, true)
 							hero:SetGold(0, false)
 							print ( '[BAREBONES] player was phantom_lancer and got 750')
-						elseif string.match(hero:GetName(),"dazzle") then
+						elseif string.match(hero:GetName(),"vengefulspirit") then
 							hero:SetGold(herogold + 750, true)
 							hero:SetGold(0, false)
+						elseif string.match(hero:GetName(),"enigma") then
+							hero:SetGold(herogold + 3000, true)
+							hero:SetGold(0, false)
+						elseif string.match(hero:GetName(),"bane") then
+							hero:SetGold(herogold + 5000, true)
+							hero:SetGold(0, false)
+							
 					end
 end
 
@@ -1866,6 +1878,7 @@ function become_boat(casterUnit, heroname)
 			print("calling replace hero")
 			BOAT_JUST_BAUGHT=1
 			local hero = PlayerResource:ReplaceHeroWith( casterUnit:GetPlayerID(), heroname , 0, 0 )
+			SendToServerConsole( "dota_combine_models 0" ) 
 			
 				print("called replace hero")
 				if hero ~= nil then
@@ -1881,7 +1894,7 @@ function become_boat(casterUnit, heroname)
 							local newItem = CreateItem(itemlist[b], hero, hero)
 							if newItem ~= nil then                   -- makes sure that the item exists and making sure it is the correct item
 								
-								if b==5 and string.match(heroname,"dazzle") then
+								if b==5 and (string.match(heroname,"vengefulspirit") or string.match(heroname,"enigma") or string.match(heroname,"bane")) then
 								local newItem2 = CreateItem("item_trade_manifest", hero, hero)
 									hero:AddItem(newItem2)
 									local data =
@@ -2095,29 +2108,11 @@ function RemoveWearables( hero )
         end
         model = model:NextMovePeer()
     end
-	modelSwap(hero)
 	
 end
 	  )
 end
-function modelSwap(hero)
-      -- Check if npc is hero
-	  Timers:CreateTimer( 0.1, function()
-	  local model_name = ""
-      if not hero:IsHero() then return end
 
-      -- Getting model name
-      if model_lookup[ hero:GetName() ] ~= nil and hero:GetModelName() ~= model_lookup[ hero:GetName() ] then
-        model_name = model_lookup[ hero:GetName() ]
-      else
-        return nil
-      end
-	     hero:SetModel( model_name )
-      hero:SetOriginalModel( model_name )
-      hero:MoveToPosition( hero:GetAbsOrigin() )
-	  end
-	  )
-end
 
 function UnstickPlayer(eventSourceIndex, args)
 print("in unstick")
@@ -2300,8 +2295,12 @@ function buyBoat(eventSourceIndex, args)
 				become_boat(casterUnit, "npc_dota_hero_phantom_lancer")
 			elseif string.match(itemName,"pugna") then
 				become_boat(casterUnit, "npc_dota_hero_pugna")
-			elseif string.match(itemName,"dazzle") then
-				become_boat(casterUnit, "npc_dota_hero_dazzle")
+			elseif string.match(itemName,"vengefulspirit") then
+				become_boat(casterUnit, "npc_dota_hero_vengefulspirit")
+			elseif string.match(itemName,"enigma") then
+				become_boat(casterUnit, "npc_dota_hero_enigma")
+			elseif string.match(itemName,"bane") then
+				become_boat(casterUnit, "npc_dota_hero_bane")
 		end
 		Timers:CreateTimer( .1, function()
 		local data =
@@ -2519,7 +2518,7 @@ function HandleShopChecks(hero)
 			end
 	end
 					
-	if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and cotinue==1 then -- and string.match(hero:GetName(),"*trade*") then
+	if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 then -- and string.match(hero:GetName(),"*trade*") then
 		local casterPos = hero:GetAbsOrigin()
 		local nearestShop= Entities:FindByNameNearest("npc_dota_buil*",casterPos,0)
 		if nearestShop then
@@ -2534,9 +2533,24 @@ function HandleShopChecks(hero)
 			local targetUnitTwo = Entities:FindByName( nil, "north_boat_shop")
 			local directionOne =  casterPos - targetUnitOne:GetAbsOrigin()
 			local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
+			
+			for itemSlot = 0, 5, 1 do 
+				local Item = hero:GetItemInSlot( itemSlot )
+				if Item ~= nil  and string.match(Item:GetName(),"contract_empty") and ShopDist:Length()<600 then	
+							hero:RemoveItem(Item)
+							hero:SetGold(hero:GetGold()+100*EMP_GOLD_NUMBER/2,true)
+							hero:SetGold(0,false)
+							hero:AddExperience(200,0,false,true)
+							Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={ color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
+							Notifications:Top(hero:GetPlayerID(),{text=100*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+
+				end		
+			end
+			
+		
 
 			
-		if ShopDist:Length()<600 and (directionOne:Length() > 1000 and directionTwo:Length() > 1000) then
+		if ShopDist:Length()<600 and (directionOne:Length() > 1000 and directionTwo:Length() > 1000) and cotinue==1 then
 			
 			if WasNearShop[hero]==false then
 				print("sending entershop")
@@ -2674,15 +2688,7 @@ function HandleShopChecks(hero)
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
 						Notifications:Top(hero:GetPlayerID(),{text=35*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
-							elseif string.match(Item:GetName(),"contract_empty") then
-							hero:RemoveItem(Item)
-							hero:SetGold(hero:GetGold()+100*EMP_GOLD_NUMBER/2,true)
-							hero:SetGold(0,false)
-							hero:AddExperience(200,0,false,true)
-							Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={ color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-							Notifications:Top(hero:GetPlayerID(),{text=100*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
-							
-						end
+							end
 					end
 				end
 			end

@@ -53,7 +53,9 @@
 		"crystal_maiden"										"Canoe"
 		"phantom_lancer"										"Airboat"
 				"pugna"							"Ice Breaker"
-					"dazzle"							"Phoenician Trader"
+					"vengefulspirit"							"Phoenician Trader"
+					"bane"							"Cargo Ship"
+					"enigma"							"Ghost Trader"
 		
 		"phantom_lancer_desc"				"The Airboat it a fast and sturdy ship with some dangerous damage abilities."		
 		"pugna_desc"							"The Ice Breaker survives the cold better than any other ship and brings with it all the power of frost."
@@ -74,9 +76,10 @@
 		"windrunner_desc"					"he construction ship is a floating dock, capable of using the scrap around it to repair itself, protect its allies and even construct ships for the empire."
 		"crystal_maiden_desc"				"The Canoe is a very simple boat whose crew gains heart from one another and inspires their allies."			
 		"sniper_desc"				"This submarine is less of a submarine and more of a boat.  The sub is powerful, and even more powerful when submerged. But be wary, or you'll run out of oxygen!"			
-	"dazzle_desc"				"A weak but speedy ship that comes with a trading manifest."			
-	
-
+		"bane_desc"				"The strongest fastest trader in the seas. Might be radioactive... nobody's sure"			
+		"enigma_desc"							"The SS Baychimo has been lost and abandoned in 1931.  This ghost ship was last seen in 1969... untill now."
+"vengefulspirit_desc"							"Phoenician Trader a simple but fully licensed ship."
+				
 	
 	
 	"Ships"					"Ships"
@@ -100,7 +103,7 @@
 	
 	
 	"trade"	"Trade"
-	"no_trade" "You must be in a trade ship and near a trading post (white dots on map)"
+	"no_trade" "You must be in a trade ship and near a trading post to trade."
 	"Trade_Missions" "Trading Post"	
 	"Left_Bot_Missions" "Farmer's Trading Post"
 	"Left_Mid_Missions" "Coastal Trading Post"
@@ -109,7 +112,7 @@
 	"Right_Mid_Missions" "Mountain Trading Post"	
 	"Right_Top_Missions" "Wasteland Trading Post"
 	"Mid_Bot_Missions" "Swampland Trading Post"
-	"Mid_Mid_Missions" "Central City Trading Post"
+	"Mid_Mid_Missions" "Central Cove Trading Post"
 	"Mid_Top_Missions" "Forest Camp Trading Post"
 	"Submit" "Invest Amount in Retirement Fund"
 	"One_Hundred" "100"
@@ -131,13 +134,13 @@
 	"earth_desc" "Earth Gem: Become untargetable for 3 sec"
 	"screen_desc" "Sun Screen: provides short term magic immunity"
 	"dust_desc" "Pocket Sand: blind your enemy for 5 seconds"
-	"luck_desc" "Lucky Charm: 70 percent chance to set min HP to 7 for 7 sec "
+	"luck_desc" "Lucky Charm: Disables a random gun on target ship for 4 seconds"
 	"good_stuff_desc" "The Good Stuff: Double your weapons but lose 10 armor (5 s)"
 	"firecrackers_desc" "Firecrackers: Silence all enemies in large area around you."
 	"booze_desc" "Still Booze: Clears all ability cooldowns"
 	"trap_desc" "Bear Trap: lays a trap that does 90 damage and stuns for 5 sec"
 	"chain_desc" "Unlawful Augmentation: Despatch a shore guard against target ship for 5 s"
-	"camo_desc" "Camouflage Cloak: 4 second invisibility. (disables weapons)"
+	"camo_desc" "Cease Fire Agreement: for 4 seconds weapons do not target you. (disables weapons)"
 	"scope_desc" "Scope: Grants 1000 vision for 6 seconds"
 	"invest" "invest"
 	
@@ -177,7 +180,7 @@
 	"off_wall" " Stay off the walls if you cannot fly!"
 	"dc_drop" " has disconnected they will have 3 minutes of gametime (not pauses) before their gold is distributed"	
 	"player_kickable" "A player is now eligible to be kicked due to disconnect so their team can receive gold. Once kicked they will NEVER RECIEVE GOLD EVEN IF THEY RECONNECT. to kick this player move their ship onto the 'KICK DISCONNECTED' text  if a player ABANDONS the game they will be kicked."
-	"to_base" "You need to go back to base to buy a boat. You have been refunded what you spent."
+	"to_base" "You need to go back to base to buy a boat."
 	"dev_sucks"	"This is a workaround for items in the stash disappearing. I have ejected the item and it should be on the ground. Sorry."
 	
 	
@@ -583,14 +586,40 @@ DURATION: 3.0 3.5 4.0 4.5"
 "icy_waters_battleship_Description"						"All nearby Enemy ships are slowed. \n \nHigher levels increase slowing effect.
 SLOW: -30 -35 -40 -45"
 
+
+
+"Trade_hide_battleship"					"Mist and Sahdows"
+"Trade_hide_battleship_Description"					"When used, the Phoenician Trader hides in a cloud of mist, becoming immune to detection. weapons will cease to fire but abilities can still be used.
+DURATION: 4.0"
+
+"dump_cargo"									"Dump Cargo"
+"dump_cargo_Description"						"Toss Goods off the back of your ship to gain massive short lived speed boost.\nDrops a random consumable item or gold piecein your wake. \n \nHigher levels increase duration.
+DURATION: 0.6 0.7 0.8
+Speed Bonus 350 400 500"
+
+
+"ghost_ship"									"Ghost Ship"
+"ghost_ship_Description"						"This ship is lost a sea and does not appear on the mini map unless it draws within close range of its foes. \n \nHigher levels decrease range.
+SIGHTING RANGE: 2000 1500 1000"
+
+"instill_terror"									"Instill Terror"
+"instill_terror_Description"						"Silence target ship and throw them into a panic where their ship moves erratically. \n \nHigher levels increase duration.
+DURATION: 2.5 3.0 3.5 4.0"
+
+	"go_daralect"									"Go Derelict "
+	"go_daralect_Description"						"If you have a Derelict already, swap locations with it leaving a Derelict vessle where you were. If you do not, this ability drops one at your current location.\n The Derelict ship will float between trade posts and will not draw fire.  \n \nHigher levels decrease cooldown."
+
+"swap_mission"	"Swap Mission"
+"swap_mission_Description" "Alter your contract to show a different destionation.  Don't worry you'll still get paid in full."
+
 "peak_battleship"									"Sonar Ping"
 		"peak_battleship_Description"					"Ping the map to see where enemy ships are. \n\nHigher levels decrease cooldown."
 
 		"turret_battleship"								"Deploy Turret!"
 		"turret_battleship_Description"					"Deploy Turret that deals 500 dmg per attack in a very short range \n\nHigher levels decrease cooldown."
 
-		"mission_done" "Mission Complete! earned yourself "
-		"mission_done_team" "Earned each of your teammates "
+		"mission_done" "Mission Complete! You earned yourself "
+		"mission_done_team" "You earned each of your teammates "
 		"mission_empty" "Found Goods.  Take them to any trade post for reward!"
 
 }

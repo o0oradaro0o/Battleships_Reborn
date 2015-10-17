@@ -187,7 +187,9 @@ function showDetails(BoatName)
 		$("#tidehunter").style.height = "0px";
 		$("#crystal_maiden").style.height = "0px";
 		$("#phantom_lancer").style.height = "0px";
-		$("#dazzle").style.height = "0px";
+		$("#vengefulspirit").style.height = "0px";
+		$("#bane").style.height = "0px";
+		$("#enigma").style.height = "0px";
 		
 
 	}
@@ -214,7 +216,9 @@ function showDetails(BoatName)
 		$("#tidehunter").style.height = "0px";
 		$("#crystal_maiden").style.height = "0px";
 		$("#phantom_lancer").style.height = "0px";
-			$("#dazzle").style.height = "0px";
+			$("#vengefulspirit").style.height = "0px";
+			$("#bane").style.height = "0px";
+			$("#enigma").style.height = "0px";
 		$(  "#"+BoatName ).style.height = "650px";
 	}
 	
@@ -325,6 +329,7 @@ function buyBoat(BoatName, cost)
 					{
 						$( "#empty_guts" ).style.visibility="visible";
 						hidden=false;
+						$.Schedule( 4.0, hideShop );
 					}
 				}
 				hideMissionsIfNeeded();
@@ -333,6 +338,7 @@ function buyBoat(BoatName, cost)
 			{
 				$( "#empty_guts" ).style.visibility="visible";
 				hidden=false;
+				$.Schedule( 4.0, hideShop );
 			}
 		}
 		else
@@ -344,7 +350,7 @@ function buyBoat(BoatName, cost)
 	{
 		if (Players.GetLocalPlayer() == data.splitscreenplayer)
 		{
-			 hideShop();
+			 hideShipShop();
 		 }
 	}
 	function hideShop()
@@ -393,7 +399,10 @@ function buyBoat(BoatName, cost)
 		$("#tidehunter").style.height = "0px";
 		$("#crystal_maiden").style.height = "0px";
 		$("#phantom_lancer").style.height = "0px";
-			$("#dazzle").style.height = "0px";
+			$("#vengefulspirit").style.height = "0px";
+			$("#bane").style.height = "0px";
+			$("#enigma").style.height = "0px";
+			
 		Game.EmitSound("ui.chat_close");
 		
 		
@@ -658,7 +667,7 @@ function buyBoat(BoatName, cost)
 				if(data.Ally_ID == 0)
 				{
 					$( "#out_of_contracts" ).style.visibility="visible";
-					$.Schedule( 1.5, reHideOutOfContracts );
+					$.Schedule( 4, reHideOutOfContracts );
 				}
 			}
 		
@@ -943,7 +952,7 @@ function OnRightButtonPressed()
 // Main mouse event callback
 GameUI.SetMouseCallback( function( eventName, arg ) {
 
-	$.Msg("MOUSE: ", eventName, " -- ", arg, " -- ", GameUI.GetClickBehaviors())
+	//$.Msg("MOUSE: ", eventName, " -- ", arg, " -- ", GameUI.GetClickBehaviors())
 
 	if ( GameUI.GetClickBehaviors() !== CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE )
 		return CONTINUE_PROCESSING_EVENT;
