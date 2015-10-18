@@ -4,7 +4,7 @@ require("timers")
 require('physics')
 require('notifications')
 require('storage')
-require('statcollection/init')
+--require('statcollection/init')
 
 
 if CBattleship8D == nil then
@@ -1148,8 +1148,8 @@ function CBattleship8D:OnThink()
 		local bsuiTimerData = {
 			nEmpire = 240-THINK_TICKS % 240;
 			nCreep = nCreepval;
-			nNorthGold = getEmpGoldForTeam(DOTA_TEAM_GOODGUYS);
-			nSouthGold = getEmpGoldForTeam(DOTA_TEAM_BADGUYS);
+			nNorthGold = getEmpGoldForTeam(DOTA_TEAM_BADGUYS);
+			nSouthGold = getEmpGoldForTeam(DOTA_TEAM_GOODGUYS);
 			
 		}
 		FireGameEvent( "bsui_timer_data", bsuiTimerData ); 

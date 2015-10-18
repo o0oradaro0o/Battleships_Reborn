@@ -649,19 +649,21 @@ function buyBoat(BoatName, cost)
 	
 	function CannotBuy(data)
 	{
-		$.Msg("cannot buy");
+		$.Msg("cannot buy test");
 		$.Msg("pid "+data.Player_ID);
+		$.Msg("this id "+Players.GetLocalPlayer());
+		$.Msg(data.Player_ID==Players.GetLocalPlayer());
 			showMission[ data.Player_ID]=0;
-			hideMissionsIfNeeded();
-			
-			
-			if(showMission[Players.GetLocalPlayer()]==0)
+		
+			if(showMission[Players.GetLocalPlayer()]==0 && data.Player_ID==Players.GetLocalPlayer())
 			{
 				$.Msg(data);
+				$.Msg("1");
 				var v=[data.x,data.y,data.z]
 				if(data.x<999999)
 				{
-				GameUI.PingMinimapAtLocation(v);
+					$.Msg("2");
+					GameUI.PingMinimapAtLocation(v);
 				}
 				showMission[Players.GetLocalPlayer()]=data.Ally_ID;
 				if(data.Ally_ID == 0)
@@ -670,13 +672,16 @@ function buyBoat(BoatName, cost)
 					$.Schedule( 4, reHideOutOfContracts );
 				}
 			}
+			hideMissionsIfNeeded();
+			
+			
 		
 	}
 function PingLoc(data)
 	{
 	$.Msg(data);
 			showMission[ data.player_id]=0;
-			if(showMission[Players.GetLocalPlayer()]==0)
+			if(showMission[Players.GetLocalPlayer()]==0 && data.player_id==Players.GetLocalPlayer())
 			{
 				
 				var v=[data.x,data.y,data.z]

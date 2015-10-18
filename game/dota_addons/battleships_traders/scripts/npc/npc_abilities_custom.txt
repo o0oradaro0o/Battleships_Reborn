@@ -7954,7 +7954,9 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"drop_item"
 			"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-
+		"MaxLevel"						"3"
+		"LevelsBetweenUpgrades"					"3"
+		"RequiredLevel"						"2"
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"21.0 17.0 13.0"

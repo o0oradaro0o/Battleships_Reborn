@@ -1382,7 +1382,7 @@
 
         "override_hero"             "npc_dota_hero_pugna"          // Hero to override
 
-      "Model" "models/trade_one_boat.vmdl"    // Model.
+      "Model" "models/ice_boat.vmdl"    // Model.
 		 "SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		

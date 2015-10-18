@@ -45,9 +45,9 @@ name_lookup["npc_dota_hero_ursa"] = "Aircraft Carrier"
 name_lookup["npc_dota_hero_pugna"] = "Ice Breaker"
 name_lookup["npc_dota_hero_windrunner"] = "Construction Ship"
 name_lookup["npc_dota_hero_tusk"] = "Battleship"
-name_lookup["npc_dota_hero_dazzle"] = "Phoenician"
+name_lookup["npc_dota_hero_vengefulspirit"] = "Phoenician"
 name_lookup["npc_dota_hero_enigma"] = "Ghost"
-name_lookup["npc_dota_hero_earthshaker"] = "Cargo"
+name_lookup["npc_dota_hero_bane"] = "Cargo"
 
 
 

@@ -588,7 +588,7 @@ SLOW: -30 -35 -40 -45"
 
 
 
-"Trade_hide_battleship"					"Mist and Sahdows"
+"Trade_hide_battleship"					"Mist and Shadows"
 "Trade_hide_battleship_Description"					"When used, the Phoenician Trader hides in a cloud of mist, becoming immune to detection. weapons will cease to fire but abilities can still be used.
 DURATION: 4.0"
 
