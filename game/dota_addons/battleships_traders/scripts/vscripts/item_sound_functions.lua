@@ -148,3 +148,37 @@ function lightSoundFire(keys)
 		end		
 	end		
 end
+
+function lightSoundImpact(keys)
+--Play sound for impacting light-type weapons
+	local targetUnit = keys.target	
+	--Very simple now. All light-type impacts have the same sound. 
+	EmitSoundOn("Hero_SkywrathMage.ProjectileImpact", targetUnit)		
+end 
+
+function iceSoundFire(keys)
+--Play sound for firing ice-type weapons
+	
+	local casterUnit = keys.caster
+	local item = keys.ability:GetAbilityName() --ability is how item name is passed in
+	local range = 1200
+	local handles = {}
+	handles.team = DOTA_UNIT_TARGET_TEAM_ENEMY
+	handles.types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_MECHANICAL + DOTA_UNIT_TARGET_HERO
+	handles.flags = DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
+		
+	if #getEnemies(casterUnit,range,handles) > 0 then
+		if string.match(item, "two") then--level-2 ice-type
+			EmitSoundOn("Hero_Lich.Attack", casterUnit) 			
+		elseif string.match(item, "three") then--level-3 ice-type
+			EmitSoundOn("Hero_Ancient_Apparition.Attack", casterUnit)
+		elseif string.match(item, "ult") then--ultimate ice-type
+			EmitSoundOn("Hero_Ancient_Apparition.Attack", casterUnit)
+			Timers:CreateTimer( 0.05, function()
+				EmitSoundOn("Hero_Ancient_Apparition.IceBlastRelease.Tick", casterUnit)
+			end)			
+		else --level-1 ice-type
+			EmitSoundOn("hero_Crystal.attack", casterUnit)
+		end		
+	end		
+end
