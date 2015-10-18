@@ -182,3 +182,17 @@ function iceSoundFire(keys)
 		end		
 	end		
 end
+
+function iceSoundImpact(keys)
+--Play sound for impacting ice-type weapons
+
+	local targetUnit = keys.target
+	local item = keys.ability:GetAbilityName() --ability is how item name is passed in
+	
+	if string.match(item, "ult") then --ultimate ice-type has a special impact
+		EmitSoundOn("Hero_Ancient_Apparition.ColdFeetTick", targetUnit)
+	else --all other ice-type weapons share the same impact sound
+		EmitSoundOn("Hero_Lich.ProjectileImpact", targetUnit)
+	end
+
+end 

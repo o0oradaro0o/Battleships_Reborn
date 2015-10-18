@@ -3086,7 +3086,7 @@
 						"MoveSpeed" "650"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/ice_one_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/ice_one_projectile.vpcf" 
 					}
 					
 					
@@ -3096,16 +3096,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"iceSoundImpact"
+			}  
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+				
+		}
 			"AbilitySpecial"
 		{
 			"01"
@@ -3716,6 +3721,7 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+				
 					"RunScript"
 					{
 						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
@@ -3736,7 +3742,7 @@
 						"MoveSpeed" "650"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/ice_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/ice_two_projectile.vpcf" 
 					}
 					
 					
@@ -3746,16 +3752,20 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"iceSoundImpact"
+			} 				
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}                        
+		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -4375,7 +4385,7 @@
 						"MoveSpeed" "650"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/ice_three_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/ice_three_projectile.vpcf" 
 					}
 					
 					
@@ -4385,16 +4395,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"iceSoundImpact"
+			} 				
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
                         
-                }
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -5073,7 +5088,7 @@
 						"MoveSpeed" "650"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/ice_one_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/ice_one_projectile.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -5090,7 +5105,7 @@
 						"MoveSpeed" "650"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/ice_one_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/ice_one_projectile.vpcf" 
 					}
 					
 					
@@ -5099,16 +5114,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                 "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"iceSoundImpact"
+			} 				
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					 "Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
                         
-                }
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -5839,7 +5859,7 @@
 						"MoveSpeed" "650"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/ice_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/ice_two_projectile.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -5856,7 +5876,7 @@
 						"MoveSpeed" "650"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/ice_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/ice_two_projectile.vpcf" 
 					}
 					
 					
@@ -5866,16 +5886,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"iceSoundImpact"
+			} 				
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+			
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -6596,7 +6621,7 @@
 						"MoveSpeed" "650"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/ice_three_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/ice_three_projectile.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -6613,7 +6638,7 @@
 						"MoveSpeed" "650"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/ice_three_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/ice_three_projectile.vpcf" 
 					}
 					
 					
@@ -6622,16 +6647,20 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"iceSoundImpact"
+			} 				
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}                        
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -7434,25 +7463,30 @@
 		}
 		"OnProjectileHitUnit"
 		{
-				"DeleteOnHit"                           "false"
-				"Damage"
-				{
-						"Type"                                  "DAMAGE_TYPE_PHYSICAL"
-						"Damage"                                "%dmg"
-						"Target"                                "TARGET"
-				}
-				"ApplyModifier"
-				{
-					"Target"				"TARGET"
-					"ModifierName" "item_ice_ult_bow_slow"
-				}
-			   "AttachEffect"
-				{
-					"Target"				"TARGET"
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"iceSoundImpact"
+			} 		
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+			"ApplyModifier"
+			{
+				"Target"				"TARGET"
+				"ModifierName" "item_ice_ult_bow_slow"
+			}
+		   "AttachEffect"
+			{
+				"Target"				"TARGET"
 
-					"EffectName"		"particles/basic_projectile/ice_ult_slow.vpcf"
-					"EffectAttachType"	"follow_origin"
-				}
+				"EffectName"		"particles/basic_projectile/ice_ult_slow.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
 		}
 		"AbilitySpecial"
 		{
