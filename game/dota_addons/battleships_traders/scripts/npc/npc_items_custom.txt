@@ -3053,10 +3053,7 @@
 		"ItemQuality"					"epic"
 	
 		
-		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		
-		
-		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"		
 		
 		"Modifiers"
 		{
@@ -3069,6 +3066,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"iceSoundFire"
+					}								
 					"TrackingProjectile"
 					{
 						"Target"
@@ -3270,16 +3272,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"lightSoundImpact"
+			}	
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+				
+		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -3709,6 +3716,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"iceSoundFire"
+					}								
 					"TrackingProjectile"
 					{
 						"Target"
@@ -3912,16 +3924,20 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"lightSoundImpact"
+			}								
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}			
+		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -4339,6 +4355,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"iceSoundFire"
+					}								
 					"TrackingProjectile"
 					{
 						"Target"
@@ -4536,16 +4557,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"lightSoundImpact"
+			}								
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}			
+        }
+		
 		"AbilitySpecial"
 		{
 			"01"
@@ -5027,6 +5053,11 @@
 				"ThinkInterval"		"%fire_rate"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"iceSoundFire"
+					}				
 					"TrackingProjectile"
 					{
 						"Target"
@@ -5278,16 +5309,20 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                 "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"lightSoundImpact"
+			}					
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					 "Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}			
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -5784,6 +5819,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"iceSoundFire"
+					}								
 					"TrackingProjectile"
 					{
 						"Target"
@@ -6031,16 +6071,20 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"lightSoundImpact"
+			}												
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}                        
+        }
 				"AbilitySpecial"
 		{
 			"01"
@@ -6532,6 +6576,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"iceSoundFire"
+					}								
 					"TrackingProjectile"
 					{
 						"Target"
@@ -6786,17 +6835,22 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
-				"AbilitySpecial"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"lightSoundImpact"
+			}								
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}			
+		}
+		
+		"AbilitySpecial"
 		{
 			"01"
 			{
@@ -7237,7 +7291,7 @@
 				"ThinkInterval" ".5"
 				"OnIntervalThink"
 				{	
-				"RunScript"
+					"RunScript"
 					{
 						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
 						"Function"			"fireSoundAura"
@@ -7340,6 +7394,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"iceSoundFire"
+					}								
 					"TrackingProjectile"
 					{
 						"Target"
@@ -7609,16 +7668,22 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+		"RunScript"
+		{
+			"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+			"Function"			"lightSoundImpact"
+		}					
+		
+		"DeleteOnHit"                           "false"
+		"Damage"
+		{
+				"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+				"Damage"                                "%dmg"
+				"Target"                                "TARGET"
+		}
+		
+		}
 		"AbilitySpecial"
 		{
 			"01"
