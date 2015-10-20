@@ -1732,7 +1732,7 @@
             </Panel>
 			 /* left_mid_shop */
             <Panel hittest="false" id="left_mid_shop" class="shop_guts">
-                <Image class="bkg_image" src="file://{images}/custom_game/mid_top.png" />
+                <Image class="bkg_image" src="file://{images}/custom_game/mid_left.png" />
                 <Panel class="shop_content_holder">
                     <Label hittest="false" class="trade_text_title" text="#Left_Mid_Missions" />
                     <Panel hittest="false" id="mission_hider_2" class="mission_guts">
@@ -2018,7 +2018,7 @@
                 </Panel>
             </Panel>
 		<Panel hittest="false" id="empty_guts">
-            <Panel hittest="false" id="empty_guts_content" oncancel="hideShop()">
+            <Panel hittest="false" id="empty_guts_content" oncancel="hideShop()" onmouseover="NoFadeMap()" onmouseout="okayToFade()">
                 <Label hittest="false" id="no_trade_text" text="#no_trade" />
 				 <Image  src="file://{images}/custom_game/map.png" />
 								
