@@ -166,9 +166,6 @@
 			
 		}
 
-		
-		
-		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -263,7 +260,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hoop_bonus_armor"	"1 2 4 7"
+				"hoop_bonus_armor"	"1 2 3 4"
 			}
 			"02"
 			{
@@ -1186,8 +1183,8 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"2"
 		"MaxLevel"						"3"
-		"LevelsBetweenUpgrades"					"3"
-		"RequiredLevel"						"2"
+		"LevelsBetweenUpgrades"					"4"
+		"RequiredLevel"						"3"
 
 
 		
@@ -1203,7 +1200,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"600 700 800"
+		"AbilityDamage"					"600 900 1200"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -5024,7 +5021,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hoop_bonus_armor"	"2 4 7"
+				"hoop_bonus_armor"	"2 4 6"
 			}
 			"02"
 			{

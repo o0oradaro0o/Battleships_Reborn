@@ -224,7 +224,10 @@ model_lookup["npc_dota_hero_enigma"] = "models/trade_three_boat.vmdl"
 
 
 
-
+NorthEasyMissions={}
+NorthHardMissions={}
+SouthEasyMissions={}
+SouthHardMissions={}
 
 function Precache( context )
 		for ind = 0, 11, 1 do 
@@ -416,6 +419,232 @@ function CBattleship8D:InitGameMode()
   mode = GameRules:GetGameModeEntity()
 mode:SetHUDVisible(12, false)
   
+  
+  
+  
+NorthEasyMissions["npc_dota_shop_left_bot"]={}
+NorthEasyMissions["npc_dota_shop_right_bot"]={}
+NorthEasyMissions["npc_dota_shop_right_mid"]={}
+NorthEasyMissions["npc_dota_shop_left_mid"]={}
+NorthEasyMissions["npc_dota_shop_left_top"]={}
+NorthEasyMissions["npc_dota_shop_mid_bot"]={}
+NorthEasyMissions["npc_dota_shop_mid_mid"]={}
+NorthEasyMissions["npc_dota_shop_mid_top"]={}
+NorthEasyMissions["npc_dota_shop_right_top"]={}
+NorthHardMissions["npc_dota_shop_left_bot"]={}
+NorthHardMissions["npc_dota_shop_right_bot"]={}
+NorthHardMissions["npc_dota_shop_right_mid"]={}
+NorthHardMissions["npc_dota_shop_left_mid"]={}
+NorthHardMissions["npc_dota_shop_left_top"]={}
+NorthHardMissions["npc_dota_shop_mid_bot"]={}
+NorthHardMissions["npc_dota_shop_mid_mid"]={}
+NorthHardMissions["npc_dota_shop_mid_top"]={}
+NorthHardMissions["npc_dota_shop_right_top"]={}
+SouthEasyMissions["npc_dota_shop_left_bot"]={}
+SouthEasyMissions["npc_dota_shop_right_bot"]={}
+SouthEasyMissions["npc_dota_shop_right_mid"]={}
+SouthEasyMissions["npc_dota_shop_left_mid"]={}
+SouthEasyMissions["npc_dota_shop_left_top"]={}
+SouthEasyMissions["npc_dota_shop_mid_bot"]={}
+SouthEasyMissions["npc_dota_shop_mid_mid"]={}
+SouthEasyMissions["npc_dota_shop_mid_top"]={}
+SouthEasyMissions["npc_dota_shop_right_top"]={}
+SouthHardMissions["npc_dota_shop_left_bot"]={}
+SouthHardMissions["npc_dota_shop_right_bot"]={}
+SouthHardMissions["npc_dota_shop_right_mid"]={}
+SouthHardMissions["npc_dota_shop_left_mid"]={}
+SouthHardMissions["npc_dota_shop_left_top"]={}
+SouthHardMissions["npc_dota_shop_mid_bot"]={}
+SouthHardMissions["npc_dota_shop_mid_mid"]={}
+SouthHardMissions["npc_dota_shop_mid_top"]={}
+SouthHardMissions["npc_dota_shop_right_top"]={}
+
+table.insert(NorthEasyMissions["npc_dota_shop_left_top"], "item_contract_easy_left_mid")
+table.insert(NorthEasyMissions["npc_dota_shop_left_top"], "item_contract_easy_mid_top")
+table.insert(NorthEasyMissions["npc_dota_shop_left_top"], "item_contract_easy_right_top")
+table.insert(NorthEasyMissions["npc_dota_shop_mid_mid"], "item_contract_easy_mid_top")
+table.insert(NorthEasyMissions["npc_dota_shop_left_mid"], "item_contract_easy_left_top")
+table.insert(NorthEasyMissions["npc_dota_shop_mid_top"], "item_contract_easy_left_top")
+table.insert(NorthEasyMissions["npc_dota_shop_mid_top"], "item_contract_easy_left_mid")
+table.insert(NorthEasyMissions["npc_dota_shop_mid_top"], "item_contract_easy_right_mid")
+table.insert(NorthEasyMissions["npc_dota_shop_mid_top"], "item_contract_easy_right_top")
+table.insert(NorthEasyMissions["npc_dota_shop_right_mid"], "item_contract_easy_right_top")
+table.insert(NorthEasyMissions["npc_dota_shop_right_top"], "item_contract_easy_left_top")
+table.insert(NorthEasyMissions["npc_dota_shop_right_top"], "item_contract_easy_mid_top")
+table.insert(NorthEasyMissions["npc_dota_shop_right_top"], "item_contract_easy_right_mid")
+table.insert(NorthHardMissions["npc_dota_shop_left_top"], "item_contract_hard_mid_mid")
+table.insert(NorthHardMissions["npc_dota_shop_left_top"], "item_contract_hard_right_mid")
+table.insert(NorthHardMissions["npc_dota_shop_left_top"], "item_contract_hard_right_bot")
+table.insert(NorthHardMissions["npc_dota_shop_left_top"], "item_contract_hard_mid_bot")
+table.insert(NorthHardMissions["npc_dota_shop_mid_mid"], "item_contract_hard_left_bot")
+table.insert(NorthHardMissions["npc_dota_shop_mid_mid"], "item_contract_hard_right_bot")
+table.insert(NorthHardMissions["npc_dota_shop_mid_mid"], "item_contract_hard_mid_bot")
+table.insert(NorthHardMissions["npc_dota_shop_left_mid"], "item_contract_hard_mid_mid")
+table.insert(NorthHardMissions["npc_dota_shop_left_mid"], "item_contract_hard_right_mid")
+table.insert(NorthHardMissions["npc_dota_shop_left_mid"], "item_contract_hard_right_bot")
+table.insert(NorthHardMissions["npc_dota_shop_left_mid"], "item_contract_hard_mid_bot")
+table.insert(NorthHardMissions["npc_dota_shop_left_mid"], "item_contract_hard_right_top")
+table.insert(NorthHardMissions["npc_dota_shop_left_bot"], "item_contract_hard_mid_mid")
+table.insert(NorthHardMissions["npc_dota_shop_left_bot"], "item_contract_hard_right_mid")
+table.insert(NorthHardMissions["npc_dota_shop_left_bot"], "item_contract_hard_right_bot")
+table.insert(NorthHardMissions["npc_dota_shop_left_bot"], "item_contract_hard_mid_bot")
+table.insert(NorthHardMissions["npc_dota_shop_left_bot"], "item_contract_hard_right_top")
+table.insert(NorthHardMissions["npc_dota_shop_mid_top"], "item_contract_hard_mid_mid")
+table.insert(NorthHardMissions["npc_dota_shop_mid_top"], "item_contract_hard_left_bot")
+table.insert(NorthHardMissions["npc_dota_shop_mid_top"], "item_contract_hard_right_bot")
+table.insert(NorthHardMissions["npc_dota_shop_mid_top"], "item_contract_hard_mid_bot")
+table.insert(NorthHardMissions["npc_dota_shop_right_mid"], "item_contract_hard_left_top")
+table.insert(NorthHardMissions["npc_dota_shop_right_mid"], "item_contract_hard_mid_mid")
+table.insert(NorthHardMissions["npc_dota_shop_right_mid"], "item_contract_hard_left_mid")
+table.insert(NorthHardMissions["npc_dota_shop_right_mid"], "item_contract_hard_left_bot")
+table.insert(NorthHardMissions["npc_dota_shop_right_mid"], "item_contract_hard_mid_bot")
+table.insert(NorthHardMissions["npc_dota_shop_right_bot"], "item_contract_hard_left_top")
+table.insert(NorthHardMissions["npc_dota_shop_right_bot"], "item_contract_hard_mid_mid")
+table.insert(NorthHardMissions["npc_dota_shop_right_bot"], "item_contract_hard_left_mid")
+table.insert(NorthHardMissions["npc_dota_shop_right_bot"], "item_contract_hard_left_bot")
+table.insert(NorthHardMissions["npc_dota_shop_right_bot"], "item_contract_hard_mid_bot")
+table.insert(NorthHardMissions["npc_dota_shop_mid_bot"], "item_contract_hard_left_top")
+table.insert(NorthHardMissions["npc_dota_shop_mid_bot"], "item_contract_hard_mid_mid")
+table.insert(NorthHardMissions["npc_dota_shop_mid_bot"], "item_contract_hard_left_bot")
+table.insert(NorthHardMissions["npc_dota_shop_mid_bot"], "item_contract_hard_mid_top")
+table.insert(NorthHardMissions["npc_dota_shop_mid_bot"], "item_contract_hard_right_bot")
+table.insert(NorthHardMissions["npc_dota_shop_mid_bot"], "item_contract_hard_right_top")
+table.insert(NorthHardMissions["npc_dota_shop_right_top"], "item_contract_hard_mid_mid")
+table.insert(NorthHardMissions["npc_dota_shop_right_top"], "item_contract_hard_left_mid")
+table.insert(NorthHardMissions["npc_dota_shop_right_top"], "item_contract_hard_left_bot")
+table.insert(NorthHardMissions["npc_dota_shop_right_top"], "item_contract_hard_mid_bot")
+table.insert(NorthHardMissions["npc_dota_shop_left_top"], "item_contract_medium_left_bot")
+table.insert(NorthHardMissions["npc_dota_shop_mid_mid"], "item_contract_medium_left_top")
+table.insert(NorthHardMissions["npc_dota_shop_mid_mid"], "item_contract_medium_left_mid")
+table.insert(NorthHardMissions["npc_dota_shop_mid_mid"], "item_contract_medium_right_mid")
+table.insert(NorthHardMissions["npc_dota_shop_mid_mid"], "item_contract_medium_right_top")
+table.insert(NorthHardMissions["npc_dota_shop_left_mid"], "item_contract_medium_left_bot")
+table.insert(NorthHardMissions["npc_dota_shop_left_mid"], "item_contract_medium_mid_top")
+table.insert(NorthHardMissions["npc_dota_shop_left_bot"], "item_contract_medium_left_top")
+table.insert(NorthHardMissions["npc_dota_shop_left_bot"], "item_contract_medium_left_mid")
+table.insert(NorthHardMissions["npc_dota_shop_left_bot"], "item_contract_medium_mid_top")
+table.insert(NorthHardMissions["npc_dota_shop_right_mid"], "item_contract_medium_mid_top")
+table.insert(NorthHardMissions["npc_dota_shop_right_mid"], "item_contract_medium_right_bot")
+table.insert(NorthHardMissions["npc_dota_shop_right_bot"], "item_contract_medium_mid_top")
+table.insert(NorthHardMissions["npc_dota_shop_right_bot"], "item_contract_medium_right_mid")
+table.insert(NorthHardMissions["npc_dota_shop_right_bot"], "item_contract_medium_right_top")
+table.insert(NorthHardMissions["npc_dota_shop_mid_bot"], "item_contract_medium_left_mid")
+table.insert(NorthHardMissions["npc_dota_shop_mid_bot"], "item_contract_medium_right_mid")
+table.insert(NorthHardMissions["npc_dota_shop_right_top"], "item_contract_medium_right_bot")
+table.insert(SouthEasyMissions["npc_dota_shop_mid_mid"], "item_contract_easy_mid_bot")
+table.insert(SouthEasyMissions["npc_dota_shop_left_mid"], "item_contract_easy_left_bot")
+table.insert(SouthEasyMissions["npc_dota_shop_left_bot"], "item_contract_easy_left_mid")
+table.insert(SouthEasyMissions["npc_dota_shop_left_bot"], "item_contract_easy_right_bot")
+table.insert(SouthEasyMissions["npc_dota_shop_left_bot"], "item_contract_easy_mid_bot")
+table.insert(SouthEasyMissions["npc_dota_shop_right_mid"], "item_contract_easy_right_bot")
+table.insert(SouthEasyMissions["npc_dota_shop_right_bot"], "item_contract_easy_left_bot")
+table.insert(SouthEasyMissions["npc_dota_shop_right_bot"], "item_contract_easy_right_mid")
+table.insert(SouthEasyMissions["npc_dota_shop_right_bot"], "item_contract_easy_mid_bot")
+table.insert(SouthEasyMissions["npc_dota_shop_mid_bot"], "item_contract_easy_left_mid")
+table.insert(SouthEasyMissions["npc_dota_shop_mid_bot"], "item_contract_easy_left_bot")
+table.insert(SouthEasyMissions["npc_dota_shop_mid_bot"], "item_contract_easy_right_mid")
+table.insert(SouthEasyMissions["npc_dota_shop_mid_bot"], "item_contract_easy_right_bot")
+table.insert(SouthHardMissions["npc_dota_shop_left_top"], "item_contract_hard_mid_mid")
+table.insert(SouthHardMissions["npc_dota_shop_left_top"], "item_contract_hard_mid_top")
+table.insert(SouthHardMissions["npc_dota_shop_left_top"], "item_contract_hard_right_mid")
+table.insert(SouthHardMissions["npc_dota_shop_left_top"], "item_contract_hard_right_bot")
+table.insert(SouthHardMissions["npc_dota_shop_left_top"], "item_contract_hard_right_top")
+table.insert(SouthHardMissions["npc_dota_shop_mid_mid"], "item_contract_hard_left_top")
+table.insert(SouthHardMissions["npc_dota_shop_mid_mid"], "item_contract_hard_mid_top")
+table.insert(SouthHardMissions["npc_dota_shop_mid_mid"], "item_contract_hard_right_top")
+table.insert(SouthHardMissions["npc_dota_shop_left_mid"], "item_contract_hard_mid_mid")
+table.insert(SouthHardMissions["npc_dota_shop_left_mid"], "item_contract_hard_mid_top")
+table.insert(SouthHardMissions["npc_dota_shop_left_mid"], "item_contract_hard_right_mid")
+table.insert(SouthHardMissions["npc_dota_shop_left_mid"], "item_contract_hard_right_bot")
+table.insert(SouthHardMissions["npc_dota_shop_left_mid"], "item_contract_hard_right_top")
+table.insert(SouthHardMissions["npc_dota_shop_left_bot"], "item_contract_hard_mid_mid")
+table.insert(SouthHardMissions["npc_dota_shop_left_bot"], "item_contract_hard_mid_top")
+table.insert(SouthHardMissions["npc_dota_shop_left_bot"], "item_contract_hard_right_mid")
+table.insert(SouthHardMissions["npc_dota_shop_left_bot"], "item_contract_hard_right_top")
+table.insert(SouthHardMissions["npc_dota_shop_mid_top"], "item_contract_hard_left_top")
+table.insert(SouthHardMissions["npc_dota_shop_mid_top"], "item_contract_hard_mid_mid")
+table.insert(SouthHardMissions["npc_dota_shop_mid_top"], "item_contract_hard_left_bot")
+table.insert(SouthHardMissions["npc_dota_shop_mid_top"], "item_contract_hard_right_bot")
+table.insert(SouthHardMissions["npc_dota_shop_mid_top"], "item_contract_hard_mid_bot")
+table.insert(SouthHardMissions["npc_dota_shop_mid_top"], "item_contract_hard_right_top")
+table.insert(SouthHardMissions["npc_dota_shop_right_mid"], "item_contract_hard_left_top")
+table.insert(SouthHardMissions["npc_dota_shop_right_mid"], "item_contract_hard_mid_mid")
+table.insert(SouthHardMissions["npc_dota_shop_right_mid"], "item_contract_hard_left_mid")
+table.insert(SouthHardMissions["npc_dota_shop_right_mid"], "item_contract_hard_left_bot")
+table.insert(SouthHardMissions["npc_dota_shop_right_mid"], "item_contract_hard_mid_top")
+table.insert(SouthHardMissions["npc_dota_shop_right_bot"], "item_contract_hard_left_top")
+table.insert(SouthHardMissions["npc_dota_shop_right_bot"], "item_contract_hard_mid_mid")
+table.insert(SouthHardMissions["npc_dota_shop_right_bot"], "item_contract_hard_left_mid")
+table.insert(SouthHardMissions["npc_dota_shop_right_bot"], "item_contract_hard_mid_top")
+table.insert(SouthHardMissions["npc_dota_shop_mid_bot"], "item_contract_hard_left_top")
+table.insert(SouthHardMissions["npc_dota_shop_mid_bot"], "item_contract_hard_mid_mid")
+table.insert(SouthHardMissions["npc_dota_shop_mid_bot"], "item_contract_hard_mid_top")
+table.insert(SouthHardMissions["npc_dota_shop_mid_bot"], "item_contract_hard_right_top")
+table.insert(SouthHardMissions["npc_dota_shop_right_top"], "item_contract_hard_left_top")
+table.insert(SouthHardMissions["npc_dota_shop_right_top"], "item_contract_hard_mid_mid")
+table.insert(SouthHardMissions["npc_dota_shop_right_top"], "item_contract_hard_left_mid")
+table.insert(SouthHardMissions["npc_dota_shop_right_top"], "item_contract_hard_left_bot")
+table.insert(SouthHardMissions["npc_dota_shop_right_top"], "item_contract_hard_mid_top")
+table.insert(SouthHardMissions["npc_dota_shop_left_top"], "item_contract_medium_left_mid")
+table.insert(SouthHardMissions["npc_dota_shop_left_top"], "item_contract_medium_left_bot")
+table.insert(SouthHardMissions["npc_dota_shop_left_top"], "item_contract_medium_mid_bot")
+table.insert(SouthHardMissions["npc_dota_shop_mid_mid"], "item_contract_medium_left_mid")
+table.insert(SouthHardMissions["npc_dota_shop_mid_mid"], "item_contract_medium_left_bot")
+table.insert(SouthHardMissions["npc_dota_shop_mid_mid"], "item_contract_medium_right_mid")
+table.insert(SouthHardMissions["npc_dota_shop_mid_mid"], "item_contract_medium_right_bot")
+table.insert(SouthHardMissions["npc_dota_shop_left_mid"], "item_contract_medium_left_top")
+table.insert(SouthHardMissions["npc_dota_shop_left_mid"], "item_contract_medium_mid_bot")
+table.insert(SouthHardMissions["npc_dota_shop_left_bot"], "item_contract_medium_left_top")
+table.insert(SouthHardMissions["npc_dota_shop_mid_top"], "item_contract_medium_left_mid")
+table.insert(SouthHardMissions["npc_dota_shop_mid_top"], "item_contract_medium_right_mid")
+table.insert(SouthHardMissions["npc_dota_shop_right_mid"], "item_contract_medium_mid_bot")
+table.insert(SouthHardMissions["npc_dota_shop_right_mid"], "item_contract_medium_right_top")
+table.insert(SouthHardMissions["npc_dota_shop_right_bot"], "item_contract_medium_right_top")
+table.insert(SouthHardMissions["npc_dota_shop_right_top"], "item_contract_medium_right_mid")
+table.insert(SouthHardMissions["npc_dota_shop_right_top"], "item_contract_medium_right_bot")
+table.insert(SouthHardMissions["npc_dota_shop_right_top"], "item_contract_medium_mid_bot")
+
+
+
+
+table.insert(NorthEasyMissions["npc_dota_shop_left_top"], "item_contract_medium_left_bot")
+table.insert(NorthEasyMissions["npc_dota_shop_mid_mid"], "item_contract_medium_left_top")
+table.insert(NorthEasyMissions["npc_dota_shop_mid_mid"], "item_contract_medium_left_mid")
+table.insert(NorthEasyMissions["npc_dota_shop_mid_mid"], "item_contract_medium_right_mid")
+table.insert(NorthEasyMissions["npc_dota_shop_mid_mid"], "item_contract_medium_right_top")
+table.insert(NorthEasyMissions["npc_dota_shop_left_mid"], "item_contract_medium_left_bot")
+table.insert(NorthEasyMissions["npc_dota_shop_left_mid"], "item_contract_medium_mid_top")
+table.insert(NorthEasyMissions["npc_dota_shop_left_bot"], "item_contract_medium_left_top")
+table.insert(NorthEasyMissions["npc_dota_shop_left_bot"], "item_contract_medium_left_mid")
+table.insert(NorthEasyMissions["npc_dota_shop_left_bot"], "item_contract_medium_mid_top")
+table.insert(NorthEasyMissions["npc_dota_shop_right_mid"], "item_contract_medium_mid_top")
+table.insert(NorthEasyMissions["npc_dota_shop_right_mid"], "item_contract_medium_right_bot")
+table.insert(NorthEasyMissions["npc_dota_shop_right_bot"], "item_contract_medium_mid_top")
+table.insert(NorthEasyMissions["npc_dota_shop_right_bot"], "item_contract_medium_right_mid")
+table.insert(NorthEasyMissions["npc_dota_shop_right_bot"], "item_contract_medium_right_top")
+table.insert(NorthEasyMissions["npc_dota_shop_mid_bot"], "item_contract_medium_left_mid")
+table.insert(NorthEasyMissions["npc_dota_shop_mid_bot"], "item_contract_medium_right_mid")
+table.insert(NorthEasyMissions["npc_dota_shop_right_top"], "item_contract_medium_right_bot")
+
+
+table.insert(SouthEasyMissions["npc_dota_shop_left_top"], "item_contract_medium_left_mid")
+table.insert(SouthEasyMissions["npc_dota_shop_left_top"], "item_contract_medium_left_bot")
+table.insert(SouthEasyMissions["npc_dota_shop_left_top"], "item_contract_medium_mid_bot")
+table.insert(SouthEasyMissions["npc_dota_shop_mid_mid"], "item_contract_medium_left_mid")
+table.insert(SouthEasyMissions["npc_dota_shop_mid_mid"], "item_contract_medium_left_bot")
+table.insert(SouthEasyMissions["npc_dota_shop_mid_mid"], "item_contract_medium_right_mid")
+table.insert(SouthEasyMissions["npc_dota_shop_mid_mid"], "item_contract_medium_right_bot")
+table.insert(SouthEasyMissions["npc_dota_shop_left_mid"], "item_contract_medium_left_top")
+table.insert(SouthEasyMissions["npc_dota_shop_left_mid"], "item_contract_medium_mid_bot")
+table.insert(SouthEasyMissions["npc_dota_shop_left_bot"], "item_contract_medium_left_top")
+table.insert(SouthEasyMissions["npc_dota_shop_mid_top"], "item_contract_medium_left_mid")
+table.insert(SouthEasyMissions["npc_dota_shop_mid_top"], "item_contract_medium_right_mid")
+table.insert(SouthEasyMissions["npc_dota_shop_right_mid"], "item_contract_medium_mid_bot")
+table.insert(SouthEasyMissions["npc_dota_shop_right_mid"], "item_contract_medium_right_top")
+table.insert(SouthEasyMissions["npc_dota_shop_right_bot"], "item_contract_medium_right_top")
+table.insert(SouthEasyMissions["npc_dota_shop_right_top"], "item_contract_medium_right_mid")
+table.insert(SouthEasyMissions["npc_dota_shop_right_top"], "item_contract_medium_right_bot")
+table.insert(SouthEasyMissions["npc_dota_shop_right_top"], "item_contract_medium_mid_bot")
 end
 
 
@@ -589,6 +818,7 @@ function CBattleship8D:handleEmpGold()
 			
 end 
 
+
 function CBattleship8D:quickSpawn(team, lane, tier, level, number)
         
 	local spawnLocation = Entities:FindByName( nil, team .. "_spawn_" .. lane)
@@ -626,8 +856,10 @@ function getEmpGoldForTeam(team)
 					end
 				end
 			end
-			
-			 
+			if team_players==0 then
+				team_players=1
+			end
+			 local minGold = 500 * EMP_GOLD_NUMBER
 			local goldEach = 500 * EMP_GOLD_NUMBER
 			local GoldDif = 0
 			
@@ -636,17 +868,27 @@ function getEmpGoldForTeam(team)
 				goldEach = goldEach + GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
 				BAD_GOLD_TOTAL_MOD = 0
 				GOOD_GOLD_TOTAL_MOD = GoldDif
+				if team == DOTA_TEAM_BADGUYS  then 
+					return goldEach / team_players
+					else
+					return minGold / team_players
+				end
 			end
 			if BAD_GOLD_TOTAL_MOD > GOOD_GOLD_TOTAL_MOD then
 				GoldDif = BAD_GOLD_TOTAL_MOD - GOOD_GOLD_TOTAL_MOD
 				goldEach = goldEach + GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
 				BAD_GOLD_TOTAL_MOD = GoldDif
 				GOOD_GOLD_TOTAL_MOD = 0
+				if team == DOTA_TEAM_GOODGUYS  then 
+					return goldEach  / team_players
+					else
+					return minGold / team_players
+				end
 			end
 			if NUM_GOOD_PLAYERS ~= 0 and NUM_BAD_PLAYERS ~= 0 then
 				return goldEach / team_players
 			end
-			return goldEach
+			return goldEach / team_players
 		
 end
 
@@ -760,7 +1002,7 @@ local hero = casterUnit
 							hero:SetGold(0, false)
 							print ( '[BAREBONES] player was phantom_lancer and got 750')
 						elseif string.match(hero:GetName(),"vengefulspirit") then
-							hero:SetGold(herogold + 750, true)
+							hero:SetGold(herogold + 500, true)
 							hero:SetGold(0, false)
 						elseif string.match(hero:GetName(),"enigma") then
 							hero:SetGold(herogold + 3000, true)
@@ -1904,28 +2146,71 @@ function become_boat(casterUnit, heroname)
 							local newItem = CreateItem(itemlist[b], hero, hero)
 							if newItem ~= nil then                   -- makes sure that the item exists and making sure it is the correct item
 								
-								if b==5 and (string.match(heroname,"vengefulspirit") or string.match(heroname,"enigma") or string.match(heroname,"bane")) then
-								local newItem2 = CreateItem("item_trade_manifest", hero, hero)
-									hero:AddItem(newItem2)
-									local data =
-									{
-										Player_ID = hero:GetPlayerID();
-										Ally_ID = allyteamnumber;
-									}
-									FireGameEvent("Team_Can_Buy",data)
-									elseif  b==5 then
-									local data =
-									{
-										Player_ID = hero:GetPlayerID();
-										Ally_ID = -1;
-										x = 99999999;
-										y =  99999999;
-										z =  99999999;
-									}
-									FireGameEvent("Team_Cannot_Buy",data)
+								if string.match(heroname,"vengefulspirit") or string.match(heroname,"enigma") or string.match(heroname,"bane") then
+									if b==4 then
+										
 
+										if hero:GetTeamNumber()==DOTA_TEAM_GOODGUYS then
+										local newItem3 = CreateItem("item_contract_easy_mid_bot", hero, hero)
+										local MissionLoc
+											for _,mission in pairs(  Entities:FindAllByName( "npc_dota_buil*")) do
+													if  string.match(mission:GetUnitName(),"mid_bot") then
+														MissionLoc=mission
+													end
+											end
+										local data =
+														{
+															Player_ID = hero:GetPlayerID();
+															Ally_ID = 0;
+															x =  MissionLoc:GetAbsOrigin().x;
+															y =  MissionLoc:GetAbsOrigin().y;
+															z =  MissionLoc:GetAbsOrigin().z;
+														}
+														FireGameEvent("Team_Cannot_Buy",data) 
+														hero:AddItem(newItem3)
+														local newItem2 = CreateItem("item_trade_manifest", hero, hero)
+													hero:AddItem(newItem2)
+											else
+										local newItem = CreateItem("item_contract_easy_mid_top", hero, hero)
+										local MissionLoc
+											for _,mission in pairs(  Entities:FindAllByName( "npc_dota_buil*")) do
+													if  string.match(mission:GetUnitName(),"mid_top") then
+														MissionLoc=mission
+													end
+											end
+										local data =
+										{
+											Player_ID = hero:GetPlayerID();
+											Ally_ID = 0;
+											x =  MissionLoc:GetAbsOrigin().x;
+											y =  MissionLoc:GetAbsOrigin().y;
+											z =  MissionLoc:GetAbsOrigin().z;
+										}
+										FireGameEvent("Team_Cannot_Buy",data)
+										hero:AddItem(newItem3)
+										local newItem2 = CreateItem("item_trade_manifest", hero, hero)
+											hero:AddItem(newItem2)
+										end
+									
+									
+									end
+									
+									elseif  b==5 then
+											local data =
+											{
+												Player_ID = hero:GetPlayerID();
+												Ally_ID = -1;
+												x = 99999999;
+												y =  99999999;
+												z =  99999999;
+											}
+											FireGameEvent("Team_Cannot_Buy",data)
 								end
-								if b<5 and  string.match(itemlist[b],"fluff") then
+								if (string.match(heroname,"vengefulspirit") or string.match(heroname,"enigma") or string.match(heroname,"bane")) and (b==10 or b==11) then
+										CreateItemOnPositionSync(hero:GetOrigin(), newItem)
+										print("ejecting")
+								end
+								if b<4 and  string.match(itemlist[b],"fluff") then
 									hero:AddItem(newItem)
 								elseif not  string.match(itemlist[b],"fluff") then
 									hero:AddItem(newItem)
@@ -2139,6 +2424,8 @@ print("in unstick")
 							local vecorig = LastLocs2[hero]
 							hero:SetOrigin(vecorig)
 							stopPhysics(hero)
+							else
+								hero:SetOrigin(hero:GetOrigin()+RandomVector( RandomFloat( 200, 300 )))
 						end
 					end
 					local item = CreateItem( "item_spawn_stunner", hero, hero)
@@ -2379,7 +2666,6 @@ function GiveEasy(eventSourceIndex, args)
 	local pID = args.PlayerID
 	local teamNum=PlayerResource:GetTeam(pID)
 	local heroBuying
-	local allyhero
 	--get list of heroes on this team
 	local i=0
 	for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
@@ -2388,10 +2674,6 @@ function GiveEasy(eventSourceIndex, args)
 					heroBuying= hero
 					print("assignedHero")
 				end
-				if hero:GetTeamNumber() == teamNum then
-					allyhero = hero
-					print("allyHero")
-				end
 		end
 	end
 	if heroBuying~=nil and heroBuying:IsAlive() and not CheckInvFull(heroBuying,1) and not HasQuest(heroBuying) then
@@ -2400,45 +2682,42 @@ function GiveEasy(eventSourceIndex, args)
 		local ShopDist =  casterPos - nearestShop:GetAbsOrigin()
 		if ShopDist:Length()<600 then
 			print("inrange")
-			local missionPool=Entities:FindAllByNameWithin("npc_dota_buil*", nearestShop:GetAbsOrigin(), 12000)
-			local chosenMission
-			
-			while chosenMission==nil do
-				local i = RandomInt( 1, #missionPool )
-				if missionPool[i]~=nearestShop and not string.match(missionPool[i]:GetUnitName(),"ship") then
-					chosenMission=missionPool[i]
-				end
-			end
-			local missionDist =  chosenMission:GetAbsOrigin() - nearestShop:GetAbsOrigin()
-			print("unitname" .. chosenMission:GetUnitName())
-			print("journey dist " .. missionDist:Length())
-				local newItem 
-			if missionDist:Length()<7500 then 
-				if heroBuying:GetTeamNumber() == DOTA_TEAM_GOODGUYS and  string.match(chosenMission:GetUnitName(),"top")  then
-					 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
-			
-				elseif  heroBuying:GetTeamNumber() == DOTA_TEAM_BADGUYS and  string.match(chosenMission:GetUnitName(),"bot") then
-					 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
+			local missionPool
+			if heroBuying:GetTeamNumber()==DOTA_TEAM_GOODGUYS then
+				print(nearestShop:GetUnitName())
+				PrintTable(SouthEasyMissions[nearestShop:GetUnitName()])
+				missionPool=SouthEasyMissions[nearestShop:GetUnitName()]
 				else
-					newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_easy"), hero, hero)
-				end
-				
-			else
-				newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero) 
+				missionPool=NorthEasyMissions[nearestShop:GetUnitName()]
 			end
+			local chosenMission=missionPool[RandomInt( 1, #missionPool )]
+			newItem = CreateItem(chosenMission, hero, hero)
 			if newItem ~= nil then -- makes sure that the item exists and making sure it is the correct item
 				print("Item Is: " .. newItem:GetName() )
 				
 				heroBuying:AddItem(newItem)
 				EmitSoundOnClient("ui.npe_objective_given",PlayerResource:GetPlayer(heroBuying:GetPlayerID()))
 				
+					print(newItem)
+					local itemStrippedEasy=string.gsub(newItem:GetName(),"item_contract_easy","")
+					local itemStrippedMedium=string.gsub(newItem:GetName(),"item_contract_medium","")
+					local itemStrippedHard=string.gsub(newItem:GetName(),"item_contract_hard","")
+					local MissionLoc
+						for _,mission in pairs(  Entities:FindAllByName( "npc_dota_buil*")) do
+								if  string.match(mission:GetUnitName(),itemStrippedEasy) or string.match(mission:GetUnitName(),itemStrippedMedium) or string.match(mission:GetUnitName(),itemStrippedHard)then
+									MissionLoc=mission
+								end
+						end
+								
+				
+				
 				local data =
 				{
 					Player_ID = heroBuying:GetPlayerID();
 					Ally_ID = 0;
-					x =  chosenMission:GetAbsOrigin().x;
-					y =  chosenMission:GetAbsOrigin().y;
-					z =  chosenMission:GetAbsOrigin().z;
+					x =  MissionLoc:GetAbsOrigin().x;
+					y =  MissionLoc:GetAbsOrigin().y;
+					z =  MissionLoc:GetAbsOrigin().z;
 				}
 				FireGameEvent("Team_Cannot_Buy",data) 
 			end
@@ -2447,23 +2726,18 @@ function GiveEasy(eventSourceIndex, args)
 end
 
 function GiveMedium(eventSourceIndex, args)
-	print("in give medium")
+		print("in give easy")
 	local pID = args.PlayerID
 	local teamNum=PlayerResource:GetTeam(pID)
 	local heroBuying
-	local allyhero
 	--get list of heroes on this team
 	local i=0
 	for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-			if hero:GetPlayerID() == pID then
-				heroBuying= hero
-				print("assignedHero")
-			end
-			if hero:GetTeamNumber() == teamNum then
-				allyhero = hero
-				print("allyHero")
-			end
+				if hero:GetPlayerID() == pID then
+					heroBuying= hero
+					print("assignedHero")
+				end
 		end
 	end
 	if heroBuying~=nil and heroBuying:IsAlive() and not CheckInvFull(heroBuying,1) and not HasQuest(heroBuying) then
@@ -2472,45 +2746,41 @@ function GiveMedium(eventSourceIndex, args)
 		local ShopDist =  casterPos - nearestShop:GetAbsOrigin()
 		if ShopDist:Length()<600 then
 			print("inrange")
-			local missionPool=Entities:FindAllByName("npc_dota_buil*")
-			local chosenMission
-			local missionDist
-			while chosenMission==nil do
-				local i = RandomInt( 1, #missionPool )
-				missionDist =  missionPool[i]:GetAbsOrigin() - nearestShop:GetAbsOrigin()
-				if missionPool[i]~=nearestShop and missionDist:Length()>6000 and not string.match(missionPool[i]:GetUnitName(),"ship") then
-					chosenMission=missionPool[i]
-				end
-			end
-			print("unitname" .. chosenMission:GetUnitName())
-			local newItem
-			print("journey dist " .. missionDist:Length())
-			if missionDist:Length()>12000 then 
-				if heroBuying:GetTeamNumber() == DOTA_TEAM_GOODGUYS and  string.match(chosenMission:GetUnitName(),"bot")  then
-					 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
-				elseif  heroBuying:GetTeamNumber() == DOTA_TEAM_BADGUYS and  string.match(chosenMission:GetUnitName(),"top") then
-					 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
+			local missionPool
+			if heroBuying:GetTeamNumber()==DOTA_TEAM_GOODGUYS then
+				missionPool=SouthHardMissions[nearestShop:GetUnitName()]
 				else
-					 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_hard"), hero, hero)
-				end
-			else
-				 newItem = CreateItem(string.gsub(chosenMission:GetUnitName(),"npc_dota_shop", "item_contract_medium"), hero, hero)
+				missionPool=NorthHardMissions[nearestShop:GetUnitName()]
 			end
-			if newItem ~= nil then                   -- makes sure that the item exists and making sure it is the correct item
+			local chosenMission=missionPool[RandomInt( 1, #missionPool )]
+			newItem = CreateItem(chosenMission, hero, hero)
+			if newItem ~= nil then -- makes sure that the item exists and making sure it is the correct item
 				print("Item Is: " .. newItem:GetName() )
-				heroBuying:AddItem(newItem)
 				
+				heroBuying:AddItem(newItem)
 				EmitSoundOnClient("ui.npe_objective_given",PlayerResource:GetPlayer(heroBuying:GetPlayerID()))
-										
+					print(newItem)
+					local itemStrippedEasy=string.gsub(newItem:GetName(),"item_contract_easy","")
+					local itemStrippedMedium=string.gsub(newItem:GetName(),"item_contract_medium","")
+					local itemStrippedHard=string.gsub(newItem:GetName(),"item_contract_hard","")
+					local MissionLoc
+						for _,mission in pairs(  Entities:FindAllByName( "npc_dota_buil*")) do
+								if  string.match(mission:GetUnitName(),itemStrippedEasy) or string.match(mission:GetUnitName(),itemStrippedMedium) or string.match(mission:GetUnitName(),itemStrippedHard)then
+									MissionLoc=mission
+								end
+						end
+								
+				
+				
 				local data =
 				{
 					Player_ID = heroBuying:GetPlayerID();
 					Ally_ID = 0;
-					x =  chosenMission:GetAbsOrigin().x;
-					y =  chosenMission:GetAbsOrigin().y;
-					z =  chosenMission:GetAbsOrigin().z;
+					x =  MissionLoc:GetAbsOrigin().x;
+					y =  MissionLoc:GetAbsOrigin().y;
+					z =  MissionLoc:GetAbsOrigin().z;
 				}
-				FireGameEvent("Team_Cannot_Buy",data)
+				FireGameEvent("Team_Cannot_Buy",data) 
 			end
 		end
 	end
@@ -2581,13 +2851,13 @@ function HandleShopChecks(hero)
 						local itemStrippedHard=string.gsub(Item:GetName(),"item_contract_hard","")
 						if  string.match(nearestShop:GetUnitName(),itemStrippedEasy) then
 							hero:RemoveItem(Item)
-							hero:SetGold(hero:GetGold()+100*EMP_GOLD_NUMBER/2,true)
+							hero:SetGold(hero:GetGold()+130*EMP_GOLD_NUMBER/2,true)
 							hero:SetGold(0,false)
 							hero:AddExperience(xp_to_level[hero:GetLevel()]*.33,0,false,true)
 							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 50
+								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 130*EMP_GOLD_NUMBER/2
 							elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 50
+								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 130*EMP_GOLD_NUMBER/2
 							end
 						
 							local allyteamnumber=hero:GetPlayerID()
@@ -2614,20 +2884,20 @@ function HandleShopChecks(hero)
 								end
 							end
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(), {text=100*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(), {text=130*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
 						Notifications:Top(hero:GetPlayerID(), {text=16*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 						elseif string.match(nearestShop:GetUnitName(),itemStrippedMedium) then
 							hero:RemoveItem(Item)
-							hero:SetGold(hero:GetGold()+200*EMP_GOLD_NUMBER/2,true)
+							hero:SetGold(hero:GetGold()+300*EMP_GOLD_NUMBER/2,true)
 							hero:SetGold(0,false)
 								print("hero level: " .. hero:GetLevel())
 								print("nect level: " .. xp_to_level[hero:GetLevel()])
 							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 100
+								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 300*EMP_GOLD_NUMBER/2
 							elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 100
+								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 300*EMP_GOLD_NUMBER/2
 							end
 							
 							hero:AddExperience(xp_to_level[hero:GetLevel()]*.33,0,false,true)
@@ -2656,13 +2926,13 @@ function HandleShopChecks(hero)
 							FireGameEvent("Team_Can_Buy",data)
 							EmitSoundOnClient("ui.npe_objective_complete",PlayerResource:GetPlayer(hero:GetPlayerID()))
 							 Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(),{text=200*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(),{text=300*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
 						Notifications:Top(hero:GetPlayerID(),{text=26*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 						elseif string.match(nearestShop:GetUnitName(),itemStrippedHard) then
 							hero:RemoveItem(Item)
-							hero:SetGold(hero:GetGold()+400*EMP_GOLD_NUMBER/2,true)
+							hero:SetGold(hero:GetGold()+500*EMP_GOLD_NUMBER/2,true)
 							hero:SetGold(0,false)
 							hero:AddExperience(xp_to_level[hero:GetLevel()]*.33,0,false,true)
 							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
@@ -2694,7 +2964,7 @@ function HandleShopChecks(hero)
 							FireGameEvent("Team_Can_Buy",data)
 							EmitSoundOnClient("ui.npe_objective_complete",PlayerResource:GetPlayer(hero:GetPlayerID()))
 						 Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-						 Notifications:Top(hero:GetPlayerID(),{text=400*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+						 Notifications:Top(hero:GetPlayerID(),{text=500*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
 						Notifications:Top(hero:GetPlayerID(),{text=35*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						

@@ -396,8 +396,8 @@ margin-top:90px;
 	width: 97px;
 	height: 35px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #fff3de ), color-stop( 0.40, #523c08 ), color-stop( 0.5, #523c08 ), color-stop( 0.75, #c88423 ), to( #b58a42 ) );
-     margin-bottom:244px;
-	 margin-right:7px;
+     margin-bottom:205px;
+	 margin-right:108px;
 	 z-index:50;
 	 border: 1px solid #523c08;
 }
@@ -408,8 +408,8 @@ margin-top:90px;
 	width: 97px;
 	height: 35px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #fff3de ), color-stop( 0.40, #523c08 ), color-stop( 0.5, #523c08 ), color-stop( 0.75, #c88423 ), to( #b58a42 ) );
-     margin-bottom:245px;
-	 margin-right:7px;
+    margin-bottom:205px;
+	 margin-right:108px;
 	 z-index:50;
 	 border: 1px solid #523c08;
 }
@@ -422,8 +422,8 @@ margin-top:90px;
 	height: 35px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #fff3de ), color-stop( 0.40, #523c08 ), color-stop( 0.5, #523c08 ), color-stop( 0.75, #c88423 ), to( #b58a42 ) );
      
-	 margin-bottom:245px;
-	 margin-right:7px;
+	  margin-bottom:205px;
+	 margin-right:108px;
 	 z-index:50;
 	 border: 1px solid #523c08;
 }
@@ -556,7 +556,7 @@ border: 1px solid #523c08;
 	height: 40px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #252525 ), to( #42494e ) );
 	 border: 3px solid white;
-	 margin: 15px;
+	 margin: 10px;
 }
 
 
@@ -579,7 +579,7 @@ border: 1px solid #523c08;
 	height: 40px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #404040 ), to( #60606e ) );
 	 border: 2px solid white;
-	 margin: 15px;
+	 margin: 10px;
 }
 .TradeBtnItm:hover
 {
@@ -747,9 +747,9 @@ horizontal-align: center;
 {
 horizontal-align: right;
 	
-margin-top: 10px;
+margin-top: 0px;
 margin-right: 0px;
-margin-bottom: -200px;
+margin-bottom: -180px;
 width: 490px;
 height: 500px;
  }
@@ -1434,7 +1434,7 @@ horizontal-align: center;
 	
 	visibility: collapse;
 	margin-right:-5px;
-	
+	opacity:0;
 }
 
 #empty_guts_content

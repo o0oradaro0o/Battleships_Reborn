@@ -248,7 +248,7 @@ DURATION: 6.0 6.0 6.0 6.0"
 
 "tighten_hoop"								"Tighten Hoops"
 "tighten_hoop_Description"					"Strengthens the structural integrity of your vessel to provide an armor bonus and health regen bonus. \n\nHigher levels increase armor and regen bonuses.
-ARMOR: 1 2 4 7
+ARMOR: 1 2 3 4
 HEALTH REGEN: 4.0 6.0 8.0 10.0"
 
 "go_home_battleship"									"Go Home"
@@ -261,7 +261,7 @@ DURATION: 0.6 0.8 1.0 1.2"
 
 "batten_hatches"								"Batten Down the Hatches"
 "batten_hatches_Description"					"Strengthens the structural integrity of your vessel to provide an armor bonus and health regen bonus. \n\nHigher levels increase regen and armor.
-ARMOR: 2 4 7
+ARMOR: 2 4 6
 HEALTH REGEN: 6.0 8.0 10.0"
 
 "panic_battleship"							"Panic!"
@@ -313,13 +313,15 @@ LEAP SPEED BONUS AREA: 775"
 ARROW WIDTH: 150 150 150 150
 RANGE: 2325
 VISION RADIUS: 500 500 500 500
-VISION DURATION: 1.3 1.3 1.3 1.3"
+VISION DURATION: 1.3 1.3 1.3 1.3
+DAMAGE: 120 180 240 300"
 
 "kunkka_torrent_bships"								"Restricted Area"
 "kunkka_torrent_bships_Description"					"Designate an area as restricted. Any enemies remaining in the restricted area units are launched upward on a torrent of water after a short delay, dealing damage, slowing them and applying a mini stun.  \n\n
 SLOW DURATION: 1.0 2.0 3.0 4.0
 STUN: .5 .5 .5 .5
-DELAY: 1.6 1.6 1.6 1.6"
+DELAY: 1.6 1.6 1.6 1.6
+DAMAGE: 200 250 300 350"
 
 "kunkka_x_marks_the_spot_bships"								"Stop Right There!"
 "kunkka_x_marks_the_spot_bships_Description"					"After a short delay, recalls target unit to the its initial position from when the spell was cast.\n\nHigher levels decrease cooldown.
@@ -333,13 +335,15 @@ RANGE: 1000 1100 1200
 SHIP WIDTH: 425 425 425
 MOVEMENT SPEED BONUS: 10 20 30
 STUN: 1.5 1.5 1.5
-SHIP SPEED: 1300 1400 1500"
+SHIP SPEED: 1300 1400 1500
+DAMAGE: 250 300 350"
 
 "morphling_waveform_battleship"								"Big Wake"
 "morphling_waveform_battleship_Description"					"Rev your engine for a short burst, thrust forward, and splash enemies with a powerful wake. \n\nHigher levels increase range and damage.
 WAVE SPEED: 1450
 MOVEMENT SPEED REDUCTION: 1450
-WAVE WIDTH: 200"
+WAVE WIDTH: 200
+DAMAGE: 200 250 300 400"
 
 "gun_it"								"Overcharge!"
 "gun_it_Description"					"Overcharge your engine, increasing acceleration at the cost of health. Damage continues until the engine cools off. (momentum continues through stuns and holds)\n\nHigher levels increase base speed bonus.
@@ -411,19 +415,22 @@ MOVEMENT SPEED BONUS: 8 12 16 20"
 
 "riki_blink_strike_battleship"								"Join the party!"
 "riki_blink_strike_battleship_Description"					"Teleport to target friend or foe and join the battle! \n\nHigher levels increase damage.
-RANGE: 800"
+RANGE: 800
+DAMAGE: 200 300 400"
 
 "sniper_shrapnel_battleship"								"Fire Mortars"
 "sniper_shrapnel_battleship_Description"					"Rain mortars down on target area, dealing damage and providing vision.  \n\nHigher levels increase duration and damage.
 MOVEMENT SLOW: -15 -20 -25 -30
 AREA: 400
 DURATION: 3.0
-SLOW DURATION: 3.0"
+SLOW DURATION: 3.0
+DAMAGE: 70 90 120 140"
 
 "sniper_assassinate_battleship"								"Long Nines"
 "sniper_assassinate_battleship_Description"					"Stop your ship to fire a powerful cannon at long range. \n\nHigher levels increase range and damage.
 PROJECTILE SPEED: 2500 2500 2500
-RANGE: 1500 1700 1900"
+RANGE: 1500 1700 1900
+DAMAGE: 600 900 1200"
 
 
 
@@ -435,7 +442,8 @@ VISION RADIUS: 1000 1100 1200 1300"
 "pudge_meat_hook_battleship"								"Grab"
 "pudge_meat_hook_battleship_Description"					"Shoots out a line and pulls in the first ship it hits. \n\nHigher levels increase damage and range while decreasing cooldown.
 HOOK SPEED: 1600.0
-RANGE: 700 900 1100 1300"
+RANGE: 700 900 1100 1300
+DAMAGE: 200 300 400 500"
 
 "batrider_flaming_lasso_battleship"								"Tug!"
 "batrider_flaming_lasso_battleship_Description"					"Snag an enemy unit and pull them along with you while dealing damage. \n\nHigher levels increase duration.
@@ -526,7 +534,8 @@ RANGE: 900 1000 1100 1200"
 
 "puck_waning_rift_battleship"								"Hack Their System!"
 "puck_waning_rift_battleship_Description"					"Disables the use of abilities on all units in the area and deals damage to them. \n\nHigher levels increase damage and duration.
-DURATION: 3.0 3.5 4.0 4.5"
+DURATION: 3.0 3.5 4.0 4.5
+DAMAGE: 400 450 500 550"
 
 "abaddon_aphotic_shield_battleship"							"Scrap Armor"
 "abaddon_aphotic_shield_battleship_Description"	"Creates junk armor around an ally unit, forming a shield that absorbs a set amount of damage before expiring. When the shield is destroyed it will burst and deal damage equal to the amount it could absorb to an area around it. Removes certain types of negative buffs and stuns on cast.
@@ -557,7 +566,7 @@ DAMAGE: 1000"
 
 "jakiro_ice_path_battleship"								"Ice Path"
 "jakiro_ice_path_battleship_Description"					"Creates a path of ice that stuns and damages enemies that touch it. \n Higher levels increase damage and stun duration and decrease cooldown
-DURATION:
+DURATION: .0 1.4 1.8 2.2
 DAMAGE: 200
 RANGE: 1600"
 

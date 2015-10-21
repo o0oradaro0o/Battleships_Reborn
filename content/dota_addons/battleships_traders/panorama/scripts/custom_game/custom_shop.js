@@ -225,19 +225,46 @@ function showDetails(BoatName)
 }
 
 
-
-
+var FadeTrade=true;
+var ticksOfFade=0;
 function buyBoat(BoatName, cost)
 {
 	GameEvents.SendCustomGameEventToServer( "buyBoat", { "text": BoatName, "cost": cost}); 
 	$(  "#"+BoatName ).style.height = "0px";
 }
 
+function NoFadeMap()
+{
+	$("#empty_guts").style.opacity=1;
+	ticksOfFade=0
+	FadeTrade=false;
+}
+function okayToFade()
+{
+	$("#empty_guts").style.opacity=1;
+	ticksOfFade=0
+	FadeTrade=true;
+}
 
 
+function FadeShop()
+{
+		ticksOfFade++;
+	if(ticksOfFade>10 && FadeTrade)
+		{
+			 $("#empty_guts").style.opacity=$("#empty_guts").style.opacity-.02;
+		}
+		if($("#empty_guts").style.opacity==0)
+		{
+			hideShop();
+		}
+		//re-call self (i could not find an "onSliderValueChanged" so i resorted to this
+		if($("#empty_guts").style.visibility=="visible")
+		{
+				$.Schedule( .04, FadeShop );
+		}
 
-
-
+}
 	function fillAndShow()
 	{
 		$.Msg("inside fillAndShow");
@@ -328,8 +355,9 @@ function buyBoat(BoatName, cost)
 					else
 					{
 						$( "#empty_guts" ).style.visibility="visible";
+						$("#empty_guts").style.opacity=1;
 						hidden=false;
-						$.Schedule( 4.0, hideShop );
+						$.Schedule( 4.0, FadeShop );
 					}
 				}
 				hideMissionsIfNeeded();
@@ -337,8 +365,9 @@ function buyBoat(BoatName, cost)
 			else
 			{
 				$( "#empty_guts" ).style.visibility="visible";
+				$("#empty_guts").style.opacity=1;
 				hidden=false;
-				$.Schedule( 4.0, hideShop );
+				$.Schedule( 4.0, FadeShop );
 			}
 		}
 		else
@@ -414,15 +443,15 @@ function buyBoat(BoatName, cost)
 		$.Msg(showMission[Players.GetLocalPlayer()]);
 		if(showMission[Players.GetLocalPlayer()]==1)
 		{
-			$( "#mission_hider_1" ).style.height="200px";
-			$( "#mission_hider_2" ).style.height="200px";
-			$( "#mission_hider_3" ).style.height="200px";
-			$( "#mission_hider_4" ).style.height="200px";
-			$( "#mission_hider_5" ).style.height="200px";
-			$( "#mission_hider_6" ).style.height="200px";
-			$( "#mission_hider_7" ).style.height="200px";
-			$( "#mission_hider_8" ).style.height="200px";
-			$( "#mission_hider_9" ).style.height="200px";
+			$( "#mission_hider_1" ).style.height="170px";
+			$( "#mission_hider_2" ).style.height="170px";
+			$( "#mission_hider_3" ).style.height="170px";
+			$( "#mission_hider_4" ).style.height="170px";
+			$( "#mission_hider_5" ).style.height="170px";
+			$( "#mission_hider_6" ).style.height="170px";
+			$( "#mission_hider_7" ).style.height="170px";
+			$( "#mission_hider_8" ).style.height="170px";
+			$( "#mission_hider_9" ).style.height="170px";
 		}
 		else
 		{	
@@ -439,15 +468,15 @@ function buyBoat(BoatName, cost)
 		}
 		if (showMission[Players.GetLocalPlayer()]==-1)
 		{
-			$( "#must_be_trader_1" ).style.height="200px";
-			$( "#must_be_trader_2" ).style.height="200px";
-			$( "#must_be_trader_3" ).style.height="200px";
-			$( "#must_be_trader_4" ).style.height="200px";
-			$( "#must_be_trader_5" ).style.height="200px";
-			$( "#must_be_trader_6" ).style.height="200px";
-			$( "#must_be_trader_7" ).style.height="200px";
-			$( "#must_be_trader_8" ).style.height="200px";
-			$( "#must_be_trader_9" ).style.height="200px";
+			$( "#must_be_trader_1" ).style.height="170px";
+			$( "#must_be_trader_2" ).style.height="170px";
+			$( "#must_be_trader_3" ).style.height="170px";
+			$( "#must_be_trader_4" ).style.height="170px";
+			$( "#must_be_trader_5" ).style.height="170px";
+			$( "#must_be_trader_6" ).style.height="170px";
+			$( "#must_be_trader_7" ).style.height="170px";
+			$( "#must_be_trader_8" ).style.height="170px";
+			$( "#must_be_trader_9" ).style.height="170px";
 		}
 		else{
 			$( "#must_be_trader_1" ).style.height="0px";
@@ -499,8 +528,9 @@ function buyBoat(BoatName, cost)
 	{
 		//get the current zoom number
 		var oldval=$("#zoomLblVal").text
+		$.Msg($("#ZoomSlider").GetChild(1).value);
 		//get the percentage of the slider bar that is filled
-		var zoomPer = Math.floor($("#ZoomSlider").GetChild(1).GetChild(1).actuallayoutwidth/($("#ZoomSlider").GetChild(1).GetChild(0).actuallayoutwidth-20)*100)
+		var zoomPer = Math.floor($("#ZoomSlider").GetChild(1).value*100)
 		
 		//if it is not the same as the old zoom value, zoom to it otherwise wait and slowly fade out the zoom box
 		//set the +1800 to your min zoom and 1800+2200 will be your max zoom
