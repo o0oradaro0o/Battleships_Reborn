@@ -3164,6 +3164,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"windSoundFire"
+					}						
 					"TrackingProjectile"
 					{
 						"Target"
@@ -3179,24 +3184,27 @@
 						"MoveSpeed" "900"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/wind_one_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/wind_one_projectile.vpcf" 
 					}
-					
-					
 					
 				}
 				
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                         "RunScript"
-						{
-							"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-							"Function"			"WindOneDmg"
-						}
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"windSoundImpact"
+			}					
+			"DeleteOnHit"                           "false"
+			 "RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"WindOneDmg"
+			}
+		}
 							"AbilitySpecial"
 		{
 			"01"
@@ -3220,7 +3228,7 @@
 		"ID"                            "1005"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
-		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"			"item_light_bow"
 		"TextureName"					"light_bow"
 		"AbilityCastRange"              "0"
@@ -3341,6 +3349,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"coalSoundFire"
+					}						
 					"TrackingProjectile"
 					{
 						"Target"
@@ -3356,7 +3369,7 @@
 						"MoveSpeed" "600"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/coal_one_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/coal_one_projectile.vpcf" 
 					}
 					
 					
@@ -3366,16 +3379,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"coalSoundImpact"
+			}				
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+				
+		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -3805,8 +3823,6 @@
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		
 		
-		
-		
 		"Modifiers"
 		{
 			
@@ -3818,6 +3834,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"windSoundFire"
+					}						
 					"TrackingProjectile"
 					{
 						"Target"
@@ -3843,15 +3864,20 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                         "RunScript"
-						{
-							"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-							"Function"			"WindTwoDmg"
-						}
-                        
-                }
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+					"Function"			"windSoundImpact"
+				}				
+				"DeleteOnHit"                           "false"
+				 "RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+					"Function"			"WindTwoDmg"
+				}
+					
+			}
 		"AbilitySpecial"
 		{
 			"01"
@@ -3999,6 +4025,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"coalSoundFire"
+					}					
 					"TrackingProjectile"
 					{
 						"Target"
@@ -4014,7 +4045,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/coal_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/coal_two_projectile.vpcf" 
 					}
 					
 					
@@ -4024,16 +4055,20 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"coalSoundImpact"
+			}				
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}			
+		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -4462,6 +4497,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"windSoundFire"
+					}						
 					"TrackingProjectile"
 					{
 						"Target"
@@ -4477,21 +4517,26 @@
 						"MoveSpeed" "900"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/wind_three_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/wind_three_projectile.vpcf" 
 					}
 				}
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                         "RunScript"
-						{
-							"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-							"Function"			"WindThreeDmg"
-						}
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"windSoundImpact"
+			}				
+			"DeleteOnHit"                           "false"
+			 "RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"WindThreeDmg"
+			}
+				
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -4639,6 +4684,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"coalSoundFire"
+					}					
 					"TrackingProjectile"
 					{
 						"Target"
@@ -4654,7 +4704,7 @@
 						"MoveSpeed" "600"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/coal_three_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/coal_three_projectile.vpcf" 
 					}
 					
 					
@@ -4664,17 +4714,22 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
-				"AbilitySpecial"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"coalSoundImpact"
+			}					
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+				
+		}
+		"AbilitySpecial"
 		{
 			"01"
 			{
@@ -5182,6 +5237,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"windSoundFire"
+					}						
 
 					"TrackingProjectile"
 					{
@@ -5198,7 +5258,7 @@
 						"MoveSpeed" "900"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/wind_one_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/wind_one_projectile.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -5215,7 +5275,7 @@
 						"MoveSpeed" "900"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/wind_one_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/wind_one_projectile.vpcf" 
 					}
 					
 					
@@ -5224,15 +5284,20 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                         "RunScript"
-						{
-							"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-							"Function"			"WindOneDmg"
-						}
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"windSoundImpact"
+			}				
+			"DeleteOnHit"                           "false"
+			 "RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"WindOneDmg"
+			}
+				
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -5395,6 +5460,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"coalSoundFire"
+					}					
 					"TrackingProjectile"
 					{
 						"Target"
@@ -5410,7 +5480,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/coal_one_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/coal_one_projectile.vpcf" 
 					}
 					
 					"TrackingProjectile"
@@ -5428,7 +5498,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/coal_one_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/coal_one_projectile.vpcf" 
 					}
 					
 					
@@ -5437,16 +5507,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"coalSoundImpact"
+			}				
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+				
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -5953,6 +6028,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"windSoundFire"
+					}						
 					"TrackingProjectile"
 					{
 						"Target"
@@ -5968,7 +6048,7 @@
 						"MoveSpeed" "900"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/wind_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/wind_two_projectile.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -5985,7 +6065,7 @@
 						"MoveSpeed" "900"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/wind_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/wind_two_projectile.vpcf" 
 					}
 					
 					
@@ -5994,15 +6074,20 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                         "RunScript"
-						{
-							"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-							"Function"			"WindTwoDmg"
-						}
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"windSoundImpact"
+			}				
+			"DeleteOnHit"                           "false"
+			 "RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"WindTwoDmg"
+			}
+					
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -6161,6 +6246,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"coalSoundFire"
+					}					
 					"TrackingProjectile"
 					{
 						"Target"
@@ -6176,7 +6266,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/coal_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/coal_two_projectile.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -6193,7 +6283,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/coal_two_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/coal_two_projectile.vpcf" 
 					}
 					
 
@@ -6203,16 +6293,21 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                               "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"coalSoundImpact"
+			}				
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+				   "Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+				
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -6714,6 +6809,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"windSoundFire"
+					}						
 					"TrackingProjectile"
 					{
 						"Target"
@@ -6729,7 +6829,7 @@
 						"MoveSpeed" "900"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/wind_three_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/wind_three_projectile.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -6746,7 +6846,7 @@
 						"MoveSpeed" "900"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/wind_three_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/wind_three_projectile.vpcf" 
 					}
 					
 					
@@ -6756,15 +6856,20 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                         "RunScript"
-						{
-							"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-							"Function"			"WindThreeDmg"
-						}
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"windSoundImpact"
+			}				
+			"DeleteOnHit"                           "false"
+			 "RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"WindThreeDmg"
+			}
+					
+		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -6931,6 +7036,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"coalSoundFire"
+					}					
 					"TrackingProjectile"
 					{
 						"Target"
@@ -6946,7 +7056,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/coal_three_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/coal_three_projectile.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -6963,7 +7073,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/coal_three_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/coal_three_projectile.vpcf" 
 					}
 					
 					
@@ -6972,17 +7082,22 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                        "Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                               "Damage"                                "%dmg"
-                                "Target"                                "TARGET"
-                        }
-                        
-                }
-				"AbilitySpecial"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"coalSoundImpact"
+			}				
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+				   "Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+				
+		}
+		"AbilitySpecial"
 		{
 			"01"
 			{
@@ -7539,6 +7654,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"windSoundFire"
+					}				
 					"TrackingProjectile"
 					{
 						"Target"
@@ -7554,9 +7674,8 @@
 						"MoveSpeed" "900"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/wind_ult_projectile.vpcf" 
-					}
-					
+						"EffectName"    "particles/basic_projectile/wind_ult_projectile.vpcf" 
+					}		
 					
 					
 				}
@@ -7608,21 +7727,26 @@
 			
 		}
 		"OnProjectileHitUnit"
-                {
-                        "DeleteOnHit"                           "false"
-                         "RunScript"
-						{
-							"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-							"Function"			"WindUltDmg"
-						}
-					//	"ApplyModifier"
-					//	{
-					//		"Target" "TARGET"
-					//		"ModifierName" "item_wind_ult_bow_buffet"
-					//	}
-						
-                        
-                }
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"windSoundImpact"
+			}				
+			"DeleteOnHit"                           "false"
+			 "RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"WindUltDmg"
+			}
+			//	"ApplyModifier"
+			//	{
+			//		"Target" "TARGET"
+			//		"ModifierName" "item_wind_ult_bow_buffet"
+			//	}
+					
+					
+			}
 				"AbilitySpecial"
 		{
 			"01"
@@ -7770,6 +7894,11 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"coalSoundFire"
+					}					
 					"TrackingProjectile"
 					{
 						"Target"
@@ -7785,7 +7914,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/coal_ult_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/coal_ult_projectile.vpcf" 
 					}
 					
 					
@@ -7813,6 +7942,11 @@
 		}
 		"OnProjectileHitUnit"
 			{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"coalSoundImpact"
+					}				
 					"DeleteOnHit"                           "false"
 					"Damage"
 					{
@@ -7820,12 +7954,12 @@
 							"Damage"                                "%dmg"
 							"Target"                                "TARGET"
 					}
-					 "RunScript"
-						{
-							"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-							"Function"			"coalUltStun"
-						}
-				   "AttachEffect"
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"coalUltStun"
+					}
+					"AttachEffect"
 					{
 						"Target"				"TARGET"
 

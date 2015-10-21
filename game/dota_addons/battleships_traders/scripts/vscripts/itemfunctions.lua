@@ -1,4 +1,5 @@
 require('notifications')
+require('item_sound_functions')
 
 if itemFunctions == nil then
 	print ( '[ItemFunctions] creating itemFunctions' )
@@ -437,6 +438,7 @@ function coalUltStun(args) -- keys is the information sent by the ability
 								if RandomInt(0,4) == 0 then
 									print('[ItemFunctions] random_hit! ')
 									Item:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_coal_ult_bow_stunned", nil)
+									coalSoundStun(args)
 									print('[ItemFunctions] stunned from coal! ')
 								end
 								
