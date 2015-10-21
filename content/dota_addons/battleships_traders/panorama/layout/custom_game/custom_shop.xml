@@ -1693,6 +1693,7 @@
 	 
 	 <Panel hittest="false" id="custom_shop" oncancel="hideShop()">
 	
+	
 		
 		
             /* left_bot_shop */

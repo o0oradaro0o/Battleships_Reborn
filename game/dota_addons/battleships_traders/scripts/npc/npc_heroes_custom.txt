@@ -652,7 +652,7 @@
 		"Ability6"					"bships_empty"
 		"Ability8"					"bships_empty"
 
-        "ModelScale"        ".6"
+        "ModelScale"        ".4"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
