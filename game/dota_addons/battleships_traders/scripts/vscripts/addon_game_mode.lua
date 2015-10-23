@@ -257,6 +257,13 @@ function Precache( context )
 	PrecacheResource( "model", "models/bad_ancient_ambient_blast", context )
 	PrecacheResource( "model", "models/heroes/tidehunter/tidehunter.vmdl", context )
 	
+	PrecacheResource( "model", "models/spin_one", context )
+PrecacheResource( "model", "models/spin_two", context )
+		
+	PrecacheResource( "model", "models/spin_three", context )
+	PrecacheResource( "model", "models/no_model", context )
+	
+
 	
 	PrecacheResource( "model", "models/jet.vmdl", context )
 	PrecacheResource( "model", "models/iceberg.vmdl", context )
@@ -2145,45 +2152,45 @@ function become_boat(casterUnit, heroname)
 										
 
 										if hero:GetTeamNumber()==DOTA_TEAM_GOODGUYS then
-										local newItem3 = CreateItem("item_contract_easy_mid_bot", hero, hero)
-										local MissionLoc
-											for _,mission in pairs(  Entities:FindAllByName( "npc_dota_buil*")) do
-													if  string.match(mission:GetUnitName(),"mid_bot") then
-														MissionLoc=mission
-													end
-											end
-										local data =
-														{
-															Player_ID = hero:GetPlayerID();
-															Ally_ID = 0;
-															x =  MissionLoc:GetAbsOrigin().x;
-															y =  MissionLoc:GetAbsOrigin().y;
-															z =  MissionLoc:GetAbsOrigin().z;
-														}
-														FireGameEvent("Team_Cannot_Buy",data) 
-														hero:AddItem(newItem3)
-														local newItem2 = CreateItem("item_trade_manifest", hero, hero)
-													hero:AddItem(newItem2)
-											else
-										local newItem = CreateItem("item_contract_easy_mid_top", hero, hero)
-										local MissionLoc
-											for _,mission in pairs(  Entities:FindAllByName( "npc_dota_buil*")) do
-													if  string.match(mission:GetUnitName(),"mid_top") then
-														MissionLoc=mission
-													end
-											end
-										local data =
-										{
-											Player_ID = hero:GetPlayerID();
-											Ally_ID = 0;
-											x =  MissionLoc:GetAbsOrigin().x;
-											y =  MissionLoc:GetAbsOrigin().y;
-											z =  MissionLoc:GetAbsOrigin().z;
-										}
-										FireGameEvent("Team_Cannot_Buy",data)
-										hero:AddItem(newItem3)
-										local newItem2 = CreateItem("item_trade_manifest", hero, hero)
-											hero:AddItem(newItem2)
+											local newItem3 = CreateItem("item_contract_easy_mid_bot", hero, hero)
+											local MissionLoc
+												for _,mission in pairs(  Entities:FindAllByName( "npc_dota_buil*")) do
+														if  string.match(mission:GetUnitName(),"mid_bot") then
+															MissionLoc=mission
+														end
+												end
+											local data =
+															{
+																Player_ID = hero:GetPlayerID();
+																Ally_ID = 0;
+																x =  MissionLoc:GetAbsOrigin().x;
+																y =  MissionLoc:GetAbsOrigin().y;
+																z =  MissionLoc:GetAbsOrigin().z;
+															}
+															FireGameEvent("Team_Cannot_Buy",data) 
+															hero:AddItem(newItem3)
+															local newItem2 = CreateItem("item_trade_manifest", hero, hero)
+														hero:AddItem(newItem2)
+										else
+											local newItem3 = CreateItem("item_contract_easy_mid_top", hero, hero)
+											local MissionLoc
+												for _,mission in pairs(  Entities:FindAllByName( "npc_dota_buil*")) do
+														if  string.match(mission:GetUnitName(),"mid_top") then
+															MissionLoc=mission
+														end
+												end
+											local data =
+											{
+												Player_ID = hero:GetPlayerID();
+												Ally_ID = 0;
+												x =  MissionLoc:GetAbsOrigin().x;
+												y =  MissionLoc:GetAbsOrigin().y;
+												z =  MissionLoc:GetAbsOrigin().z;
+											}
+											FireGameEvent("Team_Cannot_Buy",data)
+											hero:AddItem(newItem3)
+											local newItem2 = CreateItem("item_trade_manifest", hero, hero)
+												hero:AddItem(newItem2)
 										end
 									
 									
@@ -2200,7 +2207,7 @@ function become_boat(casterUnit, heroname)
 											}
 											FireGameEvent("Team_Cannot_Buy",data)
 								end
-								if (string.match(heroname,"vengefulspirit") or string.match(heroname,"enigma") or string.match(heroname,"bane")) and (b==10 or b==11) then
+								if (string.match(heroname,"vengefulspirit") or string.match(heroname,"enigma") or string.match(heroname,"bane")) and (b==10 or b==11) and not string.match(itemlist[b],"fluff") then
 										CreateItemOnPositionSync(hero:GetOrigin(), newItem)
 										print("ejecting")
 								end
@@ -2414,7 +2421,7 @@ print("in unstick")
 			if herogold>0 then
 				if hero:GetPlayerID() == pID then
 					if false == hero:HasModifier("pergatory_3") then
-						 if LastLocs2[hero]~= nil and (LastLocs2[hero] - hero:GetOrigin()):Length() <1000 then
+						 if LastLocs2[hero]~= nil and ((LastLocs2[hero] - hero:GetOrigin()):Length() <1000 or (LastLocs2[hero] - hero:GetOrigin()):Length()<50) then
 							local vecorig = LastLocs2[hero]
 							hero:SetOrigin(vecorig)
 							stopPhysics(hero)

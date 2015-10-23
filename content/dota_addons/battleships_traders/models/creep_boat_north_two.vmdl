@@ -68,10 +68,11 @@ CVModel CVModel_0
 			string m_sFileName = ""
 		}
 	]
-	CVanimGroupReference[] m_pAnimGroups = 
-	[
-		
-	]
+	CVanimGroupReference m_pAnimGroup = CVanimGroupReference
+	{
+		CVanimGroup* m_pObject = NULL
+		string m_sFileName = ""
+	}
 	CVNodeMaterialGroupListReference m_pMaterialGroupList = CVNodeMaterialGroupListReference
 	{
 		NodeMaterialGroupList_t* m_pObject = NULL
@@ -117,7 +118,7 @@ CVModel CVModel_0
 	float m_flFbxScale = 1.000000
 	float m_flQCScale = 1.000000
 	float(3) m_vOrigin = ( 0.000000, 0.000000, 0.000000 )
-	CVPsf* m_pvPsf = NULL
+	CVPsfList* m_pPsfList = NULL
 	string m_keyValueText = ""
 	bool m_bStaticProp = false
 	bool m_bEnableClothProcessing = true
@@ -128,6 +129,10 @@ CVModel CVModel_0
 	bool m_bMakeUniqueVMeshes = false
 	bool m_bMakeImplicitBindPoseSequence = false
 	bool m_bAdjustSkeletonFromBoneFlags = false
+	CVanimGroupReference[] m_pAnimGroups = 
+	[
+		
+	]
 }
 
 CVhitBoxSetList CVhitBoxSetList_0
@@ -147,11 +152,13 @@ CVhitBoxSetList CVhitBoxSetList_0
 					string m_sBoneName = "root"
 					float(3) m_vMinBounds = ( -35.806839, -106.052353, 8.067871 )
 					float(3) m_vMaxBounds = ( 34.216339, 84.765411, 146.507019 )
+					bool m_bTranslationOnly = false
 					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
 				}
 			]
 		}
 	]
+	string m_AutoCreateSetName = ""
 }
 
 CVattachmentList CVattachmentList_0
@@ -167,8 +174,8 @@ CVattachmentList CVattachmentList_0
 				CVattachmentInfluence
 				{
 					string m_influenceName = "root"
-					float(3) m_vTranslationOffset = ( 0.000000, 0.000000, 0.000000 )
-					float(3) m_vRotationOffset = ( 0.000000, 0.000000, 0.000000 )
+					float(3) m_vTranslationOffset = ( 0.000000, 0.000000, 66.538681 )
+					float(3) m_vRotationOffset = ( 0.000000, -0.000000, -0.000010 )
 					float m_flWeight = 1.000000
 					bool m_bRoot = false
 				}
@@ -182,8 +189,8 @@ CVattachmentList CVattachmentList_0
 				CVattachmentInfluence
 				{
 					string m_influenceName = "root"
-					float(3) m_vTranslationOffset = ( 0.000000, 0.000000, 0.000000 )
-					float(3) m_vRotationOffset = ( 0.000000, 0.000000, 0.000000 )
+					float(3) m_vTranslationOffset = ( 0.000000, 0.000000, 76.194839 )
+					float(3) m_vRotationOffset = ( 0.000000, -0.000000, -0.000010 )
 					float m_flWeight = 1.000000
 					bool m_bRoot = false
 				}

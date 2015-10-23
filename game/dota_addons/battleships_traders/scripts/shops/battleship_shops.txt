@@ -7,6 +7,7 @@
 		"item"		"item_plasma_bow"
 		"item"		"item_poison_bow"
 		"item"		"item_light_bow"
+		"item"		"item_spin_bow"
 		"item"		"item_ice_bow"
 		"item"		"item_wind_bow"
 
@@ -20,6 +21,7 @@
 		"item"		"item_plasma_two_bow"
 		"item"		"item_poison_two_bow"
 		"item"		"item_light_two_bow"
+		"item"		"item_spin_two_bow"
 		"item"		"item_ice_two_bow"
 		"item"		"item_wind_two_bow"	
 		
@@ -32,6 +34,7 @@
 		"item"		"item_plasma_three_bow"
 		"item"		"item_poison_three_bow"
 		"item"		"item_light_three_bow"
+		"item"		"item_spin_three_bow"
 		"item"		"item_ice_three_bow"
 		"item"		"item_wind_three_bow"
 		
@@ -51,6 +54,7 @@
 		"item" 		"item_plasma_ult_bow"
 		"item"		"item_poison_ult_bow"
 		"item" 		"item_light_ult_bow"
+		"item" 		"item_spin_ult_bow"
 		"item" 		"item_ice_ult_bow"
 		"item" 		"item_wind_ult_bow"
 

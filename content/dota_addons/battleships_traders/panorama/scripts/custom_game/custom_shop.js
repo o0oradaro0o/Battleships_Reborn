@@ -158,14 +158,14 @@ function showText(BoatName,AbilityName)
 	$( "#"+BoatName+"_ability_desc" ).text=$.Localize("#"+AbilityName+"_Description");
 	
 	
+	
 }
 function showDetails(BoatName)
 {
 	
 	$.Msg(BoatName);
-	if ($( "#"+BoatName ).style.height=="650.0px")
+	if (BoatName=="hide" || $( "#"+BoatName ).style.height=="650.0px" )
 	{
-		$(  "#"+BoatName ).style.height = "0px";
 		$("#ancient_apparition").style.height = "0px";
 		$("#crystal_maiden").style.height = "0px";
 		$("#disruptor").style.height = "0px";

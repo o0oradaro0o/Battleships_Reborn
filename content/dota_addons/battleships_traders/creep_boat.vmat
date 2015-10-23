@@ -4,6 +4,9 @@ Layer0
 {
 	shader "hero.vfx"
 
+	//---- Translucency ----
+	F_TRANSLUCENT 1
+
 	//---- Blend To Full ----
 	g_flEnvMapBlendToFull "0.000"
 	g_flMetalnessBlendToFull "0.000"
@@ -17,9 +20,11 @@ Layer0
 	g_flCloakIntensity "0.850"
 	g_flCloakRefractAmount "0.100"
 	g_flMaterialCloakFactor "0.000"
-	g_vCloakColorTint "[1.000000 1.000000 1.000000 0.000000]"
+	g_vCloakColorTint "[1.000 1.000 1.000]"
 
 	//---- Color ----
+	g_flDiffuseModulationAmount "1.000"
+	g_flTexCoordRotation "0.000"
 	g_vTexCoordOffset "[0.000 0.000]"
 	g_vTexCoordScale "[1.000 1.000]"
 	TextureColor "creep_boat.tga"
@@ -46,4 +51,7 @@ Layer0
 	g_flSpecularExponent "32.000"
 	g_flSpecularScale "1.000"
 	g_vSpecularColor "[1.000000 1.000000 1.000000 0.000000]"
+
+	//---- Translucency ----
+	TextureTranslucency "[0.000000 0.000000 0.000000 0.000000]"
 }

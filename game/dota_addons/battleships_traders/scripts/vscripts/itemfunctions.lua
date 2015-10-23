@@ -257,11 +257,98 @@ print('[ItemFunctions] healTowers started!')
 						print('[ItemFunctions] healTowers found an ally tower.')
 					end
 				end
-			
-			
 	end
 end
 
+
+function cluster(keys)
+	local dummy = CreateUnitByName( "dummy_unit_cluster", keys.target:GetAbsOrigin(), false, keys.caster, keys.caster, keys.caster:GetTeamNumber() )
+	dummy:AddNewModifier(creature, nil, "modifier_kill", {duration = 3})
+		local abil =dummy:GetAbilityByIndex(1)
+		
+		abil:CastAbility()
+
+end
+
+function clusterBoom(args)
+
+		local caster = args.caster
+		local enemies
+
+			--hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
+		if caster:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+			enemies = FindUnitsInRadius( DOTA_TEAM_BADGUYS, caster:GetOrigin(), nil, 600, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+
+		else
+			enemies = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, caster:GetOrigin(), nil, 600, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+
+		end
+		local CapTheseFuckers = {}
+		if #enemies>5 then
+			local rand= RandomInt( 1, #enemies )
+			table.insert(CapTheseFuckers,enemies[rand])
+			table.remove(enemies,rand)
+		else
+			CapTheseFuckers=enemies
+		end
+		 for _,fucker in pairs( CapTheseFuckers) do
+				local info = 
+				{
+					Ability = caster:GetAbilityByIndex(1),	
+					Source = caster,
+					Target = fucker,
+					vSourceLoc = caster:GetOrigin(),
+					EffectName = "particles/basic_projectile/spin_one_projectile.vpcf",
+					bProvidesVision = false,
+					iVisionRadius = 1000,
+					iVisionTeamNumber = caster:GetTeamNumber(),
+					bDeleteOnHit = false,
+					iMoveSpeed = 750,
+					vVelocity = 750,
+				}
+				projectile = ProjectileManager:CreateTrackingProjectile(info)
+			end
+	
+
+end
+
+function PrintTable(t, indent, done)
+	--print ( string.format ('PrintTable type %s', type(keys)) )
+    if type(t) ~= "table" then return end
+
+    done = done or {}
+    done[t] = true
+    indent = indent or 0
+
+    local l = {}
+    for k, v in pairs(t) do
+        table.insert(l, k)
+    end
+
+    table.sort(l)
+    for k, v in ipairs(l) do
+        -- Ignore FDesc
+        if v ~= 'FDesc' then
+            local value = t[v]
+
+            if type(value) == "table" and not done[value] then
+                done [value] = true
+                print(string.rep ("\t", indent)..tostring(v)..":")
+                PrintTable (value, indent + 2, done)
+            elseif type(value) == "userdata" and not done[value] then
+                done [value] = true
+                print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
+                PrintTable ((getmetatable(value) and getmetatable(value).__index) or getmetatable(value), indent + 2, done)
+            else
+                if t.FDesc and t.FDesc[v] then
+                    print(string.rep ("\t", indent)..tostring(t.FDesc[v]))
+                else
+                    print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
+                end
+            end
+        end
+    end
+end
 
 
 function WindOneDmg(args) -- keys is the information sent by the ability
@@ -271,8 +358,8 @@ function WindOneDmg(args) -- keys is the information sent by the ability
 		local abil = casterUnit:GetAbilityByIndex(0)
 		local level = abil:GetLevel()
 		local targetUnit = args.target
-		local targetPos = args.target:GetAbsOrigin()
 		local targetUnit = args.target
+		local targetPos = args.target:GetAbsOrigin()
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
         local casterPos = args.caster:GetAbsOrigin()
 	--print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
@@ -445,10 +532,6 @@ function coalUltStun(args) -- keys is the information sent by the ability
 					end
 			end
 		end
-
-
-
-		
 end
 
 

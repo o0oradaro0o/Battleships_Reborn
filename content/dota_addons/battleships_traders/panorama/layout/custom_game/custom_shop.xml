@@ -56,6 +56,7 @@
         </Button>
 	</Panel>
 	
+	
 		<Panel hittest="false" id="UnstickButton" onload="setZoom()">
         <Button class="unstickbox" onactivate="Unstick()">
              <Label text="#unstick" class="UnstickLabel"/>
@@ -72,6 +73,9 @@
 			</DOTASettingsSlider>
 		</Button>
 	</Panel>
+	
+	
+
 
 	
     <Panel hittest="false" class="BarebonesTopNotifications">
@@ -118,6 +122,13 @@
 
 	<Panel hittest="false" id="ancient_apparition">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
+		
 		<Label hittest="false" class="boat_title" text="#ancient_apparition" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/ancient_apparition.png" />
@@ -179,6 +190,12 @@
 
 	<Panel hittest="false" id="crystal_maiden">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#crystal_maiden" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/crystal_maiden.png" />
@@ -211,11 +228,11 @@
                        <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('crystal_maiden','war_drumbs_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/bane_aftershock.png" />
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/earthshaker_aftershock.png" />
                        <Label hittest="false" class="ability_name" text="#war_drumbs_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('crystal_maiden','might_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/bane_enchant_totem.png" />
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/earthshaker_enchant_totem.png" />
                        <Label hittest="false" class="ability_name" text="#might_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('crystal_maiden','batten_hatches')" >
@@ -240,6 +257,12 @@
 
 	<Panel hittest="false" id="phantom_lancer">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#phantom_lancer" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/phantom_lancer.png" />
@@ -301,6 +324,12 @@
 
 	<Panel hittest="false" id="tidehunter">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#tidehunter" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/tidehunter.png" />
@@ -363,6 +392,12 @@
 
 	<Panel hittest="false" id="rattletrap">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#rattletrap" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/rattletrap.png" />
@@ -423,6 +458,12 @@
 	</Panel>
 	<Panel hittest="false" id="disruptor">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#disruptor" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/disruptor.png" />
@@ -484,6 +525,12 @@
 
 	<Panel hittest="false" id="morphling">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#morphling" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/morphling.png" />
@@ -545,6 +592,12 @@
 
 	<Panel hittest="false" id="storm_spirit">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#storm_spirit" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/storm_spirit.png" />
@@ -606,6 +659,12 @@
 
 	<Panel hittest="false" id="nevermore">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#nevermore" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/nevermore.png" />
@@ -667,6 +726,12 @@
 
 	<Panel hittest="false" id="lion">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#lion" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/lion.png" />
@@ -728,6 +793,12 @@
 
 	<Panel hittest="false" id="meepo">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#meepo" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/meepo.png" />
@@ -789,6 +860,12 @@
 
 	<Panel hittest="false" id="jakiro">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#jakiro" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/jakiro.png" />
@@ -850,6 +927,12 @@
 
 	<Panel hittest="false" id="ember_spirit">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#ember_spirit" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/ember_spirit.png" />
@@ -911,6 +994,12 @@
 
 	<Panel hittest="false" id="slark">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#slark" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/slark.png" />
@@ -972,6 +1061,12 @@
 
 	<Panel hittest="false" id="sniper">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#sniper" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/sniper.png" />
@@ -1033,6 +1128,12 @@
 
 	<Panel hittest="false" id="visage">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#visage" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/visage.png" />
@@ -1094,6 +1195,12 @@
 
 	<Panel hittest="false" id="ursa">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#ursa" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/ursa.png" />
@@ -1155,6 +1262,12 @@
 
 	<Panel hittest="false" id="tusk">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#tusk" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/tusk.png" />
@@ -1216,6 +1329,12 @@
 
 	<Panel hittest="false" id="windrunner">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#windrunner" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/windrunner.png" />
@@ -1278,6 +1397,12 @@
 
 	<Panel hittest="false" id="pugna">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#pugna" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/pugna.png" />
@@ -1340,6 +1465,12 @@
 	
 	<Panel hittest="false" id="vengefulspirit">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#vengefulspirit" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/vengefulspirit.png" />
@@ -1403,6 +1534,12 @@
 	
 	<Panel hittest="false" id="enigma">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#enigma" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/enigma.png" />
@@ -1463,6 +1600,12 @@
 
 	<Panel hittest="false" id="bane">	
 		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
 		<Label hittest="false" class="boat_title" text="#bane" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/bane.png" />
@@ -1528,6 +1671,11 @@
 		<Panel hittest="false" id="ship_shop" class="ship_shop_guts">
 			  <Image class="ship_bkg_image" src="file://{images}/custom_game/Kunkka.png" />
                 <Panel class="ship_shop_content_holder">
+				<Panel hittest="false" class="closeButtonholder">
+					<Button class="close" onactivate="hideShipShop()">
+							<Label  text="X" class="closeX"/>		
+					</Button>
+				</Panel>
 					<Label hittest="false" class="trade_text_title" text="#ship_shop" />  
 					<Label hittest="false" class="trade_text_footer" text="#left_click" />  
 					
@@ -1692,7 +1840,7 @@
         <Label hittest="false" id="out_of_contracts" text="#Out_Of_Contracts" />
 	 
 	 <Panel hittest="false" id="custom_shop" oncancel="hideShop()">
-	
+			
 	
 		
 		
@@ -1700,6 +1848,11 @@
             <Panel hittest="false" id="left_bot_shop" class="shop_guts">
                 <Image class="bkg_image" src="file://{images}/custom_game/bot_left.png" />
                 <Panel class="shop_content_holder">
+				<Panel hittest="false" class="closeButtonholder">
+				<Button class="close" onactivate="hideShop()">
+						<Label  text="X" class="closeX"/>		
+				</Button>
+			</Panel>
                     <Label hittest="false" class="trade_text_title" text="#Left_Bot_Missions" />
                     <Panel hittest="false" id="mission_hider_1" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
@@ -1735,6 +1888,11 @@
             <Panel hittest="false" id="left_mid_shop" class="shop_guts">
                 <Image class="bkg_image" src="file://{images}/custom_game/mid_left.png" />
                 <Panel class="shop_content_holder">
+				<Panel hittest="false" class="closeButtonholder">
+				<Button class="close" onactivate="hideShop()">
+						<Label  text="X" class="closeX"/>		
+				</Button>
+			</Panel>
                     <Label hittest="false" class="trade_text_title" text="#Left_Mid_Missions" />
                     <Panel hittest="false" id="mission_hider_2" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
@@ -1772,6 +1930,11 @@
             <Panel hittest="false" id="left_top_shop" class="shop_guts">
                 <Image class="bkg_image" src="file://{images}/custom_game/left_top.png" />
                 <Panel class="shop_content_holder">
+				<Panel hittest="false" class="closeButtonholder">
+				<Button class="close" onactivate="hideShop()">
+						<Label  text="X" class="closeX"/>		
+				</Button>
+			</Panel>
                     <Label hittest="false" class="trade_text_title" text="#Left_Top_Missions" />
                     <Panel hittest="false" id="mission_hider_3" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
@@ -1807,6 +1970,11 @@
             <Panel hittest="false" id="mid_bot_shop" class="shop_guts">
                 <Image class="bkg_image" src="file://{images}/custom_game/mid_bot.png" />
                 <Panel class="shop_content_holder">
+				<Panel hittest="false" class="closeButtonholder">
+				<Button class="close" onactivate="hideShop()">
+						<Label  text="X" class="closeX"/>		
+				</Button>
+			</Panel>
                     <Label hittest="false" class="trade_text_title" text="#Mid_Bot_Missions" />
                     <Panel hittest="false" id="mission_hider_4" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
@@ -1843,6 +2011,11 @@
             <Panel hittest="false" id="mid_mid_shop" class="shop_guts">
                 <Image class="bkg_image" src="file://{images}/custom_game/mid_mid.png" />
                 <Panel class="shop_content_holder">
+				<Panel hittest="false" class="closeButtonholder">
+				<Button class="close" onactivate="hideShop()">
+						<Label  text="X" class="closeX"/>		
+				</Button>
+			</Panel>
                     <Label hittest="false" class="trade_text_title" text="#Mid_Mid_Missions" />
                     <Panel hittest="false" id="mission_hider_5" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
@@ -1881,6 +2054,11 @@
             <Panel hittest="false" id="mid_top_shop" class="shop_guts">
                 <Image class="bkg_image" src="file://{images}/custom_game/mid_top.png" />
                 <Panel class="shop_content_holder">
+				<Panel hittest="false" class="closeButtonholder">
+				<Button class="close" onactivate="hideShop()">
+						<Label  text="X" class="closeX"/>		
+				</Button>
+			</Panel>
                     <Label hittest="false" class="trade_text_title" text="#Mid_Top_Missions" />
                     <Panel hittest="false" id="mission_hider_6" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
@@ -1916,6 +2094,11 @@
             <Panel hittest="false" id="right_bot_shop" class="shop_guts">
                 <Image class="bkg_image" src="file://{images}/custom_game/Bot_right.png" />
                 <Panel class="shop_content_holder">
+				<Panel hittest="false" class="closeButtonholder">
+				<Button class="close" onactivate="hideShop()">
+						<Label  text="X" class="closeX"/>		
+				</Button>
+			</Panel>
                     <Label hittest="false" class="trade_text_title" text="#Right_Bot_Missions" />
                     <Panel hittest="false" id="mission_hider_7" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
@@ -1951,6 +2134,11 @@
             <Panel hittest="false" id="right_mid_shop" class="shop_guts">
                 <Image class="bkg_image" src="file://{images}/custom_game/mid_right.png" />
                 <Panel class="shop_content_holder">
+				<Panel hittest="false" class="closeButtonholder">
+				<Button class="close" onactivate="hideShop()">
+						<Label  text="X" class="closeX"/>		
+				</Button>
+			</Panel>
                     <Label hittest="false" class="trade_text_title" text="#Right_Mid_Missions" />
                     <Panel hittest="false" id="mission_hider_8" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
@@ -1986,6 +2174,11 @@
             <Panel hittest="false" id="right_top_shop" class="shop_guts">
                 <Image class="bkg_image" src="file://{images}/custom_game/right_top.png" />
                 <Panel class="shop_content_holder">
+				<Panel hittest="false" class="closeButtonholder">
+				<Button class="close" onactivate="hideShop()">
+						<Label  text="X" class="closeX"/>		
+				</Button>
+			</Panel>
                     <Label hittest="false" class="trade_text_title" text="#Right_Top_Missions" />
                     <Panel hittest="false" id="mission_hider_9" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
