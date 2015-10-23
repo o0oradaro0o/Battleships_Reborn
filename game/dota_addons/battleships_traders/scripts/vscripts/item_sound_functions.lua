@@ -13,6 +13,44 @@ local enemies = FindUnitsInRadius(casterUnit:GetTeamNumber(),
 	return enemies
 end
 
+function coalSoundFire(keys)
+--Play sound for firing coal-type weapons
+	
+	local casterUnit = keys.caster
+	local item = keys.ability:GetAbilityName() --ability is how item name is passed in
+	local range = 600	 
+	local handles = {}
+	handles.team = DOTA_UNIT_TARGET_TEAM_ENEMY
+	handles.types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING + DOTA_UNIT_TARGET_MECHANICAL + DOTA_UNIT_TARGET_HERO
+	handles.flags = DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
+		
+	if #getEnemies(casterUnit,range,handles) > 0 then
+		if string.match(item, "two") then--level-2 coal-type
+			EmitSoundOn("Hero_Lion.Attack", casterUnit) 			
+		elseif string.match(item, "three") then--level-3 coal-type
+			EmitSoundOn("Hero_Nevermore.Attack", casterUnit)			
+		elseif string.match(item, "ult") then--ultimate coal-type
+			EmitSoundOn("Hero_Warlock.Attack", casterUnit)			
+		else --level-1 coal-type
+			EmitSoundOn("Hero_Batrider.Attack", casterUnit)
+		end		
+	end		
+end
+
+function coalSoundImpact(keys)
+--Play sound for impacting coal-type weapons
+	local targetUnit = keys.target	
+	--Very simple now. All coal-type impacts have the same sound. 
+	--The coal-type ult has a stun sound for the proc in a different function. 
+	EmitSoundOn("Hero_Lion.ProjectileImpact", targetUnit)	
+end
+
+function coalSoundStun(keys)
+--Play sound for impacting coal-type weapons
+	local targetUnit = keys.target		 
+	EmitSoundOn("Hero_Batrider.Flamebreak.Impact", targetUnit)	
+end
+
 function fireSoundFire(keys)
 --Play sound for firing fire-type weapons
 	
@@ -196,3 +234,39 @@ function iceSoundImpact(keys)
 	end
 
 end 
+
+function windSoundFire(keys)
+--Play sound for firing wind-type weapons
+	
+	local casterUnit = keys.caster
+	local item = keys.ability:GetAbilityName() --ability is how item name is passed in
+	local range = 1400
+	local handles = {}
+	handles.team = DOTA_UNIT_TARGET_TEAM_ENEMY
+	handles.types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_MECHANICAL + DOTA_UNIT_TARGET_HERO
+	handles.flags = DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
+		
+	if #getEnemies(casterUnit,range,handles) > 0 then
+		if string.match(item, "two") then--level-2 wind-type
+			EmitSoundOn("Hero_Disruptor.Attack", casterUnit) 			
+		elseif string.match(item, "three") then--level-3 wind-type
+			EmitSoundOn("Hero_Zuus.Attack", casterUnit)
+		elseif string.match(item, "ult") then--ultimate wind-type
+			EmitSoundOn("Hero_Zuus.Attack", casterUnit)
+			Timers:CreateTimer( 0.05, function()
+				EmitSoundOn("Hero_Disruptor.Attack", casterUnit)
+			end)				
+		else --level-1 wind-type
+			EmitSoundOn("Beastmaster_Boar.Attack", casterUnit)
+		end		
+	end		
+end
+
+function windSoundImpact(keys)
+--Play sound for impacting wind-type weapons
+
+	local targetUnit = keys.target
+	EmitSoundOn("Hero_Disruptor.ProjectileImpact", targetUnit)
+
+end 
+
