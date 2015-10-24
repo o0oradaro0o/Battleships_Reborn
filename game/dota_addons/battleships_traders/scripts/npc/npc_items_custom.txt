@@ -1367,7 +1367,7 @@
 	//=================================================================================================================
 	"item_recipe_spin_ult_bow"
 	{
-		"ID"							"2307"
+		"ID"							"2308"
 
 		"BaseClass"						"item_recipe_arcane_boots"
 		"Model"							"models/props_gameplay/recipe.mdl"
@@ -3610,7 +3610,7 @@
 	//===============================================
     "item_spin_bow"
 	{
-		"ID"                            "1007"
+		"ID"                            "1008"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
@@ -4379,7 +4379,7 @@
 	//===============================================
     "item_spin_two_bow"
 	{
-		"ID"                            "1107"
+		"ID"                            "1108"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
@@ -5139,7 +5139,7 @@
 	//===============================================
     "item_spin_three_bow"
 	{
-		"ID"                            "1207"
+		"ID"                            "1208"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
@@ -6042,7 +6042,7 @@
 	//===============================================
     "item_spin_bow_doubled"
 	{
-		"ID"                            "1507"
+		"ID"                            "1508"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
@@ -6943,7 +6943,7 @@
 	//===============================================
     "item_spin_two_bow_doubled"
 	{
-		"ID"                            "1607"
+		"ID"                            "1608"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
@@ -7832,7 +7832,7 @@
 	//===============================================
     "item_spin_three_bow_doubled"
 	{
-		"ID"                            "1707"
+		"ID"                            "1708"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
@@ -8817,7 +8817,7 @@
 	//===============================================
     "item_spin_ult_bow"
 	{
-		"ID"                            "1307"
+		"ID"                            "1308"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
