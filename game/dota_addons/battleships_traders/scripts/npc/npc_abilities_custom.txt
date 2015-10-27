@@ -4144,7 +4144,7 @@
 						"MaxTargets" "1"
 						"Random" "1"
 					}
-				"MoveSpeed" "750"
+				"MoveSpeed" "522"
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/monkey_buisness_effect.vpcf" 
 			}

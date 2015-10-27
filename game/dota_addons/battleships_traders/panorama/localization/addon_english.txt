@@ -14,7 +14,7 @@
 	"bs_Weapons"				"Weapons:"
 	"bs_Ships"					"Ships:"
 
-	"bs_HowToWin"				"Destroy the Enemy's Base located just outside their Harbor, or destroy both of their Docks, located to the Left and Right of the main base."
+	"bs_HowToWin"				"To win, destroy the Enemy's Base located just outside their Harbor, or destroy both of their Docks, located to the Left and Right of the main base."
 	"bs_HowToWeapons"			"Weapons target random enemies in their range. You can buy pairs of weapons in the store, and they'll take up a single slot in your inventory. Weapons at lower tiers are more cost effective, and weapons at higher tiers save space. You can combine all three tiers into an Ultimate Weapon."
 	"bs_HowToShips"				"You can upgrade to new ships by heading to the Ships vendor, and purchasing from one of four classes of ships. You'll start with nothing more than a barrel, so upgrade to get bigger boats and better abilities!"
 
@@ -144,7 +144,7 @@
 	"scope_desc" "Scope: Grants 1000 vision for 6 seconds"
 	"invest" "invest"
 	
-	
+	"spys_reminder" "Spies are available for purchase at the side shops here. They permanently dearmor enemy buildings"
 	"supply" "Purchase Mission Supplies"
 	"must_be_trader" "I will only sell goods and give missions to Licensed Trade ships."
 	"Out_Of_Contracts" "You have accepted a trade contract!"

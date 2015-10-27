@@ -666,8 +666,8 @@ end
 			iVisionRadius = 1000,
 			iVisionTeamNumber = caster:GetTeamNumber(),
 			bDeleteOnHit = false,
-			iMoveSpeed = 750,
-			vVelocity = 750,
+			iMoveSpeed = 522,
+			vVelocity = 522,
 		}
 		projectile = ProjectileManager:CreateTrackingProjectile(info)
 	end

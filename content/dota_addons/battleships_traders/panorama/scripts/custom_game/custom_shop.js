@@ -709,16 +709,9 @@ function FadeShop()
 	}
 function PingLoc(data)
 	{
-	$.Msg(data);
-			showMission[ data.player_id]=0;
-			if(showMission[Players.GetLocalPlayer()]==0 && data.player_id==Players.GetLocalPlayer())
-			{
-				
-				var v=[data.x,data.y,data.z]
-				GameUI.PingMinimapAtLocation(v);
-				showMission[Players.GetLocalPlayer()]=-1;
-			}
-		
+		$.Msg(data);
+		var v=[data.x,data.y,data.z]
+		GameUI.PingMinimapAtLocation(v);
 	}
 
 	
