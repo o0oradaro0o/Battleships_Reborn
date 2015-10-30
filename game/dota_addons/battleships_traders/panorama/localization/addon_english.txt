@@ -14,7 +14,7 @@
 	"bs_Weapons"				"Weapons:"
 	"bs_Ships"					"Ships:"
 
-	"bs_HowToWin"				"To win, destroy the Enemy's Base located just outside their Harbor, or destroy both of their Docks, located to the Left and Right of the main base."
+	"bs_HowToWin"				"Destroy the Enemy's Base located just outside their Harbor, or destroy both of their Docks, located to the Left and Right of the main base."
 	"bs_HowToWeapons"			"Weapons target random enemies in their range. You can buy pairs of weapons in the store, and they'll take up a single slot in your inventory. Weapons at lower tiers are more cost effective, and weapons at higher tiers save space. You can combine all three tiers into an Ultimate Weapon."
 	"bs_HowToShips"				"You can upgrade to new ships by heading to the Ships vendor, and purchasing from one of four classes of ships. You'll start with nothing more than a barrel, so upgrade to get bigger boats and better abilities!"
 
@@ -144,7 +144,7 @@
 	"scope_desc" "Scope: Grants 1000 vision for 6 seconds"
 	"invest" "invest"
 	
-	"spys_reminder" "Spies are available for purchase at the side shops here. They permanently dearmor enemy buildings"
+	
 	"supply" "Purchase Mission Supplies"
 	"must_be_trader" "I will only sell goods and give missions to Licensed Trade ships."
 	"Out_Of_Contracts" "You have accepted a trade contract!"
@@ -497,8 +497,8 @@ RANGE: 2500 2500 2500 2500"
 "mountain_battleship_Description"					"End the flood. Immobilizes you and all units around you in a large radius. \n\nHigher levels increase duration.
 DURATION: 3.0 4.0 5.0"
 
-"monkey_buisness"									"Monkey Buisness"
-"monkey_buisness_Description"					"Your monkeys jump to a nearby enamy ship, do as much damage as they can, then escape to an allied ship.  Monkeys continue until they have no where to jump, alternating between allies and enemies.\n\nHigher levels increase damage and jump range.
+"monkey_buisness"									"Monkey Business"
+"monkey_buisness_Description"					"Your monkeys jump to a nearby enemy ship, do as much damage as they can, then escape to an allied ship.  Monkeys continue until they have no where to jump, alternating between allies and enemies.\n\nHigher levels increase damage and jump range.
 MONKEY JUMP RANGE: 600 700 800 900
 MONKEY ATTACK DAMAGE: 200 300 400 500"
 
@@ -511,7 +511,7 @@ DAMAGE: 600"
 DURATION: 15 17 19 21"
 
 "Over_And_Out"									"Over and Out"
-"Over_And_Out_Description"					"The aircraft carrier shoots forward even over terrain grabbs any units encountered and pulls them back out to where it started. (pulled units cannot move over terrain\n\n Higher levels increase duration.
+"Over_And_Out_Description"					"The aircraft carrier shoots forward even over terrain grabs any units encountered and pulls them back out to where it started. (pulled units cannot move over terrain\n\n Higher levels increase duration.
 DURATION: 2.25 2.5 2.75"
 
 "gyrocopter_call_down_battleship"									"Hit!"

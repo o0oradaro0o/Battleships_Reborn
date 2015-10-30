@@ -1084,12 +1084,12 @@ function CBattleship8D:OnThink()
 		end
 		
 		if THINK_TICKS == 30 then	
-		 Notifications:TopToAll({text="#bs_HowToWin", duration=6.0, style={color="#07C300",  fontSize="18px;"}})
+		 Notifications:TopToAll({text="#bs_HowToWin", duration=6.0, style={color="#58ACFA",  fontSize="18px;"}})
 
 		end
 		
 			if THINK_TICKS == 1320 then	
-				Notifications:TopToAll({text="#bs_HowToWin", duration=6.0, style={color="#CC33FF",  fontSize="25px;"}})
+				Notifications:TopToAll({text="#spys_reminder", duration=6.0, style={color="#CC33FF",  fontSize="25px;"}})
 				local Data = {
 					player_id =0,
 					x 	= -3328,
