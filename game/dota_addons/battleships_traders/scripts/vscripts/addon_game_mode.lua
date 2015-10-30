@@ -262,6 +262,7 @@ PrecacheResource( "model", "models/spin_two", context )
 		
 	PrecacheResource( "model", "models/spin_three", context )
 	PrecacheResource( "model", "models/no_model", context )
+	PrecacheResource( "model", "models/monkey", context )
 	
 
 	
@@ -1081,6 +1082,49 @@ function CBattleship8D:OnThink()
 		
 			
 		end
+		
+		if THINK_TICKS == 30 then	
+		 Notifications:TopToAll({text="#bs_HowToWin", duration=6.0, style={color="#07C300",  fontSize="18px;"}})
+
+		end
+		
+			if THINK_TICKS == 1320 then	
+				Notifications:TopToAll({text="#bs_HowToWin", duration=6.0, style={color="#CC33FF",  fontSize="25px;"}})
+				local Data = {
+					player_id =0,
+					x 	= -3328,
+					y  = 320,
+					z  = -68
+				}
+				FireGameEvent( "ping_loc", Data ); 
+				
+				local Data = {
+					player_id =0,
+					x 	= 3008,
+					y  = -320,
+					z  = -68
+				}
+				FireGameEvent( "ping_loc", Data ); 
+				
+			end
+			if THINK_TICKS == 1324 then	
+				local Data = {
+					player_id =0,
+					x 	= -3328,
+					y  = 320,
+					z  = -68
+				}
+				FireGameEvent( "ping_loc", Data ); 
+				
+				local Data = {
+					player_id =0,
+					x 	= 3008,
+					y  = -320,
+					z  = -68
+				}
+				FireGameEvent( "ping_loc", Data ); 
+				
+			end
 		if THINK_TICKS == 20 then	
 			local i=0
 			while i < 5-NUM_GOOD_PLAYERS do
