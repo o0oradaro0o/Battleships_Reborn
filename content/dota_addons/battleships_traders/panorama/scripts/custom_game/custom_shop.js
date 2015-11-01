@@ -16,17 +16,8 @@ function hideTrade()
 			numbuildings++;
 		}
 	}
-	if (numbuildings<15)
-	{
-		$( "#missionButton" ).style.visibility="collapse";
-		$( "#ConstStatusRow1" ).style.visibility="collapse";
-		$( "#TempStatusRow1" ).style.visibility="collapse";
-		$( "#ConstStatusRow2" ).style.visibility="collapse";
-		$( "#TempStatusRow2" ).style.visibility="collapse";
-	}
-	else{
+
 		$( "#missionButton" ).style.visibility="visible";
-	}
 	
 	$.Msg("buildings: "+numbuildings);
 }

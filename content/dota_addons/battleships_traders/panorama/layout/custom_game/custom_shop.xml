@@ -21,7 +21,6 @@
 	</Panel>-->
 	
 	
-	
 	<Panel class="timerRight" id="timerPanel">
 		<Panel class="timersHolder">
 		<Panel class="timerRowTop">
@@ -1185,9 +1184,9 @@
 					</Panel>
 			</Panel>
 					<Panel hittest="false" class="buy_box" >
-						<Button class="buy_ship_button" onactivate="buyBoat('visage', 10000)" oncontextmenu="buyBoat('visage', 10000)">
+						<Button class="buy_ship_button" onactivate="buyBoat('visage', 12000)" oncontextmenu="buyBoat('visage', 12000)">
 							<Label hittest="false" class="buy_text" text="#buy" />
-							<Label hittest="false" class="buy_text_g" text="10000 G" />
+							<Label hittest="false" class="buy_text_g" text="12000 G" />
 						</Button>
 					</Panel>
 		</Panel>	
@@ -1252,9 +1251,9 @@
 					</Panel>
 			</Panel>
 					<Panel hittest="false" class="buy_box" >
-						<Button class="buy_ship_button" onactivate="buyBoat('ursa', 10000)" oncontextmenu="buyBoat('ursa', 10000)">
+						<Button class="buy_ship_button" onactivate="buyBoat('ursa', 12000)" oncontextmenu="buyBoat('ursa', 12000)">
 							<Label hittest="false" class="buy_text" text="#buy" />
-							<Label hittest="false" class="buy_text_g" text="10000 G" />
+							<Label hittest="false" class="buy_text_g" text="12000 G" />
 						</Button>
 					</Panel>
 		</Panel>	
@@ -1281,7 +1280,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="100000" />
+							<Label hittest="false" class="boat_stat_label_val" text="120000" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
@@ -1319,9 +1318,9 @@
 					</Panel>
 			</Panel>
 					<Panel hittest="false" class="buy_box" >
-						<Button class="buy_ship_button" onactivate="buyBoat('tusk', 10000)" oncontextmenu="buyBoat('tusk', 10000)">
+						<Button class="buy_ship_button" onactivate="buyBoat('tusk', 12000)" oncontextmenu="buyBoat('tusk', 12000)">
 							<Label hittest="false" class="buy_text" text="#buy" />
-							<Label hittest="false" class="buy_text_g" text="10000 G" />
+							<Label hittest="false" class="buy_text_g" text="12000 G" />
 						</Button>
 					</Panel>
 		</Panel>	
@@ -1386,9 +1385,9 @@
 					</Panel>
 			</Panel>
 					<Panel hittest="false" class="buy_box" >
-						<Button class="buy_ship_button" onactivate="buyBoat('windrunner', 10000)" oncontextmenu="buyBoat('windrunner', 10000)">
+						<Button class="buy_ship_button" onactivate="buyBoat('windrunner', 12000)" oncontextmenu="buyBoat('windrunner', 12000)">
 							<Label hittest="false" class="buy_text" text="#buy" />
-							<Label hittest="false" class="buy_text_g" text="10000 G" />
+							<Label hittest="false" class="buy_text_g" text="12000 G" />
 						</Button>
 					</Panel>
 		</Panel>	
@@ -1454,9 +1453,9 @@
 					</Panel>
 			</Panel>
 					<Panel hittest="false" class="buy_box" >
-						<Button class="buy_ship_button" onactivate="buyBoat('pugna', 10000)" oncontextmenu="buyBoat('pugna', 10000)">
+						<Button class="buy_ship_button" onactivate="buyBoat('pugna', 12000)" oncontextmenu="buyBoat('pugna', 12000)">
 							<Label hittest="false" class="buy_text" text="#buy" />
-							<Label hittest="false" class="buy_text_g" text="10000 G" />
+							<Label hittest="false" class="buy_text_g" text="12000 G" />
 						</Button>
 					</Panel>
 		</Panel>	
@@ -1776,28 +1775,28 @@
 					</Panel>
 					<Panel id="ten_ks" class="supply_guts">
 							<Panel hittest="false" class="supply_row">
-								 <Button class="boat_btn_item"  onactivate="showDetails('pugna')" oncontextmenu="buyBoat('pugna', 10000)">
+								 <Button class="boat_btn_item"  onactivate="showDetails('pugna')" oncontextmenu="buyBoat('pugna', 12000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/pugna.png" />
 									 <Label hittest="false" class="boat_name_text" text="#pugna" />
 										</Button> 
 								
-								<Button class="boat_btn_item"  onactivate="showDetails('visage')" oncontextmenu="buyBoat('visage', 10000)">
+								<Button class="boat_btn_item"  onactivate="showDetails('visage')" oncontextmenu="buyBoat('visage', 12000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/visage.png" />
 									 <Label hittest="false" class="boat_name_text" text="#visage" />
 								</Button>
 								
-								<Button class="boat_btn_item"  onactivate="showDetails('windrunner')" oncontextmenu="buyBoat('windrunner', 10000)">
+								<Button class="boat_btn_item"  onactivate="showDetails('windrunner')" oncontextmenu="buyBoat('windrunner', 12000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/windrunner.png" />
 									 <Label hittest="false" class="boat_name_text" text="#windrunner" />
 								</Button>
 							</Panel>
 							<Panel hittest="false" class="supply_row">
-								 <Button class="boat_btn_item"  onactivate="showDetails('tusk')" oncontextmenu="buyBoat('tusk', 10000)">
+								 <Button class="boat_btn_item"  onactivate="showDetails('tusk')" oncontextmenu="buyBoat('tusk', 12000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/tusk.png" />
 									 <Label hittest="false" class="boat_name_text" text="#tusk" />
 								</Button>
 								
-								<Button class="boat_btn_item"  onactivate="showDetails('ursa')" oncontextmenu="buyBoat('ursa', 10000)">
+								<Button class="boat_btn_item"  onactivate="showDetails('ursa')" oncontextmenu="buyBoat('ursa', 12000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/ursa.png" />
 									 <Label hittest="false" class="boat_name_text" text="#ursa" />
 								</Button>

@@ -2906,9 +2906,9 @@ function HandleShopChecks(hero)
 							hero:SetGold(0,false)
 							hero:AddExperience(xp_to_level[hero:GetLevel()]*.33,0,false,true)
 							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 130*EMP_GOLD_NUMBER/2
+								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 160*EMP_GOLD_NUMBER/3
 							elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 130*EMP_GOLD_NUMBER/2
+								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 160*EMP_GOLD_NUMBER/3
 							end
 						
 							local allyteamnumber=hero:GetPlayerID()
@@ -2927,9 +2927,9 @@ function HandleShopChecks(hero)
 										otherHero:SetGold(herogold + 16*EMP_GOLD_NUMBER/2, true)
 										otherHero:SetGold(0, false)
 										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 16*EMP_GOLD_NUMBER/2
+											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 16*EMP_GOLD_NUMBER/3
 										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 16*EMP_GOLD_NUMBER/2
+											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 16*EMP_GOLD_NUMBER/3
 										end
 									end
 								end
@@ -2946,9 +2946,9 @@ function HandleShopChecks(hero)
 								print("hero level: " .. hero:GetLevel())
 								print("nect level: " .. xp_to_level[hero:GetLevel()])
 							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 300*EMP_GOLD_NUMBER/2
+								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 350*EMP_GOLD_NUMBER/3
 							elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 300*EMP_GOLD_NUMBER/2
+								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 350*EMP_GOLD_NUMBER/3
 							end
 							
 							hero:AddExperience(xp_to_level[hero:GetLevel()]*.33,0,false,true)
@@ -2959,9 +2959,9 @@ function HandleShopChecks(hero)
 										otherHero:SetGold(herogold + 26*EMP_GOLD_NUMBER/2, true)
 										otherHero:SetGold(0, false)
 										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 26*EMP_GOLD_NUMBER/2
+											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 26*EMP_GOLD_NUMBER/3
 										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 26*EMP_GOLD_NUMBER/2
+											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 26*EMP_GOLD_NUMBER/3
 										end
 									end
 								end
@@ -2976,7 +2976,7 @@ function HandleShopChecks(hero)
 							}
 							FireGameEvent("Team_Can_Buy",data)
 							EmitSoundOnClient("ui.npe_objective_complete",PlayerResource:GetPlayer(hero:GetPlayerID()))
-							 Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
+							Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
 						Notifications:Top(hero:GetPlayerID(),{text=300*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
 						Notifications:Top(hero:GetPlayerID(),{text=26*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
@@ -2987,9 +2987,9 @@ function HandleShopChecks(hero)
 							hero:SetGold(0,false)
 							hero:AddExperience(xp_to_level[hero:GetLevel()]*.33,0,false,true)
 							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 200
+								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 500*EMP_GOLD_NUMBER/3
 							elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 200
+								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 500*EMP_GOLD_NUMBER/3
 							end
 						
 							local allyteamnumber=hero:GetPlayerID()
@@ -2997,12 +2997,12 @@ function HandleShopChecks(hero)
 								if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
 									local herogold = otherHero:GetGold()
 									if otherHero:GetTeamNumber() == hero:GetTeam()  and otherHero~=hero then
-										otherHero:SetGold(herogold + 36*EMP_GOLD_NUMBER/2, true)
+										otherHero:SetGold(herogold + 36*EMP_GOLD_NUMBER/3, true)
 										otherHero:SetGold(0, false)
 										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 36*EMP_GOLD_NUMBER/2
+											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 36*EMP_GOLD_NUMBER/3
 										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 36*EMP_GOLD_NUMBER/2
+											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 36*EMP_GOLD_NUMBER/3
 										end
 									end
 								end
