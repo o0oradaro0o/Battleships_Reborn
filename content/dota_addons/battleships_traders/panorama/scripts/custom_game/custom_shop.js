@@ -700,11 +700,14 @@ function FadeShop()
 	}
 function PingLoc(data)
 	{
-		$.Msg(data);
-		var v=[data.x,data.y,data.z]
-		GameUI.PingMinimapAtLocation(v);
+		if(data.player_id==Players.GetLocalPlayer())
+			{
+				var v=[data.x,data.y,data.z]
+				GameUI.PingMinimapAtLocation(v);
+			}
 	}
 
+	
 	
 	
 function TopNotification( msg ) {

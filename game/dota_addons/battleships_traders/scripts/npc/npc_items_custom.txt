@@ -9453,7 +9453,8 @@
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
-	
+	"SideShop"						"1"
+				"ItemPurchasable"				"0"
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		
@@ -9552,7 +9553,8 @@
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
-	
+	"SideShop"						"1"
+				"ItemPurchasable"				"0"
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		

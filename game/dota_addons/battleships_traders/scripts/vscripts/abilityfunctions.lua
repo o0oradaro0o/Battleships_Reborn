@@ -363,9 +363,10 @@ function panic(args) -- keys is the information sent by the ability
 end
 function SwapMission(args)
 
+local heroBuying=args.caster
 local olditem=""
 local diff=0
-	local heroBuying=args.caster
+	
 		for itemSlot = 0, 5, 1 do 
 				if heroBuying ~= nil then
 					local Item = heroBuying:GetItemInSlot( itemSlot )
@@ -394,7 +395,7 @@ local diff=0
 			local missionDist
 			while chosenMission==nil do
 				local i = RandomInt( 1, #missionPool )
-				if not string.match(missionPool[i]:GetUnitName(),olditem)  and not string.match(missionPool[i]:GetUnitName(),"ship") then
+				if not string.match(missionPool[i]:GetUnitName(),olditem)  and not string.match(missionPool[i]:GetUnitName(),"ship") and (heroBuying:GetOrigin()-missionPool[i]:GetOrigin()):Length()>2500 then
 					chosenMission=missionPool[i]
 				end
 			end

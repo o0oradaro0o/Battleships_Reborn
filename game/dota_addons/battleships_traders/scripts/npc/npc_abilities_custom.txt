@@ -3989,7 +3989,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blink_range"			"900 1000 1100 1200"
+				"blink_range"			"700 800 900 1000"
 			}
 			
 			"02"

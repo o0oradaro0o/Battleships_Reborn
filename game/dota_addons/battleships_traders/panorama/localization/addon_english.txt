@@ -57,7 +57,7 @@
 					"bane"							"Cargo Ship"
 					"enigma"							"Ghost Trader"
 		
-		"phantom_lancer_desc"				"The Airboat it a fast and sturdy ship with some dangerous damage abilities."		
+		"phantom_lancer_desc"				"The Airboat is a fast and sturdy ship with some dangerous damage abilities."		
 		"pugna_desc"							"The Ice Breaker survives the cold better than any other ship and brings with it all the power of frost."
 		"ember_spirit_desc"					"Charge headlong into combat. Snag foes and drag them to their doom."
 		"disruptor_desc"						"Enforce the law on the High Seas and control the movement of vessels in your domain."	
@@ -531,7 +531,7 @@ armor: 1.0 2.0 3.0 4.0"
 
 "antimage_blink_battleship"											"Cheat"
 "antimage_blink_battleship_Description"								"Short distance teleportation that allows battleship to shift around the board.
-RANGE: 900 1000 1100 1200"
+RANGE: 700 800 900 1000"
 
 "puck_waning_rift_battleship"								"Hack Their System!"
 "puck_waning_rift_battleship_Description"					"Disables the use of abilities on all units in the area and deals damage to them. \n\nHigher levels increase damage and duration.
@@ -584,7 +584,7 @@ DAMAGE: 205 270 350"
 DURATION: 4.0"
 
 "estab_route"									"Established Route"
-"estab_route_Description"						"Gain significant move speed speed for the duration or untill a new order is given. \n \nHigher levels increase speed effect.
+"estab_route_Description"						"Gain significant move speed speed for the duration or until a new order is given. \n \nHigher levels increase speed effect.
 DURATION: 15.0
 Speed: 60 90 120 150"
 
