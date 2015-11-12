@@ -28,7 +28,7 @@ local statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
 local postLocation = 'http://getdotastats.com/s2/api/'
 
 -- The schema version we are currently using
-local schemaVersion = 1
+local schemaVersion = 3
 
 -- Constants used for pretty formatting, as well as strings
 local printPrefix = 'Stat Collection: '
@@ -57,19 +57,7 @@ local messagePhase1Complete = 'Match was successfully registered with GetDotaSta
 local messagePhase2Complete = 'Match pregame settings have been recorded!'
 local messagePhase3Complete = 'Match stats were successfully recorded!'
 local messageCustomComplete = 'Match custom stats were successfully recorded!'
-
--- Store the first detected steamID
-local firstConnectedSteamID = -1
-ListenToGameEvent('player_connect', function(keys)
--- Grab their steamID
-    local steamID64 = tostring(keys.xuid)
-    local steamIDPart = tonumber(steamID64:sub(4))
-    if not steamIDPart then return end
-    local steamID = tostring(steamIDPart - 61197960265728)
-
-    -- Store it
-    firstConnectedSteamID = steamID
-end, nil)
+local messageFlagsSet       = 'Flag was successfully set!'
 
 -- Create the stat collection class
 if not statCollection then
@@ -88,15 +76,8 @@ function statCollection:init()
     -- Print the intro message
     print(printPrefix .. messageStarting)
 
-    -- Load up the settings
-    local modIdentifier = statInfo.modID
-    local schemaID = statInfo.schemaID
-    local HAS_SCHEMA = statInfo.schemaID ~= 'XXXXXXXXXXXXXXXX'
-    local HAS_ROUNDS = statInfo.HAS_ROUNDS
-    local GAME_WINNER = statInfo.GAME_WINNER
-    local ANCIENT_EXPLOSION = statInfo.ANCIENT_EXPLOSION
-
     -- Check for a modIdentifier
+    local modIdentifier = statInfo.modID
     if not modIdentifier then
         print(printPrefix .. errorMissingModIdentifier)
 
@@ -106,12 +87,6 @@ function statCollection:init()
         self.doneInit = false
         return
     end
-
-    -- Set settings
-    self.HAS_SCHEMA = HAS_SCHEMA
-    self.HAS_ROUNDS = tobool(statInfo.HAS_ROUNDS)
-    self.GAME_WINNER = tobool(statInfo.GAME_WINNER)
-    self.ANCIENT_EXPLOSION = tobool(statInfo.ANCIENT_EXPLOSION)
 
     --[[ Check for a schemaIdentifier
     if not schemaID then
@@ -123,14 +98,18 @@ function statCollection:init()
         return
     end]]
 
+    -- Load and set settings
+    self.HAS_SCHEMA = statInfo.schemaID ~= 'XXXXXXXXXXXXXXXX'
+    self.HAS_ROUNDS = tobool(statInfo.HAS_ROUNDS)
+    self.GAME_WINNER = tobool(statInfo.GAME_WINNER)
+    self.ANCIENT_EXPLOSION = tobool(statInfo.ANCIENT_EXPLOSION)
+    self.TESTING = tobool(statInfo.TESTING)
+
     -- Store the modIdentifier
     self.modIdentifier = modIdentifier
 
     -- Store the schemaIdentifier
     self.SCHEMA_KEY = statInfo.schemaID
-
-    -- Reset our flags store
-    self.flags = {}
 
     -- Set the default winner to -1 (no winner)
     self.winner = -1
@@ -184,7 +163,14 @@ function statCollection:hookFunctions()
     -- Grab the current state
         local state = GameRules:State_Get()
 
-        if state >= DOTA_GAMERULES_STATE_PRE_GAME then
+        if state == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
+            -- Load time flag
+            statCollection:setFlags({loadTime = math.floor(GameRules:GetGameTime())})
+
+            -- Start the client checking recording
+            CustomUI:DynamicHud_Create(-1,"statcollection","file://{resources}/layout/custom_game/statcollection.xml",nil)
+
+        elseif state >= DOTA_GAMERULES_STATE_PRE_GAME then
             -- Send pregame stats
             this:sendStage2()
         end
@@ -236,6 +222,7 @@ function statCollection:setFlags(flags)
         -- Store the new flags
         for flagKey,flagValue in pairs(flags) do
             self.flags[flagKey] = flagValue
+            print(printPrefix .. messageFlagsSet .. " {"..flagKey..":"..tostring(flagValue).."}")
         end
         
     else
@@ -265,16 +252,20 @@ function statCollection:sendStage1()
     -- Workout the player count
     local playerCount = PlayerResource:GetPlayerCount()
     if playerCount <= 0 then playerCount = 1 end
+    statCollection:setFlags({numPlayers = playerCount})
 
     -- Workout who is hosting
-    local hostSteamID = PlayerResource:GetSteamAccountID(0)
-    if hostSteamID == 0 then
-        if firstConnectedSteamID ~= -1 then
-            hostSteamID = firstConnectedSteamID
-        else
-            hostSteamID = -1
+    local hostID
+    for playerID = 0, DOTA_MAX_PLAYERS do
+        if PlayerResource:IsValidPlayerID(playerID) then
+            local player = PlayerResource:GetPlayer(playerID)
+            if GameRules:PlayerHasCustomGameHostPrivileges(player) then 
+                hostID = playerID
+                break
+            end
         end
     end
+    local hostSteamID = PlayerResource:GetSteamAccountID(hostID)
 
     -- Workout if the server is dedicated or not
     local isDedicated = (IsDedicatedServer() and 1) or 0
@@ -288,7 +279,6 @@ function statCollection:sendStage1()
     local payload = {
         modIdentifier = self.modIdentifier,
         hostSteamID32 = tostring(hostSteamID),
-        numPlayers = playerCount,
         schemaVersion = schemaVersion
     }
 
@@ -332,14 +322,19 @@ function statCollection:sendStage2()
     -- Print the intro message
     print(printPrefix .. messagePhase2Starting)
 
+    -- Client check in
+    CustomGameEventManager:Send_ServerToAllClients("statcollection_client", { modID = self.modIdentifier, matchID = self.matchID, schemaVersion = schemaVersion})
+
     -- Build players array
     local players = {}
-    for i = 1, (PlayerResource:GetPlayerCount() or 1) do
-        table.insert(players, {
-            playerName = PlayerResource:GetPlayerName(i - 1),
-            steamID32 = PlayerResource:GetSteamAccountID(i - 1),
-            connectionState = PlayerResource:GetConnectionState(i - 1)
-        })
+    for playerID = 0, DOTA_MAX_PLAYERS do
+        if PlayerResource:IsValidPlayerID(playerID) then
+            table.insert(players, {
+                playerName = PlayerResource:GetPlayerName(playerID),
+                steamID32 = PlayerResource:GetSteamAccountID(playerID),
+                connectionState = PlayerResource:GetConnectionState(playerID)
+            })
+        end
     end
 
     local payload = {
@@ -479,7 +474,6 @@ function statCollection:sendCustom(args)
     print(printPrefix .. messageCustomStarting)
 
     -- Build rounds table
-    -- Build rounds table
     rounds = {}
     rounds[tostring(self.roundID)] = {
         game = game,
@@ -520,7 +514,7 @@ end
 function statCollection:sendStage(stageName, payload, callback)
     -- Create the request
     local req = CreateHTTPRequest('POST', postLocation .. stageName)
-    print(json.encode(payload))
+    --print(json.encode(payload))
     -- Add the data
     req:SetHTTPRequestGetOrPostParameter('payload', json.encode(payload))
 

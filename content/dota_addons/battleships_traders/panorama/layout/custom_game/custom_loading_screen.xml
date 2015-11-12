@@ -19,7 +19,7 @@
 				<Label class="AuthorTitle" text="Original Artwork By: Taterfish" />
 		</Panel>
 		<Panel id="HeroPanel">
-				<Label class="heroTitle" text="IRC heroes: Noya, BMD, Myll, Hewdraw, Wigguno, Jimmydorry, Crazyloon, and SinZ " />
+				<Label class="heroTitle" text="IRC heroes: Noya, BMD, Myll, Hewdraw, Sidearms, Wigguno, Jimmydorry, Crazyloon, and SinZ \n\nAlso, check out Dota2Bships.com for more info" />
 		</Panel>
 
 	</Panel>

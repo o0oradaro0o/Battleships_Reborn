@@ -253,4 +253,8 @@
 	"item_octarine_core"			"REMOVE"
 	"item_recipe_travel_boots_2"			"REMOVE"
 	"item_travel_boots_2"           "REMOVE"
+	"item_travel_boots_2"           "REMOVE"
+	"item_enchanted_mango"          "REMOVE"    
+ "item_recipe_crimson_guard"         "REMOVE"    
+    "item_crimson_guard"            "REMOVE"    
 }

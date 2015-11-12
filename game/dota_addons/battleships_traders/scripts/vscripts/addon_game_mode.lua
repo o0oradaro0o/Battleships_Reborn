@@ -258,9 +258,10 @@ function Precache( context )
 	PrecacheResource( "model", "models/heroes/tidehunter/tidehunter.vmdl", context )
 	
 	PrecacheResource( "model", "models/spin_one", context )
-PrecacheResource( "model", "models/spin_two", context )
+	PrecacheResource( "model", "models/spin_two", context )
 		
 	PrecacheResource( "model", "models/spin_three", context )
+	
 	PrecacheResource( "model", "models/no_model", context )
 	PrecacheResource( "model", "models/monkey", context )
 	
@@ -1010,13 +1011,13 @@ local hero = casterUnit
 							hero:SetGold(0, false)
 							print ( '[BAREBONES] player was phantom_lancer and got 750')
 						elseif string.match(hero:GetName(),"vengefulspirit") then
-							hero:SetGold(herogold + 500, true)
+							hero:SetGold(herogold + 750, true)
 							hero:SetGold(0, false)
 						elseif string.match(hero:GetName(),"enigma") then
-							hero:SetGold(herogold + 3000, true)
+							hero:SetGold(herogold + 4000, true)
 							hero:SetGold(0, false)
 						elseif string.match(hero:GetName(),"bane") then
-							hero:SetGold(herogold + 5000, true)
+							hero:SetGold(herogold + 7000, true)
 							hero:SetGold(0, false)
 							
 					end
@@ -1084,12 +1085,12 @@ function CBattleship8D:OnThink()
 		end
 		
 		if THINK_TICKS == 30 then	
-		 Notifications:TopToAll({text="#bs_HowToWin", duration=6.0, style={color="#58ACFA",  fontSize="18px;"}})
+		 Notifications:TopToAll({text="#bs_HowToWin", duration=10.0, style={color="#58ACFA",  fontSize="25px;"}})
 
 		end
 		
 			if THINK_TICKS == 1320 then	
-				Notifications:TopToAll({text="#spys_reminder", duration=6.0, style={color="#CC33FF",  fontSize="25px;"}})
+				Notifications:TopToAll({text="#spys_reminder", duration=8.0, style={color="#CC33FF",  fontSize="25px;"}})
 				local Data = {
 					player_id =0,
 					x 	= -3328,
@@ -1497,15 +1498,38 @@ function CBattleship8D:OnConnectFull(keys)
   PrintTable(keys)
 
 		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-			if hero ~= nil then
+			
+			
+			
+			
 				local id = hero:GetPlayerOwnerID()
 				print("this hero's id" .. tostring(hero:GetPlayerOwnerID()))
 				if id == keys.index then
 					print("this is the DCd hero reconnecting")
+					if hero ~= nil then
+						for itemSlot = 0, 5, 1 do 
+							if hero ~= nil then
+								local Item = hero:GetItemInSlot( itemSlot )
+								if Item ~= nil then
+									if string.match(Item:GetName(),"contract") then
+										hero:RemoveItem(Item)
+										local allyteamnumber=hero:GetPlayerID()
+										local data =
+										{
+											Player_ID = hero:GetPlayerID();
+											Ally_ID = allyteamnumber;
+										}
+										FireGameEvent("Team_Can_Buy",data)
+										EmitSoundOnClient("ui.npe_objective_complete",PlayerResource:GetPlayer(hero:GetPlayerID()))
+									end
+								end
+							end
+						end
+					end
+					
 					isDisconnected[hero] = 0
 					DisconnectTime[hero] = 0
 				end
-			end
 		end
 end
 
@@ -1590,11 +1614,11 @@ function CBattleship8D:OnEntityKilled( keys )
 					GameRules:SetSafeToLeave( true )
 				elseif string.match(killedUnit:GetUnitName(), "left") then
 					DOCK_SOUTH_LEFT = 0
-					Notifications:TopToAll({text="#left_north_harbor_died", duration=5.0, style={color="#B2B2B2",  fontSize="18px;"}})
+					Notifications:TopToAll({text="#left_south_harbor_died", duration=5.0, style={color="#FF6600",  fontSize="50px;"}})
 			
 				elseif string.match(killedUnit:GetUnitName(), "right") then
 					DOCK_SOUTH_RIGHT = 0
-					Notifications:TopToAll({text="#right_south_harbor_died", duration=5.0, style={color="#B2B2B2",  fontSize="18px;"}})
+					Notifications:TopToAll({text="#right_south_harbor_died", duration=5.0, style={color="#FF6600",  fontSize="50px;"}})
 			
 				end
 				
@@ -2869,11 +2893,11 @@ function HandleShopChecks(hero)
 				local Item = hero:GetItemInSlot( itemSlot )
 				if Item ~= nil  and string.match(Item:GetName(),"contract_empty") and ShopDist:Length()<600 then	
 							hero:RemoveItem(Item)
-							hero:SetGold(hero:GetGold()+100*EMP_GOLD_NUMBER/2,true)
+							hero:SetGold(hero:GetGold()+300*EMP_GOLD_NUMBER/4,true)
 							hero:SetGold(0,false)
 							hero:AddExperience(200,0,false,true)
-							Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={ color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-							Notifications:Top(hero:GetPlayerID(),{text=100*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+							Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=4.0, style={ color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
+							Notifications:Top(hero:GetPlayerID(),{text=100*EMP_GOLD_NUMBER/2, duration=4.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 
 				end		
 			end
@@ -2902,13 +2926,13 @@ function HandleShopChecks(hero)
 						local itemStrippedHard=string.gsub(Item:GetName(),"item_contract_hard","")
 						if  string.match(nearestShop:GetUnitName(),itemStrippedEasy) then
 							hero:RemoveItem(Item)
-							hero:SetGold(hero:GetGold()+130*EMP_GOLD_NUMBER/2,true)
+							hero:SetGold(hero:GetGold()+300*EMP_GOLD_NUMBER/4,true)
 							hero:SetGold(0,false)
 							hero:AddExperience(xp_to_level[hero:GetLevel()]*.33,0,false,true)
 							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 160*EMP_GOLD_NUMBER/3
+								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 300*EMP_GOLD_NUMBER/4
 							elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 160*EMP_GOLD_NUMBER/3
+								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 300*EMP_GOLD_NUMBER/4
 							end
 						
 							local allyteamnumber=hero:GetPlayerID()
@@ -2924,31 +2948,31 @@ function HandleShopChecks(hero)
 								if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
 									local herogold = otherHero:GetGold()
 									if otherHero:GetTeamNumber() == hero:GetTeam()  and otherHero~=hero then
-										otherHero:SetGold(herogold + 16*EMP_GOLD_NUMBER/2, true)
+										otherHero:SetGold(herogold + 46*EMP_GOLD_NUMBER/4, true)
 										otherHero:SetGold(0, false)
 										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 16*EMP_GOLD_NUMBER/3
+											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 46*EMP_GOLD_NUMBER/4
 										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 16*EMP_GOLD_NUMBER/3
+											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 46*EMP_GOLD_NUMBER/4
 										end
 									end
 								end
 							end
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(), {text=130*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(), {text=300*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(), {text=16*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(), {text=46*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 						elseif string.match(nearestShop:GetUnitName(),itemStrippedMedium) then
 							hero:RemoveItem(Item)
-							hero:SetGold(hero:GetGold()+300*EMP_GOLD_NUMBER/2,true)
+							hero:SetGold(hero:GetGold()+600*EMP_GOLD_NUMBER/4,true)
 							hero:SetGold(0,false)
 								print("hero level: " .. hero:GetLevel())
 								print("nect level: " .. xp_to_level[hero:GetLevel()])
 							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 350*EMP_GOLD_NUMBER/3
+								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 600*EMP_GOLD_NUMBER/4
 							elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 350*EMP_GOLD_NUMBER/3
+								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 600*EMP_GOLD_NUMBER/4
 							end
 							
 							hero:AddExperience(xp_to_level[hero:GetLevel()]*.33,0,false,true)
@@ -2956,12 +2980,12 @@ function HandleShopChecks(hero)
 								if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
 									local herogold = otherHero:GetGold()
 									if otherHero:GetTeamNumber() == hero:GetTeam()  and otherHero~=hero then
-										otherHero:SetGold(herogold + 26*EMP_GOLD_NUMBER/2, true)
+										otherHero:SetGold(herogold + 76*EMP_GOLD_NUMBER/4, true)
 										otherHero:SetGold(0, false)
 										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 26*EMP_GOLD_NUMBER/3
+											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 76*EMP_GOLD_NUMBER/4
 										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 26*EMP_GOLD_NUMBER/3
+											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 76*EMP_GOLD_NUMBER/4
 										end
 									end
 								end
@@ -2977,19 +3001,19 @@ function HandleShopChecks(hero)
 							FireGameEvent("Team_Can_Buy",data)
 							EmitSoundOnClient("ui.npe_objective_complete",PlayerResource:GetPlayer(hero:GetPlayerID()))
 							Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(),{text=300*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(),{text=600*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(),{text=26*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(),{text=76*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 						elseif string.match(nearestShop:GetUnitName(),itemStrippedHard) then
 							hero:RemoveItem(Item)
-							hero:SetGold(hero:GetGold()+500*EMP_GOLD_NUMBER/2,true)
+							hero:SetGold(hero:GetGold()+1000*EMP_GOLD_NUMBER/4,true)
 							hero:SetGold(0,false)
 							hero:AddExperience(xp_to_level[hero:GetLevel()]*.33,0,false,true)
 							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 500*EMP_GOLD_NUMBER/3
+								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 1000*EMP_GOLD_NUMBER/4
 							elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 500*EMP_GOLD_NUMBER/3
+								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 1000*EMP_GOLD_NUMBER/4
 							end
 						
 							local allyteamnumber=hero:GetPlayerID()
@@ -2997,12 +3021,12 @@ function HandleShopChecks(hero)
 								if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
 									local herogold = otherHero:GetGold()
 									if otherHero:GetTeamNumber() == hero:GetTeam()  and otherHero~=hero then
-										otherHero:SetGold(herogold + 36*EMP_GOLD_NUMBER/3, true)
+										otherHero:SetGold(herogold + 100*EMP_GOLD_NUMBER/4, true)
 										otherHero:SetGold(0, false)
 										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 36*EMP_GOLD_NUMBER/3
+											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 100*EMP_GOLD_NUMBER/4
 										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 36*EMP_GOLD_NUMBER/3
+											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 100*EMP_GOLD_NUMBER/4
 										end
 									end
 								end
@@ -3015,9 +3039,9 @@ function HandleShopChecks(hero)
 							FireGameEvent("Team_Can_Buy",data)
 							EmitSoundOnClient("ui.npe_objective_complete",PlayerResource:GetPlayer(hero:GetPlayerID()))
 						 Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-						 Notifications:Top(hero:GetPlayerID(),{text=500*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+						 Notifications:Top(hero:GetPlayerID(),{text=750*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(),{text=35*EMP_GOLD_NUMBER/2, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(),{text=100*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 							end
 					end
