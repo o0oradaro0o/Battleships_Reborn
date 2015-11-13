@@ -933,7 +933,6 @@ function OnRightButtonPressed()
 	{
 		for ( var e of accurateEntities )
 		{
-			$.Msg("ACCURATE ENTITY")
 			if ( Entities.IsDisarmed( e.entityIndex ) )
 			{
 				//$.Msg("INVULNERABLE UNIT CLICKED")
