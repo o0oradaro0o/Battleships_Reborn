@@ -35,21 +35,98 @@ end
 
 -------------------------------------
 
-function customSchema:submitRound(args)
-    winners = BuildRoundWinnerArray()
-    game = BuildGameArray()
-    players = BuildPlayersArray()
+-- In the statcollection/lib/utilities.lua, you'll find many useful functions to build your schema.
+-- You are also encouraged to call your custom mod-specific functions
 
-    statCollection:sendCustom({game=game, players=players})
+-- Returns a table with our custom game tracking.
+function BuildGameArray()
+    local game = {}
 
-    return {winners = winners, lastRound = false}
+    -- Add game values here as game.someValue = GetSomeGameValue()
+    game.eh=storage:GetEmpGoldHist()		-- Team advantage history
+    game.wn=storage:getWinner()			-- Team winner
+    --game.th=storage:GetTideKillers()
+
+    return game
+end
+
+-- Returns a table containing data for every player in the game
+function BuildPlayersArray()
+    local players = {}
+    for playerID = 0, DOTA_MAX_PLAYERS do
+        if PlayerResource:IsValidPlayerID(playerID) then
+            if not PlayerResource:IsBroadcaster(playerID) then
+
+                local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+                
+                local teamname="North"
+                if hero:GetTeamNumber()==DOTA_TEAM_GOODGUYS then
+                	teamname="South"
+                end
+                
+                local kickStatus="Active"
+                if storage:GetDisconnectState(playerID)~=0 then
+                	kickStatus="Kicked"
+                end
+
+                table.insert(players, {
+                    -- steamID32 required in here
+                    steamID32 = PlayerResource:GetSteamAccountID(playerID),
+
+                    -- Example functions for generic stats are defined in statcollection/lib/utilities.lua
+                    -- Add player values here as someValue = GetSomePlayerValue(),
+                    tm=teamname,
+                    shp = storage:GetHeroName(playerID), 	--Hero by its short name
+                    kls  = hero:GetKills(),   			--Player Kills
+                    dth  = hero:GetDeaths(),  			--Player Deaths
+                    lvl = hero:GetLevel(),			--Player Levels
+                    afk = kickStatus,				--Custom Player status
+                    
+                    -- Item List
+                    bo=storage:GetPlayerHist(playerID)
+                })
+            end
+        end
+    end
+
+    return players
+end
+
+-- Prints the custom schema, required to get an schemaID
+function PrintSchema( gameArray, playerArray )
+    print("-------- GAME DATA --------")
+    DeepPrintTable(gameArray)
+    print("\n-------- PLAYER DATA --------")
+    DeepPrintTable(playerArray)
+    print("-------------------------------------")
+end
+
+-- Write 'test_schema' on the console to test your current functions instead of having to end the game
+if Convars:GetBool('developer') then
+    Convars:RegisterCommand("test_schema", function() PrintSchema(BuildGameArray(),BuildPlayersArray()) end, "Test the custom schema arrays", 0)
 end
 
 -------------------------------------
 
+-- If your gamemode is round-based, you can use statCollection:submitRound(bLastRound) at any point of your main game logic code to send a round
+-- If you intend to send rounds, make sure your settings.kv has the 'HAS_ROUNDS' set to true. Each round will send the game and player arrays defined earlier
+-- The round number is incremented internally, lastRound can be marked to notify that the game ended properly
+function customSchema:submitRound(isLastRound)
+
+    local winners = BuildRoundWinnerArray()
+    local game = BuildGameArray()
+    local players = BuildPlayersArray()
+
+    statCollection:sendCustom({game=game, players=players})
+
+    isLastRound = isLastRound or false --If the function is passed with no parameter, default to false.
+    return {winners = winners, lastRound = isLastRound}
+end
+
+-- A list of players marking who won this round
 function BuildRoundWinnerArray()
     local winners = {}
-    local current_winner_team = GameRules.Winner or 0
+    local current_winner_team = GameRules.Winner or 0 --You'll need to provide your own way of determining which team won the round
     for playerID = 0, DOTA_MAX_PLAYERS do
         if PlayerResource:IsValidPlayerID(playerID) then
             if not PlayerResource:IsBroadcaster(playerID) then
@@ -60,128 +137,4 @@ function BuildRoundWinnerArray()
     return winners
 end
 
--- Returns a table with our custom game tracking.
-function BuildGameArray()
-	
-    local game = {}
-	game.eh=storage:GetEmpGoldHist()
-	game.wn=storage:getWinner()
-	--game.th=storage:GetTideKillers()
-    return game
-end
--- Returns a table containing data for every player in the game
-function BuildPlayersArray()
-    local players = {}
-    for playerID = 0, DOTA_MAX_PLAYERS do
-        if PlayerResource:IsValidPlayerID(playerID) then
-            if not PlayerResource:IsBroadcaster(playerID) then
-
-                local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-				
-				local teamname="North"
-				if hero:GetTeamNumber()==DOTA_TEAM_GOODGUYS then
-					teamname="South"
-				end
-				
-				local kickStatus="Active"
-				if storage:GetDisconnectState(playerID)~=0 then
-					kickStatus="Kicked"
-				end
-				
-                table.insert(players, {
-                    --steamID32 required in here
-                    steamID32 = PlayerResource:GetSteamAccountID(playerID),
-					tm=teamname,
-                    -- Example functions of generic stats (keep, delete or change any that you don't need)
-                    shp = storage:GetHeroName(playerID), --Hero by its short name
-                    kls  = hero:GetKills(),   --Number of kills of this players hero
-                    dth  = hero:GetDeaths(),  --Number of deaths of this players hero
-					 lvl = hero:GetLevel(),
-					afk = kickStatus,
-                    -- Item List
-                    bo=storage:GetPlayerHist(playerID),
-                })
-            end
-        end
-    end
-	DeepPrintTable(players) 
-    return players
-end
-
 -------------------------------------
---          Stat Functions         --
--------------------------------------
-
-function PrintSchema( gameArray, playerArray )
-    print("-------- GAME DATA --------")
-    DeepPrintTable(gameArray)
-    print("\n-------- PLAYER DATA --------")
-    DeepPrintTable(playerArray)
-    print("-------------------------------------")
-end
-
-function GetRoshanKills()
-    local total_rosh_kills = 0
-    for playerID = 0, DOTA_MAX_PLAYERS do
-        if PlayerResource:IsValidPlayerID(playerID) then
-            local roshan_kills_player =  PlayerResource:GetRoshanKills(playerID)
-            total_rosh_kills = total_rosh_kills + roshan_kills_player
-        end
-    end
-end
-
-function GetHeroName( playerID )
-    local heroName = GetSelectedHeroName( playerID )
-    heroName = string.gsub(heroName,"npc_dota_hero_","") --Cuts the npc_dota_hero_ prefix
-    return heroName
-end
-
-function GetNetworth( hero )
-    local gold = hero:GetGold()
-
-    -- Iterate over item slots adding up its gold cost
-    for i=0,15 do
-        local item = hero:GetItemInSlot(i)
-        if item then
-            gold = gold + item:GetCost()
-        end
-    end
-end
-
-function GetItemName(hero, slot)
-    local item = hero:GetItemInSlot(slot)
-    if item then
-        local itemName = item:GetAbilityName()
-        itemName = string.gsub(itemName,"item_","") --Cuts the item_ prefix
-        return itemName
-    else
-        return ""
-    end
-end
-
---NOTE THAT THIS FUNCTION RELIES ON YOUR npc_items_custom.txt
---having "ID" properly set to unique values (within your mod)
-function GetItemList(hero)
-    --Create a table of items for the hero
-    --Order that table to remove the impact of slot order
-    --Concatonate the table into a single string
-    local item
-    local itemID
-    local itemTable = {}
-    local itemList
-
-    for i=0,5 do
-        item = hero:GetItemInSlot(i)
-        if item then
-            itemID = item:GetAbilityIndex()
-            if itemID then
-                table.insert(itemTable,itemID)
-            end
-        end
-    end
-
-    table.sort(itemTable)
-    itemList = table.concat(itemTable, "_")
-
-    return itemList
-end
