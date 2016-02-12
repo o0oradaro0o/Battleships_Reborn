@@ -1096,30 +1096,29 @@
 	//=================================================================================================================
 	"sniper_shrapnel_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"FightRecapLevel"				"1"
-		
+
 		"BaseClass" 					"sniper_shrapnel"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1400"
+		"AbilityCastRange"				"1800"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30.0 25.0 20.0 15.0"
+		"AbilityCooldown"				"0"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"70 90 120 140"
+		"AbilityDamage"					"50 60 70 80"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0 0 0 0"
+		"AbilityManaCost"				"0"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1137,27 +1136,37 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"400"
+				"radius"				"450"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"building_damage"		"4 8 12 16"
+				"building_damage"		"0"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0"
+				"duration"				"10.0"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_delay"			"0.8 0.8 0.8 0.8"
+				"damage_delay"			"1.2"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"slow_duration"			"2.0 2.0 2.0 2.0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_charges"			"3"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"charge_restore_time"	"30 25 20"
 			}
 		}
 	}

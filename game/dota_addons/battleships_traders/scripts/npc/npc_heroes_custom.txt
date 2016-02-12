@@ -76,6 +76,76 @@
 		"BountyGoldMin"				"150"		// Gold earned min.
 		"BountyGoldMax"				"151"		// Gold earned max.
 	}
+	  "npc_dota_hero_abaddon_battleship8d" 
+    {
+
+        "override_hero"             "npc_dota_hero_abaddon"          // Hero to override
+	
+       "Model" "models/barrel_boat.vmdl"    // Model.
+        "SoundSet"          "Hero_Kunkka"  	
+		//"VoiceFile"			"scripts/voscripts/game_sounds_vo_kunkka.txt"		// Name of sound set.
+		
+		
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		
+	    "AttributeBaseStrength"     "1"                                     // Base strength
+		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
+		"AttributeBaseIntelligence" "1"                                     // Base intelligence
+		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
+		"AttributeBaseAgility"      "1"                                     // Base agility
+		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
+		
+		"MovementSpeed"				"225"									// Speed.
+		"MovementTurnRate"			"0.7"									// Turning rate.
+		
+		"StatusHealth"				"300"		// Base health.
+		"StatusHealthRegen"			"1.0"		// Health regeneration rate.
+		
+		"ArmorPhysical"				"0"
+		"MagicalResistance"				"0"
+		
+		"AbilityLayout"				"3"
+		"Ability1"					"pistols_battleship"
+		"Ability2"					"bail_water"
+		"Ability3"					"tighten_hoop"
+		"Ability4"					"go_home_battleship"
+        "ModelScale"        ".001"
+		"RingRadius"				"100"
+		"AttachWearables"
+		{
+			"Wearable1"
+			{
+				"ItemDef" "0"
+			}
+			"Wearable2"
+			{
+				"ItemDef" "0"
+			}
+			"Wearable3"
+			{
+				"ItemDef" "0"
+			}
+			"Wearable4"
+			{
+				"ItemDef" "0"
+			}
+			"Wearable5"
+			{
+				"ItemDef" "0"
+			}
+		}
+	"RenderablePortrait"
+	{
+		"Particles"
+		{
+		}
+	}
+		
+		"ItemSlots" {}
+		
+		"BountyGoldMin"				"150"		// Gold earned min.
+		"BountyGoldMax"				"151"		// Gold earned max.
+	}
 	
 	//=================================================================================================================
     // HERO: zodiac_boat ship
@@ -111,7 +181,7 @@
 		"AbilityLayout"				"3"
 		"Ability1"					"pistols_battleship"
 		"Ability2"					"dive_battleship"
-		"Ability3"					"panic_battleship"
+		"Ability3"					"ramming_speed_battleship"
 		"Ability4"					"batten_hatches"
         "ModelScale"        "0.6"
 		"RingRadius"				"100"
@@ -570,7 +640,7 @@
 		"MovementSpeed"				"330"									// Speed.
 		"MovementTurnRate"			"0.5"									// Turning rate.
 		
-		"StatusHealth"				"2400"		// Base health.
+		"StatusHealth"				"2550"		// Base health.
 		"StatusHealthRegen"			"14.0"		// Health regeneration rate.
 		
 		"ArmorPhysical"				"0"
@@ -963,8 +1033,8 @@
 		"MovementSpeed"				"350"									// Speed.
 		"MovementTurnRate"			"0.5"									// Turning rate.
 		
-		"StatusHealth"				"4800"		// Base health.
-		"StatusHealthRegen"			"60.0"		// Health regeneration rate.
+		"StatusHealth"				"5000"		// Base health.
+		"StatusHealthRegen"			"70.0"		// Health regeneration rate.
 		
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"

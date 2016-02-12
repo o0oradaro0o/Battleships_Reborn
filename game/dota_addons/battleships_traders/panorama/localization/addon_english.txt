@@ -233,7 +233,9 @@
 	"kill_self_one"	"Do not kill yourself oponants awareded "
 	"kill_self_two"	"to be distributed with empire gold. "
 	
-	
+	//co-op mode
+	"co_op_one"	"Only one team detected activating Co-Op Mode."
+	"co_op_two"	"Destroy the enemy base before you asre overrun. "
 
 "pistols_battleship"							"Pistols"
 "pistols_battleship_Description"				"Your crew fires pistols rapidly at random nearby targets. \n\nHigher levels increase damage
@@ -268,6 +270,13 @@ HEALTH REGEN: 6.0 8.0 10.0"
 "panic_battleship"							"Panic!"
 "panic_battleship_Description"				"Your panic drives you.  Gain move speed for every 10 percent of your health you are missing.\n Higher levels increase move speed bonus range.
 BONUS SPEED: 20 25 30 35"
+
+"ramming_speed_battleship"								"Reckless Speed!"
+"ramming_speed_battleship_Description"					"Vastly increases movement speed, but decreases maneuverability. (momentum continues through stuns and holds) \n\nHigher levels increases duration and max speed.
+DURATION: 2.2 2.2 2.2 2.2
+BONUS SPEED BASE: 300.0 350.0 400.5 450.0
+"
+		
 
 "war_drumbs_battleship"									"War Drums"
 "war_drumbs_battleship_Description"						"The Canoe's crew beats their drums in a hypnotic rhythm to increase their rower's speed as well as the speed of the ships around them. \n \nHigher levels decrease cooldown, increase speed bonus, and increase duration.
@@ -632,5 +641,6 @@ DURATION: 2.5 3.0 3.5 4.0"
 		"mission_done_team" "You earned each of your teammates "
 		"mission_empty" "Found Goods.  Take them to any trade post for reward!"
 
+		
 }
 

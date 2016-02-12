@@ -163,9 +163,9 @@
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/dive_battleship_puck.png" />
                        <Label hittest="false" class="ability_name" text="#dive_battleship"/>"
 					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('ancient_apparition','panic_battleship')" >
+					<Panel hittest="false" class="ability" onmouseover="showText('ancient_apparition','ramming_speed_battleship')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/ramming_speed_battleship.png" />
-                       <Label hittest="false" class="ability_name" text="#panic_battleship"/>"
+                       <Label hittest="false" class="ability_name" text="#ramming_speed_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('ancient_apparition','batten_hatches')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/hatches.png" />
@@ -610,7 +610,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="2400" />
+							<Label hittest="false" class="boat_stat_label_val" text="2550" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
@@ -1012,7 +1012,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="4800" />
+							<Label hittest="false" class="boat_stat_label_val" text="5000" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
@@ -1020,7 +1020,7 @@
 					</Panel>
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#regen" />
-							<Label hittest="false" class="boat_stat_label_val" text="60" />
+							<Label hittest="false" class="boat_stat_label_val" text="70" />
 					</Panel>
 				</Panel>	
 			</Panel>	
