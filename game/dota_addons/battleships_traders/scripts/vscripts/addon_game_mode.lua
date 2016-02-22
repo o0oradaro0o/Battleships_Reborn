@@ -1142,21 +1142,33 @@ print(co_op_hero_count .. "   out of a possable " .. math.sqrt(co_op_diff_level)
 											local abil4 = hero:GetAbilityByIndex(3)
 											
 											if abil:IsFullyCastable() then
-												 hero:CastAbilityOnPosition(nearbyHero[RandomInt(1,#nearbyHero)]:GetOrigin(), abil, 0)	
-												hero:CastAbilityOnTarget(nearbyHero[RandomInt(1,#nearbyHero)], abil, 0)
-												abil:CastAbility()
+												if THINK_TICKS%2==0 then
+													hero:CastAbilityOnPosition(nearbyHero[RandomInt(1,#nearbyHero)]:GetOrigin(), abil, -1)	
+												else
+													hero:CastAbilityOnTarget(nearbyHero[RandomInt(1,#nearbyHero)], abil, -1)
+												end
+												--abil:CastAbility()
 											elseif abil2:IsFullyCastable() then
-											hero:CastAbilityOnPosition(nearbyHero[RandomInt(1,#nearbyHero)]:GetOrigin(), abil2, 0)	
-												hero:CastAbilityOnTarget(nearbyHero[RandomInt(1,#nearbyHero)], abil2, 0)
-												abil2:CastAbility()
+												if THINK_TICKS%2==0 then
+													hero:CastAbilityOnPosition(nearbyHero[RandomInt(1,#nearbyHero)]:GetOrigin(), abil2, -1)	
+												else
+													hero:CastAbilityOnTarget(nearbyHero[RandomInt(1,#nearbyHero)], abil2, -1)
+												end
+												--abil2:CastAbility()
 											elseif abil3:IsFullyCastable() then
-												hero:CastAbilityOnPosition(nearbyHero[RandomInt(1,#nearbyHero)]:GetOrigin(), abil3, 0)	
-												hero:CastAbilityOnTarget(nearbyHero[RandomInt(1,#nearbyHero)], abil3, 0)
-												abil3:CastAbility()
+												if THINK_TICKS%2==0 then
+													hero:CastAbilityOnPosition(nearbyHero[RandomInt(1,#nearbyHero)]:GetOrigin(), abil3, -1)	
+												else
+													hero:CastAbilityOnTarget(nearbyHero[RandomInt(1,#nearbyHero)], abil3, -1)
+												end
+												--abil3:CastAbility()
 											elseif abil4 ~= nil and abil4:IsFullyCastable() then
-												hero:CastAbilityOnPosition(nearbyHero[RandomInt(1,#nearbyHero)]:GetOrigin(), abil4, 0)	
-												hero:CastAbilityOnTarget(nearbyHero[RandomInt(1,#nearbyHero)], abil4, 0)
-												abil4:CastAbility()
+												if THINK_TICKS%2==0 then
+													hero:CastAbilityOnPosition(nearbyHero[RandomInt(1,#nearbyHero)]:GetOrigin(), abil4, -1)	
+												else
+													hero:CastAbilityOnTarget(nearbyHero[RandomInt(1,#nearbyHero)], abil4, -1)
+												end
+												--abil4:CastAbility()
 											else
 												hero:MoveToPosition(nearby[RandomInt(1,#nearby)]:GetOrigin())
 											end
@@ -1192,13 +1204,7 @@ print(co_op_hero_count .. "   out of a possable " .. math.sqrt(co_op_diff_level)
 			
 		 creature = CreateUnitByName( co_op_unit_pool[unitSpawned] ,spawnPos , true, nil, nil, DOTA_TEAM_BADGUYS )
 		
-				local Data = {
-					player_id =0,
-					x 	= 	(creature:GetOrigin() * Vector(1,0,0)):Length(),
-					y  = 	(creature:GetOrigin() * Vector(0,1,0)):Length(),
-					z  = 0
-				}
-				FireGameEvent( "ping_loc", Data ); 
+				
 		if creature:HasInventory() then
 			co_op_hero_count=co_op_hero_count+1
 			local num_items=RandomInt(1,6)

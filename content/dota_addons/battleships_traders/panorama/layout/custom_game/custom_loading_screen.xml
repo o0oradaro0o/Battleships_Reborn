@@ -12,14 +12,24 @@
 			<Label id="BattleshipsTitle" text="#addon_game_name" style="" />
 		</Panel>
 
-		<Panel id="AuthorPanel">
-			<Label class="AuthorTitle" text="Presented By: radar, WeAreAllBritons, Frood, Multiplex, and zentrix" />
-		</Panel>
-		<Panel id="ArtistPanel">
-				<Label class="AuthorTitle" text="Original Artwork By: Taterfish" />
-		</Panel>
-		<Panel id="HeroPanel">
-				<Label class="heroTitle" text="IRC heroes: Noya, BMD, Myll, Hewdraw, Sidearms, Wigguno, Jimmydorry, Crazyloon, and SinZ \n\nAlso, check out Dota2Bships.com for more info" />
+		<Panel id="AuthorPanelHolder">
+			<Panel id="AuthorPanel">
+				<Label class="AuthorTitle" text="Presented By: radar, WeAreAllBritons, Frood, Multiplex, and zentrix" />
+			</Panel>
+			
+			<Panel id="ArtistPanel">
+					<Label class="AuthorTitle" text="Original Artwork By: Taterfish" />
+			</Panel>
+			<Panel id="HeroPanel">
+					<Label class="heroTitle" text="IRC heroes: Noya, BMD, Myll, Hewdraw, Sidearms, Wigguno, Jimmydorry, Crazyloon, and SinZ \n\nAlso, check out Dota2Bships.com for more info" />
+			</Panel>
+	</Panel>
+		
+		<Panel id="CoOpHolder">
+			<Panel id="CoOp">
+				<Label class="AuthorTitle" text="New Survival mode!" />
+				<Label class="heroTitle" text="If all players join the south alliance it will activate co-op mode. A survival challenge. (Still a work in progress)" />
+			</Panel>
 		</Panel>
 
 	</Panel>
