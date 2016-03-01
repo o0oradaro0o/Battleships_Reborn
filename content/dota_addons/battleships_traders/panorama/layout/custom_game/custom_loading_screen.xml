@@ -27,8 +27,8 @@
 		
 		<Panel id="CoOpHolder">
 			<Panel id="CoOp">
-				<Label class="AuthorTitle" text="New Survival mode!" />
-				<Label class="heroTitle" text="If all players join the south alliance it will activate co-op mode. A survival challenge. (Still a work in progress)" />
+				<Label class="AuthorTitle" text="Survival mode!" />
+				<Label class="heroTitle" text="If all players join the south alliance it will activate co-op survival mode. A survival challenge against waves of bots. (Still a work in progress) To play solo without bots, just join the north." />
 			</Panel>
 		</Panel>
 

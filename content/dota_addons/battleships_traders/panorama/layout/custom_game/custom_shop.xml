@@ -73,9 +73,30 @@
 		</Button>
 	</Panel>
 	
+	<Panel hittest="false" class="coOpVoteBorder" id="coOpVoteBox">
+		<Button class="coOpHolder">
+		<Label hittest="false" class="boat_title" text="#co_op_diff" />
+				<Panel hittest="false" class="diff_box" >
+				<Button class="diff_button" onactivate="diffCoOp(0)" oncontextmenu="diffBoat('ancient_apparition', 1000)">
+					<Label hittest="false" class="diff_text_easy" text="#co_op_easy" />
+				</Button>
+			</Panel>
+			<Panel hittest="false" class="diff_box" >
+				<Button class="diff_button" onactivate="diffCoOp(1)" oncontextmenu="diffBoat('ancient_apparition', 1000)">
+					<Label hittest="false" class="diff_text" text="#co_op_middle" />
+				</Button>
+			</Panel>
+			<Panel hittest="false" class="diff_box" >
+				<Button class="diff_button" onactivate="diffCoOp(2)" oncontextmenu="diffBoat('ancient_apparition', 1000)">
+					<Label hittest="false" class="diff_text_hard" text="#co_op_hard" />
+				</Button>
+			</Panel>
+		</Button>
+	</Panel>
 	
 
 
+	
 	
     <Panel hittest="false" class="BarebonesTopNotifications">
       <Panel hittest="false" id="TopNotifications">

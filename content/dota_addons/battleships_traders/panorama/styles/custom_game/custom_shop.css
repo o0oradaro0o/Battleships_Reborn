@@ -315,6 +315,33 @@ margin-top:90px;
 	 z-index:8;
 	 border-radius: 4px;
 }
+
+#coOpVoteBox
+{
+	visibility: collapse;
+	horizontal-align: center;
+	vertical-align: top;
+	width: 500px;
+	height: 300px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #908585 ), color-stop( 0.25, #62696e ), color-stop( 0.5, #AA9595 ), color-stop( 0.75, #62696e ), to( #908585 ) );
+margin-top:300px;
+
+	 z-index:8;
+	 border-radius: 10px;
+}
+.coOpHolder
+{
+	margin-left:4px;
+	margin-top:4px;
+	width: 492px;
+	height: 292px;
+	flow-children: down;
+	border: 0px solid black;
+    background-color: gradient( linear, 0% 50%, 0% 100%, from( #42494e ), to( #252525 ) );
+	border-radius: 10px;
+}
+
+
 .timerLabel
 {
 
@@ -1219,6 +1246,88 @@ border-radius: 10px;
 	width: 100px;
 		border: 3px solid green;
 }
+
+.diff_text
+{
+	 font-weight: bold;
+	height: 40px;
+
+    font-size: 24px;
+    color: white;	
+	text-shadow: 2px 2px 2px #000000;
+	color: gradient( linear, 0% 0%, 0% 100%, from( #c88423 ), color-stop( 0.25, #c88423 ), color-stop( 0.5, #fffb84 ), color-stop( 0.75, #c88423 ), to( #9a6717 ) );
+	
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+		margin-left: 20px;
+		
+	}
+	.diff_text_easy
+{
+	  font-weight: bold;
+	height: 40px;
+
+    font-size: 24px;
+    color: white;	
+	text-shadow: 2px 2px 2px #000000;
+	color: gradient( linear, 0% 0%, 0% 100%, from( #c8ff23 ), color-stop( 0.25, #c8ff23 ), color-stop( 0.5, #44fb84 ), color-stop( 0.75, #c8ff23 ), to( #9aff17 ) );
+
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+		
+	}
+		.diff_text_hard
+{
+	  font-weight: bold;
+	height: 40px;
+
+    font-size: 24px;
+    color: white;	
+	text-shadow: 2px 2px 2px #000000;
+	color: gradient( linear, 0% 0%, 0% 100%, from( #ff6023 ), color-stop( 0.25, #ff6023 ), color-stop( 0.5, #ff5084 ), color-stop( 0.75, #ff3333 ), to( #ff2017 ) );
+
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+		
+	}
+	
+	.diff_button
+{
+		flow-children: right;
+	height: 40px;
+	width: 380px;
+	horizontal-align: center;
+	vertical-align: top;
+}
+.diff_box
+{
+	vertical-align: top;
+	border-radius: 10px;
+		horizontal-align: center;
+	height: 40px;
+	width: 400px;
+	margin: 20px;
+		border: 3px solid grey;
+		background-color: gradient( linear, 0% 50%, 0% 100%, from( #525943ff ), to( #303025 ) );
+	
+}
+
+.diff_box:hover
+{
+	vertical-align: top;
+	border-radius: 10px;
+		horizontal-align: center;
+	height: 40px;
+	width: 400px;
+	margin: 20px;
+		border: 3px solid grey;
+	background-color: gradient( linear, 0% 50%, 0% 100%, from( #62695eff ), to( #353525ff ) );
+}
+
+
 
 .buy_text
 {

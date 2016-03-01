@@ -4,7 +4,7 @@ require("timers")
 require('physics')
 require('notifications')
 require('storage')
---require('statcollection/init')
+require('statcollection/init')
 
 
 if CBattleship8D == nil then
@@ -55,6 +55,7 @@ EMP_GOLD_NUMBER = 1
 co_op_mode=0
 co_op_hero_count = 0
 co_op_diff_level=1
+co_op_diff_setting=0
 co_op_item_pool={}
 co_op_unit_pool={}
 
@@ -434,6 +435,7 @@ function CBattleship8D:InitGameMode()
 	CustomGameEventManager:RegisterListener("GiveEasy", GiveEasy);
 	CustomGameEventManager:RegisterListener("GiveMedium", GiveMedium);
 	CustomGameEventManager:RegisterListener("buyItem", buyItem);
+	CustomGameEventManager:RegisterListener("DiffSelection", ChooseDiff);
 	CustomGameEventManager:RegisterListener("buyBoat", buyBoat);
 	
 	CustomGameEventManager:RegisterListener("Unstick", UnstickPlayer);
@@ -681,11 +683,7 @@ table.insert(SouthEasyMissions["npc_dota_shop_right_top"], "item_contract_medium
 	table.insert(co_op_item_pool,"item_repair_one")
 	
 	table.insert(co_op_unit_pool,"npc_dota_hero_zuus")
-	table.insert(co_op_unit_pool,"npc_dota_hero_ancient_apparition")
-	table.insert(co_op_unit_pool,"npc_dota_hero_crystal_maiden")
-	table.insert(co_op_unit_pool,"npc_dota_hero_phantom_lancer")
-	table.insert(co_op_unit_pool,"npc_dota_hero_tidehunter")
-	table.insert(co_op_unit_pool,"npc_dota_hero_rattletrap")
+
 
 
 	
@@ -934,7 +932,15 @@ end
 
 function UpdateCoOpTables()
 
-	if co_op_diff_level==10 then
+if co_op_diff_level==5-co_op_diff_setting then
+		table.insert(co_op_unit_pool,"npc_dota_hero_ancient_apparition")
+		table.insert(co_op_unit_pool,"npc_dota_hero_crystal_maiden")
+		table.insert(co_op_unit_pool,"npc_dota_hero_phantom_lancer")
+		table.insert(co_op_unit_pool,"npc_dota_hero_tidehunter")
+		table.insert(co_op_unit_pool,"npc_dota_hero_rattletrap")
+	end
+
+	if co_op_diff_level==10-co_op_diff_setting*2 then
 		table.insert(co_op_item_pool,"item_coal_bow_doubled")
 		table.insert(co_op_item_pool,"item_fire_bow_doubled")
 		table.insert(co_op_item_pool,"item_plasma_bow_doubled")
@@ -944,7 +950,7 @@ function UpdateCoOpTables()
 		table.insert(co_op_item_pool,"item_ice_bow_doubled")
 	end
 
-	if co_op_diff_level==20 then
+	if co_op_diff_level==20-co_op_diff_setting*3 then
 		
 		table.insert(co_op_unit_pool,"npc_dota_hero_disruptor")
 		table.insert(co_op_unit_pool,"npc_dota_hero_morphling")
@@ -965,7 +971,7 @@ function UpdateCoOpTables()
 
 	end
 
-	if co_op_diff_level==30 then
+	if co_op_diff_level==30-co_op_diff_setting*4 then
 		co_op_unit_pool={}
 		table.insert(co_op_unit_pool,"npc_dota_hero_disruptor")
 		table.insert(co_op_unit_pool,"npc_dota_hero_morphling")
@@ -986,8 +992,7 @@ function UpdateCoOpTables()
 
 	end
 
-	if co_op_diff_level==40 then
-		co_op_unit_pool={}
+	if co_op_diff_level==40-co_op_diff_setting*5 then
 		table.insert(co_op_unit_pool,"npc_dota_hero_meepo")
 		table.insert(co_op_unit_pool,"npc_dota_hero_jakiro")
 		table.insert(co_op_unit_pool,"npc_dota_hero_ember_spirit")
@@ -1007,7 +1012,7 @@ function UpdateCoOpTables()
 
 	end
 
-	if co_op_diff_level==50 then
+	if co_op_diff_level==50-co_op_diff_setting*6 then
 		co_op_unit_pool={}
 		table.insert(co_op_unit_pool,"npc_dota_hero_meepo")
 		table.insert(co_op_unit_pool,"npc_dota_hero_jakiro")
@@ -1029,13 +1034,7 @@ function UpdateCoOpTables()
 
 	end
 
-	if co_op_diff_level==60 then
-		co_op_unit_pool={}
-		table.insert(co_op_unit_pool,"npc_dota_hero_meepo")
-		table.insert(co_op_unit_pool,"npc_dota_hero_jakiro")
-		table.insert(co_op_unit_pool,"npc_dota_hero_ember_spirit")
-		table.insert(co_op_unit_pool,"npc_dota_hero_slark")
-		table.insert(co_op_unit_pool,"npc_dota_hero_sniper")
+	if co_op_diff_level==60-co_op_diff_setting*7 then
 		
 		
 		table.insert(co_op_item_pool,"item_coal_three_bow_doubled")
@@ -1051,7 +1050,7 @@ function UpdateCoOpTables()
 
 	end
 
-	if co_op_diff_level==70 then
+	if co_op_diff_level==70-co_op_diff_setting*7 then
 		co_op_unit_pool={}
 		table.insert(co_op_unit_pool,"npc_dota_hero_meepo")
 		table.insert(co_op_unit_pool,"npc_dota_hero_jakiro")
@@ -1073,8 +1072,7 @@ function UpdateCoOpTables()
 
 	end
 
-	if co_op_diff_level>75 and co_op_diff_level%10==0 then
-		co_op_unit_pool={}
+	if co_op_diff_level>75-co_op_diff_setting*7 and co_op_diff_level%10==0 then
 		table.insert(co_op_unit_pool,"npc_dota_hero_visage")
 		table.insert(co_op_unit_pool,"npc_dota_hero_ursa")
 		table.insert(co_op_unit_pool,"npc_dota_hero_tusk")
@@ -1099,14 +1097,14 @@ end
 function HandleCoOp()
 
 
-print(co_op_hero_count .. "   out of a possable " .. math.sqrt(co_op_diff_level)*.5*NUM_GOOD_PLAYERS)
+
 			for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 					if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 						
 						if  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 							local height = hero:GetOrigin() * Vector(0,0,1)
 							print("bad height " .. height:Length())
-							if height:Length() > 110 then
+							if height:Length() > 80 then
 								print("moving wall stuck")
 								hero:SetOrigin(hero:GetOrigin() * Vector(.9,.9,.9))
 							end
@@ -1177,7 +1175,10 @@ print(co_op_hero_count .. "   out of a possable " .. math.sqrt(co_op_diff_level)
 										end
 								end
 								if hero:IsAlive() == false then
-									hero:RemoveSelf()
+									Timers:CreateTimer( 10, function()
+											hero:RemoveSelf()
+									end)
+									
 								end
 							end
 							
@@ -1185,7 +1186,9 @@ print(co_op_hero_count .. "   out of a possable " .. math.sqrt(co_op_diff_level)
 					end
 
 
-	if (co_op_hero_count<math.sqrt(co_op_diff_level)*.5*NUM_GOOD_PLAYERS or co_op_hero_count==0) and co_op_hero_count<25 then
+if (co_op_hero_count<math.sqrt(co_op_diff_level)*.5*NUM_GOOD_PLAYERS+1 or co_op_hero_count==0) and co_op_hero_count<25 and THINK_TICKS%2==0 then
+		print(co_op_hero_count .. "   out of a possable " .. math.sqrt(co_op_diff_level)*.5*NUM_GOOD_PLAYERS+1)
+		print("current diff level is" .. co_op_diff_level)
 		local spawnPicked=0
 		local spawnPos=Vector(0,0,0)
 		local tries=0
@@ -1444,6 +1447,21 @@ function CBattleship8D:OnThink()
 				end
 			if NUM_BAD_PLAYERS==0 then
 				co_op_mode=1
+				local co_op_pid
+				for playerID = 0, DOTA_MAX_PLAYERS do
+					if PlayerResource:IsValidPlayerID(playerID) then
+						local player = PlayerResource:GetPlayer(playerID)
+						if GameRules:PlayerHasCustomGameHostPrivileges(player) then 
+							co_op_pid = playerID
+						end
+					end
+				end  
+				
+				local data =
+				{
+					Player_ID = co_op_pid;
+				}
+				FireGameEvent("co_op_mode",data)
 			end
 			
 		end
@@ -2086,7 +2104,9 @@ function CBattleship8D:OnEntityKilled( keys )
   end
   
 		if co_op_mode and killedUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS and killedUnit:IsRealHero() then
-			co_op_diff_level=co_op_diff_level+1
+			if RandomInt(1,NUM_GOOD_PLAYERS+5)<5 then
+				co_op_diff_level=co_op_diff_level+1
+			end
 			co_op_hero_count=co_op_hero_count-1
 			UpdateCoOpTables()
 		end
@@ -3071,6 +3091,10 @@ function buyBoat(eventSourceIndex, args)
 		EmitSoundOnClient("ui.contract_fail",PlayerResource:GetPlayer(pID)) 
 		end
 	end
+end
+function ChooseDiff(eventSourceIndex, args)
+co_op_diff_setting=args.diff
+print("diff set to " .. args.diff) 
 end
 
 function buyItem(eventSourceIndex, args)

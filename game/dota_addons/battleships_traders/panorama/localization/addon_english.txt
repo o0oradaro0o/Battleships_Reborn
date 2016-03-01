@@ -162,7 +162,7 @@
 	
 	//instructions
 	"Welcome" 	"Welcome to Battleships"
-	"inst_one" 	"Armor Speed and Regen "
+	"inst_one" 	"Armor, Speed, and Regen "
 	"inst_two" 	"are in the "
 	"inst_three"	 "Upgrades"
 	"inst_four"	 	" tab of the main shop in base."
@@ -235,7 +235,12 @@
 	
 	//co-op mode
 	"co_op_one"	"Only one team detected activating Co-Op Mode."
-	"co_op_two"	"Destroy the enemy base before you asre overrun. "
+	"co_op_two"	"Destroy the enemy base before you are overrun. "
+	
+	"co_op_diff"	"Select Survival Diffaculty"
+	"co_op_easy" "Easy "
+	"co_op_middle" "Medium    "
+	"co_op_hard" "I Hate Winning"
 
 "pistols_battleship"							"Pistols"
 "pistols_battleship_Description"				"Your crew fires pistols rapidly at random nearby targets. \n\nHigher levels increase damage

@@ -583,7 +583,8 @@ function FadeShop()
     GameEvents.Subscribe( "Team_Cannot_Buy", CannotBuy );
 	GameEvents.Subscribe( "ping_loc", PingLoc );
 	GameEvents.Subscribe( "bsui_timer_data", OnBsuiTimer );
-
+	
+	GameEvents.Subscribe( "co_op_mode", handleCoOp );
 	
 	GameEvents.Subscribe( "top_notification", TopNotification );
 	GameEvents.Subscribe( "bottom_notification", BottomNotification );
@@ -625,9 +626,29 @@ function FadeShop()
 		if(showMission[Players.GetLocalPlayer()]>-1)
 		{
 			GameEvents.SendCustomGameEventToServer( "buyItem", { "text": itemName, "cost": cost}); 
+			
 		}
-
 	}
+	
+	
+	
+	function diffCoOp(DiffSelection)
+	{
+		
+			GameEvents.SendCustomGameEventToServer( "DiffSelection", { "diff": DiffSelection}); 
+			$("#coOpVoteBox").style.visibility="collapse";
+	}
+	
+	function handleCoOp(data)
+	{
+		$.Msg("handling co op, leader is " +data.Player_ID);
+		if(data.Player_ID==Players.GetLocalPlayer())
+		{
+			$("#coOpVoteBox").style.visibility="visible";
+		}
+		
+	}
+	
 	function NearShipShop(data)
 	{
 	

@@ -30,6 +30,11 @@
     {
     }
 	
+	 "co_op_mode"
+    {
+		"Player_ID"		"short"
+    }
+	
 	"bsui_timer_data" 
 	{
 		"nEmpire"		"long"
