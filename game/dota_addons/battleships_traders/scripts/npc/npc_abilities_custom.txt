@@ -3929,6 +3929,11 @@
 						"Target" "CASTER"
 						"ModifierName" "swimbreak"
 					}
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"stopGunningItAbility"
+					}
 				}
 			}
 			

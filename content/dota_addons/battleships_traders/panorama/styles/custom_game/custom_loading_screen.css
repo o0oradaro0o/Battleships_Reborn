@@ -33,6 +33,8 @@
 	box-shadow: inset black 5px 5px 10px 10px;
 }
 
+
+
 #TitlePanel
 {
 	horizontal-align: left;
@@ -138,6 +140,19 @@
 	color: #cccccc;
 	text-shadow: 2px 2px 2px #000000;
 }
+
+.SpecialTitle
+{
+	horizontal-align: left;
+	vertical-align: top;
+	margin-top: 1030px;
+	margin-left: 100px;
+	flow-children: right;
+	font-size: 20px;
+	color: #cccccc;
+	text-shadow: 2px 2px 2px #000000;
+}
+
 .SeqImg
 {
 	background-repeat: no-repeat;

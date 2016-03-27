@@ -1021,6 +1021,7 @@ if co_op_diff_level==5-co_op_diff_setting then
 		table.insert(co_op_unit_pool,"npc_dota_hero_sniper")
 		
 		
+		
 		table.insert(co_op_item_pool,"item_coal_three_bow")
 		table.insert(co_op_item_pool,"item_fire_three_bow")
 		table.insert(co_op_item_pool,"item_plasma_three_bow")
@@ -1047,6 +1048,9 @@ if co_op_diff_level==5-co_op_diff_setting then
 		table.insert(co_op_item_pool,"item_hull_four")
 		table.insert(co_op_item_pool,"item_sail_four")
 		table.insert(co_op_item_pool,"item_repair_four")
+		if co_op_diff_setting==3 then
+			table.insert(co_op_unit_pool,"npc_dota_hero_spirit_breaker")
+		end
 
 	end
 
@@ -1069,6 +1073,9 @@ if co_op_diff_level==5-co_op_diff_setting then
 		table.insert(co_op_item_pool,"item_hull_four")
 		table.insert(co_op_item_pool,"item_sail_four")
 		table.insert(co_op_item_pool,"item_repair_four")
+		if co_op_diff_setting==3 or co_op_diff_setting==2 then
+			table.insert(co_op_unit_pool,"npc_dota_hero_spirit_breaker")
+		end
 
 	end
 
@@ -1078,8 +1085,14 @@ if co_op_diff_level==5-co_op_diff_setting then
 		table.insert(co_op_unit_pool,"npc_dota_hero_tusk")
 		table.insert(co_op_unit_pool,"npc_dota_hero_windrunner")
 		table.insert(co_op_unit_pool,"npc_dota_hero_pugna")
+		table.insert(co_op_unit_pool,"npc_dota_hero_spirit_breaker")
 		
-		
+		if co_op_diff_setting==3 or co_op_diff_setting==2 then
+			table.insert(co_op_unit_pool,"npc_dota_hero_spirit_breaker")
+		end
+		if co_op_diff_setting==3 then
+			table.insert(co_op_unit_pool,"npc_dota_hero_spirit_breaker")
+		end
 		table.insert(co_op_item_pool,"item_coal_ult_bow")
 		table.insert(co_op_item_pool,"item_fire_ult_bow")
 		table.insert(co_op_item_pool,"item_plasma_ult_bow")
@@ -1092,6 +1105,7 @@ if co_op_diff_level==5-co_op_diff_setting then
 		table.insert(co_op_item_pool,"item_repair_four")
 
 	end
+	
 end
 
 function HandleCoOp()
@@ -1174,7 +1188,7 @@ function HandleCoOp()
 											hero:MoveToPosition(nearby[RandomInt(1,#nearby)]:GetOrigin())
 										end
 								end
-								if hero:IsAlive() == false then
+								if hero~= nil and hero:IsAlive() == false then
 									Timers:CreateTimer( 10, function()
 											hero:RemoveSelf()
 									end)
@@ -1388,14 +1402,13 @@ local hero = casterUnit
 end
 
 function CBattleship8D:OnThink()
-		if THINK_TICKS < 160 then
-			if NUM_PLAYERS == 0 then
-				for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero_a*")) do
-					if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+		if THINK_TICKS < 500 then
+				for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero_abad*")) do
+					if hero ~= nil and hero:IsOwnedByAnyPlayer() and string.match(hero:GetName(),"abaddon") and hero.changed==nil then
+						hero.changed=1
 						NUM_PLAYERS=NUM_PLAYERS+1
 						become_boat(hero, "npc_dota_hero_zuus")
 						RemoveWearables( hero )
-					end
 				end
 			end
 		end
@@ -1465,7 +1478,7 @@ function CBattleship8D:OnThink()
 			end
 			
 		end
-		if THINK_TICKS ==13 then	
+		if THINK_TICKS ==13 and co_op_mode==1 then	
 		 Notifications:TopToAll({text="#co_op_one", duration=6.0, style={color="#07C300",  fontSize="30px;"}})
 		 Notifications:TopToAll({text="#co_op_two", duration=6.0, style={color="#07C300",  fontSize="30px;"}})
 		
@@ -2151,7 +2164,7 @@ function CBattleship8D:OnEntityKilled( keys )
   end
 
   --handle killing a streaker
-	if killerEntity:IsRealHero() and killedUnit:IsOwnedByAnyPlayer() then
+	if killerEntity:IsRealHero() and killedUnit:IsOwnedByAnyPlayer() and co_op_mode==0 then
 	  
 	  if killedUnit:IsRealHero() then 
 	  if herokills[killedUnit:GetPlayerID()] ~= nil and herokills[killedUnit:GetPlayerID()] > 2 then
@@ -2387,7 +2400,7 @@ end
 			local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
 			
 			
-			if directionOne:Length() < 600 or directionTwo:Length() < 600 then
+			if directionOne:Length() < 900 or directionTwo:Length() < 900 then
 				boat=true
 				sellBoat(casterUnit)
 					
@@ -3020,7 +3033,7 @@ function buyBoat(eventSourceIndex, args)
 		local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
 		
 		print(itemName .. " vs " .. casterUnit:GetName())
-		if (directionOne:Length() < 600 or directionTwo:Length() < 600) and herogold>cost-1 and not string.match(casterUnit:GetName(),itemName ) then
+		if (directionOne:Length() < 1000 or directionTwo:Length() < 1000) and herogold>cost-1 and not string.match(casterUnit:GetName(),itemName ) then
 			boat=true
 			casterUnit:SetGold(herogold-cost,true)
 			casterUnit:SetGold(0,false)

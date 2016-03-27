@@ -551,9 +551,31 @@ end
 
 function stopGunningIt(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')
-	
+local casterUnit = args.caster
+	local direction =  casterUnit:GetForwardVector()
+        local vec = direction:Normalized() * 0.0
+		
+		Physics:Unit(casterUnit)
+		
+		casterUnit:SetPhysicsAcceleration(vec)
 
 end
+
+function stopGunningItAbility(args) -- keys is the information sent by the ability
+--print('[ItemFunctions] gunning_it started! ')
+local casterUnit = args.caster
+	local direction =  casterUnit:GetForwardVector()
+        local vec = direction:Normalized() * 0.0
+		local abil = casterUnit:GetAbilityByIndex(2)
+		if abil:GetLevel()~=0 then
+			abil:ToggleAbility()
+		end
+		Physics:Unit(casterUnit)
+		
+		casterUnit:SetPhysicsAcceleration(vec)
+
+end
+
 
 
 function RainbowDied(args)

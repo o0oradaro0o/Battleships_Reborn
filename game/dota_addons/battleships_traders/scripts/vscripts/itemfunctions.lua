@@ -515,24 +515,27 @@ function coalUltStun(args) -- keys is the information sent by the ability
 		local casterUnit = args.caster
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 		local targetUnit = args.target
-		
+		local Item
+		local coalitem
+		local stunmult=0
 		local itemName = tostring(args.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. keys.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
 		if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
 			for itemSlot = 0, 11, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
 					if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
-							local Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
+							 Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
 							if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
-								if RandomInt(0,4) == 0 then
-									print('[ItemFunctions] random_hit! ')
-									Item:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_coal_ult_bow_stunned", nil)
-									coalSoundStun(args)
-									print('[ItemFunctions] stunned from coal! ')
-								end
-								
-								do return end
+								stunmult=stunmult+1
+								coalitem=Item
 							end
 					end
 			end
+		end
+		print('[ItemFunctions] stunmult! ' .. stunmult)
+		if coalitem ~= nil and RandomInt(0,4*stunmult) == 0 then
+			print('[ItemFunctions] random_hit! ')
+			coalitem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_coal_ult_bow_stunned", nil)
+			coalSoundStun(args)
+			print('[ItemFunctions] stunned from coal! ')
 		end
 end
 
