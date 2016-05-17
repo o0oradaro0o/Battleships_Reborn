@@ -6641,6 +6641,87 @@
 
 	}
 	
+	
+		//=================================================================================================================
+	// icy waters
+	//=================================================================================================================
+	"armor_remover"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"slardar_amplify_damage"
+		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		"OnUpgrade"
+		{
+			"RemoveModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "aura_ice"
+			}
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "aura_ice"
+			}
+		}
+		
+		 "Modifiers"
+        {
+                "aura_de_armor"
+                {
+                   
+                        "Passive"                               "1"
+                       
+                        "Aura"                                  "de_armor_aura"
+                        "Aura_Radius"                   "900"
+                        "Aura_Teams"                    "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+                        "Aura_Types"                    "DOTA_UNIT_TARGET_HERO"
+                        "Aura_ApplyToCaster"    "0"
+                }
+                       
+                "de_armor_aura"
+                {
+                        "Properties"
+                        {
+                          
+								"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_debuff"
+                        }
+
+                }
+               
+        }
+       
+        "AbilitySpecial"
+        {
+               
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"armor_debuff"	"-3,-3,-3,-3"
+				}
+        }
+	
+		
+
+	}
+	
 	//=================================================================================================================
 	// Tidehunter: Ravage
 	//=================================================================================================================

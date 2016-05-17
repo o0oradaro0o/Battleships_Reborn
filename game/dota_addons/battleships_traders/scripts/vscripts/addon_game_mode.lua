@@ -2882,19 +2882,7 @@ end
 
 function RemoveWearables( hero )
       -- Setup variables
-	  Timers:CreateTimer( 0.1, function()
-	hero.hiddenWearables = {} -- Keep every wearable handle in a table to show them later
-    local model = hero:FirstMoveChild()
-    while model ~= nil do
-        if model:GetClassname() == "dota_item_wearable" then
-            model:AddEffects(EF_NODRAW) -- Set model hidden
-            table.insert(hero.hiddenWearables, model)
-        end
-        model = model:NextMovePeer()
-    end
-	
-end
-	  )
+
 end
 
 

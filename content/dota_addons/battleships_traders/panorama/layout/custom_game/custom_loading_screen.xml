@@ -28,7 +28,7 @@
 		<Panel id="CoOpHolder">
 			<Panel id="CoOp">
 				<Label class="AuthorTitle" text="Co-Op Challange mode!" />
-				<Label class="heroTitle" text="If all players join the south alliance it will activate co-op mode. An assault challenge against waves of bots. Kill their base beefore you are overrun. To play solo without bots, just join the north." />
+				<Label class="heroTitle" text="If all players join the south alliance it will activate co-op mode. An assault challenge against waves of bots. Kill their base before you are overrun. To play solo without bots, just join the north." />
 			</Panel>
 		</Panel>
 		<Label class="SpecialTitle" text="sawen'ka top kisa, lav tebya" />

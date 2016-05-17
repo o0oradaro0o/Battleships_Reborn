@@ -705,6 +705,7 @@
 			"MinimapIconSize"			"0"
 			"Level"						"1"
 			"Ability1"					"kill_rng_on_death"			// Ability 1
+			"Ability2"					"armor_remover"
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"30"		// Physical protection.
@@ -777,6 +778,7 @@
 			"MinimapIconSize"			"0"
 			"Level"						"1"
 			"Ability1"					"kill_rng_on_death"			// Ability 1
+			"Ability2"					"armor_remover"
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"31"		// Physical protection.
@@ -849,6 +851,7 @@
 			"MinimapIconSize"			"0"
 			"Level"						"1"
 			"Ability1"					"kill_rng_on_death"			// Ability 1
+			"Ability2"					"armor_remover"
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"30"		// Physical protection.
@@ -923,6 +926,7 @@
 			
 			
 			"Ability1"					"kill_rng_on_death"			// Ability 1
+			"Ability2"					"armor_remover"
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"31"		// Physical protection.
@@ -994,6 +998,7 @@
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
 			"Level"						"1"
+			"Ability2"					"armor_remover"
 			
 			// Armor
 			//----------------------------------------------------------------
@@ -1056,6 +1061,7 @@
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
 			"Level"						"1"
+			"Ability2"					"armor_remover"
 			
 			// Armor
 			//----------------------------------------------------------------
@@ -1119,6 +1125,7 @@
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
 			"Level"						"1"
+			"Ability2"					"armor_remover"
 			
 			// Armor
 			//----------------------------------------------------------------
@@ -1181,6 +1188,7 @@
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
 			"Level"						"1"
+			"Ability2"					"armor_remover"
 			
 			// Armor
 			//----------------------------------------------------------------
@@ -1258,7 +1266,7 @@
 								// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"repair_aura"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"armor_remover"
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 			
@@ -1331,7 +1339,7 @@
 					// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"repair_aura"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"armor_remover"
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 			
@@ -1390,7 +1398,7 @@
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
 			"Level"						"1"
-			
+			"Ability2"					"armor_remover"
 				"ModelScale" 				"1.0"
 			
 			// Armor
@@ -1457,7 +1465,7 @@
 			"Level"						"1"
 			
 			"ModelScale" 				"1.0"
-			
+			"Ability2"					"armor_remover"
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"31"		// Physical protection.

@@ -15,7 +15,7 @@
         "SoundSet"          "Hero_Kunkka"  	
 		//"VoiceFile"			"scripts/voscripts/game_sounds_vo_kunkka.txt"		// Name of sound set.
 		
-		
+		 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
 	    "AttributeBaseStrength"     "1"                                     // Base strength
@@ -41,36 +41,14 @@
 		"Ability4"					"go_home_battleship"
         "ModelScale"        "1.2"
 		"RingRadius"				"100"
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef" "0"
-			}
-			"Wearable2"
-			{
-				"ItemDef" "0"
-			}
-			"Wearable3"
-			{
-				"ItemDef" "0"
-			}
-			"Wearable4"
-			{
-				"ItemDef" "0"
-			}
-			"Wearable5"
-			{
-				"ItemDef" "0"
-			}
-		}
+
 	"RenderablePortrait"
 	{
 		"Particles"
 		{
 		}
 	}
-		
+		"DisableWearables" "1"
 		"ItemSlots" {}
 		
 		"BountyGoldMin"				"150"		// Gold earned min.
@@ -111,29 +89,7 @@
 		"Ability4"					"go_home_battleship"
         "ModelScale"        ".001"
 		"RingRadius"				"100"
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef" "0"
-			}
-			"Wearable2"
-			{
-				"ItemDef" "0"
-			}
-			"Wearable3"
-			{
-				"ItemDef" "0"
-			}
-			"Wearable4"
-			{
-				"ItemDef" "0"
-			}
-			"Wearable5"
-			{
-				"ItemDef" "0"
-			}
-		}
+
 	"RenderablePortrait"
 	{
 		"Particles"
@@ -145,6 +101,7 @@
 		
 		"BountyGoldMin"				"150"		// Gold earned min.
 		"BountyGoldMax"				"151"		// Gold earned max.
+		"DisableWearables" "1"
 	}
 	
 	//=================================================================================================================
@@ -185,29 +142,7 @@
 		"Ability4"					"batten_hatches"
         "ModelScale"        "0.6"
 		"RingRadius"				"100"
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef" "0"
-			}
-			"Wearable2"
-			{
-				"ItemDef" "0"
-			}
-			"Wearable3"
-			{
-				"ItemDef" "0"
-			}
-			"Wearable4"
-			{
-				"ItemDef" "0"
-			}
-			"Wearable5"
-			{
-				"ItemDef" "0"
-			}
-		}
+		"DisableWearables" "1"
 		"ItemSlots" {}
 		"AttachWearables" {}
 		"BountyGoldMin"				"240"		// Gold earned min.
@@ -279,7 +214,7 @@
 		"AttachWearables" {}
 		"BountyGoldMin"				"240"		// Gold earned min.
 		"BountyGoldMax"				"260"		// Gold earned max.
-		
+		"DisableWearables" "1"
 	}
 	
 		//=================================================================================================================
@@ -347,7 +282,7 @@
 		"AttachWearables" {}
 		"BountyGoldMin"				"240"		// Gold earned min.
 		"BountyGoldMax"				"260"		// Gold earned max.
-		
+		"DisableWearables" "1"
 	}
 	
 	
@@ -414,6 +349,7 @@
 		"ItemSlots" {}
 		"BountyGoldMin"				"240"		// Gold earned min.
 		"BountyGoldMax"				"260"		// Gold earned max.
+		"DisableWearables" "1"
 	}
 
 	
@@ -486,6 +422,7 @@
 		"ItemSlots" {}
 		"BountyGoldMin"				"240"		// Gold earned min.
 		"BountyGoldMax"				"260"		// Gold earned max.
+		"DisableWearables" "1"
 	}
 
 
@@ -553,6 +490,7 @@
 		"ItemSlots" {}
 		"BountyGoldMin"				"599"		// Gold earned min.
 		"BountyGoldMax"				"601"		// Gold earned max.
+		"DisableWearables" "1"
 	}
 		//=================================================================================================================
     // HERO: npc_dota_hero_morphling
@@ -617,6 +555,7 @@
 		"ItemSlots" {}
 		"BountyGoldMin"				"599"		// Gold earned min.
 		"BountyGoldMax"				"601"		// Gold earned max.
+		"DisableWearables" "1"
 	}
 	
 	//=================================================================================================================
@@ -680,6 +619,7 @@
 		"ItemSlots" {}
 		"BountyGoldMin"				"599"		// Gold earned min.
 		"BountyGoldMax"				"601"		// Gold earned max.
+		"DisableWearables" "1"
 	}
 	
 	
@@ -750,6 +690,7 @@
 		"ItemSlots" {}
 		"BountyGoldMin"				"599"		// Gold earned min.
 		"BountyGoldMax"				"601"		// Gold earned max.
+		"DisableWearables" "1"
 	}
 	
 	//=================================================================================================================
@@ -815,6 +756,7 @@
 		"ItemSlots" {}
 		"BountyGoldMin"				"599"		// Gold earned min.
 		"BountyGoldMax"				"601"		// Gold earned max.
+		"DisableWearables" "1"
 	}
 
 	
@@ -879,6 +821,7 @@
 		"ItemSlots" {}
 		"BountyGoldMin"				"1049"		// Gold earned min.
 		"BountyGoldMax"				"1051"		// Gold earned max.
+		"DisableWearables" "1"
 	}
 	
 	//=================================================================================================================
@@ -944,6 +887,7 @@
 		"ItemSlots" {}
 		"BountyGoldMin"				"1049"		// Gold earned min.
 		"BountyGoldMax"				"1051"		// Gold earned max.
+		"DisableWearables" "1"
 	}
 	
 	//=================================================================================================================
@@ -1009,6 +953,7 @@
 		"ItemSlots" {}
 		"BountyGoldMin"				"1049"		// Gold earned min.
 		"BountyGoldMax"				"1051"		// Gold earned max.
+		"DisableWearables" "1"
 	}
 	
 	//=================================================================================================================
@@ -1073,6 +1018,7 @@
 		"ItemSlots" {}
 		"BountyGoldMin"				"1049"		// Gold earned min.
 		"BountyGoldMax"				"1051"		// Gold earned max.
+		"DisableWearables" "1"
 	}
 	//=================================================================================================================
     // HERO: npc_dota_hero_shredder battleship
@@ -1197,6 +1143,7 @@
 		}
 		"BountyGoldMin"				"1049"		// Gold earned min.
 		"BountyGoldMax"				"1051"		// Gold earned max.
+		"DisableWearables" "1"
 	}
 
 	
@@ -1263,6 +1210,7 @@
 		"ItemSlots" {}
 		"BountyGoldMin"				"1599"		// Gold earned min.
 		"BountyGoldMax"				"1601"		// Gold earned max.
+		"DisableWearables" "1"
 	}
 	
 		//=================================================================================================================
@@ -1328,6 +1276,7 @@
 		"ItemSlots" {}
 		"BountyGoldMin"				"1599"		// Gold earned min.
 		"BountyGoldMax"				"1601"		// Gold earned max.
+		"DisableWearables" "1"
 	}
 	
 	
@@ -1396,8 +1345,9 @@
 			}
 		}
 		"ItemSlots" {}
+		"DisableWearables" "1"
 		"BountyGoldMin"				"1490"		// Gold earned min.
-		"BountyGoldMax"				"1510"		// Gold earned max.
+		"BountyGoldMax"				"1510"		// Gold earned max."DisableWearables" "1"
 	}
 
 	
@@ -1442,6 +1392,7 @@
 		"ItemSlots"  {}
 		"BountyGoldMin"				"1490"		// Gold earned min.
 		"BountyGoldMax"				"1510"		// Gold earned max.
+		"DisableWearables" "1"
 	}
 	
 	//=================================================================================================================
@@ -1485,6 +1436,7 @@
 		"ItemSlots"  {}
 		"BountyGoldMin"				"1490"		// Gold earned min.
 		"BountyGoldMax"				"1510"		// Gold earned max.
+		"DisableWearables" "1"
 	}
 	
 	//=================================================================================================================
@@ -1552,6 +1504,7 @@
 		"AttachWearables" {}
 		"BountyGoldMin"				"340"		// Gold earned min.
 		"BountyGoldMax"				"360"		// Gold earned max.
+		"DisableWearables" "1"
 		
 	}
 	
@@ -1621,6 +1574,7 @@
 		"AttachWearables" {}
 		"BountyGoldMin"				"599"		// Gold earned min.
 		"BountyGoldMax"				"601"		// Gold earned max.
+		"DisableWearables" "1"
 		
 	}
 	
@@ -1688,6 +1642,7 @@
 		"AttachWearables" {}
 		"BountyGoldMin"				"1490"		// Gold earned min.
 		"BountyGoldMax"				"1510"		// Gold earned max.
+		"DisableWearables" "1"
 		
 	}
 	
@@ -1742,7 +1697,7 @@
 		"BountyXP"					"350"		// Experience earn.
 		"BountyGoldMin"				"300"		// Gold earned min.
 		"BountyGoldMax"				"305"		// Gold earned max.
-
+		"DisableWearables" "1"
 	}
 	
 	
