@@ -17,11 +17,11 @@ Layer0
 	g_flSpecularExponentBlendToFull "0.000"
 
 	//---- Cloak ----
-	g_flCloakBlurAmount "0.005"
-	g_flCloakIntensity "0.850"
-	g_flCloakRefractAmount "0.100"
-	g_flMaterialCloakFactor "0.000"
-	g_vCloakColorTint "[1.000 1.000 1.000]"
+	g_flCloakBlurAmount "0.027"
+	g_flCloakIntensity "0.142"
+	g_flCloakRefractAmount "1.000"
+	g_flMaterialCloakFactor "0.337"
+	g_vCloakColorTint "[7.403 0.000 0.000]"
 
 	//---- Color ----
 	g_flDiffuseModulationAmount "1.000"
@@ -31,9 +31,9 @@ Layer0
 	TextureColor "materials/zodiac/sm_zodiac_phong1_color.png"
 
 	//---- Fresnel ----
-	TextureFresnelWarpColor "[1.000000 1.000000 1.000000 0.000000]"
-	TextureFresnelWarpRim "[0.549000 0.549000 0.549000 0.000000]"
-	TextureFresnelWarpSpec "[1.000000 1.000000 1.000000 0.000000]"
+	TextureFresnelWarpColor "materials/default/default_fresnelwarpcolor.tga"
+	TextureFresnelWarpRim "materials/default/default_fresnelwarprim.tga"
+	TextureFresnelWarpSpec "materials/default/default_fresnelwarpspec.tga"
 
 	//---- Lighting ----
 	g_flAmbientScale "1.000"
@@ -61,8 +61,8 @@ Layer0
 	g_vRimLightColor "[1.000000 1.000000 1.000000 0.000000]"
 
 	//---- Specular ----
-	g_flSpecularExponent "32.000"
-	g_flSpecularScale "1.000"
+	g_flSpecularExponent "64.000"
+	g_flSpecularScale "2.000"
 	g_vSpecularColor "[1.000000 1.000000 1.000000 0.000000]"
 
 	SystemAttributes
