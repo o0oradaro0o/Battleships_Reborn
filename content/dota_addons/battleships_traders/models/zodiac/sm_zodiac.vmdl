@@ -358,7 +358,7 @@
 					m_Filepath = "models/zodiac/anim_zodiac_idle.fbx"
 					m_nStartframe = 0
 					m_nEndframe = 59
-					m_flFps = 25.000000
+					m_flFps = 20.000000
 					m_Loop =
 					{
 						m_bLoop = true
@@ -474,7 +474,7 @@
 		m_vMaterialRemapList =
 		[
 			{
-				m_sSearchMaterial = "phong3.vmat"
+				m_sSearchMaterial = "phong7.vmat"
 				m_sReplaceMaterial = "zodiac_boat.vmat"
 			},
 		]

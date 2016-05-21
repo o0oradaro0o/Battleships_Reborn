@@ -10,7 +10,7 @@ Layer0
 
 	//---- Blend To Full ----
 	g_flEnvMapBlendToFull "0.000"
-	g_flMetalnessBlendToFull "0.000"
+	g_flMetalnessBlendToFull "0.142"
 	g_flReflectionsTintByBaseBlendToNone "0.000"
 	g_flSelfIllumBlendToFull "0.000"
 	g_flSpecularBlendToFull "0.000"
@@ -45,11 +45,11 @@ Layer0
 	TextureDetailMask "materials/zodiac/sm_zodiac_phong1_mask1.png"
 	TextureDiffuseWarpMask "materials/zodiac/sm_zodiac_phong1_mask1.png"
 	TextureMetalnessMask "materials/zodiac/sm_zodiac_phong1_mask1.png"
-	TextureSelfIllumMask "materials/zodiac/sm_zodiac_phong1_mask1.png"
+	TextureSelfIllumMask "[0.291000 0.291000 0.291000 0.000000]"
 
 	//---- Mask 2 ----
 	TextureRimMask "materials/zodiac/sm_zodiac_phong1_mask2.png"
-	TextureSpecularExponent "materials/zodiac/sm_zodiac_phong1_mask2.png"
+	TextureSpecularExponent "[0.484000 0.484000 0.484000 0.000000]"
 	TextureSpecularMask "materials/zodiac/sm_zodiac_phong1_mask2.png"
 	TextureTintByBaseMask "materials/zodiac/sm_zodiac_phong1_mask2.png"
 
