@@ -110,7 +110,21 @@ function rammingIt(args) -- keys is the information sent by the ability
 		local level = abil:GetLevel()
         local vec = direction:Normalized() * (30 * level +80)
 		casterUnit:AddPhysicsVelocity(vec)
+		
 end
+
+function startRammingIt(args) -- keys is the information sent by the ability
+--print('[ItemFunctions] gunning_it started! ')
+		local casterUnit = args.caster
+		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+
+		local abil = casterUnit:GetAbilityByIndex(2)
+		local level = abil:GetLevel()
+       StartAnimation(casterUnit, {duration=2.2, activity=ACT_SCRIPT_CUSTOM_1,rate=(level+2)/4})
+		
+end
+
+
 dumpingItDir={}
 function dumpingIt(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')
@@ -533,19 +547,9 @@ function CallPuckDive(args) -- keys is the information sent by the ability
 		
 		local abil = casterUnit:GetAbilityByIndex(1)
 		local level = abil:GetLevel()
+		 StartAnimation(casterUnit, {duration=.4+.2*level, activity=ACT_SCRIPT_CUSTOM_0, rate=1.6-.3*level})
+	
 		
-		local abil1 = casterUnit:GetAbilityByIndex(3)
-			local level2 = abil1:GetLevel()
-		casterUnit:RemoveAbility(abil1:GetAbilityName())
-		casterUnit:AddAbility(ability)
-		
-		local abil2 = casterUnit:GetAbilityByIndex(3)
-		abil2:SetLevel(level)
-		abil2:CastAbility()
-		casterUnit:RemoveAbility(abil2:GetAbilityName())
-		casterUnit:AddAbility("batten_hatches")
-		local abil3 = casterUnit:GetAbilityByIndex(3)
-		abil3:SetLevel(level2)
 end
 
 
@@ -573,7 +577,8 @@ local casterUnit = args.caster
 		Physics:Unit(casterUnit)
 		
 		casterUnit:SetPhysicsAcceleration(vec)
-
+		 
+	
 end
 
 

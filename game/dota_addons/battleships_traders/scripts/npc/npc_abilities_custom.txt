@@ -726,7 +726,6 @@
 				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"CallPuckDive"
 			}
-
 		}
 		
 		"OnAbilityEndChannel"
@@ -763,8 +762,7 @@
 				"ModifierName" "remove_vision"
 			}
 		}
-
-		
+	
 		 "Modifiers"
         {
 				"remove_vision"
@@ -775,7 +773,18 @@
 						{
 							"MODIFIER_PROPERTY_BONUS_DAY_VISION"	"-2000"
 							"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"	"-2000"
+							
 						}
+						 "States"
+						{
+							"MODIFIER_STATE_ATTACK_IMMUNE"			"MODIFIER_STATE_VALUE_ENABLED"
+							"MODIFIER_STATE_MAGIC_IMMUNE"			"MODIFIER_STATE_VALUE_ENABLED"
+							"MODIFIER_STATE_UNSELECTABLE"			"MODIFIER_STATE_VALUE_ENABLED"
+							"MODIFIER_STATE_NO_HEALTH_BAR"			"MODIFIER_STATE_VALUE_ENABLED"
+							"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"	// Don't use these state for a channeling ability.
+							"MODIFIER_STATE_OUT_OF_GAME"			"MODIFIER_STATE_VALUE_ENABLED"
+			
+						} 
 						
 						
 					}
@@ -871,6 +880,12 @@
 				"Target" "CASTER"
 				"ModifierName" "ramming_speed"
 			}
+			"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"startRammingIt"
+					}
+
 			
 		}
 			

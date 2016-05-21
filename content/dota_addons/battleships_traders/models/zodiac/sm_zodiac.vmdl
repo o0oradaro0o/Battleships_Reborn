@@ -55,6 +55,85 @@
 	]
 	m_pAttachmentLists =
 	[
+		{
+			_class = "CVattachmentListReference"
+			m_pObject =
+			{
+				m_name = ""
+				m_attachments =
+				[
+					{
+						m_name = "R_chim1"
+						m_influences =
+						[
+							{
+								m_influenceName = "R_chim1"
+								m_vTranslationOffset =
+								[
+									0.000000,
+									0.000000,
+									0.000000,
+								]
+								m_vRotationOffset =
+								[
+									0.000000,
+									0.000000,
+									0.000000,
+								]
+								m_flWeight = 1.000000
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "L_chim1"
+						m_influences =
+						[
+							{
+								m_influenceName = "L_chim1"
+								m_vTranslationOffset =
+								[
+									0.000000,
+									0.000000,
+									0.000000,
+								]
+								m_vRotationOffset =
+								[
+									0.000000,
+									0.000000,
+									0.000000,
+								]
+								m_flWeight = 1.000000
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "M_chim1"
+						m_influences =
+						[
+							{
+								m_influenceName = "M_chim1"
+								m_vTranslationOffset =
+								[
+									0.000000,
+									0.000000,
+									0.000000,
+								]
+								m_vRotationOffset =
+								[
+									0.000000,
+									0.000000,
+									0.000000,
+								]
+								m_flWeight = 1.000000
+								m_bRoot = false
+							},
+						]
+					},
+				]
+			}
+		},
 	]
 	m_pAnimGroup =
 	{
@@ -90,7 +169,7 @@
 					m_flFps = 30.000000
 					m_Loop =
 					{
-						m_bLoop = false
+						m_bLoop = true
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
@@ -105,6 +184,10 @@
 					m_bDisable = false
 					m_Activities =
 					[
+						{
+							m_Name = "ACT_DOTA_RUN"
+							m_nWeight = 1
+						},
 					]
 					m_AnimationEvents =
 					[
@@ -165,6 +248,10 @@
 					m_bDisable = false
 					m_Activities =
 					[
+						{
+							m_Name = "ACT_SCRIPT_CUSTOM_0"
+							m_nWeight = 1
+						},
 					]
 					m_AnimationEvents =
 					[
@@ -210,7 +297,7 @@
 					m_flFps = 50.000000
 					m_Loop =
 					{
-						m_bLoop = false
+						m_bLoop = true
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
@@ -225,6 +312,10 @@
 					m_bDisable = false
 					m_Activities =
 					[
+						{
+							m_Name = "ACT_SCRIPT_CUSTOM_1"
+							m_nWeight = 1
+						},
 					]
 					m_AnimationEvents =
 					[
@@ -285,6 +376,10 @@
 					m_bDisable = false
 					m_Activities =
 					[
+						{
+							m_Name = "ACT_DOTA_IDLE"
+							m_nWeight = 1
+						},
 					]
 					m_AnimationEvents =
 					[

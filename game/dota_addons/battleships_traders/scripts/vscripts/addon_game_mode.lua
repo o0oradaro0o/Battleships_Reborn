@@ -1,10 +1,14 @@
 -- Generated from template
 
-require("timers")
-require('physics')
+require("libraries/timers")
+require('libraries/physics')
 require('notifications')
 require('storage')
 require('statcollection/init')
+-- This library can be used for starting customized animations on units from lua
+require('libraries/animations')
+-- This library can be used for performing "Frankenstein" attachments on units
+require('libraries/attachments')
 
 
 if CBattleship8D == nil then
@@ -723,6 +727,7 @@ if BOAT_JUST_BAUGHT ==0 then
 		end
 	if npc:IsRealHero() then
 		RemoveWearables( npc )
+		attachCosmetics(npc)
 		stopPhysics(npc)
 		npc:SetBaseStrength(1)
 		print("hero level is" .. npc:GetLevel())
@@ -772,6 +777,22 @@ if BOAT_JUST_BAUGHT ==0 then
   else
   BOAT_JUST_BAUGHT=0
   end
+end
+
+function attachCosmetics(hero)
+		if string.match(hero:GetName(),"apparition") then
+			if hero.particleR==nil then
+			 hero.particleR = ParticleManager:CreateParticle( "particles/basic_projectile/smoke_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+				ParticleManager:SetParticleControlEnt(hero.particleR, 0, hero, PATTACH_POINT_FOLLOW, "R_chim1", hero:GetAbsOrigin(), true)
+			 hero.particleL = ParticleManager:CreateParticle( "particles/basic_projectile/smoke_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+				ParticleManager:SetParticleControlEnt(hero.particleL, 0, hero, PATTACH_POINT_FOLLOW, "L_chim1", hero:GetAbsOrigin(), true)
+			 hero.particleM = ParticleManager:CreateParticle( "particles/basic_projectile/smoke_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+				ParticleManager:SetParticleControlEnt(hero.particleM, 0, hero, PATTACH_POINT_FOLLOW, "M_chim1", hero:GetAbsOrigin(), true)
+			end
+		
+			print( "partical attachment." )
+		end
+
 end
 
 function CBattleship8D:handleEmpGold()
@@ -1188,7 +1209,7 @@ function HandleCoOp()
 											hero:MoveToPosition(nearby[RandomInt(1,#nearby)]:GetOrigin())
 										end
 								end
-								if hero~= nil and hero:IsAlive() == false then
+								if !hero:IsNull() and hero:IsAlive() == false then
 									Timers:CreateTimer( 10, function()
 											hero:RemoveSelf()
 									end)
@@ -1556,6 +1577,8 @@ function CBattleship8D:OnThink()
 			end
 			for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 				if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 then
+				
+				attachCosmetics(hero)
 					HandleShopChecks(hero)
 					if hero:IsIllusion() then
 						hero:SetModel( "models/noah_boat.vmdl" )
@@ -2627,6 +2650,7 @@ function become_boat(casterUnit, heroname)
 					
 					if id == plyID then
 					RemoveWearables( hero )
+					attachCosmetics(hero)
 						print("this is the new hero, put items in " .. hero:GetName())
 						hero:SetGold(gold, true)
 						hero:SetGold(0, false)
