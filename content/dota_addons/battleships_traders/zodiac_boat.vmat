@@ -4,6 +4,10 @@ Layer0
 {
 	shader "hero.vfx"
 
+	//---- Masks ----
+	F_MASKS_1 1
+	F_MASKS_2 1
+
 	//---- Blend To Full ----
 	g_flEnvMapBlendToFull "0.000"
 	g_flMetalnessBlendToFull "0.000"
@@ -13,16 +17,18 @@ Layer0
 	g_flSpecularExponentBlendToFull "0.000"
 
 	//---- Cloak ----
-	g_flCloakBlurAmount "0.005"
-	g_flCloakIntensity "0.850"
-	g_flCloakRefractAmount "0.100"
-	g_flMaterialCloakFactor "0.000"
-	g_vCloakColorTint "[1.000000 1.000000 1.000000 0.000000]"
+	g_flCloakBlurAmount "0.027"
+	g_flCloakIntensity "0.142"
+	g_flCloakRefractAmount "1.000"
+	g_flMaterialCloakFactor "0.337"
+	g_vCloakColorTint "[7.403 0.000 0.000]"
 
 	//---- Color ----
+	g_flDiffuseModulationAmount "1.000"
+	g_flTexCoordRotation "0.000"
 	g_vTexCoordOffset "[0.000 0.000]"
 	g_vTexCoordScale "[1.000 1.000]"
-	TextureColor "materials/zodiac_boatin.tga"
+	TextureColor "materials/zodiac/sm_zodiac_phong1_color.png"
 
 	//---- Fresnel ----
 	TextureFresnelWarpColor "materials/default/default_fresnelwarpcolor.tga"
@@ -35,15 +41,32 @@ Layer0
 	g_flBloomShift "0.000"
 	g_vBloomColor "[1.000000 1.000000 1.000000 0.000000]"
 
+	//---- Mask 1 ----
+	TextureDetailMask "materials/zodiac/sm_zodiac_phong1_mask1.png"
+	TextureDiffuseWarpMask "materials/zodiac/sm_zodiac_phong1_mask1.png"
+	TextureMetalnessMask "materials/zodiac/sm_zodiac_phong1_mask1.png"
+	TextureSelfIllumMask "materials/zodiac/sm_zodiac_phong1_mask1.png"
+
+	//---- Mask 2 ----
+	TextureRimMask "materials/zodiac/sm_zodiac_phong1_mask2.png"
+	TextureSpecularExponent "materials/zodiac/sm_zodiac_phong1_mask2.png"
+	TextureSpecularMask "materials/zodiac/sm_zodiac_phong1_mask2.png"
+	TextureTintByBaseMask "materials/zodiac/sm_zodiac_phong1_mask2.png"
+
 	//---- Normal Map ----
-	TextureNormal "materials/default/default_normal.tga"
+	TextureNormal "materials/zodiac/sm_zodiac_n.png"
 
 	//---- Rim ----
-	g_flRimLightScale "1.000"
+	g_flRimLightScale "0.000"
 	g_vRimLightColor "[1.000000 1.000000 1.000000 0.000000]"
 
 	//---- Specular ----
-	g_flSpecularExponent "32.000"
-	g_flSpecularScale "1.000"
+	g_flSpecularExponent "64.000"
+	g_flSpecularScale "2.000"
 	g_vSpecularColor "[1.000000 1.000000 1.000000 0.000000]"
+
+	SystemAttributes
+	{
+		PhysicsSurfaceProperties "metal"
+	}
 }
