@@ -783,11 +783,11 @@ function attachCosmetics(hero)
 		if string.match(hero:GetName(),"apparition") then
 			if hero.particleR==nil then
 			 hero.particleR = ParticleManager:CreateParticle( "particles/basic_projectile/smoke_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
-				ParticleManager:SetParticleControlEnt(hero.particleR, 0, hero, PATTACH_POINT_FOLLOW, "R_chim1", hero:GetAbsOrigin(), true)
+				ParticleManager:SetParticleControlEnt(hero.particleR, 0, hero, PATTACH_POINT_FOLLOW, "R_chim3", hero:GetAbsOrigin(), true)
 			 hero.particleL = ParticleManager:CreateParticle( "particles/basic_projectile/smoke_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
-				ParticleManager:SetParticleControlEnt(hero.particleL, 0, hero, PATTACH_POINT_FOLLOW, "L_chim1", hero:GetAbsOrigin(), true)
+				ParticleManager:SetParticleControlEnt(hero.particleL, 0, hero, PATTACH_POINT_FOLLOW, "L_chim3", hero:GetAbsOrigin(), true)
 			 hero.particleM = ParticleManager:CreateParticle( "particles/basic_projectile/smoke_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
-				ParticleManager:SetParticleControlEnt(hero.particleM, 0, hero, PATTACH_POINT_FOLLOW, "M_chim1", hero:GetAbsOrigin(), true)
+				ParticleManager:SetParticleControlEnt(hero.particleM, 0, hero, PATTACH_POINT_FOLLOW, "M_chim3", hero:GetAbsOrigin(), true)
 			end
 		
 			print( "partical attachment." )
@@ -1209,7 +1209,7 @@ function HandleCoOp()
 											hero:MoveToPosition(nearby[RandomInt(1,#nearby)]:GetOrigin())
 										end
 								end
-								if !hero:IsNull() and hero:IsAlive() == false then
+								if hero:IsNull()==false and hero:IsAlive() == false then
 									Timers:CreateTimer( 10, function()
 											hero:RemoveSelf()
 									end)

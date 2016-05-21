@@ -63,11 +63,11 @@
 				m_attachments =
 				[
 					{
-						m_name = "R_chim1"
+						m_name = "R_chim3"
 						m_influences =
 						[
 							{
-								m_influenceName = "R_chim1"
+								m_influenceName = "R_chim3"
 								m_vTranslationOffset =
 								[
 									0.000000,
@@ -86,11 +86,11 @@
 						]
 					},
 					{
-						m_name = "L_chim1"
+						m_name = "M_chim3"
 						m_influences =
 						[
 							{
-								m_influenceName = "L_chim1"
+								m_influenceName = "M_chim3"
 								m_vTranslationOffset =
 								[
 									0.000000,
@@ -109,11 +109,11 @@
 						]
 					},
 					{
-						m_name = "M_chim1"
+						m_name = "L_chim3"
 						m_influences =
 						[
 							{
-								m_influenceName = "M_chim1"
+								m_influenceName = "L_chim3"
 								m_vTranslationOffset =
 								[
 									0.000000,
@@ -125,6 +125,29 @@
 									0.000000,
 									0.000000,
 									0.000000,
+								]
+								m_flWeight = 1.000000
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "ATTACH_HITLOC"
+						m_influences =
+						[
+							{
+								m_influenceName = "zodiac_base"
+								m_vTranslationOffset =
+								[
+									0.000000,
+									74.994301,
+									0.000000,
+								]
+								m_vRotationOffset =
+								[
+									0.000000,
+									-0.000000,
+									-0.000000,
 								]
 								m_flWeight = 1.000000
 								m_bRoot = false
