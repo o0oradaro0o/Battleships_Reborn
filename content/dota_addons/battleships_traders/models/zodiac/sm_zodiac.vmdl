@@ -154,6 +154,29 @@
 							},
 						]
 					},
+					{
+						m_name = "attach_attack1"
+						m_influences =
+						[
+							{
+								m_influenceName = "zodiac_base"
+								m_vTranslationOffset =
+								[
+									49.203888,
+									77.166534,
+									0.000000,
+								]
+								m_vRotationOffset =
+								[
+									0.000000,
+									-0.000000,
+									-0.000001,
+								]
+								m_flWeight = 1.000000
+								m_bRoot = false
+							},
+						]
+					},
 				]
 			}
 		},
@@ -427,6 +450,70 @@
 							0.000000,
 							0.000000,
 							0.000000,
+						]
+					}
+					m_Keywords =
+					[
+					]
+					m_sequenceParams =
+					{
+						m_flFadeInTime = 0.200000
+						m_flFadeOutTime = 0.200000
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "anim_zodiac_capture"
+					m_Filepath = "models/zodiac/anim_zodiac_move.fbx"
+					m_nStartframe = 0
+					m_nEndframe = 59
+					m_flFps = 30.000000
+					m_Loop =
+					{
+						m_bLoop = true
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop =
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities =
+					[
+						{
+							m_Name = "ACT_DOTA_CAPTURE"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents =
+					[
+					]
+					m_MotionFrames =
+					[
+					]
+					m_pIkRules =
+					[
+					]
+					m_pAlignAnimation = null
+					m_adjustAnimation =
+					{
+						m_translation =
+						[
+							-350.000000,
+							80.000000,
+							300.000000,
+						]
+						m_rotation =
+						[
+							40.000000,
+							35.000000,
+							45.000000,
 						]
 					}
 					m_Keywords =

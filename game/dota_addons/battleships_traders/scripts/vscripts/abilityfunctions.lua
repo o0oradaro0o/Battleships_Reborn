@@ -547,7 +547,7 @@ function CallPuckDive(args) -- keys is the information sent by the ability
 		
 		local abil = casterUnit:GetAbilityByIndex(1)
 		local level = abil:GetLevel()
-		 StartAnimation(casterUnit, {duration=.4+.2*level, activity=ACT_SCRIPT_CUSTOM_0, rate=1.6-.3*level})
+		 StartAnimation(casterUnit, {duration=.4+.2*level, activity=ACT_SCRIPT_CUSTOM_0, rate=1.6-.2*level})
 	
 		
 end

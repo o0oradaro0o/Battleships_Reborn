@@ -3308,7 +3308,7 @@ function HandleShopChecks(hero)
 				end
 			end
 	end
-	if cotinue==1 and hasContract==1 then
+	if cotinue==1 and hasContract==0 then
 		local data =
 		{
 			Player_ID = hero:GetPlayerID();

@@ -4979,7 +4979,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityTextureName"				"hatches"
+		"AbilityTextureName"				"icon_zodiac_ability4"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		
 		"BaseClass" 					"ability_datadriven"
@@ -5757,6 +5757,14 @@
 				"Target" "TARGET"
 				"ModifierName" "gas_mod"
 			}
+			"TrackingProjectile"
+			{
+				"Target" "TARGET"
+					
+				"MoveSpeed" "1200"
+				"ProvidesVision" "0"
+				"EffectName"    "particles/basic_projectile/swamp_gas_proj.vpcf" 
+			}
 			
 		}
 		
@@ -6101,7 +6109,6 @@
 				"Target" "CASTER"
 				"ModifierName" "nav_mess"
 			}
-
 		}
 		
 		
