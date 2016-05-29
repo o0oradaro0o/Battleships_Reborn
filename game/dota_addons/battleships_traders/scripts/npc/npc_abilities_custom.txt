@@ -6114,9 +6114,7 @@
 		
 		"Modifiers"
 		{
-		
 
-			
 			
 			 "nav_mess"
                 {
@@ -8408,7 +8406,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"80"
+				"dmg"	"5 7 11 80"
 			}
 
 		}
