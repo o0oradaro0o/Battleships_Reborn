@@ -4,6 +4,10 @@ Layer0
 {
 	shader "hero.vfx"
 
+	//---- Masks ----
+	F_MASKS_1 1
+	F_MASKS_2 1
+
 	//---- Blend To Full ----
 	g_flEnvMapBlendToFull "0.000"
 	g_flMetalnessBlendToFull "0.000"
@@ -13,17 +17,18 @@ Layer0
 	g_flSpecularExponentBlendToFull "0.000"
 
 	//---- Cloak ----
-	g_flCloakBlurAmount "0.005"
-	g_flCloakIntensity "0.850"
-	g_flCloakRefractAmount "0.100"
+	g_flCloakBlurAmount "0.000"
+	g_flCloakIntensity "0.000"
+	g_flCloakRefractAmount "0.000"
 	g_flMaterialCloakFactor "0.000"
-	g_vCloakColorTint "[1.000000 1.000000 1.000000 0.000000]"
+	g_vCloakColorTint "[1.000 1.000 1.000]"
 
 	//---- Color ----
 	g_flDiffuseModulationAmount "1.000"
+	g_flTexCoordRotation "0.000"
 	g_vTexCoordOffset "[0.000 0.000]"
 	g_vTexCoordScale "[1.000 1.000]"
-	TextureColor "materials/airboat.tga"
+	TextureColor "materials/airboat/phong16_base_color.png"
 
 	//---- Fresnel ----
 	TextureFresnelWarpColor "materials/default/default_fresnelwarpcolor.tga"
@@ -36,8 +41,20 @@ Layer0
 	g_flBloomShift "0.000"
 	g_vBloomColor "[1.000000 1.000000 1.000000 0.000000]"
 
+	//---- Mask 1 ----
+	TextureDetailMask "materials/airboat/sm_airboat_phong16_mask1.jpg"
+	TextureDiffuseWarpMask "materials/airboat/sm_airboat_phong16_mask1.jpg"
+	TextureMetalnessMask "materials/airboat/sm_airboat_phong16_mask1.jpg"
+	TextureSelfIllumMask "materials/airboat/fresnel_mask.png"
+
+	//---- Mask 2 ----
+	TextureRimMask "materials/airboat/sm_airboat_phong16_mask2.jpg"
+	TextureSpecularExponent "materials/airboat/sm_airboat_phong16_mask2.jpg"
+	TextureSpecularMask "materials/airboat/sm_airboat_phong16_mask2.jpg"
+	TextureTintByBaseMask "materials/airboat/sm_airboat_phong16_mask2.jpg"
+
 	//---- Normal Map ----
-	TextureNormal "materials/default/default_normal.tga"
+	TextureNormal "materials/airboat/t_airboat_normal.png"
 
 	//---- Rim ----
 	g_flRimLightScale "1.000"
