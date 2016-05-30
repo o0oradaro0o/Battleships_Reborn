@@ -261,12 +261,57 @@ print('[ItemFunctions] healTowers started!')
 	end
 end
 
+function getEnemies(casterUnit, range, handles)
+
+local enemies = FindUnitsInRadius(casterUnit:GetTeamNumber(), 
+		casterUnit:GetOrigin(), 
+		nil, 
+		range, 
+		handles.team, 
+		handles.types, 
+		handles.flags, 
+		0, 
+		false)
+	return enemies
+end
+
+function FireDmgAura(keys)
+	local casterUnit = keys.caster
+	local item = keys.ability:GetAbilityName() --ability is how item name is passed in
+	local range = 700	 
+	local handles = {}
+	handles.team = DOTA_UNIT_TARGET_TEAM_ENEMY
+	handles.types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING + DOTA_UNIT_TARGET_MECHANICAL + DOTA_UNIT_TARGET_HERO
+	handles.flags = DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
+		local dmg=0;
+	if #getEnemies(casterUnit,range,handles) > 0 then
+		if string.match(item, "two") then--level-2 fire-type
+					dmg	=4
+		elseif string.match(item, "three") then--level-3 fire-type
+					dmg = 6
+		elseif string.match(item, "ult") then--ultimate fire-type
+					dmg = 20
+		else --level-1 fire-type
+			dmg = 2
+		end		
+		for _,en in pairs(getEnemies(casterUnit,range,handles)) do
+				local damageTable = {
+				victim = en,
+				attacker = casterUnit,
+				damage = dmg,
+				damage_type = DAMAGE_TYPE_PHYSICAL,
+			}
+			ApplyDamage(damageTable)
+		end
+
+	end		
+end
 
 function cluster(keys)
 	local dummy = CreateUnitByName( "dummy_unit_cluster", keys.target:GetAbsOrigin(), false, keys.caster, keys.caster, keys.caster:GetTeamNumber() )
 	dummy:AddNewModifier(creature, nil, "modifier_kill", {duration = 3})
 		local abil =dummy:GetAbilityByIndex(1)
-		abil3:SetLevel(2)
+		abil:SetLevel(2)
 		dummy.lvl=4
 		abil:CastAbility()
 
@@ -301,6 +346,9 @@ function cluster1(keys)
 		abil:CastAbility()
 
 end
+
+
+
 
 function clusterBoom(args)
 
@@ -694,7 +742,7 @@ function coalUltStun(args) -- keys is the information sent by the ability
 			end
 		end
 		print('[ItemFunctions] stunmult! ' .. stunmult)
-		if coalitem ~= nil and RandomInt(0,4*stunmult) == 0 then
+		if coalitem ~= nil and RandomInt(0,10) == 0 then
 			print('[ItemFunctions] random_hit! ')
 			coalitem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_coal_ult_bow_stunned", nil)
 			coalSoundStun(args)
@@ -723,7 +771,7 @@ function coalThreeStun(args) -- keys is the information sent by the ability
 			end
 		end
 		print('[ItemFunctions] stunmult! ' .. stunmult)
-		if coalitem ~= nil and RandomInt(0,8) == 0 then
+		if coalitem ~= nil and RandomInt(0,15) == 0 then
 			print('[ItemFunctions] random_hit! ')
 			coalitem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_coal_three_bow_stunned", nil)
 			coalSoundStun(args)
@@ -752,7 +800,7 @@ function coalTwoStun(args) -- keys is the information sent by the ability
 			end
 		end
 		print('[ItemFunctions] stunmult! ' .. stunmult)
-		if coalitem ~= nil and RandomInt(0,8) == 0 then
+		if coalitem ~= nil and RandomInt(0,15) == 0 then
 			print('[ItemFunctions] random_hit! ')
 			coalitem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_coal_three_bow_stunned", nil)
 			coalSoundStun(args)
@@ -781,7 +829,7 @@ function coalStun(args) -- keys is the information sent by the ability
 			end
 		end
 		print('[ItemFunctions] stunmult! ' .. stunmult)
-		if coalitem ~= nil and RandomInt(0,8) == 0 then
+		if coalitem ~= nil and RandomInt(0,15) == 0 then
 			print('[ItemFunctions] random_hit! ')
 			coalitem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_coal_bow_stunned", nil)
 			coalSoundStun(args)
