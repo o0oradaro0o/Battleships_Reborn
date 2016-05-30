@@ -18,7 +18,7 @@
 			</Panel>
 			
 			<Panel id="ArtistPanel">
-					<Label class="AuthorTitle" text="Original Artwork By: Taterfish" />
+					<Label class="AuthorTitle" text="Original Artwork By: Taterfish and Slapunas" />
 			</Panel>
 			<Panel id="HeroPanel">
 					<Label class="heroTitle" text="IRC heroes: Noya, BMD, Myll, Hewdraw, Sidearms, Wigguno, Jimmydorry, Crazyloon, and SinZ \n\nAlso, check out Dota2Bships.com for more info" />
@@ -32,6 +32,15 @@
 			</Panel>
 		</Panel>
 		<Label class="SpecialTitle" text="sawen'ka top kisa, lav tebya" />
+		
+		
+		<Panel id="NewsHolder">
+			<Panel id="News">
+				<Label class="AuthorTitle" text="News!" />
+				<Label class="heroTitle" text="Hey everyone, thanks for playing recently! Your support really means a lot and the mods popularity has caught the attention of a talented artist, Slapunas. \n\nHe will be helping to overhaul and improve our models. Look for visual changes rolling out in the coming months, and maybe the odd weapon change. Thanks again and happy sailing!" />
+			</Panel>
+		</Panel>
+		
 		
 
 	</Panel>

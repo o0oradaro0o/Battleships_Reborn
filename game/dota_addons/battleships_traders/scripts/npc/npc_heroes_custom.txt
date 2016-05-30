@@ -110,7 +110,7 @@
        "Model" "models/zodiac/sm_zodiac.vmdl"     // Model.
         "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
 		
-		
+		"ModelScale"        "1.2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
 	    "AttributeBaseStrength"     "1"                                     // Base strength

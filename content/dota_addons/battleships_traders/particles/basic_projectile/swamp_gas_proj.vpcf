@@ -8,7 +8,7 @@
 	m_Children =
 	[
 		{
-			m_ChildRef = resource:"particles/basic_projectile/courier_frull_ambient_pot_smoke.vpcf"
+			m_ChildRef = resource:"particles/dragon_knight_elder_dragon_corrosive_trail_3.vpcf"
 		},
 	]
 	m_bShouldSort = false

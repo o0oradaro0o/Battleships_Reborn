@@ -266,7 +266,38 @@ function cluster(keys)
 	local dummy = CreateUnitByName( "dummy_unit_cluster", keys.target:GetAbsOrigin(), false, keys.caster, keys.caster, keys.caster:GetTeamNumber() )
 	dummy:AddNewModifier(creature, nil, "modifier_kill", {duration = 3})
 		local abil =dummy:GetAbilityByIndex(1)
-		
+		abil3:SetLevel(2)
+		dummy.lvl=4
+		abil:CastAbility()
+
+end
+
+function cluster3(keys)
+	local dummy = CreateUnitByName( "dummy_unit_cluster", keys.target:GetAbsOrigin(), false, keys.caster, keys.caster, keys.caster:GetTeamNumber() )
+	dummy:AddNewModifier(creature, nil, "modifier_kill", {duration = 3})
+		local abil =dummy:GetAbilityByIndex(1)
+		abil:SetLevel(3)
+		dummy.lvl=3
+		abil:CastAbility()
+
+end
+
+function cluster2(keys)
+	local dummy = CreateUnitByName( "dummy_unit_cluster", keys.target:GetAbsOrigin(), false, keys.caster, keys.caster, keys.caster:GetTeamNumber() )
+	dummy:AddNewModifier(creature, nil, "modifier_kill", {duration = 3})
+		local abil =dummy:GetAbilityByIndex(1)
+		abil:SetLevel(2)
+		dummy.lvl=2
+		abil:CastAbility()
+
+end
+
+function cluster1(keys)
+	local dummy = CreateUnitByName( "dummy_unit_cluster", keys.target:GetAbsOrigin(), false, keys.caster, keys.caster, keys.caster:GetTeamNumber() )
+	dummy:AddNewModifier(creature, nil, "modifier_kill", {duration = 3})
+		local abil =dummy:GetAbilityByIndex(1)
+		abil:SetLevel(1)
+		dummy.lvl=1
 		abil:CastAbility()
 
 end
@@ -275,7 +306,7 @@ function clusterBoom(args)
 
 		local caster = args.caster
 		local enemies
-
+		
 			--hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
 		if caster:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 			enemies = FindUnitsInRadius( DOTA_TEAM_BADGUYS, caster:GetOrigin(), nil, 600, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, 0, 0, false )
@@ -285,10 +316,12 @@ function clusterBoom(args)
 
 		end
 		local CapTheseFuckers = {}
-		if #enemies>5 then
-			local rand= RandomInt( 1, #enemies )
-			table.insert(CapTheseFuckers,enemies[rand])
-			table.remove(enemies,rand)
+		if #enemies>caster.lvl then
+			while #CapTheseFuckers<caster.lvl do
+				local rand= RandomInt( 1, #enemies )
+				table.insert(CapTheseFuckers,enemies[rand])
+				table.remove(enemies,rand)
+			end
 		else
 			CapTheseFuckers=enemies
 		end
@@ -312,6 +345,138 @@ function clusterBoom(args)
 	
 
 end
+
+function dearmorUlt(args)
+
+	local casterUnit = args.caster
+		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+		local targetUnit = args.target
+		local Item
+		local plasmaItem
+		local stunmult=0
+		local itemName = tostring(args.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. keys.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
+		if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
+			for itemSlot = 0, 11, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
+					if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
+							 Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
+							if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
+								stunmult=stunmult+1
+								plasmaItem=Item
+							end
+					end
+			end
+		end
+		if plasmaItem ~= nil then
+			if targetUnit:HasModifier("item_plasma_ult_bow_dearmored") then
+
+				local t=targetUnit:FindAllModifiersByName("item_plasma_ult_bow_dearmored")
+				 for _,fucker in pairs( t) do
+					fucker:SetDuration(fucker:GetRemainingTime()+2,true)
+				end
+			else
+				plasmaItem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_plasma_ult_bow_dearmored", nil)
+			end
+		end
+end
+
+function dearmor3(args)
+
+	local casterUnit = args.caster
+		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+		local targetUnit = args.target
+		local Item
+		local plasmaItem
+		local stunmult=0
+		local itemName = tostring(args.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. keys.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
+		if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
+			for itemSlot = 0, 11, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
+					if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
+							 Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
+							if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
+								stunmult=stunmult+1
+								plasmaItem=Item
+							end
+					end
+			end
+		end
+		if plasmaItem ~= nil then
+			if targetUnit:HasModifier("item_plasma_three_bow_dearmored") then
+				local t=targetUnit:FindAllModifiersByName("item_plasma_three_bow_dearmored")
+				 for _,fucker in pairs( t) do
+					fucker:SetDuration(fucker:GetRemainingTime()+2,true)
+				end
+			else
+				plasmaItem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_plasma_three_bow_dearmored", nil)
+			end
+		end
+end
+
+function dearmor2(args)
+
+	local casterUnit = args.caster
+		print('plasma dearmor start' )
+		local targetUnit = args.target
+		local Item
+		local plasmaItem
+		local stunmult=0
+		local itemName = tostring(args.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. keys.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
+		if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
+			for itemSlot = 0, 11, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
+					if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
+							 Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
+							if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
+								stunmult=stunmult+1
+								plasmaItem=Item
+							end
+					end
+			end
+		end
+		if plasmaItem ~= nil then
+			if targetUnit:HasModifier("item_plasma_two_bow_dearmored") then
+				local t=targetUnit:FindAllModifiersByName("item_plasma_two_bow_dearmored")
+				 for _,fucker in pairs( t) do
+					fucker:SetDuration(fucker:GetRemainingTime()+2,true)
+				end
+			else
+				print('didnt exist, added' )
+				plasmaItem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_plasma_two_bow_dearmored", nil)
+			end
+		end
+end
+
+function dearmor1(args)
+
+	local casterUnit = args.caster
+		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+		local targetUnit = args.target
+		local Item
+		local plasmaItem
+		local stunmult=0
+		local itemName = tostring(args.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. keys.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
+		if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
+			for itemSlot = 0, 11, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
+					if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
+							 Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
+							if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
+								stunmult=stunmult+1
+								plasmaItem=Item
+							end
+					end
+			end
+		end
+		if plasmaItem ~= nil then
+			if targetUnit:HasModifier("item_plasma_bow_dearmored") then
+				local t=targetUnit:FindAllModifiersByName("item_plasma_bow_dearmored")
+				 for _,fucker in pairs( t) do
+					fucker:SetDuration(fucker:GetRemainingTime()+2,true)
+				end
+			else
+				plasmaItem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_plasma_bow_dearmored", nil)
+			end
+		end
+end
+
+
 
 function PrintTable(t, indent, done)
 	--print ( string.format ('PrintTable type %s', type(keys)) )
@@ -492,9 +657,7 @@ function WindUltDmg(args) -- keys is the information sent by the ability
 					if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
 							local Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
 							if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
-								if RandomInt(0,4) == 0 then
-								Item:ApplyDataDrivenModifier(casterUnit, targetUnit, "aura_speed_wind", nil)
-								end
+							
 
 									local damageTable = {
 										victim = targetUnit,
@@ -539,6 +702,92 @@ function coalUltStun(args) -- keys is the information sent by the ability
 		end
 end
 
+function coalThreeStun(args) -- keys is the information sent by the ability
+	print('[ItemFunctions] coal started! ')
+		local casterUnit = args.caster
+		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+		local targetUnit = args.target
+		local Item
+		local coalitem
+		local stunmult=0
+		local itemName = tostring(args.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. keys.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
+		if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
+			for itemSlot = 0, 11, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
+					if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
+							 Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
+							if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
+								stunmult=stunmult+1
+								coalitem=Item
+							end
+					end
+			end
+		end
+		print('[ItemFunctions] stunmult! ' .. stunmult)
+		if coalitem ~= nil and RandomInt(0,8) == 0 then
+			print('[ItemFunctions] random_hit! ')
+			coalitem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_coal_three_bow_stunned", nil)
+			coalSoundStun(args)
+			print('[ItemFunctions] stunned from coal! ')
+		end
+end
+
+function coalTwoStun(args) -- keys is the information sent by the ability
+	print('[ItemFunctions] coal started! ')
+		local casterUnit = args.caster
+		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+		local targetUnit = args.target
+		local Item
+		local coalitem
+		local stunmult=0
+		local itemName = tostring(args.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. keys.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
+		if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
+			for itemSlot = 0, 11, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
+					if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
+							 Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
+							if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
+								stunmult=stunmult+1
+								coalitem=Item
+							end
+					end
+			end
+		end
+		print('[ItemFunctions] stunmult! ' .. stunmult)
+		if coalitem ~= nil and RandomInt(0,8) == 0 then
+			print('[ItemFunctions] random_hit! ')
+			coalitem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_coal_three_bow_stunned", nil)
+			coalSoundStun(args)
+			print('[ItemFunctions] stunned from coal! ')
+		end
+end
+
+function coalStun(args) -- keys is the information sent by the ability
+	print('[ItemFunctions] coal started! ')
+		local casterUnit = args.caster
+		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+		local targetUnit = args.target
+		local Item
+		local coalitem
+		local stunmult=0
+		local itemName = tostring(args.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. keys.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
+		if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
+			for itemSlot = 0, 11, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
+					if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
+							 Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
+							if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
+								stunmult=stunmult+1
+								coalitem=Item
+							end
+					end
+			end
+		end
+		print('[ItemFunctions] stunmult! ' .. stunmult)
+		if coalitem ~= nil and RandomInt(0,8) == 0 then
+			print('[ItemFunctions] random_hit! ')
+			coalitem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_coal_bow_stunned", nil)
+			coalSoundStun(args)
+			print('[ItemFunctions] stunned from coal! ')
+		end
+end
 
 -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
 -- makes sure that the item exists and making sure it is the correct item

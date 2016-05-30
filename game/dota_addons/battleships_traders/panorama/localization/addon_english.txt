@@ -29,11 +29,11 @@
 	"south_gold_each" "South Emp Gold Each:"
 	"zoom_lbl"	"Zoom"
 	
-	"ancient_apparition"	"Zodiac"
+	"ancient_apparition"	"Paddlewheel Diver"
 	"ancient_apparition_desc"	"A simple, maneuverable ship that can dive beneath attacks."
 	
 		"ember_spirit"												"Tug Boat"
-		"ancient_apparition"												"Zodiac"
+		"ancient_apparition"												"Paddlewheel Diver"
 		"disruptor"												"Shore Guard"
 		"morphling"											"Speed Boat"
 		"storm_spirit"											"Junk Ship"

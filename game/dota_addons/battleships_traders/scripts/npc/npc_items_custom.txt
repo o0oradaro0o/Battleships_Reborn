@@ -5664,6 +5664,24 @@
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/wind_one_projectile.vpcf" 
 					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "300"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BUILDING"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "800"
+						"ProvidesVision" "1"
+						"VisionRadius" "200"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/wind_one_projectile.vpcf" 
+					}
 					
 					
 				}
@@ -5754,7 +5772,8 @@
 							"Random" "1"
 						}
 						"MoveSpeed" "800"
-						"ProvidesVision" "0"
+						"ProvidesVision" "1"
+						"VisionRadius" "200"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/pink_one_projectile.vpcf" 
 					}
@@ -5771,7 +5790,8 @@
 							"Random" "1"
 						}
 						"MoveSpeed" "800"
-						"ProvidesVision" "0"
+						"VisionRadius" "200"
+						"ProvidesVision" "1"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/pink_one_projectile.vpcf" 
 					}
@@ -5892,23 +5912,48 @@
 				}
 				
 			}
+			"item_coal_bow_stunned"
+			{
+				"Duration"              ".55"
+				"EffectName"            "particles/basic_projectile/stunned.vpcf"
+				"EffectAttachType"      "follow_overhead"
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED" "MODIFIER_STATE_VALUE_ENABLED"
+				} 
+			}
+					
+			
+			
 		}
 		"OnProjectileHitUnit"
-		{
-			"RunScript"
 			{
-				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-				"Function"			"coalSoundImpact"
-			}				
-			"DeleteOnHit"                           "false"
-			"Damage"
-			{
-					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
-					"Damage"                                "%dmg"
-					"Target"                                "TARGET"
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"coalSoundImpact"
+					}				
+					"DeleteOnHit"                           "false"
+					"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+							"Damage"                                "%dmg"
+							"Target"                                "TARGET"
+					}
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"coalStun"
+					}
+					"AttachEffect"
+					{
+						"Target"				"TARGET"
+
+						"EffectName"		"particles/basic_projectile/coal_ult_blind.vpcf" 
+						"EffectAttachType"	"follow_origin"
+					}
 			}
-				
-		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -6003,6 +6048,20 @@
 				}
 				
 			}
+			"item_plasma_bow_dearmored"
+				{
+					"Duration"              "1.0"
+					"EffectName"            "particles/basic_projectile/dearmor.vpcf"
+					"EffectAttachType"      "follow_overhead"
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"-.5"
+					}
+					
+				}
+					
+			
+			
 		}
 		"OnProjectileHitUnit"
 		{
@@ -6010,15 +6069,21 @@
 			{
 				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
 				"Function"			"plasmaSoundImpact"
-			}				
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+				"Function"			"dearmor1"
+			}
 			"DeleteOnHit"                           "false"
 			"Damage"
 			{
 				"Type"                                  "DAMAGE_TYPE_PHYSICAL"
-				 "Damage"                                "%dmg"
+				"Damage"                                "%dmg"
 				"Target"                                "TARGET"
 			}
-                        
+		
+
 		}
 				"AbilitySpecial"
 		{
@@ -6126,6 +6191,12 @@
 				"Function"			"plasmaSoundImpact"
 			}
 		
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+				"Function"			"cluster1"
+			}
+			
 			"DeleteOnHit"                           "false"
 			"Damage"
 			{
@@ -6569,7 +6640,24 @@
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/wind_two_projectile.vpcf" 
 					}
-					
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "400"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BUILDING"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "800"
+						"ProvidesVision" "1"
+						"VisionRadius" "200"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/wind_two_projectile.vpcf" 
+					}
 					
 				}
 				
@@ -6656,7 +6744,8 @@
 							"Random" "1"
 						}
 						"MoveSpeed" "800"
-						"ProvidesVision" "0"
+						"ProvidesVision" "1"
+						"VisionRadius" "400"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/pink_two_projectile.vpcf" 
 					}
@@ -6673,7 +6762,8 @@
 							"Random" "1"
 						}
 						"MoveSpeed" "800"
-						"ProvidesVision" "0"
+						"ProvidesVision" "1"
+						"VisionRadius" "400"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/pink_two_projectile.vpcf" 
 					}
@@ -6793,23 +6883,48 @@
 				}
 				
 			}
+		"item_coal_two_bow_stunned"
+			{
+				"Duration"              ".75"
+				"EffectName"            "particles/basic_projectile/stunned.vpcf"
+				"EffectAttachType"      "follow_overhead"
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED" "MODIFIER_STATE_VALUE_ENABLED"
+				} 
+			}
+					
+			
+			
 		}
 		"OnProjectileHitUnit"
-		{
-			"RunScript"
 			{
-				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-				"Function"			"coalSoundImpact"
-			}				
-			"DeleteOnHit"                           "false"
-			"Damage"
-			{
-					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
-				   "Damage"                                "%dmg"
-					"Target"                                "TARGET"
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"coalSoundImpact"
+					}				
+					"DeleteOnHit"                           "false"
+					"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+							"Damage"                                "%dmg"
+							"Target"                                "TARGET"
+					}
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"coalTwoStun"
+					}
+					"AttachEffect"
+					{
+						"Target"				"TARGET"
+
+						"EffectName"		"particles/basic_projectile/coal_ult_blind.vpcf" 
+						"EffectAttachType"	"follow_origin"
+					}
 			}
-				
-		}
 				"AbilitySpecial"
 		{
 			"01"
@@ -6904,6 +7019,20 @@
 				}
 				
 			}
+		"item_plasma_two_bow_dearmored"
+				{
+					"Duration"              "1.0"
+					"EffectName"            "particles/basic_projectile/dearmor.vpcf"
+					"EffectAttachType"      "follow_overhead"
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"-1"
+					}
+					
+				}
+					
+			
+			
 		}
 		"OnProjectileHitUnit"
 		{
@@ -6911,7 +7040,7 @@
 			{
 				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
 				"Function"			"plasmaSoundImpact"
-			}		
+			}
 			"DeleteOnHit"                           "false"
 			"Damage"
 			{
@@ -6919,7 +7048,12 @@
 				"Damage"                                "%dmg"
 				"Target"                                "TARGET"
 			}
-				
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+				"Function"			"dearmor2"
+			}
+
 		}
 				"AbilitySpecial"
 		{
@@ -7024,6 +7158,12 @@
 			{
 				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
 				"Function"			"plasmaSoundImpact"
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+				"Function"			"cluster2"
 			}
 		
 			"DeleteOnHit"                           "false"
@@ -7464,7 +7604,24 @@
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/wind_three_projectile.vpcf" 
 					}
-					
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "500"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BUILDING"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "800"
+						"ProvidesVision" "1"
+						"VisionRadius" "200"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/wind_three_projectile.vpcf" 
+					}
 					
 					
 				}
@@ -7557,7 +7714,8 @@
 							"Random" "1"
 						}
 						"MoveSpeed" "800"
-						"ProvidesVision" "0"
+						"ProvidesVision" "1"
+						"VisionRadius" "600"
 						"Dodgeable" "1" 
                    "EffectName"    "particles/basic_projectile/pink_three_projectile.vpcf" 
 					}
@@ -7574,7 +7732,8 @@
 							"Random" "1"
 						}
 						"MoveSpeed" "800"
-						"ProvidesVision" "0"
+						"ProvidesVision" "1"
+						"VisionRadius" "600"
 						"Dodgeable" "1" 
                    "EffectName"    "particles/basic_projectile/pink_three_projectile.vpcf" 
 					}
@@ -7696,23 +7855,48 @@
 				}
 				
 			}
+		"item_coal_three_bow_stunned"
+			{
+				"Duration"              "1.0"
+				"EffectName"            "particles/basic_projectile/stunned.vpcf"
+				"EffectAttachType"      "follow_overhead"
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED" "MODIFIER_STATE_VALUE_ENABLED"
+				} 
+			}
+					
+			
+			
 		}
 		"OnProjectileHitUnit"
-		{
-			"RunScript"
 			{
-				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-				"Function"			"coalSoundImpact"
-			}				
-			"DeleteOnHit"                           "false"
-			"Damage"
-			{
-					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
-				   "Damage"                                "%dmg"
-					"Target"                                "TARGET"
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"coalSoundImpact"
+					}				
+					"DeleteOnHit"                           "false"
+					"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+							"Damage"                                "%dmg"
+							"Target"                                "TARGET"
+					}
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"coalThreeStun"
+					}
+					"AttachEffect"
+					{
+						"Target"				"TARGET"
+
+						"EffectName"		"particles/basic_projectile/coal_ult_blind.vpcf" 
+						"EffectAttachType"	"follow_origin"
+					}
 			}
-				
-		}
 		"AbilitySpecial"
 		{
 			"01"
@@ -7811,6 +7995,20 @@
 				}
 				
 			}
+			"item_plasma_three_bow_dearmored"
+				{
+					"Duration"              "1.5"
+					"EffectName"            "particles/basic_projectile/dearmor.vpcf"
+					"EffectAttachType"      "follow_overhead"
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"-2"
+					}
+					
+				}
+					
+			
+			
 		}
 		"OnProjectileHitUnit"
 		{
@@ -7818,7 +8016,7 @@
 			{
 				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
 				"Function"			"plasmaSoundImpact"
-			}		
+			}
 			"DeleteOnHit"                           "false"
 			"Damage"
 			{
@@ -7826,7 +8024,12 @@
 				"Damage"                                "%dmg"
 				"Target"                                "TARGET"
 			}
-				
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+				"Function"			"dearmor3"
+			}
+
 		}
 				"AbilitySpecial"
 		{
@@ -7930,6 +8133,12 @@
 			{
 				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
 				"Function"			"plasmaSoundImpact"
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+				"Function"			"cluster3"
 			}
 		
 			"DeleteOnHit"                           "false"
@@ -8408,51 +8617,27 @@
 					
 					
 				}
-				
-			}
-			
-			 "aura_speed_wind"
-                {
-                       
-                        "Duration" "3"
-                        "Aura"                                  "speed_aura_wind"
-                        "Aura_Radius"                   "700"
-                        "Aura_Teams"                    "DOTA_UNIT_TARGET_TEAM_ENEMY"
-                        "Aura_Types"                    "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-                        "Aura_ApplyToCaster"    "1"
-						
-						
-                }
-                       
-                "speed_aura_wind"
-                {
-					"Properties"
+				"TrackingProjectile"
 					{
-						"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"60"
-
-					}
-					"Duration" "3"
-					
-				
-						"Target" "CASTER"
-						"EffectName"    "particles/basic_projectile/speed_attach.vpcf" 
-						"EffectAttachType"	"follow_overhead"
-					
-                }
-			
-			"item_wind_ult_bow_buffet"
-			{
-				"ThinkInterval"		"0.03"
-				"OnIntervalThink"
-				{
-						"RunScript"
+						"Target"
 						{
-							"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-							"Function"			"wind_ult_buffet"
+							"Center" "CASTER"
+							"Radius" "700"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BUILDING"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
 						}
-				}
-				"Duration" "1"
+						"MoveSpeed" "800"
+						"ProvidesVision" "1"
+						"VisionRadius" "200"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/wind_ult_projectile.vpcf" 
+					}
+				
 			}
+			
 			
 		}
 		"OnProjectileHitUnit"
@@ -8468,12 +8653,6 @@
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
 				"Function"			"WindUltDmg"
 			}
-			//	"ApplyModifier"
-			//	{
-			//		"Target" "TARGET"
-			//		"ModifierName" "item_wind_ult_bow_buffet"
-			//	}
-					
 					
 			}
 				"AbilitySpecial"
@@ -8806,11 +8985,12 @@
 				"Damage"                                "%dmg"
 				"Target"                                "TARGET"
 			}
-			"ApplyModifier"
+			"RunScript"
 			{
-				"Target"				"TARGET"
-				"ModifierName" "item_plasma_ult_bow_dearmored"
+				"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+				"Function"			"dearmorUlt"
 			}
+
 		}
 			"AbilitySpecial"
 		{
