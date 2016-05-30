@@ -5325,23 +5325,56 @@
 				}
 				
 			}
+		"item_poison_ult_bow_pleagued_1"
+			{			
+				"Duration"  "3"
+								"IsHidden"	 "1"
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"0.5"
+				"OnIntervalThink"
+				{
+					
+					"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PURE"
+							"Damage"                                "%damage"
+							"Target"                                "TARGET"
+					}	
+				}
+			}
+			
+		"item_poison_dot_show"
+					{
+						"Duration" "3"
+						
+					}
 		}
 		"OnProjectileHitUnit"
 		{
-			"DeleteOnHit"                           "false"
-			"Damage"
+			"ApplyModifier"
 			{
-					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
-					"Damage"                                "%dmg"
-					"Target"                                "TARGET"
+				"Target"				"TARGET"
+				"ModifierName" "item_poison_dot_show"
 			}
-			"RunScript"
-				{
-					"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-					"Function"			"poisonSoundImpact"
-				}        
-				
-		}
+					"DeleteOnHit"                           "false"
+					"DeleteOnHit"                           "false"
+					"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+							"Damage"                                "%dmg"
+							"Target"                                "TARGET"
+					}
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"poisonSoundImpact"
+					}   						
+					 "ApplyModifier"
+					{
+						"Target"				"TARGET"
+						"ModifierName" "item_poison_ult_bow_pleagued_1"
+					}
+                }
 		"AbilitySpecial"
 		{
 			"01"
@@ -5353,6 +5386,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"dmg"	"42"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"	"1"
 			}
 
 		}
@@ -5400,6 +5438,11 @@
 						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
 						"Function"			"fireSoundFire"
 					}
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"FireDmgAura"
+					}
 					"TrackingProjectile"
 					{
 						"Target"
@@ -5439,6 +5482,23 @@
 				}
 				
 			}
+			"fire_area_1"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsHidden"	 "1"
+				"Passive"	 "1"
+				"Aura" "create_fire_area_aura_1"
+				"Aura_Radius" "700"
+				"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+			}
+			"create_fire_area_aura_1"
+			{
+				"IsDebuff" "1"
+				"IsPurgable" "0"
+				"EffectName" "particles/basic_projectile/fire_burn_effect_small.vpcf"
+				
+			}
 		}
 		"OnProjectileHitUnit"
 		{
@@ -5467,6 +5527,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"dmg"	"12"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"	"2"
 			}
 		}
 		
@@ -5554,22 +5619,55 @@
 				}
 				
 			}
+		"item_ice_bow_slow"
+					{
+						"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+						"Properties"
+						{
+							"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-1"
+					
+						}
+						"Duration" "3.5"
+						
+					}
+		"item_ice_slow_show"
+					{
+
+						"Duration" "3.5"
+						
+					}
 		}
 		"OnProjectileHitUnit"
 		{
+			"ApplyModifier"
+			{
+				"Target"				"TARGET"
+				"ModifierName" "item_ice_slow_show"
+			}
 			"RunScript"
 			{
 				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
 				"Function"			"iceSoundImpact"
-			} 				
+			} 		
 			"DeleteOnHit"                           "false"
 			"Damage"
 			{
 					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
-					 "Damage"                                "%dmg"
+					"Damage"                                "%dmg"
 					"Target"                                "TARGET"
 			}
-                        
+			"ApplyModifier"
+			{
+				"Target"				"TARGET"
+				"ModifierName" "item_ice_bow_slow"
+			}
+		   "AttachEffect"
+			{
+				"Target"				"TARGET"
+
+				"EffectName"		"particles/basic_projectile/ice_ult_slow.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
 		}
 				"AbilitySpecial"
 		{
@@ -5677,8 +5775,6 @@
 							"Random" "1"
 						}
 						"MoveSpeed" "800"
-						"ProvidesVision" "1"
-						"VisionRadius" "200"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/wind_one_projectile.vpcf" 
 					}
@@ -6307,23 +6403,56 @@
 				}
 				
 			}
+				"item_poison_ult_bow_pleagued_2"
+			{			
+				"Duration"  "3"
+								"IsHidden"	 "1"
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"0.5"
+				"OnIntervalThink"
+				{
+					
+					"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PURE"
+							"Damage"                                "%damage"
+							"Target"                                "TARGET"
+					}	
+				}
+			}
+			
+		"item_poison_dot_show"
+					{
+						"Duration" "3"
+						
+					}
 		}
 		"OnProjectileHitUnit"
 		{
-			"DeleteOnHit"                           "false"
-			"Damage"
+			"ApplyModifier"
 			{
-					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
-					 "Damage"                                "%dmg"
-					"Target"                                "TARGET"
+				"Target"				"TARGET"
+				"ModifierName" "item_poison_dot_show"
 			}
-			"RunScript"
-			{
-				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-				"Function"			"poisonSoundImpact"
-			}          
-				
-		}
+					"DeleteOnHit"                           "false"
+					"DeleteOnHit"                           "false"
+					"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+							"Damage"                                "%dmg"
+							"Target"                                "TARGET"
+					}
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"poisonSoundImpact"
+					}   						
+					 "ApplyModifier"
+					{
+						"Target"				"TARGET"
+						"ModifierName" "item_poison_ult_bow_pleagued_2"
+					}
+                }
 				"AbilitySpecial"
 		{
 			"01"
@@ -6336,7 +6465,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"dmg"	"90"
 			}
-
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"	"2"
+			}
 		}
 	}
 	//===============================================
@@ -6419,6 +6552,24 @@
 				}
 				
 			}
+			"fire_area_2"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsHidden"	 "1"
+				"Passive"	 "1"
+				"Aura" "create_fire_area_aura_2"
+				"Aura_Radius" "700"
+				"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+			}
+			"create_fire_area_aura_2"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsDebuff" "1"
+				"IsPurgable" "0"
+				"EffectName" "particles/basic_projectile/fire_burn_effect.vpcf"
+
+			}
 		}
 		"OnProjectileHitUnit"
 		{
@@ -6447,6 +6598,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"dmg"	"26"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"	"4"
 			}
 
 		}
@@ -6532,14 +6688,36 @@
 				}
 				
 			}
+		"item_ice_two_bow_slow"
+					{
+						"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+						"IsHidden"	 "1"
+						"Properties"
+						{
+							"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-2"
+					
+						}
+						"Duration" "3.5"
+						
+					}
+					"item_ice_slow_show"
+					{
+						"Duration" "3.5"
+						
+					}
 		}
 		"OnProjectileHitUnit"
 		{
+			"ApplyModifier"
+			{
+				"Target"				"TARGET"
+				"ModifierName" "item_ice_slow_show"
+			}
 			"RunScript"
 			{
 				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
 				"Function"			"iceSoundImpact"
-			} 				
+			} 		
 			"DeleteOnHit"                           "false"
 			"Damage"
 			{
@@ -6547,7 +6725,18 @@
 					"Damage"                                "%dmg"
 					"Target"                                "TARGET"
 			}
-			
+			"ApplyModifier"
+			{
+				"Target"				"TARGET"
+				"ModifierName" "item_ice_two_bow_slow"
+			}
+		   "AttachEffect"
+			{
+				"Target"				"TARGET"
+
+				"EffectName"		"particles/basic_projectile/ice_ult_slow.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
 		}
 				"AbilitySpecial"
 		{
@@ -6653,8 +6842,6 @@
 							"Random" "1"
 						}
 						"MoveSpeed" "800"
-						"ProvidesVision" "1"
-						"VisionRadius" "200"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/wind_two_projectile.vpcf" 
 					}
@@ -7273,22 +7460,56 @@
 					}					
 				}				
 			}
+			"item_poison_ult_bow_pleagued_3"
+			{			
+							"IsHidden"	 "1"
+				"Duration"  "3"
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"0.5"
+				"OnIntervalThink"
+				{
+					
+					"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PURE"
+							"Damage"                                "%damage"
+							"Target"                                "TARGET"
+					}	
+				}
+			}
+			
+		"item_poison_dot_show"
+					{
+						"Duration" "3"
+						
+					}
 		}
 		"OnProjectileHitUnit"
 		{
-			"DeleteOnHit"                           "false"
-			"Damage"
+			"ApplyModifier"
 			{
-				"Type"                                  "DAMAGE_TYPE_PHYSICAL"
-				"Damage"                                "%dmg"
-				"Target"                                "TARGET"
+				"Target"				"TARGET"
+				"ModifierName" "item_poison_dot_show"
 			}
-			"RunScript"
-			{
-				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-				"Function"			"poisonSoundImpact"
-			}   			
-		}
+					"DeleteOnHit"                           "false"
+					"DeleteOnHit"                           "false"
+					"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+							"Damage"                                "%dmg"
+							"Target"                                "TARGET"
+					}
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"poisonSoundImpact"
+					}   						
+					 "ApplyModifier"
+					{
+						"Target"				"TARGET"
+						"ModifierName" "item_poison_ult_bow_pleagued_3"
+					}
+                }
 		"AbilitySpecial"
 		{
 			"01"
@@ -7300,6 +7521,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"dmg"	"180"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"	"3"
 			}
 
 		}
@@ -7345,6 +7571,11 @@
 						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
 						"Function"			"fireSoundFire"
 					}
+						"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"FireDmgAura"
+					}
 					"TrackingProjectile"
 					{
 						"Target"
@@ -7384,6 +7615,24 @@
 				}
 				
 			}
+			
+			"fire_area_3"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsHidden"	 "1"
+				"Passive"	 "1"
+				"Aura" "create_fire_area_aura_3"
+				"Aura_Radius" "700"
+				"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+			}
+			"create_fire_area_aura_3"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsDebuff" "1"
+				"IsPurgable" "0"
+				"EffectName" "particles/basic_projectile/fire_burn_effect_small.vpcf"
+			}
 		}
 		"OnProjectileHitUnit"
 		{
@@ -7411,6 +7660,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"dmg"	"52"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"	"6"
 			}
 
 		}
@@ -7496,21 +7750,55 @@
 				}
 				
 			}
+		"item_ice_three_bow_slow"
+					{
+						"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+						"Properties"
+						{
+							"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-3"
+					
+						}
+						"Duration" "3.5"
+						
+					}
+		"item_ice_slow_show"
+					{
+					
+						"Duration" "3.5"
+						
+					}
 		}
 		"OnProjectileHitUnit"
 		{
+			"ApplyModifier"
+			{
+				"Target"				"TARGET"
+				"ModifierName" "item_ice_slow_show"
+			}
 			"RunScript"
 			{
 				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
 				"Function"			"iceSoundImpact"
-			} 				
+			} 		
 			"DeleteOnHit"                           "false"
 			"Damage"
 			{
 					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
 					"Damage"                                "%dmg"
 					"Target"                                "TARGET"
-			}                        
+			}
+			"ApplyModifier"
+			{
+				"Target"				"TARGET"
+				"ModifierName" "item_ice_three_bow_slow"
+			}
+		   "AttachEffect"
+			{
+				"Target"				"TARGET"
+
+				"EffectName"		"particles/basic_projectile/ice_ult_slow.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
 		}
 				"AbilitySpecial"
 		{
@@ -7617,8 +7905,6 @@
 							"Random" "1"
 						}
 						"MoveSpeed" "800"
-						"ProvidesVision" "1"
-						"VisionRadius" "200"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/wind_three_projectile.vpcf" 
 					}
@@ -8242,8 +8528,9 @@
 			
 			"item_poison_ult_bow_pleagued"
 			{			
+							"IsHidden"	 "1"
 				"Duration"  "4"
-				
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"0.5"
 				"OnIntervalThink"
 				{
@@ -8257,10 +8544,19 @@
 				}
 			}
 			
+					"item_poison_dot_show"
+					{
+						"Duration" "4"
+						
+					}
 		}
-		
-				"OnProjectileHitUnit"
-                {
+		"OnProjectileHitUnit"
+		{
+			"ApplyModifier"
+			{
+				"Target"				"TARGET"
+				"ModifierName" "item_poison_dot_show"
+			}
 					"DeleteOnHit"                           "false"
 					"DeleteOnHit"                           "false"
 					"Damage"
@@ -8291,6 +8587,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"dmg"	"650"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"	"20"
 			}
 		}
 	}
@@ -8333,6 +8634,11 @@
 						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
 						"Function"			"fireSoundFire"
 					}
+						"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"FireDmgAura"
+					}
 					"TrackingProjectile"
 					{
 						"Target"
@@ -8356,35 +8662,22 @@
 			}
 		
 
-			"fire_area"
+			"fire_area_4"
 			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"IsHidden"	 "1"
 				"Passive"	 "1"
-				"Aura" "create_fire_area_aura"
-				"Aura_Radius" "%radius"
+				"Aura" "create_fire_area_aura_4"
+				"Aura_Radius" "700"
 				"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Aura_Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
 			}
-			"create_fire_area_aura"
+			"create_fire_area_aura_4"
 			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"IsDebuff" "1"
 				"IsPurgable" "0"
-				"EffectName" "particles/basic_projectile/fire_burn_effect.vpcf"
-				"ThinkInterval" ".5"
-				"OnIntervalThink"
-				{	
-					"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-						"Function"			"fireSoundAura"
-					}				
-					"Damage"
-					{
-						"Type"   "DAMAGE_TYPE_PHYSICAL"
-						"Damage" "%damage"
-						"Target" "TARGET"
-					}
-				}
+				"EffectName" "particles/basic_projectile/fire_burn_effect_small.vpcf"
 			}
 		}
 
@@ -8426,7 +8719,7 @@
 			"03"
 			{
 				"var_type"                "FIELD_INTEGER"
-				"damage"                "30"
+				"damage"                "20"
 			}
 			"04"
 			{
@@ -8504,7 +8797,7 @@
 			}
 			"item_ice_ult_bow_slow"
 					{
-					
+						"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 						"Properties"
 						{
 							"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-15"
@@ -8513,9 +8806,19 @@
 						"Duration" "3.5"
 						
 					}
+		"item_ice_slow_show"
+					{
+						"Duration" "3.5"
+						
+					}
 		}
 		"OnProjectileHitUnit"
 		{
+			"ApplyModifier"
+			{
+				"Target"				"TARGET"
+				"ModifierName" "item_ice_slow_show"
+			}
 			"RunScript"
 			{
 				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
@@ -8630,8 +8933,6 @@
 							"Random" "1"
 						}
 						"MoveSpeed" "800"
-						"ProvidesVision" "1"
-						"VisionRadius" "200"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/wind_ult_projectile.vpcf" 
 					}

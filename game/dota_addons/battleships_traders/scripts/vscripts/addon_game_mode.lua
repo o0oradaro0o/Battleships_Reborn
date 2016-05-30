@@ -1138,7 +1138,6 @@ function HandleCoOp()
 						
 						if  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 							local height = hero:GetOrigin() * Vector(0,0,1)
-							print("bad height " .. height:Length())
 							if height:Length() > 80 then
 								print("moving wall stuck")
 								hero:SetOrigin(hero:GetOrigin() * Vector(.9,.9,.9))
