@@ -110,7 +110,7 @@
        "Model" "models/zodiac/sm_zodiac.vmdl"     // Model.
         "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
 		
-		"ModelScale"        "1.2"
+		"ModelScale"        "1.25"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
 	    "AttributeBaseStrength"     "1"                                     // Base strength
@@ -241,13 +241,12 @@
 		
 				"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
-		
+		"ModelScale"        ".9"
 		"AbilityLayout"				"3"
 		"Ability1"					"pistols_battleship"
 		"Ability2"					"swamp_gas_battleship"
 		"Ability3"					"fan_blast_battleship"
 		"Ability4"					"batten_hatches"
-        "ModelScale"        "0.6"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{

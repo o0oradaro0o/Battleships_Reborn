@@ -37,11 +37,11 @@
 		<Panel id="NewsHolder">
 			<Panel id="News">
 				<Label class="AuthorTitle" text="News!" />
-				<Label class="heroTitle" text="Hey everyone, thanks for playing recently! Your support really means a lot and the mods popularity has caught the attention of a talented artist, Slapunas. \n\nHe will be helping to overhaul and improve our models. Look for visual changes rolling out in the coming months, and maybe the odd weapon change. Thanks again and happy sailing!" />
+
+				<Label class="newsTitle" text="Hey everyone, thanks for playing recently! Your support really means a lot and the mods popularity has caught the attention of a talented artist, Slapunas. Who will be helping to overhaul our models \n\nNewest changes:\nNew Airboat model added!\n-Every weapon now gets a special effect when 'doubled' which is a mini version of the old ultimate effects\n-All weapon effects now stack (so more than one posion dot can effect the same target for example)\n-Wind effect changed so that the ultimate and doubled weapons gain an additional tower only projectile that is very short ranged (ultimate no longer gives move speed boost)\n\nI am sure the balance will be effected by these large changes to the weapons.  Please share your thoughts with me in the comments/discussion bored on the workshop page.  The intent is to allow additional specialization early to add more flavor to the weapons. Thanks for playing and happy sailing." />
 			</Panel>
 		</Panel>
 		
 		
-
 	</Panel>
 </root>
