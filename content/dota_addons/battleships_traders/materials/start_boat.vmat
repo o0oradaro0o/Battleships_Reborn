@@ -4,25 +4,34 @@ Layer0
 {
 	shader "hero.vfx"
 
+	//---- 2-Sided Rendering ----
+	F_RENDER_BACKFACES 1
+
+	//---- Masks ----
+	F_MASKS_1 1
+	F_MASKS_2 1
+
 	//---- Blend To Full ----
 	g_flEnvMapBlendToFull "0.000"
-	g_flMetalnessBlendToFull "0.000"
-	g_flReflectionsTintByBaseBlendToNone "0.000"
-	g_flSelfIllumBlendToFull "0.000"
-	g_flSpecularBlendToFull "0.000"
-	g_flSpecularExponentBlendToFull "0.000"
+	g_flMetalnessBlendToFull "0.144"
+	g_flReflectionsTintByBaseBlendToNone "0.541"
+	g_flSelfIllumBlendToFull "0.360"
+	g_flSpecularBlendToFull "0.288"
+	g_flSpecularExponentBlendToFull "1.000"
 
 	//---- Cloak ----
-	g_flCloakBlurAmount "0.005"
+	g_flCloakBlurAmount "0.000"
 	g_flCloakIntensity "0.850"
-	g_flCloakRefractAmount "0.100"
+	g_flCloakRefractAmount "0.104"
 	g_flMaterialCloakFactor "0.000"
-	g_vCloakColorTint "[1.000000 1.000000 1.000000 0.000000]"
+	g_vCloakColorTint "[1.000 1.000 1.000]"
 
 	//---- Color ----
+	g_flDiffuseModulationAmount "1.000"
+	g_flTexCoordRotation "0.000"
 	g_vTexCoordOffset "[0.000 0.000]"
 	g_vTexCoordScale "[1.000 1.000]"
-	TextureColor "materials/start_boat.tga"
+	TextureColor "materials/barrelboat/t_barrelboat_c.png"
 
 	//---- Fresnel ----
 	TextureFresnelWarpColor "materials/default/default_fresnelwarpcolor.tga"
@@ -31,19 +40,31 @@ Layer0
 
 	//---- Lighting ----
 	g_flAmbientScale "1.000"
-	g_flBloomScale "0.000"
+	g_flBloomScale "0.053"
 	g_flBloomShift "0.000"
 	g_vBloomColor "[1.000000 1.000000 1.000000 0.000000]"
 
+	//---- Mask 1 ----
+	TextureDetailMask "materials/barrelboat/t_barrelboat_mask1.png"
+	TextureDiffuseWarpMask "materials/barrelboat/t_barrelboat_mask1.png"
+	TextureMetalnessMask "materials/barrelboat/t_barrelboat_mask1.png"
+	TextureSelfIllumMask "materials/barrelboat/t_barrelboat_c.png"
+
+	//---- Mask 2 ----
+	TextureRimMask "materials/barrelboat/t_barreloab_mask2.png"
+	TextureSpecularExponent "materials/barrelboat/t_barrelboat_c.png"
+	TextureSpecularMask "materials/barrelboat/t_barreloab_mask2.png"
+	TextureTintByBaseMask "materials/barrelboat/t_barrelboat_c.png"
+
 	//---- Normal Map ----
-	TextureNormal "materials/start_boat.tga"
+	TextureNormal "materials/barrelboat/t_barrelboat_n.png"
 
 	//---- Rim ----
-	g_flRimLightScale "1.000"
+	g_flRimLightScale "0.800"
 	g_vRimLightColor "[1.000000 1.000000 1.000000 0.000000]"
 
 	//---- Specular ----
-	g_flSpecularExponent "32.000"
-	g_flSpecularScale "1.000"
-	g_vSpecularColor "[1.000000 1.000000 1.000000 0.000000]"
+	g_flSpecularExponent "82.760"
+	g_flSpecularScale "16.000"
+	g_vSpecularColor "[0.843137 0.831373 1.000000 0.000000]"
 }
