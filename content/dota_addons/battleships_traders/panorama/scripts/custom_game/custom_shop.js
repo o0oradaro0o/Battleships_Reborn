@@ -525,11 +525,11 @@ function FadeShop()
 		
 		//if it is not the same as the old zoom value, zoom to it otherwise wait and slowly fade out the zoom box
 		//set the +1800 to your min zoom and 1800+2200 will be your max zoom
-		if($("#zoomLblVal").text!=zoomPer/100*1300+1800)
+		if($("#zoomLblVal").text!=zoomPer/100*1300+1600)
 		{
-			GameUI.SetCameraDistance(zoomPer/100*1300+1800)
+			GameUI.SetCameraDistance(zoomPer/100*1300+1600)
 
-			$("#zoomLblVal").text=zoomPer/100*1300+1800;
+			$("#zoomLblVal").text=zoomPer/100*1300+1600;
 			ticksSinceChanged=0;
 				$("#ZoomSliderBox").style.opacity=1;
 		}
@@ -553,7 +553,7 @@ function FadeShop()
 	
 	function setZoom()
 	{
-		GameUI.SetCameraDistance(1800)
+		GameUI.SetCameraDistance(1600)
 	}
 	function toggleZoom()
 	{

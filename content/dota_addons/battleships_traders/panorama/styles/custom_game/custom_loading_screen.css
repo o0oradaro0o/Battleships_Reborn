@@ -98,17 +98,17 @@
 	vertical-align: top;
 	margin-top: 20px;
 		margin-left: 30px;
-	margin-right: 30px;
-	width: 400px;
+	margin-right: 10px;
+	width: 740px;
 	height: 300px;
-	
+	overflow: squish scroll;
 }
 #NewsHolder
 {
 		border-radius: 20px;
 	flow-children: down;
 	background-color: gradient( linear, 0% 50%, 0% 100%, from( #42694ecc ), to( #252525ff) );
-		height: 320px;
+		height: 380px;
 		margin-top: 600px;
 	margin-right: 30px;
 	margin-left: 30px;
@@ -152,7 +152,6 @@
 
 .AuthorTitle
 {
-	margin-bottom: -15px;
 	vertical-align: center;
 	font-size: 25px;
 	color: #cccccc;
@@ -167,7 +166,15 @@
 	color: #cccccc;
 	text-shadow: 2px 2px 2px #000000;
 }
-
+.newsTitle
+{
+	margin-top:10px;
+	margin-bottom: -60px;
+	vertical-align: center;
+	font-size: 17px;
+	color: #cccccc;
+	text-shadow: 2px 2px 2px #000000;
+}
 .SpecialTitle
 {
 	horizontal-align: left;
