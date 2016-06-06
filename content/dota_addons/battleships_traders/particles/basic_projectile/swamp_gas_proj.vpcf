@@ -55,6 +55,12 @@
 			m_fFalloffPower = 0.000000
 			m_nControlPointNumber = 1
 			m_Notes = "This Force Generator pulls the projectile effect toward its target (CP1). Though the force is set extraordinarily high, the effect\'s speed is limited by the Movement Max Velocity op. IMPORTANT: It\'s best not to modify this op for custom effects!"
+			m_vecComponentScale =
+			[
+				1.000000,
+				1.000000,
+				30.000000,
+			]
 		},
 	]
 }

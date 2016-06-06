@@ -5757,15 +5757,12 @@
 				"Target" "TARGET"
 				"ModifierName" "gas_mod"
 			}
-			"TrackingProjectile"
-			{
-				"Target" "TARGET"
-					
-				"MoveSpeed" "1200"
-				"ProvidesVision" "0"
-				"EffectName"    "particles/basic_projectile/swamp_gas_proj.vpcf" 
-			}
 			
+			"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"fireGas"
+					}
 		}
 		
 		"Modifiers"
