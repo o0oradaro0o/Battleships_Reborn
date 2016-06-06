@@ -1065,6 +1065,30 @@ end
 
 end
 
+ function fireGas(args) -- keys is the information sent by the ability
+		print('[ItemFunctions] dragonBlast started! ')
+
+		local targetUnit = args.target
+		local caster = args.caster
+
+		local info = 
+		{
+			Ability = caster:GetAbilityByIndex(1),	
+			Source = caster,
+			Target = targetUnit,
+			vSourceLoc = targetUnit:GetOrigin(),
+			EffectName = "particles/basic_projectile/swamp_gas_proj.vpcf",
+			bProvidesVision = false,
+			iVisionRadius = 1000,
+			iVisionTeamNumber = caster:GetTeamNumber(),
+			bDeleteOnHit = false,
+			iMoveSpeed = 750,
+			vVelocity = 750,
+			iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2
+		}
+		projectile = ProjectileManager:CreateTrackingProjectile(info)
+end
+
 
 function hackNav(args) -- keys is the information sent by the ability
 		print('[ItemFunctions] dragonBlast started! ')

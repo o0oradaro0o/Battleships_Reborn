@@ -789,8 +789,13 @@ function attachCosmetics(hero)
 			 hero.particleM = ParticleManager:CreateParticle( "particles/basic_projectile/smoke_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 				ParticleManager:SetParticleControlEnt(hero.particleM, 0, hero, PATTACH_POINT_FOLLOW, "M_chim3", hero:GetAbsOrigin(), true)
 			end
-		
-			print( "partical attachment." )
+			elseif string.match(hero:GetName(),"phantom") then
+			if hero.particleM==nil then
+				 hero.particleM = ParticleManager:CreateParticle( "particles/basic_projectile/smoke_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+					ParticleManager:SetParticleControlEnt(hero.particleM, 0, hero, PATTACH_POINT_FOLLOW, "Pipe_emitter", hero:GetAbsOrigin(), true)
+			
+				print( "partical attachment." )
+				end
 		end
 
 end

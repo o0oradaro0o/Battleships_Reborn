@@ -5622,6 +5622,7 @@
 		"item_ice_bow_slow"
 					{
 						"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+						"IsHidden"	 "1"
 						"Properties"
 						{
 							"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-1"
@@ -5634,7 +5635,8 @@
 					{
 
 						"Duration" "3.5"
-						
+							"EffectName"		"particles/basic_projectile/ice_slow_effect.vpcf"
+							"EffectAttachType"	"follow_origin"
 					}
 		}
 		"OnProjectileHitUnit"
@@ -5661,13 +5663,7 @@
 				"Target"				"TARGET"
 				"ModifierName" "item_ice_bow_slow"
 			}
-		   "AttachEffect"
-			{
-				"Target"				"TARGET"
 
-				"EffectName"		"particles/basic_projectile/ice_ult_slow.vpcf"
-				"EffectAttachType"	"follow_origin"
-			}
 		}
 				"AbilitySpecial"
 		{
@@ -6041,13 +6037,6 @@
 					{
 						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
 						"Function"			"coalStun"
-					}
-					"AttachEffect"
-					{
-						"Target"				"TARGET"
-
-						"EffectName"		"particles/basic_projectile/coal_ult_blind.vpcf" 
-						"EffectAttachType"	"follow_origin"
 					}
 			}
 				"AbilitySpecial"
@@ -6703,7 +6692,8 @@
 					"item_ice_slow_show"
 					{
 						"Duration" "3.5"
-						
+				"EffectName"		"particles/basic_projectile/ice_slow_effect.vpcf"
+				"EffectAttachType"	"follow_origin"
 					}
 		}
 		"OnProjectileHitUnit"
@@ -6730,13 +6720,7 @@
 				"Target"				"TARGET"
 				"ModifierName" "item_ice_two_bow_slow"
 			}
-		   "AttachEffect"
-			{
-				"Target"				"TARGET"
 
-				"EffectName"		"particles/basic_projectile/ice_ult_slow.vpcf"
-				"EffectAttachType"	"follow_origin"
-			}
 		}
 				"AbilitySpecial"
 		{
@@ -7104,13 +7088,7 @@
 						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
 						"Function"			"coalTwoStun"
 					}
-					"AttachEffect"
-					{
-						"Target"				"TARGET"
 
-						"EffectName"		"particles/basic_projectile/coal_ult_blind.vpcf" 
-						"EffectAttachType"	"follow_origin"
-					}
 			}
 				"AbilitySpecial"
 		{
@@ -7753,6 +7731,7 @@
 		"item_ice_three_bow_slow"
 					{
 						"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+						"IsHidden"	 "1"
 						"Properties"
 						{
 							"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-3"
@@ -7765,7 +7744,8 @@
 					{
 					
 						"Duration" "3.5"
-						
+							"EffectName"		"particles/basic_projectile/ice_slow_effect.vpcf"
+							"EffectAttachType"	"follow_origin"
 					}
 		}
 		"OnProjectileHitUnit"
@@ -7792,13 +7772,7 @@
 				"Target"				"TARGET"
 				"ModifierName" "item_ice_three_bow_slow"
 			}
-		   "AttachEffect"
-			{
-				"Target"				"TARGET"
-
-				"EffectName"		"particles/basic_projectile/ice_ult_slow.vpcf"
-				"EffectAttachType"	"follow_origin"
-			}
+		  
 		}
 				"AbilitySpecial"
 		{
@@ -8175,13 +8149,7 @@
 						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
 						"Function"			"coalThreeStun"
 					}
-					"AttachEffect"
-					{
-						"Target"				"TARGET"
 
-						"EffectName"		"particles/basic_projectile/coal_ult_blind.vpcf" 
-						"EffectAttachType"	"follow_origin"
-					}
 			}
 		"AbilitySpecial"
 		{
@@ -8798,6 +8766,7 @@
 			"item_ice_ult_bow_slow"
 					{
 						"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+						"IsHidden"	 "1"
 						"Properties"
 						{
 							"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-15"
@@ -8809,7 +8778,8 @@
 		"item_ice_slow_show"
 					{
 						"Duration" "3.5"
-						
+				"EffectName"		"particles/basic_projectile/ice_ult_slow.vpcf"
+				"EffectAttachType"	"follow_origin"
 					}
 		}
 		"OnProjectileHitUnit"
@@ -8836,13 +8806,7 @@
 				"Target"				"TARGET"
 				"ModifierName" "item_ice_ult_bow_slow"
 			}
-		   "AttachEffect"
-			{
-				"Target"				"TARGET"
-
-				"EffectName"		"particles/basic_projectile/ice_ult_slow.vpcf"
-				"EffectAttachType"	"follow_origin"
-			}
+		  
 		}
 		"AbilitySpecial"
 		{
@@ -9168,13 +9132,7 @@
 						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
 						"Function"			"coalUltStun"
 					}
-					"AttachEffect"
-					{
-						"Target"				"TARGET"
 
-						"EffectName"		"particles/basic_projectile/coal_ult_blind.vpcf" 
-						"EffectAttachType"	"follow_origin"
-					}
 			}
 			"AbilitySpecial"
 		{
