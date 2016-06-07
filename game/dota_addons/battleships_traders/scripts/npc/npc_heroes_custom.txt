@@ -11,7 +11,7 @@
 
         "override_hero"             "npc_dota_hero_zuus"          // Hero to override
 	
-       "Model" "models/barrel_boat.vmdl"    // Model.
+       "Model" "models/start_boat.vmdl"    // Model.
         "SoundSet"          "Hero_Kunkka"  	
 		//"VoiceFile"			"scripts/voscripts/game_sounds_vo_kunkka.txt"		// Name of sound set.
 		
@@ -39,7 +39,7 @@
 		"Ability2"					"bail_water"
 		"Ability3"					"tighten_hoop"
 		"Ability4"					"go_home_battleship"
-        "ModelScale"        "1.2"
+        "ModelScale"        ".6"
 		"RingRadius"				"100"
 
 	"RenderablePortrait"
