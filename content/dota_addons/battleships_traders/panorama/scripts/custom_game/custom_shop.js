@@ -352,42 +352,42 @@ function hideShop() {
 
 	Game.EmitSound("ui.chat_close");
 } 
-function hideShipShop() {
-	hiddenship=true;
-	$.Msg("inhide");
-	$( "#ship_shop" ).style.visibility="collapse";
-	$("#ancient_apparition").style.height = "0px";
-	$("#crystal_maiden").style.height = "0px";
-	$("#disruptor").style.height = "0px";
-	$("#morphling").style.height = "0px";
-	$("#storm_spirit").style.height = "0px";
-	$("#nevermore").style.height = "0px";
-	$("#lion").style.height = "0px";
-	$("#meepo").style.height = "0px";
-	$("#jakiro").style.height = "0px";
-	$("#ember_spirit").style.height = "0px";
-	$("#slark").style.height = "0px";
-	$("#sniper").style.height = "0px";
-	$("#visage").style.height = "0px";
-	$("#ursa").style.height = "0px";
-	$("#tusk").style.height = "0px";
-	$("#windrunner").style.height = "0px";
-	$("#pugna").style.height = "0px";
-	$("#rattletrap").style.height = "0px";
-	$("#tidehunter").style.height = "0px";
-	$("#crystal_maiden").style.height = "0px";
-	$("#phantom_lancer").style.height = "0px";
-	$("#vengefulspirit").style.height = "0px";
-	$("#bane").style.height = "0px";
-	$("#enigma").style.height = "0px";
-		
-	Game.EmitSound("ui.chat_close");
-}
-function hideShipShop(data) {
-	if (Players.GetLocalPlayer() == data.splitscreenplayer) {
-		hideShipShop();
+function hideShipShop(data)
+	{
+		hiddenship=true;
+		$.Msg("inhide ship shop 1  --" + Players.GetLocalPlayer() +" "+ data.Player_ID);
+		if ( typeof data === 'undefined' || typeof data !== 'undefined' && Players.GetLocalPlayer() == data.Player_ID)
+		{
+			 	$.Msg("inhide ship shop 2");
+				$( "#ship_shop" ).style.visibility="collapse";
+				$("#ancient_apparition").style.height = "0px";
+				$("#crystal_maiden").style.height = "0px";
+				$("#disruptor").style.height = "0px";
+				$("#morphling").style.height = "0px";
+				$("#storm_spirit").style.height = "0px";
+				$("#nevermore").style.height = "0px";
+				$("#lion").style.height = "0px";
+				$("#meepo").style.height = "0px";
+				$("#jakiro").style.height = "0px";
+				$("#ember_spirit").style.height = "0px";
+				$("#slark").style.height = "0px";
+				$("#sniper").style.height = "0px";
+				$("#visage").style.height = "0px";
+				$("#ursa").style.height = "0px";
+				$("#tusk").style.height = "0px";
+				$("#windrunner").style.height = "0px";
+				$("#pugna").style.height = "0px";
+				$("#rattletrap").style.height = "0px";
+				$("#tidehunter").style.height = "0px";
+				$("#crystal_maiden").style.height = "0px";
+				$("#phantom_lancer").style.height = "0px";
+				$("#vengefulspirit").style.height = "0px";
+				$("#bane").style.height = "0px";
+				$("#enigma").style.height = "0px";
+					
+				Game.EmitSound("ui.chat_close");
+		 }
 	}
-}  
 function NearShipShop(data) {
 	$.Msg("in near ship");
 	if (Players.GetLocalPlayer() == data.Player_ID) {
@@ -520,15 +520,9 @@ function donate(amount) {
 ///
 /// Zoom
 /// 
-function handleZoom() {
-	//get the current zoom number
-	var oldval=$("#zoomLblVal").text
-	$.Msg($("#ZoomSlider").GetChild(1).value);
-	//get the percentage of the slider bar that is filled
-	var zoomPer = Math.floor($("#ZoomSlider").GetChild(1).value*100)
-	
-	//if it is not the same as the old zoom value, zoom to it otherwise wait and slowly fade out the zoom box
-	//set the +1800 to your min zoom and 1800+2200 will be your max zoom
+var ticksSinceChanged=0
+	function handleZoom()
+	{
 		//get the current zoom number
 		var oldval=$("#zoomLblVal").text
 		$.Msg($("#ZoomSlider").GetChild(1).value);
@@ -561,37 +555,30 @@ function handleZoom() {
 		{
 				$.Schedule( .05, handleZoom );
 		}
-		 $("#ZoomSliderBox").style.opacity=$("#ZoomSliderBox").style.opacity-.04;
 	}
-	if($("#ZoomSliderBox").style.opacity==0)
+	
+	function setZoom()
 	{
 		GameUI.SetCameraDistance(1600)
-		toggleZoom();
-		GameUI.SetCameraDistance(1600)
 	}
-	//re-call self (i could not find an "onSliderValueChanged" so i resorted to this
-	if($("#ZoomSliderBox").style.visibility=="visible")
+	function toggleZoom()
 	{
-			$.Schedule( .05, handleZoom );
-	}
-} 
-function setZoom() {
-	GameUI.SetCameraDistance(1600)
-}
-function toggleZoom() {
-	if($("#ZoomSliderBox").style.visibility=="visible") {
-		$("#ZoomSliderBox").style.visibility="collapse";
-	}
-	else {
-		$("#ZoomSliderBox").style.visibility="visible";
-		ticksSinceChanged=0;
+		if($("#ZoomSliderBox").style.visibility=="visible")
+		{
+				$("#ZoomSliderBox").style.visibility="collapse";
+		}
+		else
+		{
+				$("#ZoomSliderBox").style.visibility="visible";
+				ticksSinceChanged=0;
+				$("#ZoomSliderBox").style.opacity=1;
+				handleZoom();
+		}
 		
-		$("#ZoomSliderBox").style.opacity=1;
-		handleZoom();
+		
 	}
-}
 
-///
+//
 /// Unstick Stuck Ship
 ///
 function Unstick(data) {
@@ -629,15 +616,10 @@ function OnBSUITimer(eventData) {
 	GameEvents.Subscribe( "Team_Can_Buy", CanBuy );
 	GameEvents.Subscribe( "Team_Cannot_Buy", CannotBuy );
 	GameEvents.Subscribe( "ping_loc", PingLoc );
-<<<<<<< HEAD
 	GameEvents.Subscribe( "bsui_timer_data", OnBsuiTimer );
 	
 	GameEvents.Subscribe( "co_op_mode", handleCoOp );
-	
-=======
 	GameEvents.Subscribe( "bsui_timer_data", OnBSUITimer );
-
->>>>>>> d77203a5d7e51ce049402fa3e4085a1835181a4e
 	GameEvents.Subscribe( "top_notification", TopNotification );
 	GameEvents.Subscribe( "bottom_notification", BottomNotification );
 	GameEvents.Subscribe( "top_remove_notification", TopRemoveNotification );
@@ -649,7 +631,6 @@ function test(data) {
 	$.Msg("data");
 	$.Msg(data);
 	
-<<<<<<< HEAD
 	}
 	function OnBsuiTimer(eventData)
 	{
@@ -778,9 +759,6 @@ function PingLoc(data)
 				GameUI.PingMinimapAtLocation(v);
 			}
 	}
-=======
-}
->>>>>>> d77203a5d7e51ce049402fa3e4085a1835181a4e
 
 ///
 ///	Notification Displays
@@ -988,19 +966,11 @@ function OnRightButtonPressed() {
 	mouseEntities = mouseEntities.filter( function(e) { return e.entityIndex != localHeroIndex; } );
 
 	var accurateEntities = mouseEntities.filter( function( e ) { return e.accurateCollision; } );
-<<<<<<< HEAD
 	if ( accurateEntities.length > 0 )
 	{
-		for ( var e of accurateEntities )
-		{
-			if ( Entities.IsDisarmed( e.entityIndex ) )
-			{
-=======
-	if ( accurateEntities.length > 0 ) {
 		for ( var e of accurateEntities ) {
 			$.Msg("ACCURATE ENTITY")
 			if ( Entities.IsDisarmed( e.entityIndex ) ) {
->>>>>>> d77203a5d7e51ce049402fa3e4085a1835181a4e
 				//$.Msg("INVULNERABLE UNIT CLICKED")
 				fillAndShow();
 				return CONSUME_EVENT;
@@ -1056,6 +1026,5 @@ GameUI.SetMouseCallback( function( eventName, arg ) {
 	if (GameUI.CustomUIConfig().DebugMessagesEnabled == true)
 		$.Msg("Right Click Override JS Loaded."); 
 })();
-	
 	
 	

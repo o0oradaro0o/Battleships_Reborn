@@ -3055,7 +3055,14 @@ function buyBoat(eventSourceIndex, args)
 			casterUnit:SetGold(0,false)
 			sellBoat(casterUnit)
 			EmitSoundOnClient("General.Buy",PlayerResource:GetPlayer(pID))
-		Timers:CreateTimer( .1, function()
+			Timers:CreateTimer( .1, function()
+		local data =
+			{
+				Player_ID = casterUnit:GetPlayerID()
+			}
+			FireGameEvent("Hero_Near_Ship_Shop",data)
+		end)
+		Timers:CreateTimer( .15, function()
 	
 		if string.match(itemName,"disruptor") then
 			become_boat(casterUnit, "npc_dota_hero_disruptor")
@@ -3104,13 +3111,7 @@ function buyBoat(eventSourceIndex, args)
 			elseif string.match(itemName,"bane") then
 				become_boat(casterUnit, "npc_dota_hero_bane")
 		end
-		Timers:CreateTimer( .1, function()
-		local data =
-			{
-				Player_ID = casterUnit:GetPlayerID()
-			}
-			FireGameEvent("Hero_Near_Ship_Shop",data)
-		end)
+		
 	end)
 	elseif(directionOne:Length() > 599 and directionTwo:Length() > 599) then
 		
