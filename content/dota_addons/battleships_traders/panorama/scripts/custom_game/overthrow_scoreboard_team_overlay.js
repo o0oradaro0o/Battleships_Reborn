@@ -12,7 +12,7 @@ function OnInvestEvent( event )
 
 	$.Msg( teamPanel.GetChild( 1 ).GetChild( 0 ) );
 	var recentScore = teamPanel.GetAttributeInt( "recent_score_count", 0 );
-	recentScore++;
+	//recentScore++; //This seems unnecessary
 	teamPanel.SetAttributeInt( "recent_score_count", event.invest_amount );
 	teamPanel.GetChild( 1 ).GetChild( 0 ).text=event.team_gold;
 	teamPanel.SetAttributeInt( "ds_time_of_most_recent_score", curTimeDS );
@@ -65,13 +65,11 @@ function UpdateRecentScore()
 
 	var recentScorePanel = teamPanel.FindChildInLayoutFile( "RecentScore" );
 
-	if ( recentScore === 0 )
-	{
+	if ( recentScore === 0 ) {
 		recentScorePanel.SetHasClass( "recent_score", false );
 		recentScorePanel.SetHasClass( "no_recent_score", true );
 	}
-	else
-	{
+	else {
 		recentScorePanel.SetDialogVariableInt( "score", recentScore );
 		recentScorePanel.text = $.Localize( "#RecentScore", recentScorePanel );
 		recentScorePanel.SetHasClass( "recent_score", true );
@@ -79,10 +77,6 @@ function UpdateRecentScore()
 	}
 }
 
-(function()
-{
-//	$.Msg( "overthrow_scoreboard_team_overlay" );
-
-
+(function() { 
 	GameEvents.Subscribe( "invest_event", OnInvestEvent );
 })();

@@ -6135,12 +6135,12 @@
 			}
 			"item_plasma_bow_dearmored"
 				{
-					"Duration"              "1.0"
+					"Duration"              ".5"
 					"EffectName"            "particles/basic_projectile/dearmor.vpcf"
 					"EffectAttachType"      "follow_overhead"
 					"Properties"
 					{
-						"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"-.5"
+						"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"-1"
 					}
 					
 				}
@@ -6556,7 +6556,7 @@
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"IsDebuff" "1"
 				"IsPurgable" "0"
-				"EffectName" "particles/basic_projectile/fire_burn_effect.vpcf"
+				"EffectName" "particles/basic_projectile/fire_burn_effect_small.vpcf"
 
 			}
 		}
@@ -8645,7 +8645,7 @@
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"IsDebuff" "1"
 				"IsPurgable" "0"
-				"EffectName" "particles/basic_projectile/fire_burn_effect_small.vpcf"
+				"EffectName" "particles/basic_projectile/fire_burn_effect.vpcf"
 			}
 		}
 
