@@ -529,20 +529,6 @@ function handleZoom() {
 	
 	//if it is not the same as the old zoom value, zoom to it otherwise wait and slowly fade out the zoom box
 	//set the +1800 to your min zoom and 1800+2200 will be your max zoom
-	if($("#zoomLblVal").text!=zoomPer/100*1300+1800)
-	{
-		GameUI.SetCameraDistance(zoomPer/100*1300+1800)
-
-		$("#zoomLblVal").text=zoomPer/100*1300+1800;
-		ticksSinceChanged=0;
-			$("#ZoomSliderBox").style.opacity=1;
-	}
-	else{
-		ticksSinceChanged++;
-	}
-	if(ticksSinceChanged>60)
-	{
-<<<<<<< HEAD
 		//get the current zoom number
 		var oldval=$("#zoomLblVal").text
 		$.Msg($("#ZoomSlider").GetChild(1).value);
@@ -575,17 +561,13 @@ function handleZoom() {
 		{
 				$.Schedule( .05, handleZoom );
 		}
-=======
 		 $("#ZoomSliderBox").style.opacity=$("#ZoomSliderBox").style.opacity-.04;
->>>>>>> d77203a5d7e51ce049402fa3e4085a1835181a4e
 	}
 	if($("#ZoomSliderBox").style.opacity==0)
 	{
-<<<<<<< HEAD
 		GameUI.SetCameraDistance(1600)
-=======
 		toggleZoom();
->>>>>>> d77203a5d7e51ce049402fa3e4085a1835181a4e
+		GameUI.SetCameraDistance(1600)
 	}
 	//re-call self (i could not find an "onSliderValueChanged" so i resorted to this
 	if($("#ZoomSliderBox").style.visibility=="visible")
@@ -594,7 +576,7 @@ function handleZoom() {
 	}
 } 
 function setZoom() {
-	GameUI.SetCameraDistance(1800)
+	GameUI.SetCameraDistance(1600)
 }
 function toggleZoom() {
 	if($("#ZoomSliderBox").style.visibility=="visible") {
