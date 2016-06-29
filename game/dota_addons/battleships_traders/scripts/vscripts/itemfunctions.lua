@@ -374,21 +374,22 @@ function clusterBoom(args)
 			CapTheseFuckers=enemies
 		end
 		 for _,fucker in pairs( CapTheseFuckers) do
-				local info = 
-				{
-					Ability = caster:GetAbilityByIndex(1),	
-					Source = caster,
-					Target = fucker,
-					vSourceLoc = caster:GetOrigin(),
-					EffectName = "particles/basic_projectile/spin_one_projectile.vpcf",
-					bProvidesVision = false,
-					iVisionRadius = 1000,
-					iVisionTeamNumber = caster:GetTeamNumber(),
-					bDeleteOnHit = false,
-					iMoveSpeed = 750,
-					vVelocity = 750,
-				}
-				projectile = ProjectileManager:CreateTrackingProjectile(info)
+			local tracking_projectile = 
+        {
+            EffectName = "particles/basic_projectile/spin_one_projectile.vpcf",
+            Ability = caster:GetAbilityByIndex(1),
+            vSpawnOrigin = caster:GetAbsOrigin(),
+            Target = fucker,
+            Source = args.source or caster,
+            bHasFrontalCone = false,
+            iMoveSpeed = 750,
+            bReplaceExisting = false,
+            bProvidesVision = false,
+            iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+        }
+			
+
+				ProjectileManager:CreateTrackingProjectile(tracking_projectile)
 			end
 	
 

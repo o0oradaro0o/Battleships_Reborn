@@ -3320,13 +3320,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"dummy_explode"
 		"Ability2"					"dummy_explode_two"
-	
-		"Ability3" "" // Ability 3.
-		"Ability4" "" // Ability 4.
-		"Ability5" "" // Ability 5.
-		"Ability6" "" // Ability 6 - Extra.
-		"Ability7" "" // Ability 7 - Extra.
-		"Ability8" "" // Ability 8 - Extra.
+
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical" "0" // Physical protection.
