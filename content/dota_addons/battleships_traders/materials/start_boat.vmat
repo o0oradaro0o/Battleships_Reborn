@@ -31,7 +31,7 @@ Layer0
 	g_flTexCoordRotation "0.000"
 	g_vTexCoordOffset "[0.000 0.000]"
 	g_vTexCoordScale "[1.000 1.000]"
-	TextureColor "materials/barrelboat/t_barrelboat_c.png"
+	TextureColor "materials/barrelboat/t_barrelboat_color.jpg"
 
 	//---- Fresnel ----
 	TextureFresnelWarpColor "materials/default/default_fresnelwarpcolor.tga"
@@ -45,19 +45,19 @@ Layer0
 	g_vBloomColor "[1.000000 1.000000 1.000000 0.000000]"
 
 	//---- Mask 1 ----
-	TextureDetailMask "materials/barrelboat/t_barrelboat_mask1.png"
-	TextureDiffuseWarpMask "materials/barrelboat/t_barrelboat_mask1.png"
-	TextureMetalnessMask "materials/barrelboat/t_barrelboat_mask1.png"
-	TextureSelfIllumMask "materials/barrelboat/t_barrelboat_c.png"
+	TextureDetailMask "materials/barrelboat/t_barrelboat_mask1.jpg"
+	TextureDiffuseWarpMask "materials/barrelboat/t_barrelboat_mask1.jpg"
+	TextureMetalnessMask "materials/barrelboat/t_barrelboat_mask1.jpg"
+	TextureSelfIllumMask "materials/barrelboat/t_barrelboat_color.jpg"
 
 	//---- Mask 2 ----
-	TextureRimMask "materials/barrelboat/t_barreloab_mask2.png"
-	TextureSpecularExponent "materials/barrelboat/t_barrelboat_c.png"
-	TextureSpecularMask "materials/barrelboat/t_barreloab_mask2.png"
-	TextureTintByBaseMask "materials/barrelboat/t_barrelboat_c.png"
+	TextureRimMask "materials/barrelboat/t_barrelboat_mask2.jpg"
+	TextureSpecularExponent "materials/barrelboat/t_barrelboat_color.jpg"
+	TextureSpecularMask "materials/barrelboat/t_barrelboat_mask2.jpg"
+	TextureTintByBaseMask "materials/barrelboat/t_barrelboat_color.jpg"
 
 	//---- Normal Map ----
-	TextureNormal "materials/barrelboat/t_barrelboat_n.png"
+	TextureNormal "materials/barrelboat/t_barrelboat_normal.jpg"
 
 	//---- Rim ----
 	g_flRimLightScale "0.800"
