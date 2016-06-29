@@ -28,7 +28,7 @@ Layer0
 	g_flTexCoordRotation "0.000"
 	g_vTexCoordOffset "[0.000 0.000]"
 	g_vTexCoordScale "[1.000 1.000]"
-	TextureColor "materials/airboat/phong16_base_color.png"
+	TextureColor "materials/airboat/t_ariboat_color.jpg"
 
 	//---- Fresnel ----
 	TextureFresnelWarpColor "materials/default/default_fresnelwarpcolor.tga"
@@ -42,19 +42,19 @@ Layer0
 	g_vBloomColor "[1.000000 1.000000 1.000000 0.000000]"
 
 	//---- Mask 1 ----
-	TextureDetailMask "materials/airboat/sm_airboat_phong16_mask1.jpg"
-	TextureDiffuseWarpMask "materials/airboat/sm_airboat_phong16_mask1.jpg"
-	TextureMetalnessMask "materials/airboat/sm_airboat_phong16_mask1.jpg"
-	TextureSelfIllumMask "materials/airboat/fresnel_mask.png"
+	TextureDetailMask "materials/airboat/t_airboat_mask1.jpg"
+	TextureDiffuseWarpMask "materials/airboat/t_airboat_mask1.jpg"
+	TextureMetalnessMask "materials/airboat/t_airboat_mask1.jpg"
+	TextureSelfIllumMask "materials/airboat/t_airboat_fresnel.jpg"
 
 	//---- Mask 2 ----
-	TextureRimMask "materials/airboat/sm_airboat_phong16_mask2.jpg"
-	TextureSpecularExponent "materials/airboat/sm_airboat_phong16_mask2.jpg"
-	TextureSpecularMask "materials/airboat/sm_airboat_phong16_mask2.jpg"
-	TextureTintByBaseMask "materials/airboat/sm_airboat_phong16_mask2.jpg"
+	TextureRimMask "materials/airboat/t_airboat_mask2.jpg"
+	TextureSpecularExponent "materials/airboat/t_airboat_mask2.jpg"
+	TextureSpecularMask "materials/airboat/t_airboat_mask2.jpg"
+	TextureTintByBaseMask "materials/airboat/t_airboat_mask2.jpg"
 
 	//---- Normal Map ----
-	TextureNormal "materials/airboat/t_airboat_normal.png"
+	TextureNormal "materials/airboat/t_airboat_normals.jpg"
 
 	//---- Rim ----
 	g_flRimLightScale "1.000"

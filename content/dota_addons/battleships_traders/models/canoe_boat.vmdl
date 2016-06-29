@@ -1,349 +1,284 @@
-<!-- schema text {7e125a45-3d83-4043-b292-9e24f8ef27b4} generic {198980d8-3a93-4919-b4c6-dd1fb07a3a4b} -->
-CVModel CVModel_0
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
-	CVmeshList m_meshList = CVmeshList
+	_class = "CVModel"
+	m_meshList = 
 	{
-		CVmesh[] m_meshList = 
+		m_meshList = 
 		[
-			CVmesh
 			{
-				string m_meshName = "canoe_boat"
-				string m_meshFile = "models/canoe_boat.smd"
-				string m_materialSearchPath = ""
-				bool m_bSkinParentedObjects = true
-				bool m_bLegacySkinParentedTransforms = false
-				bool m_bExpensiveTangents = false
-				bool m_bExpensiveVertices = false
-				bool m_bIgnoreCloth = false
-				bool m_bGetSkinningFromLod0 = false
-				CVmorphInfo* m_pMorphInfo = NULL
+				m_meshName = "anim_canoe_idle"
+				m_meshFile = "models/canoe/anim_canoe_idle.fbx"
+				m_materialSearchPath = ""
+				m_bSkinParentedObjects = true
+				m_bLegacySkinParentedTransforms = false
+				m_bExpensiveTangents = false
+				m_bExpensiveVertices = false
+				m_bHighPrecisionTexCoords = false
+				m_bIgnoreCloth = false
+				m_bGetSkinningFromLod0 = false
+				m_pMorphInfo = null
+			},
+		]
+	}
+	m_clothProxyMeshList = 
+	{
+		_class = "CVClothProxyMeshList"
+		m_flClothEnableThreshold = 0.05
+		m_bCreateStaticBone = false
+		m_nMaxBonesPerVertex = 4
+		m_bRemoveUnusedBonesEnabled = false
+		m_bDriveMeshesWithBacksolvedJointsOnly = true
+		m_flMatchProxiesToMeshes = 1.0
+		m_flReservedFloat = 0.0
+		m_nReservedInt = 0
+		m_bReservedBool1 = false
+		m_bReservedBool2 = false
+		m_bReservedBool3 = false
+		m_bReservedBool4 = false
+		m_clothProxyMeshList = [  ]
+	}
+	m_physicsMeshList = 
+	{
+		m_meshList = [  ]
+	}
+	m_pModelInfo = null
+	m_pBoneFlagList = 
+	{
+		_class = "CVBoneFlagListReference"
+		m_pObject = null
+	}
+	m_pHitBoxSetLists = 
+	[
+		{
+			_class = "CVhitBoxSetListReference"
+			m_pObject = 
+			{
+				m_HitBoxSets = 
+				[
+					{
+						m_name = "default"
+						m_HitBoxes = 
+						[
+							{
+								m_name = "root"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "root"
+								m_vMinBounds = [ -45.524673, -41.118622, 5.303902 ]
+								m_vMaxBounds = [ 61.035942, 79.489197, 84.407211 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+						]
+					},
+				]
+				m_AutoCreateSetName = ""
 			}
-		]
-	}
-	CVClothProxyMeshList m_clothProxyMeshList = CVClothProxyMeshList
-	{
-		CVClothProxyMesh[] m_clothProxyMeshList = 
-		[
-			
-		]
-		float m_flClothEnableThreshold = 0.050000
-		bool m_bCreateStaticBone = false
-		int m_nMaxBonesPerVertex = 4
-		bool m_bRemoveUnusedBonesEnabled = false
-		bool m_bDriveMeshesWithBacksolvedJointsOnly = true
-		float m_flMatchProxiesToMeshes = 1.000000
-		float m_flReservedFloat = 0.000000
-		int m_nReservedInt = 0
-		bool m_bReservedBool1 = false
-		bool m_bReservedBool2 = false
-		bool m_bReservedBool3 = false
-		bool m_bReservedBool4 = false
-	}
-	CVphysicsMeshList m_physicsMeshList = CVphysicsMeshList
-	{
-		CVphysicsMesh[] m_meshList = 
-		[
-			
-		]
-	}
-	CVmodelInfo* m_pModelInfo = NULL
-	CVBoneFlagListReference m_pBoneFlagList = CVBoneFlagListReference
-	{
-		CVBoneFlagList* m_pObject = NULL
-		string m_sFileName = ""
-	}
-	CVhitBoxSetListReference[] m_pHitBoxSetLists = 
-	[
-		CVhitBoxSetListReference
-		{
-			CVhitBoxSetList* m_pObject = &CVhitBoxSetList_0
-			string m_sFileName = ""
-		}
-	]
-	CVattachmentListReference[] m_pAttachmentLists = 
-	[
-		CVattachmentListReference
-		{
-			CVattachmentList* m_pObject = &CVattachmentList_0
-			string m_sFileName = ""
-		}
-	]
-	CVanimGroupReference m_pAnimGroup = CVanimGroupReference
-	{
-		CVanimGroup* m_pObject = &CVanimGroup_0
-		string m_sFileName = ""
-	}
-	CVNodeMaterialGroupListReference m_pMaterialGroupList = CVNodeMaterialGroupListReference
-	{
-		NodeMaterialGroupList_t* m_pObject = NULL
-		string m_sFileName = ""
-	}
-	CVMeshGroupListReference m_pMeshGroupList = CVMeshGroupListReference
-	{
-		MeshGroupList_t* m_pObject = NULL
-		string m_sFileName = ""
-	}
-	CVLODGroupListReference m_pLodGroupList = CVLODGroupListReference
-	{
-		LODGroupList_t* m_pObject = NULL
-		string m_sFileName = ""
-	}
-	CVpropBreakableListReference m_pPropBreakableList = CVpropBreakableListReference
-	{
-		CVpropBreakableList* m_pObject = NULL
-		string m_sFileName = ""
-	}
-	CVpropDataListReference m_pPropDataList = CVpropDataListReference
-	{
-		CVpropDataList* m_pObject = NULL
-		string m_sFileName = ""
-	}
-	CVConstraintListReference[] m_pConstraintLists = 
-	[
-		
-	]
-	string m_collision = ""
-	string m_softbody = ""
-	string m_sMDLFilename = ""
-	string[] m_sOffsetHitboxSets = 
-	[
-		
-	]
-	float(3) m_vHitboxSetOffset = ( 0.000000, 0.000000, 0.000000 )
-	string[] m_scriptFiles = 
-	[
-		
-	]
-	CVMaterialRemapList* m_pMaterialRemapList = NULL
-	float m_flFbxScale = 1.000000
-	float m_flQCScale = 1.000000
-	float(3) m_vOrigin = ( 0.000000, 0.000000, 0.000000 )
-	CVPsfList* m_pPsfList = NULL
-	string m_keyValueText = ""
-	bool m_bStaticProp = false
-	bool m_bEnableClothProcessing = true
-	float m_flClothEnableThreshold = 0.050000
-	int m_nMaxClothVertsPerMesh = 2048
-	bool m_bBuildClothBoneHierarchy = false
-	symbol m_nNavType = AUTH_NAV_MESH
-	bool m_bMakeUniqueVMeshes = false
-	bool m_bMakeImplicitBindPoseSequence = false
-	bool m_bAdjustSkeletonFromBoneFlags = false
-	CVanimGroupReference[] m_pAnimGroups = 
-	[
-		
-	]
-}
-
-CVhitBoxSetList CVhitBoxSetList_0
-{
-	CVhitBoxSet[] m_HitBoxSets = 
-	[
-		CVhitBoxSet
-		{
-			string m_name = "default"
-			CVhitBox[] m_HitBoxes = 
-			[
-				CVhitBox
-				{
-					string m_name = "root"
-					string m_sSurfaceProperty = ""
-					int m_nGroupId = 0
-					string m_sBoneName = "root"
-					float(3) m_vMinBounds = ( -45.524673, -41.118622, 5.303902 )
-					float(3) m_vMaxBounds = ( 61.035942, 79.489197, 84.407211 )
-					bool m_bTranslationOnly = false
-					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
-				}
-			]
-		}
-	]
-	string m_AutoCreateSetName = ""
-}
-
-CVattachmentList CVattachmentList_0
-{
-	string m_name = ""
-	CVattachment[] m_attachments = 
-	[
-		CVattachment
-		{
-			string m_name = "attach_attack1"
-			CVattachmentInfluence[] m_influences = 
-			[
-				CVattachmentInfluence
-				{
-					string m_influenceName = "root"
-					float(3) m_vTranslationOffset = ( 0.000000, 0.000000, 59.422417 )
-					float(3) m_vRotationOffset = ( 0.000000, -0.000000, -0.000010 )
-					float m_flWeight = 1.000000
-					bool m_bRoot = false
-				}
-			]
 		},
-		CVattachment
-		{
-			string m_name = "attach_hitloc"
-			CVattachmentInfluence[] m_influences = 
-			[
-				CVattachmentInfluence
-				{
-					string m_influenceName = "root"
-					float(3) m_vTranslationOffset = ( 0.000000, 0.000000, 45.238770 )
-					float(3) m_vRotationOffset = ( 0.000000, -0.000000, -0.000010 )
-					float m_flWeight = 1.000000
-					bool m_bRoot = false
-				}
-			]
-		}
 	]
-}
-
-CVanimGroup CVanimGroup_0
-{
-	string m_Name = ""
-	CVReferenceSkeletonReference m_pReferenceSkeleton = CVReferenceSkeletonReference
-	{
-		CVReferenceSkeleton* m_pObject = NULL
-		string m_sFileName = ""
-	}
-	CVBoneFlagListReference m_pBoneFlagList = CVBoneFlagListReference
-	{
-		CVBoneFlagList* m_pObject = NULL
-		string m_sFileName = ""
-	}
-	CVseqGroupReference m_pSeqGroup = CVseqGroupReference
-	{
-		CVseqGroup* m_pObject = NULL
-		string m_sFileName = ""
-	}
-	CVanimGroupReference[] m_pAnimGroups = 
+	m_pAttachmentLists = 
 	[
-		
-	]
-	CVanim[] m_Vanim = 
-	[
-		CVanim
 		{
-			string m_Animationname = "main"
-			string m_Filepath = "models/canoe_boat.smd"
-			int m_nStartframe = 0
-			int m_nEndframe = 0
-			float m_flFps = 30.000000
-			CAnimationLoop m_Loop = CAnimationLoop
+			_class = "CVattachmentListReference"
+			m_pObject = 
 			{
-				bool m_bLoop = false
-				bool m_bSmoothLoop = false
-				int m_nSmoothLoopStart = 0
-				int m_nSmoothLoopEnd = 0
-				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
-				{
-					bool m_bEnabled = false
-					int m_nLoopRestart = 0
-				}
+				m_name = ""
+				m_attachments = 
+				[
+					{
+						m_name = "attach_attack1"
+						m_influences = 
+						[
+							{
+								m_influenceName = "root"
+								m_vTranslationOffset = [ 0.0, 0.0, 59.422417 ]
+								m_vRotationOffset = [ 0.0, -0.0, -0.00001 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "attach_hitloc"
+						m_influences = 
+						[
+							{
+								m_influenceName = "root"
+								m_vTranslationOffset = [ 0.0, 0.0, 45.23877 ]
+								m_vRotationOffset = [ 0.0, -0.0, -0.00001 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+				]
 			}
-			bool m_bHidden = false
-			bool m_bDisable = false
-			CActivity[] m_Activities = 
-			[
-				
-			]
-			CAnimationEvent[] m_AnimationEvents = 
-			[
-				
-			]
-			CMotionFrame[] m_MotionFrames = 
-			[
-				
-			]
-			CIKrule*[] m_pIkRules = 
-			[
-				
-			]
-			CAlignAnimation* m_pAlignAnimation = NULL
-			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
-			{
-				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
-				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
-			}
-			string[] m_Keywords = 
-			[
-				
-			]
-			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
-			{
-				float m_flFadeInTime = 0.200000
-				float m_flFadeOutTime = 0.200000
-			}
-			string m_folderName = ""
-			string m_MotionFramesRootBone = ""
 		},
-		CVanim
+	]
+	m_pAnimGroup = 
+	{
+		_class = "CVanimGroupReference"
+		m_pObject = 
 		{
-			string m_Animationname = "canoe_boat"
-			string m_Filepath = "models/canoe_boat.smd"
-			int m_nStartframe = 0
-			int m_nEndframe = 0
-			float m_flFps = 30.000000
-			CAnimationLoop m_Loop = CAnimationLoop
+			m_Name = ""
+			m_pReferenceSkeleton = 
 			{
-				bool m_bLoop = false
-				bool m_bSmoothLoop = false
-				int m_nSmoothLoopStart = 0
-				int m_nSmoothLoopEnd = 0
-				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
+				_class = "CVReferenceSkeletonReference"
+				m_pObject = null
+			}
+			m_pBoneFlagList = 
+			{
+				_class = "CVBoneFlagListReference"
+				m_pObject = null
+			}
+			m_pSeqGroup = 
+			{
+				_class = "CVseqGroupReference"
+				m_pObject = null
+			}
+			m_pAnimGroups = [  ]
+			m_Vanim = 
+			[
 				{
-					bool m_bEnabled = false
-					int m_nLoopRestart = 0
-				}
-			}
-			bool m_bHidden = false
-			bool m_bDisable = false
-			CActivity[] m_Activities = 
-			[
-				CActivity
+					m_Animationname = "anim_canoe_idle"
+					m_Filepath = "models/canoe/anim_canoe_idle.fbx"
+					m_nStartframe = 0
+					m_nEndframe = 43
+					m_flFps = 18.0
+					m_Loop = 
+					{
+						m_bLoop = true
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = [  ]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
 				{
-					string m_Name = "ACT_DOTA_CAPTURE"
-					int m_nWeight = 1
-				}
+					m_Animationname = "anim_canoe_move"
+					m_Filepath = "models/canoe/anim_canoe_move.fbx"
+					m_nStartframe = 0
+					m_nEndframe = 43
+					m_flFps = 10.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = [  ]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
 			]
-			CAnimationEvent[] m_AnimationEvents = 
-			[
-				
-			]
-			CMotionFrame[] m_MotionFrames = 
-			[
-				
-			]
-			CIKrule*[] m_pIkRules = 
-			[
-				
-			]
-			CAlignAnimation* m_pAlignAnimation = NULL
-			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
-			{
-				float(3) m_translation = ( 15.000000, -10.000000, 40.000000 )
-				float(3) m_rotation = ( -22.000000, 40.000000, -50.000000 )
-			}
-			string[] m_Keywords = 
-			[
-				
-			]
-			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
-			{
-				float m_flFadeInTime = 0.200000
-				float m_flFadeOutTime = 0.200000
-			}
-			string m_folderName = ""
-			string m_MotionFramesRootBone = ""
+			m_sScripts = [  ]
+			m_folderNames = [  ]
 		}
-	]
-	string[] m_sScripts = 
-	[
-		
-	]
-	string[] m_folderNames = 
-	[
-		
-	]
+	}
+	m_pMaterialGroupList = 
+	{
+		_class = "CVNodeMaterialGroupListReference"
+		m_pObject = null
+	}
+	m_pMeshGroupList = 
+	{
+		_class = "CVMeshGroupListReference"
+		m_pObject = null
+	}
+	m_pLodGroupList = 
+	{
+		_class = "CVLODGroupListReference"
+		m_pObject = null
+	}
+	m_pPropBreakableList = 
+	{
+		_class = "CVpropBreakableListReference"
+		m_pObject = null
+	}
+	m_pPropDataList = 
+	{
+		_class = "CVpropDataListReference"
+		m_pObject = null
+	}
+	m_pConstraintLists = [  ]
+	m_collision = ""
+	m_softbody = ""
+	m_sMDLFilename = ""
+	m_sOffsetHitboxSets = [  ]
+	m_vHitboxSetOffset = [ 0.0, 0.0, 0.0 ]
+	m_scriptFiles = [  ]
+	m_pMaterialRemapList = 
+	{
+		m_vMaterialRemapList = 
+		[
+			{
+				m_sSearchMaterial = "*"
+				m_sReplaceMaterial = "canoe_boat.vmat"
+			},
+		]
+	}
+	m_flFbxScale = 1.0
+	m_flQCScale = 1.0
+	m_vOrigin = [ 0.0, 0.0, 0.0 ]
+	m_pPsfList = null
+	m_keyValueText = ""
+	m_bStaticProp = false
+	m_bEnableClothProcessing = true
+	m_flClothEnableThreshold = 0.05
+	m_nMaxClothVertsPerMesh = 2048
+	m_bBuildClothBoneHierarchy = false
+	m_nNavType = "AUTH_NAV_MESH"
+	m_bMakeUniqueVMeshes = false
+	m_bMakeImplicitBindPoseSequence = false
+	m_bAdjustSkeletonFromBoneFlags = false
+	m_pAnimGroups = [  ]
 }
