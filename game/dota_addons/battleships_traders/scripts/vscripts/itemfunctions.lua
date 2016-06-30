@@ -281,7 +281,7 @@ function FireDmgAura(keys)
 	local range = 700	 
 	local handles = {}
 	handles.team = DOTA_UNIT_TARGET_TEAM_ENEMY
-	handles.types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING + DOTA_UNIT_TARGET_MECHANICAL + DOTA_UNIT_TARGET_HERO
+	handles.types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING + DOTA_UNIT_TARGET_HERO
 	handles.flags = DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
 		local dmg=0;
 	if #getEnemies(casterUnit,range,handles) > 0 then

@@ -55,7 +55,7 @@
 							"Center" "CASTER"
 							"Radius" "600"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_HERO"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
 							"MaxTargets" "1"
 							"Random" "1"
@@ -1547,7 +1547,7 @@
 		"BaseClass" 					"batrider_flaming_lasso"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"FightRecapLevel"				"2"
@@ -1870,7 +1870,7 @@
             "Aura" "create_fire_area_aura"
             "Aura_Radius" "300"
             "Aura_Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-            "Aura_Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+            "Aura_Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
         }
         "create_fire_area_aura"
         {
@@ -4169,7 +4169,7 @@
 						"Center" "CASTER"
 						"Radius" "%spread_range"
 						"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_HERO"
+						"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 						"MaxTargets" "1"
 						"Random" "1"
 					}
@@ -4217,7 +4217,7 @@
 						"Center" "TARGET"
 						"Radius" "10"
 						"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_HERO"
+						"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 						"MaxTargets" "1"
 						"Random" "1"
 					}
@@ -4278,7 +4278,7 @@
 					"Center" "CASTER"
 					"Radius" "%ele_range"
 					"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_HERO"
+					"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 					"MaxTargets" "20"
 					"Random" "1"
 				}
@@ -4655,7 +4655,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 			"AbilityTextureName"	"abaddon_aphotic_shield"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
 		"FightRecapLevel"				"1"
 
@@ -4776,7 +4776,7 @@
 							"Center" "CASTER"
 							"Radius" "50"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+							"Types" "DOTA_UNIT_TARGET_BASIC"
 							"MaxTargets" "1"
 							"Random" "1"
 						}
@@ -5567,7 +5567,11 @@
 				"EffectName"    "particles/basic_projectile/speed_effect.vpcf" 
 				"EffectAttachType"	"follow_origin"
 			}
-			
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"DrumbAnimate"
+			}
 			
 		}
 
@@ -5646,7 +5650,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"25.0 23.0 21.0 19.0"
+		"AbilityCooldown"				"15.0 13.0 11.0 9.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -5690,7 +5694,7 @@
 				
 				"Duration"  "%duration"
 				
-				"ThinkInterval"		"17.9"
+				"ThinkInterval"		"24.9"
 				"OnIntervalThink"
 				{
 					
@@ -5716,7 +5720,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"18.0 18.0 18.0 18.0"
+				"duration"				"25.0 25.0 25.0 25.0"
 			}
 			"02"
 			{
@@ -6904,7 +6908,7 @@
 							"Center" "CASTER"
 							"Radius" "1200"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_HERO"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS"
 							"MaxTargets" "1"
 							"Random" "1"

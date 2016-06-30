@@ -124,6 +124,18 @@ function startRammingIt(args) -- keys is the information sent by the ability
 		
 end
 
+function DrumbAnimate(args) -- keys is the information sent by the ability
+--print('[ItemFunctions] gunning_it started! ')
+		local casterUnit = args.caster
+		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+
+		local abil = casterUnit:GetAbilityByIndex(2)
+		local level = abil:GetLevel()
+       StartAnimation(casterUnit, {duration=2.2+.3*level, activity=ACT_DOTA_RUN,rate=1.5})
+		
+end
+
+
 
 dumpingItDir={}
 function dumpingIt(args) -- keys is the information sent by the ability
@@ -971,15 +983,80 @@ end
 function mightStart(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
 	local numunits=0
+	
+	
+	local enemies
+		
+			--hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
+		if casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+			enemies = FindUnitsInRadius( DOTA_TEAM_BADGUYS, casterUnit:GetOrigin(), nil, 800, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+
+		else
+			enemies = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, casterUnit:GetOrigin(), nil, 800, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+
+		end
+
+		 for _,fucker in pairs( enemies) do
+		 if casterUnit.strbonus then
+			local dmg=  (casterUnit.strbonus*20)/#enemies
+			print(dmg)
+				local damageTable = {
+				victim = fucker,
+				attacker = casterUnit,
+				damage =dmg,
+				damage_type = DAMAGE_TYPE_PURE,
+			}
+			local tracking_projectile = 
+			{
+				EffectName = "particles/basic_projectile/might.vpcf",
+				Ability = casterUnit:GetAbilityByIndex(1),
+				vSpawnOrigin = casterUnit:GetAbsOrigin(),
+				Target = fucker,
+				Source = args.source or casterUnit,
+				bHasFrontalCone = false,
+				iMoveSpeed = 750,
+				bReplaceExisting = false,
+				bProvidesVision = false,
+				iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+			}
+			
+
+				ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+				ApplyDamage(damageTable)
+				end
+		end
+	
+	
 	numunits = FindUnitsInRadius( casterUnit:GetTeamNumber(), casterUnit:GetOrigin(), nil, 800, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, 0, 0, false )
 	print('[ItemFunctions] RmightStart started! units is:' .. #numunits)
 	local hpPer =  casterUnit:GetHealthPercent()
 	print('[ItemFunctions] RmightStart started! hpPer is:' .. hpPer)
 	print('[ItemFunctions] new max health should be' .. casterUnit:GetMaxHealth()+35*#numunits)
 	casterUnit:ModifyStrength(3*#numunits)
+	casterUnit.strbonus=#numunits
+	 for _,friend in pairs( numunits) do
+
+			local tracking_projectile = 
+			{
+				EffectName = "particles/basic_projectile/might_good.vpcf",
+				Ability = casterUnit:GetAbilityByIndex(1),
+				vSpawnOrigin = friend,
+				Target = casterUnit,
+				Source = friend,
+				bHasFrontalCone = false,
+				iMoveSpeed = 750,
+				bReplaceExisting = false,
+				bProvidesVision = false,
+				iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+			}
+			
+
+				ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+				ApplyDamage(damageTable)
+				end
+
 	
-	
-	
+
 end
 
 
@@ -987,7 +1064,6 @@ function mightStop(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
 	print('[ItemFunctions] Rmightstop started')
 	casterUnit:SetBaseStrength(1)
-	
 end
 
 

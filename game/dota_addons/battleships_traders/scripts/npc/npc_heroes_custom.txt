@@ -179,7 +179,7 @@
 		"Ability2"					"war_drumbs_battleship"
 		"Ability3"					"might_battleship"
 		"Ability4"					"batten_hatches"
-        "ModelScale"        "0.6"
+        "ModelScale"        "1.0"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{

@@ -289,7 +289,7 @@ DURATION: 2.5 2.8 3.1 3.4
 BONUS MOVE SPEED: 90 110 130 150"
 
 "might_battleship"									"Might of the Tribe"
-"might_battleship_Description"						"The Canoe gains strength from nearby allies, increasing its maximum health and regeneration for a short time. \n \nHigher levels decrease cooldown.
+"might_battleship_Description"						"The Canoe gains strength from nearby allies, increasing its maximum health and regeneration for a short time. Releases any stored energy as damage to enemies in the same area when recollecting might. \n \nHigher levels decrease cooldown.
 DURATION: 18.0 18.0 18.0 18.0
 BONUS HP/ALLY NEARBY: 57"
 
