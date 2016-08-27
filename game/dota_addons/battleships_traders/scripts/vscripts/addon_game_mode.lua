@@ -52,6 +52,7 @@ CREEP_LEVEL = 0
 CREEP_NUM_SMALL = 4
 CREEP_NUM_BIG = 3
 CREEP_NUM_HUGE = 2
+CREEP_NUM_PRIV = 1
 EMP_GOLD_NUMBER = 1
 
 
@@ -62,6 +63,15 @@ co_op_diff_level=1
 co_op_diff_setting=0
 co_op_item_pool={}
 co_op_unit_pool={}
+
+
+battle_mode=0
+battle_mode_number=1
+battle_mode_north_score=0
+battle_mode_south_score=0
+battle_mode_timer=120
+battle_mode_remaining=0
+battle_loc=0
 
 statCollection=0
 
@@ -272,6 +282,8 @@ function Precache( context )
 	PrecacheResource( "model", "models/Aircraft_boat2.vmdl", context )
 	PrecacheResource( "model", "models/sub_boat_down", context )
 	PrecacheResource( "model", "models/rng_ind", context )
+	PrecacheResource( "model", "models/battle_ind.vmdl", context )
+	PrecacheResource( "model", "models/battle_ind", context )
 	PrecacheResource( "model", "models/bad_ancient_ambient_blast", context )
 	PrecacheResource( "model", "models/heroes/tidehunter/tidehunter.vmdl", context )
 	
@@ -353,6 +365,8 @@ function Precache( context )
 	PrecacheUnitByNameSync( "npc_dota_boat_south_three", context )
 	PrecacheUnitByNameSync( "npc_dota_boat_north_three", context )
 	
+	PrecacheUnitByNameSync( "npc_dota_battle_ind", context )
+	
 	PrecacheUnitByNameSync( "npc_dota_boat_south_four", context )
 	PrecacheUnitByNameSync( "npc_dota_boat_north_one", context )
 	PrecacheUnitByNameSync( "npc_dota_boat_north_two", context )
@@ -360,6 +374,8 @@ function Precache( context )
 	PrecacheUnitByNameSync( "npc_dota_air_craft_bomber", context )
 	PrecacheUnitByNameSync( "npc_dota_boat_pleasure_craft", context )
 	PrecacheResource( "model", "models/courier/donkey_unicorn/donkey_unicorn.vmdl", context )
+	PrecacheResource( "model", "models/courier/donkey_unicorn/donkey_unicorn.vmdyl", context )
+	
 	PrecacheResource( "model", "models/courier/sw_donkey/sw_donkey.vmdl", context )
 	PrecacheResource( "model", "models/items/courier/jumo/jumo.vmdl", context )
 	PrecacheResource( "model", "models/items/courier/blotto_and_stick/blotto.vmdl", context )
@@ -441,6 +457,9 @@ function CBattleship8D:InitGameMode()
 	CustomGameEventManager:RegisterListener("buyItem", buyItem);
 	CustomGameEventManager:RegisterListener("DiffSelection", ChooseDiff);
 	CustomGameEventManager:RegisterListener("buyBoat", buyBoat);
+	
+	CustomGameEventManager:RegisterListener("BattleMode", battleMode);
+	CustomGameEventManager:RegisterListener("Activate_Co_Op", ActivateCoOp);
 	
 	CustomGameEventManager:RegisterListener("Unstick", UnstickPlayer);
 	
@@ -1134,12 +1153,115 @@ if co_op_diff_level==5-co_op_diff_setting then
 	
 end
 
+
+
+function HandleTideAbil()
+
+	local otherTeam=DOTA_TEAM_BADGUYS
+	local team="north"
+
+			for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero_spirit_brea*")) do
+					if hero ~= nil then
+						
+						if hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+							otherTeam=DOTA_TEAM_GOODGUYS
+						end
+						print("haveTide!!")
+							local nearby=FindUnitsInRadius(  hero:GetTeamNumber(), hero:GetOrigin(), nil, 1200, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING, 0, 0, false )
+							if #nearby==0 then
+							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+								team="south"
+							end
+								
+									 local waypoint = Entities:FindByNameNearest( team .. "_wp_*", hero:GetOrigin(), 0 )
+										if waypoint and goingToMid[hero]~=1 then
+													local wpNextNum=tonumber(string.sub(waypoint:GetName(),string.len(waypoint:GetName())))
+													local waypoint2 =nil
+													local wpName=string.gsub(waypoint:GetName(),tostring(wpNextNum),tostring(wpNextNum+1))
+													waypoint2 = Entities:FindByName(nil, wpName)
+													if waypoint2 then
+														print(waypoint2:GetName())
+														hero:MoveToPosition( waypoint2:GetOrigin())
+													 end
+													 else
+													   hero:MoveToPosition( Vector(60,-5568,0))
+													   print("othermove")
+										end
+										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS and (hero:GetOrigin()* Vector(0,1,0)- Vector(0,6100,0)):Length()<200 or goingToMid[hero]==1 then
+											 hero:MoveToPositionAggressive( Vector(-58,5390,0))
+											 goingToMid[hero]=1
+										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS and (hero:GetOrigin()* Vector(0,1,0)+ Vector(0,6100,0)):Length()<200 or goingToMid[hero]==1 then
+											  hero:MoveToPositionAggressive( Vector(60,-5568,0))
+											  goingToMid[hero]=1
+										end
+									else
+									local nearbyHero=FindUnitsInRadius( hero:GetTeamNumber(), hero:GetOrigin(), nil, 1200, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 0, 0, false )
+								
+										if #nearbyHero~=0 then
+											local abil = hero:GetAbilityByIndex(0)
+												
+											local abil2 = hero:GetAbilityByIndex(1)
+							
+											local abil3 = hero:GetAbilityByIndex(2)
+
+											local abil4 = hero:GetAbilityByIndex(3)
+											
+											if abil:IsFullyCastable() then
+												if THINK_TICKS%2==0 then
+													hero:CastAbilityOnPosition(nearbyHero[RandomInt(1,#nearbyHero)]:GetOrigin(), abil, -1)	
+												else
+													hero:CastAbilityOnTarget(nearbyHero[RandomInt(1,#nearbyHero)], abil, -1)
+												end
+												--abil:CastAbility()
+											elseif abil2:IsFullyCastable() then
+												if THINK_TICKS%2==0 then
+													hero:CastAbilityOnPosition(nearbyHero[RandomInt(1,#nearbyHero)]:GetOrigin(), abil2, -1)	
+												else
+													hero:CastAbilityOnTarget(nearbyHero[RandomInt(1,#nearbyHero)], abil2, -1)
+												end
+												--abil2:CastAbility()
+											elseif abil3:IsFullyCastable() then
+												if THINK_TICKS%2==0 then
+													hero:CastAbilityOnPosition(nearbyHero[RandomInt(1,#nearbyHero)]:GetOrigin(), abil3, -1)	
+												else
+													hero:CastAbilityOnTarget(nearbyHero[RandomInt(1,#nearbyHero)], abil3, -1)
+												end
+												--abil3:CastAbility()
+											elseif abil4 ~= nil and abil4:IsFullyCastable() then
+												if THINK_TICKS%2==0 then
+													hero:CastAbilityOnPosition(nearbyHero[RandomInt(1,#nearbyHero)]:GetOrigin(), abil4, -1)	
+												else
+													hero:CastAbilityOnTarget(nearbyHero[RandomInt(1,#nearbyHero)], abil4, -1)
+												end
+												--abil4:CastAbility()
+											else
+												hero:MoveToPosition(nearby[RandomInt(1,#nearby)]:GetOrigin())
+											end
+										else
+											hero:MoveToPosition(nearby[RandomInt(1,#nearby)]:GetOrigin())
+										end
+								if hero:IsNull()==false and hero:IsAlive() == false then
+									Timers:CreateTimer( 10, function()
+											print("Removing Tide!!!!")
+											hero:RemoveSelf()
+									end)
+									
+								end
+							end
+							
+						end
+					end
+					
+					end
+
+
+
 function HandleCoOp()
 
 
 
 			for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-					if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+					if hero ~= nil and hero:IsOwnedByAnyPlayer() and not string.match(hero:GetName(),"spirit_brea") then
 						
 						if  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 							local height = hero:GetOrigin() * Vector(0,0,1)
@@ -1225,7 +1347,7 @@ function HandleCoOp()
 					end
 
 
-if (co_op_hero_count<math.sqrt(co_op_diff_level)*.5*NUM_GOOD_PLAYERS+1 or co_op_hero_count==0) and co_op_hero_count<25 and THINK_TICKS%2==0 then
+if (co_op_hero_count<math.sqrt(co_op_diff_level)*.2*NUM_GOOD_PLAYERS*(co_op_diff_setting+1)+1 or co_op_hero_count==0) and co_op_hero_count<25 and THINK_TICKS%2==0 then
 		print(co_op_hero_count .. "   out of a possable " .. math.sqrt(co_op_diff_level)*.5*NUM_GOOD_PLAYERS+1)
 		print("current diff level is" .. co_op_diff_level)
 		local spawnPicked=0
@@ -1245,6 +1367,7 @@ if (co_op_hero_count<math.sqrt(co_op_diff_level)*.5*NUM_GOOD_PLAYERS+1 or co_op_
 			local unitSpawned=RandomInt( 1, #co_op_unit_pool )
 			
 		 creature = CreateUnitByName( co_op_unit_pool[unitSpawned] ,spawnPos , true, nil, nil, DOTA_TEAM_BADGUYS )
+		 
 		
 				
 		if creature:HasInventory() then
@@ -1397,7 +1520,7 @@ local hero = casterUnit
 							hero:SetGold(herogold + 2250, true)
 							hero:SetGold(0, false)
 							print ( '[BAREBONES] player was nevermore and got 2250')
-						elseif string.match(hero:GetName(),"shredder") then
+						elseif string.match(hero:GetName(),"sniper") then
 							hero:SetGold(herogold + 4500, true)
 							hero:SetGold(0, false)
 							print ( '[BAREBONES] player was sniper and got 2250')
@@ -1442,9 +1565,16 @@ function CBattleship8D:OnThink()
 		if GameRules:GetGameTime() ~= LAST_TIME then
 			
 					if THINK_TICKS == 5 then
+					if battle_mode==1 then
+						local battleTimerData = {
+							TimeTillBattle = battle_mode_timer;
+						}
+						FireGameEvent( "Battle_Over", battleTimerData ); 
+					end
 		Timers:CreateTimer( 300, function()
 			spawnTide()
 		end)
+		spawnCop()
 			for _,tower in pairs( Entities:FindAllByClassname( "npc_dota_tow*")) do
 					if tower ~= nil and string.match(tower:GetName(),"tower") then
 						if tower:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
@@ -1470,7 +1600,6 @@ function CBattleship8D:OnThink()
 		 Notifications:TopToAll({text="#inst_six", duration=6.0, style={color="#58ACFA",  fontSize="18px;"}, continue=true})
 		 Notifications:TopToAll({text="#inst_seven", duration=6.0, style={color="#07C300",  fontSize="18px;"}, continue=true})
 		 Notifications:TopToAll({text="#inst_eight", duration=6.0, style={color="#58ACFA",  fontSize="18px;"}, continue=true})
-		
 			NUM_GOOD_PLAYERS = 0
 			NUM_BAD_PLAYERS = 0
 				for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
@@ -1483,8 +1612,8 @@ function CBattleship8D:OnThink()
 						isDisconnected[hero] = 0
 					end
 				end
-			if NUM_BAD_PLAYERS==0 then
-				co_op_mode=1
+			if co_op_mode==1 then
+
 				local co_op_pid
 				for playerID = 0, DOTA_MAX_PLAYERS do
 					if PlayerResource:IsValidPlayerID(playerID) then
@@ -1509,6 +1638,16 @@ function CBattleship8D:OnThink()
 		
 		end
 		
+		if THINK_TICKS ==13 and battle_mode==1 then	
+			Notifications:TopToAll({text="#battle_mode", duration=5.0, style={color="#F2B2B2",  fontSize="40px;"}})
+			Notifications:TopToAll({text="#battle_mode_1", duration=5.0, style={color="#F2B2B2",  fontSize="20px;"}})
+			
+			
+			
+		end
+		
+		
+		
 		if THINK_TICKS == 30 then	
 		 Notifications:TopToAll({text="#bs_HowToWin", duration=10.0, style={color="#58ACFA",  fontSize="25px;"}})
 
@@ -1516,39 +1655,54 @@ function CBattleship8D:OnThink()
 		
 			if THINK_TICKS == 1320 then	
 				Notifications:TopToAll({text="#spys_reminder", duration=8.0, style={color="#CC33FF",  fontSize="25px;"}})
-				local Data = {
-					player_id =0,
-					x 	= -3328,
-					y  = 320,
-					z  = -68
-				}
-				FireGameEvent( "ping_loc", Data ); 
-				
-				local Data = {
-					player_id =0,
-					x 	= 3008,
-					y  = -320,
-					z  = -68
-				}
-				FireGameEvent( "ping_loc", Data ); 
+				  for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+					if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+						if hero:IsRealHero() then
+
+					
+						local Data = {
+							player_id =hero:GetPlayerOwnerID(),
+							x 	= -3328,
+							y  = 320,
+							z  = -68
+						}
+						FireGameEvent( "ping_loc", Data ); 
+						
+						local Data = {
+							player_id =hero:GetPlayerOwnerID(),
+							x 	= 3008,
+							y  = -320,
+							z  = -68
+						}
+						FireGameEvent( "ping_loc", Data ); 
+						end
+					end
+				end
 				
 			end
 			if THINK_TICKS == 1324 then	
-				local Data = {
-					player_id =0,
-					x 	= -3328,
-					y  = 320,
-					z  = -68
-				}
-				FireGameEvent( "ping_loc", Data ); 
-				
-				local Data = {
-					player_id =0,
-					x 	= 3008,
-					y  = -320,
-					z  = -68
-				}
-				FireGameEvent( "ping_loc", Data ); 
+				Notifications:TopToAll({text="#spys_reminder", duration=8.0, style={color="#CC33FF",  fontSize="25px;"}})
+				  for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+					if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+						if hero:IsRealHero() then
+						local Data = {
+							player_id =hero:GetPlayerOwnerID(),
+							x 	= -3328,
+							y  = 320,
+							z  = -68
+						}
+						FireGameEvent( "ping_loc", Data ); 
+						
+						local Data = {
+							player_id =hero:GetPlayerOwnerID(),
+							x 	= 3008,
+							y  = -320,
+							z  = -68
+						}
+						FireGameEvent( "ping_loc", Data ); 
+						end
+					end
+				end
 				
 			end
 		if THINK_TICKS == 20 then	
@@ -1793,10 +1947,13 @@ function CBattleship8D:OnThink()
 			end
 		end
 		
+		HandleTideAbil()
+		
 		if THINK_TICKS % 2 == 0 then
 			reapplyWP()
+			
 		end
-		
+	
 		if THINK_TICKS % 3 == 0 and co_op_mode==1 then
 			HandleCoOp()
 		end
@@ -1804,6 +1961,8 @@ function CBattleship8D:OnThink()
 		if THINK_TICKS % 240 == 0 or TICKS_SINCE_EMP_GOLD > 240 then
 			CBattleship8D:handleEmpGold()
 			EMP_GOLD_NUMBER = EMP_GOLD_NUMBER + 1
+			CREEP_LEVEL=CREEP_LEVEL+1
+			CREEP_NUM_PRIV=CREEP_NUM_PRIV+1
 		end
 		
 		if THINK_TICKS % 45 == 0 or THINK_TICKS == 1 then
@@ -1875,8 +2034,19 @@ function CBattleship8D:OnThink()
 			
 		end
 		local nCreepval = 45-THINK_TICKS%45;
-		if THINK_TICKS % 240 == 0 then
-			CREEP_LEVEL=CREEP_LEVEL+1
+		
+		if battle_mode==1 then
+			battle_mode_timer=battle_mode_timer-1
+			
+			if battle_mode_timer<1 and battle_mode_remaining==0 then
+				startBattle()
+				battle_mode_timer=5000
+			elseif battle_mode_remaining==0 then
+					local battleTimerData = {
+						TimeTillBattle = battle_mode_timer;
+					}
+					FireGameEvent( "Battle_Timer", battleTimerData ); 
+			end
 		end
 		
 		
@@ -2091,12 +2261,46 @@ function CBattleship8D:OnEntityKilled( keys )
   end
  
   if string.match(killedUnit:GetUnitName(), "creature_tidehunter") then
+	
 	if killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-		CBattleship8D:quickSpawn("north","right", "four", 1, CREEP_NUM_HUGE+2)
-		CBattleship8D:quickSpawn("north","left", "four", 1, CREEP_NUM_HUGE+2)
+	
+		local spawnLocation = Entities:FindByName( nil, "north_spawn_left")
+        local waypointlocation = Entities:FindByName ( nil, "north_wp_left_2")
+     local creature
+	
+		creature = CreateUnitByName( "npc_dota_hero_spirit_breaker" ,spawnLocation:GetAbsOrigin() , true, nil, nil, DOTA_TEAM_BADGUYS )
+			
+			if creature~=nil then
+			
+			
+			local abil = creature:GetAbilityByIndex(0)
+			
+				local abil2 = creature:GetAbilityByIndex(1)
+
+				local abil3 = creature:GetAbilityByIndex(2)
+
+				local abil4 = creature:GetAbilityByIndex(3)
+				if abil~= nil then
+					abil:SetLevel(2)
+				end
+				if abil2~= nil then
+					abil2:SetLevel(2)
+				end
+				if abil3~= nil then
+					abil3:SetLevel(2)
+				end
+				if abil4~= nil then
+					abil4:SetLevel(2)
+				end
+				
+			RemoveWearables( creature )
+			creature:SetRespawnsDisabled(true)
+	end
 		GameRules:SendCustomMessage("#north_tide", DOTA_TEAM_GOODGUYS, 0)
 		Notifications:TopToAll({hero="npc_dota_hero_tidehunter", imagestyle="portrait", continue=true})
 		Notifications:TopToAll({text="#north_tide", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
+		
+	
 			 table.insert(tideKillerArray,{
 			 Killer_Team="North",
 			 Game_time=GameRules:GetGameTime()/60+0.5,
@@ -2105,8 +2309,37 @@ function CBattleship8D:OnEntityKilled( keys )
 			 storage:SetTideKillers(tideKiller)
 	end
 	if  killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-		CBattleship8D:quickSpawn("south","right", "four", 1, CREEP_NUM_HUGE+2)
-		CBattleship8D:quickSpawn("south","left", "four", 1, CREEP_NUM_HUGE+2)
+	
+	local spawnLocation = Entities:FindByName( nil, "south_spawn_left")
+        local waypointlocation = Entities:FindByName ( nil, "south_wp_left_2")
+     local creature
+		creature = CreateUnitByName( "npc_dota_hero_spirit_breaker" ,spawnLocation:GetAbsOrigin() , true, nil, nil, DOTA_TEAM_GOODGUYS )
+		if creature~=nil then
+		
+				local abil = creature:GetAbilityByIndex(0)
+			
+				local abil2 = creature:GetAbilityByIndex(1)
+
+				local abil3 = creature:GetAbilityByIndex(2)
+
+				local abil4 = creature:GetAbilityByIndex(3)
+				if abil~= nil then
+					abil:SetLevel(2)
+				end
+				if abil2~= nil then
+					abil2:SetLevel(2)
+				end
+				if abil3~= nil then
+					abil3:SetLevel(2)
+				end
+				if abil4~= nil then
+					abil4:SetLevel(2)
+				end
+				
+		
+			RemoveWearables( creature )
+			creature:SetRespawnsDisabled(true)
+		end
 		Notifications:TopToAll({hero="npc_dota_hero_tidehunter", imagestyle="portrait", continue=true})
 		Notifications:TopToAll({text="#south_tide", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
 		 table.insert(tideKillerArray,{
@@ -2116,6 +2349,8 @@ function CBattleship8D:OnEntityKilled( keys )
 			  tideKiller=tideKiller .. "S" .. math.floor(GameRules:GetGameTime()/60+0.5)
 			  storage:SetTideKillers(tideKiller)
 	end
+	
+	
 		Timers:CreateTimer( 300, function()
 		TIDE_LEVEL = TIDE_LEVEL+1
 			spawnTide()
@@ -2125,7 +2360,7 @@ function CBattleship8D:OnEntityKilled( keys )
 		
   end
 
-   if string.match(killedUnit:GetUnitName(), "_three") or string.match(killedUnit:GetUnitName(), "_four") then
+   if string.match(killedUnit:GetUnitName(), "_three")  then
 		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 				local herogold = hero:GetGold()
@@ -2144,7 +2379,7 @@ function CBattleship8D:OnEntityKilled( keys )
   end
   
 		if co_op_mode and killedUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS and killedUnit:IsRealHero() then
-			if RandomInt(1,NUM_GOOD_PLAYERS+5)<5 then
+			if RandomInt(1,NUM_GOOD_PLAYERS*2+5)<5 then
 				co_op_diff_level=co_op_diff_level+1
 			end
 			co_op_hero_count=co_op_hero_count-1
@@ -2194,6 +2429,18 @@ function CBattleship8D:OnEntityKilled( keys )
 	if killerEntity:IsRealHero() and killedUnit:IsOwnedByAnyPlayer() and co_op_mode==0 then
 	  
 	  if killedUnit:IsRealHero() then 
+	  
+	  if battle_mode_remaining>0 and  killerEntity:GetTeamNumber() ~= killedUnit:GetTeam() then
+
+			if killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+				battle_mode_south_score=battle_mode_south_score+5
+			elseif  killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+				battle_mode_north_score=battle_mode_north_score+5
+			end
+		 
+	  end
+	  
+	  
 	  if herokills[killedUnit:GetPlayerID()] ~= nil and herokills[killedUnit:GetPlayerID()] > 2 then
 		if killerEntity ~= nil and killerEntity:IsOwnedByAnyPlayer() then
 			local herogold = killerEntity:GetGold()
@@ -2311,15 +2558,15 @@ if herokills[killerEntity:GetPlayerID()] ~=nil then
 		print ("NUM_GOOD_PLAYERS: " .. NUM_GOOD_PLAYERS .. " -- good dead: " .. goodDead)
 		print ("NUM_BAD_PLAYERS: " .. NUM_BAD_PLAYERS .. " -- bad dead: " .. badDead)
 		if goodDead == NUM_GOOD_PLAYERS and killedUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS and NUM_GOOD_PLAYERS>1 then
-			CBattleship8D:quickSpawn("north","right", "four", 1, CREEP_NUM_HUGE+2)
-			CBattleship8D:quickSpawn("north","left", "four", 1, CREEP_NUM_HUGE+2)
+			CBattleship8D:quickSpawn("north","right", "four", 1, CREEP_NUM_PRIV)
+			CBattleship8D:quickSpawn("north","left", "four", 1, CREEP_NUM_PRIV)
 			Notifications:TopToAll({text="#team_wipe_north", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
 
 						
 		end
 		if badDead == NUM_BAD_PLAYERS and killedUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS and NUM_BAD_PLAYERS>1 then
-			CBattleship8D:quickSpawn("south","right", "four", 1, CREEP_NUM_HUGE+2)
-			CBattleship8D:quickSpawn("south","left", "four", 1, CREEP_NUM_HUGE+2)
+			CBattleship8D:quickSpawn("south","right", "four", 1, CREEP_NUM_PRIV)
+			CBattleship8D:quickSpawn("south","left", "four", 1, CREEP_NUM_PRIV)
 			Notifications:TopToAll({text="#team_wipe_north", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
 
 		end
@@ -2906,6 +3153,17 @@ function spawnTide()
 			
 end
 
+function spawnCop()
+ spawnLocation = Entities:FindByName( nil, "cop_spawn")
+         i = 0
+        while  1>i do
+					creature = CreateUnitByName( "npc_dota_creature_cop" , spawnLocation:GetAbsOrigin() + Vector(-300 + i * 100,0,0), true, nil, nil, 4 )
+				creature:CreatureLevelUp(TIDE_LEVEL)
+                i = i + 1
+        end
+			
+end
+
 
 
 function RemoveWearables( hero )
@@ -3020,6 +3278,7 @@ function HasQuest(hero)
 	end
 	return false
 end
+
 
 function buyBoat(eventSourceIndex, args)
 	local pID = args.PlayerID
@@ -3564,4 +3823,188 @@ function GetHeroLevel(playerID)
 	end
 	return 0
 end
+
+
+
+
+
+function ActivateCoOp(eventSourceIndex, args)
+print(args.text)
+	if string.match(args.text,"normal") then
+		co_op_mode=0
+		
+	else
+		co_op_mode=1
+	end
+	print(co_op_mode)
+		
+		
+end
+
+
+---------------------------BATTLE MODE CODE---------------------------
+
+
+function battleMode(eventSourceIndex, args)
+print(args.text)
+	if string.match(args.text,"normal") then
+		battle_mode=0
+		else
+		battle_mode=1
+	end
+	print(battle_mode)
+end
+
+function startBattle()
+	battle_loc=RandomInt(1,3)
+	
+	
+	Notifications:TopToAll({text="#battle_starting_" .. tostring(battle_loc), duration=5.0, style={color="#F2B2B2",  fontSize="60px;"}})
+	
+	local battleTimerData = {
+						TimeTillBattle = battle_mode_timer;
+					}
+					FireGameEvent( "Battle_Started", battleTimerData ); 
+			
+	
+	  local waypointlocation = Entities:FindByName ( nil,  "battle_" .. battle_loc )
+	  
+	   for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+			if hero:IsRealHero() then
+				  
+				  local Data = {
+								player_id =hero:GetPlayerOwnerID(),
+								x =  waypointlocation:GetAbsOrigin().x;
+								y =  waypointlocation:GetAbsOrigin().y;
+								z =  waypointlocation:GetAbsOrigin().z;
+							}
+							FireGameEvent( "ping_loc", Data ); 
+							
+							Timers:CreateTimer( 2, function()
+									local Data = {
+										player_id =hero:GetPlayerOwnerID(),
+										x =  waypointlocation:GetAbsOrigin().x;
+										y =  waypointlocation:GetAbsOrigin().y;
+										z =  waypointlocation:GetAbsOrigin().z;
+									}
+									FireGameEvent( "ping_loc", Data ); 
+							end)
+							
+							Timers:CreateTimer( 4, function()
+									local Data = {
+									player_id =hero:GetPlayerOwnerID(),
+										x =  waypointlocation:GetAbsOrigin().x;
+										y =  waypointlocation:GetAbsOrigin().y;
+										z =  waypointlocation:GetAbsOrigin().z;
+									}
+									FireGameEvent( "ping_loc", Data ); 
+							end)
+				end
+			end
+			end
+				
+				
+				
+	  
+	  local dummy = CreateUnitByName( "npc_dota_battle_ind", waypointlocation:GetAbsOrigin(), true, nil, nil, 4 )
+	dummy:AddNewModifier(dummy, nil, "modifier_kill", {duration = 60})
+	battle_mode_remaining=60
+	Timers:CreateTimer( 1, function()
+			HandleBattle()
+	end)
+end
+
+
+function HandleBattle()
+
+  local waypointlocation = Entities:FindByName ( nil,  "battle_" .. battle_loc )
+  
+  	print( "battle time remaining" .. battle_mode_remaining)
+	
+
+ for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+			local Dist =  hero:GetAbsOrigin() - waypointlocation:GetAbsOrigin()
+			if hero:IsRealHero() and Dist:Length()<1100 and hero:IsAlive() then
+				local herogold = hero:GetGold()
+				if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+					battle_mode_south_score=battle_mode_south_score+1
+					hero:SetGold(herogold + battle_mode_number*3+2, true)   
+					GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + battle_mode_number*3+2
+				elseif	hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+					battle_mode_north_score=battle_mode_north_score+1
+					hero:SetGold(herogold + battle_mode_number*3+2, true)   
+					BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + battle_mode_number*3+2
+				end
+			end
+		end
+	end
+	battle_mode_remaining=battle_mode_remaining-1
+	if battle_mode_remaining>1 then
+		local battleTimerData = {
+						TimeInBattle = battle_mode_remaining;
+						NorthScore = battle_mode_north_score;
+						SouthScore = battle_mode_south_score;
+						gpt = battle_mode_number*3+2;
+					}
+		FireGameEvent( "Battle_in_Progress", battleTimerData ); 
+		
+		
+		Timers:CreateTimer( 1, function()
+					HandleBattle()
+		end)
+	else
+			endBattle()
+	end
+	
+
+end
+
+function endBattle()
+
+	local battleTimerData = {
+						TimeTillBattle = battle_mode_timer;
+					}
+					FireGameEvent( "Battle_Over", battleTimerData );
+
+ for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+			if hero:IsRealHero() then
+				local herogold = hero:GetGold()
+				if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS and battle_mode_north_score < battle_mode_south_score then
+					battle_mode_south_score=battle_mode_south_score+1
+					hero:SetGold(herogold + (battle_mode_number*3+2)*15, true)  
+					GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + (battle_mode_number*4+2)*15					
+				elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS and battle_mode_north_score > battle_mode_south_score then
+					battle_mode_north_score=battle_mode_north_score+1
+					hero:SetGold(herogold +  (battle_mode_number*3+2)*15, true)   
+					BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + (battle_mode_number*4+2)*15
+				end
+			end
+		end
+	end
+	if  battle_mode_north_score < battle_mode_south_score then
+		Notifications:TopToAll({text="#south_won_battle", duration=5.0, style={color="#F2B2B2",  fontSize="30px;"}})
+	
+	elseif battle_mode_north_score > battle_mode_south_score then
+		Notifications:TopToAll({text="#north_won_battle", duration=5.0, style={color="#F2B2B2",  fontSize="30px;"}})
+	else
+		Notifications:TopToAll({text="#nobody_won_battle", duration=5.0, style={color="#F2B2B2",  fontSize="30px;"}})
+	end
+	Notifications:TopToAll({text=" " .. tostring((battle_mode_number*4+2)*15) .. " ", duration=5.0, style={color="#FFD700",  fontSize="30px;"}, continue=true})
+	Notifications:TopToAll({text="#gold", duration=5.0, style={color="#F2B2B2",  fontSize="30px;"}, continue=true})
+
+
+battle_mode_number=battle_mode_number+1
+battle_mode_north_score=0
+battle_mode_south_score=0
+battle_mode_timer=180
+battle_mode_remaining=0
+battle_loc=0
+
+
+
+end
+
 

@@ -1283,7 +1283,7 @@
 					m_pAlignAnimation = null
 					m_adjustAnimation = 
 					{
-						m_translation = [ 0.0, 0.0, 20.0 ]
+						m_translation = [ 0.0, 0.0, 15.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]
@@ -1329,7 +1329,7 @@
 					m_pAlignAnimation = null
 					m_adjustAnimation = 
 					{
-						m_translation = [ 0.0, 0.0, 20.0 ]
+						m_translation = [ 0.0, 0.0, 15.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]

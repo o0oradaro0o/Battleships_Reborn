@@ -814,6 +814,55 @@
 		}
 	}
 	
+	//=================================================================================================================
+	// Recipe: caulk Bow Doubled
+	//=================================================================================================================
+	"item_recipe_caulk_bow_doubled"
+	{
+		"ID"							"2009"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_caulk_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_caulk_bow;item_caulk_bow"
+		}
+	}
+	
+	//=================================================================================================================
+	// Recipe: breach Bow Doubled
+	//=================================================================================================================
+	"item_recipe_breach_bow_doubled"
+	{
+		"ID"							"2010"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_breach_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_breach_bow;item_breach_bow"
+		}
+	}
+	
+	
 	
 	//=================================================================================================================
 	// Recipe: poison Bow II Doubled
@@ -1002,6 +1051,55 @@
 			"01"						"item_spin_two_bow;item_spin_two_bow"
 		}
 	}
+	
+	//=================================================================================================================
+	// Recipe: caulk Bow II Doubled
+	//=================================================================================================================
+	"item_recipe_caulk_two_bow_doubled"
+	{
+		"ID"							"2109"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_caulk_two_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_caulk_two_bow;item_caulk_two_bow"
+		}
+	}
+	
+	//=================================================================================================================
+	// Recipe: breach Bow II Doubled
+	//=================================================================================================================
+	"item_recipe_breach_two_bow_doubled"
+	{
+		"ID"							"2110"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_breach_two_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_breach_two_bow;item_breach_two_bow"
+		}
+	}
+	
 	
 	
 	//=================================================================================================================
@@ -1193,6 +1291,58 @@
 	}
 	
 	
+	//=================================================================================================================
+	// Recipe: caulk Bow III Doubled
+	//=================================================================================================================
+	"item_recipe_caulk_three_bow_doubled"
+	{
+		"ID"							"2209"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_caulk_three_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_caulk_three_bow;item_caulk_three_bow"
+		}
+	}
+	
+	//=================================================================================================================
+	// Recipe: breach Bow III Doubled
+	//=================================================================================================================
+	"item_recipe_breach_three_bow_doubled"
+	{
+		"ID"							"2210"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_breach_three_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_breach_three_bow;item_breach_three_bow"
+		}
+	}
+	
+	
+	
+	
+	
 	
 	
 	//=================================================================================================================
@@ -1255,7 +1405,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4500"	
+		"ItemCost"						"3600"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -1279,7 +1429,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4800"	
+		"ItemCost"						"4100"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -1385,6 +1535,56 @@
 			"01"						"item_spin_bow_doubled;item_spin_two_bow_doubled;item_spin_three_bow_doubled"
 		}
 	}
+	
+				//=================================================================================================================
+	// Recipe: caulk blaster ult
+	//=================================================================================================================
+	"item_recipe_caulk_ult_bow"
+	{
+		"ID"							"2309"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3700"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_caulk_ult_bow"
+		"ItemRequirements"
+		{
+			"01"						"item_caulk_bow_doubled;item_caulk_two_bow_doubled;item_caulk_three_bow_doubled"
+		}
+	}
+	
+	//=================================================================================================================
+	// Recipe: breach blaster ult
+	//=================================================================================================================
+	"item_recipe_breach_ult_bow"
+	{
+		"ID"							"2310"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3700"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_breach_ult_bow"
+		"ItemRequirements"
+		{
+			"01"						"item_breach_bow_doubled;item_breach_two_bow_doubled;item_breach_three_bow_doubled"
+		}
+	}
+
+
 
 
 
@@ -3173,14 +3373,14 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1200"
+							"Radius" "1300"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "650"
+						"MoveSpeed" "1125"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_one_projectile.vpcf" 
@@ -3271,7 +3471,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1400"
+							"Radius" "1500"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -3312,7 +3512,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"26"
+				"dmg"	"16"
 			}
 
 		}
@@ -3649,7 +3849,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1100"
+							"Radius" "1050"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -3700,6 +3900,250 @@
 
 		}
 	}
+	
+	
+			//===============================================
+	// caulk-bow
+	//===============================================
+    "item_caulk_bow"
+	{
+		"ID"                            "1009"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_caulk_bow"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "349" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_caulk_bow_shooting"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}
+					
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fireCaulkWeapon"
+					}
+					
+					
+					
+				}
+				
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}
+		
+			"DeleteOnHit"                           "false"
+			"Heal"
+			{
+					"HealAmount"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	"1.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"24"
+			}
+
+		}
+	}
+	
+	
+	//===============================================
+	// breach-bow
+	//===============================================
+    "item_breach_bow"
+	{
+		"ID"                            "1010"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_breach_bow"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "299" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_breach_bow_shooting"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}
+					
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1200"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "875"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+                   "EffectName"    "particles/basic_projectile/breach_one_projectile.vpcf" 
+					}
+					
+					
+					
+				}
+				
+			}
+			
+			"item_breach_bow_dmg"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%delay"
+				"Duration"  "%remove"
+				"IsHidden"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundImpact"
+					}
+					
+					"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+							"Damage"                                "%dmg"
+							"Target"                                "TARGET"
+					}
+					
+					"AttachEffect"
+						{
+							"Target"				"TARGET"
+							"EffectName" 			"particles/basic_projectile/breach_boom.vpcf"
+							"EffectAttachType" 		"follow_origin"
+						}
+					
+				}
+				
+			}
+			
+			
+			
+		"item_breach_dmg_ind"
+			{
+				"EffectName" 			"particles/basic_projectile/breach_ind.vpcf"
+				"EffectAttachType"	"follow_overhead"
+				"Duration"  "%remove"					
+			}
+			
+			
+			
+		}
+		"OnProjectileHitUnit"
+		{
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "item_breach_dmg_ind"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}
+		
+			"DeleteOnHit"                           "false"
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "item_breach_bow_dmg"
+			}
+			
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	".8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"21"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"	"2.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"remove"	"3"
+			}
+
+
+		}
+	}
+	
 	
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// level twos l2
@@ -3944,14 +4388,14 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1200"
+							"Radius" "1300"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "650"
+						"MoveSpeed" "1125"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_two_projectile.vpcf" 
@@ -4038,7 +4482,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1400"
+							"Radius" "1500"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -4418,7 +4862,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1100"
+							"Radius" "1050"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -4469,6 +4913,250 @@
 
 		}
 	}
+	
+	//===============================================
+	// caulk-bow two
+	//===============================================
+    "item_caulk_two_bow"
+	{
+		"ID"                            "1109"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_caulk_two_bow"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "950" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_caulk_two_bow_shooting"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}
+					
+						"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fireCaulkWeapon"
+					}
+					
+					
+					
+				}
+				
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}
+		
+			"DeleteOnHit"                           "false"
+				"Heal"
+			{
+					"HealAmount"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+				
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	"1.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"45"
+			}
+
+		}
+	}
+	
+		
+	//===============================================
+	// breach-bow two
+	//===============================================
+    "item_breach_two_bow"
+	{
+		"ID"                            "1110"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_breach_two_bow"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "825" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_breach_two_bow_shooting"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}
+					
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1200"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "875"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+                   "EffectName"    "particles/basic_projectile/breach_two_projectile.vpcf" 
+					}
+					
+					
+					
+				}
+				
+			}
+			
+			"item_breach_two_bow_dmg"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%delay"
+				"Duration"  "%remove"
+				"IsHidden"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundImpact"
+					}
+					
+					"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+							"Damage"                                "%dmg"
+							"Target"                                "TARGET"
+					}
+					"AttachEffect"
+						{
+							"Target"				"TARGET"
+							"EffectName" 			"particles/basic_projectile/breach_boom.vpcf"
+							"EffectAttachType" 		"follow_origin"
+						}
+					
+										
+					
+				}
+				
+			}
+			
+			
+			
+		"item_breach_dmg_ind"
+			{
+				"EffectName" 			"particles/basic_projectile/breach_ind.vpcf"
+				"EffectAttachType"	"follow_overhead"
+				"Duration"  "%remove"					
+			}
+			
+			
+			
+		}
+		"OnProjectileHitUnit"
+		{
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "item_breach_dmg_ind"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}
+		
+			"DeleteOnHit"                           "false"
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "item_breach_two_bow_dmg"
+			}
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	".8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"41"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"	"2.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"remove"	"3"
+			}
+
+
+		}
+	}
+	
 	
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// level threes
@@ -4701,14 +5389,14 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1200"
+							"Radius" "1300"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "650"
+						"MoveSpeed" "1125"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_three_projectile.vpcf" 
@@ -4798,7 +5486,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1400"
+							"Radius" "1500"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -4838,7 +5526,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"100"
+				"dmg"	"66"
 			}
 
 		}
@@ -5178,7 +5866,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1100"
+							"Radius" "1050"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -5226,6 +5914,245 @@
 				"var_type"				"FIELD_FLOAT"
 				"dmg"	"52"
 			}
+
+		}
+	}
+	
+	//===============================================
+	// caulk-bow three
+	//===============================================
+    "item_caulk_three_bow"
+	{
+		"ID"                            "1209"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_caulk_three_bow"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "2200" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_caulk_three_bow_shooting"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}
+					
+						"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fireCaulkWeapon"
+					}
+					
+					
+					
+				}
+				
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}
+		
+			"DeleteOnHit"                           "false"
+			"Heal"
+			{
+					"HealAmount"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	"1.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"103"
+			}
+
+		}
+	}
+	
+		//===============================================
+	// breach-bow three
+	//===============================================
+    "item_breach_three_bow"
+	{
+		"ID"                            "1210"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_breach_three_bow"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "2050" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_breach_three_bow_shooting"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}
+					
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1200"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "875"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+                   "EffectName"    "particles/basic_projectile/breach_three_projectile.vpcf" 
+					}
+					
+					
+					
+				}
+				
+			}
+			
+			"item_breach_three_bow_dmg"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%delay"
+				"Duration"  "%remove"
+				"IsHidden"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundImpact"
+					}
+					
+					"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+							"Damage"                                "%dmg"
+							"Target"                                "TARGET"
+					}
+										"AttachEffect"
+						{
+							"Target"				"TARGET"
+							"EffectName" 			"particles/basic_projectile/breach_boom.vpcf"
+							"EffectAttachType" 		"follow_origin"
+						}
+					
+				}
+				
+			}
+			
+			
+			
+		"item_breach_dmg_ind"
+			{
+				"EffectName" 			"particles/basic_projectile/breach_ind.vpcf"
+				"EffectAttachType"	"follow_overhead"
+				"Duration"  "%remove"					
+			}
+			
+			
+			
+		}
+		"OnProjectileHitUnit"
+		{
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "item_breach_dmg_ind"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}
+		
+			"DeleteOnHit"                           "false"
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "item_breach_three_bow_dmg"
+			}
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	".8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"80"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"	"2.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"remove"	"3"
+			}
+
 
 		}
 	}
@@ -5585,14 +6512,14 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1200"
+							"Radius" "1300"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "650"
+						"MoveSpeed" "1125"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_one_projectile.vpcf" 
@@ -5602,14 +6529,14 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1200"
+							"Radius" "1300"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "650"
+						"MoveSpeed" "1125"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_one_projectile.vpcf" 
@@ -5729,7 +6656,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1400"
+							"Radius" "1500"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -5746,7 +6673,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1400"
+							"Radius" "1500"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -5755,22 +6682,6 @@
 						}
 						"MoveSpeed" "900"
 						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/wind_one_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "300"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BUILDING"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "800"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/wind_one_projectile.vpcf" 
 					}
@@ -5805,7 +6716,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"26"
+				"dmg"	"16"
 			}
 
 		}
@@ -6231,7 +7142,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1100"
+							"Radius" "1050"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -6248,7 +7159,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1100"
+							"Radius" "1050"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
@@ -6303,6 +7214,293 @@
 				"var_type"				"FIELD_FLOAT"
 				"dmg"	"12"
 			}
+
+		}
+	}
+	
+	//===============================================
+	// caulk-bow_doubled
+	//===============================================
+    "item_caulk_bow_doubled"
+	{
+		"ID"                            "1509"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_caulk_bow_doubled"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "349" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_caulk_bow_shooting_doubled"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}
+					
+						"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fireCaulkWeapon"
+					}
+						"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fireCaulkWeapon"
+					}
+					
+					
+				}
+				
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}
+		
+			"DeleteOnHit"                           "false"
+			"Heal"
+			{
+					"HealAmount"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "dmg_aoe"
+					"Target"
+					{
+						"Center" "TARGET"
+						"Radius" "300"
+						"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+						"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+						"MaxTargets" "30"
+					}
+			}
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	"1.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"24"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg_aoe"	"3"
+			}
+
+		}
+	}
+	
+	//===============================================
+	// breach-bow_doubled
+	//===============================================
+    "item_breach_bow_doubled"
+	{
+		"ID"                            "1510"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_breach_bow_doubled"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "249" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_breach_bow_shooting_doubled"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}
+					
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1200"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "875"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+                   "EffectName"    "particles/basic_projectile/breach_one_projectile.vpcf" 
+					}
+					
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1200"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "875"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+                   "EffectName"    "particles/basic_projectile/breach_one_projectile.vpcf" 
+					}
+					
+					
+					
+				}
+				
+			}
+			
+			"item_breach_bow_doubled_dmg"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%delay"
+				"Duration"  "%remove"
+				"IsHidden"	 "1"
+
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundImpact"
+					}
+					
+					"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+							"Damage"                                "%dmg"
+							"Target"                                "TARGET"
+					}
+								"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PURE"
+							"Damage"                                "4"
+							"Target"                                "TARGET"
+					}
+					"AttachEffect"
+						{
+							"Target"				"TARGET"
+							"EffectName" 			"particles/basic_projectile/breach_boom.vpcf"
+							"EffectAttachType" 		"follow_origin"
+						}
+				}
+				
+			}
+			
+			
+			
+		"item_breach_dmg_ind"
+			{
+				"EffectName" 			"particles/basic_projectile/breach_ind.vpcf"
+				"EffectAttachType"	"follow_overhead"
+				"Duration"  "%remove"					
+			}
+			
+			
+			
+		}
+		"OnProjectileHitUnit"
+		{
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "item_breach_dmg_ind"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}
+		
+			"DeleteOnHit"                           "false"
+				"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "item_breach_bow_doubled_dmg"
+			}
+
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	".8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"17"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"	"2.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"remove"	"3"
+			}
+
 
 		}
 	}
@@ -6642,14 +7840,14 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1200"
+							"Radius" "1300"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "650"
+						"MoveSpeed" "1125"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_two_projectile.vpcf" 
@@ -6659,14 +7857,14 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1200"
+							"Radius" "1300"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "650"
+						"MoveSpeed" "1125"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_two_projectile.vpcf" 
@@ -6784,7 +7982,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1400"
+							"Radius" "1500"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -6801,7 +7999,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1400"
+							"Radius" "1500"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -6810,22 +8008,6 @@
 						}
 						"MoveSpeed" "900"
 						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/wind_two_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "400"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BUILDING"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "800"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/wind_two_projectile.vpcf" 
 					}
@@ -6859,7 +8041,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"54"
+				"dmg"	"35"
 			}
 
 		}
@@ -7281,7 +8463,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1100"
+							"Radius" "1050"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -7298,7 +8480,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1100"
+							"Radius" "1050"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -7355,7 +8537,291 @@
 
 		}
 	}
+		//===============================================
+	// caulk-bow two doubled
+	//===============================================
+    "item_caulk_two_bow_doubled"
+	{
+		"ID"                            "1609"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_caulk_two_bow_doubled"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "950" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
 	
+		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_caulk_two_bow_doubled_shooting"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}
+						"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fireCaulkWeapon"
+					}
+						"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fireCaulkWeapon"
+					}
+					
+				}
+				
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}
+		
+			"DeleteOnHit"                           "false"
+				"Heal"
+			{
+					"HealAmount"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "dmg_aoe"
+					"Target"
+					{
+						"Center" "TARGET"
+						"Radius" "300"
+						"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+						"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+						"MaxTargets" "30"
+					}
+			}
+				
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	"1.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"45"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg_aoe"	"6"
+			}
+
+		}
+	}
+	
+	
+	//===============================================
+	// breach-bow_doubled two
+	//===============================================
+    "item_breach_two_bow_doubled"
+	{
+		"ID"                            "1610"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_breach_two_bow_doubled"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "750" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_breach_two_bow_shooting_doubled"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}
+					
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1200"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "875"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+                   "EffectName"    "particles/basic_projectile/breach_two_projectile.vpcf" 
+					}
+						"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1200"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "875"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+                   "EffectName"    "particles/basic_projectile/breach_two_projectile.vpcf" 
+					}
+					
+					
+					
+				}
+				
+			}
+			
+			"item_breach_two_bow_doubled_dmg"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%delay"
+				"Duration"  "%remove"
+				"IsHidden"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundImpact"
+					}
+					
+					"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+							"Damage"                                "%dmg"
+							"Target"                                "TARGET"
+					}
+					"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PURE"
+							"Damage"                                "8"
+							"Target"                                "TARGET"
+					}
+					"AttachEffect"
+						{
+							"Target"				"TARGET"
+							"EffectName" 			"particles/basic_projectile/breach_boom.vpcf"
+							"EffectAttachType" 		"follow_origin"
+						}
+					
+				}
+				
+			}
+			
+			
+			
+		"item_breach_dmg_ind"
+			{
+				"EffectName" 			"particles/basic_projectile/breach_ind.vpcf"
+				"EffectAttachType"	"follow_overhead"
+				"Duration"  "%remove"					
+			}
+			
+			
+			
+		}
+		"OnProjectileHitUnit"
+		{
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "item_breach_dmg_ind"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}
+		
+			"DeleteOnHit"                           "false"
+				"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "item_breach_two_bow_doubled_dmg"
+			}
+			
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	".8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"33"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"	"2.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"remove"	"3"
+			}
+
+
+		}
+	}
 	
 	
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -7694,14 +9160,14 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1200"
+							"Radius" "1300"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "650"
+						"MoveSpeed" "1125"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_three_projectile.vpcf" 
@@ -7711,14 +9177,14 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1200"
+							"Radius" "1300"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "650"
+						"MoveSpeed" "1125"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_three_projectile.vpcf" 
@@ -7837,7 +9303,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1400"
+							"Radius" "1500"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -7854,7 +9320,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1400"
+							"Radius" "1500"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -7863,22 +9329,6 @@
 						}
 						"MoveSpeed" "900"
 						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/wind_three_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "500"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BUILDING"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "800"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/wind_three_projectile.vpcf" 
 					}
@@ -7913,7 +9363,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"100"
+				"dmg"	"66"
 			}
 
 		}
@@ -8345,7 +9795,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1100"
+							"Radius" "1050"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -8362,7 +9812,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1100"
+							"Radius" "1050"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -8419,6 +9869,298 @@
 
 		}
 	}
+	
+		
+	//===============================================
+	// caulk-bow three_doubled
+	//===============================================
+    "item_caulk_three_bow_doubled"
+	{
+		"ID"                            "1709"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_caulk_three_bow_doubled"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "2200" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_caulk_three_bow_doubled_shooting"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}
+					
+						"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fireCaulkWeapon"
+					}
+						"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fireCaulkWeapon"
+					}
+					
+					
+					
+				}
+				
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}
+		
+			"DeleteOnHit"                           "false"
+			"Heal"
+			{
+					"HealAmount"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+			
+				"Damage"
+				{
+						"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+						"Damage"                                "dmg_aoe"
+						"Target"
+						{
+							"Center" "TARGET"
+							"Radius" "300"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "30"
+						}
+				}
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	"1.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"103"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg_aoe"	"14"
+			}
+
+		}
+	}
+	
+	
+	//===============================================
+	// breach-bow_doubled three
+	//===============================================
+    "item_breach_three_bow_doubled"
+	{
+		"ID"                            "1710"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_breach_three_bow_doubled"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "2000" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_breach_three_bow_shooting_doubled"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}
+					
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1200"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "875"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+                   "EffectName"    "particles/basic_projectile/breach_three_projectile.vpcf" 
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1200"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "875"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+                   "EffectName"    "particles/basic_projectile/breach_three_projectile.vpcf" 
+					}
+					
+					
+					
+				}
+				
+			}
+			
+			"item_breach_three_bow_doubled_dmg"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%delay"
+				"Duration"  "%remove"
+				"IsHidden"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundImpact"
+					}
+					
+					"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+							"Damage"                                "%dmg"
+							"Target"                                "TARGET"
+					}
+					
+					"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PURE"
+							"Damage"                                "16"
+							"Target"                                "TARGET"
+					}
+					
+					"AttachEffect"
+						{
+							"Target"				"TARGET"
+							"EffectName" 			"particles/basic_projectile/breach_boom.vpcf"
+							"EffectAttachType" 		"follow_origin"
+						}
+				}
+									
+			}
+			
+			"item_breach_dmg_ind"
+			{
+				"EffectName" 			"particles/basic_projectile/breach_ind.vpcf"
+				"EffectAttachType"	"follow_overhead"
+				"Duration"  "%remove"					
+			}
+			
+			
+			
+		}
+		"OnProjectileHitUnit"
+		{
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "item_breach_dmg_ind"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}
+		
+			"DeleteOnHit"                           "false"
+				"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "item_breach_three_bow_doubled_dmg"
+			}
+			
+			
+			
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	".8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"64"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"	"2.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"remove"	"3"
+			}
+
+
+		}
+	}
+	
 	
 	
 	//=================================================================================================
@@ -8747,14 +10489,14 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1200"
+							"Radius" "1300"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "650"
+						"MoveSpeed" "1125"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_ult_projectile.vpcf" 
@@ -8869,7 +10611,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1400"
+							"Radius" "1500"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -8882,24 +10624,8 @@
 						"EffectName"    "particles/basic_projectile/wind_ult_projectile.vpcf" 
 					}		
 					
-					
 				}
-				"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "700"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BUILDING"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "800"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/wind_ult_projectile.vpcf" 
-					}
+				
 				
 			}
 			
@@ -8930,7 +10656,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"431"
+				"dmg"	"273"
 			}
 		}
 	}
@@ -9312,7 +11038,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1100"
+							"Radius" "1050"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -9357,6 +11083,270 @@
 				"var_type"				"FIELD_FLOAT"
 				"dmg"	"110"
 			}
+
+		}
+	}
+	
+	//===============================================
+	// caulk-bow ult
+	//===============================================
+    "item_caulk_ult_bow"
+	{
+		"ID"                            "1309"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_caulk_ult_bow"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "2200" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_caulk_ult_bow_shooting"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}
+					
+						"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fireCaulkWeapon"
+					}
+					
+					
+					
+				}
+				
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}
+		
+			"DeleteOnHit"                           "false"
+			"Heal"
+			{
+					"HealAmount"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+			"Damage"
+				{
+						"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+						"Damage"                                "dmg_aoe"
+						"Target"
+						{
+							"Center" "TARGET"
+							"Radius" "300"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "30"
+						}
+				}
+				
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	"1.2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"392"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg_aoe"	"55"
+			}
+
+		}
+	}
+	
+	//===============================================
+	// breach-bow ult
+	//===============================================
+    "item_breach_ult_bow"
+	{
+		"ID"                            "1310"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_breach_ult_bow"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "2000" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_breach_ult_bow_shooting"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundFire"
+					}
+					
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1200"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "875"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+                   "EffectName"    "particles/basic_projectile/breach_ult_projectile.vpcf" 
+					}
+					
+										
+					
+				}
+				
+			}
+			
+			"item_breach_ult_bow_dmg"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%delay"
+				"Duration"  "%remove"
+				"IsHidden"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"plasmaSoundImpact"
+					}
+					
+					"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+							"Damage"                                "%dmg"
+							"Target"                                "TARGET"
+					}
+					"Damage"
+					{
+							"Type"                                  "DAMAGE_TYPE_PURE"
+							"Damage"                                "60"
+							"Target"                                "TARGET"
+					}
+					"AttachEffect"
+						{
+							"Target"				"TARGET"
+							"EffectName" 			"particles/basic_projectile/breach_boom.vpcf"
+							"EffectAttachType" 		"follow_origin"
+						}
+				}
+				
+			}
+			
+			
+			
+		"item_breach_dmg_ind"
+			{
+				"EffectName" 			"particles/basic_projectile/breach_ind.vpcf"
+				"EffectAttachType"	"follow_overhead"
+				"Duration"  "%remove"					
+			}
+			
+			
+			
+		}
+		"OnProjectileHitUnit"
+		{
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "item_breach_dmg_ind"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"plasmaSoundImpact"
+			}
+		
+			"DeleteOnHit"                           "false"
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "item_breach_ult_bow_dmg"
+			}
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	".8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"260"
+			}
+			"0ult"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"	"2.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"remove"	"3"
+			}
+
 
 		}
 	}
@@ -9921,7 +11911,7 @@
 									"Center" "TARGET"
 									"Radius" "%spread_range"
 									"Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-									"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+									"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_OTHER"
 									"MaxTargets" "1"
 									"Random" "1"
 								}
@@ -14691,6 +16681,6 @@
 	}
 	
 	
-}
+	}
 
 	

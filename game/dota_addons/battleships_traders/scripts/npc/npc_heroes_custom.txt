@@ -165,7 +165,7 @@
 		"AttributeBaseAgility"      "1"                                     // Base agility
 		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
 		
-		"MovementSpeed"				"260"									// Speed.
+		"MovementSpeed"				"290"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 		
 		"StatusHealth"				"800"		// Base health.
@@ -299,7 +299,7 @@
 		"AttributeBaseAgility"      "1"                                     // Base agility
 		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
 		
-		"MovementSpeed"				"250"									// Speed.
+		"MovementSpeed"				"280"									// Speed.
 		"MovementTurnRate"			"0.3"									// Turning rate.
 		
 		"StatusHealth"				"1150"		// Base health.
@@ -368,7 +368,7 @@
 		"AttributeBaseAgility"      "1"                                     // Base agility
 		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
 		
-		"MovementSpeed"				"275"									// Speed.
+		"MovementSpeed"				"285"									// Speed.
 		"MovementTurnRate"			"0.3"									// Turning rate.
 		
 		"StatusHealth"				"650"		// Base health.
@@ -1014,7 +1014,7 @@
 		"DisableWearables" "1"
 	}
 	//=================================================================================================================
-    // HERO: npc_dota_hero_shredder battleship
+    // HERO: npc_dota_hero_sniper battleship
     //=================================================================================================================
 	 "npc_dota_hero_shredder_battleship8d" 
     {
@@ -1673,7 +1673,7 @@
 		"MovementSpeed"				"300"									// Speed.
 		"MovementTurnRate"			"0.6"									// Turning rate.
 		
-		"StatusHealth"				"9000"		// Base health.
+		"StatusHealth"				"10000"		// Base health.
 		"StatusHealthRegen"			"20.0"		// Health regeneration rate.
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
@@ -1683,8 +1683,8 @@
 		"Ability2"					"tidehunter_gush_battleship"		// Ability 2.
 		"Ability3"					"pudge_meat_hook_battleship_tide"			// Ability 3.
 		"Ability4"					"tide_wep_battleship"			// Ability 4.
-		
-        "ModelScale"        "1.6"
+
+        "ModelScale"        "1.4"
 		"RingRadius"				"100"
 		"ItemSlots"  {}
 		"BountyXP"					"350"		// Experience earn.

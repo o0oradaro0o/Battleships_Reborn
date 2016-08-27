@@ -20,6 +20,39 @@
 		</Panel>
 	</Panel>-->
 	
+	<Panel id="battleTimerPanel">
+		<Panel class="battleTimersHolder">
+		<Panel class="battleTimerRowTop">
+				<Label id="BattleTime" text="#time_till_battle" />
+				
+			</Panel>
+			<Panel class="timerRowTop">
+				<Label id="BattleTimeVal" text=""/>
+			</Panel>
+		</Panel>
+	</Panel>
+	
+	<Panel  id="battleProgressTimerPanel">
+		<Panel class="battleTimersHolder">
+			<Panel class="battleTimerRowTop">
+				<Label id="BattleProgressTime" text="#battle_progress" class="battleTimerLabelt"/>
+				<Label id="BattleProgressTimeVal" text="" class="battleTimerLabelValt"/>
+			</Panel>
+			<Panel class="timerRow">
+				<Label id="NorthScore" text="#north_score" class="battleTimerLabel"/>
+				<Label id="NorthScoreVal" text="" class="battleTimerLabelVal"/>
+			</Panel>
+			<Panel class="timerRow">
+				<Label id="SouthScore" text="#south_score" class="battleTimerLabel" />
+				<Label id="SouthScoreVal" text="" class="battleTimerLabelVal"/>
+			</Panel>
+			<Panel class="timerRow">
+				<Label id="gpt" text="#gold_per_tick" class="battleTimerLabel" />
+				<Label id="gptval" text="" class="battlegoldLabelVal"/>
+			</Panel>
+		</Panel>
+	</Panel>
+	
 	
 	<Panel class="timerRight" id="timerPanel">
 		<Panel class="timersHolder">
@@ -233,7 +266,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
-							<Label hittest="false" class="boat_stat_label_val" text="260" />
+							<Label hittest="false" class="boat_stat_label_val" text="290" />
 					</Panel>
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#regen" />
@@ -367,7 +400,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
-							<Label hittest="false" class="boat_stat_label_val" text="250" />
+							<Label hittest="false" class="boat_stat_label_val" text="280" />
 					</Panel>
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#regen" />
@@ -435,7 +468,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
-							<Label hittest="false" class="boat_stat_label_val" text="275" />
+							<Label hittest="false" class="boat_stat_label_val" text="285" />
 					</Panel>
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#regen" />

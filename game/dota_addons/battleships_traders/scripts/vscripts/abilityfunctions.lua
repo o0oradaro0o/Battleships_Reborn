@@ -21,7 +21,7 @@ function battleshipHealth(args)
 end
 
 function route(args)
-PrintTable(args ) 
+
 			args.caster:MoveToPositionAggressive(args.target_points[1] )
 end
 
@@ -68,26 +68,7 @@ function peak(keys) -- keys is the information sent by the ability
 	end
 		
 end
-GunTicks = {}
-function gunningIt(args) -- keys is the information sent by the ability
---print('[ItemFunctions] gunning_it started! ')
-		local casterUnit = args.caster
-		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
-		if not IsPhysicsUnit(casterUnit) then
-			Physics:Unit(casterUnit)
-		end
-	--print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
-        local direction =  casterUnit:GetForwardVector()
-		local abil = casterUnit:GetAbilityByIndex(2)
-		local level = abil:GetLevel()
-        local vec = direction:Normalized() * (20 * level +40)
-		casterUnit:AddPhysicsVelocity(vec)
-	if GunTicks[casterUnit:GetOwner():GetPlayerID()] ~= nil  then
-		GunTicks[casterUnit:GetOwner():GetPlayerID()] = GunTicks[casterUnit:GetOwner():GetPlayerID()]+1
-	else
-		GunTicks[casterUnit:GetOwner():GetPlayerID()]=1
-	end
-end
+
 
 function startGunningIt(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')
@@ -211,6 +192,34 @@ local herogold = casterUnit:GetGold()
 casterUnit:SetGold(herogold+100,true)
 casterUnit:SetGold(0,false)
 end
+
+GunTicks = {}
+function gunningIt(args) -- keys is the information sent by the ability
+--print('[ItemFunctions] gunning_it started! ')
+		local casterUnit = args.caster
+		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+		if not IsPhysicsUnit(casterUnit) then
+			Physics:Unit(casterUnit)
+		end
+	--print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+        local direction =  casterUnit:GetForwardVector()
+		local abil = casterUnit:GetAbilityByIndex(2)
+		local level = abil:GetLevel()
+        local vec = direction:Normalized() * (20 * level +40)
+		casterUnit:AddPhysicsVelocity(vec)
+	if GunTicks[casterUnit:GetOwner():GetPlayerID()] ~= nil  then
+		GunTicks[casterUnit:GetOwner():GetPlayerID()] = GunTicks[casterUnit:GetOwner():GetPlayerID()]+1
+		casterUnit:RemoveModifierByName("remove_wreaking_it")	
+		abil:ApplyDataDrivenModifier(casterUnit, casterUnit, "wreaking_it", nil)
+			
+	else
+		GunTicks[casterUnit:GetOwner():GetPlayerID()]=1
+		casterUnit:RemoveModifierByName("remove_wreaking_it")	
+		abil:ApplyDataDrivenModifier(casterUnit, casterUnit, "wreaking_it", nil)
+			
+	end
+end
+
 	
 function gunningItDamage(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')
@@ -222,7 +231,7 @@ if GunTicks[casterUnit:GetOwner():GetPlayerID()]~=nil and GunTicks[casterUnit:Ge
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 		local abil = casterUnit:GetAbilityByIndex(2)
 		local level = abil:GetLevel()
-		local dmg=casterUnit:GetMaxHealth()*0.003*GunTicks[casterUnit:GetOwner():GetPlayerID()]/10
+		local dmg=casterUnit:GetMaxHealth()*0.0005*GunTicks[casterUnit:GetOwner():GetPlayerID()]
 		
 		local damageTable = {
 			victim = casterUnit,
@@ -351,6 +360,8 @@ function burstingItDamage(args) -- keys is the information sent by the ability
 		
 		
 end
+
+
 function burstingItDamageRemove(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
@@ -583,7 +594,8 @@ local casterUnit = args.caster
 	local direction =  casterUnit:GetForwardVector()
         local vec = direction:Normalized() * 0.0
 		local abil = casterUnit:GetAbilityByIndex(2)
-		if abil:GetLevel()~=0 then
+		print(GunTicks[casterUnit:GetOwner():GetPlayerID()])
+		if abil:GetLevel()~=0 and GunTicks[casterUnit:GetOwner():GetPlayerID()]~=nil  and GunTicks[casterUnit:GetOwner():GetPlayerID()]>2 then
 			abil:ToggleAbility()
 		end
 		Physics:Unit(casterUnit)
@@ -1670,6 +1682,47 @@ PrintTable(weps)
 	Timers:CreateTimer( 4, function()
 		 RemoveDD(args)
 	end)
+		
+end
+
+
+function visionGrant(args) 
+
+local casterUnit = args.caster
+        
+		local creature
+		creature1 = CreateUnitByName( "dummy_vision800" , casterUnit:GetOrigin() , true, nil, nil,  DOTA_TEAM_GOODGUYS)
+		creature1:AddNewModifier(creature, nil, "modifier_kill", {duration = .1})
+		creature2 = CreateUnitByName( "dummy_vision800" , casterUnit:GetOrigin() , true, nil, nil,  DOTA_TEAM_BADGUYS)
+		creature2:AddNewModifier(creature, nil, "modifier_kill", {duration = .1})
+		
+		
+		local allUnits = FindUnitsInRadius( DOTA_TEAM_BADGUYS, casterUnit:GetOrigin(), nil, 600, DOTA_UNIT_TARGET_TEAM_ENEMY,  DOTA_UNIT_TARGET_HERO, 0, 0, false )
+			local allUnits2 = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, casterUnit:GetOrigin(), nil, 600, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 0, 0, false )
+			for k,v in pairs(allUnits2) do allUnits[k] = v end
+		
+		for _,hero in pairs( allUnits) do
+	
+			for itemSlot = 0, 5, 1 do 
+					if hero ~= nil then
+						local Item = hero:GetItemInSlot( itemSlot )
+							if Item ~= nil and string.match(Item:GetName(),"contract") then
+							
+							EMP_GOLD_NUMBER = math.floor(GameRules:GetGameTime()/500+0.5)+1
+							
+								hero:RemoveItem(Item)
+								Notifications:Top(hero:GetPlayerID(), {text="#mission_taken", duration=4.0, style={ color=" #A060D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
+								Notifications:Top(hero:GetPlayerID(), {text="#mission_taken_2", duration=4.0, style={ color=" #A060D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
+								Notifications:Top(hero:GetPlayerID(),{text=100*EMP_GOLD_NUMBER/2, duration=4.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+								
+								hero:SetGold(hero:GetGold()+100*EMP_GOLD_NUMBER/2,true)
+								
+								end
+					end
+			end
+		end
+		
+		
 		
 end
 

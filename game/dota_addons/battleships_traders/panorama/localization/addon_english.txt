@@ -196,8 +196,8 @@
 	"south_tower_died" "Southern tower has fallen! North Empire's gold income permanently increased and each southern captain got "
 
 	//killed tidehunter
-	"south_tide"	"Privateers have seen the SOUTH slay a monster and have decided to join their cause."
-	"north_tide"	"Privateers have seen the NORTH slay a monster and have decided to join their cause."
+	"south_tide"	"SOUTH have slain a monster and have tamed its child!"
+	"north_tide"	"NORTH have slain a monster and have tamed its child!"
 	
 	//kill streak ended in game reads: Kill Streak ended! [gold amount] gold awarded to each player.
 	"streak_end_one_n"	"Southern kill Streak ended! "
@@ -230,7 +230,7 @@
 	"for_each_player"	"each."
 	
 	//kil self
-	"kill_self_one"	"Do not kill yourself oponants awareded "
+	"kill_self_one"	"Do not kill yourself opponents awarded "
 	"kill_self_two"	"to be distributed with empire gold. "
 	
 	//co-op mode
@@ -295,8 +295,8 @@ BONUS HP/ALLY NEARBY: 57"
 
 "swamp_gas_battleship"									"Swamp Gas"
 "swamp_gas_battleship_Description"						"Shoot some swamp gas into their ship to slowly eat away at their hull for a while. \n \nHigher levels decrease cooldown, and increase damage.
-DAMAGE PER TICK: 25 33 42 50
-TOTAL DAMAGE: 25 33 42 50
+DAMAGE PER TICK: 15 23 31 39
+TOTAL DAMAGE: 120 184 248 312
 DURATION: 6.0"
 
 "fan_blast_battleship"									"Fan Blast"
@@ -430,7 +430,7 @@ MOVEMENT SPEED BONUS: 8 12 16 20"
 
 "riki_blink_strike_battleship"								"Join the party!"
 "riki_blink_strike_battleship_Description"					"Teleport to target friend or foe and join the battle! \n\nHigher levels increase damage.
-RANGE: 800
+RANGE: 700 800 900
 DAMAGE: 200 300 400"
 
 "sniper_shrapnel_battleship"								"Fire Mortars"
@@ -549,7 +549,7 @@ RANGE: 700 800 900 1000"
 
 "puck_waning_rift_battleship"								"Hack Their System!"
 "puck_waning_rift_battleship_Description"					"Disables the use of abilities on all units in the area and deals damage to them. \n\nHigher levels increase damage and duration.
-DURATION: 3.0 3.5 4.0 4.5
+DURATION: 2.0 2.5 3.0 3.5
 DAMAGE: 400 450 500 550"
 
 "abaddon_aphotic_shield_battleship"							"Scrap Armor"
@@ -645,6 +645,30 @@ DURATION: 2.5 3.0 3.5 4.0"
 		"mission_done" "Mission Complete! You earned yourself "
 		"mission_done_team" "You earned each of your teammates "
 		"mission_empty" "Found Goods.  Take them to any trade post for reward!"
+		
+		"mission_taken" "Officer Chelle is corrupt."
+		"mission_taken_2" "She has taken your goods and extorted a small bribe of "
+		
+		"battle_mode" "Battle mode Activated"
+		"battle_mode_1" "An arena will apear every 4 minutes"
+		
+		"battle_starting_1" "A Battle is starting in Central Cove!"
+		"battle_starting_2" "A Battle is starting in Tidehunter's Lare!"
+		"battle_starting_3" "A Battle is starting in Chelle's Station!"
+		
+		"north_won_battle" "The North Empire has won the day earning each captain "
+		"south_won_battle" "The South Empire has won the day earning each captain "
+		
+		"nobody_won_battle" "There was no clear winner... what a waste of "
+		
+		"time_till_battle" "Time Until Next Battle:"
+		"battle_progress" "Time Remaining:"
+		"gold" " gold."
+		
+		"north_score" "North Score:"
+		"south_score" "South Score:"
+		"gold_per_tick" "gold per tick:"
+		
 
 		
 }

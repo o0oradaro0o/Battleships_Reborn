@@ -48,7 +48,7 @@
 {
 	horizontal-align: Left;
 	vertical-align: top;
-	margin-top: 30px;
+	margin-top: 20px;
 	margin-right: 30px;
 	margin-left: 30px;
 	flow-children: down;
@@ -56,9 +56,9 @@
 }
 #AuthorPanelHolder
 {
-		margin-top: 240px;
+		margin-top: 230px;
 		width: 450px;
-		height: 350px;
+		height: 360px;
 		margin-left: 30px;
 		background-color: gradient( linear, 0% 50%, 0% 100%, from( #42494ecc ), to( #252525ff ) );
 		border-radius: 20px;
@@ -74,7 +74,20 @@
 		margin-left: 30px;
 	margin-right: 30px;
 	width: 400px;
-	height: 140px;
+	height: 100px;
+	
+}
+#battle
+{
+	flow-children: down;
+
+	horizontal-align: Left;
+	vertical-align: top;
+	margin-top: 20px;
+		margin-left: 30px;
+	margin-right: 30px;
+	width: 400px;
+	height: 100px;
 	
 }
 #CoOpHolder
@@ -82,10 +95,11 @@
 		border-radius: 20px;
 	flow-children: down;
 	background-color: gradient( linear, 0% 50%, 0% 100%, from( #62494ecc ), to( #552525ff ) );
-		height: 170px;
-		margin-top: 330px;
+		height: 230;
+		margin-top: 230px;
 	margin-right: 30px;
 	margin-left: 500px;
+	height: 260px;
 }
 
 
@@ -99,7 +113,7 @@
 	margin-top: 20px;
 		margin-left: 30px;
 	margin-right: 10px;
-	width: 740px;
+	
 	height: 300px;
 	overflow: squish scroll;
 }
@@ -108,7 +122,8 @@
 		border-radius: 20px;
 	flow-children: down;
 	background-color: gradient( linear, 0% 50%, 0% 100%, from( #42694ecc ), to( #252525ff) );
-		height: 380px;
+		height: 400px;
+		width: 450px;
 		margin-top: 600px;
 	margin-right: 30px;
 	margin-left: 30px;

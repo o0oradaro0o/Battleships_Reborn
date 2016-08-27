@@ -396,6 +396,8 @@ function clusterBoom(args)
 end
 
 function dearmorUlt(args)
+Timers:CreateTimer( .05, function()
+
 
 	local casterUnit = args.caster
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
@@ -426,10 +428,11 @@ function dearmorUlt(args)
 				plasmaItem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_plasma_ult_bow_dearmored", nil)
 			end
 		end
+			end)
 end
 
 function dearmor3(args)
-
+Timers:CreateTimer( .05, function()
 	local casterUnit = args.caster
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 		local targetUnit = args.target
@@ -458,10 +461,11 @@ function dearmor3(args)
 				plasmaItem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_plasma_three_bow_dearmored", nil)
 			end
 		end
+		end)
 end
 
 function dearmor2(args)
-
+Timers:CreateTimer( .05, function()
 	local casterUnit = args.caster
 		print('plasma dearmor start' )
 		local targetUnit = args.target
@@ -491,10 +495,11 @@ function dearmor2(args)
 				plasmaItem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_plasma_two_bow_dearmored", nil)
 			end
 		end
+		end)
 end
 
 function dearmor1(args)
-
+Timers:CreateTimer( .05, function()
 	local casterUnit = args.caster
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 		local targetUnit = args.target
@@ -523,6 +528,7 @@ function dearmor1(args)
 				plasmaItem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_plasma_bow_dearmored", nil)
 			end
 		end
+		end)
 end
 
 
@@ -573,7 +579,6 @@ function WindOneDmg(args) -- keys is the information sent by the ability
 		local abil = casterUnit:GetAbilityByIndex(0)
 		local level = abil:GetLevel()
 		local targetUnit = args.target
-		local targetUnit = args.target
 		local targetPos = args.target:GetAbsOrigin()
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
         local casterPos = args.caster:GetAbsOrigin()
@@ -584,7 +589,7 @@ function WindOneDmg(args) -- keys is the information sent by the ability
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = direction:Length()/1200 * 26,
+				damage = direction:Length()/1200 * 16,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
@@ -592,19 +597,35 @@ function WindOneDmg(args) -- keys is the information sent by the ability
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = 13,
+				damage = 8,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
-		elseif direction:Length() > 1400 and direction:Length() < 1600 then
+		elseif direction:Length() > 1199 and direction:Length() < 1900 then
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = (1600-direction:Length())/200*26,
+				damage =16,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
 		end
+		local item = args.ability:GetAbilityName() --ability is how 
+		if string.match(item, "doubled") then--l
+		
+			local HPPercentageTaken = (targetUnit:GetHealth()/targetUnit:GetMaxHealth()) -- Calculate the target HP percentage
+			local damageTable = {
+				victim = targetUnit,
+				attacker = casterUnit,
+				damage = 16*HPPercentageTaken,
+				damage_type = DAMAGE_TYPE_PHYSICAL,
+			}
+			ApplyDamage(damageTable)
+			
+			
+		end
+		
+		
 end
 
 function WindTwoDmg(args) -- keys is the information sent by the ability
@@ -615,7 +636,6 @@ function WindTwoDmg(args) -- keys is the information sent by the ability
 		local level = abil:GetLevel()
 		local targetUnit = args.target
 		local targetPos = args.target:GetAbsOrigin()
-		local targetUnit = args.target
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
         local casterPos = args.caster:GetAbsOrigin()
 	--print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
@@ -624,7 +644,7 @@ function WindTwoDmg(args) -- keys is the information sent by the ability
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = direction:Length()/1200 * 54,
+				damage = direction:Length()/1200 * 35,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
@@ -632,20 +652,33 @@ function WindTwoDmg(args) -- keys is the information sent by the ability
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = 27,
+				damage = 17,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
-		elseif direction:Length() > 1400 and direction:Length() < 1600 then
+		elseif direction:Length() > 1199 and direction:Length() < 1900 then
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = (1600-direction:Length())/200*54,
+				damage = 35,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
 		end
-
+		local item = args.ability:GetAbilityName() --ability is how 
+		if string.match(item, "doubled") then--l
+		
+			local HPPercentageTaken = (targetUnit:GetHealth()/targetUnit:GetMaxHealth()) -- Calculate the target HP percentage
+			local damageTable = {
+				victim = targetUnit,
+				attacker = casterUnit,
+				damage = 35*HPPercentageTaken,
+				damage_type = DAMAGE_TYPE_PHYSICAL,
+			}
+			ApplyDamage(damageTable)
+			
+			
+		end
 end
 
 function WindThreeDmg(args) -- keys is the information sent by the ability
@@ -656,7 +689,6 @@ function WindThreeDmg(args) -- keys is the information sent by the ability
 		local level = abil:GetLevel()
 		local targetUnit = args.target
 		local targetPos = args.target:GetAbsOrigin()
-		local targetUnit = args.target
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
         local casterPos = args.caster:GetAbsOrigin()
 	--print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
@@ -665,7 +697,7 @@ function WindThreeDmg(args) -- keys is the information sent by the ability
 				local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = direction:Length()/1200 * 100,
+				damage = direction:Length()/1200 * 66,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
@@ -673,20 +705,33 @@ function WindThreeDmg(args) -- keys is the information sent by the ability
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = 50,
+				damage = 33,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
-		elseif direction:Length() > 1400 and direction:Length() < 1600 then
+		elseif direction:Length() > 1199 and direction:Length() < 1900 then
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = (1600-direction:Length())/200*100,
+				damage = 66,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
 		end
-
+		local item = args.ability:GetAbilityName() --ability is how 
+		if string.match(item, "doubled") then--l
+		
+			local HPPercentageTaken = (targetUnit:GetHealth()/targetUnit:GetMaxHealth()) -- Calculate the target HP percentage
+			local damageTable = {
+				victim = targetUnit,
+				attacker = casterUnit,
+				damage = 66*HPPercentageTaken,
+				damage_type = DAMAGE_TYPE_PHYSICAL,
+			}
+			ApplyDamage(damageTable)
+			
+			
+		end
 end
 
 function WindUltDmg(args) -- keys is the information sent by the ability
@@ -711,7 +756,16 @@ function WindUltDmg(args) -- keys is the information sent by the ability
 									local damageTable = {
 										victim = targetUnit,
 										attacker = casterUnit,
-										damage = 431,
+										damage = 273,
+										damage_type = DAMAGE_TYPE_PHYSICAL,
+									}
+									ApplyDamage(damageTable)
+									
+									local HPPercentageTaken = (targetUnit:GetHealth()/targetUnit:GetMaxHealth()) -- Calculate the target HP percentage
+									local damageTable = {
+										victim = targetUnit,
+										attacker = casterUnit,
+										damage = 273*HPPercentageTaken,
 										damage_type = DAMAGE_TYPE_PHYSICAL,
 									}
 									ApplyDamage(damageTable)
@@ -836,6 +890,96 @@ function coalStun(args) -- keys is the information sent by the ability
 			coalSoundStun(args)
 			print('[ItemFunctions] stunned from coal! ')
 		end
+end
+
+
+function fireCaulkWeapon(args) 
+
+	local itemName = tostring(args.ability:GetAbilityName())
+	local casterUnit = args.caster
+
+	friends = FindUnitsInRadius( casterUnit:GetTeamNumber(), casterUnit:GetOrigin(), nil, 650, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+
+	TargetFriend=friends[RandomInt( 1, #friends )]
+	
+	if #friends>1 then
+
+		while casterUnit==TargetFriend do
+			TargetFriend= friends[RandomInt( 1, #friends )]
+		end
+
+
+		if string.match(itemName, "ult") then
+			local tracking_projectile = 
+			{
+				EffectName = "particles/basic_projectile/caulk_ult_projectile.vpcf",
+				Ability = args.ability,
+				vSpawnOrigin = casterUnit:GetAbsOrigin(),
+				Target = TargetFriend,
+				Source = args.source or casterUnit,
+				bHasFrontalCone = false,
+				iMoveSpeed = 950,
+				bReplaceExisting = false,
+				bProvidesVision = false,
+				iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+			}
+
+			ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+
+		elseif string.match(itemName, "two") then
+			local tracking_projectile = 
+			{
+				EffectName = "particles/basic_projectile/caulk_two_projectile.vpcf",
+				Ability = args.ability,
+				vSpawnOrigin = casterUnit:GetAbsOrigin(),
+				Target = TargetFriend,
+				Source = args.source or casterUnit,
+				bHasFrontalCone = false,
+				iMoveSpeed = 950,
+				bReplaceExisting = false,
+				bProvidesVision = false,
+				iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+			}
+
+			ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+
+		elseif string.match(itemName, "three") then
+			local tracking_projectile = 
+			{
+				EffectName = "particles/basic_projectile/caulk_three_projectile.vpcf",
+				Ability = args.ability,
+				vSpawnOrigin = casterUnit:GetAbsOrigin(),
+				Target = TargetFriend,
+				Source = args.source or casterUnit,
+				bHasFrontalCone = false,
+				iMoveSpeed = 950,
+				bReplaceExisting = false,
+				bProvidesVision = false,
+				iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+			}
+
+			ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+
+		else
+			local tracking_projectile = 
+			{
+				EffectName = "particles/basic_projectile/caulk_one_projectile.vpcf",
+				Ability = args.ability,
+				vSpawnOrigin = casterUnit:GetAbsOrigin(),
+				Target = TargetFriend,
+				Source = args.source or casterUnit,
+				bHasFrontalCone = false,
+				iMoveSpeed = 950,
+				bReplaceExisting = false,
+				bProvidesVision = false,
+				iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+			}
+
+			ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+
+		end
+	end
+
 end
 
 -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.

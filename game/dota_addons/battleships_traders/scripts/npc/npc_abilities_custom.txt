@@ -1493,7 +1493,7 @@
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1200 1300 1400"
+		"AbilityCastRange"				"700 800 900"
 		"AbilityCastPoint"				"0.4 0.4 0.4"
 
 		// Time		
@@ -1673,7 +1673,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"4"
+		"AbilityCooldown"				"12"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -5289,12 +5289,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"500 500 500 500"
+				"radius"					"300 300 300 300"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"silence_duration"			"3.0 3.5 4.0 4.5"
+				"silence_duration"			"2.0 2.5 3.0 3.5"
 			}
 		}
 	}
@@ -5753,7 +5753,7 @@
 		"AbilityManaCost"				"0 0 0 0"
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18.0 16.0 14.0 12.0"
+		"AbilityCooldown"				"16.0 14.0 12.0 10.0"
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -5805,7 +5805,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"25 33 42 50"
+				"damage"			"15 23 31 39"
 			}
 			"02"
 			{
@@ -5815,7 +5815,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"total_damage"			"200 266 333 400"
+				"total_damage"			"120 184 248 312"
 			}
 		}
 	}
@@ -8411,6 +8411,225 @@
 
 		}
 	}
+	
+	
+	//=================================================================================================================
+	// tighten_hoop
+	//=================================================================================================================
+	"give_all_vision"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"tinker_rearm"
+		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		
+		"OnUpgrade"
+		{
+			"RemoveModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "tightened_hoops"
+			}
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "tightened_hoops"
+			}
+		}
+		
+		"OnOwnerSpawned"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "tightened_hoops"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"tightened_hoops"
+			{
+			
+				"ThinkInterval"	".05"	
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"visionGrant"
+					}
+					
+				}
+
+				
+				
+			}
+			
+		}
+
+		
+		
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hoop_bonus_armor"	"1 2 3 4"
+			}
+			"02"
+			{
+					"var_type"                                      "FIELD_FLOAT"
+					"health_regen"                          "4.0 6.0 8.0 10.0"
+			}
+		}
+
+	}
+	
+	
+	"battle_effect"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"alchemist_goblins_greed"
+		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		"OnUpgrade"
+		{
+			"RemoveModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "aura_regen"
+			}
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "aura_regen"
+			}
+		}
+		
+		 "Modifiers"
+        {
+                "aura_fight_effect"
+                {
+                        "IsHidden"                              "1"
+                        "Passive"                               "1"
+                       
+                        "Aura"                                  "fight_effect"
+                        "Aura_Radius"                   "1000"
+                        "Aura_Teams"                    "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                        "Aura_Types"                    "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+                        "Aura_ApplyToCaster"    "1"
+                }
+                       
+                "fight_effect"
+                {
+                        "ThinkInterval"		"1"
+						"OnIntervalThink"
+						{
+							
+							
+							"AttachEffect"
+								{
+									"Target"				"TARGET"
+									"EffectName" 			"particles/basic_projectile/battle_gold.vpcf"
+									"EffectAttachType" 		"follow_overhead"
+								}
+							
+						}
+                }
+               
+        }
+       
+  
+	
+		
+
+	}
+	
+		"battle_effect"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"alchemist_goblins_greed"
+		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		
+		 "Modifiers"
+        {
+                       
+                "battle_show_effect"
+                {
+					"Passive"                               "1"
+                        "ThinkInterval"		".5"
+						"OnIntervalThink"
+						{
+							"RunScript"
+							{
+								"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+								"Function"			"startDisco"
+							}
+						}
+                }
+               
+        }
+       
+  
+	
+		
+
+	}
+	
 	
 	
 	

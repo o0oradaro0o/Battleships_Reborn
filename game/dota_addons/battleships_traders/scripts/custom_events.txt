@@ -35,6 +35,26 @@
 		"Player_ID"		"short"
     }
 	
+	 "Battle_Timer"
+    {
+		"TimeTillBattle"		"long"
+    }
+	 "Battle_in_Progress"
+    {
+		"TimeInBattle"		"long"
+		"NorthScore"		"long"
+		"SouthScore"		"long"
+		"gpt"					"long"
+    }
+	"Battle_Started"
+    {
+    }
+	"Battle_Over"
+    {
+    }
+	
+	
+	
 	"bsui_timer_data" 
 	{
 		"nEmpire"		"long"

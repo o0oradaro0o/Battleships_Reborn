@@ -584,6 +584,13 @@ function FadeShop()
 	GameEvents.Subscribe( "ping_loc", PingLoc );
 	GameEvents.Subscribe( "bsui_timer_data", OnBsuiTimer );
 	
+	GameEvents.Subscribe( "Battle_in_Progress", OnBattleProgressTimer );
+	
+	GameEvents.Subscribe( "Battle_Timer",  OnBattleTimer);
+	GameEvents.Subscribe( "Battle_Started", OnBattleStarted );
+	GameEvents.Subscribe( "Battle_Over", OnBattleOver );
+	
+	
 	GameEvents.Subscribe( "co_op_mode", handleCoOp );
 	
 	GameEvents.Subscribe( "top_notification", TopNotification );
@@ -594,12 +601,48 @@ function FadeShop()
 	
 })();
 
+
 	function test(data)
 	{
 			$.Msg("data");
 	$.Msg(data);
 	
 	}
+	
+	function OnBattleStarted(eventData)
+	{
+		$("#battleTimerPanel").style.visibility="collapse";
+		$("#battleProgressTimerPanel").style.visibility="visible";
+		
+	}
+	
+	function OnBattleOver(eventData)
+	{
+		$("#battleTimerPanel").style.visibility="visible";
+		$("#battleProgressTimerPanel").style.visibility="collapse";
+		
+	}
+	
+	
+	function OnBattleProgressTimer(eventData)	
+	{
+
+		$( "#BattleProgressTimeVal" ).text=eventData.TimeInBattle;
+		$( "#NorthScoreVal" ).text= eventData.NorthScore;
+		$( "#SouthScoreVal" ).text= eventData.SouthScore;
+		$( "#gptval" ).text =  eventData.gpt;
+		
+	}
+	
+	function OnBattleTimer(eventData)
+	{
+		$.Msg(eventData)
+		var tBattle = (Math.floor(eventData.TimeTillBattle/60)) + ":" + (eventData.TimeTillBattle % 60 >= 10 ? "": "0") +  (eventData.TimeTillBattle % 60);
+		$( "#BattleTimeVal" ).text=tBattle;
+		
+		
+	}
+	
 	function OnBsuiTimer(eventData)
 	{
 		if(firstcall)
@@ -954,13 +997,13 @@ function OnRightButtonPressed()
 	{
 		for ( var e of accurateEntities )
 		{
-			if ( Entities.IsDisarmed( e.entityIndex ) )
+			if ( Entities.IsDisarmed( e.entityIndex ) && Entities.NoHealthBar( e.entityIndex ))
 			{
 				//$.Msg("INVULNERABLE UNIT CLICKED")
 				fillAndShow();
 				return CONSUME_EVENT;
 			}
-			if ( Entities.IsHexed( e.entityIndex ) )
+			if ( Entities.IsHexed( e.entityIndex ) && Entities.NoHealthBar( e.entityIndex ))
 			{
 				//$.Msg("INVULNERABLE UNIT CLICKED")
 				showShips();
@@ -973,13 +1016,13 @@ function OnRightButtonPressed()
 	{
 		//$.Msg("ENTITY")
 		var e = mouseEntities[0];
-		if ( Entities.IsFrozen( e.entityIndex ) )
+		if ( Entities.IsFrozen( e.entityIndex ) && Entities.NoHealthBar( e.entityIndex ))
 			{
 				//$.Msg("INVULNERABLE UNIT CLICKED")
 				fillAndShow();
 				return CONSUME_EVENT;
 			}
-			if ( Entities.IsHexed( e.entityIndex ) )
+			if ( Entities.IsHexed( e.entityIndex ) && Entities.NoHealthBar( e.entityIndex ))
 			{
 				//$.Msg("INVULNERABLE UNIT CLICKED")
 				showShips();

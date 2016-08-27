@@ -335,8 +335,8 @@
 		"Creature"
 		{
 			//Level Up
-			"HPGain"					"200"
-			"DamageGain"				"10"
+			"HPGain"					"800"
+			"DamageGain"				"20"
 			"ArmorGain"					"3.0"
 			"MagicResistGain"			"0.0"
 			"MoveSpeedGain"				"10"
@@ -3309,6 +3309,17 @@
 	"Ability1"					"dummy_passive_fly"
 }
 
+	"dummy_vision800"
+{
+	"BaseClass"					"npc_dota_creature"
+	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+	"VisionDaytimeRange"		"800"	
+	"VisionNighttimeRange"		"800"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+	"Ability1"					"dummy_passive_fly"
+}
+
 	"dummy_unit_cluster"
 {
 	"BaseClass" "npc_dota_creature" // Class of entity of link to.
@@ -3550,6 +3561,157 @@
 			"XPGain"					"7"
 		}
 	}
+	
+	
+	//=================================================================
+	// cop
+	//=================================================================
+	"npc_dota_creature_cop"
+	{
+	
+	"precache"
+			{
+				"model"							"models/items/courier/nexon_turtle_15_red/nexon_turtle_15_red_flying.vmdl"// Model.
+			}
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+		"Model"				"models/items/courier/nexon_turtle_15_red/nexon_turtle_15_red_flying.vmdl"	// Model.
+		"SoundSet"					"Hero_Broodmother"					// Name of sound set.
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_broodmother.vsndevts"
+		"ModelScale"				"2.5"								// old 1.0
+		"Level"						"1"
+		"ConsideredHero"			"1"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		
+		"Ability1"					"give_all_vision"			// Ability 1.
+		"Ability2"					"take_contracts"		// Ability 2.
+		"Ability3"					""			// 
+		"Ability4"					""			// Ability 4.
+		"Ability5"					""			// Ability 5.
+		"Ability6"					""			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"20"			// Physical protection.
+		"MagicalResistance"			"25"		// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"90"		// Damage range min.
+		"AttackDamageMax"			"175"		// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.35"		// Speed of attack.
+		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackRange"				"100"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			""			// Speed of projectile.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"350"		// Experience earn.
+		"BountyGoldMin"				"300"		// Gold earned min.
+		"BountyGoldMax"				"305"		// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"			// Hull type used for navigation/locomotion.
+		"HealthBarOffset"			"380"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"450"		// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"999999"		// Base health.
+		"StatusHealthRegen"			"999"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		//Precache
+		//------------------------------------------------------------------
+		"VoiceFile"				"soundevents/voscripts/game_sounds_vo_broodmother.vsndevts"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_broodmother.vsndevts"
+		"vscripts"				"cop_ai.lua"
+
+		// Creature Data
+		//----------------------------------------------------------------------------------------------------------------------
+		"Creature"
+		{
+			"CanRespawn"				"0"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"20.0"
+					"Avoidance"			"10.0"
+					"Support"			"0.0"
+				}
+			}
+
+			"DefaultState"				"Invade"	
+		"HPGain"					"2000"
+			"DamageGain"				"5"
+			"ArmorGain"					"2"
+			"MagicResistGain"			"0.0"
+			"MoveSpeedGain"				"10"
+			"BountyGain"				"100"
+			"XPGain"					"50"			
+		}
+		// Creature Data
+		//----------------------------------------------------------------
+
+		
+		
+	}
+	
+	
+	//=================================================================================	
+	// Creature:range ind
+	//=================================================================================
+	"npc_dota_battle_ind"	
+	{
+	
+	"precache"
+			{
+				"model"							"models/battle_ind.vmdl"// Model.
+			}
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/battle_ind.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"VisionDaytimeRange"		"800"	
+		"VisionNighttimeRange"		"800"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"Ability1"					"dummy_passive_fly"
+		"Ability2"					"battle_effect"
+		"Ability3"					"battle_show"
+	}
+
 	
 	
 }

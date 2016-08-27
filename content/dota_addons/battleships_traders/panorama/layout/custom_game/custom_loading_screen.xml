@@ -27,8 +27,12 @@
 		
 		<Panel id="CoOpHolder">
 			<Panel id="CoOp">
-				<Label class="AuthorTitle" text="Co-Op Challange mode!" />
-				<Label class="heroTitle" text="If all players join the south alliance it will activate co-op mode. An assault challenge against waves of bots. Kill their base before you are overrun. To play solo without bots, just join the north." />
+				<Label class="AuthorTitle" text="Co-Op Challenge mode!" />
+				<Label class="heroTitle" text="An assault challenge against waves of bots. Kill their base before you are overrun." />
+			</Panel>
+				<Panel id="battle">
+				<Label class="AuthorTitle" text="Battle mode!" />
+				<Label class="heroTitle" text="Every 4 minutes a king of the hill style battle occurs.  All participents get gold and the winning team gets extra gold." />
 			</Panel>
 		</Panel>
 		<Label class="SpecialTitle" text="sawen'ka top kisa, lav tebya" />
@@ -38,7 +42,15 @@
 			<Panel id="News">
 				<Label class="AuthorTitle" text="News!" />
 
-				<Label class="newsTitle" text="Hey everyone, thanks for playing recently! Your support really means a lot and the mods popularity has caught the attention of a talented artist, Slapunas. Who will be helping to overhaul our models \n\nNewest changes:\nNew Airboat model added!\n-Every weapon now gets a special effect when 'doubled' which is a mini version of the old ultimate effects\n-All weapon effects now stack (so more than one posion dot can effect the same target for example)\n-Wind effect changed so that the ultimate and doubled weapons gain an additional tower only projectile that is very short ranged (ultimate no longer gives move speed boost)\n\nI am sure the balance will be effected by these large changes to the weapons.  Please share your thoughts with me in the comments/discussion bored on the workshop page.  The intent is to allow additional specialization early to add more flavor to the weapons. Thanks for playing and happy sailing." />
+				<Label class="newsTitle" text="Hi all! Art update will resume but is temporarily on hold.  In the meantime I am continuing to make balance changes.
+\n\nNewest balance changes:
+\n- Swamp gas slightly nerfed 
+\n- All 1k ships speed brought closer to the higher end of the 1 k speed range.
+\n- House boat’s join the party range decreased by 500 for each level.
+\n\nThanks for playing and happy sailing!
+" />
+
+			
 			</Panel>
 		</Panel>
 		
