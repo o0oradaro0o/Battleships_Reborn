@@ -53,11 +53,11 @@ name_lookup["npc_dota_hero_bane"] = "Cargo"
 
 
 function storage:GetEmpGoldHist()
-	return tideKiller
+	return empGoldHist
 end
 
 function storage:GetTideKillers()
-	return empGoldHist
+	return tideKiller
 end
 
 function storage:SetEmpGoldHist(eg)
