@@ -2026,7 +2026,7 @@
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"550"
+				"radius"					"300"
 			}
 			"08"
 			{
@@ -3698,6 +3698,14 @@
 		{
 			
 		}
+		"OnChannelInterrupted"
+		{
+			"RemoveModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "goHome"
+			}
+		}
 		"OnChannelSucceeded"
 		{
 				"ApplyModifier"
@@ -3710,18 +3718,35 @@
 					"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 					"Function"			"TeleHome"
 				}	
+				"AttachEffect"
+						{
+							"Target"				"CASTER"
+							"EffectName" 			"particles/basic_projectile/go_home_end.vpcf"
+							"EffectAttachType" 		"follow_origin"
+						}
+				
 		}
 		"Modifiers"
 		{
 			"goHome"
 			{
-
+					"OnCreated"
+					{
+						"AttachEffect"
+						{
+							"Target"				"CASTER"
+							"EffectName" 			"particles/basic_projectile/go_home_channel.vpcf"
+							"EffectAttachType" 		"follow_origin"
+						}
+					}
+				
 					"Duration"	"10.0 10.0 10.0"
 					"States"
 					{
 						"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
 					}
 			}
+
 		}
 
 		"AbilitySpecial"
@@ -3729,7 +3754,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"4.5 4.5 4.5"
+				"duration"				"4.4 4.4 4.4"
 			}
 		}
 	}
@@ -4397,7 +4422,7 @@
 						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 						"Function"			"moceCarrierIn"
 					}
-					"ApplyModifier"
+						"ApplyModifier"
 					{
 						"Target" "CASTER"
 						"ModifierName" "start_go_back"
@@ -4414,55 +4439,17 @@
 			"start_go_back"
 			{	
 				"IsHidden"                              "1"
-				"IsHidden"                              "1"
 				"Duration" "3.0"
 				"ThinkInterval"		"%move_duration"
-				"OnIntervalThink"
-				{
-					"ApplyModifier"
-					{
-						"Target" "CASTER"
-						"ModifierName" "go_back"
-					}
-				}
-				"States"
-				{
-					"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-			"go_back"
-			{
-				"EffectName" "particles/basic_projectile/ramming_speed.vpcf" 
-				"EffectAttachType" "follow_origin"
-				
-				"Duration"  "%move_duration"
-				"States"
-				{
-					"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
-				}
-				"ThinkInterval"		"0.05"
 				"OnIntervalThink"
 				{
 					"RunScript"
 					{
 						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
-						"Function"			"moceCarrierOut"
+						"Function"			"getDown"
 					}
-					"RemoveModifier"
-					{
-						"Target" "CASTER"
-						"ModifierName" "start_go_back"
-					}
-					"AttachEffect"
-						{
-							"Target" "CASTER"
-							"EffectName"		  "particles/basic_projectile/over_and_out_effect.vpcf" 
-							"EffectAttachType"	"follow_origin"
-						}
 				}
 			}
-			
-			
 			
 			 "giraffe_grab"
                 {
@@ -4473,16 +4460,12 @@
                         "Aura_Teams"                    "DOTA_UNIT_TARGET_TEAM_BOTH"
                         "Aura_Types"                    "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
                         "Aura_ApplyToCaster"    "0"
-					
-						
-					
-							
                 }
          
                 "giraffe_grabed"
                 {
 						"IsHidden"                              "1"
-						"ThinkInterval"	".03"	
+						"ThinkInterval"	".02"	
 						"Duration"				"2.0"
 						"OnIntervalThink"
 						{
@@ -4497,9 +4480,7 @@
 						{
 							"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
 						}
-                       
                 }
-
 		}
 		
 
@@ -4510,7 +4491,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"move_duration"	"1.125 1.25 1.375"
+				"move_duration"	"2.25 2.5 2.75"
 			}
 			"02"
 			{
@@ -5452,7 +5433,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"				"0.4 0.6 0.8 1.0"
+				"dmg"				"0.3 0.4 0.5 .6"
 			}
 		}
 	}
@@ -6247,7 +6228,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"31.0 29.0 27.0 25.0"
+		"AbilityCooldown"				"20.0 18.0 16.0 14.0"
 		"AbilityCastRange"				"400 500 600 700"
 		"BaseClass" 					"ability_datadriven"
 		"AbilityDamage"					"1000"
@@ -6267,7 +6248,7 @@
 				"Target"            "POINT"
 				"UnitName"              "npc_dota_iceberg"
 				"UnitCount"             "1"
-				"Duration"				"120"
+				"Duration"				"240"
 			}
 		}
 		"AbilitySpecial"
@@ -6275,7 +6256,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration"			"120"
+				"duration"			"240"
 			}
 		
 			"02"
@@ -6532,7 +6513,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "180"
+							"Radius" "300"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 							"MaxTargets" "5"
@@ -6565,7 +6546,7 @@
                        "Damage"
                         {
                                 "Type"                                  "DAMAGE_TYPE_PHYSICAL"
-                                "Damage"                                "1000"
+                                "Damage"                                "800"
                                 "Target"                                "TARGET"
                         }
 					

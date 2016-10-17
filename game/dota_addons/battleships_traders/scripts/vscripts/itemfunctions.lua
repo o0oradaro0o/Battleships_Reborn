@@ -982,5 +982,307 @@ function fireCaulkWeapon(args)
 
 end
 
+
+chaosDmgHolder={}
+function fireChaosWeapon(args) 
+
+	local itemName = tostring(args.ability:GetAbilityName())
+	local casterUnit = args.caster
+	
+	if args.ability.counter==nil then
+		args.ability.counter=0
+	end
+	if chaosDmgHolder[args.ability]==nil then
+		chaosDmgHolder[args.ability]={}
+	end
+	
+	
+	if RandomInt(1,5)==4 or args.ability.counter==4 then
+		
+		fuckers = FindUnitsInRadius( casterUnit:GetTeamNumber(), casterUnit:GetOrigin(), nil, 850, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC+ DOTA_UNIT_TARGET_BUILDING, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE, 0, false )
+
+		Targetfucker=fuckers[RandomInt( 1, #fuckers )]
+		if string.match(itemName, "doubled") then
+			otherFucker=fuckers[RandomInt( 1, #fuckers )]
+		end
+		
+		if #fuckers>0 then
+
+			if string.match(itemName, "ult") then
+				if args.ability.counter <4 then
+					local tracking_projectile = 
+					{
+						EffectName = "particles/basic_projectile/chaos_ult_projectile_weak.vpcf",
+						Ability = args.ability,
+						vSpawnOrigin = casterUnit:GetAbsOrigin(),
+						Target = Targetfucker,
+						Source = args.source or casterUnit,
+						bHasFrontalCone = false,
+						iMoveSpeed = 950,
+						bReplaceExisting = false,
+						bProvidesVision = false,
+						iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+					}
+						table.insert(chaosDmgHolder[args.ability],433*(args.ability.counter+1)/4)
+					ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+				else
+						local tracking_projectile = 
+						{
+							EffectName = "particles/basic_projectile/chaos_ult_projectile_strong.vpcf",
+							Ability = args.ability,
+							vSpawnOrigin = casterUnit:GetAbsOrigin(),
+							Target = Targetfucker,
+							Source = args.source or casterUnit,
+							bHasFrontalCone = false,
+							iMoveSpeed = 950,
+							bReplaceExisting = false,
+							bProvidesVision = false,
+							iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+						}
+						if RandomInt(1,2)==2 then
+							table.insert(chaosDmgHolder[args.ability],551)
+						else
+							table.insert(chaosDmgHolder[args.ability],660)
+						end
+						ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+					end
+
+			elseif string.match(itemName, "two") then
+				if args.ability.counter <4 then
+					local tracking_projectile = 
+					{
+						EffectName = "particles/basic_projectile/chaos_two_projectile_weak.vpcf",
+						Ability = args.ability,
+						vSpawnOrigin = casterUnit:GetAbsOrigin(),
+						Target = Targetfucker,
+						Source = args.source or casterUnit,
+						bHasFrontalCone = false,
+						iMoveSpeed = 950,
+						bReplaceExisting = false,
+						bProvidesVision = false,
+						iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+					}
+						table.insert(chaosDmgHolder[args.ability],60*(args.ability.counter+1)/4)
+					ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+						if string.match(itemName, "doubled") then
+							local tracking_projectile = 
+							{
+								EffectName = "particles/basic_projectile/chaos_two_projectile_weak.vpcf",
+								Ability = args.ability,
+								vSpawnOrigin = casterUnit:GetAbsOrigin(),
+								Target = Targetfucker,
+								Source = args.source or casterUnit,
+								bHasFrontalCone = false,
+								iMoveSpeed = 950,
+								bReplaceExisting = false,
+								bProvidesVision = false,
+								iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+							}
+								table.insert(chaosDmgHolder[args.ability],60*(args.ability.counter+1)/4)
+							ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+						end
+					else
+						local tracking_projectile = 
+						{
+							EffectName = "particles/basic_projectile/chaos_two_projectile_strong.vpcf",
+							Ability = args.ability,
+							vSpawnOrigin = casterUnit:GetAbsOrigin(),
+							Target = Targetfucker,
+							Source = args.source or casterUnit,
+							bHasFrontalCone = false,
+							iMoveSpeed = 950,
+							bReplaceExisting = false,
+							bProvidesVision = false,
+							iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+						}
+						table.insert(chaosDmgHolder[args.ability],73)
+						ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+						if string.match(itemName, "doubled") then
+							local tracking_projectile = 
+							{
+								EffectName = "particles/basic_projectile/chaos_two_projectile_strong.vpcf",
+								Ability = args.ability,
+								vSpawnOrigin = casterUnit:GetAbsOrigin(),
+								Target = Targetfucker,
+								Source = args.source or casterUnit,
+								bHasFrontalCone = false,
+								iMoveSpeed = 950,
+								bReplaceExisting = false,
+								bProvidesVision = false,
+								iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+							}
+								table.insert(chaosDmgHolder[args.ability],87)
+							ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+						end
+					end
+
+			elseif string.match(itemName, "three") then
+				if args.ability.counter <4 then
+					local tracking_projectile = 
+					{
+						EffectName = "particles/basic_projectile/chaos_three_projectile_weak.vpcf",
+						Ability = args.ability,
+						vSpawnOrigin = casterUnit:GetAbsOrigin(),
+						Target = Targetfucker,
+						Source = args.source or casterUnit,
+						bHasFrontalCone = false,
+						iMoveSpeed = 950,
+						bReplaceExisting = false,
+						bProvidesVision = false,
+						iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+					}
+						table.insert(chaosDmgHolder[args.ability],120*(args.ability.counter+1)/4)
+					ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+					if string.match(itemName, "doubled") then
+							local tracking_projectile = 
+							{
+								EffectName = "particles/basic_projectile/chaos_three_projectile_weak.vpcf",
+								Ability = args.ability,
+								vSpawnOrigin = casterUnit:GetAbsOrigin(),
+								Target = Targetfucker,
+								Source = args.source or casterUnit,
+								bHasFrontalCone = false,
+								iMoveSpeed = 950,
+								bReplaceExisting = false,
+								bProvidesVision = false,
+								iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+							}
+								table.insert(chaosDmgHolder[args.ability],120*(args.ability.counter+1)/4)
+							ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+						end
+					else
+						local tracking_projectile = 
+						{
+							EffectName = "particles/basic_projectile/chaos_three_projectile_strong.vpcf",
+							Ability = args.ability,
+							vSpawnOrigin = casterUnit:GetAbsOrigin(),
+							Target = Targetfucker,
+							Source = args.source or casterUnit,
+							bHasFrontalCone = false,
+							iMoveSpeed = 950,
+							bReplaceExisting = false,
+							bProvidesVision = false,
+							iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+						}
+						table.insert(chaosDmgHolder[args.ability],145)
+						ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+						if string.match(itemName, "doubled") then
+							local tracking_projectile = 
+							{
+								EffectName = "particles/basic_projectile/chaos_three_projectile_strong.vpcf",
+								Ability = args.ability,
+								vSpawnOrigin = casterUnit:GetAbsOrigin(),
+								Target = Targetfucker,
+								Source = args.source or casterUnit,
+								bHasFrontalCone = false,
+								iMoveSpeed = 950,
+								bReplaceExisting = false,
+								bProvidesVision = false,
+								iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+							}
+								table.insert(chaosDmgHolder[args.ability],174)
+							ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+						end
+						end
+
+			else
+			
+				if args.ability.counter <4 then
+					local tracking_projectile = 
+					{
+						EffectName = "particles/basic_projectile/chaos_one_projectile_weak.vpcf",
+						Ability = args.ability,
+						vSpawnOrigin = casterUnit:GetAbsOrigin(),
+						Target = Targetfucker,
+						Source = args.source or casterUnit,
+						bHasFrontalCone = false,
+						iMoveSpeed = 950,
+						bReplaceExisting = false,
+						bProvidesVision = false,
+						iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+					}
+						table.insert(chaosDmgHolder[args.ability],28*(args.ability.counter+1)/4)
+					ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+					if string.match(itemName, "doubled") then
+							local tracking_projectile = 
+							{
+								EffectName = "particles/basic_projectile/chaos_one_projectile_weak.vpcf",
+								Ability = args.ability,
+								vSpawnOrigin = casterUnit:GetAbsOrigin(),
+								Target = Targetfucker,
+								Source = args.source or casterUnit,
+								bHasFrontalCone = false,
+								iMoveSpeed = 950,
+								bReplaceExisting = false,
+								bProvidesVision = false,
+								iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+							}
+								table.insert(chaosDmgHolder[args.ability],28*(args.ability.counter+1)/4)
+							ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+						end
+					else
+						local tracking_projectile = 
+						{
+							EffectName = "particles/basic_projectile/chaos_one_projectile_strong.vpcf",
+							Ability = args.ability,
+							vSpawnOrigin = casterUnit:GetAbsOrigin(),
+							Target = Targetfucker,
+							Source = args.source or casterUnit,
+							bHasFrontalCone = false,
+							iMoveSpeed = 950,
+							bReplaceExisting = false,
+							bProvidesVision = false,
+							iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+						}
+						table.insert(chaosDmgHolder[args.ability],33)
+						ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+						if string.match(itemName, "doubled") then
+							local tracking_projectile = 
+							{
+								EffectName = "particles/basic_projectile/chaos_one_projectile_strong.vpcf",
+								Ability = args.ability,
+								vSpawnOrigin = casterUnit:GetAbsOrigin(),
+								Target = Targetfucker,
+								Source = args.source or casterUnit,
+								bHasFrontalCone = false,
+								iMoveSpeed = 950,
+								bReplaceExisting = false,
+								bProvidesVision = false,
+								iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+							}
+								table.insert(chaosDmgHolder[args.ability],39)
+							ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+						end
+					end
+				end
+			end
+		args.ability.counter=0
+	else
+		args.ability.counter=args.ability.counter+1
+	end
+
+end
+
+function ChaosWeaponHit(args) 
+
+	local casterUnit = args.caster
+			--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+			local targetUnit = args.target
+			local casterUnit = args.caster
+		if chaosDmgHolder[args.ability][1]~=nil then
+				
+				local damageTable = {
+					victim = targetUnit,
+					attacker = casterUnit,
+					damage = chaosDmgHolder[args.ability][1],
+					damage_type = DAMAGE_TYPE_PHYSICAL,
+				}
+				ApplyDamage(damageTable)
+
+				table.remove(chaosDmgHolder[args.ability], 1)
+		end
+end
+
+
 -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
 -- makes sure that the item exists and making sure it is the correct item

@@ -862,6 +862,30 @@
 		}
 	}
 	
+	//=================================================================================================================
+	// Recipe: chaos Bow Doubled
+	//=================================================================================================================
+	"item_recipe_chaos_bow_doubled"
+	{
+		"ID"							"2011"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_chaos_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_chaos_bow;item_chaos_bow"
+		}
+	}
+	
 	
 	
 	//=================================================================================================================
@@ -1097,6 +1121,30 @@
 		"ItemRequirements"
 		{
 			"01"						"item_breach_two_bow;item_breach_two_bow"
+		}
+	}
+	
+	//=================================================================================================================
+	// Recipe: chaos Bow II Doubled
+	//=================================================================================================================
+	"item_recipe_chaos_two_bow_doubled"
+	{
+		"ID"							"2111"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_chaos_two_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_chaos_two_bow;item_chaos_two_bow"
 		}
 	}
 	
@@ -1340,7 +1388,29 @@
 	}
 	
 	
-	
+	//=================================================================================================================
+	// Recipe: chaos Bow III Doubled
+	//=================================================================================================================
+	"item_recipe_chaos_three_bow_doubled"
+	{
+		"ID"							"2211"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_chaos_three_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_chaos_three_bow;item_chaos_three_bow"
+		}
+	}
 	
 	
 	
@@ -1584,6 +1654,30 @@
 		}
 	}
 
+	//=================================================================================================================
+	// Recipe: chaos blaster ult
+	//=================================================================================================================
+	"item_recipe_chaos_ult_bow"
+	{
+		"ID"							"2311"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3700"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_chaos_ult_bow"
+		"ItemRequirements"
+		{
+			"01"						"item_chaos_bow_doubled;item_chaos_two_bow_doubled;item_chaos_three_bow_doubled"
+		}
+	}
+		
 
 
 
@@ -1638,7 +1732,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement"		"35"
+				"bonus_movement"		"40"
 			}
 			"02"
 			{
@@ -1699,7 +1793,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement"		"50"
+				"bonus_movement"		"60"
 			}
 			"02"
 			{
@@ -1760,7 +1854,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement"		"75"
+				"bonus_movement"		"85"
 			}
 			"02"
 			{
@@ -1822,7 +1916,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement"		"100"
+				"bonus_movement"		"110"
 			}
 			"02"
 			{
@@ -4000,7 +4094,7 @@
 		"AbilityCastRange"              "0"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "299" 
+		"ItemCost"                      "349" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
@@ -4140,6 +4234,84 @@
 				"remove"	"3"
 			}
 
+
+		}
+	}
+	
+	//===============================================
+	// chaos-bow
+	//===============================================
+    "item_chaos_bow"
+	{
+		"ID"                            "1011"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_chaos_bow"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "299" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_chaos_bow_shooting"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"chaosSoundFire"
+					}	
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fireChaosWeapon"
+					}							
+					
+					
+					
+					
+				}
+				
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+						"Function"			"ChaosWeaponHit"
+					}					
+			"DeleteOnHit"                           "false"
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	".2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"60"
+			}
 
 		}
 	}
@@ -4999,6 +5171,8 @@
 		}
 	}
 	
+	
+	
 		
 	//===============================================
 	// breach-bow two
@@ -5153,6 +5327,84 @@
 				"remove"	"3"
 			}
 
+
+		}
+	}
+	
+		//===============================================
+	// chaos-bow
+	//===============================================
+    "item_chaos_two_bow"
+	{
+		"ID"                            "1111"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_chaos_two_bow"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "825" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_chaos_two_bow_shooting"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"chaosSoundFire"
+					}	
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fireChaosWeapon"
+					}							
+					
+					
+					
+					
+				}
+				
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+						"Function"			"ChaosWeaponHit"
+					}					
+			"DeleteOnHit"                           "false"
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	".2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"60"
+			}
 
 		}
 	}
@@ -6153,6 +6405,83 @@
 				"remove"	"3"
 			}
 
+
+		}
+	}
+	
+	//===============================================
+	// chaos-bow
+	//===============================================
+    "item_chaos_three_bow"
+	{
+		"ID"                            "1211"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_chaos_three_bow"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "2000" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_chaos_three_bow_shooting"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"chaosSoundFire"
+					}	
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fireChaosWeapon"
+					}							
+					
+					
+					
+					
+				}
+				
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+						"Function"			"ChaosWeaponHit"
+					}					
+			"DeleteOnHit"                           "false"
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	".2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"60"
+			}
 
 		}
 	}
@@ -7505,6 +7834,85 @@
 		}
 	}
 	
+	//===============================================
+	// chaos-bow
+	//===============================================
+    "item_chaos_bow_doubled"
+	{
+		"ID"                            "1511"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_chaos_bow_doubled"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "249" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_chaos_bow_shooting_doubled"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"chaosSoundFire"
+					}	
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fireChaosWeapon"
+					}							
+					
+					
+					
+					
+				}
+				
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+						"Function"			"ChaosWeaponHit"
+					}					
+			"DeleteOnHit"                           "false"
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	".2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"60"
+			}
+
+		}
+	}
+	
+	
 	
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// level twos doubled l2d
@@ -8819,6 +9227,84 @@
 				"remove"	"3"
 			}
 
+
+		}
+	}
+	
+		//===============================================
+	// chaos-two_bow
+	//===============================================
+    "item_chaos_two_bow_doubled"
+	{
+		"ID"                            "1611"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_chaos_two_bow_doubled"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "249" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_chaos_two_bow_shooting_doubled"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"chaosSoundFire"
+					}	
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fireChaosWeapon"
+					}							
+					
+					
+					
+					
+				}
+				
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+						"Function"			"ChaosWeaponHit"
+					}					
+			"DeleteOnHit"                           "false"
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	".2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"60"
+			}
 
 		}
 	}
@@ -10161,6 +10647,84 @@
 		}
 	}
 	
+		//===============================================
+	// chaos-three_bow
+	//===============================================
+    "item_chaos_three_bow_doubled"
+	{
+		"ID"                            "1711"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_chaos_three_bow_doubled"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "249" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_chaos_three_bow_shooting_doubled"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"chaosSoundFire"
+					}	
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fireChaosWeapon"
+					}							
+					
+					
+					
+					
+				}
+				
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+						"Function"			"ChaosWeaponHit"
+					}					
+			"DeleteOnHit"                           "false"
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	".2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"60"
+			}
+
+		}
+	}
+	
 	
 	
 	//=================================================================================================
@@ -11347,6 +11911,84 @@
 				"remove"	"3"
 			}
 
+
+		}
+	}
+	
+	//===============================================
+	// chaos-ult_bow
+	//===============================================
+    "item_chaos_ult_bow"
+	{
+		"ID"                            "1611"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_datadriven"
+		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"				"item_chaos_ult_bow"
+		"AbilityCastRange"              "0"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "249" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		
+		
+		"Modifiers"
+		{
+			
+			
+			"item_chaos_ult_bow_shooting"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"chaosSoundFire"
+					}	
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fireChaosWeapon"
+					}							
+					
+					
+					
+					
+				}
+				
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
+						"Function"			"ChaosWeaponHit"
+					}					
+			"DeleteOnHit"                           "false"
+				
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	".2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"60"
+			}
 
 		}
 	}

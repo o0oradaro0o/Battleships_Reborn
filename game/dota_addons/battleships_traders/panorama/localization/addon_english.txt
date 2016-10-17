@@ -243,7 +243,7 @@
 	"co_op_hard" "I Hate Winning"
 
 "pistols_battleship"							"Pistols"
-"pistols_battleship_Description"				"Your crew fires pistols rapidly at random nearby targets. \n\nHigher levels increase damage
+"pistols_battleship_Description"				"Your crew fires pistols rapidly at random targets within 600 range. \n\nHigher levels increase damage
 DURATION: 5.0 5.0 5.0 5.0
 BASE DAMAGE: 85.0 170.0 255.0 340.0
 PERCENTAGE MAX HP AS DAMAGE: 0.05 0.1 0.15 0.2
@@ -526,7 +526,7 @@ DAMAGE: 600"
 DURATION: 15 17 19 21"
 
 "Over_And_Out"									"Over and Out"
-"Over_And_Out_Description"					"The aircraft carrier shoots forward even over terrain grabs any units encountered and pulls them back out to where it started. (pulled units cannot move over terrain\n\n Higher levels increase duration.
+"Over_And_Out_Description"					"aircraft carrier shoots forward even over terrain grabbs any units encountered and pulls them with you as you rocket into the air.\n\n Higher levels increase duration.
 DURATION: 2.25 2.5 2.75"
 
 "gyrocopter_call_down_battleship"									"Hit!"
@@ -650,11 +650,11 @@ DURATION: 2.5 3.0 3.5 4.0"
 		"mission_taken_2" "She has taken your goods and extorted a small bribe of "
 		
 		"battle_mode" "Battle mode Activated"
-		"battle_mode_1" "An arena will apear every 4 minutes"
+		"battle_mode_1" "An arena will appear every 4 minutes in a random location. any player in the arena will receive extra gold per second and whichever team controls the arena longest will receive bonus gold."
 		
 		"battle_starting_1" "A Battle is starting in Central Cove!"
-		"battle_starting_2" "A Battle is starting in Tidehunter's Lare!"
-		"battle_starting_3" "A Battle is starting in Chelle's Station!"
+		"battle_starting_2" "<--A Battle is starting in Tidehunter's Lair!"
+		"battle_starting_3" "A Battle is starting in Chelle's Station!-->"
 		
 		"north_won_battle" "The North Empire has won the day earning each captain "
 		"south_won_battle" "The South Empire has won the day earning each captain "

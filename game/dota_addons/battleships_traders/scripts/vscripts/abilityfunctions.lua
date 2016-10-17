@@ -595,7 +595,7 @@ local casterUnit = args.caster
         local vec = direction:Normalized() * 0.0
 		local abil = casterUnit:GetAbilityByIndex(2)
 		print(GunTicks[casterUnit:GetOwner():GetPlayerID()])
-		if abil:GetLevel()~=0 and GunTicks[casterUnit:GetOwner():GetPlayerID()]~=nil  and GunTicks[casterUnit:GetOwner():GetPlayerID()]>2 then
+		if abil:GetLevel()~=0 and not casterUnit:HasModifier("remove_wreaking_it") and GunTicks[casterUnit:GetOwner():GetPlayerID()]~=nil  and GunTicks[casterUnit:GetOwner():GetPlayerID()]>2 then
 			abil:ToggleAbility()
 		end
 		Physics:Unit(casterUnit)
@@ -641,6 +641,8 @@ function toggle_item(keys) -- keys is the information sent by the ability
 	end
 end
 function TeleHome(keys) -- keys is the information sent by the ability
+Timers:CreateTimer( 0.1, function()
+	
 	print( '[AbilityFunctions] toggle_item  Called' )
 	local casterUnit = EntIndexToHScript( keys.caster_entindex )
 	local vecorig = Vector(0,0,0)
@@ -650,6 +652,8 @@ function TeleHome(keys) -- keys is the information sent by the ability
 		 vecorig = Vector(0,7040,0)+RandomVector( RandomFloat( 0, 100 ))
 	end	
 	casterUnit:SetOrigin(vecorig)
+	 end
+	 )
 end
 	
 	function keepUp(args) -- keys is the information sent by the ability
@@ -735,7 +739,17 @@ end
 
 
 
+function getDown(args) 
+		local casterUnit = args.caster
+		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 
+	--print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+        local direction =  casterUnit:GetForwardVector()
+        local vec = direction:Normalized() * 50.0
+		local vecorig = casterUnit:GetOrigin()
+		
+	casterUnit:MoveToPosition(vecorig+vec)
+end
 	
 function giraffeGrab(args) -- keys is the information sent by the ability
 		print('[ItemFunctions] drag started! ')
@@ -766,7 +780,7 @@ function moceCarrierIn(args) -- keys is the information sent by the ability
 		local vecorig = casterUnit:GetOrigin()
 		
 		
-		casterUnit:SetOrigin(vecorig+vec)
+		casterUnit:SetOrigin((vecorig+vec)* Vector(1,1,0)+Vector(0,0,300))
 		
 end
 function moceCarrierOut(args) -- keys is the information sent by the ability
@@ -962,8 +976,8 @@ end
 function reflect(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
 	print('[ItemFunctions] REFLECT finished! HP was:' .. herohp[casterUnit:GetOwner():GetPlayerID()])
-	local ruseDmg = herohp[casterUnit:GetOwner():GetPlayerID()] - casterUnit:GetHealth()
-	casterUnit:SetHealth(herohp[casterUnit:GetOwner():GetPlayerID()])
+	local ruseDmg = herohp[casterUnit:GetOwner():GetPlayerID()] - casterUnit:GetHealth() * (0.2+0.1*abil:GetLevel())
+	casterUnit:SetHealth(casterUnit:GetHealth()+ruseDmg)
 	
 end
 
@@ -976,7 +990,7 @@ function takeReflected(args) -- keys is the information sent by the ability
 	
 	local abil = casterUnit:GetAbilityByIndex(2)
 	local level = abil:GetLevel()
-	ruseDmg = ruseDmg *(0.2+0.2*abil:GetLevel())
+	ruseDmg = ruseDmg *(0.2+0.1*abil:GetLevel())
 	
 	local targetUnit = args.target
 	local damageTable = {

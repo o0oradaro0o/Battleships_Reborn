@@ -1200,7 +1200,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="110000" />
+							<Label hittest="false" class="boat_stat_label_val" text="11000" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />

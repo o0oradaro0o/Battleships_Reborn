@@ -701,6 +701,9 @@ table.insert(SouthEasyMissions["npc_dota_shop_right_top"], "item_contract_medium
 	table.insert(co_op_item_pool,"item_light_bow")
 	table.insert(co_op_item_pool,"item_spin_bow")
 	table.insert(co_op_item_pool,"item_ice_bow")
+	table.insert(co_op_item_pool,"item_breach_bow")
+	table.insert(co_op_item_pool,"item_chaos_bow")
+	table.insert(co_op_item_pool,"item_caulk_bow")
 	table.insert(co_op_item_pool,"item_hull_one")
 	table.insert(co_op_item_pool,"item_sail_one")
 	table.insert(co_op_item_pool,"item_repair_one")
@@ -820,8 +823,10 @@ function attachCosmetics(hero)
 end
 
 function CBattleship8D:handleEmpGold()
+
 			GameRules:SetTimeOfDay(0.25)
 		
+		if co_op_mode==0 then
 			TICKS_SINCE_EMP_GOLD = 0
 			local goodGold = 0
 			local badGold = 0
@@ -849,14 +854,24 @@ function CBattleship8D:handleEmpGold()
 			local GoldDif = 0
 			if GOOD_GOLD_TOTAL_MOD > BAD_GOLD_TOTAL_MOD then
 				GoldDif = GOOD_GOLD_TOTAL_MOD - BAD_GOLD_TOTAL_MOD
-				badGoldEach = badGoldEach + GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
+					if GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER)) < badGoldEach then
+						badGoldEach = badGoldEach + GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
+					else
+						badGoldEach=GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))*2
+						goodGoldEach=GoldDif *(DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
+				end
 				BAD_GOLD_TOTAL_MOD = 0
 				GOOD_GOLD_TOTAL_MOD = GoldDif
 				empGoldHist=empGoldHist .. "N:" .. EMP_GOLD_NUMBER .. "L:S "
 				storage:SetEmpGoldHist(empGoldHist)
 			elseif BAD_GOLD_TOTAL_MOD > GOOD_GOLD_TOTAL_MOD then
 				GoldDif = BAD_GOLD_TOTAL_MOD - GOOD_GOLD_TOTAL_MOD
-				goodGoldEach = goodGoldEach + GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
+				if GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER)) < goodGoldEach then
+					goodGoldEach = goodGoldEach + GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
+					else
+						goodGoldEach=GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))*2
+						badGoldEach=GoldDif*(DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
+				end
 				BAD_GOLD_TOTAL_MOD = GoldDif
 				GOOD_GOLD_TOTAL_MOD = 0
 				empGoldHist=empGoldHist .. "N:" .. EMP_GOLD_NUMBER .. "L:N "
@@ -899,6 +914,40 @@ function CBattleship8D:handleEmpGold()
 				end
 			end
 			
+			else
+			
+				local goodGoldEach = 500 * EMP_GOLD_NUMBER
+				local badGoldEach = 500 * EMP_GOLD_NUMBER
+				if NUM_GOOD_PLAYERS ~= 0 and NUM_BAD_PLAYERS ~= 0 then
+					goodGoldEach = goodGoldEach / NUM_GOOD_PLAYERS
+					badGoldEach = badGoldEach / NUM_BAD_PLAYERS
+				end
+				Notifications:TopToAll({text="#emp_gold", duration=5.0, style={color="#B2B2B2",  fontSize="50px;"}})
+				Notifications:TopToAll({text="#north_gets", duration=5.0, style={color="#B2B2B2",  fontSize="30px;"}})
+				Notifications:TopToAll({text=tostring(math.floor(badGoldEach+0.5)) .. " ", duration=5.0, style={color="#FFD700",  fontSize="30px;"}, continue=true})
+				Notifications:TopToAll({text="#for_each_player", duration=5.0, style={color="#B2B2B2",  fontSize="30px;"}, continue=true})
+				Notifications:TopToAll({text="#south_gets", duration=5.0, style={color="#B2B2B2",  fontSize="30px;"}})
+				Notifications:TopToAll({text=tostring(math.floor(goodGoldEach+0.5)) .. " ", duration=5.0, style={color="#FFD700",  fontSize="30px;"}, continue=true})
+				Notifications:TopToAll({text="#for_each_player", duration=5.0, style={color="#B2B2B2",  fontSize="30px;"}, continue=true})
+				
+			
+				for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+				if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and not hero:HasModifier("pergatory_perm") then
+					local herogold = hero:GetGold()
+					if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+						hero:SetGold(herogold + goodGoldEach, true)   
+						GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + goodGoldEach
+						print("hero's is good guy (south) had " .. herogold .. " got " .. goodGoldEach .. "new gold is: " .. herogold + goodGoldEach)
+						hero:SetGold(0, false)
+					elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+						hero:SetGold(herogold + badGoldEach, true)
+						BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + badGoldEach
+						print("hero's is bad guy (north) had " .. herogold .. " got " .. badGoldEach .. "new gold is: " .. herogold + badGoldEach)
+						hero:SetGold(0, false)
+					end
+				end
+			end
+			end
 end 
 
 
@@ -927,6 +976,8 @@ function CBattleship8D:quickSpawn(team, lane, tier, level, number)
 end
 
 function getEmpGoldForTeam(team)
+if co_op_mode==0 then
+
 			local gold = 0
 			local team_players = 0
 			for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
@@ -948,7 +999,14 @@ function getEmpGoldForTeam(team)
 			
 			if GOOD_GOLD_TOTAL_MOD > BAD_GOLD_TOTAL_MOD then
 				GoldDif = GOOD_GOLD_TOTAL_MOD - BAD_GOLD_TOTAL_MOD
-				goldEach = goldEach + GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
+				
+				if GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER)) < goldEach then
+						goldEach = goldEach + GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
+					else
+						goldEach=GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))*2
+						minGold=GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
+				end
+				
 				BAD_GOLD_TOTAL_MOD = 0
 				GOOD_GOLD_TOTAL_MOD = GoldDif
 				if team == DOTA_TEAM_BADGUYS  then 
@@ -959,7 +1017,14 @@ function getEmpGoldForTeam(team)
 			end
 			if BAD_GOLD_TOTAL_MOD > GOOD_GOLD_TOTAL_MOD then
 				GoldDif = BAD_GOLD_TOTAL_MOD - GOOD_GOLD_TOTAL_MOD
-				goldEach = goldEach + GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
+				
+				if GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER)) < goldEach then
+						goldEach = goldEach + GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
+					else
+						goldEach=GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))*2
+						minGold=GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
+				end
+				
 				BAD_GOLD_TOTAL_MOD = GoldDif
 				GOOD_GOLD_TOTAL_MOD = 0
 				if team == DOTA_TEAM_GOODGUYS  then 
@@ -972,6 +1037,23 @@ function getEmpGoldForTeam(team)
 				return goldEach / team_players
 			end
 			return goldEach / team_players
+			else
+				local team_players = 0
+				for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+					if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 then
+						local herogold = hero:GetGold()
+						if herogold>0 and not hero:HasModifier("pergatory_perm") then
+							if hero:GetTeamNumber() == team then
+								team_players = team_players + 1
+							end
+						end
+					end
+				end
+				if team_players==0 then
+					return 0
+				end
+				return  500 * EMP_GOLD_NUMBER / team_players
+		end
 		
 end
 
@@ -993,6 +1075,9 @@ if co_op_diff_level==5-co_op_diff_setting then
 		table.insert(co_op_item_pool,"item_light_bow_doubled")
 		table.insert(co_op_item_pool,"item_spin_bow_doubled")
 		table.insert(co_op_item_pool,"item_ice_bow_doubled")
+		table.insert(co_op_item_pool,"item_breach_bow_doubled")
+		table.insert(co_op_item_pool,"item_chaos_bow_doubled")
+		table.insert(co_op_item_pool,"item_caulk_bow_doubled")
 	end
 
 	if co_op_diff_level==20-co_op_diff_setting*3 then
@@ -1010,6 +1095,9 @@ if co_op_diff_level==5-co_op_diff_setting then
 		table.insert(co_op_item_pool,"item_light_two_bow")
 		table.insert(co_op_item_pool,"item_spin_two_bow")
 		table.insert(co_op_item_pool,"item_ice_two_bow")
+		table.insert(co_op_item_pool,"item_breach_two_bow")
+		table.insert(co_op_item_pool,"item_chaos_two_bow")
+		table.insert(co_op_item_pool,"item_caulk_two_bow")
 		table.insert(co_op_item_pool,"item_hull_two")
 		table.insert(co_op_item_pool,"item_sail_two")
 		table.insert(co_op_item_pool,"item_repair_two")
@@ -1031,6 +1119,9 @@ if co_op_diff_level==5-co_op_diff_setting then
 		table.insert(co_op_item_pool,"item_light_two_bow_doubled")
 		table.insert(co_op_item_pool,"item_spin_two_bow_doubled")
 		table.insert(co_op_item_pool,"item_ice_two_bow_doubled")
+		table.insert(co_op_item_pool,"item_breach_two_bow_doubled")
+		table.insert(co_op_item_pool,"item_chaos_two_bow_doubled")
+		table.insert(co_op_item_pool,"item_caulk_two_bow_doubled")
 		table.insert(co_op_item_pool,"item_hull_two")
 		table.insert(co_op_item_pool,"item_sail_two")
 		table.insert(co_op_item_pool,"item_repair_two")
@@ -1074,6 +1165,9 @@ if co_op_diff_level==5-co_op_diff_setting then
 		table.insert(co_op_item_pool,"item_light_three_bow")
 		table.insert(co_op_item_pool,"item_spin_three_bow")
 		table.insert(co_op_item_pool,"item_ice_three_bow")
+				table.insert(co_op_item_pool,"item_breach_three_bow")
+		table.insert(co_op_item_pool,"item_chaos_three_bow")
+		table.insert(co_op_item_pool,"item_caulk_three_bow")
 		table.insert(co_op_item_pool,"item_hull_three")
 		table.insert(co_op_item_pool,"item_sail_three")
 		table.insert(co_op_item_pool,"item_repair_three")
@@ -1090,6 +1184,9 @@ if co_op_diff_level==5-co_op_diff_setting then
 		table.insert(co_op_item_pool,"item_light_three_bow_doubled")
 		table.insert(co_op_item_pool,"item_spin_three_bow_doubled")
 		table.insert(co_op_item_pool,"item_ice_three_bow_doubled")
+		table.insert(co_op_item_pool,"item_breach_three_bow_doubled")
+		table.insert(co_op_item_pool,"item_chaos_three_bow_doubled")
+		table.insert(co_op_item_pool,"item_caulk_three_bow_doubled")
 		table.insert(co_op_item_pool,"item_hull_four")
 		table.insert(co_op_item_pool,"item_sail_four")
 		table.insert(co_op_item_pool,"item_repair_four")
@@ -1115,6 +1212,9 @@ if co_op_diff_level==5-co_op_diff_setting then
 		table.insert(co_op_item_pool,"item_light_ult_bow")
 		table.insert(co_op_item_pool,"item_spin_ult_bow")
 		table.insert(co_op_item_pool,"item_ice_ult_bow")
+		table.insert(co_op_item_pool,"item_breach_ult_bow")
+		table.insert(co_op_item_pool,"item_chaos_ult_bow")
+		table.insert(co_op_item_pool,"item_caulk_ult_bow")
 		table.insert(co_op_item_pool,"item_hull_four")
 		table.insert(co_op_item_pool,"item_sail_four")
 		table.insert(co_op_item_pool,"item_repair_four")
@@ -1653,7 +1753,7 @@ function CBattleship8D:OnThink()
 
 		end
 		
-			if THINK_TICKS == 1320 then	
+			if THINK_TICKS == 1224 then	
 				Notifications:TopToAll({text="#spys_reminder", duration=8.0, style={color="#CC33FF",  fontSize="25px;"}})
 				  for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 					if hero ~= nil and hero:IsOwnedByAnyPlayer() then
@@ -1680,7 +1780,7 @@ function CBattleship8D:OnThink()
 				end
 				
 			end
-			if THINK_TICKS == 1324 then	
+			if THINK_TICKS == 1228 then	
 				Notifications:TopToAll({text="#spys_reminder", duration=8.0, style={color="#CC33FF",  fontSize="25px;"}})
 				  for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 					if hero ~= nil and hero:IsOwnedByAnyPlayer() then
@@ -1875,7 +1975,7 @@ function CBattleship8D:OnThink()
 					
 					--handles people stuck on cliffs
 						local height = hero:GetOrigin() * Vector(0,0,1)
-						if height:Length() > 110 and false == hero:HasModifier("line_mod")  and false == hero:HasModifier("fly_bat") and false == hero:HasModifier("fly") and false == hero:HasModifier("modifier_spirit_breaker_charge_of_darkness") and false == hero:HasModifier("modifier_kunkka_torrent") and false == hero:HasModifier("modifier_batrider_flaming_lasso") and false == hero:HasModifier("modifier_mirana_leap")  and false == hero:IsStunned() and  hero:IsAlive()  then 
+						if height:Length() > 110 and false == hero:HasModifier("line_mod")  and false == hero:HasModifier("fly_bat") and false == hero:HasModifier("fly") and false == hero:HasModifier("modifier_spirit_breaker_charge_of_darkness") and false == hero:HasModifier("modifier_kunkka_torrent") and false == hero:HasModifier("move_carrier_in")  and false == hero:HasModifier("giraffe_grabed")  and false == hero:HasModifier("modifier_batrider_flaming_lasso") and false == hero:HasModifier("modifier_mirana_leap")  and false == hero:IsStunned() and  hero:IsAlive()  then 
 							
 							local abil1 = hero:GetAbilityByIndex(1)
 							
@@ -2557,14 +2657,14 @@ if herokills[killerEntity:GetPlayerID()] ~=nil then
 
 		print ("NUM_GOOD_PLAYERS: " .. NUM_GOOD_PLAYERS .. " -- good dead: " .. goodDead)
 		print ("NUM_BAD_PLAYERS: " .. NUM_BAD_PLAYERS .. " -- bad dead: " .. badDead)
-		if goodDead == NUM_GOOD_PLAYERS and killedUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS and NUM_GOOD_PLAYERS>1 then
+		if goodDead == NUM_GOOD_PLAYERS and killedUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS and NUM_GOOD_PLAYERS>2 then
 			CBattleship8D:quickSpawn("north","right", "four", 1, CREEP_NUM_PRIV)
 			CBattleship8D:quickSpawn("north","left", "four", 1, CREEP_NUM_PRIV)
 			Notifications:TopToAll({text="#team_wipe_north", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
 
 						
 		end
-		if badDead == NUM_BAD_PLAYERS and killedUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS and NUM_BAD_PLAYERS>1 then
+		if badDead == NUM_BAD_PLAYERS and killedUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS and NUM_BAD_PLAYERS>2 then
 			CBattleship8D:quickSpawn("south","right", "four", 1, CREEP_NUM_PRIV)
 			CBattleship8D:quickSpawn("south","left", "four", 1, CREEP_NUM_PRIV)
 			Notifications:TopToAll({text="#team_wipe_north", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
@@ -3683,7 +3783,7 @@ function HandleShopChecks(hero)
 								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 600*EMP_GOLD_NUMBER/4
 							end
 							
-							hero:AddExperience(xp_to_level[hero:GetLevel()]*.33,0,false,true)
+							hero:AddExperience(xp_to_level[hero:GetLevel()]*.45,0,false,true)
 							for _,otherHero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 								if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
 									local herogold = otherHero:GetGold()
@@ -3717,7 +3817,7 @@ function HandleShopChecks(hero)
 							hero:RemoveItem(Item)
 							hero:SetGold(hero:GetGold()+1000*EMP_GOLD_NUMBER/4,true)
 							hero:SetGold(0,false)
-							hero:AddExperience(xp_to_level[hero:GetLevel()]*.33,0,false,true)
+							hero:AddExperience(xp_to_level[hero:GetLevel()]*.5,0,false,true)
 							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 1000*EMP_GOLD_NUMBER/4
 							elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
@@ -3892,6 +3992,69 @@ function startBattle()
 							end)
 							
 							Timers:CreateTimer( 4, function()
+									local Data = {
+									player_id =hero:GetPlayerOwnerID(),
+										x =  waypointlocation:GetAbsOrigin().x;
+										y =  waypointlocation:GetAbsOrigin().y;
+										z =  waypointlocation:GetAbsOrigin().z;
+									}
+									FireGameEvent( "ping_loc", Data ); 
+							end)
+							Timers:CreateTimer( 8, function()
+									local Data = {
+									player_id =hero:GetPlayerOwnerID(),
+										x =  waypointlocation:GetAbsOrigin().x;
+										y =  waypointlocation:GetAbsOrigin().y;
+										z =  waypointlocation:GetAbsOrigin().z;
+									}
+									FireGameEvent( "ping_loc", Data ); 
+							end)
+							Timers:CreateTimer( 12, function()
+									local Data = {
+									player_id =hero:GetPlayerOwnerID(),
+										x =  waypointlocation:GetAbsOrigin().x;
+										y =  waypointlocation:GetAbsOrigin().y;
+										z =  waypointlocation:GetAbsOrigin().z;
+									}
+									FireGameEvent( "ping_loc", Data ); 
+							end)
+							Timers:CreateTimer( 16, function()
+									local Data = {
+									player_id =hero:GetPlayerOwnerID(),
+										x =  waypointlocation:GetAbsOrigin().x;
+										y =  waypointlocation:GetAbsOrigin().y;
+										z =  waypointlocation:GetAbsOrigin().z;
+									}
+									FireGameEvent( "ping_loc", Data ); 
+							end)
+							Timers:CreateTimer( 20, function()
+									local Data = {
+									player_id =hero:GetPlayerOwnerID(),
+										x =  waypointlocation:GetAbsOrigin().x;
+										y =  waypointlocation:GetAbsOrigin().y;
+										z =  waypointlocation:GetAbsOrigin().z;
+									}
+									FireGameEvent( "ping_loc", Data ); 
+							end)
+							Timers:CreateTimer( 25, function()
+									local Data = {
+									player_id =hero:GetPlayerOwnerID(),
+										x =  waypointlocation:GetAbsOrigin().x;
+										y =  waypointlocation:GetAbsOrigin().y;
+										z =  waypointlocation:GetAbsOrigin().z;
+									}
+									FireGameEvent( "ping_loc", Data ); 
+							end)
+							Timers:CreateTimer( 30, function()
+									local Data = {
+									player_id =hero:GetPlayerOwnerID(),
+										x =  waypointlocation:GetAbsOrigin().x;
+										y =  waypointlocation:GetAbsOrigin().y;
+										z =  waypointlocation:GetAbsOrigin().z;
+									}
+									FireGameEvent( "ping_loc", Data ); 
+							end)
+							Timers:CreateTimer( 40, function()
 									local Data = {
 									player_id =hero:GetPlayerOwnerID(),
 										x =  waypointlocation:GetAbsOrigin().x;
