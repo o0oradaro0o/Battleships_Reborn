@@ -1202,9 +1202,9 @@ function hackNav(args) -- keys is the information sent by the ability
 	--print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
         local direction =  casterPos - targetPos
         local vec = direction:Normalized() * -1.0
-		
-		targetUnit:SetForwardVector(vec)
-		
+		if math.abs((targetUnit:GetForwardVector()+vec):Length())<1.85 then
+			targetUnit:SetForwardVector(targetUnit:GetForwardVector()+vec)
+		end
 
 end
 function unstickPush(args)
@@ -1605,6 +1605,32 @@ for itemSlot = 0, 5, 1 do
 end
 			
 end
+
+
+function ApplyRandomDD(args) -- keys is the information sent by the ability
+		local casterUnit = args.caster
+	local hero = args.caster
+		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+		local done=0
+		while done==0 do
+			for itemSlot = 0, 5, 1 do 
+				if hero ~= nil then
+					local Item = hero:GetItemInSlot( itemSlot )
+					if Item ~= nil and string.match(Item:GetName(),"doubled") and RandomInt(0,4)==2 then -- makes sure that the item exists and making sure it is the correct item
+						local doubledstring = string.gsub(Item:GetName(),"_bow", "_bow_shooting")
+						Item:ApplyDataDrivenModifier(hero, hero, doubledstring, nil)
+						done=1
+					elseif Item ~= nil and string.match(Item:GetName(),"bow") and RandomInt(0,4)==2 then -- makes sure that the item exists and making sure it is the correct item
+						Item:ApplyDataDrivenModifier(hero, hero, Item:GetName() .. "_shooting", nil)
+						print( "bow found." )
+						done=1
+					end
+				end
+			end
+		end
+			
+end
+
 function RemoveDD(args) -- keys is the information sent by the ability
 		local hero = args.caster
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))

@@ -1023,7 +1023,7 @@ function fireChaosWeapon(args)
 						bProvidesVision = false,
 						iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
 					}
-						table.insert(chaosDmgHolder[args.ability],433*(args.ability.counter+1)/4)
+						table.insert(chaosDmgHolder[args.ability],433*(args.ability.counter+1)/5)
 					ProjectileManager:CreateTrackingProjectile(tracking_projectile)
 				else
 						local tracking_projectile = 
@@ -1062,7 +1062,7 @@ function fireChaosWeapon(args)
 						bProvidesVision = false,
 						iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
 					}
-						table.insert(chaosDmgHolder[args.ability],60*(args.ability.counter+1)/4)
+						table.insert(chaosDmgHolder[args.ability],60*(args.ability.counter+1)/5)
 					ProjectileManager:CreateTrackingProjectile(tracking_projectile)
 						if string.match(itemName, "doubled") then
 							local tracking_projectile = 
@@ -1078,7 +1078,7 @@ function fireChaosWeapon(args)
 								bProvidesVision = false,
 								iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
 							}
-								table.insert(chaosDmgHolder[args.ability],60*(args.ability.counter+1)/4)
+								table.insert(chaosDmgHolder[args.ability],60*(args.ability.counter+1)/5)
 							ProjectileManager:CreateTrackingProjectile(tracking_projectile)
 						end
 					else
@@ -1131,7 +1131,7 @@ function fireChaosWeapon(args)
 						bProvidesVision = false,
 						iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
 					}
-						table.insert(chaosDmgHolder[args.ability],120*(args.ability.counter+1)/4)
+						table.insert(chaosDmgHolder[args.ability],120*(args.ability.counter+1)/5)
 					ProjectileManager:CreateTrackingProjectile(tracking_projectile)
 					if string.match(itemName, "doubled") then
 							local tracking_projectile = 
@@ -1147,7 +1147,7 @@ function fireChaosWeapon(args)
 								bProvidesVision = false,
 								iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
 							}
-								table.insert(chaosDmgHolder[args.ability],120*(args.ability.counter+1)/4)
+								table.insert(chaosDmgHolder[args.ability],120*(args.ability.counter+1)/5)
 							ProjectileManager:CreateTrackingProjectile(tracking_projectile)
 						end
 					else
@@ -1201,7 +1201,7 @@ function fireChaosWeapon(args)
 						bProvidesVision = false,
 						iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
 					}
-						table.insert(chaosDmgHolder[args.ability],28*(args.ability.counter+1)/4)
+						table.insert(chaosDmgHolder[args.ability],28*(args.ability.counter+1)/5)
 					ProjectileManager:CreateTrackingProjectile(tracking_projectile)
 					if string.match(itemName, "doubled") then
 							local tracking_projectile = 
@@ -1217,7 +1217,7 @@ function fireChaosWeapon(args)
 								bProvidesVision = false,
 								iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
 							}
-								table.insert(chaosDmgHolder[args.ability],28*(args.ability.counter+1)/4)
+								table.insert(chaosDmgHolder[args.ability],28*(args.ability.counter+1)/5)
 							ProjectileManager:CreateTrackingProjectile(tracking_projectile)
 						end
 					else

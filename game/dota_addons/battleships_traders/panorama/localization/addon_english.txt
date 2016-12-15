@@ -73,7 +73,7 @@
 		"visage_desc"							"Survive the flood in this ancient vessel and strand your enemies on the mountaintops."
 		"nevermore_desc"					"Navigate the seas in this pontooned and marooned plane; it's more nimble than you'd imagine. Watch what happens when you try to turn on your engines!"		
 		"rattletrap_desc"						"Light and fast, the Catamaran jumps out of reach and fires a deadly arrow."
-		"windrunner_desc"					"he construction ship is a floating dock, capable of using the scrap around it to repair itself, protect its allies and even construct ships for the empire."
+		"windrunner_desc"					"The construction ship is a floating dock, capable of using the scrap around it to repair itself, protect its allies and even construct ships for the empire."
 		"crystal_maiden_desc"				"The Canoe is a very simple boat whose crew gains heart from one another and inspires their allies."			
 		"sniper_desc"				"This submarine is less of a submarine and more of a boat.  The sub is powerful, and even more powerful when submerged. But be wary, or you'll run out of oxygen!"			
 		"bane_desc"				"The strongest fastest trader in the seas. Might be radioactive... nobody's sure"			
@@ -526,7 +526,7 @@ DAMAGE: 600"
 DURATION: 15 17 19 21"
 
 "Over_And_Out"									"Over and Out"
-"Over_And_Out_Description"					"aircraft carrier shoots forward even over terrain grabbs any units encountered and pulls them with you as you rocket into the air.\n\n Higher levels increase duration.
+"Over_And_Out_Description"					"aircraft carrier shoots forward even over terrain and grabs any units encountered and pulls them with you as you rocket into the air.\n\n Higher levels increase duration.
 DURATION: 2.25 2.5 2.75"
 
 "gyrocopter_call_down_battleship"									"Hit!"
@@ -559,7 +559,7 @@ MAX DAMAGE ABSORBED: 500.0 600.0 700.0 800.0
 BURST RADIUS: 1000"
 
 "into_the_hold"			"Into The Hold"				
-"into_the_hold_Description" "Construct anempire ship and carry it in your hold while constructing it and shielding it.  this ship will divide fire. \n\nHigher levels increase time in hold, armor bonus and ally regen speed
+"into_the_hold_Description" "Construct an empire ship and carry it in your hold while constructing it and shielding it.  this ship will divide fire. \n\nHigher levels increase time in hold, armor bonus and ally regen speed
 DURATION: 5.0 6.0 7.0 8.0
 RANGE: 2 3 4 5
 HEALTH REGEN: 50 60 70 80"

@@ -1,6 +1,89 @@
 <root>
 <script>
 		GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY, false );
+		 
+		 //---------------------------shop stuff--------------------
+		 //get shop ui
+		 varNewShopUI = $.GetContextPanel().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop");
+		 
+		 
+		 //fuck reccomended items
+		 varNewShopUI.FindChildTraverse("header").FindChildTraverse("ShopTabs").FindChildTraverse("SuggestedButton").style.visibility = "collapse";
+		 
+		 //show the item grid
+		 varNewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ItemsArea").FindChildTraverse("ItemGrid").style.opacity = "1";
+		 //rename the buttons
+		 varNewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ItemsArea").FindChildTraverse("ItemGrid").FindChildTraverse("MainShop").FindChildTraverse("GridTabs").FindChildTraverse("BasicTab").GetChild(1).text = "WEAPONS";
+		  varNewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ItemsArea").FindChildTraverse("ItemGrid").FindChildTraverse("MainShop").FindChildTraverse("GridTabs").FindChildTraverse("UpgradesTab").GetChild(1).text = "UTILITIES";
+		  
+		   varNewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemCombines").FindChildTraverse("ItemsContainer").style.visibility = "visible";
+		 
+		 
+		 //------------------------------hero panel stuff--------------------------------
+		 var newCenterUI = $.GetContextPanel().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("lower_hud").FindChildTraverse("center_with_stats").FindChildTraverse("center_block");
+        
+		//try the neat way to remove the tree itself
+        newCenterUI.FindChildTraverse("StatBranch").AddClass("NonHero");
+       
+	   //that bar that grows from level 1 to 25 is annoying
+        newCenterUI.FindChildTraverse("StatBranch").FindChildTraverse("StatBranchGraphics").FindChildTraverse("StatBranchChannel").style.visibility = "collapse";
+       
+	   //you are not spawning the talent UI, fuck off
+        newCenterUI.FindChildTraverse("StatBranch").SetPanelEvent("onmouseover", function(){});
+        newCenterUI.FindChildTraverse("StatBranch").SetPanelEvent("onactivate", function(){});
+      
+	  //fuck backpack UI
+        newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("inventory_backpack_list").style.visibility = "collapse";
+        //Spawn our new superior stats
+        if (!newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("StaticStats")) {
+            $.CreatePanel("DOTAQuickStats", newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("BackPackShadow"), "StaticStats");
+        }
+
+        //AltPressed makes it actually visible
+        newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("StaticStats").AddClass("AltPressed");
+		
+        //Between test client and main client, they are trying to make it down flow, fuck that I want right still
+        newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("StaticStats").style.flowChildren = "down";
+        //they have it hardcoded to something tiny, lets fix it.
+        newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("StaticStats").style.width = "100%";
+		//It was too close to inventory, move it down a bit.
+        newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("StaticStats").style.marginTop = "5px";
+		
+        //It was too close to inventory, move it down a bit.
+        newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("StaticStats").FindChildTraverse("KDARow").style.marginTop = "5px";
+		
+		newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("StaticStats").FindChildTraverse("QuickStatsContainer").style.backgroundColor = "transparent";
+		
+		
+		
+		  newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("KDARow").style.width = "90%";
+        
+     
+		 var newBotRightUI = $.GetContextPanel().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("lower_hud").FindChildTraverse("shop_launcher_block");
+		 
+		 newBotRightUI.FindChildTraverse("shop_launcher_bg").style.width="440px"
+		 
+		 newBotRightUI.FindChildTraverse("quickbuy").FindChildTraverse("ShopCourierControls").FindChildTraverse("courier").style.visibility = "collapse";
+		 
+	
+	
+		 newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("KDARow").style.flowChildren = "right";
+		 newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("KDARow").GetChild(0).style.width = "30%";
+		 newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("KDARow").GetChild(1).style.width = "60%";
+		  newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("KDARow").GetChild(1).style.marginTop = "-5px";
+		  
+		 
+		 newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("KDARow").GetChild(1).style.fontSize = "18px";
+		  newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("KDARow").GetChild(0).style.fontSize = "16px";
+		  
+		newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("ManaContainer").style.visibility = "collapse";
+		
+		newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("HealthContainer").style.height = "40px"
+		 
+		
+        
+	 
+	 
 	</script>
 	<Panel>
 	

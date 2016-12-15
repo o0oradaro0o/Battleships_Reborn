@@ -35,7 +35,6 @@
 				<Label class="heroTitle" text="Every 4 minutes a king of the hill style battle occurs.  All participants get gold and the winning team gets extra gold." />
 			</Panel>
 		</Panel>
-		<Label class="SpecialTitle" text="sawen'ka top kisa, lav tebya" />
 		
 		
 		<Panel id="NewsHolder">
@@ -43,11 +42,10 @@
 				<Label class="AuthorTitle" text="News!" />
 
 				<Label class="newsTitle" text="Hi all! Art update will resume but is temporarily on hold.  In the meantime I am continuing to make balance changes.
-\n\nNewest balance changes: (10/12/2016)
-\n- Hull breaching mines tier 1 cost raised by 50
-\n- barrel teleport effect more clear
-\n- junkship and icebreaker hitbox size increased
-\n\nThanks for playing and happy sailing!
+\n\nNewest balance changes: (12/14/2016)
+\n- Trader items no longer stack (still consumable)
+\n- Junk ship ult made smoother and also gives a small range of maneuverability
+\n- 3x emp gold to losing team cap removed for battle mode
 " />
 
 			

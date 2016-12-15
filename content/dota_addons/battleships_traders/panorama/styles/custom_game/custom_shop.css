@@ -585,69 +585,76 @@ margin-top:300px;
 }
 .panelHiderHolder
 {
+	border-radius: 3px;
+	box-shadow: #000066aa 0px 0px 2px 2px;
 	horizontal-align: right;
 	vertical-align: bottom;
-	width: 97px;
-	height: 35px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #fff3de ), color-stop( 0.40, #523c08 ), color-stop( 0.5, #523c08 ), color-stop( 0.75, #c88423 ), to( #b58a42 ) );
-     margin-bottom:205px;
-	 margin-right:108px;
+	brightness:1.0;
+	width: 122px;
+	height: 38px;	
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #4245c4  ),  to( #223578 ) );
+     margin-bottom:11px;
+	 margin-right:269px;
 	 z-index:50;
-	 border: 1px solid #523c08;
+
 }
 .panelHiderHolder:hover
 {
+	border-radius: 3px;
+	box-shadow: #0000FFaa 0px 0px 2px 2px;
 	horizontal-align: right;
 	vertical-align: bottom;
-	width: 97px;
-	height: 35px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #fff3de ), color-stop( 0.40, #523c08 ), color-stop( 0.5, #523c08 ), color-stop( 0.75, #c88423 ), to( #b58a42 ) );
-    margin-bottom:205px;
-	 margin-right:108px;
+	width: 122px;
+	height: 38px;	
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #3235FF  ),  to( #2225a8 ) );
+     margin-bottom:11px;
+	 margin-right:269px;
 	 z-index:50;
-	 border: 1px solid #523c08;
+
 }
 
 .panelHiderHolder:active
 {
+	border-radius: 3px;
+	box-shadow: #000000aa 0px 0px 2px 2px;
 	horizontal-align: right;
 	vertical-align: bottom;
-	width: 97px;
-	height: 35px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #fff3de ), color-stop( 0.40, #523c08 ), color-stop( 0.5, #523c08 ), color-stop( 0.75, #c88423 ), to( #b58a42 ) );
+	width: 122px;
+	height: 38px;	
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #4245c4  ),  to( #223578 ) );
      
-	  margin-bottom:205px;
-	 margin-right:108px;
+     margin-bottom:11px;
+	 margin-right:269px;
 	 z-index:50;
-	 border: 1px solid #523c08;
+
 }
 
 .panelHider
 {
 	horizontal-align: center;
 	vertical-align: center;
-	width: 87px;
-	height: 27px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #FCB514 ), color-stop( 0.25, #8E6B23 ), color-stop( 0.5, #aEaB93 ), color-stop( 0.75, #CD950C ), to( #8B6508 ) );
-border: 1px solid #523c08;
+	width: 118px;
+	height: 34px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #223578 ),  to( #4245c4 ) );
+
 	}
 .panelHider:hover
 {
 	horizontal-align: center;
 	vertical-align: center;
-	width: 87px;
-	height: 27px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #FCc534 ), color-stop( 0.25, #AE9B53 ), color-stop( 0.5, #dEdBb3 ), color-stop( 0.75, #FDb53C ), to( #BB9538 ) );
-border: 1px solid #825c38;
+	width: 118px;
+	height: 34px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #323598 ),  to( #4245FF ) );
+
 	}
 .panelHider:active
 {
 	horizontal-align: center;
 	vertical-align: center;
-	width: 87px;
-	height: 27px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #FCc534 ), color-stop( 0.25, #AE9B53 ), color-stop( 0.5, #dEdBb3 ), color-stop( 0.75, #FDb53C ), to( #BB9538 ) );
-border: 1px solid #825c38;
+	width: 118px;
+	height: 34px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #425578  ),  to( #6265c4 ) );
+
 	}
 
 
@@ -655,68 +662,71 @@ border: 1px solid #825c38;
 
 .shipPanelHiderHolder
 {
+	border-radius: 3px;
+	box-shadow: #000000aa 0px 0px 2px 2px;
 	horizontal-align: right;
 	vertical-align: bottom;
-	width: 97px;
-	height: 35px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #fff3de ), color-stop( 0.40, #523c08 ), color-stop( 0.5, #523c08 ), color-stop( 0.75, #c88423 ), to( #b58a42 ) );
-     margin-bottom:205px;
-	 margin-right:7px;
+	brightness:1.0;
+	width: 122px;
+	height: 38px;
+background-color: gradient( linear, 0% 0%, 0% 100%, from( #a53333 ),  to( #c53333 ) );
+     margin-bottom:11px;
+	 margin-right:138px;
 	 z-index:50;
-	 border: 1px solid #523c08;
+
 }
 .shipPanelHiderHolder:hover
 {
+	border-radius: 3px;
+	box-shadow: #660000aa 0px 0px 2px 2px;
 	horizontal-align: right;
-	vertical-align: bottom;
-	width: 97px;
-	height: 35px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #fff3de ), color-stop( 0.40, #523c08 ), color-stop( 0.5, #523c08 ), color-stop( 0.75, #c88423 ), to( #b58a42 ) );
-     margin-bottom:205px;
-	 margin-right:7px;
+	vertical-align: bottom;	
+	width: 122px;
+	height: 38px;
+		background-color: gradient( linear, 0% 0%, 0% 100%, from( #FF4343 ),  to( #AA0303) );
+    margin-bottom:11px;
+	 margin-right:138px;
 	 z-index:50;
-	 border: 1px solid #523c08;
+
 }
 
 .shipPanelHiderHolder:active
 {
+	border-radius: 3px;
 	horizontal-align: right;
 	vertical-align: bottom;
-	width: 97px;
-	height: 35px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #fff3de ), color-stop( 0.40, #523c08 ), color-stop( 0.5, #523c08 ), color-stop( 0.75, #c88423 ), to( #b58a42 ) );
-     margin-bottom:205px;
-	 margin-right:7px;
+	width: 122px;
+	height: 38px;	
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #856363 ),  to( #8E2323 ) );
+     margin-bottom:11px;
+	 margin-right:138px;
 	 z-index:50;
-	 border: 1px solid #523c08;
+
 }
 
 .shipPanelHider
 {
 	horizontal-align: center;
 	vertical-align: center;
-	width: 87px;
-	height: 27px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #755353 ), color-stop( 0.25, #701A1A ), color-stop( 0.5, #7B5959 ), color-stop( 0.75, #951A1A ), to( #7E1313 ) );
-	border: 1px solid #523c08;
+	width: 118px;
+	height: 34px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #6E2323 ),  to( #c53333) );
 }
 .shipPanelHider:hover
 {
 	horizontal-align: center;
 	vertical-align: center;
-	width: 87px;
-	height: 27px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #a58383 ), color-stop( 0.25, #A04A4A ), color-stop( 0.5, #AB8989 ), color-stop( 0.75, #C54A4A ), to( #AE4343 ) );
-border: 1px solid #825c38;
+	width: 118px;
+	height: 34px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #AA0303 ),  to( #FF4343) );
 	}
 .shipPanelHider:active
 {
 	horizontal-align: center;
 	vertical-align: center;
-	width: 87px;
-	height: 27px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #856363 ), color-stop( 0.25, #802A2A ), color-stop( 0.5, #8B6969 ), color-stop( 0.75, #A52A2A ), to( #8E2323 ) );
-border: 1px solid #523c08;
+	width: 118px;
+	height: 34px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #8E2323 ),  to( #856363) );
 }
 
 
@@ -827,22 +837,30 @@ flow-children: right-wrap;
 {
 width: 350px;
 horizontal-align: center;
-}
+}	
 .move_up
 {
-	margin-top: -3px;
-	width: 100%;
+	horizontal-align: right;
+	flow-children: right;
+	width: 80%;
 	height: 100%;
+}
+.tiny_icon
+{
+	horizontal-align: right;
+	flow-children: right;
+	margin: 2px;
 }
 .shop_text
 {
-
-	horizontal-align: center;
+	text-align: right;
+	horizontal-align: right;
 	vertical-align: top;
 	color: white;
     font-size: 21px;
-	font-family: Goudy Trajan Medium;
+	font-weight: bold;
     margin: 3px;
+	  margin-right: 5px;
 	text-shadow: 2px 2px 2px #000000;
 }
 .trade_text_title

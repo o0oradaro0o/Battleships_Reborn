@@ -160,6 +160,8 @@
         <Button class="panelHider" onactivate="fillAndShow()">
 		<Panel hittest="false" class="move_up">
             <Label hittest="false" class="shop_text" text="#trade" />
+			<Image  class="tiny_icon" src="file://{images}/custom_game/trade_icon.png" />
+		
 			</Panel>
         </Button>
 	</Panel>
@@ -168,6 +170,8 @@
         <Button class="shipPanelHider" onactivate="showShips()">
 		<Panel hittest="false" class="move_up">           
 		   <Label hittest="false" class="shop_text" text="#Ships" />
+		   <Image  class="tiny_icon" src="file://{images}/custom_game/boat_icon.png" />
+				
 			</Panel>
         </Button>
 	</Panel>
@@ -635,7 +639,7 @@
 					</Panel>
 			</Panel>
 					<Panel hittest="false" class="buy_box" >
-						<Button class="buy_ship_button" onactivate="buyBoat('morphling', 3000)" oncontextmenu="buyBoat('morphling', 3000)">
+						<Button class="buy_ship_button" onactivate="buyBoat('winter_wyvern', 3000)" oncontextmenu="buyBoat('winter_wyvern', 3000)">
 							<Label hittest="false" class="buy_text" text="#buy" />
 							<Label hittest="false" class="buy_text_g" text="3000 G" />
 						</Button>
@@ -1334,7 +1338,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="12000" />
+							<Label hittest="false" class="boat_stat_label_val" text="10000" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
@@ -1774,7 +1778,7 @@
 									<Image class="boat_image" src="file://{images}/custom_game/boats/disruptor.png" />
 									 <Label hittest="false" class="boat_name_text" text="#disruptor" />
 								</Button>
-								<Button class="boat_btn_item"  onactivate="showDetails('morphling')" oncontextmenu="buyBoat('morphling', 3000)">
+								<Button class="boat_btn_item"  onactivate="showDetails('morphling')" oncontextmenu="buyBoat('winter_wyvern', 3000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/morphling.png" />
 									 <Label hittest="false" class="boat_name_text" text="#morphling" />
 								</Button>

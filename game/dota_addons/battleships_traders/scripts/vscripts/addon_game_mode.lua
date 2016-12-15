@@ -858,7 +858,9 @@ function CBattleship8D:handleEmpGold()
 						badGoldEach = badGoldEach + GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
 					else
 						badGoldEach=GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))*2
-						goodGoldEach=GoldDif *(DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
+						if badGoldEach > 1500*EMP_GOLD_NUMBER and battle_mode==0 then
+							badGoldEach=1500*EMP_GOLD_NUMBER
+						end
 				end
 				BAD_GOLD_TOTAL_MOD = 0
 				GOOD_GOLD_TOTAL_MOD = GoldDif
@@ -870,7 +872,9 @@ function CBattleship8D:handleEmpGold()
 					goodGoldEach = goodGoldEach + GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
 					else
 						goodGoldEach=GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))*2
-						badGoldEach=GoldDif*(DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
+						if goodGoldEach > 1500*EMP_GOLD_NUMBER and battle_mode==0 then
+							goodGoldEach=1500*EMP_GOLD_NUMBER
+						end
 				end
 				BAD_GOLD_TOTAL_MOD = GoldDif
 				GOOD_GOLD_TOTAL_MOD = 0
@@ -915,7 +919,7 @@ function CBattleship8D:handleEmpGold()
 			end
 			
 			else
-			
+				TICKS_SINCE_EMP_GOLD = 0
 				local goodGoldEach = 500 * EMP_GOLD_NUMBER
 				local badGoldEach = 500 * EMP_GOLD_NUMBER
 				if NUM_GOOD_PLAYERS ~= 0 and NUM_BAD_PLAYERS ~= 0 then
@@ -951,30 +955,6 @@ function CBattleship8D:handleEmpGold()
 end 
 
 
-function CBattleship8D:quickSpawn(team, lane, tier, level, number)
-        
-	local spawnLocation = Entities:FindByName( nil, team .. "_spawn_" .. lane)
-        local waypointlocation = Entities:FindByName ( nil,  team .. "_wp_" .. lane .. "_2")
-        local i = 0
-        while number>i do
-				local creature
-				--print ("team is: " .. team .. "     spawn is: " .. team .. "_spawn_" .. lane .. "     comparison yields" .. tostring(team == "north"))
-                --hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
-				if team == "north" then
-					 creature = CreateUnitByName( "npc_dota_boat_" .. team .. "_" .. tier , spawnLocation:GetAbsOrigin() + Vector(-300 + i * 200,0,0), true, nil, nil, DOTA_TEAM_BADGUYS )
-				else
-					 creature = CreateUnitByName( "npc_dota_boat_" .. team .. "_" .. tier , spawnLocation:GetAbsOrigin() + Vector(-300 + i * 200,0,0), true, nil, nil, DOTA_TEAM_GOODGUYS )
-				end
-                --Sets the waypath to follow. path_wp1 in this example
-				if creature~=nil then
-						creature:CreatureLevelUp(level)
-				end
-				
-                i = i + 1
-        end
-	reapplyWP()
-end
-
 function getEmpGoldForTeam(team)
 if co_op_mode==0 then
 
@@ -1004,7 +984,9 @@ if co_op_mode==0 then
 						goldEach = goldEach + GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
 					else
 						goldEach=GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))*2
-						minGold=GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
+						if goldEach > 1500*EMP_GOLD_NUMBER and battle_mode==0 then
+								goldEach=1500*EMP_GOLD_NUMBER
+						end
 				end
 				
 				BAD_GOLD_TOTAL_MOD = 0
@@ -1022,7 +1004,9 @@ if co_op_mode==0 then
 						goldEach = goldEach + GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
 					else
 						goldEach=GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))*2
-						minGold=GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
+							if goldEach > 1500*EMP_GOLD_NUMBER and battle_mode==0 then
+								goldEach=1500*EMP_GOLD_NUMBER
+						end
 				end
 				
 				BAD_GOLD_TOTAL_MOD = GoldDif
@@ -1057,6 +1041,32 @@ if co_op_mode==0 then
 		
 end
 
+
+function CBattleship8D:quickSpawn(team, lane, tier, level, number)
+        
+	local spawnLocation = Entities:FindByName( nil, team .. "_spawn_" .. lane)
+        local waypointlocation = Entities:FindByName ( nil,  team .. "_wp_" .. lane .. "_2")
+        local i = 0
+        while number>i do
+				local creature
+				--print ("team is: " .. team .. "     spawn is: " .. team .. "_spawn_" .. lane .. "     comparison yields" .. tostring(team == "north"))
+                --hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
+				if team == "north" then
+					 creature = CreateUnitByName( "npc_dota_boat_" .. team .. "_" .. tier , spawnLocation:GetAbsOrigin() + Vector(-300 + i * 200,0,0), true, nil, nil, DOTA_TEAM_BADGUYS )
+				else
+					 creature = CreateUnitByName( "npc_dota_boat_" .. team .. "_" .. tier , spawnLocation:GetAbsOrigin() + Vector(-300 + i * 200,0,0), true, nil, nil, DOTA_TEAM_GOODGUYS )
+				end
+                --Sets the waypath to follow. path_wp1 in this example
+				if creature~=nil then
+						creature:CreatureLevelUp(level)
+				end
+				
+                i = i + 1
+        end
+	reapplyWP()
+end
+
+
 function UpdateCoOpTables()
 
 if co_op_diff_level==5-co_op_diff_setting then
@@ -1083,7 +1093,7 @@ if co_op_diff_level==5-co_op_diff_setting then
 	if co_op_diff_level==20-co_op_diff_setting*3 then
 		
 		table.insert(co_op_unit_pool,"npc_dota_hero_disruptor")
-		table.insert(co_op_unit_pool,"npc_dota_hero_morphling")
+		table.insert(co_op_unit_pool,"npc_dota_hero_winter_wyvern")
 		table.insert(co_op_unit_pool,"npc_dota_hero_storm_spirit")
 		table.insert(co_op_unit_pool,"npc_dota_hero_nevermore")
 		table.insert(co_op_unit_pool,"npc_dota_hero_lion")
@@ -1107,7 +1117,7 @@ if co_op_diff_level==5-co_op_diff_setting then
 	if co_op_diff_level==30-co_op_diff_setting*4 then
 		co_op_unit_pool={}
 		table.insert(co_op_unit_pool,"npc_dota_hero_disruptor")
-		table.insert(co_op_unit_pool,"npc_dota_hero_morphling")
+		table.insert(co_op_unit_pool,"npc_dota_hero_winter_wyvern")
 		table.insert(co_op_unit_pool,"npc_dota_hero_storm_spirit")
 		table.insert(co_op_unit_pool,"npc_dota_hero_nevermore")
 		table.insert(co_op_unit_pool,"npc_dota_hero_lion")
@@ -1565,7 +1575,7 @@ local hero = casterUnit
 							hero:SetGold(0, false)
 							 print ( '[BAREBONES] player was disruptor and got 2250')
 						elseif string.match(hero:GetName(),"ursa") then
-							hero:SetGold(herogold + 6000, true)
+							hero:SetGold(herogold + 8000, true)
 							hero:SetGold(0, false)
 							print ( '[BAREBONES] player was ursa and got 6000')
 						elseif string.match(hero:GetName(),"meepo") then
@@ -1584,10 +1594,10 @@ local hero = casterUnit
 							hero:SetGold(herogold + 750, true)
 							hero:SetGold(0, false)
 							print ( '[BAREBONES] player was rattletrap and got 750')
-						elseif string.match(hero:GetName(),"morphling") then
+						elseif string.match(hero:GetName(),"winter_wyvern") then
 							hero:SetGold(herogold + 2250, true)
 							hero:SetGold(0, false)
-							print ( '[BAREBONES] player was morphling and got 2250')
+							print ( '[BAREBONES] player was winter_wyvern and got 2250')
 						elseif string.match(hero:GetName(),"storm_spirit") then
 							hero:SetGold(herogold + 2250, true)
 							hero:SetGold(0, false)
@@ -1599,7 +1609,7 @@ local hero = casterUnit
 						elseif string.match(hero:GetName(),"slark") then
 							hero:SetGold(herogold + 4500, true)
 							hero:SetGold(0, false)
-							print ( '[BAREBONES] player was npc_dota_hero_winter_wyvern and got 4500')
+							print ( '[BAREBONES] player was slark and got 4500')
 						elseif string.match(hero:GetName(),"jakiro") then
 							hero:SetGold(herogold + 4500, true)
 							hero:SetGold(0, false)
@@ -1609,11 +1619,11 @@ local hero = casterUnit
 							hero:SetGold(0, false)
 							print ( '[BAREBONES] player was lion and got 2250')
 						elseif string.match(hero:GetName(),"tusk") then
-							hero:SetGold(herogold + 6000, true)
+							hero:SetGold(herogold + 8000, true)
 							hero:SetGold(0, false)
 							print ( '[BAREBONES] player was tusk and got 6000')
 						elseif string.match(hero:GetName(),"visage") then
-							hero:SetGold(herogold + 6000, true)
+							hero:SetGold(herogold + 8000, true)
 							hero:SetGold(0, false)
 							print ( '[BAREBONES] player was visage and got 4500')
 						elseif string.match(hero:GetName(),"nevermore") then
@@ -1625,7 +1635,7 @@ local hero = casterUnit
 							hero:SetGold(0, false)
 							print ( '[BAREBONES] player was sniper and got 2250')
 						elseif string.match(casterUnit:GetName(),"wind") then
-							casterUnit:SetGold(herogold + 6000, true)
+							casterUnit:SetGold(herogold + 8000, true)
 							casterUnit:SetGold(0, false)
 							print ( '[BAREBONES] player was lone_druid and got 6000')
 						elseif string.match(casterUnit:GetName(),"crystal") then
@@ -1645,8 +1655,11 @@ local hero = casterUnit
 						elseif string.match(hero:GetName(),"bane") then
 							hero:SetGold(herogold + 7000, true)
 							hero:SetGold(0, false)
-							
-					end
+						elseif string.match(hero:GetName(),"pugna") then
+							casterUnit:SetGold(herogold + 8000, true)
+							casterUnit:SetGold(0, false)
+							print ( '[BAREBONES] player was pugna and got 10000')
+				end
 end
 
 function CBattleship8D:OnThink()
@@ -1924,7 +1937,7 @@ function CBattleship8D:OnThink()
 											storage:SetDisconnectState(DisconnectKicked)
 											--not sure if syntax in following line is right
 											sellBoat(hero)
-											for itemSlot = 0, 11, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
+											for itemSlot = 0, 14, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
 													if hero ~= nil then --checks to make sure the killed unit is not nonexistent.
 															local Item = hero:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
 															if Item ~= nil then -- makes sure that the item exists and making sure it is the correct item
@@ -1979,9 +1992,9 @@ function CBattleship8D:OnThink()
 							
 							local abil1 = hero:GetAbilityByIndex(1)
 							
-							print( 'player found at z of: ' .. tostring(height:Length()) .. "and cd check is " .. tostring(abil1:GetCooldownTimeRemaining() > abil1:GetCooldown(abil1:GetLevel())-2) .. " and name of hero is " .. hero:GetName() .. " so name check is " .. tostring(string.match(hero:GetName(),"morphling")))
+							print( 'player found at z of: ' .. tostring(height:Length()) .. "and cd check is " .. tostring(abil1:GetCooldownTimeRemaining() > abil1:GetCooldown(abil1:GetLevel())-2) .. " and name of hero is " .. hero:GetName() .. " so name check is " .. tostring(string.match(hero:GetName(),"winter_wyvern")))
 						
-							if abil1:GetCooldownTimeRemaining() >= abil1:GetCooldown(abil1:GetLevel())-2 and (string.match(hero:GetName(),"morphling") or string.match(hero:GetName(),"kunkka")) then
+							if abil1:GetCooldownTimeRemaining() >= abil1:GetCooldown(abil1:GetLevel())-2 and (string.match(hero:GetName(),"winter_wyvern") or string.match(hero:GetName(),"kunkka")) then
 							
 							else
 									lasth=LastLocs[hero]*Vector(0,0,1)
@@ -2788,8 +2801,8 @@ end
 					become_boat(casterUnit, "npc_dota_hero_tidehunter")
 				elseif string.match(itemName,"puck") then
 					become_boat(casterUnit, "npc_dota_hero_ancient_apparition")
-				elseif string.match(itemName,"morphling") then
-					become_boat(casterUnit, "npc_dota_hero_morphling")
+				elseif string.match(itemName,"winter_wyvern") then
+					become_boat(casterUnit, "npc_dota_hero_winter_wyvern")
 				elseif string.match(itemName,"storm_spirit") then
 					become_boat(casterUnit, "npc_dota_hero_storm_spirit")
 				elseif string.match(itemName,"zuus") then
@@ -2848,10 +2861,10 @@ end
 					casterUnit:SetGold(herogold + 1000, true)
 					casterUnit:SetGold(0, false)
 					print ( '[BAREBONES] player was rattletrap and got 1000')
-				elseif string.match(itemName,"morphling") then
+				elseif string.match(itemName,"winter_wyvern") then
 					casterUnit:SetGold(herogold + 3000, true)
 					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was morphling and got 3000')
+					print ( '[BAREBONES] player was winter_wyvern and got 3000')
 				elseif string.match(itemName,"storm_spirit") then
 					casterUnit:SetGold(herogold + 3000, true)
 					casterUnit:SetGold(0, false)
@@ -2863,7 +2876,7 @@ end
 				elseif string.match(itemName,"magnus") then
 					casterUnit:SetGold(herogold + 6000, true)
 					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was npc_dota_hero_winter_wyvern and got 6000')
+					print ( '[BAREBONES] player was magmus and got 6000')
 				elseif string.match(itemName,"jakiro") then
 					casterUnit:SetGold(herogold + 6000, true)
 					casterUnit:SetGold(0, false)
@@ -2904,9 +2917,13 @@ end
 					casterUnit:SetGold(herogold + 1000, true)
 					casterUnit:SetGold(0, false)
 					print ( '[BAREBONES] player was phantom_lancer and got 1000')
+				elseif string.match(itemName,"pugna") then
+					casterUnit:SetGold(herogold + 10000, true)
+					casterUnit:SetGold(0, false)
+					print ( '[BAREBONES] player was phantom_lancer and got 1000')
 				end
 				if casterUnit:IsHero() or casterUnit:HasInventory() then 
-					for itemSlot = 0, 11, 1 do 
+					for itemSlot = 0, 14, 1 do 
 						if casterUnit ~= nil then
 							local Item = casterUnit:GetItemInSlot( itemSlot )
 							if Item ~= nil and string.match(Item:GetName(), "boat") then
@@ -2954,7 +2971,7 @@ function become_boat(casterUnit, heroname)
 	local droppeditemlist = {}
 	local itemstacks = {}
     if (casterUnit:IsHero() or casterUnit:HasInventory()) and heroname ~= casterUnit:GetName() then 
-    	for itemSlot = 0, 11, 1 do 
+    	for itemSlot = 0, 14, 1 do 
             if casterUnit ~= nil then
                 local Item = casterUnit:GetItemInSlot( itemSlot )
 				if Item ~= nil and not string.match(Item:GetName(), "boat") and not string.match(Item:GetName(), "trade_") and not string.match(Item:GetName(), "contract") then
@@ -2968,6 +2985,9 @@ function become_boat(casterUnit, heroname)
 					itemlist[itemSlot] = "item_fluff"
 					casterUnit:RemoveItem(Item)
 				
+				elseif itemSlot > 5 and itemSlot <9 then
+				print("Item in slot is: item_backpack_stuffer")
+					itemlist[itemSlot] = "item_backpack_stuffer"
 				else
 					print("Item in slot is: filler")
 					itemlist[itemSlot] = "item_fluff"
@@ -3006,7 +3026,7 @@ function become_boat(casterUnit, heroname)
 						hero:SetGold(gold, true)
 						hero:SetGold(0, false)
 						hero:AddExperience(xp, false, false)
-						for b = 0, 11, 1 do 
+						for b = 0, 14, 1 do 
 							local newItem = CreateItem(itemlist[b], hero, hero)
 							if newItem ~= nil then                   -- makes sure that the item exists and making sure it is the correct item
 								
@@ -3033,7 +3053,14 @@ function become_boat(casterUnit, heroname)
 															FireGameEvent("Team_Cannot_Buy",data) 
 															hero:AddItem(newItem3)
 															local newItem2 = CreateItem("item_trade_manifest", hero, hero)
-														hero:AddItem(newItem2)
+															local newItem3 = CreateItem("item_backpack_stuffer", hero, hero)
+											local newItem4 = CreateItem("item_backpack_stuffer", hero, hero)
+											local newItem5 = CreateItem("item_backpack_stuffer", hero, hero)
+											
+												hero:AddItem(newItem2)
+												hero:AddItem(newItem3)
+												hero:AddItem(newItem4)
+												hero:AddItem(newItem5)
 										else
 											local newItem3 = CreateItem("item_contract_easy_mid_top", hero, hero)
 											local MissionLoc
@@ -3053,7 +3080,14 @@ function become_boat(casterUnit, heroname)
 											FireGameEvent("Team_Cannot_Buy",data)
 											hero:AddItem(newItem3)
 											local newItem2 = CreateItem("item_trade_manifest", hero, hero)
+											local newItem3 = CreateItem("item_backpack_stuffer", hero, hero)
+											local newItem4 = CreateItem("item_backpack_stuffer", hero, hero)
+											local newItem5 = CreateItem("item_backpack_stuffer", hero, hero)
+											
 												hero:AddItem(newItem2)
+												hero:AddItem(newItem3)
+												hero:AddItem(newItem4)
+												hero:AddItem(newItem5)
 										end
 									
 									
@@ -3070,11 +3104,14 @@ function become_boat(casterUnit, heroname)
 											}
 											FireGameEvent("Team_Cannot_Buy",data)
 								end
-								if (string.match(heroname,"vengefulspirit") or string.match(heroname,"enigma") or string.match(heroname,"bane")) and (b==10 or b==11) and not string.match(itemlist[b],"fluff") then
+								
+								if (string.match(heroname,"vengefulspirit") or string.match(heroname,"enigma") or string.match(heroname,"bane")) and (b==13 or b==14) and not string.match(itemlist[b],"fluff") then
 										CreateItemOnPositionSync(hero:GetOrigin(), newItem)
 										print("ejecting")
 								end
-								if b<4 and  string.match(itemlist[b],"fluff") then
+								if (string.match(heroname,"vengefulspirit") or string.match(heroname,"enigma") or string.match(heroname,"bane")) and  string.match(itemlist[b],"backpack") then
+									
+								elseif string.match(itemlist[b],"fluff") then
 									hero:AddItem(newItem)
 								elseif not  string.match(itemlist[b],"fluff") then
 									hero:AddItem(newItem)
@@ -3095,7 +3132,7 @@ function become_boat(casterUnit, heroname)
 							end
 						end
 						if hero:IsHero() or hero:HasInventory() then 
-							for itemSlot = 0, 11, 1 do 
+							for itemSlot = 0, 14, 1 do 
 								if hero ~= nil then
 									local activateItem = hero:GetItemInSlot( itemSlot )
 									if activateItem ~= nil and string.match(activateItem:GetName(), "bow") then
@@ -3114,7 +3151,7 @@ function become_boat(casterUnit, heroname)
 		
 		else
 			 if casterUnit:IsHero() or casterUnit:HasInventory() then 
-			for itemSlot = 0, 11, 1 do 
+			for itemSlot = 0, 14, 1 do 
 				if casterUnit ~= nil then
 					local Item = casterUnit:GetItemInSlot( itemSlot )
 					
@@ -3140,7 +3177,7 @@ print('[ItemFunctions] dubuffTower started!')
 	end
 	SPY_ANNOUNCMENT_FLAG = 1
 	if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
-		for itemSlot = 0, 11, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
+		for itemSlot = 0, 14, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
 	        	if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
                 		local Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
                 		if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
@@ -3165,7 +3202,7 @@ end
 function healTowers(casterUnit, itemName)
 print('[ItemFunctions] healTowers started!')
 	if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
-		for itemSlot = 0, 11, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
+		for itemSlot = 0, 14, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
 	        	if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
                 		local Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
                 		if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
@@ -3190,7 +3227,7 @@ print('[ItemFunctions] healTowers started!')
 end
 function spawnNuts(casterUnit, itemName)
 	if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
-		for itemSlot = 0, 11, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
+		for itemSlot = 0, 14, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
 	        	if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
                 		local Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
                 		if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
@@ -3433,8 +3470,8 @@ function buyBoat(eventSourceIndex, args)
 				become_boat(casterUnit, "npc_dota_hero_tidehunter")
 			elseif string.match(itemName,"ancient_apparition") then
 				become_boat(casterUnit, "npc_dota_hero_ancient_apparition")
-			elseif string.match(itemName,"morphling") then
-				become_boat(casterUnit, "npc_dota_hero_morphling")
+			elseif string.match(itemName,"winter_wyvern") then
+				become_boat(casterUnit, "npc_dota_hero_winter_wyvern")
 			elseif string.match(itemName,"storm_spirit") then
 				become_boat(casterUnit, "npc_dota_hero_storm_spirit")
 			elseif string.match(itemName,"ember_spirit") then
