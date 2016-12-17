@@ -2173,12 +2173,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"2700"
+				"bonus_hp"				"2000"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"6"
+				"bonus_armor"			"5"
 			}
 		}
 	}
@@ -11920,7 +11920,7 @@
 	//===============================================
     "item_chaos_ult_bow"
 	{
-		"ID"                            "1611"
+		"ID"                            "1311"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"

@@ -594,7 +594,7 @@ margin-top:300px;
 	height: 38px;	
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #4245c4  ),  to( #223578 ) );
      margin-bottom:11px;
-	 margin-right:269px;
+	 margin-right:275px;
 	 z-index:50;
 
 }
@@ -608,7 +608,7 @@ margin-top:300px;
 	height: 38px;	
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #3235FF  ),  to( #2225a8 ) );
      margin-bottom:11px;
-	 margin-right:269px;
+	 margin-right:275px;
 	 z-index:50;
 
 }
@@ -624,7 +624,7 @@ margin-top:300px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #4245c4  ),  to( #223578 ) );
      
      margin-bottom:11px;
-	 margin-right:269px;
+	 margin-right:275px;
 	 z-index:50;
 
 }
@@ -663,29 +663,29 @@ margin-top:300px;
 .shipPanelHiderHolder
 {
 	border-radius: 3px;
-	box-shadow: #000000aa 0px 0px 2px 2px;
+	box-shadow: #660000aa 0px 0px 2px 2px;
 	horizontal-align: right;
 	vertical-align: bottom;
 	brightness:1.0;
 	width: 122px;
 	height: 38px;
-background-color: gradient( linear, 0% 0%, 0% 100%, from( #a53333 ),  to( #c53333 ) );
+background-color: gradient( linear, 0% 0%, 0% 100%, from( #a53333 ),  to( #6E2323 ) );
      margin-bottom:11px;
-	 margin-right:138px;
+	 margin-right:143px;
 	 z-index:50;
 
 }
 .shipPanelHiderHolder:hover
 {
 	border-radius: 3px;
-	box-shadow: #660000aa 0px 0px 2px 2px;
+	box-shadow: #000000aa 0px 0px 2px 2px;
 	horizontal-align: right;
 	vertical-align: bottom;	
 	width: 122px;
 	height: 38px;
 		background-color: gradient( linear, 0% 0%, 0% 100%, from( #FF4343 ),  to( #AA0303) );
     margin-bottom:11px;
-	 margin-right:138px;
+	 margin-right:143px;
 	 z-index:50;
 
 }
@@ -699,7 +699,7 @@ background-color: gradient( linear, 0% 0%, 0% 100%, from( #a53333 ),  to( #c5333
 	height: 38px;	
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #856363 ),  to( #8E2323 ) );
      margin-bottom:11px;
-	 margin-right:138px;
+	 margin-right:143px;
 	 z-index:50;
 
 }
