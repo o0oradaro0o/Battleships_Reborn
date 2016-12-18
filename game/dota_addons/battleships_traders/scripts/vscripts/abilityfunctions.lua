@@ -253,8 +253,6 @@ function gunningItDamageRemove(args) -- keys is the information sent by the abil
 	if GunTicks[casterUnit:GetOwner():GetPlayerID()]~=nil and GunTicks[casterUnit:GetOwner():GetPlayerID()]>0 then
 		GunTicks[casterUnit:GetOwner():GetPlayerID()]=GunTicks[casterUnit:GetOwner():GetPlayerID()]-1
 	end
-
-	
 end
 
 

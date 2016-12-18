@@ -4,6 +4,8 @@ var hiddenship=true;
 var showMission=[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]
 var firstcall=true;
 var starttime=0;
+var NewShopUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop");
+var shipShopShow=false;
 function hideTrade()
 {
 	var numbuildings=0;
@@ -28,25 +30,36 @@ function hideTrade()
 
 function showShips()
 {
-	hideShop()
-	if(	hiddenship)
+	$.Msg(NewShopUI.BHasClass("ShopOpen"))
+	if(shipShopShow==false)
+	{
+		
+		if(!NewShopUI.BHasClass("ShopOpen"))
 		{
-			$( "#ship_shop" ).style.visibility="visible";
-			hiddenship=false;
+		$.DispatchEvent("DOTAHUDToggleShop");
 		}
-	else
-		{
-			hideShipShop();
-		}
-	
+	  if (!NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder")) 
+	  {
+		  $("#ship_shop_content_holder").SetParent(NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea"));
+		
+            
+        }
+		NewShopUI.FindChildTraverse("ItemsArea").FindChildTraverse("ItemGrid").style.visibility = "collapse";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").style.visibility="visible";
+	shipShopShow=true;
+	}
+	else{
+		hideShipShop();
+	}
 }
 
 function showShipsNoHide()
 {
+	$.Msg("showShipsNoHide");
 	hideShop()
 	if(	hiddenship)
 		{
-			$( "#ship_shop" ).style.visibility="visible";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").style.visibility="visible";
 			hiddenship=false;
 		}
 
@@ -54,89 +67,91 @@ function showShipsNoHide()
 
 function show1ks()
 {
-	$.Msg($( "#one_ks" ).style.height);
-	if ($( "#one_ks" ).style.height=="180.0px")
+	
+	
+	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height=="240.0px")
 	{
-		$( "#one_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height = "0px";
 
 	}
 	else
 	{
-		$( "#one_ks" ).style.height = "180px";
-		$( "#three_ks" ).style.height = "0px";
-		$( "#six_ks" ).style.height = "0px";
-		$( "#ten_ks" ).style.height = "0px";
-			$( "#trader_ships" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height = "240px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height = "0px";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height = "0px";
 	}
 }
 
 
 function show3ks()
 {
-	$.Msg($( "#three_ks" ).style.height);
-	if ($( "#three_ks" ).style.height=="180.0px")
+
+	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height=="240.0px")
 	{
-		$( "#three_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height = "0px";
 
 	}
 	else
 	{
-		$( "#three_ks" ).style.height = "180px";
-		$( "#one_ks" ).style.height = "0px";
-		$( "#six_ks" ).style.height = "0px";
-		$( "#ten_ks" ).style.height = "0px";
-			$( "#trader_ships" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height = "240px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height = "0px";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height = "0px";
 	}
 }
 function show6ks()
 {
-	$.Msg($( "#six_ks" ).style.height);
-	if ($( "#six_ks" ).style.height=="180.0px")
+
+	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height=="240.0px")
 	{
-		$( "#six_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height = "0px";
 
 	}
 	else
 	{
-		$( "#six_ks" ).style.height = "180px";
-			$( "#one_ks" ).style.height = "0px";
-		$( "#three_ks" ).style.height = "0px";
-		$( "#ten_ks" ).style.height = "0px";
-			$( "#trader_ships" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height = "240px";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height = "0px";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height = "0px";
 	}
 }
 function show10ks()
 {
-	$.Msg($( "#ten_ks" ).style.height);
-	if ($( "#ten_ks" ).style.height=="180.0px")
+
+	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height=="240.0px")
 	{
-		$( "#ten_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height = "0px";
 
 	}
 	else
 	{
-		$( "#ten_ks" ).style.height = "180px";
-			$( "#one_ks" ).style.height = "0px";
-		$( "#three_ks" ).style.height = "0px";
-		$( "#six_ks" ).style.height = "0px";
-			$( "#trader_ships" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height = "240px";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height = "0px";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height = "0px";
 	}
 }
+
 function showtraders()
 {
-	$.Msg($( "#trader_ships" ).style.height);
-	if ($( "#trader_ships" ).style.height=="180.0px")
+
+	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height=="240.0px")
 	{
-		$( "#trader_ships" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height = "0px";
 
 	}
 	else
 	{
-		$( "#trader_ships" ).style.height = "180px";
-			$( "#one_ks" ).style.height = "0px";
-		$( "#three_ks" ).style.height = "0px";
-		$( "#six_ks" ).style.height = "0px";
-			$( "#ten_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height = "240px";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height = "0px";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height = "0px";
 	}
 }
 
@@ -384,13 +399,7 @@ function FadeShop()
 			hideShop();
 		}
 	}
-	function hideShipShop(data)
-	{
-		if (Players.GetLocalPlayer() == data.splitscreenplayer)
-		{
-			 hideShipShop();
-		 }
-	}
+
 	function hideShop()
 	{
 		hidden=true;
@@ -411,8 +420,37 @@ function FadeShop()
 		
 	}
 	
-		function hideShipShop()
+	function hideShipShop()
 	{
+		if(NewShopUI.BHasClass("ShopOpen"))
+			{
+				$.DispatchEvent("DOTAHUDToggleShop");
+				 closeShipShop()
+			}
+			else
+			{
+				shipShopShow=false;
+				showShips();
+				return;
+			}
+	}
+	
+		function closeShipShop()
+	{
+		
+		$.Msg("inhide ship shop");
+		if(shipShopShow)
+		{
+			
+				  if (!NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder")) 
+			  {
+				  $("#ship_shop_content_holder").SetParent(NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea"));
+				}
+				NewShopUI.FindChildTraverse("ItemsArea").FindChildTraverse("ItemGrid").style.visibility = "visible";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").style.visibility="collapse";
+		}
+	shipShopShow=false;
+	
 		hiddenship=true;
 		$.Msg("inhide");
 		$( "#ship_shop" ).style.visibility="collapse";
