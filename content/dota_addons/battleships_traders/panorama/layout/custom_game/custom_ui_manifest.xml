@@ -2,11 +2,6 @@
 <script>
 		GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY, false );
 		 
-		 //miniMap
-		
-		 
-		 
-		 
 		 //---------------------------shop stuff--------------------
 		 //get shop ui
 		 varNewShopUI = $.GetContextPanel().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop");

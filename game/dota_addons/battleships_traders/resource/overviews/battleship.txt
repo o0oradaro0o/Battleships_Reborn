@@ -1,8 +1,8 @@
 battleship
 {
 	material materials/overviews/battleship.vmat
-	pos_x 0
-	pos_y -2147483648
-	scale -332306979139188339659867366684098560.000
+	pos_x -8192
+	pos_y 8192
+	scale 16.000
 }
 

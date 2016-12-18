@@ -1723,13 +1723,17 @@
 	</Panel>
 
 
+
 		/* ship shop */
 		<Panel hittest="false" id="ship_shop" class="ship_shop_guts">
 			  <Image class="ship_bkg_image" src="file://{images}/custom_game/Kunkka.png" />
-                <Panel id="ship_shop_content_holder">
-					<Button class="closeShip" onactivate="closeShipShop()">
-							<Label  text="#back_to_items" class="closeXship"/>		
+                <Panel class="ship_shop_content_holder">
+				<Panel hittest="false" class="closeButtonholder">
+					<Button class="close" onactivate="hideShipShop()">
+							<Label  text="X" class="closeX"/>		
 					</Button>
+				</Panel>
+					<Label hittest="false" class="trade_text_title" text="#ship_shop" />  
 					<Label hittest="false" class="trade_text_footer" text="#left_click" />  
 					
 					<Panel id="one_ks_tab" class="ship_shop_tier_tab" onactivate="show1ks()">
@@ -1745,9 +1749,6 @@
 									<Image class="boat_image" src="file://{images}/custom_game/boats/phantom_lancer.png" />
 									 <Label hittest="false" class="boat_name_text" text="#phantom_lancer" />
 								</Button>
-							</Panel>
-							
-							<Panel hittest="false" class="supply_row">
 								<Button class="boat_btn_item"  onactivate="showDetails('crystal_maiden')" oncontextmenu="buyBoat('crystal_maiden', 1000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/crystal_maiden.png" />
 									 <Label hittest="false" class="boat_name_text" text="#crystal_maiden" />
@@ -1777,9 +1778,6 @@
 									<Image class="boat_image" src="file://{images}/custom_game/boats/disruptor.png" />
 									 <Label hittest="false" class="boat_name_text" text="#disruptor" />
 								</Button>
-							</Panel>
-							<Panel hittest="false" class="supply_row">
-
 								<Button class="boat_btn_item"  onactivate="showDetails('morphling')" oncontextmenu="buyBoat('winter_wyvern', 3000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/morphling.png" />
 									 <Label hittest="false" class="boat_name_text" text="#morphling" />
@@ -1811,9 +1809,6 @@
 									<Image class="boat_image" src="file://{images}/custom_game/boats/ember_spirit.png" />
 									 <Label hittest="false" class="boat_name_text" text="#ember_spirit" />
 								</Button>
-
-							</Panel>
-							<Panel hittest="false" class="supply_row">
 								<Button class="boat_btn_item"  onactivate="showDetails('meepo')" oncontextmenu="buyBoat('meepo', 6000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/meepo.png" />
 									 <Label hittest="false" class="boat_name_text" text="#meepo" />
@@ -1847,8 +1842,6 @@
 									<Image class="boat_image" src="file://{images}/custom_game/boats/visage.png" />
 									 <Label hittest="false" class="boat_name_text" text="#visage" />
 								</Button>
-							</Panel>
-							<Panel hittest="false" class="supply_row">
 								
 								<Button class="boat_btn_item"  onactivate="showDetails('windrunner')" oncontextmenu="buyBoat('windrunner', 12000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/windrunner.png" />
@@ -1888,12 +1881,9 @@
 									<Label hittest="false" class="boat_name_text" text="#bane" />
 									
 								</Button>
-								
-							</Panel>
-							<Panel hittest="false" class="supply_row">
-							<Button class="boat_btn_item"  onactivate="showDetails('enigma')" oncontextmenu="buyBoat('enigma', 7000)">
+								<Button class="boat_btn_item"  onactivate="showDetails('enigma')" oncontextmenu="buyBoat('enigma', 7000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/enigma.png" />
-								
+									
 									<Label hittest="false" class="boat_gold_text" text="7000" />					
 									<Label hittest="false" class="boat_name_text" text="#enigma" />
 									
@@ -1907,6 +1897,9 @@
         <Label hittest="false" id="out_of_contracts" text="#Out_Of_Contracts" />
 	 
 	 <Panel hittest="false" id="custom_shop" oncancel="hideShop()">
+			
+	
+		
 		
             /* left_bot_shop */
             <Panel hittest="false" id="left_bot_shop" class="shop_guts">
@@ -1948,8 +1941,6 @@
                     </Panel>
                 </Panel>
             </Panel>
-			
-			
 			 /* left_mid_shop */
             <Panel hittest="false" id="left_mid_shop" class="shop_guts">
                 <Image class="bkg_image" src="file://{images}/custom_game/mid_left.png" />

@@ -357,46 +357,6 @@ padding-top: 0px;
 	border-radius: 5px;
 }
 
-
-
-.closeXship
-{
-	margin-top:3px;
-	color: #FFFFFF;
-	font-size: 16px;
-	text-align: center;
-	horizontal-align: center;
-	vertical-align: center;
-	font-weight: bold;
-}
-
-.closeShip
-{
-	horizontal-align: center;
-	margin-left:1px;
-	margin-top:1px;
-	width: 100%;
-	height: 40px;
-	flow-children: down;
-	border: 3px solid white;
-    background-color: gradient( linear, 0% 50%, 0% 100%, from( #92494ecc ), to( #752525ff ) );
-	border-radius: 5px;
-}
-
-.closeShip:hover
-{
-	margin-left:1px;
-	margin-top:1px;
-	width: 100%;
-	height: 40px;
-	flow-children: down;
-	border: 0px solid black;
-    background-color: gradient( linear, 0% 50%, 0% 100%, from( #a2696ecc ), to( #954545ff ) );
-	border-radius: 5px;
-	border: 2px solid white;
-}
-
-
 .zoomHider
 {
 	margin-left:2px;
@@ -992,7 +952,7 @@ horizontal-align: center;
 {
 	flow-children: right;
 		horizontal-align: center;
-	margin: 1px;
+	margin: -10px;
 	visibility: visible;
 }
 
@@ -1029,15 +989,16 @@ border-radius: 10px;
 	 border-radius: 10px;
 	margin: 5px;
 }
-#ship_shop_content_holder
+.ship_shop_content_holder
 {
 	flow-children: down;
-	width: 250px;
+	width: 500px;
 	height: 850px;
 	border: 0px solid black;
 
 	horizontal-align: right;
-    border-radius: 10px;
+    background-color: gradient( linear, 0% 50%, 0% 100%, from( #42494ecc ), to( #252525ff ) );
+	 border-radius: 10px;
 	margin: 5px;
 }
 .ship_shop_tier_tab
@@ -1585,23 +1546,23 @@ border-radius: 10px;
 	flow-children: down;
 	horizontal-align: left;
 	height: 65px;
-	width: 90px;
+	width: 120px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #252525 ), to( #42494e ) );
 	 border: 4px solid gray;
 	 vertical-align: center;
-	 margin: 6px;
+	 margin: 15px;
 }
 .boat_btn_item:hover
 {
 	flow-children: down;
 	horizontal-align: center;
 	height: 65px;
-	width: 90px;
+	width: 120px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #252525 ), to( #42494e ) );
 	
 	 border: 2px solid white;
 	 vertical-align: center;
-	 margin: 6px;
+	 margin: 15px;
 }
 .boat_btn_item:active
 {
@@ -1609,12 +1570,12 @@ border-radius: 10px;
 	flow-children: down;
 horizontal-align: center;
 	height: 65px;
-	width: 90px;
+	width: 120px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #252525 ), to( #42494e ) );
 	
 	 border: 2px solid red;
 	 vertical-align: center;
-	 margin: 6px;
+	 margin: 15px;
 }
 
 
