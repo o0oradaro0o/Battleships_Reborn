@@ -1,0 +1,1105 @@
+﻿// **********************************************************************************************************************
+// This file contains generated tooltips created from the files in the scripts/npc directory of this mod.
+// It does not contain tooltips already defined in addon_russian.txt, nor modifiers with the property "IsHidden" "1".
+// **********************************************************************************************************************
+
+// ******************** HEROES ********************
+"npc_dota_hero_zuus"                                                              ""
+"npc_dota_hero_ancient_apparition"                                                ""
+"npc_dota_hero_crystal_maiden"                                                    ""
+"npc_dota_hero_phantom_lancer"                                                    ""
+"npc_dota_hero_tidehunter"                                                        ""
+"npc_dota_hero_rattletrap"                                                        ""
+"npc_dota_hero_disruptor"                                                         ""
+"npc_dota_hero_morphling"                                                         ""
+"npc_dota_hero_storm_spirit"                                                      ""
+"npc_dota_hero_nevermore"                                                         ""
+"npc_dota_hero_lion"                                                              ""
+"npc_dota_hero_meepo"                                                             ""
+"npc_dota_hero_jakiro"                                                            ""
+"npc_dota_hero_undying"                                                           ""
+"npc_dota_hero_slark"                                                             ""
+"npc_dota_hero_shredder"                                                          ""
+"npc_dota_hero_visage"                                                            ""
+"npc_dota_hero_ursa"                                                              ""
+"npc_dota_hero_tusk"                                                              ""
+"npc_dota_hero_lone_druid"                                                        ""
+"npc_dota_hero_wisp"                                                              ""
+
+// ******************** UNITS ********************
+"npc_dota_boat_south_one"                                                         ""
+"npc_dota_boat_south_two"                                                         ""
+"npc_dota_boat_south_three"                                                       ""
+"npc_dota_boat_south_four"                                                        ""
+"npc_dota_boat_north_one"                                                         ""
+"npc_dota_boat_north_two"                                                         ""
+"npc_dota_boat_north_three"                                                       ""
+"npc_dota_boat_north_four"                                                        ""
+"npc_dota_tower_south_weaker"                                                     ""
+"npc_dota_tower_south_stronger"                                                   ""
+"npc_dota_tower_north_weaker"                                                     ""
+"npc_dota_tower_north_stronger"                                                   ""
+"npc_dota_dock_south_left"                                                        ""
+"npc_dota_dock_south_right"                                                       ""
+"npc_dota_dock_north_left"                                                        ""
+"npc_dota_dock_north_right"                                                       ""
+"npc_dota_north_repair"                                                           ""
+"npc_dota_south_repair"                                                           ""
+"npc_dota_north_base"                                                             ""
+"npc_dota_south_base"                                                             ""
+"npc_dota_air_craft"                                                              ""
+"npc_dota_air_craft_bomber"                                                       ""
+"npc_dota_boat_pleasure_craft"                                                    ""
+"npc_dota_rainbow_unit"                                                           ""
+"npc_dota_turret"                                                                 ""
+"npc_dota_creep_upgrade"                                                          ""
+"npc_dota_vision_granter"                                                         ""
+"npc_dota_rng_ind"                                                                ""
+"npc_dota_iceberg"                                                                ""
+"npc_dota_creature_tidehunter"                                                    ""
+
+// ******************** ABILITY MODIFIERS ********************
+"DOTA_Tooltip_modifier_fire_pistols"                                              ""
+"DOTA_Tooltip_modifier_fire_pistols_Description"                                  ""
+
+"DOTA_Tooltip_modifier_bailing_water"                                             ""
+"DOTA_Tooltip_modifier_bailing_water_Description"                                 ""
+
+"DOTA_Tooltip_modifier_tightened_hoops"                                           ""
+"DOTA_Tooltip_modifier_tightened_hoops_Description"                               ""
+
+"DOTA_Tooltip_modifier_discoing"                                                  ""
+"DOTA_Tooltip_modifier_discoing_Description"                                      ""
+
+"DOTA_Tooltip_modifier_fun_aura"                                                  ""
+"DOTA_Tooltip_modifier_fun_aura_Description"                                      ""
+
+"DOTA_Tooltip_modifier_remove_vision"                                             ""
+"DOTA_Tooltip_modifier_remove_vision_Description"                                 ""
+
+"DOTA_Tooltip_modifier_ramming_speed"                                             ""
+"DOTA_Tooltip_modifier_ramming_speed_Description"                                 ""
+
+"DOTA_Tooltip_modifier_above_water"                                               ""
+"DOTA_Tooltip_modifier_above_water_Description"                                   ""
+
+"DOTA_Tooltip_modifier_bilge_mod"                                                 ""
+"DOTA_Tooltip_modifier_bilge_mod_Description"                                     ""
+
+"DOTA_Tooltip_modifier_Gunning_it"                                                ""
+"DOTA_Tooltip_modifier_Gunning_it_Description"                                    ""
+
+"DOTA_Tooltip_modifier_start_fire"                                                ""
+"DOTA_Tooltip_modifier_start_fire_Description"                                    ""
+
+"DOTA_Tooltip_modifier_fire_area"                                                 ""
+"DOTA_Tooltip_modifier_fire_area_Description"                                     ""
+
+"DOTA_Tooltip_modifier_create_fire_area_aura"                                     ""
+"DOTA_Tooltip_modifier_create_fire_area_aura_Description"                         ""
+
+"DOTA_Tooltip_modifier_fx_test_modifier"                                          ""
+"DOTA_Tooltip_modifier_fx_test_modifier_Description"                              ""
+
+"DOTA_Tooltip_modifier_fly"                                                       ""
+"DOTA_Tooltip_modifier_fly_Description"                                           ""
+
+"DOTA_Tooltip_modifier_fx_test_modifier"                                          ""
+"DOTA_Tooltip_modifier_fx_test_modifier_Description"                              ""
+
+"DOTA_Tooltip_modifier_move_carrier_in"                                           ""
+"DOTA_Tooltip_modifier_move_carrier_in_Description"                               ""
+
+"DOTA_Tooltip_modifier_start_go_back"                                             ""
+"DOTA_Tooltip_modifier_start_go_back_Description"                                 ""
+
+"DOTA_Tooltip_modifier_kill_self"                                                 ""
+"DOTA_Tooltip_modifier_kill_self_Description"                                     ""
+
+"DOTA_Tooltip_modifier_Pillage_Guns"                                              ""
+"DOTA_Tooltip_modifier_Pillage_Guns_Description"                                  ""
+
+"DOTA_Tooltip_modifier_building_dearmor"                                          ""
+"DOTA_Tooltip_modifier_building_dearmor_Description"                              ""
+
+"DOTA_Tooltip_modifier_big_boom"                                                  ""
+"DOTA_Tooltip_modifier_big_boom_Description"                                      ""
+
+"DOTA_Tooltip_modifier_evasion_aura"                                              ""
+"DOTA_Tooltip_modifier_evasion_aura_Description"                                  ""
+
+"DOTA_Tooltip_modifier_creator"                                                   ""
+"DOTA_Tooltip_modifier_creator_Description"                                       ""
+
+"DOTA_Tooltip_modifier_rainbow"                                                   ""
+"DOTA_Tooltip_modifier_rainbow_Description"                                       ""
+
+"DOTA_Tooltip_modifier_killSelf"                                                  ""
+"DOTA_Tooltip_modifier_killSelf_Description"                                      ""
+
+"DOTA_Tooltip_modifier_stop_aura"                                                 ""
+"DOTA_Tooltip_modifier_stop_aura_Description"                                     ""
+
+"DOTA_Tooltip_modifier_fx_test_modifier"                                          ""
+"DOTA_Tooltip_modifier_fx_test_modifier_Description"                              ""
+
+"DOTA_Tooltip_modifier_mayday_ind"                                                ""
+"DOTA_Tooltip_modifier_mayday_ind_Description"                                    ""
+
+"DOTA_Tooltip_modifier_goHome"                                                    ""
+"DOTA_Tooltip_modifier_goHome_Description"                                        ""
+
+"DOTA_Tooltip_modifier_goHome"                                                    ""
+"DOTA_Tooltip_modifier_goHome_Description"                                        ""
+
+"DOTA_Tooltip_modifier_swimbreak"                                                 ""
+"DOTA_Tooltip_modifier_swimbreak_Description"                                     ""
+
+"DOTA_Tooltip_modifier_stunned_from_relaxing"                                     ""
+"DOTA_Tooltip_modifier_stunned_from_relaxing_Description"                         ""
+
+"DOTA_Tooltip_modifier_keep_up"                                                   ""
+"DOTA_Tooltip_modifier_keep_up_Description"                                       ""
+
+"DOTA_Tooltip_modifier_keep_up_effect"                                            ""
+"DOTA_Tooltip_modifier_keep_up_effect_Description"                                ""
+
+"DOTA_Tooltip_modifier_monkey_buisness"                                           ""
+"DOTA_Tooltip_modifier_monkey_buisness_Description"                               ""
+
+"DOTA_Tooltip_modifier_elephant_intimidation"                                     ""
+"DOTA_Tooltip_modifier_elephant_intimidation_Description"                         ""
+
+"DOTA_Tooltip_modifier_move_carrier_in"                                           ""
+"DOTA_Tooltip_modifier_move_carrier_in_Description"                               ""
+
+"DOTA_Tooltip_modifier_go_back"                                                   ""
+"DOTA_Tooltip_modifier_go_back_Description"                                       ""
+
+"DOTA_Tooltip_modifier_giraffe_grab"                                              ""
+"DOTA_Tooltip_modifier_giraffe_grab_Description"                                  ""
+
+"DOTA_Tooltip_modifier_submerged"                                                 ""
+"DOTA_Tooltip_modifier_submerged_Description"                                     ""
+
+"DOTA_Tooltip_modifier_in_the_hold"                                               ""
+"DOTA_Tooltip_modifier_in_the_hold_Description"                                   ""
+
+"DOTA_Tooltip_modifier_in_the_hold_finder"                                        ""
+"DOTA_Tooltip_modifier_in_the_hold_finder_Description"                            ""
+
+"DOTA_Tooltip_modifier_salvager"                                                  ""
+"DOTA_Tooltip_modifier_salvager_Description"                                      ""
+
+"DOTA_Tooltip_modifier_root_self"                                                 ""
+"DOTA_Tooltip_modifier_root_self_Description"                                     ""
+
+"DOTA_Tooltip_modifier_batten_hatches"                                            ""
+"DOTA_Tooltip_modifier_batten_hatches_Description"                                ""
+
+"DOTA_Tooltip_modifier_push_back"                                                 ""
+"DOTA_Tooltip_modifier_push_back_Description"                                     ""
+
+"DOTA_Tooltip_modifier_root_self"                                                 ""
+"DOTA_Tooltip_modifier_root_self_Description"                                     ""
+
+"DOTA_Tooltip_modifier_creep_buffer"                                              ""
+"DOTA_Tooltip_modifier_creep_buffer_Description"                                  ""
+
+"DOTA_Tooltip_modifier_reflected"                                                 ""
+"DOTA_Tooltip_modifier_reflected_Description"                                     ""
+
+"DOTA_Tooltip_modifier_take_reflected"                                            ""
+"DOTA_Tooltip_modifier_take_reflected_Description"                                ""
+
+"DOTA_Tooltip_modifier_gag_order"                                                 ""
+"DOTA_Tooltip_modifier_gag_order_Description"                                     ""
+
+"DOTA_Tooltip_modifier_speed_aura"                                                ""
+"DOTA_Tooltip_modifier_speed_aura_Description"                                    ""
+
+"DOTA_Tooltip_modifier_hp_boost"                                                  ""
+"DOTA_Tooltip_modifier_hp_boost_Description"                                      ""
+
+"DOTA_Tooltip_modifier_gas_mod"                                                   ""
+"DOTA_Tooltip_modifier_gas_mod_Description"                                       ""
+
+"DOTA_Tooltip_modifier_blasted"                                                   ""
+"DOTA_Tooltip_modifier_blasted_Description"                                       ""
+
+"DOTA_Tooltip_modifier_dragon_death_thinker"                                      ""
+"DOTA_Tooltip_modifier_dragon_death_thinker_Description"                          ""
+
+"DOTA_Tooltip_modifier_nav_mess"                                                  ""
+"DOTA_Tooltip_modifier_nav_mess_Description"                                      ""
+
+"DOTA_Tooltip_modifier_keep_alive"                                                ""
+"DOTA_Tooltip_modifier_keep_alive_Description"                                    ""
+
+"DOTA_Tooltip_modifier_alive"                                                     ""
+"DOTA_Tooltip_modifier_alive_Description"                                         ""
+
+"DOTA_Tooltip_modifier_root_self"                                                 ""
+"DOTA_Tooltip_modifier_root_self_Description"                                     ""
+
+"DOTA_Tooltip_modifier_trap"                                                      ""
+"DOTA_Tooltip_modifier_trap_Description"                                          ""
+
+"DOTA_Tooltip_modifier_aura_ice"                                                  ""
+"DOTA_Tooltip_modifier_aura_ice_Description"                                      ""
+
+"DOTA_Tooltip_modifier_ice_aura"                                                  ""
+"DOTA_Tooltip_modifier_ice_aura_Description"                                      ""
+
+"DOTA_Tooltip_modifier_item_ice_three_bow_shooting_doubled"                       ""
+"DOTA_Tooltip_modifier_item_ice_three_bow_shooting_doubled_Description"           ""
+
+
+// ******************** ITEM MODIFIERS ********************
+"DOTA_Tooltip_modifier_restart_healing"                                           ""
+"DOTA_Tooltip_modifier_restart_healing_Description"                               ""
+
+"DOTA_Tooltip_modifier_restart_healing"                                           ""
+"DOTA_Tooltip_modifier_restart_healing_Description"                               ""
+
+"DOTA_Tooltip_modifier_restart_healing"                                           ""
+"DOTA_Tooltip_modifier_restart_healing_Description"                               ""
+
+"DOTA_Tooltip_modifier_restart_healing"                                           ""
+"DOTA_Tooltip_modifier_restart_healing_Description"                               ""
+
+"DOTA_Tooltip_modifier_item_poison_bow_shooting"                                  ""
+"DOTA_Tooltip_modifier_item_poison_bow_shooting_Description"                      ""
+
+"DOTA_Tooltip_modifier_item_fire_bow_shooting"                                    ""
+"DOTA_Tooltip_modifier_item_fire_bow_shooting_Description"                        ""
+
+"DOTA_Tooltip_modifier_item_ice_bow_shooting"                                     ""
+"DOTA_Tooltip_modifier_item_ice_bow_shooting_Description"                         ""
+
+"DOTA_Tooltip_modifier_item_wind_bow_shooting"                                    ""
+"DOTA_Tooltip_modifier_item_wind_bow_shooting_Description"                        ""
+
+"DOTA_Tooltip_modifier_item_light_bow_shooting"                                   ""
+"DOTA_Tooltip_modifier_item_light_bow_shooting_Description"                       ""
+
+"DOTA_Tooltip_modifier_item_coal_bow_shooting"                                    ""
+"DOTA_Tooltip_modifier_item_coal_bow_shooting_Description"                        ""
+
+"DOTA_Tooltip_modifier_item_plasma_bow_shooting"                                  ""
+"DOTA_Tooltip_modifier_item_plasma_bow_shooting_Description"                      ""
+
+"DOTA_Tooltip_modifier_item_poison_two_bow_shooting"                              ""
+"DOTA_Tooltip_modifier_item_poison_two_bow_shooting_Description"                  ""
+
+"DOTA_Tooltip_modifier_item_fire_two_bow_shooting"                                ""
+"DOTA_Tooltip_modifier_item_fire_two_bow_shooting_Description"                    ""
+
+"DOTA_Tooltip_modifier_item_ice_two_bow_shooting"                                 ""
+"DOTA_Tooltip_modifier_item_ice_two_bow_shooting_Description"                     ""
+
+"DOTA_Tooltip_modifier_item_wind_two_bow_shooting"                                ""
+"DOTA_Tooltip_modifier_item_wind_two_bow_shooting_Description"                    ""
+
+"DOTA_Tooltip_modifier_item_light_two_bow_shooting"                               ""
+"DOTA_Tooltip_modifier_item_light_two_bow_shooting_Description"                   ""
+
+"DOTA_Tooltip_modifier_item_coal_two_bow_shooting"                                ""
+"DOTA_Tooltip_modifier_item_coal_two_bow_shooting_Description"                    ""
+
+"DOTA_Tooltip_modifier_item_plasma_two_bow_shooting"                              ""
+"DOTA_Tooltip_modifier_item_plasma_two_bow_shooting_Description"                  ""
+
+"DOTA_Tooltip_modifier_item_poison_three_bow_shooting"                            ""
+"DOTA_Tooltip_modifier_item_poison_three_bow_shooting_Description"                ""
+
+"DOTA_Tooltip_modifier_item_fire_three_bow_shooting"                              ""
+"DOTA_Tooltip_modifier_item_fire_three_bow_shooting_Description"                  ""
+
+"DOTA_Tooltip_modifier_item_ice_three_bow_shooting"                               ""
+"DOTA_Tooltip_modifier_item_ice_three_bow_shooting_Description"                   ""
+
+"DOTA_Tooltip_modifier_item_wind_three_bow_shooting"                              ""
+"DOTA_Tooltip_modifier_item_wind_three_bow_shooting_Description"                  ""
+
+"DOTA_Tooltip_modifier_item_light_three_bow_shooting"                             ""
+"DOTA_Tooltip_modifier_item_light_three_bow_shooting_Description"                 ""
+
+"DOTA_Tooltip_modifier_item_coal_three_bow_shooting"                              ""
+"DOTA_Tooltip_modifier_item_coal_three_bow_shooting_Description"                  ""
+
+"DOTA_Tooltip_modifier_item_plasma_three_bow_shooting"                            ""
+"DOTA_Tooltip_modifier_item_plasma_three_bow_shooting_Description"                ""
+
+"DOTA_Tooltip_modifier_item_poison_bow_shooting_doubled"                          ""
+"DOTA_Tooltip_modifier_item_poison_bow_shooting_doubled_Description"              ""
+
+"DOTA_Tooltip_modifier_item_fire_bow_shooting_doubled"                            ""
+"DOTA_Tooltip_modifier_item_fire_bow_shooting_doubled_Description"                ""
+
+"DOTA_Tooltip_modifier_item_ice_bow_shooting_doubled"                             ""
+"DOTA_Tooltip_modifier_item_ice_bow_shooting_doubled_Description"                 ""
+
+"DOTA_Tooltip_modifier_item_wind_bow_shooting_doubled"                            ""
+"DOTA_Tooltip_modifier_item_wind_bow_shooting_doubled_Description"                ""
+
+"DOTA_Tooltip_modifier_item_light_bow_shooting_doubled"                           ""
+"DOTA_Tooltip_modifier_item_light_bow_shooting_doubled_Description"               ""
+
+"DOTA_Tooltip_modifier_item_coal_bow_shooting_doubled"                            ""
+"DOTA_Tooltip_modifier_item_coal_bow_shooting_doubled_Description"                ""
+
+"DOTA_Tooltip_modifier_item_plasma_bow_shooting_doubled"                          ""
+"DOTA_Tooltip_modifier_item_plasma_bow_shooting_doubled_Description"              ""
+
+"DOTA_Tooltip_modifier_item_poison_two_bow_shooting_doubled"                      ""
+"DOTA_Tooltip_modifier_item_poison_two_bow_shooting_doubled_Description"          ""
+
+"DOTA_Tooltip_modifier_item_fire_two_bow_shooting_doubled"                        ""
+"DOTA_Tooltip_modifier_item_fire_two_bow_shooting_doubled_Description"            ""
+
+"DOTA_Tooltip_modifier_item_ice_two_bow_shooting_doubled"                         ""
+"DOTA_Tooltip_modifier_item_ice_two_bow_shooting_doubled_Description"             ""
+
+"DOTA_Tooltip_modifier_item_wind_two_bow_shooting_doubled"                        ""
+"DOTA_Tooltip_modifier_item_wind_two_bow_shooting_doubled_Description"            ""
+
+"DOTA_Tooltip_modifier_item_light_two_bow_shooting_doubled"                       ""
+"DOTA_Tooltip_modifier_item_light_two_bow_shooting_doubled_Description"           ""
+
+"DOTA_Tooltip_modifier_item_coal_two_bow_shooting_doubled"                        ""
+"DOTA_Tooltip_modifier_item_coal_two_bow_shooting_doubled_Description"            ""
+
+"DOTA_Tooltip_modifier_item_plasma_two_bow_shooting_doubled"                      ""
+"DOTA_Tooltip_modifier_item_plasma_two_bow_shooting_doubled_Description"          ""
+
+"DOTA_Tooltip_modifier_item_poison_three_bow_shooting_doubled"                    ""
+"DOTA_Tooltip_modifier_item_poison_three_bow_shooting_doubled_Description"        ""
+
+"DOTA_Tooltip_modifier_item_fire_three_bow_shooting_doubled"                      ""
+"DOTA_Tooltip_modifier_item_fire_three_bow_shooting_doubled_Description"          ""
+
+"DOTA_Tooltip_modifier_item_ice_three_bow_shooting_doubled"                       ""
+"DOTA_Tooltip_modifier_item_ice_three_bow_shooting_doubled_Description"           ""
+
+"DOTA_Tooltip_modifier_item_wind_three_bow_shooting_doubled"                      ""
+"DOTA_Tooltip_modifier_item_wind_three_bow_shooting_doubled_Description"          ""
+
+"DOTA_Tooltip_modifier_item_light_three_bow_shooting_doubled"                     ""
+"DOTA_Tooltip_modifier_item_light_three_bow_shooting_doubled_Description"         ""
+
+"DOTA_Tooltip_modifier_item_coal_three_bow_shooting_doubled"                      ""
+"DOTA_Tooltip_modifier_item_coal_three_bow_shooting_doubled_Description"          ""
+
+"DOTA_Tooltip_modifier_item_plasma_three_bow_shooting_doubled"                    ""
+"DOTA_Tooltip_modifier_item_plasma_three_bow_shooting_doubled_Description"        ""
+
+"DOTA_Tooltip_modifier_item_poison_ult_bow_shooting"                              ""
+"DOTA_Tooltip_modifier_item_poison_ult_bow_shooting_Description"                  ""
+
+"DOTA_Tooltip_modifier_item_poison_ult_bow_pleagued"                              ""
+"DOTA_Tooltip_modifier_item_poison_ult_bow_pleagued_Description"                  ""
+
+"DOTA_Tooltip_modifier_item_fire_ult_bow_shooting"                                ""
+"DOTA_Tooltip_modifier_item_fire_ult_bow_shooting_Description"                    ""
+
+"DOTA_Tooltip_modifier_create_fire_area_aura"                                     ""
+"DOTA_Tooltip_modifier_create_fire_area_aura_Description"                         ""
+
+"DOTA_Tooltip_modifier_item_ice_ult_bow_shooting"                                 ""
+"DOTA_Tooltip_modifier_item_ice_ult_bow_shooting_Description"                     ""
+
+"DOTA_Tooltip_modifier_item_ice_ult_bow_slow"                                     ""
+"DOTA_Tooltip_modifier_item_ice_ult_bow_slow_Description"                         ""
+
+"DOTA_Tooltip_modifier_item_wind_ult_bow_shooting"                                ""
+"DOTA_Tooltip_modifier_item_wind_ult_bow_shooting_Description"                    ""
+
+"DOTA_Tooltip_modifier_aura_speed_wind"                                           ""
+"DOTA_Tooltip_modifier_aura_speed_wind_Description"                               ""
+
+"DOTA_Tooltip_modifier_speed_aura_wind"                                           ""
+"DOTA_Tooltip_modifier_speed_aura_wind_Description"                               ""
+
+"DOTA_Tooltip_modifier_item_wind_ult_bow_buffet"                                  ""
+"DOTA_Tooltip_modifier_item_wind_ult_bow_buffet_Description"                      ""
+
+"DOTA_Tooltip_modifier_item_light_ult_bow_shooting"                               ""
+"DOTA_Tooltip_modifier_item_light_ult_bow_shooting_Description"                   ""
+
+"DOTA_Tooltip_modifier_item_coal_ult_bow_shooting"                                ""
+"DOTA_Tooltip_modifier_item_coal_ult_bow_shooting_Description"                    ""
+
+"DOTA_Tooltip_modifier_item_coal_ult_bow_stunned"                                 ""
+"DOTA_Tooltip_modifier_item_coal_ult_bow_stunned_Description"                     ""
+
+"DOTA_Tooltip_modifier_item_plasma_ult_bow_shooting"                              ""
+"DOTA_Tooltip_modifier_item_plasma_ult_bow_shooting_Description"                  ""
+
+"DOTA_Tooltip_modifier_item_plasma_ult_bow_dearmored"                             ""
+"DOTA_Tooltip_modifier_item_plasma_ult_bow_dearmored_Description"                 ""
+
+"DOTA_Tooltip_modifier_monkey_buisness_item"                                      ""
+"DOTA_Tooltip_modifier_monkey_buisness_item_Description"                          ""
+
+"DOTA_Tooltip_modifier_monkey_buisness_rest_item"                                 ""
+"DOTA_Tooltip_modifier_monkey_buisness_rest_item_Description"                     ""
+
+"DOTA_Tooltip_modifier_pergatory_3"                                               ""
+"DOTA_Tooltip_modifier_pergatory_3_Description"                                   ""
+
+"DOTA_Tooltip_modifier_pergatory_6"                                               ""
+"DOTA_Tooltip_modifier_pergatory_6_Description"                                   ""
+
+"DOTA_Tooltip_modifier_pergatory_9"                                               ""
+"DOTA_Tooltip_modifier_pergatory_9_Description"                                   ""
+
+"DOTA_Tooltip_modifier_pergatory_12"                                              ""
+"DOTA_Tooltip_modifier_pergatory_12_Description"                                  ""
+
+
+// ******************** ABILITIES ********************
+"DOTA_Tooltip_ability_pistols_battleship"                                         ""
+"DOTA_Tooltip_ability_pistols_battleship_Description"                             ""
+"DOTA_Tooltip_ability_pistols_battleship_Note0"                                   ""
+"DOTA_Tooltip_ability_pistols_battleship_Lore"                                    ""
+"DOTA_Tooltip_ability_pistols_battleship_pistol_duration"                         ""
+"DOTA_Tooltip_ability_pistols_battleship_pistol_base_dmg"                         ""
+"DOTA_Tooltip_ability_pistols_battleship_pistol_hp_dmg"                           ""
+"DOTA_Tooltip_ability_pistols_battleship_range"                                   ""
+
+"DOTA_Tooltip_ability_bail_water"                                                 ""
+"DOTA_Tooltip_ability_bail_water_Description"                                     ""
+"DOTA_Tooltip_ability_bail_water_Note0"                                           ""
+"DOTA_Tooltip_ability_bail_water_Lore"                                            ""
+"DOTA_Tooltip_ability_bail_water_bail_bonus_move_speed"                           ""
+"DOTA_Tooltip_ability_bail_water_bail_duration"                                   ""
+
+"DOTA_Tooltip_ability_tighten_hoop"                                               ""
+"DOTA_Tooltip_ability_tighten_hoop_Description"                                   ""
+"DOTA_Tooltip_ability_tighten_hoop_Note0"                                         ""
+"DOTA_Tooltip_ability_tighten_hoop_Lore"                                          ""
+"DOTA_Tooltip_ability_tighten_hoop_hoop_bonus_armor"                              ""
+"DOTA_Tooltip_ability_tighten_hoop_health_regen"                                  ""
+
+"DOTA_Tooltip_ability_kunkka_torrent_bships"                                      ""
+"DOTA_Tooltip_ability_kunkka_torrent_bships_Description"                          ""
+"DOTA_Tooltip_ability_kunkka_torrent_bships_Note0"                                ""
+"DOTA_Tooltip_ability_kunkka_torrent_bships_Lore"                                 ""
+"DOTA_Tooltip_ability_kunkka_torrent_bships_radius"                               ""
+"DOTA_Tooltip_ability_kunkka_torrent_bships_movespeed_bonus"                      ""
+"DOTA_Tooltip_ability_kunkka_torrent_bships_slow_duration"                        ""
+"DOTA_Tooltip_ability_kunkka_torrent_bships_stun_duration"                        ""
+"DOTA_Tooltip_ability_kunkka_torrent_bships_delay"                                ""
+
+"DOTA_Tooltip_ability_kunkka_x_marks_the_spot_bships"                             ""
+"DOTA_Tooltip_ability_kunkka_x_marks_the_spot_bships_Description"                 ""
+"DOTA_Tooltip_ability_kunkka_x_marks_the_spot_bships_Note0"                       ""
+"DOTA_Tooltip_ability_kunkka_x_marks_the_spot_bships_Lore"                        ""
+"DOTA_Tooltip_ability_kunkka_x_marks_the_spot_bships_duration"                    ""
+"DOTA_Tooltip_ability_kunkka_x_marks_the_spot_bships_allied_duration_tooltip"     ""
+"DOTA_Tooltip_ability_kunkka_x_marks_the_spot_bships_tooltip_range"               ""
+"DOTA_Tooltip_ability_kunkka_x_marks_the_spot_bships_fow_range"                   ""
+"DOTA_Tooltip_ability_kunkka_x_marks_the_spot_bships_fow_duration"                ""
+
+"DOTA_Tooltip_ability_kunkka_ghostship_bships"                                    ""
+"DOTA_Tooltip_ability_kunkka_ghostship_bships_Description"                        ""
+"DOTA_Tooltip_ability_kunkka_ghostship_bships_Note0"                              ""
+"DOTA_Tooltip_ability_kunkka_ghostship_bships_Lore"                               ""
+"DOTA_Tooltip_ability_kunkka_ghostship_bships_tooltip_delay"                      ""
+"DOTA_Tooltip_ability_kunkka_ghostship_bships_ghostship_distance"                 ""
+"DOTA_Tooltip_ability_kunkka_ghostship_bships_ghostship_width"                    ""
+"DOTA_Tooltip_ability_kunkka_ghostship_bships_movespeed_bonus"                    ""
+"DOTA_Tooltip_ability_kunkka_ghostship_bships_buff_duration"                      ""
+"DOTA_Tooltip_ability_kunkka_ghostship_bships_stun_duration"                      ""
+"DOTA_Tooltip_ability_kunkka_ghostship_bships_ghostship_speed"                    ""
+
+"DOTA_Tooltip_ability_brewmaster_drunken_haze_bships"                             ""
+"DOTA_Tooltip_ability_brewmaster_drunken_haze_bships_Description"                 ""
+"DOTA_Tooltip_ability_brewmaster_drunken_haze_bships_Note0"                       ""
+"DOTA_Tooltip_ability_brewmaster_drunken_haze_bships_Lore"                        ""
+"DOTA_Tooltip_ability_brewmaster_drunken_haze_bships_radius"                      ""
+"DOTA_Tooltip_ability_brewmaster_drunken_haze_bships_duration"                    ""
+"DOTA_Tooltip_ability_brewmaster_drunken_haze_bships_duration_creeps"             ""
+"DOTA_Tooltip_ability_brewmaster_drunken_haze_bships_movement_slow"               ""
+"DOTA_Tooltip_ability_brewmaster_drunken_haze_bships_miss_chance"                 ""
+
+"DOTA_Tooltip_ability_discoship_battleship"                                       ""
+"DOTA_Tooltip_ability_discoship_battleship_Description"                           ""
+"DOTA_Tooltip_ability_discoship_battleship_Note0"                                 ""
+"DOTA_Tooltip_ability_discoship_battleship_Lore"                                  ""
+"DOTA_Tooltip_ability_discoship_battleship_radius"                                ""
+"DOTA_Tooltip_ability_discoship_battleship_miss_chance"                           ""
+
+"DOTA_Tooltip_ability_fun_battleship"                                             ""
+"DOTA_Tooltip_ability_fun_battleship_Description"                                 ""
+"DOTA_Tooltip_ability_fun_battleship_Note0"                                       ""
+"DOTA_Tooltip_ability_fun_battleship_Lore"                                        ""
+"DOTA_Tooltip_ability_fun_battleship_health_regen"                                ""
+"DOTA_Tooltip_ability_fun_battleship_fun_bonus_move_speed"                        ""
+
+"DOTA_Tooltip_ability_dive_battleship"                                            ""
+"DOTA_Tooltip_ability_dive_battleship_Description"                                ""
+"DOTA_Tooltip_ability_dive_battleship_Note0"                                      ""
+"DOTA_Tooltip_ability_dive_battleship_Lore"                                       ""
+"DOTA_Tooltip_ability_dive_battleship_duration"                                   ""
+
+"DOTA_Tooltip_ability_dive_battleship"                                            ""
+"DOTA_Tooltip_ability_dive_battleship_Description"                                ""
+"DOTA_Tooltip_ability_dive_battleship_Note0"                                      ""
+"DOTA_Tooltip_ability_dive_battleship_Lore"                                       ""
+"DOTA_Tooltip_ability_dive_battleship_duration"                                   ""
+
+"DOTA_Tooltip_ability_dive_battleship_puck"                                       ""
+"DOTA_Tooltip_ability_dive_battleship_puck_Description"                           ""
+"DOTA_Tooltip_ability_dive_battleship_puck_Note0"                                 ""
+"DOTA_Tooltip_ability_dive_battleship_puck_Lore"                                  ""
+"DOTA_Tooltip_ability_dive_battleship_puck_duration"                              ""
+
+"DOTA_Tooltip_ability_ramming_speed_battleship"                                   ""
+"DOTA_Tooltip_ability_ramming_speed_battleship_Description"                       ""
+"DOTA_Tooltip_ability_ramming_speed_battleship_Note0"                             ""
+"DOTA_Tooltip_ability_ramming_speed_battleship_Lore"                              ""
+"DOTA_Tooltip_ability_ramming_speed_battleship_turn_rate"                         ""
+"DOTA_Tooltip_ability_ramming_speed_battleship_duration"                          ""
+"DOTA_Tooltip_ability_ramming_speed_battleship_base_speed"                        ""
+"DOTA_Tooltip_ability_ramming_speed_battleship_accel_boost"                       ""
+
+"DOTA_Tooltip_ability_head_above_water_battleship"                                ""
+"DOTA_Tooltip_ability_head_above_water_battleship_Description"                    ""
+"DOTA_Tooltip_ability_head_above_water_battleship_Note0"                          ""
+"DOTA_Tooltip_ability_head_above_water_battleship_Lore"                           ""
+"DOTA_Tooltip_ability_head_above_water_battleship_duration"                       ""
+"DOTA_Tooltip_ability_head_above_water_battleship_bonus_armor"                    ""
+"DOTA_Tooltip_ability_head_above_water_battleship_magic_armor"                    ""
+
+"DOTA_Tooltip_ability_meepo_earthbind_battleship"                                 ""
+"DOTA_Tooltip_ability_meepo_earthbind_battleship_Description"                     ""
+"DOTA_Tooltip_ability_meepo_earthbind_battleship_Note0"                           ""
+"DOTA_Tooltip_ability_meepo_earthbind_battleship_Lore"                            ""
+"DOTA_Tooltip_ability_meepo_earthbind_battleship_duration"                        ""
+"DOTA_Tooltip_ability_meepo_earthbind_battleship_radius"                          ""
+"DOTA_Tooltip_ability_meepo_earthbind_battleship_speed"                           ""
+"DOTA_Tooltip_ability_meepo_earthbind_battleship_tooltip_range"                   ""
+
+"DOTA_Tooltip_ability_sniper_shrapnel_battleship"                                 ""
+"DOTA_Tooltip_ability_sniper_shrapnel_battleship_Description"                     ""
+"DOTA_Tooltip_ability_sniper_shrapnel_battleship_Note0"                           ""
+"DOTA_Tooltip_ability_sniper_shrapnel_battleship_Lore"                            ""
+"DOTA_Tooltip_ability_sniper_shrapnel_battleship_slow_movement_speed"             ""
+"DOTA_Tooltip_ability_sniper_shrapnel_battleship_radius"                          ""
+"DOTA_Tooltip_ability_sniper_shrapnel_battleship_building_damage"                 ""
+"DOTA_Tooltip_ability_sniper_shrapnel_battleship_duration"                        ""
+"DOTA_Tooltip_ability_sniper_shrapnel_battleship_damage_delay"                    ""
+"DOTA_Tooltip_ability_sniper_shrapnel_battleship_slow_duration"                   ""
+
+"DOTA_Tooltip_ability_sniper_assassinate_battleship"                              ""
+"DOTA_Tooltip_ability_sniper_assassinate_battleship_Description"                  ""
+"DOTA_Tooltip_ability_sniper_assassinate_battleship_Note0"                        ""
+"DOTA_Tooltip_ability_sniper_assassinate_battleship_Lore"                         ""
+"DOTA_Tooltip_ability_sniper_assassinate_battleship_projectile_speed"             ""
+"DOTA_Tooltip_ability_sniper_assassinate_battleship_tooltip_range"                ""
+
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship"                                 ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_Description"                     ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_Note0"                           ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_Lore"                            ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_hook_speed"                      ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_hook_width"                      ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_hook_distance"                   ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_vision_radius"                   ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_vision_duration"                 ""
+
+"DOTA_Tooltip_ability_morphling_waveform_battleship"                              ""
+"DOTA_Tooltip_ability_morphling_waveform_battleship_Description"                  ""
+"DOTA_Tooltip_ability_morphling_waveform_battleship_Note0"                        ""
+"DOTA_Tooltip_ability_morphling_waveform_battleship_Lore"                         ""
+"DOTA_Tooltip_ability_morphling_waveform_battleship_speed"                        ""
+"DOTA_Tooltip_ability_morphling_waveform_battleship_width"                        ""
+
+"DOTA_Tooltip_ability_tidehunter_gush_battleship"                                 ""
+"DOTA_Tooltip_ability_tidehunter_gush_battleship_Description"                     ""
+"DOTA_Tooltip_ability_tidehunter_gush_battleship_Note0"                           ""
+"DOTA_Tooltip_ability_tidehunter_gush_battleship_Lore"                            ""
+"DOTA_Tooltip_ability_tidehunter_gush_battleship_projectile_speed"                ""
+"DOTA_Tooltip_ability_tidehunter_gush_battleship_movement_speed"                  ""
+"DOTA_Tooltip_ability_tidehunter_gush_battleship_armor_bonus"                     ""
+"DOTA_Tooltip_ability_tidehunter_gush_battleship_damage"                          ""
+"DOTA_Tooltip_ability_tidehunter_gush_battleship_duration"                        ""
+
+"DOTA_Tooltip_ability_riki_blink_strike_battleship"                               ""
+"DOTA_Tooltip_ability_riki_blink_strike_battleship_Description"                   ""
+"DOTA_Tooltip_ability_riki_blink_strike_battleship_Note0"                         ""
+"DOTA_Tooltip_ability_riki_blink_strike_battleship_Lore"                          ""
+"DOTA_Tooltip_ability_riki_blink_strike_battleship_tooltip_range"                 ""
+
+"DOTA_Tooltip_ability_skywrath_mage_concussive_shot_battleship"                   ""
+"DOTA_Tooltip_ability_skywrath_mage_concussive_shot_battleship_Description"       ""
+"DOTA_Tooltip_ability_skywrath_mage_concussive_shot_battleship_Note0"             ""
+"DOTA_Tooltip_ability_skywrath_mage_concussive_shot_battleship_Lore"              ""
+"DOTA_Tooltip_ability_skywrath_mage_concussive_shot_battleship_launch_radius"     ""
+"DOTA_Tooltip_ability_skywrath_mage_concussive_shot_battleship_slow_radius"       ""
+"DOTA_Tooltip_ability_skywrath_mage_concussive_shot_battleship_speed"             ""
+"DOTA_Tooltip_ability_skywrath_mage_concussive_shot_battleship_damage"            ""
+"DOTA_Tooltip_ability_skywrath_mage_concussive_shot_battleship_slow_duration"     ""
+"DOTA_Tooltip_ability_skywrath_mage_concussive_shot_battleship_movement_speed_pct"		""
+"DOTA_Tooltip_ability_skywrath_mage_concussive_shot_battleship_shot_vision"       ""
+"DOTA_Tooltip_ability_skywrath_mage_concussive_shot_battleship_vision_duration"   ""
+
+"DOTA_Tooltip_ability_batrider_flaming_lasso_battleship"                          ""
+"DOTA_Tooltip_ability_batrider_flaming_lasso_battleship_Description"              ""
+"DOTA_Tooltip_ability_batrider_flaming_lasso_battleship_Note0"                    ""
+"DOTA_Tooltip_ability_batrider_flaming_lasso_battleship_Lore"                     ""
+"DOTA_Tooltip_ability_batrider_flaming_lasso_battleship_duration"                 ""
+"DOTA_Tooltip_ability_batrider_flaming_lasso_battleship_drag_distance"            ""
+"DOTA_Tooltip_ability_batrider_flaming_lasso_battleship_break_distance"           ""
+
+"DOTA_Tooltip_ability_spirit_breaker_charge_of_darkness_battleship"               ""
+"DOTA_Tooltip_ability_spirit_breaker_charge_of_darkness_battleship_Description"   ""
+"DOTA_Tooltip_ability_spirit_breaker_charge_of_darkness_battleship_Note0"         ""
+"DOTA_Tooltip_ability_spirit_breaker_charge_of_darkness_battleship_Lore"          ""
+"DOTA_Tooltip_ability_spirit_breaker_charge_of_darkness_battleship_movement_speed"		""
+"DOTA_Tooltip_ability_spirit_breaker_charge_of_darkness_battleship_stun_duration"		""
+"DOTA_Tooltip_ability_spirit_breaker_charge_of_darkness_battleship_bash_radius"   ""
+"DOTA_Tooltip_ability_spirit_breaker_charge_of_darkness_battleship_vision_radius"		""
+"DOTA_Tooltip_ability_spirit_breaker_charge_of_darkness_battleship_vision_duration"		""
+
+"DOTA_Tooltip_ability_gun_it"                                                     ""
+"DOTA_Tooltip_ability_gun_it_Description"                                         ""
+"DOTA_Tooltip_ability_gun_it_Note0"                                               ""
+"DOTA_Tooltip_ability_gun_it_Lore"                                                ""
+"DOTA_Tooltip_ability_gun_it_hero_damage"                                         ""
+"DOTA_Tooltip_ability_gun_it_base_speed"                                          ""
+"DOTA_Tooltip_ability_gun_it_accel_boost"                                         ""
+
+"DOTA_Tooltip_ability_launch_craft"                                               ""
+"DOTA_Tooltip_ability_launch_craft_Description"                                   ""
+"DOTA_Tooltip_ability_launch_craft_Note0"                                         ""
+"DOTA_Tooltip_ability_launch_craft_Lore"                                          ""
+"DOTA_Tooltip_ability_launch_craft_DAMAGE"                                        ""
+
+"DOTA_Tooltip_ability_launch_all"                                                 ""
+"DOTA_Tooltip_ability_launch_all_Description"                                     ""
+"DOTA_Tooltip_ability_launch_all_Note0"                                           ""
+"DOTA_Tooltip_ability_launch_all_Lore"                                            ""
+"DOTA_Tooltip_ability_launch_all_duration"                                        ""
+
+"DOTA_Tooltip_ability_gyrocopter_call_down_battleship"                            ""
+"DOTA_Tooltip_ability_gyrocopter_call_down_battleship_Description"                ""
+"DOTA_Tooltip_ability_gyrocopter_call_down_battleship_Note0"                      ""
+"DOTA_Tooltip_ability_gyrocopter_call_down_battleship_Lore"                       ""
+"DOTA_Tooltip_ability_gyrocopter_call_down_battleship_slow_duration_first"        ""
+"DOTA_Tooltip_ability_gyrocopter_call_down_battleship_slow_duration_second"       ""
+"DOTA_Tooltip_ability_gyrocopter_call_down_battleship_damage_first"               ""
+"DOTA_Tooltip_ability_gyrocopter_call_down_battleship_damage_second"              ""
+"DOTA_Tooltip_ability_gyrocopter_call_down_battleship_slow_first"                 ""
+"DOTA_Tooltip_ability_gyrocopter_call_down_battleship_slow_second"                ""
+"DOTA_Tooltip_ability_gyrocopter_call_down_battleship_radius"                     ""
+"DOTA_Tooltip_ability_gyrocopter_call_down_battleship_range_scepter"              ""
+"DOTA_Tooltip_ability_gyrocopter_call_down_battleship_damage_second_scepter"      ""
+
+"DOTA_Tooltip_ability_aircraft_bomb"                                              ""
+"DOTA_Tooltip_ability_aircraft_bomb_Description"                                  ""
+"DOTA_Tooltip_ability_aircraft_bomb_Note0"                                        ""
+"DOTA_Tooltip_ability_aircraft_bomb_Lore"                                         ""
+"DOTA_Tooltip_ability_aircraft_bomb_move_duration"                                ""
+"DOTA_Tooltip_ability_aircraft_bomb_pull_duration"                                ""
+
+"DOTA_Tooltip_ability_magnataur_skewer_battleship"                                ""
+"DOTA_Tooltip_ability_magnataur_skewer_battleship_Description"                    ""
+"DOTA_Tooltip_ability_magnataur_skewer_battleship_Note0"                          ""
+"DOTA_Tooltip_ability_magnataur_skewer_battleship_Lore"                           ""
+"DOTA_Tooltip_ability_magnataur_skewer_battleship_skewer_speed"                   ""
+"DOTA_Tooltip_ability_magnataur_skewer_battleship_range"                          ""
+"DOTA_Tooltip_ability_magnataur_skewer_battleship_slow_pct"                       ""
+"DOTA_Tooltip_ability_magnataur_skewer_battleship_skewer_radius"                  ""
+"DOTA_Tooltip_ability_magnataur_skewer_battleship_slow_duration"                  ""
+"DOTA_Tooltip_ability_magnataur_skewer_battleship_skewer_damage"                  ""
+"DOTA_Tooltip_ability_magnataur_skewer_battleship_tree_radius"                    ""
+
+"DOTA_Tooltip_ability_Pillage"                                                    ""
+"DOTA_Tooltip_ability_Pillage_Description"                                        ""
+"DOTA_Tooltip_ability_Pillage_Note0"                                              ""
+"DOTA_Tooltip_ability_Pillage_Lore"                                               ""
+"DOTA_Tooltip_ability_Pillage_bonus_armor"                                        ""
+"DOTA_Tooltip_ability_Pillage_damage_per_second"                                  ""
+
+"DOTA_Tooltip_ability_big_boom"                                                   ""
+"DOTA_Tooltip_ability_big_boom_Description"                                       ""
+"DOTA_Tooltip_ability_big_boom_Note0"                                             ""
+"DOTA_Tooltip_ability_big_boom_Lore"                                              ""
+"DOTA_Tooltip_ability_big_boom_vah_dmg"                                           ""
+
+"DOTA_Tooltip_ability_alchemist_goblins_greed_battleship"                         ""
+"DOTA_Tooltip_ability_alchemist_goblins_greed_battleship_Description"             ""
+"DOTA_Tooltip_ability_alchemist_goblins_greed_battleship_Note0"                   ""
+"DOTA_Tooltip_ability_alchemist_goblins_greed_battleship_Lore"                    ""
+"DOTA_Tooltip_ability_alchemist_goblins_greed_battleship_duration"                ""
+"DOTA_Tooltip_ability_alchemist_goblins_greed_battleship_bonus_gold"              ""
+"DOTA_Tooltip_ability_alchemist_goblins_greed_battleship_bonus_bonus_gold"        ""
+"DOTA_Tooltip_ability_alchemist_goblins_greed_battleship_bonus_gold_cap"          ""
+
+"DOTA_Tooltip_ability_drop_craft"                                                 ""
+"DOTA_Tooltip_ability_drop_craft_Description"                                     ""
+"DOTA_Tooltip_ability_drop_craft_Note0"                                           ""
+"DOTA_Tooltip_ability_drop_craft_Lore"                                            ""
+"DOTA_Tooltip_ability_drop_craft_duration"                                        ""
+
+"DOTA_Tooltip_ability_doom_bringer_scorched_earth_battleship"                     ""
+"DOTA_Tooltip_ability_doom_bringer_scorched_earth_battleship_Description"         ""
+"DOTA_Tooltip_ability_doom_bringer_scorched_earth_battleship_Note0"               ""
+"DOTA_Tooltip_ability_doom_bringer_scorched_earth_battleship_Lore"                ""
+"DOTA_Tooltip_ability_doom_bringer_scorched_earth_battleship_damage_per_second"   ""
+"DOTA_Tooltip_ability_doom_bringer_scorched_earth_battleship_radius"              ""
+"DOTA_Tooltip_ability_doom_bringer_scorched_earth_battleship_bonus_movement_speed_pct"		""
+"DOTA_Tooltip_ability_doom_bringer_scorched_earth_battleship_duration"            ""
+
+"DOTA_Tooltip_ability_miss_battleship"                                            ""
+"DOTA_Tooltip_ability_miss_battleship_Description"                                ""
+"DOTA_Tooltip_ability_miss_battleship_Note0"                                      ""
+"DOTA_Tooltip_ability_miss_battleship_Lore"                                       ""
+"DOTA_Tooltip_ability_miss_battleship_evasion"                                    ""
+
+"DOTA_Tooltip_ability_hit_battleship"                                             ""
+"DOTA_Tooltip_ability_hit_battleship_Description"                                 ""
+"DOTA_Tooltip_ability_hit_battleship_Note0"                                       ""
+"DOTA_Tooltip_ability_hit_battleship_Lore"                                        ""
+"DOTA_Tooltip_ability_hit_battleship_vision_radius"                               ""
+
+"DOTA_Tooltip_ability_terrorblade_conjure_image_battleship"                       ""
+"DOTA_Tooltip_ability_terrorblade_conjure_image_battleship_Description"           ""
+"DOTA_Tooltip_ability_terrorblade_conjure_image_battleship_Note0"                 ""
+"DOTA_Tooltip_ability_terrorblade_conjure_image_battleship_Lore"                  ""
+"DOTA_Tooltip_ability_terrorblade_conjure_image_battleship_illusion_outgoing_damage"		""
+"DOTA_Tooltip_ability_terrorblade_conjure_image_battleship_illusion_incoming_damage"		""
+"DOTA_Tooltip_ability_terrorblade_conjure_image_battleship_illusion_outgoing_tooltip"		""
+"DOTA_Tooltip_ability_terrorblade_conjure_image_battleship_illusion_duration"     ""
+
+"DOTA_Tooltip_ability_rainbow_battleship"                                         ""
+"DOTA_Tooltip_ability_rainbow_battleship_Description"                             ""
+"DOTA_Tooltip_ability_rainbow_battleship_Note0"                                   ""
+"DOTA_Tooltip_ability_rainbow_battleship_Lore"                                    ""
+"DOTA_Tooltip_ability_rainbow_battleship_heal_amount"                             ""
+"DOTA_Tooltip_ability_rainbow_battleship_range"                                   ""
+
+"DOTA_Tooltip_ability_mountain_battleship"                                        ""
+"DOTA_Tooltip_ability_mountain_battleship_Description"                            ""
+"DOTA_Tooltip_ability_mountain_battleship_Note0"                                  ""
+"DOTA_Tooltip_ability_mountain_battleship_Lore"                                   ""
+"DOTA_Tooltip_ability_mountain_battleship_duration"                               ""
+"DOTA_Tooltip_ability_mountain_battleship_ele_armor_reduction"                    ""
+
+"DOTA_Tooltip_ability_plane_fly_battleship"                                       ""
+"DOTA_Tooltip_ability_plane_fly_battleship_Description"                           ""
+"DOTA_Tooltip_ability_plane_fly_battleship_Note0"                                 ""
+"DOTA_Tooltip_ability_plane_fly_battleship_Lore"                                  ""
+"DOTA_Tooltip_ability_plane_fly_battleship_damage_per_second"                     ""
+"DOTA_Tooltip_ability_plane_fly_battleship_radius"                                ""
+"DOTA_Tooltip_ability_plane_fly_battleship_duration"                              ""
+"DOTA_Tooltip_ability_plane_fly_battleship_tick_interval"                         ""
+"DOTA_Tooltip_ability_plane_fly_battleship_tree_radius"                           ""
+"DOTA_Tooltip_ability_plane_fly_battleship_speed_bonus"                           ""
+
+"DOTA_Tooltip_ability_batrider_firefly_battleship"                                ""
+"DOTA_Tooltip_ability_batrider_firefly_battleship_Description"                    ""
+"DOTA_Tooltip_ability_batrider_firefly_battleship_Note0"                          ""
+"DOTA_Tooltip_ability_batrider_firefly_battleship_Lore"                           ""
+"DOTA_Tooltip_ability_batrider_firefly_battleship_damage_per_second"              ""
+"DOTA_Tooltip_ability_batrider_firefly_battleship_radius"                         ""
+"DOTA_Tooltip_ability_batrider_firefly_battleship_duration"                       ""
+"DOTA_Tooltip_ability_batrider_firefly_battleship_tick_interval"                  ""
+"DOTA_Tooltip_ability_batrider_firefly_battleship_tree_radius"                    ""
+
+"DOTA_Tooltip_ability_sputt_battleship"                                           ""
+"DOTA_Tooltip_ability_sputt_battleship_Description"                               ""
+"DOTA_Tooltip_ability_sputt_battleship_Note0"                                     ""
+"DOTA_Tooltip_ability_sputt_battleship_Lore"                                      ""
+"DOTA_Tooltip_ability_sputt_battleship_evasion"                                   ""
+"DOTA_Tooltip_ability_sputt_battleship_aura_radius"                               ""
+"DOTA_Tooltip_ability_sputt_battleship_sputt_duration"                            ""
+
+"DOTA_Tooltip_ability_mayday_battleship"                                          ""
+"DOTA_Tooltip_ability_mayday_battleship_Description"                              ""
+"DOTA_Tooltip_ability_mayday_battleship_Note0"                                    ""
+"DOTA_Tooltip_ability_mayday_battleship_Lore"                                     ""
+"DOTA_Tooltip_ability_mayday_battleship_heal_amount"                              ""
+"DOTA_Tooltip_ability_mayday_battleship_delay"                                    ""
+
+"DOTA_Tooltip_ability_go_home_battleship"                                         ""
+"DOTA_Tooltip_ability_go_home_battleship_Description"                             ""
+"DOTA_Tooltip_ability_go_home_battleship_Note0"                                   ""
+"DOTA_Tooltip_ability_go_home_battleship_Lore"                                    ""
+"DOTA_Tooltip_ability_go_home_battleship_duration"                                ""
+
+"DOTA_Tooltip_ability_chen_test_of_faith_teleport_battleship"                     ""
+"DOTA_Tooltip_ability_chen_test_of_faith_teleport_battleship_Description"         ""
+"DOTA_Tooltip_ability_chen_test_of_faith_teleport_battleship_Note0"               ""
+"DOTA_Tooltip_ability_chen_test_of_faith_teleport_battleship_Lore"                ""
+"DOTA_Tooltip_ability_chen_test_of_faith_teleport_battleship_hero_teleport_delay"		""
+
+"DOTA_Tooltip_ability_mirana_leap_battlsehip"                                     ""
+"DOTA_Tooltip_ability_mirana_leap_battlsehip_Description"                         ""
+"DOTA_Tooltip_ability_mirana_leap_battlsehip_Note0"                               ""
+"DOTA_Tooltip_ability_mirana_leap_battlsehip_Lore"                                ""
+"DOTA_Tooltip_ability_mirana_leap_battlsehip_leap_distance"                       ""
+"DOTA_Tooltip_ability_mirana_leap_battlsehip_leap_speed"                          ""
+"DOTA_Tooltip_ability_mirana_leap_battlsehip_leap_acceleration"                   ""
+"DOTA_Tooltip_ability_mirana_leap_battlsehip_leap_radius"                         ""
+"DOTA_Tooltip_ability_mirana_leap_battlsehip_leap_speedbonus"                     ""
+"DOTA_Tooltip_ability_mirana_leap_battlsehip_leap_speedbonus_as"                  ""
+
+"DOTA_Tooltip_ability_windrunner_powershot_battleship"                            ""
+"DOTA_Tooltip_ability_windrunner_powershot_battleship_Description"                ""
+"DOTA_Tooltip_ability_windrunner_powershot_battleship_Note0"                      ""
+"DOTA_Tooltip_ability_windrunner_powershot_battleship_Lore"                       ""
+"DOTA_Tooltip_ability_windrunner_powershot_battleship_damage_reduction"           ""
+"DOTA_Tooltip_ability_windrunner_powershot_battleship_speed_reduction"            ""
+"DOTA_Tooltip_ability_windrunner_powershot_battleship_arrow_width"                ""
+"DOTA_Tooltip_ability_windrunner_powershot_battleship_arrow_range"                ""
+"DOTA_Tooltip_ability_windrunner_powershot_battleship_arrow_speed"                ""
+"DOTA_Tooltip_ability_windrunner_powershot_battleship_tree_width"                 ""
+"DOTA_Tooltip_ability_windrunner_powershot_battleship_vision_radius"              ""
+"DOTA_Tooltip_ability_windrunner_powershot_battleship_vision_duration"            ""
+
+"DOTA_Tooltip_ability_swim_battleship"                                            ""
+"DOTA_Tooltip_ability_swim_battleship_Description"                                ""
+"DOTA_Tooltip_ability_swim_battleship_Note0"                                      ""
+"DOTA_Tooltip_ability_swim_battleship_Lore"                                       ""
+"DOTA_Tooltip_ability_swim_battleship_regen"                                      ""
+"DOTA_Tooltip_ability_swim_battleship_stun_time"                                  ""
+
+"DOTA_Tooltip_ability_antimage_blink_battleship"                                  ""
+"DOTA_Tooltip_ability_antimage_blink_battleship_Description"                      ""
+"DOTA_Tooltip_ability_antimage_blink_battleship_Note0"                            ""
+"DOTA_Tooltip_ability_antimage_blink_battleship_Lore"                             ""
+"DOTA_Tooltip_ability_antimage_blink_battleship_blink_range"                      ""
+"DOTA_Tooltip_ability_antimage_blink_battleship_min_blink_range"                  ""
+
+"DOTA_Tooltip_ability_keeping_up_battleship"                                      ""
+"DOTA_Tooltip_ability_keeping_up_battleship_Description"                          ""
+"DOTA_Tooltip_ability_keeping_up_battleship_Note0"                                ""
+"DOTA_Tooltip_ability_keeping_up_battleship_Lore"                                 ""
+"DOTA_Tooltip_ability_keeping_up_battleship_duration"                             ""
+
+"DOTA_Tooltip_ability_monkey_buisness"                                            ""
+"DOTA_Tooltip_ability_monkey_buisness_Description"                                ""
+"DOTA_Tooltip_ability_monkey_buisness_Note0"                                      ""
+"DOTA_Tooltip_ability_monkey_buisness_Lore"                                       ""
+"DOTA_Tooltip_ability_monkey_buisness_spread_range"                               ""
+"DOTA_Tooltip_ability_monkey_buisness_monkey_damage"                              ""
+
+"DOTA_Tooltip_ability_elephant_intimidate"                                        ""
+"DOTA_Tooltip_ability_elephant_intimidate_Description"                            ""
+"DOTA_Tooltip_ability_elephant_intimidate_Note0"                                  ""
+"DOTA_Tooltip_ability_elephant_intimidate_Lore"                                   ""
+"DOTA_Tooltip_ability_elephant_intimidate_ele_range"                              ""
+"DOTA_Tooltip_ability_elephant_intimidate_ele_armor_reduction"                    ""
+"DOTA_Tooltip_ability_elephant_intimidate_duration"                               ""
+
+"DOTA_Tooltip_ability_Over_And_Out"                                               ""
+"DOTA_Tooltip_ability_Over_And_Out_Description"                                   ""
+"DOTA_Tooltip_ability_Over_And_Out_Note0"                                         ""
+"DOTA_Tooltip_ability_Over_And_Out_Lore"                                          ""
+"DOTA_Tooltip_ability_Over_And_Out_move_duration"                                 ""
+"DOTA_Tooltip_ability_Over_And_Out_pull_duration"                                 ""
+
+"DOTA_Tooltip_ability_sandking_burrowstrike_battleship"                           ""
+"DOTA_Tooltip_ability_sandking_burrowstrike_battleship_Description"               ""
+"DOTA_Tooltip_ability_sandking_burrowstrike_battleship_Note0"                     ""
+"DOTA_Tooltip_ability_sandking_burrowstrike_battleship_Lore"                      ""
+"DOTA_Tooltip_ability_sandking_burrowstrike_battleship_burrow_width"              ""
+"DOTA_Tooltip_ability_sandking_burrowstrike_battleship_burrow_duration"           ""
+"DOTA_Tooltip_ability_sandking_burrowstrike_battleship_burrow_speed"              ""
+"DOTA_Tooltip_ability_sandking_burrowstrike_battleship_burrow_anim_time"          ""
+"DOTA_Tooltip_ability_sandking_burrowstrike_battleship_tooltip_range"             ""
+
+"DOTA_Tooltip_ability_submerge_battleship"                                        ""
+"DOTA_Tooltip_ability_submerge_battleship_Description"                            ""
+"DOTA_Tooltip_ability_submerge_battleship_Note0"                                  ""
+"DOTA_Tooltip_ability_submerge_battleship_Lore"                                   ""
+"DOTA_Tooltip_ability_submerge_battleship_bonus_movement"                         ""
+"DOTA_Tooltip_ability_submerge_battleship_bonus_armor"                            ""
+"DOTA_Tooltip_ability_submerge_battleship_mana_bonus"                             ""
+
+"DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship"                          ""
+"DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship_Description"              ""
+"DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship_Note0"                    ""
+"DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship_Lore"                     ""
+"DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship_duration"                 ""
+"DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship_damage_absorb"            ""
+"DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship_radius"                   ""
+
+"DOTA_Tooltip_ability_into_the_hold"                                              ""
+"DOTA_Tooltip_ability_into_the_hold_Description"                                  ""
+"DOTA_Tooltip_ability_into_the_hold_Note0"                                        ""
+"DOTA_Tooltip_ability_into_the_hold_Lore"                                         ""
+"DOTA_Tooltip_ability_into_the_hold_duration"                                     ""
+"DOTA_Tooltip_ability_into_the_hold_bonus_armor"                                  ""
+"DOTA_Tooltip_ability_into_the_hold_health_regen"                                 ""
+
+"DOTA_Tooltip_ability_salvage_battleship"                                         ""
+"DOTA_Tooltip_ability_salvage_battleship_Description"                             ""
+"DOTA_Tooltip_ability_salvage_battleship_Note0"                                   ""
+"DOTA_Tooltip_ability_salvage_battleship_Lore"                                    ""
+"DOTA_Tooltip_ability_salvage_battleship_heal_amount"                             ""
+"DOTA_Tooltip_ability_salvage_battleship_heal_amount_other"                       ""
+
+"DOTA_Tooltip_ability_batten_hatches"                                             ""
+"DOTA_Tooltip_ability_batten_hatches_Description"                                 ""
+"DOTA_Tooltip_ability_batten_hatches_Note0"                                       ""
+"DOTA_Tooltip_ability_batten_hatches_Lore"                                        ""
+"DOTA_Tooltip_ability_batten_hatches_hoop_bonus_armor"                            ""
+"DOTA_Tooltip_ability_batten_hatches_health_regen"                                ""
+
+"DOTA_Tooltip_ability_shove_battleship"                                           ""
+"DOTA_Tooltip_ability_shove_battleship_Description"                               ""
+"DOTA_Tooltip_ability_shove_battleship_Note0"                                     ""
+"DOTA_Tooltip_ability_shove_battleship_Lore"                                      ""
+"DOTA_Tooltip_ability_shove_battleship_turn_rate"                                 ""
+"DOTA_Tooltip_ability_shove_battleship_duration"                                  ""
+
+"DOTA_Tooltip_ability_puck_waning_rift_battleship"                                ""
+"DOTA_Tooltip_ability_puck_waning_rift_battleship_Description"                    ""
+"DOTA_Tooltip_ability_puck_waning_rift_battleship_Note0"                          ""
+"DOTA_Tooltip_ability_puck_waning_rift_battleship_Lore"                           ""
+"DOTA_Tooltip_ability_puck_waning_rift_battleship_radius"                         ""
+"DOTA_Tooltip_ability_puck_waning_rift_battleship_silence_duration"               ""
+
+"DOTA_Tooltip_ability_shadow_shaman_shackles_battleship"                          ""
+"DOTA_Tooltip_ability_shadow_shaman_shackles_battleship_Description"              ""
+"DOTA_Tooltip_ability_shadow_shaman_shackles_battleship_Note0"                    ""
+"DOTA_Tooltip_ability_shadow_shaman_shackles_battleship_Lore"                     ""
+"DOTA_Tooltip_ability_shadow_shaman_shackles_battleship_tick_interval"            ""
+"DOTA_Tooltip_ability_shadow_shaman_shackles_battleship_channel_time"             ""
+"DOTA_Tooltip_ability_shadow_shaman_shackles_battleship_total_damage"             ""
+
+"DOTA_Tooltip_ability_ruse_battleship"                                            ""
+"DOTA_Tooltip_ability_ruse_battleship_Description"                                ""
+"DOTA_Tooltip_ability_ruse_battleship_Note0"                                      ""
+"DOTA_Tooltip_ability_ruse_battleship_Lore"                                       ""
+"DOTA_Tooltip_ability_ruse_battleship_duration"                                   ""
+"DOTA_Tooltip_ability_ruse_battleship_dmg"                                        ""
+
+"DOTA_Tooltip_ability_gag_battleship"                                             ""
+"DOTA_Tooltip_ability_gag_battleship_Description"                                 ""
+"DOTA_Tooltip_ability_gag_battleship_Note0"                                       ""
+"DOTA_Tooltip_ability_gag_battleship_Lore"                                        ""
+"DOTA_Tooltip_ability_gag_battleship_duration"                                    ""
+
+"DOTA_Tooltip_ability_war_drumbs_battleship"                                      ""
+"DOTA_Tooltip_ability_war_drumbs_battleship_Description"                          ""
+"DOTA_Tooltip_ability_war_drumbs_battleship_Note0"                                ""
+"DOTA_Tooltip_ability_war_drumbs_battleship_Lore"                                 ""
+"DOTA_Tooltip_ability_war_drumbs_battleship_duration"                             ""
+"DOTA_Tooltip_ability_war_drumbs_battleship_bonus_move_speed"                     ""
+
+"DOTA_Tooltip_ability_might_battleship"                                           ""
+"DOTA_Tooltip_ability_might_battleship_Description"                               ""
+"DOTA_Tooltip_ability_might_battleship_Note0"                                     ""
+"DOTA_Tooltip_ability_might_battleship_Lore"                                      ""
+"DOTA_Tooltip_ability_might_battleship_duration"                                  ""
+"DOTA_Tooltip_ability_might_battleship_bonus_hp"                                  ""
+
+"DOTA_Tooltip_ability_swamp_gas_battleship"                                       ""
+"DOTA_Tooltip_ability_swamp_gas_battleship_Description"                           ""
+"DOTA_Tooltip_ability_swamp_gas_battleship_Note0"                                 ""
+"DOTA_Tooltip_ability_swamp_gas_battleship_Lore"                                  ""
+"DOTA_Tooltip_ability_swamp_gas_battleship_damage"                                ""
+"DOTA_Tooltip_ability_swamp_gas_battleship_duration"                              ""
+"DOTA_Tooltip_ability_swamp_gas_battleship_total_damage"                          ""
+
+"DOTA_Tooltip_ability_fan_blast_battleship"                                       ""
+"DOTA_Tooltip_ability_fan_blast_battleship_Description"                           ""
+"DOTA_Tooltip_ability_fan_blast_battleship_Note0"                                 ""
+"DOTA_Tooltip_ability_fan_blast_battleship_Lore"                                  ""
+"DOTA_Tooltip_ability_fan_blast_battleship_movement_speed"                        ""
+"DOTA_Tooltip_ability_fan_blast_battleship_damage"                                ""
+"DOTA_Tooltip_ability_fan_blast_battleship_duration"                              ""
+
+"DOTA_Tooltip_ability_dragon_battleship"                                          ""
+"DOTA_Tooltip_ability_dragon_battleship_Description"                              ""
+"DOTA_Tooltip_ability_dragon_battleship_Note0"                                    ""
+"DOTA_Tooltip_ability_dragon_battleship_Lore"                                     ""
+"DOTA_Tooltip_ability_dragon_battleship_radius"                                   ""
+"DOTA_Tooltip_ability_dragon_battleship_damage"                                   ""
+"DOTA_Tooltip_ability_dragon_battleship_duration"                                 ""
+
+"DOTA_Tooltip_ability_firework_battleship"                                        ""
+"DOTA_Tooltip_ability_firework_battleship_Description"                            ""
+"DOTA_Tooltip_ability_firework_battleship_Note0"                                  ""
+"DOTA_Tooltip_ability_firework_battleship_Lore"                                   ""
+"DOTA_Tooltip_ability_firework_battleship_duration"                               ""
+"DOTA_Tooltip_ability_firework_battleship_range"                                  ""
+
+"DOTA_Tooltip_ability_nav_hack_battleship"                                        ""
+"DOTA_Tooltip_ability_nav_hack_battleship_Description"                            ""
+"DOTA_Tooltip_ability_nav_hack_battleship_Note0"                                  ""
+"DOTA_Tooltip_ability_nav_hack_battleship_Lore"                                   ""
+"DOTA_Tooltip_ability_nav_hack_battleship_duration"                               ""
+
+"DOTA_Tooltip_ability_iceberg_battleship"                                         ""
+"DOTA_Tooltip_ability_iceberg_battleship_Description"                             ""
+"DOTA_Tooltip_ability_iceberg_battleship_Note0"                                   ""
+"DOTA_Tooltip_ability_iceberg_battleship_Lore"                                    ""
+"DOTA_Tooltip_ability_iceberg_battleship_duration"                                ""
+"DOTA_Tooltip_ability_iceberg_battleship_damage"                                  ""
+
+"DOTA_Tooltip_ability_jakiro_ice_path_battleship"                                 ""
+"DOTA_Tooltip_ability_jakiro_ice_path_battleship_Description"                     ""
+"DOTA_Tooltip_ability_jakiro_ice_path_battleship_Note0"                           ""
+"DOTA_Tooltip_ability_jakiro_ice_path_battleship_Lore"                            ""
+"DOTA_Tooltip_ability_jakiro_ice_path_battleship_path_delay"                      ""
+"DOTA_Tooltip_ability_jakiro_ice_path_battleship_duration"                        ""
+"DOTA_Tooltip_ability_jakiro_ice_path_battleship_path_radius"                     ""
+"DOTA_Tooltip_ability_jakiro_ice_path_battleship_damage"                          ""
+"DOTA_Tooltip_ability_jakiro_ice_path_battleship_RANGE"                           ""
+
+"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship"                   ""
+"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_Description"       ""
+"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_Note0"             ""
+"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_Lore"              ""
+"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_radius"            ""
+"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_explosion_radius"		""
+"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_explosion_interval"		""
+"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_movespeed_slow"    ""
+"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_attack_slow"       ""
+"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_slow_duration"     ""
+"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_explosion_min_dist"		""
+"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_explosion_max_dist"		""
+"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_damage"            ""
+"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_damage_scepter"    ""
+"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_movespeed_slow_scepter"		""
+"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_attack_slow_scepter"		""
+
+"DOTA_Tooltip_ability_icy_waters_battleship"                                      ""
+"DOTA_Tooltip_ability_icy_waters_battleship_Description"                          ""
+"DOTA_Tooltip_ability_icy_waters_battleship_Note0"                                ""
+"DOTA_Tooltip_ability_icy_waters_battleship_Lore"                                 ""
+"DOTA_Tooltip_ability_icy_waters_battleship_fun_bonus_move_speed"                 ""
+
+"DOTA_Tooltip_ability_tidehunter_ravage_battleship"                               ""
+"DOTA_Tooltip_ability_tidehunter_ravage_battleship_Description"                   ""
+"DOTA_Tooltip_ability_tidehunter_ravage_battleship_Note0"                         ""
+"DOTA_Tooltip_ability_tidehunter_ravage_battleship_Lore"                          ""
+"DOTA_Tooltip_ability_tidehunter_ravage_battleship_radius"                        ""
+"DOTA_Tooltip_ability_tidehunter_ravage_battleship_speed"                         ""
+"DOTA_Tooltip_ability_tidehunter_ravage_battleship_duration"                      ""
+
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide"                            ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_Description"                ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_Note0"                      ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_Lore"                       ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_hook_speed"                 ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_hook_width"                 ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_hook_distance"              ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_vision_radius"              ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_vision_duration"            ""
+
+"DOTA_Tooltip_ability_tide_wep_battleship"                                        ""
+"DOTA_Tooltip_ability_tide_wep_battleship_Description"                            ""
+"DOTA_Tooltip_ability_tide_wep_battleship_Note0"                                  ""
+"DOTA_Tooltip_ability_tide_wep_battleship_Lore"                                   ""
+"DOTA_Tooltip_ability_tide_wep_battleship_fun_bonus_move_speed"                   ""
+
+
+// ******************** ITEMS ********************

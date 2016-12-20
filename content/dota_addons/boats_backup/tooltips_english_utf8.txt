@@ -1,0 +1,458 @@
+﻿// **********************************************************************************************************************
+// This file contains generated tooltips created from the files in the scripts/npc directory of this mod.
+// It does not contain tooltips already defined in addon_english.txt, nor modifiers with the property "IsHidden" "1".
+// **********************************************************************************************************************
+
+// ******************** HEROES ********************
+
+// ******************** UNITS ********************
+"npc_dota_rainbow_unit"                                                           ""
+"npc_dota_turret"                                                                 ""
+"npc_dota_creep_upgrade"                                                          ""
+"npc_dota_vision_granter"                                                         ""
+"npc_dota_rng_ind"                                                                ""
+"npc_dota_iceberg"                                                                ""
+
+// ******************** ABILITY MODIFIERS ********************
+"DOTA_Tooltip_modifier_fire_pistols"                                              ""
+"DOTA_Tooltip_modifier_fire_pistols_Description"                                  ""
+
+"DOTA_Tooltip_modifier_bailing_water"                                             ""
+"DOTA_Tooltip_modifier_bailing_water_Description"                                 ""
+
+"DOTA_Tooltip_modifier_tightened_hoops"                                           ""
+"DOTA_Tooltip_modifier_tightened_hoops_Description"                               ""
+
+"DOTA_Tooltip_modifier_discoing"                                                  ""
+"DOTA_Tooltip_modifier_discoing_Description"                                      ""
+
+"DOTA_Tooltip_modifier_fun_aura"                                                  ""
+"DOTA_Tooltip_modifier_fun_aura_Description"                                      ""
+
+"DOTA_Tooltip_modifier_remove_vision"                                             ""
+"DOTA_Tooltip_modifier_remove_vision_Description"                                 ""
+
+"DOTA_Tooltip_modifier_ramming_speed"                                             ""
+"DOTA_Tooltip_modifier_ramming_speed_Description"                                 ""
+
+"DOTA_Tooltip_modifier_above_water"                                               ""
+"DOTA_Tooltip_modifier_above_water_Description"                                   ""
+
+"DOTA_Tooltip_modifier_bilge_mod"                                                 ""
+"DOTA_Tooltip_modifier_bilge_mod_Description"                                     ""
+
+"DOTA_Tooltip_modifier_Gunning_it"                                                ""
+"DOTA_Tooltip_modifier_Gunning_it_Description"                                    ""
+
+"DOTA_Tooltip_modifier_start_fire"                                                ""
+"DOTA_Tooltip_modifier_start_fire_Description"                                    ""
+
+"DOTA_Tooltip_modifier_fire_area"                                                 ""
+"DOTA_Tooltip_modifier_fire_area_Description"                                     ""
+
+"DOTA_Tooltip_modifier_create_fire_area_aura"                                     ""
+"DOTA_Tooltip_modifier_create_fire_area_aura_Description"                         ""
+
+"DOTA_Tooltip_modifier_fx_test_modifier"                                          ""
+"DOTA_Tooltip_modifier_fx_test_modifier_Description"                              ""
+
+"DOTA_Tooltip_modifier_fly"                                                       ""
+"DOTA_Tooltip_modifier_fly_Description"                                           ""
+
+"DOTA_Tooltip_modifier_fx_test_modifier"                                          ""
+"DOTA_Tooltip_modifier_fx_test_modifier_Description"                              ""
+
+"DOTA_Tooltip_modifier_move_carrier_in"                                           ""
+"DOTA_Tooltip_modifier_move_carrier_in_Description"                               ""
+
+"DOTA_Tooltip_modifier_start_go_back"                                             ""
+"DOTA_Tooltip_modifier_start_go_back_Description"                                 ""
+
+"DOTA_Tooltip_modifier_kill_self"                                                 ""
+"DOTA_Tooltip_modifier_kill_self_Description"                                     ""
+
+"DOTA_Tooltip_modifier_Pillage_Guns"                                              ""
+"DOTA_Tooltip_modifier_Pillage_Guns_Description"                                  ""
+
+"DOTA_Tooltip_modifier_building_dearmor"                                          ""
+"DOTA_Tooltip_modifier_building_dearmor_Description"                              ""
+
+"DOTA_Tooltip_modifier_big_boom"                                                  ""
+"DOTA_Tooltip_modifier_big_boom_Description"                                      ""
+
+"DOTA_Tooltip_modifier_evasion_aura"                                              ""
+"DOTA_Tooltip_modifier_evasion_aura_Description"                                  ""
+
+"DOTA_Tooltip_modifier_creator"                                                   ""
+"DOTA_Tooltip_modifier_creator_Description"                                       ""
+
+"DOTA_Tooltip_modifier_rainbow"                                                   ""
+"DOTA_Tooltip_modifier_rainbow_Description"                                       ""
+
+"DOTA_Tooltip_modifier_killSelf"                                                  ""
+"DOTA_Tooltip_modifier_killSelf_Description"                                      ""
+
+"DOTA_Tooltip_modifier_stop_aura"                                                 ""
+"DOTA_Tooltip_modifier_stop_aura_Description"                                     ""
+
+"DOTA_Tooltip_modifier_fx_test_modifier"                                          ""
+"DOTA_Tooltip_modifier_fx_test_modifier_Description"                              ""
+
+"DOTA_Tooltip_modifier_mayday_ind"                                                ""
+"DOTA_Tooltip_modifier_mayday_ind_Description"                                    ""
+
+"DOTA_Tooltip_modifier_goHome"                                                    ""
+"DOTA_Tooltip_modifier_goHome_Description"                                        ""
+
+"DOTA_Tooltip_modifier_goHome"                                                    ""
+"DOTA_Tooltip_modifier_goHome_Description"                                        ""
+
+"DOTA_Tooltip_modifier_swimbreak"                                                 ""
+"DOTA_Tooltip_modifier_swimbreak_Description"                                     ""
+
+"DOTA_Tooltip_modifier_stunned_from_relaxing"                                     ""
+"DOTA_Tooltip_modifier_stunned_from_relaxing_Description"                         ""
+
+"DOTA_Tooltip_modifier_keep_up"                                                   ""
+"DOTA_Tooltip_modifier_keep_up_Description"                                       ""
+
+"DOTA_Tooltip_modifier_keep_up_effect"                                            ""
+"DOTA_Tooltip_modifier_keep_up_effect_Description"                                ""
+
+"DOTA_Tooltip_modifier_monkey_buisness"                                           ""
+"DOTA_Tooltip_modifier_monkey_buisness_Description"                               ""
+
+"DOTA_Tooltip_modifier_elephant_intimidation"                                     ""
+"DOTA_Tooltip_modifier_elephant_intimidation_Description"                         ""
+
+"DOTA_Tooltip_modifier_move_carrier_in"                                           ""
+"DOTA_Tooltip_modifier_move_carrier_in_Description"                               ""
+
+"DOTA_Tooltip_modifier_go_back"                                                   ""
+"DOTA_Tooltip_modifier_go_back_Description"                                       ""
+
+"DOTA_Tooltip_modifier_giraffe_grab"                                              ""
+"DOTA_Tooltip_modifier_giraffe_grab_Description"                                  ""
+
+"DOTA_Tooltip_modifier_submerged"                                                 ""
+"DOTA_Tooltip_modifier_submerged_Description"                                     ""
+
+"DOTA_Tooltip_modifier_in_the_hold"                                               ""
+"DOTA_Tooltip_modifier_in_the_hold_Description"                                   ""
+
+"DOTA_Tooltip_modifier_in_the_hold_finder"                                        ""
+"DOTA_Tooltip_modifier_in_the_hold_finder_Description"                            ""
+
+"DOTA_Tooltip_modifier_salvager"                                                  ""
+"DOTA_Tooltip_modifier_salvager_Description"                                      ""
+
+"DOTA_Tooltip_modifier_root_self"                                                 ""
+"DOTA_Tooltip_modifier_root_self_Description"                                     ""
+
+"DOTA_Tooltip_modifier_batten_hatches"                                            ""
+"DOTA_Tooltip_modifier_batten_hatches_Description"                                ""
+
+"DOTA_Tooltip_modifier_push_back"                                                 ""
+"DOTA_Tooltip_modifier_push_back_Description"                                     ""
+
+"DOTA_Tooltip_modifier_root_self"                                                 ""
+"DOTA_Tooltip_modifier_root_self_Description"                                     ""
+
+"DOTA_Tooltip_modifier_creep_buffer"                                              ""
+"DOTA_Tooltip_modifier_creep_buffer_Description"                                  ""
+
+"DOTA_Tooltip_modifier_reflected"                                                 ""
+"DOTA_Tooltip_modifier_reflected_Description"                                     ""
+
+"DOTA_Tooltip_modifier_take_reflected"                                            ""
+"DOTA_Tooltip_modifier_take_reflected_Description"                                ""
+
+"DOTA_Tooltip_modifier_gag_order"                                                 ""
+"DOTA_Tooltip_modifier_gag_order_Description"                                     ""
+
+"DOTA_Tooltip_modifier_speed_aura"                                                ""
+"DOTA_Tooltip_modifier_speed_aura_Description"                                    ""
+
+"DOTA_Tooltip_modifier_hp_boost"                                                  ""
+"DOTA_Tooltip_modifier_hp_boost_Description"                                      ""
+
+"DOTA_Tooltip_modifier_gas_mod"                                                   ""
+"DOTA_Tooltip_modifier_gas_mod_Description"                                       ""
+
+"DOTA_Tooltip_modifier_blasted"                                                   ""
+"DOTA_Tooltip_modifier_blasted_Description"                                       ""
+
+"DOTA_Tooltip_modifier_dragon_death_thinker"                                      ""
+"DOTA_Tooltip_modifier_dragon_death_thinker_Description"                          ""
+
+"DOTA_Tooltip_modifier_nav_mess"                                                  ""
+"DOTA_Tooltip_modifier_nav_mess_Description"                                      ""
+
+"DOTA_Tooltip_modifier_keep_alive"                                                ""
+"DOTA_Tooltip_modifier_keep_alive_Description"                                    ""
+
+"DOTA_Tooltip_modifier_alive"                                                     ""
+"DOTA_Tooltip_modifier_alive_Description"                                         ""
+
+"DOTA_Tooltip_modifier_root_self"                                                 ""
+"DOTA_Tooltip_modifier_root_self_Description"                                     ""
+
+"DOTA_Tooltip_modifier_trap"                                                      ""
+"DOTA_Tooltip_modifier_trap_Description"                                          ""
+
+"DOTA_Tooltip_modifier_aura_ice"                                                  ""
+"DOTA_Tooltip_modifier_aura_ice_Description"                                      ""
+
+"DOTA_Tooltip_modifier_ice_aura"                                                  ""
+"DOTA_Tooltip_modifier_ice_aura_Description"                                      ""
+
+"DOTA_Tooltip_modifier_item_ice_three_bow_shooting_doubled"                       ""
+"DOTA_Tooltip_modifier_item_ice_three_bow_shooting_doubled_Description"           ""
+
+
+// ******************** ITEM MODIFIERS ********************
+"DOTA_Tooltip_modifier_restart_healing"                                           ""
+"DOTA_Tooltip_modifier_restart_healing_Description"                               ""
+
+"DOTA_Tooltip_modifier_restart_healing"                                           ""
+"DOTA_Tooltip_modifier_restart_healing_Description"                               ""
+
+"DOTA_Tooltip_modifier_restart_healing"                                           ""
+"DOTA_Tooltip_modifier_restart_healing_Description"                               ""
+
+"DOTA_Tooltip_modifier_restart_healing"                                           ""
+"DOTA_Tooltip_modifier_restart_healing_Description"                               ""
+
+"DOTA_Tooltip_modifier_item_poison_bow_shooting"                                  ""
+"DOTA_Tooltip_modifier_item_poison_bow_shooting_Description"                      ""
+
+"DOTA_Tooltip_modifier_item_fire_bow_shooting"                                    ""
+"DOTA_Tooltip_modifier_item_fire_bow_shooting_Description"                        ""
+
+"DOTA_Tooltip_modifier_item_ice_bow_shooting"                                     ""
+"DOTA_Tooltip_modifier_item_ice_bow_shooting_Description"                         ""
+
+"DOTA_Tooltip_modifier_item_wind_bow_shooting"                                    ""
+"DOTA_Tooltip_modifier_item_wind_bow_shooting_Description"                        ""
+
+"DOTA_Tooltip_modifier_item_light_bow_shooting"                                   ""
+"DOTA_Tooltip_modifier_item_light_bow_shooting_Description"                       ""
+
+"DOTA_Tooltip_modifier_item_coal_bow_shooting"                                    ""
+"DOTA_Tooltip_modifier_item_coal_bow_shooting_Description"                        ""
+
+"DOTA_Tooltip_modifier_item_plasma_bow_shooting"                                  ""
+"DOTA_Tooltip_modifier_item_plasma_bow_shooting_Description"                      ""
+
+"DOTA_Tooltip_modifier_item_poison_two_bow_shooting"                              ""
+"DOTA_Tooltip_modifier_item_poison_two_bow_shooting_Description"                  ""
+
+"DOTA_Tooltip_modifier_item_fire_two_bow_shooting"                                ""
+"DOTA_Tooltip_modifier_item_fire_two_bow_shooting_Description"                    ""
+
+"DOTA_Tooltip_modifier_item_ice_two_bow_shooting"                                 ""
+"DOTA_Tooltip_modifier_item_ice_two_bow_shooting_Description"                     ""
+
+"DOTA_Tooltip_modifier_item_wind_two_bow_shooting"                                ""
+"DOTA_Tooltip_modifier_item_wind_two_bow_shooting_Description"                    ""
+
+"DOTA_Tooltip_modifier_item_light_two_bow_shooting"                               ""
+"DOTA_Tooltip_modifier_item_light_two_bow_shooting_Description"                   ""
+
+"DOTA_Tooltip_modifier_item_coal_two_bow_shooting"                                ""
+"DOTA_Tooltip_modifier_item_coal_two_bow_shooting_Description"                    ""
+
+"DOTA_Tooltip_modifier_item_plasma_two_bow_shooting"                              ""
+"DOTA_Tooltip_modifier_item_plasma_two_bow_shooting_Description"                  ""
+
+"DOTA_Tooltip_modifier_item_poison_three_bow_shooting"                            ""
+"DOTA_Tooltip_modifier_item_poison_three_bow_shooting_Description"                ""
+
+"DOTA_Tooltip_modifier_item_fire_three_bow_shooting"                              ""
+"DOTA_Tooltip_modifier_item_fire_three_bow_shooting_Description"                  ""
+
+"DOTA_Tooltip_modifier_item_ice_three_bow_shooting"                               ""
+"DOTA_Tooltip_modifier_item_ice_three_bow_shooting_Description"                   ""
+
+"DOTA_Tooltip_modifier_item_wind_three_bow_shooting"                              ""
+"DOTA_Tooltip_modifier_item_wind_three_bow_shooting_Description"                  ""
+
+"DOTA_Tooltip_modifier_item_light_three_bow_shooting"                             ""
+"DOTA_Tooltip_modifier_item_light_three_bow_shooting_Description"                 ""
+
+"DOTA_Tooltip_modifier_item_coal_three_bow_shooting"                              ""
+"DOTA_Tooltip_modifier_item_coal_three_bow_shooting_Description"                  ""
+
+"DOTA_Tooltip_modifier_item_plasma_three_bow_shooting"                            ""
+"DOTA_Tooltip_modifier_item_plasma_three_bow_shooting_Description"                ""
+
+"DOTA_Tooltip_modifier_item_poison_bow_shooting_doubled"                          ""
+"DOTA_Tooltip_modifier_item_poison_bow_shooting_doubled_Description"              ""
+
+"DOTA_Tooltip_modifier_item_fire_bow_shooting_doubled"                            ""
+"DOTA_Tooltip_modifier_item_fire_bow_shooting_doubled_Description"                ""
+
+"DOTA_Tooltip_modifier_item_ice_bow_shooting_doubled"                             ""
+"DOTA_Tooltip_modifier_item_ice_bow_shooting_doubled_Description"                 ""
+
+"DOTA_Tooltip_modifier_item_wind_bow_shooting_doubled"                            ""
+"DOTA_Tooltip_modifier_item_wind_bow_shooting_doubled_Description"                ""
+
+"DOTA_Tooltip_modifier_item_light_bow_shooting_doubled"                           ""
+"DOTA_Tooltip_modifier_item_light_bow_shooting_doubled_Description"               ""
+
+"DOTA_Tooltip_modifier_item_coal_bow_shooting_doubled"                            ""
+"DOTA_Tooltip_modifier_item_coal_bow_shooting_doubled_Description"                ""
+
+"DOTA_Tooltip_modifier_item_plasma_bow_shooting_doubled"                          ""
+"DOTA_Tooltip_modifier_item_plasma_bow_shooting_doubled_Description"              ""
+
+"DOTA_Tooltip_modifier_item_poison_two_bow_shooting_doubled"                      ""
+"DOTA_Tooltip_modifier_item_poison_two_bow_shooting_doubled_Description"          ""
+
+"DOTA_Tooltip_modifier_item_fire_two_bow_shooting_doubled"                        ""
+"DOTA_Tooltip_modifier_item_fire_two_bow_shooting_doubled_Description"            ""
+
+"DOTA_Tooltip_modifier_item_ice_two_bow_shooting_doubled"                         ""
+"DOTA_Tooltip_modifier_item_ice_two_bow_shooting_doubled_Description"             ""
+
+"DOTA_Tooltip_modifier_item_wind_two_bow_shooting_doubled"                        ""
+"DOTA_Tooltip_modifier_item_wind_two_bow_shooting_doubled_Description"            ""
+
+"DOTA_Tooltip_modifier_item_light_two_bow_shooting_doubled"                       ""
+"DOTA_Tooltip_modifier_item_light_two_bow_shooting_doubled_Description"           ""
+
+"DOTA_Tooltip_modifier_item_coal_two_bow_shooting_doubled"                        ""
+"DOTA_Tooltip_modifier_item_coal_two_bow_shooting_doubled_Description"            ""
+
+"DOTA_Tooltip_modifier_item_plasma_two_bow_shooting_doubled"                      ""
+"DOTA_Tooltip_modifier_item_plasma_two_bow_shooting_doubled_Description"          ""
+
+"DOTA_Tooltip_modifier_item_poison_three_bow_shooting_doubled"                    ""
+"DOTA_Tooltip_modifier_item_poison_three_bow_shooting_doubled_Description"        ""
+
+"DOTA_Tooltip_modifier_item_fire_three_bow_shooting_doubled"                      ""
+"DOTA_Tooltip_modifier_item_fire_three_bow_shooting_doubled_Description"          ""
+
+"DOTA_Tooltip_modifier_item_ice_three_bow_shooting_doubled"                       ""
+"DOTA_Tooltip_modifier_item_ice_three_bow_shooting_doubled_Description"           ""
+
+"DOTA_Tooltip_modifier_item_wind_three_bow_shooting_doubled"                      ""
+"DOTA_Tooltip_modifier_item_wind_three_bow_shooting_doubled_Description"          ""
+
+"DOTA_Tooltip_modifier_item_light_three_bow_shooting_doubled"                     ""
+"DOTA_Tooltip_modifier_item_light_three_bow_shooting_doubled_Description"         ""
+
+"DOTA_Tooltip_modifier_item_coal_three_bow_shooting_doubled"                      ""
+"DOTA_Tooltip_modifier_item_coal_three_bow_shooting_doubled_Description"          ""
+
+"DOTA_Tooltip_modifier_item_plasma_three_bow_shooting_doubled"                    ""
+"DOTA_Tooltip_modifier_item_plasma_three_bow_shooting_doubled_Description"        ""
+
+"DOTA_Tooltip_modifier_item_poison_ult_bow_shooting"                              ""
+"DOTA_Tooltip_modifier_item_poison_ult_bow_shooting_Description"                  ""
+
+"DOTA_Tooltip_modifier_item_poison_ult_bow_pleagued"                              ""
+"DOTA_Tooltip_modifier_item_poison_ult_bow_pleagued_Description"                  ""
+
+"DOTA_Tooltip_modifier_item_fire_ult_bow_shooting"                                ""
+"DOTA_Tooltip_modifier_item_fire_ult_bow_shooting_Description"                    ""
+
+"DOTA_Tooltip_modifier_create_fire_area_aura"                                     ""
+"DOTA_Tooltip_modifier_create_fire_area_aura_Description"                         ""
+
+"DOTA_Tooltip_modifier_item_ice_ult_bow_shooting"                                 ""
+"DOTA_Tooltip_modifier_item_ice_ult_bow_shooting_Description"                     ""
+
+"DOTA_Tooltip_modifier_item_ice_ult_bow_slow"                                     ""
+"DOTA_Tooltip_modifier_item_ice_ult_bow_slow_Description"                         ""
+
+"DOTA_Tooltip_modifier_item_wind_ult_bow_shooting"                                ""
+"DOTA_Tooltip_modifier_item_wind_ult_bow_shooting_Description"                    ""
+
+"DOTA_Tooltip_modifier_aura_speed_wind"                                           ""
+"DOTA_Tooltip_modifier_aura_speed_wind_Description"                               ""
+
+"DOTA_Tooltip_modifier_speed_aura_wind"                                           ""
+"DOTA_Tooltip_modifier_speed_aura_wind_Description"                               ""
+
+"DOTA_Tooltip_modifier_item_wind_ult_bow_buffet"                                  ""
+"DOTA_Tooltip_modifier_item_wind_ult_bow_buffet_Description"                      ""
+
+"DOTA_Tooltip_modifier_item_light_ult_bow_shooting"                               ""
+"DOTA_Tooltip_modifier_item_light_ult_bow_shooting_Description"                   ""
+
+"DOTA_Tooltip_modifier_item_coal_ult_bow_shooting"                                ""
+"DOTA_Tooltip_modifier_item_coal_ult_bow_shooting_Description"                    ""
+
+"DOTA_Tooltip_modifier_item_coal_ult_bow_stunned"                                 ""
+"DOTA_Tooltip_modifier_item_coal_ult_bow_stunned_Description"                     ""
+
+"DOTA_Tooltip_modifier_item_plasma_ult_bow_shooting"                              ""
+"DOTA_Tooltip_modifier_item_plasma_ult_bow_shooting_Description"                  ""
+
+"DOTA_Tooltip_modifier_item_plasma_ult_bow_dearmored"                             ""
+"DOTA_Tooltip_modifier_item_plasma_ult_bow_dearmored_Description"                 ""
+
+"DOTA_Tooltip_modifier_monkey_buisness_item"                                      ""
+"DOTA_Tooltip_modifier_monkey_buisness_item_Description"                          ""
+
+"DOTA_Tooltip_modifier_monkey_buisness_rest_item"                                 ""
+"DOTA_Tooltip_modifier_monkey_buisness_rest_item_Description"                     ""
+
+"DOTA_Tooltip_modifier_pergatory_3"                                               ""
+"DOTA_Tooltip_modifier_pergatory_3_Description"                                   ""
+
+"DOTA_Tooltip_modifier_pergatory_6"                                               ""
+"DOTA_Tooltip_modifier_pergatory_6_Description"                                   ""
+
+"DOTA_Tooltip_modifier_pergatory_9"                                               ""
+"DOTA_Tooltip_modifier_pergatory_9_Description"                                   ""
+
+"DOTA_Tooltip_modifier_pergatory_12"                                              ""
+"DOTA_Tooltip_modifier_pergatory_12_Description"                                  ""
+
+
+// ******************** ABILITIES ********************
+"DOTA_Tooltip_ability_dive_battleship_puck"                                       ""
+"DOTA_Tooltip_ability_dive_battleship_puck_Description"                           ""
+"DOTA_Tooltip_ability_dive_battleship_puck_Note0"                                 ""
+"DOTA_Tooltip_ability_dive_battleship_puck_Lore"                                  ""
+"DOTA_Tooltip_ability_dive_battleship_puck_duration"                              ""
+
+"DOTA_Tooltip_ability_batrider_firefly_battleship"                                ""
+"DOTA_Tooltip_ability_batrider_firefly_battleship_Description"                    ""
+"DOTA_Tooltip_ability_batrider_firefly_battleship_Note0"                          ""
+"DOTA_Tooltip_ability_batrider_firefly_battleship_Lore"                           ""
+"DOTA_Tooltip_ability_batrider_firefly_battleship_damage_per_second"              ""
+"DOTA_Tooltip_ability_batrider_firefly_battleship_radius"                         ""
+"DOTA_Tooltip_ability_batrider_firefly_battleship_duration"                       ""
+"DOTA_Tooltip_ability_batrider_firefly_battleship_tick_interval"                  ""
+"DOTA_Tooltip_ability_batrider_firefly_battleship_tree_radius"                    ""
+
+"DOTA_Tooltip_ability_tidehunter_ravage_battleship"                               ""
+"DOTA_Tooltip_ability_tidehunter_ravage_battleship_Description"                   ""
+"DOTA_Tooltip_ability_tidehunter_ravage_battleship_Note0"                         ""
+"DOTA_Tooltip_ability_tidehunter_ravage_battleship_Lore"                          ""
+"DOTA_Tooltip_ability_tidehunter_ravage_battleship_radius"                        ""
+"DOTA_Tooltip_ability_tidehunter_ravage_battleship_speed"                         ""
+"DOTA_Tooltip_ability_tidehunter_ravage_battleship_duration"                      ""
+
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide"                            ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_Description"                ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_Note0"                      ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_Lore"                       ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_hook_speed"                 ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_hook_width"                 ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_hook_distance"              ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_vision_radius"              ""
+"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_vision_duration"            ""
+
+"DOTA_Tooltip_ability_tide_wep_battleship"                                        ""
+"DOTA_Tooltip_ability_tide_wep_battleship_Description"                            ""
+"DOTA_Tooltip_ability_tide_wep_battleship_Note0"                                  ""
+"DOTA_Tooltip_ability_tide_wep_battleship_Lore"                                   ""
+"DOTA_Tooltip_ability_tide_wep_battleship_fun_bonus_move_speed"                   ""
+
+
+// ******************** ITEMS ********************

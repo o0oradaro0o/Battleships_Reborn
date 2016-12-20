@@ -253,8 +253,6 @@ function gunningItDamageRemove(args) -- keys is the information sent by the abil
 	if GunTicks[casterUnit:GetOwner():GetPlayerID()]~=nil and GunTicks[casterUnit:GetOwner():GetPlayerID()]>0 then
 		GunTicks[casterUnit:GetOwner():GetPlayerID()]=GunTicks[casterUnit:GetOwner():GetPlayerID()]-1
 	end
-
-	
 end
 
 
@@ -647,9 +645,9 @@ Timers:CreateTimer( 0.1, function()
 	local casterUnit = EntIndexToHScript( keys.caster_entindex )
 	local vecorig = Vector(0,0,0)
 	if casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-		 vecorig = Vector(-30,-7104,0)+RandomVector( RandomFloat( 0, 100 ))
+		 vecorig = Vector(-30,5604,0)+RandomVector( RandomFloat( 0, 100 ))
 	elseif  casterUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-		 vecorig = Vector(0,7040,0)+RandomVector( RandomFloat( 0, 100 ))
+		 vecorig = Vector(0,5540,0)+RandomVector( RandomFloat( 0, 100 ))
 	end	
 	casterUnit:SetOrigin(vecorig)
 	 end

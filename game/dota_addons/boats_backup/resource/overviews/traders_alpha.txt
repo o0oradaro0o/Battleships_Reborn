@@ -1,0 +1,8 @@
+traders_alpha
+{
+	material materials/overviews/traders_alpha.vmat
+	pos_x -8192
+	pos_y 7936
+	scale 15.750
+}
+

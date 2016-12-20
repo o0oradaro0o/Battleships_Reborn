@@ -1,0 +1,196 @@
+"dota_shops"
+{
+	"consumables"
+	{
+		"item"		"item_coal_bow"
+		"item"		"item_caulk_bow"
+		"item"		"item_fire_bow"
+		"item"		"item_plasma_bow"
+		"item"		"item_chaos_bow"
+		"item"		"item_poison_bow"
+
+		"item"		"item_light_bow"
+		"item"		"item_spin_bow"
+		"item"		"item_breach_bow"
+		"item"		"item_ice_bow"
+		"item"		"item_wind_bow"
+
+
+	}
+
+	"attributes"
+	{
+		"item"		"item_coal_two_bow"
+		"item"		"item_caulk_two_bow"
+		"item"		"item_fire_two_bow"
+		"item"		"item_plasma_two_bow"
+		"item"		"item_chaos_two_bow"
+		"item"		"item_poison_two_bow"
+
+		"item"		"item_light_two_bow"
+		"item"		"item_spin_two_bow"
+		"item"		"item_breach_two_bow"
+		"item"		"item_ice_two_bow"
+		"item"		"item_wind_two_bow"	
+		
+	}
+
+	"weapons_armor"
+	{
+	"item"		"item_coal_three_bow"
+		"item"		"item_caulk_three_bow"
+		"item"		"item_fire_three_bow"
+		"item"		"item_plasma_three_bow"
+		"item"		"item_chaos_three_bow"
+		"item"		"item_poison_three_bow"
+
+		"item"		"item_light_three_bow"
+		"item"		"item_spin_three_bow"
+		"item"		"item_breach_three_bow"
+		"item"		"item_ice_three_bow"
+		"item"		"item_wind_three_bow"
+		
+        //"item"		"item_hull_sail_one_combo_rec"
+        //"item"		"item_hull_sail_two_combo_rec"
+        //"item"		"item_hull_sail_three_combo_rec"
+        //"item"		"item_repair_wood_one_combo_rec"
+        //"item"		"item_repair_wood_two_combo_rec"
+        //"item"		"item_repair_wood_three_combo_rec"
+	}
+	
+	"misc"
+	{
+			
+		"item" 		"item_coal_ult_bow"
+		"item"		"item_caulk_ult_bow"
+		"item" 		"item_fire_ult_bow"
+		"item" 		"item_plasma_ult_bow"
+		"item"		"item_chaos_ult_bow"
+		"item"		"item_poison_ult_bow"
+
+		"item" 		"item_light_ult_bow"
+		"item" 		"item_spin_ult_bow"
+		"item"		"item_breach_ult_bow"
+		"item" 		"item_ice_ult_bow"
+		"item" 		"item_wind_ult_bow"
+
+	}	
+	
+	// Level 1 - Green Recipes
+	"basics"
+	{
+		"item"		"item_hull_one"
+		"item"		"item_hull_two"
+		"item"		"item_hull_three"
+		"item"		"item_hull_four"
+			
+	}
+
+	// Level 2 - Blue Recipes
+	"support"
+	{
+		"item"		"item_sail_one"
+		"item"		"item_sail_two"
+		"item"		"item_sail_three"
+		"item"		"item_sail_four"
+
+		//"item"		"item_hull_sail_four_combo"
+		
+	}
+	
+	"magics"
+	{
+		
+	}
+	
+	// Level 3 - Purple Recipes
+	"defense"
+	{
+		"item"		"item_repair_one"
+		"item"		"item_repair_two"
+		"item"		"item_repair_three"
+		"item"		"item_repair_four"
+	
+
+		
+	}
+	
+	"weapons"
+	{
+		"item"		"item_wood_one"
+		"item"		"item_wood_two"
+		"item"		"item_wood_three"
+		"item"		"item_wood_four"
+	}
+	
+	// Level 4 - Orange / Orb / Artifacts
+	"artifacts"
+	{
+		
+	}
+
+	"sideshop1"
+	{
+		"item" 		"item_fluff_flag1"
+		
+		"item"		"item_puck_replacement_boat"
+		
+		"item"		"item_rubick_replacement_boat"
+		
+		"item" 		"item_fluff_flag2"
+		
+		"item"		"item_kunkka_replacement_boat"
+		
+		"item"		"item_nevermore_replacement_boat"
+		
+		"item" 		"item_fluff_flag3"
+		
+		"item"		"item_magnus_replacement_boat"
+		
+		"item"		"item_shredder_replacement_boat"
+		
+		"item" 		"item_fluff_flag4"
+		
+		"item" 		"item_visage_replacement_boat"
+		
+		"item"		"item_gyrocopter_replacement_boat"
+		
+	}
+
+	"sideshop2"
+	{
+		"item"		"item_tidehunter_replacement_boat"
+		
+		"item"		"item_crystal_maiden_replacement_boat"
+		
+		"item"		"item_phantom_lancer_replacement_boat"
+		
+		"item" 		"item_morphling_replacement_boat"
+		
+		"item"		"item_lion_replacement_boat"
+		
+		"item" 		"item_storm_spirit_replacement_boat"
+		
+		"item"		"item_brewmaster_replacement_boat"
+		
+		"item" 		"item_jakiro_replacement_boat"
+		
+		"item"		"item_zuus_replacement_boat"
+		
+		"item"		"item_spectre_replacement_boat"
+		
+		"item"		"item_treant_replacement_boat"
+		
+		"item"		"item_wisp_replacement_boat"
+	}
+
+	
+	"secretshop"
+	{
+		"item"		"item_tower_debuff"
+		"item"		"item_tower_healer"
+		"item"		"item_nut_spawner"
+		
+		
+	}
+}

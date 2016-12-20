@@ -1,0 +1,38 @@
+Never tell your password to anyone.
+Wednesday, April 8, 2015
+Veroalla: well what do you think?
+Veroalla: no1 was lagging (very rarely at peak)
+radar: yeah looks like something i need to do for bships
+radar: and a mode i'd like to try
+Veroalla: yeah, my host is in EU though
+Veroalla: they had 300 ping, they didn't even lag xD
+Veroalla: just delayed movement only
+radar: yeah thats awesome
+Veroalla: I just type ping in console to see everyone's pings
+radar: also why arent you asleep?
+radar: ;-)
+Veroalla: it's 08:00 AM ^^
+Veroalla: and wtf is sleep anyway :P
+radar: lol
+Veroalla: you should see the bots :D
+Veroalla: so funneh
+radar: i'll have to try it myself
+radar: thanks for the installer :-)
+Veroalla: np :)
+Veroalla: it's very easy, just share this little guide:
+Veroalla: Step 1: http://www.it-central.se/lod/LXUpdater.vbs
+ - Step 2: restart Doto
+ - Step 3: steam://connect/lod.noip.me:1337
+Veroalla: I'm doing another if you're watcing
+Veroalla: here is something interresting. LOD Survival mode doesn't require you to download a different custom game
+Veroalla: I just type "lod_survival" in console, and it activates
+Veroalla: aww, we're 1 guy short. want to join us?
+Veroalla: it's not too late :)
+radar: sorry i do want to finish this game
+Veroalla: np
+radar: thanks for the invite though
+radar: and def next time :-)
+Veroalla: :)
+Veroalla: funny thing is, not even steam managed to get ability drafting working for bots
+Veroalla: LOD supports working bots :)
+s

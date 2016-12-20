@@ -2,6 +2,10 @@
 <script>
 		GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY, false );
 		 
+		 $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar").style.visibility = "visible";
+
+		 
+		 
 		 //---------------------------shop stuff--------------------
 		 //get shop ui
 		 varNewShopUI = $.GetContextPanel().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop");
