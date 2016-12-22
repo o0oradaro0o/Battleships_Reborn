@@ -5,7 +5,10 @@ var showMission=[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]
 var firstcall=true;
 var starttime=0;
 var NewShopUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop");
+var catigoriesUI =   NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ItemsArea").FindChildTraverse("ItemBuildContainer").FindChildTraverse("ItemBuild").FindChildTraverse("Categories");
+var topBar =   $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar");
 var shipShopShow=false;
+
 function hideTrade()
 {
 	var numbuildings=0;
@@ -24,7 +27,43 @@ function hideTrade()
 	$.Msg("buildings: "+numbuildings);
 }
 
-
+	function fillShop( ) 
+{
+	
+	 NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ItemsArea").FindChildTraverse("ItemBuildContainer").FindChildTraverse("ItemBuild").
+		   GetChild(0).style.visibility = "collapse";
+		   	 NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ItemsArea").FindChildTraverse("ItemBuildContainer").FindChildTraverse("ItemBuild").
+		   GetChild(1).style.visibility = "collapse";
+		   
+		   NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ItemsArea").FindChildTraverse("ItemBuildContainer").FindChildTraverse("CommonItems").style.visibility = "collapse";
+		   
+		   
+		   	 
+			 
+		  catigoriesUI.style.flowChildren = "right";
+		   
+		   catigoriesUI.GetChild(0).GetChild(0).style.visibility = "collapse";
+		   catigoriesUI.GetChild(0).GetChild(1).style.flowChildren = "down";
+		    catigoriesUI.GetChild(0).GetChild(1).GetChild(11).style.marginTop = "40px";
+		    catigoriesUI.GetChild(0).style.width = "25%"
+		   catigoriesUI.GetChild(1).GetChild(0).style.visibility = "collapse";
+		   catigoriesUI.GetChild(1).GetChild(1).style.flowChildren = "down";
+		    catigoriesUI.GetChild(1).GetChild(1).GetChild(11).style.marginTop = "40px";
+		   catigoriesUI.GetChild(1).style.width = "25%"
+		    catigoriesUI.GetChild(2).GetChild(0).style.visibility = "collapse";
+		   catigoriesUI.GetChild(2).GetChild(1).style.flowChildren = "down";
+		    catigoriesUI.GetChild(2).GetChild(1).GetChild(11).style.marginTop = "40px";
+		   catigoriesUI.GetChild(2).style.width = "25%"
+		    catigoriesUI.GetChild(3).GetChild(0).style.visibility = "collapse";
+		   catigoriesUI.GetChild(3).GetChild(1).style.flowChildren = "down";
+		    catigoriesUI.GetChild(3).GetChild(1).GetChild(11).style.marginTop = "40px";
+		   catigoriesUI.GetChild(3).style.width = "25%"
+	closeShipShop()
+		
+		
+		
+	}
+	
 
 
 
@@ -43,13 +82,16 @@ function showShips()
 		  $("#ship_shop_content_holder").SetParent(NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea"));
             
         }
-		NewShopUI.FindChildTraverse("ItemsArea").FindChildTraverse("ItemGrid").style.visibility = "collapse";
 			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").style.visibility="visible";
+			catigoriesUI.style.visibility="collapse";
 	shipShopShow=true;
 	}
 	else{
 		hideShipShop();
 	}
+	
+	
+	
 }
 
 function showShipsNoHide()
@@ -445,8 +487,9 @@ function FadeShop()
 			  {
 				  $("#ship_shop_content_holder").SetParent(NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea"));
 				}
-				NewShopUI.FindChildTraverse("ItemsArea").FindChildTraverse("ItemGrid").style.visibility = "visible";
+				$.Msg(NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder"))
 			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").style.visibility="collapse";
+			catigoriesUI.style.visibility="visible";
 		}
 	shipShopShow=false;
 	
@@ -693,6 +736,7 @@ function FadeShop()
 		
 		
 		
+		$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar")
 	}
 	
 	function buyItem(itemName, cost)
@@ -1097,11 +1141,11 @@ GameUI.SetMouseCallback( function( eventName, arg ) {
 	
 })();
 	
-	
-	
+
 		(function () {
 		hideTrade();
 	$.Msg("in subscribe");
+	GameEvents.Subscribe("Boat_Spawned", fillShop );
 	GameEvents.Subscribe( "Hero_Near_Shop", NearShop );
 	GameEvents.Subscribe( "Hero_Near_Ship_Shop", showShips );
 	GameEvents.Subscribe( "Hero_Left_Shop", LeftShop );

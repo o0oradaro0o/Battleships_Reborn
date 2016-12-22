@@ -2285,6 +2285,31 @@
             </Panel>
 		 </Panel>
 		 
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_ancient_apparition.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_bane.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_crystal_maiden.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_disruptor.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_ember_spirit.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_enigma.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_jakiro.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_lion.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_meepo.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_nevermore.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_phantom_lancer.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_pugna.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_rattletrap.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_slark.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_sniper.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_storm_spirit.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_tidehunter.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_tusk.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_ursa.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_vengefulspirit.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_visage.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_windrunner.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_winter_wyvern.png"  />
+		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_zuus.png"  />
+		 
         </Panel>
     </Panel>
 </root>

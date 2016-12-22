@@ -726,6 +726,11 @@
 				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"CallPuckDive"
 			}
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"RemoveWeps"
+			}
 		}
 		
 		"OnAbilityEndChannel"
@@ -735,6 +740,11 @@
 				"Target" "CASTER"
 				"ModifierName" "remove_vision"
 			}
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"RemoveDD"
+			}
 		}
 		"OnChannelInterrupted"
 		{
@@ -742,6 +752,11 @@
 			{
 				"Target" "CASTER"
 				"ModifierName" "remove_vision"
+			}
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"RemoveDD"
 			}
 		}
 		
@@ -752,6 +767,11 @@
 				"Target" "CASTER"
 				"ModifierName" "remove_vision"
 			}
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"RemoveDD"
+			}
 		}
 		
 		"OnChannelSucceeded"
@@ -760,6 +780,11 @@
 			{
 				"Target" "CASTER"
 				"ModifierName" "remove_vision"
+			}
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"RemoveDD"
 			}
 		}
 	

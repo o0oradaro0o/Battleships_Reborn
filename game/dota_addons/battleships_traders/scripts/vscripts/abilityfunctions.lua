@@ -562,7 +562,6 @@ end
 
 function CallPuckDive(args) -- keys is the information sent by the ability
 		print('[ItemFunctions] CallPuckDive started! ')
-
 		local casterUnit = args.caster
 		local ability = "dive_battleship_puck"
 		
@@ -645,7 +644,7 @@ Timers:CreateTimer( 0.1, function()
 	local casterUnit = EntIndexToHScript( keys.caster_entindex )
 	local vecorig = Vector(0,0,0)
 	if casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-		 vecorig = Vector(-30,5604,0)+RandomVector( RandomFloat( 0, 100 ))
+		 vecorig = Vector(-30,-5604,0)+RandomVector( RandomFloat( 0, 100 ))
 	elseif  casterUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 		 vecorig = Vector(0,5540,0)+RandomVector( RandomFloat( 0, 100 ))
 	end	
@@ -973,8 +972,11 @@ end
 
 function reflect(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
+	local abil = casterUnit:GetAbilityByIndex(2)
 	print('[ItemFunctions] REFLECT finished! HP was:' .. herohp[casterUnit:GetOwner():GetPlayerID()])
-	local ruseDmg = herohp[casterUnit:GetOwner():GetPlayerID()] - casterUnit:GetHealth() * (0.2+0.1*abil:GetLevel())
+	local ruseDmg = herohp[casterUnit:GetOwner():GetPlayerID()] - casterUnit:GetHealth()
+	ruseDmg = ruseDmg *(0.2+0.1*abil:GetLevel())
+	
 	casterUnit:SetHealth(casterUnit:GetHealth()+ruseDmg)
 	
 end
@@ -1665,6 +1667,7 @@ end
 function RemoveWeps(args) -- keys is the information sent by the ability
 		local casterUnit = args.caster
 	local hero = args.caster
+		print('[ItemFunctions] CallPuckDive removing weps! ')
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 for itemSlot = 0, 5, 1 do 
 	if hero ~= nil then
