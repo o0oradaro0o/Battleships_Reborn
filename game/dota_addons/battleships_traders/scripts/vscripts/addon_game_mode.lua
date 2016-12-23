@@ -441,7 +441,7 @@ function CBattleship8D:InitGameMode()
 	
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
 	GameRules:GetGameModeEntity():SetRecommendedItemsDisabled(true)
-	GameRules:GetGameModeEntity():SetBuybackEnabled(false)
+	GameRules:SetUseBaseGoldBountyOnHeroes(true)
 	GameRules:SetSameHeroSelectionEnabled(true)
 	SendToServerConsole( "dota_combine_models 0" ) 
 	ListenToGameEvent('dota_item_purchased', Dynamic_Wrap(CBattleship8D, 'OnItemPurchased'), self)
@@ -1549,12 +1549,11 @@ function reapplyWP()
 								 end
 							 end
 					end
+				
 					if not creep:IsAttacking() then
-						if creep:GetTeamNumber() == DOTA_TEAM_GOODGUYS and (creep:GetOrigin()* Vector(0,1,0)- Vector(0,6100,0)):Length()<200 or goingToMid[creep]==1 then
-							 creep:MoveToPositionAggressive( Vector(-58,5390,0))
-							 goingToMid[creep]=1
-						elseif  creep:GetTeamNumber() == DOTA_TEAM_BADGUYS and (creep:GetOrigin()* Vector(0,1,0)+ Vector(0,6100,0)):Length()<200 or goingToMid[creep]==1 then
-							  creep:MoveToPositionAggressive( Vector(60,-5568,0))
+						if creep:GetTeamNumber() == DOTA_TEAM_GOODGUYS and (creep:GetOrigin()* Vector(0,1,0)- Vector(0,4200,0)):Length()<400 or goingToMid[creep]==1 then
+							  goingToMid[creep]=1
+						elseif  creep:GetTeamNumber() == DOTA_TEAM_BADGUYS and (creep:GetOrigin()* Vector(0,1,0)+ Vector(0,-4200,0)):Length()<400 or goingToMid[creep]==1 then
 							  goingToMid[creep]=1
 						end
 					end
@@ -2473,23 +2472,9 @@ function CBattleship8D:OnEntityKilled( keys )
 		
   end
 
-   if string.match(killedUnit:GetUnitName(), "_three")  then
-		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-				local herogold = hero:GetGold()
-				if hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-					hero:SetGold(herogold + 50, true)
-					hero:SetGold(0, false)
-					GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 50
-				elseif hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-					hero:SetGold(herogold + 50, true)
-					hero:SetGold(0, false)
-					BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 50
-
-				end
-			end
-		end
-  end
+		
+  
+  
   
 		if co_op_mode and killedUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS and killedUnit:IsRealHero() then
 			if RandomInt(1,NUM_GOOD_PLAYERS*2+5)<5 then
@@ -2498,13 +2483,37 @@ function CBattleship8D:OnEntityKilled( keys )
 			co_op_hero_count=co_op_hero_count-1
 			UpdateCoOpTables()
 		end
+		--distribute the gold to the team, add it to the empire gold and remove the origional bounty gold from the killer
   if killedUnit:GetGoldBounty() and killerEntity:IsRealHero() then
+  
+		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+				local herogold = hero:GetGold()
+				if hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+					hero:SetGold(herogold + killedUnit:GetGoldBounty()/NUM_GOOD_PLAYERS, true)
+					hero:SetGold(0, false)
+				
+				elseif hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+					hero:SetGold(herogold + killedUnit:GetGoldBounty()/NUM_BAD_PLAYERS, true)
+					hero:SetGold(0, false)
+
+				end
+			end
+		end
+  
+  
+  
+  
 		if killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 			GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + killedUnit:GetGoldBounty()
 		elseif killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 			BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + killedUnit:GetGoldBounty()
 		end
+		local herogold = killerEntity:GetGold()
+		killerEntity:SetGold(herogold - killedUnit:GetGoldBounty(), true)
+		killerEntity:SetGold(0, false)
   end
+  
   if killedUnit:IsRealHero() then
 		  if killedUnit ~= nil then
 				local continue=0
@@ -2965,6 +2974,7 @@ end
 
 function become_boat(casterUnit, heroname)
     print('[ItemFunctions] become_bristleback started!')
+
     local a = 0
     local plyID = casterUnit:GetPlayerOwnerID()
     local itemlist = {}
@@ -3163,7 +3173,10 @@ function become_boat(casterUnit, heroname)
 		end
 		
 	end
-	
+	Timers:CreateTimer( 1, function()
+		local data ={}
+	FireGameEvent("Boat_Spawned",data)
+	end)
 end
 
 
@@ -3451,13 +3464,6 @@ function buyBoat(eventSourceIndex, args)
 			casterUnit:SetGold(0,false)
 			sellBoat(casterUnit)
 			EmitSoundOnClient("General.Buy",PlayerResource:GetPlayer(pID))
-			Timers:CreateTimer( .1, function()
-		local data =
-			{
-				Player_ID = casterUnit:GetPlayerID()
-			}
-			FireGameEvent("Hero_Near_Ship_Shop",data)
-		end)
 		Timers:CreateTimer( .15, function()
 	
 		if string.match(itemName,"disruptor") then
@@ -3750,7 +3756,7 @@ function HandleShopChecks(hero)
 		
 
 			
-		if ShopDist:Length()<600 and (directionOne:Length() > 1000 and directionTwo:Length() > 1000) and cotinue==1 then
+		if ShopDist:Length()<500 and (directionOne:Length() > 1000 and directionTwo:Length() > 1000) and cotinue==1 then
 			
 			if WasNearShop[hero]==false then
 				print("sending entershop")

@@ -1,0 +1,57 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/custom_loading_screen.css" />
+	</styles>
+	<Panel class="BattleshipsLoadingRoot">
+
+		<Panel id="seq" >
+			<Image id="seq_bg" class="SeqBg" src="file://{images}/custom_game/loading_screen/loading.png" />
+		</Panel>
+
+		<Panel id="TitlePanel">
+			<Label id="BattleshipsTitle" text="#addon_game_name" style="" />
+		</Panel>
+
+		<Panel id="AuthorPanelHolder">
+			<Panel id="AuthorPanel">
+				<Label class="AuthorTitle" text="Presented By: radar, WeAreAllBritons, Frood, Multiplex, Penrose, and zentrix" />
+			</Panel>
+			
+			<Panel id="ArtistPanel">
+					<Label class="AuthorTitle" text="Original Artwork By: Taterfish and Slapunas" />
+			</Panel>
+			<Panel id="HeroPanel">
+					<Label class="heroTitle" text="IRC heroes: Noya, BMD, Myll, Hewdraw, Sidearms, Wigguno, Jimmydorry, Crazyloon, and SinZ " />
+			</Panel>
+	</Panel>
+		
+		<Panel id="CoOpHolder">
+			<Panel id="CoOp">
+				<Label class="AuthorTitle" text="Co-Op Challenge mode!" />
+				<Label class="heroTitle" text="An assault challenge against waves of bots. Kill their base before you are overrun." />
+			</Panel>
+				<Panel id="battle">
+				<Label class="AuthorTitle" text="Battle mode!" />
+				<Label class="heroTitle" text="Every 4 minutes a king of the hill style battle occurs.  All participants get gold and the winning team gets extra gold." />
+			</Panel>
+		</Panel>
+		
+		
+		<Panel id="NewsHolder">
+			<Panel id="News">
+				<Label class="AuthorTitle" text="News!" />
+
+				<Label class="newsTitle" text="Hi all! Art update will resume but is temporarily on hold.  In the meantime I am continuing to make balance changes.
+\n\nNewest balance changes: (12/14/2016)
+\n- Trader items no longer stack (still consumable)
+\n- Junk ship ult made smoother and also gives a small range of maneuverability
+\n- 3x emp gold to losing team cap removed for battle mode
+" />
+
+			
+			</Panel>
+		</Panel>
+		
+		
+	</Panel>
+</root>

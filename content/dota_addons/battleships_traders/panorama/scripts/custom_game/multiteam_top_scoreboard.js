@@ -1,6 +1,8 @@
 "use strict";
 
 var g_ScoreboardHandle = null;
+this.g_RadiantScore = 0;
+this.g_DireScore = 0;
 
 function UpdateScoreboard()
 {
@@ -9,8 +11,16 @@ function UpdateScoreboard()
 	$.Schedule( 0.2, UpdateScoreboard );
 }
 
+function UpdateRoundScore( data )
+{
+	g_RadiantScore = data.radiantScore;
+	g_DireScore = data.direScore;
+}
+
 (function()
 {
+	var shouldSort = true;
+
 	if ( GameUI.CustomUIConfig().multiteam_top_scoreboard )
 	{
 		var cfg = GameUI.CustomUIConfig().multiteam_top_scoreboard;
@@ -22,6 +32,11 @@ function UpdateScoreboard()
 		{
 			$( "#RightInjectXMLFile" ).BLoadLayout( cfg.RightInjectXMLFile, false, false );
 		}
+
+		if ( typeof(cfg.shouldSort) !== 'undefined')
+		{
+			shouldSort = cfg.shouldSort;
+		}
 	}
 	
 	if ( ScoreboardUpdater_InitializeScoreboard === null ) { $.Msg( "WARNING: This file requires shared_scoreboard_updater.js to be included." ); }
@@ -30,9 +45,14 @@ function UpdateScoreboard()
 	{
 		"teamXmlName" : "file://{resources}/layout/custom_game/multiteam_top_scoreboard_team.xml",
 		"playerXmlName" : "file://{resources}/layout/custom_game/multiteam_top_scoreboard_player.xml",
+		"shouldSort" : shouldSort
 	};
 	g_ScoreboardHandle = ScoreboardUpdater_InitializeScoreboard( scoreboardConfig, $( "#MultiteamScoreboard" ) );
 
 	UpdateScoreboard();
+
+	if (Game.GetMapInfo().map_display_name == "fate_elim_6v6") { 
+		GameEvents.Subscribe( "winner_decided", UpdateRoundScore );
+	}
 })();
 

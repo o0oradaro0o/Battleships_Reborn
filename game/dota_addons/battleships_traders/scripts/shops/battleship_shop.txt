@@ -1,0 +1,118 @@
+"dota_shops"
+{
+	"consumables"
+	{
+		 "item" "item_coal_bow"
+ "item" "item_caulk_bow"
+ "item" "item_fire_bow"
+ "item" "item_plasma_bow"
+ "item" "item_chaos_bow"
+ "item" "item_poison_bow"
+
+ "item" "item_light_bow"
+ "item" "item_spin_bow"
+ "item" "item_breach_bow"
+ "item" "item_ice_bow"
+ "item" "item_wind_bow"
+	}
+	"attributes"
+	{
+		 "item" "item_coal_two_bow"
+ "item" "item_caulk_two_bow"
+ "item" "item_fire_two_bow"
+ "item" "item_plasma_two_bow"
+ "item" "item_chaos_two_bow"
+ "item" "item_poison_two_bow"
+
+ "item" "item_light_two_bow"
+ "item" "item_spin_two_bow"
+ "item" "item_breach_two_bow"
+ "item" "item_ice_two_bow"
+ "item" "item_wind_two_bow"	
+		
+	}
+	"weapons_armor"
+	{
+		 "item" "item_coal_three_bow"
+ "item" "item_caulk_three_bow"
+ "item" "item_fire_three_bow"
+ "item" "item_plasma_three_bow"
+ "item" "item_chaos_three_bow"
+ "item" "item_poison_three_bow"
+ "item" "item_light_three_bow"
+ "item" "item_spin_three_bow"
+ "item" "item_breach_three_bow"
+ "item" "item_ice_three_bow"
+ "item" "item_wind_three_bow"
+	}
+	"misc"
+	{
+ "item"  "item_coal_ult_bow"
+ "item" "item_caulk_ult_bow"
+ "item"  "item_fire_ult_bow"
+ "item"  "item_plasma_ult_bow"
+ "item" "item_chaos_ult_bow"
+ "item" "item_poison_ult_bow"
+
+ "item"  "item_light_ult_bow"
+ "item"  "item_spin_ult_bow"
+ "item" "item_breach_ult_bow"
+ "item"  "item_ice_ult_bow"
+ "item"  "item_wind_ult_bow"
+	}
+	// Level 1 - Green Recipes
+	"basics"
+	{
+	 "item" "item_hull_one"
+ "item" "item_hull_two"
+ "item" "item_hull_three"
+ "item" "item_hull_four"
+	}
+	// Level 2 - Blue Recipes
+	"support"
+	{
+ "item" "item_sail_one"
+ "item" "item_sail_two"
+ "item" "item_sail_three"
+ "item" "item_sail_four"
+	
+	}
+	"magics"
+	{ 
+
+	}
+	// Level 3 - Purple Recipes
+	"defense"
+	{
+ "item" "item_repair_one"
+ "item" "item_repair_two"
+ "item" "item_repair_three"
+ "item" "item_repair_four"	
+	}
+	"weapons"
+	{
+	"item" "item_wood_one"
+ "item" "item_wood_two"
+ "item" "item_wood_three"
+ "item" "item_wood_four"
+	}
+	// Level 4 - Orange / Orb / Artifacts
+	"artifacts"
+	{
+	}
+	"sideshop1"
+	{
+	
+	}
+	"sideshop2"
+	{
+		
+	}
+	"secretshop"
+	{
+		 "item" "item_tower_debuff"
+ "item" "item_tower_healer"
+ "item" "item_nut_spawner"
+	}
+
+}

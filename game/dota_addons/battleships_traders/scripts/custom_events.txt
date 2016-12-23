@@ -29,6 +29,9 @@
     "stat_collection_send"
     {
     }
+	"Boat_Spawned"
+    {
+    }
 	
 	 "co_op_mode"
     {

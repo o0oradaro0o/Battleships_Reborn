@@ -1,0 +1,89 @@
+"itembuilds/test_windrunner.txt"
+{
+	"author"		radar
+	"hero"			"npc_dota_hero_windrunner"
+	"Title"			"battleships"
+	
+	"Items"
+	{		
+		"#DOTA_Item_Build_Starting_Items"
+		{
+			"item" "item_coal_bow"
+ "item" "item_caulk_bow"
+ "item" "item_fire_bow"
+ "item" "item_plasma_bow"
+ "item" "item_chaos_bow"
+ "item" "item_poison_bow"
+
+ "item" "item_light_bow"
+ "item" "item_spin_bow"
+ "item" "item_breach_bow"
+ "item" "item_ice_bow"
+ "item" "item_wind_bow"
+ "item"		"item_hull_one"
+		"item"		"item_hull_two"
+		"item"		"item_hull_three"
+		"item"		"item_hull_four"
+		}
+		
+		"#DOTA_Item_Build_Early_Game"
+		{	
+		"item"		"item_coal_two_bow"
+		"item"		"item_caulk_two_bow"
+		"item"		"item_fire_two_bow"
+		"item"		"item_plasma_two_bow"
+		"item"		"item_chaos_two_bow"
+		"item"		"item_poison_two_bow"
+
+		"item"		"item_light_two_bow"
+		"item"		"item_spin_two_bow"
+		"item"		"item_breach_two_bow"
+		"item"		"item_ice_two_bow"
+		"item"		"item_wind_two_bow"	
+		"item"		"item_sail_one"
+		"item"		"item_sail_two"
+		"item"		"item_sail_three"
+		"item"		"item_sail_four"
+		}
+		
+		"#DOTA_Item_Build_Core_Items"
+		{
+				"item"		"item_coal_three_bow"
+		"item"		"item_caulk_three_bow"
+		"item"		"item_fire_three_bow"
+		"item"		"item_plasma_three_bow"
+		"item"		"item_chaos_three_bow"
+		"item"		"item_poison_three_bow"
+
+		"item"		"item_light_three_bow"
+		"item"		"item_spin_three_bow"
+		"item"		"item_breach_three_bow"
+		"item"		"item_ice_three_bow"
+		"item"		"item_wind_three_bow"
+		"item"		"item_repair_one"
+		"item"		"item_repair_two"
+		"item"		"item_repair_three"
+		"item"		"item_repair_four"
+		}
+		
+		"#DOTA_Item_Build_Luxury"
+		{
+			"item" 		"item_coal_ult_bow"
+		"item"		"item_caulk_ult_bow"
+		"item" 		"item_fire_ult_bow"
+		"item" 		"item_plasma_ult_bow"
+		"item"		"item_chaos_ult_bow"
+		"item"		"item_poison_ult_bow"
+
+		"item" 		"item_light_ult_bow"
+		"item" 		"item_spin_ult_bow"
+		"item"		"item_breach_ult_bow"
+		"item" 		"item_ice_ult_bow"
+		"item" 		"item_wind_ult_bow"
+		"item"		"item_wood_one"
+		"item"		"item_wood_two"
+		"item"		"item_wood_three"
+		"item"		"item_wood_four"
+		}
+	}
+}
