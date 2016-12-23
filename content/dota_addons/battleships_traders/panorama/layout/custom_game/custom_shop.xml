@@ -2285,94 +2285,95 @@
             </Panel>
 		 </Panel>
 		 
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_ancient_apparition.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_bane.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_crystal_maiden.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_disruptor.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_ember_spirit.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_enigma.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_jakiro.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_lion.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_meepo.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_nevermore.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_phantom_lancer.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_pugna.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_rattletrap.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_slark.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_sniper.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_storm_spirit.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_tidehunter.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_tusk.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_ursa.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_vengefulspirit.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_visage.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_windrunner.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_winter_wyvern.png"  />
-		 <Image class="Toggled" src="file://{images}//heroes/npc_dota_hero_zuus.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_ancient_apparition.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_bane.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_crystal_maiden.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_disruptor.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_ember_spirit.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_enigma.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_jakiro.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_lion.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_meepo.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_nevermore.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_phantom_lancer.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_pugna.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_rattletrap.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_slark.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_sniper.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_storm_spirit.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_tidehunter.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_tusk.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_ursa.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_vengefulspirit.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_visage.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_windrunner.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_winter_wyvern.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_zuus.png"  />
 		 
-	<Image class="Toggled" src="file://{images}//items/item_coal_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_caulk_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_fire_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_plasma_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_chaos_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_poison_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_light_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_spin_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_breach_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_ice_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_wind_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_coal_two_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_caulk_two_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_fire_two_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_plasma_two_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_chaos_two_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_poison_two_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_light_two_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_spin_two_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_breach_two_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_ice_two_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_wind_two_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_coal_three_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_caulk_three_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_fire_three_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_plasma_three_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_chaos_three_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_poison_three_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_light_three_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_spin_three_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_breach_three_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_ice_three_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_wind_three_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_coal_ult_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_caulk_ult_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_fire_ult_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_plasma_ult_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_chaos_ult_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_poison_ult_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_light_ult_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_spin_ult_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_breach_ult_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_ice_ult_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_wind_ult_bow"  />
-<Image class="Toggled" src="file://{images}//items/item_hull_one"  />
-<Image class="Toggled" src="file://{images}//items/item_hull_two"  />
-<Image class="Toggled" src="file://{images}//items/item_hull_three"  />
-<Image class="Toggled" src="file://{images}//items/item_hull_four"  />
-<Image class="Toggled" src="file://{images}//items/item_sail_one"  />
-<Image class="Toggled" src="file://{images}//items/item_sail_two"  />
-<Image class="Toggled" src="file://{images}//items/item_sail_three"  />
-<Image class="Toggled" src="file://{images}//items/item_sail_four"  />
-<Image class="Toggled" src="file://{images}//items/item_repair_one"  />
-<Image class="Toggled" src="file://{images}//items/item_repair_two"  />
-<Image class="Toggled" src="file://{images}//items/item_repair_three"  />
-<Image class="Toggled" src="file://{images}//items/item_repair_four"  />
-<Image class="Toggled" src="file://{images}//items/item_wood_one"  />
-<Image class="Toggled" src="file://{images}//items/item_wood_two"  />
-<Image class="Toggled" src="file://{images}//items/item_wood_three"  />
-<Image class="Toggled" src="file://{images}//items/item_wood_four"  />
-<Image class="Toggled" src="file://{images}//items/item_tower_debuff"  />
-<Image class="Toggled" src="file://{images}//items/item_tower_healer"  />
-<Image class="Toggled" src="file://{images}//items/item_nut_spawner" />
+	<Image class="Toggled" src="file://{images}/items/coal_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/caulk_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/fire_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/plasma_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/chaos_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/poison_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/light_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/spin_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/breach_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/ice_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/wind_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/coal_two_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/caulk_two_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/fire_two_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/plasma_two_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/chaos_two_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/poison_two_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/light_two_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/spin_two_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/breach_two_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/ice_two_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/wind_two_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/coal_three_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/caulk_three_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/fire_three_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/plasma_three_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/chaos_three_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/poison_three_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/light_three_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/spin_three_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/breach_three_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/ice_three_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/wind_three_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/coal_ult_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/caulk_ult_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/fire_ult_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/plasma_ult_bow_final.png"  />
+<Image class="Toggled" src="file://{images}/items/chaos_ult_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/poison_ult_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/light_ult_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/spin_ult_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/breach_ult_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/ice_ult_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/wind_ult_bow.png"  />
+<Image class="Toggled" src="file://{images}/items/hull_one.png"  />
+<Image class="Toggled" src="file://{images}/items/hull_two.png"  />
+<Image class="Toggled" src="file://{images}/items/hull_three.png"  />
+<Image class="Toggled" src="file://{images}/items/hull_four.png"  />
+<Image class="Toggled" src="file://{images}/items/sail_one.png"  />
+<Image class="Toggled" src="file://{images}/items/sail_two.png"  />
+<Image class="Toggled" src="file://{images}/items/sail_three.png"  />
+<Image class="Toggled" src="file://{images}/items/sail_four.png"  />
+<Image class="Toggled" src="file://{images}/items/repair_one.png"  />
+<Image class="Toggled" src="file://{images}/items/repair_two.png"  />
+<Image class="Toggled" src="file://{images}/items/repair_three.png"  />
+<Image class="Toggled" src="file://{images}/items/repair_four.png"  />
+<Image class="Toggled" src="file://{images}/items/wood_one.png"  />
+<Image class="Toggled" src="file://{images}/items/wood_two.png"  />
+<Image class="Toggled" src="file://{images}/items/wood_three.png"  />
+<Image class="Toggled" src="file://{images}/items/wood_four.png"  />
+<Image class="Toggled" src="file://{images}/items/tower_debuff.png"  />
+<Image class="Toggled" src="file://{images}/items/tower_healer.png"  />
+<Image class="Toggled" src="file://{images}/items/nut_spawner" />
+
 		 
 		 
         </Panel>

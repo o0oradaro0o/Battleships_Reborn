@@ -1535,7 +1535,7 @@ function reapplyWP()
 					elseif  creep:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 						 waypoint = Entities:FindByNameNearest( "north_wp_*", creep:GetOrigin(), 0 )
 					end
-					if waypoint and goingToMid[creep]~=1 then
+					if waypoint and goingToMid[creep]==nil then
 							if not creep:IsAttacking() then
 								local wpNextNum=tonumber(string.sub(waypoint:GetName(),string.len(waypoint:GetName())))
 								local waypoint2 =nil
@@ -1551,12 +1551,20 @@ function reapplyWP()
 					end
 				
 					if not creep:IsAttacking() then
-						if creep:GetTeamNumber() == DOTA_TEAM_GOODGUYS and (creep:GetOrigin()* Vector(0,1,0)- Vector(0,4200,0)):Length()<400 or goingToMid[creep]==1 then
-							  goingToMid[creep]=1
-						elseif  creep:GetTeamNumber() == DOTA_TEAM_BADGUYS and (creep:GetOrigin()* Vector(0,1,0)+ Vector(0,-4200,0)):Length()<400 or goingToMid[creep]==1 then
-							  goingToMid[creep]=1
+						if creep:GetTeamNumber() == DOTA_TEAM_GOODGUYS and (creep:GetOrigin()* Vector(0,1,0)- Vector(0,4200,0)):Length()<400 and goingToMid[creep]==nil then
+						
+							  goingToMid[creep]=creep:GetOrigin()* Vector(-1,1,1)
+						elseif  creep:GetTeamNumber() == DOTA_TEAM_BADGUYS and (creep:GetOrigin()* Vector(0,1,0)- Vector(0,-4200,0)):Length()<400 and goingToMid[creep]==nil then
+						
+							   goingToMid[creep]=creep:GetOrigin()* Vector(-1,1,1)
+						elseif  goingToMid[creep] ~=nil then
+							 print (goingToMid[creep])
+							  creep:MoveToPositionAggressive(  goingToMid[creep])
+							  
 						end
 					end
+					
+					
 					if height:Length() > 110 then
 						creep:ForceKill(true)
 					end
