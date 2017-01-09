@@ -3,6 +3,9 @@
 {
 	"Version"		"1"
 
+	
+	
+	
 	//=================================================================================================================
 	// pistols
 	//=================================================================================================================
@@ -953,7 +956,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.2 2.2 2.2 2.2"
+				"duration"				"1.5 1.6 1.7 1.8"
 			
 			}
 			"03"
@@ -1338,6 +1341,86 @@
 		}
 	}
 	
+	// Rewrite of the Pudge Meat Hook ability
+// Author: Valve
+// Date: 25.09.2015.
+"pudge_meat_hook_lua"
+{
+	// General
+	"BaseClass"						"ability_lua"
+	"AbilityTextureName"			"pudge_meat_hook"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"1"
+	"ScriptFile"					"heroes/hero_pudge/pudge_meat_hook_lua.lua"	
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
+		"particle"			"particles/units/heroes/hero_pudge/pudge_meathook_chain.vpcf"
+		"particle"			"particles/units/heroes/hero_pudge/pudge_meathook_impact.vpcf"
+		"particle"			"particles/units/heroes/hero_pudge/pudge_meathook.vpcf"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1000 1100 1200 1300"
+	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"14 13 12 11"
+
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0 0 0 0"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"hook_speed"			"1600.0"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"hook_width"		"100"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"hook_distance"		"700 900 1100 1300"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"vision_radius"		"500 500 500 500"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"vision_duration"	"4.0 4.0 4.0 4.0"
+		}
+		"06"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"hook_followthrough_constant"			"0.65"
+		}
+		"07"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"hook_damage"		"200 300 400 500"
+		}
+	}
+}
+	
 	//=================================================================================================================
 	// Morphling: Waveform
 	//=================================================================================================================
@@ -1602,7 +1685,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.0 1.5 2.0"
+				"duration"				"1.0 2.0 3.0"
 			}
 			"02"
 			{
@@ -3785,10 +3868,78 @@
 	}
 	
 	
+	
+	
+	"mirana_leap_battlsehip"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass" 					"ability_datadriven"												// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName"				"mirana_leap_battlsehip"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30.0 26.0 22.0 18.0"
+		"AbilityDuration"				"10.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0 0 0 0"
+
+		
+			"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"CallLeapBattleship"
+			}
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"leap_distance"			"800 900 1000 1100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"leap_speed"			"2000.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"leap_acceleration"		"7000.0"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"leap_radius"		"775"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"leap_speedbonus"	"4 8 12 16"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"leap_speedbonus_as"	"8 16 24 32"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Ability: Mirana Leap
 	//=================================================================================================================
-	"mirana_leap_battlsehip"
+	"mirana_leap_battlsehip_caller"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -3865,12 +4016,12 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"9.0 9.0 9.0 9.0"
+		"AbilityCooldown"				"15.0 14.0 13.0 12.0"
 		"AbilityChannelTime"			"0.5 0.5 0.5 0.5"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"120 180 240 300"
+		"AbilityDamage"					"150 225 300 375"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -4102,24 +4253,24 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700 800 900 1000"
+		"AbilityCastRange"				"900 1000 1100 1200"
 		"AbilityCooldown"				"22.0 20.0 18.0 15.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0 0 0"
+		"AbilityManaCost"				"0 0 0 0"
 		"OnSpellStart"
 		{
 			"ApplyModifier"
 			{
 				"Target" "TARGET"
-				"ModifierName" "keep_up"
+				"ModifierName" "keep_up_bad"
 			}
 			
 			"ApplyModifier"
 			{
 				"Target" "CASTER"
-				"ModifierName" "keep_up"
+				"ModifierName" "keep_up_good"
 			}
 			"ApplyModifier"
 			{
@@ -4130,21 +4281,21 @@
 		
 		"Modifiers"
 		{
-			"keep_up"
+			"keep_up_good"
 			{
 					"Duration"	"%duration"
-					"ThinkInterval"	".2"	
-					"OnIntervalThink"
-					{
-						"RunScript"
-						{
-							"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
-							"Function"			"keepUp"
-						}
-						
-						
+					"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%movment"
+				}
+			}
+			
+			"keep_up_bad"
+			{
+					"Duration"	"%duration""Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%movment_slow"
 					}
-					
 			}
 			
 			"keep_up_effect"
@@ -4179,6 +4330,16 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"duration"	"2.5 3.0 3.5 4.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"movment"	"40 50 60 70"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"movment_slow"	"-40 -50 -60 -70"
 			}
 		}
 	}
@@ -8676,8 +8837,129 @@
 
 	}
 	
+		"no_fire_zone"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+			"AbilityTextureName"				"lone_druid_savage_roar"
+			"BaseClass" 					"ability_datadriven"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30 17 14 11"
+		"AOERadius"						"%radius"
+		// Damage.
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		
+		 "OnSpellStart"
+		{
+			
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/abilityFunctions.lua"
+				"Function"			"CreateNoFireZone"
+				"Target"		"POINT"
+			}
+			
+		}
+       	"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"300 400 500"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"3 4 5"
+			}
+		}
+	
+		
+
+	}
+
 	
 	
+	//=================================================================================================================
+	"coast_heal_battleship"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"				"modifier_halloffame_glow"
+		
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700 800 900 1000"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityManaCost"				"0 0 0 0"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14.0 13.0 12.0 11.0"
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target" "TARGET"
+					
+				"MoveSpeed" "900"
+				"ProvidesVision" "0"
+				"EffectName"    "particles/basic_projectile/coast_heal_proj.vpcf" 
+			}
+			
+			
+		}
+		
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"                           "false"
+				"Heal"
+			{
+					"HealAmount"                                "%damage"
+					"Target"                                "TARGET"
+			}
+		}
+		
+		
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"		"250 350 450 550"
+			}
+
+		}
+	}
 	
 	
 

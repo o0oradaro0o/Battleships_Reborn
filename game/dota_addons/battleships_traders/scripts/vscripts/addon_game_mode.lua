@@ -421,6 +421,8 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_shop_mid_bot", context)
 	PrecacheUnitByNameSync("npc_dota_trap", context)
 	PrecacheUnitByNameSync("npc_dota_chain", context)
+	PrecacheUnitByNameSync("npc_dota_booey", context)
+	
 	PrecacheResource( "soundfile","soundevents/custom_sounds.vsndevts", context )
 	
 end
@@ -1862,6 +1864,10 @@ function CBattleship8D:OnThink()
 						hero:SetModel( "models/noah_boat.vmdl" )
 						hero:SetOriginalModel( "models/noah_boat.vmdl" )
 					end
+					
+					if string.match(hero:GetName(),"crystal_maiden") then
+						hero:SetMana((hero:GetStrength()-1)/3)
+					end
 					if string.match(hero:GetName(),"tusk") then
 							local casterUnit = hero
 							--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
@@ -2498,7 +2504,7 @@ function CBattleship8D:OnEntityKilled( keys )
 			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 				local herogold = hero:GetGold()
 				if hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-					hero:SetGold(herogold + killedUnit:GetGoldBounty()/NUM_GOOD_PLAYERS, true)
+					hero:SetGold(herogold + (killedUnit:GetGoldBounty()/NUM_GOOD_PLAYERS)/2, true)
 					hero:SetGold(0, false)
 				
 				elseif hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
@@ -2509,16 +2515,13 @@ function CBattleship8D:OnEntityKilled( keys )
 			end
 		end
   
-  
-  
-  
 		if killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 			GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + killedUnit:GetGoldBounty()
 		elseif killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 			BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + killedUnit:GetGoldBounty()
 		end
 		local herogold = killerEntity:GetGold()
-		killerEntity:SetGold(herogold - killedUnit:GetGoldBounty(), true)
+		killerEntity:SetGold(herogold - killedUnit:GetGoldBounty()/2, true)
 		killerEntity:SetGold(0, false)
   end
   
@@ -3807,12 +3810,12 @@ function HandleShopChecks(hero)
 								if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
 									local herogold = otherHero:GetGold()
 									if otherHero:GetTeamNumber() == hero:GetTeam()  and otherHero~=hero then
-										otherHero:SetGold(herogold + 46*EMP_GOLD_NUMBER/4, true)
+										otherHero:SetGold(herogold + 30*EMP_GOLD_NUMBER/4, true)
 										otherHero:SetGold(0, false)
 										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 46*EMP_GOLD_NUMBER/4
 										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 46*EMP_GOLD_NUMBER/4
+											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 30*EMP_GOLD_NUMBER/4
 										end
 									end
 								end
@@ -3820,7 +3823,7 @@ function HandleShopChecks(hero)
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
 						Notifications:Top(hero:GetPlayerID(), {text=300*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(), {text=46*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(), {text=30*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 						elseif string.match(nearestShop:GetUnitName(),itemStrippedMedium) then
 							hero:RemoveItem(Item)
@@ -3839,12 +3842,12 @@ function HandleShopChecks(hero)
 								if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
 									local herogold = otherHero:GetGold()
 									if otherHero:GetTeamNumber() == hero:GetTeam()  and otherHero~=hero then
-										otherHero:SetGold(herogold + 76*EMP_GOLD_NUMBER/4, true)
+										otherHero:SetGold(herogold + 46*EMP_GOLD_NUMBER/4, true)
 										otherHero:SetGold(0, false)
 										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 76*EMP_GOLD_NUMBER/4
 										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 76*EMP_GOLD_NUMBER/4
+											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 46*EMP_GOLD_NUMBER/4
 										end
 									end
 								end
@@ -3862,7 +3865,7 @@ function HandleShopChecks(hero)
 							Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
 						Notifications:Top(hero:GetPlayerID(),{text=600*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(),{text=76*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(),{text=46*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 						elseif string.match(nearestShop:GetUnitName(),itemStrippedHard) then
 							hero:RemoveItem(Item)
@@ -3880,12 +3883,12 @@ function HandleShopChecks(hero)
 								if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
 									local herogold = otherHero:GetGold()
 									if otherHero:GetTeamNumber() == hero:GetTeam()  and otherHero~=hero then
-										otherHero:SetGold(herogold + 100*EMP_GOLD_NUMBER/4, true)
+										otherHero:SetGold(herogold + 76*EMP_GOLD_NUMBER/4, true)
 										otherHero:SetGold(0, false)
 										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 100*EMP_GOLD_NUMBER/4
+											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 76*EMP_GOLD_NUMBER/4
 										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 100*EMP_GOLD_NUMBER/4
+											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 76*EMP_GOLD_NUMBER/4
 										end
 									end
 								end
@@ -3900,7 +3903,7 @@ function HandleShopChecks(hero)
 						 Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
 						 Notifications:Top(hero:GetPlayerID(),{text=750*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(),{text=100*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(),{text=76*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 							end
 					end

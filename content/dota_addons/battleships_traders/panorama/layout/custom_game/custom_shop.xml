@@ -556,13 +556,13 @@
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/kunkka_torrent.png" />
                        <Label hittest="false" class="ability_name" text="#kunkka_torrent_bships"/>"
 					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('disruptor','kunkka_x_marks_the_spot_bships')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/kunkka_x_marks_the_spot.png" />
-                       <Label hittest="false" class="ability_name" text="#kunkka_x_marks_the_spot_bships"/>"
+					<Panel hittest="false" class="ability" onmouseover="showText('disruptor','coast_heal_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/modifier_halloffame_glow.png" />
+                       <Label hittest="false" class="ability_name" text="#coast_heal_battleship"/>"
 					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('disruptor','kunkka_ghostship_bships')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/kunkka_ghostship.png" />
-                       <Label hittest="false" class="ability_name" text="#kunkka_ghostship_bships"/>"
+					<Panel hittest="false" class="ability" onmouseover="showText('disruptor','no_fire_zone')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/lone_druid_savage_roar.png" />
+                       <Label hittest="false" class="ability_name" text="#no_fire_zone"/>"
 					</Panel>
 				</Panel>
 				<Panel hittest="false" class="boat_row">

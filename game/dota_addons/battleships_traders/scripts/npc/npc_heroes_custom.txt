@@ -188,7 +188,7 @@
 		
 	    "AttributeBaseStrength"     "1"                                     // Base strength
 		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
+		"AttributeBaseIntelligence" "0"                                     // Base intelligence
 		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
 		"AttributeBaseAgility"      "1"                                     // Base agility
 		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
@@ -516,9 +516,9 @@
 		"AbilityLayout"				"3"
 		"Ability1"					"pistols_battleship"
 		"Ability2"					"kunkka_torrent_bships"
-		"Ability3"					"kunkka_x_marks_the_spot_bships"
-		"Ability4"					"kunkka_ghostship_bships"
-		"Ability6"					"kunkka_return_bships"
+		"Ability3"					"coast_heal_battleship"
+		"Ability4"					"no_fire_zone"
+		"Ability6"					"bships_empty"
 "Ability6"					"bships_empty"
 				"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
@@ -1041,7 +1041,7 @@
 		
 		"AbilityLayout"				"3"
 		"Ability1"					"pistols_battleship"
-		"Ability2"					"pudge_meat_hook_battleship"
+		"Ability2"					"pudge_meat_hook_lua"
 		"Ability3"					"shove_battleship"
 		"Ability4"					"batrider_flaming_lasso_battleship"
 		"Ability5"					"bships_empty"

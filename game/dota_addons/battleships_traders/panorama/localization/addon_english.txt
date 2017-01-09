@@ -415,8 +415,9 @@ MOVEMENT BONUS PERCENTAGE: 20 23 25 27
 DURATION: 6.0 6.5 7.0 7.5"
 
 "keeping_up_battleship"									"Keeping up with the Joneses"
-"keeping_up_battleship_Description"					"Link yourself to a unit.  Every second, for the duration of this link, your and your targets hit point percentages will be moved toward their average by 2 percent.\n\nHigher levels increase duration.
-DURATION: 2.5 3.0 3.5 4.0"
+"keeping_up_battleship_Description"					"Link yourself to a unit and steal some of their movment speed.\n\nHigher levels increase duration.
+DURATION: 2.5 3.0 3.5 4.0
+STOLEN MS: 40 50 60 70"
 
 "discoship_battleship"								"Disco Ship!"
 "discoship_battleship_Description"					"Grants allies pulsing vision of the surrounding area, and allows all enemy ships to see you. Gain an armor bonus because no one can touch you while you boogie \n\nHigher levels increase your vision area and evasion.
@@ -462,7 +463,7 @@ DAMAGE: 200 300 400 500"
 
 "batrider_flaming_lasso_battleship"								"Tug!"
 "batrider_flaming_lasso_battleship_Description"					"Snag an enemy unit and pull them along with you while dealing damage. \n\nHigher levels increase duration.
-DURATION: 1.0 1.5 2.0
+DURATION: 1.0 2.0 3.0
 DRAG DISTANCE: 100 100 100
 CHAIN BREAK DISTANCE: 400 400 400"
 
@@ -578,6 +579,17 @@ TOTAL DAMAGE: 550 600 650"
 "iceberg_battleship_Description"						"Hide an iceberg (invisible to enemy team). The first enemy ship to run into it will take considerable damage. \n \nHigher levels decrease cooldown.
 DURATION: 120
 DAMAGE: 1000"
+
+"no_fire_zone"									"No Fire Zone"
+	"no_fire_zone_Description"						"Establish a no fire zone where both ally and enamy ships cannot use their weapons.
+	DURATION: 3 4 5
+	RADIAS: 300 400 500"
+	
+		"coast_heal_battleship"									"Rescue Mission"
+	"coast_heal_battleship_Description"						"Shoot a healing projectile at target unit.
+HEAL AMOUNT: 250 350 450 550"
+
+	
 
 "jakiro_ice_path_battleship"								"Ice Path"
 "jakiro_ice_path_battleship_Description"					"Creates a path of ice that stuns and damages enemies that touch it. \n Higher levels increase damage and stun duration and decrease cooldown

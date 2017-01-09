@@ -493,6 +493,32 @@ function CallBatFly(args) -- keys is the information sent by the ability
 end
 
 
+function CallLeapBattleship(args)
+print('[ItemFunctions] CallLeapBattleship started! ')
+
+		local casterUnit = args.caster
+		local ability = "mirana_leap_battlsehip_caller"
+		
+		local abil = casterUnit:GetAbilityByIndex(1)
+		local level = abil:GetLevel()
+		
+		local abil1 = casterUnit:GetAbilityByIndex(3)
+			local level2 = abil1:GetLevel()
+		casterUnit:RemoveAbility(abil1:GetAbilityName())
+		casterUnit:AddAbility(ability)
+		
+		--disjoint
+		ProjectileManager:ProjectileDodge(casterUnit)
+		
+		local abil2 = casterUnit:GetAbilityByIndex(3)
+		abil2:SetLevel(level)
+		abil2:CastAbility()
+		casterUnit:RemoveAbility(abil2:GetAbilityName())
+		casterUnit:AddAbility("batten_hatches")
+		local abil3 = casterUnit:GetAbilityByIndex(3)
+		abil3:SetLevel(level2)
+end
+
 function CallSlarkInvis(args) -- keys is the information sent by the ability
 		print('[ItemFunctions] CallPuckDive started! ')
 
@@ -1059,6 +1085,7 @@ function mightStart(args) -- keys is the information sent by the ability
 	print('[ItemFunctions] RmightStart started! hpPer is:' .. hpPer)
 	print('[ItemFunctions] new max health should be' .. casterUnit:GetMaxHealth()+35*#numunits)
 	casterUnit:ModifyStrength(3*#numunits)
+	casterUnit:SetMana((casterUnit:GetStrength()-1)/3)
 	casterUnit.strbonus=#numunits
 	 for _,friend in pairs( numunits) do
 
@@ -1571,9 +1598,7 @@ function grow(args) -- keys is the information sent by the ability
 casterUnit:SetModelScale(1.5)
 			
 end
-function reapplyAllBows( hero )
-	
-end
+
 function shrink(args) -- keys is the information sent by the ability
 		local casterUnit = args.caster
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
@@ -1689,8 +1714,57 @@ end
 end
 
 
+function removeAllBows( hero )
+	for itemSlot = 0, 5, 1 do 
+		if hero ~= nil then
+			local Item = hero:GetItemInSlot( itemSlot )
+			if Item ~= nil and string.match(Item:GetName(),"doubled") then -- makes sure that the item exists and making sure it is the correct item
+				local doubledstring = string.gsub(Item:GetName(),"_bow", "_bow_shooting")
+				while  hero:HasModifier(doubledstring) do
+					hero:RemoveModifierByName(doubledstring)
+				end
+			elseif Item ~= nil and string.match(Item:GetName(),"bow") then -- makes sure that the item exists and making sure it is the correct item
+				while  hero:HasModifier(Item:GetName() .. "_shooting") do
+					hero:RemoveModifierByName(Item:GetName() .. "_shooting")
+				end
+				print( "bow found." )
+			end
+		end
+	end
+end
 
+function reapplyAllBows( hero )
 
+for itemSlot = 0, 5, 1 do 
+	if hero ~= nil then
+		local Item = hero:GetItemInSlot( itemSlot )
+		if Item ~= nil and string.match(Item:GetName(),"doubled") then -- makes sure that the item exists and making sure it is the correct item
+			local doubledstring = string.gsub(Item:GetName(),"_bow", "_bow_shooting")
+			while  hero:HasModifier(doubledstring) do
+				hero:RemoveModifierByName(doubledstring)
+			end
+		elseif Item ~= nil and string.match(Item:GetName(),"bow") then -- makes sure that the item exists and making sure it is the correct item
+			while  hero:HasModifier(Item:GetName() .. "_shooting") do
+				hero:RemoveModifierByName(Item:GetName() .. "_shooting")
+			end
+			print( "bow found." )
+		end
+	end
+end
+for itemSlot = 0, 5, 1 do 
+	if hero ~= nil then
+		local Item = hero:GetItemInSlot( itemSlot )
+		if Item ~= nil and string.match(Item:GetName(),"doubled") then -- makes sure that the item exists and making sure it is the correct item
+			local doubledstring = string.gsub(Item:GetName(),"_bow", "_bow_shooting")
+			Item:ApplyDataDrivenModifier(hero, hero, doubledstring, nil)
+		elseif Item ~= nil and string.match(Item:GetName(),"bow") then -- makes sure that the item exists and making sure it is the correct item
+			Item:ApplyDataDrivenModifier(hero, hero, Item:GetName() .. "_shooting", nil)
+			print( "bow found." )
+		end
+	end
+end
+
+end
 
 function ApplyStun(args) -- keys is the information sent by the ability
 		local casterUnit = args.caster
@@ -1801,8 +1875,111 @@ function DropEmptyOnDeath(keys) -- keys is the information sent by the ability
 	FireGameEvent("Team_Can_Buy",data)
 end
 
+function CreateNoFireZone(keys)
+
+local casterUnit = keys.caster
+local ability = keys.ability
+local point = keys.target_points[1]
+local radius = ability:GetLevelSpecialValueFor("radius", (ability:GetLevel() - 1))
+
+	for i = 0, 330, 30 do
+		local creature2 = CreateUnitByName( "npc_dota_booey" , point , true, casterUnit:GetOwner(), casterUnit:GetOwner(),  casterUnit:GetTeamNumber())
+			
+			 	creature2:SetOrigin(point+Vector(math.cos(math.rad(i))*radius,math.sin(math.rad(i))*radius,-50))
+	end
+	Timers:CreateTimer(  .05, function()
+		maintainNoFireZone(keys)
+		end)
+		Timers:CreateTimer(  ability:GetLevelSpecialValueFor("duration", (ability:GetLevel() - 1)), function()
+			killNoFireZone(keys)
+		end)
+		
+end
+
+gotNoBows = {}
+function maintainNoFireZone(keys)
+local casterUnit = keys.caster
+local ability = keys.ability
+local point = keys.target_points[1]
+local radius = ability:GetLevelSpecialValueFor("radius", (ability:GetLevel() - 1))
 
 
+ 
+ local allUnits2 = Entities:FindAllInSphere(point,1000)
+	if #allUnits2 >0 then
+	for _,boo in pairs(allUnits2) do
+		if  boo:HasModifier("dummy_modifier") then
+			if boo:GetOwner()~=nil and boo:GetOwner():GetPlayerID() ~=nil then
+				print(tostring(boo:GetUnitName()) .. tostring(boo:GetOwner():GetPlayerID()))
+				if string.match(boo:GetUnitName(),"booey") and boo:GetOwner():GetPlayerID()==casterUnit:GetOwner():GetPlayerID() then
+					 for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+						local heroDist =  hero:GetAbsOrigin() - point
+							
+						if gotNoBows[hero]~=nil and gotNoBows[hero]==1 and heroDist:Length()>radius then
+								reapplyAllBows(hero)
+								gotNoBows[hero]=0
+							elseif  heroDist:Length()<=radius and (gotNoBows[hero]==nil or gotNoBows[hero]==0) then
+								removeAllBows(hero)
+								gotNoBows[hero]=1
+								print(hero:GetUnitName())
+								print("dist")
+								print(heroDist:Length())
+								print("radius")
+								print(radius)
+							end
+						
+					 end
+					 Timers:CreateTimer(  .05, function()
+						maintainNoFireZone(keys)
+					end)
+					return
+				end
+			end
+		end
+	end
+	end
+
+		
+end
+
+function killNoFireZone(keys)
+local casterUnit = keys.caster
+local ability = keys.ability
+local point = keys.target_points[1]
+local radius = ability:GetLevelSpecialValueFor("radius", (ability:GetLevel() - 1))
+
+	 for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+ 
+	if gotNoBows[hero]~=nil and gotNoBows[hero]==1 then
+			 Timers:CreateTimer(  .1, function()
+			 print("gimme my bows wqhore!!!")
+				reapplyAllBows(hero)
+				gotNoBows[hero]=0
+						end)
+		end
+
+	local allUnits2 = Entities:FindAllInSphere(point,1000)
+	if #allUnits2 >0 then
+	for _,boo in pairs(allUnits2) do
+		print("kill me!")
+		if  boo:HasModifier("dummy_modifier") then
+			if boo:GetOwner()~=nil and boo:GetOwner():GetPlayerID() ~=nil then
+				print(tostring(boo:GetUnitName()) .. tostring(boo:GetOwner():GetPlayerID()))
+				if string.match(boo:GetUnitName(),"booey") and boo:GetOwner():GetPlayerID()==casterUnit:GetOwner():GetPlayerID() then
+					print("killed me!")
+					RemoveSelf(boo)
+					boo:RemoveSelf()
+				end
+			end
+		end
+	end
+	end
+	
+
+	
+ end
+	
+end
 
 function PrintTable(t, indent, done)
 	--print ( string.format ('PrintTable type %s', type(keys)) )

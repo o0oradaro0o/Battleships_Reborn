@@ -287,6 +287,15 @@ function buyBoat(BoatName, cost)
 		
 		newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("HealthContainer").style.height = "20px"
 	}
+	else if(BoatName=="crystal_maiden")
+	{
+		newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("ManaContainer").style.visibility = "visible";
+		newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("ManaContainer").FindChildTraverse("ManaLabel").style.visibility = "visible";
+		newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("ManaContainer").FindChildTraverse("ManaRegenLabel").style.visibility = "collapse";
+		
+		
+		newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("HealthContainer").style.height = "20px"
+	}
 	else
 	{
 		newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("ManaContainer").style.visibility = "collapse";
