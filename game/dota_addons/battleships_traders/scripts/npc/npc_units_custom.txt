@@ -2036,7 +2036,6 @@
 	{
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/bad_ancient_ambient_blast.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"

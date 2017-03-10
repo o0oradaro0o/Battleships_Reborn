@@ -25,7 +25,7 @@
 		"ItemCost"						"0"	
 		"ItemShopTags"					""
 							"SideShop"						"1"
-				"ItemPurchasable"				"0"
+				
 		 // Recipe
         //-------------------------------------------------------------------------------------------------------------
         "ItemRecipe"					"1"
@@ -70,7 +70,7 @@
 
 		"BaseClass"						"item_recipe_arcane_boots"
 					"SideShop"						"1"
-				"ItemPurchasable"				"0"
+				
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"	
@@ -118,7 +118,7 @@
 
 		"BaseClass"						"item_recipe_arcane_boots"
 					"SideShop"						"1"
-				"ItemPurchasable"				"0"
+				
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"	
@@ -166,7 +166,7 @@
 
 		"BaseClass"						"item_recipe_arcane_boots"
 					"SideShop"						"1"
-				"ItemPurchasable"				"0"
+				
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"	
@@ -214,7 +214,7 @@
 
 		"BaseClass"						"item_recipe_arcane_boots"
 				"SideShop"						"1"
-				"ItemPurchasable"				"0"
+				
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"	
@@ -262,7 +262,7 @@
 
 		"BaseClass"						"item_recipe_arcane_boots"
 				"SideShop"						"1"
-				"ItemPurchasable"				"0"
+				
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"	
@@ -310,7 +310,7 @@
 
 		"BaseClass"						"item_recipe_arcane_boots"
 					"SideShop"						"1"
-				"ItemPurchasable"				"0"
+				
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"	
@@ -358,7 +358,7 @@
 
 		"BaseClass"						"item_recipe_arcane_boots"
 					"SideShop"						"1"
-				"ItemPurchasable"				"0"
+				
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"	
@@ -408,7 +408,7 @@
 
 		"BaseClass"						"item_recipe_arcane_boots"
 					"SideShop"						"1"
-				"ItemPurchasable"				"0"
+				
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"	
@@ -1950,7 +1950,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"250"
+		"ItemCost"						"500"
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -1986,7 +1986,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"300"
+				"bonus_hp"				"500"
 			}
 			"03"
 			{
@@ -2012,7 +2012,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"900"
+		"ItemCost"						"1000"
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -2048,7 +2048,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"600"
+				"bonus_hp"				"800"
 			}
 			"03"
 			{
@@ -2074,7 +2074,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1800"
+		"ItemCost"						"2500"
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -2110,12 +2110,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"1100"
+				"bonus_hp"				"1500"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"4"
+				"bonus_armor"			"3"
 			}
 		}
 	}
@@ -2137,7 +2137,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4000"
+		"ItemCost"						"5000"
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -2173,12 +2173,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"2000"
+				"bonus_hp"				"2400"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"5"
+				"bonus_armor"			"4"
 			}
 		}
 	}
@@ -2429,6 +2429,119 @@
     //        }
     //    }
   //  }
+  
+  
+  
+  ////=================================================================================================================
+//    // item_hull_sail_one_combo
+//    //=================================================================================================================
+    "item_hull_sail_one_combo_bow"
+    {
+        "ID"							"805"
+
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"						"item_datadriven"
+        "AbilityTextureName"			"item_iron_talon"
+        "AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"1000"
+        "ItemShopTags"					"move_speed"
+        "ItemQuality"					"rare"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+        "ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+        "ItemAlertable"					"1"
+        "ItemAliases"					"mana;mb"
+	
+
+        "Modifiers"
+        {
+            "modifier_item_hull_one"
+            {
+				"ThinkInterval"		"%fire_rate"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"poisonSoundFire"
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "650"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "700"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/starter_one_projectile.vpcf" 
+					}
+				}
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"  "%bonus_movement"
+                    "MODIFIER_PROPERTY_HEALTH_BONUS"			 "%bonus_hp"
+                }
+            }
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
+					"Damage"                                "%dmg"
+					"Target"                                "TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+				"Function"			"poisonSoundImpact"
+			}        
+				
+		}
+
+	
+		
+		
+        // Special	
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_movement"		"30"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_hp"				"250"
+            }
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fire_rate"	".3"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg"	"12"
+			}
+
+        }
+    }
 	
 	
 	//=================================================================================================================
@@ -2583,7 +2696,7 @@
 		"AbilityCastRange"              "0"
 		"AbilityCooldown"               "35"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "6000" 
+		"ItemCost"                      "5000" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
@@ -2637,47 +2750,8 @@
 					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"  "%bonus_regen"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen"
 				}
-				"OnTakeDamage"
-				{
-					"ApplyModifier"
-					{
-						"Target" "CASTER"
-						"ModifierName" "restart_healing"
-					}
-					"RemoveModifier"
-					{
-						"Target" "CASTER"
-						"ModifierName" "modifier_item_repair_one"
-					}
-				}
 			}
-			
-			"restart_healing"
-			{
-				"ThinkInterval"		"1.5"
-					"OnIntervalThink"
-					{
-						"ApplyModifier"
-						{
-							"Target" "CASTER"
-							"ModifierName" "modifier_item_repair_one"
-						}
-					}
-					"Duration"	"1.6"     
-				"OnTakeDamage"
-				{
-					"ApplyModifier"
-					{
-						"Target" "CASTER"
-						"ModifierName" "restart_healing"
-					}
-				}
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"  "%bonus_regen_half"
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen_half"
-				}
-			}
+
 		}
 		
 		// Special	
@@ -2686,23 +2760,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_regen"		".8"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_regen"		".6"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_regen"		"12.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_regen_half"		"0.3"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_regen_half"		"3.0"
+				"health_regen"		"8.0"
 			}
 		}
 	}
@@ -2743,46 +2807,6 @@
 					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"  "%bonus_regen"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen"
 				}
-				"OnTakeDamage"
-				{
-					"ApplyModifier"
-					{
-						"Target" "CASTER"
-						"ModifierName" "restart_healing"
-					}
-					"RemoveModifier"
-					{
-						"Target" "CASTER"
-						"ModifierName" "modifier_item_repair_one"
-					}
-				}
-			}
-			
-			"restart_healing"
-			{
-				"ThinkInterval"		"1.5"
-					"OnIntervalThink"
-					{
-						"ApplyModifier"
-						{
-							"Target" "CASTER"
-							"ModifierName" "modifier_item_repair_one"
-						}
-					}
-					"Duration"	"1.6"     
-				"OnTakeDamage"
-				{
-					"ApplyModifier"
-					{
-						"Target" "CASTER"
-						"ModifierName" "restart_healing"
-					}
-				}
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"  "%bonus_regen_half"
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen_half"
-				}
 			}
 		}
 		
@@ -2792,23 +2816,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_regen"		"1.0"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_regen"		".75"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"health_regen"		"28.5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_regen_half"		"0.3"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_regen_half"		"8.8"
+				"var_type"				"FIELD_FLOAT"
+				"health_regen"		"21.375"
 			}
 		}
 	}
@@ -2849,47 +2863,8 @@
 					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"  "%bonus_regen"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen"
 				}
-				"OnTakeDamage"
-				{
-					"ApplyModifier"
-					{
-						"Target" "CASTER"
-						"ModifierName" "restart_healing"
-					}
-					"RemoveModifier"
-					{
-						"Target" "CASTER"
-						"ModifierName" "modifier_item_repair_one"
-					}
-				}
 			}
 			
-			"restart_healing"
-			{
-				"ThinkInterval"		"1.5"
-					"OnIntervalThink"
-					{
-						"ApplyModifier"
-						{
-							"Target" "CASTER"
-							"ModifierName" "modifier_item_repair_one"
-						}
-					}
-					"Duration"	"1.6"     
-				"OnTakeDamage"
-				{
-					"ApplyModifier"
-					{
-						"Target" "CASTER"
-						"ModifierName" "restart_healing"
-					}
-				}
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"  "%bonus_regen_half"
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen_half"
-				}
-			}
 		}
 		
 		// Special	
@@ -2898,23 +2873,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_regen"		"1.5"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_regen"		"1.125"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_regen"		"90"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_regen_half"		".5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_regen_half"		"30.5"
+				"health_regen"		"67.5"
 			}
 		}
 		
@@ -2936,7 +2901,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"6000"
+		"ItemCost"						"5000"
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -2956,46 +2921,7 @@
 					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"  "%bonus_regen"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen"
 				}
-				"OnTakeDamage"
-				{
-					"ApplyModifier"
-					{
-						"Target" "CASTER"
-						"ModifierName" "restart_healing"
-					}
-					"RemoveModifier"
-					{
-						"Target" "CASTER"
-						"ModifierName" "modifier_item_repair_one"
-					}
-				}
-			}
 			
-			"restart_healing"
-			{
-				"ThinkInterval"		"1.5"
-					"OnIntervalThink"
-					{
-						"ApplyModifier"
-						{
-							"Target" "CASTER"
-							"ModifierName" "modifier_item_repair_one"
-						}
-					}
-					"Duration"	"1.6"     
-				"OnTakeDamage"
-				{
-					"ApplyModifier"
-					{
-						"Target" "CASTER"
-						"ModifierName" "restart_healing"
-					}
-				}
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"  "%bonus_regen_half"
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen_half"
-				}
 			}
 		}
 		
@@ -3005,23 +2931,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_regen"		"1.7"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_regen"		"1.25"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_regen"		"205.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_regen_half"		"0.57"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_regen_half"		"68.5"
+				"health_regen"		"133.75"
 			}
 		}
 	}
@@ -6520,7 +6436,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 
 		
 		
@@ -6673,7 +6589,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 
 		
 		
@@ -6815,7 +6731,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 
 		
 		
@@ -6884,13 +6800,13 @@
 							"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-1"
 					
 						}
-						"Duration" "3.5"
+						"Duration" "1"
 						
 					}
 		"item_ice_slow_show"
 					{
 
-						"Duration" "3.5"
+						"Duration"	"1"
 							"EffectName"		"particles/basic_projectile/ice_slow_effect.vpcf"
 							"EffectAttachType"	"follow_origin"
 					}
@@ -6959,7 +6875,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 
 		
 		
@@ -7072,7 +6988,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 		
 		
 		"Modifiers"
@@ -7183,7 +7099,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 
 		
 	
@@ -7315,7 +7231,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 		
 		"Modifiers"
 		{
@@ -7938,7 +7854,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 		
 		
 		
@@ -8088,7 +8004,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 		
 		
 		
@@ -8224,7 +8140,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 	
 		
 		"Modifiers"
@@ -8289,15 +8205,15 @@
 						"IsHidden"	 "1"
 						"Properties"
 						{
-							"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-2"
+							"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-1.5"
 					
 						}
-						"Duration" "3.5"
+						"Duration" "2"
 						
 					}
 					"item_ice_slow_show"
 					{
-						"Duration" "3.5"
+						"Duration" "2"
 				"EffectName"		"particles/basic_projectile/ice_slow_effect.vpcf"
 				"EffectAttachType"	"follow_origin"
 					}
@@ -8365,7 +8281,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 		
 		
 		
@@ -8476,7 +8392,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 	
 		"Modifiers"
 		{	
@@ -8584,7 +8500,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 		
 	
 		
@@ -8716,7 +8632,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 		
 		"Modifiers"
 		{
@@ -9334,7 +9250,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 		
 	
 		
@@ -9481,7 +9397,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 		
 		
 		
@@ -9621,7 +9537,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 		
 		
 		
@@ -9686,16 +9602,16 @@
 						"IsHidden"	 "1"
 						"Properties"
 						{
-							"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-3"
+							"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-2"
 					
 						}
-						"Duration" "3.5"
+						"Duration" "3"
 						
 					}
 		"item_ice_slow_show"
 					{
 					
-						"Duration" "3.5"
+						"Duration" "3"
 							"EffectName"		"particles/basic_projectile/ice_slow_effect.vpcf"
 							"EffectAttachType"	"follow_origin"
 					}
@@ -9764,7 +9680,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 		
 	
 		
@@ -9877,7 +9793,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 		
 		
 		
@@ -9992,7 +9908,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 		
 		
 		
@@ -10755,7 +10671,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 		
 	
 		
@@ -10890,7 +10806,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 		
 	
 		
@@ -11030,7 +10946,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 		
 		
 		
@@ -11075,15 +10991,15 @@
 						"IsHidden"	 "1"
 						"Properties"
 						{
-							"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-15"
+							"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-12"
 					
 						}
-						"Duration" "3.5"
+						"Duration" "2.0"
 						
 					}
 		"item_ice_slow_show"
 					{
-						"Duration" "3.5"
+						"Duration" "2.0"
 				"EffectName"		"particles/basic_projectile/ice_ult_slow.vpcf"
 				"EffectAttachType"	"follow_origin"
 					}
@@ -11150,7 +11066,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 		
 		
 		
@@ -11247,7 +11163,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 		
 	
 		
@@ -11342,7 +11258,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 		
 		
 		
@@ -11461,7 +11377,7 @@
 	
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemPurchasable"				"0"
+		
 		
 		
 		
@@ -12019,7 +11935,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 			"SideShop"						"1"
-				"ItemPurchasable"				"0"
+					"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		
 		
@@ -12224,9 +12140,9 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 			"SideShop"						"1"
-				"ItemPurchasable"				"0"
+				
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		
+		"ItemPurchasable"				"0"
 		
 		"OnSpellStart"
 		{
@@ -12273,8 +12189,8 @@
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
-			"ItemPurchasable"				"0"
-		
+			
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 				"SideShop"						"1"
 		
@@ -12324,10 +12240,10 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 			"SideShop"						"1"
-				"ItemPurchasable"				"0"
+				
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		
-		
+		"ItemPurchasable"				"0"
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -12374,9 +12290,9 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 			"SideShop"						"1"
-				"ItemPurchasable"				"0"
+				
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		
+		"ItemPurchasable"				"0"
 		
 		"OnSpellStart"
 		{
@@ -12474,10 +12390,10 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 			"SideShop"						"1"
-				"ItemPurchasable"				"0"
+				
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		
-		
+		"ItemPurchasable"				"0"
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -12524,8 +12440,8 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	"SideShop"						"1"
-				"ItemPurchasable"				"0"
-		
+				
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		
 		
@@ -12624,7 +12540,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 	"SideShop"						"1"
-				"ItemPurchasable"				"0"
+					"ItemPurchasable"				"0"
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		
@@ -12855,9 +12771,9 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 			"SideShop"						"1"
-				"ItemPurchasable"				"0"
+				
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		
+		"ItemPurchasable"				"0"
 		
 		"OnSpellStart"
 		{
@@ -12905,9 +12821,9 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
 			"SideShop"						"1"
-				"ItemPurchasable"				"0"
+				
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		
+		"ItemPurchasable"				"0"
 		
 		"OnSpellStart"
 		{
@@ -13222,8 +13138,8 @@
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
-	
-		"ItemPurchasable"				"0"
+	"ItemPurchasable"				"0"
+		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -13272,11 +13188,11 @@
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
-	
+	"ItemPurchasable"				"0"
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
-		"ItemPurchasable"				"0"
+		
 		
 		"OnSpellStart"
 		{
@@ -13679,8 +13595,8 @@
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
-	
-		"ItemPurchasable"				"0"
+	"ItemPurchasable"				"0"
+		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -13731,8 +13647,8 @@
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
-	
-		"ItemPurchasable"				"0"
+	"ItemPurchasable"				"0"
+		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -13891,8 +13807,8 @@
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
-	
-		"ItemPurchasable"				"0"
+	"ItemPurchasable"				"0"
+		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -13994,8 +13910,8 @@
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
-	
-		"ItemPurchasable"				"0"
+	"ItemPurchasable"				"0"
+		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"SideShop"						"1"
 		
@@ -14051,8 +13967,8 @@
 		"ItemAliases"					"mana;mb"
 		"ItemAliases"					"mana;mb"
 		"ItemDroppable"					"0"
-		
 		"ItemPurchasable"				"0"
+		
 		OnEquip
 		{
 			"RunScript"
@@ -15089,7 +15005,7 @@
 		"ItemSellable"					"0"
 		"ItemAliases"					"mana;mb"
 		"ItemDroppable"					"0"
-		"ItemPurchasable"				"0"
+		
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -15169,7 +15085,7 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemAlertable"					"1"
 		"ItemSellable"					"0"
-		"ItemPurchasable"				"0"
+		
 		"ItemAliases"					"mana;mb"
 		"ItemDroppable"					"0"
 		"OnSpellStart"
@@ -15206,7 +15122,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
-		"ItemPurchasable"				"0"
+		
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -15257,7 +15173,7 @@
 		}
 
 
-
+"ItemPurchasable"				"0"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"150"
@@ -15269,7 +15185,7 @@
 		"ItemAliases"					"mana;mb"
 		"ItemDroppable"					"0"
 		"ItemSellable"					"0"
-		"ItemPurchasable"				"0"
+		
 		"AbilitySpecial"
 		{
 			"01"
@@ -15528,8 +15444,8 @@
 		"ItemDroppable"					"1"
 		"ItemStackable"					"0"
 		"ItemSellable"					"0"
-		"ItemPurchasable"				"0"
-
+		
+"ItemPurchasable"				"0"
 		"ItemInitialCharges"			"2"
 		"ItemPermanent" 				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -16801,9 +16717,10 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemAlertable"					"1"
 		"ItemSellable"					"0"
-		"ItemPurchasable"				"0"
+		
 		"ItemAliases"					"mana;mb"
 		"ItemDroppable"					"1"
+		"ItemPurchasable"				"0"
 		"ItemStackable"					"0"
 		"ItemInitialCharges"			"1"
 		"ItemPermanent" 				"0"
@@ -16859,11 +16776,12 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemAlertable"					"1"
-		"ItemPurchasable"				"0"
+		
 		"ItemAliases"					"mana;mb"
 		"ItemDroppable"					"1"
 		"ItemStackable"					"0"
 		"ItemSellable"					"0"
+		"ItemPurchasable"				"0"
 		"ItemInitialCharges"			"1"
 		"ItemPermanent" 				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -16941,10 +16859,11 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemAlertable"					"1"
 		"ItemAliases"					"mana;mb"
-		"ItemPurchasable"				"0"
+		
 		"ItemDroppable"					"1"
 		"ItemStackable"					"0"
 		"ItemInitialCharges"			"1"
+		"ItemPurchasable"				"0"
 		"ItemPermanent" 				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemSellable"					"0"
@@ -17020,7 +16939,7 @@
 		"ItemCost"						"150"
 		"ItemSellable"					"0"
 		"ItemShopTags"					"move_speed"
-		"ItemPurchasable"				"0"
+		
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
@@ -17028,6 +16947,7 @@
 		"ItemAliases"					"mana;mb"
 		"ItemDroppable"					"1"
 		"ItemStackable"					"0"
+		"ItemPurchasable"				"0"
 		"ItemInitialCharges"			"1"
 		"ItemPermanent" 				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -17113,7 +17033,7 @@
 		"ItemCost"						"150"
 				"ItemSellable"					"0"
 		"ItemShopTags"					"move_speed"
-		"ItemPurchasable"				"0"
+		
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
@@ -17123,6 +17043,7 @@
 		"ItemStackable"					"0"
 		"ItemInitialCharges"			"1"
 		"ItemPermanent" 				"0"
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -17188,7 +17109,7 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		"ItemPurchasable"				"0"
+		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"150"
@@ -17201,6 +17122,7 @@
 		"ItemAliases"					"mana;mb"
 		"ItemDroppable"					"1"
 		"ItemStackable"					"0"
+		"ItemPurchasable"				"0"
 		"ItemInitialCharges"			"1"
 		"ItemPermanent" 				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
@@ -17244,11 +17166,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		// Item Info
+		"ItemPurchasable"				"0"
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"150"
 		"ItemSellable"					"0"
 		"ItemShopTags"					"move_speed"
-		"ItemPurchasable"				"0"
+		
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
@@ -17283,11 +17206,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"100"
 		"AbilityCastPoint"				"0.0"
-		
+		"ItemPurchasable"				"0"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"99999"
-		"ItemPurchasable"				"0"
+		
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemStackable"					"0"

@@ -5,10 +5,10 @@ var showMission=[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]
 var firstcall=true;
 var starttime=0;
 var NewShopUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop");
-var catigoriesUI =   NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ItemsArea").FindChildTraverse("ItemBuildContainer").FindChildTraverse("ItemBuild").FindChildTraverse("Categories");
-var topBar =   $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar");
-var shipShopShow=false;
 
+  var catigoriesUI;
+
+var shipShopShow=false;
 function hideTrade()
 {
 	var numbuildings=0;
@@ -27,21 +27,38 @@ function hideTrade()
 	$.Msg("buildings: "+numbuildings);
 }
 
-	function fillShop( ) 
+function replaceShopUI()
 {
 	
-	 NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ItemsArea").FindChildTraverse("ItemBuildContainer").FindChildTraverse("ItemBuild").
+		
+
+
+		
+		
+		if( $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop").FindChildTraverse("GuideFlyout").FindChildTraverse("ItemsArea"))
+		{
+		  $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop").FindChildTraverse("GuideFlyout").FindChildTraverse("ItemsArea").FindChildTraverse("ItemBuildContainer").style.visibility = "visible";
+		  
+		  
+		   $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop").FindChildTraverse("GuideFlyout").FindChildTraverse("ItemsArea").SetParent(NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter"));
+		  
+		}
+		
+
+		
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("GridMainShop").style.visibility = "collapse";
+		
+		  catigoriesUI =   NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ItemsArea").FindChildTraverse("ItemBuildContainer").FindChildTraverse("ItemBuild").FindChildTraverse("Categories");
+		  
+		  
+		   NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ItemsArea").FindChildTraverse("ItemBuildContainer").FindChildTraverse("ItemBuild").
 		   GetChild(0).style.visibility = "collapse";
 		   	 NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ItemsArea").FindChildTraverse("ItemBuildContainer").FindChildTraverse("ItemBuild").
 		   GetChild(1).style.visibility = "collapse";
-		   
-		   NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ItemsArea").FindChildTraverse("ItemBuildContainer").FindChildTraverse("CommonItems").style.visibility = "collapse";
-		   
-		   
-		   	 
+		  
 			 
 		  catigoriesUI.style.flowChildren = "right";
-		   
+		   catigoriesUI.style.marginTop = "55px";
 		   catigoriesUI.GetChild(0).GetChild(0).style.visibility = "collapse";
 		   catigoriesUI.GetChild(0).GetChild(1).style.flowChildren = "down";
 		    catigoriesUI.GetChild(0).GetChild(1).GetChild(11).style.marginTop = "40px";
@@ -58,8 +75,74 @@ function hideTrade()
 		   catigoriesUI.GetChild(3).GetChild(1).style.flowChildren = "down";
 		    catigoriesUI.GetChild(3).GetChild(1).GetChild(11).style.marginTop = "40px";
 		   catigoriesUI.GetChild(3).style.width = "25%"
-	closeShipShop()
+}
+function fixUI( ) 
+{
+	
+	
+	
+	$.Msg("in fix ui--------------------------------------");
+	GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY, false );
+		 $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar").style.visibility = "visible";
+		 
+		 
+		 var sidenotif =   $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("combat_events");
+		 
+		 var topnotif =   $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("FightRecap");
+		 
+		 var buyback =   $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("FightRecap");
+		 
+		 var newCenterUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("lower_hud").FindChildTraverse("center_with_stats").FindChildTraverse("center_block");
+		 
+		newCenterUI.FindChildTraverse("death_panel_buyback").FindChildTraverse("BuybackButton").style.visibility = "collapse";
+		 
+		 sidenotif.style.visibility = "collapse";
+		 topnotif.style.visibility = "collapse";
+		 
 		
+		 //---------------------------shop stuff--------------------
+		 
+		var shipShopShow=false;
+		var topBar =   $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar");
+		NewShopUI.FindChildTraverse("GuidesButton").style.visibility = "collapse";
+		NewShopUI.FindChildTraverse("GuideFlyout").style.visibility = "collapse";
+		
+
+		 //------------------------------hero panel stuff--------------------------------
+		 
+		//try the neat way to remove the tree itself
+        newCenterUI.FindChildTraverse("stats_container").style.visibility = "visible";
+	   //that bar that grows from level 1 to 25 is annoying
+        newCenterUI.FindChildTraverse("AbilitiesAndStatBranch").FindChildTraverse("StatBranch").style.visibility = "collapse";
+	  //fuck backpack UI
+        newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("inventory_backpack_list").style.visibility = "collapse";
+		//--------------bot right -----------------
+     
+		 var newBotRightUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("lower_hud").FindChildTraverse("shop_launcher_block");
+		 
+		 newBotRightUI.FindChildTraverse("shop_launcher_bg").style.width="440px"
+		 
+		 newBotRightUI.FindChildTraverse("quickbuy").FindChildTraverse("ShopCourierControls").FindChildTraverse("courier").style.visibility = "collapse";
+		  newBotRightUI.FindChildTraverse("quickbuy").FindChildTraverse("ShopCourierControls").FindChildTraverse("ShopButton").style.horizontalAlign = "right";
+		  
+		  newBotRightUI.FindChildTraverse("quickbuy").FindChildTraverse("ShopCourierControls").style.width = "100%";
+		  
+		   newBotRightUI.FindChildTraverse("quickbuy").FindChildTraverse("ShopCourierControls").style.marginRight = "12px";
+		  
+		  
+		
+		newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("ManaContainer").style.visibility = "collapse";
+		
+		newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("HealthContainer").style.height = "40px"
+
+}
+	function fillShop( ) 
+{
+	
+	
+			
+		 fixUI( ) 
+		closeShipShop()
 		
 		
 	}
@@ -69,6 +152,9 @@ function hideTrade()
 
 function showShips()
 {
+	
+	$.Msg(Game.GetGameTime())
+	
 	$.Msg(NewShopUI.BHasClass("ShopOpen"))
 	if(shipShopShow==false)
 	{
@@ -77,16 +163,18 @@ function showShips()
 		{
 		$.DispatchEvent("DOTAHUDToggleShop");
 		}
-	  if (!NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder")) 
+	  if (!NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder")) 
 	  {
-		  $("#ship_shop_content_holder").SetParent(NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea"));
+		  $("#ship_shop_content_holder").SetParent(NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter"));
             
         }
-			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").style.visibility="visible";
-			catigoriesUI.style.visibility="collapse";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").style.visibility="visible";
+			//catigoriesUI.style.visibility="collapse";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("GridMainShop").style.visibility="collapse";
 	shipShopShow=true;
 	}
 	else{
+		$.Msg("callinghidedamn it");
 		hideShipShop();
 	}
 	
@@ -100,7 +188,7 @@ function showShipsNoHide()
 	hideShop()
 	if(	hiddenship)
 		{
-			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").style.visibility="visible";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").style.visibility="visible";
 			hiddenship=false;
 		}
 
@@ -110,18 +198,18 @@ function show1ks()
 {
 	
 	
-	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height=="240.0px")
+	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height=="240.0px")
 	{
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height = "0px";
 
 	}
 	else
 	{
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height = "240px";
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height = "0px";
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height = "0px";
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height = "0px";
-			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height = "240px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height = "0px";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height = "0px";
 	}
 }
 
@@ -129,70 +217,70 @@ function show1ks()
 function show3ks()
 {
 
-	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height=="240.0px")
+	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height=="240.0px")
 	{
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height = "0px";
 
 	}
 	else
 	{
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height = "240px";
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height = "0px";
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height = "0px";
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height = "0px";
-			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height = "240px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height = "0px";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height = "0px";
 	}
 }
 function show6ks()
 {
 
-	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height=="240.0px")
+	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height=="240.0px")
 	{
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height = "0px";
 
 	}
 	else
 	{
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height = "240px";
-			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height = "0px";
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height = "0px";
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height = "0px";
-			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height = "240px";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height = "0px";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height = "0px";
 	}
 }
 function show10ks()
 {
 
-	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height=="240.0px")
+	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height=="240.0px")
 	{
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height = "0px";
 
 	}
 	else
 	{
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height = "240px";
-			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height = "0px";
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height = "0px";
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height = "0px";
-			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height = "240px";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height = "0px";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height = "0px";
 	}
 }
 
 function showtraders()
 {
 
-	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height=="240.0px")
+	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height=="240.0px")
 	{
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height = "0px";
 
 	}
 	else
 	{
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height = "240px";
-			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height = "0px";
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height = "0px";
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height = "0px";
-			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height = "240px";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "three_ks" ).style.height = "0px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "six_ks" ).style.height = "0px";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "ten_ks" ).style.height = "0px";
 	}
 }
 
@@ -472,8 +560,10 @@ function FadeShop()
 	
 	function hideShipShop()
 	{
+		$.Msg("-------------------------------");
 		if(NewShopUI.BHasClass("ShopOpen"))
 			{
+					$.Msg("shop Open");
 				$.DispatchEvent("DOTAHUDToggleShop");
 				 closeShipShop()
 			}
@@ -492,13 +582,14 @@ function FadeShop()
 		if(shipShopShow)
 		{
 			
-				  if (!NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder")) 
+				  if (!NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder")) 
 			  {
-				  $("#ship_shop_content_holder").SetParent(NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea"));
+				  $("#ship_shop_content_holder").SetParent(NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter"));
 				}
-				$.Msg(NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder"))
-			NewShopUI.FindChildTraverse("Main").FindChildTraverse("ItemsArea").FindChildTraverse("ship_shop_content_holder").style.visibility="collapse";
-			catigoriesUI.style.visibility="visible";
+				$.Msg(NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder"))
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").style.visibility="collapse";
+			//catigoriesUI.style.visibility="visible";
+			NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("GridMainShop").style.visibility="visible";
 		}
 	shipShopShow=false;
 	
@@ -1155,6 +1246,7 @@ GameUI.SetMouseCallback( function( eventName, arg ) {
 		hideTrade();
 	$.Msg("in subscribe");
 	GameEvents.Subscribe("Boat_Spawned", fillShop );
+	
 	GameEvents.Subscribe( "Hero_Near_Shop", NearShop );
 	GameEvents.Subscribe( "Hero_Near_Ship_Shop", showShips );
 	GameEvents.Subscribe( "Hero_Left_Shop", LeftShop );

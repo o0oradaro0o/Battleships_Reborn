@@ -328,7 +328,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				".5 .5 .5 .5"
+				"stun_duration"				".75 1.25 1.75 2.25"
 			}
 			"05"
 			{
@@ -1321,7 +1321,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"hook_width"		"100"
+				"hook_width"		"160"
 			}
 			"03"
 			{
@@ -1671,8 +1671,8 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"150 150 150"
-		"AbilityCooldown"				"35.0 35.0 35.0"
+		"AbilityCastRange"				"400 400 400"
+		"AbilityCooldown"				"30.0 27.0 24.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -1685,17 +1685,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.0 2.0 3.0"
+				"duration"				"2.0 2.5 3.0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"drag_distance"			"100 100 100"
+				"drag_distance"			"300 300 300"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"break_distance"		"400 400 400"
+				"break_distance"		"700 700 700"
 			}
 		}
 	}
@@ -2947,31 +2947,14 @@
 		
 		"OnSpellStart"
 		{
-			"TrackingProjectile"
+			"RunScript"
 					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "10000"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_HERO"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "600"
-						"ProvidesVision" "1"
-						"VisionRadius" "%vision_radius"
-						"EffectName"    "particles/basic_projectile/hit_projectile.vpcf" 
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"ShowShip"
 					}
 		}
 
-		
-		"OnProjectileHitUnit"
-		{
-				"DeleteOnHit"                           "false"
-
-				
-		}
+	
 		
 		
 		
@@ -5851,6 +5834,18 @@
 
 		 "Modifiers"
         {
+		
+			"might_stun"
+			{
+
+				
+				"Duration"  "0"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
+					
+				}
+			}
             "hp_boost"
 			{
 			
@@ -5861,7 +5856,7 @@
 				
 				"Duration"  "%duration"
 				
-				"ThinkInterval"		"24.9"
+				"ThinkInterval"		"39.9"
 				"OnIntervalThink"
 				{
 					
@@ -5887,7 +5882,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"25.0 25.0 25.0 25.0"
+				"duration"				"40.0 40.0 40.0 40.0"
 			}
 			"02"
 			{
@@ -8846,7 +8841,9 @@
 			"AbilityTextureName"				"lone_druid_savage_roar"
 			"BaseClass" 					"ability_datadriven"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		
+				"MaxLevel"						"3"
+		"LevelsBetweenUpgrades"					"3"
+		"RequiredLevel"						"2"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
@@ -8881,7 +8878,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"300 400 500"
+				"radius"					"350 350 350"
 			}
 			"02"
 			{

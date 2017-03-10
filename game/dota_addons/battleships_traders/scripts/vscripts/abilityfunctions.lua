@@ -51,6 +51,179 @@ function startDisco(keys) -- keys is the information sent by the ability
 	casterUnit:MakeVisibleDueToAttack(4)
 end
 
+
+function ShowShip(keys) -- keys is the information sent by the ability
+	local casterUnit = EntIndexToHScript( keys.caster_entindex ) -- EntIndexToHScript takes 
+	print( '[AbilityFunctions] ShowShip  Called' )
+	if casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+			enemies = FindUnitsInRadius( DOTA_TEAM_BADGUYS, casterUnit:GetOrigin(), nil, 100000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, 0, 0, false )
+
+		else
+			enemies = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, casterUnit:GetOrigin(), nil, 100000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, 0, 0, false )
+
+		end
+	local fuckerWeShow
+	local fuckerdist=100000
+	for _,fucker in pairs( enemies) do
+		local heroDist =  fucker:GetAbsOrigin() - casterUnit:GetAbsOrigin()
+							
+			if  heroDist:Length()<fuckerdist then
+					fuckerdist=heroDist:Length()
+					fuckerWeShow=fucker
+					print( '[AbilityFunctions] ShowShip  nearest is: ' .. fuckerdist )
+			end
+	end
+	
+	local tracking_projectile = 
+			{
+				EffectName = "particles/basic_projectile/hit_projectile.vpcf",
+				Ability = casterUnit:GetAbilityByIndex(2),
+				vSpawnOrigin = casterUnit:GetAbsOrigin(),
+				Target = fuckerWeShow,
+				Source = casterUnit,
+				bHasFrontalCone = false,
+				iMoveSpeed = 600,
+				bReplaceExisting = false,
+				bProvidesVision = false,
+				iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+			}
+	ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+	
+	
+	if fuckerWeShow~=nil then
+		fuckerWeShow:MakeVisibleDueToAttack(1)
+		fuckerWeShow:MakeVisibleDueToAttack(2)
+		fuckerWeShow:MakeVisibleDueToAttack(3)
+		fuckerWeShow:MakeVisibleDueToAttack(4)
+	 Timers:CreateTimer(  .2, function()
+			
+				fuckerWeShow:MakeVisibleDueToAttack(1)
+				fuckerWeShow:MakeVisibleDueToAttack(2)
+				fuckerWeShow:MakeVisibleDueToAttack(3)
+				fuckerWeShow:MakeVisibleDueToAttack(4)
+						end)
+						 Timers:CreateTimer(  .4, function()
+			 fuckerWeShow:MakeVisibleDueToAttack(1)
+		fuckerWeShow:MakeVisibleDueToAttack(2)
+		fuckerWeShow:MakeVisibleDueToAttack(3)
+		fuckerWeShow:MakeVisibleDueToAttack(4)
+						end)
+						 Timers:CreateTimer(  .6, function()
+			fuckerWeShow:MakeVisibleDueToAttack(1)
+		fuckerWeShow:MakeVisibleDueToAttack(2)
+		fuckerWeShow:MakeVisibleDueToAttack(3)
+		fuckerWeShow:MakeVisibleDueToAttack(4)
+						end)
+						 Timers:CreateTimer(  .8, function()
+			 fuckerWeShow:MakeVisibleDueToAttack(1)
+		fuckerWeShow:MakeVisibleDueToAttack(2)
+		fuckerWeShow:MakeVisibleDueToAttack(3)
+		fuckerWeShow:MakeVisibleDueToAttack(4)
+						end)
+						Timers:CreateTimer(  1, function()
+			
+				fuckerWeShow:MakeVisibleDueToAttack(1)
+				fuckerWeShow:MakeVisibleDueToAttack(2)
+				fuckerWeShow:MakeVisibleDueToAttack(3)
+				fuckerWeShow:MakeVisibleDueToAttack(4)
+						end)
+						 Timers:CreateTimer(  1.2, function()
+			 fuckerWeShow:MakeVisibleDueToAttack(1)
+		fuckerWeShow:MakeVisibleDueToAttack(2)
+		fuckerWeShow:MakeVisibleDueToAttack(3)
+		fuckerWeShow:MakeVisibleDueToAttack(4)
+						end)
+						Timers:CreateTimer( 1.4, function()
+			fuckerWeShow:MakeVisibleDueToAttack(1)
+		fuckerWeShow:MakeVisibleDueToAttack(2)
+		fuckerWeShow:MakeVisibleDueToAttack(3)
+		fuckerWeShow:MakeVisibleDueToAttack(4)
+						end)
+						 Timers:CreateTimer( 1.6, function()
+			fuckerWeShow:MakeVisibleDueToAttack(1)
+		fuckerWeShow:MakeVisibleDueToAttack(2)
+		fuckerWeShow:MakeVisibleDueToAttack(3)
+		fuckerWeShow:MakeVisibleDueToAttack(4)
+						end)
+						 Timers:CreateTimer(  1.8, function()
+			 fuckerWeShow:MakeVisibleDueToAttack(1)
+		fuckerWeShow:MakeVisibleDueToAttack(2)
+		fuckerWeShow:MakeVisibleDueToAttack(3)
+		fuckerWeShow:MakeVisibleDueToAttack(4)
+						end)
+						Timers:CreateTimer(  2, function()
+			
+				fuckerWeShow:MakeVisibleDueToAttack(1)
+				fuckerWeShow:MakeVisibleDueToAttack(2)
+				fuckerWeShow:MakeVisibleDueToAttack(3)
+				fuckerWeShow:MakeVisibleDueToAttack(4)
+						end)
+						 Timers:CreateTimer(  2.2, function()
+			 fuckerWeShow:MakeVisibleDueToAttack(1)
+		fuckerWeShow:MakeVisibleDueToAttack(2)
+		fuckerWeShow:MakeVisibleDueToAttack(3)
+		fuckerWeShow:MakeVisibleDueToAttack(4)
+						end)
+						Timers:CreateTimer( 2.4, function()
+			fuckerWeShow:MakeVisibleDueToAttack(1)
+		fuckerWeShow:MakeVisibleDueToAttack(2)
+		fuckerWeShow:MakeVisibleDueToAttack(3)
+		fuckerWeShow:MakeVisibleDueToAttack(4)
+						end)
+						 Timers:CreateTimer( 2.6, function()
+			fuckerWeShow:MakeVisibleDueToAttack(1)
+		fuckerWeShow:MakeVisibleDueToAttack(2)
+		fuckerWeShow:MakeVisibleDueToAttack(3)
+		fuckerWeShow:MakeVisibleDueToAttack(4)
+						end)
+						 Timers:CreateTimer(  2.8, function()
+			 fuckerWeShow:MakeVisibleDueToAttack(1)
+		fuckerWeShow:MakeVisibleDueToAttack(2)
+		fuckerWeShow:MakeVisibleDueToAttack(3)
+		fuckerWeShow:MakeVisibleDueToAttack(4)
+						end)
+						Timers:CreateTimer(  1.8, function()
+			 fuckerWeShow:MakeVisibleDueToAttack(1)
+		fuckerWeShow:MakeVisibleDueToAttack(2)
+		fuckerWeShow:MakeVisibleDueToAttack(3)
+		fuckerWeShow:MakeVisibleDueToAttack(4)
+						end)
+						Timers:CreateTimer(  3, function()
+			
+				fuckerWeShow:MakeVisibleDueToAttack(1)
+				fuckerWeShow:MakeVisibleDueToAttack(2)
+				fuckerWeShow:MakeVisibleDueToAttack(3)
+				fuckerWeShow:MakeVisibleDueToAttack(4)
+						end)
+						 Timers:CreateTimer(  3.2, function()
+			 fuckerWeShow:MakeVisibleDueToAttack(1)
+		fuckerWeShow:MakeVisibleDueToAttack(2)
+		fuckerWeShow:MakeVisibleDueToAttack(3)
+		fuckerWeShow:MakeVisibleDueToAttack(4)
+						end)
+						Timers:CreateTimer( 3.4, function()
+			fuckerWeShow:MakeVisibleDueToAttack(1)
+		fuckerWeShow:MakeVisibleDueToAttack(2)
+		fuckerWeShow:MakeVisibleDueToAttack(3)
+		fuckerWeShow:MakeVisibleDueToAttack(4)
+						end)
+						 Timers:CreateTimer( 3.6, function()
+			fuckerWeShow:MakeVisibleDueToAttack(1)
+		fuckerWeShow:MakeVisibleDueToAttack(2)
+		fuckerWeShow:MakeVisibleDueToAttack(3)
+		fuckerWeShow:MakeVisibleDueToAttack(4)
+						end)
+						 Timers:CreateTimer(  3.8, function()
+			 fuckerWeShow:MakeVisibleDueToAttack(1)
+		fuckerWeShow:MakeVisibleDueToAttack(2)
+		fuckerWeShow:MakeVisibleDueToAttack(3)
+		fuckerWeShow:MakeVisibleDueToAttack(4)
+						end)
+		
+	end
+	
+end
+
 function peak(keys) -- keys is the information sent by the ability
 	print( '[AbilityFunctions] peak  Called' )
 	local casterUnit = EntIndexToHScript( keys.caster_entindex )
@@ -1036,6 +1209,7 @@ function mightStart(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
 	local numunits=0
 	
+	print('[ItemFunctions] mightStart started!')
 	
 	local enemies
 		
@@ -1071,22 +1245,28 @@ function mightStart(args) -- keys is the information sent by the ability
 				bProvidesVision = false,
 				iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
 			}
-			
-
+			fucker:AddNewModifier(casterUnit, nil, "modifier_stunned", {duration = .1*casterUnit.strbonus/#enemies})
+		
 				ProjectileManager:CreateTrackingProjectile(tracking_projectile)
 				ApplyDamage(damageTable)
 				end
 		end
 	
 	
-	numunits = FindUnitsInRadius( casterUnit:GetTeamNumber(), casterUnit:GetOrigin(), nil, 800, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+	numunits = FindUnitsInRadius( casterUnit:GetTeamNumber(), casterUnit:GetOrigin(), nil, 800, DOTA_UNIT_TARGET_TEAM_FRIENDLY,  DOTA_UNIT_TARGET_CREEP, 0, 0, false )
+	numheroes = FindUnitsInRadius( casterUnit:GetTeamNumber(), casterUnit:GetOrigin(), nil, 800, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, 0, 0, false )
 	print('[ItemFunctions] RmightStart started! units is:' .. #numunits)
+	print('[ItemFunctions] RmightStart started! heroes is:' .. #numheroes)
+	
 	local hpPer =  casterUnit:GetHealthPercent()
 	print('[ItemFunctions] RmightStart started! hpPer is:' .. hpPer)
 	print('[ItemFunctions] new max health should be' .. casterUnit:GetMaxHealth()+35*#numunits)
-	casterUnit:ModifyStrength(3*#numunits)
+	casterUnit:ModifyStrength(#numunits*3+#numheroes*9)
 	casterUnit:SetMana((casterUnit:GetStrength()-1)/3)
-	casterUnit.strbonus=#numunits
+	casterUnit.strbonus=#numunits+#numheroes*5
+	
+	for k,v in pairs(numheroes) do numunits[k] = v end
+		
 	 for _,friend in pairs( numunits) do
 
 			local tracking_projectile = 
@@ -1733,24 +1913,26 @@ function removeAllBows( hero )
 	end
 end
 
-function reapplyAllBows( hero )
+function reapplyAllBowsIfRemoved( hero )
 
 for itemSlot = 0, 5, 1 do 
 	if hero ~= nil then
 		local Item = hero:GetItemInSlot( itemSlot )
 		if Item ~= nil and string.match(Item:GetName(),"doubled") then -- makes sure that the item exists and making sure it is the correct item
 			local doubledstring = string.gsub(Item:GetName(),"_bow", "_bow_shooting")
-			while  hero:HasModifier(doubledstring) do
-				hero:RemoveModifierByName(doubledstring)
+			if  hero:HasModifier(doubledstring) then
+				return
 			end
 		elseif Item ~= nil and string.match(Item:GetName(),"bow") then -- makes sure that the item exists and making sure it is the correct item
-			while  hero:HasModifier(Item:GetName() .. "_shooting") do
-				hero:RemoveModifierByName(Item:GetName() .. "_shooting")
+			if  hero:HasModifier(Item:GetName() .. "_shooting") then
+				return
 			end
 			print( "bow found." )
 		end
 	end
 end
+
+
 for itemSlot = 0, 5, 1 do 
 	if hero ~= nil then
 		local Item = hero:GetItemInSlot( itemSlot )
@@ -1881,11 +2063,15 @@ local casterUnit = keys.caster
 local ability = keys.ability
 local point = keys.target_points[1]
 local radius = ability:GetLevelSpecialValueFor("radius", (ability:GetLevel() - 1))
+local rand=RandomInt(1,40)
+print(rand)
+local by = 40
 
-	for i = 0, 330, 30 do
+	for i = 0, 330, by do
 		local creature2 = CreateUnitByName( "npc_dota_booey" , point , true, casterUnit:GetOwner(), casterUnit:GetOwner(),  casterUnit:GetTeamNumber())
 			
-			 	creature2:SetOrigin(point+Vector(math.cos(math.rad(i))*radius,math.sin(math.rad(i))*radius,-50))
+			 	creature2:SetOrigin(point+Vector(math.cos(math.rad(i+rand))*radius,math.sin(math.rad(i+rand))*radius,-30))
+				 creature2:AddNewModifier(creature, nil, "modifier_kill", {duration = 6})
 	end
 	Timers:CreateTimer(  .05, function()
 		maintainNoFireZone(keys)
@@ -1915,17 +2101,12 @@ local radius = ability:GetLevelSpecialValueFor("radius", (ability:GetLevel() - 1
 					 for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 						local heroDist =  hero:GetAbsOrigin() - point
 							
-						if gotNoBows[hero]~=nil and gotNoBows[hero]==1 and heroDist:Length()>radius then
-								reapplyAllBows(hero)
+						if gotNoBows[hero]~=nil and heroDist:Length()>radius then
+								reapplyAllBowsIfRemoved(hero)
 								gotNoBows[hero]=0
 							elseif  heroDist:Length()<=radius and (gotNoBows[hero]==nil or gotNoBows[hero]==0) then
 								removeAllBows(hero)
 								gotNoBows[hero]=1
-								print(hero:GetUnitName())
-								print("dist")
-								print(heroDist:Length())
-								print("radius")
-								print(radius)
 							end
 						
 					 end
@@ -1950,13 +2131,12 @@ local radius = ability:GetLevelSpecialValueFor("radius", (ability:GetLevel() - 1
 
 	 for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
  
-	if gotNoBows[hero]~=nil and gotNoBows[hero]==1 then
-			 Timers:CreateTimer(  .1, function()
+			 Timers:CreateTimer(  .2, function()
 			 print("gimme my bows wqhore!!!")
-				reapplyAllBows(hero)
+				reapplyAllBowsIfRemoved(hero)
 				gotNoBows[hero]=0
 						end)
-		end
+	end
 
 	local allUnits2 = Entities:FindAllInSphere(point,1000)
 	if #allUnits2 >0 then
@@ -1977,7 +2157,6 @@ local radius = ability:GetLevelSpecialValueFor("radius", (ability:GetLevel() - 1
 	
 
 	
- end
 	
 end
 

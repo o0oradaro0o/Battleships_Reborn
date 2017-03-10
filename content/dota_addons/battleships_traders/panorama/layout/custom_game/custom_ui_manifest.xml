@@ -1,74 +1,15 @@
 <root>
 <script>
-		GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY, false );
-		 
-		 $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar").style.visibility = "visible";
-
-		 
-		 //---------------------------shop stuff--------------------
-		 
-		 var NewShopUI = $.GetContextPanel().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop");
-		 
-
-		 //get shop ui
-		 NewShopUI = $.GetContextPanel().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop");
-		 
-		 
-		 
-		 //fuck reccomended items
-		 NewShopUI.FindChildTraverse("Main").FindChildTraverse("header").FindChildTraverse("GuidesButton").style.visibility = "collapse";
-		 
-		 NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ItemsArea").FindChildTraverse("ItemBuildContainer").style.visibility = "visible";
-		
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ItemsArea").FindChildTraverse("ItemBuildContainer").style.visibility = "visible";
-		
-	
-	
-
-		 
-		 
-		 //------------------------------hero panel stuff--------------------------------
-		 var newCenterUI = $.GetContextPanel().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("lower_hud").FindChildTraverse("center_with_stats").FindChildTraverse("center_block");
-        
+	 //------------------------------hero panel stuff--------------------------------
+		 var newCenterUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("lower_hud").FindChildTraverse("center_with_stats").FindChildTraverse("center_block");
 		//try the neat way to remove the tree itself
-        newCenterUI.FindChildTraverse("StatBranch").AddClass("NonHero");
-       
+        newCenterUI.FindChildTraverse("stats_container").style.visibility = "visible";
 	   //that bar that grows from level 1 to 25 is annoying
-        newCenterUI.FindChildTraverse("StatBranch").FindChildTraverse("StatBranchGraphics").FindChildTraverse("StatBranchChannel").style.visibility = "collapse";
-		
+        newCenterUI.FindChildTraverse("AbilitiesAndStatBranch").FindChildTraverse("StatBranch").style.visibility = "collapse";
 		 newCenterUI.FindChildTraverse("level_stats_frame").style.visibility = "collapse";
-		
-		 newCenterUI.FindChildTraverse("StatBranch").FindChildTraverse("StatBranchGraphics").FindChildTraverse("StatBranchChannel").style.visibility = "collapse";
-       
-	   //you are not spawning the talent UI, fuck off
-        newCenterUI.FindChildTraverse("StatBranch").SetPanelEvent("onmouseover", function(){});
-        newCenterUI.FindChildTraverse("StatBranch").SetPanelEvent("onactivate", function(){});
-      
 	  //fuck backpack UI
         newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("inventory_backpack_list").style.visibility = "collapse";
-       
-		
-		
-		//--------------bot right -----------------
-     
-		 var newBotRightUI = $.GetContextPanel().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("lower_hud").FindChildTraverse("shop_launcher_block");
-		 
-		 newBotRightUI.FindChildTraverse("shop_launcher_bg").style.width="440px"
-		 
-		 newBotRightUI.FindChildTraverse("quickbuy").FindChildTraverse("ShopCourierControls").FindChildTraverse("courier").style.visibility = "collapse";
-		  newBotRightUI.FindChildTraverse("quickbuy").FindChildTraverse("ShopCourierControls").FindChildTraverse("ShopButton").style.horizontalAlign = "right";
-		  
-		  newBotRightUI.FindChildTraverse("quickbuy").FindChildTraverse("ShopCourierControls").style.width = "100%";
-		  
-		   newBotRightUI.FindChildTraverse("quickbuy").FindChildTraverse("ShopCourierControls").style.marginRight = "12px";
-		  
-		  
-		
-		newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("ManaContainer").style.visibility = "collapse";
-		
-		newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("HealthContainer").style.height = "40px"
-		 
-	
+	 
 	 
 	</script>
 	<Panel>

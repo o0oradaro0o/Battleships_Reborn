@@ -13,7 +13,7 @@
 
 .BarebonesBottomNotifications
 {
-    width: 100%;
+    width: 30%;
     height: 100%;
     flow-children: down;
 }
@@ -34,7 +34,7 @@
     margin-top: 15px;
     flow-children: right;
     vertical-align: middle;
-	horizontal-align: right;
+	horizontal-align: left;
 }
 
 #TopNotifications
@@ -50,16 +50,15 @@
 
 #BottomNotifications
 {
-    text-align: right;
+    text-align: left;
     flow-children: down;
-    horizontal-align: right;
+    horizontal-align: left;
     vertical-align: bottom;
     width: 100%;
     opacity: 1;
     margin-bottom: 275px;
-	margin-right: 30px;
+	margin-left: 30px;
     visibility: visible;
-    border: 0px solid blue;
 }
 
 .NotificationMessage

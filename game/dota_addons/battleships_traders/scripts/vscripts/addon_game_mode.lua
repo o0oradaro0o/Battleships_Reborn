@@ -124,6 +124,8 @@ LastLocs = {}
 LastLocs2 ={}
 GoodWon=true
 
+hero_gold_array={}
+
 
 
 
@@ -860,8 +862,8 @@ function CBattleship8D:handleEmpGold()
 						badGoldEach = badGoldEach + GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
 					else
 						badGoldEach=GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))*2
-						if badGoldEach > 1500*EMP_GOLD_NUMBER and battle_mode==0 then
-							badGoldEach=1500*EMP_GOLD_NUMBER
+						if badGoldEach > 2000*EMP_GOLD_NUMBER and battle_mode==0 then
+							badGoldEach=2000*EMP_GOLD_NUMBER
 						end
 				end
 				BAD_GOLD_TOTAL_MOD = 0
@@ -874,8 +876,8 @@ function CBattleship8D:handleEmpGold()
 					goodGoldEach = goodGoldEach + GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
 					else
 						goodGoldEach=GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))*2
-						if goodGoldEach > 1500*EMP_GOLD_NUMBER and battle_mode==0 then
-							goodGoldEach=1500*EMP_GOLD_NUMBER
+						if goodGoldEach > 2000*EMP_GOLD_NUMBER and battle_mode==0 then
+							goodGoldEach=2000*EMP_GOLD_NUMBER
 						end
 				end
 				BAD_GOLD_TOTAL_MOD = GoldDif
@@ -911,11 +913,13 @@ function CBattleship8D:handleEmpGold()
 						GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + goodGoldEach
 						print("hero's is good guy (south) had " .. herogold .. " got " .. goodGoldEach .. "new gold is: " .. herogold + goodGoldEach)
 						hero:SetGold(0, false)
+						hero_gold_array[hero]=GOOD_GOLD_TOTAL_MOD + goodGoldEach
 					elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 						hero:SetGold(herogold + badGoldEach, true)
 						BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + badGoldEach
 						print("hero's is bad guy (north) had " .. herogold .. " got " .. badGoldEach .. "new gold is: " .. herogold + badGoldEach)
 						hero:SetGold(0, false)
+						hero_gold_array[hero]=BAD_GOLD_TOTAL_MOD + badGoldEach
 					end
 				end
 			end
@@ -945,11 +949,13 @@ function CBattleship8D:handleEmpGold()
 						GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + goodGoldEach
 						print("hero's is good guy (south) had " .. herogold .. " got " .. goodGoldEach .. "new gold is: " .. herogold + goodGoldEach)
 						hero:SetGold(0, false)
+						hero_gold_array[hero]=herogold + goodGoldEach
 					elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 						hero:SetGold(herogold + badGoldEach, true)
 						BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + badGoldEach
 						print("hero's is bad guy (north) had " .. herogold .. " got " .. badGoldEach .. "new gold is: " .. herogold + badGoldEach)
 						hero:SetGold(0, false)
+						hero_gold_array[hero]=herogold + badGoldEach
 					end
 				end
 			end
@@ -986,8 +992,8 @@ if co_op_mode==0 then
 						goldEach = goldEach + GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
 					else
 						goldEach=GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))*2
-						if goldEach > 1500*EMP_GOLD_NUMBER and battle_mode==0 then
-								goldEach=1500*EMP_GOLD_NUMBER
+						if goldEach > 2000*EMP_GOLD_NUMBER and battle_mode==0 then
+								goldEach=2000*EMP_GOLD_NUMBER
 						end
 				end
 				
@@ -1006,8 +1012,8 @@ if co_op_mode==0 then
 						goldEach = goldEach + GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
 					else
 						goldEach=GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))*2
-							if goldEach > 1500*EMP_GOLD_NUMBER and battle_mode==0 then
-								goldEach=1500*EMP_GOLD_NUMBER
+							if goldEach > 2000*EMP_GOLD_NUMBER and battle_mode==0 then
+								goldEach=2000*EMP_GOLD_NUMBER
 						end
 				end
 				
@@ -1582,91 +1588,114 @@ local hero = casterUnit
 	if string.match(hero:GetName(),"disruptor") then
 							hero:SetGold(herogold + 2250, true)
 							hero:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 2250
 							 print ( '[BAREBONES] player was disruptor and got 2250')
 						elseif string.match(hero:GetName(),"ursa") then
 							hero:SetGold(herogold + 8000, true)
 							hero:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 8000
 							print ( '[BAREBONES] player was ursa and got 6000')
 						elseif string.match(hero:GetName(),"meepo") then
 							hero:SetGold(herogold + 4500, true)
 							hero:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 4500
 							print ( '[BAREBONES] player was meepo and got 4500')
 						elseif string.match(hero:GetName(),"tidehunter") then
 							hero:SetGold(herogold + 750, true)
 							hero:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 750
 							print ( '[BAREBONES] player was tidehunter and got 750')
 						elseif string.match(hero:GetName(),"apparition") then
 							hero:SetGold(herogold + 750, true)
 							hero:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 750
 							print ( '[BAREBONES] player was apparition and got 750')
 						elseif string.match(hero:GetName(),"rattletrap") then
 							hero:SetGold(herogold + 750, true)
 							hero:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 750
 							print ( '[BAREBONES] player was rattletrap and got 750')
 						elseif string.match(hero:GetName(),"winter_wyvern") then
 							hero:SetGold(herogold + 2250, true)
 							hero:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 2250
 							print ( '[BAREBONES] player was winter_wyvern and got 2250')
 						elseif string.match(hero:GetName(),"storm_spirit") then
 							hero:SetGold(herogold + 2250, true)
 							hero:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 2250
 							print ( '[BAREBONES] player was storm_spirit and got 2250')
 						elseif string.match(hero:GetName(),"ember_spirit") then
 							hero:SetGold(herogold + 4500, true)
 							hero:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 4500
 							print ( '[BAREBONES] player was zuus and got 6000')
 						elseif string.match(hero:GetName(),"slark") then
 							hero:SetGold(herogold + 4500, true)
 							hero:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 4500
 							print ( '[BAREBONES] player was slark and got 4500')
 						elseif string.match(hero:GetName(),"jakiro") then
 							hero:SetGold(herogold + 4500, true)
 							hero:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 4500
 							print ( '[BAREBONES] player was jakiro and got 4500')
 						elseif string.match(hero:GetName(),"lion") then
 							hero:SetGold(herogold + 2250, true)
 							hero:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 2250
 							print ( '[BAREBONES] player was lion and got 2250')
 						elseif string.match(hero:GetName(),"tusk") then
 							hero:SetGold(herogold + 8000, true)
 							hero:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 8000
 							print ( '[BAREBONES] player was tusk and got 6000')
 						elseif string.match(hero:GetName(),"visage") then
 							hero:SetGold(herogold + 8000, true)
 							hero:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 8000
 							print ( '[BAREBONES] player was visage and got 4500')
 						elseif string.match(hero:GetName(),"nevermore") then
 							hero:SetGold(herogold + 2250, true)
 							hero:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 2250
 							print ( '[BAREBONES] player was nevermore and got 2250')
 						elseif string.match(hero:GetName(),"sniper") then
 							hero:SetGold(herogold + 4500, true)
 							hero:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 4500
 							print ( '[BAREBONES] player was sniper and got 2250')
 						elseif string.match(casterUnit:GetName(),"wind") then
 							casterUnit:SetGold(herogold + 8000, true)
 							casterUnit:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 8000
 							print ( '[BAREBONES] player was lone_druid and got 6000')
 						elseif string.match(casterUnit:GetName(),"crystal") then
 							casterUnit:SetGold(herogold + 750, true)
 							casterUnit:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 750
 					print ( '[BAREBONES] player was lone_druid and got 6000')
 						elseif string.match(hero:GetName(),"phantom") then
 							hero:SetGold(herogold + 750, true)
 							hero:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 750
 							print ( '[BAREBONES] player was phantom_lancer and got 750')
 						elseif string.match(hero:GetName(),"vengefulspirit") then
 							hero:SetGold(herogold + 750, true)
 							hero:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 750
 						elseif string.match(hero:GetName(),"enigma") then
 							hero:SetGold(herogold + 4000, true)
 							hero:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 8000
 						elseif string.match(hero:GetName(),"bane") then
 							hero:SetGold(herogold + 7000, true)
 							hero:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 7000
 						elseif string.match(hero:GetName(),"pugna") then
 							casterUnit:SetGold(herogold + 8000, true)
 							casterUnit:SetGold(0, false)
+							hero_gold_array[casterUnit]=herogold + 8000
 							print ( '[BAREBONES] player was pugna and got 10000')
 				end
 end
@@ -1678,6 +1707,8 @@ function CBattleship8D:OnThink()
 						hero.changed=1
 						NUM_PLAYERS=NUM_PLAYERS+1
 						become_boat(hero, "npc_dota_hero_zuus")
+						
+						
 						RemoveWearables( hero )
 				end
 			end
@@ -1988,16 +2019,21 @@ function CBattleship8D:OnThink()
 								end
 						
 						
-				
+				local hulls=0
 							for itemSlot = 0, 5, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
 									if hero ~= nil then --checks to make sure the killed unit is not nonexistent.
 											local Item = hero:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
 											if Item ~= nil and string.match(Item:GetName(),"hull") then -- makes sure that the item exists and making sure it is the correct item
 												Item:ApplyDataDrivenModifier(hero, hero, "modifier_item_hull_one", nil)
-												
+												hulls=hulls+1
 											end
 									end
 							end
+					
+					if hulls>1 and hero.hullmsg==nil then
+						hero.hullmsg=1
+						Notifications:Top(hero:GetPlayerID(), {text="#too_many_hulls", duration=5.0, style={color="#800000",  fontSize="50px;"}})
+					end
 					
 					--handles people stuck on cliffs
 						local height = hero:GetOrigin() * Vector(0,0,1)
@@ -2059,10 +2095,12 @@ function CBattleship8D:OnThink()
 					if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 						hero:SetGold(herogold + GOOD_GOLD_PER_TICK * 2, true)
 						hero:SetGold(0, false)
+						hero_gold_array[hero]=herogold + GOOD_GOLD_PER_TICK * 2
 						GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + GOOD_GOLD_PER_TICK * 2
 					elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 						hero:SetGold(herogold + BAD_GOLD_PER_TICK * 2, true)
 						hero:SetGold(0, false)
+						hero_gold_array[hero]=herogold + BAD_GOLD_PER_TICK * 2
 						BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + BAD_GOLD_PER_TICK * 2
 					end
 					
@@ -2223,6 +2261,11 @@ end
 function CBattleship8D:OnConnectFull(keys)
   print ( '[BAREBONES] OnConnectFull' )
   PrintTable(keys)
+  
+  Timers:CreateTimer( 5, function()
+		local data ={}
+	FireGameEvent("Boat_Spawned",data)
+	end)
 
 		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 			
@@ -2281,6 +2324,7 @@ function CBattleship8D:OnEntityKilled( keys )
 						if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS  then
 							hero:SetGold(herogold + 100, true)
 							hero:SetGold(0, false)
+							hero_gold_array[hero]=herogold + 100
 							GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 100
 						end
 					end
@@ -2298,6 +2342,7 @@ function CBattleship8D:OnEntityKilled( keys )
 							hero:SetGold(herogold + 100, true)
 							hero:SetGold(0, false)
 							BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 100
+							hero_gold_array[hero]=herogold + 100
 						end
 					end
 				end
@@ -2498,6 +2543,174 @@ function CBattleship8D:OnEntityKilled( keys )
 			UpdateCoOpTables()
 		end
 		--distribute the gold to the team, add it to the empire gold and remove the origional bounty gold from the killer
+		
+if killedUnit:IsRealHero() then
+	
+	local killerName="Unknown"
+	local KilledName="Unknown"
+	if killedUnit:GetPlayerID()~=nil then
+		killedName=PlayerResource:GetPlayerName( killedUnit:GetPlayerID())
+	end
+		
+		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+				if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+					local herogold = hero:GetGold()
+					if hero_gold_array[hero]~=nil and hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+						if herogold>hero_gold_array[hero] then
+							hero:SetGold(hero_gold_array[hero], true)
+							hero:SetGold(0, false)
+						end
+					elseif hero_gold_array[hero]~=nil and hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+						if herogold>hero_gold_array[hero] then
+							hero:SetGold(hero_gold_array[hero], true)
+							hero:SetGold(0, false)
+						end
+					end
+				end
+		end
+		
+		
+		if killerEntity:IsRealHero() and killerEntity:GetTeamNumber()~=killedUnit:GetTeamNumber() then
+			if killerEntity:GetPlayerID()~=nil then
+				killerName=PlayerResource:GetPlayerName( killerEntity:GetPlayerID())
+			end
+			
+			if killedUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+				
+				
+				
+				
+				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {hero=killerEntity:GetName(), style={height="15px", width="20px",  marginRight="3px"}, imagestyle="landscape", duration=10.0})
+				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=killerName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
+				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#got_kill_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+				
+				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {hero=killedUnit:GetName(), style={height="15px", width="20px",  marginRight="3px"}, imagestyle="landscape", duration=10.0, continue=true})
+				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=killedName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=true})
+				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#got_kill_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=tostring(math.floor(killedUnit:GetGoldBounty()/2+0.5)) .. " ", duration=10.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
+				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#got_kill_three", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=tostring(math.floor(killedUnit:GetGoldBounty()/2+0.5)) .. " ", duration=10.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
+			
+				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#got_kill_four", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+				
+				
+				--badguy messager
+				Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {hero=killerEntity:GetName(), style={height="15px", width="20px",  marginRight="3px"}, imagestyle="landscape", duration=10.0})
+				Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=killerName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=true})
+				
+				Notifications:BottomToTeam(DOTA_TEAM_BADGUYS,{text="#got_kill_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+				
+				Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {hero=killedUnit:GetName(), style={height="15px", width="20px",  marginRight="3px"}, imagestyle="landscape", duration=10.0, continue=true})
+				Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=killedName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
+				
+				Notifications:BottomToTeam(DOTA_TEAM_BADGUYS,{text="#got_kill_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+				
+				Notifications:BottomToTeam(DOTA_TEAM_BADGUYS,{text=tostring(math.floor(killedUnit:GetGoldBounty()/2+0.5)) .. " ", duration=10.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
+				
+				Notifications:BottomToTeam(DOTA_TEAM_BADGUYS,{text="#got_kill_three", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+				
+			Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=tostring(math.floor(killedUnit:GetGoldBounty()/2+0.5)) .. " ", duration=10.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
+			
+				Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#got_kill_four", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+				else
+				
+				Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {hero=killerEntity:GetName(), style={height="15px", width="20px",  marginRight="3px"}, imagestyle="landscape", duration=10.0})
+				Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=killerName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
+				
+				Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#got_kill_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+				
+					Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {hero=killedUnit:GetName(), style={height="15px", width="20px",  marginRight="3px"}, imagestyle="landscape", duration=10.0, continue=true})
+				Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=killedName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=true})
+				
+				Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#got_kill_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+				
+				Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=tostring(math.floor(killedUnit:GetGoldBounty()/2+0.5)) .. " ", duration=10.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
+				
+				Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#got_kill_three", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+				
+			Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=tostring(math.floor(killedUnit:GetGoldBounty()/2+0.5)) .. " ", duration=10.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
+			
+				Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#got_kill_four", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+				
+			
+			
+			
+			Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {hero=killerEntity:GetName(), style={height="15px", width="20px",  marginRight="3px"}, imagestyle="landscape", duration=10.0})
+				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=killerName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=true})
+				
+				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS,{text="#got_kill_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+				
+	Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {hero=killedUnit:GetName(), style={height="15px", width="20px",  marginRight="3px"}, imagestyle="landscape", duration=10.0, continue=true})
+	
+				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=killedName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
+				
+				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS,{text="#got_kill_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+				
+				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS,{text=tostring(math.floor(killedUnit:GetGoldBounty()/2+0.5)) .. " ", duration=10.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
+				
+				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS,{text="#got_kill_three", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+				
+			Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=tostring(math.floor(killedUnit:GetGoldBounty()/2+0.5)) .. " ", duration=10.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
+			
+				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#got_kill_four", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+				end
+		else
+				
+				if killedUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+					Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {hero=killedUnit:GetName(), style={height="15px", width="20px",  marginRight="3px"}, imagestyle="landscape", duration=10.0})
+					Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=killedName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
+					Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+					Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=tostring(math.floor(killedUnit:GetGoldBounty()+0.5)) .. " ", duration=10.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
+					Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+			
+				Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {hero=killedUnit:GetName(), style={height="15px", width="20px",  marginRight="3px"}, imagestyle="landscape", duration=10.0})
+					Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=killedName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=true})
+					Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+					Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=tostring(math.floor(killedUnit:GetGoldBounty()+0.5)) .. " ", duration=10.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
+					Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+
+				else
+					Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {hero=killedUnit:GetName(), style={height="15px", width="20px",  marginRight="3px"}, imagestyle="landscape", duration=10.0})
+					Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=killedName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
+					Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+					Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=tostring(math.floor(killedUnit:GetGoldBounty()+0.5)) .. " ", duration=10.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
+					Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+
+					Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {hero=killedUnit:GetName(), style={height="15px", width="20px",  marginRight="3px"}, imagestyle="landscape", duration=10.0})
+					Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=killedName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=true})
+					Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+					Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=tostring(math.floor(killedUnit:GetGoldBounty()+0.5)) .. " ", duration=10.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
+					Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+
+				
+				end
+				
+		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+				local herogold = hero:GetGold()
+				if hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+					hero:SetGold(herogold + killedUnit:GetGoldBounty()/NUM_GOOD_PLAYERS, true)
+					hero:SetGold(0, false)
+					hero_gold_array[hero]=herogold + (killedUnit:GetGoldBounty()/NUM_GOOD_PLAYERS)
+				elseif hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+					hero:SetGold(herogold + killedUnit:GetGoldBounty()/NUM_BAD_PLAYERS, true)
+					hero:SetGold(0, false)
+					hero_gold_array[hero]=herogold + (killedUnit:GetGoldBounty()/NUM_BAD_PLAYERS)
+				end
+			end
+		end
+		if killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+			GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + killedUnit:GetGoldBounty()
+		elseif killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+			BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + killedUnit:GetGoldBounty()
+		end
+				
+	end	
+		
+  end
+
+		
+		
   if killedUnit:GetGoldBounty() and killerEntity:IsRealHero() then
   
 		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
@@ -2506,11 +2719,11 @@ function CBattleship8D:OnEntityKilled( keys )
 				if hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 					hero:SetGold(herogold + (killedUnit:GetGoldBounty()/NUM_GOOD_PLAYERS)/2, true)
 					hero:SetGold(0, false)
-				
+					hero_gold_array[hero]=herogold + (killedUnit:GetGoldBounty()/NUM_GOOD_PLAYERS)/2
 				elseif hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 					hero:SetGold(herogold + killedUnit:GetGoldBounty()/NUM_BAD_PLAYERS, true)
 					hero:SetGold(0, false)
-
+					hero_gold_array[hero]=herogold + (killedUnit:GetGoldBounty()/NUM_BAD_PLAYERS)/2
 				end
 			end
 		end
@@ -2521,8 +2734,15 @@ function CBattleship8D:OnEntityKilled( keys )
 			BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + killedUnit:GetGoldBounty()
 		end
 		local herogold = killerEntity:GetGold()
-		killerEntity:SetGold(herogold - killedUnit:GetGoldBounty()/2, true)
+		killerEntity:SetGold(herogold + killedUnit:GetGoldBounty()/2, true)
 		killerEntity:SetGold(0, false)
+		if killedUnit:IsRealHero() then
+		hero_gold_array[killerEntity]=herogold + killedUnit:GetGoldBounty()/2
+		else
+			hero_gold_array[killerEntity]=herogold - killedUnit:GetGoldBounty()/2
+		end
+		
+		print("gold bounty for hero was " .. killedUnit:GetGoldBounty())
   end
   
   if killedUnit:IsRealHero() then
@@ -2580,6 +2800,7 @@ function CBattleship8D:OnEntityKilled( keys )
 			if killerEntity:GetTeamNumber() ~= killedUnit:GetTeam()  then
 				killerEntity:SetGold(herogold + herokills[killedUnit:GetPlayerID()] * 100, true)
 				killerEntity:SetGold(0, false)
+				hero_gold_array[killerEntity]=herogold + herokills[killedUnit:GetPlayerID()] * 100
 				if killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 					GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + herokills[killedUnit:GetPlayerID()] * 100
 					Notifications:BottomToAll({text="#streak_end_one_s", duration=5.0, style={color="#A70606",  fontSize="30px;"}})
@@ -2608,6 +2829,8 @@ if herokills[killerEntity:GetPlayerID()] ~=nil then
 						if hero:GetTeamNumber() == killerEntity:GetTeam()  then
 							hero:SetGold(herogold + killerEntity:GetStreak() * 30, true)
 							hero:SetGold(0, false)
+							hero_gold_array[hero]=killergold + killerEntity:GetStreak() * 30
+			
 							if killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + killerEntity:GetStreak() * 30
 							elseif  killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
@@ -2619,6 +2842,7 @@ if herokills[killerEntity:GetPlayerID()] ~=nil then
 				local killergold = killerEntity:GetGold()
 				killerEntity:SetGold(killergold - killerEntity:GetStreak() * 30, true)
 				killerEntity:SetGold(0, false)
+				hero_gold_array[killerEntity]=killergold - killerEntity:GetStreak() * 30
 			
 				if killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 					GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD - killerEntity:GetStreak() * 30
@@ -2639,13 +2863,7 @@ if herokills[killerEntity:GetPlayerID()] ~=nil then
 				Notifications:BottomToAll({text=tostring(killerEntity:GetGoldBounty()) .. " ", duration=5.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
 				Notifications:BottomToAll({text="#kill_self_two", duration=5.0, style={color="#A70606",  fontSize="18px;"}, continue=true})
 
-				if killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-						GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + killerEntity:GetGoldBounty()
-
-					elseif  killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-						BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + killerEntity:GetGoldBounty()
-
-					end
+	
 			end
 		end
 		--handle vengance
@@ -2656,6 +2874,8 @@ if herokills[killerEntity:GetPlayerID()] ~=nil then
 						
 						killerEntity:SetGold(killerEntity:GetGold() + bounty/4, true)
 						hero:SetGold(hero:GetGold() + bounty/2, true)
+						hero_gold_array[hero]=hero:GetGold() + bounty/2
+						hero_gold_array[killerEntity]=hero:GetGold() + bounty/4
 						Notifications:BottomToAll({text=PlayerResource:GetPlayerName( killerEntity:GetPlayerID()) .. " ", duration=5.0, style={color="#FF9955",  fontSize="18px;"}})
 						Notifications:BottomToAll({text="#avenge_one", duration=5.0, style={color="#FF9900",  fontSize="18px;"}, continue=true})
 						Notifications:BottomToAll({text=PlayerResource:GetPlayerName( hero:GetPlayerID()) .. " ", duration=5.0, style={color="#FF9955",  fontSize="18px;"}, continue=true})
@@ -2691,17 +2911,10 @@ if herokills[killerEntity:GetPlayerID()] ~=nil then
 		print ("NUM_GOOD_PLAYERS: " .. NUM_GOOD_PLAYERS .. " -- good dead: " .. goodDead)
 		print ("NUM_BAD_PLAYERS: " .. NUM_BAD_PLAYERS .. " -- bad dead: " .. badDead)
 		if goodDead == NUM_GOOD_PLAYERS and killedUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS and NUM_GOOD_PLAYERS>2 then
-			CBattleship8D:quickSpawn("north","right", "four", 1, CREEP_NUM_PRIV)
-			CBattleship8D:quickSpawn("north","left", "four", 1, CREEP_NUM_PRIV)
-			Notifications:TopToAll({text="#team_wipe_north", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
-
-						
+			Notifications:TopToAll({text="#team_wipe_north", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})	
 		end
 		if badDead == NUM_BAD_PLAYERS and killedUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS and NUM_BAD_PLAYERS>2 then
-			CBattleship8D:quickSpawn("south","right", "four", 1, CREEP_NUM_PRIV)
-			CBattleship8D:quickSpawn("south","left", "four", 1, CREEP_NUM_PRIV)
 			Notifications:TopToAll({text="#team_wipe_north", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
-
 		end
 		
 		
@@ -2771,189 +2984,14 @@ if item_code_lookup[itemName] ~= nil then
 print(item_code_lookup[itemName])
 	  storage:AddToPlayerItemHist(casterUnit:GetPlayerID(),item_code_lookup[itemName])--math.floor(GameRules:GetGameTime()/60+0.5) .. item_code_lookup[itemName])
 end	  
-  	if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
-		
-		
-		for itemSlot = 0, 5, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
-			if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
-				local Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
-				if Item ~= nil and Item:GetName() == itemName and not string.match(Item:GetName(), "wood") and not string.match(Item:GetName(), "boat") and not string.match(Item:GetName(), "bow") then -- makes sure that the item exists and making sure it is the correct item
-					if Item:GetToggleState() ~= true then
-						local boat=false
-						
-						Item:ToggleAbility()
-						if boat then
-							break
-						end
-					end
-				end
-			end
-		end
-		
-	end
 
-	
-  
   -- The name of the item purchased
   
   print ( '[BAREBONES] Item Purchased was ' .. itemName)
   local herogold = casterUnit:GetGold()
-		if string.match(itemName, "boat") then
-			local casterPos = casterUnit:GetAbsOrigin()
-			
-			local targetUnitOne = Entities:FindByName( nil, "south_boat_shop")
-			local targetUnitTwo = Entities:FindByName( nil, "north_boat_shop")
-			local directionOne =  casterPos - targetUnitOne:GetAbsOrigin()
-			local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
-			
-			
-			if directionOne:Length() < 900 or directionTwo:Length() < 900 then
-				boat=true
-				sellBoat(casterUnit)
-					
-					if string.match(itemName,"kunkka") then
-				become_boat(casterUnit, "npc_dota_hero_disruptor")
-				elseif string.match(itemName,"gyrocopter") then
-					become_boat(casterUnit, "npc_dota_hero_ursa")
-				elseif string.match(itemName,"brewmaster") then
-					become_boat(casterUnit, "npc_dota_hero_meepo")
-				elseif string.match(itemName,"tidehunter") then
-					become_boat(casterUnit, "npc_dota_hero_tidehunter")
-				elseif string.match(itemName,"puck") then
-					become_boat(casterUnit, "npc_dota_hero_ancient_apparition")
-				elseif string.match(itemName,"winter_wyvern") then
-					become_boat(casterUnit, "npc_dota_hero_winter_wyvern")
-				elseif string.match(itemName,"storm_spirit") then
-					become_boat(casterUnit, "npc_dota_hero_storm_spirit")
-				elseif string.match(itemName,"zuus") then
-					become_boat(casterUnit, "npc_dota_hero_ember_spirit")
-				elseif string.match(itemName,"magnus") then
-					become_boat(casterUnit, "npc_dota_hero_slark")
-				elseif string.match(itemName,"jakiro") then
-					become_boat(casterUnit, "npc_dota_hero_jakiro")
-				elseif string.match(itemName,"lion") then
-					become_boat(casterUnit, "npc_dota_hero_lion")
-				elseif string.match(itemName,"spectre") then
-					become_boat(casterUnit, "npc_dota_hero_tusk")
-				elseif string.match(itemName,"visage") then
-					become_boat(casterUnit, "npc_dota_hero_visage")
-				elseif string.match(itemName,"nevermore") then
-					become_boat(casterUnit, "npc_dota_hero_nevermore")
-				elseif string.match(itemName,"rubick") then
-					become_boat(casterUnit, "npc_dota_hero_rattletrap")
-				elseif string.match(itemName,"shredder") then
-					become_boat(casterUnit, "npc_dota_hero_sniper")
-				elseif string.match(itemName,"treant") then
-					become_boat(casterUnit, "npc_dota_hero_windrunner")
-				elseif string.match(itemName,"crystal") then
-					become_boat(casterUnit, "npc_dota_hero_crystal_maiden")
-				elseif string.match(itemName,"phantom") then
-					become_boat(casterUnit, "npc_dota_hero_phantom_lancer")
-				elseif string.match(itemName,"wisp") then
-					become_boat(casterUnit, "npc_dota_hero_pugna")
-			end
-		else
-		
-		 Notifications:Top(casterUnit:GetPlayerID(), {text="#to_base", duration=3.0, style={color="#800000",  fontSize="50px;"}})
-				
-				
-				if string.match(itemName,"kunkka") then
-					casterUnit:SetGold(herogold + 3000, true)
-					casterUnit:SetGold(0, false)
-					 print ( '[BAREBONES] player was disruptor and got 3000')
-				elseif string.match(itemName,"gyrocopter") then
-					casterUnit:SetGold(herogold + 10000, true)
-					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was ursa and got 10000')
-				elseif string.match(itemName,"brewmaster") then
-					casterUnit:SetGold(herogold + 6000, true)
-					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was meepo and got 6000')
-				elseif string.match(itemName,"tidehunter") then
-					casterUnit:SetGold(herogold + 1000, true)
-					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was tidehunter and got 1000')
-				elseif string.match(itemName,"puck") then
-					casterUnit:SetGold(herogold + 1000, true)
-					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was apparition and got 1000')
-				elseif string.match(itemName,"rubick") then
-					casterUnit:SetGold(herogold + 1000, true)
-					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was rattletrap and got 1000')
-				elseif string.match(itemName,"winter_wyvern") then
-					casterUnit:SetGold(herogold + 3000, true)
-					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was winter_wyvern and got 3000')
-				elseif string.match(itemName,"storm_spirit") then
-					casterUnit:SetGold(herogold + 3000, true)
-					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was storm_spirit and got 3000')
-				elseif string.match(itemName,"zuus") then
-					casterUnit:SetGold(herogold + 6000, true)
-					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was zuus and got 10000')
-				elseif string.match(itemName,"magnus") then
-					casterUnit:SetGold(herogold + 6000, true)
-					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was magmus and got 6000')
-				elseif string.match(itemName,"jakiro") then
-					casterUnit:SetGold(herogold + 6000, true)
-					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was jakiro and got 6000')
-				elseif string.match(itemName,"lion") then
-					casterUnit:SetGold(herogold + 3000, true)
-					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was lion and got 3000')
-				elseif string.match(itemName,"spectre") then
-					casterUnit:SetGold(herogold + 10000, true)
-					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was tusk and got 10000')
-				elseif string.match(itemName,"visage") then
-					casterUnit:SetGold(herogold + 10000, true)
-					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was visage and got 6000')
-				elseif string.match(itemName,"nevermore") then
-					casterUnit:SetGold(herogold + 3000, true)
-					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was nevermore and got 3000')
-				elseif string.match(itemName,"sniper") then
-					casterUnit:SetGold(herogold + 6000, true)
-					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was sniper and got 3000')
-				elseif string.match(itemName,"treant") then
-					casterUnit:SetGold(herogold + 10000, true)
-					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was lone_druid and got 10000')
-				elseif string.match(itemName,"wisp") then
-					casterUnit:SetGold(herogold + 10000, true)
-					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was lone_druid and got 10000')
-				elseif string.match(itemName,"crystal") then
-					casterUnit:SetGold(herogold + 1000, true)
-					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was lone_druid and got 10000')
-				elseif string.match(itemName,"phantom") then
-					casterUnit:SetGold(herogold + 1000, true)
-					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was phantom_lancer and got 1000')
-				elseif string.match(itemName,"pugna") then
-					casterUnit:SetGold(herogold + 10000, true)
-					casterUnit:SetGold(0, false)
-					print ( '[BAREBONES] player was phantom_lancer and got 1000')
-				end
-				if casterUnit:IsHero() or casterUnit:HasInventory() then 
-					for itemSlot = 0, 14, 1 do 
-						if casterUnit ~= nil then
-							local Item = casterUnit:GetItemInSlot( itemSlot )
-							if Item ~= nil and string.match(Item:GetName(), "boat") then
-								casterUnit:RemoveItem(Item)
-							end
-						end
-					end
-				end
-		end
-	end
+  hero_gold_array[casterUnit]=herogold
+  
+	
 		
 
 	if string.match(itemName, "tower_debuff") then
@@ -3012,7 +3050,9 @@ function become_boat(casterUnit, heroname)
 				else
 					print("Item in slot is: filler")
 					itemlist[itemSlot] = "item_fluff"
-					
+					if string.match(heroname,"zuus") and itemSlot==0 then
+						itemlist[itemSlot]="item_hull_sail_one_combo_bow"
+					end
 				end
             end
 		end
@@ -3046,6 +3086,7 @@ function become_boat(casterUnit, heroname)
 						print("this is the new hero, put items in " .. hero:GetName())
 						hero:SetGold(gold, true)
 						hero:SetGold(0, false)
+						hero_gold_array[hero]=gold
 						hero:AddExperience(xp, false, false)
 						for b = 0, 14, 1 do 
 							local newItem = CreateItem(itemlist[b], hero, hero)
@@ -3185,6 +3226,18 @@ function become_boat(casterUnit, heroname)
 		
 	end
 	Timers:CreateTimer( 1, function()
+		local data ={}
+	FireGameEvent("Boat_Spawned",data)
+	end)
+	Timers:CreateTimer( 3, function()
+		local data ={}
+	FireGameEvent("Boat_Spawned",data)
+	end)
+	Timers:CreateTimer( 5, function()
+		local data ={}
+	FireGameEvent("Boat_Spawned",data)
+	end)
+	Timers:CreateTimer( 7, function()
 		local data ={}
 	FireGameEvent("Boat_Spawned",data)
 	end)
@@ -3469,10 +3522,11 @@ function buyBoat(eventSourceIndex, args)
 		local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
 		
 		print(itemName .. " vs " .. casterUnit:GetName())
-		if (directionOne:Length() < 1000 or directionTwo:Length() < 1000) and herogold>cost-1 and not string.match(casterUnit:GetName(),itemName ) then
+		if (directionOne:Length() < 1000 or directionTwo:Length() < 1000) and herogold>cost-1 and not string.match(casterUnit:GetName(),itemName ) and  GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 			boat=true
 			casterUnit:SetGold(herogold-cost,true)
 			casterUnit:SetGold(0,false)
+			hero_gold_array[casterUnit]=herogold-cost
 			sellBoat(casterUnit)
 			EmitSoundOnClient("General.Buy",PlayerResource:GetPlayer(pID))
 		Timers:CreateTimer( .15, function()
@@ -3526,10 +3580,14 @@ function buyBoat(eventSourceIndex, args)
 		end
 		
 	end)
+	elseif GameRules:State_Get() ~= 	DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+		Notifications:Top(casterUnit:GetPlayerID(), {text="#cant_buy", duration=3.0, style={color="#800000",  fontSize="50px;"}})
+		EmitSoundOnClient("ui.contract_fail",PlayerResource:GetPlayer(pID))
 	elseif(directionOne:Length() > 599 and directionTwo:Length() > 599) then
 		
 	Notifications:Top(casterUnit:GetPlayerID(), {text="#to_base", duration=3.0, style={color="#800000",  fontSize="50px;"}})
 	EmitSoundOnClient("ui.contract_fail",PlayerResource:GetPlayer(pID))
+	
 	else
 		EmitSoundOnClient("ui.contract_fail",PlayerResource:GetPlayer(pID)) 
 		end
@@ -3577,6 +3635,7 @@ function buyItem(eventSourceIndex, args)
 				heroBuying:AddItem(tempItem)
 				heroBuying:SetGold(herogold-cost,true)
 				heroBuying:SetGold(0,false)
+				hero_gold_array[heroBuying]=herogold-cost
 			else
 				EmitSoundOnClient("ui.contract_fail",PlayerResource:GetPlayer(pID))
 			end
@@ -3757,9 +3816,10 @@ function HandleShopChecks(hero)
 							hero:RemoveItem(Item)
 							hero:SetGold(hero:GetGold()+300*EMP_GOLD_NUMBER/4,true)
 							hero:SetGold(0,false)
+							hero_gold_array[hero]=hero:GetGold()+300*EMP_GOLD_NUMBER/4
 							hero:AddExperience(200,0,false,true)
 							Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=4.0, style={ color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-							Notifications:Top(hero:GetPlayerID(),{text=100*EMP_GOLD_NUMBER/2, duration=4.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+							Notifications:Top(hero:GetPlayerID(),{text=300*EMP_GOLD_NUMBER/4, duration=4.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 
 				end		
 			end
@@ -3779,6 +3839,9 @@ function HandleShopChecks(hero)
 				FireGameEvent("Hero_Near_Shop",data)
 			end
 		
+		--saves number of peoplke on this traders team
+		local numPlayers
+		
 			for itemSlot = 0, 5, 1 do 
 				if hero ~= nil then
 					local Item = hero:GetItemInSlot( itemSlot )
@@ -3788,13 +3851,14 @@ function HandleShopChecks(hero)
 						local itemStrippedHard=string.gsub(Item:GetName(),"item_contract_hard","")
 						if  string.match(nearestShop:GetUnitName(),itemStrippedEasy) then
 							hero:RemoveItem(Item)
-							hero:SetGold(hero:GetGold()+300*EMP_GOLD_NUMBER/4,true)
+							hero:SetGold(hero:GetGold()+100*EMP_GOLD_NUMBER/4,true)
 							hero:SetGold(0,false)
+							hero_gold_array[hero]=hero:GetGold()+100*EMP_GOLD_NUMBER/4
 							hero:AddExperience(xp_to_level[hero:GetLevel()]*.33,0,false,true)
 							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 300*EMP_GOLD_NUMBER/4
+								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 100*EMP_GOLD_NUMBER/4
 							elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 300*EMP_GOLD_NUMBER/4
+								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 100*EMP_GOLD_NUMBER/4
 							end
 						
 							local allyteamnumber=hero:GetPlayerID()
@@ -3810,31 +3874,38 @@ function HandleShopChecks(hero)
 								if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
 									local herogold = otherHero:GetGold()
 									if otherHero:GetTeamNumber() == hero:GetTeam()  and otherHero~=hero then
-										otherHero:SetGold(herogold + 30*EMP_GOLD_NUMBER/4, true)
-										otherHero:SetGold(0, false)
 										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 46*EMP_GOLD_NUMBER/4
+											numPlayers=NUM_GOOD_PLAYERS
+											otherHero:SetGold(herogold + 50*EMP_GOLD_NUMBER/numPlayers, true)
+											otherHero:SetGold(0, false)
+											hero_gold_array[otherHero]=herogold + 50*EMP_GOLD_NUMBER/numPlayers
+											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 50*EMP_GOLD_NUMBER/numPlayers
 										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 30*EMP_GOLD_NUMBER/4
+											numPlayers=NUM_BAD_PLAYERS
+											otherHero:SetGold(herogold + 50*EMP_GOLD_NUMBER/numPlayers, true)
+											otherHero:SetGold(0, false)
+											hero_gold_array[otherHero]=herogold + 50*EMP_GOLD_NUMBER/numPlayers
+											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 50*EMP_GOLD_NUMBER/numPlayers
 										end
 									end
 								end
 							end
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(), {text=300*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(), {text=100*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(), {text=30*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(), {text=math.floor(50*EMP_GOLD_NUMBER/numPlayers), duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 						elseif string.match(nearestShop:GetUnitName(),itemStrippedMedium) then
 							hero:RemoveItem(Item)
-							hero:SetGold(hero:GetGold()+600*EMP_GOLD_NUMBER/4,true)
+							hero:SetGold(hero:GetGold()+300*EMP_GOLD_NUMBER/4,true)
 							hero:SetGold(0,false)
+								hero_gold_array[hero]=hero:GetGold()+300*EMP_GOLD_NUMBER/4
 								print("hero level: " .. hero:GetLevel())
 								print("nect level: " .. xp_to_level[hero:GetLevel()])
 							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 600*EMP_GOLD_NUMBER/4
+								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 300*EMP_GOLD_NUMBER/4
 							elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 600*EMP_GOLD_NUMBER/4
+								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 300*EMP_GOLD_NUMBER/4
 							end
 							
 							hero:AddExperience(xp_to_level[hero:GetLevel()]*.45,0,false,true)
@@ -3842,12 +3913,20 @@ function HandleShopChecks(hero)
 								if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
 									local herogold = otherHero:GetGold()
 									if otherHero:GetTeamNumber() == hero:GetTeam()  and otherHero~=hero then
-										otherHero:SetGold(herogold + 46*EMP_GOLD_NUMBER/4, true)
-										otherHero:SetGold(0, false)
+										
 										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 76*EMP_GOLD_NUMBER/4
+											numPlayers=NUM_GOOD_PLAYERS
+											otherHero:SetGold(herogold + 75*EMP_GOLD_NUMBER/numPlayers, true)
+											otherHero:SetGold(0, false)
+												hero_gold_array[otherHero]=herogold + 75*EMP_GOLD_NUMBER/numPlayers
+											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 75*EMP_GOLD_NUMBER/numPlayers
 										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 46*EMP_GOLD_NUMBER/4
+											numPlayers=NUM_BAD_PLAYERS
+											otherHero:SetGold(herogold + 75*EMP_GOLD_NUMBER/numPlayers, true)
+											otherHero:SetGold(0, false)
+											hero_gold_array[otherHero]=herogold + 75*EMP_GOLD_NUMBER/numPlayers
+											
+											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 75*EMP_GOLD_NUMBER/numPlayers
 										end
 									end
 								end
@@ -3863,19 +3942,20 @@ function HandleShopChecks(hero)
 							FireGameEvent("Team_Can_Buy",data)
 							EmitSoundOnClient("ui.npe_objective_complete",PlayerResource:GetPlayer(hero:GetPlayerID()))
 							Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(),{text=600*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(),{text=300*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(),{text=46*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(),{text=math.floor(75*EMP_GOLD_NUMBER/numPlayers), duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 						elseif string.match(nearestShop:GetUnitName(),itemStrippedHard) then
 							hero:RemoveItem(Item)
-							hero:SetGold(hero:GetGold()+1000*EMP_GOLD_NUMBER/4,true)
+							hero:SetGold(hero:GetGold()+300*EMP_GOLD_NUMBER/4,true)
 							hero:SetGold(0,false)
+							hero_gold_array[hero]=hero:GetGold()+300*EMP_GOLD_NUMBER/4
 							hero:AddExperience(xp_to_level[hero:GetLevel()]*.5,0,false,true)
 							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 1000*EMP_GOLD_NUMBER/4
+								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 300*EMP_GOLD_NUMBER/4
 							elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 1000*EMP_GOLD_NUMBER/4
+								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 300*EMP_GOLD_NUMBER/4
 							end
 						
 							local allyteamnumber=hero:GetPlayerID()
@@ -3883,12 +3963,20 @@ function HandleShopChecks(hero)
 								if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
 									local herogold = otherHero:GetGold()
 									if otherHero:GetTeamNumber() == hero:GetTeam()  and otherHero~=hero then
-										otherHero:SetGold(herogold + 76*EMP_GOLD_NUMBER/4, true)
-										otherHero:SetGold(0, false)
+										
 										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 76*EMP_GOLD_NUMBER/4
+											numPlayers=NUM_GOOD_PLAYERS
+											otherHero:SetGold(herogold + 100*EMP_GOLD_NUMBER/NUM_GOOD_PLAYERS, true)
+											otherHero:SetGold(0, false)
+												hero_gold_array[otherHero]=herogold + 100*EMP_GOLD_NUMBER/NUM_BAD_PLAYERS
+											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 100*EMP_GOLD_NUMBER/NUM_GOOD_PLAYERS
 										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 76*EMP_GOLD_NUMBER/4
+											numPlayers=NUM_BAD_PLAYERS
+											otherHero:SetGold(herogold + 100*EMP_GOLD_NUMBER/NUM_BAD_PLAYERS, true)
+											otherHero:SetGold(0, false)
+											hero_gold_array[otherHero]=herogold + 100*EMP_GOLD_NUMBER/NUM_BAD_PLAYERS
+											
+											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 100*EMP_GOLD_NUMBER/NUM_BAD_PLAYERS
 										end
 									end
 								end
@@ -3901,9 +3989,9 @@ function HandleShopChecks(hero)
 							FireGameEvent("Team_Can_Buy",data)
 							EmitSoundOnClient("ui.npe_objective_complete",PlayerResource:GetPlayer(hero:GetPlayerID()))
 						 Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-						 Notifications:Top(hero:GetPlayerID(),{text=750*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+						 Notifications:Top(hero:GetPlayerID(),{text=300*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(),{text=76*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(),{text=math.floor(100*EMP_GOLD_NUMBER/numPlayers), duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 							end
 					end
@@ -4148,10 +4236,12 @@ function HandleBattle()
 				if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 					battle_mode_south_score=battle_mode_south_score+1
 					hero:SetGold(herogold + battle_mode_number*3+2, true)   
+					hero_gold_array[hero]=herogold +  (battle_mode_number*3+2)
 					GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + battle_mode_number*3+2
 				elseif	hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 					battle_mode_north_score=battle_mode_north_score+1
 					hero:SetGold(herogold + battle_mode_number*3+2, true)   
+					hero_gold_array[hero]=herogold +  (battle_mode_number*3+2)
 					BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + battle_mode_number*3+2
 				end
 			end
@@ -4192,10 +4282,12 @@ function endBattle()
 				if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS and battle_mode_north_score < battle_mode_south_score then
 					battle_mode_south_score=battle_mode_south_score+1
 					hero:SetGold(herogold + (battle_mode_number*3+2)*15, true)  
+					hero_gold_array[hero]=herogold +  (battle_mode_number*3+2)*15
 					GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + (battle_mode_number*4+2)*15					
 				elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS and battle_mode_north_score > battle_mode_south_score then
 					battle_mode_north_score=battle_mode_north_score+1
 					hero:SetGold(herogold +  (battle_mode_number*3+2)*15, true)   
+					hero_gold_array[hero]=herogold +  (battle_mode_number*3+2)*15
 					BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + (battle_mode_number*4+2)*15
 				end
 			end

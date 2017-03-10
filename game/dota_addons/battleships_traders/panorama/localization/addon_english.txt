@@ -185,6 +185,9 @@
 	"dev_sucks"	"This is a workaround for items in the stash disappearing. I have ejected the item and it should be on the ground. Sorry."
 	
 	
+	"cant_buy" "Ships are not yet available."
+	
+	
 	//harbor deaths
 	"left_north_harbor_died"		"North Harbor has fallen! If the right lane falls they will be defeated!</font>"
 	"right_north_harbor_died"		"North Harbor has fallen! If the left lane falls they will be defeated!"
@@ -212,8 +215,8 @@
 	"streak_reward_one_s" "Kill Streak bonus grants southern players "
 	"streak_reward_two_s"	"each."
 	
-	"team_wipe_north" "Privateers have seen all SOUTHERN capital ships fall and are seizing the opportunity to safely assist the NORTH."
-	"team_wipe_south" "Privateers have seen all NORTHERN capital ships fall and are seizing the opportunity to safely assist the SOUTH."
+	"team_wipe_north" "All SOUTHERN capital ships fall NORTH, you did good and should be proud."
+	"team_wipe_south" "All NORTH capital ships fall SOUTHERN, you did good and should be proud."
 	
 	"spawn_tide"	"TIDEHUNTER ROAMS THE SEAS!"
 	
@@ -231,10 +234,25 @@
 	
 	//kil self
 	"kill_self_one"	"Do not kill yourself opponents awarded "
-	"kill_self_two"	"to be distributed with empire gold. "
+	"kill_self_two"	"distributed evenly "
+	
+	//hey dummy
+	"too_many_hulls" "Only one hull can be active at a time.  You should sell a hull."
+	
+	//has killed
+	
+	"got_kill_one" " killed "
+	"got_kill_two" " for "
+	
+	"got_kill_three" " gold & "
+	"got_kill_four" "gold split.."
+	
+	//has died
+	"died_one" " has has died. "
+	"died_two" " gold will be split enemies "
 	
 	//co-op mode
-	"co_op_one"	"Only one team detected activating Co-Op Mode."
+	"co_op_one"	"Activating Co-Op Mode."
 	"co_op_two"	"Destroy the enemy base before you are overrun. "
 	
 	"co_op_diff"	"Select Survival Diffaculty"
@@ -334,7 +352,7 @@ DAMAGE: 120 180 240 300"
 "kunkka_torrent_bships"								"Restricted Area"
 "kunkka_torrent_bships_Description"					"Designate an area as restricted. Any enemies remaining in the restricted area units are launched upward on a torrent of water after a short delay, dealing damage, slowing them and applying a mini stun.  \n\n
 SLOW DURATION: 1.0 2.0 3.0 4.0
-STUN: .5 .5 .5 .5
+STUN: .75 1.25 1.75 2.25
 DELAY: 1.6 1.6 1.6 1.6
 DAMAGE: 200 250 300 350"
 
@@ -452,8 +470,7 @@ DAMAGE: 600 900 1200"
 
 
 "hit_battleship"									"Flare"
-"hit_battleship_Description"					"Launches a flare at a random enemy hero, providing vision as it flies. \n\nHigher levels decrease cooldown and increase projectile vision.
-VISION RADIUS: 1000 1100 1200 1300"
+"hit_battleship_Description"					"Launches a flare at the nearest enemy hero, providing vision of them for 4 seconds \n\nHigher levels decrease cooldown"
 
 "pudge_meat_hook_battleship"								"Grab"
 "pudge_meat_hook_battleship_Description"					"Shoots out a line and pulls in the first ship it hits. \n\nHigher levels increase damage and range while decreasing cooldown.
@@ -581,7 +598,7 @@ DURATION: 120
 DAMAGE: 1000"
 
 "no_fire_zone"									"No Fire Zone"
-	"no_fire_zone_Description"						"Establish a no fire zone where both ally and enamy ships cannot use their weapons.
+	"no_fire_zone_Description"						"Establish a no fire zone where both ally and enemy ships cannot use their weapons.
 	DURATION: 3 4 5
 	RADIAS: 300 400 500"
 	
@@ -795,34 +812,34 @@ DURATION: 2.5 3.0 3.5 4.0"
 		"DOTA_Tooltip_ability_item_spin_bow"									"Iron I"
 
 		"DOTA_Tooltip_ability_item_spin_bow_Description"        				"Buy 2x to collapse to one slot 
-\n Level 1 Iron \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1100 \n  DPS: 26 \nWhen doubled, explodes on impact fireing smaller attacks at up to 1 nearby enamy unit within 600 range for 5 damage."
+\n Level 1 Iron \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1100 \n  DPS: 26 \nWhen doubled, explodes on impact fireing smaller attacks at up to 1 nearby enemy unit within 600 range for 5 damage."
 		
 		"DOTA_Tooltip_ability_item_spin_bow_doubled"							"Double Iron I"
 
-		"DOTA_Tooltip_ability_item_spin_bow_doubled_Description"					"\n Level 1 Iron Combo \n LONG RANGE, DOES NOT HIT TOWERS \n  Range: 1100 \n  DPS: 52 \nDoubled: explodes on impact fireing smaller attacks at up to 1 nearby enamy unit within 600 range for 5 damage."
+		"DOTA_Tooltip_ability_item_spin_bow_doubled_Description"					"\n Level 1 Iron Combo \n LONG RANGE, DOES NOT HIT TOWERS \n  Range: 1100 \n  DPS: 52 \nDoubled: explodes on impact fireing smaller attacks at up to 1 nearby enemy unit within 600 range for 5 damage."
 		
 		"DOTA_Tooltip_ability_item_spin_two_bow"								"Iron II"
 
 		"DOTA_Tooltip_ability_item_spin_two_bow_Description"        				"Buy 2x to collapse to one slot 
-\n Level 2 Iron \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1100 \n  DPS: 52 \nWhen doubled, explodes on impact fireing smaller attacks at up to 2 nearby enamy units within 600 range for 7 damage."
+\n Level 2 Iron \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1100 \n  DPS: 52 \nWhen doubled, explodes on impact fireing smaller attacks at up to 2 nearby enemy units within 600 range for 7 damage."
 		
 		"DOTA_Tooltip_ability_item_spin_two_bow_doubled"						"Double Iron II"
 
-		"DOTA_Tooltip_ability_item_spin_two_bow_doubled_Description"				"\n Level 2 Iron Combo \n LONG RANGE, DOES NOT HIT TOWERS  \n  Range: 1100 \n  DPS: 104 \nDoubled: explodes on impact fireing smaller attacks at up to 2 nearby enamy units within 600 range for 7 damage."
+		"DOTA_Tooltip_ability_item_spin_two_bow_doubled_Description"				"\n Level 2 Iron Combo \n LONG RANGE, DOES NOT HIT TOWERS  \n  Range: 1100 \n  DPS: 104 \nDoubled: explodes on impact fireing smaller attacks at up to 2 nearby enemy units within 600 range for 7 damage."
 		
 		"DOTA_Tooltip_ability_item_spin_three_bow"							"Iron III"
 
 		"DOTA_Tooltip_ability_item_spin_three_bow_Description"        				"Buy 2x to collapse to one slot 
-\n Level 3 Iron \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1100 \n  DPS: 104 \nWhen doubled, explodes on impact fireing smaller attacks at up to 3 nearby enamy units within 600 range for 11 damage."
+\n Level 3 Iron \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1100 \n  DPS: 104 \nWhen doubled, explodes on impact fireing smaller attacks at up to 3 nearby enemy units within 600 range for 11 damage."
 		
 		"DOTA_Tooltip_ability_item_spin_three_bow_doubled"					"Double Iron III"
 
-		"DOTA_Tooltip_ability_item_spin_three_bow_doubled_Description"			"\n Level 3 Iron Combo \n LONG RANGE, DOES NOT HIT TOWERS  \n  Range: 1100 \n  DPS: 208 \nDoubled, explodes on impact fireing smaller attacks at up to 3 nearby enamy units within 600 range for 11 damage."
+		"DOTA_Tooltip_ability_item_spin_three_bow_doubled_Description"			"\n Level 3 Iron Combo \n LONG RANGE, DOES NOT HIT TOWERS  \n  Range: 1100 \n  DPS: 208 \nDoubled, explodes on impact fireing smaller attacks at up to 3 nearby enemy units within 600 range for 11 damage."
 		
 		"DOTA_Tooltip_ability_item_spin_ult_bow"								"Cluster shuriken"
 
 		"DOTA_Tooltip_ability_item_spin_ult_bow_Description"        				" 
-\n Ultimate Iron \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1100 \n  DPS: 220 \n Bonus: Explodes on impact fireing smaller attacks at up to 4 nearby enamy units within 600 range for 80 damage each."
+\n Ultimate Iron \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1100 \n  DPS: 220 \n Bonus: Explodes on impact fireing smaller attacks at up to 4 nearby enemy units within 600 range for 80 damage each."
 
 		"DOTA_Tooltip_ability_item_spin_ult_bow_rec"							"Cluster shuriken"
 
@@ -852,34 +869,34 @@ DURATION: 2.5 3.0 3.5 4.0"
 		"DOTA_Tooltip_ability_item_ice_bow"									"Ice I"
 
 		"DOTA_Tooltip_ability_item_ice_bow_Description"        				"Buy 2x to collapse to one slot 
-\n Level 1 Ice \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1200 \n  DPS: 25 \nWhen doubled, Reduces target's movement speed by 1 percent for 3.5 seconds"
+\n Level 1 Ice \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1200 \n  DPS: 25 \nWhen doubled, Reduces target's movement speed by 1 percent for 1 seconds"
 		
 		"DOTA_Tooltip_ability_item_ice_bow_doubled"							"Double Ice I"
 
-		"DOTA_Tooltip_ability_item_ice_bow_doubled_Description"					"\n Level 1 Ice Combo \n LONG RANGE, DOES NOT HIT TOWERS \n  Range: 1200 \n  DPS: 50 \nDoubled: Reduces target's movement speed by 1 percent for 3.5 seconds"
+		"DOTA_Tooltip_ability_item_ice_bow_doubled_Description"					"\n Level 1 Ice Combo \n LONG RANGE, DOES NOT HIT TOWERS \n  Range: 1200 \n  DPS: 50 \nDoubled: Reduces target's movement speed by 1 percent for 1 seconds"
 		
 		"DOTA_Tooltip_ability_item_ice_two_bow"								"Ice II"
 
 		"DOTA_Tooltip_ability_item_ice_two_bow_Description"        				"Buy 2x to collapse to one slot 
-\n Level 2 Ice \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1200 \n  DPS: 50 \nWhen doubled, Reduces target's movement speed by 2 percent for 3.5 seconds"
+\n Level 2 Ice \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1200 \n  DPS: 50 \nWhen doubled, Reduces target's movement speed by 1.5 percent for 2 seconds"
 		
 		"DOTA_Tooltip_ability_item_ice_two_bow_doubled"						"Double Ice II"
 
-		"DOTA_Tooltip_ability_item_ice_two_bow_doubled_Description"				"\n Level 2 Ice Combo \n LONG RANGE, DOES NOT HIT TOWERS \n  Range: 1200 \n  DPS: 100 \nDoubled: Reduces target's movement speed by 2 percent for 3.5 seconds"
+		"DOTA_Tooltip_ability_item_ice_two_bow_doubled_Description"				"\n Level 2 Ice Combo \n LONG RANGE, DOES NOT HIT TOWERS \n  Range: 1200 \n  DPS: 100 \nDoubled: Reduces target's movement speed by 1.5 percent for 2 seconds"
 		
 		"DOTA_Tooltip_ability_item_ice_three_bow"							"Ice III"
 
 		"DOTA_Tooltip_ability_item_ice_three_bow_Description"        				"Buy 2x to collapse to one slot 
-\n Level 3 Ice \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1200 \n  DPS: 96 \nWhen doubled, Reduces target's movement speed by 3 percent for 3.5 seconds"
+\n Level 3 Ice \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1200 \n  DPS: 96 \nWhen doubled, Reduces target's movement speed by 2 percent for 2 seconds"
 		
 		"DOTA_Tooltip_ability_item_ice_three_bow_doubled"					"Double Ice III"
 
-		"DOTA_Tooltip_ability_item_ice_three_bow_doubled_Description"			"\n Level 3 Ice Combo \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1200 \n  DPS: 192 \nDoubled: Reduces target's movement speed by 3 percent for 3.5 seconds"
+		"DOTA_Tooltip_ability_item_ice_three_bow_doubled_Description"			"\n Level 3 Ice Combo \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1200 \n  DPS: 192 \nDoubled: Reduces target's movement speed by 2 percent for 2 seconds"
 		
 		"DOTA_Tooltip_ability_item_ice_ult_bow"								"Blizzard"
 
 		"DOTA_Tooltip_ability_item_ice_ult_bow_Description"        				" 
-\n Ultimate Ice \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1200 \n  DPS: 390 \n Bonus: Reduces target's movement speed by 15 percent for 3.5 seconds"
+\n Ultimate Ice \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1200 \n  DPS: 390 \n Bonus: Reduces target's movement speed by 12 percent for 2 seconds"
 
 		"DOTA_Tooltip_ability_item_ice_ult_bow_rec"							"Blizzard"
 
@@ -1245,6 +1262,16 @@ DURATION: 2.5 3.0 3.5 4.0"
 		
 		//utility
 		
+		"DOTA_Tooltip_ability_item_hull_sail_one_combo_bow"						"Hand Of the Empire"
+
+		"DOTA_Tooltip_ability_item_hull_sail_one_combo_bow_Description"				"A starter kit awarded by the empire to captains who show promise. \n\n This item cannot be combined or upgraded. \nDoes not stack with hulls or sails.\nSells for 500 gold. DPS: 40"
+		
+		"DOTA_Tooltip_ability_item_hull_sail_one_combo_bow_bonus_movement"							"Move Speed:"
+			"DOTA_Tooltip_ability_item_hull_sail_one_combo_bow_bonus_hp"							"HP bonus:"
+				"DOTA_Tooltip_ability_item_hull_sail_one_combo_bow_dmg"							"Damage:"
+					"DOTA_Tooltip_ability_item_hull_sail_one_combo_bow_fire_rate"							"Reload Delay(S):"
+					
+		
 		"DOTA_Tooltip_ability_item_sail_one"						"Tattered Sail"
 
 		"DOTA_Tooltip_ability_item_sail_one_Description"				"\n\n Poor Sail \n Speed Boost: 35 \n Does not stack with other sails"
@@ -1322,7 +1349,7 @@ DURATION: 2.5 3.0 3.5 4.0"
 		
 		"DOTA_Tooltip_ability_item_wood_four"						"Craftsman's Repair Wood"
 
-		"DOTA_Tooltip_ability_item_wood_four_Description"				"\n\n Great repair wood. Activate to heal yourself. \n Heal Amount: 8000 \n Cooldown: 35"
+		"DOTA_Tooltip_ability_item_wood_four_Description"				"\n\n Great repair wood. Activate to heal yourself. \n Heal Amount: 7000 \n Cooldown: 35"
 		
 		"DOTA_Tooltip_ability_item_repair_one"						"Novice Repair Crew"
 
@@ -1651,31 +1678,31 @@ DURATION: 2.5 3.0 3.5 4.0"
 		
 		"DOTA_Tooltip_item_spin_bow_shooting"									"Iron I"
 
-		"DOTA_Tooltip_item_spin_bow_shooting_Description"							"\n Level 1 Iron \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1100 \n  DPS: 26 \nWhen doubled, explodes on impact fireing smaller attacks at up to 1 nearby enamy unit within 600 range for 5 damage."
+		"DOTA_Tooltip_item_spin_bow_shooting_Description"							"\n Level 1 Iron \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1100 \n  DPS: 26 \nWhen doubled, explodes on impact fireing smaller attacks at up to 1 nearby enemy unit within 600 range for 5 damage."
 		
 		"DOTA_Tooltip_item_spin_bow_shooting_doubled"							"Double Iron I"
 
-		"DOTA_Tooltip_item_spin_bow_shooting_doubled_Description"					"\n Level 1 Iron Combo \n LONG RANGE, DOES NOT HIT TOWERS \n  Range: 1100 \n  DPS: 52 \nDoubled: explodes on impact fireing smaller attacks at up to 1 nearby enamy unit within 600 range for 5 damage."
+		"DOTA_Tooltip_item_spin_bow_shooting_doubled_Description"					"\n Level 1 Iron Combo \n LONG RANGE, DOES NOT HIT TOWERS \n  Range: 1100 \n  DPS: 52 \nDoubled: explodes on impact fireing smaller attacks at up to 1 nearby enemy unit within 600 range for 5 damage."
 		
 		"DOTA_Tooltip_item_spin_two_bow_shooting"								"Iron II"
 
-		"DOTA_Tooltip_item_spin_two_bow_shooting_Description"						"\n Level 2 Iron \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1100 \n  DPS: 52 \nWhen doubled, explodes on impact fireing smaller attacks at up to 2 nearby enamy units within 600 range for 7 damage."
+		"DOTA_Tooltip_item_spin_two_bow_shooting_Description"						"\n Level 2 Iron \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1100 \n  DPS: 52 \nWhen doubled, explodes on impact fireing smaller attacks at up to 2 nearby enemy units within 600 range for 7 damage."
 		
 		"DOTA_Tooltip_item_spin_two_bow_shooting_doubled"						"Double Iron II"
 
-		"DOTA_Tooltip_item_spin_two_bow_shooting_doubled_Description"				"\n Level 2 Iron Combo \n LONG RANGE, DOES NOT HIT TOWERS  \n  Range: 1100 \n  DPS: 104 \nDoubled: explodes on impact fireing smaller attacks at up to 2 nearby enamy units within 600 range for 7 damage."
+		"DOTA_Tooltip_item_spin_two_bow_shooting_doubled_Description"				"\n Level 2 Iron Combo \n LONG RANGE, DOES NOT HIT TOWERS  \n  Range: 1100 \n  DPS: 104 \nDoubled: explodes on impact fireing smaller attacks at up to 2 nearby enemy units within 600 range for 7 damage."
 		
 		"DOTA_Tooltip_item_spin_three_bow_shooting"							"Iron III"
 
-		"DOTA_Tooltip_item_spin_three_bow_shooting_Description"					"\n Level 3 Iron \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1100 \n  DPS: 104 \nWhen doubled, explodes on impact fireing smaller attacks at up to 3 nearby enamy units within 600 range for 11 damage."
+		"DOTA_Tooltip_item_spin_three_bow_shooting_Description"					"\n Level 3 Iron \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1100 \n  DPS: 104 \nWhen doubled, explodes on impact fireing smaller attacks at up to 3 nearby enemy units within 600 range for 11 damage."
 		
 		"DOTA_Tooltip_item_spin_three_bow_shooting_doubled"					"Double Iron III"
 
-		"DOTA_Tooltip_item_spin_three_bow_shooting_doubled_Description"			"\n Level 3 Iron Combo \n LONG RANGE, DOES NOT HIT TOWERS  \n  Range: 1100 \n  DPS: 208 \nDoubled, explodes on impact fireing smaller attacks at up to 3 nearby enamy units within 600 range for 11 damage."
+		"DOTA_Tooltip_item_spin_three_bow_shooting_doubled_Description"			"\n Level 3 Iron Combo \n LONG RANGE, DOES NOT HIT TOWERS  \n  Range: 1100 \n  DPS: 208 \nDoubled, explodes on impact fireing smaller attacks at up to 3 nearby enemy units within 600 range for 11 damage."
 		
 		"DOTA_Tooltip_item_spin_ult_bow_shooting"								"Cluster shuriken"
 
-		"DOTA_Tooltip_item_spin_ult_bow_shooting_Description"						"\n Ultimate Iron \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1100 \n  DPS: 220 \n Bonus: Explodes on impact fireing smaller attacks at up to 4 nearby enamy units within 600 range for 80 damage each."
+		"DOTA_Tooltip_item_spin_ult_bow_shooting_Description"						"\n Ultimate Iron \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1100 \n  DPS: 220 \n Bonus: Explodes on impact fireing smaller attacks at up to 4 nearby enemy units within 600 range for 80 damage each."
 
 		"DOTA_Tooltip_item_spin_ult_bow_shooting_rec"							"Cluster shuriken"
 
@@ -2012,7 +2039,7 @@ Hit: Fire a long ranged nuclear strike followed by a less powerful aftershock."
 		
 		"DOTA_Tooltip_ability_item_visage_replacement_boat_Description"         "Survive the flood in this ancient vessel and strand your enemies on the mountaintops.
 		\nAbilities:
-Monkey Buisness: Your monkeys jump to a nearby enamy ship, do as much damage as they can, then escape to an allied ship.  Monkeys continue until they have no where to jump, alternating between allies and enemies.
+Monkey Buisness: Your monkeys jump to a nearby enemy ship, do as much damage as they can, then escape to an allied ship.  Monkeys continue until they have no where to jump, alternating between allies and enemies.
 Two by Two: Creates a duplicate of your ship, weapons included, that takes increased damage from foes.
 Rainbow to End the Storm: Upon your death, heroes around you are healed substantially.
 Stuck on a Mountain: End the flood. Immobilizes you and all units around you in a large radius. "
@@ -2069,7 +2096,7 @@ Hoist: CHANNELED - Binds an enemy unit so that it cannot move or attack, while d
 			\nAbilities:
 Pistols: Your crew fires pistols rapidly at random nearby targets.
 War Drums: The Canoe's crew beats their drums in a hypnotic rhythm to increase their rower's speed as well as the speed of the ships around them.
-Might of the Tribe: The Canoe gains strength from nearby allies, increasing its maximum health and regeneration for a short time. releases any stored energy as damage when recollecting.
+Might of the Tribe: The Canoe gains strength from nearby allies, increasing its maximum health and regeneration for a short time. releases any stored energy as damage and a ministun when recollecting.
 Batten Down the Hatches: Strengthens the structural integrity of your vessel to provide an armor bonus and health regen bonus "
 		
 		
@@ -2402,9 +2429,8 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"DOTA_Tooltip_Ability_miss_battleship_evasion"					"armor:"
 
 		"DOTA_Tooltip_Ability_hit_battleship"									"Flare"
-		"DOTA_Tooltip_Ability_hit_battleship_Description"					"Launches a flare at a random enemy hero, providing vision as it flies. \n\nHigher levels decrease cooldown and increase projectile vision."
-		"DOTA_Tooltip_Ability_hit_battleship_vision_radius"					"VISION RADIUS:"
-
+		"DOTA_Tooltip_Ability_hit_battleship_Description"					"Launches a flare at the nearest enemy hero, providing vision of them for 4 seconds. \n\nHigher levels decrease cooldown."
+		
 		
 		"DOTA_Tooltip_Ability_peak_battleship"									"Sonar Ping"
 		"DOTA_Tooltip_Ability_peak_battleship_Description"					"Ping the map to see where enemy ships are. \n\nHigher levels decrease cooldown."
@@ -2557,7 +2583,7 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"DOTA_Tooltip_ability_gag_battleship_duration"			"DURATION:"
 		
 		"DOTA_Tooltip_ability_might_battleship"									"Might of the Tribe"
-		"DOTA_Tooltip_ability_might_battleship_Description"						"The Canoe gains strength from nearby allies, increasing its maximum health and regeneration for a short time. Releases any stored energy as damage to enemies in the same area when recollecting might. \n \nHigher levels decrease cooldown."
+		"DOTA_Tooltip_ability_might_battleship_Description"						"The Canoe gains strength from nearby allies, increasing its maximum health and regeneration for a short time. Releases any stored energy as damage and a ministun to enemies in the same area when recollecting might. \n \nHigher levels decrease cooldown."
 		"DOTA_Tooltip_ability_might_battleship_duration"			"DURATION:"
 		"DOTA_Tooltip_ability_might_battleship_bonus_hp"			"BONUS HP/ALLY NEARBY:"
 		

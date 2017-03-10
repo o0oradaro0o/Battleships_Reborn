@@ -29,6 +29,7 @@ padding-top: 0px;
 	visibility: visible;
 	margin-top: 200px;
 }
+
 #timerPanel
 {
 	visibility: visible;
@@ -1032,13 +1033,14 @@ border-radius: 10px;
 #ship_shop_content_holder
 {
 	flow-children: down;
-	width: 250px;
+	width: 300px;
 	height: 850px;
 	border: 0px solid black;
 
 	horizontal-align: right;
     border-radius: 10px;
 	margin: 5px;
+	margin-top: 75px;
 }
 .ship_shop_tier_tab
 {

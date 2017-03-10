@@ -83,7 +83,12 @@ function use_wood(keys) -- keys is the information sent by the ability
 		for itemSlot = 0, 11, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
 	        	if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
                 		local Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
-                		if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
+						if  Item ~= nil and string.match(Item:GetName(), "wood") then -- makes sure that the item exists and making sure it is the correct item
+							Item:StartCooldown(35.0)
+							print( '[ItemFunctions] StartCooldown  Called' ) 
+						end
+							
+                		if Item ~= nil and Item:GetName() == itemName then
 							local hp = casterUnit:GetHealth()
 							local boost = 0
 							if not string.match(Item:GetName(), "combo") then
@@ -94,7 +99,7 @@ function use_wood(keys) -- keys is the information sent by the ability
 								elseif string.match(Item:GetName(), "three") then
 									boost = 3500
 								elseif string.match(Item:GetName(), "four") then
-									boost = 8000
+									boost = 7000
 								end
 							else
 								if string.match(Item:GetName(), "one") then
@@ -104,7 +109,7 @@ function use_wood(keys) -- keys is the information sent by the ability
 								elseif string.match(Item:GetName(), "three") then
 									boost = 3500
 								elseif string.match(Item:GetName(), "four") then
-									boost = 8000
+									boost = 7000
 								end
 							end
 							casterUnit:SetHealth(hp+boost)
@@ -601,7 +606,7 @@ function WindOneDmg(args) -- keys is the information sent by the ability
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
-		elseif direction:Length() > 1199 and direction:Length() < 1900 then
+		elseif direction:Length() > 1199  then
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
@@ -656,7 +661,7 @@ function WindTwoDmg(args) -- keys is the information sent by the ability
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
-		elseif direction:Length() > 1199 and direction:Length() < 1900 then
+		elseif direction:Length() > 1199  then
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
@@ -709,7 +714,7 @@ function WindThreeDmg(args) -- keys is the information sent by the ability
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
-		elseif direction:Length() > 1199 and direction:Length() < 1900 then
+		elseif direction:Length() > 1199 then
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
