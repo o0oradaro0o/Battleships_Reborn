@@ -153,30 +153,28 @@ function fixUI( )
 function showShips()
 {
 	
-	$.Msg(Game.GetGameTime())
-	
-	$.Msg(NewShopUI.BHasClass("ShopOpen"))
-	if(shipShopShow==false)
-	{
-		
-		if(!NewShopUI.BHasClass("ShopOpen"))
+		$.Msg(NewShopUI.BHasClass("ShopOpen"))
+		if(shipShopShow==false)
 		{
-		$.DispatchEvent("DOTAHUDToggleShop");
+			
+			if(!NewShopUI.BHasClass("ShopOpen"))
+			{
+			$.DispatchEvent("DOTAHUDToggleShop");
+			}
+		  if (!NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder")) 
+		  {
+			  $("#ship_shop_content_holder").SetParent(NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter"));
+				
+			}
+				NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").style.visibility="visible";
+				//catigoriesUI.style.visibility="collapse";
+				NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("GridMainShop").style.visibility="collapse";
+		shipShopShow=true;
 		}
-	  if (!NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder")) 
-	  {
-		  $("#ship_shop_content_holder").SetParent(NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter"));
-            
-        }
-			NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").style.visibility="visible";
-			//catigoriesUI.style.visibility="collapse";
-			NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("GridMainShop").style.visibility="collapse";
-	shipShopShow=true;
-	}
-	else{
-		$.Msg("callinghidedamn it");
-		hideShipShop();
-	}
+		else{
+			$.Msg("callinghidedamn it");
+			hideShipShop();
+		}
 	
 	
 	

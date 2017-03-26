@@ -341,7 +341,7 @@ function dumpingItem(args)
 local casterUnit = args.caster
 	local a=RandomInt( 1, 3 )
 	if a==1 then
-		local newItem = CreateItem( "item_bag_of_gold_battleships", nil, nil )
+		local newItem = CreateItem( oneshots[RandomInt( 1, #oneshots )], nil, nil )
 		local drop = CreateItemOnPositionForLaunch( casterUnit:GetOrigin(), newItem )
 		local direction=casterUnit:GetForwardVector()
 		 local vec = direction:Normalized() * -200
