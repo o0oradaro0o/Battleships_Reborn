@@ -809,7 +809,7 @@
 		"MovementSpeed"				"330"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 		
-		"StatusHealth"				"2600"		// Base health.
+		"StatusHealth"				"2800"		// Base health.
 		"StatusHealthRegen"			"12.0"		// Health regeneration rate.
 		
 		"ArmorPhysical"				"0"

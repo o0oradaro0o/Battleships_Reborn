@@ -594,7 +594,7 @@ function WindOneDmg(args) -- keys is the information sent by the ability
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = direction:Length()/1200 * 16,
+				damage = direction:Length()/1200 * 20,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
@@ -602,7 +602,7 @@ function WindOneDmg(args) -- keys is the information sent by the ability
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = 8,
+				damage = 10,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
@@ -610,7 +610,7 @@ function WindOneDmg(args) -- keys is the information sent by the ability
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage =16,
+				damage =20,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
@@ -649,7 +649,7 @@ function WindTwoDmg(args) -- keys is the information sent by the ability
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = direction:Length()/1200 * 35,
+				damage = direction:Length()/1200 * 54,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
@@ -657,7 +657,7 @@ function WindTwoDmg(args) -- keys is the information sent by the ability
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = 17,
+				damage = 27,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
@@ -665,7 +665,7 @@ function WindTwoDmg(args) -- keys is the information sent by the ability
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = 35,
+				damage = 54,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
@@ -677,7 +677,7 @@ function WindTwoDmg(args) -- keys is the information sent by the ability
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = 35*HPPercentageTaken,
+				damage = 40*HPPercentageTaken,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
@@ -702,7 +702,7 @@ function WindThreeDmg(args) -- keys is the information sent by the ability
 				local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = direction:Length()/1200 * 66,
+				damage = direction:Length()/1200 * 82,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
@@ -710,7 +710,7 @@ function WindThreeDmg(args) -- keys is the information sent by the ability
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = 33,
+				damage = 41,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
@@ -718,7 +718,7 @@ function WindThreeDmg(args) -- keys is the information sent by the ability
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = 66,
+				damage = 82,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
@@ -730,7 +730,7 @@ function WindThreeDmg(args) -- keys is the information sent by the ability
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = 66*HPPercentageTaken,
+				damage = 60*HPPercentageTaken,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
@@ -761,7 +761,7 @@ function WindUltDmg(args) -- keys is the information sent by the ability
 									local damageTable = {
 										victim = targetUnit,
 										attacker = casterUnit,
-										damage = 273,
+										damage = 310,
 										damage_type = DAMAGE_TYPE_PHYSICAL,
 									}
 									ApplyDamage(damageTable)
@@ -770,7 +770,7 @@ function WindUltDmg(args) -- keys is the information sent by the ability
 									local damageTable = {
 										victim = targetUnit,
 										attacker = casterUnit,
-										damage = 273*HPPercentageTaken,
+										damage = 310*HPPercentageTaken,
 										damage_type = DAMAGE_TYPE_PHYSICAL,
 									}
 									ApplyDamage(damageTable)

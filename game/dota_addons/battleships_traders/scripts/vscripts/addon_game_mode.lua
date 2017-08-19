@@ -4,7 +4,7 @@ require("libraries/timers")
 require('libraries/physics')
 require('notifications')
 require('storage')
---require('statcollection/init')
+require('StatCollection/init')
 -- This library can be used for starting customized animations on units from lua
 require('libraries/animations')
 -- This library can be used for performing "Frankenstein" attachments on units
@@ -15,11 +15,11 @@ if CBattleship8D == nil then
 	CBattleship8D = class({})
 end
 
-precashed = false
-teamScores={0, 0}
-WasNearShop={}
-score_to_win=100000
-xp_to_level={
+-- global variable fun!!!
+
+--tracksif a hero needs a shop to auto open or close
+g_WasNearShop={}
+g_XpToLevel={
 200,
 300,
 400,
@@ -48,230 +48,249 @@ xp_to_level={
 100000
 }
 
-CREEP_LEVEL = 0
-CREEP_NUM_SMALL = 4
-CREEP_NUM_BIG = 3
-CREEP_NUM_HUGE = 2
-CREEP_NUM_PRIV = 1
-EMP_GOLD_NUMBER = 1
+-- creep spawn and level counters
+g_CreepLevel = 0
+g_NumSmallCreeps = 4
+g_NumBigCreeps = 3
+g_NumHugeCreeps = 2
+g_NumPrivCreeps = 1
+g_EmpireGoldCount = 1
+
+
+-- coopertive mode varialves
+g_CoOpMode=0
+g_CoOpHeroCount = 0
+g_CoOpDiffLevel=1
+g_CoOpDiffSetting=0
+g_CoOpItemPool={}
+g_CoOpUnitPool={}
+
+-- battle mode variables
+g_BattleMode=0
+g_BattleModeNumber=1
+g_BattleModeNorthScore=0
+g_BattleModeSouthScore=0
+g_BattleModeTimer=120
+g_BattleModeRemaining=0
+g_BattleModeLocation=0
+
+-- set to 1 if you are testing and want to make jimmydorry happy
+g_StatCollectionEnabled=0
+
+-- a running tally of the total gold collected by each team
+g_TotalGoldCollectedByNorth = 0
+g_TotalGoldCollectedBySouth = 0
+
+-- flag to nout put newly purchased boats into pergitory
+g_BoatJustBaught=0
+
+-- ceat item counter
+g_LorneItemBuyers = 0
+
+--	player counter
+g_PlayerCount = 0
+
+-- this is like red hot, i put this shit on everything it tracks how farinto the game we are
+g_MainTimerTickCount = 1
+
+-- current constant gold income for each player on the named team
+g_GoldPerTickNorth = 3
+g_GoldPerTickSouth = 3
+
+-- used for empire gold change and to end the game
+g_DockAliveNorthLeft = 1
+g_DockAliveNorthRight = 1
+g_DockAliveSouthLeft = 1
+g_DockAliveSouthRight = 1
+
+-- this was to fix some bugs with pausing or some shit, iot like resets the tick counter if stuff goes weird i think
+g_PreviousTickCount=0
+
+-- spy vairables (keeps track of team dearmors)
+g_SpyAnnouncmentFlag = 0
+g_SpyCountNorth = 0
+g_SpyCountSouth = 0
+
+-- player coutns for each team
+g_PlayerCountSouth = 0
+g_PlayerCountNorth = 0
+
+g_TidehunterLevel = 0
+
+g_TicksSinceEmpireGold = 0
+
+
+g_EmpGoldArray={}
+
+g_tideKillerArray={}
+
+g_HeroKills = {}
+g_HeroHP = {}
+g_PlayerIdsToNames = {}
+
+-- when a creep cant find where to go it gets put in this array and sent to attack the enamy spawn point
+g_ConfusedCreeps={}
+
+-- handle disconnects
+g_IsHeroDisconnected = {}
+g_DisconnectTime = {}
+g_DisconnectKicked = {}
+
+-- these make the unstick button work most of the time
+g_OldHeroLocations = {}
+g_OlderHeroLocations ={}
+
+-- this replaces dotas default gold tracking.
+g_HeroGoldArray={}
 
 
 
-co_op_mode=0
-co_op_hero_count = 0
-co_op_diff_level=1
-co_op_diff_setting=0
-co_op_item_pool={}
-co_op_unit_pool={}
+-- this shit is all for stat tracking.  we can look at recent games to check item builds and see what items are most popular
+g_ItemCodeLookUp={}
+g_ItemCodeLookUp["item_coal_bow"] = "CO"
+g_ItemCodeLookUp["item_fire_bow"] = "FO"
+g_ItemCodeLookUp["item_plasma_bow"] = "PO"
+g_ItemCodeLookUp["item_poison_bow"] = "OO"
+g_ItemCodeLookUp["item_light_bow"] = "LO"
+g_ItemCodeLookUp["item_ice_bow"] = "IO"
+g_ItemCodeLookUp["item_wind_bow"] = "WO"
 
+g_ItemCodeLookUp["item_coal_two_bow"] = "CT"
+g_ItemCodeLookUp["item_fire_two_bow"] = "FT"
+g_ItemCodeLookUp["item_plasma_two_bow"] = "PT"
+g_ItemCodeLookUp["item_poison_two_bow"] = "OT"
+g_ItemCodeLookUp["item_light_two_bow"] = "LT"
+g_ItemCodeLookUp["item_ice_two_bow"] = "IT"
+g_ItemCodeLookUp["item_wind_two_bow"] = "WT"
 
-battle_mode=0
-battle_mode_number=1
-battle_mode_north_score=0
-battle_mode_south_score=0
-battle_mode_timer=120
-battle_mode_remaining=0
-battle_loc=0
+g_ItemCodeLookUp["item_coal_three_bow"] = "CH"
+g_ItemCodeLookUp["item_fire_three_bow"] = "FH"
+g_ItemCodeLookUp["item_plasma_three_bow"] = "PH"
+g_ItemCodeLookUp["item_poison_three_bow"] = "OH"
+g_ItemCodeLookUp["item_light_three_bow"] = "LH"
+g_ItemCodeLookUp["item_ice_three_bow"] = "IH"
+g_ItemCodeLookUp["item_wind_three_bow"] = "WH"
+g_ItemCodeLookUp["item_recipe_coal_ult_bow"] = "CU"
 
-statCollection=0
+g_ItemCodeLookUp["item_recipe_fire_ult_bow"] = "FU"
+g_ItemCodeLookUp["item_recipe_plasma_ult_bow"] = "PU"
+g_ItemCodeLookUp["item_recipe_poison_ult_bow"] = "OU"
+g_ItemCodeLookUp["item_recipe_light_ult_bow"] = "LU"
+g_ItemCodeLookUp["item_recipe_ice_ult_bow"] = "IU"
+g_ItemCodeLookUp["item_recipe_wind_ult_bow"] = "WU"
 
-BAD_GOLD_TOTAL_MOD = 0
-GOOD_GOLD_TOTAL_MOD = 0
+g_ItemCodeLookUp["item_hull_one"] = "HO"
+g_ItemCodeLookUp["item_hull_two"] = "HT"
+g_ItemCodeLookUp["item_hull_three"] = "HH"
+g_ItemCodeLookUp["item_hull_four"] = "HF"
+g_ItemCodeLookUp["item_sail_one"] = "SU"
+g_ItemCodeLookUp["item_sail_two"] = "SO"
+g_ItemCodeLookUp["item_sail_three"] = "ST"
+g_ItemCodeLookUp["item_sail_four"] = "SH"
+g_ItemCodeLookUp["item_repair_one"] = "RF"
+g_ItemCodeLookUp["item_repair_two"] = "RU"
+g_ItemCodeLookUp["item_repair_three"] = "RO"
+g_ItemCodeLookUp["item_repair_four"] = "RT"
+g_ItemCodeLookUp["item_wood_one"] = "DH"
+g_ItemCodeLookUp["item_wood_two"] = "DF"
+g_ItemCodeLookUp["item_wood_three"] = "DU"
+g_ItemCodeLookUp["item_wood_four"] = "DO"
 
-BOAT_JUST_BAUGHT=0
-
-LORNE_ITEM_BUYERS = 0
-NUM_PLAYERS = 0
-
-THINK_TICKS = 1
-BAD_GOLD_PER_TICK = 3
-GOOD_GOLD_PER_TICK = 3
-
-DOCK_NORTH_LEFT = 1
-DOCK_NORTH_RIGHT = 1
-DOCK_SOUTH_LEFT = 1
-DOCK_SOUTH_RIGHT = 1
-LAST_TIME=0
-
-SPY_ANNOUNCMENT_FLAG = 0
-SPYS_NORTH = 0
-SPYS_SOUTH = 0
-
-NUM_GOOD_PLAYERS = 0
-NUM_BAD_PLAYERS = 0
-
-TIDE_LEVEL = 0
-
-TICKS_SINCE_EMP_GOLD = 0
-
-
-empGoldArray={}
-
-tideKillerArray={}
-
-herokills = {}
-herohp = {}
-playerIdsToNames = {}
-
-goingToMid={}
-
-isDisconnected = {}
-DisconnectTime = {}
-DisconnectKicked = {}
-heroids = {}
-DISCONNECT_MESSAGE_DESPLAYED = 0
-LastLocs = {}
-LastLocs2 ={}
-GoodWon=true
-
-hero_gold_array={}
+g_ItemCodeLookUp["item_tower_debuff"] = "EG"
+g_ItemCodeLookUp["item_tower_healer"] = "EB"
+g_ItemCodeLookUp["item_nut_spawner"] = "EN"
 
 
 
-
-item_code_lookup={}
-item_code_lookup["item_coal_bow"] = "CO"
-item_code_lookup["item_fire_bow"] = "FO"
-item_code_lookup["item_plasma_bow"] = "PO"
-item_code_lookup["item_poison_bow"] = "OO"
-item_code_lookup["item_light_bow"] = "LO"
-item_code_lookup["item_ice_bow"] = "IO"
-item_code_lookup["item_wind_bow"] = "WO"
-
-item_code_lookup["item_coal_two_bow"] = "CT"
-item_code_lookup["item_fire_two_bow"] = "FT"
-item_code_lookup["item_plasma_two_bow"] = "PT"
-item_code_lookup["item_poison_two_bow"] = "OT"
-item_code_lookup["item_light_two_bow"] = "LT"
-item_code_lookup["item_ice_two_bow"] = "IT"
-item_code_lookup["item_wind_two_bow"] = "WT"
-
-item_code_lookup["item_coal_three_bow"] = "CH"
-item_code_lookup["item_fire_three_bow"] = "FH"
-item_code_lookup["item_plasma_three_bow"] = "PH"
-item_code_lookup["item_poison_three_bow"] = "OH"
-item_code_lookup["item_light_three_bow"] = "LH"
-item_code_lookup["item_ice_three_bow"] = "IH"
-item_code_lookup["item_wind_three_bow"] = "WH"
-item_code_lookup["item_recipe_coal_ult_bow"] = "CU"
-
-item_code_lookup["item_recipe_fire_ult_bow"] = "FU"
-item_code_lookup["item_recipe_plasma_ult_bow"] = "PU"
-item_code_lookup["item_recipe_poison_ult_bow"] = "OU"
-item_code_lookup["item_recipe_light_ult_bow"] = "LU"
-item_code_lookup["item_recipe_ice_ult_bow"] = "IU"
-item_code_lookup["item_recipe_wind_ult_bow"] = "WU"
-
-item_code_lookup["item_hull_one"] = "HO"
-item_code_lookup["item_hull_two"] = "HT"
-item_code_lookup["item_hull_three"] = "HH"
-item_code_lookup["item_hull_four"] = "HF"
-item_code_lookup["item_sail_one"] = "SU"
-item_code_lookup["item_sail_two"] = "SO"
-item_code_lookup["item_sail_three"] = "ST"
-item_code_lookup["item_sail_four"] = "SH"
-item_code_lookup["item_repair_one"] = "RF"
-item_code_lookup["item_repair_two"] = "RU"
-item_code_lookup["item_repair_three"] = "RO"
-item_code_lookup["item_repair_four"] = "RT"
-item_code_lookup["item_wood_one"] = "DH"
-item_code_lookup["item_wood_two"] = "DF"
-item_code_lookup["item_wood_three"] = "DU"
-item_code_lookup["item_wood_four"] = "DO"
-
-item_code_lookup["item_tower_debuff"] = "EG"
-item_code_lookup["item_tower_healer"] = "EB"
-item_code_lookup["item_nut_spawner"] = "EN"
-
-
-
-item_code_lookup["item_puck_replacement_boat"] = "BZ"
+g_ItemCodeLookUp["item_puck_replacement_boat"] = "BZ"
 --Zodiac
-item_code_lookup["item_rubick_replacement_boat"] = "BC"
+g_ItemCodeLookUp["item_rubick_replacement_boat"] = "BC"
 --Catamaran
-item_code_lookup["item_tidehunter_replacement_boat"] = "BP"
+g_ItemCodeLookUp["item_tidehunter_replacement_boat"] = "BP"
 --Pontoon
-item_code_lookup["item_phantom_lancer_replacement_boat"] = "BA"
+g_ItemCodeLookUp["item_phantom_lancer_replacement_boat"] = "BA"
 --Airboat
-item_code_lookup["item_morphling_replacement_boat"] = "BS"
+g_ItemCodeLookUp["item_morphling_replacement_boat"] = "BS"
 --Speedboat
-item_code_lookup["item_nevermore_replacement_boat"] = "BL"
+g_ItemCodeLookUp["item_nevermore_replacement_boat"] = "BL"
 --Plane
-item_code_lookup["item_kunkka_replacement_boat"] = "BH"
+g_ItemCodeLookUp["item_kunkka_replacement_boat"] = "BH"
 --Shore Guard
-item_code_lookup["item_zuus_replacement_boat"] = "BT"
+g_ItemCodeLookUp["item_zuus_replacement_boat"] = "BT"
 --Tug Boat
-item_code_lookup["item_brewmaster_replacement_boat"] = "BH"
+g_ItemCodeLookUp["item_brewmaster_replacement_boat"] = "BH"
 --Houseboat
-item_code_lookup["item_magnus_replacement_boat"] = "BV"
+g_ItemCodeLookUp["item_magnus_replacement_boat"] = "BV"
 --Viking
-item_code_lookup["item_jakiro_replacement_boat"] = "BG"
+g_ItemCodeLookUp["item_jakiro_replacement_boat"] = "BG"
 --Galleon
-item_code_lookup["item_shredder_replacement_boat"] = "BU"
+g_ItemCodeLookUp["item_shredder_replacement_boat"] = "BU"
 --Submarine
-item_code_lookup["item_treant_replacement_boat"] = "BO"
+g_ItemCodeLookUp["item_treant_replacement_boat"] = "BO"
 --Construction
-item_code_lookup["item_spectre_replacement_boat"] = "BB"
+g_ItemCodeLookUp["item_spectre_replacement_boat"] = "BB"
 --Battleship
-item_code_lookup["item_visage_replacement_boat"] = "BN"
+g_ItemCodeLookUp["item_visage_replacement_boat"] = "BN"
 --Noah's Ark
-item_code_lookup["item_wisp_replacement_boat"] = "BI"
+g_ItemCodeLookUp["item_wisp_replacement_boat"] = "BI"
 --Icebreaker
-item_code_lookup["item_gyrocopter_replacement_boat"] = "BR"
+g_ItemCodeLookUp["item_gyrocopter_replacement_boat"] = "BR"
 --Aircraft Carrier
-item_code_lookup["item_lion_replacement_boat"] = "BY"
+g_ItemCodeLookUp["item_lion_replacement_boat"] = "BY"
 --Yacht
-item_code_lookup["item_crystal_maiden_replacement_boat"] = "BN"
+g_ItemCodeLookUp["item_crystal_maiden_replacement_boat"] = "BN"
 --Canoe
-item_code_lookup["item_storm_spirit_replacement_boat"] = "BJ"
+g_ItemCodeLookUp["item_storm_spirit_replacement_boat"] = "BJ"
 --Junk
 
-model_lookup = {}
-model_lookup["npc_dota_hero_zuus"] = "models/barrel_boat.vmdl"
-model_lookup["npc_dota_hero_ancient_apparition"] = "models/zodiac_boat.vmdl"
-model_lookup["npc_dota_hero_tidehunter"] = "models/pontoon_boat.vmdl"
-model_lookup["npc_dota_hero_crystal_maiden"] = "models/canoe_boat.vmdl"
-model_lookup["npc_dota_hero_phantom_lancer"] = "models/air_boat.vmdl"
-model_lookup["npc_dota_hero_rattletrap"] = "models/cat_boat.vmdl"
-model_lookup["npc_dota_hero_jakiro"] = "models/galleon_boat.vmdl"
-model_lookup["npc_dota_hero_nevermore"] = "models/plane_boat.vmdl"
-model_lookup["npc_dota_hero_meepo"] = "models/house_boat.vmdl"
-model_lookup["npc_dota_hero_disruptor"] = "models/coast_boat.vmdl"
-model_lookup["npc_dota_hero_morphling"] = "models/speed_boat.vmdl"
-model_lookup["npc_dota_hero_storm_spirit"] = "models/junk_boat.vmdl"
-model_lookup["npc_dota_hero_lion"] = "models/yacht_boat.vmdl"
-model_lookup["npc_dota_hero_ember_spirit"] = "models/tug_boat.vmdl"
-model_lookup["npc_dota_hero_slark"] = "models/viking_boat.vmdl"
-model_lookup["npc_dota_hero_sniper"] = "models/sub_boat.vmdl"
-model_lookup["npc_dota_hero_visage"] = "models/noah_boat.vmdl"
-model_lookup["npc_dota_hero_ursa"] = "models/Aircraft_boat.vmdl"
-model_lookup["npc_dota_hero_pugna"] = "models/ice_boat.vmdl"
-model_lookup["npc_dota_hero_windrunner"] = "models/const_boat.vmdl"
-model_lookup["npc_dota_hero_tusk"] = "models/battleship_boat0.vmdl"
-model_lookup["npc_dota_hero_vengefulspirit"] = "models/trade_one_boat.vmdl"
-model_lookup["npc_dota_hero_bane"] = "models/trade_boat_two.vmdl"
-model_lookup["npc_dota_hero_enigma"] = "models/trade_three_boat.vmdl"
+
+-- this is for if we need to swap a unit model 
+g_ModelLookUp = {}
+g_ModelLookUp["npc_dota_hero_zuus"] = "models/barrel_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_ancient_apparition"] = "models/zodiac_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_tidehunter"] = "models/pontoon_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_crystal_maiden"] = "models/canoe_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_phantom_lancer"] = "models/air_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_rattletrap"] = "models/cat_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_jakiro"] = "models/galleon_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_nevermore"] = "models/plane_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_meepo"] = "models/house_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_disruptor"] = "models/coast_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_morphling"] = "models/speed_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_storm_spirit"] = "models/junk_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_lion"] = "models/yacht_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_ember_spirit"] = "models/tug_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_slark"] = "models/viking_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_sniper"] = "models/sub_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_visage"] = "models/noah_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_ursa"] = "models/Aircraft_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_pugna"] = "models/ice_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_windrunner"] = "models/const_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_tusk"] = "models/battleship_boat0.vmdl"
+g_ModelLookUp["npc_dota_hero_vengefulspirit"] = "models/trade_one_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_bane"] = "models/trade_boat_two.vmdl"
+g_ModelLookUp["npc_dota_hero_enigma"] = "models/trade_three_boat.vmdl"
 
 
 
-NorthEasyMissions={}
-NorthHardMissions={}
-SouthEasyMissions={}
-SouthHardMissions={}
+g_EasyMissionsNorth={}
+g_HardMissionsNorth={}
+g_EasyMissionsSouth={}
+g_HardMissionsSouth={}
 
 function Precache( context )
 		for ind = 0, 11, 1 do 
-			isDisconnected[ind] = 0 
-			DisconnectTime[ind] = 0 
-			DisconnectKicked[ind] = 0
-			 herokills[ind] = 0
+			g_IsHeroDisconnected[ind] = 0 
+			g_DisconnectTime[ind] = 0 
+			g_DisconnectKicked[ind] = 0
+			 g_HeroKills[ind] = 0
 				  -- These lines will create an item and add it to the player, effectively ensuring they start with the item
 		end
 	for ind = 0, 20, 1 do 
-		playerIdsToNames[ind]=0;
+		g_PlayerIdsToNames[ind]=0;
 	end
 
-	for k, v in pairs( model_lookup ) do
+	for k, v in pairs( g_ModelLookUp ) do
     PrecacheResource( "model", v, context )
   end
 	PrecacheResource( "particle_folder", "particles/basic_projectile", context )
@@ -446,15 +465,21 @@ function CBattleship8D:InitGameMode()
 	--register the 'UnstickMe' command in our console
 	GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( CBattleship8D, "OrderExecutionFilter" ), self )
 	
+	GameRules:GetGameModeEntity():SetBountyRunePickupFilter( Dynamic_Wrap( CBattleship8D, "BountyRuneFilter" ), self )
+	
+	
 
 	
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
 	GameRules:GetGameModeEntity():SetRecommendedItemsDisabled(true)
 	GameRules:SetUseBaseGoldBountyOnHeroes(true)
 	GameRules:SetSameHeroSelectionEnabled(true)
+	
 	SendToServerConsole( "dota_combine_models 0" ) 
 	ListenToGameEvent('dota_item_purchased', Dynamic_Wrap(CBattleship8D, 'OnItemPurchased'), self)
 
+	GameRules:GetGameModeEntity():SetRuneSpawnFilter( Dynamic_Wrap( CBattleship8D, "FilterRuneSpawn" ), self )
+	
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(CBattleship8D, 'OnEntityKilled'), self)
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(CBattleship8D, 'OnNPCSpawned'), self)
 	ListenToGameEvent('player_connect_full', Dynamic_Wrap(CBattleship8D, 'OnConnectFull'), self)
@@ -477,246 +502,246 @@ mode:SetHUDVisible(12, false)
   
   
   
-NorthEasyMissions["npc_dota_shop_left_bot"]={}
-NorthEasyMissions["npc_dota_shop_right_bot"]={}
-NorthEasyMissions["npc_dota_shop_right_mid"]={}
-NorthEasyMissions["npc_dota_shop_left_mid"]={}
-NorthEasyMissions["npc_dota_shop_left_top"]={}
-NorthEasyMissions["npc_dota_shop_mid_bot"]={}
-NorthEasyMissions["npc_dota_shop_mid_mid"]={}
-NorthEasyMissions["npc_dota_shop_mid_top"]={}
-NorthEasyMissions["npc_dota_shop_right_top"]={}
-NorthHardMissions["npc_dota_shop_left_bot"]={}
-NorthHardMissions["npc_dota_shop_right_bot"]={}
-NorthHardMissions["npc_dota_shop_right_mid"]={}
-NorthHardMissions["npc_dota_shop_left_mid"]={}
-NorthHardMissions["npc_dota_shop_left_top"]={}
-NorthHardMissions["npc_dota_shop_mid_bot"]={}
-NorthHardMissions["npc_dota_shop_mid_mid"]={}
-NorthHardMissions["npc_dota_shop_mid_top"]={}
-NorthHardMissions["npc_dota_shop_right_top"]={}
-SouthEasyMissions["npc_dota_shop_left_bot"]={}
-SouthEasyMissions["npc_dota_shop_right_bot"]={}
-SouthEasyMissions["npc_dota_shop_right_mid"]={}
-SouthEasyMissions["npc_dota_shop_left_mid"]={}
-SouthEasyMissions["npc_dota_shop_left_top"]={}
-SouthEasyMissions["npc_dota_shop_mid_bot"]={}
-SouthEasyMissions["npc_dota_shop_mid_mid"]={}
-SouthEasyMissions["npc_dota_shop_mid_top"]={}
-SouthEasyMissions["npc_dota_shop_right_top"]={}
-SouthHardMissions["npc_dota_shop_left_bot"]={}
-SouthHardMissions["npc_dota_shop_right_bot"]={}
-SouthHardMissions["npc_dota_shop_right_mid"]={}
-SouthHardMissions["npc_dota_shop_left_mid"]={}
-SouthHardMissions["npc_dota_shop_left_top"]={}
-SouthHardMissions["npc_dota_shop_mid_bot"]={}
-SouthHardMissions["npc_dota_shop_mid_mid"]={}
-SouthHardMissions["npc_dota_shop_mid_top"]={}
-SouthHardMissions["npc_dota_shop_right_top"]={}
+g_EasyMissionsNorth["npc_dota_shop_left_bot"]={}
+g_EasyMissionsNorth["npc_dota_shop_right_bot"]={}
+g_EasyMissionsNorth["npc_dota_shop_right_mid"]={}
+g_EasyMissionsNorth["npc_dota_shop_left_mid"]={}
+g_EasyMissionsNorth["npc_dota_shop_left_top"]={}
+g_EasyMissionsNorth["npc_dota_shop_mid_bot"]={}
+g_EasyMissionsNorth["npc_dota_shop_mid_mid"]={}
+g_EasyMissionsNorth["npc_dota_shop_mid_top"]={}
+g_EasyMissionsNorth["npc_dota_shop_right_top"]={}
+g_HardMissionsNorth["npc_dota_shop_left_bot"]={}
+g_HardMissionsNorth["npc_dota_shop_right_bot"]={}
+g_HardMissionsNorth["npc_dota_shop_right_mid"]={}
+g_HardMissionsNorth["npc_dota_shop_left_mid"]={}
+g_HardMissionsNorth["npc_dota_shop_left_top"]={}
+g_HardMissionsNorth["npc_dota_shop_mid_bot"]={}
+g_HardMissionsNorth["npc_dota_shop_mid_mid"]={}
+g_HardMissionsNorth["npc_dota_shop_mid_top"]={}
+g_HardMissionsNorth["npc_dota_shop_right_top"]={}
+g_EasyMissionsSouth["npc_dota_shop_left_bot"]={}
+g_EasyMissionsSouth["npc_dota_shop_right_bot"]={}
+g_EasyMissionsSouth["npc_dota_shop_right_mid"]={}
+g_EasyMissionsSouth["npc_dota_shop_left_mid"]={}
+g_EasyMissionsSouth["npc_dota_shop_left_top"]={}
+g_EasyMissionsSouth["npc_dota_shop_mid_bot"]={}
+g_EasyMissionsSouth["npc_dota_shop_mid_mid"]={}
+g_EasyMissionsSouth["npc_dota_shop_mid_top"]={}
+g_EasyMissionsSouth["npc_dota_shop_right_top"]={}
+g_HardMissionsSouth["npc_dota_shop_left_bot"]={}
+g_HardMissionsSouth["npc_dota_shop_right_bot"]={}
+g_HardMissionsSouth["npc_dota_shop_right_mid"]={}
+g_HardMissionsSouth["npc_dota_shop_left_mid"]={}
+g_HardMissionsSouth["npc_dota_shop_left_top"]={}
+g_HardMissionsSouth["npc_dota_shop_mid_bot"]={}
+g_HardMissionsSouth["npc_dota_shop_mid_mid"]={}
+g_HardMissionsSouth["npc_dota_shop_mid_top"]={}
+g_HardMissionsSouth["npc_dota_shop_right_top"]={}
 
-table.insert(NorthEasyMissions["npc_dota_shop_left_top"], "item_contract_easy_left_mid")
-table.insert(NorthEasyMissions["npc_dota_shop_left_top"], "item_contract_easy_mid_top")
-table.insert(NorthEasyMissions["npc_dota_shop_left_top"], "item_contract_easy_right_top")
-table.insert(NorthEasyMissions["npc_dota_shop_mid_mid"], "item_contract_easy_mid_top")
-table.insert(NorthEasyMissions["npc_dota_shop_left_mid"], "item_contract_easy_left_top")
-table.insert(NorthEasyMissions["npc_dota_shop_mid_top"], "item_contract_easy_left_top")
-table.insert(NorthEasyMissions["npc_dota_shop_mid_top"], "item_contract_easy_left_mid")
-table.insert(NorthEasyMissions["npc_dota_shop_mid_top"], "item_contract_easy_right_mid")
-table.insert(NorthEasyMissions["npc_dota_shop_mid_top"], "item_contract_easy_right_top")
-table.insert(NorthEasyMissions["npc_dota_shop_right_mid"], "item_contract_easy_right_top")
-table.insert(NorthEasyMissions["npc_dota_shop_right_top"], "item_contract_easy_left_top")
-table.insert(NorthEasyMissions["npc_dota_shop_right_top"], "item_contract_easy_mid_top")
-table.insert(NorthEasyMissions["npc_dota_shop_right_top"], "item_contract_easy_right_mid")
-table.insert(NorthHardMissions["npc_dota_shop_left_top"], "item_contract_hard_mid_mid")
-table.insert(NorthHardMissions["npc_dota_shop_left_top"], "item_contract_hard_right_mid")
-table.insert(NorthHardMissions["npc_dota_shop_left_top"], "item_contract_hard_right_bot")
-table.insert(NorthHardMissions["npc_dota_shop_left_top"], "item_contract_hard_mid_bot")
-table.insert(NorthHardMissions["npc_dota_shop_mid_mid"], "item_contract_hard_left_bot")
-table.insert(NorthHardMissions["npc_dota_shop_mid_mid"], "item_contract_hard_right_bot")
-table.insert(NorthHardMissions["npc_dota_shop_mid_mid"], "item_contract_hard_mid_bot")
-table.insert(NorthHardMissions["npc_dota_shop_left_mid"], "item_contract_hard_mid_mid")
-table.insert(NorthHardMissions["npc_dota_shop_left_mid"], "item_contract_hard_right_mid")
-table.insert(NorthHardMissions["npc_dota_shop_left_mid"], "item_contract_hard_right_bot")
-table.insert(NorthHardMissions["npc_dota_shop_left_mid"], "item_contract_hard_mid_bot")
-table.insert(NorthHardMissions["npc_dota_shop_left_mid"], "item_contract_hard_right_top")
-table.insert(NorthHardMissions["npc_dota_shop_left_bot"], "item_contract_hard_mid_mid")
-table.insert(NorthHardMissions["npc_dota_shop_left_bot"], "item_contract_hard_right_mid")
-table.insert(NorthHardMissions["npc_dota_shop_left_bot"], "item_contract_hard_right_bot")
-table.insert(NorthHardMissions["npc_dota_shop_left_bot"], "item_contract_hard_mid_bot")
-table.insert(NorthHardMissions["npc_dota_shop_left_bot"], "item_contract_hard_right_top")
-table.insert(NorthHardMissions["npc_dota_shop_mid_top"], "item_contract_hard_mid_mid")
-table.insert(NorthHardMissions["npc_dota_shop_mid_top"], "item_contract_hard_left_bot")
-table.insert(NorthHardMissions["npc_dota_shop_mid_top"], "item_contract_hard_right_bot")
-table.insert(NorthHardMissions["npc_dota_shop_mid_top"], "item_contract_hard_mid_bot")
-table.insert(NorthHardMissions["npc_dota_shop_right_mid"], "item_contract_hard_left_top")
-table.insert(NorthHardMissions["npc_dota_shop_right_mid"], "item_contract_hard_mid_mid")
-table.insert(NorthHardMissions["npc_dota_shop_right_mid"], "item_contract_hard_left_mid")
-table.insert(NorthHardMissions["npc_dota_shop_right_mid"], "item_contract_hard_left_bot")
-table.insert(NorthHardMissions["npc_dota_shop_right_mid"], "item_contract_hard_mid_bot")
-table.insert(NorthHardMissions["npc_dota_shop_right_bot"], "item_contract_hard_left_top")
-table.insert(NorthHardMissions["npc_dota_shop_right_bot"], "item_contract_hard_mid_mid")
-table.insert(NorthHardMissions["npc_dota_shop_right_bot"], "item_contract_hard_left_mid")
-table.insert(NorthHardMissions["npc_dota_shop_right_bot"], "item_contract_hard_left_bot")
-table.insert(NorthHardMissions["npc_dota_shop_right_bot"], "item_contract_hard_mid_bot")
-table.insert(NorthHardMissions["npc_dota_shop_mid_bot"], "item_contract_hard_left_top")
-table.insert(NorthHardMissions["npc_dota_shop_mid_bot"], "item_contract_hard_mid_mid")
-table.insert(NorthHardMissions["npc_dota_shop_mid_bot"], "item_contract_hard_left_bot")
-table.insert(NorthHardMissions["npc_dota_shop_mid_bot"], "item_contract_hard_mid_top")
-table.insert(NorthHardMissions["npc_dota_shop_mid_bot"], "item_contract_hard_right_bot")
-table.insert(NorthHardMissions["npc_dota_shop_mid_bot"], "item_contract_hard_right_top")
-table.insert(NorthHardMissions["npc_dota_shop_right_top"], "item_contract_hard_mid_mid")
-table.insert(NorthHardMissions["npc_dota_shop_right_top"], "item_contract_hard_left_mid")
-table.insert(NorthHardMissions["npc_dota_shop_right_top"], "item_contract_hard_left_bot")
-table.insert(NorthHardMissions["npc_dota_shop_right_top"], "item_contract_hard_mid_bot")
-table.insert(NorthHardMissions["npc_dota_shop_left_top"], "item_contract_medium_left_bot")
-table.insert(NorthHardMissions["npc_dota_shop_mid_mid"], "item_contract_medium_left_top")
-table.insert(NorthHardMissions["npc_dota_shop_mid_mid"], "item_contract_medium_left_mid")
-table.insert(NorthHardMissions["npc_dota_shop_mid_mid"], "item_contract_medium_right_mid")
-table.insert(NorthHardMissions["npc_dota_shop_mid_mid"], "item_contract_medium_right_top")
-table.insert(NorthHardMissions["npc_dota_shop_left_mid"], "item_contract_medium_left_bot")
-table.insert(NorthHardMissions["npc_dota_shop_left_mid"], "item_contract_medium_mid_top")
-table.insert(NorthHardMissions["npc_dota_shop_left_bot"], "item_contract_medium_left_top")
-table.insert(NorthHardMissions["npc_dota_shop_left_bot"], "item_contract_medium_left_mid")
-table.insert(NorthHardMissions["npc_dota_shop_left_bot"], "item_contract_medium_mid_top")
-table.insert(NorthHardMissions["npc_dota_shop_right_mid"], "item_contract_medium_mid_top")
-table.insert(NorthHardMissions["npc_dota_shop_right_mid"], "item_contract_medium_right_bot")
-table.insert(NorthHardMissions["npc_dota_shop_right_bot"], "item_contract_medium_mid_top")
-table.insert(NorthHardMissions["npc_dota_shop_right_bot"], "item_contract_medium_right_mid")
-table.insert(NorthHardMissions["npc_dota_shop_right_bot"], "item_contract_medium_right_top")
-table.insert(NorthHardMissions["npc_dota_shop_mid_bot"], "item_contract_medium_left_mid")
-table.insert(NorthHardMissions["npc_dota_shop_mid_bot"], "item_contract_medium_right_mid")
-table.insert(NorthHardMissions["npc_dota_shop_right_top"], "item_contract_medium_right_bot")
-table.insert(SouthEasyMissions["npc_dota_shop_mid_mid"], "item_contract_easy_mid_bot")
-table.insert(SouthEasyMissions["npc_dota_shop_left_mid"], "item_contract_easy_left_bot")
-table.insert(SouthEasyMissions["npc_dota_shop_left_bot"], "item_contract_easy_left_mid")
-table.insert(SouthEasyMissions["npc_dota_shop_left_bot"], "item_contract_easy_right_bot")
-table.insert(SouthEasyMissions["npc_dota_shop_left_bot"], "item_contract_easy_mid_bot")
-table.insert(SouthEasyMissions["npc_dota_shop_right_mid"], "item_contract_easy_right_bot")
-table.insert(SouthEasyMissions["npc_dota_shop_right_bot"], "item_contract_easy_left_bot")
-table.insert(SouthEasyMissions["npc_dota_shop_right_bot"], "item_contract_easy_right_mid")
-table.insert(SouthEasyMissions["npc_dota_shop_right_bot"], "item_contract_easy_mid_bot")
-table.insert(SouthEasyMissions["npc_dota_shop_mid_bot"], "item_contract_easy_left_mid")
-table.insert(SouthEasyMissions["npc_dota_shop_mid_bot"], "item_contract_easy_left_bot")
-table.insert(SouthEasyMissions["npc_dota_shop_mid_bot"], "item_contract_easy_right_mid")
-table.insert(SouthEasyMissions["npc_dota_shop_mid_bot"], "item_contract_easy_right_bot")
-table.insert(SouthHardMissions["npc_dota_shop_left_top"], "item_contract_hard_mid_mid")
-table.insert(SouthHardMissions["npc_dota_shop_left_top"], "item_contract_hard_mid_top")
-table.insert(SouthHardMissions["npc_dota_shop_left_top"], "item_contract_hard_right_mid")
-table.insert(SouthHardMissions["npc_dota_shop_left_top"], "item_contract_hard_right_bot")
-table.insert(SouthHardMissions["npc_dota_shop_left_top"], "item_contract_hard_right_top")
-table.insert(SouthHardMissions["npc_dota_shop_mid_mid"], "item_contract_hard_left_top")
-table.insert(SouthHardMissions["npc_dota_shop_mid_mid"], "item_contract_hard_mid_top")
-table.insert(SouthHardMissions["npc_dota_shop_mid_mid"], "item_contract_hard_right_top")
-table.insert(SouthHardMissions["npc_dota_shop_left_mid"], "item_contract_hard_mid_mid")
-table.insert(SouthHardMissions["npc_dota_shop_left_mid"], "item_contract_hard_mid_top")
-table.insert(SouthHardMissions["npc_dota_shop_left_mid"], "item_contract_hard_right_mid")
-table.insert(SouthHardMissions["npc_dota_shop_left_mid"], "item_contract_hard_right_bot")
-table.insert(SouthHardMissions["npc_dota_shop_left_mid"], "item_contract_hard_right_top")
-table.insert(SouthHardMissions["npc_dota_shop_left_bot"], "item_contract_hard_mid_mid")
-table.insert(SouthHardMissions["npc_dota_shop_left_bot"], "item_contract_hard_mid_top")
-table.insert(SouthHardMissions["npc_dota_shop_left_bot"], "item_contract_hard_right_mid")
-table.insert(SouthHardMissions["npc_dota_shop_left_bot"], "item_contract_hard_right_top")
-table.insert(SouthHardMissions["npc_dota_shop_mid_top"], "item_contract_hard_left_top")
-table.insert(SouthHardMissions["npc_dota_shop_mid_top"], "item_contract_hard_mid_mid")
-table.insert(SouthHardMissions["npc_dota_shop_mid_top"], "item_contract_hard_left_bot")
-table.insert(SouthHardMissions["npc_dota_shop_mid_top"], "item_contract_hard_right_bot")
-table.insert(SouthHardMissions["npc_dota_shop_mid_top"], "item_contract_hard_mid_bot")
-table.insert(SouthHardMissions["npc_dota_shop_mid_top"], "item_contract_hard_right_top")
-table.insert(SouthHardMissions["npc_dota_shop_right_mid"], "item_contract_hard_left_top")
-table.insert(SouthHardMissions["npc_dota_shop_right_mid"], "item_contract_hard_mid_mid")
-table.insert(SouthHardMissions["npc_dota_shop_right_mid"], "item_contract_hard_left_mid")
-table.insert(SouthHardMissions["npc_dota_shop_right_mid"], "item_contract_hard_left_bot")
-table.insert(SouthHardMissions["npc_dota_shop_right_mid"], "item_contract_hard_mid_top")
-table.insert(SouthHardMissions["npc_dota_shop_right_bot"], "item_contract_hard_left_top")
-table.insert(SouthHardMissions["npc_dota_shop_right_bot"], "item_contract_hard_mid_mid")
-table.insert(SouthHardMissions["npc_dota_shop_right_bot"], "item_contract_hard_left_mid")
-table.insert(SouthHardMissions["npc_dota_shop_right_bot"], "item_contract_hard_mid_top")
-table.insert(SouthHardMissions["npc_dota_shop_mid_bot"], "item_contract_hard_left_top")
-table.insert(SouthHardMissions["npc_dota_shop_mid_bot"], "item_contract_hard_mid_mid")
-table.insert(SouthHardMissions["npc_dota_shop_mid_bot"], "item_contract_hard_mid_top")
-table.insert(SouthHardMissions["npc_dota_shop_mid_bot"], "item_contract_hard_right_top")
-table.insert(SouthHardMissions["npc_dota_shop_right_top"], "item_contract_hard_left_top")
-table.insert(SouthHardMissions["npc_dota_shop_right_top"], "item_contract_hard_mid_mid")
-table.insert(SouthHardMissions["npc_dota_shop_right_top"], "item_contract_hard_left_mid")
-table.insert(SouthHardMissions["npc_dota_shop_right_top"], "item_contract_hard_left_bot")
-table.insert(SouthHardMissions["npc_dota_shop_right_top"], "item_contract_hard_mid_top")
-table.insert(SouthHardMissions["npc_dota_shop_left_top"], "item_contract_medium_left_mid")
-table.insert(SouthHardMissions["npc_dota_shop_left_top"], "item_contract_medium_left_bot")
-table.insert(SouthHardMissions["npc_dota_shop_left_top"], "item_contract_medium_mid_bot")
-table.insert(SouthHardMissions["npc_dota_shop_mid_mid"], "item_contract_medium_left_mid")
-table.insert(SouthHardMissions["npc_dota_shop_mid_mid"], "item_contract_medium_left_bot")
-table.insert(SouthHardMissions["npc_dota_shop_mid_mid"], "item_contract_medium_right_mid")
-table.insert(SouthHardMissions["npc_dota_shop_mid_mid"], "item_contract_medium_right_bot")
-table.insert(SouthHardMissions["npc_dota_shop_left_mid"], "item_contract_medium_left_top")
-table.insert(SouthHardMissions["npc_dota_shop_left_mid"], "item_contract_medium_mid_bot")
-table.insert(SouthHardMissions["npc_dota_shop_left_bot"], "item_contract_medium_left_top")
-table.insert(SouthHardMissions["npc_dota_shop_mid_top"], "item_contract_medium_left_mid")
-table.insert(SouthHardMissions["npc_dota_shop_mid_top"], "item_contract_medium_right_mid")
-table.insert(SouthHardMissions["npc_dota_shop_right_mid"], "item_contract_medium_mid_bot")
-table.insert(SouthHardMissions["npc_dota_shop_right_mid"], "item_contract_medium_right_top")
-table.insert(SouthHardMissions["npc_dota_shop_right_bot"], "item_contract_medium_right_top")
-table.insert(SouthHardMissions["npc_dota_shop_right_top"], "item_contract_medium_right_mid")
-table.insert(SouthHardMissions["npc_dota_shop_right_top"], "item_contract_medium_right_bot")
-table.insert(SouthHardMissions["npc_dota_shop_right_top"], "item_contract_medium_mid_bot")
-
-
+table.insert(g_EasyMissionsNorth["npc_dota_shop_left_top"], "item_contract_easy_left_mid")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_left_top"], "item_contract_easy_mid_top")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_left_top"], "item_contract_easy_right_top")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_mid_mid"], "item_contract_easy_mid_top")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_left_mid"], "item_contract_easy_left_top")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_mid_top"], "item_contract_easy_left_top")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_mid_top"], "item_contract_easy_left_mid")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_mid_top"], "item_contract_easy_right_mid")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_mid_top"], "item_contract_easy_right_top")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_right_mid"], "item_contract_easy_right_top")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_right_top"], "item_contract_easy_left_top")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_right_top"], "item_contract_easy_mid_top")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_right_top"], "item_contract_easy_right_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_left_top"], "item_contract_hard_mid_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_left_top"], "item_contract_hard_right_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_left_top"], "item_contract_hard_right_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_left_top"], "item_contract_hard_mid_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_mid_mid"], "item_contract_hard_left_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_mid_mid"], "item_contract_hard_right_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_mid_mid"], "item_contract_hard_mid_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_left_mid"], "item_contract_hard_mid_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_left_mid"], "item_contract_hard_right_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_left_mid"], "item_contract_hard_right_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_left_mid"], "item_contract_hard_mid_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_left_mid"], "item_contract_hard_right_top")
+table.insert(g_HardMissionsNorth["npc_dota_shop_left_bot"], "item_contract_hard_mid_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_left_bot"], "item_contract_hard_right_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_left_bot"], "item_contract_hard_right_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_left_bot"], "item_contract_hard_mid_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_left_bot"], "item_contract_hard_right_top")
+table.insert(g_HardMissionsNorth["npc_dota_shop_mid_top"], "item_contract_hard_mid_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_mid_top"], "item_contract_hard_left_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_mid_top"], "item_contract_hard_right_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_mid_top"], "item_contract_hard_mid_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_right_mid"], "item_contract_hard_left_top")
+table.insert(g_HardMissionsNorth["npc_dota_shop_right_mid"], "item_contract_hard_mid_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_right_mid"], "item_contract_hard_left_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_right_mid"], "item_contract_hard_left_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_right_mid"], "item_contract_hard_mid_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_right_bot"], "item_contract_hard_left_top")
+table.insert(g_HardMissionsNorth["npc_dota_shop_right_bot"], "item_contract_hard_mid_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_right_bot"], "item_contract_hard_left_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_right_bot"], "item_contract_hard_left_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_right_bot"], "item_contract_hard_mid_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_mid_bot"], "item_contract_hard_left_top")
+table.insert(g_HardMissionsNorth["npc_dota_shop_mid_bot"], "item_contract_hard_mid_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_mid_bot"], "item_contract_hard_left_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_mid_bot"], "item_contract_hard_mid_top")
+table.insert(g_HardMissionsNorth["npc_dota_shop_mid_bot"], "item_contract_hard_right_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_mid_bot"], "item_contract_hard_right_top")
+table.insert(g_HardMissionsNorth["npc_dota_shop_right_top"], "item_contract_hard_mid_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_right_top"], "item_contract_hard_left_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_right_top"], "item_contract_hard_left_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_right_top"], "item_contract_hard_mid_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_left_top"], "item_contract_medium_left_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_mid_mid"], "item_contract_medium_left_top")
+table.insert(g_HardMissionsNorth["npc_dota_shop_mid_mid"], "item_contract_medium_left_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_mid_mid"], "item_contract_medium_right_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_mid_mid"], "item_contract_medium_right_top")
+table.insert(g_HardMissionsNorth["npc_dota_shop_left_mid"], "item_contract_medium_left_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_left_mid"], "item_contract_medium_mid_top")
+table.insert(g_HardMissionsNorth["npc_dota_shop_left_bot"], "item_contract_medium_left_top")
+table.insert(g_HardMissionsNorth["npc_dota_shop_left_bot"], "item_contract_medium_left_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_left_bot"], "item_contract_medium_mid_top")
+table.insert(g_HardMissionsNorth["npc_dota_shop_right_mid"], "item_contract_medium_mid_top")
+table.insert(g_HardMissionsNorth["npc_dota_shop_right_mid"], "item_contract_medium_right_bot")
+table.insert(g_HardMissionsNorth["npc_dota_shop_right_bot"], "item_contract_medium_mid_top")
+table.insert(g_HardMissionsNorth["npc_dota_shop_right_bot"], "item_contract_medium_right_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_right_bot"], "item_contract_medium_right_top")
+table.insert(g_HardMissionsNorth["npc_dota_shop_mid_bot"], "item_contract_medium_left_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_mid_bot"], "item_contract_medium_right_mid")
+table.insert(g_HardMissionsNorth["npc_dota_shop_right_top"], "item_contract_medium_right_bot")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_mid_mid"], "item_contract_easy_mid_bot")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_left_mid"], "item_contract_easy_left_bot")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_left_bot"], "item_contract_easy_left_mid")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_left_bot"], "item_contract_easy_right_bot")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_left_bot"], "item_contract_easy_mid_bot")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_right_mid"], "item_contract_easy_right_bot")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_right_bot"], "item_contract_easy_left_bot")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_right_bot"], "item_contract_easy_right_mid")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_right_bot"], "item_contract_easy_mid_bot")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_mid_bot"], "item_contract_easy_left_mid")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_mid_bot"], "item_contract_easy_left_bot")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_mid_bot"], "item_contract_easy_right_mid")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_mid_bot"], "item_contract_easy_right_bot")
+table.insert(g_HardMissionsSouth["npc_dota_shop_left_top"], "item_contract_hard_mid_mid")
+table.insert(g_HardMissionsSouth["npc_dota_shop_left_top"], "item_contract_hard_mid_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_left_top"], "item_contract_hard_right_mid")
+table.insert(g_HardMissionsSouth["npc_dota_shop_left_top"], "item_contract_hard_right_bot")
+table.insert(g_HardMissionsSouth["npc_dota_shop_left_top"], "item_contract_hard_right_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_mid_mid"], "item_contract_hard_left_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_mid_mid"], "item_contract_hard_mid_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_mid_mid"], "item_contract_hard_right_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_left_mid"], "item_contract_hard_mid_mid")
+table.insert(g_HardMissionsSouth["npc_dota_shop_left_mid"], "item_contract_hard_mid_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_left_mid"], "item_contract_hard_right_mid")
+table.insert(g_HardMissionsSouth["npc_dota_shop_left_mid"], "item_contract_hard_right_bot")
+table.insert(g_HardMissionsSouth["npc_dota_shop_left_mid"], "item_contract_hard_right_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_left_bot"], "item_contract_hard_mid_mid")
+table.insert(g_HardMissionsSouth["npc_dota_shop_left_bot"], "item_contract_hard_mid_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_left_bot"], "item_contract_hard_right_mid")
+table.insert(g_HardMissionsSouth["npc_dota_shop_left_bot"], "item_contract_hard_right_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_mid_top"], "item_contract_hard_left_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_mid_top"], "item_contract_hard_mid_mid")
+table.insert(g_HardMissionsSouth["npc_dota_shop_mid_top"], "item_contract_hard_left_bot")
+table.insert(g_HardMissionsSouth["npc_dota_shop_mid_top"], "item_contract_hard_right_bot")
+table.insert(g_HardMissionsSouth["npc_dota_shop_mid_top"], "item_contract_hard_mid_bot")
+table.insert(g_HardMissionsSouth["npc_dota_shop_mid_top"], "item_contract_hard_right_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_right_mid"], "item_contract_hard_left_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_right_mid"], "item_contract_hard_mid_mid")
+table.insert(g_HardMissionsSouth["npc_dota_shop_right_mid"], "item_contract_hard_left_mid")
+table.insert(g_HardMissionsSouth["npc_dota_shop_right_mid"], "item_contract_hard_left_bot")
+table.insert(g_HardMissionsSouth["npc_dota_shop_right_mid"], "item_contract_hard_mid_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_right_bot"], "item_contract_hard_left_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_right_bot"], "item_contract_hard_mid_mid")
+table.insert(g_HardMissionsSouth["npc_dota_shop_right_bot"], "item_contract_hard_left_mid")
+table.insert(g_HardMissionsSouth["npc_dota_shop_right_bot"], "item_contract_hard_mid_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_mid_bot"], "item_contract_hard_left_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_mid_bot"], "item_contract_hard_mid_mid")
+table.insert(g_HardMissionsSouth["npc_dota_shop_mid_bot"], "item_contract_hard_mid_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_mid_bot"], "item_contract_hard_right_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_right_top"], "item_contract_hard_left_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_right_top"], "item_contract_hard_mid_mid")
+table.insert(g_HardMissionsSouth["npc_dota_shop_right_top"], "item_contract_hard_left_mid")
+table.insert(g_HardMissionsSouth["npc_dota_shop_right_top"], "item_contract_hard_left_bot")
+table.insert(g_HardMissionsSouth["npc_dota_shop_right_top"], "item_contract_hard_mid_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_left_top"], "item_contract_medium_left_mid")
+table.insert(g_HardMissionsSouth["npc_dota_shop_left_top"], "item_contract_medium_left_bot")
+table.insert(g_HardMissionsSouth["npc_dota_shop_left_top"], "item_contract_medium_mid_bot")
+table.insert(g_HardMissionsSouth["npc_dota_shop_mid_mid"], "item_contract_medium_left_mid")
+table.insert(g_HardMissionsSouth["npc_dota_shop_mid_mid"], "item_contract_medium_left_bot")
+table.insert(g_HardMissionsSouth["npc_dota_shop_mid_mid"], "item_contract_medium_right_mid")
+table.insert(g_HardMissionsSouth["npc_dota_shop_mid_mid"], "item_contract_medium_right_bot")
+table.insert(g_HardMissionsSouth["npc_dota_shop_left_mid"], "item_contract_medium_left_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_left_mid"], "item_contract_medium_mid_bot")
+table.insert(g_HardMissionsSouth["npc_dota_shop_left_bot"], "item_contract_medium_left_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_mid_top"], "item_contract_medium_left_mid")
+table.insert(g_HardMissionsSouth["npc_dota_shop_mid_top"], "item_contract_medium_right_mid")
+table.insert(g_HardMissionsSouth["npc_dota_shop_right_mid"], "item_contract_medium_mid_bot")
+table.insert(g_HardMissionsSouth["npc_dota_shop_right_mid"], "item_contract_medium_right_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_right_bot"], "item_contract_medium_right_top")
+table.insert(g_HardMissionsSouth["npc_dota_shop_right_top"], "item_contract_medium_right_mid")
+table.insert(g_HardMissionsSouth["npc_dota_shop_right_top"], "item_contract_medium_right_bot")
+table.insert(g_HardMissionsSouth["npc_dota_shop_right_top"], "item_contract_medium_mid_bot")
 
 
-table.insert(NorthEasyMissions["npc_dota_shop_left_top"], "item_contract_medium_left_bot")
-table.insert(NorthEasyMissions["npc_dota_shop_mid_mid"], "item_contract_medium_left_top")
-table.insert(NorthEasyMissions["npc_dota_shop_mid_mid"], "item_contract_medium_left_mid")
-table.insert(NorthEasyMissions["npc_dota_shop_mid_mid"], "item_contract_medium_right_mid")
-table.insert(NorthEasyMissions["npc_dota_shop_mid_mid"], "item_contract_medium_right_top")
-table.insert(NorthEasyMissions["npc_dota_shop_left_mid"], "item_contract_medium_left_bot")
-table.insert(NorthEasyMissions["npc_dota_shop_left_mid"], "item_contract_medium_mid_top")
-table.insert(NorthEasyMissions["npc_dota_shop_left_bot"], "item_contract_medium_left_top")
-table.insert(NorthEasyMissions["npc_dota_shop_left_bot"], "item_contract_medium_left_mid")
-table.insert(NorthEasyMissions["npc_dota_shop_left_bot"], "item_contract_medium_mid_top")
-table.insert(NorthEasyMissions["npc_dota_shop_right_mid"], "item_contract_medium_mid_top")
-table.insert(NorthEasyMissions["npc_dota_shop_right_mid"], "item_contract_medium_right_bot")
-table.insert(NorthEasyMissions["npc_dota_shop_right_bot"], "item_contract_medium_mid_top")
-table.insert(NorthEasyMissions["npc_dota_shop_right_bot"], "item_contract_medium_right_mid")
-table.insert(NorthEasyMissions["npc_dota_shop_right_bot"], "item_contract_medium_right_top")
-table.insert(NorthEasyMissions["npc_dota_shop_mid_bot"], "item_contract_medium_left_mid")
-table.insert(NorthEasyMissions["npc_dota_shop_mid_bot"], "item_contract_medium_right_mid")
-table.insert(NorthEasyMissions["npc_dota_shop_right_top"], "item_contract_medium_right_bot")
 
 
-table.insert(SouthEasyMissions["npc_dota_shop_left_top"], "item_contract_medium_left_mid")
-table.insert(SouthEasyMissions["npc_dota_shop_left_top"], "item_contract_medium_left_bot")
-table.insert(SouthEasyMissions["npc_dota_shop_left_top"], "item_contract_medium_mid_bot")
-table.insert(SouthEasyMissions["npc_dota_shop_mid_mid"], "item_contract_medium_left_mid")
-table.insert(SouthEasyMissions["npc_dota_shop_mid_mid"], "item_contract_medium_left_bot")
-table.insert(SouthEasyMissions["npc_dota_shop_mid_mid"], "item_contract_medium_right_mid")
-table.insert(SouthEasyMissions["npc_dota_shop_mid_mid"], "item_contract_medium_right_bot")
-table.insert(SouthEasyMissions["npc_dota_shop_left_mid"], "item_contract_medium_left_top")
-table.insert(SouthEasyMissions["npc_dota_shop_left_mid"], "item_contract_medium_mid_bot")
-table.insert(SouthEasyMissions["npc_dota_shop_left_bot"], "item_contract_medium_left_top")
-table.insert(SouthEasyMissions["npc_dota_shop_mid_top"], "item_contract_medium_left_mid")
-table.insert(SouthEasyMissions["npc_dota_shop_mid_top"], "item_contract_medium_right_mid")
-table.insert(SouthEasyMissions["npc_dota_shop_right_mid"], "item_contract_medium_mid_bot")
-table.insert(SouthEasyMissions["npc_dota_shop_right_mid"], "item_contract_medium_right_top")
-table.insert(SouthEasyMissions["npc_dota_shop_right_bot"], "item_contract_medium_right_top")
-table.insert(SouthEasyMissions["npc_dota_shop_right_top"], "item_contract_medium_right_mid")
-table.insert(SouthEasyMissions["npc_dota_shop_right_top"], "item_contract_medium_right_bot")
-table.insert(SouthEasyMissions["npc_dota_shop_right_top"], "item_contract_medium_mid_bot")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_left_top"], "item_contract_medium_left_bot")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_mid_mid"], "item_contract_medium_left_top")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_mid_mid"], "item_contract_medium_left_mid")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_mid_mid"], "item_contract_medium_right_mid")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_mid_mid"], "item_contract_medium_right_top")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_left_mid"], "item_contract_medium_left_bot")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_left_mid"], "item_contract_medium_mid_top")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_left_bot"], "item_contract_medium_left_top")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_left_bot"], "item_contract_medium_left_mid")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_left_bot"], "item_contract_medium_mid_top")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_right_mid"], "item_contract_medium_mid_top")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_right_mid"], "item_contract_medium_right_bot")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_right_bot"], "item_contract_medium_mid_top")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_right_bot"], "item_contract_medium_right_mid")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_right_bot"], "item_contract_medium_right_top")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_mid_bot"], "item_contract_medium_left_mid")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_mid_bot"], "item_contract_medium_right_mid")
+table.insert(g_EasyMissionsNorth["npc_dota_shop_right_top"], "item_contract_medium_right_bot")
 
 
-	table.insert(co_op_item_pool,"item_coal_bow")
-	table.insert(co_op_item_pool,"item_fire_bow")
-	table.insert(co_op_item_pool,"item_plasma_bow")
-	table.insert(co_op_item_pool,"item_poison_bow")
-	table.insert(co_op_item_pool,"item_light_bow")
-	table.insert(co_op_item_pool,"item_spin_bow")
-	table.insert(co_op_item_pool,"item_ice_bow")
-	table.insert(co_op_item_pool,"item_breach_bow")
-	table.insert(co_op_item_pool,"item_chaos_bow")
-	table.insert(co_op_item_pool,"item_caulk_bow")
-	table.insert(co_op_item_pool,"item_hull_one")
-	table.insert(co_op_item_pool,"item_sail_one")
-	table.insert(co_op_item_pool,"item_repair_one")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_left_top"], "item_contract_medium_left_mid")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_left_top"], "item_contract_medium_left_bot")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_left_top"], "item_contract_medium_mid_bot")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_mid_mid"], "item_contract_medium_left_mid")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_mid_mid"], "item_contract_medium_left_bot")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_mid_mid"], "item_contract_medium_right_mid")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_mid_mid"], "item_contract_medium_right_bot")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_left_mid"], "item_contract_medium_left_top")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_left_mid"], "item_contract_medium_mid_bot")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_left_bot"], "item_contract_medium_left_top")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_mid_top"], "item_contract_medium_left_mid")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_mid_top"], "item_contract_medium_right_mid")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_right_mid"], "item_contract_medium_mid_bot")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_right_mid"], "item_contract_medium_right_top")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_right_bot"], "item_contract_medium_right_top")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_right_top"], "item_contract_medium_right_mid")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_right_top"], "item_contract_medium_right_bot")
+table.insert(g_EasyMissionsSouth["npc_dota_shop_right_top"], "item_contract_medium_mid_bot")
+
+
+	table.insert(g_CoOpItemPool,"item_coal_bow")
+	table.insert(g_CoOpItemPool,"item_fire_bow")
+	table.insert(g_CoOpItemPool,"item_plasma_bow")
+	table.insert(g_CoOpItemPool,"item_poison_bow")
+	table.insert(g_CoOpItemPool,"item_light_bow")
+	table.insert(g_CoOpItemPool,"item_spin_bow")
+	table.insert(g_CoOpItemPool,"item_ice_bow")
+	table.insert(g_CoOpItemPool,"item_breach_bow")
+	table.insert(g_CoOpItemPool,"item_chaos_bow")
+	table.insert(g_CoOpItemPool,"item_caulk_bow")
+	table.insert(g_CoOpItemPool,"item_hull_one")
+	table.insert(g_CoOpItemPool,"item_sail_one")
+	table.insert(g_CoOpItemPool,"item_repair_one")
 	
-	table.insert(co_op_unit_pool,"npc_dota_hero_zuus")
+	table.insert(g_CoOpUnitPool,"npc_dota_hero_zuus")
 
 
 
@@ -732,6 +757,36 @@ function CBattleship8D:FilterModifyGold(event)
     --Return true by default to keep all other orders the same
     return true
 end
+
+function CBattleship8D:BountyRuneFilter(filterTable)
+    --Check if the order is the glyph type
+	print("i'm in BountyRuneFilter!!!!!!!!!!!!!!!!!!!")
+	
+   for k, v in pairs( filterTable ) do
+		print("rune spawn: " .. k .. " " .. tostring(v) )
+	end
+	filterTable[GOLD_BOUNTY]=filterTable[GOLD_BOUNTY]*.5*g_EmpireGoldCount
+	if PlayerResource:GetTeam(filterTable[player_id_const]) == DOTA_TEAM_GOODGUYS then
+		
+		g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + filterTable[GOLD_BOUNTY]
+	else
+		g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + filterTable[GOLD_BOUNTY]
+	end
+	g_HeroGoldArray[filterTable[player_id_const]] =g_HeroGoldArray[filterTable[player_id_const]]  + filterTable[GOLD_BOUNTY]
+    --Return true by default to keep all other orders the same
+    return true
+end
+
+
+
+
+function CBattleship8D:FilterRuneSpawn( filterTable )
+	for k, v in pairs( filterTable ) do
+		print("rune spawn: " .. k .. " " .. tostring(v) )
+	end
+	return true
+end
+
 
 function CBattleship8D:OrderExecutionFilter(keys)
 
@@ -757,7 +812,7 @@ function CBattleship8D:OrderExecutionFilter(keys)
 		print(sellGold)
 		print(GetItemCost(ability:GetName()))
 		print(ability:GetGoldCost(1))
-		hero_gold_array[ability:GetCaster()]=hero_gold_array[ability:GetCaster()]+sellGold
+		g_HeroGoldArray[ability:GetCaster():GetPlayerOwnerID()]=g_HeroGoldArray[ability:GetCaster():GetPlayerOwnerID()]+sellGold
 
 	end
   end
@@ -775,17 +830,554 @@ function CBattleship8D:OrderExecutionFilter(keys)
   return true
 end
 
+
+function CBattleship8D:OnThink()
+		if g_MainTimerTickCount < 500 then
+				for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero_abad*")) do
+					if hero ~= nil and hero:IsOwnedByAnyPlayer() and string.match(hero:GetName(),"abaddon") and hero.changed==nil then
+						hero.changed=1
+					
+						g_PlayerCount=g_PlayerCount+1
+						become_boat(hero, "npc_dota_hero_zuus")
+						
+						
+						RemoveWearables( hero )
+				end
+			end
+		end
+			 
+	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+		if GameRules:GetGameTime() ~= g_PreviousTickCount then
+			
+					if g_MainTimerTickCount == 5 then
+					if g_BattleMode==1 then
+						local battleTimerData = {
+							TimeTillBattle = g_BattleModeTimer;
+						}
+						FireGameEvent( "Battle_Over", battleTimerData ); 
+					end
+		Timers:CreateTimer( 300, function()
+			spawnTide()
+		end)
+		spawnCop()
+			for _,tower in pairs( Entities:FindAllByClassname( "npc_dota_tow*")) do
+					if tower ~= nil and string.match(tower:GetName(),"tower") then
+						if tower:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+							creature = CreateUnitByName( "npc_dota_rng_ind" , tower:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_GOODGUYS )
+							creature:SetOrigin( tower:GetAbsOrigin()* Vector(1,1,0))
+						elseif  tower:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+							creature = CreateUnitByName( "npc_dota_rng_ind" , tower:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_BADGUYS )
+							creature:SetOrigin(creature:GetOrigin() * Vector(1,1,0))
+						end
+						
+				end
+			end
+		 Notifications:TopToAll({text="#Welcome", duration=6.0, style={color="#58ACFA",  fontSize="40px;"}})
+		 Notifications:TopToAll({text="#inst_one", duration=6.0, style={color="#B03060",  fontSize="18px;"}})
+		 Notifications:TopToAll({text="#inst_two", duration=6.0, style={color="#58ACFA",  fontSize="18px;"}, continue=true})
+		 Notifications:TopToAll({text="#inst_three", duration=6.0, style={color="#B03060",  fontSize="18px;"}, continue=true})
+		 Notifications:TopToAll({text="#inst_four", duration=6.0, style={color="#58ACFA",  fontSize="18px;"}, continue=true})
+		
+		
+		end
+		if g_MainTimerTickCount == 7 then	
+		 Notifications:TopToAll({text="#inst_five", duration=6.0, style={color="#07C300",  fontSize="18px;"}})
+		 Notifications:TopToAll({text="#inst_six", duration=6.0, style={color="#58ACFA",  fontSize="18px;"}, continue=true})
+		 Notifications:TopToAll({text="#inst_seven", duration=6.0, style={color="#07C300",  fontSize="18px;"}, continue=true})
+		 Notifications:TopToAll({text="#inst_eight", duration=6.0, style={color="#58ACFA",  fontSize="18px;"}, continue=true})
+			g_PlayerCountSouth = 0
+			g_PlayerCountNorth = 0
+				for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+					if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+						if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+							g_PlayerCountSouth = g_PlayerCountSouth + 1
+						elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+							g_PlayerCountNorth = g_PlayerCountNorth + 1
+						end
+						g_IsHeroDisconnected[hero] = 0
+					end
+				end
+			if g_CoOpMode==1 then
+				g_PlayerCountNorth=1
+				local co_op_pid
+				for playerID = 0, DOTA_MAX_PLAYERS do
+					if PlayerResource:IsValidPlayerID(playerID) then
+						local player = PlayerResource:GetPlayer(playerID)
+						if GameRules:PlayerHasCustomGameHostPrivileges(player) then 
+							co_op_pid = playerID
+						end
+					end
+				end  
+				
+				local data =
+				{
+					Player_ID = co_op_pid;
+				}
+				FireGameEvent("g_CoOpMode",data)
+			end
+			
+		end
+		if g_MainTimerTickCount ==13 and g_CoOpMode==1 then	
+		 Notifications:TopToAll({text="#co_op_one", duration=6.0, style={color="#07C300",  fontSize="30px;"}})
+		 Notifications:TopToAll({text="#co_op_two", duration=6.0, style={color="#07C300",  fontSize="30px;"}})
+		
+		end
+		
+		if g_MainTimerTickCount ==13 and g_BattleMode==1 then	
+			Notifications:TopToAll({text="#g_BattleMode", duration=5.0, style={color="#F2B2B2",  fontSize="40px;"}})
+			Notifications:TopToAll({text="#g_BattleMode_1", duration=5.0, style={color="#F2B2B2",  fontSize="20px;"}})
+			
+			
+			
+		end
+		
+		
+		
+		if g_MainTimerTickCount == 30 then	
+		 Notifications:TopToAll({text="#bs_HowToWin", duration=10.0, style={color="#58ACFA",  fontSize="25px;"}})
+
+		end
+		
+			if g_MainTimerTickCount == 1224 then	
+				Notifications:TopToAll({text="#spys_reminder", duration=8.0, style={color="#CC33FF",  fontSize="25px;"}})
+				  for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+					if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+						if hero:IsRealHero() then
+
+					
+						local Data = {
+							player_id =hero:GetPlayerOwnerID(),
+							x 	= -3328,
+							y  = 320,
+							z  = -68
+						}
+						FireGameEvent( "ping_loc", Data ); 
+						
+						local Data = {
+							player_id =hero:GetPlayerOwnerID(),
+							x 	= 3008,
+							y  = -320,
+							z  = -68
+						}
+						FireGameEvent( "ping_loc", Data ); 
+						end
+					end
+				end
+				
+			end
+			if g_MainTimerTickCount == 1228 then	
+				Notifications:TopToAll({text="#spys_reminder", duration=8.0, style={color="#CC33FF",  fontSize="25px;"}})
+				  for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+					if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+						if hero:IsRealHero() then
+						local Data = {
+							player_id =hero:GetPlayerOwnerID(),
+							x 	= -3328,
+							y  = 320,
+							z  = -68
+						}
+						FireGameEvent( "ping_loc", Data ); 
+						
+						local Data = {
+							player_id =hero:GetPlayerOwnerID(),
+							x 	= 3008,
+							y  = -320,
+							z  = -68
+						}
+						FireGameEvent( "ping_loc", Data ); 
+						end
+					end
+				end
+				
+			end
+		if g_MainTimerTickCount == 20 then	
+			local i=0
+			while i < 5-g_PlayerCountSouth do
+			g_GoldPerTickSouth = g_GoldPerTickSouth + 1
+			i=i+1
+			end
+			i=0
+			while i < 5-g_PlayerCountNorth do
+			g_GoldPerTickNorth = g_GoldPerTickNorth + 1
+			i=i+1
+			end
+		end
+		
+		
+		--iterates through heroes every 2 seconds
+		if g_MainTimerTickCount % 2 == 0 then
+			if g_MainTimerTickCount % 4 == 0 and g_SpyAnnouncmentFlag == 1 then
+				g_SpyAnnouncmentFlag = 0
+				 Notifications:TopToAll({text="#buy_spy_header", duration=4.0, style={color="#58ACFA",  fontSize="30px;"}})
+				 Notifications:TopToAll({text="#g_SpyCountSouth_start", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}})
+				 Notifications:TopToAll({text=tostring(g_SpyCountSouth) .. " ", duration=4.0, style={color="#CC3300",  fontSize="30px;"}, continue=true})
+				 Notifications:TopToAll({text="#spys_end", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}, continue=true})
+				 Notifications:TopToAll({text="#g_SpyCountNorth_start", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}})
+				 Notifications:TopToAll({text=tostring(g_SpyCountNorth) .. " ", duration=4.0, style={color="#CC3300",  fontSize="30px;"}, continue=true})
+				 Notifications:TopToAll({text="#spys_end", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}, continue=true})
+				
+				
+			end
+			for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+				if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 then
+				
+				AttachCosmetics(hero)
+					HandleShopChecks(hero)
+					if hero:IsIllusion() then
+						hero:SetModel( "models/noah_boat.vmdl" )
+						hero:SetOriginalModel( "models/noah_boat.vmdl" )
+					end
+					
+					if string.match(hero:GetName(),"crystal_maiden") then
+						hero:SetMana((hero:GetStrength()-1)/3)
+					end
+					if string.match(hero:GetName(),"tusk") then
+							local casterUnit = hero
+							--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+							--print('[AbilityFunctions] battleshipHealth started!')
+							if casterUnit:IsAlive() and hero:IsOwnedByAnyPlayer() and g_HeroHP[casterUnit:GetPlayerID()] == nil then
+								g_HeroHP[casterUnit:GetPlayerID()] = casterUnit:GetHealthPercent() 
+								casterUnit:SetModel("models/battleship_boat0")
+								casterUnit:SetOriginalModel("models/battleship_boat0")
+							end
+							if casterUnit:IsAlive() and hero:IsOwnedByAnyPlayer() then
+								if casterUnit:GetHealthPercent() < 7  and g_HeroHP[casterUnit:GetPlayerID()] > 6 then
+									casterUnit:SetModel("models/battleship_boat4")
+									casterUnit:SetOriginalModel("models/battleship_boat4")
+								--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
+								elseif casterUnit:GetHealthPercent() < 25 and g_HeroHP[casterUnit:GetPlayerID()] > 24 then
+									casterUnit:SetModel("models/battleship_boat3")
+									casterUnit:SetOriginalModel("models/battleship_boat3")
+									--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
+								elseif casterUnit:GetHealthPercent() < 50 and g_HeroHP[casterUnit:GetPlayerID()] > 49 then
+									casterUnit:SetModel("models/battleship_boat2")
+									casterUnit:SetOriginalModel("models/battleship_boat2")
+									--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
+								elseif casterUnit:GetHealthPercent() < 75 and g_HeroHP[casterUnit:GetPlayerID()] > 74 then
+									casterUnit:SetModel("models/battleship_boat1")
+									casterUnit:SetOriginalModel("models/battleship_boat1")
+									--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
+								elseif casterUnit:GetHealthPercent() > 74 and g_HeroHP[casterUnit:GetPlayerID()] < 75 then
+									casterUnit:SetModel("models/battleship_boat0")
+									casterUnit:SetOriginalModel("models/battleship_boat0")
+									--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
+								--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
+								end
+									g_HeroHP[casterUnit:GetPlayerID()] = casterUnit:GetHealthPercent() 
+							end
+						end
+						
+					
+							local casterPos = hero:GetAbsOrigin()
+							local targetUnitOne = Entities:FindByName( nil, "south_kicker")
+							local targetUnitTwo = Entities:FindByName( nil, "north_kicker")
+							local directionOne =  casterPos - targetUnitOne:GetAbsOrigin()
+							local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
+						
+						
+						
+		
+
+						
+						if PlayerResource:GetConnectionState( hero:GetPlayerID() ) ~= 2 or hero:HasOwnerAbandoned() or hero:HasModifier("pergatory_perm") then
+								print('inside disconnect')
+										if g_DisconnectTime[hero]~= nil then
+											g_DisconnectTime[hero]=g_DisconnectTime[hero]+2
+											print('disconnect time: ' .. g_DisconnectTime[hero])
+											else
+											g_DisconnectTime[hero]=1
+										end
+											if g_DisconnectTime[hero]==180 or g_DisconnectTime[hero]==181 then
+											Notifications:TopToAll({text="#player_kickable", duration=6.0, style={color="#800000",  fontSize="30px;"}})
+				
+											 					
+											end
+											if g_DisconnectTime[hero]>180 or hero:HasOwnerAbandoned() then
+											print('bigger than 180')
+												local casterPos = hero:GetAbsOrigin()
+												local targetUnitOne = Entities:FindByName( nil, "south_kicker")
+												local targetUnitTwo = Entities:FindByName( nil, "north_kicker")
+												local directionOne =  casterPos - targetUnitOne:GetAbsOrigin()
+												local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
+											
+											
+												if directionOne:Length() < 600 or directionTwo:Length() < 600 or hero:HasOwnerAbandoned() then
+													g_DisconnectKicked[hero] =1
+												end
+											end
+										local herogold=0
+											if hero:IsOwnedByAnyPlayer() then
+											 herogold = g_HeroGoldArray[hero:GetPlayerOwnerID()]
+											end
+										if (g_DisconnectKicked[hero] == 1 and g_PlayerCount>1 or hero:HasOwnerAbandoned()) and herogold > 30 and false == hero:HasModifier("pergatory_perm") and g_PlayerCount>1 then
+											GameRules:SendCustomMessage("#remove_player", DOTA_TEAM_GOODGUYS, 0)
+											storage:SetDisconnectState(g_DisconnectKicked)
+											--not sure if syntax in following line is right
+											sellBoat(hero)
+											for itemSlot = 0, 14, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
+													if hero ~= nil then --checks to make sure the killed unit is not nonexistent.
+															local Item = hero:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
+															if Item ~= nil then -- makes sure that the item exists and making sure it is the correct item
+																hero:SetGold(herogold + Item:GetGoldCost(0), true)
+																hero:SetGold(0, false)
+																hero:RemoveItem(Item)
+															end
+													end
+											end
+											local herogoldaftersell = hero:GetGold()
+											if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+												g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + herogoldaftersell
+											elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+												g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + herogoldaftersell
+											end
+											hero:SetGold(0, false)
+											hero:SetGold(0, true)
+											g_DisconnectKicked[hero] = 2
+											local vecorig = Vector(-8000,384,0)
+											hero:SetOrigin(vecorig)
+											local item = CreateItem( "item_spawn_stunner", npc, npc)
+							
+											item:ApplyDataDrivenModifier(hero, hero, "pergatory_perm", nil)
+										end
+										
+										if g_DisconnectKicked[hero] == 2 or hero:HasOwnerAbandoned() or hero:HasModifier("pergatory_perm") then
+												if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+													hero:SetGold(0, true)
+													g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + g_GoldPerTickNorth * 2
+												elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+													hero:SetGold(0, true)
+													g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + g_GoldPerTickSouth * 2
+											end
+										end
+								end
+						
+						
+				local hulls=0
+							for itemSlot = 0, 5, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
+									if hero ~= nil then --checks to make sure the killed unit is not nonexistent.
+											local Item = hero:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
+											if Item ~= nil and string.match(Item:GetName(),"hull") then -- makes sure that the item exists and making sure it is the correct item
+												Item:ApplyDataDrivenModifier(hero, hero, "modifier_item_hull_one", nil)
+												hulls=hulls+1
+											end
+									end
+							end
+					
+					if hulls>1 and hero.hullmsg==nil then
+						hero.hullmsg=1
+						Notifications:Top(hero:GetPlayerID(), {text="#too_many_hulls", duration=5.0, style={color="#800000",  fontSize="50px;"}})
+					end
+					
+					--handles people stuck on cliffs
+						local height = hero:GetOrigin() * Vector(0,0,1)
+						if height:Length() > 110 and false == hero:HasModifier("line_mod")  and false == hero:HasModifier("fly_bat") and false == hero:HasModifier("fly") and false == hero:HasModifier("modifier_spirit_breaker_charge_of_darkness") and false == hero:HasModifier("modifier_kunkka_torrent") and false == hero:HasModifier("move_carrier_in")  and false == hero:HasModifier("giraffe_grabed")  and false == hero:HasModifier("modifier_batrider_flaming_lasso") and false == hero:HasModifier("modifier_mirana_leap")  and false == hero:IsStunned() and  hero:IsAlive()  then 
+							
+							local abil1 = hero:GetAbilityByIndex(1)
+							
+							print( 'player found at z of: ' .. tostring(height:Length()) .. "and cd check is " .. tostring(abil1:GetCooldownTimeRemaining() > abil1:GetCooldown(abil1:GetLevel())-2) .. " and name of hero is " .. hero:GetName() .. " so name check is " .. tostring(string.match(hero:GetName(),"winter_wyvern")))
+						
+							if abil1:GetCooldownTimeRemaining() >= abil1:GetCooldown(abil1:GetLevel())-2 and (string.match(hero:GetName(),"winter_wyvern") or string.match(hero:GetName(),"kunkka")) then
+							
+							else
+									lasth=g_OldHeroLocations[hero]*Vector(0,0,1)
+									if	lasth:Length() <110 then
+										hero:SetOrigin(g_OldHeroLocations[hero])		
+										else
+										hero:SetOrigin(g_OlderHeroLocations[hero])		
+									end
+									
+									local dmg=hero:GetHealth() * 0.7
+									local damageTable = {
+										victim = hero,
+										attacker = hero,
+										damage = dmg,
+										damage_type = DAMAGE_TYPE_PURE,
+									}
+									
+									 Notifications:Top(hero:GetPlayerID(), {text="#off_wall", duration=3.0, style={color="#800000",  fontSize="50px;"}})
+					
+									ApplyDamage(damageTable)
+							end
+						else
+							if g_OldHeroLocations[hero]~=nil then
+								if g_OlderHeroLocations[hero] ~=nil and (g_OldHeroLocations[hero] - hero:GetOrigin()):Length() >20 then
+									g_OlderHeroLocations[hero] = g_OldHeroLocations[hero]
+									--print("update ll2")
+								elseif g_OlderHeroLocations[hero]==nil then
+									g_OlderHeroLocations[hero] = g_OldHeroLocations[hero]
+								--	print("irst time ll2")
+								else
+								--	print("no update ll2")
+								end
+							end
+							if  g_OldHeroLocations[hero]~=nil and (g_OldHeroLocations[hero] - hero:GetOrigin()):Length() >20 then
+								--print((g_OldHeroLocations[hero] - hero:GetOrigin()):Length())
+								g_OldHeroLocations[hero] = hero:GetOrigin()
+							elseif g_OldHeroLocations[hero]==nil then
+							--	print("first time")
+								g_OldHeroLocations[hero] = hero:GetOrigin()
+								--print((g_OldHeroLocations[hero] - hero:GetOrigin()):Length())
+								else
+							--	print("no update ll")
+							end
+							
+							
+							end
+					--gives gold per tick
+					
+					if hero:IsOwnedByAnyPlayer() then
+						local herogold = g_HeroGoldArray[hero:GetPlayerOwnerID()]
+						if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+							hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + g_GoldPerTickSouth * 2, true)
+							hero:SetGold(0, false)
+							g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + g_GoldPerTickSouth * 2
+							g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + g_GoldPerTickSouth * 2
+						elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+							hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + g_GoldPerTickNorth * 2, true)
+							hero:SetGold(0, false)
+							g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + g_GoldPerTickNorth * 2
+							g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + g_GoldPerTickNorth * 2
+						end
+					end
+				
+
+				end
+			end
+		end
+		
+		HandleTideAbil()
+		
+		if g_MainTimerTickCount % 2 == 0 then
+			reapplyWP()
+			
+		end
+	
+		if g_MainTimerTickCount % 3 == 0 and g_CoOpMode==1 then
+			HandleCoOp()
+		end
+		
+		if g_MainTimerTickCount % 240 == 0 or g_TicksSinceEmpireGold > 240 then
+			CBattleship8D:HandleEmpGold()
+			g_EmpireGoldCount = g_EmpireGoldCount + 1
+			g_CreepLevel=g_CreepLevel+1
+			g_NumPrivCreeps=g_NumPrivCreeps+1
+		end
+		
+		if g_MainTimerTickCount % 45 == 0 or g_MainTimerTickCount == 1 then
+			if  g_DockAliveSouthRight == 1 then
+				CBattleship8D:QuickSpawn("south","right", "one", g_CreepLevel, g_NumSmallCreeps)
+			else
+				CBattleship8D:QuickSpawn("south","right", "one", 1, g_NumSmallCreeps)
+			end
+			if  g_DockAliveNorthRight == 1 then
+					CBattleship8D:QuickSpawn("north","right", "one", g_CreepLevel, g_NumSmallCreeps)
+			else
+					CBattleship8D:QuickSpawn("north","right", "one", 1, g_NumSmallCreeps)
+			end
+			if  g_DockAliveSouthLeft == 1 then
+					CBattleship8D:QuickSpawn("south","left", "one", g_CreepLevel, g_NumSmallCreeps)
+			else
+					CBattleship8D:QuickSpawn("south","left", "one", 1, g_NumSmallCreeps)
+			end
+			if  g_DockAliveNorthLeft == 1 then
+				CBattleship8D:QuickSpawn("north","left", "one", g_CreepLevel, g_NumSmallCreeps)
+			else
+				CBattleship8D:QuickSpawn("north","left", "one", 1, g_NumSmallCreeps)
+			end
+		end
+		if g_MainTimerTickCount % 90 == 0 then
+			if  g_DockAliveSouthRight == 1 then
+				CBattleship8D:QuickSpawn("south","right", "two", g_CreepLevel, g_NumBigCreeps)
+			else
+				CBattleship8D:QuickSpawn("south","right", "two", 1, g_NumBigCreeps)
+			end
+			if  g_DockAliveNorthRight == 1 then
+					CBattleship8D:QuickSpawn("north","right", "two", g_CreepLevel, g_NumBigCreeps)
+			else
+					CBattleship8D:QuickSpawn("north","right", "two", 1, g_NumBigCreeps)
+			end
+			if  g_DockAliveSouthLeft == 1 then
+					CBattleship8D:QuickSpawn("south","left", "two", g_CreepLevel, g_NumBigCreeps)
+			else
+					CBattleship8D:QuickSpawn("south","left", "two", 1, g_NumBigCreeps)
+			end
+			if  g_DockAliveNorthLeft == 1 then
+				CBattleship8D:QuickSpawn("north","left", "two", g_CreepLevel, g_NumBigCreeps)
+			else
+				CBattleship8D:QuickSpawn("north","left", "two", 1, g_NumBigCreeps)
+			end
+			
+		end
+		if g_MainTimerTickCount % 180 == 0 then	
+			if  g_DockAliveSouthRight == 1 then
+				CBattleship8D:QuickSpawn("south","right", "three", g_CreepLevel, g_NumHugeCreeps)
+			else
+				CBattleship8D:QuickSpawn("south","right", "three", 1, g_NumHugeCreeps)
+			end
+			if  g_DockAliveNorthRight == 1 then
+					CBattleship8D:QuickSpawn("north","right", "three", g_CreepLevel, g_NumHugeCreeps)
+			else
+					CBattleship8D:QuickSpawn("north","right", "three", 1, g_NumHugeCreeps)
+			end
+			if  g_DockAliveSouthLeft == 1 then
+					CBattleship8D:QuickSpawn("south","left", "three", g_CreepLevel, g_NumHugeCreeps)
+			else
+					CBattleship8D:QuickSpawn("south","left", "three", 1, g_NumHugeCreeps)
+			end
+			if  g_DockAliveNorthLeft == 1 then
+				CBattleship8D:QuickSpawn("north","left", "three", g_CreepLevel, g_NumHugeCreeps)
+			else
+				CBattleship8D:QuickSpawn("north","left", "three", 1, g_NumHugeCreeps)
+			end
+			
+		end
+		local nCreepval = 45-g_MainTimerTickCount%45;
+		
+		if g_BattleMode==1 then
+			g_BattleModeTimer=g_BattleModeTimer-1
+			
+			if g_BattleModeTimer<1 and g_BattleModeRemaining==0 then
+				startBattle()
+				g_BattleModeTimer=5000
+			elseif g_BattleModeRemaining==0 then
+					local battleTimerData = {
+						TimeTillBattle = g_BattleModeTimer;
+					}
+					FireGameEvent( "Battle_Timer", battleTimerData ); 
+			end
+		end
+		
+		
+		local bsuiTimerData = {
+			nEmpire = 240-g_MainTimerTickCount % 240;
+			nCreep = nCreepval;
+			nNorthGold = GetEmpGoldForTeam(DOTA_TEAM_BADGUYS);
+			nSouthGold = GetEmpGoldForTeam(DOTA_TEAM_GOODGUYS);
+			
+		}
+		FireGameEvent( "bsui_timer_data", bsuiTimerData ); 
+			g_MainTimerTickCount = g_MainTimerTickCount + 1
+			g_TicksSinceEmpireGold=g_TicksSinceEmpireGold+1
+			g_PreviousTickCount=GameRules:GetGameTime()		
+		end
+		--print( "Template addon script is running." )
+	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
+		return nil
+	end
+	return 1
+end
+
 function CBattleship8D:OnNPCSpawned(keys)
-if BOAT_JUST_BAUGHT ==0 then
+if g_BoatJustBaught ==0 then
   local npc = EntIndexToHScript(keys.entindex)
-  if THINK_TICKS > 20 then
+  if g_MainTimerTickCount > 20 then
   if npc:IsIllusion() then
 			npc:SetModel( "models/noah_boat.vmdl" )
 			npc:SetOriginalModel( "models/noah_boat.vmdl" )
 		end
 	if npc:IsRealHero() then
 		RemoveWearables( npc )
-		attachCosmetics(npc)
+		AttachCosmetics(npc)
 		stopPhysics(npc)
 		npc:SetBaseStrength(1)
 		print("hero level is" .. npc:GetLevel())
@@ -833,11 +1425,11 @@ if BOAT_JUST_BAUGHT ==0 then
 	  end
   end
   else
-  BOAT_JUST_BAUGHT=0
+  g_BoatJustBaught=0
   end
 end
 
-function attachCosmetics(hero)
+function AttachCosmetics(hero)
 		if string.match(hero:GetName(),"apparition") then
 			if hero.particleR==nil then
 			 hero.particleR = ParticleManager:CreateParticle( "particles/basic_projectile/smoke_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
@@ -858,71 +1450,35 @@ function attachCosmetics(hero)
 
 end
 
-function CBattleship8D:handleEmpGold()
+function CBattleship8D:HandleEmpGold()
 
 			GameRules:SetTimeOfDay(0.25)
 		
-		if co_op_mode==0 then
-			TICKS_SINCE_EMP_GOLD = 0
+		if g_CoOpMode==0 then
+			g_TicksSinceEmpireGold = 0
 			local goodGold = 0
 			local badGold = 0
-			NUM_GOOD_PLAYERS = 0
-			NUM_BAD_PLAYERS = 0
+			g_PlayerCountSouth = 0
+			g_PlayerCountNorth = 0
+			local goodGoldEach = 500 * g_EmpireGoldCount
+			local badGoldEach = 500 * g_EmpireGoldCount
+			local GoldDif = 0
+			
 			for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-				if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 then
-					if hero_gold_array[hero]>0 and not hero:HasModifier("pergatory_perm") then
+				if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and hero:IsRealHero() then
+					if g_HeroGoldArray[hero:GetPlayerOwnerID()]>0 and not hero:HasModifier("pergatory_perm") then
 						if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-							NUM_GOOD_PLAYERS = NUM_GOOD_PLAYERS + 1
+							g_PlayerCountSouth = g_PlayerCountSouth + 1
 						elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-							NUM_BAD_PLAYERS = NUM_BAD_PLAYERS + 1
+							g_PlayerCountNorth = g_PlayerCountNorth + 1
 						end
 					end
 				end
 			end
-		
-			print("bad gold for this interval was" .. BAD_GOLD_TOTAL_MOD)
-			print("good gold for this interval was" .. GOOD_GOLD_TOTAL_MOD)
+			
+			goodGoldEach = GetEmpGoldForTeam(DOTA_TEAM_GOODGUYS)
+			badGoldEach = GetEmpGoldForTeam(DOTA_TEAM_BADGUYS)
 
-			 
-			local goodGoldEach = 500 * EMP_GOLD_NUMBER
-			local badGoldEach = 500 * EMP_GOLD_NUMBER
-			local GoldDif = 0
-			if GOOD_GOLD_TOTAL_MOD > BAD_GOLD_TOTAL_MOD then
-				GoldDif = GOOD_GOLD_TOTAL_MOD - BAD_GOLD_TOTAL_MOD
-					if GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER)) < badGoldEach then
-						badGoldEach = badGoldEach + GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
-					else
-						badGoldEach=GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))*2
-						if badGoldEach > 2000*EMP_GOLD_NUMBER and battle_mode==0 then
-							badGoldEach=2000*EMP_GOLD_NUMBER
-						end
-				end
-				BAD_GOLD_TOTAL_MOD = 0
-				GOOD_GOLD_TOTAL_MOD = GoldDif
-				empGoldHist=empGoldHist .. "N:" .. EMP_GOLD_NUMBER .. "L:S "
-				storage:SetEmpGoldHist(empGoldHist)
-			elseif BAD_GOLD_TOTAL_MOD > GOOD_GOLD_TOTAL_MOD then
-				GoldDif = BAD_GOLD_TOTAL_MOD - GOOD_GOLD_TOTAL_MOD
-				if GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER)) < goodGoldEach then
-					goodGoldEach = goodGoldEach + GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
-					else
-						goodGoldEach=GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))*2
-						if goodGoldEach > 2000*EMP_GOLD_NUMBER and battle_mode==0 then
-							goodGoldEach=2000*EMP_GOLD_NUMBER
-						end
-				end
-				BAD_GOLD_TOTAL_MOD = GoldDif
-				GOOD_GOLD_TOTAL_MOD = 0
-				empGoldHist=empGoldHist .. "N:" .. EMP_GOLD_NUMBER .. "L:N "
-				storage:SetEmpGoldHist(empGoldHist)
-			end
-			if NUM_GOOD_PLAYERS ~= 0 and NUM_BAD_PLAYERS ~= 0 then
-				goodGoldEach = goodGoldEach / NUM_GOOD_PLAYERS
-				badGoldEach = badGoldEach / NUM_BAD_PLAYERS
-			end
-			--trying out full game igold team comparison stuff crap shit
-			--BAD_GOLD_TOTAL_MOD = 0
-			--GOOD_GOLD_TOTAL_MOD = 0
 			Notifications:TopToAll({text="#emp_gold", duration=5.0, style={color="#B2B2B2",  fontSize="50px;"}})
 			Notifications:TopToAll({text="#north_gets", duration=5.0, style={color="#B2B2B2",  fontSize="30px;"}})
 			Notifications:TopToAll({text=tostring(math.floor(badGoldEach+0.5)) .. " ", duration=5.0, style={color="#FFD700",  fontSize="30px;"}, continue=true})
@@ -930,42 +1486,39 @@ function CBattleship8D:handleEmpGold()
 			Notifications:TopToAll({text="#south_gets", duration=5.0, style={color="#B2B2B2",  fontSize="30px;"}})
 			Notifications:TopToAll({text=tostring(math.floor(goodGoldEach+0.5)) .. " ", duration=5.0, style={color="#FFD700",  fontSize="30px;"}, continue=true})
 			Notifications:TopToAll({text="#for_each_player", duration=5.0, style={color="#B2B2B2",  fontSize="30px;"}, continue=true})
-			 table.insert(empGoldArray,{
-			 Emp_Gold_Number=EMP_GOLD_NUMBER,
+			 table.insert(g_EmpGoldArray,{
+			 g_EmpireGoldCount=g_EmpireGoldCount,
 			 South_Gold=goodGoldEach,
 			 North_gold=badGoldEach,
 			 })
 			
 			for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-				if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and not hero:HasModifier("pergatory_perm") then
+				if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and not hero:HasModifier("pergatory_perm") and hero:IsRealHero()  then
 					if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-						hero:SetGold(hero_gold_array[hero] + goodGoldEach, true)   
-						GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + goodGoldEach
-						print("hero's is good guy (south) had " .. hero_gold_array[hero] .. " got " .. goodGoldEach .. "new gold is: " .. hero_gold_array[hero] + goodGoldEach)
+						hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + goodGoldEach, true)   
+						g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + goodGoldEach
+						print("hero's is good guy (south) had " .. g_HeroGoldArray[hero:GetPlayerOwnerID()] .. " got " .. goodGoldEach .. "new gold is: " .. g_HeroGoldArray[hero:GetPlayerOwnerID()] + goodGoldEach)
 						hero:SetGold(0, false)
-						hero_gold_array[hero]=hero_gold_array[hero] + goodGoldEach
+						g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + goodGoldEach
 					elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-						hero:SetGold(hero_gold_array[hero] + badGoldEach, true)
-						BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + badGoldEach
-						print("hero's is bad guy (north) had " .. hero_gold_array[hero] .. " got " .. badGoldEach .. "new gold is: " .. hero_gold_array[hero] + badGoldEach)
+						hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + badGoldEach, true)
+						g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + badGoldEach
+						print("hero's is bad guy (north) had " .. g_HeroGoldArray[hero:GetPlayerOwnerID()] .. " got " .. badGoldEach .. "new gold is: " .. g_HeroGoldArray[hero:GetPlayerOwnerID()] + badGoldEach)
 						hero:SetGold(0, false)
-						hero_gold_array[hero]=hero_gold_array[hero] + badGoldEach
+						g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + badGoldEach
 					end
 				end
 			end
 			
 			else
-				TICKS_SINCE_EMP_GOLD = 0
-				local goodGoldEach = 500 * EMP_GOLD_NUMBER
-				local badGoldEach = 500 * EMP_GOLD_NUMBER
-				if NUM_GOOD_PLAYERS ~= 0 and NUM_BAD_PLAYERS ~= 0 then
-					goodGoldEach = goodGoldEach / NUM_GOOD_PLAYERS
-					badGoldEach = badGoldEach / NUM_BAD_PLAYERS
+				g_TicksSinceEmpireGold = 0
+				local goodGoldEach = 500 * g_EmpireGoldCount
+				local badGoldEach = 500 * g_EmpireGoldCount
+				if g_PlayerCountSouth ~= 0 and g_PlayerCountNorth ~= 0 then
+					goodGoldEach = goodGoldEach / g_PlayerCountSouth
+					badGoldEach = badGoldEach / g_PlayerCountNorth
 				end
 				Notifications:TopToAll({text="#emp_gold", duration=5.0, style={color="#B2B2B2",  fontSize="50px;"}})
-				Notifications:TopToAll({text="#north_gets", duration=5.0, style={color="#B2B2B2",  fontSize="30px;"}})
-				Notifications:TopToAll({text=tostring(math.floor(badGoldEach+0.5)) .. " ", duration=5.0, style={color="#FFD700",  fontSize="30px;"}, continue=true})
-				Notifications:TopToAll({text="#for_each_player", duration=5.0, style={color="#B2B2B2",  fontSize="30px;"}, continue=true})
 				Notifications:TopToAll({text="#south_gets", duration=5.0, style={color="#B2B2B2",  fontSize="30px;"}})
 				Notifications:TopToAll({text=tostring(math.floor(goodGoldEach+0.5)) .. " ", duration=5.0, style={color="#FFD700",  fontSize="30px;"}, continue=true})
 				Notifications:TopToAll({text="#for_each_player", duration=5.0, style={color="#B2B2B2",  fontSize="30px;"}, continue=true})
@@ -976,16 +1529,16 @@ function CBattleship8D:handleEmpGold()
 					local herogold = hero:GetGold()
 					if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 						hero:SetGold(herogold + goodGoldEach, true)   
-						GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + goodGoldEach
+						g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + goodGoldEach
 						print("hero's is good guy (south) had " .. herogold .. " got " .. goodGoldEach .. "new gold is: " .. herogold + goodGoldEach)
 						hero:SetGold(0, false)
-						hero_gold_array[hero]=hero_gold_array[hero] + goodGoldEach
+						g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + goodGoldEach
 					elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 						hero:SetGold(herogold + badGoldEach, true)
-						BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + badGoldEach
+						g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + badGoldEach
 						print("hero's is bad guy (north) had " .. herogold .. " got " .. badGoldEach .. "new gold is: " .. herogold + badGoldEach)
 						hero:SetGold(0, false)
-						hero_gold_array[hero]=hero_gold_array[hero] + badGoldEach
+						g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + badGoldEach
 					end
 				end
 			end
@@ -993,17 +1546,23 @@ function CBattleship8D:handleEmpGold()
 end 
 
 
-function getEmpGoldForTeam(team)
-if co_op_mode==0 then
+function GetEmpGoldForTeam(team)
+if g_CoOpMode==0 then
 
 			local gold = 0
 			local team_players = 0
+			local team_gold = 0
+			local other_team_gold = 0
+			
+			
 			for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-				if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 then
-					local herogold = hero:GetGold()
-					if herogold>0 and not hero:HasModifier("pergatory_perm") then
+				if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and hero:IsRealHero() then
+					if g_HeroGoldArray[hero:GetPlayerOwnerID()]>0 and not hero:HasModifier("pergatory_perm") then
 						if hero:GetTeamNumber() == team then
-							team_players = team_players + 1
+								team_players = team_players + 1
+								team_gold=team_gold + GetNetWorth(hero)
+							else
+								other_team_gold = other_team_gold + GetNetWorth(hero)
 						end
 					end
 				end
@@ -1011,76 +1570,147 @@ if co_op_mode==0 then
 			if team_players==0 then
 				team_players=1
 			end
-			 local minGold = 500 * EMP_GOLD_NUMBER
-			local goldEach = 500 * EMP_GOLD_NUMBER
+			 local minGold = 500 * g_EmpireGoldCount
+			local goldEach = 500 * g_EmpireGoldCount
 			local GoldDif = 0
 			
-			if GOOD_GOLD_TOTAL_MOD > BAD_GOLD_TOTAL_MOD then
-				GoldDif = GOOD_GOLD_TOTAL_MOD - BAD_GOLD_TOTAL_MOD
-				
-				if GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER)) < goldEach then
-						goldEach = goldEach + GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
-					else
-						goldEach=GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))*2
-						if goldEach > 2000*EMP_GOLD_NUMBER and battle_mode==0 then
-								goldEach=2000*EMP_GOLD_NUMBER
-						end
-				end
-				
-				BAD_GOLD_TOTAL_MOD = 0
-				GOOD_GOLD_TOTAL_MOD = GoldDif
-				if team == DOTA_TEAM_BADGUYS  then 
-					return goldEach / team_players
-					else
-					return minGold / team_players
-				end
+			if team_gold < other_team_gold then
+				local balanceAmount  =  (other_team_gold-team_gold)
+					goldEach = goldEach + balanceAmount * (g_DockAliveNorthLeft + g_DockAliveNorthRight)/2 * (0.1 + 0.8 * (1/g_EmpireGoldCount))
 			end
-			if BAD_GOLD_TOTAL_MOD > GOOD_GOLD_TOTAL_MOD then
-				GoldDif = BAD_GOLD_TOTAL_MOD - GOOD_GOLD_TOTAL_MOD
-				
-				if GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER)) < goldEach then
-						goldEach = goldEach + GoldDif * (DOCK_NORTH_LEFT + DOCK_NORTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))
-					else
-						goldEach=GoldDif * (DOCK_SOUTH_LEFT + DOCK_SOUTH_RIGHT)/2 * (0.1 + 0.8 * (1/EMP_GOLD_NUMBER))*2
-							if goldEach > 2000*EMP_GOLD_NUMBER and battle_mode==0 then
-								goldEach=2000*EMP_GOLD_NUMBER
-						end
-				end
-				
-				BAD_GOLD_TOTAL_MOD = GoldDif
-				GOOD_GOLD_TOTAL_MOD = 0
-				if team == DOTA_TEAM_GOODGUYS  then 
-					return goldEach  / team_players
-					else
-					return minGold / team_players
-				end
-			end
-			if NUM_GOOD_PLAYERS ~= 0 and NUM_BAD_PLAYERS ~= 0 then
-				return goldEach / team_players
-			end
-			return goldEach / team_players
-			else
-				local team_players = 0
-				for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-					if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 then
-						local herogold = hero:GetGold()
-						if herogold>0 and not hero:HasModifier("pergatory_perm") then
-							if hero:GetTeamNumber() == team then
-								team_players = team_players + 1
-							end
-						end
-					end
-				end
-				if team_players==0 then
-					return 0
-				end
-				return  500 * EMP_GOLD_NUMBER / team_players
-		end
+			
+		return goldEach / team_players
+		
+	end
 		
 end
 
+function GetNetWorth(hero)
 
-function CBattleship8D:quickSpawn(team, lane, tier, level, number)
+	local TotalGold = 0
+	if g_HeroGoldArray[hero:GetPlayerOwnerID()] ~= nil then
+	print(TotalGold)
+	print(g_HeroGoldArray[hero:GetPlayerOwnerID()])
+		TotalGold=TotalGold + g_HeroGoldArray[hero:GetPlayerOwnerID()]
+		TotalGold=TotalGold+GetBoatValue(hero)
+		TotalGold=TotalGold+GetItemValue(hero)
+	end
+	return TotalGold
+end
+
+function GetItemValue(hero)
+	local totalGold = 0
+	
+	for _,item in pairs( Entities:FindAllByName("item_*")) do
+				if item~=nil and item:GetName()~=nil and item:GetName()~=""then
+					if item:GetPurchaser() == hero  and item:IsPermanent() then
+					
+						if string.match(item:GetName(),"hull")  or
+						string.match(item:GetName(),"bow")   or
+						string.match(item:GetName(),"wood") or  
+						string.match(item:GetName(),"sail") or
+						string.match(item:GetName(),"repair")then
+							totalGold=totalGold+GetItemCost(item:GetName())
+						end
+					end
+				end
+	end
+		for _,herocopy in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+				if herocopy ~= nil and herocopy:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and not herocopy:IsRealHero() and herocopy:GetPlayerOwnerID() == hero:GetPlayerOwnerID() then
+					for itemSlot = 0, 14, 1 do 
+						if herocopy ~= nil then
+							local Item = herocopy:GetItemInSlot( itemSlot )
+							if Item ~= nil and (
+							string.match(Item:GetName(),"hull")  or
+							string.match(Item:GetName(),"bow")   or
+							string.match(Item:GetName(),"wood") or  
+							string.match(Item:GetName(),"sail") or
+							string.match(Item:GetName(),"repair")) then
+								totalGold=totalGold-GetItemCost(Item:GetName())
+							end
+						end
+				end
+			end
+		end
+				
+
+	
+	return totalGold
+end
+
+function GetBoatValue(hero)
+	if string.match(hero:GetName(),"disruptor") then
+		return 3000
+		
+	elseif string.match(hero:GetName(),"ursa") then
+		 return 12000
+
+	elseif string.match(hero:GetName(),"meepo") then
+		 return 6000
+	
+	elseif string.match(hero:GetName(),"tidehunter") then
+		return 1000
+	
+	elseif string.match(hero:GetName(),"apparition") then
+		return 1000
+		
+	elseif string.match(hero:GetName(),"rattletrap") then
+		return 1000
+		
+	elseif string.match(hero:GetName(),"winter_wyvern") then
+		return 3000
+
+	elseif string.match(hero:GetName(),"storm_spirit") then
+		 return 3000
+
+	elseif string.match(hero:GetName(),"ember_spirit") then
+		 return 6000
+
+	elseif string.match(hero:GetName(),"slark") then
+		return 6000
+
+	elseif string.match(hero:GetName(),"jakiro") then
+		return 6000
+
+	elseif string.match(hero:GetName(),"lion") then
+		return 3000
+
+	elseif string.match(hero:GetName(),"tusk") then
+		 return 12000
+
+	elseif string.match(hero:GetName(),"visage") then
+		 return 12000
+
+	elseif string.match(hero:GetName(),"nevermore") then
+		return 3000
+
+	elseif string.match(hero:GetName(),"sniper") then
+		return 6000
+
+	elseif string.match(hero:GetName(),"wind") then
+		return 12000
+
+	elseif string.match(hero:GetName(),"crystal") then
+		return 1000
+
+	elseif string.match(hero:GetName(),"phantom") then
+		return 1000
+
+	elseif string.match(hero:GetName(),"vengefulspirit") then
+		 return 750
+	elseif string.match(hero:GetName(),"enigma") then
+		 return 8000
+	elseif string.match(hero:GetName(),"bane") then
+		 return 4000
+	elseif string.match(hero:GetName(),"pugna") then
+		 return 12000
+	 else
+		 return 0
+end
+
+
+end
+function CBattleship8D:QuickSpawn(team, lane, tier, level, number)
         
 	local spawnLocation = Entities:FindByName( nil, team .. "_spawn_" .. lane)
         local waypointlocation = Entities:FindByName ( nil,  team .. "_wp_" .. lane .. "_2")
@@ -1107,195 +1737,195 @@ end
 
 function UpdateCoOpTables()
 
-if co_op_diff_level==5-co_op_diff_setting then
-		table.insert(co_op_unit_pool,"npc_dota_hero_ancient_apparition")
-		table.insert(co_op_unit_pool,"npc_dota_hero_crystal_maiden")
-		table.insert(co_op_unit_pool,"npc_dota_hero_phantom_lancer")
-		table.insert(co_op_unit_pool,"npc_dota_hero_tidehunter")
-		table.insert(co_op_unit_pool,"npc_dota_hero_rattletrap")
+if g_CoOpDiffLevel==5-g_CoOpDiffSetting then
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_ancient_apparition")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_crystal_maiden")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_phantom_lancer")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_tidehunter")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_rattletrap")
 	end
 
-	if co_op_diff_level==10-co_op_diff_setting*2 then
-		table.insert(co_op_item_pool,"item_coal_bow_doubled")
-		table.insert(co_op_item_pool,"item_fire_bow_doubled")
-		table.insert(co_op_item_pool,"item_plasma_bow_doubled")
-		table.insert(co_op_item_pool,"item_poison_bow_doubled")
-		table.insert(co_op_item_pool,"item_light_bow_doubled")
-		table.insert(co_op_item_pool,"item_spin_bow_doubled")
-		table.insert(co_op_item_pool,"item_ice_bow_doubled")
-		table.insert(co_op_item_pool,"item_breach_bow_doubled")
-		table.insert(co_op_item_pool,"item_chaos_bow_doubled")
-		table.insert(co_op_item_pool,"item_caulk_bow_doubled")
+	if g_CoOpDiffLevel==10-g_CoOpDiffSetting*2 then
+		table.insert(g_CoOpItemPool,"item_coal_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_fire_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_plasma_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_poison_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_light_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_spin_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_ice_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_breach_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_chaos_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_caulk_bow_doubled")
 	end
 
-	if co_op_diff_level==20-co_op_diff_setting*3 then
+	if g_CoOpDiffLevel==20-g_CoOpDiffSetting*3 then
 		
-		table.insert(co_op_unit_pool,"npc_dota_hero_disruptor")
-		table.insert(co_op_unit_pool,"npc_dota_hero_winter_wyvern")
-		table.insert(co_op_unit_pool,"npc_dota_hero_storm_spirit")
-		table.insert(co_op_unit_pool,"npc_dota_hero_nevermore")
-		table.insert(co_op_unit_pool,"npc_dota_hero_lion")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_disruptor")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_winter_wyvern")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_storm_spirit")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_nevermore")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_lion")
 		
-		table.insert(co_op_item_pool,"item_coal_two_bow")
-		table.insert(co_op_item_pool,"item_fire_two_bow")
-		table.insert(co_op_item_pool,"item_plasma_two_bow")
-		table.insert(co_op_item_pool,"item_poison_two_bow")
-		table.insert(co_op_item_pool,"item_light_two_bow")
-		table.insert(co_op_item_pool,"item_spin_two_bow")
-		table.insert(co_op_item_pool,"item_ice_two_bow")
-		table.insert(co_op_item_pool,"item_breach_two_bow")
-		table.insert(co_op_item_pool,"item_chaos_two_bow")
-		table.insert(co_op_item_pool,"item_caulk_two_bow")
-		table.insert(co_op_item_pool,"item_hull_two")
-		table.insert(co_op_item_pool,"item_sail_two")
-		table.insert(co_op_item_pool,"item_repair_two")
-
-	end
-
-	if co_op_diff_level==30-co_op_diff_setting*4 then
-		co_op_unit_pool={}
-		table.insert(co_op_unit_pool,"npc_dota_hero_disruptor")
-		table.insert(co_op_unit_pool,"npc_dota_hero_winter_wyvern")
-		table.insert(co_op_unit_pool,"npc_dota_hero_storm_spirit")
-		table.insert(co_op_unit_pool,"npc_dota_hero_nevermore")
-		table.insert(co_op_unit_pool,"npc_dota_hero_lion")
-		
-		table.insert(co_op_item_pool,"item_coal_two_bow_doubled")
-		table.insert(co_op_item_pool,"item_fire_two_bow_doubled")
-		table.insert(co_op_item_pool,"item_plasma_two_bow_doubled")
-		table.insert(co_op_item_pool,"item_poison_two_bow_doubled")
-		table.insert(co_op_item_pool,"item_light_two_bow_doubled")
-		table.insert(co_op_item_pool,"item_spin_two_bow_doubled")
-		table.insert(co_op_item_pool,"item_ice_two_bow_doubled")
-		table.insert(co_op_item_pool,"item_breach_two_bow_doubled")
-		table.insert(co_op_item_pool,"item_chaos_two_bow_doubled")
-		table.insert(co_op_item_pool,"item_caulk_two_bow_doubled")
-		table.insert(co_op_item_pool,"item_hull_two")
-		table.insert(co_op_item_pool,"item_sail_two")
-		table.insert(co_op_item_pool,"item_repair_two")
+		table.insert(g_CoOpItemPool,"item_coal_two_bow")
+		table.insert(g_CoOpItemPool,"item_fire_two_bow")
+		table.insert(g_CoOpItemPool,"item_plasma_two_bow")
+		table.insert(g_CoOpItemPool,"item_poison_two_bow")
+		table.insert(g_CoOpItemPool,"item_light_two_bow")
+		table.insert(g_CoOpItemPool,"item_spin_two_bow")
+		table.insert(g_CoOpItemPool,"item_ice_two_bow")
+		table.insert(g_CoOpItemPool,"item_breach_two_bow")
+		table.insert(g_CoOpItemPool,"item_chaos_two_bow")
+		table.insert(g_CoOpItemPool,"item_caulk_two_bow")
+		table.insert(g_CoOpItemPool,"item_hull_two")
+		table.insert(g_CoOpItemPool,"item_sail_two")
+		table.insert(g_CoOpItemPool,"item_repair_two")
 
 	end
 
-	if co_op_diff_level==40-co_op_diff_setting*5 then
-		table.insert(co_op_unit_pool,"npc_dota_hero_meepo")
-		table.insert(co_op_unit_pool,"npc_dota_hero_jakiro")
-		table.insert(co_op_unit_pool,"npc_dota_hero_ember_spirit")
-		table.insert(co_op_unit_pool,"npc_dota_hero_slark")
-		table.insert(co_op_unit_pool,"npc_dota_hero_sniper")
+	if g_CoOpDiffLevel==30-g_CoOpDiffSetting*4 then
+		g_CoOpUnitPool={}
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_disruptor")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_winter_wyvern")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_storm_spirit")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_nevermore")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_lion")
 		
-		table.insert(co_op_item_pool,"item_coal_three_bow")
-		table.insert(co_op_item_pool,"item_fire_three_bow")
-		table.insert(co_op_item_pool,"item_plasma_three_bow")
-		table.insert(co_op_item_pool,"item_poison_three_bow")
-		table.insert(co_op_item_pool,"item_light_three_bow")
-		table.insert(co_op_item_pool,"item_spin_three_bow")
-		table.insert(co_op_item_pool,"item_ice_three_bow")
-		table.insert(co_op_item_pool,"item_hull_three")
-		table.insert(co_op_item_pool,"item_sail_three")
-		table.insert(co_op_item_pool,"item_repair_three")
+		table.insert(g_CoOpItemPool,"item_coal_two_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_fire_two_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_plasma_two_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_poison_two_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_light_two_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_spin_two_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_ice_two_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_breach_two_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_chaos_two_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_caulk_two_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_hull_two")
+		table.insert(g_CoOpItemPool,"item_sail_two")
+		table.insert(g_CoOpItemPool,"item_repair_two")
 
 	end
 
-	if co_op_diff_level==50-co_op_diff_setting*6 then
-		co_op_unit_pool={}
-		table.insert(co_op_unit_pool,"npc_dota_hero_meepo")
-		table.insert(co_op_unit_pool,"npc_dota_hero_jakiro")
-		table.insert(co_op_unit_pool,"npc_dota_hero_ember_spirit")
-		table.insert(co_op_unit_pool,"npc_dota_hero_slark")
-		table.insert(co_op_unit_pool,"npc_dota_hero_sniper")
+	if g_CoOpDiffLevel==40-g_CoOpDiffSetting*5 then
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_meepo")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_jakiro")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_ember_spirit")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_slark")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_sniper")
 		
-		
-		
-		table.insert(co_op_item_pool,"item_coal_three_bow")
-		table.insert(co_op_item_pool,"item_fire_three_bow")
-		table.insert(co_op_item_pool,"item_plasma_three_bow")
-		table.insert(co_op_item_pool,"item_poison_three_bow")
-		table.insert(co_op_item_pool,"item_light_three_bow")
-		table.insert(co_op_item_pool,"item_spin_three_bow")
-		table.insert(co_op_item_pool,"item_ice_three_bow")
-				table.insert(co_op_item_pool,"item_breach_three_bow")
-		table.insert(co_op_item_pool,"item_chaos_three_bow")
-		table.insert(co_op_item_pool,"item_caulk_three_bow")
-		table.insert(co_op_item_pool,"item_hull_three")
-		table.insert(co_op_item_pool,"item_sail_three")
-		table.insert(co_op_item_pool,"item_repair_three")
+		table.insert(g_CoOpItemPool,"item_coal_three_bow")
+		table.insert(g_CoOpItemPool,"item_fire_three_bow")
+		table.insert(g_CoOpItemPool,"item_plasma_three_bow")
+		table.insert(g_CoOpItemPool,"item_poison_three_bow")
+		table.insert(g_CoOpItemPool,"item_light_three_bow")
+		table.insert(g_CoOpItemPool,"item_spin_three_bow")
+		table.insert(g_CoOpItemPool,"item_ice_three_bow")
+		table.insert(g_CoOpItemPool,"item_hull_three")
+		table.insert(g_CoOpItemPool,"item_sail_three")
+		table.insert(g_CoOpItemPool,"item_repair_three")
 
 	end
 
-	if co_op_diff_level==60-co_op_diff_setting*7 then
+	if g_CoOpDiffLevel==50-g_CoOpDiffSetting*6 then
+		g_CoOpUnitPool={}
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_meepo")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_jakiro")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_ember_spirit")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_slark")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_sniper")
 		
 		
-		table.insert(co_op_item_pool,"item_coal_three_bow_doubled")
-		table.insert(co_op_item_pool,"item_fire_three_bow_doubled")
-		table.insert(co_op_item_pool,"item_plasma_three_bow_doubled")
-		table.insert(co_op_item_pool,"item_poison_three_bow_doubled")
-		table.insert(co_op_item_pool,"item_light_three_bow_doubled")
-		table.insert(co_op_item_pool,"item_spin_three_bow_doubled")
-		table.insert(co_op_item_pool,"item_ice_three_bow_doubled")
-		table.insert(co_op_item_pool,"item_breach_three_bow_doubled")
-		table.insert(co_op_item_pool,"item_chaos_three_bow_doubled")
-		table.insert(co_op_item_pool,"item_caulk_three_bow_doubled")
-		table.insert(co_op_item_pool,"item_hull_four")
-		table.insert(co_op_item_pool,"item_sail_four")
-		table.insert(co_op_item_pool,"item_repair_four")
-		if co_op_diff_setting==3 then
-			table.insert(co_op_unit_pool,"npc_dota_hero_spirit_breaker")
+		
+		table.insert(g_CoOpItemPool,"item_coal_three_bow")
+		table.insert(g_CoOpItemPool,"item_fire_three_bow")
+		table.insert(g_CoOpItemPool,"item_plasma_three_bow")
+		table.insert(g_CoOpItemPool,"item_poison_three_bow")
+		table.insert(g_CoOpItemPool,"item_light_three_bow")
+		table.insert(g_CoOpItemPool,"item_spin_three_bow")
+		table.insert(g_CoOpItemPool,"item_ice_three_bow")
+				table.insert(g_CoOpItemPool,"item_breach_three_bow")
+		table.insert(g_CoOpItemPool,"item_chaos_three_bow")
+		table.insert(g_CoOpItemPool,"item_caulk_three_bow")
+		table.insert(g_CoOpItemPool,"item_hull_three")
+		table.insert(g_CoOpItemPool,"item_sail_three")
+		table.insert(g_CoOpItemPool,"item_repair_three")
+
+	end
+
+	if g_CoOpDiffLevel==60-g_CoOpDiffSetting*7 then
+		
+		
+		table.insert(g_CoOpItemPool,"item_coal_three_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_fire_three_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_plasma_three_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_poison_three_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_light_three_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_spin_three_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_ice_three_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_breach_three_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_chaos_three_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_caulk_three_bow_doubled")
+		table.insert(g_CoOpItemPool,"item_hull_four")
+		table.insert(g_CoOpItemPool,"item_sail_four")
+		table.insert(g_CoOpItemPool,"item_repair_four")
+		if g_CoOpDiffSetting==3 then
+			table.insert(g_CoOpUnitPool,"npc_dota_hero_spirit_breaker")
 		end
 
 	end
 
-	if co_op_diff_level==70-co_op_diff_setting*7 then
-		co_op_unit_pool={}
-		table.insert(co_op_unit_pool,"npc_dota_hero_meepo")
-		table.insert(co_op_unit_pool,"npc_dota_hero_jakiro")
-		table.insert(co_op_unit_pool,"npc_dota_hero_ember_spirit")
-		table.insert(co_op_unit_pool,"npc_dota_hero_slark")
-		table.insert(co_op_unit_pool,"npc_dota_hero_sniper")
+	if g_CoOpDiffLevel==70-g_CoOpDiffSetting*7 then
+		g_CoOpUnitPool={}
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_meepo")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_jakiro")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_ember_spirit")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_slark")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_sniper")
 		
 		
-		table.insert(co_op_item_pool,"item_coal_ult_bow")
-		table.insert(co_op_item_pool,"item_fire_ult_bow")
-		table.insert(co_op_item_pool,"item_plasma_ult_bow")
-		table.insert(co_op_item_pool,"item_poison_ult_bow")
-		table.insert(co_op_item_pool,"item_light_ult_bow")
-		table.insert(co_op_item_pool,"item_spin_ult_bow")
-		table.insert(co_op_item_pool,"item_ice_ult_bow")
-		table.insert(co_op_item_pool,"item_breach_ult_bow")
-		table.insert(co_op_item_pool,"item_chaos_ult_bow")
-		table.insert(co_op_item_pool,"item_caulk_ult_bow")
-		table.insert(co_op_item_pool,"item_hull_four")
-		table.insert(co_op_item_pool,"item_sail_four")
-		table.insert(co_op_item_pool,"item_repair_four")
-		if co_op_diff_setting==3 or co_op_diff_setting==2 then
-			table.insert(co_op_unit_pool,"npc_dota_hero_spirit_breaker")
+		table.insert(g_CoOpItemPool,"item_coal_ult_bow")
+		table.insert(g_CoOpItemPool,"item_fire_ult_bow")
+		table.insert(g_CoOpItemPool,"item_plasma_ult_bow")
+		table.insert(g_CoOpItemPool,"item_poison_ult_bow")
+		table.insert(g_CoOpItemPool,"item_light_ult_bow")
+		table.insert(g_CoOpItemPool,"item_spin_ult_bow")
+		table.insert(g_CoOpItemPool,"item_ice_ult_bow")
+		table.insert(g_CoOpItemPool,"item_breach_ult_bow")
+		table.insert(g_CoOpItemPool,"item_chaos_ult_bow")
+		table.insert(g_CoOpItemPool,"item_caulk_ult_bow")
+		table.insert(g_CoOpItemPool,"item_hull_four")
+		table.insert(g_CoOpItemPool,"item_sail_four")
+		table.insert(g_CoOpItemPool,"item_repair_four")
+		if g_CoOpDiffSetting==3 or g_CoOpDiffSetting==2 then
+			table.insert(g_CoOpUnitPool,"npc_dota_hero_spirit_breaker")
 		end
 
 	end
 
-	if co_op_diff_level>75-co_op_diff_setting*7 and co_op_diff_level%10==0 then
-		table.insert(co_op_unit_pool,"npc_dota_hero_visage")
-		table.insert(co_op_unit_pool,"npc_dota_hero_ursa")
-		table.insert(co_op_unit_pool,"npc_dota_hero_tusk")
-		table.insert(co_op_unit_pool,"npc_dota_hero_windrunner")
-		table.insert(co_op_unit_pool,"npc_dota_hero_pugna")
-		table.insert(co_op_unit_pool,"npc_dota_hero_spirit_breaker")
+	if g_CoOpDiffLevel>75-g_CoOpDiffSetting*7 then
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_visage")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_ursa")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_tusk")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_windrunner")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_pugna")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_spirit_breaker")
 		
-		if co_op_diff_setting==3 or co_op_diff_setting==2 then
-			table.insert(co_op_unit_pool,"npc_dota_hero_spirit_breaker")
+		if g_CoOpDiffSetting==3 or g_CoOpDiffSetting==2 then
+			table.insert(g_CoOpUnitPool,"npc_dota_hero_spirit_breaker")
 		end
-		if co_op_diff_setting==3 then
-			table.insert(co_op_unit_pool,"npc_dota_hero_spirit_breaker")
+		if g_CoOpDiffSetting==3 then
+			table.insert(g_CoOpUnitPool,"npc_dota_hero_spirit_breaker")
 		end
-		table.insert(co_op_item_pool,"item_coal_ult_bow")
-		table.insert(co_op_item_pool,"item_fire_ult_bow")
-		table.insert(co_op_item_pool,"item_plasma_ult_bow")
-		table.insert(co_op_item_pool,"item_poison_ult_bow")
-		table.insert(co_op_item_pool,"item_light_ult_bow")
-		table.insert(co_op_item_pool,"item_spin_ult_bow")
-		table.insert(co_op_item_pool,"item_ice_ult_bow")
-		table.insert(co_op_item_pool,"item_hull_four")
-		table.insert(co_op_item_pool,"item_sail_four")
-		table.insert(co_op_item_pool,"item_repair_four")
+		table.insert(g_CoOpItemPool,"item_coal_ult_bow")
+		table.insert(g_CoOpItemPool,"item_fire_ult_bow")
+		table.insert(g_CoOpItemPool,"item_plasma_ult_bow")
+		table.insert(g_CoOpItemPool,"item_poison_ult_bow")
+		table.insert(g_CoOpItemPool,"item_light_ult_bow")
+		table.insert(g_CoOpItemPool,"item_spin_ult_bow")
+		table.insert(g_CoOpItemPool,"item_ice_ult_bow")
+		table.insert(g_CoOpItemPool,"item_hull_four")
+		table.insert(g_CoOpItemPool,"item_sail_four")
+		table.insert(g_CoOpItemPool,"item_repair_four")
 
 	end
 	
@@ -1322,7 +1952,7 @@ function HandleTideAbil()
 							end
 								
 									 local waypoint = Entities:FindByNameNearest( team .. "_wp_*", hero:GetOrigin(), 0 )
-										if waypoint and goingToMid[hero]~=1 then
+										if waypoint and g_ConfusedCreeps[hero]~=1 then
 													local wpNextNum=tonumber(string.sub(waypoint:GetName(),string.len(waypoint:GetName())))
 													local waypoint2 =nil
 													local wpName=string.gsub(waypoint:GetName(),tostring(wpNextNum),tostring(wpNextNum+1))
@@ -1335,12 +1965,12 @@ function HandleTideAbil()
 													   hero:MoveToPosition( Vector(60,-5568,0))
 													   print("othermove")
 										end
-										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS and (hero:GetOrigin()* Vector(0,1,0)- Vector(0,6100,0)):Length()<200 or goingToMid[hero]==1 then
+										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS and (hero:GetOrigin()* Vector(0,1,0)- Vector(0,6100,0)):Length()<200 or g_ConfusedCreeps[hero]==1 then
 											 hero:MoveToPositionAggressive( Vector(-58,5390,0))
-											 goingToMid[hero]=1
-										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS and (hero:GetOrigin()* Vector(0,1,0)+ Vector(0,6100,0)):Length()<200 or goingToMid[hero]==1 then
+											 g_ConfusedCreeps[hero]=1
+										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS and (hero:GetOrigin()* Vector(0,1,0)+ Vector(0,6100,0)):Length()<200 or g_ConfusedCreeps[hero]==1 then
 											  hero:MoveToPositionAggressive( Vector(60,-5568,0))
-											  goingToMid[hero]=1
+											  g_ConfusedCreeps[hero]=1
 										end
 									else
 									local nearbyHero=FindUnitsInRadius( hero:GetTeamNumber(), hero:GetOrigin(), nil, 1200, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 0, 0, false )
@@ -1355,28 +1985,28 @@ function HandleTideAbil()
 											local abil4 = hero:GetAbilityByIndex(3)
 											
 											if abil:IsFullyCastable() then
-												if THINK_TICKS%2==0 then
+												if g_MainTimerTickCount%2==0 then
 													hero:CastAbilityOnPosition(nearbyHero[RandomInt(1,#nearbyHero)]:GetOrigin(), abil, -1)	
 												else
 													hero:CastAbilityOnTarget(nearbyHero[RandomInt(1,#nearbyHero)], abil, -1)
 												end
 												--abil:CastAbility()
 											elseif abil2:IsFullyCastable() then
-												if THINK_TICKS%2==0 then
+												if g_MainTimerTickCount%2==0 then
 													hero:CastAbilityOnPosition(nearbyHero[RandomInt(1,#nearbyHero)]:GetOrigin(), abil2, -1)	
 												else
 													hero:CastAbilityOnTarget(nearbyHero[RandomInt(1,#nearbyHero)], abil2, -1)
 												end
 												--abil2:CastAbility()
 											elseif abil3:IsFullyCastable() then
-												if THINK_TICKS%2==0 then
+												if g_MainTimerTickCount%2==0 then
 													hero:CastAbilityOnPosition(nearbyHero[RandomInt(1,#nearbyHero)]:GetOrigin(), abil3, -1)	
 												else
 													hero:CastAbilityOnTarget(nearbyHero[RandomInt(1,#nearbyHero)], abil3, -1)
 												end
 												--abil3:CastAbility()
 											elseif abil4 ~= nil and abil4:IsFullyCastable() then
-												if THINK_TICKS%2==0 then
+												if g_MainTimerTickCount%2==0 then
 													hero:CastAbilityOnPosition(nearbyHero[RandomInt(1,#nearbyHero)]:GetOrigin(), abil4, -1)	
 												else
 													hero:CastAbilityOnTarget(nearbyHero[RandomInt(1,#nearbyHero)], abil4, -1)
@@ -1405,9 +2035,6 @@ function HandleTideAbil()
 
 
 function HandleCoOp()
-
-
-
 			for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 					if hero ~= nil and hero:IsOwnedByAnyPlayer() and not string.match(hero:GetName(),"spirit_brea") then
 						
@@ -1416,12 +2043,28 @@ function HandleCoOp()
 							if height:Length() > 80 then
 								print("moving wall stuck")
 								hero:SetOrigin(hero:GetOrigin() * Vector(.9,.9,.9))
+								if hero:GetOrigin():Length() < 1000 then
+										hero:SetOrigin( Vector(0,4300,0)+RandomVector( RandomFloat( 200, 300 )))
+								end
+								
+								
 							end
+							
+							local ycord = hero:GetOrigin() * Vector(0,1,0)
+							if ycord:Length() > 4300 then
+								print("moving to base, too far back")
+								hero:SetOrigin( Vector(0,4300,0)+RandomVector( RandomFloat( 200, 300 )))
+								
+							end
+							
+							 
+							
+							
 						
 							local nearby=FindUnitsInRadius( DOTA_TEAM_BADGUYS, hero:GetOrigin(), nil, 1200, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING, 0, 0, false )
 							if #nearby==0 then
 									 local waypoint = Entities:FindByNameNearest( "north_wp_*", hero:GetOrigin(), 0 )
-										if waypoint and goingToMid[hero]~=1 then
+										if waypoint and g_ConfusedCreeps[hero]~=1 then
 													local wpNextNum=tonumber(string.sub(waypoint:GetName(),string.len(waypoint:GetName())))
 													local waypoint2 =nil
 													local wpName=string.gsub(waypoint:GetName(),tostring(wpNextNum),tostring(wpNextNum+1))
@@ -1432,9 +2075,9 @@ function HandleCoOp()
 													 else
 													   hero:MoveToPosition( Vector(60,-5568,0))
 										end
-											if  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS and (hero:GetOrigin()* Vector(0,1,0)+ Vector(0,6100,0)):Length()<100 or goingToMid[hero]==1 then
+											if  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS and (hero:GetOrigin()* Vector(0,1,0)+ Vector(0,6100,0)):Length()<100 or g_ConfusedCreeps[hero]==1 then
 												  hero:MoveToPosition( Vector(60,-5568,0))
-												  goingToMid[hero]=1
+												  g_ConfusedCreeps[hero]=1
 											end
 									else
 										local nearbyHero=FindUnitsInRadius( DOTA_TEAM_BADGUYS, hero:GetOrigin(), nil, 1200, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 0, 0, false )
@@ -1449,28 +2092,28 @@ function HandleCoOp()
 											local abil4 = hero:GetAbilityByIndex(3)
 											
 											if abil:IsFullyCastable() then
-												if THINK_TICKS%2==0 then
+												if g_MainTimerTickCount%2==0 then
 													hero:CastAbilityOnPosition(nearbyHero[RandomInt(1,#nearbyHero)]:GetOrigin(), abil, -1)	
 												else
 													hero:CastAbilityOnTarget(nearbyHero[RandomInt(1,#nearbyHero)], abil, -1)
 												end
 												--abil:CastAbility()
 											elseif abil2:IsFullyCastable() then
-												if THINK_TICKS%2==0 then
+												if g_MainTimerTickCount%2==0 then
 													hero:CastAbilityOnPosition(nearbyHero[RandomInt(1,#nearbyHero)]:GetOrigin(), abil2, -1)	
 												else
 													hero:CastAbilityOnTarget(nearbyHero[RandomInt(1,#nearbyHero)], abil2, -1)
 												end
 												--abil2:CastAbility()
 											elseif abil3:IsFullyCastable() then
-												if THINK_TICKS%2==0 then
+												if g_MainTimerTickCount%2==0 then
 													hero:CastAbilityOnPosition(nearbyHero[RandomInt(1,#nearbyHero)]:GetOrigin(), abil3, -1)	
 												else
 													hero:CastAbilityOnTarget(nearbyHero[RandomInt(1,#nearbyHero)], abil3, -1)
 												end
 												--abil3:CastAbility()
 											elseif abil4 ~= nil and abil4:IsFullyCastable() then
-												if THINK_TICKS%2==0 then
+												if g_MainTimerTickCount%2==0 then
 													hero:CastAbilityOnPosition(nearbyHero[RandomInt(1,#nearbyHero)]:GetOrigin(), abil4, -1)	
 												else
 													hero:CastAbilityOnTarget(nearbyHero[RandomInt(1,#nearbyHero)], abil4, -1)
@@ -1486,6 +2129,7 @@ function HandleCoOp()
 								if hero:IsNull()==false and hero:IsAlive() == false then
 									Timers:CreateTimer( 10, function()
 											hero:RemoveSelf()
+											
 									end)
 									
 								end
@@ -1495,9 +2139,9 @@ function HandleCoOp()
 					end
 
 
-if (co_op_hero_count<math.sqrt(co_op_diff_level)*.2*NUM_GOOD_PLAYERS*(co_op_diff_setting+1)+1 or co_op_hero_count==0) and co_op_hero_count<25 and THINK_TICKS%2==0 then
-		print(co_op_hero_count .. "   out of a possable " .. math.sqrt(co_op_diff_level)*.5*NUM_GOOD_PLAYERS+1)
-		print("current diff level is" .. co_op_diff_level)
+if (g_CoOpHeroCount<math.sqrt(g_CoOpDiffLevel)*.2*g_PlayerCountSouth*(g_CoOpDiffSetting+1)+1 or g_CoOpHeroCount==0) and g_CoOpHeroCount<25 and g_MainTimerTickCount%2==0 then
+		print(g_CoOpHeroCount .. "   out of a possable " .. math.sqrt(g_CoOpDiffLevel)*.5*g_PlayerCountSouth+1)
+		print("current diff level is" .. g_CoOpDiffLevel)
 		local spawnPicked=0
 		local spawnPos=Vector(0,0,0)
 		local tries=0
@@ -1512,19 +2156,18 @@ if (co_op_hero_count<math.sqrt(co_op_diff_level)*.2*NUM_GOOD_PLAYERS*(co_op_diff
 				end
 			end
 			
-			local unitSpawned=RandomInt( 1, #co_op_unit_pool )
+			local unitSpawned=RandomInt( 1, #g_CoOpUnitPool )
 			
-		 creature = CreateUnitByName( co_op_unit_pool[unitSpawned] ,spawnPos , true, nil, nil, DOTA_TEAM_BADGUYS )
+		 creature = CreateUnitByName( g_CoOpUnitPool[unitSpawned] ,spawnPos , true, nil, nil, DOTA_TEAM_BADGUYS )
 		 
-		
 				
 		if creature:HasInventory() then
-			co_op_hero_count=co_op_hero_count+1
+			g_CoOpHeroCount=g_CoOpHeroCount+1
 			local num_items=RandomInt(1,6)
 			local added=0
 			while added < num_items do
 							
-				local newItem2 = CreateItem(co_op_item_pool[RandomInt( 1, #co_op_item_pool )], creature, creature)
+				local newItem2 = CreateItem(g_CoOpItemPool[RandomInt( 1, #g_CoOpItemPool )], creature, creature)
 				creature:AddItem(newItem2)
 				added=added+1
 				
@@ -1573,7 +2216,7 @@ function reapplyWP()
 					elseif  creep:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 						 waypoint = Entities:FindByNameNearest( "north_wp_*", creep:GetOrigin(), 0 )
 					end
-					if waypoint and goingToMid[creep]==nil then
+					if waypoint and g_ConfusedCreeps[creep]==nil then
 							if not creep:IsAttacking() then
 								local wpNextNum=tonumber(string.sub(waypoint:GetName(),string.len(waypoint:GetName())))
 								local waypoint2 =nil
@@ -1589,15 +2232,15 @@ function reapplyWP()
 					end
 				
 					if not creep:IsAttacking() then
-						if creep:GetTeamNumber() == DOTA_TEAM_GOODGUYS and (creep:GetOrigin()* Vector(0,1,0)- Vector(0,4200,0)):Length()<400 and goingToMid[creep]==nil then
+						if creep:GetTeamNumber() == DOTA_TEAM_GOODGUYS and (creep:GetOrigin()* Vector(0,1,0)- Vector(0,4200,0)):Length()<400 and g_ConfusedCreeps[creep]==nil then
 						
-							  goingToMid[creep]=creep:GetOrigin()* Vector(-1,1,1)
-						elseif  creep:GetTeamNumber() == DOTA_TEAM_BADGUYS and (creep:GetOrigin()* Vector(0,1,0)- Vector(0,-4200,0)):Length()<400 and goingToMid[creep]==nil then
+							  g_ConfusedCreeps[creep]=creep:GetOrigin()* Vector(-1,1,1)
+						elseif  creep:GetTeamNumber() == DOTA_TEAM_BADGUYS and (creep:GetOrigin()* Vector(0,1,0)- Vector(0,-4200,0)):Length()<400 and g_ConfusedCreeps[creep]==nil then
 						
-							   goingToMid[creep]=creep:GetOrigin()* Vector(-1,1,1)
-						elseif  goingToMid[creep] ~=nil then
-							 print (goingToMid[creep])
-							  creep:MoveToPositionAggressive(  goingToMid[creep])
+							   g_ConfusedCreeps[creep]=creep:GetOrigin()* Vector(-1,1,1)
+						elseif  g_ConfusedCreeps[creep] ~=nil then
+							 print (g_ConfusedCreeps[creep])
+							  creep:MoveToPositionAggressive(  g_ConfusedCreeps[creep])
 							  
 						end
 					end
@@ -1612,662 +2255,17 @@ function reapplyWP()
 end
 -- Evaluate the state of the game
 
-function sellBoat(casterUnit)
-local hero = casterUnit
-  local herogold = casterUnit:GetGold()
-	if string.match(hero:GetName(),"disruptor") then
-							hero:SetGold(herogold + 2250, true)
+function sellBoat(hero)
+	  local herogold = hero:GetGold()
+	local goldVal=GetBoatValue(hero)
+		hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + goldVal, true)
 							hero:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 2250
-							 print ( '[BAREBONES] player was disruptor and got 2250')
-						elseif string.match(hero:GetName(),"ursa") then
-							hero:SetGold(hero_gold_array[hero] + 8000, true)
-							hero:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 8000
-							print ( '[BAREBONES] player was ursa and got 6000')
-						elseif string.match(hero:GetName(),"meepo") then
-							hero:SetGold(hero_gold_array[hero] + 4500, true)
-							hero:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 4500
-							print ( '[BAREBONES] player was meepo and got 4500')
-						elseif string.match(hero:GetName(),"tidehunter") then
-							hero:SetGold(hero_gold_array[hero] + 750, true)
-							hero:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 750
-							print ( '[BAREBONES] player was tidehunter and got 750')
-						elseif string.match(hero:GetName(),"apparition") then
-							hero:SetGold(hero_gold_array[hero] + 750, true)
-							hero:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 750
-							print ( '[BAREBONES] player was apparition and got 750')
-						elseif string.match(hero:GetName(),"rattletrap") then
-							hero:SetGold(hero_gold_array[hero] + 750, true)
-							hero:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 750
-							print ( '[BAREBONES] player was rattletrap and got 750')
-						elseif string.match(hero:GetName(),"winter_wyvern") then
-							hero:SetGold(hero_gold_array[hero] + 2250, true)
-							hero:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 2250
-							print ( '[BAREBONES] player was winter_wyvern and got 2250')
-						elseif string.match(hero:GetName(),"storm_spirit") then
-							hero:SetGold(hero_gold_array[hero] + 2250, true)
-							hero:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 2250
-							print ( '[BAREBONES] player was storm_spirit and got 2250')
-						elseif string.match(hero:GetName(),"ember_spirit") then
-							hero:SetGold(hero_gold_array[hero] + 4500, true)
-							hero:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 4500
-							print ( '[BAREBONES] player was zuus and got 6000')
-						elseif string.match(hero:GetName(),"slark") then
-							hero:SetGold(hero_gold_array[hero] + 4500, true)
-							hero:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 4500
-							print ( '[BAREBONES] player was slark and got 4500')
-						elseif string.match(hero:GetName(),"jakiro") then
-							hero:SetGold(hero_gold_array[hero] + 4500, true)
-							hero:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 4500
-							print ( '[BAREBONES] player was jakiro and got 4500')
-						elseif string.match(hero:GetName(),"lion") then
-							hero:SetGold(hero_gold_array[hero] + 2250, true)
-							hero:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 2250
-							print ( '[BAREBONES] player was lion and got 2250')
-						elseif string.match(hero:GetName(),"tusk") then
-							hero:SetGold(hero_gold_array[hero] + 8000, true)
-							hero:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 8000
-							print ( '[BAREBONES] player was tusk and got 6000')
-						elseif string.match(hero:GetName(),"visage") then
-							hero:SetGold(hero_gold_array[hero] + 8000, true)
-							hero:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 8000
-							print ( '[BAREBONES] player was visage and got 4500')
-						elseif string.match(hero:GetName(),"nevermore") then
-							hero:SetGold(hero_gold_array[hero] + 2250, true)
-							hero:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 2250
-							print ( '[BAREBONES] player was nevermore and got 2250')
-						elseif string.match(hero:GetName(),"sniper") then
-							hero:SetGold(hero_gold_array[hero] + 4500, true)
-							hero:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 4500
-							print ( '[BAREBONES] player was sniper and got 2250')
-						elseif string.match(casterUnit:GetName(),"wind") then
-							casterUnit:SetGold(hero_gold_array[hero] + 8000, true)
-							casterUnit:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 8000
-							print ( '[BAREBONES] player was lone_druid and got 6000')
-						elseif string.match(casterUnit:GetName(),"crystal") then
-							casterUnit:SetGold(hero_gold_array[hero] + 750, true)
-							casterUnit:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 750
-					print ( '[BAREBONES] player was lone_druid and got 6000')
-						elseif string.match(hero:GetName(),"phantom") then
-							hero:SetGold(hero_gold_array[hero] + 750, true)
-							hero:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 750
-							print ( '[BAREBONES] player was phantom_lancer and got 750')
-						elseif string.match(hero:GetName(),"vengefulspirit") then
-							hero:SetGold(hero_gold_array[hero] + 750, true)
-							hero:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 750
-						elseif string.match(hero:GetName(),"enigma") then
-							hero:SetGold(hero_gold_array[hero] + 4000, true)
-							hero:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 8000
-						elseif string.match(hero:GetName(),"bane") then
-							hero:SetGold(hero_gold_array[hero] + 7000, true)
-							hero:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 7000
-						elseif string.match(hero:GetName(),"pugna") then
-							casterUnit:SetGold(hero_gold_array[hero] + 8000, true)
-							casterUnit:SetGold(0, false)
-							hero_gold_array[casterUnit]=hero_gold_array[hero] + 8000
-							print ( '[BAREBONES] player was pugna and got 10000')
-				end
+							g_HeroGoldArray[casterUnit:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + goldVal
 end
 
 
 
 
-function CBattleship8D:OnThink()
-		if THINK_TICKS < 500 then
-				for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero_abad*")) do
-					if hero ~= nil and hero:IsOwnedByAnyPlayer() and string.match(hero:GetName(),"abaddon") and hero.changed==nil then
-						hero.changed=1
-					
-						NUM_PLAYERS=NUM_PLAYERS+1
-						become_boat(hero, "npc_dota_hero_zuus")
-						
-						
-						RemoveWearables( hero )
-				end
-			end
-		end
-			 
-	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		if GameRules:GetGameTime() ~= LAST_TIME then
-			
-					if THINK_TICKS == 5 then
-					if battle_mode==1 then
-						local battleTimerData = {
-							TimeTillBattle = battle_mode_timer;
-						}
-						FireGameEvent( "Battle_Over", battleTimerData ); 
-					end
-		Timers:CreateTimer( 300, function()
-			spawnTide()
-		end)
-		spawnCop()
-			for _,tower in pairs( Entities:FindAllByClassname( "npc_dota_tow*")) do
-					if tower ~= nil and string.match(tower:GetName(),"tower") then
-						if tower:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-							creature = CreateUnitByName( "npc_dota_rng_ind" , tower:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_GOODGUYS )
-							creature:SetOrigin( tower:GetAbsOrigin()* Vector(1,1,0))
-						elseif  tower:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-							creature = CreateUnitByName( "npc_dota_rng_ind" , tower:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_BADGUYS )
-							creature:SetOrigin(creature:GetOrigin() * Vector(1,1,0))
-						end
-						
-				end
-			end
-		 Notifications:TopToAll({text="#Welcome", duration=6.0, style={color="#58ACFA",  fontSize="40px;"}})
-		 Notifications:TopToAll({text="#inst_one", duration=6.0, style={color="#B03060",  fontSize="18px;"}})
-		 Notifications:TopToAll({text="#inst_two", duration=6.0, style={color="#58ACFA",  fontSize="18px;"}, continue=true})
-		 Notifications:TopToAll({text="#inst_three", duration=6.0, style={color="#B03060",  fontSize="18px;"}, continue=true})
-		 Notifications:TopToAll({text="#inst_four", duration=6.0, style={color="#58ACFA",  fontSize="18px;"}, continue=true})
-		
-		
-		end
-		if THINK_TICKS == 7 then	
-		 Notifications:TopToAll({text="#inst_five", duration=6.0, style={color="#07C300",  fontSize="18px;"}})
-		 Notifications:TopToAll({text="#inst_six", duration=6.0, style={color="#58ACFA",  fontSize="18px;"}, continue=true})
-		 Notifications:TopToAll({text="#inst_seven", duration=6.0, style={color="#07C300",  fontSize="18px;"}, continue=true})
-		 Notifications:TopToAll({text="#inst_eight", duration=6.0, style={color="#58ACFA",  fontSize="18px;"}, continue=true})
-			NUM_GOOD_PLAYERS = 0
-			NUM_BAD_PLAYERS = 0
-				for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-					if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-						if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-							NUM_GOOD_PLAYERS = NUM_GOOD_PLAYERS + 1
-						elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-							NUM_BAD_PLAYERS = NUM_BAD_PLAYERS + 1
-						end
-						isDisconnected[hero] = 0
-					end
-				end
-			if co_op_mode==1 then
-
-				local co_op_pid
-				for playerID = 0, DOTA_MAX_PLAYERS do
-					if PlayerResource:IsValidPlayerID(playerID) then
-						local player = PlayerResource:GetPlayer(playerID)
-						if GameRules:PlayerHasCustomGameHostPrivileges(player) then 
-							co_op_pid = playerID
-						end
-					end
-				end  
-				
-				local data =
-				{
-					Player_ID = co_op_pid;
-				}
-				FireGameEvent("co_op_mode",data)
-			end
-			
-		end
-		if THINK_TICKS ==13 and co_op_mode==1 then	
-		 Notifications:TopToAll({text="#co_op_one", duration=6.0, style={color="#07C300",  fontSize="30px;"}})
-		 Notifications:TopToAll({text="#co_op_two", duration=6.0, style={color="#07C300",  fontSize="30px;"}})
-		
-		end
-		
-		if THINK_TICKS ==13 and battle_mode==1 then	
-			Notifications:TopToAll({text="#battle_mode", duration=5.0, style={color="#F2B2B2",  fontSize="40px;"}})
-			Notifications:TopToAll({text="#battle_mode_1", duration=5.0, style={color="#F2B2B2",  fontSize="20px;"}})
-			
-			
-			
-		end
-		
-		
-		
-		if THINK_TICKS == 30 then	
-		 Notifications:TopToAll({text="#bs_HowToWin", duration=10.0, style={color="#58ACFA",  fontSize="25px;"}})
-
-		end
-		
-			if THINK_TICKS == 1224 then	
-				Notifications:TopToAll({text="#spys_reminder", duration=8.0, style={color="#CC33FF",  fontSize="25px;"}})
-				  for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-					if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-						if hero:IsRealHero() then
-
-					
-						local Data = {
-							player_id =hero:GetPlayerOwnerID(),
-							x 	= -3328,
-							y  = 320,
-							z  = -68
-						}
-						FireGameEvent( "ping_loc", Data ); 
-						
-						local Data = {
-							player_id =hero:GetPlayerOwnerID(),
-							x 	= 3008,
-							y  = -320,
-							z  = -68
-						}
-						FireGameEvent( "ping_loc", Data ); 
-						end
-					end
-				end
-				
-			end
-			if THINK_TICKS == 1228 then	
-				Notifications:TopToAll({text="#spys_reminder", duration=8.0, style={color="#CC33FF",  fontSize="25px;"}})
-				  for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-					if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-						if hero:IsRealHero() then
-						local Data = {
-							player_id =hero:GetPlayerOwnerID(),
-							x 	= -3328,
-							y  = 320,
-							z  = -68
-						}
-						FireGameEvent( "ping_loc", Data ); 
-						
-						local Data = {
-							player_id =hero:GetPlayerOwnerID(),
-							x 	= 3008,
-							y  = -320,
-							z  = -68
-						}
-						FireGameEvent( "ping_loc", Data ); 
-						end
-					end
-				end
-				
-			end
-		if THINK_TICKS == 20 then	
-			local i=0
-			while i < 5-NUM_GOOD_PLAYERS do
-			GOOD_GOLD_PER_TICK = GOOD_GOLD_PER_TICK + 1
-			i=i+1
-			end
-			i=0
-			while i < 5-NUM_BAD_PLAYERS do
-			BAD_GOLD_PER_TICK = BAD_GOLD_PER_TICK + 1
-			i=i+1
-			end
-		end
-		
-		
-		--iterates through heroes every 2 seconds
-		if THINK_TICKS % 2 == 0 then
-			if THINK_TICKS % 4 == 0 and SPY_ANNOUNCMENT_FLAG == 1 then
-				SPY_ANNOUNCMENT_FLAG = 0
-				 Notifications:TopToAll({text="#buy_spy_header", duration=4.0, style={color="#58ACFA",  fontSize="30px;"}})
-				 Notifications:TopToAll({text="#spys_south_start", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}})
-				 Notifications:TopToAll({text=tostring(SPYS_SOUTH) .. " ", duration=4.0, style={color="#CC3300",  fontSize="30px;"}, continue=true})
-				 Notifications:TopToAll({text="#spys_end", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}, continue=true})
-				 Notifications:TopToAll({text="#spys_north_start", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}})
-				 Notifications:TopToAll({text=tostring(SPYS_NORTH) .. " ", duration=4.0, style={color="#CC3300",  fontSize="30px;"}, continue=true})
-				 Notifications:TopToAll({text="#spys_end", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}, continue=true})
-				
-				
-			end
-			for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-				if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 then
-				
-				attachCosmetics(hero)
-					HandleShopChecks(hero)
-					if hero:IsIllusion() then
-						hero:SetModel( "models/noah_boat.vmdl" )
-						hero:SetOriginalModel( "models/noah_boat.vmdl" )
-					end
-					
-					if string.match(hero:GetName(),"crystal_maiden") then
-						hero:SetMana((hero:GetStrength()-1)/3)
-					end
-					if string.match(hero:GetName(),"tusk") then
-							local casterUnit = hero
-							--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
-							--print('[AbilityFunctions] battleshipHealth started!')
-							if casterUnit:IsAlive() and hero:IsOwnedByAnyPlayer() and herohp[casterUnit:GetPlayerID()] == nil then
-								herohp[casterUnit:GetPlayerID()] = casterUnit:GetHealthPercent() 
-								casterUnit:SetModel("models/battleship_boat0")
-								casterUnit:SetOriginalModel("models/battleship_boat0")
-							end
-							if casterUnit:IsAlive() and hero:IsOwnedByAnyPlayer() then
-								if casterUnit:GetHealthPercent() < 7  and herohp[casterUnit:GetPlayerID()] > 6 then
-									casterUnit:SetModel("models/battleship_boat4")
-									casterUnit:SetOriginalModel("models/battleship_boat4")
-								--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
-								elseif casterUnit:GetHealthPercent() < 25 and herohp[casterUnit:GetPlayerID()] > 24 then
-									casterUnit:SetModel("models/battleship_boat3")
-									casterUnit:SetOriginalModel("models/battleship_boat3")
-									--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
-								elseif casterUnit:GetHealthPercent() < 50 and herohp[casterUnit:GetPlayerID()] > 49 then
-									casterUnit:SetModel("models/battleship_boat2")
-									casterUnit:SetOriginalModel("models/battleship_boat2")
-									--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
-								elseif casterUnit:GetHealthPercent() < 75 and herohp[casterUnit:GetPlayerID()] > 74 then
-									casterUnit:SetModel("models/battleship_boat1")
-									casterUnit:SetOriginalModel("models/battleship_boat1")
-									--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
-								elseif casterUnit:GetHealthPercent() > 74 and herohp[casterUnit:GetPlayerID()] < 75 then
-									casterUnit:SetModel("models/battleship_boat0")
-									casterUnit:SetOriginalModel("models/battleship_boat0")
-									--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
-								--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
-								end
-									herohp[casterUnit:GetPlayerID()] = casterUnit:GetHealthPercent() 
-							end
-						end
-						
-					
-							local casterPos = hero:GetAbsOrigin()
-							local targetUnitOne = Entities:FindByName( nil, "south_kicker")
-							local targetUnitTwo = Entities:FindByName( nil, "north_kicker")
-							local directionOne =  casterPos - targetUnitOne:GetAbsOrigin()
-							local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
-						
-						
-						
-		
-
-						
-						if PlayerResource:GetConnectionState( hero:GetPlayerID() ) ~= 2 or hero:HasOwnerAbandoned() or hero:HasModifier("pergatory_perm") then
-								print('inside disconnect')
-										if DisconnectTime[hero]~= nil then
-											DisconnectTime[hero]=DisconnectTime[hero]+2
-											print('disconnect time: ' .. DisconnectTime[hero])
-											else
-											DisconnectTime[hero]=1
-										end
-											if DisconnectTime[hero]==180 or DisconnectTime[hero]==181 then
-											Notifications:TopToAll({text="#player_kickable", duration=6.0, style={color="#800000",  fontSize="30px;"}})
-				
-											 					
-											end
-											if DisconnectTime[hero]>180 or hero:HasOwnerAbandoned() then
-											print('bigger than 180')
-												local casterPos = hero:GetAbsOrigin()
-												local targetUnitOne = Entities:FindByName( nil, "south_kicker")
-												local targetUnitTwo = Entities:FindByName( nil, "north_kicker")
-												local directionOne =  casterPos - targetUnitOne:GetAbsOrigin()
-												local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
-											
-											
-												if directionOne:Length() < 600 or directionTwo:Length() < 600 or hero:HasOwnerAbandoned() then
-													DisconnectKicked[hero] =1
-												end
-											end
-
-											
-											local herogold = hero_gold_array[hero]
-										if (DisconnectKicked[hero] == 1 and NUM_PLAYERS>1 or hero:HasOwnerAbandoned()) and herogold > 30 and false == hero:HasModifier("pergatory_perm") and NUM_PLAYERS>1 then
-											GameRules:SendCustomMessage("#remove_player", DOTA_TEAM_GOODGUYS, 0)
-											storage:SetDisconnectState(DisconnectKicked)
-											--not sure if syntax in following line is right
-											sellBoat(hero)
-											for itemSlot = 0, 14, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
-													if hero ~= nil then --checks to make sure the killed unit is not nonexistent.
-															local Item = hero:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
-															if Item ~= nil then -- makes sure that the item exists and making sure it is the correct item
-																hero:SetGold(herogold + Item:GetGoldCost(0), true)
-																hero:SetGold(0, false)
-																hero:RemoveItem(Item)
-															end
-													end
-											end
-											local herogoldaftersell = hero:GetGold()
-											if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-												BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + herogoldaftersell
-											elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-												GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + herogoldaftersell
-											end
-											hero:SetGold(0, false)
-											hero:SetGold(0, true)
-											DisconnectKicked[hero] = 2
-											local vecorig = Vector(-8000,384,0)
-											hero:SetOrigin(vecorig)
-											local item = CreateItem( "item_spawn_stunner", npc, npc)
-							
-											item:ApplyDataDrivenModifier(hero, hero, "pergatory_perm", nil)
-										end
-										
-										if DisconnectKicked[hero] == 2 or hero:HasOwnerAbandoned() or hero:HasModifier("pergatory_perm") then
-												if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-													hero:SetGold(0, true)
-													BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + BAD_GOLD_PER_TICK * 2
-												elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-													hero:SetGold(0, true)
-													GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + GOOD_GOLD_PER_TICK * 2
-											end
-										end
-								end
-						
-						
-				local hulls=0
-							for itemSlot = 0, 5, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
-									if hero ~= nil then --checks to make sure the killed unit is not nonexistent.
-											local Item = hero:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
-											if Item ~= nil and string.match(Item:GetName(),"hull") then -- makes sure that the item exists and making sure it is the correct item
-												Item:ApplyDataDrivenModifier(hero, hero, "modifier_item_hull_one", nil)
-												hulls=hulls+1
-											end
-									end
-							end
-					
-					if hulls>1 and hero.hullmsg==nil then
-						hero.hullmsg=1
-						Notifications:Top(hero:GetPlayerID(), {text="#too_many_hulls", duration=5.0, style={color="#800000",  fontSize="50px;"}})
-					end
-					
-					--handles people stuck on cliffs
-						local height = hero:GetOrigin() * Vector(0,0,1)
-						if height:Length() > 110 and false == hero:HasModifier("line_mod")  and false == hero:HasModifier("fly_bat") and false == hero:HasModifier("fly") and false == hero:HasModifier("modifier_spirit_breaker_charge_of_darkness") and false == hero:HasModifier("modifier_kunkka_torrent") and false == hero:HasModifier("move_carrier_in")  and false == hero:HasModifier("giraffe_grabed")  and false == hero:HasModifier("modifier_batrider_flaming_lasso") and false == hero:HasModifier("modifier_mirana_leap")  and false == hero:IsStunned() and  hero:IsAlive()  then 
-							
-							local abil1 = hero:GetAbilityByIndex(1)
-							
-							print( 'player found at z of: ' .. tostring(height:Length()) .. "and cd check is " .. tostring(abil1:GetCooldownTimeRemaining() > abil1:GetCooldown(abil1:GetLevel())-2) .. " and name of hero is " .. hero:GetName() .. " so name check is " .. tostring(string.match(hero:GetName(),"winter_wyvern")))
-						
-							if abil1:GetCooldownTimeRemaining() >= abil1:GetCooldown(abil1:GetLevel())-2 and (string.match(hero:GetName(),"winter_wyvern") or string.match(hero:GetName(),"kunkka")) then
-							
-							else
-									lasth=LastLocs[hero]*Vector(0,0,1)
-									if	lasth:Length() <110 then
-										hero:SetOrigin(LastLocs[hero])		
-										else
-										hero:SetOrigin(LastLocs2[hero])		
-									end
-									
-									local dmg=hero:GetHealth() * 0.7
-									local damageTable = {
-										victim = hero,
-										attacker = hero,
-										damage = dmg,
-										damage_type = DAMAGE_TYPE_PURE,
-									}
-									
-									 Notifications:Top(hero:GetPlayerID(), {text="#off_wall", duration=3.0, style={color="#800000",  fontSize="50px;"}})
-					
-									ApplyDamage(damageTable)
-							end
-						else
-							if LastLocs[hero]~=nil then
-								if LastLocs2[hero] ~=nil and (LastLocs[hero] - hero:GetOrigin()):Length() >20 then
-									LastLocs2[hero] = LastLocs[hero]
-									--print("update ll2")
-								elseif LastLocs2[hero]==nil then
-									LastLocs2[hero] = LastLocs[hero]
-								--	print("irst time ll2")
-								else
-								--	print("no update ll2")
-								end
-							end
-							if  LastLocs[hero]~=nil and (LastLocs[hero] - hero:GetOrigin()):Length() >20 then
-								--print((LastLocs[hero] - hero:GetOrigin()):Length())
-								LastLocs[hero] = hero:GetOrigin()
-							elseif LastLocs[hero]==nil then
-							--	print("first time")
-								LastLocs[hero] = hero:GetOrigin()
-								--print((LastLocs[hero] - hero:GetOrigin()):Length())
-								else
-							--	print("no update ll")
-							end
-							
-							
-							end
-					--gives gold per tick
-					
-					
-					local herogold = hero_gold_array[hero]
-					if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-						hero:SetGold(hero_gold_array[hero] + GOOD_GOLD_PER_TICK * 2, true)
-						hero:SetGold(0, false)
-						hero_gold_array[hero]=hero_gold_array[hero] + GOOD_GOLD_PER_TICK * 2
-						GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + GOOD_GOLD_PER_TICK * 2
-					elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-						hero:SetGold(hero_gold_array[hero] + BAD_GOLD_PER_TICK * 2, true)
-						hero:SetGold(0, false)
-						hero_gold_array[hero]=hero_gold_array[hero] + BAD_GOLD_PER_TICK * 2
-						BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + BAD_GOLD_PER_TICK * 2
-					end
-					
-					--Old code that got deleted then pasted back in
-									
-
-				end
-			end
-		end
-		
-		HandleTideAbil()
-		
-		if THINK_TICKS % 2 == 0 then
-			reapplyWP()
-			
-		end
-	
-		if THINK_TICKS % 3 == 0 and co_op_mode==1 then
-			HandleCoOp()
-		end
-		
-		if THINK_TICKS % 240 == 0 or TICKS_SINCE_EMP_GOLD > 240 then
-			CBattleship8D:handleEmpGold()
-			EMP_GOLD_NUMBER = EMP_GOLD_NUMBER + 1
-			CREEP_LEVEL=CREEP_LEVEL+1
-			CREEP_NUM_PRIV=CREEP_NUM_PRIV+1
-		end
-		
-		if THINK_TICKS % 45 == 0 or THINK_TICKS == 1 then
-			if  DOCK_SOUTH_RIGHT == 1 then
-				CBattleship8D:quickSpawn("south","right", "one", CREEP_LEVEL, CREEP_NUM_SMALL)
-			else
-				CBattleship8D:quickSpawn("south","right", "one", 1, CREEP_NUM_SMALL)
-			end
-			if  DOCK_NORTH_RIGHT == 1 then
-					CBattleship8D:quickSpawn("north","right", "one", CREEP_LEVEL, CREEP_NUM_SMALL)
-			else
-					CBattleship8D:quickSpawn("north","right", "one", 1, CREEP_NUM_SMALL)
-			end
-			if  DOCK_SOUTH_LEFT == 1 then
-					CBattleship8D:quickSpawn("south","left", "one", CREEP_LEVEL, CREEP_NUM_SMALL)
-			else
-					CBattleship8D:quickSpawn("south","left", "one", 1, CREEP_NUM_SMALL)
-			end
-			if  DOCK_NORTH_LEFT == 1 then
-				CBattleship8D:quickSpawn("north","left", "one", CREEP_LEVEL, CREEP_NUM_SMALL)
-			else
-				CBattleship8D:quickSpawn("north","left", "one", 1, CREEP_NUM_SMALL)
-			end
-		end
-		if THINK_TICKS % 90 == 0 then
-			if  DOCK_SOUTH_RIGHT == 1 then
-				CBattleship8D:quickSpawn("south","right", "two", CREEP_LEVEL, CREEP_NUM_BIG)
-			else
-				CBattleship8D:quickSpawn("south","right", "two", 1, CREEP_NUM_BIG)
-			end
-			if  DOCK_NORTH_RIGHT == 1 then
-					CBattleship8D:quickSpawn("north","right", "two", CREEP_LEVEL, CREEP_NUM_BIG)
-			else
-					CBattleship8D:quickSpawn("north","right", "two", 1, CREEP_NUM_BIG)
-			end
-			if  DOCK_SOUTH_LEFT == 1 then
-					CBattleship8D:quickSpawn("south","left", "two", CREEP_LEVEL, CREEP_NUM_BIG)
-			else
-					CBattleship8D:quickSpawn("south","left", "two", 1, CREEP_NUM_BIG)
-			end
-			if  DOCK_NORTH_LEFT == 1 then
-				CBattleship8D:quickSpawn("north","left", "two", CREEP_LEVEL, CREEP_NUM_BIG)
-			else
-				CBattleship8D:quickSpawn("north","left", "two", 1, CREEP_NUM_BIG)
-			end
-			
-		end
-		if THINK_TICKS % 180 == 0 then	
-			if  DOCK_SOUTH_RIGHT == 1 then
-				CBattleship8D:quickSpawn("south","right", "three", CREEP_LEVEL, CREEP_NUM_HUGE)
-			else
-				CBattleship8D:quickSpawn("south","right", "three", 1, CREEP_NUM_HUGE)
-			end
-			if  DOCK_NORTH_RIGHT == 1 then
-					CBattleship8D:quickSpawn("north","right", "three", CREEP_LEVEL, CREEP_NUM_HUGE)
-			else
-					CBattleship8D:quickSpawn("north","right", "three", 1, CREEP_NUM_HUGE)
-			end
-			if  DOCK_SOUTH_LEFT == 1 then
-					CBattleship8D:quickSpawn("south","left", "three", CREEP_LEVEL, CREEP_NUM_HUGE)
-			else
-					CBattleship8D:quickSpawn("south","left", "three", 1, CREEP_NUM_HUGE)
-			end
-			if  DOCK_NORTH_LEFT == 1 then
-				CBattleship8D:quickSpawn("north","left", "three", CREEP_LEVEL, CREEP_NUM_HUGE)
-			else
-				CBattleship8D:quickSpawn("north","left", "three", 1, CREEP_NUM_HUGE)
-			end
-			
-		end
-		local nCreepval = 45-THINK_TICKS%45;
-		
-		if battle_mode==1 then
-			battle_mode_timer=battle_mode_timer-1
-			
-			if battle_mode_timer<1 and battle_mode_remaining==0 then
-				startBattle()
-				battle_mode_timer=5000
-			elseif battle_mode_remaining==0 then
-					local battleTimerData = {
-						TimeTillBattle = battle_mode_timer;
-					}
-					FireGameEvent( "Battle_Timer", battleTimerData ); 
-			end
-		end
-		
-		
-		local bsuiTimerData = {
-			nEmpire = 240-THINK_TICKS % 240;
-			nCreep = nCreepval;
-			nNorthGold = getEmpGoldForTeam(DOTA_TEAM_BADGUYS);
-			nSouthGold = getEmpGoldForTeam(DOTA_TEAM_GOODGUYS);
-			
-		}
-		FireGameEvent( "bsui_timer_data", bsuiTimerData ); 
-			THINK_TICKS = THINK_TICKS + 1
-			TICKS_SINCE_EMP_GOLD=TICKS_SINCE_EMP_GOLD+1
-			LAST_TIME=GameRules:GetGameTime()		
-		end
-		--print( "Template addon script is running." )
-	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
-		return nil
-	end
-	return 1
-end
 
 
 function CBattleship8D:OnDisconnect(keys)
@@ -2275,7 +2273,7 @@ function CBattleship8D:OnDisconnect(keys)
     PrintTable(keys)
 		local plyID
 		for ind = 0, 20, 1 do 
-			if string.match(keys.name,playerIdsToNames[ind]) then
+			if string.match(keys.name,g_PlayerIdsToNames[ind]) then
 				plyID=ind
 			end		
 		end
@@ -2286,7 +2284,7 @@ function CBattleship8D:OnDisconnect(keys)
 				print("this hero's id" .. tostring(hero:GetPlayerOwnerID()))
 				if id == plyID then
 					print("this is the DCd hero")
-					isDisconnected[hero] = 1
+					g_IsHeroDisconnected[hero] = 1
 				end
 			end
 	 	end	
@@ -2333,8 +2331,8 @@ function CBattleship8D:OnConnectFull(keys)
 						end
 					end
 					
-					isDisconnected[hero] = 0
-					DisconnectTime[hero] = 0
+					g_IsHeroDisconnected[hero] = 0
+					g_DisconnectTime[hero] = 0
 				end
 		end
 end
@@ -2344,12 +2342,24 @@ function CBattleship8D:OnEntityKilled( keys )
 	
 	local killedUnit = EntIndexToHScript( keys.entindex_killed )
 	
+	for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+		
+		if hero:GetPlayerOwnerID() ==nil then
+			print("nobody owns me! and nobody will")
+		else
+			if g_HeroGoldArray[hero:GetPlayerOwnerID()] == nil then
+				g_HeroGoldArray[hero:GetPlayerOwnerID()]=0
+				print("owned but no array! got one now")
+			end
+		end
+	end
+	
 	--handle tower gold
 	if killedUnit:IsTower()  then
 			print( "Tower Killed" )
 			if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS and not string.match(killedUnit:GetUnitName(), "dock") then
-				GOOD_GOLD_PER_TICK = GOOD_GOLD_PER_TICK + 2
-				print( "Bad Tower, Good guys gold per tick is now: " .. GOOD_GOLD_PER_TICK )
+				g_GoldPerTickSouth = g_GoldPerTickSouth + 2
+				print( "Bad Tower, Good guys gold per tick is now: " .. g_GoldPerTickSouth )
 				Notifications:TopToAll({text="#north_tower_died", duration=5.0, style={color="#FF6600",  fontSize="18px;"}})
 				Notifications:TopToAll({text=tostring(100), duration=5.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
 
@@ -2357,26 +2367,26 @@ function CBattleship8D:OnEntityKilled( keys )
 				for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 					if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 						if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS  then
-							hero:SetGold(hero_gold_array[hero] + 100, true)
+							hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + 100, true)
 							hero:SetGold(0, false)
-							hero_gold_array[hero]=hero_gold_array[hero] + 100
-							GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 100
+							g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + 100
+							g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 100
 						end
 					end
 				end
 			elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS and not string.match(killedUnit:GetUnitName(), "dock") then
-				BAD_GOLD_PER_TICK = BAD_GOLD_PER_TICK + 2
-				print( "Good Tower, Bad guys gold per tick is now: " .. BAD_GOLD_PER_TICK )
+				g_GoldPerTickNorth = g_GoldPerTickNorth + 2
+				print( "Good Tower, Bad guys gold per tick is now: " .. g_GoldPerTickNorth )
 				Notifications:TopToAll({text="#south_tower_died", duration=5.0, style={color="#FF6600",  fontSize="18px;"}})
 				Notifications:TopToAll({text=tostring(100), duration=5.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
 
 				for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 					if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 						if hero:GetTeamNumber() == DOTA_TEAM_BADGUYS  then
-							hero:SetGold(hero_gold_array[hero] + 100, true)
+							hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + 100, true)
 							hero:SetGold(0, false)
-							BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 100
-							hero_gold_array[hero]=hero_gold_array[hero] + 100
+							g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 100
+							g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + 100
 						end
 					end
 				end
@@ -2388,8 +2398,7 @@ function CBattleship8D:OnEntityKilled( keys )
 			
 			if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS then
 				
-				if DOCK_NORTH_LEFT+DOCK_NORTH_RIGHT==1 then
-					GoodWon=true
+				if g_DockAliveNorthLeft+g_DockAliveNorthRight==1 then
 
 					
 					GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
@@ -2399,18 +2408,17 @@ function CBattleship8D:OnEntityKilled( keys )
 					
 					GameRules:SetSafeToLeave( true )
 				elseif string.match(killedUnit:GetUnitName(), "left") then
-					DOCK_NORTH_LEFT = 0
+					g_DockAliveNorthLeft = 0
 					Notifications:TopToAll({text="#left_north_harbor_died", duration=5.0, style={color="#FF6600",  fontSize="50px;"}})
 				elseif string.match(killedUnit:GetUnitName(), "right") then
-					DOCK_NORTH_RIGHT = 0
+					g_DockAliveNorthRight = 0
 					Notifications:TopToAll({text="#right_north_harbor_died", duration=5.0, style={color="#FF6600",  fontSize="50px;"}})
 				
 				end
 				
 				
 			elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
-				if DOCK_SOUTH_LEFT+DOCK_SOUTH_RIGHT==1 then
-					GoodWon=false
+				if g_DockAliveSouthLeft+g_DockAliveSouthRight==1 then
 
 					GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 					storage:SetWinner("North")
@@ -2419,25 +2427,24 @@ function CBattleship8D:OnEntityKilled( keys )
 					
 					GameRules:SetSafeToLeave( true )
 				elseif string.match(killedUnit:GetUnitName(), "left") then
-					DOCK_SOUTH_LEFT = 0
+					g_DockAliveSouthLeft = 0
 					Notifications:TopToAll({text="#left_south_harbor_died", duration=5.0, style={color="#FF6600",  fontSize="50px;"}})
 			
 				elseif string.match(killedUnit:GetUnitName(), "right") then
-					DOCK_SOUTH_RIGHT = 0
+					g_DockAliveSouthRight = 0
 					Notifications:TopToAll({text="#right_south_harbor_died", duration=5.0, style={color="#FF6600",  fontSize="50px;"}})
 			
 				end
 				
 			end
-			print( "North docks:" .. DOCK_NORTH_LEFT .. DOCK_NORTH_RIGHT )
-			print( "South docks:" .. DOCK_SOUTH_LEFT .. DOCK_SOUTH_RIGHT )
+			print( "North docks:" .. g_DockAliveNorthLeft .. g_DockAliveNorthRight )
+			print( "South docks:" .. g_DockAliveSouthLeft .. g_DockAliveSouthRight )
 		end
 		
 		--handle ending game
 		if string.match(killedUnit:GetUnitName(), "base") then
 			print( "MATCHED BASE IS TRUE" )
 			if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS then
-					GoodWon=true
 				storage:SetWinner("South")
 				GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 				GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
@@ -2445,7 +2452,6 @@ function CBattleship8D:OnEntityKilled( keys )
 				
 				GameRules:SetSafeToLeave( true )
 			elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
-				GoodWon=false
 
 				storage:SetWinner("North")
 				GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
@@ -2506,7 +2512,7 @@ function CBattleship8D:OnEntityKilled( keys )
 		Notifications:TopToAll({text="#north_tide", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
 		
 	
-			 table.insert(tideKillerArray,{
+			 table.insert(g_tideKillerArray,{
 			 Killer_Team="North",
 			 Game_time=GameRules:GetGameTime()/60+0.5,
 			 })
@@ -2515,9 +2521,9 @@ function CBattleship8D:OnEntityKilled( keys )
 	end
 	if  killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 	
-	local spawnLocation = Entities:FindByName( nil, "south_spawn_left")
-        local waypointlocation = Entities:FindByName ( nil, "south_wp_left_2")
-     local creature
+		local spawnLocation = Entities:FindByName( nil, "south_spawn_left")
+		local waypointlocation = Entities:FindByName ( nil, "south_wp_left_2")
+		local creature
 		creature = CreateUnitByName( "npc_dota_hero_spirit_breaker" ,spawnLocation:GetAbsOrigin() , true, nil, nil, DOTA_TEAM_GOODGUYS )
 		if creature~=nil then
 		
@@ -2547,7 +2553,7 @@ function CBattleship8D:OnEntityKilled( keys )
 		end
 		Notifications:TopToAll({hero="npc_dota_hero_tidehunter", imagestyle="portrait", continue=true})
 		Notifications:TopToAll({text="#south_tide", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
-		 table.insert(tideKillerArray,{
+		 table.insert(g_tideKillerArray,{
 			 Killer_Team="South",
 			 Game_time=GameRules:GetGameTime()/60+0.5,
 			 })
@@ -2557,7 +2563,7 @@ function CBattleship8D:OnEntityKilled( keys )
 	
 	
 		Timers:CreateTimer( 300, function()
-		TIDE_LEVEL = TIDE_LEVEL+1
+		g_TidehunterLevel = g_TidehunterLevel+1
 			spawnTide()
 		end)
 		
@@ -2569,16 +2575,20 @@ function CBattleship8D:OnEntityKilled( keys )
   
   
   
-		if co_op_mode and killedUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS and killedUnit:IsRealHero() then
-			if RandomInt(1,NUM_GOOD_PLAYERS*2+5)<5 then
-				co_op_diff_level=co_op_diff_level+1
+		if g_CoOpMode and killedUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS and killedUnit:IsRealHero() then
+			if RandomInt(1,g_PlayerCountSouth*2+5)<5 then
+				g_CoOpDiffLevel=g_CoOpDiffLevel+1
+				print( "g_CoOpDiffLevel: " .. g_CoOpDiffLevel )
 			end
-			co_op_hero_count=co_op_hero_count-1
+			g_CoOpHeroCount=g_CoOpHeroCount-1
 			UpdateCoOpTables()
 		end
 		--distribute the gold to the team, add it to the empire gold and remove the origional bounty gold from the killer
 		
-if killedUnit:IsRealHero() then
+	if killedUnit:IsRealHero() then
+
+
+
 	
 	local killerName="Unknown"
 	local KilledName="Unknown"
@@ -2707,20 +2717,20 @@ if killedUnit:IsRealHero() then
 		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 				if hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-					hero:SetGold(hero_gold_array[hero] + killedUnit:GetGoldBounty()/NUM_GOOD_PLAYERS, true)
+					hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + killedUnit:GetGoldBounty()/g_PlayerCountSouth, true)
 					hero:SetGold(0, false)
-					hero_gold_array[hero]=hero_gold_array[hero] + (killedUnit:GetGoldBounty()/NUM_GOOD_PLAYERS)
+					g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + (killedUnit:GetGoldBounty()/g_PlayerCountSouth)
 				elseif hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-					hero:SetGold(hero_gold_array[hero] + killedUnit:GetGoldBounty()/NUM_BAD_PLAYERS, true)
+					hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + killedUnit:GetGoldBounty()/g_PlayerCountNorth, true)
 					hero:SetGold(0, false)
-					hero_gold_array[hero]=hero_gold_array[hero] + (killedUnit:GetGoldBounty()/NUM_BAD_PLAYERS)
+					g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + (killedUnit:GetGoldBounty()/g_PlayerCountNorth)
 				end
 			end
 		end
 		if killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-			GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + killedUnit:GetGoldBounty()
+			g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + killedUnit:GetGoldBounty()
 		elseif killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-			BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + killedUnit:GetGoldBounty()
+			g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + killedUnit:GetGoldBounty()
 		end
 				
 	end	
@@ -2729,34 +2739,38 @@ if killedUnit:IsRealHero() then
 
 		
 		
-  if killedUnit:GetGoldBounty() and killerEntity:IsRealHero() then
+  if killedUnit:GetGoldBounty() and killerEntity:IsRealHero() and killerEntity:IsOwnedByAnyPlayer() then
   
 		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 			print(hero:GetName())
-				if hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-					hero:SetGold(hero_gold_array[hero] + (killedUnit:GetGoldBounty()/NUM_GOOD_PLAYERS)/2, true)
+				if hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS and killedUnit ~= nil and g_HeroGoldArray[hero:GetPlayerOwnerID()] ~= nil then
+					hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + (killedUnit:GetGoldBounty()/g_PlayerCountSouth)/2, true)
 					hero:SetGold(0, false)
-					hero_gold_array[hero]=hero_gold_array[hero] + (killedUnit:GetGoldBounty()/NUM_GOOD_PLAYERS)/2
-				elseif hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-					hero:SetGold(hero_gold_array[hero] + killedUnit:GetGoldBounty()/NUM_BAD_PLAYERS, true)
+					g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + (killedUnit:GetGoldBounty()/g_PlayerCountSouth)/2
+				elseif hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS and killedUnit ~= nil then
+					print(g_HeroGoldArray[hero:GetPlayerOwnerID()])
+					print(g_PlayerCountNorth)
+					hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + killedUnit:GetGoldBounty()/g_PlayerCountNorth/2, true)
 					hero:SetGold(0, false)
-					hero_gold_array[hero]=hero_gold_array[hero] + (killedUnit:GetGoldBounty()/NUM_BAD_PLAYERS)/2
+					g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + (killedUnit:GetGoldBounty()/g_PlayerCountNorth)/2
 				end
 			end
 		end
   
 		if killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-			GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + killedUnit:GetGoldBounty()
+			g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + killedUnit:GetGoldBounty()
 		elseif killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-			BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + killedUnit:GetGoldBounty()
+			g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + killedUnit:GetGoldBounty()
 		end
-		killerEntity:SetGold(hero_gold_array[killerEntity] + killedUnit:GetGoldBounty()/2, true)
+		killerEntity:SetGold(g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] + killedUnit:GetGoldBounty()/2, true)
 		killerEntity:SetGold(0, false)
+		g_HeroGoldArray[killerEntity:GetPlayerOwnerID()]=g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] + killedUnit:GetGoldBounty()/2
+
 		if killedUnit:IsRealHero() then
-		hero_gold_array[killerEntity]=hero_gold_array[killerEntity] + killedUnit:GetGoldBounty()/2
+		g_HeroGoldArray[killerEntity:GetPlayerOwnerID()]=g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] + killedUnit:GetGoldBounty()/2
 		else
-			hero_gold_array[killerEntity]=hero_gold_array[killerEntity] - killedUnit:GetGoldBounty()/2
+			g_HeroGoldArray[killerEntity:GetPlayerOwnerID()]=g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] - killedUnit:GetGoldBounty()/2
 		end
 		
 		print("gold bounty for hero was " .. killedUnit:GetGoldBounty())
@@ -2796,35 +2810,35 @@ if killedUnit:IsRealHero() then
   end
 
   --handle killing a streaker
-	if killerEntity:IsRealHero() and killedUnit:IsOwnedByAnyPlayer() and co_op_mode==0 then
+	if killerEntity:IsRealHero() and killedUnit:IsOwnedByAnyPlayer() and g_CoOpMode==0 then
 	  
 	  if killedUnit:IsRealHero() then 
 	  
-	  if battle_mode_remaining>0 and  killerEntity:GetTeamNumber() ~= killedUnit:GetTeam() then
+	  if g_BattleModeRemaining>0 and  killerEntity:GetTeamNumber() ~= killedUnit:GetTeam() then
 
 			if killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-				battle_mode_south_score=battle_mode_south_score+5
+				g_BattleModeSouthScore=g_BattleModeSouthScore+5
 			elseif  killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-				battle_mode_north_score=battle_mode_north_score+5
+				g_BattleModeNorthScore=g_BattleModeNorthScore+5
 			end
 		 
 	  end
 	  
 	  
-	  if herokills[killedUnit:GetPlayerID()] ~= nil and herokills[killedUnit:GetPlayerID()] > 2 then
+	  if g_HeroKills[killedUnit:GetPlayerID()] ~= nil and g_HeroKills[killedUnit:GetPlayerID()] > 2 then
 		if killerEntity ~= nil and killerEntity:IsOwnedByAnyPlayer() then
 			if killerEntity:GetTeamNumber() ~= killedUnit:GetTeam()  then
-				killerEntity:SetGold(hero_gold_array[killerEntity] + herokills[killedUnit:GetPlayerID()] * 100, true)
+				killerEntity:SetGold(g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] + g_HeroKills[killedUnit:GetPlayerID()] * 100, true)
 				killerEntity:SetGold(0, false)
-				hero_gold_array[killerEntity]=hero_gold_array[killerEntity] + herokills[killedUnit:GetPlayerID()] * 100
+				g_HeroGoldArray[killerEntity:GetPlayerOwnerID()]=g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] + g_HeroKills[killedUnit:GetPlayerID()] * 100
 				if killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-					GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + herokills[killedUnit:GetPlayerID()] * 100
+					g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + g_HeroKills[killedUnit:GetPlayerID()] * 100
 					Notifications:BottomToAll({text="#streak_end_one_s", duration=5.0, style={color="#A70606",  fontSize="30px;"}})
 					Notifications:BottomToAll({text=tostring(killerEntity:GetStreak() * 100) .. " ", duration=5.0, style={color="#FFD700",  fontSize="30px;"}, continue=true})
 					Notifications:BottomToAll({text="#streak_end_two_s", duration=5.0, style={color="#A70606",  fontSize="30px;"}, continue=true})
 				
 				elseif  killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-					BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + herokills[killedUnit:GetPlayerID()] * 100
+					g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + g_HeroKills[killedUnit:GetPlayerID()] * 100
 					Notifications:BottomToAll({text="#streak_end_one_n", duration=5.0, style={color="#A70606",  fontSize="30px;"}})
 					Notifications:BottomToAll({text=tostring(killerEntity:GetStreak() * 100) .. " ", duration=5.0, style={color="#FFD700",  fontSize="30px;"}, continue=true})
 					Notifications:BottomToAll({text="#streak_end_two_n", duration=5.0, style={color="#A70606",  fontSize="30px;"}, continue=true})
@@ -2832,40 +2846,40 @@ if killedUnit:IsRealHero() then
 				end
 			end
 		end
-			herokills[killedUnit:GetPlayerID()] = 0
+			g_HeroKills[killedUnit:GetPlayerID()] = 0
 	   end
 -- handle awarding kill streak gold
-if herokills[killerEntity:GetPlayerID()] ~=nil then
-		herokills[killerEntity:GetPlayerID()] = herokills[killerEntity:GetPlayerID()] + 1
+if g_HeroKills[killerEntity:GetPlayerID()] ~=nil then
+		g_HeroKills[killerEntity:GetPlayerID()] = g_HeroKills[killerEntity:GetPlayerID()] + 1
 			print ("KILLEDKILLER: " .. killedUnit:GetName() .. " -- " .. killerEntity:GetName())
-			if killerEntity:GetStreak() > 2 and killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber()  then
+			if killerEntity:GetStreak() > 2 and killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber() and killerEntity:IsOwnedByAnyPlayer() then
 				for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 					if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 						if hero:GetTeamNumber() == killerEntity:GetTeam()  then
-							hero:SetGold(hero_gold_array[hero] + killerEntity:GetStreak() * 30, true)
+							hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + killerEntity:GetStreak() * 30, true)
 							hero:SetGold(0, false)
-							hero_gold_array[hero]=killergold + killerEntity:GetStreak() * 30
+							g_HeroGoldArray[hero:GetPlayerOwnerID()]=killergold + killerEntity:GetStreak() * 30
 			
 							if killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + killerEntity:GetStreak() * 30
+								g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + killerEntity:GetStreak() * 30
 							elseif  killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + killerEntity:GetStreak() * 30
+								g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + killerEntity:GetStreak() * 30
 							end
 						end
 					end
 				end
-				killerEntity:SetGold(hero_gold_array[killerEntity] - killerEntity:GetStreak() * 30, true)
+				killerEntity:SetGold(g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] - killerEntity:GetStreak() * 30, true)
 				killerEntity:SetGold(0, false)
-				hero_gold_array[killerEntity]=hero_gold_array[killerEntity] - killerEntity:GetStreak() * 30
+				g_HeroGoldArray[killerEntity:GetPlayerOwnerID()]=g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] - killerEntity:GetStreak() * 30
 			
 				if killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-					GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD - killerEntity:GetStreak() * 30
+					g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth - killerEntity:GetStreak() * 30
 					Notifications:BottomToAll({text="#streak_reward_one_n", duration=5.0, style={color="#A70606",  fontSize="18px;"}})
 					Notifications:BottomToAll({text=tostring(killerEntity:GetStreak() * 30) .. " ", duration=5.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
 					Notifications:BottomToAll({text="#streak_reward_two_n", duration=5.0, style={color="#A70606",  fontSize="18px;"}, continue=true})
 				
 				elseif  killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-					BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD - killerEntity:GetStreak() * 30
+					g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth - killerEntity:GetStreak() * 30
 					Notifications:BottomToAll({text="#streak_reward_one_s", duration=5.0, style={color="#A70606",  fontSize="18px;"}})
 					Notifications:BottomToAll({text=tostring(killerEntity:GetStreak() * 30) .. " ", duration=5.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
 					Notifications:BottomToAll({text="#streak_reward_two_s", duration=5.0, style={color="#A70606",  fontSize="18px;"}, continue=true})
@@ -2883,13 +2897,13 @@ if herokills[killerEntity:GetPlayerID()] ~=nil then
 		--handle vengance
 		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 				if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-					if false == hero:IsAlive() and false == hero:IsIllusion() and hero:GetTeamNumber() == killerEntity:GetTeam() and killerEntity ~= hero and killerEntity:GetTeam() ~= killedUnit:GetTeam() and hero:GetPlayerOwnerID() ~= -1 then
+					if false == hero:IsAlive() and false == hero:IsIllusion() and hero:GetTeamNumber() == killerEntity:GetTeam() and killerEntity ~= hero and killerEntity:GetTeam() ~= killedUnit:GetTeam() and hero:GetPlayerOwnerID() ~= -1 and killerEntity:IsOwnedByAnyPlayer() then
 						local bounty=hero:GetGoldBounty()
 						
-						killerEntity:SetGold(hero_gold_array[killerEntity] + bounty/4, true)
-						hero:SetGold(hero_gold_array[hero] + bounty/2, true)
-						hero_gold_array[hero]=hero_gold_array[hero]+ bounty/2
-						hero_gold_array[killerEntity]=hero_gold_array[killerEntity] + bounty/4
+						killerEntity:SetGold(g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] + bounty/4, true)
+						hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + bounty/2, true)
+						g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()]+ bounty/2
+						g_HeroGoldArray[killerEntity:GetPlayerOwnerID()]=g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] + bounty/4
 						Notifications:BottomToAll({text=PlayerResource:GetPlayerName( killerEntity:GetPlayerID()) .. " ", duration=5.0, style={color="#FF9955",  fontSize="18px;"}})
 						Notifications:BottomToAll({text="#avenge_one", duration=5.0, style={color="#FF9900",  fontSize="18px;"}, continue=true})
 						Notifications:BottomToAll({text=PlayerResource:GetPlayerName( hero:GetPlayerID()) .. " ", duration=5.0, style={color="#FF9955",  fontSize="18px;"}, continue=true})
@@ -2899,9 +2913,9 @@ if herokills[killerEntity:GetPlayerID()] ~=nil then
 						Notifications:BottomToAll({text=tostring(math.floor(bounty/2+0.5)) .. " ", duration=5.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
 						Notifications:BottomToAll({text="#avenge_four", duration=5.0, style={color="#FF9900",  fontSize="18px;"}, continue=true})
 						if killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-							GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + EMP_GOLD_NUMBER * bounty*3/4
+							g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + g_EmpireGoldCount * bounty*3/4
 						elseif  killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-							BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + EMP_GOLD_NUMBER * bounty*3/4
+							g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + g_EmpireGoldCount * bounty*3/4
 						end
 					end
 				end
@@ -2922,12 +2936,12 @@ if herokills[killerEntity:GetPlayerID()] ~=nil then
 				end
 			end
 
-		print ("NUM_GOOD_PLAYERS: " .. NUM_GOOD_PLAYERS .. " -- good dead: " .. goodDead)
-		print ("NUM_BAD_PLAYERS: " .. NUM_BAD_PLAYERS .. " -- bad dead: " .. badDead)
-		if goodDead == NUM_GOOD_PLAYERS and killedUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS and NUM_GOOD_PLAYERS>2 then
-			Notifications:TopToAll({text="#team_wipe_north", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})	
+		print ("g_PlayerCountSouth: " .. g_PlayerCountSouth .. " -- good dead: " .. goodDead)
+		print ("g_PlayerCountNorth: " .. g_PlayerCountNorth .. " -- bad dead: " .. badDead)
+		if goodDead == g_PlayerCountSouth and killedUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS and g_PlayerCountSouth>2 then
+			Notifications:TopToAll({text="#team_wipe_south", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})	
 		end
-		if badDead == NUM_BAD_PLAYERS and killedUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS and NUM_BAD_PLAYERS>2 then
+		if badDead == g_PlayerCountNorth and killedUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS and g_PlayerCountNorth>2 then
 			Notifications:TopToAll({text="#team_wipe_north", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
 		end
 		
@@ -2994,16 +3008,16 @@ function CBattleship8D:OnItemPurchased( keys )
 		end
     end
 local itemName = keys.itemname 
-if item_code_lookup[itemName] ~= nil then
-print(item_code_lookup[itemName])
-	  storage:AddToPlayerItemHist(casterUnit:GetPlayerID(),item_code_lookup[itemName])--math.floor(GameRules:GetGameTime()/60+0.5) .. item_code_lookup[itemName])
+if g_ItemCodeLookUp[itemName] ~= nil then
+print(g_ItemCodeLookUp[itemName])
+	  storage:AddToPlayerItemHist(casterUnit:GetPlayerID(),g_ItemCodeLookUp[itemName])--math.floor(GameRules:GetGameTime()/60+0.5) .. g_ItemCodeLookUp[itemName])
 end	  
 
   -- The name of the item purchased
   
   print ( '[BAREBONES] Item Purchased was ' .. itemName)
   local herogold = casterUnit:GetGold()
-  hero_gold_array[casterUnit]=herogold
+  g_HeroGoldArray[casterUnit:GetPlayerOwnerID()]=herogold
   
 	
 		
@@ -3019,14 +3033,15 @@ end
 	end
 	
 	if GameRules:GetGameTime() < 300 and  string.match(itemName, "lorne") then
-		LORNE_ITEM_BUYERS = LORNE_ITEM_BUYERS + 1
+		g_LorneItemBuyers = g_LorneItemBuyers + 1
 		
 	end
-	if LORNE_ITEM_BUYERS == NUM_PLAYERS and NUM_PLAYERS ~= 0 then
+	if g_LorneItemBuyers == g_PlayerCount and g_PlayerCount ~= 0 then
 		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 				hero:SetGold(80000, true)
 				hero:AddExperience(80000, true,false)
+				g_HeroGoldArray[hero:GetPlayerOwnerID()]=80000
 			end
 		end
 	end
@@ -3043,7 +3058,7 @@ function become_boat(casterUnit, heroname)
     local itemlist = {}
 	local droppeditemlist = {}
 	local itemstacks = {}
-	local savedGold = hero_gold_array[casterUnit]
+	local savedGold = g_HeroGoldArray[casterUnit:GetPlayerOwnerID()]
     if (casterUnit:IsHero() or casterUnit:HasInventory()) and heroname ~= casterUnit:GetName() then 
     	for itemSlot = 0, 14, 1 do 
             if casterUnit ~= nil then
@@ -3087,7 +3102,7 @@ function become_boat(casterUnit, heroname)
 			local gold = casterUnit:GetGold()
 			local xp = casterUnit:GetCurrentXP()
 			print("calling replace hero")
-			BOAT_JUST_BAUGHT=1
+			g_BoatJustBaught=1
 			local hero = PlayerResource:ReplaceHeroWith( casterUnit:GetPlayerID(), heroname , 0, 0 )
 			SendToServerConsole( "dota_combine_models 0" ) 
 			casterUnit:RemoveSelf()
@@ -3097,11 +3112,11 @@ function become_boat(casterUnit, heroname)
 					
 					if id == plyID then
 					RemoveWearables( hero )
-					attachCosmetics(hero)
+					AttachCosmetics(hero)
 						print("this is the new hero, put items in " .. hero:GetName())
 						hero:SetGold(gold, true)
 						hero:SetGold(0, false)
-						hero_gold_array[hero]=gold
+						g_HeroGoldArray[hero:GetPlayerOwnerID()]=gold
 						hero:AddExperience(xp, false, false)
 						for b = 0, 14, 1 do 
 							local newItem = CreateItem(itemlist[b], hero, hero)
@@ -3201,13 +3216,6 @@ function become_boat(casterUnit, heroname)
 								end
 							end
 						end
-						for itemnum= 0, #droppeditemlist, 1 do
-							PrintTable(droppeditemlist)
-							if droppeditemlist[itemnum] ~= nil then
-								local DroppedItem=droppeditemlist[itemnum]
-									DroppedItem:SetPurchaser(hero)
-							end
-						end
 						if hero:IsHero() or hero:HasInventory() then 
 							for itemSlot = 0, 14, 1 do 
 								if hero ~= nil then
@@ -3223,6 +3231,15 @@ function become_boat(casterUnit, heroname)
 								end
 							end
 						end
+						
+						for itemnum= 0, #droppeditemlist, 1 do
+							PrintTable(droppeditemlist)
+							if droppeditemlist[itemnum] ~= nil then
+								local DroppedItem=droppeditemlist[itemnum]
+									DroppedItem:SetPurchaser(hero)
+							end
+						end
+						
 					end
 				end
 		
@@ -3264,11 +3281,11 @@ end
 function debuffTowers(casterUnit, itemName)
 print('[ItemFunctions] dubuffTower started!')
 	if casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-		SPYS_SOUTH = SPYS_SOUTH + 1
+		g_SpyCountSouth = g_SpyCountSouth + 1
 	elseif  casterUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-		SPYS_NORTH = SPYS_NORTH + 1
+		g_SpyCountNorth = g_SpyCountNorth + 1
 	end
-	SPY_ANNOUNCMENT_FLAG = 1
+	g_SpyAnnouncmentFlag = 1
 	if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
 		for itemSlot = 0, 14, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
 	        	if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
@@ -3374,7 +3391,7 @@ function spawnTide()
          i = 0
         while  1>i do
 					creature = CreateUnitByName( "npc_dota_creature_tidehunter" , spawnLocation:GetAbsOrigin() + Vector(-300 + i * 100,0,0), true, nil, nil, 4 )
-				creature:CreatureLevelUp(TIDE_LEVEL)
+				creature:CreatureLevelUp(g_TidehunterLevel)
                 i = i + 1
         end
 		Notifications:TopToAll({hero="npc_dota_hero_tidehunter", imagestyle="portrait", continue=true})
@@ -3388,7 +3405,7 @@ function spawnCop()
          i = 0
         while  1>i do
 					creature = CreateUnitByName( "npc_dota_creature_cop" , spawnLocation:GetAbsOrigin() + Vector(-300 + i * 100,0,0), true, nil, nil, 4 )
-				creature:CreatureLevelUp(TIDE_LEVEL)
+				creature:CreatureLevelUp(g_TidehunterLevel)
                 i = i + 1
         end
 			
@@ -3413,8 +3430,8 @@ print("in unstick")
 			if herogold>0 then
 				if hero:GetPlayerID() == pID then
 					if false == hero:HasModifier("pergatory_3") then
-						 if LastLocs2[hero]~= nil and ((LastLocs2[hero] - hero:GetOrigin()):Length() <1000 or (LastLocs2[hero] - hero:GetOrigin()):Length()<50) then
-							local vecorig = LastLocs2[hero]
+						 if g_OlderHeroLocations[hero]~= nil and ((g_OlderHeroLocations[hero] - hero:GetOrigin()):Length() <1000 or (g_OlderHeroLocations[hero] - hero:GetOrigin()):Length()<50) then
+							local vecorig = g_OlderHeroLocations[hero]
 							hero:SetOrigin(vecorig)
 							stopPhysics(hero)
 							else
@@ -3542,7 +3559,7 @@ function buyBoat(eventSourceIndex, args)
 			boat=true
 			casterUnit:SetGold(herogold-cost,true)
 			casterUnit:SetGold(0,false)
-			hero_gold_array[casterUnit]=herogold-cost
+			g_HeroGoldArray[casterUnit:GetPlayerOwnerID()]=herogold-cost
 			sellBoat(casterUnit)
 			EmitSoundOnClient("General.Buy",PlayerResource:GetPlayer(pID))
 		Timers:CreateTimer( .15, function()
@@ -3610,7 +3627,7 @@ function buyBoat(eventSourceIndex, args)
 	end
 end
 function ChooseDiff(eventSourceIndex, args)
-co_op_diff_setting=args.diff
+g_CoOpDiffSetting=args.diff
 print("diff set to " .. args.diff) 
 end
 
@@ -3651,7 +3668,7 @@ function buyItem(eventSourceIndex, args)
 				heroBuying:AddItem(tempItem)
 				heroBuying:SetGold(herogold-cost,true)
 				heroBuying:SetGold(0,false)
-				hero_gold_array[heroBuying]=herogold-cost
+				g_HeroGoldArray[heroBuying:GetPlayerOwnerID()]=herogold-cost
 			else
 				EmitSoundOnClient("ui.contract_fail",PlayerResource:GetPlayer(pID))
 			end
@@ -3683,10 +3700,10 @@ function GiveEasy(eventSourceIndex, args)
 			local missionPool
 			if heroBuying:GetTeamNumber()==DOTA_TEAM_GOODGUYS then
 				print(nearestShop:GetUnitName())
-				PrintTable(SouthEasyMissions[nearestShop:GetUnitName()])
-				missionPool=SouthEasyMissions[nearestShop:GetUnitName()]
+				PrintTable(g_EasyMissionsSouth[nearestShop:GetUnitName()])
+				missionPool=g_EasyMissionsSouth[nearestShop:GetUnitName()]
 				else
-				missionPool=NorthEasyMissions[nearestShop:GetUnitName()]
+				missionPool=g_EasyMissionsNorth[nearestShop:GetUnitName()]
 			end
 			local chosenMission=missionPool[RandomInt( 1, #missionPool )]
 			newItem = CreateItem(chosenMission, hero, hero)
@@ -3746,9 +3763,9 @@ function GiveMedium(eventSourceIndex, args)
 			print("inrange")
 			local missionPool
 			if heroBuying:GetTeamNumber()==DOTA_TEAM_GOODGUYS then
-				missionPool=SouthHardMissions[nearestShop:GetUnitName()]
+				missionPool=g_HardMissionsSouth[nearestShop:GetUnitName()]
 				else
-				missionPool=NorthHardMissions[nearestShop:GetUnitName()]
+				missionPool=g_HardMissionsNorth[nearestShop:GetUnitName()]
 			end
 			local chosenMission=missionPool[RandomInt( 1, #missionPool )]
 			newItem = CreateItem(chosenMission, hero, hero)
@@ -3818,8 +3835,8 @@ function HandleShopChecks(hero)
 			
 
 		local ShopDist =  casterPos - nearestShop:GetAbsOrigin()
-		if WasNearShop[hero]==nil then
-			WasNearShop[hero] = true
+		if g_WasNearShop[hero]==nil then
+			g_WasNearShop[hero] = true
 		end
 			local targetUnitOne = Entities:FindByName( nil, "south_boat_shop")
 			local targetUnitTwo = Entities:FindByName( nil, "north_boat_shop")
@@ -3830,12 +3847,12 @@ function HandleShopChecks(hero)
 				local Item = hero:GetItemInSlot( itemSlot )
 				if Item ~= nil  and string.match(Item:GetName(),"contract_empty") and ShopDist:Length()<600 then	
 							hero:RemoveItem(Item)
-							hero:SetGold(hero:GetGold()+300*EMP_GOLD_NUMBER/4,true)
+							hero:SetGold(hero:GetGold()+300*g_EmpireGoldCount/4,true)
 							hero:SetGold(0,false)
-							hero_gold_array[hero]=hero:GetGold()+300*EMP_GOLD_NUMBER/4
+							g_HeroGoldArray[hero:GetPlayerOwnerID()]=hero:GetGold()+300*g_EmpireGoldCount/4
 							hero:AddExperience(200,0,false,true)
 							Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=4.0, style={ color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-							Notifications:Top(hero:GetPlayerID(),{text=300*EMP_GOLD_NUMBER/4, duration=4.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+							Notifications:Top(hero:GetPlayerID(),{text=300*g_EmpireGoldCount/4, duration=4.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 
 				end		
 			end
@@ -3845,9 +3862,9 @@ function HandleShopChecks(hero)
 			
 		if ShopDist:Length()<500 and (directionOne:Length() > 1000 and directionTwo:Length() > 1000) and cotinue==1 then
 			
-			if WasNearShop[hero]==false then
+			if g_WasNearShop[hero]==false then
 				print("sending entershop")
-				WasNearShop[hero]=true
+				g_WasNearShop[hero]=true
 				local data =
 				{
 					Player_ID = hero:GetPlayerID()
@@ -3856,7 +3873,7 @@ function HandleShopChecks(hero)
 			end
 		
 		--saves number of peoplke on this traders team
-		local numPlayers
+		local numPlayers=1
 		
 			for itemSlot = 0, 5, 1 do 
 				if hero ~= nil then
@@ -3867,14 +3884,14 @@ function HandleShopChecks(hero)
 						local itemStrippedHard=string.gsub(Item:GetName(),"item_contract_hard","")
 						if  string.match(nearestShop:GetUnitName(),itemStrippedEasy) then
 							hero:RemoveItem(Item)
-							hero:SetGold(hero_gold_array[hero]+100*EMP_GOLD_NUMBER/4,true)
+							hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()]+100*g_EmpireGoldCount/4,true)
 							hero:SetGold(0,false)
-							hero_gold_array[hero]=hero_gold_array[hero]+100*EMP_GOLD_NUMBER/4
-							hero:AddExperience(xp_to_level[hero:GetLevel()]*.33,0,false,true)
+							g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()]+100*g_EmpireGoldCount/4
+							hero:AddExperience(g_XpToLevel[hero:GetLevel()]*.25,0,false,true)
 							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 100*EMP_GOLD_NUMBER/4
+								g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 100*g_EmpireGoldCount/4
 							elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 100*EMP_GOLD_NUMBER/4
+								g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 100*g_EmpireGoldCount/4
 							end
 						
 							local allyteamnumber=hero:GetPlayerID()
@@ -3888,61 +3905,61 @@ function HandleShopChecks(hero)
 							
 							for _,otherHero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 								if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
-									local herogold = hero_gold_array[otherHero]
+									local herogold = g_HeroGoldArray[otherHero:GetPlayerOwnerID()]
 									if otherHero:GetTeamNumber() == hero:GetTeam()  and otherHero~=hero then
 										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-											numPlayers=NUM_GOOD_PLAYERS
-											otherHero:SetGold(herogold + 50*EMP_GOLD_NUMBER/numPlayers, true)
+											numPlayers=g_PlayerCountSouth
+											otherHero:SetGold(herogold + 50*g_EmpireGoldCount/numPlayers, true)
 											otherHero:SetGold(0, false)
-											hero_gold_array[otherHero]=herogold + 50*EMP_GOLD_NUMBER/numPlayers
-											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 50*EMP_GOLD_NUMBER/numPlayers
+											g_HeroGoldArray[otherHero:GetPlayerOwnerID()]=herogold + 50*g_EmpireGoldCount/numPlayers
+											g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 50*g_EmpireGoldCount/numPlayers
 										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-											numPlayers=NUM_BAD_PLAYERS
-											otherHero:SetGold(herogold + 50*EMP_GOLD_NUMBER/numPlayers, true)
+											numPlayers=g_PlayerCountNorth
+											otherHero:SetGold(herogold + 50*g_EmpireGoldCount/numPlayers, true)
 											otherHero:SetGold(0, false)
-											hero_gold_array[otherHero]=herogold + 50*EMP_GOLD_NUMBER/numPlayers
-											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 50*EMP_GOLD_NUMBER/numPlayers
+											g_HeroGoldArray[otherHero:GetPlayerOwnerID()]=herogold + 50*g_EmpireGoldCount/numPlayers
+											g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 50*g_EmpireGoldCount/numPlayers
 										end
 									end
 								end
 							end
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(), {text=100*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(), {text=100*g_EmpireGoldCount/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(), {text=math.floor(50*EMP_GOLD_NUMBER/numPlayers), duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(), {text=math.floor(50*g_EmpireGoldCount/numPlayers), duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 						elseif string.match(nearestShop:GetUnitName(),itemStrippedMedium) then
 							hero:RemoveItem(Item)
-							hero:SetGold(hero_gold_array[hero]+300*EMP_GOLD_NUMBER/4,true)
+							hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()]+300*g_EmpireGoldCount/4,true)
 							hero:SetGold(0,false)
-								hero_gold_array[hero]=hero_gold_array[hero]+300*EMP_GOLD_NUMBER/4
+								g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()]+300*g_EmpireGoldCount/4
 								print("hero level: " .. hero:GetLevel())
-								print("nect level: " .. xp_to_level[hero:GetLevel()])
+								print("nect level: " .. g_XpToLevel[hero:GetLevel()])
 							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 300*EMP_GOLD_NUMBER/4
+								g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 300*g_EmpireGoldCount/4
 							elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 300*EMP_GOLD_NUMBER/4
+								g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 300*g_EmpireGoldCount/4
 							end
 							
-							hero:AddExperience(xp_to_level[hero:GetLevel()]*.45,0,false,true)
+							hero:AddExperience(g_XpToLevel[hero:GetLevel()]*.25,0,false,true)
 							for _,otherHero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 								if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
-									local herogold = hero_gold_array[otherHero]
+									local herogold = g_HeroGoldArray[otherHero:GetPlayerOwnerID()]
 									if otherHero:GetTeamNumber() == hero:GetTeam()  and otherHero~=hero then
 										
 										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-											numPlayers=NUM_GOOD_PLAYERS
-											otherHero:SetGold(herogold + 75*EMP_GOLD_NUMBER/numPlayers, true)
+											numPlayers=g_PlayerCountSouth
+											otherHero:SetGold(herogold + 75*g_EmpireGoldCount/numPlayers, true)
 											otherHero:SetGold(0, false)
-												hero_gold_array[otherHero]=herogold + 75*EMP_GOLD_NUMBER/numPlayers
-											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 75*EMP_GOLD_NUMBER/numPlayers
+												g_HeroGoldArray[otherHero:GetPlayerOwnerID()]=herogold + 75*g_EmpireGoldCount/numPlayers
+											g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 75*g_EmpireGoldCount/numPlayers
 										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-											numPlayers=NUM_BAD_PLAYERS
-											otherHero:SetGold(herogold + 75*EMP_GOLD_NUMBER/numPlayers, true)
+											numPlayers=g_PlayerCountNorth
+											otherHero:SetGold(herogold + 75*g_EmpireGoldCount/numPlayers, true)
 											otherHero:SetGold(0, false)
-											hero_gold_array[otherHero]=herogold + 75*EMP_GOLD_NUMBER/numPlayers
+											g_HeroGoldArray[otherHero:GetPlayerOwnerID()]=herogold + 75*g_EmpireGoldCount/numPlayers
 											
-											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 75*EMP_GOLD_NUMBER/numPlayers
+											g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 75*g_EmpireGoldCount/numPlayers
 										end
 									end
 								end
@@ -3958,20 +3975,20 @@ function HandleShopChecks(hero)
 							FireGameEvent("Team_Can_Buy",data)
 							EmitSoundOnClient("ui.npe_objective_complete",PlayerResource:GetPlayer(hero:GetPlayerID()))
 							Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(),{text=300*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(),{text=300*g_EmpireGoldCount/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(),{text=math.floor(75*EMP_GOLD_NUMBER/numPlayers), duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(),{text=math.floor(75*g_EmpireGoldCount/numPlayers), duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 						elseif string.match(nearestShop:GetUnitName(),itemStrippedHard) then
 							hero:RemoveItem(Item)
-							hero:SetGold(hero:GetGold()+300*EMP_GOLD_NUMBER/4,true)
+							hero:SetGold(hero:GetGold()+300*g_EmpireGoldCount/4,true)
 							hero:SetGold(0,false)
-							hero_gold_array[hero]=hero:GetGold()+300*EMP_GOLD_NUMBER/4
-							hero:AddExperience(xp_to_level[hero:GetLevel()]*.5,0,false,true)
+							g_HeroGoldArray[hero:GetPlayerOwnerID()]=hero:GetGold()+300*g_EmpireGoldCount/4
+							hero:AddExperience(g_XpToLevel[hero:GetLevel()]*.33,0,false,true)
 							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-								GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 300*EMP_GOLD_NUMBER/4
+								g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 300*g_EmpireGoldCount/4
 							elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-								BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 300*EMP_GOLD_NUMBER/4
+								g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 300*g_EmpireGoldCount/4
 							end
 						
 							local allyteamnumber=hero:GetPlayerID()
@@ -3981,18 +3998,18 @@ function HandleShopChecks(hero)
 									if otherHero:GetTeamNumber() == hero:GetTeam()  and otherHero~=hero then
 										
 										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-											numPlayers=NUM_GOOD_PLAYERS
-											otherHero:SetGold(herogold + 100*EMP_GOLD_NUMBER/NUM_GOOD_PLAYERS, true)
+											numPlayers=g_PlayerCountSouth
+											otherHero:SetGold(herogold + 100*g_EmpireGoldCount/g_PlayerCountSouth, true)
 											otherHero:SetGold(0, false)
-												hero_gold_array[otherHero]=herogold + 100*EMP_GOLD_NUMBER/NUM_BAD_PLAYERS
-											GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + 100*EMP_GOLD_NUMBER/NUM_GOOD_PLAYERS
+												g_HeroGoldArray[otherHero:GetPlayerOwnerID()]=herogold + 100*g_EmpireGoldCount/g_PlayerCountNorth
+											g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 100*g_EmpireGoldCount/g_PlayerCountSouth
 										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-											numPlayers=NUM_BAD_PLAYERS
-											otherHero:SetGold(herogold + 100*EMP_GOLD_NUMBER/NUM_BAD_PLAYERS, true)
+											numPlayers=g_PlayerCountNorth
+											otherHero:SetGold(herogold + 100*g_EmpireGoldCount/g_PlayerCountNorth, true)
 											otherHero:SetGold(0, false)
-											hero_gold_array[otherHero]=herogold + 100*EMP_GOLD_NUMBER/NUM_BAD_PLAYERS
+											g_HeroGoldArray[otherHero:GetPlayerOwnerID()]=herogold + 100*g_EmpireGoldCount/g_PlayerCountNorth
 											
-											BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + 100*EMP_GOLD_NUMBER/NUM_BAD_PLAYERS
+											g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 100*g_EmpireGoldCount/g_PlayerCountNorth
 										end
 									end
 								end
@@ -4005,17 +4022,17 @@ function HandleShopChecks(hero)
 							FireGameEvent("Team_Can_Buy",data)
 							EmitSoundOnClient("ui.npe_objective_complete",PlayerResource:GetPlayer(hero:GetPlayerID()))
 						 Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-						 Notifications:Top(hero:GetPlayerID(),{text=300*EMP_GOLD_NUMBER/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+						 Notifications:Top(hero:GetPlayerID(),{text=300*g_EmpireGoldCount/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(),{text=math.floor(100*EMP_GOLD_NUMBER/numPlayers), duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(),{text=math.floor(100*g_EmpireGoldCount/numPlayers), duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 							end
 					end
 				end
 			end
-			elseif WasNearShop[hero]==true then
+			elseif g_WasNearShop[hero]==true then
 				print("sending leftshop")
-				WasNearShop[hero]=false
+				g_WasNearShop[hero]=false
 				local data =
 				{
 					Player_ID = hero:GetPlayerID()
@@ -4038,8 +4055,8 @@ function GetDisconnectState(playerID)
 	for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 			if hero:GetPlayerID() == playerID then
-				if DisconnectKicked[hero]~= nil then
-					return DisconnectKicked[hero]
+				if g_DisconnectKicked[hero]~= nil then
+					return g_DisconnectKicked[hero]
 					else
 					return 0
 				end
@@ -4089,12 +4106,12 @@ end
 function ActivateCoOp(eventSourceIndex, args)
 print(args.text)
 	if string.match(args.text,"normal") then
-		co_op_mode=0
+		g_CoOpMode=0
 		
 	else
-		co_op_mode=1
+		g_CoOpMode=1
 	end
-	print(co_op_mode)
+	print(g_CoOpMode)
 		
 		
 end
@@ -4106,26 +4123,26 @@ end
 function battleMode(eventSourceIndex, args)
 print(args.text)
 	if string.match(args.text,"normal") then
-		battle_mode=0
+		g_BattleMode=0
 		else
-		battle_mode=1
+		g_BattleMode=1
 	end
-	print(battle_mode)
+	print(g_BattleMode)
 end
 
 function startBattle()
-	battle_loc=RandomInt(1,3)
+	g_BattleModeLocation=RandomInt(1,3)
 	
 	
-	Notifications:TopToAll({text="#battle_starting_" .. tostring(battle_loc), duration=5.0, style={color="#F2B2B2",  fontSize="60px;"}})
+	Notifications:TopToAll({text="#battle_starting_" .. tostring(g_BattleModeLocation), duration=5.0, style={color="#F2B2B2",  fontSize="60px;"}})
 	
 	local battleTimerData = {
-						TimeTillBattle = battle_mode_timer;
+						TimeTillBattle = g_BattleModeTimer;
 					}
 					FireGameEvent( "Battle_Started", battleTimerData ); 
 			
 	
-	  local waypointlocation = Entities:FindByName ( nil,  "battle_" .. battle_loc )
+	  local waypointlocation = Entities:FindByName ( nil,  "battle_" .. g_BattleModeLocation )
 	  
 	   for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
@@ -4230,7 +4247,7 @@ function startBattle()
 	  
 	  local dummy = CreateUnitByName( "npc_dota_battle_ind", waypointlocation:GetAbsOrigin(), true, nil, nil, 4 )
 	dummy:AddNewModifier(dummy, nil, "modifier_kill", {duration = 60})
-	battle_mode_remaining=60
+	g_BattleModeRemaining=60
 	Timers:CreateTimer( 1, function()
 			HandleBattle()
 	end)
@@ -4239,9 +4256,9 @@ end
 
 function HandleBattle()
 
-  local waypointlocation = Entities:FindByName ( nil,  "battle_" .. battle_loc )
+  local waypointlocation = Entities:FindByName ( nil,  "battle_" .. g_BattleModeLocation )
   
-  	print( "battle time remaining" .. battle_mode_remaining)
+  	print( "battle time remaining" .. g_BattleModeRemaining)
 	
 
  for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
@@ -4250,26 +4267,28 @@ function HandleBattle()
 			if hero:IsRealHero() and Dist:Length()<1100 and hero:IsAlive() then
 				
 				if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-					battle_mode_south_score=battle_mode_south_score+1
-					hero:SetGold(hero_gold_array[hero] + battle_mode_number*3+2, true)   
-					hero_gold_array[hero]=hero_gold_array[hero] +  (battle_mode_number*3+2)
-					GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + battle_mode_number*3+2
+					g_BattleModeSouthScore=g_BattleModeSouthScore+1
+					hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + g_BattleModeNumber*3+2, true)   
+					g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] +  (g_BattleModeNumber*3+2)
+					g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + g_BattleModeNumber*3+2
+					hero:AddExperience(g_BattleModeNumber*3+2, true,false)
 				elseif	hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-					battle_mode_north_score=battle_mode_north_score+1
-					hero:SetGold(hero_gold_array[hero] + battle_mode_number*3+2, true)   
-					hero_gold_array[hero]=hero_gold_array[hero] +  (battle_mode_number*3+2)
-					BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + battle_mode_number*3+2
+					g_BattleModeNorthScore=g_BattleModeNorthScore+1
+					hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + g_BattleModeNumber*3+2, true)   
+					g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] +  (g_BattleModeNumber*3+2)
+					g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + g_BattleModeNumber*3+2
+					hero:AddExperience(g_BattleModeNumber*3+2, true,false)
 				end
 			end
 		end
 	end
-	battle_mode_remaining=battle_mode_remaining-1
-	if battle_mode_remaining>1 then
+	g_BattleModeRemaining=g_BattleModeRemaining-1
+	if g_BattleModeRemaining>1 then
 		local battleTimerData = {
-						TimeInBattle = battle_mode_remaining;
-						NorthScore = battle_mode_north_score;
-						SouthScore = battle_mode_south_score;
-						gpt = battle_mode_number*3+2;
+						TimeInBattle = g_BattleModeRemaining;
+						NorthScore = g_BattleModeNorthScore;
+						SouthScore = g_BattleModeSouthScore;
+						gpt = g_BattleModeNumber*3+2;
 					}
 		FireGameEvent( "Battle_in_Progress", battleTimerData ); 
 		
@@ -4287,48 +4306,47 @@ end
 function endBattle()
 
 	local battleTimerData = {
-						TimeTillBattle = battle_mode_timer;
+						TimeTillBattle = g_BattleModeTimer;
 					}
 					FireGameEvent( "Battle_Over", battleTimerData );
 
  for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 			if hero:IsRealHero() then
-				if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS and battle_mode_north_score < battle_mode_south_score then
-					battle_mode_south_score=battle_mode_south_score+1
-					hero:SetGold(hero_gold_array[hero] + (battle_mode_number*3+2)*15, true)  
-					hero_gold_array[hero]=hero_gold_array[hero] +  (battle_mode_number*3+2)*15
-					GOOD_GOLD_TOTAL_MOD = GOOD_GOLD_TOTAL_MOD + (battle_mode_number*4+2)*15					
-				elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS and battle_mode_north_score > battle_mode_south_score then
-					battle_mode_north_score=battle_mode_north_score+1
-					hero:SetGold(hero_gold_array[hero] +  (battle_mode_number*3+2)*15, true)   
-					hero_gold_array[hero]=hero_gold_array[hero] +  (battle_mode_number*3+2)*15
-					BAD_GOLD_TOTAL_MOD = BAD_GOLD_TOTAL_MOD + (battle_mode_number*4+2)*15
+				if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS and g_BattleModeNorthScore < g_BattleModeSouthScore then
+					g_BattleModeSouthScore=g_BattleModeSouthScore+1
+					hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + (g_BattleModeNumber*3+2)*15, true)  
+					g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] +  (g_BattleModeNumber*3+2)*15
+					g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + (g_BattleModeNumber*4+2)*15			
+					hero:AddExperience((g_BattleModeNumber*4+2)*15, true,false)					
+				elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS and g_BattleModeNorthScore > g_BattleModeSouthScore then
+					g_BattleModeNorthScore=g_BattleModeNorthScore+1
+					hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] +  (g_BattleModeNumber*3+2)*15, true)   
+					g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] +  (g_BattleModeNumber*3+2)*15
+					g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + (g_BattleModeNumber*4+2)*15
+					hero:AddExperience((g_BattleModeNumber*4+2)*15, true,false)
 				end
 			end
 		end
 	end
-	if  battle_mode_north_score < battle_mode_south_score then
+	if  g_BattleModeNorthScore < g_BattleModeSouthScore then
 		Notifications:TopToAll({text="#south_won_battle", duration=5.0, style={color="#F2B2B2",  fontSize="30px;"}})
 	
-	elseif battle_mode_north_score > battle_mode_south_score then
+	elseif g_BattleModeNorthScore > g_BattleModeSouthScore then
 		Notifications:TopToAll({text="#north_won_battle", duration=5.0, style={color="#F2B2B2",  fontSize="30px;"}})
 	else
 		Notifications:TopToAll({text="#nobody_won_battle", duration=5.0, style={color="#F2B2B2",  fontSize="30px;"}})
 	end
-	Notifications:TopToAll({text=" " .. tostring((battle_mode_number*4+2)*15) .. " ", duration=5.0, style={color="#FFD700",  fontSize="30px;"}, continue=true})
+	Notifications:TopToAll({text=" " .. tostring((g_BattleModeNumber*4+2)*15) .. " ", duration=5.0, style={color="#FFD700",  fontSize="30px;"}, continue=true})
 	Notifications:TopToAll({text="#gold", duration=5.0, style={color="#F2B2B2",  fontSize="30px;"}, continue=true})
 
 
-battle_mode_number=battle_mode_number+1
-battle_mode_north_score=0
-battle_mode_south_score=0
-battle_mode_timer=180
-battle_mode_remaining=0
-battle_loc=0
-
-
-
+g_BattleModeNumber=g_BattleModeNumber+1
+g_BattleModeNorthScore=0
+g_BattleModeSouthScore=0
+g_BattleModeTimer=180
+g_BattleModeRemaining=0
+g_BattleModeLocation=0
 end
 
 

@@ -1,5 +1,9 @@
 "addon"
 {
+    "Language"        "English"
+    "Tokens"
+    {
+
 "addon_game_name" "战列舰"
 "Unassigned" "未分配的团队"
 "Spectator" "观众团队"
@@ -338,4 +342,5 @@
 "mission_done" "任务完成！你自己挣"
 "mission_done_team" "你每赚你的队友"
 "mission_empty" "发现商品。带他们到任何交易后的奖励"
+}
 }

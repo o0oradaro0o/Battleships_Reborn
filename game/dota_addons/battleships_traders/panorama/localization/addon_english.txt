@@ -1,5 +1,9 @@
 "addon"
 {
+    "Language"        "English"
+    "Tokens"
+    {
+
 	"addon_game_name" 			"Battleships"
 	
 	"Unassigned"      			"Unassigned Team"
@@ -500,7 +504,7 @@ BUILDING ARMOR REDUCTION: -3 -6 -9 -12
 BUILDING DPS: -3 -6 -9 -12"
 
 "big_boom"									"Visions of Valhalla!"
-"big_boom_Description"					"Valhalla awaits! Activate to deal damage to all nearby boats (friend, foe, and yourself) after five seconds. \n \n Higher levels decrease the cooldown.
+"big_boom_Description"					"Valhalla awaits! Activate to deal damage to all nearby boats (friend, foe, and yourself) after four seconds. If you survive you are graces with extra regen briefly. \n \n Higher levels decrease the cooldown.
 DAMAGE: 1500 1800 2100"
 
 "tidehunter_gush_battleship"								"Bilging"
@@ -869,20 +873,20 @@ DURATION: 2.5 3.0 3.5 4.0"
 		"DOTA_Tooltip_ability_item_ice_bow"									"Ice I"
 
 		"DOTA_Tooltip_ability_item_ice_bow_Description"        				"Buy 2x to collapse to one slot 
-\n Level 1 Ice \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1200 \n  DPS: 25 \nWhen doubled, Reduces target's movement speed by 1 percent for 1 seconds"
+\n Level 1 Ice \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1200 \n  DPS: 23 \nWhen doubled, Reduces target's movement speed by 1 percent for 1 seconds"
 		
 		"DOTA_Tooltip_ability_item_ice_bow_doubled"							"Double Ice I"
 
-		"DOTA_Tooltip_ability_item_ice_bow_doubled_Description"					"\n Level 1 Ice Combo \n LONG RANGE, DOES NOT HIT TOWERS \n  Range: 1200 \n  DPS: 50 \nDoubled: Reduces target's movement speed by 1 percent for 1 seconds"
+		"DOTA_Tooltip_ability_item_ice_bow_doubled_Description"					"\n Level 1 Ice Combo \n LONG RANGE, DOES NOT HIT TOWERS \n  Range: 1200 \n  DPS: 46 \nDoubled: Reduces target's movement speed by 1 percent for 1 seconds"
 		
 		"DOTA_Tooltip_ability_item_ice_two_bow"								"Ice II"
 
 		"DOTA_Tooltip_ability_item_ice_two_bow_Description"        				"Buy 2x to collapse to one slot 
-\n Level 2 Ice \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1200 \n  DPS: 50 \nWhen doubled, Reduces target's movement speed by 1.5 percent for 2 seconds"
+\n Level 2 Ice \n LONG RANGE, DOES NOT HIT TOWERS \n Range: 1200 \n  DPS: 47 \nWhen doubled, Reduces target's movement speed by 1.5 percent for 2 seconds"
 		
 		"DOTA_Tooltip_ability_item_ice_two_bow_doubled"						"Double Ice II"
 
-		"DOTA_Tooltip_ability_item_ice_two_bow_doubled_Description"				"\n Level 2 Ice Combo \n LONG RANGE, DOES NOT HIT TOWERS \n  Range: 1200 \n  DPS: 100 \nDoubled: Reduces target's movement speed by 1.5 percent for 2 seconds"
+		"DOTA_Tooltip_ability_item_ice_two_bow_doubled_Description"				"\n Level 2 Ice Combo \n LONG RANGE, DOES NOT HIT TOWERS \n  Range: 1200 \n  DPS: 95 \nDoubled: Reduces target's movement speed by 1.5 percent for 2 seconds"
 		
 		"DOTA_Tooltip_ability_item_ice_three_bow"							"Ice III"
 
@@ -1042,41 +1046,41 @@ DURATION: 2.5 3.0 3.5 4.0"
 		
 		
 		
-		"DOTA_Tooltip_ability_item_wind_bow"								"Wind I"
+	"DOTA_Tooltip_ability_item_wind_bow"								"Wind I"
 
 		"DOTA_Tooltip_ability_item_wind_bow_Description"        				"Buy 2x to collapse to one slot 
-\n Level 1 Wind \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1600 (if the target escapes this range from shooter they will not suffer damage)\n Range: 1400 \n  DPS: 16 \nWhen doubled, gains up to 16 bonus damage depending on targets missing health (weaker tarkets take more damage)"
+\n Level 1 Wind \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1600 \n Range: 1400 \n  DPS: 20 \nWhen doubled, gains up to 16 bonus damage depending on targets missing health (weaker tarkets take more damage)"
 		
 		"DOTA_Tooltip_ability_item_wind_bow_doubled"						"Double Wind I"
 
-		"DOTA_Tooltip_ability_item_wind_bow_doubled_Description"				"\n Level 1 Wind Combo \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1600 (if the target escapes this range from shooter they will not suffer damage)\n  Range: 1400 \n  DPS: 25 \ndoubled: gains up to 35 bonus damage depending on targets missing health (weaker tarkets take more damage)"
+		"DOTA_Tooltip_ability_item_wind_bow_doubled_Description"				"\n Level 1 Wind Combo \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1600 \n  Range: 1400 \n  DPS: 40 \ndoubled: gains up to 16 bonus damage depending on targets missing health (weaker tarkets take more damage)"
 		
 		"DOTA_Tooltip_ability_item_wind_two_bow"							"Wind II"
 
 		"DOTA_Tooltip_ability_item_wind_two_bow_Description"        				"Buy 2x to collapse to one slot 
-\n Level 2 Wind \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1600 (if the target escapes this range from shooter they will not suffer damage)\n  Range: 1400 \n  DPS: 25 \nWhen doubled, gains up to 35 bonus damage depending on targets missing health (weaker tarkets take more damage)"
+\n Level 2 Wind \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1600 \n  Range: 1400 \n  DPS: 40 \nWhen doubled, gains up to 40 bonus damage depending on targets missing health (weaker tarkets take more damage)"
 		
 		"DOTA_Tooltip_ability_item_wind_two_bow_doubled"					"Double Wind II"
 
-		"DOTA_Tooltip_ability_item_wind_two_bow_doubled_Description"			"\n Level 2 Wind Combo \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1600 (if the target escapes this range from shooter they will not suffer damage)\n Range: 1400 \n  DPS: 50 \ndoubled: gains up to 35 bonus damage depending on targets missing health (weaker tarkets take more damage)"
+		"DOTA_Tooltip_ability_item_wind_two_bow_doubled_Description"			"\n Level 2 Wind Combo \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1600 \n Range: 1400 \n  DPS: 80 \ndoubled: gains up to 40 bonus damage depending on targets missing health (weaker tarkets take more damage)"
 		
 		"DOTA_Tooltip_ability_item_wind_three_bow"							"Wind III"
 
 		"DOTA_Tooltip_ability_item_wind_three_bow_Description"        				"Buy 2x to collapse to one slot 
-\n Level 3 Wind \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1600 (if the target escapes this range from shooter they will not suffer damage)\n Range: 1400 \n  DPS: 47 \nWhen doubled, gains up to 66 bonus damage depending on targets missing health (weaker tarkets take more damage)"
+\n Level 3 Wind \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1600 \n Range: 1400 \n  DPS: 59 \nWhen doubled, gains up to 59 bonus damage depending on targets missing health (weaker tarkets take more damage)"
 		
 		"DOTA_Tooltip_ability_item_wind_three_bow_doubled"					"Double Wind III"
 
-		"DOTA_Tooltip_ability_item_wind_three_bow_doubled_Description"			"\n Level 3 Wind Combo \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1600 (if the target escapes this range from shooter they will not suffer damage)\n Range: 1400 \n  DPS: 95 \n\doubled: gains up to 66 bonus damage depending on targets missing health (weaker tarkets take more damage)"
+		"DOTA_Tooltip_ability_item_wind_three_bow_doubled_Description"			"\n Level 3 Wind Combo \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1600 \n Range: 1400 \n  DPS: 118 \n\doubled: gains up to 59 bonus damage depending on targets missing health (weaker tarkets take more damage)"
 		
 		"DOTA_Tooltip_ability_item_wind_ult_bow"							"Tornado"
 
 		"DOTA_Tooltip_ability_item_wind_ult_bow_Description"        				" 
-\n Ultimate Wind \n LONG RANGE, DOES NOT HIT TOWERS \n   \n  Range: 1400 \n  DPS: 195 \n Bonus: gains up to 273 bonus damage depending on targets missing health (weaker tarkets take more damage)"
+\n Ultimate Wind \n LONG RANGE, DOES NOT HIT TOWERS \n   \n  Range: 1400 \n  DPS: 236 \n Bonus: gains up to 330 bonus damage depending on targets missing health (weaker tarkets take more damage)"
 
 		"DOTA_Tooltip_ability_item_wind_ult_bow_rec"						"Tornado"
 
-		"DOTA_Tooltip_ability_item_wind_ult_bow_rec_Description"				"\n Ultimate Wind \n LONG RANGE, DOES NOT HIT TOWERS \n   \n  Range: 1400 \n  DPS: 195 \n Bonus: gains up to 273 bonus damage depending on targets missing health (weaker tarkets take more damage)"
+		"DOTA_Tooltip_ability_item_wind_ult_bow_rec_Description"				"\n Ultimate Wind \n LONG RANGE, DOES NOT HIT TOWERS \n   \n  Range: 1400 \n  DPS: 236 \n Bonus: gains up to 330 bonus damage depending on targets missing health (weaker tarkets take more damage)"
 		
 				"DOTA_Tooltip_ability_item_wind_bow_fire_rate"							"Reload Delay(S):"
 		"DOTA_Tooltip_ability_item_wind_bow_dmg"									"Damage:"
@@ -1538,27 +1542,27 @@ DURATION: 2.5 3.0 3.5 4.0"
 		
 		"DOTA_Tooltip_item_wind_bow_shooting"								"Wind I"
 
-		"DOTA_Tooltip_item_wind_bow_shooting_Description"						"\n\n Level 1 Wind \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1900 (if the target escapes this range from shooter they will not suffer damage)\n Range: 1400 \n  DPS: 26 \n"
+		"DOTA_Tooltip_item_wind_bow_shooting_Description"						"\n\n Level 1 Wind \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1900 \n Range: 1400 \n  DPS: 26 \n"
 		
 		"DOTA_Tooltip_item_wind_bow_shooting_doubled"						"Double Wind I"
 
-		"DOTA_Tooltip_item_wind_bow_shooting_doubled_Description"				"\n\n Level 1 Wind Combo \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1900 (if the target escapes this range from shooter they will not suffer damage)\n  Range: 1400 \n  DPS: 52 \n"
+		"DOTA_Tooltip_item_wind_bow_shooting_doubled_Description"				"\n\n Level 1 Wind Combo \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1900 \n  Range: 1400 \n  DPS: 52 \n"
 		
 		"DOTA_Tooltip_item_wind_two_bow_shooting"							"Wind II"
 
-		"DOTA_Tooltip_item_wind_two_bow_shooting_Description"					"\n\n Level 2 Wind \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1900 (if the target escapes this range from shooter they will not suffer damage)\n Damage: 27\n\n  Range: 1400 \n  DPS: 39 \n"
+		"DOTA_Tooltip_item_wind_two_bow_shooting_Description"					"\n\n Level 2 Wind \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1900 \n Damage: 27\n\n  Range: 1400 \n  DPS: 39 \n"
 		
 		"DOTA_Tooltip_item_wind_two_bow_shooting_doubled"					"Double Wind II"
 
-		"DOTA_Tooltip_item_wind_two_bow_shooting_doubled_Description"			"\n\n Level 2 Wind Combo \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1900 (if the target escapes this range from shooter they will not suffer damage)\n Damage: 27* 2 \n\n  Range: 1400 \n  DPS: 78 \n"
+		"DOTA_Tooltip_item_wind_two_bow_shooting_doubled_Description"			"\n\n Level 2 Wind Combo \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1900 \n Damage: 27* 2 \n\n  Range: 1400 \n  DPS: 78 \n"
 		
 		"DOTA_Tooltip_item_wind_three_bow_shooting"							"Wind III"
 
-		"DOTA_Tooltip_item_wind_three_bow_shooting_Description"					"\n\n Level 3 Wind \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1900 (if the target escapes this range from shooter they will not suffer damage)\n Range: 1400 \n  DPS: 71 \n"
+		"DOTA_Tooltip_item_wind_three_bow_shooting_Description"					"\n\n Level 3 Wind \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1900 \n Range: 1400 \n  DPS: 71 \n"
 		
 		"DOTA_Tooltip_item_wind_three_bow_shooting_doubled"					"Double Wind III"
 
-		"DOTA_Tooltip_item_wind_three_bow_shooting_doubled_Description"			"\n\n Level 3 Wind Combo \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1900 (if the target escapes this range from shooter they will not suffer damage)\n  Range: 1400 \n  DPS: 142 \n"
+		"DOTA_Tooltip_item_wind_three_bow_shooting_doubled_Description"			"\n\n Level 3 Wind Combo \n LONG RANGE, DOES NOT HIT TOWERS \n Minimum Effective Range: 600 (does 50 percent dmg below this range)\n Maximum effective Range 1900 \n  Range: 1400 \n  DPS: 142 \n"
 		
 		"DOTA_Tooltip_item_wind_ult_bow_shooting"							"Tornado"
 
@@ -2397,7 +2401,7 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		
 			
 		"DOTA_Tooltip_Ability_big_boom"									"Visions of Valhalla!"
-		"DOTA_Tooltip_Ability_big_boom_Description"					"Valhalla awaits! Activate to deal damage to all nearby boats (friend, foe, and yourself) after five seconds. \n \n Higher levels decrease the cooldown."
+		"DOTA_Tooltip_Ability_big_boom_Description"					"Valhalla awaits! Activate to deal damage to all nearby boats (friend, foe, and yourself) after four seconds. If you survive you are graces with extra regen briefly. \n \n Higher levels decrease the cooldown."
 		"DOTA_Tooltip_Ability_big_boom_vah_dmg"					"DAMAGE:"
 
 		
@@ -3114,5 +3118,5 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		
 		"back_to_items" "Back to Items"
 		
+	}
 }
-

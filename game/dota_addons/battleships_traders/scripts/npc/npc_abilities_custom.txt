@@ -2430,7 +2430,7 @@
                         {
                                 "MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"             "10"
                         }
-                        "EffectName"                    "particles/basic_projectile/fun_aura.vpcf"
+                        "EffectName"                    "particles/basic_projectile/harbor_aura.vpcf"
                 }
                
         }
@@ -2662,6 +2662,11 @@
 							"EffectName"    "particles/basic_projectile/big_boom_explode_effect.vpcf" 
 						}
 						
+						"ApplyModifier"
+						{
+							"Target" "CASTER"
+							"ModifierName" "big_boom_recover"
+						}
 						"RemoveModifier"
 						{
 							"Target" "TARGET"
@@ -2702,6 +2707,15 @@
 				}
 					
 			}
+			"big_boom_recover"
+			{
+				"Duration" "8.0"
+				"Properties"
+				{
+						"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"             "%regen"
+				}
+			}
+			
 				
 		}
 		
@@ -2711,6 +2725,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"vah_dmg"			"1500 1800 2100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vah_regen"			"60 80 100"
 			}
 		}
 		
@@ -2798,7 +2817,7 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 600 600 600"
-		"AbilityCooldown"				"22.0 21.0 20.0 19.0"
+		"AbilityCooldown"				"18.0 17.0 16.0 15.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
