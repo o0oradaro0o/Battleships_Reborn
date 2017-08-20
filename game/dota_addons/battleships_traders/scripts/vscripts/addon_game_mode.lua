@@ -765,14 +765,16 @@ function CBattleship8D:BountyRuneFilter(filterTable)
    for k, v in pairs( filterTable ) do
 		print("rune spawn: " .. k .. " " .. tostring(v) )
 	end
-	filterTable[GOLD_BOUNTY]=filterTable[GOLD_BOUNTY]*.5*g_EmpireGoldCount
-	if PlayerResource:GetTeam(filterTable[player_id_const]) == DOTA_TEAM_GOODGUYS then
+	print(g_EmpireGoldCount)
+	print(filterTable["gold_bounty"])
+	filterTable["gold_bounty"]=filterTable["gold_bounty"]*.5*g_EmpireGoldCount
+	if PlayerResource:GetTeam(filterTable["player_id_const"]) == DOTA_TEAM_GOODGUYS then
 		
-		g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + filterTable[GOLD_BOUNTY]
+		g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + filterTable["gold_bounty"]
 	else
-		g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + filterTable[GOLD_BOUNTY]
+		g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + filterTable["gold_bounty"]
 	end
-	g_HeroGoldArray[filterTable[player_id_const]] =g_HeroGoldArray[filterTable[player_id_const]]  + filterTable[GOLD_BOUNTY]
+	g_HeroGoldArray[filterTable["player_id_const"]] =g_HeroGoldArray[filterTable["player_id_const"]]  + filterTable["gold_bounty"]
     --Return true by default to keep all other orders the same
     return true
 end
@@ -1167,6 +1169,10 @@ function CBattleship8D:OnThink()
 						hero.hullmsg=1
 						Notifications:Top(hero:GetPlayerID(), {text="#too_many_hulls", duration=5.0, style={color="#800000",  fontSize="50px;"}})
 					end
+					
+						if hulls>1 and g_MainTimerTickCount % 15 == 0 then
+							hero.hullmsg=nil
+						end
 					
 					--handles people stuck on cliffs
 						local height = hero:GetOrigin() * Vector(0,0,1)
@@ -2257,10 +2263,15 @@ end
 
 function sellBoat(hero)
 	  local herogold = hero:GetGold()
-	local goldVal=GetBoatValue(hero)
+	  local goldVal=GetBoatValue(hero)
+	  heroname = hero:GetName()
+	  	if not string.match(heroname,"vengefulspirit") and not string.match(heroname,"enigma") and not string.match(heroname,"bane") then
+			goldVal=goldVal*.75
+		end
+
 		hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + goldVal, true)
 							hero:SetGold(0, false)
-							g_HeroGoldArray[casterUnit:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + goldVal
+							g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + goldVal
 end
 
 
