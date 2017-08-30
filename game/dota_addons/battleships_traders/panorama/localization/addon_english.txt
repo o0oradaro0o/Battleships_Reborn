@@ -287,7 +287,7 @@ CHANNEL TIME: 4.5 4.5 4.5"
 
 "dive_battleship"								"Dive"
 "dive_battleship_Description"					"Momentarily dive underwater, avoiding any incoming projectile, and losing vision of your surroundings. \n\nHigher levels increase duration and cooldown.
-DURATION: 0.6 0.8 1.0 1.2"
+DURATION: 0.4 0.5 0.6 0.7"
 
 "batten_hatches"								"Batten Down the Hatches"
 "batten_hatches_Description"					"Strengthens the structural integrity of your vessel to provide an armor bonus and health regen bonus. \n\nHigher levels increase regen and armor.
@@ -340,7 +340,7 @@ NET SPEED: 1400"
 
 "mirana_leap_battlsehip"									"Gusted"
 "mirana_leap_battlsehip_Description"					"Tilt your sails to take advantage of the wind! The Catamaran will leap in the direction it is facing, airborn for a moment. Nearby allies receive a small movement speed bonus. This ability also disjoints. Be careful not to land on walls!\n\nHigher levels increase leap distance and speed bonus.
-LEAP DISTANCE: 800 900 1000 1100
+LEAP DISTANCE: 600 650 700 750
 LEAP SPEED: 2000.0
 LEAP ALLIED SPEED BOOST: 2000.0
 LEAP SPEED BONUS AREA: 775"

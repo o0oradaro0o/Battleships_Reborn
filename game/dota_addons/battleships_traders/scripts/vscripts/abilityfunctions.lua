@@ -681,7 +681,7 @@ print('[ItemFunctions] CallLeapBattleship started! ')
 		casterUnit:AddAbility(ability)
 		
 		--disjoint
-		ProjectileManager:ProjectileDodge(casterUnit)
+		--ProjectileManager:ProjectileDodge(casterUnit)
 		
 		local abil2 = casterUnit:GetAbilityByIndex(3)
 		abil2:SetLevel(level)
@@ -766,7 +766,7 @@ function CallPuckDive(args) -- keys is the information sent by the ability
 		
 		local abil = casterUnit:GetAbilityByIndex(1)
 		local level = abil:GetLevel()
-		 StartAnimation(casterUnit, {duration=.4+.2*level, activity=ACT_SCRIPT_CUSTOM_0, rate=2/(.4+.2*level)})
+		 StartAnimation(casterUnit, {duration=.3+.2*level, activity=ACT_SCRIPT_CUSTOM_0, rate=2/(.3+.1*level)})
 	
 		
 end
