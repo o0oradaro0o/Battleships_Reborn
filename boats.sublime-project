@@ -1,0 +1,11 @@
+{
+	"folders":
+	[
+		{
+			"path": "game\\dota_addons\\battleships_traders\\scripts"
+		},
+		{
+			"path": "content\\dota_addons\\battleships_traders\\panorama"
+		}
+	]
+}

@@ -33,6 +33,11 @@
     {
     }
 	
+	"Trade_Mode_Enabled"
+    {
+    }
+	
+	
 	 "co_op_mode"
     {
 		"Player_ID"		"short"

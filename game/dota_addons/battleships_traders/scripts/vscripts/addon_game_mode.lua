@@ -74,6 +74,9 @@ g_BattleModeTimer=120
 g_BattleModeRemaining=0
 g_BattleModeLocation=0
 
+-- trade mode variables
+g_TradeMode=0
+
 -- set to 1 if you are testing and want to make jimmydorry happy
 g_StatCollectionEnabled=0
 
@@ -492,6 +495,7 @@ function CBattleship8D:InitGameMode()
 	CustomGameEventManager:RegisterListener("buyBoat", buyBoat);
 	
 	CustomGameEventManager:RegisterListener("BattleMode", battleMode);
+	CustomGameEventManager:RegisterListener("TradeMode", tradeMode);
 	CustomGameEventManager:RegisterListener("Activate_Co_Op", ActivateCoOp);
 	
 	CustomGameEventManager:RegisterListener("Unstick", UnstickPlayer);
@@ -858,6 +862,20 @@ function CBattleship8D:OnThink()
 						}
 						FireGameEvent( "Battle_Over", battleTimerData ); 
 					end
+					
+					if g_BattleMode==1 then
+						local battleTimerData = {
+							TimeTillBattle = g_BattleModeTimer;
+						}
+						FireGameEvent( "Battle_Over", battleTimerData ); 
+					end
+					print("g_TradeMode is" .. g_TradeMode)
+					if g_TradeMode==1 then
+						local empty = {}
+							FireGameEvent( "Trade_Mode_Enabled", empty ); 
+					end
+					
+					
 		Timers:CreateTimer( 300, function()
 			spawnTide()
 		end)
@@ -1011,10 +1029,10 @@ function CBattleship8D:OnThink()
 			if g_MainTimerTickCount % 4 == 0 and g_SpyAnnouncmentFlag == 1 then
 				g_SpyAnnouncmentFlag = 0
 				 Notifications:TopToAll({text="#buy_spy_header", duration=4.0, style={color="#58ACFA",  fontSize="30px;"}})
-				 Notifications:TopToAll({text="#g_SpyCountSouth_start", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}})
+				 Notifications:TopToAll({text="#SpyCountSouth_start", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}})
 				 Notifications:TopToAll({text=tostring(g_SpyCountSouth) .. " ", duration=4.0, style={color="#CC3300",  fontSize="30px;"}, continue=true})
 				 Notifications:TopToAll({text="#spys_end", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}, continue=true})
-				 Notifications:TopToAll({text="#g_SpyCountNorth_start", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}})
+				 Notifications:TopToAll({text="#SpyCountNorth_start", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}})
 				 Notifications:TopToAll({text=tostring(g_SpyCountNorth) .. " ", duration=4.0, style={color="#CC3300",  fontSize="30px;"}, continue=true})
 				 Notifications:TopToAll({text="#spys_end", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}, continue=true})
 				
@@ -1270,6 +1288,12 @@ function CBattleship8D:OnThink()
 		end
 		
 		if g_MainTimerTickCount % 45 == 0 or g_MainTimerTickCount == 1 then
+			print("g_TradeMode is" .. g_TradeMode)
+			if g_TradeMode==1 then
+				local empty = {}
+					FireGameEvent( "Trade_Mode_Enabled", empty ); 
+			end
+			
 			if  g_DockAliveSouthRight == 1 then
 				CBattleship8D:QuickSpawn("south","right", "one", g_CreepLevel, g_NumSmallCreeps)
 			else
@@ -1638,7 +1662,7 @@ function GetItemValue(hero)
 				end
 			end
 		end
-				
+				print("current item cold value" .. totalGold)
 
 	
 	return totalGold
@@ -3032,7 +3056,7 @@ end
   
 	
 		
-
+GetItemValue(casterUnit)
 	if string.match(itemName, "tower_debuff") then
 		debuffTowers(casterUnit, itemName)
 	end
@@ -4125,6 +4149,17 @@ print(args.text)
 	print(g_CoOpMode)
 		
 		
+end
+
+
+function tradeMode(eventSourceIndex, args)
+print(args.text)
+	if string.match(args.text,"normal") then
+		g_TradeMode=0
+		else
+		g_TradeMode=1
+	end
+	print(g_TradeMode)
 end
 
 

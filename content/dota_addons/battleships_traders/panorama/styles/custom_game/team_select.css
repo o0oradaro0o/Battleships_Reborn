@@ -390,6 +390,17 @@
 vertical-align: center;
 	
 }
+
+#tradeButton
+{
+	horizontal-align: center;
+	margin-top: 10px;
+	margin-bottom: 70px;
+	width:80%;
+vertical-align: center;
+	
+}
+
 .untoggled
 {
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #486ca9cc ) );
@@ -403,6 +414,14 @@ vertical-align: center;
     horizontal-align: center;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #9d4881cc ), to( #986ca9cc ) );
 	box-shadow: fill #ff6ca922 -4px -4px 8px 8px;
+	border-top: 1px solid #ffffff03;
+	border-left: 1px solid #ffffff03; 
+}
+
+.tradeuntoggled
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2dff81cc ), to( #486f66cc ) );
+	box-shadow: fill #486ca922 -4px -4px 8px 8px;
 	border-top: 1px solid #ffffff03;
 	border-left: 1px solid #ffffff03; 
 }
@@ -427,6 +446,18 @@ vertical-align: center;
 	text-transform: uppercase;
 	width: 100%;
 }
+
+#TradeLabel
+{
+	margin:5px;
+	font-size: 25px;
+	 text-align: center;
+	vertical-align: center;
+	text-shadow: 2px 2px 2px black;
+	text-transform: uppercase;
+	width: 100%;
+}
+
 
 .unassigned_players #LockAndStartButton 
 {

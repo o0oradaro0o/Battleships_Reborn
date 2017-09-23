@@ -1,5 +1,6 @@
 "use strict";
 var hidden=true;
+var tradeHidden=true;
 var hiddenship=true;
 var showMission=[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]
 var firstcall=true;
@@ -11,30 +12,23 @@ var NewShopUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChil
 var shipShopShow=false;
 function hideTrade()
 {
-	var numbuildings=0;
-	var i=0;
-	for (var shop in Entities.GetAllEntities()) 
-	{
-		i++;
-		if(Entities.IsBuilding( i ) && !Entities.IsTower(i))
-		{
-			numbuildings++;
-		}
-	}
-
-		$( "#missionButton" ).style.visibility="visible";
 	
-	$.Msg("buildings: "+numbuildings);
+		$( "#missionButton" ).style.visibility="collapse";
+			$( "#traders_tab" ).style.height="0px";
+tradeHidden=true;
+}
+
+function showTrade()
+{
+	tradeHidden=false;
+		$( "#missionButton" ).style.visibility="visible";
+			$( "#traders_tab" ).style.height="40px";
 }
 
 function replaceShopUI()
 {
 	
-		
-
-
-		
-		
+	
 		if( $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop").FindChildTraverse("GuideFlyout").FindChildTraverse("ItemsArea"))
 		{
 		  $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop").FindChildTraverse("GuideFlyout").FindChildTraverse("ItemsArea").FindChildTraverse("ItemBuildContainer").style.visibility = "visible";
@@ -429,7 +423,7 @@ function FadeShop()
 	{
 		$.Msg("inside fillAndShow");
 		closeShipShop()
-		if(	hidden)
+		if(	hidden && !tradeHidden)
 		{
 			var heroloc = Entities.GetAbsOrigin(Players.GetPlayerHeroEntityIndex(Players.GetLocalPlayer()));
 			
@@ -1244,6 +1238,7 @@ GameUI.SetMouseCallback( function( eventName, arg ) {
 		hideTrade();
 	$.Msg("in subscribe");
 	GameEvents.Subscribe("Boat_Spawned", fillShop );
+	GameEvents.Subscribe("Trade_Mode_Enabled", showTrade );
 	
 	GameEvents.Subscribe( "Hero_Near_Shop", NearShop );
 	GameEvents.Subscribe( "Hero_Near_Ship_Shop", showShips );

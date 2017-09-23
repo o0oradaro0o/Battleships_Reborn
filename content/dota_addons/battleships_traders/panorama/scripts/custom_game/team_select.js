@@ -328,6 +328,27 @@ function UpdateTimer()
 				$( "#battleButton" ).SetHasClass( "untoggled", true);
 		}
 		
+		if(timeleft>94 && timeleft <97)
+		{
+			$( "#battleLabel" ).text = "Game Mode: Normal";
+			$( "#battleButton" ).RemoveClass("toggled");
+				$( "#battleButton" ).SetHasClass( "untoggled", true);
+		}
+		
+		if(timeleft>104 && timeleft <107)
+		{
+			$.Msg("here")
+			$( "#TradeLabel" ).text = "trading: Enabled";
+			$( "#tradeButton" ).RemoveClass("toggled");
+				$( "#tradeButton" ).SetHasClass( "tradeuntoggled", true);
+		}
+		if(timeleft>114 && timeleft <117)
+		{
+			$( "#TradeLabel" ).text = "trading: Disabled";
+			$( "#tradeButton" ).RemoveClass("tradeuntoggled");
+				$( "#tradeButton" ).SetHasClass( "toggled", true);
+		}
+		
 	$.Schedule( 0.1, UpdateTimer );
 }
 function SetTimerToDefault()
@@ -384,6 +405,35 @@ function BattleMode()
 			var mode="normal";
 		}
 		GameEvents.SendCustomGameEventToServer( "BattleMode", { "text": mode}); 
+	
+	}
+		
+}
+
+
+function TradeMode()
+{
+	var playerInfo = Game.GetLocalPlayerInfo();
+	if ( !playerInfo )
+		return;
+	if(playerInfo.player_has_host_privileges )
+	{
+		$.Msg(playerInfo.player_has_host_privileges)
+		if($( "#tradeButton" ).BHasClass("toggled"))
+		{
+			Game.SetRemainingSetupTime( 106 ); 
+			$.Schedule( 1.0, SetTimerToDefault );
+			
+			var tmode="trading";
+		}
+		else
+		{
+			Game.SetRemainingSetupTime( 116 ); 
+			$.Schedule( 1.0, SetTimerToDefault );
+
+			var tmode="normal";
+		}
+		GameEvents.SendCustomGameEventToServer( "TradeMode", { "text": tmode}); 
 	
 	}
 		
