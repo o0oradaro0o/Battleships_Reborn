@@ -1619,8 +1619,6 @@ function GetNetWorth(hero)
 
 	local TotalGold = 0
 	if g_HeroGoldArray[hero:GetPlayerOwnerID()] ~= nil then
-	print(TotalGold)
-	print(g_HeroGoldArray[hero:GetPlayerOwnerID()])
 		TotalGold=TotalGold + g_HeroGoldArray[hero:GetPlayerOwnerID()]
 		TotalGold=TotalGold+GetBoatValue(hero)
 		TotalGold=TotalGold+GetItemValue(hero)
@@ -1662,7 +1660,6 @@ function GetItemValue(hero)
 				end
 			end
 		end
-				print("current item cold value" .. totalGold)
 
 	
 	return totalGold
@@ -2784,8 +2781,6 @@ function CBattleship8D:OnEntityKilled( keys )
 					hero:SetGold(0, false)
 					g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + (killedUnit:GetGoldBounty()/g_PlayerCountSouth)/2
 				elseif hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS and killedUnit ~= nil then
-					print(g_HeroGoldArray[hero:GetPlayerOwnerID()])
-					print(g_PlayerCountNorth)
 					hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + killedUnit:GetGoldBounty()/g_PlayerCountNorth/2, true)
 					hero:SetGold(0, false)
 					g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + (killedUnit:GetGoldBounty()/g_PlayerCountNorth)/2
@@ -3055,8 +3050,6 @@ end
   g_HeroGoldArray[casterUnit:GetPlayerOwnerID()]=herogold
   
 	
-		
-GetItemValue(casterUnit)
 	if string.match(itemName, "tower_debuff") then
 		debuffTowers(casterUnit, itemName)
 	end

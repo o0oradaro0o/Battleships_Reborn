@@ -2582,10 +2582,20 @@
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"use_wood"
+				"Function"				"use_wood"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"heal_amount"	"400"
 			}
 		}
 	}
+	
 	//=================================================================================================================
 	// repair wood_two
 	//=================================================================================================================
@@ -2624,6 +2634,15 @@
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
 				"Function"			"use_wood"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"heal_amount"	"1000"
 			}
 		}
 	}
@@ -2669,6 +2688,15 @@
 				"Function"			"use_wood"
 			}
 		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"heal_amount"	"3500"
+			}
+		}
 	}
 	//=================================================================================================================
 	// repair wood_four
@@ -2710,6 +2738,15 @@
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
 				"Function"			"use_wood"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"heal_amount"	"7000"
 			}
 		}
 	}
@@ -3150,11 +3187,11 @@
 //    }
 	
 	//=================================================================================================
-	// single_items
+	// WEAPONS
 	//=================================================================================================
 	
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	// level ones
+	// POISON
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	
 	//===============================================
@@ -3200,7 +3237,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "900"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -3234,13 +3271,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.5"
+				"var_type"	"FIELD_FLOAT"
+				"dmg"		"42"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"42"
+				"var_type"	"FIELD_FLOAT"
+				"fire_rate"	"1.5"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"900"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"damage"	"1"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"psn_dur"	"3"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"28"
 			}
 
 		}
@@ -3328,12 +3385,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".4"
+				"dmg"	"12"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"12"
+				"fire_rate"	".4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"	"2"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"700"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"30"
 			}
 
 		}
@@ -3422,15 +3494,34 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"2.1"
+				"var_type"	"FIELD_FLOAT"
+				"dmg"		"48"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"48"
+				"var_type"	"FIELD_FLOAT"
+				"fire_rate"	"2.1"
 			}
-
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"1200"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"slow_amt"	"1"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"slow_dur"	"1"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"23"
+			}
 		}
 	}	
 	
@@ -3516,15 +3607,44 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.0"
+				"var_type"			"FIELD_FLOAT"
+				"dmg"				"20"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"20"
+				"var_type"			"FIELD_FLOAT"
+				"fire_rate"			"1.0"
 			}
-
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"range"				"1400"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"max_range"			"1600"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"min_range"			"600"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_dmg"			"16"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"min_range_dmg_pct"	"50"
+			}
+			"08"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"20"
+			}
 		}
 	}
 	//===============================================
@@ -3611,13 +3731,28 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.2"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"27"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"32"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"1.2"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"1000"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"vision_rad"	"600"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"236"
 			}
 
 		}
@@ -3706,13 +3841,34 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.8"
+				"dmg"	"60"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"60"
+				"fire_rate"	"1.8"
 			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"stun_pct"	"6.67"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"stun_dur"	"0.55"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"600"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"33"
+			}
+
 
 		}
 	}
@@ -3802,13 +3958,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"3.0"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"90"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"90"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"3.0"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"800"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"armor_down"	"1"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"armor_dur"		"0.5"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"30"
 			}
 
 		}
@@ -3899,20 +4075,45 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".5"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"13"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"13"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		".5"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"1050"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounces"		"1"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounce_dmg"	"5"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounce_range"	"600"
+			}
+			"07"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"26"
 			}
 
 		}
 	}
 	
 	
-			//===============================================
+	//===============================================
 	// caulk-bow
 	//===============================================
     "item_caulk_bow"
@@ -3920,8 +4121,8 @@
 		"ID"                            "1009"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
-		"Model"								"models/props_gameplay/divine_rapier.vmdl"
-		"AbilityTextureName"				"item_caulk_bow"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"			"item_caulk_bow"
 		"AbilityCastRange"              "0"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
@@ -3941,9 +4142,9 @@
 			
 			"item_caulk_bow_shooting"
 			{
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
-				"Passive"	 "1"
+				"Passive"	 		"1"
 				"OnIntervalThink"
 				{
 					"RunScript"
@@ -3954,7 +4155,7 @@
 					
 					"RunScript"
 					{
-						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
 						"Function"			"fireCaulkWeapon"
 					}
 					
@@ -3975,7 +4176,7 @@
 			"DeleteOnHit"                           "false"
 			"Heal"
 			{
-					"HealAmount"                                "%dmg"
+					"HealAmount"                            "%dmg"
 					"Target"                                "TARGET"
 			}
 				
@@ -3984,13 +4185,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.2"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"24"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"24"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"1.2"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"650"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_aoe"		"2.4"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_range"		"300"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_pct"		"10"
 			}
 
 		}
@@ -4132,12 +4353,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".8"
+				"dmg"	"21"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"21"
+				"fire_rate"	".8"
 			}
 			"03"
 			{
@@ -4149,8 +4370,22 @@
 				"var_type"				"FIELD_FLOAT"
 				"remove"	"3"
 			}
-
-
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"1200"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"pure_pct"	"20"
+			}
+			"07"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"26"
+			}
+		
 		}
 	}
 	
@@ -4220,13 +4455,38 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".2"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"29"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"60"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		".2"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"max_rate"		"1"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"850"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_bonus"		"20"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bonus_rate"	"50"
+			}
+			"07"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"dps"	"29"
 			}
 
 		}
@@ -4282,7 +4542,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "900"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -4321,13 +4581,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.5"
+				"var_type"	"FIELD_FLOAT"
+				"dmg"		"90"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"90"
+				"var_type"	"FIELD_FLOAT"
+				"fire_rate"	"1.5"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"900"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"damage"	"2"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"psn_dur"	"3"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"dps"	"60"
 			}
 
 		}
@@ -4418,12 +4698,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"0.4"
+				"dmg"	"26"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"26"
+				"fire_rate"	".4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"	"4"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"700"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"65"
 			}
 
 		}
@@ -4514,13 +4809,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"2.1"
+				"var_type"	"FIELD_FLOAT"
+				"dmg"		"100"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"100"
+				"var_type"	"FIELD_FLOAT"
+				"fire_rate"	"2.1"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"1200"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"slow_amt"	"1.5"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"slow_dur"	"1"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"47"
 			}
 
 		}
@@ -4608,15 +4923,44 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.4"
+				"var_type"			"FIELD_FLOAT"
+				"dmg"				"40"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"54"
+				"var_type"			"FIELD_FLOAT"
+				"fire_rate"			"1.0"
 			}
-
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"range"				"1400"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"max_range"			"1600"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"min_range"			"600"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_dmg"			"35"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"min_range_dmg_pct"	"50"
+			}
+			"08"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"40"
+			}
 		}
 	}
 	//===============================================
@@ -4704,15 +5048,29 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"0.8"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"44"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"44"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"0.8"
 			}
-
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"1000"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"vision_rad"	"600"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"55"
+			}
 		}
 	}
 	
@@ -4800,13 +5158,34 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.8"
+				"dmg"	"126"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"126"
+				"fire_rate"	"1.8"
 			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"stun_pct"	"6.67"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"stun_dur"	"0.75"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"600"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"70"
+			}
+
 
 		}
 	}
@@ -4893,19 +5272,38 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"3.0"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"195"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"195"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"3.0"
 			}
-
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"800"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"armor_down"	"1"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"armor_dur"		"1"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"65"
+			}
 		}
 	}
 	
-			//===============================================
+	//===============================================
 	// spin-bow two
 	//===============================================
     "item_spin_two_bow"
@@ -4950,7 +5348,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1050"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -4991,13 +5389,39 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".5"
+				"dmg"	"26"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"26"
+				"fire_rate"	".5"
 			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"1050"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounces"		"2"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounce_dmg"	"7"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounce_range"	"600"
+			}
+			"07"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"52"
+			}
+
 
 		}
 	}
@@ -5075,15 +5499,34 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.2"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"45"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"45"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"1.2"
 			}
-
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"650"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_aoe"		"4.5"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_range"		"300"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_pct"		"10"
+			}
 		}
 	}
 	
@@ -5225,12 +5668,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".8"
+				"dmg"	"41"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"41"
+				"fire_rate"	".8"
 			}
 			"03"
 			{
@@ -5241,6 +5684,21 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"remove"	"3"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"1200"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"pure_pct"	"20"
+			}
+			"07"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"52"
 			}
 
 
@@ -5313,15 +5771,39 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".2"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"63"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"60"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		".2"
 			}
-
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"max_rate"		"1"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"850"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_bonus"		"20"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bonus_rate"	"50"
+			}
+			"07"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"dps"	"63"
+			}
 		}
 	}
 	
@@ -5374,7 +5856,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "900"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -5410,13 +5892,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.5"
+				"var_type"	"FIELD_FLOAT"
+				"dmg"		"180"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"180"
+				"var_type"	"FIELD_FLOAT"
+				"fire_rate"	"1.5"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"900"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"damage"	"3"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"psn_dur"	"3"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"dps"	"120"
 			}
 
 		}
@@ -5500,12 +6002,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"0.4"
+				"dmg"	"52"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"52"
+				"fire_rate"	".4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"	"6"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"700"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"130"
 			}
 
 		}
@@ -5596,15 +6113,34 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"2.1"
+				"var_type"	"FIELD_FLOAT"
+				"dmg"		"200"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"200"
+				"var_type"	"FIELD_FLOAT"
+				"fire_rate"	"2.1"
 			}
-
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"1200"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"slow_amt"	"3"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"slow_dur"	"3.5"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"96"
+			}
 		}
 	}
 	
@@ -5688,15 +6224,44 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.4"
+				"var_type"			"FIELD_FLOAT"
+				"dmg"				"118"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"82"
+				"var_type"			"FIELD_FLOAT"
+				"fire_rate"			"1.0"
 			}
-
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"range"				"1400"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"max_range"			"1600"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"min_range"			"600"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_dmg"			"59"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"min_range_dmg_pct"	"50"
+			}
+			"08"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"118"
+			}
 		}
 	}
 	
@@ -5783,15 +6348,29 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"0.8"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"88"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"88"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"0.8"
 			}
-
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"1000"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"vision_rad"	"600"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"110"
+			}
 		}
 	}
 	//===============================================
@@ -5881,12 +6460,32 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.8"
+				"dmg"	"252"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"252"
+				"fire_rate"	"1.8"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"stun_pct"	"6.67"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"stun_dur"	"1"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"600"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"140"
 			}
 
 		}
@@ -5978,13 +6577,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"3.0"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"390"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"390"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"3.0"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"800"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"armor_down"	"2"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"armor_dur"		"1.5"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"130"
 			}
 		}
 	}
@@ -6075,13 +6694,39 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".5"
+				"dmg"	"52"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"52"
+				"fire_rate"	".5"
 			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"1050"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounces"		"3"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounce_dmg"	"11"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounce_range"	"600"
+			}
+			"07"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"104"
+			}
+
 
 		}
 	}
@@ -6158,13 +6803,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.2"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"103"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"103"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"1.2"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"650"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_aoe"		"10.3"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_range"		"300"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_pct"		"10"
 			}
 
 		}
@@ -6303,12 +6968,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".8"
+				"dmg"	"64"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"80"
+				"fire_rate"	".8"
 			}
 			"03"
 			{
@@ -6320,8 +6985,21 @@
 				"var_type"				"FIELD_FLOAT"
 				"remove"	"3"
 			}
-
-
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"1200"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"pure_pct"	"20"
+			}
+			"07"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"115"
+			}
 		}
 	}
 	
@@ -6390,15 +7068,39 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".2"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"125"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"60"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		".2"
 			}
-
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"max_rate"		"1"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"850"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_bonus"		"20"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bonus_rate"	"50"
+			}
+			"07"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"dps"	"125"
+			}
 		}
 	}
 	
@@ -6423,8 +7125,8 @@
 		"ID"                            "1501"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
-		"Model"								"models/props_gameplay/divine_rapier.vmdl"
-		"AbilityTextureName"				"item_poison_bow_doubled"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"			"item_poison_bow_doubled"
 		"AbilityCastRange"              "0"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
@@ -6462,7 +7164,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "900"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -6480,7 +7182,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "900"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -6500,7 +7202,7 @@
 		"item_poison_ult_bow_pleagued_1"
 			{			
 				"Duration"  "3"
-								"IsHidden"	 "1"
+				"IsHidden"	 "1"
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"0.5"
 				"OnIntervalThink"
@@ -6551,18 +7253,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.5"
+				"var_type"	"FIELD_FLOAT"
+				"dmg"	"42"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"42"
+				"var_type"	"FIELD_FLOAT"
+				"fire_rate"	"1.5"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"	"FIELD_FLOAT"
 				"damage"	"1"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"900"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"psn_dur"	"3"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"56"
 			}
 
 		}
@@ -6688,22 +7405,32 @@
 			}
 				
 		}
-				"AbilitySpecial"
+		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".4"
+				"dmg"	"12"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"12"
+				"fire_rate"	".4"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"damage"	"2"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"700"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"60"
 			}
 		}
 		
@@ -6841,13 +7568,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"2.1"
+				"var_type"	"FIELD_FLOAT"
+				"dmg"		"48"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"48"
+				"var_type"	"FIELD_FLOAT"
+				"fire_rate"	"2.1"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"1200"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"slow_amt"	"1"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"slow_dur"	"1"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"46"
 			}
 
 		}
@@ -6955,15 +7702,44 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.0"
+				"var_type"			"FIELD_FLOAT"
+				"dmg"				"20"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"20"
+				"var_type"			"FIELD_FLOAT"
+				"fire_rate"			"1.0"
 			}
-
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"range"				"1400"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"max_range"			"1600"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"min_range"			"600"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_dmg"			"16"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"min_range_dmg_pct"	"50"
+			}
+			"08"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"40"
+			}
 		}
 	}
 	//===============================================
@@ -7067,15 +7843,29 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.2"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"32"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"32"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"1.2"
 			}
-
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"1000"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"vision_rad"	"600"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"54"
+			}
 		}
 	}
 	//===============================================
@@ -7200,12 +7990,32 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.8"
+				"dmg"	"60"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"60"
+				"fire_rate"	"1.8"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"stun_pct"	"6.67"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"stun_dur"	"0.55"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"600"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"66"
 			}
 
 		}
@@ -7330,15 +8140,34 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"3.0"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"90"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"90"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"3.0"
 			}
-
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"800"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"armor_down"	"1"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"armor_dur"		"0.5"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"60"
+			}
 		}
 	}
 	
@@ -7451,14 +8280,40 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".5"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		".5"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"12"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"12"
 			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"1050"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounces"		"1"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounce_dmg"	"5"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounce_range"	"600"
+			}
+			"07"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"52"
+			}
+
 
 		}
 	}
@@ -7553,18 +8408,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.2"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"24"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"24"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"1.2"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg_aoe"	"3"
+				"var_type"		"FIELD_FLOAT"
+				"range"			"650"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_aoe"		"2.4"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_range"		"300"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_pct"		"10"
 			}
 
 		}
@@ -7728,12 +8598,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".8"
+				"dmg"	"17"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"17"
+				"fire_rate"	".8"
 			}
 			"03"
 			{
@@ -7745,7 +8615,21 @@
 				"var_type"				"FIELD_FLOAT"
 				"remove"	"3"
 			}
-
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"1200"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"pure_pct"	"20"
+			}
+			"07"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"52"
+			}
 
 		}
 	}
@@ -7816,15 +8700,39 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".2"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"29"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"60"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		".2"
 			}
-
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"max_rate"		"1"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"850"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_bonus"		"20"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bonus_rate"	"50"
+			}
+			"07"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"dps"	"58"
+			}
 		}
 	}
 	
@@ -7879,7 +8787,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "900"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -7968,18 +8876,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.5"
+				"var_type"	"FIELD_FLOAT"
+				"dmg"		"90"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"90"
+				"var_type"	"FIELD_FLOAT"
+				"fire_rate"	"1.5"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"	"FIELD_FLOAT"
 				"damage"	"2"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"drange"	"900"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"psn_dur"	"3"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"dps"	"120"
 			}
 		}
 	}
@@ -8029,7 +8952,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "700"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -8046,7 +8969,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "700"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -8103,17 +9026,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"0.4"
+				"dmg"	"26"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"26"
+				"fire_rate"	".4"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"damage"	"4"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"700"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"130"
 			}
 
 		}
@@ -8248,13 +9181,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"2.1"
+				"var_type"	"FIELD_FLOAT"
+				"dmg"		"100"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"106"
+				"var_type"	"FIELD_FLOAT"
+				"fire_rate"	"2.1"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"1200"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"slow_amt"	"1.5"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"slow_dur"	"1"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"94"
 			}
 
 		}
@@ -8359,13 +9312,43 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.4"
+				"var_type"			"FIELD_FLOAT"
+				"dmg"				"40"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"54"
+				"var_type"			"FIELD_FLOAT"
+				"fire_rate"			"1.0"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"range"				"1400"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"max_range"			"1600"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"min_range"			"600"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_dmg"			"35"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"min_range_dmg_pct"	"50"
+			}
+			"08"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"80"
 			}
 
 		}
@@ -8468,15 +9451,29 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"0.8"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"44"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"44"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"0.8"
 			}
-
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"1000"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"vision_rad"	"600"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"110"
+			}
 		}
 	}
 	//===============================================
@@ -8601,12 +9598,32 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.8"
+				"dmg"	"126"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"126"
+				"fire_rate"	"1.8"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"stun_pct"	"6.67"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"stun_dur"	"0.75"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"600"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"140"
 			}
 
 		}
@@ -8730,13 +9747,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"3.0"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"195"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"195"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"3.0"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"800"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"armor_down"	"1"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"armor_dur"		"1"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"130"
 			}
 
 		}
@@ -8851,13 +9888,39 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".5"
+				"dmg"	"26"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"26"
+				"fire_rate"	".5"
 			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"1050"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounces"		"2"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounce_dmg"	"7"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounce_range"	"600"
+			}
+			"07"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"104"
+			}
+
 
 		}
 	}
@@ -8950,20 +10013,34 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.2"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"45"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"45"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"1.2"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg_aoe"	"6"
+				"var_type"		"FIELD_FLOAT"
+				"range"			"650"
 			}
-
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_aoe"		"4.5"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_range"		"300"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_pct"		"10"
+			}
 		}
 	}
 	
@@ -9125,12 +10202,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".8"
+				"dmg"	"41"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"33"
+				"fire_rate"	".8"
 			}
 			"03"
 			{
@@ -9142,8 +10219,21 @@
 				"var_type"				"FIELD_FLOAT"
 				"remove"	"3"
 			}
-
-
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"1200"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"pure_pct"	"20"
+			}
+			"07"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"104"
+			}
 		}
 	}
 	
@@ -9213,15 +10303,39 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".2"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"63"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"60"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		".2"
 			}
-
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"max_rate"		"1"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"850"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_bonus"		"20"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bonus_rate"	"50"
+			}
+			"07"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"dps"	"126"
+			}
 		}
 	}
 	
@@ -9275,7 +10389,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "900"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -9360,18 +10474,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.5"
+				"var_type"	"FIELD_FLOAT"
+				"dmg"		"180"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"180"
+				"var_type"	"FIELD_FLOAT"
+				"fire_rate"	"1.5"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"	"FIELD_FLOAT"
 				"damage"	"3"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"900"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"psn_dur"	"3"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"dps"	"240"
 			}
 
 		}
@@ -9500,17 +10629,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"0.4"
+				"dmg"	"52"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"52"
+				"fire_rate"	".4"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"damage"	"6"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"700"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"260"
 			}
 
 		}
@@ -9646,13 +10785,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"2.1"
+				"var_type"	"FIELD_FLOAT"
+				"dmg"		"200"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"200"
+				"var_type"	"FIELD_FLOAT"
+				"fire_rate"	"2.1"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"1200"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"slow_amt"	"3"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"slow_dur"	"3.5"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"182"
 			}
 
 		}
@@ -9759,15 +10918,44 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.4"
+				"var_type"			"FIELD_FLOAT"
+				"dmg"				"118"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"82"
+				"var_type"			"FIELD_FLOAT"
+				"fire_rate"			"1.0"
 			}
-
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"range"				"1400"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"max_range"			"1600"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"min_range"			"600"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_dmg"			"59"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"min_range_dmg_pct"	"50"
+			}
+			"08"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"236"
+			}
 		}
 	}
 	
@@ -9875,15 +11063,29 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"0.8"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"88"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"88"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"0.8"
 			}
-
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"1000"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"vision_rad"	"600"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"220"
+			}
 		}
 	}
 	
@@ -10008,14 +11210,33 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.8"
+				"dmg"	"252"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"252"
+				"fire_rate"	"1.8"
 			}
-
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"stun_pct"	"6.67"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"stun_dur"	"1"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"600"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"280"
+			}
 		}
 	}
 	//===============================================
@@ -10141,13 +11362,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"3.0"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"390"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"390"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"3.0"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"800"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"armor_down"	"2"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"armor_dur"		"1.5"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"260"
 			}
 		}
 	}
@@ -10261,13 +11502,39 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".5"
+				"dmg"	"52"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"52"
+				"fire_rate"	".5"
 			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"1050"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounces"		"3"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounce_dmg"	"11"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounce_range"	"600"
+			}
+			"07"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"208"
+			}
+
 
 		}
 	}
@@ -10365,18 +11632,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.2"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"103"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"103"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"1.2"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg_aoe"	"14"
+				"var_type"		"FIELD_FLOAT"
+				"range"			"650"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_aoe"		"10.3"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_range"		"300"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_pct"		"10"
 			}
 
 		}
@@ -10541,12 +11823,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".8"
+				"dmg"	"64"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"64"
+				"fire_rate"	".8"
 			}
 			"03"
 			{
@@ -10558,8 +11840,21 @@
 				"var_type"				"FIELD_FLOAT"
 				"remove"	"3"
 			}
-
-
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"1200"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"pure_pct"	"20"
+			}
+			"07"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"230"
+			}
 		}
 	}
 	
@@ -10629,15 +11924,39 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".2"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"125"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"60"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		".2"
 			}
-
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"max_rate"		"1"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"850"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_bonus"		"20"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bonus_rate"	"50"
+			}
+			"07"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"dps"	"250"
+			}
 		}
 	}
 	
@@ -10770,18 +12089,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"	"FIELD_FLOAT"
 				"fire_rate"	"1.5"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"650"
+				"var_type"	"FIELD_FLOAT"
+				"dmg"		"650"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"	"FIELD_FLOAT"
 				"damage"	"20"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"900"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"psn_dur"	"3"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"dps"	"467"
 			}
 		}
 	}
@@ -10898,28 +12232,31 @@
 		{
 			"01"
 			{
-				"var_type"                "FIELD_INTEGER"
-				"radius"                "700"
+				"var_type"	"FIELD_INTEGER"
+				"dmg"		"200"
 			}
 			"02"
 			{
-				"var_type"                "FIELD_FLOAT"
-				"duration"                "4.0"
-			}
-			"03"
+				"var_type"	"FIELD_FLOAT"
+				"duration"	"4.0"
+			}"03"
 			{
-				"var_type"                "FIELD_INTEGER"
-				"damage"                "20"
-			}
-			"04"
+				"var_type"	"FIELD_INTEGER"
+				"radius"	"700"
+			}"04"
 			{
-				"var_type"                "FIELD_INTEGER"
-				"dmg"                "200"
+				"var_type"	"FIELD_INTEGER"
+				"damage"	"20"
 			}
 			"05"
 			{
-				"var_type"                "FIELD_FLOAT"
-				"fire_rate"                "0.4"
+				"var_type"	"FIELD_FLOAT"
+				"fire_rate"	"0.4"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"500"
 			}
 		}
 	}
@@ -11034,13 +12371,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"2.1"
+				"var_type"	"FIELD_FLOAT"
+				"dmg"		"818"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"818"
+				"var_type"	"FIELD_FLOAT"
+				"fire_rate"	"2.1"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"1200"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"slow_amt"	"12"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"slow_dur"	"2"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"390"
 			}
 		}
 	}
@@ -11130,13 +12487,43 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.4"
+				"var_type"			"FIELD_FLOAT"
+				"dmg"				"236"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"330"
+				"var_type"			"FIELD_FLOAT"
+				"fire_rate"			"1.0"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"range"				"1400"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"max_range"			"1600"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"min_range"			"600"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_dmg"			"330"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"min_range_dmg_pct"	"50"
+			}
+			"08"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"236"
 			}
 		}
 	}
@@ -11149,7 +12536,7 @@
 		"ID"                            "1305"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
-		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"			"item_light_ult_bow"
 		
 		"AbilityCastRange"              "0"
@@ -11173,9 +12560,9 @@
 			
 			"item_light_ult_bow_shooting"
 			{
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
-				"Passive"	 "1"
+				"Passive"	 		"1"
 				"OnIntervalThink"
 				{
 					"RunScript"
@@ -11187,19 +12574,19 @@
 					{
 						"Target"
 						{
-							"Center" "CASTER"
-							"Radius" "1000"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
+							"Center" 		"CASTER"
+							"Radius" 		"1000"
+							"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+							"flags" 		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" 	"1"
+							"Random" 		"1"
 						}
-												"ProvidesVision" "1"
-						"VisionRadius" "800"
-						"MoveSpeed" "800"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/pink_ult_projectile.vpcf" 
+						"ProvidesVision" 	"1"
+						"VisionRadius" 		"800"
+						"MoveSpeed" 		"800"
+						"Dodgeable" 		"1" 
+						"EffectName"   		"particles/basic_projectile/pink_ult_projectile.vpcf" 
 					}
 				}
 			}
@@ -11225,13 +12612,28 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"0.8"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"356"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"356"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"0.8"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"1000"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"vision_rad"	"600"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"445"
 			}
 		}
 	}
@@ -11344,14 +12746,35 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.8"
+				"var_type"	"FIELD_FLOAT"
+				"dmg"		"966"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"966"
+				"var_type"	"FIELD_FLOAT"
+				"fire_rate"	"1.8"
 			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"stun_pct"	"10"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"stun_dur"	"3"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"600"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"537"
+			}
+
 		}
 	}
 
@@ -11461,13 +12884,33 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"3.0"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"1440"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"1440"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"3.0"
+			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"800"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"armor_down"	"4"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"armor_dur"		"3"
+			}
+			"07"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"480"
 			}
 		}
 	}
@@ -11556,13 +12999,39 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".5"
+				"dmg"	"110"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"110"
+				"fire_rate"	".5"
 			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"1050"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounces"		"4"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounce_dmg"	"80"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bounce_range"	"600"
+			}
+			"07"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"220"
+			}
+
 
 		}
 	}
@@ -11654,20 +13123,34 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	"1.2"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"392"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"392"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		"1.2"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg_aoe"	"55"
+				"var_type"		"FIELD_FLOAT"
+				"range"			"650"
 			}
-
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_aoe"		"39.2"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_range"		"300"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_pct"		"10"
+			}
 		}
 	}
 	
@@ -11809,14 +13292,14 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".8"
+				"dmg"	"260"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"260"
+				"fire_rate"	".8"
 			}
-			"0ult"
+			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"delay"	"2.5"
@@ -11825,6 +13308,21 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"remove"	"3"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"1200"
+			}
+			"06"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"pure_pct"	"20"
+			}
+			"07"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"400"
 			}
 
 
@@ -11897,15 +13395,39 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".2"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"457"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"	"60"
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate"		".2"
 			}
-
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"max_rate"		"1"
+			}
+			"04"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range"			"850"
+			}
+			"05"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_bonus"		"20"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"bonus_rate"	"50"
+			}
+			"07"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"dps"	"457"
+			}
 		}
 	}
 	
