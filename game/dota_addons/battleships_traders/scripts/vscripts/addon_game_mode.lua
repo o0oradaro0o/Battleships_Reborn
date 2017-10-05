@@ -933,7 +933,7 @@ function CBattleship8D:OnThink()
 				{
 					Player_ID = co_op_pid;
 				}
-				FireGameEvent("g_CoOpMode",data)
+				FireGameEvent("co_op_mode",data)
 			end
 			
 		end
@@ -1029,10 +1029,10 @@ function CBattleship8D:OnThink()
 			if g_MainTimerTickCount % 4 == 0 and g_SpyAnnouncmentFlag == 1 then
 				g_SpyAnnouncmentFlag = 0
 				 Notifications:TopToAll({text="#buy_spy_header", duration=4.0, style={color="#58ACFA",  fontSize="30px;"}})
-				 Notifications:TopToAll({text="#SpyCountSouth_start", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}})
+				 Notifications:TopToAll({text="#spys_south_start", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}})
 				 Notifications:TopToAll({text=tostring(g_SpyCountSouth) .. " ", duration=4.0, style={color="#CC3300",  fontSize="30px;"}, continue=true})
 				 Notifications:TopToAll({text="#spys_end", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}, continue=true})
-				 Notifications:TopToAll({text="#SpyCountNorth_start", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}})
+				 Notifications:TopToAll({text="#spys_north_start", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}})
 				 Notifications:TopToAll({text=tostring(g_SpyCountNorth) .. " ", duration=4.0, style={color="#CC3300",  fontSize="30px;"}, continue=true})
 				 Notifications:TopToAll({text="#spys_end", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}, continue=true})
 				
@@ -1637,8 +1637,10 @@ function GetItemValue(hero)
 						string.match(item:GetName(),"bow")   or
 						string.match(item:GetName(),"wood") or  
 						string.match(item:GetName(),"sail") or
-						string.match(item:GetName(),"repair")then
-							totalGold=totalGold+GetItemCost(item:GetName())
+						string.match(item:GetName(),"repair") then
+							if not string.match(item:GetName(),"sail_one_combo_bow") then
+								totalGold=totalGold+GetItemCost(item:GetName())
+							end
 						end
 					end
 				end
@@ -1654,7 +1656,9 @@ function GetItemValue(hero)
 							string.match(Item:GetName(),"wood") or  
 							string.match(Item:GetName(),"sail") or
 							string.match(Item:GetName(),"repair")) then
-								totalGold=totalGold-GetItemCost(Item:GetName())
+								if not string.match(item:GetName(),"sail_one_combo_bow") then
+									totalGold=totalGold-GetItemCost(Item:GetName())
+								end
 							end
 						end
 				end
@@ -3052,12 +3056,15 @@ end
 	
 	if string.match(itemName, "tower_debuff") then
 		debuffTowers(casterUnit, itemName)
+		fixBackpack(casterUnit)
 	end
 	if string.match(itemName, "tower_healer") then
 		healTowers(casterUnit, itemName)
+		fixBackpack(casterUnit)
 	end
 	if string.match(itemName, "nut_spawner") then
 		spawnNuts(casterUnit, itemName)
+		fixBackpack(casterUnit)
 	end
 	
 	if GameRules:GetGameTime() < 300 and  string.match(itemName, "lorne") then
@@ -3077,6 +3084,45 @@ end
  
 end
 
+
+function fixBackpack(casterUnit)
+
+	if (casterUnit:IsHero() or casterUnit:HasInventory()) and heroname ~= casterUnit:GetName() then 
+    	for itemSlot = 0, 14, 1 do 
+            if casterUnit ~= nil then
+                local Item = casterUnit:GetItemInSlot( itemSlot )
+				if Item ~= nil and string.match(Item:GetName(), "backpack_stuffer")  then
+					casterUnit:RemoveItem(Item)
+					local newItem = CreateItem("item_fluff", casterUnit, casterUnit)
+					casterUnit:AddItem(newItem)
+				
+				elseif itemSlot > 5 and itemSlot <9 then
+					casterUnit:RemoveItem(Item)
+					
+				else
+					local newItem = CreateItem("item_fluff", casterUnit, casterUnit)
+					casterUnit:AddItem(newItem)
+				end
+				if itemSlot > 5 and itemSlot <9 then
+					local newItem = CreateItem("item_backpack_stuffer", casterUnit, casterUnit)
+					casterUnit:AddItem(newItem)
+				end
+            end
+		end
+    end
+	if casterUnit:IsHero() or casterUnit:HasInventory() then 
+		for itemSlot = 0, 14, 1 do 
+			if casterUnit ~= nil then
+				local activateItem = casterUnit:GetItemInSlot( itemSlot )
+				if activateItem ~= nil and string.match(activateItem:GetName(), "fluff") then
+					print("Item in slot is: filler")
+					casterUnit:RemoveItem(activateItem)
+				end
+			end
+		end
+	end
+	
+end
 
 function become_boat(casterUnit, heroname)
     print('[ItemFunctions] become_bristleback started!')

@@ -14,7 +14,7 @@ function hideTrade()
 {
 	
 		$( "#missionButton" ).style.visibility="collapse";
-			$( "#traders_tab" ).style.height="0px";
+			$( "#traders_tab" ).style.height="40px";
 tradeHidden=true;
 }
 
@@ -24,6 +24,7 @@ function showTrade()
 		$( "#missionButton" ).style.visibility="visible";
 			$( "#traders_tab" ).style.height="40px";
 }
+
 
 function replaceShopUI()
 {
@@ -266,7 +267,7 @@ function showtraders()
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height = "0px";
 
 	}
-	else
+	else if(!tradeHidden)
 	{
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "trader_ships" ).style.height = "240px";
 			NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse( "one_ks" ).style.height = "0px";
