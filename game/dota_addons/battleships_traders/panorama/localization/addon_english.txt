@@ -33,56 +33,84 @@
 	"south_gold_each" "South Emp Gold Each:"
 	"zoom_lbl"	"Zoom"
 	
+
+	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	//Ship Descriptions
+	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	
 	"ancient_apparition"	"Paddlewheel Diver"
 	"ancient_apparition_desc"	"A simple, maneuverable ship that can dive beneath attacks."
 	
-		"ember_spirit"												"Tug Boat"
-		"ancient_apparition"												"Paddlewheel Diver"
-		"disruptor"												"Shore Guard"
-		"morphling"											"Speed Boat"
-		"storm_spirit"											"Junk Ship"
-		"jakiro"												"Galleon"
-		"tidehunter"											"Pontoon Boat"
-		"meepo"											"House Boat"
-		"zuus"										"Barrel"
-		"ursa"										"Aircraft Carrier"
-		"slark"										"Viking Warship"
-		"lion"										"Yacht"
-		"tusk"										"Battleship"
-		"visage"										"Noah's Ark"
-		"nevermore"										"Broken Sea Plane"
-		"rattletrap"										"Catamaran"
-		"windrunner"										"Construction Ship"
-		"sniper"										"Submarine"
-		"crystal_maiden"										"Canoe"
-		"phantom_lancer"										"Airboat"
-				"pugna"							"Ice Breaker"
-					"vengefulspirit"							"Phoenician Trader"
-					"bane"							"Cargo Ship"
-					"enigma"							"Ghost Trader"
-		
-		"phantom_lancer_desc"				"The Airboat is a fast and sturdy ship with some dangerous damage abilities."		
-		"pugna_desc"							"The Ice Breaker survives the cold better than any other ship and brings with it all the power of frost."
-		"ember_spirit_desc"					"Charge headlong into combat. Snag foes and drag them to their doom."
-		"disruptor_desc"						"Enforce the law on the High Seas and control the movement of vessels in your domain."	
-		"morphling_desc"						"Speed in and out of combat using dynamic movement and regeneration."
-		"storm_spirit_desc"					"Use fireworks and call upon thunderclouds to reveal your enemies and strike them down in this traditional style ship made for the South China Sea."
-		"jakiro_desc"							"Dominate the seas with devastating ranged attacks."
-		"tidehunter_desc"						"A sturdy boat that can hold its ground with defensive abilities."			
-		"meepo_desc"							"The party boat; fun to be around and the life of any party!"
-		"ursa_desc"								"Strong tanky ship that dispatches fighters and bombers."
-		"slark_desc"								"Scour the fjords in this quick, heavy-hitting berserker. Neither you nor your enemies will last long."			
-		"lion_desc"								"Light and fast, this ship can drop a small pleasure craft to absorb extra damage."	
-		"tusk_desc"								"Solid fighting vessel with missiles and powerful AOE nukes."
-		"visage_desc"							"Survive the flood in this ancient vessel and strand your enemies on the mountaintops."
-		"nevermore_desc"					"Navigate the seas in this pontooned and marooned plane; it's more nimble than you'd imagine. Watch what happens when you try to turn on your engines!"		
-		"rattletrap_desc"						"Light and fast, the Catamaran jumps out of reach and fires a deadly arrow."
-		"windrunner_desc"					"The construction ship is a floating dock, capable of using the scrap around it to repair itself, protect its allies and even construct ships for the empire."
-		"crystal_maiden_desc"				"The Canoe is a very simple boat whose crew gains heart from one another and inspires their allies."			
-		"sniper_desc"				"This submarine is less of a submarine and more of a boat.  The sub is powerful, and even more powerful when submerged. But be wary, or you'll run out of oxygen!"			
-		"bane_desc"				"The strongest fastest trader in the seas. Might be radioactive... nobody's sure"			
-		"enigma_desc"							"The SS Baychimo has been lost and abandoned in 1931.  This ghost ship was last seen in 1969... untill now."
-"vengefulspirit_desc"							"Phoenician Trader a simple but fully licensed ship."
+	"ancient_apparition"		"Paddlewheel Diver"
+	"ancient_apparition_desc"	"A simple, maneuverable ship that can dive beneath attacks."
+	
+	"ember_spirit"				"Tug Boat"
+	"ember_spirit_desc"			"Charge headlong into combat. Snag foes and drag them to their doom."
+	
+	"disruptor"					"Shore Guard"
+	"disruptor_desc"			"Enforce the law on the High Seas and control the movement of vessels in your domain."	
+	
+	"morphling"					"Speed Boat"
+	"morphling_desc"			"Speed in and out of combat using dynamic movement and regeneration."
+
+	"storm_spirit"				"Junk Ship"
+	"storm_spirit_desc"			"Use fireworks and call upon thunderclouds to reveal your enemies and strike them down in this traditional style ship made for the South China Sea."
+	
+	"jakiro"					"Galleon"
+	"jakiro_desc"				"Dominate the seas with devastating ranged attacks."
+	
+	"tidehunter"				"Pontoon Boat"
+	"tidehunter_desc"			"A sturdy boat that can hold its ground with defensive abilities."			
+	
+	"meepo"						"House Boat"
+	"meepo_desc"				"The party boat; fun to be around and the life of any party!"
+	
+	"zuus"						"Barrel"
+	
+	"ursa"						"Aircraft Carrier"
+	"ursa_desc"					"Strong tanky ship that dispatches fighters and bombers."
+	
+	"slark"						"Viking Warship"
+	"slark_desc"				"Scour the fjords in this quick, heavy-hitting berserker. Neither you nor your enemies will last long."		
+	
+	"lion"						"Yacht"	
+	"lion_desc"					"Light and fast, this ship can drop a small pleasure craft to absorb extra damage."	
+	
+	"tusk"						"Battleship"
+	"tusk_desc"					"Solid fighting vessel with missiles and powerful AOE nukes."
+	
+	"visage"					"Noah's Ark"
+	"visage_desc"				"Survive the flood in this ancient vessel and strand your enemies on the mountaintops."
+	
+	"nevermore"					"Broken Sea Plane"
+	"nevermore_desc"			"Navigate the seas in this pontooned and marooned plane; it's more nimble than you'd imagine. Watch what happens when you try to turn on your engines!"		
+	
+	"rattletrap"				"Catamaran"
+	"rattletrap_desc"			"Light and fast, the Catamaran jumps out of reach and fires a deadly arrow."
+	
+	"windrunner"				"Construction Ship"
+	"windrunner_desc"			"The construction ship is a floating dock, capable of using the scrap around it to repair itself, protect its allies and even construct ships for the empire."
+	
+	"sniper"					"Submarine"
+	"sniper_desc"				"This submarine is less of a submarine and more of a boat. The sub is powerful, and even more powerful when submerged. But be wary, or you'll run out of oxygen!"		
+	
+	"crystal_maiden"			"Canoe"
+	"crystal_maiden_desc"		"The Canoe is a very simple boat whose crew gains heart from one another and inspires their allies."		
+	
+	"phantom_lancer"			"Airboat"
+	"phantom_lancer_desc"		"The Airboat is a fast and sturdy ship with some dangerous damage abilities."
+
+	"pugna"						"Ice Breaker"
+	"pugna_desc"				"The Ice Breaker survives the cold better than any other ship and brings with it all the power of frost."
+	
+	"vengefulspirit"			"Phoenician Trader"
+	"vengefulspirit_desc"		"The Phoenician Trader is a simple but fully licensed trading ship."
+	
+	"bane"						"Cargo Ship"	
+	"bane_desc"					"The strongest, fastest trader in the seas. Might be radioactive... Nobody's sure."			
+	
+	"enigma"					"Ghost Trader"
+	"enigma_desc"				"The SS Baychimo was lost and abandoned in 1931.  This ghost ship was last seen in 1969..."
 				
 	
 	
