@@ -312,14 +312,14 @@ function FireDmgAura(keys)
 	end		
 end
 
+
 function cluster(keys)
 	local dummy = CreateUnitByName( "dummy_unit_cluster", keys.target:GetAbsOrigin(), false, keys.caster, keys.caster, keys.caster:GetTeamNumber() )
 	dummy:AddNewModifier(creature, nil, "modifier_kill", {duration = 3})
 		local abil =dummy:GetAbilityByIndex(1)
-		abil:SetLevel(2)
+		abil:SetLevel(4)
 		dummy.lvl=4
 		abil:CastAbility()
-
 end
 
 function cluster3(keys)
@@ -329,7 +329,6 @@ function cluster3(keys)
 		abil:SetLevel(3)
 		dummy.lvl=3
 		abil:CastAbility()
-
 end
 
 function cluster2(keys)
@@ -339,7 +338,6 @@ function cluster2(keys)
 		abil:SetLevel(2)
 		dummy.lvl=2
 		abil:CastAbility()
-
 end
 
 function cluster1(keys)
@@ -349,10 +347,7 @@ function cluster1(keys)
 		abil:SetLevel(1)
 		dummy.lvl=1
 		abil:CastAbility()
-
 end
-
-
 
 
 function clusterBoom(args)
@@ -396,8 +391,6 @@ function clusterBoom(args)
 
 				ProjectileManager:CreateTrackingProjectile(tracking_projectile)
 			end
-	
-
 end
 
 function dearmorUlt(args)
