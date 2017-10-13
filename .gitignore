@@ -46,6 +46,11 @@ build/
 *.log
 *.scc
 
+# More C files
+*.vanim_c
+*.vtex_c
+*.vmesh_c
+
 # Visual C++ cache files
 ipch/
 *.aps
@@ -174,6 +179,7 @@ content/dota_addons/ui_example
 content/dota_addons/vpks/
 content/dota_addons/workshop_testbed/
 content/dota_addons/dungeon/
+content/dota_addons/new_bloom_2017/
 
 game/dota_addons/dungeon/
 game/dota_addons/addon_template/
@@ -192,6 +198,7 @@ game/dota_addons/tutorial_basics/
 game/dota_addons/ui_example
 game/dota_addons/vpks/
 game/dota_addons/workshop_testbed/
+game/dota_addons/new_bloom_2017/
 
 *.bin
 *.mdmp
