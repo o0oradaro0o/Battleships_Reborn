@@ -8266,12 +8266,12 @@
 				"Function"			"cluster1"
 			}
 			
-			"DeleteOnHit"                           "false"
+			"DeleteOnHit"			"false"
 			"Damage"
 			{
-					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
-					"Damage"                                "%dmg"
-					"Target"                                "TARGET"
+					"Type"			"DAMAGE_TYPE_PHYSICAL"
+					"Damage"		"%dmg"
+					"Target"		"TARGET"
 			}
 				
 		}
