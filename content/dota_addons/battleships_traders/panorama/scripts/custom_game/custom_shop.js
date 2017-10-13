@@ -137,7 +137,7 @@ function fixUI( )
 	
 			
 		 fixUI( ) 
-		closeShipShop()
+		//closeShipShop()
 		
 		
 	}

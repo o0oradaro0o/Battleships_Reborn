@@ -1656,7 +1656,7 @@ function GetItemValue(hero)
 							string.match(Item:GetName(),"wood") or  
 							string.match(Item:GetName(),"sail") or
 							string.match(Item:GetName(),"repair")) then
-								if not string.match(item:GetName(),"sail_one_combo_bow") then
+								if not string.match(Item:GetName(),"sail_one_combo_bow") then
 									totalGold=totalGold-GetItemCost(Item:GetName())
 								end
 							end
@@ -2277,7 +2277,7 @@ function reapplyWP()
 					end
 					
 					
-					if height:Length() > 110 then
+					if height:Length() > 110 and false == creep:HasModifier("modifier_kunkka_torrent") then
 						creep:ForceKill(true)
 					end
 				end
