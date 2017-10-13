@@ -2149,7 +2149,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityTextureName"				"keeper_of_the_light_chakra_magic"
+		"AbilityTextureName"			"keeper_of_the_light_chakra_magic"
 		
 		
 		"BaseClass" 					"ability_datadriven"
@@ -5529,9 +5529,9 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"BaseClass" 					"ability_datadriven"
-		"AbilityTextureName"				"necronomicon_warrior_sight"
+		"AbilityTextureName"			"necronomicon_warrior_sight"
 		
 		
 		// Casting
@@ -5539,6 +5539,7 @@
 		"AbilityCastRange"				"500 550 600 650"
 		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
 		"AbilityManaCost"				"0 0 0 0"
+
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30.0 28.0 26.0 24.0"
@@ -5548,18 +5549,18 @@
 		{
 			"ApplyModifier"
 			{
-				"Target" "CASTER"
-				"ModifierName" "reflected"
+				"Target"		"CASTER"
+				"ModifierName"	"reflected"
 			}
 			"ApplyModifier"
 			{
-				"Target" "TARGET"
-				"ModifierName" "take_reflected"
+				"Target"		"TARGET"
+				"ModifierName"	"take_reflected"
 			}
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
-				"Function"			"reflectGetStartHp"
+				"ScriptFile"	"scripts/vscripts/abilityfunctions.lua"
+				"Function"		"reflectGetStartHp"
 			}
 		}
 			
@@ -5569,32 +5570,32 @@
 		{
 			"reflected"
 			{
-				"EffectName" "particles/basic_projectile/ruse_attach.vpcf" 
-				"EffectAttachType" "follow_overhead"
-				"Duration"  "2.1"
+				"EffectName"		"particles/basic_projectile/ruse_attach.vpcf" 
+				"EffectAttachType"	"follow_overhead"
+				"Duration"			"2.1"
 				"ThinkInterval"		"2.0"
 				"OnIntervalThink"
 				{
 					"RunScript"
 					{
-						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
-						"Function"			"reflect"
+						"ScriptFile"	"scripts/vscripts/abilityfunctions.lua"
+						"Function"		"reflect"
 					}
 				}
 			}
 			"take_reflected"
 			{
 			
-				"EffectName" "particles/basic_projectile/ramming_speed.vpcf" 
-				"EffectAttachType" "follow_origin"
-				"Duration"  "2.0"
+				"EffectName"		"particles/basic_projectile/ramming_speed.vpcf" 
+				"EffectAttachType"	"follow_origin"
+				"Duration"			"2.0"
 				"ThinkInterval"		"1.9"
 				"OnIntervalThink"
 				{
 					"RunScript"
 					{
-						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
-						"Function"			"takeReflected"
+						"ScriptFile"	"scripts/vscripts/abilityfunctions.lua"
+						"Function"		"takeReflected"
 					}
 				}
 			}
@@ -5606,13 +5607,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.0"
+				"var_type"		"FIELD_FLOAT"
+				"duration"		"2.0"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg"				"0.3 0.4 0.5 .6"
+				"var_type"		"FIELD_FLOAT"
+				"dmg"			"0.3 0.4 0.5 0.6"
 			}
 		}
 	}

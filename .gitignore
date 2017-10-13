@@ -46,6 +46,11 @@ build/
 *.log
 *.scc
 
+# More C files
+*.vanim_c
+*.vtex_c
+*.vmesh_c
+
 # Visual C++ cache files
 ipch/
 *.aps

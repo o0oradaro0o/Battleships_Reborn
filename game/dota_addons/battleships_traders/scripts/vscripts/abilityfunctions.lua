@@ -1162,22 +1162,24 @@ function pushBackRefund(args) -- keys is the information sent by the ability
 	end
 end
 
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----BROKEN SEA PLANE ABILITIES--------------
+--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 herohp = {}
 function reflectGetStartHp(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
-
 	herohp[casterUnit:GetOwner():GetPlayerID()] = casterUnit:GetHealth()
 end
 
 function reflect(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
 	local abil = casterUnit:GetAbilityByIndex(2)
-	print('[ItemFunctions] REFLECT finished! HP was:' .. herohp[casterUnit:GetOwner():GetPlayerID()])
-	local ruseDmg = herohp[casterUnit:GetOwner():GetPlayerID()] - casterUnit:GetHealth()
-	ruseDmg = ruseDmg *(0.2+0.1*abil:GetLevel())
+	local startHP = herohp[casterUnit:GetOwner():GetPlayerID()]
+	print('[ItemFunctions] REFLECT finished! HP was:' .. startHP)
+	local ruseDmg = (startHP - casterUnit:GetHealth()) * abil:GetLevelSpecialValueFor("dmg", abil:GetLevel() - 1)
 	
-	casterUnit:SetHealth(casterUnit:GetHealth()+ruseDmg)
-	
+	casterUnit:SetHealth(casterUnit:GetHealth() + ruseDmg)
 end
 
 function takeReflected(args) -- keys is the information sent by the ability
@@ -1189,7 +1191,7 @@ function takeReflected(args) -- keys is the information sent by the ability
 	
 	local abil = casterUnit:GetAbilityByIndex(2)
 	local level = abil:GetLevel()
-	ruseDmg = ruseDmg *(0.2+0.1*abil:GetLevel())
+	ruseDmg = ruseDmg *(0.2 + 0.1 * abil:GetLevel())
 	
 	local targetUnit = args.target
 	local damageTable = {
