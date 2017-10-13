@@ -570,32 +570,33 @@ function PrintTable(t, indent, done)
 end
 
 
-function WindOneDmg(args) -- keys is the information sent by the ability
+function WindDmg(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')
 		local casterUnit = args.caster
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
-		local abil = casterUnit:GetAbilityByIndex(0)
-		local level = abil:GetLevel()
+		local item = args.ability
 		local targetUnit = args.target
 		local targetPos = args.target:GetAbsOrigin()
 		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
         local casterPos = args.caster:GetAbsOrigin()
 	--print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
         local direction =  casterPos - targetPos
+		local itemName = args.ability:GetAbilityName() 
 		
-		if direction:Length() > 600 and direction:Length() < 1200 then
+		
+		if direction:Length() > item:GetSpecialValueFor("min_range") and direction:Length() < 1200 then
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = direction:Length()/1200 * 20,
+				damage = direction:Length()/1200 * item:GetSpecialValueFor("dmg"),
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
-		elseif direction:Length() < 600 then
+		elseif direction:Length() < item:GetSpecialValueFor("min_range") then
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = 10,
+				damage = item:GetSpecialValueFor("dmg")/2,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
@@ -603,19 +604,19 @@ function WindOneDmg(args) -- keys is the information sent by the ability
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage =20,
+				damage =item:GetSpecialValueFor("dmg"),
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
 		end
-		local item = args.ability:GetAbilityName() --ability is how 
-		if string.match(item, "doubled") then--l
+		--ability is how 
+		if string.match(itemName, "doubled") then--l
 		
 			local HPPercentageTaken = (targetUnit:GetHealth()/targetUnit:GetMaxHealth()) -- Calculate the target HP percentage
 			local damageTable = {
 				victim = targetUnit,
 				attacker = casterUnit,
-				damage = 16*HPPercentageTaken,
+				damage = item:GetSpecialValueFor("bonus_dmg")*HPPercentageTaken,
 				damage_type = DAMAGE_TYPE_PHYSICAL,
 			}
 			ApplyDamage(damageTable)
@@ -626,111 +627,6 @@ function WindOneDmg(args) -- keys is the information sent by the ability
 		
 end
 
-function WindTwoDmg(args) -- keys is the information sent by the ability
---print('[ItemFunctions] gunning_it started! ')
-		local casterUnit = args.caster
-		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
-		local abil = casterUnit:GetAbilityByIndex(0)
-		local level = abil:GetLevel()
-		local targetUnit = args.target
-		local targetPos = args.target:GetAbsOrigin()
-		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
-        local casterPos = args.caster:GetAbsOrigin()
-	--print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
-        local direction =  casterPos - targetPos
-		if direction:Length() > 600 and direction:Length() < 1200 then
-			local damageTable = {
-				victim = targetUnit,
-				attacker = casterUnit,
-				damage = direction:Length()/1200 * 54,
-				damage_type = DAMAGE_TYPE_PHYSICAL,
-			}
-			ApplyDamage(damageTable)
-		elseif direction:Length() < 600 then
-			local damageTable = {
-				victim = targetUnit,
-				attacker = casterUnit,
-				damage = 27,
-				damage_type = DAMAGE_TYPE_PHYSICAL,
-			}
-			ApplyDamage(damageTable)
-		elseif direction:Length() > 1199  then
-			local damageTable = {
-				victim = targetUnit,
-				attacker = casterUnit,
-				damage = 54,
-				damage_type = DAMAGE_TYPE_PHYSICAL,
-			}
-			ApplyDamage(damageTable)
-		end
-		local item = args.ability:GetAbilityName() --ability is how 
-		if string.match(item, "doubled") then--l
-		
-			local HPPercentageTaken = (targetUnit:GetHealth()/targetUnit:GetMaxHealth()) -- Calculate the target HP percentage
-			local damageTable = {
-				victim = targetUnit,
-				attacker = casterUnit,
-				damage = 40*HPPercentageTaken,
-				damage_type = DAMAGE_TYPE_PHYSICAL,
-			}
-			ApplyDamage(damageTable)
-			
-			
-		end
-end
-
-function WindThreeDmg(args) -- keys is the information sent by the ability
---print('[ItemFunctions] gunning_it started! ')
-		local casterUnit = args.caster
-		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
-		local abil = casterUnit:GetAbilityByIndex(0)
-		local level = abil:GetLevel()
-		local targetUnit = args.target
-		local targetPos = args.target:GetAbsOrigin()
-		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
-        local casterPos = args.caster:GetAbsOrigin()
-	--print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
-        local direction =  casterPos - targetPos
-		if direction:Length() > 600 and direction:Length() < 1200 then
-				local damageTable = {
-				victim = targetUnit,
-				attacker = casterUnit,
-				damage = direction:Length()/1200 * 82,
-				damage_type = DAMAGE_TYPE_PHYSICAL,
-			}
-			ApplyDamage(damageTable)
-		elseif direction:Length() < 600 then
-			local damageTable = {
-				victim = targetUnit,
-				attacker = casterUnit,
-				damage = 41,
-				damage_type = DAMAGE_TYPE_PHYSICAL,
-			}
-			ApplyDamage(damageTable)
-		elseif direction:Length() > 1199 then
-			local damageTable = {
-				victim = targetUnit,
-				attacker = casterUnit,
-				damage = 82,
-				damage_type = DAMAGE_TYPE_PHYSICAL,
-			}
-			ApplyDamage(damageTable)
-		end
-		local item = args.ability:GetAbilityName() --ability is how 
-		if string.match(item, "doubled") then--l
-		
-			local HPPercentageTaken = (targetUnit:GetHealth()/targetUnit:GetMaxHealth()) -- Calculate the target HP percentage
-			local damageTable = {
-				victim = targetUnit,
-				attacker = casterUnit,
-				damage = 60*HPPercentageTaken,
-				damage_type = DAMAGE_TYPE_PHYSICAL,
-			}
-			ApplyDamage(damageTable)
-			
-			
-		end
-end
 
 function WindUltDmg(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')

@@ -3600,7 +3600,7 @@
 			 "RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"WindOneDmg"
+				"Function"			"WindDmg"
 			}
 		}
 							"AbilitySpecial"
@@ -3608,7 +3608,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"dmg"				"20"
+				"dmg"				"16"
 			}
 			"02"
 			{
@@ -3643,7 +3643,7 @@
 			"08"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"20"
+				"dps"			"16"
 			}
 		}
 	}
@@ -4914,7 +4914,7 @@
 				 "RunScript"
 				{
 					"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-					"Function"			"WindTwoDmg"
+					"Function"			"WindDmg"
 				}
 					
 			}
@@ -6215,7 +6215,7 @@
 			 "RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"WindThreeDmg"
+				"Function"			"WindDmg"
 			}
 				
 		}
@@ -7693,7 +7693,7 @@
 			 "RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"WindOneDmg"
+				"Function"			"WindDmg"
 			}
 				
 		}
@@ -7702,7 +7702,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"dmg"				"20"
+				"dmg"				"16"
 			}
 			"02"
 			{
@@ -7737,7 +7737,7 @@
 			"08"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"40"
+				"dps"			"32"
 			}
 		}
 	}
@@ -9303,7 +9303,7 @@
 			 "RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"WindTwoDmg"
+				"Function"			"WindDmg"
 			}
 					
 		}
@@ -10909,7 +10909,7 @@
 			 "RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"WindThreeDmg"
+				"Function"			"WindDmg"
 			}
 					
 		}
