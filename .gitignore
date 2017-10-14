@@ -50,6 +50,8 @@ build/
 *.vanim_c
 *.vtex_c
 *.vmesh_c
+*.vmdl_c
+*.vcss_c
 
 # Visual C++ cache files
 ipch/
@@ -226,5 +228,3 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
-*.vmdl_c
-*.vcss_c

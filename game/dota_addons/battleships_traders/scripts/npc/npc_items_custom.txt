@@ -2432,9 +2432,9 @@
   
   
   
-  ////=================================================================================================================
-//    // item_hull_sail_one_combo
-//    //=================================================================================================================
+	//=================================================================================================================
+	// item_hull_sail_one_combo
+	//=================================================================================================================
     "item_hull_sail_one_combo_bow"
     {
         "ID"							"805"
@@ -3533,7 +3533,7 @@
 		"ID"                            "1004"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
-		"Model"								"models/props_gameplay/divine_rapier.vmdl"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"			"item_wind_bow"
 		"TextureName"					"wind_bow"
 		"AbilityCastRange"              "0"
@@ -3596,10 +3596,10 @@
 				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
 				"Function"			"windSoundImpact"
 			}					
-			"DeleteOnHit"                           "false"
-			 "RunScript"
+			"DeleteOnHit"			"false"
+			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
 				"Function"			"WindDmg"
 			}
 		}
@@ -3752,7 +3752,7 @@
 			"05"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"236"
+				"dps"			"22.5"
 			}
 
 		}
@@ -10236,7 +10236,7 @@
 		}
 	}
 	
-		//===============================================
+	//===============================================
 	// chaos-two_bow
 	//===============================================
     "item_chaos_two_bow_doubled"
@@ -10244,8 +10244,8 @@
 		"ID"                            "1611"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_datadriven"
-		"Model"								"models/props_gameplay/divine_rapier.vmdl"
-		"AbilityTextureName"				"item_chaos_two_bow_doubled"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"			"item_chaos_two_bow_doubled"
 		"AbilityCastRange"              "0"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
@@ -10332,8 +10332,8 @@
 			}
 			"07"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"dps"	"126"
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"126"
 			}
 		}
 	}

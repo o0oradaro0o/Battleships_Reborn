@@ -67,19 +67,16 @@
 						"ProvidesVision" "0"
 						"EffectName"    "particles/basic_projectile/pistol_projectile.vpcf" 
 					}
-					
-					
-					
 				}
 				
 			}
 		}
 		"OnProjectileHitUnit"
                 {
-                        "DeleteOnHit"                           "false"
+                       "DeleteOnHit"		"false"
                        "RunScript"
 					{
-						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
 						"Function"			"PistolDamage"
 					}
                         
@@ -94,22 +91,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"pistol_duration"				"5.0 5.0 5.0 5.0"
+				"pistol_duration"		"5.0 5.0 5.0 5.0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"pistol_base_dmg"				"85.0 170.0 255.0 340.0"
+				"pistol_base_dmg"		"85.0 170.0 255.0 340.0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"pistol_hp_dmg"				"0.05 0.1 0.15 0.2"
+				"pistol_hp_dmg"			"0.05 0.1 0.15 0.2"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"tooltip_range"				"600"
+				"tooltip_range"			"600"
 			}
 			
 			
@@ -125,7 +122,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityTextureName"				"morphling_adaptive_strike"
+		"AbilityTextureName"			"morphling_adaptive_strike"
 		
 		
 		"BaseClass" 					"ability_datadriven"
@@ -181,7 +178,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bail_duration"				"6.0 6.0 6.0 6.0"
+				"bail_duration"			"6.0 6.0 6.0 6.0"
 			}
 		}
 }
@@ -928,7 +925,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
 						"Function"			"rammingIt"
 					}
 				}
@@ -1216,7 +1213,8 @@
 	
 		"BaseClass" 					"sniper_assassinate"
 		// General
-		//-------------------------------------------------------------------------------------------------------------												// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		//-------------------------------------------------------------------------------------------------------------												
+		// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityTextureName"			"sniper_headshot"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
@@ -1226,8 +1224,8 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"2"
 		"MaxLevel"						"3"
-		"LevelsBetweenUpgrades"					"4"
-		"RequiredLevel"						"3"
+		"LevelsBetweenUpgrades"			"4"
+		"RequiredLevel"					"3"
 
 
 		
@@ -1235,7 +1233,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1500 1700 1900"
 		"AbilityCastRangeBuffer"		"600"
-		"AbilityCastPoint"				"4.0 3.5 3.0"
+		"AbilityCastPoint"				"2.0 1.75 1.5"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -1277,7 +1275,9 @@
 	"pudge_meat_hook_battleship"
 	{
 		// General
-		//-------------------------------------------------------------------------------------------------------------												// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		//-------------------------------------------------------------------------------------------------------------												
+		// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"FightRecapLevel"				"1"
@@ -1306,8 +1306,8 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"hook_speed"			"1600.0"
+				"var_type"			"FIELD_FLOAT"
+				"hook_speed"		"1600.0"
 			}
 			"02"
 			{
@@ -1472,7 +1472,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"BaseClass" 					"ability_datadriven"
-		"AbilityTextureName"				"tidehunter_gush"
+		"AbilityTextureName"			"tidehunter_gush"
 		
 		
 		// Casting
@@ -1487,15 +1487,15 @@
 		{
 			"TrackingProjectile"
 			{
-				"Target" "TARGET"
+				"Target" 	"TARGET"
 					
-				"MoveSpeed" "%projectile_speed"
-				"ProvidesVision" "0"
-				"EffectName"    "particles/basic_projectile/gush_battleship.vpcf" 
+				"MoveSpeed" 		"%projectile_speed"
+				"ProvidesVision" 	"0"
+				"EffectName"    	"particles/basic_projectile/gush_battleship.vpcf" 
 			}
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"bilgeMana"
 			}
 			
@@ -1506,28 +1506,28 @@
 		{
 			"bilge_mod"
 			{
-				"Duration" "%duration"
+				"Duration"	"%duration"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "%movement_speed"
-                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%movement_speed"
+                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
                 }
 			}
 		}
 		
 		"OnProjectileHitUnit"
 		{
-			"DeleteOnHit"                           "false"
+			"DeleteOnHit"		"false"
 			"ApplyModifier"
 			{
-				"Target" "TARGET"
-				"ModifierName" "bilge_mod"
+				"Target"		"TARGET"
+				"ModifierName"	"bilge_mod"
 			}
 			"Damage"
 			{
-					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
-					"Damage"                                "%damage"
-					"Target" "TARGET"
+					"Type"		"DAMAGE_TYPE_PHYSICAL"
+					"Damage"	"%damage"
+					"Target"	"TARGET"
 			}
 		}
 		
@@ -1559,12 +1559,12 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"		"600 650 700 750"
+				"damage"			"600 650 700 750"
 			}
 			"05"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.0"
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"2.0"
 			}
 		}
 	}
@@ -5549,13 +5549,8 @@
 		{
 			"ApplyModifier"
 			{
-				"Target"		"CASTER"
-				"ModifierName"	"reflected"
-			}
-			"ApplyModifier"
-			{
 				"Target"		"TARGET"
-				"ModifierName"	"take_reflected"
+				"ModifierName"	"reflected"
 			}
 			"RunScript"
 			{
@@ -5563,8 +5558,6 @@
 				"Function"		"reflectGetStartHp"
 			}
 		}
-			
-		
 
 		"Modifiers"
 		{
@@ -5582,25 +5575,9 @@
 						"Function"		"reflect"
 					}
 				}
-			}
-			"take_reflected"
-			{
-			
-				"EffectName"		"particles/basic_projectile/ramming_speed.vpcf" 
-				"EffectAttachType"	"follow_origin"
-				"Duration"			"2.0"
-				"ThinkInterval"		"1.9"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"scripts/vscripts/abilityfunctions.lua"
-						"Function"		"takeReflected"
-					}
-				}
-			}
-			
+			}		
 		}
+
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -7272,7 +7249,7 @@
 
 	}
 	
-			//=================================================================================================================
+	//=================================================================================================================
 	// engine
 	//=================================================================================================================
 	"panic_battleship"
@@ -7281,8 +7258,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityTextureName"				"ramming_speed_battleship"
-		
+		"AbilityTextureName"			"ramming_speed_battleship"
 		
 		"BaseClass" 					"ability_datadriven"
 
@@ -7302,35 +7278,27 @@
 		{
 			"RunScript"
 					{
-						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
 						"Function"			"panic"
 					}
 		}
 		
 		"Modifiers"
 		{
-			
-			
 			"panic_time"
 			{
-				"IsHidden"                              "1"
+				"IsHidden"		"1"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%bail_bonus_move_speed"
 
 				}
-				"Duration" "%panic_duration"
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-				
-				
-				
+				"Duration"		"%panic_duration"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"				
 			}
 			
 		}
 
-		
-		
-		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -7343,11 +7311,9 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"panic_duration"				"3.0 4.0 5.0 6.0"
+				"panic_duration"		"3.0 4.0 5.0 6.0"
 			}
 		}
-		
-
 	}
 	
 	
@@ -7358,23 +7324,23 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityTextureName"				"windrunner_windrun_sylvan"
-		
-		
-		"BaseClass" 					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"		"windrunner_windrun_sylvan"
+
+		"BaseClass" 				"ability_datadriven"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"			"0.0 0.0 0.0 0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20.0 20.0 20.0 20.0"
-"AbilityCastRange"				"20000"
+		"AbilityCooldown"			"20.0 20.0 20.0 20.0"
+		"AbilityCastRange"			"20000"
+
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0"
+		"AbilityManaCost"			"0"
 		
 		
 		"OnSpellStart"
@@ -7382,14 +7348,14 @@
 
 			"RunScript"
 					{
-						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
 						"Function"			"route"
-							"Target"            "POINT"
+							"Target"		"POINT"
 					}
 			"ApplyModifier"
 			{
-				"Target" "CASTER"
-				"ModifierName" "route_set"
+				"Target"		"CASTER"
+				"ModifierName"	"route_set"
 			}
 		}
 		
@@ -7404,8 +7370,8 @@
 				{
 						"RemoveModifier"
 						{
-							"Target" "CASTER"
-							"ModifierName" "route_set"
+							"Target"		"CASTER"
+							"ModifierName"	"route_set"
 						}
 				}
 
@@ -7414,17 +7380,15 @@
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%path_bonus_move_speed"
 
 				}
-				"Duration" "%path_duration"
+				"Duration"	"%path_duration"
 
-				"EffectName"    "particles/basic_projectile/speed_effect.vpcf" 
+				"EffectName"		"particles/basic_projectile/speed_effect.vpcf" 
 				"EffectAttachType"	"follow_origin"
 			}
 			
 		}
 
-		
-		
-		
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
