@@ -571,103 +571,79 @@ end
 
 
 function WindDmg(args) -- keys is the information sent by the ability
---print('[ItemFunctions] gunning_it started! ')
-		local casterUnit = args.caster
-		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
-		local item = args.ability
-		local targetUnit = args.target
-		local targetPos = args.target:GetAbsOrigin()
-		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
-        local casterPos = args.caster:GetAbsOrigin()
-	--print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
-        local direction =  casterPos - targetPos
-		local itemName = args.ability:GetAbilityName() 
-		
-		
-		if direction:Length() > item:GetSpecialValueFor("min_range") and direction:Length() < 1200 then
-			local damageTable = {
-				victim = targetUnit,
-				attacker = casterUnit,
-				damage = direction:Length()/1200 * item:GetSpecialValueFor("dmg"),
-				damage_type = DAMAGE_TYPE_PHYSICAL,
-			}
-			ApplyDamage(damageTable)
-		elseif direction:Length() < item:GetSpecialValueFor("min_range") then
-			local damageTable = {
-				victim = targetUnit,
-				attacker = casterUnit,
-				damage = item:GetSpecialValueFor("dmg")/2,
-				damage_type = DAMAGE_TYPE_PHYSICAL,
-			}
-			ApplyDamage(damageTable)
-		elseif direction:Length() > 1199  then
-			local damageTable = {
-				victim = targetUnit,
-				attacker = casterUnit,
-				damage =item:GetSpecialValueFor("dmg"),
-				damage_type = DAMAGE_TYPE_PHYSICAL,
-			}
-			ApplyDamage(damageTable)
-		end
-		--ability is how 
-		if string.match(itemName, "doubled") then--l
-		
-			local HPPercentageTaken = (targetUnit:GetHealth()/targetUnit:GetMaxHealth()) -- Calculate the target HP percentage
-			local damageTable = {
-				victim = targetUnit,
-				attacker = casterUnit,
-				damage = item:GetSpecialValueFor("bonus_dmg")*HPPercentageTaken,
-				damage_type = DAMAGE_TYPE_PHYSICAL,
-			}
-			ApplyDamage(damageTable)
-			
-			
-		end
-		
-		
+	--print('[ItemFunctions] gunning_it started! ')
+	local item 			= args.ability
+	
+	local minRange		= item:GetSpecialValueFor("min_range")
+	local maxRange		= item:GetSpecialValueFor("range")
+	local distance		= (args.caster:GetAbsOrigin() - args.target:GetAbsOrigin()):Length()
+
+	local baseDamage 	= item:GetSpecialValueFor("dmg")
+	local bonusDamage	= item:GetSpecialValueFor("bonus_dmg")
+	local distDamage	= (0.5 + math.max(((distance - minRange)/(maxRange - minRange))/2)) 
+	
+	local bonusVal		= bonusDamage * (string.match(args.ability:GetAbilityName(), "doubled") and 1.2 or 0.8)
+	local distVal		= (string.match(args.ability:GetAbilityName(), "ult") and 1 or distDamage)
+
+	--Straight Damage by Percentage
+	--local damageTable = {
+	--	victim 		= args.target,
+	--	attacker 	= args.caster,
+	--	damage 		= baseDamage + bonusVal * (args.caster:GetHealth() / args.caster:GetMaxHealth()),
+	--	damage_type = DAMAGE_TYPE_PHYSICAL,
+	--}
+	--ApplyDamage(damageTable)
+	
+	--Range Penalty Damage Modifier
+	local damageTable = {
+		victim 		= args.target,
+		attacker 	= args.caster,
+		damage		= (baseDamage + (bonusVal * math.max((args.caster:GetHealth()*2 / args.caster:GetMaxHealth() - 1), 0))) * distVal,
+		damage_type = DAMAGE_TYPE_PHYSICAL,
+	}
+	ApplyDamage(damageTable)
 end
 
-
 function WindUltDmg(args) -- keys is the information sent by the ability
---print('[ItemFunctions] gunning_it started! ')
-		local casterUnit = args.caster
-		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
-		local targetUnit = args.target
-		local targetPos = args.target:GetAbsOrigin()
-		--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
-        local casterPos = args.caster:GetAbsOrigin()
-	--print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
-        local direction =  casterPos - targetPos
-		
-		local itemName = tostring(args.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. keys.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
-		if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
-			for itemSlot = 0, 11, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
-					if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
-							local Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
-							if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
-							
-
-									local damageTable = {
-										victim = targetUnit,
-										attacker = casterUnit,
-										damage = 310,
-										damage_type = DAMAGE_TYPE_PHYSICAL,
-									}
-									ApplyDamage(damageTable)
-									
-									local HPPercentageTaken = (targetUnit:GetHealth()/targetUnit:GetMaxHealth()) -- Calculate the target HP percentage
-									local damageTable = {
-										victim = targetUnit,
-										attacker = casterUnit,
-										damage = 310*HPPercentageTaken,
-										damage_type = DAMAGE_TYPE_PHYSICAL,
-									}
-									ApplyDamage(damageTable)
-								do return end
-							end
-					end
-			end
-		end
+    ----print('[ItemFunctions] gunning_it started! ')
+	--local casterUnit = args.caster
+	----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	--local targetUnit = args.target
+	--local targetPos = args.target:GetAbsOrigin()
+	----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+    --local casterPos = args.caster:GetAbsOrigin()
+	----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+    --local direction =  casterPos - targetPos
+	--	
+	--local itemName = tostring(args.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. keys.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
+	--if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
+	--	for itemSlot = 0, 11, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
+	--		if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
+	--			local Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
+	--			if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
+	--			
+	--				
+	--				local damageTable = {
+	--					victim = targetUnit,
+	--					attacker = casterUnit,
+	--					damage = 310,
+	--					damage_type = DAMAGE_TYPE_PHYSICAL,
+	--				}
+	--				ApplyDamage(damageTable)
+	--					
+	--				local HPPercentageTaken = (targetUnit:GetHealth()/targetUnit:GetMaxHealth()) -- Calculate the target HP percentage
+	--				local damageTable = {
+	--					victim = targetUnit,
+	--					attacker = casterUnit,
+	--					damage = 310*HPPercentageTaken,
+	--					damage_type = DAMAGE_TYPE_PHYSICAL,
+	--				}
+	--				ApplyDamage(damageTable)
+	--				do return end
+	--			end
+	--		end
+	--	end
+	--end
 end
 
 function coalUltStun(args) -- keys is the information sent by the ability

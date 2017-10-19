@@ -1166,33 +1166,32 @@ end
 ----BROKEN SEA PLANE ABILITIES--------------
 --~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+-- Gets starting HP for Sea Plane Ruse.
 herohp = {}
-function reflectGetStartHp(args) -- keys is the information sent by the ability
+function reflectGetStartHp(args)
 	local casterUnit = args.caster
 	herohp[casterUnit:GetOwner():GetPlayerID()] = casterUnit:GetHealth()
 end
 
-function reflect(args) -- keys is the information sent by the ability
+-- Deals damage to the enemy and heals self.
+function reflect(args)
+	print('[ItemFunctions] Start reflection return.')
+
+	-- Set up ability, get HP from cast time.
 	local casterUnit = args.caster
 	local abil = casterUnit:GetAbilityByIndex(2)
 	local startHP = herohp[casterUnit:GetOwner():GetPlayerID()]
-	print('[ItemFunctions] REFLECT finished! HP was:' .. startHP)
+	print('[ItemFunctions] Starting HP is:' .. startHP)
+	
+	-- Calculate the amount of damage to be reflected / healed
 	local ruseDmg = (startHP - casterUnit:GetHealth()) * abil:GetLevelSpecialValueFor("dmg", abil:GetLevel() - 1)
-	
-	casterUnit:SetHealth(casterUnit:GetHealth() + ruseDmg)
-end
+	print('[ItemFunctions] Current HP IS:' .. casterUnit:GetHealth() .. '. Will deal ' .. ruseDmg .. 'to target.')
 
-function takeReflected(args) -- keys is the information sent by the ability
-	local casterUnit = args.caster
-	print('[ItemFunctions] REFLECT finished! HP was:' .. herohp[casterUnit:GetOwner():GetPlayerID()])
-	local ruseDmg = herohp[casterUnit:GetOwner():GetPlayerID()] - casterUnit:GetHealth()
-	print('[ItemFunctions] REFLECT STARTED started! HP IS:' .. casterUnit:GetHealth() .. ' deal ' .. ruseDmg .. 'to target')
-	
-	
-	local abil = casterUnit:GetAbilityByIndex(2)
-	local level = abil:GetLevel()
-	ruseDmg = ruseDmg *(0.2 + 0.1 * abil:GetLevel())
-	
+	-- Add back reflected damage as health
+	casterUnit:SetHealth(casterUnit:GetHealth() + ruseDmg)
+	print('[ItemFunctions] New HP IS:' .. casterUnit:GetHealth() .. '. Should have healed ' .. ruseDmg .. '.')
+
+	-- Deal reflected damage to the enemy
 	local targetUnit = args.target
 	local damageTable = {
 				victim = targetUnit,
@@ -1204,8 +1203,9 @@ function takeReflected(args) -- keys is the information sent by the ability
 				ApplyDamage(damageTable)
 			end
 	print('[ItemFunctions] damage done')
-	
 end
+
+
 
 function mightStart(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
