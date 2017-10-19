@@ -3603,12 +3603,12 @@
 				"Function"			"WindDmg"
 			}
 		}
-							"AbilitySpecial"
+		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"dmg"				"16"
+				"dmg"				"12"
 			}
 			"02"
 			{
@@ -3633,7 +3633,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"bonus_dmg"			"16"
+				"bonus_dmg"			"8"
 			}
 			"07"
 			{
@@ -3642,8 +3642,8 @@
 			}
 			"08"
 			{
-				"var_type"		"FIELD_FLOAT"
-				"dps"			"16"
+				"var_type"			"FIELD_FLOAT"
+				"dps"				"24"	
 			}
 		}
 	}
@@ -4923,7 +4923,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"dmg"				"40"
+				"dmg"				"24"
 			}
 			"02"
 			{
@@ -4948,7 +4948,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"bonus_dmg"			"35"
+				"bonus_dmg"			"16"
 			}
 			"07"
 			{
@@ -4958,7 +4958,7 @@
 			"08"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"40"
+				"dps"			"48"
 			}
 		}
 	}
@@ -6144,7 +6144,7 @@
 	}
 	
 	//===============================================
-	// wind-bow III
+	// wind-bow 3
 	//===============================================
     "item_wind_three_bow"
 	{
@@ -6224,7 +6224,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"dmg"				"118"
+				"dmg"				"48"
 			}
 			"02"
 			{
@@ -6249,7 +6249,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"bonus_dmg"			"59"
+				"bonus_dmg"			"32"
 			}
 			"07"
 			{
@@ -6259,13 +6259,13 @@
 			"08"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"118"
+				"dps"			"96"
 			}
 		}
 	}
 	
 	//===============================================
-	// light-bow III
+	// light-bow 3
 	//===============================================
     "item_light_three_bow"
 	{
@@ -7568,7 +7568,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"dmg"		"48"
+				"dmg"		"96"
 			}
 			"02"
 			{
@@ -7600,7 +7600,7 @@
 	}
 	
 	//===============================================
-	// wind-bow_doubled
+	// wind-bow_doubled 1
 	//===============================================
     "item_wind_bow_doubled"
 	{
@@ -7702,7 +7702,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"dmg"				"16"
+				"dmg"				"12"
 			}
 			"02"
 			{
@@ -7727,7 +7727,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"bonus_dmg"			"16"
+				"bonus_dmg"			"8"
 			}
 			"07"
 			{
@@ -7736,8 +7736,8 @@
 			}
 			"08"
 			{
-				"var_type"		"FIELD_FLOAT"
-				"dps"			"32"
+				"var_type"			"FIELD_FLOAT"
+				"dps"				"48"
 			}
 		}
 	}
@@ -9052,7 +9052,7 @@
 	}
 	
 	//===============================================
-	// ice-bow_doubled II
+	// ice-bow_doubled 2
 	//===============================================
     "item_ice_two_bow_doubled"
 	{
@@ -9312,7 +9312,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"dmg"				"40"
+				"dmg"				"24"
 			}
 			"02"
 			{
@@ -9337,7 +9337,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"bonus_dmg"			"35"
+				"bonus_dmg"			"16"
 			}
 			"07"
 			{
@@ -9347,7 +9347,7 @@
 			"08"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"80"
+				"dps"			"96"
 			}
 
 		}
@@ -10817,7 +10817,7 @@
 	}
 	
 	//===============================================
-	// wind-bow_doubled III
+	// wind-bow_doubled 3
 	//===============================================
     "item_wind_three_bow_doubled"
 	{
@@ -10918,7 +10918,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"dmg"				"118"
+				"dmg"				"48"
 			}
 			"02"
 			{
@@ -10943,7 +10943,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"bonus_dmg"			"59"
+				"bonus_dmg"			"32"
 			}
 			"07"
 			{
@@ -10952,14 +10952,14 @@
 			}
 			"08"
 			{
-				"var_type"		"FIELD_FLOAT"
-				"dps"			"236"
+				"var_type"			"FIELD_FLOAT"
+				"dps"				"192"
 			}
 		}
 	}
 	
 	//===============================================
-	// light-bow_doubled III
+	// light-bow_doubled 3
 	//===============================================
     "item_light_three_bow_doubled"
 	{
@@ -12478,7 +12478,7 @@
 			 "RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-				"Function"			"WindUltDmg"
+				"Function"			"WindDmg"
 			}
 					
 			}
@@ -12487,7 +12487,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"dmg"				"236"
+				"dmg"				"195"
 			}
 			"02"
 			{
@@ -12512,7 +12512,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"bonus_dmg"			"330"
+				"bonus_dmg"			"195"
 			}
 			"07"
 			{
@@ -12522,7 +12522,7 @@
 			"08"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"236"
+				"dps"			"390"
 			}
 		}
 	}
