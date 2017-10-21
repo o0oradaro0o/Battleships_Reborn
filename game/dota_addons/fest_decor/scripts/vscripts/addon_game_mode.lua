@@ -80,7 +80,6 @@ function CfrostGameMode:OnThink()
 				unitCount=unitCount+1
 			end
 		end
-	end
 	
 		if unitCount<700 then
 		 local creature = CreateUnitByName( "npc_dota_present" ,  RandomVector( RandomFloat( 0, 5000 )), true, nil, nil, DOTA_TEAM_BADGUYS )
