@@ -1,0 +1,251 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+//=================================================================================================================
+	// icy waters
+	//=================================================================================================================
+	"festive_spirit"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		//"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"tusk_ice_shards"
+		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		"MaxLevel"						"1"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		
+		 "Modifiers"
+        {
+              "Winter_Spirit"
+			{
+				"ThinkInterval"		".05"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"WinterMove"
+					}
+					
+				}
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+					
+				} 
+			}
+		}
+	}
+	
+	
+	
+		"dummy_passive_fly"
+	{
+		"BaseClass" 		"ability_datadriven"
+		"AbilityBehavior" 	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Modifiers"
+		{
+			"dummy_modifier"
+			{
+				"Passive"	"1"
+				"States"
+				{
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_TEAM_MOVE_TO"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_TEAM_SELECT"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_COMMAND_RESTRICTED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FLYING"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		   "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	
+	
+	//=================================================================================================================
+	// root_present
+	//=================================================================================================================
+	"root_present"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"TurretIcon"
+		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+
+
+		"Modifiers"
+		{
+			"root_self"
+			{
+				"Passive" "1"
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ROOTED" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+					
+				} 
+				"OnCreated"
+					{
+					"ApplyModifier"
+						{
+							"Target" "CASTER"
+							"ModifierName" "trap"
+						}		
+					}
+			}
+			
+
+	
+			"trap"
+			{	
+				
+				"ThinkInterval"		"0.15"
+				"OnIntervalThink"
+				{
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "100"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_HERO"
+							"MaxTargets" "5"
+							"Random" "1"
+						}
+						"MoveSpeed" "2500"
+						"ProvidesVision" "0"
+							"EffectName"    "particles/basic_projectile/present.vpcf" 
+					}
+					
+				}
+				
+			}
+			
+
+		}
+		"OnProjectileHitUnit"
+                {
+                        "DeleteOnHit"                           "false"
+						"RemoveModifier"
+						{
+							"Target" "CASTER"
+							"ModifierName" "root_self"
+						}
+						"RunScript"
+						{
+							"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+							"Function"			"AddGift"
+						}
+					
+                }
+			
+
+
+	}
+	
+	"OrnimentKill"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"alchemist_goblins_greed"
+		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		
+		 "Modifiers"
+        {
+                       
+         
+		
+
+			"fire_area_4"
+			{
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsHidden"	 "1"
+				"Passive"	 "1"
+				"Aura" "dmg_aura"
+				"Aura_Radius" "100"
+				"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_BOTH"
+				"Aura_Types" "DOTA_UNIT_TARGET_HERO"
+			}
+			"dmg_aura"
+			{
+					"ThinkInterval"	".01"
+	
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+						"Function"				"killMe"
+					}
+				}
+				
+			}
+               
+        }
+       
+  
+	
+		
+
+	}
+	
+	
+	
+	
+	
+	
+}

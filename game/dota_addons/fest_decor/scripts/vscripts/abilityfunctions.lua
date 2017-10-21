@@ -1,0 +1,204 @@
+
+PlayerColors = {
+ {46, 106, 230},
+
+ {92, 230, 173},
+
+ {173, 0, 173},
+
+ {220,217,10},
+
+ {230, 98, 0},
+
+ {230, 122, 176},
+
+ {146, 164, 64},
+ 
+ {92, 197, 224},
+ 
+ {0, 119, 31},
+ 
+ {149, 96, 0}
+}
+
+
+if abilityFunctions == nil then
+	print ( '[AbilityFunctions] creating abilityFunctions' )
+	abilityFunctions = {} -- Creates an array to let us beable to index abilityFunctions when creating new functions
+	abilityFunctions.__index = abilityFunctions
+end
+ 
+function abilityFunctions:new() -- Creates the new class
+	print ( '[AbilityFunctions] abilityFunctions:new' )
+	o = o or {}
+	setmetatable( o, abilityFunctions )
+	return o
+end
+ 
+function abilityFunctions:start() -- Runs whenever the abilityFunctions.lua is ran
+	print('[AbilityFunctions] abilityFunctions started!')
+end
+
+--MoveToPosition(Vector vDest)
+
+function WinterMove(args)
+	local casterUnit = args.caster
+	
+	--handle reseting animation timing
+	if casterUnit.count==nil then
+		casterUnit.count=0
+		StartAnimation(casterUnit, {duration=2.0, activity=ACT_DOTA_RUN, rate=.5})
+	end
+	casterUnit.count=casterUnit.count+1
+	
+	--keep track of hero path
+	if casterUnit.loclist==nil then
+		casterUnit.loclist = {}
+	end
+		table.insert(casterUnit.loclist, 1, casterUnit:GetOrigin())
+		if #casterUnit.loclist >10000 then
+			casterUnit.loclist [#casterUnit.loclist] = nil
+		end
+		
+	--move ther hero
+	 local direction =  casterUnit:GetForwardVector()
+	 
+		if not IsPhysicsUnit(casterUnit) then
+		Physics:Unit(casterUnit)
+	end
+	
+	
+	if casterUnit.targ_position~=nil then
+		local targ_dist = (casterUnit.targ_position) - casterUnit:GetOrigin()*Vector(1,1,0)
+		
+		if targ_dist:Length() <200 then
+
+			casterUnit.targ_position = (casterUnit:GetOrigin()+direction*1000)*Vector(1,1,0)
+
+			casterUnit:MoveToPosition(  casterUnit:GetOrigin()+direction*1000)
+		end
+	end
+		
+
+	if casterUnit.presentList~=nil then
+		local i=1
+		for _,present in  pairs(casterUnit.presentList) do
+			present:SetOrigin(casterUnit.loclist[10*i])
+			i=i+1
+		end
+	end
+	local vec = direction*40
+	casterUnit:AddPhysicsVelocity(vec)
+	
+	if casterUnit.count%40==0 then
+		StartAnimation(casterUnit, {duration=2.0, activity=ACT_DOTA_RUN, rate=.5})
+		casterUnit.count=0
+	end
+end
+
+function AddGift(args)
+	local Hero = args.target
+	local casterUnit = args.caster
+	local deadloc = Vector(5000,5000,-1000)
+	casterUnit:SetOrigin(deadloc)
+	
+	if Hero.presentList==nil then
+		Hero.presentList = {}
+	end
+	 local creature = CreateUnitByName( "npc_dota_Orniment1" , Vector(5000,5000,-1000), true, nil, nil, Hero:GetTeamNumber() )
+	 local pId = Hero:GetPlayerOwnerID()+1
+	 if(pId == nil) then
+	 pId = 1
+	 end
+	print(pId)
+	 creature:SetRenderColor(PlayerColors[pId][1],PlayerColors[pId][2],PlayerColors[pId][3])
+		table.insert(Hero.presentList, creature)
+		if #Hero.presentList >100 then
+			Hero.presentList [#casterUnit.presentList] = nil
+		end
+		
+	Timers:CreateTimer( 0.03, function()
+	
+      local self = args.caster
+		self:ForceKill(true)
+	 return nil
+    end
+  )
+end
+
+function killMe(args) -- keys is the information sent by the ability
+--print('[ItemFunctions] gunning_it started! ')
+		print("killMe!")
+		local casterUnit = args.target
+			if casterUnit~=nil then
+		stopPhysics(casterUnit)
+		end
+		
+		local damageTable = {
+			victim = casterUnit,
+			attacker = casterUnit,
+			damage = 10000,
+			damage_type = DAMAGE_TYPE_PURE,
+		}
+		
+		ApplyDamage(damageTable)
+	if casterUnit.presentList~=nil then
+		for _,present in  pairs(casterUnit.presentList) do
+			present:RemoveSelf()
+		end
+	end
+		casterUnit.presentList={}
+	
+end
+
+function stopPhysics(casterUnit) -- keys is the information sent by the ability
+
+        local direction =  casterUnit:GetForwardVector()
+        local vec = direction:Normalized() * 0.0
+		
+		Physics:Unit(casterUnit)
+		
+		casterUnit:SetPhysicsVelocity(vec)
+
+end
+	
+
+
+function PrintTable(t, indent, done)
+	--print ( string.format ('PrintTable type %s', type(keys)) )
+    if type(t) ~= "table" then return end
+
+    done = done or {}
+    done[t] = true
+    indent = indent or 0
+
+    local l = {}
+    for k, v in pairs(t) do
+        table.insert(l, k)
+    end
+
+    table.sort(l)
+    for k, v in ipairs(l) do
+        -- Ignore FDesc
+        if v ~= 'FDesc' then
+            local value = t[v]
+
+            if type(value) == "table" and not done[value] then
+                done [value] = true
+                print(string.rep ("\t", indent)..tostring(v)..":")
+                PrintTable (value, indent + 2, done)
+            elseif type(value) == "userdata" and not done[value] then
+                done [value] = true
+                print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
+                PrintTable ((getmetatable(value) and getmetatable(value).__index) or getmetatable(value), indent + 2, done)
+            else
+                if t.FDesc and t.FDesc[v] then
+                    print(string.rep ("\t", indent)..tostring(t.FDesc[v]))
+                else
+                    print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
+                end
+            end
+        end
+    end
+end
+
