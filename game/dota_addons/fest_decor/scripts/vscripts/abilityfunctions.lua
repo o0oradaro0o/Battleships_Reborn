@@ -83,7 +83,21 @@ function WinterMove(args)
 	if casterUnit.presentList~=nil then
 		local i=1
 		for _,present in  pairs(casterUnit.presentList) do
-			present:SetOrigin(casterUnit.loclist[10*i])
+			if present.direction==nil then
+				present.direction=1
+			end
+			local height = 0;
+			height = (present:GetOrigin()*Vector(0,0,1)):Length()
+			if height>180 then
+				present.direction=-1
+				height=height+3*present.direction
+			elseif height<40 then
+				present.direction=1
+				height=height+7*present.direction
+			else
+				height=height+7*present.direction
+			end
+			present:SetOrigin(casterUnit.loclist[10*i+5]*Vector(1,1,0)+Vector(1,1,height))
 			i=i+1
 		end
 	end
@@ -96,7 +110,15 @@ function WinterMove(args)
 	end
 end
 
-function AddGift(args)
+function AddOrniment1(args)
+	AddGift(args,"npc_dota_Orniment1")
+end
+
+function AddOrniment2(args)
+	AddGift(args,"npc_dota_Orniment2")
+end
+
+function AddGift(args, name)
 	local Hero = args.target
 	local casterUnit = args.caster
 	local deadloc = Vector(5000,5000,-1000)
@@ -105,13 +127,16 @@ function AddGift(args)
 	if Hero.presentList==nil then
 		Hero.presentList = {}
 	end
-	 local creature = CreateUnitByName( "npc_dota_Orniment1" , Vector(5000,5000,-1000), true, nil, nil, Hero:GetTeamNumber() )
+	 local creature = CreateUnitByName( name , Hero.loclist[#Hero.presentList*10+15] , true, nil, nil, Hero:GetTeamNumber() )
 	 local pId = Hero:GetPlayerOwnerID()+1
 	 if(pId == nil) then
 	 pId = 1
 	 end
 	print(pId)
-	 creature:SetRenderColor(PlayerColors[pId][1],PlayerColors[pId][2],PlayerColors[pId][3])
+	if string.match(name, "Orniment1") then
+		creature:SetRenderColor(PlayerColors[pId][1],PlayerColors[pId][2],PlayerColors[pId][3])
+	 end
+	 
 		table.insert(Hero.presentList, creature)
 		if #Hero.presentList >100 then
 			Hero.presentList [#casterUnit.presentList] = nil
@@ -161,8 +186,11 @@ function stopPhysics(casterUnit) -- keys is the information sent by the ability
 		casterUnit:SetPhysicsVelocity(vec)
 
 end
-	
 
+function RandomMove(args)
+	local casterUnit = args.caster
+	casterUnit:MoveToPosition(  casterUnit:GetOrigin()+RandomVector( RandomFloat( 300, 400 )))
+end
 
 function PrintTable(t, indent, done)
 	--print ( string.format ('PrintTable type %s', type(keys)) )

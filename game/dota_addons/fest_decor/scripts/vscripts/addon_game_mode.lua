@@ -58,8 +58,6 @@ function CfrostGameMode:OrderExecutionFilter(keys)
 		  local hero = EntIndexToHScript(unitIndex)
 		  if hero then
 			hero.targ_position = Vector(keys.position_x,keys.position_y,0)
-
-			print("doing the OrderExecutionFilter!")
 		  end
 		end
 		
@@ -82,7 +80,20 @@ function CfrostGameMode:OnThink()
 		end
 	
 		if unitCount<700 then
-		 local creature = CreateUnitByName( "npc_dota_present" ,  RandomVector( RandomFloat( 0, 5000 )), true, nil, nil, DOTA_TEAM_BADGUYS )
+		local placment = RandomVector( RandomFloat( 0, 5000 ))
+		
+		local allUnits = FindUnitsInRadius( DOTA_TEAM_BADGUYS, placment, nil, 700, DOTA_UNIT_TARGET_TEAM_BOTH,  DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE,FIND_ANY_ORDER,  false)
+		print(#allUnits)
+		
+		if #allUnits==0 then
+			 if RandomInt( 0, 9 ) ==1 then
+			  local creature = CreateUnitByName( "npc_dota_present2" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
+			  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
+			 else
+			 local creature = CreateUnitByName( "npc_dota_present" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
+				creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
+			 end
+		  end
 		end
 		 
 		 
