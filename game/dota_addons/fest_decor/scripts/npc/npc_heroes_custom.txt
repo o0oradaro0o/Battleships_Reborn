@@ -49,10 +49,7 @@
         "ModelScale"        "1.0"
 		"RingRadius"				"100"
 
-		"ItemSlots" {}
-		//"AttachWearables" {}
 		"BountyGoldMin"				"240"		// Gold earned min.
 		"BountyGoldMax"				"260"		// Gold earned max.
-		"DisableWearables" "1"
 	}
 }

@@ -1,0 +1,20 @@
+<root>
+
+	<styles>
+		<include src="file://{resources}/styles/custom_game/overthrow_game_info.css" />
+	</styles>
+	<Panel class="BattleshipsGameInfo">
+		
+		<Panel id="Title">
+			<Label id="TitleName" text="#addon_game_name" />
+		</Panel>
+		<Label id="ObjectiveHeader" class="Header" html="true" text="#bs_Objectives" /> 
+		<Label id="HowToWin" html="true" text="#ds_HowToWin" />
+		
+		
+		
+		
+
+		<Label id="ThankYouNote" class="TipText" html="true" text="#bs_Thanks" />
+	</Panel>
+</root> 

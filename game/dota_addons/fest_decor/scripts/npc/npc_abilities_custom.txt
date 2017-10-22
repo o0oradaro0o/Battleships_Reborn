@@ -50,6 +50,42 @@
 	}
 	
 	
+	"Deopsit_Orbs"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		//"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"tusk_ice_shards"
+		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		"MaxLevel"						"1"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		
+		 "Modifiers"
+        {
+              "orb_deposit"
+			{
+				"ThinkInterval"		"1.0"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/addon_game_mode.lua"
+						"Function"			"DepositOrb"
+					}
+					
+				}
+			}
+		}
+	}
 	
 		"dummy_passive_fly"
 	{

@@ -1,11 +1,21 @@
 -- Generated from template
 require("libraries/timers")
+require('storage')
 require('libraries/physics')
 require('notifications')
+require('good_base')
+require('bad_base')
 -- This library can be used for starting customized animations on units from lua
 require('libraries/animations')
 -- This library can be used for performing "Frankenstein" attachments on units
  -- require('libraries/attachments')
+
+g_MainTimerTickCount = 0
+g_GoodTempPoints = 0
+g_BadTempPoints = 0
+g_GoodStashedPoints = 100
+g_BadStashedPoints = 100
+
 
 
 if CfrostGameMode == nil then
@@ -46,7 +56,10 @@ function CfrostGameMode:OnNPCSpawned(keys)
 		local abil = npc:GetAbilityByIndex(0)
 		abil:SetLevel(1)
 		PlayerResource:SetCameraTarget(npc:GetPlayerOwnerID(), npc)
-
+		local emptyData = {
+					}
+					FireGameEvent( "Player_Spawned", emptyData );
+		--SetWearablesColor(npc)
 	end
 end
 
@@ -73,32 +86,37 @@ function CfrostGameMode:OrderExecutionFilter(keys)
 function CfrostGameMode:OnThink()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		--print( "Template addon script is running." )
+		g_MainTimerTickCount = g_MainTimerTickCount +1
+		if g_MainTimerTickCount == 1 then
+			local emptyData = {
+					}
+					FireGameEvent( "Player_Spawned", emptyData );
+		end
 		
 		
+		if g_MainTimerTickCount%180 == 0 then
+			GameRules:SetTimeOfDay(0.25)
+		end
 		
 
 		local unitCount = 0
-	for _,creature in pairs( Entities:FindAllByClassname( "npc_dota_c*")) do
-			if creature ~= nil  then
-				unitCount=unitCount+1
+		for _,creature in pairs( Entities:FindAllByClassname( "npc_dota_c*")) do
+				if creature ~= nil  then
+					unitCount=unitCount+1
+				end
 			end
-		end
-	
-		if unitCount<700 then
-		local placment = RandomVector( RandomFloat( 0, 5000 ))
 		
-		local x = Entities:FindByClassnameNearest("npc_dota_creature", placment, 500)
-		print(x)
-		if x==nil then
-			 if RandomInt( 0, 9 ) ==1 then
-			  local creature = CreateUnitByName( "npc_dota_present2" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
-			  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
-			 else
-			 local creature = CreateUnitByName( "npc_dota_present" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
-				creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
-			 end
-		  end
+			if unitCount<700 then
+			local placment = RandomVector( RandomFloat( 0, 4500 ))
+			
+			local x = Entities:FindByClassnameNearest("npc_dota_creature", placment, 500)
+			if x==nil then
+					spawnOrn(placment)
+			
+			  end
 		end
+		updateScore()
+		sendScore()
 		 
 		 
 		 
@@ -106,6 +124,86 @@ function CfrostGameMode:OnThink()
 		return nil
 	end
 	return 1
+end
+
+function updateScore()
+
+end
+function sendScore()
+local TotalGoodScore = g_GoodStashedPoints + storage:GetGoodPoints()
+local TotalBadScore = g_BadStashedPoints + storage:GetBadPoints()
+
+	local emptyData = {
+		good_score = TotalGoodScore;
+		bad_score = TotalBadScore
+					}
+					FireGameEvent( "Score_data", emptyData );
+end
+
+
+
+function DepositOrb(args) -- keys is the information sent by the ability
+--print('[ItemFunctions] gunning_it started! ')
+		local casterUnit = args.caster
+		if casterUnit.presentList~= nil then
+			if #casterUnit.presentList > 0 then
+				
+				creature = table.remove(casterUnit.presentList, 1)
+				creature:ForceKill(true)
+				
+				if casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+					g_GoodStashedPoints = g_GoodStashedPoints+1
+				else
+					g_BadStashedPoints = g_BadStashedPoints+1
+				end
+			
+			else
+				--notificaiton
+			end
+		end
+end
+
+
+
+function spawnOrn(placment)
+ if RandomInt( 0, 9 ) ==1 then
+			  local creature = CreateUnitByName( "npc_dota_present2" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
+			  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
+			 else
+			 local creature = CreateUnitByName( "npc_dota_present" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
+				creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
+	 end
+end
+
+
+
+function SetWearablesColor( hero )
+
+ hero.wearableNames = {} -- In here we'll store the wearable names to revert the change
+ hero.hiddenWearables = {} -- Keep every wearable handle in a table, as its way better to iterate than in the MovePeer system
+    local model = hero:FirstMoveChild()
+    while model ~= nil do
+        if model:GetClassname() ~= "" and model:GetClassname() == "dota_item_wearable" then
+            local modelName = model:GetModelName()
+            if string.find(modelName, "invisiblebox") == nil then
+             -- Add the original model name to revert later
+             table.insert(hero.wearableNames,modelName)
+             print("Hidden "..modelName.."")
+
+             -- Set model invisible
+			 if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+				model:SetRenderColor(260,30,30)
+			 else
+					model:SetRenderColor(30,250,30)
+			 end
+
+            end
+        end
+        model = model:NextMovePeer()
+        if model ~= nil then
+         print("Next Peer:" .. model:GetModelName())
+        end
+    end
 end
 
 

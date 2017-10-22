@@ -1,0 +1,10 @@
+"addon"
+{
+    "Language"        "English"
+    "Tokens"
+    {
+
+	"addon_game_name" 			"Decoration Station"
+	
+	}
+}

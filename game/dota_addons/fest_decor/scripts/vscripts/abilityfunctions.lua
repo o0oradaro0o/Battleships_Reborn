@@ -90,12 +90,12 @@ function WinterMove(args)
 			height = (present:GetOrigin()*Vector(0,0,1)):Length()
 			if height>180 then
 				present.direction=-1
-				height=height+3*present.direction
-			elseif height<40 then
+				height=height+9*present.direction
+			elseif height<60 then
 				present.direction=1
-				height=height+7*present.direction
+				height=height+9*present.direction
 			else
-				height=height+7*present.direction
+				height=height+9*present.direction
 			end
 			present:SetOrigin(casterUnit.loclist[10*i+5]*Vector(1,1,0)+Vector(1,1,height))
 			i=i+1
