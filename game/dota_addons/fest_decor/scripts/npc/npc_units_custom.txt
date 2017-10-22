@@ -33,7 +33,7 @@
 		"SoundSet"					"n_creep_Ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
-		"ModelScale" 				"1"
+		"ModelScale" 				".8"
 		
 		"Model"						"modelbaublestillsmooth.vmdl"	// Model.
 		// Abilities
@@ -118,7 +118,7 @@
 		"SoundSet"					"n_creep_Ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
-		"ModelScale" 				".5"
+		"ModelScale" 				".45"
 		
 		"Model"						"star.vmdl"	// Model.
 		// Abilities
@@ -204,7 +204,7 @@
 		"SoundSet"					"n_creep_Ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
-		"ModelScale" 				"1"
+		"ModelScale" 				".8"
 		
 		"Model"						"modelbaublestillsmoothwhite.vmdl"	// Model.
 		// Abilities
@@ -289,7 +289,7 @@
 		"SoundSet"					"n_creep_Ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
-		"ModelScale" 				".5"
+		"ModelScale" 				".45"
 		
 		"Model"						"star.vmdl"	// Model.
 		// Abilities

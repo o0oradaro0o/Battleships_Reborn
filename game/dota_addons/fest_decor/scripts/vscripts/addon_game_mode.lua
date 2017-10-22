@@ -45,6 +45,8 @@ function CfrostGameMode:OnNPCSpawned(keys)
 	if npc:IsRealHero() then
 		local abil = npc:GetAbilityByIndex(0)
 		abil:SetLevel(1)
+		PlayerResource:SetCameraTarget(npc:GetPlayerOwnerID(), npc)
+
 	end
 end
 
@@ -71,6 +73,9 @@ function CfrostGameMode:OrderExecutionFilter(keys)
 function CfrostGameMode:OnThink()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		--print( "Template addon script is running." )
+		
+		
+		
 
 		local unitCount = 0
 	for _,creature in pairs( Entities:FindAllByClassname( "npc_dota_c*")) do
@@ -82,10 +87,9 @@ function CfrostGameMode:OnThink()
 		if unitCount<700 then
 		local placment = RandomVector( RandomFloat( 0, 5000 ))
 		
-		local allUnits = FindUnitsInRadius( DOTA_TEAM_BADGUYS, placment, nil, 700, DOTA_UNIT_TARGET_TEAM_BOTH,  DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE,FIND_ANY_ORDER,  false)
-		print(#allUnits)
-		
-		if #allUnits==0 then
+		local x = Entities:FindByClassnameNearest("npc_dota_creature", placment, 500)
+		print(x)
+		if x==nil then
 			 if RandomInt( 0, 9 ) ==1 then
 			  local creature = CreateUnitByName( "npc_dota_present2" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
 			  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
