@@ -78,7 +78,7 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"		"scripts/vscripts/addon_game_mode.lua"
+						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
 						"Function"			"DepositOrb"
 					}
 					

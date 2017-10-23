@@ -11,10 +11,7 @@ require('libraries/animations')
  -- require('libraries/attachments')
 
 g_MainTimerTickCount = 0
-g_GoodTempPoints = 0
-g_BadTempPoints = 0
-g_GoodStashedPoints = 100
-g_BadStashedPoints = 100
+
 
 
 
@@ -35,6 +32,7 @@ function Precache( context )
 			PrecacheUnitByNameSync("npc_dota_vision_granter", context)
 				PrecacheUnitByNameSync("npc_dota_present", context)
 				PrecacheUnitByNameSync("npc_dota_Orniment1", context)
+				PrecacheUnitByNameSync("npc_dota_Orniment2", context)
 end
 
 -- Create the game mode when we activate
@@ -59,7 +57,7 @@ function CfrostGameMode:OnNPCSpawned(keys)
 		local emptyData = {
 					}
 					FireGameEvent( "Player_Spawned", emptyData );
-		--SetWearablesColor(npc)
+		
 	end
 end
 
@@ -130,8 +128,8 @@ function updateScore()
 
 end
 function sendScore()
-local TotalGoodScore = g_GoodStashedPoints + storage:GetGoodPoints()
-local TotalBadScore = g_BadStashedPoints + storage:GetBadPoints()
+local TotalGoodScore =  storage:GetGoodPoints()
+local TotalBadScore =  storage:GetBadPoints()
 
 	local emptyData = {
 		good_score = TotalGoodScore;
@@ -141,27 +139,6 @@ local TotalBadScore = g_BadStashedPoints + storage:GetBadPoints()
 end
 
 
-
-function DepositOrb(args) -- keys is the information sent by the ability
---print('[ItemFunctions] gunning_it started! ')
-		local casterUnit = args.caster
-		if casterUnit.presentList~= nil then
-			if #casterUnit.presentList > 0 then
-				
-				creature = table.remove(casterUnit.presentList, 1)
-				creature:ForceKill(true)
-				
-				if casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-					g_GoodStashedPoints = g_GoodStashedPoints+1
-				else
-					g_BadStashedPoints = g_BadStashedPoints+1
-				end
-			
-			else
-				--notificaiton
-			end
-		end
-end
 
 
 
@@ -175,36 +152,6 @@ function spawnOrn(placment)
 	 end
 end
 
-
-
-function SetWearablesColor( hero )
-
- hero.wearableNames = {} -- In here we'll store the wearable names to revert the change
- hero.hiddenWearables = {} -- Keep every wearable handle in a table, as its way better to iterate than in the MovePeer system
-    local model = hero:FirstMoveChild()
-    while model ~= nil do
-        if model:GetClassname() ~= "" and model:GetClassname() == "dota_item_wearable" then
-            local modelName = model:GetModelName()
-            if string.find(modelName, "invisiblebox") == nil then
-             -- Add the original model name to revert later
-             table.insert(hero.wearableNames,modelName)
-             print("Hidden "..modelName.."")
-
-             -- Set model invisible
-			 if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-				model:SetRenderColor(260,30,30)
-			 else
-					model:SetRenderColor(30,250,30)
-			 end
-
-            end
-        end
-        model = model:NextMovePeer()
-        if model ~= nil then
-         print("Next Peer:" .. model:GetModelName())
-        end
-    end
-end
 
 
 
