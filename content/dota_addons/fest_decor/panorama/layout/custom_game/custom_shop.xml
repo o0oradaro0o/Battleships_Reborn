@@ -16,7 +16,9 @@
 			<Image id="gage_bkg" src="file://{images}/custom_game/gage_bkg.png" />
 			<Image id="team_mitten" src="file://{images}/custom_game/mitten.png" />
 			<Image id="team_stocking" src="file://{images}/custom_game/stocking.png" />
+			<Image id="MinimapFrame" src="file://{images}/custom_game/candycaneminimap" />
 </Panel>
+
 	
 	
     <Panel hittest="false" class="BarebonesTopNotifications">

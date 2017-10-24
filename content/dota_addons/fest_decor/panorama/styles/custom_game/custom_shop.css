@@ -59,3 +59,13 @@ width: 800px;
 	margin-bottom: 10px;
 	 z-index:6;	
 }
+#MinimapFrame
+{
+	visibility: visible;
+	horizontal-align: left;
+	vertical-align: bottom;
+	width: 100px;
+	height: 100px;	
+	margin-bottom: 10px;
+	 z-index:6;	
+}
