@@ -5,7 +5,7 @@
 	<Panel class="BattleshipsLoadingRoot">
 
 		<Panel id="seq" >
-			<Image id="seq_bg" class="SeqBg" src="file://{images}/custom_game/tree.png" />
+			<Image id="seq_bg" class="SeqBg" src="file://{images}/custom_game/loading.jpg" />
 		</Panel>
 
 		<Panel id="TitlePanel">
@@ -14,7 +14,7 @@
 
 		<Panel id="AuthorPanelHolder">
 			<Panel id="AuthorPanel">
-				<Label class="AuthorTitle" text="Presented By: radar, WeAreAllBritons, Frood, Multiplex, Penrose, and zentrix" />
+				<Label class="AuthorTitle" text="Presented By: radar, Frood, Tipsy Tennant, WeAreAllBritons, Penrose, and zentrix" />
 			</Panel>
 			
 	</Panel>

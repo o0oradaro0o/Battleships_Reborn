@@ -107,7 +107,7 @@ function CfrostGameMode:OnThink()
 			if unitCount<700 then
 			local placment = RandomVector( RandomFloat( 0, 4500 ))
 			
-			local x = Entities:FindByClassnameNearest("npc_dota_creature", placment, 500)
+			local x = Entities:FindByClassnameNearest("npc_dota_creature", placment, 300)
 			if x==nil then
 					spawnOrn(placment)
 			
