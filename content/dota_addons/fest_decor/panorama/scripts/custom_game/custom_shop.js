@@ -63,8 +63,13 @@ function PingLoc(data)
 			}
 	}
 	
-	function showScore(data)
+	function ShowScore(data)
 	{
+		var totalSccore = data.good_score+data.bad_score
+
+		
+		var deg =  data.good_score/totalSccore*180-90
+			$( "#Tree" ).style.transform="rotateZ("+ deg+"deg ) ;"
 				data.good_score
 				data.bad_score
 	}
@@ -72,7 +77,9 @@ function PingLoc(data)
 	
 	
 	
+	
 function TopNotification( msg ) {
+		
   AddNotification(msg, $('#TopNotifications'));
 }
 
@@ -263,6 +270,7 @@ function AddNotificationbot(msg, panel) {
     }
   }
 }
+
 
 
 

@@ -22,6 +22,18 @@ GoodTempPoints = 0
 BadTempPoints = 0
 
 
+GoodStoredPoints = 20
+BadStoredPoints = 20
+
+function storage:AddGoodStoredPoints(points)
+	GoodStoredPoints = GoodStoredPoints + 1
+end
+
+function storage:AddBadStoredPoints(points)
+	BadStoredPoints = BadStoredPoints + 1
+end
+
+
 function storage:SetGoodPoints(points)
 	GoodTempPoints = points
 end
@@ -32,11 +44,11 @@ end
 
 
 function storage:GetGoodPoints()
-	return GoodTempPoints
+	return GoodTempPoints+GoodStoredPoints
 end
 
 function storage:GetBadPoints()
-	return BadTempPoints
+	return BadTempPoints+BadStoredPoints
 end
 
 

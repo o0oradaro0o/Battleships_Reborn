@@ -127,6 +127,11 @@ function AddGift(args, name)
 	if Hero.presentList==nil then
 		Hero.presentList = {}
 	end
+	if #Hero.presentList >98 then
+	  Notifications:Top(Hero:GetPlayerOwnerID(), {text="#many_orbs", duration=1.0, style={color=" #008000;", fontSize= "45px;", textShadow= "2px 2px 2px #ff0000;"}})
+		return
+	end
+	
 	 local creature = CreateUnitByName( name , Hero.loclist[#Hero.presentList*10+15] , true, nil, nil, Hero:GetTeamNumber() )
 	 local pId = Hero:GetPlayerOwnerID()+1
 	 if(pId == nil) then
@@ -175,6 +180,32 @@ function killMe(args) -- keys is the information sent by the ability
 		casterUnit.presentList={}
 	
 end
+
+
+function DepositOrb(args) -- keys is the information sent by the ability
+--print('[ItemFunctions] gunning_it started! ')
+		local casterUnit = args.caster
+		if casterUnit.presentList~= nil then
+			if #casterUnit.presentList > 0 then
+				
+				creature = table.remove(casterUnit.presentList, 1)
+				creature:ForceKill(true)
+				
+				if casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+						storage:AddGoodStoredPoints(BadTempPoints)
+				else
+						storage:AddBadStoredPoints(BadTempPoints)
+				end
+
+			else
+				  Notifications:Top(casterUnit:GetPlayerOwnerID(), {text="#no_orbs", duration=1.0, style={color=" #008000;", fontSize= "45px;", textShadow= "2px 2px 2px #ff0000;"}})
+				  
+			end
+			else
+				 Notifications:Top(casterUnit:GetPlayerOwnerID(), {text="#no_orbs", duration=1.0, style={color="#008000",  fontSize="45px;", textShadow= "2px 2px #ff0000;"}})
+		end
+end
+
 
 function stopPhysics(casterUnit) -- keys is the information sent by the ability
 
