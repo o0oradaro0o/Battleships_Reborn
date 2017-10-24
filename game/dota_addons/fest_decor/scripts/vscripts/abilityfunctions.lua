@@ -121,7 +121,7 @@ end
 function AddGift(args, name)
 	local Hero = args.target
 	local casterUnit = args.caster
-	local deadloc = Vector(5000,5000,-1000)
+	local deadloc = Vector(10000,10000,10000)
 	casterUnit:SetOrigin(deadloc)
 	
 	if Hero.presentList==nil then
@@ -181,6 +181,36 @@ function killMe(args) -- keys is the information sent by the ability
 	
 end
 
+function killMeIfImNotTheCaster(args) -- keys is the information sent by the ability
+--print('[ItemFunctions] gunning_it started! ')
+local casterUnit = args.caster
+
+		local TargetUnit = args.target
+		if TargetUnit~=casterUnit then
+		
+			if TargetUnit~=nil then
+				stopPhysics(TargetUnit)
+				end
+				
+				local damageTable = {
+					victim = TargetUnit,
+					attacker = TargetUnit,
+					damage = 10000,
+					damage_type = DAMAGE_TYPE_PURE,
+				}
+				
+				ApplyDamage(damageTable)
+			if TargetUnit.presentList~=nil then
+				for _,present in  pairs(TargetUnit.presentList) do
+					present:RemoveSelf()
+				end
+			end
+				TargetUnit.presentList={}
+		end
+	
+end
+
+
 
 function DepositOrb(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')
@@ -188,9 +218,11 @@ function DepositOrb(args) -- keys is the information sent by the ability
 		if casterUnit.presentList~= nil then
 			if #casterUnit.presentList > 0 then
 				
-				creature = table.remove(casterUnit.presentList, 1)
-				creature:ForceKill(true)
-				
+				creature = table.remove(casterUnit.presentList)
+				creature:SetOrigin(casterUnit.loclist[10+5]*Vector(1,1,0)+Vector(1,1,250))
+				Timers:CreateTimer( 0.03, function()
+					creature:ForceKill(true)
+				end)
 				if casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 						storage:AddGoodStoredPoints(BadTempPoints)
 				else

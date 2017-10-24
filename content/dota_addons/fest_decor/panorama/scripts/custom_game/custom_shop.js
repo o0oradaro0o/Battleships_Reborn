@@ -3,7 +3,8 @@
 var NewShopUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop");
 
   var catigoriesUI;
-
+var currentDeg = 0
+var targetDeg = 0
 var shipShopShow=false;
 
 function fixUI( ) 
@@ -68,14 +69,26 @@ function PingLoc(data)
 		var totalSccore = data.good_score+data.bad_score
 
 		
-		var deg =  data.good_score/totalSccore*180-90
-			$( "#Tree" ).style.transform="rotateZ("+ deg+"deg ) ;"
-				data.good_score
-				data.bad_score
+		targetDeg =  data.good_score/totalSccore*180-90
+			$.Schedule( .1, GoToScore );
 	}
 
-	
-	
+	function GoToScore()
+	{
+		if(targetDeg<currentDeg)
+		{
+			currentDeg=currentDeg-.1;
+		}
+		if(targetDeg>currentDeg)
+		{
+			currentDeg=currentDeg+.1;
+		}
+		$( "#Tree" ).style.transform="rotateZ("+ currentDeg+"deg ) ;"
+		if(targetDeg!=currentDeg)
+		{
+		$.Schedule( .1, GoToScore );
+		}
+	}
 	
 	
 function TopNotification( msg ) {

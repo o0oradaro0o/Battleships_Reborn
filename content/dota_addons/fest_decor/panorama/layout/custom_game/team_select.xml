@@ -17,13 +17,7 @@
 				
 			
 				<Panel id="TeamsListGroup" >
-				<Button id="battleButton"  class="untoggled" onactivate="BattleMode()">
-							<Label id="battleLabel" text="Game Mode: Normal" />
-					</Button>
-					
-					<Button id="tradeButton"  class="toggled" onactivate="TradeMode()">
-							<Label id="TradeLabel" text="trading: Disabled" />
-					</Button>
+			
 					
 					<Panel id="TeamListHeader">
 						<Label id="TeamListHeaderLabel" text="#custom_game_team_select" />
@@ -34,9 +28,6 @@
 						<Label text="#custom_game_team_select_shuffle" />
 						<Image src="file://{images}/control_icons/shuffle.psd" />
 					</Button>
-					<Button id="coOpButton"  class="untoggled" onactivate="OnCoOpButtonPressed()">
-						<Label id="coOpLabel" text="Toggle Co-Op" />
-						</Button>
 					
 				</Panel>
 			</Panel>
