@@ -61,18 +61,22 @@
 }
 
 
+
 .MinimapFrameHolder
 {
-	visibility: visible;
-	vertical-align: bottom;
-	height: 100%;	
-	width: 100%;
-	
+visibility: visible;
+vertical-align: bottom;
+height: 100%;	
+width: 100%;
+margin-bottom: -75px;
+margin-left: -75px;
 }
+
+
 #MinimapFrame
 {
 	visibility: visible;
 	vertical-align: bottom;
-	pre-transform-scale2d: .5, .5;
-
+	height: 435px;
+	width: 405px;
 }
