@@ -5,8 +5,8 @@
 		m_meshList = 
 		[
 			{
-				m_meshName = "modelbaublestillsmooth"
-				m_meshFile = "modelbaublestillsmooth.fbx"
+				m_meshName = "startest"
+				m_meshFile = "startest.fbx"
 				m_materialSearchPath = ""
 				m_bSkinParentedObjects = true
 				m_bLegacySkinParentedTransforms = false
@@ -70,7 +70,7 @@
 				{
 					m_pObject = 
 					{
-						m_Name = "Default"
+						m_Name = "Test"
 						m_pReferenceSkeleton = 
 						{
 							m_pObject = null
@@ -87,14 +87,54 @@
 						m_Vanim = 
 						[
 							{
-								m_Animationname = "baubleidle"
-								m_Filepath = "baubleidle.fbx"
+								m_Animationname = "ArmatureAction"
+								m_Filepath = "ArmatureAction.smd"
 								m_nStartframe = 0
-								m_nEndframe = 119
+								m_nEndframe = 60
+								m_flFps = 30.0
+								m_Loop = 
+								{
+									m_bLoop = false
+									m_bSmoothLoop = false
+									m_nSmoothLoopStart = 0
+									m_nSmoothLoopEnd = 0
+									m_StartLoop = 
+									{
+										_class = "CVAnimCmdStartLoop"
+										m_bEnabled = false
+										m_nLoopRestart = 0
+									}
+								}
+								m_bHidden = false
+								m_bDisable = false
+								m_Activities = [  ]
+								m_AnimationEvents = [  ]
+								m_MotionFrames = [  ]
+								m_pIkRules = [  ]
+								m_pAlignAnimation = null
+								m_adjustAnimation = 
+								{
+									m_translation = [ 0.0, 0.0, 0.0 ]
+									m_rotation = [ 0.0, 0.0, 0.0 ]
+								}
+								m_Keywords = [  ]
+								m_sequenceParams = 
+								{
+									m_flFadeInTime = 0.2
+									m_flFadeOutTime = 0.2
+								}
+								m_folderName = ""
+								m_MotionFramesRootBone = ""
+							},
+							{
+								m_Animationname = "startest"
+								m_Filepath = "startest.fbx"
+								m_nStartframe = 0
+								m_nEndframe = 56
 								m_flFps = 24.0
 								m_Loop = 
 								{
-									m_bLoop = true
+									m_bLoop = false
 									m_bSmoothLoop = false
 									m_nSmoothLoopStart = 0
 									m_nSmoothLoopEnd = 0
