@@ -26,11 +26,11 @@ GoodStoredPoints = 20
 BadStoredPoints = 20
 
 function storage:AddGoodStoredPoints(points)
-	GoodStoredPoints = GoodStoredPoints + 1
+	GoodStoredPoints = GoodStoredPoints + points
 end
 
 function storage:AddBadStoredPoints(points)
-	BadStoredPoints = BadStoredPoints + 1
+	BadStoredPoints = BadStoredPoints + points
 end
 
 

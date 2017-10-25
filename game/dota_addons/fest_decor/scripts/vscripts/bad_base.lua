@@ -3,8 +3,19 @@
 BadTempPoints = 0
 
 function StartAddingPoints(trigger)
+	local pointValue = 1
+	if string.match(trigger.activator:GetUnitName(), "2")  then
+		pointValue=5
+
+	elseif string.match(trigger.activator:GetUnitName(), "3")  then
+		pointValue=3
+
+	else
+		pointValue = 1
+	end
+				
 	if not  trigger.activator:IsRealHero() then
-		BadTempPoints=BadTempPoints+1
+		BadTempPoints=BadTempPoints+pointValue
 		storage:SetBadPoints(BadTempPoints)
 	end
 
@@ -20,8 +31,19 @@ end
 
 function StopAddingPoints(trigger)
     -- Find the respective exit to every entrance
+	local pointValue = 1
+	if string.match(trigger.activator:GetUnitName(), "2")  then
+		pointValue=5
+
+	elseif string.match(trigger.activator:GetUnitName(), "3")  then
+		pointValue=3
+
+	else
+		pointValue = 1
+	end
+				
 	if not  trigger.activator:IsRealHero() then
-		BadTempPoints=BadTempPoints-1
+		BadTempPoints=BadTempPoints-pointValue
 	    storage:SetBadPoints(BadTempPoints)
 	end	
 	if trigger.activator:IsRealHero() and trigger.activator:GetTeamNumber() == DOTA_TEAM_BADGUYS then

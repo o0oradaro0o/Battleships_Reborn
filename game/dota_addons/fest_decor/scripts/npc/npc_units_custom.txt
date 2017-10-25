@@ -282,6 +282,9 @@
 	"precache"
 			{
 				"model"							"star.vmdl"// Model.
+				"model"							"plus1.vmdl"// Model.
+				"model"							"plus3.vmdl"// Model.
+				"model"							"plus5.vmdl"// Model.
 			}
 		// General
 		//----------------------------------------------------------------

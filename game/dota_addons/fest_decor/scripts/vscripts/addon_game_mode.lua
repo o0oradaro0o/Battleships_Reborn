@@ -105,9 +105,9 @@ function CfrostGameMode:OnThink()
 			end
 		
 			if unitCount<700 then
-			local placment = RandomVector( RandomFloat( 0, 4500 ))
+			local placment = RandomVector( RandomFloat( 200, 4500 ))
 			
-			local x = Entities:FindByClassnameNearest("npc_dota_creature", placment, 300)
+			local x = Entities:FindByClassnameNearest("npc_dota_creature", placment, 400)
 			if x==nil then
 					spawnOrn(placment)
 			
@@ -143,7 +143,7 @@ end
 
 
 function spawnOrn(placment)
- if RandomInt( 0, 9 ) ==1 then
+ if RandomInt( 0, 5 ) ==1 then
 			  local creature = CreateUnitByName( "npc_dota_present2" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
 			  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
 			 else

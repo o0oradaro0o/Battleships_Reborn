@@ -84,7 +84,7 @@ function PingLoc(data)
 			currentDeg=currentDeg+.1;
 		}
 		$( "#Tree" ).style.transform="rotateZ("+ currentDeg+"deg ) ;"
-		if(targetDeg!=currentDeg)
+		if(targetDeg>currentDeg+1 && targetDeg<currentDeg-1)
 		{
 		$.Schedule( .1, GoToScore );
 		}

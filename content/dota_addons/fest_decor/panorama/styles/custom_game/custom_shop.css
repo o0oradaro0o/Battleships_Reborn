@@ -3,8 +3,8 @@
 	visibility: visible;
 	horizontal-align: center;
 	vertical-align: bottom;
-	height: 600px;	
-width: 800px;
+	height: 300px;	
+width: 450px;
 	 z-index:5;	
 }
 
@@ -18,9 +18,9 @@ width: 800px;
 	visibility: visible;
 	horizontal-align: center;
 	vertical-align: bottom;
-	margin-bottom: -420px;
-	width: 150px;
-	height: 820px;	
+	margin-bottom: -210px;
+	width: 75px;
+	height: 410px;	
 	
 	 z-index:20;	
 }
@@ -31,8 +31,8 @@ width: 800px;
 	visibility: visible;
 	horizontal-align: center;
 	vertical-align: bottom;
-	width: 700px;
-	height: 400px;	
+	width: 350px;
+	height: 200px;	
 	
 	 z-index:6;	
 }
@@ -42,8 +42,8 @@ width: 800px;
 	visibility: visible;
 	horizontal-align: right;
 	vertical-align: bottom;
-	width: 100px;
-	height: 100px;	
+	width: 70px;
+	height: 70px;	
 	margin-bottom: 10px;
 	 z-index:6;	
 }
@@ -54,8 +54,8 @@ width: 800px;
 	visibility: visible;
 	horizontal-align: left;
 	vertical-align: bottom;
-	width: 100px;
-	height: 100px;	
+	width: 70px;
+	height: 70px;	
 	margin-bottom: 10px;
 	 z-index:6;	
 }

@@ -220,15 +220,35 @@ function DepositOrb(args) -- keys is the information sent by the ability
 				
 				creature = table.remove(casterUnit.presentList)
 				creature:SetOrigin(casterUnit.loclist[10+5]*Vector(1,1,0)+Vector(1,1,250))
+				
+				local pointValue = 1
+				if string.match(creature:GetUnitName(), "2")  then
+					pointValue=5
+					creature:SetModel("plus5")
+				elseif string.match(creature:GetUnitName(), "3")  then
+					pointValue=3
+					creature:SetModel("plus3")
+				else
+					creature:SetModel("plus1")
+					pointValue = 1
+				end
+				creature:SetModelScale(3)
+				creature:MoveToPosition(Vector(0,-20000,200))
+				local pId = casterUnit:GetPlayerOwnerID()+1
+				 if(pId == nil) then
+				 pId = 1
+				 end
+				creature:SetRenderColor(PlayerColors[pId][1],PlayerColors[pId][2],PlayerColors[pId][3])
+				if casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+						storage:AddGoodStoredPoints(pointValue)
+				else
+						storage:AddBadStoredPoints(pointValue)
+				end
+				
+				
 				Timers:CreateTimer( 0.03, function()
 					creature:ForceKill(true)
 				end)
-				if casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-						storage:AddGoodStoredPoints(BadTempPoints)
-				else
-						storage:AddBadStoredPoints(BadTempPoints)
-				end
-
 			else
 				  Notifications:Top(casterUnit:GetPlayerOwnerID(), {text="#no_orbs", duration=1.0, style={color=" #008000;", fontSize= "45px;", textShadow= "2px 2px 2px #ff0000;"}})
 				  
