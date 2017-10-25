@@ -158,7 +158,7 @@ end
 
 function killMe(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')
-		print("killMe!")
+		
 		local casterUnit = args.target
 			if casterUnit~=nil then
 		stopPhysics(casterUnit)
@@ -181,33 +181,32 @@ function killMe(args) -- keys is the information sent by the ability
 	
 end
 
+
 function killMeIfImNotTheCaster(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')
 local casterUnit = args.caster
 
-		local TargetUnit = args.target
-		if TargetUnit:GetPlayerOwnerID()~=casterUnit:GetPlayerOwnerID() then
+	local allUnits = Entities:FindAllInSphere(casterUnit:GetOrigin(),200)
+	for _,unit in pairs(allUnits) do
 		
-			if TargetUnit~=nil then
-				stopPhysics(TargetUnit)
+		if  unit:IsRealHero() then
+			if unit:GetOwner()~=nil and unit:GetOwner():GetPlayerID() ~= casterUnit:GetOwner():GetPlayerID() then
+					
+					if unit~=nil then
+				stopPhysics(unit)
 				end
 				
 				local damageTable = {
-					victim = TargetUnit,
-					attacker = TargetUnit,
+					victim = unit,
+					attacker = unit,
 					damage = 10000,
 					damage_type = DAMAGE_TYPE_PURE,
 				}
 				
 				ApplyDamage(damageTable)
-			if TargetUnit.presentList~=nil then
-				for _,present in  pairs(TargetUnit.presentList) do
-					present:RemoveSelf()
 				end
 			end
-				TargetUnit.presentList={}
 		end
-	
 end
 
 

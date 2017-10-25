@@ -433,15 +433,6 @@
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"IsHidden"	 "1"
 				"Passive"	 "1"
-				"Aura" "dmg_aura"
-				"Aura_Radius" "100"
-				"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_BOTH"
-				"Aura_Types" "DOTA_UNIT_TARGET_HERO"
-
-			}
-			"dmg_aura"
-			{
-					"ThinkInterval"	".01"
 	
 				"OnIntervalThink"
 				{
@@ -451,8 +442,8 @@
 						"Function"				"killMeIfImNotTheCaster"
 					}
 				}
-				
 			}
+
                
         }
        

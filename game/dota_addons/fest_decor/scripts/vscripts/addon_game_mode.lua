@@ -53,6 +53,8 @@ function CfrostGameMode:OnNPCSpawned(keys)
 	if npc:IsRealHero() then
 		local abil = npc:GetAbilityByIndex(0)
 		abil:SetLevel(1)
+		local abil2 = npc:GetAbilityByIndex(1)
+		abil2:SetLevel(1)
 		PlayerResource:SetCameraTarget(npc:GetPlayerOwnerID(), npc)
 		local emptyData = {
 					}
