@@ -3,8 +3,13 @@
 	visibility: visible;
 	horizontal-align: center;
 	vertical-align: bottom;
+<<<<<<< HEAD
 	height: 300px;	
 width: 450px;
+=======
+	height: 600px;	
+	width: 800px;
+>>>>>>> cdc2510438cb2d718e055c3a1ab5af4309ab7b1c
 	 z-index:5;	
 }
 
@@ -58,4 +63,25 @@ width: 450px;
 	height: 70px;	
 	margin-bottom: 10px;
 	 z-index:6;	
+}
+
+
+
+.MinimapFrameHolder
+{
+visibility: visible;
+vertical-align: bottom;
+height: 100%;	
+width: 100%;
+margin-bottom: -75px;
+margin-left: -75px;
+}
+
+
+#MinimapFrame
+{
+	visibility: visible;
+	vertical-align: bottom;
+	height: 435px;
+	width: 405px;
 }

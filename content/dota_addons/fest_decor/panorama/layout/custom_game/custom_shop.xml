@@ -17,6 +17,11 @@
 			<Image id="team_mitten" src="file://{images}/custom_game/mitten.png" />
 			<Image id="team_stocking" src="file://{images}/custom_game/stocking.png" />
 </Panel>
+
+<Panel hittest="false" class="MinimapFrameHolder" >
+			<Image id="MinimapFrame" src="file://{images}/custom_game/candycaneminimap.png" />
+</Panel>
+
 	
 	
     <Panel hittest="false" class="BarebonesTopNotifications">
