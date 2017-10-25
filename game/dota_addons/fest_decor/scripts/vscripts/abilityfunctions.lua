@@ -186,7 +186,7 @@ function killMeIfImNotTheCaster(args) -- keys is the information sent by the abi
 local casterUnit = args.caster
 
 		local TargetUnit = args.target
-		if TargetUnit~=casterUnit then
+		if TargetUnit:GetPlayerOwnerID()~=casterUnit:GetPlayerOwnerID() then
 		
 			if TargetUnit~=nil then
 				stopPhysics(TargetUnit)

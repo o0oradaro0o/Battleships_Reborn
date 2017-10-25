@@ -79,16 +79,7 @@
 	m_sOffsetHitboxSets = [  ]
 	m_vHitboxSetOffset = [ 0.0, 0.0, 0.0 ]
 	m_scriptFiles = [  ]
-	m_pMaterialRemapList = 
-	{
-		m_vMaterialRemapList = 
-		[
-			{
-				m_sSearchMaterial = ""
-				m_sReplaceMaterial = ""
-			},
-		]
-	}
+	m_pMaterialRemapList = null
 	m_flFbxScale = 1.0
 	m_flQCScale = 1.0
 	m_vOrigin = [ 0.0, 0.0, 0.0 ]

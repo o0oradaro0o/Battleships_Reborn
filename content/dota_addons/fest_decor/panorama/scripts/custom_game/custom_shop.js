@@ -73,6 +73,7 @@ function PingLoc(data)
 			$.Schedule( .1, GoToScore );
 	}
 
+
 	function GoToScore()
 	{
 		if(targetDeg<currentDeg)
