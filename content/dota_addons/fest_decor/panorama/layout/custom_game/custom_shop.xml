@@ -20,9 +20,10 @@
 
 <Panel hittest="false" class="MinimapFrameHolder" >
 			<Image id="MinimapFrame" src="file://{images}/custom_game/candycaneminimap.png" />
+			
 </Panel>
 
-<Image id="TimerFrame" src="file://{images}/custom_game/candycaneminimap.png" />
+<Image id="TimerFrame" src="file://{images}/custom_game/clockholder.png" />
 
 <Panel hittest="false" id="TimerHolder" >
 			<Label id = "TimeLeft" class="Timer" text="00:00" />	

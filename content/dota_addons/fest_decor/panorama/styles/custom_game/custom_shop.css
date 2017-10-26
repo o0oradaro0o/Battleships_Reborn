@@ -85,23 +85,21 @@ margin-left: -75px;
 #TimerHolder
 {
 	visibility: visible;
-vertical-align: bottom;
-	horizontal-align: right;
+vertical-align: top;
+	horizontal-align: center;
 height: 150px;	
 width: 200px;
-margin-bottom: -80px;
-background-color: gradient( linear, 0% 0%, 100% 100%, from( #FFFFFF ), color-stop( 0.1, #990000 ), color-stop( 0.2, #FFFFFF ), color-stop( 0.3, #990000 ), color-stop( 0.4, #FFFFFF ), color-stop( 0.5, #990000 ), color-stop( 0.6, #FFFFFF ), color-stop( 0.7, #990000 ), color-stop( 0.8, #FFFFFF ), color-stop( 0.9, #990000 ), to( #FFFFFF ) );
+
 }
 
 #TimerFrame
 {
 	visibility: visible;
-vertical-align: bottom;
-	horizontal-align: right;
-height: 250px;	
-width: 250px;
-margin-bottom: -120px;
-transform: scaleX(-1);
+vertical-align: top;
+	horizontal-align: center;
+height: 10%;	
+width: 13%;
+margin-top: 0px;
 z-index:6;	
 }
 
@@ -110,10 +108,10 @@ z-index:6;
 {
 	margin:10px;
 	vertical-align: top;
-	 horizontal-align: left;
-	color: #008000;
-	text-shadow: 2px 2px 2px #ffff00;
-	 font-size: 60px;
+	 horizontal-align: center;
+	color: #ffffff;
+	text-shadow: 2px 2px 2px #ff0000;
+	 font-size: 45px;
 	font-family: monospace;
 	    font-weight: bold;
 }
