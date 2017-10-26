@@ -243,7 +243,12 @@ function hurtUnit(unit)
 					}
 					
 					ApplyDamage(damageTable)
-
+if unit.presentList~=nil then
+		for _,present in  pairs(unit.presentList) do
+			present:RemoveSelf()
+		end
+	end
+		unit.presentList={}
 end
 function DepositOrb(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')
