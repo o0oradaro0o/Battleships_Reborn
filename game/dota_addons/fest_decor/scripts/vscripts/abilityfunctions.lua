@@ -288,11 +288,22 @@ function DepositOrb(args) -- keys is the information sent by the ability
 					creature:ForceKill(true)
 				end)
 			else
-				  Notifications:Top(casterUnit:GetPlayerOwnerID(), {text="#no_orbs", duration=1.0, style={color=" #008000;", fontSize= "45px;", textShadow= "2px 2px 2px #ff0000;"}})
-				  
+					if casterUnit.pop== nil then
+						casterUnit.pop = 3
+					end
+					casterUnit.pop = casterUnit.pop+1
+					if casterUnit.pop%4==0 then
+				  Notifications:Top(casterUnit:GetPlayerOwnerID(), {text="#no_orbs", duration=1.6, style={color=" #008000;", fontSize= "45px;", textShadow= "2px 2px 2px #ff0000;"}})
+				  end
 			end
 			else
-				 Notifications:Top(casterUnit:GetPlayerOwnerID(), {text="#no_orbs", duration=1.0, style={color="#008000",  fontSize="45px;", textShadow= "2px 2px #ff0000;"}})
+					if casterUnit.pop== nil then
+						casterUnit.pop = 3
+					end
+					casterUnit.pop = casterUnit.pop+1
+					if casterUnit.pop%4==0 then
+				 Notifications:Top(casterUnit:GetPlayerOwnerID(), {text="#no_orbs", duration=1.6, style={color="#008000",  fontSize="45px;", textShadow= "2px 2px #ff0000;"}})
+				 end
 		end
 end
 

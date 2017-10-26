@@ -72,7 +72,7 @@
         {
               "orb_deposit"
 			{
-				"ThinkInterval"		"1.0"
+				"ThinkInterval"		"0.4"
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
