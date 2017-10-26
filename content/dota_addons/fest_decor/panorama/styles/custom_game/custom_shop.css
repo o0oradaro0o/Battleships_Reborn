@@ -3,8 +3,8 @@
 	visibility: visible;
 	horizontal-align: center;
 	vertical-align: bottom;
-	height: 300px;	
-width: 450px;
+	height: 700px;	
+width: 800px;
 	 z-index:5;	
 }
 
@@ -32,8 +32,9 @@ width: 450px;
 	visibility: visible;
 	horizontal-align: center;
 	vertical-align: bottom;
-	width: 350px;
-	height: 200px;	
+	width: 700px;
+	height: 470px;
+	margin-bottom: -210px;
 	
 	 z-index:6;	
 }
