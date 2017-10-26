@@ -27,7 +27,6 @@
 <Panel hittest="false" id="TimerHolder" >
 			<Label id = "TimeLeft" class="Timer" text="00:00" />	
 			
-			
 </Panel>
 
 	

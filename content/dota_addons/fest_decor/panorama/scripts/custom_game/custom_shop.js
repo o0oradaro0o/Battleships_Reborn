@@ -64,6 +64,7 @@ function PingLoc(data)
 			}
 	}
 	
+	
 	function ShowScore(data)
 	{
 		var totalSccore = data.good_score+data.bad_score
