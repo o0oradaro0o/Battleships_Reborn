@@ -68,7 +68,8 @@ function PingLoc(data)
 	{
 		var totalSccore = data.good_score+data.bad_score
 
-		
+		 var tGameTime = (Math.floor(data.Game_Time/60)) + ":" + (data.Game_Time % 60 >= 10 ? "": "0") +  (data.Game_Time % 60);    
+		$( "#TimeLeft" ).text = tGameTime;
 		targetDeg =  data.good_score/totalSccore*180-90
 			$.Schedule( .1, GoToScore );
 	}
@@ -85,7 +86,7 @@ function PingLoc(data)
 			currentDeg=currentDeg+.1;
 		}
 		$( "#Tree" ).style.transform="rotateZ("+ currentDeg+"deg ) ;"
-		if(targetDeg>currentDeg+1 && targetDeg<currentDeg-1)
+		if(targetDeg>currentDeg+1 || targetDeg<currentDeg-1)
 		{
 		$.Schedule( .1, GoToScore );
 		}

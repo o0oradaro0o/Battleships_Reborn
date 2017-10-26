@@ -73,11 +73,46 @@ margin-left: -75px;
 }
 
 
-
 #MinimapFrame
 {
 	visibility: visible;
 	vertical-align: bottom;
 	height: 435px;
 	width: 405px;
+}
+
+#TimerHolder
+{
+	visibility: visible;
+vertical-align: bottom;
+	horizontal-align: right;
+height: 150px;	
+width: 200px;
+margin-bottom: -80px;
+background-color: gradient( linear, 0% 0%, 100% 100%, from( #FFFFFF ), color-stop( 0.1, #990000 ), color-stop( 0.2, #FFFFFF ), color-stop( 0.3, #990000 ), color-stop( 0.4, #FFFFFF ), color-stop( 0.5, #990000 ), color-stop( 0.6, #FFFFFF ), color-stop( 0.7, #990000 ), color-stop( 0.8, #FFFFFF ), color-stop( 0.9, #990000 ), to( #FFFFFF ) );
+}
+
+#TimerFrame
+{
+	visibility: visible;
+vertical-align: bottom;
+	horizontal-align: right;
+height: 250px;	
+width: 250px;
+margin-bottom: -120px;
+transform: scaleX(-1);
+z-index:6;	
+}
+
+
+.Timer
+{
+	margin:10px;
+	vertical-align: top;
+	 horizontal-align: left;
+	color: #008000;
+	text-shadow: 2px 2px 2px #ffff00;
+	 font-size: 60px;
+	font-family: monospace;
+	    font-weight: bold;
 }

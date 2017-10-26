@@ -22,6 +22,14 @@
 			<Image id="MinimapFrame" src="file://{images}/custom_game/candycaneminimap.png" />
 </Panel>
 
+<Image id="TimerFrame" src="file://{images}/custom_game/candycaneminimap.png" />
+
+<Panel hittest="false" id="TimerHolder" >
+			<Label id = "TimeLeft" class="Timer" text="00:00" />	
+			
+			
+</Panel>
+
 	
 	
     <Panel hittest="false" class="BarebonesTopNotifications">

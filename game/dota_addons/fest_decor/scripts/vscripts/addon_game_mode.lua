@@ -53,8 +53,6 @@ function CfrostGameMode:OnNPCSpawned(keys)
 	if npc:IsRealHero() then
 		local abil = npc:GetAbilityByIndex(0)
 		abil:SetLevel(1)
-		local abil2 = npc:GetAbilityByIndex(1)
-		abil2:SetLevel(1)
 		PlayerResource:SetCameraTarget(npc:GetPlayerOwnerID(), npc)
 		local emptyData = {
 					}
@@ -132,12 +130,27 @@ end
 function sendScore()
 local TotalGoodScore =  storage:GetGoodPoints()
 local TotalBadScore =  storage:GetBadPoints()
-
+local TimeLeftInGame = 600-g_MainTimerTickCount
 	local emptyData = {
 		good_score = TotalGoodScore;
-		bad_score = TotalBadScore
+		bad_score = TotalBadScore;
+		Game_Time = TimeLeftInGame;
 					}
 					FireGameEvent( "Score_data", emptyData );
+		if TimeLeftInGame<0 then
+				if TotalGoodScore>TotalBadScore then
+					GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
+					GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
+					
+					GameRules:SetSafeToLeave( true )
+				else
+					GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+					GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
+					
+					GameRules:SetSafeToLeave( true )
+				end
+		end
+					
 end
 
 
