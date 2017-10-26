@@ -9,7 +9,7 @@
 		</Panel>
 
 		<Panel id="TitlePanel">
-			<Label id="BattleshipsTitle" text="#addon_game_name" style="" />
+			<Label id="BattleshipsTitle" text="#addon_game_name" />
 		</Panel>
 
 		<Panel id="AuthorPanelHolder">

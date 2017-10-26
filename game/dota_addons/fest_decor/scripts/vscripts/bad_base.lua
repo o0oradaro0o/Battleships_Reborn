@@ -22,8 +22,8 @@ function StartAddingPoints(trigger)
 	if  trigger.activator:IsRealHero() and trigger.activator:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 			local ability = "Deopsit_Orbs"
 			trigger.activator:AddAbility(ability)
-			local abil = trigger.activator:GetAbilityByIndex(2)
-			abil:SetLevel(2)
+			local abil = trigger.activator:GetAbilityByIndex(1)
+			abil:SetLevel(1)
 	end
 
 end

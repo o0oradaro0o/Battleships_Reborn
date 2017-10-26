@@ -43,7 +43,7 @@ end
 
 function WinterMove(args)
 	local casterUnit = args.caster
-	
+	killMeIfImNotTheCaster(casterUnit)
 	--handle reseting animation timing
 	if casterUnit.count==nil then
 		casterUnit.count=0
@@ -182,35 +182,69 @@ function killMe(args) -- keys is the information sent by the ability
 end
 
 
-function killMeIfImNotTheCaster(args) -- keys is the information sent by the ability
---print('[ItemFunctions] gunning_it started! ')
-local casterUnit = args.caster
+function killMeIfImNotTheCaster(casterUnit) -- keys is the information sent by the ability
 
-	local allUnits = Entities:FindAllInSphere(casterUnit:GetOrigin(),200)
-	for _,unit in pairs(allUnits) do
-		
-		if  unit:IsRealHero() then
-			if unit:GetOwner()~=nil and unit:GetOwner():GetPlayerID() ~= casterUnit:GetOwner():GetPlayerID() then
-					
-					if unit~=nil then
-				stopPhysics(unit)
-				end
+
+	for _,unit in pairs(Entities:FindAllByClassnameWithin("npc_dota_hero*", casterUnit:GetOrigin(), 120)) do
+		if  unit~=nil  then
+
+			--if unit:IsRealHero() then
+				if unit ~= casterUnit  and unit:IsAlive() and casterUnit:IsAlive() then
 				
-				local damageTable = {
-					victim = unit,
-					attacker = unit,
-					damage = 10000,
-					damage_type = DAMAGE_TYPE_PURE,
-				}
+				 
+				local DirectionToUnitFromCaster = casterUnit:GetOrigin()-unit:GetOrigin()
 				
-				ApplyDamage(damageTable)
-				end
+				local DirectionToCasterFromUnit = unit:GetOrigin()-casterUnit:GetOrigin()
+				
+				local dotOverMagUnit = DirectionToUnitFromCaster:Dot(unit:GetForwardVector())/(DirectionToUnitFromCaster:Length()*unit:GetForwardVector():Length())
+				local dotOverMagCaster = DirectionToCasterFromUnit:Dot(casterUnit:GetForwardVector())/(DirectionToCasterFromUnit:Length()*casterUnit:GetForwardVector():Length())
+	
+				local UnitAngle = math.deg(math.acos(dotOverMagUnit))
+				
+				local CasterAngle   = math.deg(math.acos(dotOverMagCaster))
+				print("CasterAngle diff to vecter between units is ")
+print( CasterAngle)
+				
+				print("UnitAngle diff to vecter between units is ")
+print( UnitAngle)
+				local unitkilled=false
+						if UnitAngle<30 then
+							hurtUnit(unit)
+							unitkilled=true
+							end
+						if CasterAngle<30 then
+							hurtUnit(casterUnit)
+							unitkilled=true
+						end
+						
+						if not unitkilled then
+							if UnitAngle<CasterAngle then
+								hurtUnit(unit)
+								unitkilled=true
+							else
+								hurtUnit(casterUnit)
+								unitkilled=true
+							end
+						end
+					end
+				--end
 			end
 		end
 end
 
+function hurtUnit(unit)
+	stopPhysics(unit)
+					
+					local damageTable = {
+						victim = unit,
+						attacker = unit,
+						damage = 10000,
+						damage_type = DAMAGE_TYPE_PURE,
+					}
+					
+					ApplyDamage(damageTable)
 
-
+end
 function DepositOrb(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')
 		local casterUnit = args.caster
