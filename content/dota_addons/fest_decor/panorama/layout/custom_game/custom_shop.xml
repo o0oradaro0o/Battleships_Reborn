@@ -18,6 +18,14 @@
 			<Image id="team_stocking" src="file://{images}/custom_game/stocking.png" />
 </Panel>
 
+<Panel hittest="false" class="AbilityHolder" >
+			<Image id="presentclosed" src="file://{images}/custom_game/presentclosed.png" />
+			<Image id="presentopen" src="file://{images}/custom_game/presentopen.png" />
+			<Image id="rocketskate" src="file://{images}/custom_game/rocketskate.png" />
+			<Image id="magnet" src="file://{images}/custom_game/magnet.png" />
+			
+</Panel>
+
 <Panel hittest="false" class="MinimapFrameHolder" >
 			<Image id="MinimapFrame" src="file://{images}/custom_game/candycaneminimap.png" />
 			

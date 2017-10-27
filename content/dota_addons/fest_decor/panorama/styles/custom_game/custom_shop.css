@@ -103,7 +103,6 @@ margin-top: 0px;
 z-index:6;	
 }
 
-
 .Timer
 {
 	margin:10px;
@@ -114,4 +113,58 @@ z-index:6;
 	 font-size: 45px;
 	font-family: monospace;
 	    font-weight: bold;
+}
+.AbilityHolder
+{
+	visibility: visible;
+	vertical-align: bottom;
+	horizontal-align: right;
+	margin-right: -100px;
+	
+	
+	margin-bottom: -50px;
+	height: 500px;
+	width: 500px;
+}
+#presentclosed
+{
+	visibility: collapse;
+	vertical-align: bottom;
+	horizontal-align: right;
+	margin-bottom: -50px;
+	height: 100%;	
+	width: 100%;
+	z-index:6;	
+}
+#presentopen
+{
+	visibility: visible;
+	vertical-align: bottom;
+	horizontal-align: right;
+	margin-bottom: -50px;
+	height: 100%;	
+	width: 100%;
+	z-index:6;
+}
+
+#rocketskate
+{
+	visibility: visible;
+vertical-align: bottom;
+	horizontal-align: middle;
+	height: 30%;
+	width: 30%;
+	margin-bottom: 155px;
+z-index:6;
+}
+
+#magnet
+{
+	visibility: collapse;
+vertical-align: bottom;
+	horizontal-align: middle;
+	height: 30%;
+	width: 30%;
+	margin-bottom: 135px;
+z-index:6;
 }
