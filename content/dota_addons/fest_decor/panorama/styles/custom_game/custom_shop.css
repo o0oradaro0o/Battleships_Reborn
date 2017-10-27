@@ -134,6 +134,7 @@ z-index:6;
 	margin-bottom: -50px;
 	height: 100%;	
 	width: 100%;
+	opacity: 0.5;
 	z-index:6;	
 }
 #presentopen
@@ -149,12 +150,12 @@ z-index:6;
 
 #rocketskate
 {
-	visibility: visible;
+	visibility: collapse;
 vertical-align: bottom;
 	horizontal-align: middle;
-	height: 30%;
+	height: 25%;
 	width: 30%;
-	margin-bottom: 155px;
+	margin-bottom: 160px;
 z-index:6;
 }
 
