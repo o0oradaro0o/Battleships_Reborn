@@ -5,8 +5,8 @@
 		m_meshList = 
 		[
 			{
-				m_meshName = "star"
-				m_meshFile = "star.fbx"
+				m_meshName = "baublemodelstillsmooth2"
+				m_meshFile = "baublemodelstillsmooth2.fbx"
 				m_materialSearchPath = ""
 				m_bSkinParentedObjects = true
 				m_bLegacySkinParentedTransforms = false
@@ -87,14 +87,14 @@
 						m_Vanim = 
 						[
 							{
-								m_Animationname = "star"
-								m_Filepath = "star.fbx"
+								m_Animationname = "baublemainidle"
+								m_Filepath = "baublemainidle.fbx"
 								m_nStartframe = 0
-								m_nEndframe = 59
+								m_nEndframe = 60
 								m_flFps = 12.0
 								m_Loop = 
 								{
-									m_bLoop = false
+									m_bLoop = true
 									m_bSmoothLoop = false
 									m_nSmoothLoopStart = 0
 									m_nSmoothLoopEnd = 0

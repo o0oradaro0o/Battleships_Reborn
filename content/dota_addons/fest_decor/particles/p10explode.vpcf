@@ -91,7 +91,7 @@
 			_class = "C_OP_InstantaneousEmitter"
 		},
 	]
-	m_ConstantColor = [ 139, 69, 19, 255 ]
+	m_ConstantColor = [ 102, 50, 13, 255 ]
 	m_controlPointConfigurations = 
 	[
 		{

@@ -117,6 +117,10 @@ end
 function AddOrniment2(args)
 	AddGift(args,"npc_dota_Orniment2")
 end
+	
+function AddOrniment3(args)
+	AddGift(args,"npc_dota_Orniment3")
+end
 
 function AddGift(args, name)
 	local Hero = args.target
@@ -140,6 +144,10 @@ function AddGift(args, name)
 	print(pId)
 	if string.match(name, "Orniment1") then
 		creature:SetRenderColor(PlayerColors[pId][1],PlayerColors[pId][2],PlayerColors[pId][3])
+	 
+	 else if string.match(name, "Orniment3") then
+		creature:SetRenderColor(PlayerColors[pId][1],PlayerColors[pId][2],PlayerColors[pId][3])
+	 end
 	 end
 	 
 		table.insert(Hero.presentList, creature)

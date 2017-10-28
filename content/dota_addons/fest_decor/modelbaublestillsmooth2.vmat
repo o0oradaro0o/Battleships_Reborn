@@ -8,13 +8,13 @@ Layer0
 	g_vColorTint "[1.000000 1.000000 1.000000 0.000000]"
 	g_vTexCoordOffset "[0.000 0.000]"
 	g_vTexCoordScale "[1.000 1.000]"
-	TextureColor "materials/star.tga"
+	TextureColor "materials/baublemodelstillsmooth2.tga"
 
 	//---- Specular ----
 	g_flBloom "1.000"
-	g_flFresnelExponent "14.3"
-	g_flFresnelReflectance "0.710"
-	g_flSpecularIntensity "5.495"
+	g_flFresnelExponent "5.0"
+	g_flFresnelReflectance "1.000"
+	g_flSpecularIntensity "2.000"
 
 	//---- Translucent ----
 	g_flOpacityScale "1.000"
