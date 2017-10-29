@@ -5,22 +5,36 @@
 	<Panel class="BattleshipsLoadingRoot">
 
 		<Panel id="seq" >
-			<Image id="seq_bg" class="SeqBg" src="file://{images}/custom_game/loading.jpg" />
+			<Image id="seq_bg" class="SeqBg" src="file://{images}/custom_game/loading.png" />
 		</Panel>
 
 		<Panel id="TitlePanel">
-			<Label id="BattleshipsTitle" text="#addon_game_name" />
+				<Label id="BattleshipsTitle" text="#addon_game_name" />
 		</Panel>
+		
 
+				
+		<Panel id="AuthorPanel">
+		</Panel>
+		
 		<Panel id="AuthorPanelHolder">
-			<Panel id="AuthorPanel">
-				<Label class="AuthorTitle" text="Presented By: radar, Frood, Tipsy Tennant, WeAreAllBritons, Penrose, and zentrix" />
-			</Panel>
-			
+			<Label class="AuthorTitle" text="Presented by: radar and Frood \n			with artwork by Tipsy_Tennant and WeAreAllBritons" />
+		</Panel>
+				
+		<Panel id="InstructionPanel">
+		</Panel>
+		<Panel id="InstructionPanelHolder">
+			<Label class="Instructions" text="Frostivus is upon us, and Papa Frosti is here!\nYou've got ten minutes to decorate your grove and convince him that your team has the most Festivus Spirit!\nDon your Mittens or your Stockings, and head out onto the skating pond to collect decorations and bring them back to your grove!\nIf you're lucky, Papa Frosti will leave some presents to help you out!"/>
+		</Panel>
+				
+		
 	</Panel>
+
+
+				
 		
+	
+
 		
-		
-		
-	</Panel>
+	
 </root>

@@ -23,6 +23,7 @@
 			<Image id="presentopen" src="file://{images}/custom_game/presentopen.png" />
 			<Image id="rocketskate" src="file://{images}/custom_game/rocketskate.png" />
 			<Image id="magnet" src="file://{images}/custom_game/magnet.png" />
+			<Image id="snowball" src="file://{images}/custom_game/snowball.png" />
 			
 </Panel>
 

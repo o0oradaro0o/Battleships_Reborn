@@ -158,6 +158,17 @@ vertical-align: bottom;
 	margin-bottom: 160px;
 z-index:6;
 }
+#snowball
+{
+	visibility: visible;
+	vertical-align: bottom;
+horizontal-align: middle;
+	height: 25%;
+	width: 25%;
+	margin-bottom: 160px;
+	margin-right: 20px;
+z-index:6;
+}
 
 #magnet
 {
