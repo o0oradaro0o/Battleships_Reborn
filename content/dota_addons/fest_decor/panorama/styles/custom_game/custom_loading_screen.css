@@ -58,10 +58,10 @@
 
 #AuthorPanelHolder
 {
-		margin-top: 450px;
-		width: 750px;
-		height: 110px;
-		margin-left: 30px;
+		margin-top: 850px;
+		width: 720px;
+		height: 95px;
+		margin-left: 60px;
 		border-radius: 20px;
 		//border: 1px solid #0000ff;
 		//box-shadow: fill #ffffff 2px 2px 2px 0px; // outer
@@ -74,10 +74,10 @@
 }
 #AuthorPanel
 {
-margin-top: 450px;
-		width: 750px;
-		height: 110px;
-		margin-left: 30px;
+margin-top: 850px;
+		width: 720px;
+		height: 95px;
+		margin-left: 60px;
 	border-radius: 20px;
 	background-color: #FFFFFFFF;
 	opacity: .4;
@@ -91,10 +91,10 @@ margin-top: 450px;
 #InstructionPanel
 {
 
-margin-top: 570px;
-		width: 750px;
+margin-top: 550px;
+		width: 720px;
 		height: 270px;
-		margin-left: 30px;
+		margin-left: 60px;
 	border-radius: 20px;
 	background-color: #FFFFFFFF;
 	opacity: .4;
@@ -104,10 +104,10 @@ margin-top: 570px;
 }
 #InstructionPanelHolder
 {
-		margin-top: 570px;
-		width: 750px;
+		margin-top: 550px;
+		width: 720px;
 		height: 270px;
-		margin-left: 30px;
+		margin-left: 60px;
 		border-radius: 20px;
 		//border: 1px solid #0000ff;
 		//box-shadow: fill #ffffff 2px 2px 2px 0px; // outer
@@ -146,9 +146,11 @@ margin-top: 570px;
 	font-weight: bolder;
 	vertical-align: center;
 	horizontal-align: left;
-	font-size: 27px;
+	
 	color: #000000;
 	z-index: 6;
+	font-size: 22px;
+	font-family: Goudy Trajan medium;
 }
 
 .Instructions
@@ -156,7 +158,9 @@ margin-top: 570px;
 	font-weight: bold;
 	vertical-align: top;
 	horizontal-align: center;
-	font-size: 25px;
+		font-size: 22px;
+	font-family: Goudy Trajan medium;
+
 	color: #000000;
 	z-index: 6;
 }

@@ -18,7 +18,7 @@
 		</Panel>
 		
 		<Panel id="AuthorPanelHolder">
-			<Label class="AuthorTitle" text="Presented by: radar and Frood \n			with artwork by Tipsy_Tennant and WeAreAllBritons" />
+			<Label class="AuthorTitle" text="Presented by: radar and Frood \nwith artwork by Tipsy_Tennant and WeAreAllBritons" />
 		</Panel>
 				
 		<Panel id="InstructionPanel">

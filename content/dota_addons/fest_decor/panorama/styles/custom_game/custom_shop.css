@@ -56,8 +56,8 @@ width: 800px;
 	visibility: visible;
 	horizontal-align: left;
 	vertical-align: bottom;
-	width: 70px;
-	height: 70px;	
+	width: 200px;
+	height: 200px;	
 	margin-bottom: 10px;
 	 z-index:6;	
 }
@@ -150,7 +150,7 @@ z-index:6;
 
 #rocketskate
 {
-	visibility: collapse;
+	visibility: visible;
 vertical-align: bottom;
 	horizontal-align: middle;
 	height: 25%;
@@ -160,7 +160,7 @@ z-index:6;
 }
 #snowball
 {
-	visibility: visible;
+	visibility: collapse;
 	vertical-align: bottom;
 horizontal-align: middle;
 	height: 25%;
