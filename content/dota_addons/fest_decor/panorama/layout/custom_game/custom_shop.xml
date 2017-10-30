@@ -18,11 +18,21 @@
 			<Image id="team_stocking" src="file://{images}/custom_game/stocking.png" />
 </Panel>
 
-<Panel hittest="false" class="MinimapFrameHolder" >
-			<Image id="MinimapFrame" src="file://{images}/custom_game/candycaneminimap.png" />
+<Panel hittest="false" class="AbilityHolder" >
+			<Image id="presentclosed" src="file://{images}/custom_game/presentclosed.png" />
+			<Image id="presentopen" src="file://{images}/custom_game/presentopen.png" />
+			<Image id="rocketskate" src="file://{images}/custom_game/rocketskate.png" />
+			<Image id="magnet" src="file://{images}/custom_game/magnet.png" />
+			<Image id="snowball" src="file://{images}/custom_game/snowball.png" />
+			
 </Panel>
 
-<Image id="TimerFrame" src="file://{images}/custom_game/candycaneminimap.png" />
+<Panel hittest="false" class="MinimapFrameHolder" >
+			<Image id="MinimapFrame" src="file://{images}/custom_game/candycaneminimap.png" />
+			
+</Panel>
+
+<Image id="TimerFrame" src="file://{images}/custom_game/clockholder.png" />
 
 <Panel hittest="false" id="TimerHolder" >
 			<Label id = "TimeLeft" class="Timer" text="00:00" />	

@@ -1,20 +1,44 @@
 <root>
-
 	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
 		<include src="file://{resources}/styles/custom_game/overthrow_game_info.css" />
 	</styles>
-	<Panel class="BattleshipsGameInfo">
-		
+	<Panel class="OverthrowGameInfo">
 		<Panel id="Title">
-			<Label id="TitleName" text="#addon_game_name" />
+			<Label id="TitleName" text="Decoration \nDash" />
 		</Panel>
-		<Label id="ObjectiveHeader" class="Header" html="true" text="#bs_Objectives" /> 
-		<Label id="HowToWin" html="true" text="#ds_HowToWin" />
+		<Label id="ObjectiveHeader" class="Header" html="true" text="How to Play" />
+		<Label id="BriefDescription" text="Run over ornaments to pick them up and add them to your collection. If you run into an ornament collection, you'll die, and your current collection will be lost." />
+		<Label id="HowToPlayHeader" class="Header" html="true" text="Objective" />
+		<Label id="HowToPlay" text="After collecting ornaments, return to your teams grove, where they'll be automatically deposited over time and used to decorate your team's grove. The team with the most decorated grove at the end of 10 minutes wins!"/>
+		<Label id="PointsHeader" class="Header" html="true" text="Points" />
+		<Label id="Points" text="While you're in your grove, your ornaments will be automatically removed from your collection, and converted into points for your team. Papa Frosti, at the bottom of your screen, will give his attention to whichever team is currently in the lead."/>
 		
-		
-		
-		
+			<Panel id ="PointsHolder">
+			<Image id="Bauble" src="file://{images}/custom_game/baubleinfo.png" />
+			<Label id="BaublePoints" text="Is worth 1 point."/>
+			
+			<Image id="CandyCane" src="file://{images}/custom_game/candycaneinfo.png" />
+			<Label id="CandyCanePoints" text="Is worth 3 points."/>
+			
+			<Image id="Star" src="file://{images}/custom_game/starinfo.png" />
+			<Label id="StarPoints" text="Is worth 5 points."/>
+			</Panel>
 
-		<Label id="ThankYouNote" class="TipText" html="true" text="#bs_Thanks" />
+		<Label id="AbilitiesHeader" class="Header" html="true" text="Abilities" />
+		<Label id="Abilities" text="Pick up presents to learn single-use abilities, and activate them by pressing 'Q'."/>
+		<Panel id ="AbilitiesHolder">
+			<Image id="Skate" src="file://{images}/custom_game/rocketskate.png" />
+			<Label id="SkateInfo" text="Gain a boost of speed for a few seconds."/>
+			
+			<Image id="Magnet" src="file://{images}/custom_game/magnet.png" />
+			<Label id="MagnetInfo" text="Pull all nearby available ornaments towards you."/>
+			
+			<Image id="Snowball" src="file://{images}/custom_game/snowball.png" />
+			<Label id="SnowballInfo" text="Hit all enemies with a snowball, temporarily blinding them."/>
+			</Panel>
+		
+		
 	</Panel>
-</root> 
+</root>
+
