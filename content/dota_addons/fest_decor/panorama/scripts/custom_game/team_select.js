@@ -289,7 +289,7 @@ function UpdateTimer()
 	$.GetContextPanel().SetHasClass( "teams_locked", Game.GetTeamSelectionLocked() );
 	$.GetContextPanel().SetHasClass( "teams_unlocked", Game.GetTeamSelectionLocked() == false );
 		//$.Msg(timeleft)
-
+		
 		
 	$.Schedule( 0.1, UpdateTimer );
 }
@@ -298,8 +298,6 @@ function SetTimerToDefault()
 	
 	Game.SetRemainingSetupTime( 30 ); 
 }
-
-
 
 
 //--------------------------------------------------------------------------------------------------
@@ -328,10 +326,6 @@ function SetTimerToDefault()
 	totalPlayers+=Game.GetPlayerIDsOnTeam( DOTA_GC_TEAM.DOTA_GC_TEAM_GOOD_GUYS ).length;
 	totalPlayers+=Game.GetPlayerIDsOnTeam( DOTA_GC_TEAM.DOTA_GC_TEAM_BAD_GUYS ).length;
 	
-	if(totalPlayers>5)
-	{
-		$("#coOpButton").style.visibility="collapse"
-	}
 
 	$( "#TeamSelectContainer" ).SetAcceptsFocus( true ); // Prevents the chat window from taking focus by default
 	var teamsListRootNode = $( "#TeamsListRoot" );

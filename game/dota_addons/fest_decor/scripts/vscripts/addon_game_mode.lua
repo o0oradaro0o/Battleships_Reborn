@@ -162,17 +162,22 @@ end
 
 
 function spawnOrn(placment)
- if RandomInt( 0, 5 ) ==1 then
-			  local creature = CreateUnitByName( "npc_dota_present2" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
-			  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
-				else if RandomInt ( 0, 1) ==1 then
-					local creature = CreateUnitByName( "npc_dota_present" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
-					creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
-						else
+				--spawn star
+				if RandomInt( 0, 5 ) ==1 then
+					  local creature = CreateUnitByName( "npc_dota_present2" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
+					  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
+				
+				else
+				
+					if RandomInt ( 0, 1) ==1 then
+						local creature = CreateUnitByName( "npc_dota_present" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
+						creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
+					else
+					
 							local creature = CreateUnitByName( "npc_dota_present3" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
 							creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
-						end
-end
+					end
+				end
 end
 
 
