@@ -50,6 +50,7 @@ function StopAddingPoints(trigger)
 		local ability = "Deopsit_Orbs"
 		trigger.activator:RemoveAbility(ability)
 		trigger.activator:RemoveModifierByName("orb_deposit")
+
 								
 	end
 

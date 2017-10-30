@@ -53,6 +53,8 @@ function CfrostGameMode:OnNPCSpawned(keys)
 	if npc:IsRealHero() then
 		local abil = npc:GetAbilityByIndex(0)
 		abil:SetLevel(1)
+		
+		
 		PlayerResource:SetCameraTarget(npc:GetPlayerOwnerID(), npc)
 		local emptyData = {
 					}
@@ -105,12 +107,14 @@ function CfrostGameMode:OnThink()
 			end
 		
 			if unitCount<700 then
-			local placment = RandomVector( RandomFloat( 200, 4500 ))
-			
-			local x = Entities:FindByClassnameNearest("npc_dota_creature", placment, 400)
-			if x==nil then
-					spawnOrn(placment)
-			
+			for itemSlot = 0, 5, 1 do 
+					local placment = RandomVector( RandomFloat( 200, 4500 ))
+					
+					local x = Entities:FindByClassnameNearest("npc_dota_creature", placment, 400)
+					if x==nil then
+							spawnOrn(placment)
+					
+					  end
 			  end
 		end
 		updateScore()

@@ -33,7 +33,7 @@
 	"VisionNighttimeRange"		"50000"
 		"AbilityLayout"				"3"
 		"Ability1"					"festive_spirit"
-		"Ability2"					"heroKill"
+		"Ability2"					"festive_invlun"
 		"Ability3"					"might_battleship"
 		"Ability4"					"batten_hatches"
 		
