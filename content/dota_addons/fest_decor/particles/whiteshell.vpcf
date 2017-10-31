@@ -83,16 +83,17 @@
 		},
 		{
 			_class = "C_INIT_GlobalScale"
-			m_flScale = 2.1
+			m_flScale = 2.5
 		},
 	]
 	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 33
 		},
 	]
-	m_ConstantColor = [ 67, 67, 255, 255 ]
+	m_ConstantColor = [ 236, 236, 236, 255 ]
 	m_controlPointConfigurations = 
 	[
 		{

@@ -12,7 +12,7 @@
 			m_flAddSelfAmount = 4.0
 			m_bBlendFramesSeq0 = false
 			m_bSaturateColorPreAlphaBlend = false
-			m_hTexture = resource:"materials/particle/impact/fleks4.vtex"
+			m_hTexture = resource:"materials/particle/impact/fleks.vtex"
 			m_flOutlineStart0 = 1.0
 			m_flOutlineStart1 = 1.0
 			m_flOutlineEnd0 = 1.0
@@ -60,15 +60,6 @@
 			m_fLifetimeMin = 0.15
 		},
 		{
-			_class = "C_INIT_RingWave"
-			m_nControlPointNumber = 3
-			m_flInitialRadius = 1.0
-			m_flInitialSpeedMin = 150.0
-			m_flInitialSpeedMax = 300.0
-			m_bEvenDistribution = true
-			m_flThickness = 5.0
-		},
-		{
 			_class = "C_INIT_RandomRadius"
 			m_flRadiusMin = 6.0
 			m_flRadiusMax = 18.0
@@ -79,17 +70,23 @@
 		{
 			_class = "C_INIT_RandomSequence"
 			m_nSequenceMax = 63
+			m_nSequenceMin = 55
 		},
 		{
 			_class = "C_INIT_GlobalScale"
-			m_flScale = 4.0
+			m_flScale = 2.1
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_fRadiusMin = 60.0
+			m_fRadiusMax = 65.0
 		},
 	]
 	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"
-			m_nParticlesToEmit = 33
+			m_nParticlesToEmit = 44
 		},
 	]
 	m_ConstantColor = [ 236, 236, 236, 255 ]
@@ -107,6 +104,13 @@
 					m_entityName = "self"
 				},
 			]
+		},
+	]
+	m_ForceGenerators = 
+	[
+		{
+			_class = "C_OP_WindForce"
+			m_vForce = [ 0.0, 0.0, -40.0 ]
 		},
 	]
 }

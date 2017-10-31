@@ -182,12 +182,7 @@ function killMe(args) -- keys is the information sent by the ability
 		}
 		
 		ApplyDamage(damageTable)
-	if casterUnit.presentList~=nil then
-		for _,present in  pairs(casterUnit.presentList) do
-			present:RemoveSelf()
-		end
-	end
-		casterUnit.presentList={}
+	killPresents(casterUnit)
 	
 end
 
@@ -253,13 +248,25 @@ function hurtUnit(unit)
 					}
 					
 					ApplyDamage(damageTable)
-if unit.presentList~=nil then
+		killPresents(unit)
+end
+
+function killPresents(unit)
+	
+	if unit.presentList~=nil then
 		for _,present in  pairs(unit.presentList) do
+			local particle = ParticleManager:CreateParticle("particles/basic_projectile/shatterp1.vpcf", PATTACH_ABSORIGIN_FOLLOW, present)
+			ParticleManager:SetParticleControl(particle, 0, present:GetAbsOrigin())
+			ParticleManager:SetParticleControl(particle, 3, present:GetAbsOrigin())
+			present:SetModel('invisiblebox.vmdl')
+				Timers:CreateTimer( .5, function()
 			present:RemoveSelf()
+			end)
 		end
 	end
 		unit.presentList={}
 end
+
 function DepositOrb(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')
 		local casterUnit = args.caster

@@ -24,5 +24,11 @@
 		{
 			m_ChildRef = resource:"particles/whiteexplode.vpcf"
 		},
+		{
+			m_ChildRef = resource:"particles/whiteshell.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/p1shell.vpcf"
+		},
 	]
 }
