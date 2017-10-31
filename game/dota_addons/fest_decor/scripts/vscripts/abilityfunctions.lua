@@ -142,12 +142,14 @@ function AddGift(args, name)
 	 pId = 1
 	 end
 	print(pId)
+	
 	if string.match(name, "Orniment1") then
-		creature:SetRenderColor(PlayerColors[pId][1],PlayerColors[pId][2],PlayerColors[pId][3])
+		local modelName = "bauble" .. pId .. '_1'
+		creature:SetModel(modelName)
 	 
-	 else if string.match(name, "Orniment3") then
-		creature:SetRenderColor(PlayerColors[pId][1],PlayerColors[pId][2],PlayerColors[pId][3])
-	 end
+	 elseif string.match(name, "Orniment3") then
+		local modelName = "bauble" .. pId .. '_2'
+		creature:SetModel(modelName)
 	 end
 	 
 		table.insert(Hero.presentList, creature)
@@ -296,11 +298,22 @@ function DepositOrb(args) -- keys is the information sent by the ability
 					creature:ForceKill(true)
 				end)
 			else
-				  Notifications:Top(casterUnit:GetPlayerOwnerID(), {text="#no_orbs", duration=1.0, style={color=" #008000;", fontSize= "45px;", textShadow= "2px 2px 2px #ff0000;"}})
-				  
+					if casterUnit.pop== nil then
+						casterUnit.pop = 3
+					end
+					casterUnit.pop = casterUnit.pop+1
+					if casterUnit.pop%4==0 then
+				  Notifications:Top(casterUnit:GetPlayerOwnerID(), {text="#no_orbs", duration=1.6, style={color=" #008000;", fontSize= "45px;", textShadow= "2px 2px 2px #ff0000;"}})
+				  end
 			end
 			else
-				 Notifications:Top(casterUnit:GetPlayerOwnerID(), {text="#no_orbs", duration=1.0, style={color="#008000",  fontSize="45px;", textShadow= "2px 2px #ff0000;"}})
+					if casterUnit.pop== nil then
+						casterUnit.pop = 3
+					end
+					casterUnit.pop = casterUnit.pop+1
+					if casterUnit.pop%4==0 then
+				 Notifications:Top(casterUnit:GetPlayerOwnerID(), {text="#no_orbs", duration=1.6, style={color="#008000",  fontSize="45px;", textShadow= "2px 2px #ff0000;"}})
+				 end
 		end
 end
 
@@ -319,6 +332,24 @@ end
 function RandomMove(args)
 	local casterUnit = args.caster
 	casterUnit:MoveToPosition(  casterUnit:GetOrigin()+RandomVector( RandomFloat( 300, 400 )))
+end
+
+function CastSpecialAbility(args)
+
+	local casterUnit = args.caster
+	if casterUnit.AbilityName == nil then
+		return
+	end
+		local ability = casterUnit.AbilityName
+		
+		local abil = casterUnit:GetAbilityByIndex(0)
+		casterUnit:RemoveAbility(abil:GetAbilityName())
+		casterUnit:AddAbility(ability)
+		local abil2 = casterUnit:GetAbilityByIndex(0)
+		abil2:SetLevel(1)
+		abil2:CastAbility()
+		casterUnit:RemoveAbility(abil2:GetAbilityName())
+		casterUnit:AddAbility("cast_ability")
 end
 
 function PrintTable(t, indent, done)

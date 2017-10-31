@@ -465,7 +465,7 @@
 		"Level"						"1"
 		"ModelScale" 				".8"
 		
-		"Model"						"modelbaublestillsmoothwhite2.vmdl"	// Model.
+		"Model"						"modelbaublestillsmooth2.vmdl"	// Model.
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"OrnimentKill"			// Ability 1

@@ -13,6 +13,27 @@ require('libraries/animations')
 g_MainTimerTickCount = 0
 
 
+PlayerColors = {
+ {46, 106, 230},
+
+ {92, 230, 173},
+
+ {173, 0, 173},
+
+ {220,217,10},
+
+ {230, 98, 0},
+
+ {230, 122, 176},
+
+ {146, 164, 64},
+ 
+ {92, 197, 224},
+ 
+ {0, 119, 31},
+ 
+ {149, 96, 0}
+}
 
 
 if CfrostGameMode == nil then
@@ -31,8 +52,12 @@ function Precache( context )
 		PrecacheUnitByNameSync("npc_dota_hero_crystal_maiden", context)
 			PrecacheUnitByNameSync("npc_dota_vision_granter", context)
 				PrecacheUnitByNameSync("npc_dota_present", context)
+				PrecacheUnitByNameSync("npc_dota_present2", context)
+				PrecacheUnitByNameSync("npc_dota_present2", context)
 				PrecacheUnitByNameSync("npc_dota_Orniment1", context)
 				PrecacheUnitByNameSync("npc_dota_Orniment2", context)
+				PrecacheUnitByNameSync("npc_dota_Orniment3", context)
+
 end
 
 -- Create the game mode when we activate
@@ -51,8 +76,23 @@ end
 function CfrostGameMode:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 	if npc:IsRealHero() then
+		 local pId = npc:GetPlayerOwnerID()+1
+		 if(pId == nil) then
+		 pId = 1
+		 end
+		PlayerResource:SetCustomPlayerColor(pId,PlayerColors[pId][1],PlayerColors[pId][2],PlayerColors[pId][3] )
+	
 		local abil = npc:GetAbilityByIndex(0)
 		abil:SetLevel(1)
+		npc.AbilityName = "Spawn_Invlun"
+		Timers:CreateTimer( 0.03, function()
+					abil:CastAbility()
+				end)
+		
+		local abil = npc:GetAbilityByIndex(1)
+		abil:SetLevel(1)
+		
+		
 		PlayerResource:SetCameraTarget(npc:GetPlayerOwnerID(), npc)
 		local emptyData = {
 					}
@@ -105,12 +145,14 @@ function CfrostGameMode:OnThink()
 			end
 		
 			if unitCount<700 then
-			local placment = RandomVector( RandomFloat( 200, 4500 ))
-			
-			local x = Entities:FindByClassnameNearest("npc_dota_creature", placment, 400)
-			if x==nil then
-					spawnOrn(placment)
-			
+			for itemSlot = 0, 5, 1 do 
+					local placment = RandomVector( RandomFloat( 400, 4500 ))
+					
+					local x = Entities:FindByClassnameNearest("npc_dota_creature", placment, 400)
+					if x==nil then
+							spawnOrn(placment)
+					
+					  end
 			  end
 		end
 		updateScore()
@@ -158,17 +200,23 @@ end
 
 
 function spawnOrn(placment)
- if RandomInt( 0, 5 ) ==1 then
-			  local creature = CreateUnitByName( "npc_dota_present2" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
-			  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
-				else if RandomInt ( 0, 1) ==1 then
-					local creature = CreateUnitByName( "npc_dota_present" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
-					creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
-						else
+				--spawn star
+				if RandomInt( 0, 5 ) ==1 then
+					  local creature = CreateUnitByName( "npc_dota_present2" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
+					  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
+				
+				else
+				
+					if RandomInt ( 0, 1) ==1 then
+						local creature = CreateUnitByName( "npc_dota_present" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
+						creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
+					else
+					
 							local creature = CreateUnitByName( "npc_dota_present3" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
 							creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
-						end
-end
+					end
+				end
+				
 end
 
 
