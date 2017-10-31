@@ -70,7 +70,7 @@
 				{
 					m_pObject = 
 					{
-						m_Name = "default"
+						m_Name = "idle"
 						m_pReferenceSkeleton = 
 						{
 							m_pObject = null
@@ -87,14 +87,14 @@
 						m_Vanim = 
 						[
 							{
-								m_Animationname = "baublemainidle"
-								m_Filepath = "baublemainidle.fbx"
+								m_Animationname = "baublemodelstillsmooth2"
+								m_Filepath = "baublemodelstillsmooth2.fbx"
 								m_nStartframe = 0
 								m_nEndframe = 60
 								m_flFps = 12.0
 								m_Loop = 
 								{
-									m_bLoop = true
+									m_bLoop = false
 									m_bSmoothLoop = false
 									m_nSmoothLoopStart = 0
 									m_nSmoothLoopEnd = 0

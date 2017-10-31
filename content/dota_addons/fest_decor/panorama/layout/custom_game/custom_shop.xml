@@ -11,13 +11,16 @@
 	
     <Panel hittest="false" class="custom_shop_holder" oncancel="hideShop()">
 	
-<Panel hittest="false" class="GageHolder" >
+		
+	<Panel hittest="false" class="GageHolder" >
 			<Image id="Tree" src="file://{images}/custom_game/tree_gage.png" />
 			<Image id="gage_bkg" src="file://{images}/custom_game/gage_bkg.png" />
+
+</Panel>
+<Panel hittest ="false" class="teamholder">
 			<Image id="team_mitten" src="file://{images}/custom_game/mitten.png" />
 			<Image id="team_stocking" src="file://{images}/custom_game/stocking.png" />
-</Panel>
-
+			</Panel>
 <Panel hittest="false" class="AbilityHolder" >
 			<Image id="presentclosed" src="file://{images}/custom_game/presentclosed.png" />
 			<Image id="presentopen" src="file://{images}/custom_game/presentopen.png" />

@@ -33,12 +33,23 @@
 	visibility: visible;
 	horizontal-align: center;
 	vertical-align: bottom;
-	width: 700px;
-	height: 550px;
+	height: 500px;	
+	width: 600px;
 	margin-bottom: -270px;
 	
 	
 	 z-index:6;	
+}
+
+.teamholder
+{
+	visibility: visible;
+	vertical-align: bottom;
+	horizontal-align: center;
+	
+	
+	height: 800px;
+	width: 800px;
 }
 
 #team_stocking
@@ -46,10 +57,10 @@
 	visibility: visible;
 	horizontal-align: right;
 	vertical-align: bottom;
-	width: 175px;
-	height: 175px;	
+	margin-left:-70px;
+	width: 200px;
+	height: 180px;	
 	margin-bottom: 10px;
-	margin-right: -70px;
 	 z-index:6;	
 }
 
@@ -59,11 +70,10 @@
 	visibility: visible;
 	horizontal-align: left;
 	vertical-align: bottom;
-	margin-left:-70px;
 	width: 200px;
 	height: 200px;	
 	margin-bottom: 10px;
-	 z-index:6;	
+
 }
 
 
@@ -132,18 +142,18 @@ z-index:6;
 }
 #presentclosed
 {
-	visibility: collapse;
+	visibility: visible;
 	vertical-align: bottom;
 	horizontal-align: right;
 	margin-bottom: -50px;
 	height: 100%;	
 	width: 100%;
-	opacity: 0.5;
+	opacity: 0.3;
 	z-index:6;	
 }
 #presentopen
 {
-	visibility: visible;
+	visibility: collapse;
 	vertical-align: bottom;
 	horizontal-align: right;
 	margin-bottom: -50px;
@@ -154,7 +164,7 @@ z-index:6;
 
 #rocketskate
 {
-	visibility: visible;
+	visibility: collapse;
 vertical-align: bottom;
 	horizontal-align: middle;
 	height: 25%;
