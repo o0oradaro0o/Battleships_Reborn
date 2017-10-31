@@ -49,6 +49,12 @@
       <Panel hittest="false" id="BottomNotifications">
       </Panel>
     </Panel>
+	<Panel hittest="true" class="BellHolder" >
+			<Image id="bell" src="file://{images}/custom_game/bell2.png" />
+			<Image id="bellgrey" src="file://{images}/custom_game/bell2grey.png" />
+			
+</Panel>
+
 
     </Panel>
 </root>

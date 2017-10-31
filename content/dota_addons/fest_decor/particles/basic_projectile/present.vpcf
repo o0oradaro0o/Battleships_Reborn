@@ -53,7 +53,7 @@
 	m_Children = 
 	[
 		{
-			m_ChildRef = resource:"particles/econ/items/lanaya/lanaya_epit_trap/templar_assassin_epit_trap_explosion_shock.vpcf"
+			m_ChildRef = resource:"particles/present_pickup.vpcf"
 			m_bEndCap = true
 		},
 		{

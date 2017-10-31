@@ -10,7 +10,7 @@
 		<Label id="ObjectiveHeader" class="Header" html="true" text="How to Play" />
 		<Label id="BriefDescription" text="Run over ornaments to pick them up and add them to your collection. If you run into an ornament collection, you'll die, and your current collection will be lost." />
 		<Label id="HowToPlayHeader" class="Header" html="true" text="Objective" />
-		<Label id="HowToPlay" text="After collecting ornaments, return to your teams grove, where they'll be automatically deposited over time and used to decorate your team's grove. The team with the most decorated grove at the end of 10 minutes wins!"/>
+		<Label id="HowToPlay" text="After collecting ornaments, return to your team's grove, where they'll be automatically deposited over time and used to decorate your team's grove. The team with the most decorated grove at the end of 10 minutes wins!"/>
 		<Label id="PointsHeader" class="Header" html="true" text="Points" />
 		<Label id="Points" text="While you're in your grove, your ornaments will be automatically removed from your collection, and converted into points for your team. Papa Frosti, at the bottom of your screen, will give his attention to whichever team is currently in the lead."/>
 		
