@@ -32,8 +32,8 @@
 			"VisionDaytimeRange"		"50000"	
 	"VisionNighttimeRange"		"50000"
 		"AbilityLayout"				"3"
-		"Ability1"					"festive_spirit"
-		"Ability2"					"festive_invlun"
+		"Ability1"					"cast_ability"
+		"Ability2"					"festive_spirit"
 		"Ability3"					"might_battleship"
 		"Ability4"					"batten_hatches"
 		
