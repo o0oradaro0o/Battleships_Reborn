@@ -81,6 +81,11 @@
 			m_fRadiusMin = 60.0
 			m_fRadiusMax = 65.0
 		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 0, 0, 255, 255 ]
+			m_ColorMax = [ 65, 105, 225, 255 ]
+		},
 	]
 	m_Emitters = 
 	[
@@ -89,7 +94,7 @@
 			m_nParticlesToEmit = 44
 		},
 	]
-	m_ConstantColor = [ 100, 149, 237, 255 ]
+	m_ConstantColor = [ 65, 105, 225, 255 ]
 	m_controlPointConfigurations = 
 	[
 		{
