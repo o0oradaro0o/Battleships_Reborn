@@ -57,7 +57,7 @@ function Precache( context )
 				PrecacheUnitByNameSync("npc_dota_Orniment1", context)
 				PrecacheUnitByNameSync("npc_dota_Orniment2", context)
 				PrecacheUnitByNameSync("npc_dota_Orniment3", context)
-
+				PrecacheResource("custom_sounds", "soundevents/custom_sounds.vsndevts", context)
 end
 
 -- Create the game mode when we activate

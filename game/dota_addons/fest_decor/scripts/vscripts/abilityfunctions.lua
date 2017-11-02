@@ -254,17 +254,18 @@ end
 function killPresents(unit)
 	
 	if unit.presentList~=nil then
+	local killtimer = .05
 		for _,present in  pairs(unit.presentList) do
+			killtimer = killtimer + .05
+			Timers:CreateTimer( killtimer, function()
 			local particle = ParticleManager:CreateParticle("particles/basic_projectile/shatterp1.vpcf", PATTACH_ABSORIGIN_FOLLOW, present)
 			ParticleManager:SetParticleControl(particle, 0, present:GetAbsOrigin())
 			ParticleManager:SetParticleControl(particle, 3, present:GetAbsOrigin())
 			present:SetModel('invisiblebox.vmdl')
-				Timers:CreateTimer( .5, function()
 			present:RemoveSelf()
 			end)
+			end
 		end
-	end
-		unit.presentList={}
 end
 
 function DepositOrb(args) -- keys is the information sent by the ability
