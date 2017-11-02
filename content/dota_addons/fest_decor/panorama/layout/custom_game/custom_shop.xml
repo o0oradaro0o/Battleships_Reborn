@@ -21,6 +21,7 @@
 			<Image id="team_mitten" src="file://{images}/custom_game/mitten.png" />
 			<Image id="team_stocking" src="file://{images}/custom_game/stocking.png" />
 			</Panel>
+			
 <Panel hittest="false" class="AbilityHolder" >
 			<Image id="presentclosed" src="file://{images}/custom_game/presentclosed.png" />
 			<Image id="presentopen" src="file://{images}/custom_game/presentopen.png" />

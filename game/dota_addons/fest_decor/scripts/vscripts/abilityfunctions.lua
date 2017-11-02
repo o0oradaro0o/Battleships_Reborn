@@ -357,6 +357,58 @@ function CastSpecialAbility(args)
 		abil2:CastAbility()
 		casterUnit:RemoveAbility(abil2:GetAbilityName())
 		casterUnit:AddAbility("cast_ability")
+		casterUnit.AbilityName = "cast_ability"
+		
+		local pId = casterUnit:GetPlayerOwnerID()
+	 if(pId == nil) then
+		pId = 0
+	 end
+		
+		local emptyData = {
+		player_id = pId;
+		ability_name =  "cast_ability";
+					}
+					FireGameEvent( "grant_ability", emptyData );
+		local abil = casterUnit:GetAbilityByIndex(0)
+		abil:SetLevel(1)
+		print("we're tryin to cast!")
+end
+
+function GrantPowerUp(args)
+local heroUnit = args.target
+local Caster = args.caster
+Caster:RemoveSelf()
+
+	if heroUnit.AbilityName == nil then
+		heroUnit.AbilityName = "cast_ability"
+	end
+	local pId = heroUnit:GetPlayerOwnerID()
+	 if(pId == nil) then
+		pId = 0
+	 end
+	 local AbilName=""
+	 local randAbilInt = RandomInt ( 1, 3) 
+	 if randAbilInt==1 then
+		AbilName = "Rocket_Boots"
+	elseif randAbilInt==2 then
+		AbilName = "Snow_Ball"
+	elseif randAbilInt==3 then
+		AbilName = "Magnet"
+	 end
+	 heroUnit.AbilityName = AbilName
+	 
+	 print("granted power up" .. AbilName)
+	local emptyData = {
+		player_id = pId;
+		ability_name = AbilName;
+					}
+					FireGameEvent( "grant_ability", emptyData );
+	local abil = heroUnit:GetAbilityByIndex(0)
+		abil:SetLevel(1)
+end
+
+function PullOrn(args)
+	print("tried to PullOrn")
 end
 
 function PrintTable(t, indent, done)
