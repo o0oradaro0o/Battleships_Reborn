@@ -12,7 +12,7 @@
 			m_flAddSelfAmount = 4.0
 			m_bBlendFramesSeq0 = false
 			m_bSaturateColorPreAlphaBlend = false
-			m_hTexture = resource:"materials/particle/impact/fleks4.vtex"
+			m_hTexture = resource:"materials/particle/impact/fleks.vtex"
 			m_flOutlineStart0 = 1.0
 			m_flOutlineStart1 = 1.0
 			m_flOutlineEnd0 = 1.0
@@ -79,10 +79,11 @@
 		{
 			_class = "C_INIT_RandomSequence"
 			m_nSequenceMax = 63
+			m_nSequenceMin = 55
 		},
 		{
 			_class = "C_INIT_GlobalScale"
-			m_flScale = 4.0
+			m_flScale = 2.1
 		},
 	]
 	m_Emitters = 
@@ -91,7 +92,7 @@
 			_class = "C_OP_InstantaneousEmitter"
 		},
 	]
-	m_ConstantColor = [ 0, 255, 255, 255 ]
+	m_ConstantColor = [ 64, 224, 208, 255 ]
 	m_controlPointConfigurations = 
 	[
 		{
