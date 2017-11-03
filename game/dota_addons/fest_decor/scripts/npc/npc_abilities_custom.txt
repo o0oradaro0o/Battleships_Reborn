@@ -223,37 +223,32 @@
 		
 		"OnSpellStart"
 		{
-			"ApplyModifier"
+			"TrackingProjectile"
 			{
-				"Target" "CASTER"
-				"ModifierName" "Rocket"
+				"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "5000"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+					
+				"MoveSpeed" "60"
+				"ProvidesVision" "0"
+				"EffectName"    "particles/basic_projectile/coast_heal_proj.vpcf" 
 			}
 		}
 
-		"Modifiers"
+		"OnProjectileHitUnit"
 		{
-			
-			
-			"Rocket"
-			{
-				"EffectName"		"particles/basic_projectile/Inv_atach.vpcf" 
-				"EffectAttachType"	"follow_origin"
-				"Duration" "5.0"
-				
-				"ThinkInterval"		".05"
-				"Passive"	 "1"
-				"OnIntervalThink"
-				{
-					"RunScript"
+			"RunScript"
 					{
 						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
-						"Function"			"WinterMove"
+						"Function"			"snoballHit"
 					}
-					
-				}
-				
-				
-			}
 		}
 	}
 	
@@ -296,11 +291,11 @@
 			
 			"mag"
 			{
-				"EffectName"		"particles/basic_projectile/Inv_atach.vpcf" 
+				"EffectName"		"particles/basic_projectile/mag_atach.vpcf" 
 				"EffectAttachType"	"follow_origin"
-				"Duration" "5.0"
+				"Duration" "4.0"
 				
-				"ThinkInterval"		".05"
+				"ThinkInterval"		".02"
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
@@ -518,9 +513,9 @@
 				"Passive" "1"
 				"States"
 				{
-					"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+					
 					"MODIFIER_STATE_ROOTED" "MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+				
 					"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
 					
 				} 
@@ -618,9 +613,9 @@
 				"Passive" "1"
 				"States"
 				{
-					"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+				
 					"MODIFIER_STATE_ROOTED" "MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+			
 					"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
 					
 				} 
@@ -716,9 +711,9 @@
 				"Passive" "1"
 				"States"
 				{
-					"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+					
 					"MODIFIER_STATE_ROOTED" "MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+			
 					"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
 					
 				} 

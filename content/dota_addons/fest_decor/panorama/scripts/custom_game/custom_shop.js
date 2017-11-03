@@ -320,6 +320,24 @@ function SwapAbility(data)
 	}
 }
 
+function SnowHit(data)
+{
+	$.Msg("WeHit!!")
+	if(data.player_id==Players.GetLocalPlayer())
+	{
+		$( "#Splat" ).style.opacity="1";
+			$.Schedule( .1, fadeSnow(data.player_id) );
+	}
+}
+
+function fadeSnow(pId)
+{
+	if(pId==Players.GetLocalPlayer())
+	{
+		$( "#Splat" ).style.opacity=$( "#Splat" ).style.opacity;
+		$.Schedule( .1, fadeSnow(data.player_id) );
+	}
+}
 
 
 var CONSUME_EVENT = true;
@@ -339,6 +357,7 @@ function OnLeftButtonPressed()
 	GameEvents.Subscribe("Score_data", ShowScore );
 	GameEvents.Subscribe("grant_ability", SwapAbility );
 	GameEvents.Subscribe( "ping_loc", PingLoc );
+	GameEvents.Subscribe( "snowball_hit", SnowHit );
 	
 	
 	GameEvents.Subscribe( "top_notification", TopNotification );

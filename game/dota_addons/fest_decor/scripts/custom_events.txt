@@ -47,6 +47,10 @@
 		"player_id"  "float"
 		"ability_name"  "string"
 	}
+	"snowball_hit"
+	{
+		"player_id"  "float"
+	}
 	
 	
 	
