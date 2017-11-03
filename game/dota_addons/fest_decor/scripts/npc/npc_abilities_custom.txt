@@ -138,6 +138,187 @@
 	
 	
 	
+	"Rocket_Boots"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"			"sniper_assassinate"
+		
+		"AbilityCastRange"				"600"
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25.0 25.0 25.0 25.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "Rocket"
+			}
+		}
+
+		"Modifiers"
+		{
+			
+			
+			"Rocket"
+			{
+				"EffectName"		"particles/basic_projectile/speed_atach.vpcf" 
+				"EffectAttachType"	"follow_origin"
+				"Duration" "2.5"
+				
+				"ThinkInterval"		".05"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"WinterMove"
+					}
+					
+				}
+				
+				
+			}
+		}
+	}
+	
+	
+	"Snow_Ball"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"			"sniper_assassinate"
+		
+		"AbilityCastRange"				"600"
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25.0 25.0 25.0 25.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "Rocket"
+			}
+		}
+
+		"Modifiers"
+		{
+			
+			
+			"Rocket"
+			{
+				"EffectName"		"particles/basic_projectile/Inv_atach.vpcf" 
+				"EffectAttachType"	"follow_origin"
+				"Duration" "5.0"
+				
+				"ThinkInterval"		".05"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"WinterMove"
+					}
+					
+				}
+				
+				
+			}
+		}
+	}
+	
+	
+	"Magnet"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"			"sniper_assassinate"
+		
+		"AbilityCastRange"				"600"
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25.0 25.0 25.0 25.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "mag"
+			}
+		}
+
+		"Modifiers"
+		{
+			
+			
+			"mag"
+			{
+				"EffectName"		"particles/basic_projectile/Inv_atach.vpcf" 
+				"EffectAttachType"	"follow_origin"
+				"Duration" "5.0"
+				
+				"ThinkInterval"		".05"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"PullOrn"
+					}
+					
+				}
+				
+				
+			}
+		}
+	}
+	
+	
+	
 	"Deopsit_Orbs"
 	{
 		// General
@@ -202,6 +383,105 @@
 		}
 	}
 	
+	
+	
+	//=================================================================================================================
+	// root_orniment
+	//=================================================================================================================
+	"root_power_up"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"TurretIcon"
+		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+
+
+		"Modifiers"
+		{
+			"root_self"
+			{
+				"Passive" "1"
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ROOTED" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+					
+				} 
+				"OnCreated"
+					{
+					"ApplyModifier"
+						{
+							"Target" "CASTER"
+							"ModifierName" "trap"
+						}		
+					}
+			}
+			
+
+	
+			"trap"
+			{	
+				
+				"ThinkInterval"		"0.15"
+				"OnIntervalThink"
+				{
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "100"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_HERO"
+							"MaxTargets" "5"
+							"Random" "1"
+						}
+						"MoveSpeed" "2500"
+						"ProvidesVision" "0"
+							"EffectName"    "particles/basic_projectile/present.vpcf" 
+					}
+					
+				}
+				
+			}
+			
+
+		}
+		"OnProjectileHitUnit"
+                {
+                        "DeleteOnHit"                           "false"
+						"RemoveModifier"
+						{
+							"Target" "CASTER"
+							"ModifierName" "root_self"
+						}
+						"RunScript"
+						{
+							"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+							"Function"			"GrantPowerUp"
+						}
+					
+                }
+	}
 	
 	//=================================================================================================================
 	// root_orniment

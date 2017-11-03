@@ -53,14 +53,13 @@
 	m_Children = 
 	[
 		{
-			m_ChildRef = resource:"particles/basic_projectile/basic_projectile_explosion.vpcf"
-			m_bEndCap = true
+			m_ChildRef = resource:"particles/econ/items/windrunner/windrunner_ti6/windrunner_spell_powershot_ti6_arc_b.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/basic_projectile/basic_projectile_trail.vpcf"
+			m_ChildRef = resource:"particles/units/heroes/hero_slardar/slardar_sprint_spray.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/basic_projectile/basic_projectile_launch.vpcf"
+			m_ChildRef = resource:"particles/units/heroes/hero_ember_spirit/ember_spirit_remnant_dash_trail_base_b.vpcf"
 		},
 	]
 	m_bShouldSort = false

@@ -41,6 +41,15 @@
 		"y"  "float"
 		"z"  "float"
 	}
+	
+	"grant_ability"
+	{
+		"player_id"  "float"
+		"ability_name"  "string"
+	}
+	
+	
+	
 	"Show_Message"
 	{
 		"player_id"  "float"

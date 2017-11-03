@@ -287,9 +287,38 @@ function AddNotificationbot(msg, panel) {
   }
 }
 
-
-
-
+function SwapAbility(data)
+{
+	
+	if(data.player_id==Players.GetLocalPlayer())
+	{
+			$( "#presentclosed" ).style.visibility="collapse";
+			$( "#presentopen" ).style.visibility="collapse";
+			$( "#rocketskate" ).style.visibility="collapse";
+			$( "#magnet" ).style.visibility="collapse";
+			$( "#snowball" ).style.visibility="collapse";
+			if(data.ability_name == "Rocket_Boots")
+			{
+				$( "#presentopen" ).style.visibility="visible";
+				$( "#rocketskate" ).style.visibility="visible";
+			}
+			if(data.ability_name == "Magnet")
+			{
+				$( "#presentopen" ).style.visibility="visible";
+					$( "#magnet" ).style.visibility="visible";
+			}
+			if(data.ability_name == "Snow_Ball")
+			{
+				$( "#presentopen" ).style.visibility="visible";
+				$( "#snowball" ).style.visibility="visible";
+			}
+			if(data.ability_name == "cast_ability")
+			{
+				$( "#presentclosed" ).style.visibility="visible";
+			}
+			
+	}
+}
 
 
 
@@ -308,7 +337,7 @@ function OnLeftButtonPressed()
 	$.Msg("in subscribe");
 	GameEvents.Subscribe("Player_Spawned", fixUI );
 	GameEvents.Subscribe("Score_data", ShowScore );
-	
+	GameEvents.Subscribe("grant_ability", SwapAbility );
 	GameEvents.Subscribe( "ping_loc", PingLoc );
 	
 	

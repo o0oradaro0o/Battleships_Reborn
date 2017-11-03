@@ -252,20 +252,22 @@ function hurtUnit(unit)
 end
 
 function killPresents(unit)
-	
+	local killtime  = .05
 	if unit.presentList~=nil then
-	local killtimer = .05
 		for _,present in  pairs(unit.presentList) do
-			killtimer = killtimer + .05
-			Timers:CreateTimer( killtimer, function()
+			killtime = killtime + .05
+			Timers:CreateTimer( killtime, function()
 			local particle = ParticleManager:CreateParticle("particles/basic_projectile/shatterp1.vpcf", PATTACH_ABSORIGIN_FOLLOW, present)
 			ParticleManager:SetParticleControl(particle, 0, present:GetAbsOrigin())
 			ParticleManager:SetParticleControl(particle, 3, present:GetAbsOrigin())
 			present:SetModel('invisiblebox.vmdl')
-			present:RemoveSelf()
+				Timers:CreateTimer( .5, function()
+					present:RemoveSelf()
+				end)
 			end)
-			end
 		end
+	end
+		unit.presentList={}
 end
 
 function DepositOrb(args) -- keys is the information sent by the ability
@@ -358,6 +360,61 @@ function CastSpecialAbility(args)
 		abil2:CastAbility()
 		casterUnit:RemoveAbility(abil2:GetAbilityName())
 		casterUnit:AddAbility("cast_ability")
+		casterUnit.AbilityName = "cast_ability"
+		
+		local pId = casterUnit:GetPlayerOwnerID()
+	 if(pId == nil) then
+		pId = 0
+	 end
+		
+		local emptyData = {
+		player_id = pId;
+		ability_name =  "cast_ability";
+					}
+					FireGameEvent( "grant_ability", emptyData );
+		local abil = casterUnit:GetAbilityByIndex(0)
+		abil:SetLevel(1)
+		print("we're tryin to cast!")
+end
+
+function GrantPowerUp(args)
+local heroUnit = args.target
+local Caster = args.caster
+Caster:RemoveSelf()
+
+	if heroUnit.AbilityName == nil then
+		heroUnit.AbilityName = "cast_ability"
+	end
+	local pId = heroUnit:GetPlayerOwnerID()
+	 if(pId == nil) then
+		pId = 0
+	 end
+	 local AbilName=""
+	 local randAbilInt = RandomInt ( 1, 3) 
+	 if randAbilInt==1 then
+		AbilName = "Rocket_Boots"
+	elseif randAbilInt==2 then
+		AbilName = "Snow_Ball"
+	elseif randAbilInt==3 then
+		AbilName = "Magnet"
+	 end
+	 heroUnit.AbilityName = AbilName
+	 
+	 print("granted power up" .. AbilName)
+	local emptyData = {
+		player_id = pId;
+		ability_name = AbilName;
+					}
+					FireGameEvent( "grant_ability", emptyData );
+	local abil = heroUnit:GetAbilityByIndex(0)
+		abil:SetLevel(1)
+end
+
+function PullOrn(args)
+	print("tried to PullOrn")
+	local Caster = args.caster
+	local enemies = FindUnitsInRadius( Caster:GetTeamNumber(), Caster:GetOrigin(), nil, 600, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+	
 end
 
 function PrintTable(t, indent, done)

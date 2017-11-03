@@ -117,7 +117,7 @@ function CfrostGameMode:OrderExecutionFilter(keys)
 
         return true
     end
-
+return true
   end
 
 -- Evaluate the state of the game
@@ -201,8 +201,11 @@ end
 
 function spawnOrn(placment)
 				--spawn star
-				if RandomInt( 0, 5 ) ==1 then
+				if RandomInt( 0, 10) ==1 then
 					  local creature = CreateUnitByName( "npc_dota_present2" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
+					  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
+				elseif RandomInt( 0, 5) ==1 then
+					  local creature = CreateUnitByName( "npc_dota_power_up" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
 					  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
 				
 				else
