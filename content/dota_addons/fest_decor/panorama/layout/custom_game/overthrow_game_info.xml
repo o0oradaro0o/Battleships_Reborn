@@ -26,7 +26,7 @@
 			</Panel>
 
 		<Label id="AbilitiesHeader" class="Header" html="true" text="Abilities" />
-		<Label id="Abilities" text="Pick up presents to learn single-use abilities, and activate them by pressing 'Q'."/>
+		<Label id="Abilities" text="Pick up presents to learn single-use abilities, and activate them by pressing 'Q' (or your default Ability 1 Hotkey)."/>
 		<Panel id ="AbilitiesHolder">
 			<Image id="Skate" src="file://{images}/custom_game/rocketskate.png" />
 			<Label id="SkateInfo" text="Gain a boost of speed for a few seconds."/>
@@ -35,7 +35,7 @@
 			<Label id="MagnetInfo" text="Pull all nearby available ornaments towards you."/>
 			
 			<Image id="Snowball" src="file://{images}/custom_game/snowball.png" />
-			<Label id="SnowballInfo" text="Hit all enemies with a snowball, temporarily blinding them."/>
+			<Label id="SnowballInfo" text="Hit a nearby enemy with a snowball, temporarily blinding them."/>
 			</Panel>
 		
 		

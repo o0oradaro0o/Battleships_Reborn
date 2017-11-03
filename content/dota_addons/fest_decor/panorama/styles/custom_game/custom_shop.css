@@ -146,8 +146,9 @@ z-index:6;
 	vertical-align: bottom;
 	horizontal-align: right;
 	margin-right: -100px;
-	
-	
+	animation-name: zoomin;
+    animation-duration: .5s;
+    animation-timing-function: linear;
 	margin-bottom: -50px;
 	height: 500px;
 	width: 500px;
@@ -229,4 +230,17 @@ z-index:6;
 	horizontal-align: right;
 	height: 110px;
 	width: 110px;
+}
+@keyframes 'zoomin' {
+  from 
+  {
+	width: 0%;
+	height: 0%;
+  }
+
+  to 
+  {
+	width: 30%;
+	height: 0%;
+  }
 }

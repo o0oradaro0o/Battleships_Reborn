@@ -289,7 +289,7 @@ function AddNotificationbot(msg, panel) {
 
 function SwapAbility(data)
 {
-	
+	var ticks = 0; 
 	if(data.player_id==Players.GetLocalPlayer())
 	{
 			$( "#presentclosed" ).style.visibility="collapse";
@@ -301,16 +301,19 @@ function SwapAbility(data)
 			{
 				$( "#presentopen" ).style.visibility="visible";
 				$( "#rocketskate" ).style.visibility="visible";
+				$( "#rocketskate" ).style.vanimation="zoomin";
 			}
 			if(data.ability_name == "Magnet")
 			{
 				$( "#presentopen" ).style.visibility="visible";
 					$( "#magnet" ).style.visibility="visible";
+					$( "#rocketskate" ).style.vanimation="zoomin";
 			}
 			if(data.ability_name == "Snow_Ball")
 			{
 				$( "#presentopen" ).style.visibility="visible";
 				$( "#snowball" ).style.visibility="visible";
+				$( "#rocketskate" ).style.vanimation="zoomin";
 			}
 			if(data.ability_name == "cast_ability")
 			{
