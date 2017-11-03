@@ -88,10 +88,10 @@ function WinterMove(args)
 			end
 			local height = 0;
 			height = (present:GetOrigin()*Vector(0,0,1)):Length()
-			if height>180 then
+			if height>220 then
 				present.direction=-1
 				height=height+9*present.direction
-			elseif height<60 then
+			elseif height<100 then
 				present.direction=1
 				height=height+9*present.direction
 			else
@@ -390,13 +390,13 @@ Caster:RemoveSelf()
 		pId = 0
 	 end
 	 local AbilName=""
-	 local randAbilInt = RandomInt ( 1, 3) 
+	 local randAbilInt = RandomInt ( 1, 2) 
 	 if randAbilInt==1 then
 		AbilName = "Rocket_Boots"
 	elseif randAbilInt==2 then
-		AbilName = "Snow_Ball"
-	elseif randAbilInt==3 then
 		AbilName = "Magnet"
+	elseif randAbilInt==3 then
+		AbilName = ""
 	 end
 	 heroUnit.AbilityName = AbilName
 	 
@@ -411,11 +411,70 @@ Caster:RemoveSelf()
 end
 
 function PullOrn(args)
-	print("tried to PullOrn")
 	local Caster = args.caster
-	local enemies = FindUnitsInRadius( Caster:GetTeamNumber(), Caster:GetOrigin(), nil, 600, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+	local enemies = FindUnitsInRadius( Caster:GetTeamNumber(), Caster:GetOrigin(), nil, 500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
+	
+	for _,orn in  pairs(enemies) do
+		if string.match(orn:GetUnitName(), "pres") then
+			local dir = orn:GetOrigin()-Caster:GetOrigin()
+			orn:SetOrigin(orn:GetOrigin()-dir:Normalized()*25)
+		
+		end
+	end
 	
 end
+
+
+function snoballThrow(args)
+print("throwing")
+		local caster = args.caster
+		local enemies
+		
+			--hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
+		if caster:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+			enemies = FindUnitsInRadius( DOTA_TEAM_BADGUYS, caster:GetOrigin(), nil, 5000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, 0, 0, false )
+
+		else
+			enemies = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, caster:GetOrigin(), nil, 5000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, 0, 0, false )
+
+		end
+		--if #enemies >0 then
+		local fucker = caster--enemies[RandomInt ( 0, #enemies) ]
+					local tracking_projectile = 
+				{
+					EffectName = "particles/basic_projectile/snowball.vpcf",
+					Ability = caster:GetAbilityByIndex(1),
+					vSpawnOrigin = caster:GetAbsOrigin(),
+					Target = caster,
+					Source = args.source or caster,
+					bHasFrontalCone = false,
+					iMoveSpeed = 900,
+					bReplaceExisting = false,
+					bProvidesVision = false,
+					iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+				}
+					
+
+						ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+		--end
+		print("threw")
+end
+
+function snoballHit(args)
+ print("snoballHit")
+local heroUnit = args.target
+local pId = heroUnit:GetPlayerOwnerID()
+	 if(pId == nil) then
+		pId = 0
+	 end
+
+local Data = {
+		player_id = pId;
+					}
+					FireGameEvent( "snowball_hit", Data );
+
+end
+
 
 function PrintTable(t, indent, done)
 	--print ( string.format ('PrintTable type %s', type(keys)) )
