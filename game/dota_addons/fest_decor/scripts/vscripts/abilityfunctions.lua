@@ -252,20 +252,22 @@ function hurtUnit(unit)
 end
 
 function killPresents(unit)
-	
+	local killtime  = .05
 	if unit.presentList~=nil then
-	local killtimer = .05
 		for _,present in  pairs(unit.presentList) do
-			killtimer = killtimer + .05
-			Timers:CreateTimer( killtimer, function()
+			killtime = killtime + .05
+			Timers:CreateTimer( killtime, function()
 			local particle = ParticleManager:CreateParticle("particles/basic_projectile/shatterp1.vpcf", PATTACH_ABSORIGIN_FOLLOW, present)
 			ParticleManager:SetParticleControl(particle, 0, present:GetAbsOrigin())
 			ParticleManager:SetParticleControl(particle, 3, present:GetAbsOrigin())
 			present:SetModel('invisiblebox.vmdl')
-			present:RemoveSelf()
+				Timers:CreateTimer( .5, function()
+					present:RemoveSelf()
+				end)
 			end)
-			end
 		end
+	end
+		unit.presentList={}
 end
 
 function DepositOrb(args) -- keys is the information sent by the ability
@@ -410,6 +412,9 @@ end
 
 function PullOrn(args)
 	print("tried to PullOrn")
+	local Caster = args.caster
+	local enemies = FindUnitsInRadius( Caster:GetTeamNumber(), Caster:GetOrigin(), nil, 600, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+	
 end
 
 function PrintTable(t, indent, done)
