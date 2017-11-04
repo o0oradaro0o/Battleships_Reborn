@@ -369,6 +369,7 @@ function CastSpecialAbility(args)
 	end
 	
 	if string.match(casterUnit.AbilityName, "Snow_Ball")  then
+	StartAnimation(casterUnit, {duration=.5, activity=ACT_DOTA_ATTACK, rate=2})
 		local ability = casterUnit.AbilityName
 		casterUnit.AbilityName =  "cast_ability";
 		if casterUnit:GetAbilityByIndex(2) == nil then

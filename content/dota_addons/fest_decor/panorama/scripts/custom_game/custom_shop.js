@@ -107,19 +107,28 @@ function PingLoc(data)
 				goodToSort.forEach(function(element) 
 				{
 					count++;
-					if(element[0].length>8)
+					if(element[0].length>10)
 					{
-						var name = element[0].substring(0,8)
+						var name = element[0].substring(0,10)
 					}
 					else
 					{
 						name = element[0]
-						while(name.length<7)
+						while(name.length<9)
 						{
-							name=name+"."
+							name=name+" "
 						}
 					}
-					$( "#goodScore" + count ).text =  name + " " + element[1] + " ("+ element[2]+")" ;
+					var spaces="        "
+					if(element[1]>9)
+					{
+						spaces="       "
+					}
+					if(element[1]>99)
+					{
+						spaces="      "
+					}
+					$( "#goodScore" + count ).text =  name + " " + element[1] +spaces+ "("+ element[2]+")" ;
 					$( "#goodScore" + count ).style.color = PlayerColors[ element[3]]
 				});
 			}
@@ -130,19 +139,28 @@ function PingLoc(data)
 				badToSort.forEach(function(element) 
 				{
 					count++;
-					if(element[0].length>8)
+					if(element[0].length>10)
 					{
-						var name = element[0].substring(0,8)
+						var name = element[0].substring(0,10)
 					}
 					else
 					{
 						name = element[0]
-						while(name.length<7)
+						while(name.length<9)
 						{
 							name=name+" "
 						}
 					}
-						$( "#badScore" + count ).text =name + " " + element[1] + " (" +element[2]+")" ;
+					var spaces="        "
+					if(element[1]>9)
+					{
+						spaces="       "
+					}
+					if(element[1]>99)
+					{
+						spaces="      "
+					}
+						$( "#badScore" + count ).text =name + " " + element[1] + spaces+"(" +element[2]+")" ;
 					$( "#badScore" + count ).style.color = PlayerColors[ element[3]]
 				});
 			}
@@ -177,7 +195,6 @@ function PingLoc(data)
 			soundHandle= Game.EmitSound("ThemeSong");
 			$.Schedule( 20, contiuneMusic );
 		}
-			
 	}
 	
 	function GoToScore()

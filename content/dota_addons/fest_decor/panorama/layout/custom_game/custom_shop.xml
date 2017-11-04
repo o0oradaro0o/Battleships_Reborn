@@ -37,6 +37,7 @@
 			
 	</Panel>
 		<Panel hittest="false" class="labelHolder" >
+			<Label class="score" text="#score_title">  </Label>
 	<Label id="goodScore1" class="score"> </Label>
 			<Label id="goodScore2" class="score"> </Label>
 			<Label id="goodScore3" class="score"> </Label>
@@ -56,6 +57,7 @@
 		
 		</Panel>
 			<Panel hittest="false" class="labelHolder" >
+			<Label class="scoreR" text="#score_title">  </Label>
 		<Label id="badScore1" class="scoreR"> </Label>
 		<Label id="badScore2" class="scoreR"> </Label>
 		<Label id="badScore3" class="scoreR"> </Label>
