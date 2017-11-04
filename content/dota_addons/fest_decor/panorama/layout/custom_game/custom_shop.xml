@@ -98,11 +98,11 @@
       <Panel hittest="false" id="BottomNotifications">
       </Panel>
     </Panel>
-	<Panel hittest="true" class="BellHolder" >
+	<Button hittest="true" class="BellHolder" onactivate="toggleMusic()">
 			<Image id="bell" src="file://{images}/custom_game/bell2.png" />
 			<Image id="bellgrey" src="file://{images}/custom_game/bell2grey.png" />
 			
-</Panel>
+</Button>
 
 
     </Panel>

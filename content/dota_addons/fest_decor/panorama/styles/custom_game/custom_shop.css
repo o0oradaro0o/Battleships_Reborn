@@ -240,21 +240,18 @@ opacity: 0;
 }
 #bell
 {
-	margin-left: 1775px;
-	margin-top: 75px;
+
 	horizontal-align: right;
 	height: 110px;
 	width: 110px;
 }
 #bellgrey
 {
-	margin-left: 1775px;
-	margin-top: 75px;
 	horizontal-align: right;
 	height: 110px;
 	width: 110px;
 }
-#BellHolder
+.BellHolder
 {
 	margin-left: 1775px;
 	margin-top: 75px;

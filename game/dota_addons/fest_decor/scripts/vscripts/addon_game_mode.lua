@@ -48,6 +48,8 @@ function Precache( context )
 			PrecacheResource( "particle", "*.vpcf", context )
 			PrecacheResource( "particle_folder", "particles/folder", context )
 	]]
+	
+	PrecacheResource("soundfile", "soundevents/custom_sounds.vsndevts", context)
 	PrecacheResource( "particle_folder", "particles/basic_projectile", context )
 		PrecacheUnitByNameSync("npc_dota_hero_crystal_maiden", context)
 			PrecacheUnitByNameSync("npc_dota_vision_granter", context)
@@ -172,7 +174,31 @@ end
 function updateScore()
 
 end
+
+
 function sendScore()
+
+	for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+				if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+				local pName = "radar"
+				if PlayerResource:GetPlayerName( hero:GetPlayerID()) ~= nil and PlayerResource:GetPlayerName( hero:GetPlayerID()) ~= "" then
+					pName = PlayerResource:GetPlayerName( hero:GetPlayerID())
+				end
+				local heald_orns = 0
+				if hero.presentList ~=nil then
+					 heald_orns = #hero.presentList
+				 end
+				local score_info = {
+				player_id = hero:GetPlayerID();
+				player_name = pName;
+				delivered = hero.pointScored;
+				heald = heald_orns;
+					}
+						FireGameEvent( "score_info", score_info );
+				
+			end
+		end
+
 local TotalGoodScore =  storage:GetGoodPoints()
 local TotalBadScore =  storage:GetBadPoints()
 local TimeLeftInGame = 600-g_MainTimerTickCount
@@ -204,26 +230,7 @@ local TimeLeftInGame = 600-g_MainTimerTickCount
 				end
 		end
 		
-		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-				local pName = "radar"
-				if PlayerResource:GetPlayerName( hero:GetPlayerID()) ~= nil and PlayerResource:GetPlayerName( hero:GetPlayerID()) ~= "" then
-					pName = PlayerResource:GetPlayerName( hero:GetPlayerID())
-				end
-				local heald_orns = 0
-				if hero.presentList ~=nil then
-					 heald_orns = #hero.presentList
-				 end
-				local score_info = {
-				player_id = hero:GetPlayerID();
-				player_name = pName;
-				delivered = hero.pointScored;
-				heald = heald_orns;
-					}
-						FireGameEvent( "score_info", score_info );
-				
-			end
-		end
+		
 		
 					
 end
@@ -234,14 +241,14 @@ end
 
 function spawnOrn(placment)
 				--spawn star
-				if RandomInt( 0, 10) ==1 then
+				if RandomInt( 0, 11) ==1 then
 					  local creature = CreateUnitByName( "npc_dota_present2" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
 					  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
-				elseif RandomInt( 0, 7) ==1 then
+				elseif RandomInt( 0, 8) ==1 then
 					  local creature = CreateUnitByName( "npc_dota_present4" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
 					  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
 				
-				elseif RandomInt( 0, 6) ==1 then
+				elseif RandomInt( 0, 5) ==1 then
 					  local creature = CreateUnitByName( "npc_dota_power_up" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
 					  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
 				

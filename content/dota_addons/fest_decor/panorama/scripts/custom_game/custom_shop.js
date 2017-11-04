@@ -139,7 +139,7 @@ function PingLoc(data)
 						name = element[0]
 						while(name.length<7)
 						{
-							name=name+"."
+							name=name+" "
 						}
 					}
 						$( "#badScore" + count ).text =name + " " + element[1] + " (" +element[2]+")" ;
@@ -147,10 +147,39 @@ function PingLoc(data)
 				});
 			}
 			
+			goodTeamScores = []
+ 
+			badTeamScores = []
+			
 			
 	}
-
-
+	var soundHandle
+	function toggleMusic()
+	{
+		if($( "#bell" ).style.visibility=="collapse")
+		{
+			$( "#bell" ).style.visibility="visible";
+			$( "#bellgrey" ).style.visibility="collapse";
+			soundHandle= Game.EmitSound("ThemeSong");
+			$.Schedule( 20, contiuneMusic );
+		}
+		else
+		{
+			$( "#bellgrey" ).style.visibility="visible";
+			$( "#bell" ).style.visibility="collapse";
+			Game.StopSound(soundHandle);
+		}
+	}
+	function contiuneMusic()
+	{
+		if($( "#bellgrey" ).style.visibility=="collapse")
+		{
+			soundHandle= Game.EmitSound("ThemeSong");
+			$.Schedule( 20, contiuneMusic );
+		}
+			
+	}
+	
 	function GoToScore()
 	{
 		if(targetDeg<currentDeg)
