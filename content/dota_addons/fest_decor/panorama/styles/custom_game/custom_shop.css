@@ -268,10 +268,9 @@ height: fit-children;
 }
 #ScoreFrame1
 {
-	width: 692px;
-	height: 69px;
+	height: 35px;
 	margin-top: 870px;
-	margin-left: 225px;
+	margin-left: 240px;
 }
 .ScoreboardBackHolder1
 {
@@ -295,13 +294,6 @@ margin-left: 225px;
 {
 width: fit-children;
 height: fit-children;
-}
-#ScoreFrame2
-{
-	width: 692px;
-	height: 69px;
-	margin-top: 870px;
-	margin-left: 1000px;
 }
 
 .ScoreboardBackHolder2

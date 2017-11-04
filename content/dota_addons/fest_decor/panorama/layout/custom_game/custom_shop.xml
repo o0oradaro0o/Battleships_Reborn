@@ -37,18 +37,12 @@
 			
 	</Panel>
 		<Panel hittest="false" class="labelHolder" >
-	<Label id="goodScore1" class="score"> </Label>
+			<Label id="goodScore1" class="score"> </Label>
 			<Label id="goodScore2" class="score"> </Label>
 			<Label id="goodScore3" class="score"> </Label>
 			<Label id="goodScore4" class="score"> </Label>
 			<Label id="goodScore5" class="score"> </Label>
 			</Panel>
-</Panel>
-
-<Panel hittest="false" class="ScoreboardHolder2" >
-			
-			<Image id="ScoreFrame2" src="file://{images}/custom_game/scoreframe.png" />
-			
 </Panel>
 
 <Panel hittest="false" class="ScoreboardBackHolder2" >
