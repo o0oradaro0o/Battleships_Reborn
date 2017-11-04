@@ -122,6 +122,10 @@ function AddOrniment3(args)
 	AddGift(args,"npc_dota_Orniment3")
 end
 
+function AddOrniment4(args)
+	AddGift(args,"npc_dota_Orniment4")
+end
+
 function AddGift(args, name)
 	local Hero = args.target
 	local casterUnit = args.caster
@@ -284,15 +288,23 @@ function DepositOrb(args) -- keys is the information sent by the ability
 				creature = table.remove(casterUnit.presentList)
 				creature:SetOrigin(casterUnit.loclist[10+5]*Vector(1,1,0)+Vector(1,1,250))
 				
+				if casterUnit.pointScored == nil then
+				casterUnit.pointScored = 0
+				end
+	
+				
 				local pointValue = 1
 				if string.match(creature:GetUnitName(), "2")  then
 					pointValue=5
+					casterUnit.pointScored=casterUnit.pointScored+5
 					creature:SetModel("plus5")
-				elseif string.match(creature:GetUnitName(), "3")  then
+				elseif string.match(creature:GetUnitName(), "4")  then
 					pointValue=3
+					casterUnit.pointScored=casterUnit.pointScored+3
 					creature:SetModel("plus3")
 				else
 					creature:SetModel("plus1")
+					casterUnit.pointScored=casterUnit.pointScored+1
 					pointValue = 1
 				end
 				creature:SetModelScale(3)
@@ -358,6 +370,7 @@ function CastSpecialAbility(args)
 	
 	if string.match(casterUnit.AbilityName, "Snow_Ball")  then
 		local ability = casterUnit.AbilityName
+		casterUnit.AbilityName =  "cast_ability";
 		if casterUnit:GetAbilityByIndex(2) == nil then
 			casterUnit:AddAbility(ability)
 			local abil2 = casterUnit:GetAbilityByIndex(2)
@@ -378,6 +391,7 @@ function CastSpecialAbility(args)
 				Timers:CreateTimer( 5.0, function()
 				casterUnit:RemoveAbility(abil2:GetAbilityName())
 			end)
+				
 		end
 		
 	local pId = casterUnit:GetPlayerOwnerID()

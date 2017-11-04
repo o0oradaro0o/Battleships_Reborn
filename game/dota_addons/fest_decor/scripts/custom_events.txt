@@ -47,6 +47,15 @@
 		"player_id"  "float"
 		"ability_name"  "string"
 	}
+	
+	"score_info"
+	{
+		"player_id"  "float"
+		"player_name"  "string"
+		"delivered"  "float"
+		"heald"  "float"
+	}
+	
 	"snowball_hit"
 	{
 		"player_id"  "float"

@@ -7,7 +7,9 @@
 	"addon_game_name" 			"Decoration Station"
 	"no_orbs"								"Go Get More Decorations!"
 	"many_orbs"								"Go back to your forest to drop off your decorations!"
+	"one_minute"					"One Minute Remaining!"
 	"DOTA_GoodGuys"   			"Team Stocking"
 	"DOTA_BadGuys"    			"Team Mitten"
 	}
+	
 }

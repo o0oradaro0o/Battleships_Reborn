@@ -22,7 +22,7 @@
 		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
 		
 		"MovementSpeed"				"290"									// Speed.
-		"MovementTurnRate"			"0.7"									// Turning rate.
+		"MovementTurnRate"			"1.0"									// Turning rate.
 		
 		"StatusHealth"				"100"		// Base health.
 		"StatusHealthRegen"			"0.0"		// Health regeneration rate.

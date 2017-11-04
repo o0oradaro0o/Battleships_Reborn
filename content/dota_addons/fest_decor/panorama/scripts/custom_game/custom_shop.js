@@ -6,6 +6,30 @@ var NewShopUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChil
 var currentDeg = 0
 var targetDeg = 0
 var shipShopShow=false;
+
+
+var PlayerColors = [
+ "rgb(46, 106, 230)",
+
+ "rgb(92, 230, 173)",
+
+ "rgb(173, 0, 173)",
+
+ "rgb(220,217,10)",
+
+ "rgb(230, 98, 0)",
+
+ "rgb(230, 122, 176)",
+
+ "rgb(146, 164, 64)",
+ 
+ "rgb(92, 197, 224)",
+ 
+ "rgb(0, 119, 31)",
+ 
+ "rgb(149, 96, 0)"
+]
+
 function fixUI( ) 
 {
 	
@@ -72,6 +96,58 @@ function PingLoc(data)
 		$( "#TimeLeft" ).text = tGameTime;
 		targetDeg =  data.good_score/totalSccore*180-90
 			$.Schedule( .1, GoToScore );
+			
+			
+			var goodToSort = goodTeamScores
+			var badToSort = badTeamScores
+			if(goodToSort.length>0)
+			{
+				var count = 0
+				goodToSort.sort(compareSecondColumn);
+				goodToSort.forEach(function(element) 
+				{
+					count++;
+					if(element[0].length>8)
+					{
+						var name = element[0].substring(0,8)
+					}
+					else
+					{
+						name = element[0]
+						while(name.length<7)
+						{
+							name=name+"."
+						}
+					}
+					$( "#goodScore" + count ).text =  name + " " + element[1] + " ("+ element[2]+")" ;
+					$( "#goodScore" + count ).style.color = PlayerColors[ element[3]]
+				});
+			}
+			if(badToSort.length>0)
+			{
+				var count = 0
+				badToSort.sort(compareSecondColumn);
+				badToSort.forEach(function(element) 
+				{
+					count++;
+					if(element[0].length>8)
+					{
+						var name = element[0].substring(0,8)
+					}
+					else
+					{
+						name = element[0]
+						while(name.length<7)
+						{
+							name=name+"."
+						}
+					}
+						$( "#badScore" + count ).text =name + " " + element[1] + " (" +element[2]+")" ;
+					$( "#badScore" + count ).style.color = PlayerColors[ element[3]]
+				});
+			}
+			
+			
 	}
 
 
@@ -662,7 +738,7 @@ function SnowHit(data)
 	}
 }
 
-function fadeSnow(pId)
+function fadeSnow()
 {
 
 		 $("#Splat").style.opacity=$("#Splat").style.opacity-.02;
@@ -675,6 +751,35 @@ function fadeSnow(pId)
 
 var CONSUME_EVENT = true;
 var CONTINUE_PROCESSING_EVENT = false;
+
+
+
+function compareSecondColumn(a, b) {
+    if (a[1] === b[1]) {
+        return 0;
+    }
+    else {
+        return (a[1] > b[1]) ? -1 : 1;
+    }
+}
+
+var goodTeamScores =[]
+
+var badTeamScores = []
+
+function UpdatePlayerInfo(data)
+{
+	 $.Msg(Players.GetTeam( data.player_id ))
+	if( Players.GetTeam( data.player_id )	== 3)
+	{
+		goodTeamScores[data.player_id] = [data.player_name, data.delivered, data.heald , data.player_id  ]
+	}
+	else if(Players.GetTeam( data.player_id ) == 2)
+	{
+		badTeamScores[data.player_id] = [data.player_name, data.delivered, data.heald, data.player_id   ]
+	}
+	
+}
 
 // Handle Left Button events
 function OnLeftButtonPressed()
@@ -691,7 +796,7 @@ function OnLeftButtonPressed()
 	GameEvents.Subscribe("grant_ability", SwapAbility );
 	GameEvents.Subscribe( "ping_loc", PingLoc );
 	GameEvents.Subscribe( "snowball_hit", SnowHit );
-	
+	GameEvents.Subscribe("score_info", UpdatePlayerInfo );
 	
 	GameEvents.Subscribe( "top_notification", TopNotification );
 	GameEvents.Subscribe( "bottom_notification", BottomNotification );
