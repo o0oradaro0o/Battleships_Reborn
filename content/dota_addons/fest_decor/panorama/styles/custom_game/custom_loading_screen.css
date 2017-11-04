@@ -91,9 +91,9 @@ margin-top: 850px;
 #InstructionPanel
 {
 
-margin-top: 550px;
+margin-top: 530px;
 		width: 720px;
-		height: 270px;
+		height: 290px;
 		margin-left: 60px;
 	border-radius: 20px;
 	background-color: #FFFFFFFF;
@@ -104,9 +104,9 @@ margin-top: 550px;
 }
 #InstructionPanelHolder
 {
-		margin-top: 550px;
+		margin-top: 530px;
 		width: 720px;
-		height: 270px;
+		height: 290px;
 		margin-left: 60px;
 		border-radius: 20px;
 		//border: 1px solid #0000ff;

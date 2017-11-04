@@ -56,11 +56,11 @@
 		
 		</Panel>
 			<Panel hittest="false" class="labelHolder" >
-		<Label id="badScore1" class="score"> </Label>
-		<Label id="badScore2" class="score"> </Label>
-		<Label id="badScore3" class="score"> </Label>
-		<Label id="badScore4" class="score"> </Label>
-		<Label id="badScore5" class="score"> </Label>
+		<Label id="badScore1" class="scoreR"> </Label>
+		<Label id="badScore2" class="scoreR"> </Label>
+		<Label id="badScore3" class="scoreR"> </Label>
+		<Label id="badScore4" class="scoreR"> </Label>
+		<Label id="badScore5" class="scoreR"> </Label>
 		</Panel>		
 </Panel>			
 
@@ -98,11 +98,11 @@
       <Panel hittest="false" id="BottomNotifications">
       </Panel>
     </Panel>
-	<Panel hittest="true" class="BellHolder" >
+	<Button hittest="true" class="BellHolder" onactivate="toggleMusic()">
 			<Image id="bell" src="file://{images}/custom_game/bell2.png" />
 			<Image id="bellgrey" src="file://{images}/custom_game/bell2grey.png" />
 			
-</Panel>
+</Button>
 
 
     </Panel>
