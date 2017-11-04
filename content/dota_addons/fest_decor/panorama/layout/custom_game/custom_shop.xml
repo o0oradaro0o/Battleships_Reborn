@@ -11,6 +11,8 @@
 	
     <Panel hittest="false" class="custom_shop_holder" oncancel="hideShop()">
 	
+		
+		
 		<Panel hittest ="false" class="Splatholder">
 			<Image id="Splat" src="file://{images}/custom_game/splatfinal.png" />
 			</Panel>
@@ -19,11 +21,25 @@
 			<Image id="gage_bkg" src="file://{images}/custom_game/gage_bkg.png" />
 
 </Panel>
-<Panel hittest ="false" class="teamholder">
-			<Image id="team_mitten" src="file://{images}/custom_game/mitten.png" />
-			<Image id="team_stocking" src="file://{images}/custom_game/stocking.png" />
-			</Panel>
+
+<Panel hittest="false" class="ScoreboardHolder1" >
 			
+			<Image id="ScoreFrame1" src="file://{images}/custom_game/scoreframe.png" />
+			
+</Panel>
+<Panel hittest="false" class="ScoreboardBack1" >
+			</Panel>
+<Panel hittest="false" class="MinimapFrameHolder" >
+			<Image id="MinimapFrame" src="file://{images}/custom_game/candycaneminimap.png" />
+			
+</Panel>
+<Panel hittest="false" class="ScoreboardHolder2" >
+			
+			<Image id="ScoreFrame2" src="file://{images}/custom_game/scoreframe.png" />
+			
+</Panel>
+<Panel hittest="false" class="ScoreboardBack2" >
+			</Panel>			
 <Panel hittest="false" class="AbilityHolder" >
 			<Image id="presentclosed" src="file://{images}/custom_game/presentclosed.png" />
 			<Image id="presentopen" src="file://{images}/custom_game/presentopen.png" />
@@ -37,13 +53,16 @@
 			<Image id="MinimapFrame" src="file://{images}/custom_game/candycaneminimap.png" />
 			
 </Panel>
-
 <Image id="TimerFrame" src="file://{images}/custom_game/clockholder.png" />
 
 <Panel hittest="false" id="TimerHolder" >
 			<Label id = "TimeLeft" class="Timer" text="00:00" />	
 			
 </Panel>
+<Panel hittest ="false" class="teamholder">
+			<Image id="team_mitten" src="file://{images}/custom_game/mitten.png" />
+			<Image id="team_stocking" src="file://{images}/custom_game/stocking.png" />
+			</Panel>
 
 	
 	
