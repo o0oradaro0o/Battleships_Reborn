@@ -200,6 +200,7 @@ z-index:6;
 	height: 100%;	
 	width: 100%;
 	z-index:6;
+	opacity: 0;
 }
 
 #rocketskate
@@ -210,6 +211,7 @@ vertical-align: bottom;
 	height: 25%;
 	width: 30%;
 	margin-bottom: 160px;
+	opacity: 0;
 z-index:6;
 }
 #snowball
@@ -221,7 +223,8 @@ z-index:6;
 	width: 25%;
 	margin-bottom: 160px;
 	margin-right: 20px;
-z-index:6;
+	opacity: 0;
+	z-index:6;
 }
 
 #magnet
@@ -233,6 +236,7 @@ vertical-align: bottom;
 	width: 30%;
 	margin-bottom: 135px;
 z-index:6;
+opacity: 0;
 }
 #bell
 {
