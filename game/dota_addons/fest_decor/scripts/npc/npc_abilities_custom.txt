@@ -215,7 +215,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"25.0 25.0 25.0 25.0"
+		"AbilityCooldown"				"1.0 1.0 1.0 1.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -236,20 +236,24 @@
 							"Random" "1"
 						}
 					
-				"MoveSpeed" "60"
+				"MoveSpeed" "1500"
 				"ProvidesVision" "0"
-				"EffectName"    "particles/basic_projectile/coast_heal_proj.vpcf" 
+				"EffectName"    "particles/basic_projectile/snowball.vpcf" 
 			}
 		}
-
+		
+		
 		"OnProjectileHitUnit"
-		{
-			"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
-						"Function"			"snoballHit"
-					}
-		}
+                {
+                        "DeleteOnHit"                           "false"
+
+						"RunScript"
+						{
+							"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+							"Function"			"SnowBallHit"
+						}
+					
+                }
 	}
 	
 	
@@ -444,7 +448,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "100"
+							"Radius" "150"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_HERO"
 							"MaxTargets" "5"
@@ -542,7 +546,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "100"
+							"Radius" "150"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_HERO"
 							"MaxTargets" "5"
@@ -642,7 +646,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "100"
+							"Radius" "150"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_HERO"
 							"MaxTargets" "5"
@@ -740,7 +744,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "100"
+							"Radius" "150"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_HERO"
 							"MaxTargets" "5"

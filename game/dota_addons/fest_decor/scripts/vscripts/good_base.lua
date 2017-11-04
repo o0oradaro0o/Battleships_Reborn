@@ -21,9 +21,15 @@ end
 
 if  trigger.activator:IsRealHero() and trigger.activator:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 		local ability = "Deopsit_Orbs"
-		trigger.activator:AddAbility(ability)
-		local abil = trigger.activator:GetAbilityByIndex(2)
-		abil:SetLevel(1)
+		if trigger.activator:GetAbilityByIndex(2) == nil then
+				trigger.activator:AddAbility(ability)
+				local abil = trigger.activator:GetAbilityByIndex(2)
+				abil:SetLevel(1)
+					else
+					trigger.activator:AddAbility(ability)
+				local abil = trigger.activator:GetAbilityByIndex(3)
+				abil:SetLevel(1)
+					end
 end
 
 end

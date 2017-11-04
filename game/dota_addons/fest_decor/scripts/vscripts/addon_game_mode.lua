@@ -57,6 +57,7 @@ function Precache( context )
 				PrecacheUnitByNameSync("npc_dota_Orniment1", context)
 				PrecacheUnitByNameSync("npc_dota_Orniment2", context)
 				PrecacheUnitByNameSync("npc_dota_Orniment3", context)
+				PrecacheResource( "model", "models/particle/snowball.vmdl", context )
 				PrecacheResource("custom_sounds", "soundevents/custom_sounds.vsndevts", context)
 end
 
@@ -80,6 +81,7 @@ function CfrostGameMode:OnNPCSpawned(keys)
 		 if(pId == nil) then
 		 pId = 1
 		 end
+		 npc.PID_Color = pId
 		PlayerResource:SetCustomPlayerColor(pId,PlayerColors[pId][1],PlayerColors[pId][2],PlayerColors[pId][3] )
 	
 		local abil = npc:GetAbilityByIndex(0)
@@ -183,13 +185,16 @@ local TimeLeftInGame = 600-g_MainTimerTickCount
 				if TotalGoodScore>TotalBadScore then
 					GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
 					GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
-					
+					Timers:CreateTimer( 1, function()
 					GameRules:SetSafeToLeave( true )
+					end)
 				else
 					GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
 					GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
 					
+					Timers:CreateTimer( 1, function()
 					GameRules:SetSafeToLeave( true )
+					end)
 				end
 		end
 					

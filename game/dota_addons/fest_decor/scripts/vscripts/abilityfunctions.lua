@@ -137,7 +137,7 @@ function AddGift(args, name)
 	end
 	
 	 local creature = CreateUnitByName( name , Hero.loclist[#Hero.presentList*10+15] , true, nil, nil, Hero:GetTeamNumber() )
-	 local pId = Hero:GetPlayerOwnerID()+1
+	 local pId = Hero.PID_Color
 	 if(pId == nil) then
 	 pId = 1
 	 end
@@ -257,7 +257,12 @@ function killPresents(unit)
 		for _,present in  pairs(unit.presentList) do
 			killtime = killtime + .05
 			Timers:CreateTimer( killtime, function()
-			local particle = ParticleManager:CreateParticle("particles/basic_projectile/shatterp1.vpcf", PATTACH_ABSORIGIN_FOLLOW, present)
+			 local pId = unit.PID_Color
+				 if(pId == nil) then
+				 pId = 1
+				 end
+			
+			local particle = ParticleManager:CreateParticle("particles/basic_projectile/shatterp".. pId ..".vpcf", PATTACH_ABSORIGIN_FOLLOW, present)
 			ParticleManager:SetParticleControl(particle, 0, present:GetAbsOrigin())
 			ParticleManager:SetParticleControl(particle, 3, present:GetAbsOrigin())
 			present:SetModel('invisiblebox.vmdl')
@@ -350,6 +355,43 @@ function CastSpecialAbility(args)
 	if casterUnit.AbilityName == nil then
 		return
 	end
+	
+	if string.match(casterUnit.AbilityName, "Snow_Ball")  then
+		local ability = casterUnit.AbilityName
+		if casterUnit:GetAbilityByIndex(2) == nil then
+			casterUnit:AddAbility(ability)
+			local abil2 = casterUnit:GetAbilityByIndex(2)
+			abil2:SetLevel(1)
+			abil2:CastAbility()
+		
+		
+				Timers:CreateTimer( 5.0, function()
+				casterUnit:RemoveAbility(abil2:GetAbilityName())
+			end)
+			else
+				casterUnit:AddAbility(ability)
+				local abil2 = casterUnit:GetAbilityByIndex(3)
+				abil2:SetLevel(1)
+				abil2:CastAbility()
+		
+		
+				Timers:CreateTimer( 5.0, function()
+				casterUnit:RemoveAbility(abil2:GetAbilityName())
+			end)
+		end
+		
+	local pId = casterUnit:GetPlayerOwnerID()
+	 if(pId == nil) then
+		pId = 0
+	 end
+			local emptyData = {
+		player_id = pId;
+		ability_name =  "cast_ability";
+					}
+					FireGameEvent( "grant_ability", emptyData );
+		local abil = casterUnit:GetAbilityByIndex(0)
+	
+	else
 		local ability = casterUnit.AbilityName
 		
 		local abil = casterUnit:GetAbilityByIndex(0)
@@ -375,6 +417,8 @@ function CastSpecialAbility(args)
 		local abil = casterUnit:GetAbilityByIndex(0)
 		abil:SetLevel(1)
 		print("we're tryin to cast!")
+		
+		end
 end
 
 function GrantPowerUp(args)
@@ -390,13 +434,13 @@ Caster:RemoveSelf()
 		pId = 0
 	 end
 	 local AbilName=""
-	 local randAbilInt = RandomInt ( 1, 2) 
+	 local randAbilInt = RandomInt ( 1, 3) 
 	 if randAbilInt==1 then
 		AbilName = "Rocket_Boots"
 	elseif randAbilInt==2 then
 		AbilName = "Magnet"
 	elseif randAbilInt==3 then
-		AbilName = ""
+		AbilName = "Snow_Ball"
 	 end
 	 heroUnit.AbilityName = AbilName
 	 
@@ -425,43 +469,8 @@ function PullOrn(args)
 end
 
 
-function snoballThrow(args)
-print("throwing")
-		local caster = args.caster
-		local enemies
-		
-			--hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
-		if caster:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-			enemies = FindUnitsInRadius( DOTA_TEAM_BADGUYS, caster:GetOrigin(), nil, 5000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, 0, 0, false )
-
-		else
-			enemies = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, caster:GetOrigin(), nil, 5000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, 0, 0, false )
-
-		end
-		--if #enemies >0 then
-		local fucker = caster--enemies[RandomInt ( 0, #enemies) ]
-					local tracking_projectile = 
-				{
-					EffectName = "particles/basic_projectile/snowball.vpcf",
-					Ability = caster:GetAbilityByIndex(1),
-					vSpawnOrigin = caster:GetAbsOrigin(),
-					Target = caster,
-					Source = args.source or caster,
-					bHasFrontalCone = false,
-					iMoveSpeed = 900,
-					bReplaceExisting = false,
-					bProvidesVision = false,
-					iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
-				}
-					
-
-						ProjectileManager:CreateTrackingProjectile(tracking_projectile)
-		--end
-		print("threw")
-end
-
-function snoballHit(args)
- print("snoballHit")
+function SnowBallHit(args)
+ print("SnowBallHit")
 local heroUnit = args.target
 local pId = heroUnit:GetPlayerOwnerID()
 	 if(pId == nil) then

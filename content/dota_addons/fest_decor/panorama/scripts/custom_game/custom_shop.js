@@ -6,7 +6,6 @@ var NewShopUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChil
 var currentDeg = 0
 var targetDeg = 0
 var shipShopShow=false;
-
 function fixUI( ) 
 {
 	
@@ -325,18 +324,21 @@ function SnowHit(data)
 	$.Msg("WeHit!!")
 	if(data.player_id==Players.GetLocalPlayer())
 	{
-		$( "#Splat" ).style.opacity="1";
-			$.Schedule( .1, fadeSnow(data.player_id) );
+		$( "#Splat" ).style.opacity=.7;
+	
+			$.Schedule( .1, fadeSnow );
+			
 	}
 }
 
 function fadeSnow(pId)
 {
-	if(pId==Players.GetLocalPlayer())
-	{
-		$( "#Splat" ).style.opacity=$( "#Splat" ).style.opacity;
-		$.Schedule( .1, fadeSnow(data.player_id) );
-	}
+
+		 $("#Splat").style.opacity=$("#Splat").style.opacity-.02;
+		 if($("#Splat").style.opacity>0)
+		 {
+		$.Schedule( .03, fadeSnow );
+		 }
 }
 
 
