@@ -1,103 +1,102 @@
 <root>
     <styles>
-       <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
         <include src="file://{resources}/styles/custom_game/custom_shop.css" />
 		<include src="file://{resources}/styles/custom_game/overthrow_scoreboard.css" />
-		 <include src="file://{resources}/styles/custom_game/barebones_hud_base.css" />
+		<include src="file://{resources}/styles/custom_game/barebones_hud_base.css" />
 	</styles>
     <scripts>
         <include src="file://{resources}/scripts/custom_game/custom_shop.js" />
 	 </scripts>
 	
     <Panel hittest="false" class="custom_shop_holder" oncancel="hideShop()">
-	
-		
-		
 		<Panel hittest ="false" class="Splatholder">
 			<Image id="Splat" src="file://{images}/custom_game/splatfinal.png" />
-			</Panel>
-	<Panel hittest="false" class="GageHolder" >
+		</Panel>
+		
+		<Panel hittest="false" class="GageHolder" >
 			<Image id="Tree" src="file://{images}/custom_game/tree_gage.png" />
 			<Image id="gage_bkg" src="file://{images}/custom_game/gage_bkg.png" />
-
-</Panel>
-
-<Panel hittest="false" class="MinimapFrameHolder" >
-			<Image id="MinimapFrame" src="file://{images}/custom_game/candycaneminimap.png" />
-			
-</Panel>
-
-<Panel hittest="false" class="ScoreboardHolder1" >
-			
-			<Image id="ScoreFrame1" src="file://{images}/custom_game/scoreframe.png" />
-			
-</Panel>
-<Panel hittest="false" class="ScoreboardBackHolder1" >
-	<Panel hittest="false" class="ScoreboardBack1" >
-			
-	</Panel>
-		<Panel hittest="false" class="labelHolder" >
-			<Label id="goodScore1" class="score"> </Label>
-			<Label id="goodScore2" class="score"> </Label>
-			<Label id="goodScore3" class="score"> </Label>
-			<Label id="goodScore4" class="score"> </Label>
-			<Label id="goodScore5" class="score"> </Label>
-			</Panel>
-</Panel>
-
-<Panel hittest="false" class="ScoreboardBackHolder2" >
-	<Panel hittest="false" class="ScoreboardBack2" >
-		
 		</Panel>
-			<Panel hittest="false" class="labelHolder" >
-		<Label id="badScore1" class="scoreR"> </Label>
-		<Label id="badScore2" class="scoreR"> </Label>
-		<Label id="badScore3" class="scoreR"> </Label>
-		<Label id="badScore4" class="scoreR"> </Label>
-		<Label id="badScore5" class="scoreR"> </Label>
-		</Panel>		
-</Panel>			
 
-<Panel hittest="false" class="AbilityHolder" >
+		<Panel hittest="false" class="MinimapFrameHolder" >
+			<Image id="MinimapFrame" src="file://{images}/custom_game/candycaneminimap.png" />
+		</Panel>
+
+		<Panel hittest="false" class="ScoreboardHolder1" >
+			<Image id="ScoreFrame1" src="file://{images}/custom_game/scoreframe.png" />
+		</Panel>
+		
+		<Panel hittest="false" class="ScoreboardBackHolder1" >
+			<Panel hittest="false" class="ScoreboardBack1" >		
+			</Panel>
+		
+			<Panel hittest="false" class="labelHolder" >
+				<Label id="goodScore1" class="score"> </Label>
+				<Label class="score" text="#score_title">  </Label>
+				<Label id="goodScore1" class="score"> </Label>
+				<Label id="goodScore2" class="score"> </Label>
+				<Label id="goodScore3" class="score"> </Label>
+				<Label id="goodScore4" class="score"> </Label>
+				<Label id="goodScore5" class="score"> </Label>
+			</Panel>
+		</Panel>
+
+		<Panel hittest="false" class="ScoreboardBackHolder2" >
+			<Panel hittest="false" class="ScoreboardBack2" >
+			</Panel>
+			
+			<Panel hittest="false" class="labelHolder" >
+				<Label class="scoreR" text="#score_title">  </Label>
+				<Label id="badScore1" class="scoreR"> </Label>
+				<Label id="badScore2" class="scoreR"> </Label>
+				<Label id="badScore3" class="scoreR"> </Label>
+				<Label id="badScore4" class="scoreR"> </Label>
+				<Label id="badScore5" class="scoreR"> </Label>
+			</Panel>		
+		</Panel>			
+
+		<Panel hittest="false" class="AbilityHolder" >
 			<Image id="presentclosed" src="file://{images}/custom_game/presentclosed.png" />
 			<Image id="presentopen" src="file://{images}/custom_game/presentopen.png" />
 			<Image id="rocketskate" src="file://{images}/custom_game/rocketskate.png" />
 			<Image id="magnet" src="file://{images}/custom_game/magnet.png" />
 			<Image id="snowball" src="file://{images}/custom_game/snowball.png" />
 			
-</Panel>
+		</Panel>
 
-<Panel hittest="false" class="MinimapFrameHolder" >
+		<Panel hittest="false" class="MinimapFrameHolder" >
 			<Image id="MinimapFrame" src="file://{images}/custom_game/candycaneminimap.png" />
+			</Panel>
 			
-</Panel>
-<Image id="TimerFrame" src="file://{images}/custom_game/clockholder.png" />
+		<Image id="TimerFrame" src="file://{images}/custom_game/clockholder.png" />
 
-<Panel hittest="false" id="TimerHolder" >
+		<Panel hittest="false" id="TimerHolder" >
 			<Label id = "TimeLeft" class="Timer" text="00:00" />	
 			
-</Panel>
-<Panel hittest ="false" class="teamholder">
+		</Panel>
+		
+		<Panel hittest ="false" class="teamholder">
 			<Image id="team_mitten" src="file://{images}/custom_game/mitten.png" />
 			<Image id="team_stocking" src="file://{images}/custom_game/stocking.png" />
-			</Panel>
+		</Panel>
 
 	
 	
-    <Panel hittest="false" class="BarebonesTopNotifications">
-      <Panel hittest="false" id="TopNotifications">
-      </Panel>
-    </Panel>
-    <Panel hittest="false" class="BarebonesBottomNotifications">
-      <Panel hittest="false" id="BottomNotifications">
-      </Panel>
-    </Panel>
+		<Panel hittest="false" class="BarebonesTopNotifications">
+			<Panel hittest="false" id="TopNotifications">
+			</Panel>
+		</Panel>
+		
+		<Panel hittest="false" class="BarebonesBottomNotifications">
+			<Panel hittest="false" id="BottomNotifications">
+			</Panel>
+		</Panel>
+	
 	<Button hittest="true" class="BellHolder" onactivate="toggleMusic()">
 			<Image id="bell" src="file://{images}/custom_game/bell2.png" />
 			<Image id="bellgrey" src="file://{images}/custom_game/bell2grey.png" />
 			
-</Button>
-
-
+	</Button>
     </Panel>
 </root>

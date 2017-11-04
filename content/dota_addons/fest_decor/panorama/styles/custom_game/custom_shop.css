@@ -241,6 +241,7 @@ opacity: 0;
 #bell
 {
 
+	visibility: visible;
 	horizontal-align: right;
 	height: 110px;
 	width: 110px;
@@ -275,17 +276,16 @@ height: fit-children;
 .ScoreboardBackHolder1
 {
 	visibility: visible;
-	width: 692px;
+	width: 3000px;
 	height: 200px;
+	margin-left: 240px;
 	
-margin-left: 225px;
-	
-	margin-top: 917px;
+	margin-top: 895px;
 }
 .ScoreboardBack1
 {
-	background-color: #870000;
-	opacity: .6;
+	background-color: #000000;
+	opacity: .75;
 	width: 100%;
 	height: 100%;
 }
@@ -308,7 +308,6 @@ height: fit-children;
 
 .ScoreboardBack2
 {
-	background-color: #005903;
 	opacity: .6;
 	width: 100%;
 	height: 100%;
