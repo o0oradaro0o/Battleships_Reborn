@@ -7,7 +7,7 @@ local pointValue = 1
 	if string.match(trigger.activator:GetUnitName(), "2")  then
 		pointValue=5
 
-	elseif string.match(trigger.activator:GetUnitName(), "3")  then
+	elseif string.match(trigger.activator:GetUnitName(), "4")  then
 		pointValue=3
 
 	else

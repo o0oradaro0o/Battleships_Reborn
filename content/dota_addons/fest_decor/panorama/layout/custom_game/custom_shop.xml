@@ -22,24 +22,48 @@
 
 </Panel>
 
+<Panel hittest="false" class="MinimapFrameHolder" >
+			<Image id="MinimapFrame" src="file://{images}/custom_game/candycaneminimap.png" />
+			
+</Panel>
+
 <Panel hittest="false" class="ScoreboardHolder1" >
 			
 			<Image id="ScoreFrame1" src="file://{images}/custom_game/scoreframe.png" />
 			
 </Panel>
-<Panel hittest="false" class="ScoreboardBack1" >
-			</Panel>
-<Panel hittest="false" class="MinimapFrameHolder" >
-			<Image id="MinimapFrame" src="file://{images}/custom_game/candycaneminimap.png" />
+<Panel hittest="false" class="ScoreboardBackHolder1" >
+	<Panel hittest="false" class="ScoreboardBack1" >
 			
+	</Panel>
+		<Panel hittest="false" class="labelHolder" >
+	<Label id="goodScore1" class="score"> </Label>
+			<Label id="goodScore2" class="score"> </Label>
+			<Label id="goodScore3" class="score"> </Label>
+			<Label id="goodScore4" class="score"> </Label>
+			<Label id="goodScore5" class="score"> </Label>
+			</Panel>
 </Panel>
+
 <Panel hittest="false" class="ScoreboardHolder2" >
 			
 			<Image id="ScoreFrame2" src="file://{images}/custom_game/scoreframe.png" />
 			
 </Panel>
-<Panel hittest="false" class="ScoreboardBack2" >
-			</Panel>			
+
+<Panel hittest="false" class="ScoreboardBackHolder2" >
+	<Panel hittest="false" class="ScoreboardBack2" >
+		
+		</Panel>
+			<Panel hittest="false" class="labelHolder" >
+		<Label id="badScore1" class="score"> </Label>
+		<Label id="badScore2" class="score"> </Label>
+		<Label id="badScore3" class="score"> </Label>
+		<Label id="badScore4" class="score"> </Label>
+		<Label id="badScore5" class="score"> </Label>
+		</Panel>		
+</Panel>			
+
 <Panel hittest="false" class="AbilityHolder" >
 			<Image id="presentclosed" src="file://{images}/custom_game/presentclosed.png" />
 			<Image id="presentopen" src="file://{images}/custom_game/presentopen.png" />

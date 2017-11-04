@@ -47,11 +47,15 @@
 	vertical-align: bottom;
 	horizontal-align: center;
 	
-	
+	margin-bottom: 55px;
 	height: 800px;
 	width: 750px;
+	z-index:1;	
 }
-
+.labelHolder
+{
+flow-children: down;
+}
 #team_stocking
 {
 	visibility: visible;
@@ -60,7 +64,6 @@
 	width: 200px;
 	height: 180px;	
 	margin-bottom: 105px;
-	 z-index:6;	
 }
 
 #team_mitten
@@ -139,6 +142,31 @@ z-index:6;
 	font-family: monospace;
 	    font-weight: bold;
 }
+
+.score
+{
+	margin-left:50px;
+	width: 400px;
+	height: 30px;	
+	font-size: 25px;
+	font-family: monospace;
+	    font-weight: bold;
+		z-index:10;	
+		text-shadow: 2px 2px 2px #000000;
+}
+
+.scoreR
+{
+	margin-left:350px;
+	width: 400px;
+	height: 30px;	
+	font-size: 25px;
+	font-family: monospace;
+	    font-weight: bold;
+		z-index:10;	
+		text-shadow: 2px 2px 2px #000000;
+}
+
 .AbilityHolder
 {
 	visibility: visible;
@@ -244,16 +272,22 @@ height: fit-children;
 	margin-top: 870px;
 	margin-left: 225px;
 }
-.ScoreboardBack1
+.ScoreboardBackHolder1
 {
 	visibility: visible;
 	width: 692px;
 	height: 200px;
-	background-color: #870000;
-margin-left: 225px;
-	opacity: .6;
-	margin-top: 917px;
 	
+margin-left: 225px;
+	
+	margin-top: 917px;
+}
+.ScoreboardBack1
+{
+	background-color: #870000;
+	opacity: .6;
+	width: 100%;
+	height: 100%;
 }
 
 .ScorebooardHolder2
@@ -268,15 +302,23 @@ height: fit-children;
 	margin-top: 870px;
 	margin-left: 1000px;
 }
-.ScoreboardBack2
+
+.ScoreboardBackHolder2
 {
 	visibility: visible;
 	width: 1100px;
 	height: 200px;
-	background-color: #005903;
+	
 	margin-left: 900px;
-	opacity: .6;
 	margin-top: 917px;
+}
+
+.ScoreboardBack2
+{
+	background-color: #005903;
+	opacity: .6;
+	width: 100%;
+	height: 100%;
 	
 }
 @keyframes 'zoomin' {

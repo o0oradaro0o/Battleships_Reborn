@@ -57,6 +57,7 @@ function Precache( context )
 				PrecacheUnitByNameSync("npc_dota_Orniment1", context)
 				PrecacheUnitByNameSync("npc_dota_Orniment2", context)
 				PrecacheUnitByNameSync("npc_dota_Orniment3", context)
+				PrecacheUnitByNameSync("npc_dota_Orniment4", context)
 				PrecacheResource( "model", "models/particle/snowball.vmdl", context )
 				PrecacheResource("custom_sounds", "soundevents/custom_sounds.vsndevts", context)
 end
@@ -82,7 +83,7 @@ function CfrostGameMode:OnNPCSpawned(keys)
 		 pId = 1
 		 end
 		 npc.PID_Color = pId
-		PlayerResource:SetCustomPlayerColor(pId,PlayerColors[pId][1],PlayerColors[pId][2],PlayerColors[pId][3] )
+		PlayerResource:SetCustomPlayerColor(pId-1,PlayerColors[pId][1],PlayerColors[pId][2],PlayerColors[pId][3] )
 	
 		local abil = npc:GetAbilityByIndex(0)
 		abil:SetLevel(1)
@@ -181,6 +182,11 @@ local TimeLeftInGame = 600-g_MainTimerTickCount
 		Game_Time = TimeLeftInGame;
 					}
 					FireGameEvent( "Score_data", emptyData );
+					
+			if TimeLeftInGame==60 then
+					Notifications:TopToAll({text="#one_minute", duration=1.6, style={color=" #F00000;", fontSize= "65px;", textShadow= "2px 2px 2px #000000;"}})
+			end
+					
 		if TimeLeftInGame<0 then
 				if TotalGoodScore>TotalBadScore then
 					GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
@@ -197,6 +203,28 @@ local TimeLeftInGame = 600-g_MainTimerTickCount
 					end)
 				end
 		end
+		
+		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+				local pName = "radar"
+				if PlayerResource:GetPlayerName( hero:GetPlayerID()) ~= nil and PlayerResource:GetPlayerName( hero:GetPlayerID()) ~= "" then
+					pName = PlayerResource:GetPlayerName( hero:GetPlayerID())
+				end
+				local heald_orns = 0
+				if hero.presentList ~=nil then
+					 heald_orns = #hero.presentList
+				 end
+				local score_info = {
+				player_id = hero:GetPlayerID();
+				player_name = pName;
+				delivered = hero.pointScored;
+				heald = heald_orns;
+					}
+						FireGameEvent( "score_info", score_info );
+				
+			end
+		end
+		
 					
 end
 
@@ -209,7 +237,11 @@ function spawnOrn(placment)
 				if RandomInt( 0, 10) ==1 then
 					  local creature = CreateUnitByName( "npc_dota_present2" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
 					  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
-				elseif RandomInt( 0, 5) ==1 then
+				elseif RandomInt( 0, 7) ==1 then
+					  local creature = CreateUnitByName( "npc_dota_present4" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
+					  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
+				
+				elseif RandomInt( 0, 6) ==1 then
 					  local creature = CreateUnitByName( "npc_dota_power_up" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
 					  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
 				
