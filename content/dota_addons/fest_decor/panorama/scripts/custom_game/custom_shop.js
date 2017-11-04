@@ -286,34 +286,63 @@ function AddNotificationbot(msg, panel) {
     }
   }
 }
-
 function SwapAbility(data)
 {
-	var ticks = 0; 
+	var ticks = 0;
+	if(data.player_id==Players.GetLocalPlayer())
+	{
+			$( "#presentclosed" ).style.opacity=0;
+			$( "#presentopen" ).style.opacity=0;
+			$( "#rocketskate" ).style.opacity=0;
+			$( "#magnet" ).style.opacity=0;
+			$( "#snowball" ).style.opacity=0;
+			if(data.ability_name == "Rocket_Boots")
+			{
+				$( "#presentopen" ).style.opacity=1;
+				$( "#rocketskate" ).style.opacity=1;
+
+			}
+			if(data.ability_name == "Magnet")
+			{
+				$( "#presentopen" ).style.opacity=1;
+				$( "#magnet" ).style.opacity=1;
+			}
+			if(data.ability_name == "Snow_Ball")
+			{
+				$( "#presentopen" ).style.opacity=1;
+				$( "#snowball" ).style.opacity=1;
+			}
+			if(data.ability_name == "cast_ability")
+			{
+				$( "#presentclosed" ).style.opacity=1;
+			}
+			
+	}
+}
+/**function SwapAbility(data)
+
+{
 	if(data.player_id==Players.GetLocalPlayer())
 	{
 			$( "#presentclosed" ).style.visibility="collapse";
 			$( "#presentopen" ).style.visibility="collapse";
 			$( "#rocketskate" ).style.visibility="collapse";
 			$( "#magnet" ).style.visibility="collapse";
-			$( "#snowball" ).style.visibility="collapse";
+			$( "#snowball".style.visibility="collapse";
 			if(data.ability_name == "Rocket_Boots")
 			{
 				$( "#presentopen" ).style.visibility="visible";
 				$( "#rocketskate" ).style.visibility="visible";
-				$( "#rocketskate" ).style.vanimation="zoomin";
 			}
 			if(data.ability_name == "Magnet")
 			{
 				$( "#presentopen" ).style.visibility="visible";
-					$( "#magnet" ).style.visibility="visible";
-					$( "#rocketskate" ).style.vanimation="zoomin";
+				$( "#magnet" ).style.visibility="visible";
 			}
 			if(data.ability_name == "Snow_Ball")
 			{
 				$( "#presentopen" ).style.visibility="visible";
 				$( "#snowball" ).style.visibility="visible";
-				$( "#rocketskate" ).style.vanimation="zoomin";
 			}
 			if(data.ability_name == "cast_ability")
 			{
@@ -321,8 +350,7 @@ function SwapAbility(data)
 			}
 			
 	}
-}
-
+}**/
 function SnowHit(data)
 {
 	$.Msg("WeHit!!")
