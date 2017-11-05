@@ -76,7 +76,10 @@ GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, fals
 		
 	}
 	
-
+function  TeamWin(data)
+{
+	team_number
+}
 
 function PingLoc(data)
 	{
@@ -92,6 +95,7 @@ function PingLoc(data)
 	{
 		var totalSccore = data.good_score+data.bad_score
 
+		
 		 var tGameTime = (Math.floor(data.Game_Time/60)) + ":" + (data.Game_Time % 60 >= 10 ? "": "0") +  (data.Game_Time % 60);    
 		$( "#TimeLeft" ).text = tGameTime;
 		targetDeg =  data.good_score/totalSccore*180-90
@@ -845,6 +849,8 @@ function OnLeftButtonPressed()
 	GameEvents.Subscribe( "ping_loc", PingLoc );
 	GameEvents.Subscribe( "snowball_hit", SnowHit );
 	GameEvents.Subscribe("score_info", UpdatePlayerInfo );
+	GameEvents.Subscribe("team_win", TeamWin );
+	
 	
 	GameEvents.Subscribe( "top_notification", TopNotification );
 	GameEvents.Subscribe( "bottom_notification", BottomNotification );

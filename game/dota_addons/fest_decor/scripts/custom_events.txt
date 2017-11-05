@@ -56,6 +56,13 @@
 		"heald"  "float"
 	}
 	
+	
+	"team_win"
+	{
+		"team_number"  "float"
+		
+	}
+	
 	"snowball_hit"
 	{
 		"player_id"  "float"

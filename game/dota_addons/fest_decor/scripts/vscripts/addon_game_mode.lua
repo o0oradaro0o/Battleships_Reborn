@@ -11,11 +11,14 @@ require('libraries/animations')
  -- require('libraries/attachments')
 
 g_MainTimerTickCount = 0
+g_PreviousTickCount=0
 g_treesSpawned = 0
 
 g_GoodChangedTrees = 0
 
 g_BadChangedTrees = 0
+
+g_papa = 0
 
 PlayerColors = {
  {46, 106, 230},
@@ -139,49 +142,50 @@ return true
 function CfrostGameMode:OnThink()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		--print( "Template addon script is running." )
-		g_MainTimerTickCount = g_MainTimerTickCount +1
-		if g_MainTimerTickCount == 1 then
-			local emptyData = {
-					}
-					FireGameEvent( "Player_Spawned", emptyData );
-					
-		end
-		
-		
-		if g_MainTimerTickCount%180 == 0 then
-			GameRules:SetTimeOfDay(0.25)
-		end
-		
-
-		local unitCount = 0
-		for _,creature in pairs( Entities:FindAllByClassname( "npc_dota_c*")) do
-				if creature ~= nil  then
-					unitCount=unitCount+1
-				end
-			end
-		
-			if unitCount<700 then
-			numheros = 0
-			for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-					if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-						numheros=numheros+1
-					end
+		if GameRules:GetGameTime() ~= g_PreviousTickCount then
+			g_MainTimerTickCount = g_MainTimerTickCount +1
+			if g_MainTimerTickCount == 1 then
+				local emptyData = {
+						}
+						FireGameEvent( "Player_Spawned", emptyData );
+						g_papa = CreateUnitByName( "npc_dota_papa_frosty" ,  Vector(0,0,230), true, nil, nil, DOTA_TEAM_NEUTRALS )
 			end
 			
-			for itemSlot = 0, numheros, 1 do 
-					local placment = RandomVector( RandomFloat( 600, 4300 ))
-					
-					local x = Entities:FindByClassnameNearest("npc_dota_creature", placment, 400)
-					if x==nil then
-							spawnOrn(placment)
-					
-					  end
-			  end
-		end
-		sendScore()
-		updateTrees()
-		 
-		 
+			
+			if g_MainTimerTickCount%180 == 0 then
+				GameRules:SetTimeOfDay(0.25)
+			end
+			
+
+			local unitCount = 0
+			for _,creature in pairs( Entities:FindAllByClassname( "npc_dota_c*")) do
+					if creature ~= nil  then
+						unitCount=unitCount+1
+					end
+				end
+			
+				if unitCount<700 then
+				numheros = 0
+				for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+						if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+							numheros=numheros+1
+						end
+				end
+				
+				for itemSlot = 0, numheros, 1 do 
+						local placment = RandomVector( RandomFloat( 600, 4300 ))
+						
+						local x = Entities:FindByClassnameNearest("npc_dota_creature", placment, 400)
+						if x==nil then
+								spawnOrn(placment)
+						
+						  end
+				  end
+			end
+			sendScore()
+			updateTrees()
+			 g_PreviousTickCount=GameRules:GetGameTime()		
+		 end
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		return nil
 	end
@@ -226,30 +230,39 @@ local TimeLeftInGame = 600-g_MainTimerTickCount
 					Notifications:TopToAll({text="#one_minute", duration=1.6, style={color=" #F00000;", fontSize= "65px;", textShadow= "2px 2px 2px #000000;"}})
 			end
 					
-		if TimeLeftInGame<0 then
-				if TotalGoodScore>TotalBadScore then
+			if TotalGoodScore>TotalBadScore then
+		
+					g_papa:MoveToPosition(  Vector(300,-100,0))
+					
+					if TimeLeftInGame<0 then
+						GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+						GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
+							Timers:CreateTimer( 1, function()
+						GameRules:SetSafeToLeave( true )
+						end)
+					end
+					
+			else
+	
+				g_papa:MoveToPosition(  Vector(-300,100,0))
+				if TimeLeftInGame<0 then
 					GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
 					GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
 					Timers:CreateTimer( 1, function()
 					GameRules:SetSafeToLeave( true )
 					end)
-				else
-					GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
-					GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
-					
-					Timers:CreateTimer( 1, function()
-					GameRules:SetSafeToLeave( true )
-					end)
 				end
-		end
+			end
+		
 		
 		
 		
 					
 end
 function updateTrees()
-
-	if storage:GetGoodStoredPoints()/25>g_GoodChangedTrees+1 then
+	
+	local temp = storage:GetGoodStoredPoints()
+	if temp/25>g_GoodChangedTrees+1 then
 		g_GoodChangedTrees=g_GoodChangedTrees+1
 		
 		local trees = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, Vector(8000,-8000,0), nil, 5900, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
@@ -267,7 +280,8 @@ function updateTrees()
 			end
 		end
 	end
-	if storage:GetBadStoredPoints()/25>g_BadChangedTrees+1 then
+	temp = storage:GetBadStoredPoints()
+	if temp/25>g_BadChangedTrees+1 then
 		g_BadChangedTrees=g_BadChangedTrees+1
 		
 		local trees = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, Vector(-8000,7000,0), nil, 5500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
