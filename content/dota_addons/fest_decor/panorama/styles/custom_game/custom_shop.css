@@ -47,10 +47,10 @@
 	vertical-align: bottom;
 	horizontal-align: center;
 	
-	margin-bottom: 20px;
+	margin-bottom: -120px;
 	height: 800px;
-	width: 600px;
-	z-index:1;	
+	width: 700px;
+	z-index:8;	
 }
 .labelHolder
 {
@@ -66,9 +66,9 @@
 	visibility: visible;
 	horizontal-align: right;
 	vertical-align: bottom;
-	width: 200px;
-	height: 180px;	
-	margin-bottom: 105px;
+	width: 171px;
+	height: 154px;	
+	margin-bottom: 125px;
 }
 
 #team_mitten
@@ -163,7 +163,7 @@ z-index:6;
 
 .scoreRight
 {
-	margin-right: 290px;
+	margin-right: 220px;
 	margin-top: 10px;
 	width: 400px;
 	height: 20px;	
