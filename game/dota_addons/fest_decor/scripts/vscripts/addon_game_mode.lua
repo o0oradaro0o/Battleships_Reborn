@@ -11,7 +11,11 @@ require('libraries/animations')
  -- require('libraries/attachments')
 
 g_MainTimerTickCount = 0
+g_treesSpawned = 0
 
+g_GoodChangedTrees = 0
+
+g_BadChangedTrees = 0
 
 PlayerColors = {
  {46, 106, 230},
@@ -60,7 +64,9 @@ function Precache( context )
 				PrecacheUnitByNameSync("npc_dota_Orniment2", context)
 				PrecacheUnitByNameSync("npc_dota_Orniment3", context)
 				PrecacheUnitByNameSync("npc_dota_Orniment4", context)
-				PrecacheResource( "model", "models/particle/snowball.vmdl", context )
+				PrecacheUnitByNameSync("npc_dota_tree", context)
+				
+				PrecacheResource( "model", "models/decoratedtree.vmdl", context )
 				PrecacheResource("custom_sounds", "soundevents/custom_sounds.vsndevts", context)
 end
 
@@ -80,6 +86,10 @@ end
 function CfrostGameMode:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 	if npc:IsRealHero() then
+		if g_treesSpawned==0 then
+			spawnTrees()
+			g_treesSpawned=1
+		end
 		 local pId = npc:GetPlayerOwnerID()+1
 		 if(pId == nil) then
 		 pId = 1
@@ -134,6 +144,7 @@ function CfrostGameMode:OnThink()
 			local emptyData = {
 					}
 					FireGameEvent( "Player_Spawned", emptyData );
+					
 		end
 		
 		
@@ -160,19 +171,14 @@ function CfrostGameMode:OnThink()
 					  end
 			  end
 		end
-		updateScore()
 		sendScore()
-		 
+		updateTrees()
 		 
 		 
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		return nil
 	end
 	return 1
-end
-
-function updateScore()
-
 end
 
 
@@ -234,8 +240,84 @@ local TimeLeftInGame = 600-g_MainTimerTickCount
 		
 					
 end
+function updateTrees()
 
+	if storage:GetGoodStoredPoints()/25>g_GoodChangedTrees+1 then
+		g_GoodChangedTrees=g_GoodChangedTrees+1
+		
+		local trees = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, Vector(8000,-8000,0), nil, 5900, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
+		
+	
+		for _,tree in  pairs(trees) do
+			if string.match(tree:GetUnitName(), "tree") then
+				if tree.changed == nil then
+					tree:SetModel("models/decoratedtree.vmdl")
+					tree.changed=1
+					tree:SetModelScale(1.0)
+					return
+				end
+			
+			end
+		end
+	end
+	if storage:GetBadStoredPoints()/25>g_BadChangedTrees+1 then
+		g_BadChangedTrees=g_BadChangedTrees+1
+		
+		local trees = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, Vector(-8000,7000,0), nil, 5500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
+	
+	
+		for _,tree in  pairs(trees) do
+			if string.match(tree:GetUnitName(), "tree") then
+				if tree.changed == nil then
+					tree:SetModel("models/decoratedtree.vmdl")
+					tree.changed=1
+					tree:SetModelScale(1.0)
+					return
+				end
+			
+			end
+		end
+	end
 
+end
+
+function spawnTrees()
+
+	local unitCount = 0
+			local gonnacrash = 0
+			while unitCount<30 or gonnacrash>5000 do
+			gonnacrash=gonnacrash+1
+					local placment = RandomVector( RandomFloat( 1200, 5500 ))+ Vector(-8000,7000,0)
+					
+					
+					local x = Entities:FindByClassnameNearest("npc_dota_creature", placment, 550)
+					if x==nil  and (placment*Vector(0,1,0)):Length()<7000 and (placment*Vector(1,0,0)):Length()<7000 then
+							unitCount = unitCount+1
+							local creature = CreateUnitByName( "npc_dota_tree" ,  placment, true, nil, nil, DOTA_TEAM_BADGUYS )
+							creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
+					end
+
+			end
+			print("gonnacrash:" ..gonnacrash)
+			
+			unitCount = 0
+		gonnacrash = 0
+			while unitCount<30 or gonnacrash>5000 do
+			gonnacrash=gonnacrash+1
+			gonnacrash=gonnacrash+1
+					local placment = RandomVector( RandomFloat( 2200, 5900 ))+Vector(8000,-8000,0)
+					
+					local x = Entities:FindByClassnameNearest("npc_dota_creature", placment, 550)
+					if x==nil  and (placment*Vector(0,1,0)):Length()<7000 and (placment*Vector(1,0,0)):Length()<7000 then
+							unitCount = unitCount+1
+							local creature = CreateUnitByName( "npc_dota_tree" ,  placment, true, nil, nil, DOTA_TEAM_GOODGUYS )
+							creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
+					end
+
+			end
+
+  
+end
 
 
 

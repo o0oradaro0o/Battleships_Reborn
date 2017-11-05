@@ -815,7 +815,6 @@ var badTeamScores = []
 
 function UpdatePlayerInfo(data)
 {
-	 $.Msg(Players.GetTeam( data.player_id ))
 	if( Players.GetTeam( data.player_id )	== 3)
 	{
 		goodTeamScores[data.player_id] = [data.player_name, data.delivered, data.heald , data.player_id  ]

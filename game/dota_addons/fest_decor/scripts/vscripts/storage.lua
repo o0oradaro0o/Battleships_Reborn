@@ -43,6 +43,16 @@ function storage:SetBadPoints(points)
 end
 
 
+
+function storage:GetGoodStoredPoints()
+	return GoodStoredPoints
+end
+
+function storage:GetBadStoredPoints()
+	return BadStoredPoints
+end
+
+
 function storage:GetGoodPoints()
 	return GoodTempPoints+GoodStoredPoints
 end
