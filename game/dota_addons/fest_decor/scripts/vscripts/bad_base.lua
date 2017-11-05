@@ -11,7 +11,7 @@ function StartAddingPoints(trigger)
 	elseif string.match(trigger.activator:GetUnitName(), "4")  then
 		pointValue=3
 
-	else
+	elseif not string.match(trigger.activator:GetUnitName(), "tree") then
 		pointValue = 1
 	end
 				
@@ -42,10 +42,10 @@ function StopAddingPoints(trigger)
 	if string.match(trigger.activator:GetUnitName(), "2")  then
 		pointValue=5
 
-	elseif string.match(trigger.activator:GetUnitName(), "3")  then
+	elseif string.match(trigger.activator:GetUnitName(), "4")  then
 		pointValue=3
 
-	else
+	elseif not string.match(trigger.activator:GetUnitName(), "tree") then
 		pointValue = 1
 	end
 				

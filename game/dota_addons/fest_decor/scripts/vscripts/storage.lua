@@ -22,14 +22,18 @@ GoodTempPoints = 0
 BadTempPoints = 0
 
 
-GoodStoredPoints = 20
-BadStoredPoints = 20
+GoodStoredPoints = 0
+BadStoredPoints = 0
 
 function storage:AddGoodStoredPoints(points)
+	print("points added : " .. points)
+	print("GoodStoredPoints: " .. GoodStoredPoints)
 	GoodStoredPoints = GoodStoredPoints + points
 end
 
 function storage:AddBadStoredPoints(points)
+print("points added : " .. points)
+print("BadStoredPoints: " .. BadStoredPoints)
 	BadStoredPoints = BadStoredPoints + points
 end
 
