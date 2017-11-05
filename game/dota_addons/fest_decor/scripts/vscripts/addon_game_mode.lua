@@ -13,6 +13,10 @@ require('libraries/animations')
 g_MainTimerTickCount = 0
 g_treesSpawned = 0
 
+g_GoodChangedTrees = 0
+
+g_BadChangedTrees = 0
+
 PlayerColors = {
  {46, 106, 230},
 
@@ -62,7 +66,7 @@ function Precache( context )
 				PrecacheUnitByNameSync("npc_dota_Orniment4", context)
 				PrecacheUnitByNameSync("npc_dota_tree", context)
 				
-				PrecacheResource( "model", "models/particle/snowball.vmdl", context )
+				PrecacheResource( "model", "models/decoratedtree.vmdl", context )
 				PrecacheResource("custom_sounds", "soundevents/custom_sounds.vsndevts", context)
 end
 
@@ -168,7 +172,7 @@ function CfrostGameMode:OnThink()
 			  end
 		end
 		sendScore()
-		 
+		updateTrees()
 		 
 		 
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
@@ -235,6 +239,46 @@ local TimeLeftInGame = 600-g_MainTimerTickCount
 		
 		
 					
+end
+function updateTrees()
+
+	if storage:GetGoodStoredPoints()/25>g_GoodChangedTrees+1 then
+		g_GoodChangedTrees=g_GoodChangedTrees+1
+		
+		local trees = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, Vector(8000,-8000,0), nil, 5900, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
+		
+	
+		for _,tree in  pairs(trees) do
+			if string.match(tree:GetUnitName(), "tree") then
+				if tree.changed == nil then
+					tree:SetModel("models/decoratedtree.vmdl")
+					tree.changed=1
+					tree:SetModelScale(1.0)
+					return
+				end
+			
+			end
+		end
+	end
+	if storage:GetBadStoredPoints()/25>g_BadChangedTrees+1 then
+		g_BadChangedTrees=g_BadChangedTrees+1
+		
+		local trees = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, Vector(-8000,7000,0), nil, 5500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
+	
+	
+		for _,tree in  pairs(trees) do
+			if string.match(tree:GetUnitName(), "tree") then
+				if tree.changed == nil then
+					tree:SetModel("models/decoratedtree.vmdl")
+					tree.changed=1
+					tree:SetModelScale(1.0)
+					return
+				end
+			
+			end
+		end
+	end
+
 end
 
 function spawnTrees()
