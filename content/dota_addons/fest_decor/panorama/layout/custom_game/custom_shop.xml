@@ -32,17 +32,25 @@
 			</Panel>
 		
 			<Panel hittest="false" class="labelHolder" >
-				<Label id="goodScore1" class="score"> </Label>
-				<Label class="score" text="#score_title">  </Label>
-				<Label id="goodScore1" class="score"> </Label>
-				<Label id="goodScore2" class="score"> </Label>
-				<Label id="goodScore3" class="score"> </Label>
-				<Label id="goodScore4" class="score"> </Label>
-				<Label id="goodScore5" class="score"> </Label>
+				<Label class="scoreLeft" text="#score_title">  </Label>
+				<Label id="goodScore1" class="scoreL"> </Label>
+				<Label id="goodScore2" class="scoreL"> </Label>
+				<Label id="goodScore3" class="scoreL"> </Label>0
+				<Label id="goodScore4" class="scoreL"> </Label>
+				<Label id="goodScore5" class="scoreL"> </Label>
+			</Panel>
+			
+			<Panel hittest="false" class="labelHolder2" >
+				<Label class="scoreRight" text="#score_title">  </Label>
+				<Label id="badScore1" class="scoreR"> </Label>
+				<Label id="badScore2" class="scoreR"> </Label>
+				<Label id="badScore3" class="scoreR"> </Label>
+				<Label id="badScore4" class="scoreR"> </Label>
+				<Label id="badScore5" class="scoreR"> </Label>
 			</Panel>
 		</Panel>
 
-		<Panel hittest="false" class="ScoreboardBackHolder2" >
+		<!--<Panel hittest="false" class="ScoreboardBackHolder2" >
 			<Panel hittest="false" class="ScoreboardBack2" >
 			</Panel>
 			
@@ -54,7 +62,7 @@
 				<Label id="badScore4" class="scoreR"> </Label>
 				<Label id="badScore5" class="scoreR"> </Label>
 			</Panel>		
-		</Panel>			
+		</Panel>-->
 
 		<Panel hittest="false" class="AbilityHolder" >
 			<Image id="presentclosed" src="file://{images}/custom_game/presentclosed.png" />
