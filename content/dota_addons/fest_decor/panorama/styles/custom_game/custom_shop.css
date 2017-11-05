@@ -158,6 +158,7 @@ z-index:6;
 	font-family: monospace;
 	font-weight: bold;
 	z-index:10;	
+	text-shadow: 1px 1px 1px #000000;
 }
 
 .scoreRight
@@ -170,11 +171,13 @@ z-index:6;
 	font-family: monospace;
 	font-weight: bold;
 	z-index:10;	
+	text-shadow: 1px 1px 1px #000000;
 }
 .scoreL
 {
 	font-size: 23px;
 	text-align: center;
+	text-shadow: 1px 1px 1px #000000;
 }
 
 .scoreR
@@ -182,6 +185,7 @@ z-index:6;
 	
 	font-size: 23px;
 	text-align: center;
+	text-shadow: 1px 1px 1px #000000;
 }
 
 .AbilityHolder
@@ -301,8 +305,8 @@ height: fit-children;
 }
 .ScoreboardBack1
 {
-	background-color: #000000;
-	opacity: .85;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #90858500 ), color-stop( 0.25, #62696e44 ), color-stop( 0.5, #AA959566 ), color-stop( 0.75, #62696e ), to( #908585 ) );
+	opacity: .5;
 	width: 100%;
 	height: 100%;
 }
