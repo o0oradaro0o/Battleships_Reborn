@@ -72,10 +72,10 @@
 	m_Children = 
 	[
 		{
-			m_ChildRef = resource:"particles/decorate1.vpcf"
+			m_ChildRef = resource:"particles/new_system_test_1.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/generic_gameplay/illusion_created.vpcf"
+			m_ChildRef = resource:"particles/addons_gameplay/tower_good_tintable_lamp_end_ray.vpcf"
 		},
 	]
 }

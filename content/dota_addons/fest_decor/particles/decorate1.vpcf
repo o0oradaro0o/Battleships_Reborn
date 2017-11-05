@@ -13,6 +13,7 @@
 			m_bDisableZBuffering = true
 			m_hTexture = resource:"materials/particle/particle_flares/aircraft_white.vtex"
 			m_flAnimationRate = 0.0
+			m_flSourceAlphaValueToMapToZero = 0.982
 		},
 	]
 	m_Operators = 
