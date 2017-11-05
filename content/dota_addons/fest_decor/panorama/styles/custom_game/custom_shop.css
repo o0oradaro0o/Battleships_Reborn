@@ -262,13 +262,14 @@ opacity: 0;
 #bell
 {
 
-	visibility: visible;
+	visibility: collapse;
 	horizontal-align: right;
 	height: 110px;
 	width: 110px;
 }
 #bellgrey
 {
+	visibility: visible;
 	horizontal-align: right;
 	height: 110px;
 	width: 110px;
