@@ -172,14 +172,18 @@ function PingLoc(data)
 			
 	}
 	var soundHandle
+	var musicPlayingTime=0
 	function toggleMusic()
 	{
+		
 		if($( "#bell" ).style.visibility=="collapse")
 		{
 			$( "#bell" ).style.visibility="visible";
 			$( "#bellgrey" ).style.visibility="collapse";
 			soundHandle= Game.EmitSound("ThemeSong");
-			$.Schedule( 20, continueMusic );
+			musicPlayingTime = Game.GetGameTime()
+			$.Schedule( 68, continueMusic );
+				
 		}
 		else
 		{
@@ -192,8 +196,13 @@ function PingLoc(data)
 	{
 		if($( "#bellgrey" ).style.visibility=="collapse")
 		{
-			soundHandle= Game.EmitSound("ThemeSong");
-			$.Schedule( 20, continueMusic );
+			$.Msg(Game.GetGameTime()-musicPlayingTime)
+				if(Game.GetGameTime()-musicPlayingTime>66.5)
+				{
+					soundHandle= Game.EmitSound("ThemeSong");
+					$.Schedule( 68, continueMusic );
+					musicPlayingTime = Game.GetGameTime()
+				}
 		}
 	}
 	
@@ -423,7 +432,7 @@ function SwapAbility(data)
 				lastability = "skate";
 				hasability = true;
 				$("#presentopen").style.opacity=1;
-				$.Msg("skate fade if")
+				//$.Msg("skate fade if")
 				SkateIn()
 
 			}
@@ -432,7 +441,7 @@ function SwapAbility(data)
 				lastability = "magnet";
 				hasability = true;
 				$("#presentopen").style.opacity=1;
-				$.Msg("magnet fade if")
+				//$.Msg("magnet fade if")
 				MagnetIn()
 
 
@@ -442,14 +451,13 @@ function SwapAbility(data)
 				lastability = "snowball";
 				hasability = true;
 				$("#presentopen").style.opacity=1;
-				$.Msg("snow fade if")
+				//$.Msg("snow fade if")
 				SnowIn()
 
 			}
 			if(data.ability_name == "cast_ability")
 			{
 				//$( "#presentclosed" ).style.opacity=1;
-				$.Msg("no ability available")
 				hasability = false;
 				UseAbility()
 			}
@@ -464,7 +472,6 @@ function SkateIn()
 	{
 		$("#rocketskate").style.opacity=$("#rocketskate").style.opacity-.1+.2;
 		$.Schedule( .1, SkateIn );	
-		$.Msg("skate fade")
 		
 	}
 
@@ -477,7 +484,6 @@ function MagnetIn()
 	{
 		$("#magnet").style.opacity=$("#magnet").style.opacity-.1+.2;
 		$.Schedule( .1, MagnetIn );	
-		$.Msg("magnet fade")
 		
 	}
 
@@ -490,7 +496,6 @@ function SnowIn()
 	{
 		$("#snowball").style.opacity=$("#snowball").style.opacity-.1+.2;
 		$.Schedule( .1, SnowIn );	
-		$.Msg("snow fade")
 		
 	}
 
@@ -734,7 +739,6 @@ function UseAbility()
 			$( "#presentclosed" ).style.opacity=1;
 			hasability = false;
 			pulsecounter = 1;
-			$.Msg("lastability = none")
 	}
 }
 
@@ -774,7 +778,6 @@ function UseAbility()
 }**/
 function SnowHit(data)
 {
-	$.Msg("WeHit!!")
 	if(data.player_id==Players.GetLocalPlayer())
 	{
 		$( "#Splat" ).style.opacity=.7;

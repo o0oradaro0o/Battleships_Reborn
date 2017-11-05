@@ -431,7 +431,6 @@ function CastSpecialAbility(args)
 					FireGameEvent( "grant_ability", emptyData );
 		local abil = casterUnit:GetAbilityByIndex(0)
 		abil:SetLevel(1)
-		print("we're tryin to cast!")
 		
 		end
 end
@@ -485,7 +484,6 @@ end
 
 
 function SnowBallHit(args)
- print("SnowBallHit")
 local heroUnit = args.target
 local pId = heroUnit:GetPlayerOwnerID()
 	 if(pId == nil) then

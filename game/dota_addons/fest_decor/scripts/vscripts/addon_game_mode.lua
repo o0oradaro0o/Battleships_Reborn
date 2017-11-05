@@ -161,7 +161,14 @@ function CfrostGameMode:OnThink()
 			end
 		
 			if unitCount<700 then
-			for itemSlot = 0, 5, 1 do 
+			numheros = 0
+			for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+					if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+						numheros=numheros+1
+					end
+			end
+			
+			for itemSlot = 0, numheros, 1 do 
 					local placment = RandomVector( RandomFloat( 600, 4300 ))
 					
 					local x = Entities:FindByClassnameNearest("npc_dota_creature", placment, 400)
@@ -298,7 +305,6 @@ function spawnTrees()
 					end
 
 			end
-			print("gonnacrash:" ..gonnacrash)
 			
 			unitCount = 0
 		gonnacrash = 0
