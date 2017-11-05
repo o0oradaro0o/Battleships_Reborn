@@ -155,12 +155,13 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"25.0 25.0 25.0 25.0"
+		"AbilityCooldown"				"1.0 1.0 1.0 1.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
+
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -168,8 +169,13 @@
 				"Target" "CASTER"
 				"ModifierName" "Rocket"
 			}
+			"FireSound"
+			{
+				"EffectName" "Hero_Tinker.Heat-Seeking_Missile"
+				"Target"     "CASTER"
+			}
 		}
-
+		
 		"Modifiers"
 		{
 			
@@ -240,6 +246,11 @@
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/snowball.vpcf" 
 			}
+			"FireSound"
+			{
+				"EffectName" "Hero_ChaosKnight.idle_throw"
+				"Target"     "CASTER"
+			}
 		}
 		
 		
@@ -253,7 +264,12 @@
 							"Function"			"SnowBallHit"
 						}
 					
-                }
+					"FireSound"
+					{
+						"EffectName" "BodyImpact_Common.Light"
+						"Target"     "CASTER"
+					}
+				}
 	}
 	
 	
@@ -286,6 +302,12 @@
 			{
 				"Target" "CASTER"
 				"ModifierName" "mag"
+			}
+			
+			"FireSound"
+			{
+				"EffectName" "Hero_Dark_Seer.Vacuum"
+				"Target"     "CASTER"
 			}
 		}
 
