@@ -107,20 +107,20 @@ function PingLoc(data)
 				goodToSort.forEach(function(element) 
 				{
 					count++;
-					if(element[0].length>10)
+					if(element[0].length>20)
 					{
-						var name = element[0].substring(0,10)
+						var name = element[0].substring(0,20)
 					}
 					else
 					{
 						name = element[0]
-						while(name.length<9)
+						while(name.length<19)
 						{
 							name=name+" "
 						}
 					}
-					var spaces="        "
-					if(element[1]>9)
+					var spaces="                  "
+					if(element[1]>19)
 					{
 						spaces="       "
 					}
@@ -139,20 +139,20 @@ function PingLoc(data)
 				badToSort.forEach(function(element) 
 				{
 					count++;
-					if(element[0].length>10)
+					if(element[0].length>20)
 					{
-						var name = element[0].substring(0,10)
+						var name = element[0].substring(0,20)
 					}
 					else
 					{
 						name = element[0]
-						while(name.length<9)
+						while(name.length<19)
 						{
 							name=name+" "
 						}
 					}
-					var spaces="        "
-					if(element[1]>9)
+					var spaces="                  "
+					if(element[1]>19)
 					{
 						spaces="       "
 					}

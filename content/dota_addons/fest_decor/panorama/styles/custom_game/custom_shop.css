@@ -47,14 +47,19 @@
 	vertical-align: bottom;
 	horizontal-align: center;
 	
-	margin-bottom: 55px;
+	margin-bottom: 20px;
 	height: 800px;
-	width: 750px;
+	width: 600px;
 	z-index:1;	
 }
 .labelHolder
 {
-flow-children: down;
+	flow-children: down;
+}
+.labelHolder2
+{
+	horizontal-align: right;
+	flow-children: down;
 }
 #team_stocking
 {
@@ -143,28 +148,40 @@ z-index:6;
 	    font-weight: bold;
 }
 
-.score
+.scoreLeft
 {
-	margin-left:50px;
+	margin-left: 50px;
+	margin-top: 10px;
 	width: 400px;
-	height: 30px;	
-	font-size: 25px;
+	height: 20px;	
+	font-size: 20px;
 	font-family: monospace;
-	    font-weight: bold;
-		z-index:10;	
-		text-shadow: 2px 2px 2px #000000;
+	font-weight: bold;
+	z-index:10;	
+}
+
+.scoreRight
+{
+	margin-right: 290px;
+	margin-top: 10px;
+	width: 400px;
+	height: 20px;	
+	font-size: 20px;
+	font-family: monospace;
+	font-weight: bold;
+	z-index:10;	
+}
+.scoreL
+{
+	font-size: 23px;
+	text-align: center;
 }
 
 .scoreR
 {
-	margin-left:300px;
-	width: 400px;
-	height: 30px;	
-	font-size: 25px;
-	font-family: monospace;
-	    font-weight: bold;
-		z-index:10;	
-		text-shadow: 2px 2px 2px #000000;
+	
+	font-size: 23px;
+	text-align: center;
 }
 
 .AbilityHolder
@@ -172,7 +189,7 @@ z-index:6;
 	visibility: visible;
 	vertical-align: bottom;
 	horizontal-align: right;
-	margin-right: -100px;
+	margin-right: -150px;
 	animation-name: zoomin;
     animation-duration: .5s;
     animation-timing-function: linear;
@@ -276,16 +293,16 @@ height: fit-children;
 .ScoreboardBackHolder1
 {
 	visibility: visible;
-	width: 3000px;
+	width: 100%;
 	height: 200px;
 	margin-left: 240px;
-	
 	margin-top: 895px;
+	horizontal-align: center;
 }
 .ScoreboardBack1
 {
 	background-color: #000000;
-	opacity: .75;
+	opacity: .85;
 	width: 100%;
 	height: 100%;
 }
