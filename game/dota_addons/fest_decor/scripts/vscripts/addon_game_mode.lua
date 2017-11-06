@@ -237,10 +237,36 @@ local TimeLeftInGame = 600-g_MainTimerTickCount
 			end
 					
 			if TotalGoodScore>TotalBadScore then
-		
-					g_papa:MoveToPosition(  Vector(300,-100,0))
 					
+					
+					
+					g_papa:MoveToPosition(  Vector(300,-100,0))
+				
 					if TimeLeftInGame<0 then
+					
+					local emptyData = {
+						team_number = DOTA_TEAM_GOODGUYS;
+					}
+					FireGameEvent( "team_win", emptyData );
+					
+					local papa_place = Vector(5000,-5000,120)
+					g_papa:SetOrigin(papa_place)
+					g_papa:SetForwardVector(papa_place+Vector(0,500,120))
+					
+					for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+						if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+							PlayerResource:SetCameraTarget(hero:GetPlayerID(), g_papa)
+							hero:SetOrigin(papa_place + RandomVector(500))
+							hero:SetForwardVector(papa_place-hero:GetOrigin())
+							hero.presentList = {}
+							local ability = "festive_spirit"
+							hero:RemoveAbility(ability)
+								hero:AddAbility("cast_ability")
+							hero:RemoveModifierByName("Winter_Spirit")
+						end
+					end
+					
+					
 						GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
 						GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
 							Timers:CreateTimer( 1, function()
@@ -249,9 +275,34 @@ local TimeLeftInGame = 600-g_MainTimerTickCount
 					end
 					
 			else
-	
+			
+				
 				g_papa:MoveToPosition(  Vector(-300,100,0))
+				
 				if TimeLeftInGame<0 then
+				
+				local emptyData = {
+						team_number = DOTA_TEAM_BADGUYS;
+					}
+					
+					FireGameEvent( "team_win", emptyData );
+				
+						local papa_place = Vector(-5000,5000,120)
+					g_papa:SetOrigin(papa_place)
+					g_papa:SetForwardVector(Vector(200,-300,120))
+					
+					for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+						if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+							PlayerResource:SetCameraTarget(hero:GetPlayerID(), g_papa)
+							hero:SetOrigin(papa_place + RandomVector(500))
+							hero:SetForwardVector(papa_place-hero:GetOrigin())
+							hero.presentList = {}
+							local ability = "festive_spirit"
+							hero:RemoveAbility(ability)
+								hero:AddAbility("cast_ability")
+							hero:RemoveModifierByName("Winter_Spirit")
+						end
+					end
 					GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
 					GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
 					Timers:CreateTimer( 1, function()
@@ -268,7 +319,7 @@ end
 function updateTrees()
 	
 	local temp = storage:GetGoodStoredPoints()
-	if temp/25>g_GoodChangedTrees+1 then
+	if temp/2>g_GoodChangedTrees+1 then
 		g_GoodChangedTrees=g_GoodChangedTrees+1
 		
 		local trees = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, Vector(8000,-8000,0), nil, 5900, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
@@ -279,6 +330,14 @@ function updateTrees()
 				if tree.changed == nil then
 					tree:SetModel("models/decoratedtree.vmdl")
 					tree.changed=1
+					local particle = ParticleManager:CreateParticle("particles/basic_projectile/decoratetree.vpcf", PATTACH_OVERHEAD_FOLLOW, tree)
+					ParticleManager:SetParticleControl(particle, 0, tree:GetAbsOrigin()+Vector(0,0,250))
+					ParticleManager:SetParticleControl(particle, 2, tree:GetAbsOrigin()+Vector(0,0,250))
+					ParticleManager:SetParticleControl(particle, 3, tree:GetAbsOrigin()+Vector(0,0,250))
+					ParticleManager:SetParticleControl(particle, 15, tree:GetAbsOrigin()+Vector(0,0,250))
+					ParticleManager:SetParticleControl(particle, 16, tree:GetAbsOrigin()+Vector(0,0,250))
+					tree.changed=1
+					tree:SetModelScale(1.0)
 					tree:SetModelScale(1.0)
 					return
 				end
@@ -287,7 +346,7 @@ function updateTrees()
 		end
 	end
 	temp = storage:GetBadStoredPoints()
-	if temp/25>g_BadChangedTrees+1 then
+	if temp/2>g_BadChangedTrees+1 then
 		g_BadChangedTrees=g_BadChangedTrees+1
 		
 		local trees = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, Vector(-8000,7000,0), nil, 5500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
@@ -297,6 +356,12 @@ function updateTrees()
 			if string.match(tree:GetUnitName(), "tree") then
 				if tree.changed == nil then
 					tree:SetModel("models/decoratedtree.vmdl")
+					local particle = ParticleManager:CreateParticle("particles/basic_projectile/decoratetree.vpcf", PATTACH_OVERHEAD_FOLLOW, tree)
+					ParticleManager:SetParticleControl(particle, 0, tree:GetAbsOrigin()+Vector(0,0,250))
+					ParticleManager:SetParticleControl(particle, 2, tree:GetAbsOrigin()+Vector(0,0,250))
+					ParticleManager:SetParticleControl(particle, 3, tree:GetAbsOrigin()+Vector(0,0,250))
+					ParticleManager:SetParticleControl(particle, 15, tree:GetAbsOrigin()+Vector(0,0,250))
+					ParticleManager:SetParticleControl(particle, 16, tree:GetAbsOrigin()+Vector(0,0,250))
 					tree.changed=1
 					tree:SetModelScale(1.0)
 					return

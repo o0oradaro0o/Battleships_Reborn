@@ -20,7 +20,7 @@
                     "volume"            {   "value"     "10.00000"  }
                     
                     "pitch"             {   "value"     "1.000000"  }
-                    "soundlevel"        {   "value"     "50.00000" }
+                    "soundlevel"        {   "value"     "75.00000" }
                     "distance_max"      {   "value"     "1600.000"  }
                     "event_type"        {   "value"     "1.000000"  }
                 }
@@ -28,7 +28,6 @@
         }
     }
 }
-{
 "RocketBoots"
 {
     "operator_stacks"
@@ -58,5 +57,4 @@
             }
         }
     }
-}
 }

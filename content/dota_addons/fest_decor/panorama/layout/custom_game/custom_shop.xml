@@ -14,6 +14,12 @@
 			<Image id="Splat" src="file://{images}/custom_game/splatfinal.png" />
 		</Panel>
 		
+		<Panel hittest ="false" class="Splatholder">
+			<Image id="mit" src="file://{images}/custom_game/mittenswin.png" />
+			<Image id="sto" src="file://{images}/custom_game/stockingswin.png" />
+		</Panel>
+		
+		
 		<Panel hittest="false" class="GageHolder" >
 			<Image id="Tree" src="file://{images}/custom_game/tree_gage.png" />
 			<Image id="gage_bkg" src="file://{images}/custom_game/gage_bkg.png" />
