@@ -233,7 +233,23 @@ local TimeLeftInGame = 600-g_MainTimerTickCount
 					FireGameEvent( "Score_data", emptyData );
 					
 			if TimeLeftInGame==60 then
-					Notifications:TopToAll({text="#one_minute", duration=1.6, style={color=" #F00000;", fontSize= "65px;", textShadow= "2px 2px 2px #000000;"}})
+					Notifications:TopToAll({text="#one_minute", duration=5, style={color=" #F00000;", fontSize= "65px;", textShadow= "2px 2px 2px #000000;"}})
+			end
+			
+			if TimeLeftInGame==5 then
+					Notifications:TopToAll({text="5", duration=1, style={color=" #F00000;", fontSize= "65px;", textShadow= "2px 2px 2px #000000;"}})
+			end
+			if TimeLeftInGame==4 then
+					Notifications:TopToAll({text="4", duration=1, style={color=" #F00000;", fontSize= "65px;", textShadow= "2px 2px 2px #000000;"}})
+			end
+			if TimeLeftInGame==3 then
+					Notifications:TopToAll({text="3", duration=1, style={color=" #F00000;", fontSize= "65px;", textShadow= "2px 2px 2px #000000;"}})
+			end
+			if TimeLeftInGame==2 then
+					Notifications:TopToAll({text="2", duration=1, style={color=" #F00000;", fontSize= "65px;", textShadow= "2px 2px 2px #000000;"}})
+			end
+			if TimeLeftInGame==1 then
+					Notifications:TopToAll({text="1", duration=1, style={color=" #F00000;", fontSize= "65px;", textShadow= "2px 2px 2px #000000;"}})
 			end
 					
 			if TotalGoodScore>TotalBadScore then
