@@ -248,7 +248,7 @@
 			}
 			"FireSound"
 			{
-				"EffectName" "Hero_ChaosKnight.idle_throw"
+				"EffectName" "Ability.TossThrow"
 				"Target"     "CASTER"
 			}
 		}
@@ -267,7 +267,7 @@
 					"FireSound"
 					{
 						"EffectName" "BodyImpact_Common.Light"
-						"Target"     "CASTER"
+						"Target"     "TARGET"
 					}
 				}
 	}
