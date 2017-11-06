@@ -285,6 +285,8 @@ function DepositOrb(args) -- keys is the information sent by the ability
 		if casterUnit.presentList~= nil then
 			if #casterUnit.presentList > 0 then
 				
+				EmitSoundOnClient("Item.DropGemWorld",PlayerResource:GetPlayer(casterUnit:GetPlayerID()))
+				
 				creature = table.remove(casterUnit.presentList)
 				creature:SetOrigin(casterUnit.loclist[10+5]*Vector(1,1,0)+Vector(1,1,250))
 				
@@ -370,6 +372,7 @@ function CastSpecialAbility(args)
 	
 	if string.match(casterUnit.AbilityName, "Snow_Ball")  then
 	StartAnimation(casterUnit, {duration=.5, activity=ACT_DOTA_ATTACK, rate=2})
+
 		local ability = casterUnit.AbilityName
 		casterUnit.AbilityName =  "cast_ability";
 		if casterUnit:GetAbilityByIndex(2) == nil then
@@ -407,6 +410,11 @@ function CastSpecialAbility(args)
 		local abil = casterUnit:GetAbilityByIndex(0)
 	
 	else
+	
+		if string.match(casterUnit.AbilityName, "Magnet")  then
+			StartAnimation(casterUnit, {duration=.5, activity=ACT_DOTA_CAST_ABILITY_1, rate=2})
+		end
+	
 		local ability = casterUnit.AbilityName
 		
 		local abil = casterUnit:GetAbilityByIndex(0)

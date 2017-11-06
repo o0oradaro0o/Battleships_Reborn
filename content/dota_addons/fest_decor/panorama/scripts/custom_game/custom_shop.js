@@ -7,7 +7,6 @@ var currentDeg = 0
 var targetDeg = 0
 var shipShopShow=false;
 
-
 var PlayerColors = [
  "rgb(46, 106, 230)",
 
@@ -63,6 +62,7 @@ GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, fals
 
 
 
+
 		
 }
 	function fillShop( ) 
@@ -78,7 +78,17 @@ GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, fals
 	
 function  TeamWin(data)
 {
-	team_number
+	$.Msg("winner: "+ data.team_number )
+	if( data.team_number	== 3)
+	{
+		$( "#mit" ).style.visibility="visible";
+		$( "#mit" ).SetParent($( "#mit" ).GetParent().GetParent().GetParent().GetParent());
+	}
+	else if(data.team_number== 2)
+	{
+		$( "#sto" ).style.visibility="visible";
+		$( "#sto" ).SetParent($( "#sto" ).GetParent().GetParent().GetParent().GetParent());
+	}
 }
 
 function PingLoc(data)
@@ -179,8 +189,7 @@ function PingLoc(data)
 	var musicPlayingTime=0
 	function toggleMusic()
 	{
-		
-		if($( "#bell" ).style.visibility=="collapse")
+		if($( "#bellgrey" ).style.visibility=="visible" || $( "#bellgrey" ).style.visibility == null)
 		{
 			$( "#bell" ).style.visibility="visible";
 			$( "#bellgrey" ).style.visibility="collapse";
