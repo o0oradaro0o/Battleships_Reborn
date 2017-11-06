@@ -10,12 +10,22 @@ Label
     font-size: 22px;
     color: #999999;
     vertical-align: top;
+	
 }
  
 #Title
 {
-    flow-children: right;
+    flow-children: down;
+	width: 85%;
+	
+	
 }
+#Logo
+{
+	width: 85%;
+	height: 15%;
+}
+
 
 #TitleIcon
 {

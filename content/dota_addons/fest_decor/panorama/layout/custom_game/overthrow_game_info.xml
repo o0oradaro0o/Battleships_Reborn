@@ -4,9 +4,9 @@
 		<include src="file://{resources}/styles/custom_game/overthrow_game_info.css" />
 	</styles>
 	<Panel class="OverthrowGameInfo">
-		<Panel id="Title">
-			<Label id="TitleName" text="Decoration \nDash" />
-		</Panel>
+		
+			<Image id="Logo" src="file://{images}/custom_game/logo.png" />
+		
 		<Label id="ObjectiveHeader" class="Header" html="true" text="How to Play" />
 		<Label id="BriefDescription" text="Run over ornaments to pick them up and add them to your collection. If you run into an ornament collection, you'll die, and your current collection will be lost." />
 		<Label id="HowToPlayHeader" class="Header" html="true" text="Objective" />

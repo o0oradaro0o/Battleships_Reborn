@@ -9,11 +9,15 @@
 		<Panel id="seq" >
 			<Image id="seq_bg" class="SeqBg" src="file://{images}/custom_game/loading.png" />
 		</Panel>
-
-		<Panel id="TitlePanel">
-				<Label id="BattleshipsTitle" text="#addon_game_name" />
+		<Panel id="logoholder" >
+			<Image id="logo" class="logobg" src="file://{images}/custom_game/logo.png" />
 		</Panel>
-		
+		<!--<Panel id="TitlePanel">
+				<Label id="BattleshipsTitle" text="#addon_game_name" />
+		</Panel>-->
+		<Panel id="logoholder" >
+			<Image id="logo" class="logoimg" src="file://{images}/custom_game/logo.png" />
+		</Panel>
 
 				
 		<Panel id="AuthorPanel">
@@ -26,7 +30,7 @@
 		<Panel id="InstructionPanel">
 		</Panel>
 		<Panel id="InstructionPanelHolder">
-			<Label class="Instructions" text="Frostivus is upon us, and Papa Frosti is here!\nYou've got ten minutes to decorate your grove and convince him that your team has the most Festivus Spirit!\nDon your Mittens or your Stockings, and head out onto the skating pond to collect decorations and bring them back to your grove!\nIf you're lucky, Papa Frosti will leave some presents to help you out!"/>
+			<Label class="Instructions" text="Frostivus is upon us, and Papa Frosti is here!\nYou've got ten minutes to decorate your grove and convince him that your team has the most Festivus Spirit!\nDon your Mittens or your Stockings, and head out onto the skating pond to collect decorations and bring them back to your grove!\nIf you're lucky, Papa Frosti will leave some presents to help you out! \n \nFor more info, open the Info tab on the left side of the screen"/>
 		</Panel>
 				
 		
