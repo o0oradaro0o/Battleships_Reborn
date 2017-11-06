@@ -319,7 +319,7 @@ end
 function updateTrees()
 	
 	local temp = storage:GetGoodStoredPoints()
-	if temp/2>g_GoodChangedTrees+1 then
+	if temp/25>g_GoodChangedTrees+1 then
 		g_GoodChangedTrees=g_GoodChangedTrees+1
 		
 		local trees = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, Vector(8000,-8000,0), nil, 5900, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
@@ -329,13 +329,10 @@ function updateTrees()
 			if string.match(tree:GetUnitName(), "tree") then
 				if tree.changed == nil then
 					tree:SetModel("models/decoratedtree.vmdl")
-					tree.changed=1
-					local particle = ParticleManager:CreateParticle("particles/basic_projectile/decoratetree.vpcf", PATTACH_OVERHEAD_FOLLOW, tree)
-					ParticleManager:SetParticleControl(particle, 0, tree:GetAbsOrigin()+Vector(0,0,250))
-					ParticleManager:SetParticleControl(particle, 2, tree:GetAbsOrigin()+Vector(0,0,250))
-					ParticleManager:SetParticleControl(particle, 3, tree:GetAbsOrigin()+Vector(0,0,250))
-					ParticleManager:SetParticleControl(particle, 15, tree:GetAbsOrigin()+Vector(0,0,250))
-					ParticleManager:SetParticleControl(particle, 16, tree:GetAbsOrigin()+Vector(0,0,250))
+					local particle = ParticleManager:CreateParticle("particles/basic_projectile/decoratetree.vpcf", PATTACH_ABSORIGIN_FOLLOW, tree)
+					ParticleManager:SetParticleControl(particle, 0, tree:GetAbsOrigin())
+					ParticleManager:SetParticleControl(particle, 2, tree:GetAbsOrigin())
+
 					tree.changed=1
 					tree:SetModelScale(1.0)
 					tree:SetModelScale(1.0)
@@ -346,7 +343,7 @@ function updateTrees()
 		end
 	end
 	temp = storage:GetBadStoredPoints()
-	if temp/2>g_BadChangedTrees+1 then
+	if temp/25>g_BadChangedTrees+1 then
 		g_BadChangedTrees=g_BadChangedTrees+1
 		
 		local trees = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, Vector(-8000,7000,0), nil, 5500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
@@ -356,12 +353,10 @@ function updateTrees()
 			if string.match(tree:GetUnitName(), "tree") then
 				if tree.changed == nil then
 					tree:SetModel("models/decoratedtree.vmdl")
-					local particle = ParticleManager:CreateParticle("particles/basic_projectile/decoratetree.vpcf", PATTACH_OVERHEAD_FOLLOW, tree)
-					ParticleManager:SetParticleControl(particle, 0, tree:GetAbsOrigin()+Vector(0,0,250))
-					ParticleManager:SetParticleControl(particle, 2, tree:GetAbsOrigin()+Vector(0,0,250))
-					ParticleManager:SetParticleControl(particle, 3, tree:GetAbsOrigin()+Vector(0,0,250))
-					ParticleManager:SetParticleControl(particle, 15, tree:GetAbsOrigin()+Vector(0,0,250))
-					ParticleManager:SetParticleControl(particle, 16, tree:GetAbsOrigin()+Vector(0,0,250))
+					local particle = ParticleManager:CreateParticle("particles/basic_projectile/decoratetree.vpcf", PATTACH_ABSORIGIN_FOLLOW, tree)
+					ParticleManager:SetParticleControl(particle, 0, tree:GetAbsOrigin())
+					ParticleManager:SetParticleControl(particle, 2, tree:GetAbsOrigin())
+			
 					tree.changed=1
 					tree:SetModelScale(1.0)
 					return
