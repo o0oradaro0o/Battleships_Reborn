@@ -73,7 +73,7 @@
 					m_Filepath = "candycane.fbx"
 					m_nStartframe = 0
 					m_nEndframe = 59
-					m_flFps = 18.0
+					m_flFps = 24.0
 					m_Loop = 
 					{
 						m_bLoop = false
