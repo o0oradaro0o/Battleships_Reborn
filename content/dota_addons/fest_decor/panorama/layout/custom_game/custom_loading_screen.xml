@@ -12,7 +12,7 @@
 		<Panel id="logoholder" >
 			<Image id="logo" class="logobg" src="file://{images}/custom_game/logo.png" />
 		</Panel>
-		<!--<Panel id="TitlePanel">
+		<Panel id="TitlePanel">
 				<Label id="BattleshipsTitle" text="#addon_game_name" />
 		</Panel>-->
 		<Panel id="logoholder" >
@@ -24,13 +24,13 @@
 		</Panel>
 		
 		<Panel id="AuthorPanelHolder">
-			<Label class="AuthorTitle" text="Presented by: radar and Frood \nwith artwork by Tipsy_Tennant and WeAreAllBritons" />
+			<Label class="AuthorTitle" text="#AuthorTitle_lang"/>
 		</Panel>
 				
 		<Panel id="InstructionPanel">
 		</Panel>
 		<Panel id="InstructionPanelHolder">
-			<Label class="Instructions" text="Frostivus is upon us, and Papa Frosti is here!\nYou've got ten minutes to decorate your grove and convince him that your team has the most Frostivus Spirit!\nDon your Mittens or your Stockings, and head out onto the skating pond to collect decorations and bring them back to your grove!\nIf you're lucky, Papa Frosti will leave some presents to help you out! \n \nFor more info, open the Info tab on the left side of the screen"/>
+			<Label class="Instructions" text="#Instructions_lang"/>
 		</Panel>
 				
 		
