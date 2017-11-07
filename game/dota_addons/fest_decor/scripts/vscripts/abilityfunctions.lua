@@ -140,7 +140,7 @@ function AddGift(args, name)
 		return
 	end
 	
-	 local creature = CreateUnitByName( name , Hero.loclist[#Hero.presentList*10+15] , true, nil, nil, Hero:GetTeamNumber() )
+	 local creature = CreateUnitByName( name , Hero.loclist[#Hero.presentList*10+15] , true, nil, Hero:GetOwner(), Hero:GetTeamNumber() )
 	 local pId = Hero.PID_Color
 	 if(pId == nil) then
 	 pId = 1
@@ -172,21 +172,21 @@ end
 
 function killMe(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')
-		
-		local casterUnit = args.target
-			if casterUnit~=nil then
-		stopPhysics(casterUnit)
+		local casterUnit = args.caster
+		local targetUnit = args.target
+			if targetUnit~=nil then
+		stopPhysics(targetUnit)
 		end
 		
 		local damageTable = {
-			victim = casterUnit,
+			victim = targetUnit,
 			attacker = casterUnit,
 			damage = 10000,
 			damage_type = DAMAGE_TYPE_PURE,
 		}
 		
 		ApplyDamage(damageTable)
-	killPresents(casterUnit)
+	killPresents(targetUnit)
 	
 end
 

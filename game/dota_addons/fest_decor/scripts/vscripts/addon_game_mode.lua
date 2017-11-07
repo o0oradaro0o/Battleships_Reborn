@@ -178,7 +178,7 @@ function CfrostGameMode:OnThink()
 						end
 				end
 				
-				for itemSlot = 0, numheros, 1 do 
+				for itemSlot = 0, numheros+2, 1 do 
 						local placment = RandomVector( RandomFloat( 600, 4300 ))
 						
 						local x = Entities:FindByClassnameNearest("npc_dota_creature", placment, 400)
