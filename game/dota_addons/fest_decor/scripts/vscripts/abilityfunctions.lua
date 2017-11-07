@@ -280,13 +280,14 @@ function killPresents(unit)
 end
 
 function DepositOrb(args) -- keys is the information sent by the ability
---print('[ItemFunctions] gunning_it started! ')
+print('[DepositOrb]  ')
+
 		local casterUnit = args.caster
 		if casterUnit.presentList~= nil then
 			if #casterUnit.presentList > 0 then
 				
 				EmitSoundOnClient("Item.DropGemWorld",PlayerResource:GetPlayer(casterUnit:GetPlayerID()))
-				
+				print('[sound fired]  ')
 				creature = table.remove(casterUnit.presentList)
 				creature:SetOrigin(casterUnit.loclist[10+5]*Vector(1,1,0)+Vector(1,1,250))
 				
