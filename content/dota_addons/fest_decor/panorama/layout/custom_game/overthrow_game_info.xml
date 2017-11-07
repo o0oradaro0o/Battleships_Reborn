@@ -19,10 +19,13 @@
 			<Label id="BaublePoints" text="Is worth 1 point."/>
 			
 			<Image id="CandyCane" src="file://{images}/custom_game/candycaneinfo.png" />
-			<Label id="CandyCanePoints" text="Is worth 3 points."/>
+			<Label id="CandyCanePoints" text="Is worth 2 points."/>
 			
 			<Image id="Star" src="file://{images}/custom_game/starinfo.png" />
-			<Label id="StarPoints" text="Is worth 5 points."/>
+			<Label id="StarPoints" text="Is worth 3 points."/>
+			
+			<Image id="Angel" src="file://{images}/custom_game/angelinfo.png" />
+			<Label id="AngelPoints" text="Is worth 5 points.\nAngels are acquired by shattering your opponents' collections."/>
 			</Panel>
 
 		<Label id="AbilitiesHeader" class="Header" html="true" text="Abilities" />

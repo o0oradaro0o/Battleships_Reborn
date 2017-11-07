@@ -481,7 +481,7 @@ function SkateIn()
 {
 	//$("#rocketskate").style.opacity=$("#rocketskate").style.opacity-.1+.2;
 	//$("#presentopen").style.opacity=$("#presentopen").style.opacity-.1+.2;
-	if($("#rocketskate").style.opacity<1 && hasability == true)
+	if($("#rocketskate").style.opacity<1 && hasability == true && lastability == "skate")
 	{
 		$("#rocketskate").style.opacity=$("#rocketskate").style.opacity-.1+.2;
 		$.Schedule( .1, SkateIn );	
@@ -493,7 +493,7 @@ function MagnetIn()
 {
 	
 	//$("#presentopen").style.opacity=$("#presentopen").style.opacity-.1+.2;
-	if($("#magnet").style.opacity<1 && hasability == true)
+	if($("#magnet").style.opacity<1 && hasability == true && lastability == "magnet")
 	{
 		$("#magnet").style.opacity=$("#magnet").style.opacity-.1+.2;
 		$.Schedule( .1, MagnetIn );	
@@ -505,7 +505,7 @@ function SnowIn()
 {
 	
 	//$("#presentopen").style.opacity=$("#presentopen").style.opacity-.1+.2;
-	if($("#snowball").style.opacity<1 && hasability == true)
+	if($("#snowball").style.opacity<1 && hasability == true && lastability == "snowball")
 	{
 		$("#snowball").style.opacity=$("#snowball").style.opacity-.1+.2;
 		$.Schedule( .1, SnowIn );	

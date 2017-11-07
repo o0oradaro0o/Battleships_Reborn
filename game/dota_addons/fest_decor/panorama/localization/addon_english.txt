@@ -6,7 +6,7 @@
 
 	"addon_game_name" 			"Decoration Dash"
 	"no_orbs"								"Go Get More Decorations!"
-	"many_orbs"								"Go back to your forest to drop off your decorations!"
+	"many_orbs"								"Go back to your grove to drop off your decorations!"
 	"one_minute"					"One Minute Remaining!"
 	"score_title"						"Name    Score (Chain Length)"
 	"DOTA_GoodGuys"   			"Team Stocking"

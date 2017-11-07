@@ -69,14 +69,14 @@
 			m_Vanim = 
 			[
 				{
-					m_Animationname = "baublemaindie"
-					m_Filepath = "baublemaindie.fbx"
+					m_Animationname = "baublemainidle"
+					m_Filepath = "baublemainidle.fbx"
 					m_nStartframe = 0
 					m_nEndframe = 60
-					m_flFps = 24.0
+					m_flFps = 12.0
 					m_Loop = 
 					{
-						m_bLoop = false
+						m_bLoop = true
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
@@ -97,24 +97,7 @@
 						},
 					]
 					m_AnimationEvents = [  ]
-					m_MotionFrames = 
-					[
-						{
-							m_nFrame = 0
-							m_bExtractTX = true
-							m_bExtractTY = true
-							m_bExtractTZ = false
-							m_bExtractRX = false
-							m_bExtractRY = false
-							m_bExtractRZ = false
-							m_bDiscardTX = false
-							m_bDiscardTY = false
-							m_bDiscardTZ = false
-							m_bDiscardRX = false
-							m_bDiscardRY = false
-							m_bDiscardRZ = false
-						},
-					]
+					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
 					m_pAlignAnimation = null
 					m_adjustAnimation = 

@@ -89,7 +89,12 @@ Label
 	height: 100px;
 	margin-top: 200px;
 }
-
+#Angel
+{
+	width: 100px;
+	height: 100px;
+	margin-top: 300px;
+}
 #BaublePoints
 {
 	margin-top: 40px;
@@ -105,13 +110,21 @@ Label
 	margin-top: 235px;
 	margin-left: 120px;
 }
+#AngelPoints
+{
+	margin-top: 335px;
+	margin-left: 120px;
+	width: 430px;
+	
+	height: 200px;
+}
 #PointsHolder
 {
-	Height: 320px;
+	Height: 600px;
 }
 #AbilitiesHolder
 {
-	Height: 320px;
+	Height: 700px;
 	width: 85%;
 }
 #Skate
