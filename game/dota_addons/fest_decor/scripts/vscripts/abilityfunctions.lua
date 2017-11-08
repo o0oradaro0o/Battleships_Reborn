@@ -250,7 +250,7 @@ function hurtUnit(unit, attacker)
 					
 		if true == unit:IsAlive() then
 			if unit:GetTeamNumber() ~= attacker:GetTeamNumber() then
-					 local creature = CreateUnitByName( "npc_dota_Orniment5" , attacker.loclist[#Hero.presentList*10+15] , true, nil, attacker, attacker:GetTeamNumber() )
+					 local creature = CreateUnitByName( "npc_dota_Orniment5" , attacker.loclist[#attacker.presentList*10+15] , true, nil, attacker, attacker:GetTeamNumber() )
 					 
 						table.insert(attacker.presentList, creature)
 						if #attacker.presentList >100 then
@@ -265,7 +265,7 @@ function hurtUnit(unit, attacker)
 						
 						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
 						
-						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KilledName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
+						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KilledName, duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
 						
 						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
 						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {image="file://{images}/custom_game/angelinfo.png", style={height="35px", width = "35px"} , continue=true})

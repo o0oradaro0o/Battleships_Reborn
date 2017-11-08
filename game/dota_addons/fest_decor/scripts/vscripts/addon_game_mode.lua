@@ -118,9 +118,9 @@ function CfrostGameMode:OnNPCSpawned(keys)
 		
 		
 		for abilitySlot = 4, 11, 1 do 
-		if hero:GetAbilityByIndex(abilitySlot) ~= nil  then
-			if hero:GetAbilityByIndex(abilitySlot):GetName()~= nil then
-				hero:RemoveAbility(hero:GetAbilityByIndex(abilitySlot):GetName())
+		if npc:GetAbilityByIndex(abilitySlot) ~= nil  then
+			if npc:GetAbilityByIndex(abilitySlot):GetName()~= nil then
+				npc:RemoveAbility(hero:GetAbilityByIndex(abilitySlot):GetName())
 			end
 		end
 	end
