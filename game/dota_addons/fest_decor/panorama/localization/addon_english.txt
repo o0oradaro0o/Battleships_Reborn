@@ -32,10 +32,10 @@
 	"SnowballInfo_lang"				"Hit a nearby enemy with a snowball, temporarily blinding them."
 	
 	
-	"died_one" " has crushed "
-	"died_two" "/'s orniment collection!"
+	"died_one" " has shattered "
+	"died_two" "'s orniment collection!"
 	
-	"died_two_teamkill" "/'s orniment collection. What a waste!"
+	"died_two_teamkill" "'s orniment collection. What a waste!"
 	
 	}
 	
