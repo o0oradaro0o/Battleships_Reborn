@@ -12,7 +12,7 @@
 	"DOTA_GoodGuys"   				"Team Stocking"
 	"DOTA_BadGuys"    				"Team Mitten"
 		//Load Screen	
-	"Instructions_lang"				"Frostivus is upon us, and Papa Frosti is here!\nYou've got ten minutes to decorate your grove and convince him that your team has the most Frostivus Spirit!\nDon your Mittens or your Stockings, and head out onto the skating pond to collect decorations and bring them back to your grove!\nIf you're lucky, Papa Frosti will leave some presents to help you out! \n \nFor more info, open the Info tab on the left side of the screen"
+	"Instructions_lang"				"Frostivus is upon us, and Papa Frosti is here!\nYou've got five minutes to decorate your grove and convince him that your team has the most Frostivus Spirit!\nDon your Mittens or your Stockings, and head out onto the skating pond to collect decorations and bring them back to your grove!\nIf you're lucky, Papa Frosti will leave some presents to help you out! \n \nFor more info, open the Info tab on the left side of the screen"
 	"AuthorTitle_lang"				"Presented by: radar and Frood \nwith artwork by Tipsy_Tennant and WeAreAllBritons"
 		//Info Panel
 	"objective_header_lang"			"How to Play"
@@ -33,7 +33,7 @@
 	
 	
 	"died_one" " has crushed "
-	"died_two" "/'s orniment collection and turned them into an Angel!"
+	"died_two" "/'s orniment collection!"
 	
 	"died_two_teamkill" "/'s orniment collection. What a waste!"
 	
