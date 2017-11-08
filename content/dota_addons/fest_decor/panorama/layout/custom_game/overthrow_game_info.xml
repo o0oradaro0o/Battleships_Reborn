@@ -24,8 +24,8 @@
 			<Image id="Star" src="file://{images}/custom_game/starinfo.png" />
 			<Label id="StarPoints" text="#StarPoints_lang"/>
 			
-			<!--><Image id="Angel" src="file://{images}/custom_game/angelinfo.png" />
-			<Label id="AngelPoints" text="#AngelPoints_lang"/>-->
+			<Image id="Angel" src="file://{images}/custom_game/angelinfo.png" />
+			<Label id="AngelPoints" text="#AngelPoints_lang"/>
 			</Panel>
 
 		<Label id="AbilitiesHeader" class="Header" html="true" text="#AbilitiesHeader" />
