@@ -31,6 +31,12 @@
 	"MagnetInfo_lang"				"Pull all nearby available ornaments towards you."
 	"SnowballInfo_lang"				"Hit a nearby enemy with a snowball, temporarily blinding them."
 	
+	
+	"died_one" " has crushed "
+	"died_two" "/'s orniment collection and turned them into an Angel!"
+	
+	"died_two_teamkill" "/'s orniment collection. What a waste!"
+	
 	}
 	
 }
