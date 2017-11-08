@@ -288,7 +288,7 @@ function hurtUnit(unit, attacker)
 						
 						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KilledName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
 						
-						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=false})
+						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
 						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {image="file://{images}/custom_game/angelinfo.png", style={height="35px", width = "35px"} , continue=true})
 					
 						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KillerName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=false})
@@ -382,7 +382,7 @@ print('[DepositOrb]  ')
 				EmitSoundOnClient("Item.DropGemWorld",PlayerResource:GetPlayer(casterUnit:GetPlayerID()))
 				print('[sound fired]  ')
 				creature = table.remove(casterUnit.presentList)
-				
+				creature:SetOrigin(casterUnit:GetOrigin()+Vector(0,0,-2000))
 				if casterUnit.pointScored == nil then
 				casterUnit.pointScored = 0
 				end

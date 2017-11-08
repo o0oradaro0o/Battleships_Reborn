@@ -117,13 +117,24 @@ function CfrostGameMode:OnNPCSpawned(keys)
 		abil:SetLevel(1)
 		
 		
-		for abilitySlot = 4, 11, 1 do 
+		for abilitySlot = 2, 11, 1 do 
 		if npc:GetAbilityByIndex(abilitySlot) ~= nil  then
 			if npc:GetAbilityByIndex(abilitySlot):GetName()~= nil then
-				npc:RemoveAbility(hero:GetAbilityByIndex(abilitySlot):GetName())
+				npc:RemoveAbility(npc:GetAbilityByIndex(abilitySlot):GetName())
 			end
 		end
 	end
+	
+	for itemSlot = 0, 14, 1 do 
+		  if npc ~= nil then
+                local Item = npc:GetItemInSlot( itemSlot )
+				if Item ~= nil then
+
+						npc:RemoveItem(Item)
+					end
+				end
+	end
+		
 		
 		
 		PlayerResource:SetCameraTarget(npc:GetPlayerOwnerID(), npc)
