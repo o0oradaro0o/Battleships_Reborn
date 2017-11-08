@@ -33,7 +33,7 @@
 	
 	
 	"died_one" " has shattered "
-	"died_two" "'s orniment collection!"
+	"died_two" "'s orniment collection! and earned an "
 	
 	"died_two_teamkill" "'s orniment collection. What a waste!"
 	

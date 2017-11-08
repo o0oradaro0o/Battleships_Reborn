@@ -3198,6 +3198,7 @@ function become_boat(casterUnit, heroname)
 					if id == plyID then
 					RemoveWearables( hero )
 					AttachCosmetics(hero)
+					fixAbilities(hero)
 						print("this is the new hero, put items in " .. hero:GetName())
 						hero:SetGold(gold, true)
 						hero:SetGold(0, false)
@@ -3345,6 +3346,8 @@ function become_boat(casterUnit, heroname)
 	Timers:CreateTimer( 1, function()
 		local data ={}
 		
+
+		
 	FireGameEvent("Boat_Spawned",data)
 	end)
 	Timers:CreateTimer( 3, function()
@@ -3361,6 +3364,27 @@ function become_boat(casterUnit, heroname)
 	end)
 end
 
+
+function fixAbilities(hero)
+	for abilitySlot = 4, 11, 1 do 
+		if hero:GetAbilityByIndex(abilitySlot) ~= nil  then
+			if hero:GetAbilityByIndex(abilitySlot):GetName()~= nil then
+				hero:RemoveAbility(hero:GetAbilityByIndex(abilitySlot):GetName())
+			end
+		end
+	end
+		
+	for itemSlot = 0, 14, 1 do 
+		  if hero ~= nil then
+                local Item = hero:GetItemInSlot( itemSlot )
+				if Item ~= nil and string.match(Item:GetName(), "scroll") then
+
+						hero:RemoveItem(Item)
+					end
+				end
+	end
+		
+end
 
 
 function debuffTowers(casterUnit, itemName)

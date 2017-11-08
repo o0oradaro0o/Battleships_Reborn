@@ -117,6 +117,15 @@ function CfrostGameMode:OnNPCSpawned(keys)
 		abil:SetLevel(1)
 		
 		
+		for abilitySlot = 4, 11, 1 do 
+		if hero:GetAbilityByIndex(abilitySlot) ~= nil  then
+			if hero:GetAbilityByIndex(abilitySlot):GetName()~= nil then
+				hero:RemoveAbility(hero:GetAbilityByIndex(abilitySlot):GetName())
+			end
+		end
+	end
+		
+		
 		PlayerResource:SetCameraTarget(npc:GetPlayerOwnerID(), npc)
 		local emptyData = {
 					}
