@@ -3133,17 +3133,28 @@ function become_boat(casterUnit, heroname)
 	local droppeditemlist = {}
 	local itemstacks = {}
 	local savedGold = g_HeroGoldArray[casterUnit:GetPlayerOwnerID()]
+	
+	for itemSlot = 0, 14, 1 do 
+		  if casterUnit ~= nil then
+                local Item = casterUnit:GetItemInSlot( itemSlot )
+				if Item ~= nil and string.match(Item:GetName(), "scroll") then
+
+						casterUnit:RemoveItem(Item)
+					end
+				end
+	end
+	
     if (casterUnit:IsHero() or casterUnit:HasInventory()) and heroname ~= casterUnit:GetName() then 
     	for itemSlot = 0, 14, 1 do 
             if casterUnit ~= nil then
                 local Item = casterUnit:GetItemInSlot( itemSlot )
-				if Item ~= nil and not string.match(Item:GetName(), "boat") and not string.match(Item:GetName(), "trade_") and not string.match(Item:GetName(), "contract") then
+				if Item ~= nil and not string.match(Item:GetName(), "boat") and not string.match(Item:GetName(), "scroll") and not string.match(Item:GetName(), "trade_") and not string.match(Item:GetName(), "contract") then
 					print("Item in slot is: " .. Item:GetName())
 					itemlist[itemSlot] = Item:GetName()
 					 itemstacks[itemSlot]  = Item:GetCurrentCharges()
 						casterUnit:RemoveItem(Item)
 					
-				elseif Item ~= nil and (string.match(Item:GetName(), "boat")  or string.match(Item:GetName(), "trade_") or string.match(Item:GetName(), "contract")) then
+				elseif Item ~= nil and (string.match(Item:GetName(), "boat")  or string.match(Item:GetName(), "scroll") or string.match(Item:GetName(), "trade_") or string.match(Item:GetName(), "contract")) then
 					print("Item in slot is: trade_manifest")
 					itemlist[itemSlot] = "item_fluff"
 					casterUnit:RemoveItem(Item)

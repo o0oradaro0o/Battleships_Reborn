@@ -253,7 +253,7 @@ function hurtUnit(unit, attacker)
 						
 						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
 						
-						otifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KilledName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
+						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KilledName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
 						
 						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
 						
@@ -272,7 +272,7 @@ function hurtUnit(unit, attacker)
 						
 						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
 						
-						otifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KilledName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
+						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KilledName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
 						
 						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
 						
@@ -293,7 +293,7 @@ function hurtUnit(unit, attacker)
 						
 						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
 						
-						otifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KilledName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
+						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KilledName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
 						
 						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_two_teamkill", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
 						
@@ -312,7 +312,7 @@ function hurtUnit(unit, attacker)
 						
 						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
 						
-						otifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KilledName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
+						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KilledName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
 						
 						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_two_teamkill", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
 						

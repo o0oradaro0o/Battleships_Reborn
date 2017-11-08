@@ -36,6 +36,20 @@ function fixUI( )
 	
 	$.Msg("in fix ui--------------------------------------");
 	
+	
+	$.Msg("in fix ui--------------------------------------");
+	GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY, false );
+		 $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar").style.visibility = "visible";
+		 
+		 
+		 var sidenotif =   $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("combat_events");
+		 
+		 var topnotif =   $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("FightRecap");
+		 
+		 
+		 sidenotif.style.visibility = "collapse";
+		 topnotif.style.visibility = "collapse";
+	
 	GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ACTION_PANEL, false );     //Hero actions UI.
 	
 GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY, false );      //Time of day (clock).
