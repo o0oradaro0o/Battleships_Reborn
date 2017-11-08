@@ -13,7 +13,7 @@
 			<Image id="logo" class="logobg" src="file://{images}/custom_game/logo.png" />
 		</Panel>
 		<Panel id="TitlePanel">
-				<Label id="BattleshipsTitle" text="#addon_game_name" />
+				
 		</Panel>-->
 		<Panel id="logoholder" >
 			<Image id="logo" class="logoimg" src="file://{images}/custom_game/logo.png" />

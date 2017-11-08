@@ -90,6 +90,9 @@ function CfrostGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(CfrostGameMode, 'OnNPCSpawned'), self)
 	GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( CfrostGameMode, "OrderExecutionFilter" ), self )
+	GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap(CfrostGameMode, "FilterModifyGold"), self)
+	
+	
 end
 
 function CfrostGameMode:OnNPCSpawned(keys)
@@ -163,6 +166,21 @@ function CfrostGameMode:OrderExecutionFilter(keys)
     end
 return true
   end
+  
+  
+  
+function CfrostGameMode:FilterModifyGold(event)
+
+print("i'm in ModifyGoldFilter!!!!!!!!!!!!!!!!!!!")
+	
+    event["gold"] = 0
+
+    --Return true by default to keep all other orders the same
+    return true
+	
+  end
+  
+  
 
 -- Evaluate the state of the game
 function CfrostGameMode:OnThink()
@@ -452,7 +470,7 @@ function spawnOrn(placment)
 					  local creature = CreateUnitByName( "npc_dota_present4" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
 					  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
 				
-				elseif RandomInt( 0, 5) ==1 then
+				elseif RandomInt( 0, 7) ==1 then
 					  local creature = CreateUnitByName( "npc_dota_power_up" ,  placment, true, nil, nil, DOTA_TEAM_NEUTRALS )
 					  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
 				

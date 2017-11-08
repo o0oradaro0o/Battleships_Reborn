@@ -3367,7 +3367,7 @@ end
 
 function fixAbilities(hero)
 	for abilitySlot = 4, 11, 1 do 
-		if hero:GetAbilityByIndex(abilitySlot) ~= nil  then
+		if hero:GetAbilityByIndex() ~= nil  then
 			if hero:GetAbilityByIndex(abilitySlot):GetName()~= nil then
 				hero:RemoveAbility(hero:GetAbilityByIndex(abilitySlot):GetName())
 			end
