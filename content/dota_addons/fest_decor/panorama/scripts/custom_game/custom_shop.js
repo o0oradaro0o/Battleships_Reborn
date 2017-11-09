@@ -124,7 +124,8 @@ function PingLoc(data)
 		$( "#TimeLeft" ).text = tGameTime;
 		targetDeg =  data.good_score/totalSccore*180-90
 			$.Schedule( .1, GoToScore );
-			
+				$( "#BadPoints" ).text = data.bad_score-10;
+				$( "#GoodPoints" ).text =  data.good_score-10;
 			
 			var goodToSort = goodTeamScores
 			var badToSort = badTeamScores

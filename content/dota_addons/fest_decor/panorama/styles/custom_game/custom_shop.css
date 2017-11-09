@@ -161,6 +161,14 @@ z-index:6;
 	font-family: monospace;
 	    font-weight: bold;
 }
+#GoodPoints
+{
+	z-index:40;	
+}
+#BadPoints
+{
+	z-index:40;	
+}
 
 .scoreLeft
 {
