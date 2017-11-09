@@ -8,7 +8,7 @@
 	"no_orbs"						"Go Get More Decorations!"
 	"many_orbs"						"Go back to your grove to drop off your decorations!"
 	"one_minute"					"One Minute Remaining!"
-	"score_title"					"Name    Score (Chain Length)"
+	"score_title"					"Name    Score (Length) Kills"
 	"DOTA_GoodGuys"   				"Team Stocking"
 	"DOTA_BadGuys"    				"Team Mitten"
 		//Load Screen	
@@ -30,6 +30,12 @@
 	"SkateInfo_lang"				"Gain a boost of speed for a few seconds."
 	"MagnetInfo_lang"				"Pull all nearby available ornaments towards you."
 	"SnowballInfo_lang"				"Hit a nearby enemy with a snowball, temporarily blinding them."
+	
+	
+	"turn_in_orns_reminder1"				"You have collected some orniments!"
+	"turn_in_orns_reminder2"				"Remember bring them back to your "
+	"turn_in_orns_reminder3"				"grove "
+	"turn_in_orns_reminder4"				"to score points!"
 	
 	
 	"died_one" " has shattered "

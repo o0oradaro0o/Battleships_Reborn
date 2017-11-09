@@ -135,6 +135,54 @@ function AddGift(args, name)
 	if Hero.presentList==nil then
 		Hero.presentList = {}
 	end
+	
+	if #Hero.presentList >7 and  Hero.reminder == nil then
+	Notifications:Top(Hero:GetPlayerOwnerID(), { duration=6.0, image="file://{images}/custom_game/baubleinfo.png", style={height="65px", width = "65px", transform= "scaleX(-1)"} })
+	  Notifications:Top(Hero:GetPlayerOwnerID(), {text="#turn_in_orns_reminder1", duration=6.0, style={color=" #2BDCFF;", fontSize= "45px;", textShadow= "2px 2px 2px #000000;"}, continue=true})
+	Notifications:Top(Hero:GetPlayerOwnerID(),{ duration=6.0, image="file://{images}/custom_game/baubleinfo.png", style={height="65px", width = "65px"} , continue=true})
+	   Notifications:Top(Hero:GetPlayerOwnerID(), {text="#turn_in_orns_reminder2", duration=6.0, style={color=" #2BDCFF;", fontSize= "45px;", textShadow= "2px 2px 2px #000000;"}})
+	   
+	   	if Hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+				Notifications:Top(Hero:GetPlayerOwnerID(), {text="#turn_in_orns_reminder3", duration=6.0, style={color=" #009900;", fontSize= "45px;", textShadow= "2px 2px 2px #FFFF00;"}, continue=true})
+				local Data = {
+									player_id =Hero:GetPlayerOwnerID(),
+										x =  5000;
+										y = -5000;
+										z =  0;
+									}
+									FireGameEvent( "ping_loc", Data ); 
+									
+									
+									Timers:CreateTimer( 2.0, function()
+									FireGameEvent( "ping_loc", Data ); 
+									end)
+									Timers:CreateTimer( 4.0, function()
+									FireGameEvent( "ping_loc", Data ); 
+									end)
+	
+		else
+				Notifications:Top(Hero:GetPlayerOwnerID(), {text="#turn_in_orns_reminder3", duration=6.0, style={color=" #ff0000;", fontSize= "45px;", textShadow= "2px 2px 2px #5BFFFF;" },continue=true})
+				local Data = {
+									player_id =Hero:GetPlayerOwnerID(),
+										x =  -5000;
+										y = 5000;
+										z =  0;
+									}
+									FireGameEvent( "ping_loc", Data ); 
+									Timers:CreateTimer( 2.0, function()
+									FireGameEvent( "ping_loc", Data ); 
+									end)
+									Timers:CreateTimer( 4.0, function()
+									FireGameEvent( "ping_loc", Data ); 
+									end)
+		end
+
+	   
+	   Notifications:Top(Hero:GetPlayerOwnerID(), {text="#turn_in_orns_reminder4", duration=6.0, style={color=" #2BDCFF;", fontSize= "45px;", textShadow= "2px 2px 2px #000000;"}, continue=true})
+	  Hero.reminder = 1
+	end
+	
+	
 	if #Hero.presentList >98 then
 	  Notifications:Top(Hero:GetPlayerOwnerID(), {text="#many_orbs", duration=1.0, style={color=" #008000;", fontSize= "45px;", textShadow= "2px 2px 2px #ff0000;"}})
 		return
@@ -168,6 +216,24 @@ function AddGift(args, name)
 	 return nil
     end
   )
+end
+
+
+function CallLeapfunction(args)
+
+		local casterUnit = args.caster
+
+		local ability = "mirana_leap_caller"
+
+		local abil = casterUnit:AddAbility(ability)
+		
+		abil:SetLevel(1)
+		abil:CastAbility()
+
+		 Timers:CreateTimer(  0.5, function()
+		casterUnit:RemoveAbility(abil:GetAbilityName())
+		end)
+
 end
 
 function killMe(args) -- keys is the information sent by the ability
@@ -558,13 +624,15 @@ Caster:RemoveSelf()
 		pId = 0
 	 end
 	 local AbilName=""
-	 local randAbilInt = RandomInt ( 1, 3) 
+	 local randAbilInt = RandomInt ( 4, 4) 
 	 if randAbilInt==1 then
 		AbilName = "Rocket_Boots"
 	elseif randAbilInt==2 then
 		AbilName = "Magnet"
 	elseif randAbilInt==3 then
 		AbilName = "Snow_Ball"
+	elseif randAbilInt==4 then
+		AbilName = "leap"
 	 end
 	 heroUnit.AbilityName = AbilName
 	 

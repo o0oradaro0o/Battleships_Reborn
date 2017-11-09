@@ -54,6 +54,7 @@
 		"player_name"  "string"
 		"delivered"  "float"
 		"heald"  "float"
+		"kills"  "float"
 	}
 	
 	

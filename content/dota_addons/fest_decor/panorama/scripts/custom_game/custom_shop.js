@@ -148,8 +148,8 @@ function PingLoc(data)
 							name=name+" "
 						}
 					}
-					var spaces="                  "
-					if(element[1]>19)
+					var spaces="        "
+					if(element[1]>9)
 					{
 						spaces="       "
 					}
@@ -157,7 +157,7 @@ function PingLoc(data)
 					{
 						spaces="      "
 					}
-					$( "#goodScore" + count ).text =  name + " " + element[1] +spaces+ "("+ element[2]+")" ;
+					$( "#goodScore" + count ).text =name + " " + element[1] + spaces+"(" +element[2]+")           "+ element[4] ;
 					$( "#goodScore" + count ).style.color = PlayerColors[ element[3]]
 				});
 			}
@@ -180,8 +180,8 @@ function PingLoc(data)
 							name=name+" "
 						}
 					}
-					var spaces="                  "
-					if(element[1]>19)
+					var spaces="        "
+					if(element[1]>9)
 					{
 						spaces="       "
 					}
@@ -189,7 +189,7 @@ function PingLoc(data)
 					{
 						spaces="      "
 					}
-						$( "#badScore" + count ).text =name + " " + element[1] + spaces+"(" +element[2]+")" ;
+						$( "#badScore" + count ).text =name + " " + element[1] + spaces+"(" +element[2]+")           "+ element[4] ;
 					$( "#badScore" + count ).style.color = PlayerColors[ element[3]]
 				});
 			}
@@ -848,11 +848,11 @@ function UpdatePlayerInfo(data)
 {
 	if( Players.GetTeam( data.player_id )	== 3)
 	{
-		goodTeamScores[data.player_id] = [data.player_name, data.delivered, data.heald , data.player_id  ]
+		goodTeamScores[data.player_id] = [data.player_name, data.delivered, data.heald , data.player_id ,  data.kills]
 	}
 	else if(Players.GetTeam( data.player_id ) == 2)
 	{
-		badTeamScores[data.player_id] = [data.player_name, data.delivered, data.heald, data.player_id   ]
+		badTeamScores[data.player_id] = [data.player_name, data.delivered, data.heald, data.player_id , data.kills  ]
 	}
 	
 }

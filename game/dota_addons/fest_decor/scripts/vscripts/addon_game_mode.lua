@@ -254,6 +254,7 @@ function sendScore()
 				player_name = pName;
 				delivered = hero.pointScored;
 				heald = heald_orns;
+					kills = hero:GetKills();
 					}
 						FireGameEvent( "score_info", score_info );
 				
@@ -373,7 +374,7 @@ end
 function updateTrees()
 	
 	local temp = storage:GetGoodStoredPoints()
-	if temp/25>g_GoodChangedTrees+1 then
+	if temp/18>g_GoodChangedTrees+1 then
 		g_GoodChangedTrees=g_GoodChangedTrees+1
 		
 		local trees = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, Vector(8000,-8000,0), nil, 5900, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
@@ -397,7 +398,7 @@ function updateTrees()
 		end
 	end
 	temp = storage:GetBadStoredPoints()
-	if temp/25>g_BadChangedTrees+1 then
+	if temp/18>g_BadChangedTrees+1 then
 		g_BadChangedTrees=g_BadChangedTrees+1
 		
 		local trees = FindUnitsInRadius( DOTA_TEAM_NEUTRALS, Vector(-8000,7000,0), nil, 5500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
