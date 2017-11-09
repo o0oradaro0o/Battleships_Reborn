@@ -171,21 +171,21 @@ z-index:6;
 #GoodPoints
 {
 	z-index:40;
-	font-size: 80;
+	font-size: 60;
 	color: #ffffff;
 	text-shadow: 3px 3px 3px #000000;
 	horizontal-align: center;
-	margin-top: -80px;
+	margin-top: -70px;
 	margin-right: 20px;
 }
 #BadPoints
 {
 	z-index:40;
-	font-size: 80;
+	font-size: 55;
 	color: #ffffff;
 	text-shadow: 3px 3px 3px #000000;
 	horizontal-align: center;
-	margin-top: -55px;
+	margin-top: -45px;
 }
 
 
