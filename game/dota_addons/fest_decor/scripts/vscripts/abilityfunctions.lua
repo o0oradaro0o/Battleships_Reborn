@@ -86,18 +86,21 @@ function WinterMove(args)
 			if present.direction==nil then
 				present.direction=1
 			end
-			local height = 0;
-			height = (present:GetOrigin()*Vector(0,0,1)):Length()
-			if height>220 then
-				present.direction=-1
-				height=height+9*present.direction
-			elseif height<100 then
-				present.direction=1
-				height=height+9*present.direction
-			else
-				height=height+9*present.direction
+			
+			if present.heightVar==nil then
+				present.heightVar=0
 			end
-			present:SetOrigin(casterUnit.loclist[10*i+5]*Vector(1,1,0)+Vector(1,1,height))
+			
+			if present.heightVar>120 then
+				present.direction=-1
+				present.heightVar=present.heightVar+9*present.direction
+			elseif present.heightVar<0 then
+				present.direction=1
+				present.heightVar=present.heightVar+9*present.direction
+			else
+				present.heightVar=present.heightVar+9*present.direction
+			end
+			present:SetOrigin(casterUnit.loclist[10*i+5]+Vector(1,1,present.heightVar))
 			i=i+1
 		end
 	end
@@ -222,29 +225,37 @@ end
 function CallLeapfunction(args)
 
 		local casterUnit = args.caster
-
-		local ability = "mirana_leap_caller"
-
-		local abil = casterUnit:AddAbility(ability)
 		
-		abil:SetLevel(1)
-		abil:CastAbility()
+		local HangTime  = .04
+		
+		for itemSlot = 0, 49, 1 do 
+			HangTime = HangTime + .04
+			Timers:CreateTimer( HangTime, function()
+				LeapChange(casterUnit, 25-itemSlot)
+			end)
+		end
+		
+		
 
-		 Timers:CreateTimer(  0.5, function()
-		casterUnit:RemoveAbility(abil:GetAbilityName())
-		end)
 
 end
+
+
+function LeapChange(casterUnit, HeightChange)
+print(HeightChange)
+casterUnit:SetOrigin(casterUnit:GetOrigin()+Vector(0,0,HeightChange))
+
+
+end
+
+
 
 function killMe(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')
 		local casterUnit = args.caster
 		local targetUnit = args.target
-			if targetUnit~=nil then
-		stopPhysics(targetUnit)
-		end
 		print(casterUnit:GetOwner())
-		hurtUnit(targetUnit, casterUnit:GetOwner())
+		hurtUnit(targetUnit, casterUnit:GetOwner(), casterUnit)
 	
 end
 
@@ -276,20 +287,20 @@ print( CasterAngle)
 print( UnitAngle)
 				local unitkilled=false
 						if UnitAngle<30 then
-							hurtUnit(unit, casterUnit)
+							hurtUnit(unit, casterUnit, casterUnit)
 							unitkilled=true
 							end
 						if CasterAngle<30 then
-							hurtUnit(casterUnit, unit)
+							hurtUnit(casterUnit, unit, unit)
 							unitkilled=true
 						end
 						
 						if not unitkilled then
 							if UnitAngle<CasterAngle then
-								hurtUnit(unit, casterUnit)
+								hurtUnit(unit, casterUnit, casterUnit)
 								unitkilled=true
 							else
-								hurtUnit(casterUnit, unit)
+								hurtUnit(casterUnit, unit, unit)
 								unitkilled=true
 							end
 						end
@@ -299,7 +310,11 @@ print( UnitAngle)
 		end
 end
 
-function hurtUnit(unit, attacker)
+function hurtUnit(unit, attacker, attackerUnit)
+
+print((attackerUnit:GetOrigin()*Vector(0,0,1)):Length())
+
+if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 300 and not hero:HasModifier("leap") then
 	stopPhysics(unit)
 					
 					local damageTable = {
@@ -411,6 +426,8 @@ function hurtUnit(unit, attacker)
 					
 					ApplyDamage(damageTable)
 		killPresents(unit)
+		
+	end
 end
 
 function killPresents(unit)
@@ -624,7 +641,7 @@ Caster:RemoveSelf()
 		pId = 0
 	 end
 	 local AbilName=""
-	 local randAbilInt = RandomInt ( 4, 4) 
+	 local randAbilInt = RandomInt ( 1, 4) 
 	 if randAbilInt==1 then
 		AbilName = "Rocket_Boots"
 	elseif randAbilInt==2 then

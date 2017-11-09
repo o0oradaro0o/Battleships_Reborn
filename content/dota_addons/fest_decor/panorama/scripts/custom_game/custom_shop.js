@@ -483,6 +483,15 @@ function SwapAbility(data)
 				SnowIn()
 
 			}
+			if(data.ability_name == "leap")
+			{
+				lastability = "leap";
+				hasability = true;
+				$("#presentopen").style.opacity=1;
+				//$.Msg("snow fade if")
+				LeapIn()
+
+			}
 			if(data.ability_name == "cast_ability")
 			{
 				//$( "#presentclosed" ).style.opacity=1;
@@ -524,6 +533,19 @@ function SnowIn()
 	{
 		$("#snowball").style.opacity=$("#snowball").style.opacity-.1+.2;
 		$.Schedule( .1, SnowIn );	
+		
+	}
+
+}
+
+function LeapIn()
+{
+	
+	//$("#presentopen").style.opacity=$("#presentopen").style.opacity-.1+.2;
+	if($("#leap").style.opacity<1 && hasability == true && lastability == "leap")
+	{
+		$("#leap").style.opacity=$("#leap").style.opacity-.1+.2;
+		$.Schedule( .1, LeapIn );	
 		
 	}
 
@@ -683,6 +705,83 @@ function UseAbility()
 		}
 
 	}
+	
+	if (lastability == "leap" && hasability == false)
+	{
+		$("#leap").style.opacity=1;
+		$("#presentopen").style.opacity=1;
+		if (pulsecounter == 1)
+		{
+			//$( "#Tree" ).style.transform="rotateZ("+ currentDeg+"deg ) ;"
+			$("#leap").style.width="26%";
+			$("#leap").style.height="26%";
+			pulsecounter +=1;
+			$.Schedule( .02, UseAbility );
+		}
+		else if (pulsecounter == 2)
+		{
+			$("#leap").style.width="27%";
+			$("#leap").style.height="27%";
+			pulsecounter +=1;
+			$.Schedule( .02, UseAbility );
+		}
+		else if (pulsecounter == 3)
+		{
+			$("#leap").style.width="28%";
+			$("#leap").style.height="28%";
+			pulsecounter +=1;
+			$.Schedule( .02, UseAbility );
+		}
+		else if (pulsecounter == 4)
+		{
+			$("#leap").style.width="29%";
+			$("#leap").style.height="29%";
+			pulsecounter +=1;
+			$.Schedule( .02, UseAbility );
+		}
+		else if (pulsecounter == 5)
+		{
+			$("#leap").style.width="29%";
+			$("#leap").style.height="29%";
+			pulsecounter +=1;
+			$.Schedule( .02, UseAbility );
+		}
+		
+		else if (pulsecounter == 6)
+		{
+			$("#leap").style.width="28%";
+			$("#leap").style.height="28%";
+			pulsecounter +=1;
+			$.Schedule( .02, UseAbility );
+		}
+		else if (pulsecounter == 7)
+		{
+			$("#leap").style.width="27%";
+			$("#leap").style.height="27%";
+			pulsecounter +=1;
+			$.Schedule( .02, UseAbility );
+		}
+		else if (pulsecounter == 8)
+		{
+			$("#leap").style.width="26%";
+			$("#leap").style.height="26%";
+			pulsecounter +=1;
+			$.Schedule( .2, UseAbility );
+		}
+		else if (pulsecounter == 9)
+		{
+			$("#leap").style.width="25%";
+			$("#leap").style.height="25%";
+			pulsecounter =1;
+			lastability = "none";
+			$( "#presentclosed" ).style.opacity=1;
+			$("#leap").style.opacity=0;
+			$("#presentopen").style.opacity=0;
+			UseAbility()
+		}
+
+	}
+	
 	if (lastability == "magnet" && hasability == false)
 	{
 		$("#magnet").style.opacity=1;
@@ -764,6 +863,8 @@ function UseAbility()
 			$( "#rocketskate" ).style.opacity=0;
 			$( "#magnet" ).style.opacity=0;
 			$( "#snowball" ).style.opacity=0;		
+			$( "#leap" ).style.opacity=0;	
+			
 			$( "#presentclosed" ).style.opacity=1;
 			hasability = false;
 			pulsecounter = 1;

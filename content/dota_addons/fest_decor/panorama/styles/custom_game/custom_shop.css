@@ -307,6 +307,20 @@ z-index:6;
 	z-index:6;
 }
 
+#leap
+{
+	visibility: visible;
+	vertical-align: bottom;
+	horizontal-align: middle;
+	height: 25%;
+	width: 25%;
+	margin-bottom: 160px;
+	margin-right: 20px;
+	opacity: 0;
+	z-index:6;
+}
+
+
 #magnet
 {
 	visibility: visible;
