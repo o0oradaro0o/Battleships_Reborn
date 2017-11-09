@@ -196,7 +196,6 @@ function AddGift(args, name)
 	 if(pId == nil) then
 	 pId = 1
 	 end
-	print(pId)
 	
 	if string.match(name, "Orniment1") then
 		local modelName = "bauble" .. pId .. '_1'
@@ -242,7 +241,6 @@ end
 
 
 function LeapChange(casterUnit, HeightChange)
-print(HeightChange)
 casterUnit:SetOrigin(casterUnit:GetOrigin()+Vector(0,0,HeightChange))
 
 
@@ -314,7 +312,7 @@ function hurtUnit(unit, attacker, attackerUnit)
 
 print((attackerUnit:GetOrigin()*Vector(0,0,1)):Length())
 
-if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 300 and not hero:HasModifier("leap") then
+if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 300 and not attacker:HasModifier("leap") then
 	stopPhysics(unit)
 					
 					local damageTable = {
@@ -455,14 +453,12 @@ function killPresents(unit)
 end
 
 function DepositOrb(args) -- keys is the information sent by the ability
-print('[DepositOrb]  ')
 
 		local casterUnit = args.caster
 		if casterUnit.presentList~= nil then
 			if #casterUnit.presentList > 0 then
 				
 				EmitSoundOnClient("Item.DropGemWorld",PlayerResource:GetPlayer(casterUnit:GetPlayerID()))
-				print('[sound fired]  ')
 				creature = table.remove(casterUnit.presentList)
 				creature:SetOrigin(casterUnit:GetOrigin()+Vector(0,0,-2000))
 				if casterUnit.pointScored == nil then
