@@ -455,6 +455,7 @@ function SwapAbility(data)
 			$( "#rocketskate" ).style.opacity=0;
 			$( "#magnet" ).style.opacity=0;
 			$( "#snowball" ).style.opacity=0;
+			$( "#leap" ).style.opacity=0;
 			if(data.ability_name == "Rocket_Boots")
 			{
 				lastability = "skate";
@@ -713,65 +714,65 @@ function UseAbility()
 		if (pulsecounter == 1)
 		{
 			//$( "#Tree" ).style.transform="rotateZ("+ currentDeg+"deg ) ;"
-			$("#leap").style.width="26%";
-			$("#leap").style.height="26%";
+			$("#leap").style.width="32%";
+			$("#leap").style.height="28%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 2)
 		{
-			$("#leap").style.width="27%";
-			$("#leap").style.height="27%";
+			$("#leap").style.width= "33%";
+			$("#leap").style.height="29%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 3)
 		{
-			$("#leap").style.width="28%";
-			$("#leap").style.height="28%";
+			$("#leap").style.width="34%";
+			$("#leap").style.height="30%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 4)
 		{
-			$("#leap").style.width="29%";
-			$("#leap").style.height="29%";
+			$("#leap").style.width="35%";
+			$("#leap").style.height="31%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 5)
 		{
-			$("#leap").style.width="29%";
-			$("#leap").style.height="29%";
+			$("#leap").style.width="35%";
+			$("#leap").style.height="31%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		
 		else if (pulsecounter == 6)
 		{
-			$("#leap").style.width="28%";
-			$("#leap").style.height="28%";
+			$("#leap").style.width="34%";
+			$("#leap").style.height="30%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 7)
 		{
-			$("#leap").style.width="27%";
-			$("#leap").style.height="27%";
+			$("#leap").style.width="33%";
+			$("#leap").style.height="29%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 8)
 		{
-			$("#leap").style.width="26%";
-			$("#leap").style.height="26%";
+			$("#leap").style.width="32%";
+			$("#leap").style.height="28%";
 			pulsecounter +=1;
 			$.Schedule( .2, UseAbility );
 		}
 		else if (pulsecounter == 9)
 		{
-			$("#leap").style.width="25%";
-			$("#leap").style.height="25%";
+			$("#leap").style.width="32%";
+			$("#leap").style.height="28%";
 			pulsecounter =1;
 			lastability = "none";
 			$( "#presentclosed" ).style.opacity=1;
