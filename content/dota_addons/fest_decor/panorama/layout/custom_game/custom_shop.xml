@@ -92,12 +92,17 @@
 		
 		<Panel hittest ="false" class="teamholder">
 			<Panel id="team_mitten"  >
-				<Label id = "BadPoints" class="Timer" text="0" />	
-				<Image  src="file://{images}/custom_game/mitten.png" />
+				<Label id = "BadPoints" text="0" />	
+				<Image id = "mittenpic" src="file://{images}/custom_game/mitten.png" />
+					<Image id="ScoresignBad" src="file://{images}/custom_game/scoresignBad.png" />
+
 			</Panel>
 			<Panel id="team_stocking" >
-				<Label id = "GoodPoints" class="Timer" text="0" />	
-				<Image src="file://{images}/custom_game/stocking.png" />
+				<Label id = "GoodPoints" text="0" />	
+				<Image id = "stockingpic" src="file://{images}/custom_game/stocking.png" />
+					<Image id="ScoresignGood" src="file://{images}/custom_game/scoresignGood.png" />
+
+			
 			</Panel>
 		</Panel>
 

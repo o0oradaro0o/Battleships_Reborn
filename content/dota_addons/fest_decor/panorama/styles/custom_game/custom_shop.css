@@ -70,7 +70,6 @@
 	height: 154px;	
 	margin-bottom: 125px;
 }
-
 #team_mitten
 {
 	 
@@ -81,6 +80,14 @@
 	height: 200px;	
 	margin-bottom: 105px;
 
+}
+#mittenpic
+{
+	z-index: 1;
+}
+#stockingpic
+{
+	z-index: 1;
 }
 
 
@@ -163,13 +170,42 @@ z-index:6;
 }
 #GoodPoints
 {
-	z-index:40;	
+	z-index:40;
+	font-size: 80;
+	color: #ffffff;
+	text-shadow: 3px 3px 3px #000000;
+	horizontal-align: center;
+	margin-top: -80px;
+	margin-right: 20px;
 }
 #BadPoints
 {
-	z-index:40;	
+	z-index:40;
+	font-size: 80;
+	color: #ffffff;
+	text-shadow: 3px 3px 3px #000000;
+	horizontal-align: center;
+	margin-top: -55px;
 }
 
+
+#ScoresignBad
+{
+	margin-top: -105px;
+	height: 100%;
+	z-index: 0;
+}
+
+
+#ScoresignGood
+{
+	horizontal-align: left;
+	margin-left: -20px;
+	margin-top: -130px;
+	height: 130%;
+	width: 200%;
+	z-index: 0;
+}
 .scoreLeft
 {
 	margin-left: 50px;
