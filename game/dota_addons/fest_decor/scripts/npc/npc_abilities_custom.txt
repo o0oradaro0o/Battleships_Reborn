@@ -234,7 +234,7 @@
 				"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "5000"
+							"Radius" "15000"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
@@ -365,6 +365,11 @@
 		
 			"OnSpellStart"
 		{
+			"FireSound"
+			{
+				"EffectName" "Hero_MonkeyKing.Taunt.Pogo"
+				"Target"     "CASTER"
+			}
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
@@ -375,7 +380,6 @@
 				"Target" "CASTER"
 				"ModifierName" "leaping"
 			}
-			
 		}
 			
 		"Modifiers"

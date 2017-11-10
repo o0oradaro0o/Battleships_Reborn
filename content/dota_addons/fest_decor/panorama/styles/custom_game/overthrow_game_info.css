@@ -124,7 +124,7 @@ Label
 }
 #AbilitiesHolder
 {
-	Height: 700px;
+	Height: 900px;
 	width: 85%;
 }
 #Skate
@@ -144,6 +144,11 @@ Label
 	width: 100px;
 	height: 100px;
 	margin-top: 235px;
+}#Leap
+{
+	width: 100px;
+	height: 100px;
+	margin-top: 355px;
 }
 	
 #SkateInfo
@@ -160,6 +165,12 @@ Label
 {
 	margin-top: 265px;
 	margin-left: 120px;
+}
+#LeapInfo
+{
+	margin-top: 375px;
+	margin-left: 120px;
+	width: 85%;
 }
 #ObjectiveHeader
 {

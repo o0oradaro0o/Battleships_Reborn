@@ -136,6 +136,63 @@ function PingLoc(data)
 				goodToSort.forEach(function(element) 
 				{
 					count++;
+					
+					$( "#goodScoreName" + count ).text =element[0];
+					$( "#goodScorePoints" + count ).text = element[1] ;
+					$( "#goodScoreChain" + count ).text = "("+element[2]+")" ;
+					$( "#goodScoreKills" + count ).text =element[4];
+					$( "#goodScoreName" + count ).style.color = PlayerColors[ element[3]]
+					$( "#goodScorePoints" + count ).style.color = PlayerColors[ element[3]]
+					$( "#goodScoreKills" + count ).style.color = PlayerColors[ element[3]]
+					$( "#goodScoreChain" + count ).style.color = PlayerColors[ element[3]]
+				});
+			}
+			if(badToSort.length>0)
+			{
+				var count = 0
+				badToSort.sort(compareSecondColumn);
+				badToSort.forEach(function(element) 
+				{
+					count++;
+					
+					$( "#badScoreName" + count ).text =element[0];
+					$( "#badScorePoints" + count ).text = element[1];
+					$( "#badScoreChain" + count ).text = "("+element[2]+")";
+					$( "#badScoreKills" + count ).text =element[4];
+					$( "#badScoreName" + count ).style.color = PlayerColors[ element[3]]
+					$( "#badScorePoints" + count ).style.color = PlayerColors[ element[3]]
+					$( "#badScoreKills" + count ).style.color = PlayerColors[ element[3]]
+					$( "#badScoreChain" + count ).style.color = PlayerColors[ element[3]]
+				});
+			}
+			
+			goodTeamScores = []
+ 
+			badTeamScores = []
+			
+			
+	}
+	/**function ShowScore(data)
+	{
+		var totalSccore = data.good_score+data.bad_score
+
+		
+		 var tGameTime = (Math.floor(data.Game_Time/60)) + ":" + (data.Game_Time % 60 >= 10 ? "": "0") +  (data.Game_Time % 60);    
+		$( "#TimeLeft" ).text = tGameTime;
+		targetDeg =  data.good_score/totalSccore*180-90
+			$.Schedule( .1, GoToScore );
+				$( "#BadPoints" ).text = data.bad_score-10;
+				$( "#GoodPoints" ).text =  data.good_score-10;
+			
+			var goodToSort = goodTeamScores
+			var badToSort = badTeamScores
+			if(goodToSort.length>0)
+			{
+				var count = 0
+				goodToSort.sort(compareSecondColumn);
+				goodToSort.forEach(function(element) 
+				{
+					count++;
 					if(element[0].length>20)
 					{
 						var name = element[0].substring(0,20)
@@ -199,7 +256,7 @@ function PingLoc(data)
 			badTeamScores = []
 			
 			
-	}
+	}**/
 	var soundHandle
 	var musicPlayingTime=0
 	function toggleMusic()

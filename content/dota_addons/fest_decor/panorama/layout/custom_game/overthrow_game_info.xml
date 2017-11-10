@@ -39,7 +39,11 @@
 			
 			<Image id="Snowball" src="file://{images}/custom_game/snowball.png" />
 			<Label id="SnowballInfo" text="#SnowballInfo_lang"/>
+			
+			<Image id="Leap" src="file://{images}/custom_game/leap.png" />
+			<Label id="LeapInfo" text="#LeapInfo_lang"/>
 			</Panel>
+			
 		
 		
 	</Panel>

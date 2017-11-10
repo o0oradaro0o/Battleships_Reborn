@@ -3,8 +3,8 @@
 	visibility: visible;
 	horizontal-align: center;
 	vertical-align: bottom;
-	height: 500px;	
-	width: 600px;
+	height: 30%;	
+	width: 30%;
 	 z-index:5;	
 
 }
@@ -49,17 +49,19 @@
 	
 	margin-bottom: -120px;
 	height: 800px;
-	width: 700px;
-	z-index:8;	
+	width: 35%;
+	z-index:8;
 }
 .labelHolder
 {
 	flow-children: down;
+	horizontal-align: center;
+	width: 100%;
 }
 .labelHolder2
 {
 	horizontal-align: right;
-	flow-children: down;
+	flow-children: right;
 }
 #team_stocking
 {
@@ -206,19 +208,183 @@ z-index:6;
 	width: 200%;
 	z-index: 0;
 }
-.scoreLeft
+.goodTitle
 {
-	margin-left: 50px;
-	margin-top: 10px;
-	width: 400px;
-	height: 20px;	
-	font-size: 20px;
-	font-family: monospace;
-	font-weight: bold;
-	z-index:10;	
+	flow-children: right;
+	width: 100%;
+	font-size: 30;
+	text-shadow: 2px 2px 2px #ff0000;
+	opacity: 1;
+
+	
+}
+.scoreLeftName
+{
+width: 25%;
+font-size: 22;
+text-shadow: 1px 1px 1px #000000;
+color: #ffffff;
+opacity: 1;
+}
+.scoreLeftPoints
+{
+	font-size: 22;
+	horizontal-align: left;
+	width: 25%;
 	text-shadow: 1px 1px 1px #000000;
+color: #ffffff;
+opacity: 1;
+z-index: 20;
+}
+.scoreLeftChain
+{
+	font-size: 22;
+	horizontal-align: center;
+	width: 25%;
+	text-shadow: 1px 1px 1px #000000;
+color: #ffffff;
+opacity: 1;
+}
+.scoreLeftKills
+{
+	font-size: 22;
+horizontal-align: right;
+width: 25%;
+text-shadow: 1px 1px 1px #000000;
+color: #ffffff;
+opacity: 1;
 }
 
+.goodplayer1
+{
+	flow-children: right;
+	width: 100%;
+	opacity: 1;
+
+}
+
+
+.scoreLN
+{
+	width: 32%;
+	font-size: 25;
+	text-shadow: 1px 1px 1px #000000;
+	opacity: 1;
+}
+.scoreLP
+{
+	width: 25%;
+	font-size: 25;
+	horizontal-align: right;
+	text-shadow: 1px 1px 1px #000000;
+	opacity: 1;
+	}
+.scoreLC
+{
+	font-size: 25;
+	width: 25%;
+	horizontal-align: right;
+	text-shadow: 1px 1px 1px #000000;
+	opacity: 1;
+	
+}
+.scoreLK
+{
+	font-size: 25;
+	horizontal-align: right;
+	width: 25%;
+	text-shadow: 1px 1px 1px #000000;
+	opacity: 1;
+
+}
+.badTitle
+{
+	flow-children: right;
+	width: 100%;
+	font-size: 30;
+	text-shadow: 2px 2px 2px #ff0000;
+	opacity: 1;
+
+	
+}
+.scoreRightName
+{
+width: 25%;
+font-size: 22;
+text-shadow: 1px 1px 1px #000000;
+color: #ffffff;
+opacity: 1;
+}
+.scoreRightPoints
+{
+	font-size: 22;
+	horizontal-align: Right;
+	width: 25%;
+	text-shadow: 1px 1px 1px #000000;
+color: #ffffff;
+opacity: 1;
+}
+.scoreRightChain
+{
+	font-size: 22;
+	horizontal-align: center;
+	width: 25%;
+	text-shadow: 1px 1px 1px #000000;
+color: #ffffff;
+opacity: 1;
+}
+.scoreRightKills
+{
+	font-size: 22;
+horizontal-align: right;
+width: 25%;
+text-shadow: 1px 1px 1px #000000;
+color: #ffffff;
+opacity: 1;
+}
+
+.badplayer1
+{
+	flow-children: right;
+	width: 100%;
+	opacity: 1;
+
+}
+
+
+.scoreRN
+{
+	width: 32%;
+	font-size: 25;
+	text-shadow: 1px 1px 1px #000000;
+	opacity: 1;
+	}
+.scoreRP
+{
+	width: 25%;
+	font-size: 25;
+	horizontal-align: right;
+	text-shadow: 1px 1px 1px #000000;
+	opacity: 1;
+}
+.scoreRC
+{
+	font-size: 25;
+	width: 25%;
+	horizontal-align: right;
+	text-shadow: 1px 1px 1px #000000;
+	opacity: 1;
+	
+}
+.scoreRK
+{
+	font-size: 25;
+	horizontal-align: right;
+	width: 25%;
+	text-shadow: 1px 1px 1px #000000;
+	opacity: 1;
+
+}
 .scoreRight
 {
 	margin-right: 220px;
@@ -231,21 +397,6 @@ z-index:6;
 	z-index:10;	
 	text-shadow: 1px 1px 1px #000000;
 }
-.scoreL
-{
-	font-size: 23px;
-	text-align: center;
-	text-shadow: 1px 1px 1px #000000;
-	margin-left: 50px;
-}
-
-.scoreR
-{
-	
-	font-size: 23px;
-	text-align: center;
-	text-shadow: 1px 1px 1px #000000;
-}
 
 .AbilityHolder
 {
@@ -253,12 +404,9 @@ z-index:6;
 	vertical-align: bottom;
 	horizontal-align: right;
 	margin-right: -150px;
-	animation-name: zoomin;
-    animation-duration: .5s;
-    animation-timing-function: linear;
 	margin-bottom: -50px;
-	height: 500px;
-	width: 500px;
+	height: 44%;
+	width: 30%;
 }
 #presentclosed
 {
@@ -349,7 +497,7 @@ opacity: 0;
 }
 .BellHolder
 {
-	margin-left: 1775px;
+
 	margin-top: 75px;
 	horizontal-align: right;
 	height: 110px;
@@ -362,6 +510,7 @@ opacity: 0;
 width: fit-children;
 height: fit-children;
 }
+
 #ScoreFrame1
 {
 	height: 35px;
@@ -371,25 +520,37 @@ height: fit-children;
 .ScoreboardBackHolder1
 {
 	visibility: visible;
-	width: 100%;
-	height: 200px;
-	margin-left: 240px;
+	
+	width: 63%;
+	height: 100%;
 	margin-top: 895px;
 	horizontal-align: center;
+	z-index: 100;
 }
 .ScoreboardBack1
 {
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #90858500 ), color-stop( 0.25, #62696e44 ), color-stop( 0.5, #AA959566 ), color-stop( 0.75, #62696e ), to( #908585 ) );
-	opacity: .5;
-	width: 100%;
-	height: 100%;
+	horizontal-align: left;
+	opacity: 1;
+	width: 25%;
+	height: 95%;
+	vertical-align: bottom;
 }
+.ScoreboardBack2
+{
 
+	opacity: 1;
+	width: 25%;
+	height: 95%;
+	horizontal-align: right;
+	vertical-align: bottom;
+	margin-right: -30px;
+}
 .ScorebooardHolder2
 {
 width: fit-children;
 height: fit-children;
 }
+
 
 .ScoreboardBackHolder2
 {
@@ -400,24 +561,15 @@ height: fit-children;
 	margin-left: 900px;
 	margin-top: 917px;
 }
-
-.ScoreboardBack2
+.ScoreboardBackHolder3
 {
-	opacity: .6;
+	visibility: visible;
+	opacity: .15;
 	width: 100%;
-	height: 100%;
-	
-}
-@keyframes 'zoomin' {
-  from 
-  {
-	width: 0%;
-	height: 0%;
-  }
-
-  to 
-  {
-	width: 30%;
-	height: 0%;
-  }
+	height: 200px;
+	//background-color: gradient(color-stop( 0.25, #62696e44 ), color-stop( 0.5, #AA959566 ), color-stop( 0.75, #62696e ), to( #908585 ) );
+	background-color: gradient( linear, 0% 0%, 0% 100%, from(#bad4ff ), to( #02327f ) );
+	margin-left: 255px;
+	margin-top: 905px;
+	z-index: -10;
 }
