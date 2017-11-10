@@ -22,6 +22,7 @@ PlayerColors = {
 }
 
 
+
 if abilityFunctions == nil then
 	print ( '[AbilityFunctions] creating abilityFunctions' )
 	abilityFunctions = {} -- Creates an array to let us beable to index abilityFunctions when creating new functions
@@ -111,7 +112,7 @@ function WinterMove(args)
 		else
 		casterUnit.presentList={}
 	end
-	local vec = direction*(45-#casterUnit.presentList*.15)
+	local vec = direction*(45-#casterUnit.presentList*.1)
 	casterUnit:AddPhysicsVelocity(vec)
 	
 	if casterUnit.count%40==0 then

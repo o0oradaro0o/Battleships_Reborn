@@ -261,9 +261,41 @@ opacity: 1;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
+	margin-top: -10px;
 
 }
+.goodplayer2
+{
+	flow-children: right;
+	width: 100%;
+	opacity: 1;
+	margin: 1px;
 
+}
+.goodplayer3
+{
+	flow-children: right;
+	width: 100%;
+	opacity: 1;
+	margin: 1px;
+
+}
+.goodplayer4
+{
+	flow-children: right;
+	width: 100%;
+	opacity: 1;
+	margin: 1px;
+
+}
+.goodplayer5
+{
+	flow-children: right;
+	width: 100%;
+	opacity: 1;
+	margin: 1px;
+
+}
 
 .scoreLN
 {
@@ -349,7 +381,7 @@ horizontal-align: right;
 width: 25%;
 text-shadow: 1px 1px 1px #000000;
 color: #ffffff;
-opacity: 2px;
+opacity: 2;
 margin: 1px;
 }
 
@@ -359,8 +391,43 @@ margin: 1px;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
+	margin-top: -10px;
 
 }
+.badplayer2
+{
+	flow-children: right;
+	width: 100%;
+	opacity: 1;
+	margin: 1px;
+
+}
+.badplayer3
+{
+	flow-children: right;
+	width: 100%;
+	opacity: 1;
+	margin: 1px;
+
+}
+.badplayer4
+{
+	flow-children: right;
+	width: 100%;
+	opacity: 1;
+	margin: 1px;
+
+}
+.badplayer5
+{
+	flow-children: right;
+	width: 100%;
+	opacity: 1;
+	margin: 1px;
+
+}
+
+
 
 
 .scoreRN
