@@ -262,7 +262,7 @@ opacity: 1;
 	opacity: 1;
 	margin: 1px;
 	margin-top: -10px;
-	height: 20px;
+
 
 }
 .goodplayer2
@@ -271,7 +271,7 @@ opacity: 1;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
-	height: 20px;
+
 
 }
 .goodplayer3
@@ -280,7 +280,7 @@ opacity: 1;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
-	height: 20px;
+
 
 }
 .goodplayer4
@@ -289,7 +289,7 @@ opacity: 1;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
-	height: 20px;
+
 
 }
 .goodplayer5
@@ -298,45 +298,49 @@ opacity: 1;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
-	height: 20px;
+
 
 }
 
 .scoreLN
 {
 	width: 32%;
-	font-size: 25;
+	font-size: 22;
 	text-shadow: 1px 1px 1px #000000;
 	opacity: 1;
 	margin: 1px;
+	height: 22px;
 }
 .scoreLP
 {
 	width: 25%;
-	font-size: 25;
+	font-size: 22;
 	horizontal-align: right;
 	text-shadow: 1px 1px 1px #000000;
 	opacity: 1;
 	margin: 1px;
+	height: 22px;
 	}
 .scoreLC
 {
-	font-size: 25;
+	font-size: 22;
 	width: 25%;
 	horizontal-align: right;
 	text-shadow: 1px 1px 1px #000000;
 	opacity: 1;
 	margin: 1px;
+	height: 22px;
 	
 }
 .scoreLK
 {
-	font-size: 25;
+	font-size: 22;
 	horizontal-align: right;
 	width: 25%;
 	text-shadow: 1px 1px 1px #000000;
 	opacity: 1;
 	margin: 1px;
+	height: 22px;
 
 }
 .badTitle
@@ -396,7 +400,7 @@ margin: 1px;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
-	height: 26px;
+
 
 }
 .badplayer2
@@ -405,7 +409,7 @@ margin: 1px;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
-	height: 26px;
+
 
 
 }
@@ -415,7 +419,7 @@ margin: 1px;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
-height: 26px;
+
 
 }
 .badplayer4
@@ -424,7 +428,7 @@ height: 26px;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
-	height: 26px;
+
 }
 .badplayer5
 {
@@ -432,7 +436,7 @@ height: 26px;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
-	height: 26px;
+
 
 }
 
@@ -442,38 +446,42 @@ height: 26px;
 .scoreRN
 {
 	width: 32%;
-	font-size: 25;
+	font-size: 22;
 	text-shadow: 1px 1px 1px #000000;
 	opacity: 1;
 	margin: 1px;
+	height: 22px;
 	}
 .scoreRP
 {
 	width: 25%;
-	font-size: 25;
+	font-size: 22;
 	horizontal-align: right;
 	text-shadow: 1px 1px 1px #000000;
 	opacity: 1;
 	margin: 1px;
+	height: 22px;
 }
 .scoreRC
 {
-	font-size: 25;
+	font-size: 22;
 	width: 25%;
 	horizontal-align: right;
 	text-shadow: 1px 1px 1px #000000;
 	opacity: 1;
 	margin: 1px;
+	height: 22px;
 	
 }
 .scoreRK
 {
-	font-size: 25;
+	font-size: 22;
 	horizontal-align: right;
 	width: 25%;
 	text-shadow: 1px 1px 1px #000000;
 	opacity: 1;
 	margin: 1px;
+	height: 22px;
 
 }
 .scoreRight
@@ -639,6 +647,7 @@ height: fit-children;
 	horizontal-align: right;
 	vertical-align: bottom;
 	margin-right: -30px;
+	
 }
 .ScorebooardHolder2
 {

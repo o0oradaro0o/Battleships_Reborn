@@ -126,7 +126,7 @@
 			{
 				"EffectName"		"particles/basic_projectile/Inv_atach.vpcf" 
 				"EffectAttachType"	"follow_origin"
-				"Duration" "7.0"
+				"Duration" "4.0"
 					"States"
 				{
 						"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"

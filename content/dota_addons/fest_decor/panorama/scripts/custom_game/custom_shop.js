@@ -155,19 +155,15 @@ function PingLoc(data)
 				{
 					count++;
 					
-					/**$( "#badScoreName" + count ).text =element[0];
+					$( "#badScoreName" + count ).text =element[0];
 					$( "#badScorePoints" + count ).text = element[1];
 					$( "#badScoreChain" + count ).text = "("+element[2]+")";
 					$( "#badScoreKills" + count ).text =element[4];
 					$( "#badScoreName" + count ).style.color = PlayerColors[ element[3]]
 					$( "#badScorePoints" + count ).style.color = PlayerColors[ element[3]]
 					$( "#badScoreKills" + count ).style.color = PlayerColors[ element[3]]
-					$( "#badScoreChain" + count ).style.color = PlayerColors[ element[3]]**/
-					$( "#badScoreName" + 1 ).text ="Frood";
-					$( "#badScoreName" + 2 ).text ="radar";
-					$( "#badScoreName" + 3 ).text ="penis";
-					$( "#badScoreName" + 4 ).text ="penrose";
-					$( "#badScoreName" + 5 ).text ="Sarda";
+					$( "#badScoreChain" + count ).style.color = PlayerColors[ element[3]]
+
 				});
 			}
 			
