@@ -322,7 +322,7 @@ function hurtUnit(unit, attacker, attackerUnit)
 
 print((attackerUnit:GetOrigin()*Vector(0,0,1)):Length())
 
-if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 280 and not attacker:HasModifier("leaping") then
+if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 280 and not attacker:HasModifier("leaping") not attacker:HasModifier("invlun") then
 	stopPhysics(unit)
 					
 					local damageTable = {
@@ -660,7 +660,7 @@ Caster:ForceKill(true)
 	elseif randAbilInt==4 then
 		AbilName = "leap"
 	 end
-	 if heroUnit:GetOrigin():Length()>5200 then
+	 if heroUnit:GetOrigin():Length()>5500 then
 		AbilName = "leap"
 	 end
 	 
