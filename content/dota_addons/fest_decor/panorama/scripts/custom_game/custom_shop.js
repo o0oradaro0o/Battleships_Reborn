@@ -159,7 +159,7 @@ function PingLoc(data)
 					$( "#badScorePoints" + count ).text = element[1];
 					$( "#badScoreChain" + count ).text = "("+element[2]+")";
 					$( "#badScoreKills" + count ).text =element[4];
-					$( "#badScoreName" + count ).style.color = PlayerColors[ element[3]]
+					( "#badScoreName" + count ).style.color = PlayerColors[ element[3]]
 					$( "#badScorePoints" + count ).style.color = PlayerColors[ element[3]]
 					$( "#badScoreKills" + count ).style.color = PlayerColors[ element[3]]
 					$( "#badScoreChain" + count ).style.color = PlayerColors[ element[3]]
