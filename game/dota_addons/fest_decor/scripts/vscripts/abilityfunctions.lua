@@ -112,11 +112,9 @@ function WinterMove(args)
 		else
 		casterUnit.presentList={}
 	end
-<<<<<<< HEAD
+
 	local vec = direction*(40)
-=======
-	local vec = direction*(45-#casterUnit.presentList*.1)
->>>>>>> 3653e6366667ff253db019dc570730d276757b8e
+
 	casterUnit:AddPhysicsVelocity(vec)
 	
 	if casterUnit.count%40==0 then
