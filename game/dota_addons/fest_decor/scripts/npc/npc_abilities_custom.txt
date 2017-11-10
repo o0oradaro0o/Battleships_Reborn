@@ -388,7 +388,7 @@
 			
 			"leaping"
 			{
-				"Duration" "2.0"
+				"Duration" "2.2"
 					"States"
 				{
 						"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"

@@ -200,6 +200,7 @@ function CfrostGameMode:OnThink()
 			if g_MainTimerTickCount%180 == 0 then
 				GameRules:SetTimeOfDay(0.25)
 			end
+				
 			
 
 			local unitCount = 0

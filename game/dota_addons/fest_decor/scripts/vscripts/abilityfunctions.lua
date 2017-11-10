@@ -66,7 +66,12 @@ function WinterMove(args)
 		if not IsPhysicsUnit(casterUnit) then
 		Physics:Unit(casterUnit)
 	end
-	
+
+		if (casterUnit:GetOrigin()*Vector(0,0,1)):Length() > 230 and not casterUnit:HasModifier("leaping") then
+			print("killed: " .. (casterUnit:GetOrigin()*Vector(0,0,1)):Length())
+			hurtUnit(casterUnit, casterUnit, casterUnit)
+		end
+
 	
 	if casterUnit.targ_position~=nil then
 		local targ_dist = (casterUnit.targ_position) - casterUnit:GetOrigin()*Vector(1,1,0)
@@ -100,11 +105,13 @@ function WinterMove(args)
 			else
 				present.heightVar=present.heightVar+9*present.direction
 			end
-			present:SetOrigin(casterUnit.loclist[10*i+5]+Vector(1,1,present.heightVar))
+			present:SetOrigin(casterUnit.loclist[(10)*i+5+math.floor(#casterUnit.presentList/15)]+Vector(1,1,present.heightVar))
 			i=i+1
 		end
+		else
+		casterUnit.presentList={}
 	end
-	local vec = direction*40
+	local vec = direction*(45-#casterUnit.presentList*.15)
 	casterUnit:AddPhysicsVelocity(vec)
 	
 	if casterUnit.count%40==0 then
@@ -233,7 +240,7 @@ function CallLeapfunction(args)
 				LeapChange(casterUnit, 25-itemSlot)
 			end)
 		end
-		
+		casterUnit:SetOrigin(casterUnit:GetOrigin()+Vector(0,0,-30))
 		
 
 
@@ -312,7 +319,7 @@ function hurtUnit(unit, attacker, attackerUnit)
 
 print((attackerUnit:GetOrigin()*Vector(0,0,1)):Length())
 
-if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 300 and not attacker:HasModifier("leap") then
+if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 300 and not attacker:HasModifier("leaping") then
 	stopPhysics(unit)
 					
 					local damageTable = {
