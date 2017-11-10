@@ -105,13 +105,13 @@ function WinterMove(args)
 			else
 				present.heightVar=present.heightVar+9*present.direction
 			end
-			present:SetOrigin(casterUnit.loclist[(10)*i+5+math.floor(#casterUnit.presentList/15)]+Vector(1,1,present.heightVar))
+			present:SetOrigin(casterUnit.loclist[(10)*i+5]+Vector(1,1,present.heightVar))
 			i=i+1
 		end
 		else
 		casterUnit.presentList={}
 	end
-	local vec = direction*(45-#casterUnit.presentList*.15)
+	local vec = direction*(40)
 	casterUnit:AddPhysicsVelocity(vec)
 	
 	if casterUnit.count%40==0 then
@@ -319,7 +319,7 @@ function hurtUnit(unit, attacker, attackerUnit)
 
 print((attackerUnit:GetOrigin()*Vector(0,0,1)):Length())
 
-if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 300 and not attacker:HasModifier("leaping") then
+if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 280 and not attacker:HasModifier("leaping") then
 	stopPhysics(unit)
 					
 					local damageTable = {
@@ -634,7 +634,10 @@ end
 function GrantPowerUp(args)
 local heroUnit = args.target
 local Caster = args.caster
-Caster:RemoveSelf()
+
+local deadloc = Vector(10000,10000,10000)
+	Caster:SetOrigin(deadloc)
+Caster:ForceKill(true)
 
 	if heroUnit.AbilityName == nil then
 		heroUnit.AbilityName = "cast_ability"
@@ -654,6 +657,11 @@ Caster:RemoveSelf()
 	elseif randAbilInt==4 then
 		AbilName = "leap"
 	 end
+	 if heroUnit:GetOrigin():Length()>5200 then
+		AbilName = "leap"
+	 end
+	 
+	 
 	 heroUnit.AbilityName = AbilName
 	 
 	 print("granted power up" .. AbilName)

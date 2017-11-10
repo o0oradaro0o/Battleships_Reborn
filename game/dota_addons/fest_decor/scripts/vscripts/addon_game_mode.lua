@@ -228,6 +228,26 @@ function CfrostGameMode:OnThink()
 						  end
 				  end
 			end
+			
+			local GoodBaseGiftLoc = Vector(-5000,4900,0)
+			local GoodBaseGiftCheck = Entities:FindByClassnameNearest("npc_dota_creature", GoodBaseGiftLoc, 200)
+
+			if GoodBaseGiftCheck==nil or string.match(GoodBaseGiftCheck:GetUnitName(), "tree") then
+				local creature = CreateUnitByName( "npc_dota_power_up" ,  GoodBaseGiftLoc, true, nil, nil, DOTA_TEAM_NEUTRALS )
+						  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
+						
+			 end
+			 
+			 local BadBaseGiftLoc = Vector(5000,-5100,0)
+			local BadBaseGiftCheck = Entities:FindByClassnameNearest("npc_dota_creature", BadBaseGiftLoc, 200)
+			if BadBaseGiftCheck==nil or string.match(BadBaseGiftCheck:GetUnitName(), "tree") then
+				local creature = CreateUnitByName( "npc_dota_power_up" ,  BadBaseGiftLoc, true, nil, nil, DOTA_TEAM_NEUTRALS )
+						  creature:SetForwardVector(RandomVector( RandomFloat( 40, 40 )))
+						
+			 end
+			 
+			
+			
 			sendScore()
 			updateTrees()
 			 g_PreviousTickCount=GameRules:GetGameTime()		

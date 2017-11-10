@@ -103,7 +103,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"25.0 25.0 25.0 25.0"
+		"AbilityCooldown"				"1.0 1.0 1.0 1.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -126,7 +126,7 @@
 			{
 				"EffectName"		"particles/basic_projectile/Inv_atach.vpcf" 
 				"EffectAttachType"	"follow_origin"
-				"Duration" "5.0"
+				"Duration" "7.0"
 					"States"
 				{
 						"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
@@ -388,7 +388,7 @@
 			
 			"leaping"
 			{
-				"Duration" "2.2"
+				"Duration" "2.0"
 					"States"
 				{
 						"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
