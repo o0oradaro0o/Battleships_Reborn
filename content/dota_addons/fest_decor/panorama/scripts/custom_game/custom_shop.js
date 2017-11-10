@@ -621,35 +621,35 @@ function UseAbility()
 		if (pulsecounter == 1)
 		{
 			//$( "#Tree" ).style.transform="rotateZ("+ currentDeg+"deg ) ;"
-			$("#rocketskate").style.width="31%";
-			$("#rocketskate").style.height="31%";
+			$("#rocketskate").style.width="26%";
+			$("#rocketskate").style.height="26%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 2)
 		{
-			$("#rocketskate").style.width="32%";
+			$("#rocketskate").style.width="27%";
 			$("#rocketskate").style.height="27%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 3)
 		{
-			$("#rocketskate").style.width="33%";
+			$("#rocketskate").style.width="28%";
 			$("#rocketskate").style.height="28%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 4)
 		{
-			$("#rocketskate").style.width="34%";
+			$("#rocketskate").style.width="29%";
 			$("#rocketskate").style.height="29%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 5)
 		{
-			$("#rocketskate").style.width="34%";
+			$("#rocketskate").style.width="29%";
 			$("#rocketskate").style.height="29%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
@@ -657,28 +657,28 @@ function UseAbility()
 		
 		else if (pulsecounter == 6)
 		{
-			$("#rocketskate").style.width="33%";
+			$("#rocketskate").style.width="28%";
 			$("#rocketskate").style.height="28%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 7)
 		{
-			$("#rocketskate").style.width="32%";
+			$("#rocketskate").style.width="27%";
 			$("#rocketskate").style.height="27%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 8)
 		{
-			$("#rocketskate").style.width="31%";
+			$("#rocketskate").style.width="26%";
 			$("#rocketskate").style.height="26%";
 			pulsecounter +=1;
 			$.Schedule( .2, UseAbility );
 		}
 		else if (pulsecounter == 9)
 		{
-			$("#rocketskate").style.width="30%";
+			$("#rocketskate").style.width="25%";
 			$("#rocketskate").style.height="25%";
 			pulsecounter =1;
 			lastability = "none";
@@ -702,29 +702,29 @@ function UseAbility()
 		}
 		else if (pulsecounter == 2)
 		{
+			$("#snowball").style.width="26%";
+			$("#snowball").style.height="26%";
+			pulsecounter +=1;
+			$.Schedule( .02, UseAbility );
+		}
+		else if (pulsecounter == 3)
+		{
 			$("#snowball").style.width="27%";
 			$("#snowball").style.height="27%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
-		else if (pulsecounter == 3)
+		else if (pulsecounter == 4)
 		{
 			$("#snowball").style.width="28%";
 			$("#snowball").style.height="28%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
-		else if (pulsecounter == 4)
-		{
-			$("#snowball").style.width="29%";
-			$("#snowball").style.height="29%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
 		else if (pulsecounter == 5)
 		{
-			$("#snowball").style.width="29%";
-			$("#snowball").style.height="29%";
+			$("#snowball").style.width="28%";
+			$("#snowball").style.height="28%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
@@ -771,65 +771,65 @@ function UseAbility()
 		if (pulsecounter == 1)
 		{
 			//$( "#Tree" ).style.transform="rotateZ("+ currentDeg+"deg ) ;"
-			$("#leap").style.width="32%";
-			$("#leap").style.height="28%";
+			$("#leap").style.width="26%";
+			$("#leap").style.height="26%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 2)
 		{
-			$("#leap").style.width= "33%";
-			$("#leap").style.height="29%";
+			$("#leap").style.width= "27%";
+			$("#leap").style.height= "27%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 3)
 		{
-			$("#leap").style.width="34%";
-			$("#leap").style.height="30%";
+			$("#leap").style.width="28%";
+			$("#leap").style.height="28%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 4)
 		{
-			$("#leap").style.width="35%";
-			$("#leap").style.height="31%";
+			$("#leap").style.width="29%";
+			$("#leap").style.height="29%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 5)
 		{
-			$("#leap").style.width="35%";
-			$("#leap").style.height="31%";
+			$("#leap").style.width="29%";
+			$("#leap").style.height="29%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		
 		else if (pulsecounter == 6)
 		{
-			$("#leap").style.width="34%";
-			$("#leap").style.height="30%";
+			$("#leap").style.width="28%";
+			$("#leap").style.height="28%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 7)
 		{
-			$("#leap").style.width="33%";
-			$("#leap").style.height="29%";
+			$("#leap").style.width="27%";
+			$("#leap").style.height="27%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 8)
 		{
-			$("#leap").style.width="32%";
-			$("#leap").style.height="28%";
+			$("#leap").style.width="26%";
+			$("#leap").style.height="26%";
 			pulsecounter +=1;
 			$.Schedule( .2, UseAbility );
 		}
 		else if (pulsecounter == 9)
 		{
-			$("#leap").style.width="32%";
-			$("#leap").style.height="28%";
+			$("#leap").style.width="25%";
+			$("#leap").style.height="25%";
 			pulsecounter =1;
 			lastability = "none";
 			$( "#presentclosed" ).style.opacity=1;
@@ -847,65 +847,65 @@ function UseAbility()
 		if (pulsecounter == 1)
 		{
 			//$( "#Tree" ).style.transform="rotateZ("+ currentDeg+"deg ) ;"
-			$("#magnet").style.width="31%";
+			$("#magnet").style.width="26%";
 			$("#magnet").style.height="31%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 2)
 		{
-			$("#magnet").style.width="32%";
-			$("#magnet").style.height="32%";
+			$("#magnet").style.width="27%";
+			$("#magnet").style.height="27%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 3)
 		{
-			$("#magnet").style.width="33%";
-			$("#magnet").style.height="33%";
+			$("#magnet").style.width="28%";
+			$("#magnet").style.height="28%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 4)
 		{
-			$("#magnet").style.width="34%";
-			$("#magnet").style.height="34%";
+			$("#magnet").style.width="29%";
+			$("#magnet").style.height="29%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 5)
 		{
-			$("#magnet").style.width="34%";
-			$("#magnet").style.height="34%";
+			$("#magnet").style.width="29%";
+			$("#magnet").style.height="29%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		
 		else if (pulsecounter == 6)
 		{
-			$("#magnet").style.width="33%";
-			$("#magnet").style.height="33%";
+			$("#magnet").style.width="28%";
+			$("#magnet").style.height="28%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 7)
 		{
-			$("#magnet").style.width="32%";
-			$("#magnet").style.height="32%";
+			$("#magnet").style.width="27%";
+			$("#magnet").style.height="27%";
 			pulsecounter +=1;
 			$.Schedule( .02, UseAbility );
 		}
 		else if (pulsecounter == 8)
 		{
-			$("#magnet").style.width="31%";
-			$("#magnet").style.height="31%";
+			$("#magnet").style.width="26%";
+			$("#magnet").style.height="26%";
 			pulsecounter +=1;
 			$.Schedule( .2, UseAbility );
 		}
 		else if (pulsecounter == 9)
 		{
-			$("#magnet").style.width="30%";
-			$("#magnet").style.height="30%";
+			$("#magnet").style.width="25%";
+			$("#magnet").style.height="25%";
 			pulsecounter =1;
 			lastability = "none";
 			$( "#presentclosed" ).style.opacity=1;
