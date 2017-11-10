@@ -262,6 +262,7 @@ opacity: 1;
 	opacity: 1;
 	margin: 1px;
 	margin-top: -10px;
+	height: 20px;
 
 }
 .goodplayer2
@@ -270,6 +271,7 @@ opacity: 1;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
+	height: 20px;
 
 }
 .goodplayer3
@@ -278,6 +280,7 @@ opacity: 1;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
+	height: 20px;
 
 }
 .goodplayer4
@@ -286,6 +289,7 @@ opacity: 1;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
+	height: 20px;
 
 }
 .goodplayer5
@@ -294,6 +298,7 @@ opacity: 1;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
+	height: 20px;
 
 }
 
@@ -341,8 +346,7 @@ opacity: 1;
 	font-size: 30;
 	text-shadow: 2px 2px 2px #ff0000;
 	opacity: 1;
-	margin: 1px;
-
+	
 	
 }
 .scoreRightName
@@ -369,6 +373,7 @@ margin: 1px;
 	font-size: 22;
 	horizontal-align: center;
 	width: 25%;
+
 	text-shadow: 1px 1px 1px #000000;
 color: #ffffff;
 opacity: 1;
@@ -377,11 +382,11 @@ margin: 1px;
 .scoreRightKills
 {
 	font-size: 22;
-horizontal-align: right;
-width: 25%;
-text-shadow: 1px 1px 1px #000000;
+	horizontal-align: center;
+	width: 25%;
+	text-shadow: 1px 1px 1px #000000;
 color: #ffffff;
-opacity: 2;
+opacity: 1;
 margin: 1px;
 }
 
@@ -391,7 +396,7 @@ margin: 1px;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
-	margin-top: -10px;
+	height: 26px;
 
 }
 .badplayer2
@@ -400,7 +405,9 @@ margin: 1px;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
-	margin-top: -10px;
+	height: 26px;
+
+
 }
 .badplayer3
 {
@@ -408,7 +415,7 @@ margin: 1px;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
-	margin-top: -10px;
+height: 26px;
 
 }
 .badplayer4
@@ -417,7 +424,7 @@ margin: 1px;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
-	margin-top: -10px;
+	height: 26px;
 }
 .badplayer5
 {
@@ -425,7 +432,8 @@ margin: 1px;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
-	margin-top: -10px;
+	height: 26px;
+
 }
 
 
