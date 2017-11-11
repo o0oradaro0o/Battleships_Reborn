@@ -322,7 +322,7 @@ function hurtUnit(unit, attacker, attackerUnit)
 
 print((attackerUnit:GetOrigin()*Vector(0,0,1)):Length())
 
-if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 280 and not attacker:HasModifier("leaping") not attacker:HasModifier("invlun") then
+if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 280 and not attacker:HasModifier("leaping") and not attacker:HasModifier("invlun") then
 	stopPhysics(unit)
 					
 					local damageTable = {
