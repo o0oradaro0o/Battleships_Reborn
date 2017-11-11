@@ -256,7 +256,12 @@
 		
 		"OnProjectileHitUnit"
                 {
-                        "DeleteOnHit"                           "false"
+                    "FireSound"
+					{
+						"EffectName" "BodyImpact_Common.Light"
+						"Target"     "TARGET"
+					}
+						"DeleteOnHit"                           "false"
 
 						"RunScript"
 						{
@@ -264,11 +269,7 @@
 							"Function"			"SnowBallHit"
 						}
 					
-					"FireSound"
-					{
-						"EffectName" "BodyImpact_Common.Light"
-						"Target"     "TARGET"
-					}
+
 				}
 	}
 	

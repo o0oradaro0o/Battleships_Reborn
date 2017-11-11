@@ -469,42 +469,42 @@ function DepositOrb(args) -- keys is the information sent by the ability
 			if #casterUnit.presentList > 0 then
 				
 				EmitSoundOnClient("Item.DropGemWorld",PlayerResource:GetPlayer(casterUnit:GetPlayerID()))
-				creature = table.remove(casterUnit.presentList)
-				creature:SetOrigin(casterUnit:GetOrigin()+Vector(0,0,-2000))
+				local removedornament = table.remove(casterUnit.presentList)
+				removedornament:SetOrigin(casterUnit:GetOrigin()+Vector(0,0,-2000))
 				if casterUnit.pointScored == nil then
 				casterUnit.pointScored = 0
 				end
 				
-				creature:RemoveAbility(creature:GetAbilityByIndex(0):GetName())
-				creature:RemoveModifierByName("fire_area_4")
+				removedornament:RemoveAbility(removedornament:GetAbilityByIndex(0):GetName())
+				removedornament:RemoveModifierByName("fire_area_4")
 				
 				local pointValue = 1
-				if string.match(creature:GetUnitName(), "5")  then
+				if string.match(removedornament:GetUnitName(), "5")  then
 					pointValue=5
 					casterUnit.pointScored=casterUnit.pointScored+5
-					creature:SetModel("plus5")
-				elseif string.match(creature:GetUnitName(), "2")  then
+					removedornament:SetModel("plus5")
+				elseif string.match(removedornament:GetUnitName(), "2")  then
 					pointValue=3
 					casterUnit.pointScored=casterUnit.pointScored+3
-					creature:SetModel("plus3")
-				elseif string.match(creature:GetUnitName(), "4")  then
+					removedornament:SetModel("plus3")
+				elseif string.match(removedornament:GetUnitName(), "4")  then
 					pointValue=2
 					casterUnit.pointScored=casterUnit.pointScored+2
-					creature:SetModel("plus2")
+					removedornament:SetModel("plus2")
 				else
-					creature:SetModel("plus1")
+					removedornament:SetModel("plus1")
 					casterUnit.pointScored=casterUnit.pointScored+1
 					pointValue = 1
 				end
 				
 				
-				creature:SetModelScale(3)
+				removedornament:SetModelScale(3)
 				
 				local pId = casterUnit:GetPlayerOwnerID()+1
 				 if(pId == nil) then
 				 pId = 1
 				 end
-				creature:SetRenderColor(PlayerColors[pId][1],PlayerColors[pId][2],PlayerColors[pId][3])
+				removedornament:SetRenderColor(PlayerColors[pId][1],PlayerColors[pId][2],PlayerColors[pId][3])
 				if casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 						storage:AddGoodStoredPoints(pointValue)
 				else
@@ -513,9 +513,9 @@ function DepositOrb(args) -- keys is the information sent by the ability
 				
 				
 				Timers:CreateTimer( 0.03, function()
-					creature:SetOrigin(casterUnit:GetOrigin()+casterUnit:GetForwardVector() *200+Vector(0,0,150))
+					removedornament:SetOrigin(casterUnit:GetOrigin()+casterUnit:GetForwardVector() *200+Vector(0,0,150))
 				
-					creature:ForceKill(true)
+					removedornament:ForceKill(true)
 				end)
 			else
 					if casterUnit.pop== nil then
