@@ -318,7 +318,7 @@
 			"mag"
 			{
 				"EffectName"		"particles/basic_projectile/mag_atach.vpcf" 
-				"EffectAttachType"	"follow_origin"
+				"EffectAttachType"	"follow_overhead"
 				"Duration" "4.0"
 				
 				"ThinkInterval"		".02"

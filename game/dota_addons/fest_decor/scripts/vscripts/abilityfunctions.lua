@@ -679,7 +679,7 @@ end
 
 function PullOrn(args)
 	local Caster = args.caster
-	local enemies = FindUnitsInRadius( Caster:GetTeamNumber(), Caster:GetOrigin(), nil, 500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
+	local enemies = FindUnitsInRadius( Caster:GetTeamNumber(), Caster:GetOrigin(), nil, 700, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, 0, 0, false )
 	
 	for _,orn in  pairs(enemies) do
 		if string.match(orn:GetUnitName(), "pres") then
