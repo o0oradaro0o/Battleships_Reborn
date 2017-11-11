@@ -388,6 +388,9 @@
 			
 			"leaping"
 			{
+				"EffectName"		"particles/basic_projectile/boing_atach.vpcf" 
+				"EffectAttachType"	"follow_origin"
+			
 				"Duration" "2.0"
 					"States"
 				{
