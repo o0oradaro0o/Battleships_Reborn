@@ -291,7 +291,12 @@ function PingLoc(data)
 				}
 		}
 	}
-	
+	function showbelltooltip()
+	{
+		$.Msg("bell hovered");
+		$( "#belltooltip" ).style.visibility="visible";
+
+	}
 	function GoToScore()
 	{
 		if(targetDeg<currentDeg)

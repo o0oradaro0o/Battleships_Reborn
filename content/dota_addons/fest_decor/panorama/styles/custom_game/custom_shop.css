@@ -604,6 +604,57 @@ opacity: 0;
 	horizontal-align: right;
 	height: 110px;
 	width: 110px;
+	font-size: 50px;
+}
+.belltooltip
+{
+	visibility: collapse;
+	margin-top: 185px;
+	horizontal-align: right;
+	height: 60px;
+	width: 200px;
+	border: 4px solid #006304;
+	border-radius: 10px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from(#bad4ff ), to( #02327f ) );
+	text-shadow: 1px 1px 1px #000000;
+	text-align: center;
+	opacity: .75;
+}
+.bellhover
+{
+	margin: 3px;
+	text-align: center;
+	color: #ffffff;
+	text-shadow: 1px 1px 1px #000000;
+}
+.abilitytooltip
+{
+	visibility: visible;
+	margin-top: 650px;
+	horizontal-align: right;
+	height: 100px;
+	width: 300px;
+	border: 4px solid #006304;
+	border-radius: 10px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from(#bad4ff ), to( #02327f ) );
+	text-shadow: 1px 1px 1px #000000;
+	text-align: center;
+	opacity: .75;
+	flow-children: down;
+}
+.abilityhover
+{
+	margin: 3px;
+	text-align: center;
+	color: #ffffff;
+	text-shadow: 1px 1px 1px #000000;
+}
+.abilityhover2
+{
+	margin: 3px;
+	text-align: center;
+	color: #ffffff;
+	text-shadow: 1px 1px 1px #000000;
 }
 
 

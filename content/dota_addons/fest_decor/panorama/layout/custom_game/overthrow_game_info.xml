@@ -28,8 +28,8 @@
 			<Label id="AngelPoints" text="#AngelPoints_lang"/>
 			</Panel>
 
-		<Label id="AbilitiesHeader" class="Header" html="true" text="#AbilitiesHeader" />
-		<Label id="Abilities" text="#Abilities"/>
+		<Label id="AbilitiesHeader" class="Header" html="true" text="#AbilitiesHeader_lang" />
+		<Label id="Abilities" text="#Abilities_lang"/>
 		<Panel id ="AbilitiesHolder">
 			<Image id="Skate" src="file://{images}/custom_game/rocketskate.png" />
 			<Label id="SkateInfo" text="#SkateInfo_lang"/>
