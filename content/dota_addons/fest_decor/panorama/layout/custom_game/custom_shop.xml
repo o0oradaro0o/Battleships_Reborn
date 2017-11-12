@@ -172,7 +172,9 @@
 			<Image id="snowball" src="file://{images}/custom_game/snowball.png" />
 			<Image id="leap" src="file://{images}/custom_game/leap.png" />
 		</Panel>
-
+		<Panel hittest ="false" class="abilitytooltip">
+			<Label class="abilityhover" text="#SkateInfo_lang">  </Label>
+		</Panel>
 		<Panel hittest="false" class="MinimapFrameHolder" >
 			<Image id="MinimapFrame" src="file://{images}/custom_game/candycaneminimap.png" />
 			</Panel>
@@ -212,10 +214,13 @@
 			</Panel>
 		</Panel>
 	
-	<Button hittest="true" class="BellHolder" onactivate="toggleMusic()">
+	<Button hittest="true" class="BellHolder" onactivate="toggleMusic()" onmouseover="showbelltooltip()">
 			<Image id="bell" src="file://{images}/custom_game/bell2.png" />
 			<Image id="bellgrey" src="file://{images}/custom_game/bell2grey.png" />
 			
 	</Button>
+	<Panel hittest ="false" class="belltooltip">
+		<Label class="bellhover" text="#bellhover_lang">  </Label>
+	</Panel>
    </Panel>
 </root>
