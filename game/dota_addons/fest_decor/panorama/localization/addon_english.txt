@@ -32,7 +32,7 @@
 	"Abilities_lang"				"Pick up presents to learn single-use abilities, and activate them by pressing 'Q' (or your default Ability 1 Hotkey)."
 	"SkateInfo_lang"				"Gain a boost of speed for a few seconds."
 	"MagnetInfo_lang"				"Pull all nearby available ornaments towards you."
-	"LeapInfo_lang"					"Leap into the air, over ornament collection\nchains! You  can also pass beneath raised ornament collection chains."
+	"LeapInfo_lang"					"Leap into the air, over ornament collection chains! You  can also pass beneath raised ornament collection chains."
 	"SnowballInfo_lang"				"Hit a nearby enemy with a snowball, temporarily blinding them."
 	
 	
@@ -49,7 +49,8 @@
 	
 	
 	"bellhover_lang"				"Press to toggle a festive tune!"
-	"to_activate_lang"				"To activate, press 'Q' or your default ability 1 hotkey."
+	"to_activate_lang"				" To activate, press 'Q' or your default ability 1 hotkey."
+	"closed_tooltip_lang"			"Walk over presents to learn abilities! Activate them by pressing 'Q'."
 	}
 	
 }

@@ -164,7 +164,7 @@
 		</Panel>-->
 		
 		
-		<Panel hittest="false" class="AbilityHolder" >
+		<Panel hittest="false" id="AbilityHolder" onmouseover="showabilitytooltip()">
 			<Image id="presentclosed" src="file://{images}/custom_game/presentclosed.png" />
 			<Image id="presentopen" src="file://{images}/custom_game/presentopen.png" />
 			<Image id="rocketskate" src="file://{images}/custom_game/rocketskate.png" />
@@ -172,8 +172,8 @@
 			<Image id="snowball" src="file://{images}/custom_game/snowball.png" />
 			<Image id="leap" src="file://{images}/custom_game/leap.png" />
 		</Panel>
-		<Panel hittest ="false" class="abilitytooltip">
-			<Label class="abilityhover" text="#SkateInfo_lang">  </Label>
+		<Panel hittest ="false" id="abilitytooltip">
+			<Label id="abilityhover" text="#SkateInfo_lang">  </Label>
 		</Panel>
 		<Panel hittest="false" class="MinimapFrameHolder" >
 			<Image id="MinimapFrame" src="file://{images}/custom_game/candycaneminimap.png" />
@@ -219,8 +219,8 @@
 			<Image id="bellgrey" src="file://{images}/custom_game/bell2grey.png" />
 			
 	</Button>
-	<Panel hittest ="false" class="belltooltip">
-		<Label class="bellhover" text="#bellhover_lang">  </Label>
+	<Panel hittest ="false" id="belltooltip">
+		<Label id="bellhover" text="#bellhover_lang">  </Label>
 	</Panel>
    </Panel>
 </root>
