@@ -497,8 +497,9 @@ margin: 1px;
 	text-shadow: 1px 1px 1px #000000;
 }
 
-.AbilityHolder
+#AbilityHolder
 {
+	
 	visibility: visible;
 	vertical-align: bottom;
 	horizontal-align: right;
@@ -599,62 +600,57 @@ opacity: 0;
 }
 .BellHolder
 {
-
 	margin-top: 75px;
 	horizontal-align: right;
 	height: 110px;
 	width: 110px;
 	font-size: 50px;
 }
-.belltooltip
+#belltooltip
 {
-	visibility: collapse;
+
 	margin-top: 185px;
 	horizontal-align: right;
-	height: 60px;
+	height: fit-children;
 	width: 200px;
 	border: 4px solid #006304;
 	border-radius: 10px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from(#bad4ff ), to( #02327f ) );
 	text-shadow: 1px 1px 1px #000000;
 	text-align: center;
-	opacity: .75;
+	opacity: 0;
 }
-.bellhover
+#bellhover
 {
 	margin: 3px;
 	text-align: center;
 	color: #ffffff;
 	text-shadow: 1px 1px 1px #000000;
+	font-size: 22;
 }
-.abilitytooltip
+#abilitytooltip
 {
-	visibility: visible;
-	margin-top: 650px;
+	opacity: 0;
+	margin-bottom: 310px;
+	vertical-align: bottom;
 	horizontal-align: right;
-	height: 100px;
+	height: fit-children;
 	width: 300px;
 	border: 4px solid #006304;
 	border-radius: 10px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from(#bad4ff ), to( #02327f ) );
 	text-shadow: 1px 1px 1px #000000;
 	text-align: center;
-	opacity: .75;
 	flow-children: down;
 }
-.abilityhover
+#abilityhover
 {
-	margin: 3px;
-	text-align: center;
+	margin: 8px;
+	text-align: left;
 	color: #ffffff;
 	text-shadow: 1px 1px 1px #000000;
-}
-.abilityhover2
-{
-	margin: 3px;
-	text-align: center;
-	color: #ffffff;
-	text-shadow: 1px 1px 1px #000000;
+	font-size: 22px;
+	vertical-align: center;
 }
 
 

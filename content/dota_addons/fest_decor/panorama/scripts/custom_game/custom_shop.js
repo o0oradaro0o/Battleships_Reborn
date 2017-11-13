@@ -291,10 +291,71 @@ function PingLoc(data)
 				}
 		}
 	}
+	var fadebelltimer = 11
 	function showbelltooltip()
 	{
-		$.Msg("bell hovered");
-		$( "#belltooltip" ).style.visibility="visible";
+		fadebelltimer -= 1
+		$.Msg(fadebelltimer)
+		if (fadebelltimer == 10)
+		{
+			$("#belltooltip").style.opacity=".9";
+			$.Schedule(1.5, showbelltooltip)
+			
+		}
+		else if (fadebelltimer < 10 && fadebelltimer > 0)
+		{
+			$("#belltooltip").style.opacity=$("#belltooltip").style.opacity-.1;
+			$.Schedule(.1, showbelltooltip)
+		}
+		else if (fadebelltimer == 0)
+		{
+			fadebelltimer = 11
+			$("#belltooltip").style.opacity=0;
+		}
+
+	}
+	var fadeabilitytimer = 11
+	
+	function showabilitytooltip()
+	{
+		fadeabilitytimer -= 1
+		$.Msg(fadeabilitytimer)
+		if (lastability=="skate")
+		{
+			$( "#abilityhover" ).text = $.Localize("#SkateInfo_lang")+$.Localize("#to_activate_lang");
+		}
+		if (lastability=="snowball")
+		{
+			$( "#abilityhover" ).text = $.Localize("#SnowballInfo_lang")+$.Localize("#to_activate_lang");
+		}
+		if (lastability=="magnet")
+		{
+			$( "#abilityhover" ).text = $.Localize("#MagnetInfo_lang")+$.Localize("#to_activate_lang");
+		}	
+		if (lastability=="leap")
+		{
+			$( "#abilityhover" ).text = $.Localize("#LeapInfo_lang")+$.Localize("#to_activate_lang");
+		}
+		if (lastability=="none")
+		{
+			$( "#abilityhover" ).text = $.Localize("#closed_tooltip_lang");
+		}
+		if (fadeabilitytimer == 10)
+		{
+			$("#abilitytooltip").style.opacity=".9";
+			$.Schedule(3, showabilitytooltip)
+			
+		}
+		else if (fadeabilitytimer < 10 && fadeabilitytimer > 0)
+		{
+			$("#abilitytooltip").style.opacity=$("#abilitytooltip").style.opacity-.1;
+			$.Schedule(.1, showabilitytooltip)
+		}
+		else if (fadeabilitytimer == 0)
+		{
+			fadeabilitytimer = 11
+			$("#abilitytooltip").style.opacity=0;
+		}
 
 	}
 	function GoToScore()

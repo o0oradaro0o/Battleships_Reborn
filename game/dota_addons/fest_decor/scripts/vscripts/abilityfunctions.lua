@@ -488,6 +488,10 @@ function DepositOrb(args) -- keys is the information sent by the ability
 			if #casterUnit.presentList > 0 then
 				
 				EmitSoundOnClient("Item.DropGemWorld",PlayerResource:GetPlayer(casterUnit:GetPlayerID()))
+<<<<<<< HEAD
+=======
+
+>>>>>>> f4902caff0c91728be297b26b1fc6fe494d57f10
 				local removedornament = table.remove(casterUnit.presentList)
 				removedornament:SetOrigin(casterUnit:GetOrigin()+Vector(0,0,-2000))
 				if casterUnit.pointScored == nil then
