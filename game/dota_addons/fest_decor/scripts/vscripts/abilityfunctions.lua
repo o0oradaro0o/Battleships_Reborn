@@ -281,7 +281,6 @@ function killMe(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')
 		local casterUnit = args.caster
 		local targetUnit = args.target
-		print(casterUnit:GetOwner())
 		hurtUnit(targetUnit, casterUnit:GetOwner(), casterUnit)
 	
 end
@@ -355,7 +354,7 @@ if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 280 and not attacker:HasM
 					
 					local KilledName = PlayerResource:GetPlayerName( unit:GetPlayerID())
 					
-
+					
 					
 		if true == unit:IsAlive() then
 			if unit:GetTeamNumber() ~= attacker:GetTeamNumber() then
@@ -367,8 +366,7 @@ if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 280 and not attacker:HasM
 							attacker.presentList [#attacker.presentList] = nil
 						end
 						
-						ApplyDamage(damageTable)
-						killPresents(unit)
+					
 			
 			
 			
@@ -441,7 +439,8 @@ if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 280 and not attacker:HasM
 				
 			end
 		end
-					
+						ApplyDamage(damageTable)
+						killPresents(unit)
 				
 		
 	end
