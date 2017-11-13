@@ -676,7 +676,7 @@ height: fit-children;
 	horizontal-align: center;
 	z-index: 100;
 }
-.ScoreboardBack1
+#ScoreboardBack1
 {
 	horizontal-align: left;
 	opacity: 1;
@@ -684,7 +684,7 @@ height: fit-children;
 	height: 95%;
 	vertical-align: bottom;
 }
-.ScoreboardBack2
+#ScoreboardBack2
 {
 
 	opacity: 1;
@@ -699,6 +699,32 @@ height: fit-children;
 {
 width: fit-children;
 height: fit-children;
+}
+
+
+#SBToggle
+{
+	visibility: visible;
+	vertical-align: bottom;
+	horizontal-align: center;
+	margin-bottom: 200px;
+	height: fit-children;
+	width: fit-children;
+	border: 4px solid #006304;
+	border-radius: 10px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from(#bad4ff ), to( #02327f ) );
+	text-shadow: 1px 1px 1px #000000;
+	text-align: center;
+	opacity: 1;
+	z-index: 30;
+}
+#SBText
+{
+		margin: 3px;
+	text-align: center;
+	color: #ffffff;
+	text-shadow: 1px 1px 1px #000000;
+	font-size: 22;
 }
 
 

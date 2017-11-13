@@ -80,7 +80,7 @@ height: 180%;
 
 #AuthorPanelHolder
 {
-		margin-top: 850px;
+		margin-top: 800px;
 		width: 720px;
 		height: 95px;
 		margin-left: 60px;
@@ -96,7 +96,7 @@ height: 180%;
 }
 #AuthorPanel
 {
-margin-top: 850px;
+margin-top: 800px;
 		width: 720px;
 		height: 95px;
 		margin-left: 60px;
@@ -113,7 +113,7 @@ margin-top: 850px;
 #InstructionPanel
 {
 
-margin-top: 490px;
+margin-top: 420px;
 		width: 720px;
 		height: 350px;
 		margin-left: 60px;
@@ -126,7 +126,7 @@ margin-top: 490px;
 }
 #InstructionPanelHolder
 {
-		margin-top: 500px;
+		margin-top: 420px;
 		width: 720px;
 		height: 350px;
 		margin-left: 60px;
