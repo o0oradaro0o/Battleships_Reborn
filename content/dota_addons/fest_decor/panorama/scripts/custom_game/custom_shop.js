@@ -382,6 +382,7 @@ function PingLoc(data)
 		if (lastability=="magnet")
 		{
 			$( "#abilityhover" ).text = $.Localize("#MagnetInfo_lang")+$.Localize("#to_activate_lang");
+			$( "#abilityhover" ).text = $.Localize("#MagnetInfo_lang")+$.Localize("#to_activate_lang");
 		}	
 		if (lastability=="leap")
 		{

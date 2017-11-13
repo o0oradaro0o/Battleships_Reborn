@@ -52,6 +52,8 @@
 	"to_activate_lang"				" Para activar, presione 'Q' o su habilidad predeterminada 1 tecla de acceso directo."
 	"closed_tooltip_lang"			"¡Camina sobre regalos para aprender habilidades! Actívelos presionando 'Q'."
 	
+	"sbtext_lang"					"Mostrar / Ocultar puntajes"
+	
 	}
 	
 }

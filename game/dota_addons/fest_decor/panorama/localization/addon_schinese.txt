@@ -50,6 +50,8 @@
 	"bellhover_lang"				"按下即可切换欢乐曲调！"
 	"to_activate_lang"				" 要激活，请按'Q'或您的默认能力1热键。"
 	"closed_tooltip_lang"			"拿起礼物学习能力。按'Q'来激活它们。"
+	
+	"sbtext_lang"					"显示或隐藏分数"
 	}
 	
 }

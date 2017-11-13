@@ -70,7 +70,7 @@
 .Scoreboardfianal
 {
 	border-radius: 10px;
-	border: 4px solid #006304;
+	border: 4px solid #000000;
 	margin: 20px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from(#bad4ff ), to( #02327f ) );
 		height: 100%;	
@@ -100,11 +100,11 @@
 
 #teamholder
 {
-	vertical-align: bottom;
+	vertical-align: top;
 	horizontal-align: center;
-		visibility: visible;
-	margin-bottom: -120px;
-	height: 800px;
+	visibility: visible;
+	margin-top: 850px;
+	height: fit-children;
 	width: 35%;
 	z-index:8;
 	transform: translate3d( 0px, 0px, 0px );
@@ -125,9 +125,9 @@
 	visibility: visible;
 	horizontal-align: right;
 	vertical-align: bottom;
-	width: 171px;
-	height: 154px;	
-	margin-bottom: 125px;
+	width: 200px;
+	height: 200px;		
+
 }
 #team_mitten
 {
@@ -137,7 +137,7 @@
 	vertical-align: bottom;
 	width: 200px;
 	height: 200px;	
-	margin-bottom: 105px;
+
 
 }
 #mittenpic
@@ -230,12 +230,11 @@ z-index:6;
 #GoodPoints
 {
 	z-index:40;
-	font-size: 60;
+	font-size: 55;
 	color: #ffffff;
 	text-shadow: 3px 3px 3px #000000;
 	horizontal-align: center;
-	margin-top: -70px;
-	margin-right: 20px;
+	margin-top: -45px;
 }
 #BadPoints
 {
@@ -258,11 +257,8 @@ z-index:6;
 
 #ScoresignGood
 {
-	horizontal-align: left;
-	margin-left: -20px;
-	margin-top: -130px;
-	height: 130%;
-	width: 200%;
+	margin-top: -105px;
+	height: 100%;
 	z-index: 0;
 }
 .goodTitle
@@ -670,7 +666,7 @@ opacity: 0;
 	horizontal-align: right;
 	height: fit-children;
 	width: 200px;
-	border: 4px solid #006304;
+	border: 4px solid #000000;
 	border-radius: 10px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from(#bad4ff ), to( #02327f ) );
 	text-shadow: 1px 1px 1px #000000;
@@ -693,7 +689,7 @@ opacity: 0;
 	horizontal-align: right;
 	height: fit-children;
 	width: 300px;
-	border: 4px solid #006304;
+	border: 4px solid #000000;
 	border-radius: 10px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from(#bad4ff ), to( #02327f ) );
 	text-shadow: 1px 1px 1px #000000;
@@ -725,11 +721,11 @@ height: fit-children;
 }
 #ScoreboardBackHolder1
 {
-	visibility: visible;
 	
 	width: 63%;
 	height: 100%;
-	margin-top: 895px;
+	vertical-align: bottom;
+	margin-bottom:-850px;
 	horizontal-align: center;
 	z-index: 100;
 }
@@ -767,7 +763,7 @@ height: fit-children;
 	margin-bottom: 200px;
 	height: fit-children;
 	width: fit-children;
-	border: 4px solid #006304;
+	border: 4px solid #000000;
 	border-radius: 10px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from(#bad4ff ), to( #02327f ) );
 	text-shadow: 1px 1px 1px #000000;
@@ -804,8 +800,8 @@ height: fit-children;
 	opacity: .15;
 	width: 100%;
 	height: 200px;
-	//background-color: gradient(color-stop( 0.25, #62696e44 ), color-stop( 0.5, #AA959566 ), color-stop( 0.75, #62696e ), to( #908585 ) );
 	background-color: gradient( linear, 0% 0%, 0% 100%, from(#bad4ff ), to( #02327f ) );
+	vertical-align: top;
 	margin-left: 255px;
 	margin-top: 905px;
 	z-index: -10;
@@ -813,14 +809,14 @@ height: fit-children;
 .droppedDown
 {
 	    animation-name: DropDown;
-    animation-duration: .8s;
+    animation-duration: .5s;
     animation-timing-function: linear;
 	  transform: translate3d( 0px, 200px, 0px );
 }
 .poppedUp
 {
 	    animation-name: PopUp;
-    animation-duration: .8s;
+    animation-duration: .5s;
     animation-timing-function: linear;
 	  transform: translate3d( 0px, 0px, 0px );
 }
