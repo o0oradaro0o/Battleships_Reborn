@@ -32,11 +32,16 @@
 		<Panel hittest="false" class="ScoreboardHolder1" >
 			<Image id="ScoreFrame1" src="file://{images}/custom_game/scoreframe.png" />
 		</Panel>
-	
+			
 		<Panel hittest="false" class="ScoreboardBackHolder3" >
 		</Panel>
+		<Button hittest="true" id="SBToggle" onactivate="ToggleSB()" >
+			<Label id="SBText" text="#sbtext_lang">  </Label>
+		</Button>
 		<Panel hittest="false" class="ScoreboardBackHolder1" >
-			<Panel hittest="false" class="ScoreboardBack1" >		
+			
+
+			<Panel hittest="false" id="ScoreboardBack1" >		
 			
 		
 			<!--<Panel hittest="false" class="labelHolder" >
@@ -101,7 +106,7 @@
 					</Panel>
 				</Panel>
 			</Panel>
-			<Panel hittest="false" class="ScoreboardBack2" >
+			<Panel hittest="false" id="ScoreboardBack2" >
 					<Panel hittest="false" class="labelHolder" >
 					<!--Scoreboard Title-->
 					<Panel hittest="false" class="badTitle">

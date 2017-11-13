@@ -366,7 +366,7 @@ function PingLoc(data)
 		}
 
 	}
-	var fadeabilitytimer = 11
+	var fadeabilitytimer = 15
 	
 	function showabilitytooltip()
 	{
@@ -391,10 +391,10 @@ function PingLoc(data)
 		{
 			$( "#abilityhover" ).text = $.Localize("#closed_tooltip_lang");
 		}
-		if (fadeabilitytimer == 10)
+		if (fadeabilitytimer > 9)
 		{
 			$("#abilitytooltip").style.opacity=".9";
-			$.Schedule(3, showabilitytooltip)
+			$.Schedule(.2, showabilitytooltip)
 			
 		}
 		else if (fadeabilitytimer < 10 && fadeabilitytimer > 0)
@@ -404,7 +404,7 @@ function PingLoc(data)
 		}
 		else if (fadeabilitytimer == 0)
 		{
-			fadeabilitytimer = 11
+			fadeabilitytimer = 15
 			$("#abilitytooltip").style.opacity=0;
 		}
 
@@ -426,7 +426,61 @@ function PingLoc(data)
 		}
 	}
 	
+var scoreboard = "showing"
+var SBTimer = 1
+var SBHeight = 200
+var FrameHeight = 870
+function ToggleSB()
+{
+	$.Msg("sb toggled");
+	if (scoreboard == "showing" )
+	{
+
+			SBTimer ++
+			$( "#SBToggle" ).style.marginBottom=SBHeight+"px;"
+			$( "#ScoreFrame1" ).style.marginTop=FrameHeight+"px;"
+			$( "#ScoreFrame1" ).style.marginLeft=240+"px;"
+			SBHeight = SBHeight - 11
+			FrameHeight = FrameHeight +11
+			if(SBTimer == 22)
+			{
+
+				SBTimer = 1
+				scoreboard = "hidden"
+
+				
+			}
+			else
+			{
+				$.Schedule( .05, ToggleSB )
+			}
+		
+			
+	}
+	else if (scoreboard == "hidden" )
+	{	
+
+			SBTimer ++
+			$( "#SBToggle" ).style.marginBottom=SBHeight+"px;"
+			$( "#ScoreFrame1" ).style.marginTop=FrameHeight+"px;"
+			SBHeight = SBHeight + 11
+			FrameHeight = FrameHeight -11
+			if(SBTimer == 22)
+			{
+				SBTimer = 1
+				scoreboard = "showing"
+				SBHeight = 200
+			}
+			else
+			{
+				$.Schedule( .05, ToggleSB )
+			}
+			
+		
 	
+		
+	}
+}
 function TopNotification( msg ) {
 		
   AddNotification(msg, $('#TopNotifications'));

@@ -52,8 +52,12 @@
 	"to_activate_lang"				" To activate, press 'Q' or your default ability 1 hotkey."
 	"closed_tooltip_lang"			"Walk over presents to learn abilities! Activate them by pressing 'Q'."
 	
+<<<<<<< HEAD
 	"winner"	"You Won!"
 	"loser"	"You Lost!"
+=======
+	"sbtext_lang"					"Toggle Scoreboard"
+>>>>>>> f0854b104ffe618ec47f38668c2d0de9d26de9a9
 	}
 	
 }
