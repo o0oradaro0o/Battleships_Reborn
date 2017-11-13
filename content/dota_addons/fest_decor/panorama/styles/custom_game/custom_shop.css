@@ -15,6 +15,23 @@
  width: 100%;
     height: 100%;
 }
+.WinOrLoseHolder
+{
+	height: 100px;	
+	 width: 100%;
+
+}
+#WinOrLose
+{
+	margin-top: 40px;
+	vertical-align: bottom;
+		 font-size: 65px;
+	    font-weight: bold;
+		height: 100px;	
+			 horizontal-align: center;
+	color: #ffffff;
+	text-shadow: 2px 2px 2px #000055;
+}
 #Tree
 {
 	visibility: visible;
@@ -25,6 +42,46 @@
 	height: 417px;	
 	
 	 z-index:20;	
+}
+
+#ScoreBoardFinalholder
+{
+	visibility: collapse;
+	flow-children: down;
+	horizontal-align: right;
+	vertical-align: top;
+	height: 450px;	
+	width: 400px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from(#456687cc ), to( #02327f10 ) );
+	border-radius: 10px;
+}
+
+
+
+.player
+{
+	flow-children: right;
+	width: 100%;
+	opacity: 1;
+	margin: 1px;
+
+
+}
+.Scoreboardfianal
+{
+	border-radius: 10px;
+	border: 4px solid #006304;
+	margin: 20px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from(#bad4ff ), to( #02327f ) );
+		height: 100%;	
+	width: 100%;
+}
+.labelHolderfinal
+{
+	margin: 5px;
+	flow-children: down;
+	horizontal-align: center;
+	width: 100%;
 }
 
 #gage_bkg

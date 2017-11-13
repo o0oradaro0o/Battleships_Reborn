@@ -51,6 +51,9 @@
 	"bellhover_lang"				"Press to toggle a festive tune!"
 	"to_activate_lang"				" To activate, press 'Q' or your default ability 1 hotkey."
 	"closed_tooltip_lang"			"Walk over presents to learn abilities! Activate them by pressing 'Q'."
+	
+	"winner"	"You Won!"
+	"loser"	"You Lost!"
 	}
 	
 }

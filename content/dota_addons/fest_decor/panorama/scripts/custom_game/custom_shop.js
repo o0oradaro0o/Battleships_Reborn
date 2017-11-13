@@ -1,7 +1,7 @@
 "use strict";
 
 var NewShopUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop");
-
+	var overallScore = []
   var catigoriesUI;
 var currentDeg = 0
 var targetDeg = 0
@@ -92,17 +92,71 @@ GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, fals
 	
 function  TeamWin(data)
 {
-	$.Msg("winner: "+ data.team_number )
+
+
+
+	
+	overallScore.sort(compareSecondColumn);
+
+	var count = 0
+	overallScore.forEach(function(element) 
+	{
+		count++;
+		$.Msg("TeamNumber")
+		$.Msg(Players.GetTeam(element[3]))
+		$( "#ScoreName" + count ).text =element[0];
+		$( "#ScorePoints" + count ).text = element[1] ;
+		$( "#ScoreChain" + count ).text = "("+element[2]+")" ;
+		$( "#ScoreKills" + count ).text =element[4];
+		$( "#ScoreName" + count ).style.color = PlayerColors[ element[3]]
+		$( "#ScorePoints" + count ).style.color = PlayerColors[ element[3]]
+		$( "#ScoreKills" + count ).style.color = PlayerColors[ element[3]]
+		$( "#ScoreChain" + count ).style.color = PlayerColors[ element[3]]
+		
+		if(Players.GetTeam(element[3])==3)
+		{
+				$( "#ScoreName" + count ).GetParent().style.backgroundColor = "gradient( linear, 0% 0%, 0% 100%, from(#ff909055 ), to( #cc606055 ) );"
+		
+		}
+		else
+		{
+				$( "#ScoreName" + count ).GetParent().style.backgroundColor = "gradient( linear, 0% 0%, 0% 100%, from(#00900055 ), to( #00600055 ) );"
+			
+		}
+		
+		
+		
+		
+	});
+	
 	if( data.team_number	== 3)
 	{
+		if(Game.GetLocalPlayerInfo().player_team_id==3)
+		{
+			$( "#WinOrLose" ).text = $.Localize("#winner")
+		}
+		else
+		{
+			$( "#WinOrLose" ).text = $.Localize("#loser")
+		}
 		$( "#mit" ).style.visibility="visible";
 		$( "#mit" ).SetParent($( "#mit" ).GetParent().GetParent().GetParent().GetParent());
 	}
 	else if(data.team_number== 2)
 	{
+		if(Game.GetLocalPlayerInfo().player_team_id==2)
+		{
+			$( "#WinOrLose" ).text = $.Localize("#winner")
+		}
+		else
+		{
+			$( "#WinOrLose" ).text = $.Localize("#loser")
+		}
 		$( "#sto" ).style.visibility="visible";
 		$( "#sto" ).SetParent($( "#sto" ).GetParent().GetParent().GetParent().GetParent());
 	}
+		$( "#ScoreBoardFinalholder" ).style.visibility="visible";
+	$( "#ScoreBoardFinalholder" ).SetParent($( "#ScoreBoardFinalholder" ).GetParent().GetParent().GetParent().GetParent());
 }
 
 function PingLoc(data)
@@ -166,7 +220,7 @@ function PingLoc(data)
 
 				});
 			}
-			
+			overallScore= goodTeamScores.concat(badTeamScores)
 			goodTeamScores = []
  
 			badTeamScores = []
@@ -282,7 +336,6 @@ function PingLoc(data)
 	{
 		if($( "#bellgrey" ).style.visibility=="collapse")
 		{
-			$.Msg(Game.GetGameTime()-musicPlayingTime)
 				if(Game.GetGameTime()-musicPlayingTime>66.5)
 				{
 					soundHandle= Game.EmitSound("ThemeSong");
@@ -295,7 +348,6 @@ function PingLoc(data)
 	function showbelltooltip()
 	{
 		fadebelltimer -= 1
-		$.Msg(fadebelltimer)
 		if (fadebelltimer == 10)
 		{
 			$("#belltooltip").style.opacity=".9";
@@ -319,7 +371,6 @@ function PingLoc(data)
 	function showabilitytooltip()
 	{
 		fadeabilitytimer -= 1
-		$.Msg(fadeabilitytimer)
 		if (lastability=="skate")
 		{
 			$( "#abilityhover" ).text = $.Localize("#SkateInfo_lang")+$.Localize("#to_activate_lang");

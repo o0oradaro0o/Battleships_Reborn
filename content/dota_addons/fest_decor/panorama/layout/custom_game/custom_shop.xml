@@ -164,6 +164,90 @@
 		</Panel>-->
 		
 		
+		<Panel hittest="false" id="ScoreBoardFinalholder" >
+				<Panel hittest="false" class="WinOrLoseHolder" >
+					<Label id="WinOrLose" text="You Win!">  </Label>
+				</Panel>
+			<Panel hittest="false" class="Scoreboardfianal" >		
+				
+				<Panel hittest="false" class="labelHolderfinal" >
+					<!--Scoreboard Title-->
+					<Panel hittest="false" class="goodTitle">
+						<Label class="scoreLeftName" text="#score_Name">  </Label>
+						<Label class="scoreLeftPoints" text="#score_Points">  </Label>
+						<Label class="scoreLeftChain" text="#score_Chain">  </Label>
+						<Label class="scoreLeftKills" text="#score_Kills">  </Label>
+					</Panel>
+					<!--Good player 1-->
+					<Panel hittest="false" class="player">
+						<Label id="ScoreName1" class="scoreLN"> </Label>
+						<Label id="ScorePoints1" class="scoreLP"> </Label>
+						<Label id="ScoreChain1" class="scoreLC"> </Label>
+						<Label id="ScoreKills1" class="scoreLK"> </Label>
+					</Panel>
+					<Panel hittest="false" class="player">
+						<Label id="ScoreName2" class="scoreLN"> </Label>
+						<Label id="ScorePoints2" class="scoreLP"> </Label>
+						<Label id="ScoreChain2" class="scoreLC"> </Label>
+						<Label id="ScoreKills2" class="scoreLK"> </Label>
+					</Panel>
+					<Panel hittest="false" class="player">
+						<Label id="ScoreName3" class="scoreLN"> </Label>
+						<Label id="ScorePoints3" class="scoreLP"> </Label>
+						<Label id="ScoreChain3" class="scoreLC"> </Label>
+						<Label id="ScoreKills3" class="scoreLK"> </Label>
+					</Panel>
+					<Panel hittest="false" class="player">
+						<Label id="ScoreName4" class="scoreLN"> </Label>
+						<Label id="ScorePoints4" class="scoreLP"> </Label>
+						<Label id="ScoreChain4" class="scoreLC"> </Label>
+						<Label id="ScoreKills4" class="scoreLK"> </Label>
+					</Panel>
+					<Panel hittest="false" class="player">
+						<Label id="ScoreName5" class="scoreLN"> </Label>
+						<Label id="ScorePoints5" class="scoreLP"> </Label>
+						<Label id="ScoreChain5" class="scoreLC"> </Label>
+						<Label id="ScoreKills5" class="scoreLK"> </Label>
+					</Panel>
+					<Panel hittest="false" class="player">
+						<Label id="ScoreName6" class="scoreLN"> </Label>
+						<Label id="ScorePoints6" class="scoreLP"> </Label>
+						<Label id="ScoreChain6" class="scoreLC"> </Label>
+						<Label id="ScoreKills6" class="scoreLK"> </Label>
+					</Panel>
+					<Panel hittest="false" class="player">
+						<Label id="ScoreName7" class="scoreLN"> </Label>
+						<Label id="ScorePoints7" class="scoreLP"> </Label>
+						<Label id="ScoreChain7" class="scoreLC"> </Label>
+						<Label id="ScoreKills7" class="scoreLK"> </Label>
+					</Panel>
+					<Panel hittest="false" class="player">
+						<Label id="ScoreName8" class="scoreLN"> </Label>
+						<Label id="ScorePoints8" class="scoreLP"> </Label>
+						<Label id="ScoreChain8" class="scoreLC"> </Label>
+						<Label id="ScoreKills8" class="scoreLK"> </Label>
+					</Panel>
+					<Panel hittest="false" class="player">
+						<Label id="ScoreName9" class="scoreLN"> </Label>
+						<Label id="ScorePoints9" class="scoreLP"> </Label>
+						<Label id="ScoreChain9" class="scoreLC"> </Label>
+						<Label id="ScoreKills9" class="scoreLK"> </Label>
+					</Panel>
+					<Panel hittest="false" class="player">
+						<Label id="ScoreName10" class="scoreLN"> </Label>
+						<Label id="ScorePoints10" class="scoreLP"> </Label>
+						<Label id="ScoreChain10" class="scoreLC"> </Label>
+						<Label id="ScoreKills10" class="scoreLK"> </Label>
+					</Panel>
+					
+				</Panel>
+					<!--Good player 2-->
+					
+		</Panel>
+	</Panel>
+		
+		
+		
 		<Panel hittest="false" id="AbilityHolder" onmouseover="showabilitytooltip()">
 			<Image id="presentclosed" src="file://{images}/custom_game/presentclosed.png" />
 			<Image id="presentopen" src="file://{images}/custom_game/presentopen.png" />
@@ -201,6 +285,11 @@
 			
 			</Panel>
 		</Panel>
+		
+		
+		
+		
+		
 
 	
 	
