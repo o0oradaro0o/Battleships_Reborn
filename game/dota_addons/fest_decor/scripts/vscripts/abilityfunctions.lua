@@ -221,6 +221,25 @@ function AddGift(args, name)
 			Hero.presentList [#casterUnit.presentList] = nil
 		end
 		
+		if Hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+			nEnemyTeam = DOTA_TEAM_BADGUYS
+		else
+			nEnemyTeam = DOTA_TEAM_GOODGUYS
+		end
+			
+			local particle = ParticleManager:CreateParticleForPlayer("particles/basic_projectile/killer_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature, PlayerResource:GetPlayer( Hero:GetPlayerID() ))
+			ParticleManager:SetParticleControl( particle, 0, creature:GetAbsOrigin() )
+			creature.p1 = particle
+			local particle2 = ParticleManager:CreateParticleForTeam("particles/basic_projectile/friend_glow.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature,  Hero:GetTeamNumber())
+			ParticleManager:SetParticleControl( particle, 0, creature:GetAbsOrigin() )
+			creature.p2 = particle2
+		local particle3 = ParticleManager:CreateParticleForTeam("particles/basic_projectile/killer_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature, nEnemyTeam)
+			ParticleManager:SetParticleControl( particle, 0, creature:GetAbsOrigin() )
+		creature.p3 = particle3
+		
+		
+	
+		
 	Timers:CreateTimer( 0.03, function()
 	
       local self = args.caster
@@ -322,7 +341,7 @@ function hurtUnit(unit, attacker, attackerUnit)
 
 print((attackerUnit:GetOrigin()*Vector(0,0,1)):Length())
 
-if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 280 and not attacker:HasModifier("leaping") and not attacker:HasModifier("invlun") then
+if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 280 and not attacker:HasModifier("leaping") and not attacker:HasModifier("invlun") and (unit:GetTeamNumber() ~= attacker:GetTeamNumber()  or unit == attacker) and unit:IsAlive()  then
 	stopPhysics(unit)
 					
 					local damageTable = {
@@ -469,13 +488,8 @@ function DepositOrb(args) -- keys is the information sent by the ability
 			if #casterUnit.presentList > 0 then
 				
 				EmitSoundOnClient("Item.DropGemWorld",PlayerResource:GetPlayer(casterUnit:GetPlayerID()))
-<<<<<<< HEAD
-				local creature = table.remove(casterUnit.presentList)
-				creature:SetOrigin(casterUnit:GetOrigin()+Vector(0,0,-2000))
-=======
 				local removedornament = table.remove(casterUnit.presentList)
 				removedornament:SetOrigin(casterUnit:GetOrigin()+Vector(0,0,-2000))
->>>>>>> c91386ab327275c741f89daa3a70cf48abff469d
 				if casterUnit.pointScored == nil then
 				casterUnit.pointScored = 0
 				end
@@ -501,7 +515,9 @@ function DepositOrb(args) -- keys is the information sent by the ability
 					casterUnit.pointScored=casterUnit.pointScored+1
 					pointValue = 1
 				end
-				
+				ParticleManager:DestroyParticle(removedornament.p1, true)
+				ParticleManager:DestroyParticle(removedornament.p2, true)
+				ParticleManager:DestroyParticle(removedornament.p3, true)
 				
 				removedornament:SetModelScale(3)
 				

@@ -90,7 +90,7 @@
 						<Label id="goodScoreName4" class="scoreLN"> </Label>
 						<Label id="goodScorePoints4" class="scoreLP"> </Label>
 						<Label id="goodScoreChain4" class="scoreLC"> </Label>
-						<Label id="goodScoreKills" class="scoreLK"> </Label>
+						<Label id="goodScoreKills4" class="scoreLK"> </Label>
 					</Panel>
 					<!--Good player 5-->
 					<Panel hittest="false" class="goodplayer5">
@@ -136,7 +136,7 @@
 						<Label id="badScoreName4" class="scoreRN"> </Label>
 						<Label id="badScorePoints4" class="scoreRP"> </Label>
 						<Label id="badScoreChain4" class="scoreRC"> </Label>
-						<Label id="badScoreKills" class="scoreRK"> </Label>
+						<Label id="badScoreKills4" class="scoreRK"> </Label>
 					</Panel>
 					<!--bad player 5-->
 					<Panel hittest="false" class="badplayer5">

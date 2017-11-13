@@ -507,6 +507,9 @@
 			"root_self"
 			{
 				"Passive" "1"
+				"EffectName"		"particles/basic_projectile/power_up.vpcf" 
+				"EffectAttachType"	"follow_origin"
+				
 				"States"
 				{
 					"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
