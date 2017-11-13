@@ -430,12 +430,12 @@ function PingLoc(data)
 function ToggleSB()
 {
 	$.Msg("sb toggled");
+	$( "#SBToggle" ).ToggleClass("droppedDown")
 	$( "#BigHolder" ).ToggleClass("droppedDown")
-	$( "#teamholder" ).ToggleClass("droppedDown")
 
 	
+	$( "#SBToggle" ).ToggleClass("poppedUp")
 	$( "#BigHolder" ).ToggleClass("poppedUp")
-	$( "#teamholder" ).ToggleClass("poppedUp")
 
 
 }

@@ -26,6 +26,13 @@
 			<Image id="MinimapFrame" src="file://{images}/custom_game/candycaneminimap.png" />
 		</Panel>
 
+		
+		
+		<Button hittest="true" id="SBToggle" onactivate="ToggleSB()" class = "poppedUp" >
+			<Label id="SBText" text="#sbtext_lang">  </Label>
+		</Button>
+		
+		<Panel hittest="false" id="BigHolder" class = "poppedUp" >
 		<Panel hittest ="false" id="teamholder">
 			<Panel id="team_mitten"  >
 				<Label id = "BadPoints" text="0" />	
@@ -41,13 +48,6 @@
 			
 			</Panel>
 		</Panel>
-		
-		<Button hittest="true" id="SBToggle" onactivate="ToggleSB()" class = "poppedUp" >
-			<Label id="SBText" text="#sbtext_lang">  </Label>
-		</Button>
-		
-		<Panel hittest="false" id="BigHolder" class = "poppedUp" >
-		
 		
 		
 		<Panel hittest="false" class="ScoreboardHolder1" >
