@@ -426,61 +426,20 @@ function PingLoc(data)
 		}
 	}
 	
-var scoreboard = "showing"
-var SBTimer = 1
-var SBHeight = 200
-var FrameHeight = 870
+
 function ToggleSB()
 {
 	$.Msg("sb toggled");
-	if (scoreboard == "showing" )
-	{
+	$( "#SBToggle" ).ToggleClass("droppedDown")
+	$( "#BigHolder" ).ToggleClass("droppedDown")
 
-			SBTimer ++
-			$( "#SBToggle" ).style.marginBottom=SBHeight+"px;"
-			$( "#ScoreFrame1" ).style.marginTop=FrameHeight+"px;"
-			$( "#ScoreFrame1" ).style.marginLeft=240+"px;"
-			SBHeight = SBHeight - 11
-			FrameHeight = FrameHeight +11
-			if(SBTimer == 22)
-			{
-
-				SBTimer = 1
-				scoreboard = "hidden"
-
-				
-			}
-			else
-			{
-				$.Schedule( .05, ToggleSB )
-			}
-		
-			
-	}
-	else if (scoreboard == "hidden" )
-	{	
-
-			SBTimer ++
-			$( "#SBToggle" ).style.marginBottom=SBHeight+"px;"
-			$( "#ScoreFrame1" ).style.marginTop=FrameHeight+"px;"
-			SBHeight = SBHeight + 11
-			FrameHeight = FrameHeight -11
-			if(SBTimer == 22)
-			{
-				SBTimer = 1
-				scoreboard = "showing"
-				SBHeight = 200
-			}
-			else
-			{
-				$.Schedule( .05, ToggleSB )
-			}
-			
-		
 	
-		
-	}
+	$( "#SBToggle" ).ToggleClass("poppedUp")
+	$( "#BigHolder" ).ToggleClass("poppedUp")
+
+
 }
+
 function TopNotification( msg ) {
 		
   AddNotification(msg, $('#TopNotifications'));

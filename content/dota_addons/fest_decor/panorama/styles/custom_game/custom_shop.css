@@ -1,4 +1,4 @@
-.GageHolder
+#GageHolder
 {
 	visibility: visible;
 	horizontal-align: center;
@@ -98,16 +98,16 @@
 	 z-index:6;	
 }
 
-.teamholder
+#teamholder
 {
-	visibility: visible;
 	vertical-align: bottom;
 	horizontal-align: center;
-	
+		visibility: visible;
 	margin-bottom: -120px;
 	height: 800px;
 	width: 35%;
 	z-index:8;
+	transform: translate3d( 0px, 0px, 0px );
 }
 .labelHolder
 {
@@ -723,7 +723,7 @@ height: fit-children;
 	margin-top: 870px;
 	margin-left: 240px;
 }
-.ScoreboardBackHolder1
+#ScoreboardBackHolder1
 {
 	visibility: visible;
 	
@@ -783,7 +783,11 @@ height: fit-children;
 	text-shadow: 1px 1px 1px #000000;
 	font-size: 22;
 }
-
+#BigHolder
+{
+		width: 100%;
+	height:  100%;
+}
 
 .ScoreboardBackHolder2
 {
@@ -794,7 +798,7 @@ height: fit-children;
 	margin-left: 900px;
 	margin-top: 917px;
 }
-.ScoreboardBackHolder3
+#ScoreboardBackHolder3
 {
 	visibility: visible;
 	opacity: .15;
@@ -806,3 +810,39 @@ height: fit-children;
 	margin-top: 905px;
 	z-index: -10;
 }
+.droppedDown
+{
+	    animation-name: DropDown;
+    animation-duration: .8s;
+    animation-timing-function: linear;
+	  transform: translate3d( 0px, 200px, 0px );
+}
+.poppedUp
+{
+	    animation-name: PopUp;
+    animation-duration: .8s;
+    animation-timing-function: linear;
+	  transform: translate3d( 0px, 0px, 0px );
+}
+
+@keyframes 'DropDown' {
+  from {
+    transform: translate3d( 0px, 0px, 0px );
+  }
+
+  to {
+    transform: translate3d( 0px, 200px, 0px );
+  }
+}
+
+@keyframes 'PopUp' {
+  from {
+	  transform: translate3d( 0px, 200px, 0px );
+    
+  }
+
+  to {
+     transform: translate3d( 0px, 0px, 0px );
+  }
+}
+

@@ -20,47 +20,52 @@
 		</Panel>
 		
 		
-		<Panel hittest="false" class="GageHolder" >
-			<Image id="Tree" src="file://{images}/custom_game/tree_gage.png" />
-			<Image id="gage_bkg" src="file://{images}/custom_game/gage_bkg.png" />
-		</Panel>
+		
 
 		<Panel hittest="false" class="MinimapFrameHolder" >
 			<Image id="MinimapFrame" src="file://{images}/custom_game/candycaneminimap.png" />
 		</Panel>
 
-		<Panel hittest="false" class="ScoreboardHolder1" >
-			<Image id="ScoreFrame1" src="file://{images}/custom_game/scoreframe.png" />
-		</Panel>
-			
-		<Panel hittest="false" class="ScoreboardBackHolder3" >
-		</Panel>
-		<Button hittest="true" id="SBToggle" onactivate="ToggleSB()" >
+		
+		
+		<Button hittest="true" id="SBToggle" onactivate="ToggleSB()" class = "poppedUp" >
 			<Label id="SBText" text="#sbtext_lang">  </Label>
 		</Button>
-		<Panel hittest="false" class="ScoreboardBackHolder1" >
+		
+		<Panel hittest="false" id="BigHolder" class = "poppedUp" >
+		<Panel hittest ="false" id="teamholder">
+			<Panel id="team_mitten"  >
+				<Label id = "BadPoints" text="0" />	
+				<Image id = "mittenpic" src="file://{images}/custom_game/mitten.png" />
+					<Image id="ScoresignBad" src="file://{images}/custom_game/scoresignBad.png" />
+
+			</Panel>
+			<Panel id="team_stocking" >
+				<Label id = "GoodPoints" text="0" />	
+				<Image id = "stockingpic" src="file://{images}/custom_game/stocking.png" />
+					<Image id="ScoresignGood" src="file://{images}/custom_game/scoresignGood.png" />
+
+			
+			</Panel>
+		</Panel>
+		
+		
+		<Panel hittest="false" class="ScoreboardHolder1" >
+			<Image id="ScoreFrame1" src="file://{images}/custom_game/scoreframe.png" class = "poppedUp"/>
+		</Panel>
+		
+		<Panel hittest="false" id="GageHolder"  >
+			<Image id="Tree" src="file://{images}/custom_game/tree_gage.png" />
+			<Image id="gage_bkg" src="file://{images}/custom_game/gage_bkg.png" />
+		</Panel>
+			
+		<Panel hittest="false" id="ScoreboardBackHolder3"  >
+		</Panel>
+		
+		<Panel hittest="false" id="ScoreboardBackHolder1">
 			
 
 			<Panel hittest="false" id="ScoreboardBack1" >		
-			
-		
-			<!--<Panel hittest="false" class="labelHolder" >
-				<Label class="scoreLeft" text="#score_title">  </Label>
-				<Label id="goodScore1" class="scoreL"> </Label>
-				<Label id="goodScore2" class="scoreL"> </Label>
-				<Label id="goodScore3" class="scoreL"> </Label>
-				<Label id="goodScore4" class="scoreL"> </Label>
-				<Label id="goodScore5" class="scoreL"> </Label>
-			</Panel>
-			
-			<Panel hittest="false" class="labelHolder2" >
-				<Label class="scoreRight" text="#score_title">  </Label>
-				<Label id="badScore1" class="scoreR"> </Label>
-				<Label id="badScore2" class="scoreR"> </Label>
-				<Label id="badScore3" class="scoreR"> </Label>
-				<Label id="badScore4" class="scoreR"> </Label>
-				<Label id="badScore5" class="scoreR"> </Label>
-			</Panel>-->
 				<Panel hittest="false" class="labelHolder" >
 					<!--Scoreboard Title-->
 					<Panel hittest="false" class="goodTitle">
@@ -153,7 +158,10 @@
 				</Panel>
 		</Panel>
 		</Panel>
-
+				
+		
+		
+</Panel>
 		<!--<Panel hittest="false" class="ScoreboardBackHolder2" >
 			<Panel hittest="false" class="ScoreboardBack2" >
 			</Panel>
@@ -275,21 +283,7 @@
 			
 		</Panel>
 		
-		<Panel hittest ="false" class="teamholder">
-			<Panel id="team_mitten"  >
-				<Label id = "BadPoints" text="0" />	
-				<Image id = "mittenpic" src="file://{images}/custom_game/mitten.png" />
-					<Image id="ScoresignBad" src="file://{images}/custom_game/scoresignBad.png" />
 
-			</Panel>
-			<Panel id="team_stocking" >
-				<Label id = "GoodPoints" text="0" />	
-				<Image id = "stockingpic" src="file://{images}/custom_game/stocking.png" />
-					<Image id="ScoresignGood" src="file://{images}/custom_game/scoresignGood.png" />
-
-			
-			</Panel>
-		</Panel>
 		
 		
 		
