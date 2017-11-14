@@ -306,11 +306,7 @@ function killMeIfImNotTheCaster(casterUnit) -- keys is the information sent by t
 				local UnitAngle = math.deg(math.acos(dotOverMagUnit))
 				
 				local CasterAngle   = math.deg(math.acos(dotOverMagCaster))
-				print("CasterAngle diff to vecter between units is ")
-print( CasterAngle)
-				
-				print("UnitAngle diff to vecter between units is ")
-print( UnitAngle)
+
 				local unitkilled=false
 						if UnitAngle<30 then
 							hurtUnit(unit, casterUnit, casterUnit)
@@ -338,127 +334,127 @@ end
 
 function hurtUnit(unit, attacker, attackerUnit)
 
-print((attackerUnit:GetOrigin()*Vector(0,0,1)):Length())
-
-if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 280 and not attacker:HasModifier("leaping") and not attacker:HasModifier("invlun") and (unit:GetTeamNumber() ~= attacker:GetTeamNumber()  or unit == attacker) and true == unit:IsAlive()  then
-	stopPhysics(unit)
-					
-					local damageTable = {
-						victim = unit,
-						attacker = attacker,
-						damage = 10000,
-						damage_type = DAMAGE_TYPE_PURE,
-					}
-					
-					local KillerName = PlayerResource:GetPlayerName( attacker:GetPlayerID())
-					
-					local KilledName = PlayerResource:GetPlayerName( unit:GetPlayerID())
-					
-					
-					
-		if true == unit:IsAlive() then
-			if unit:GetTeamNumber() ~= attacker:GetTeamNumber() then
-			
-			
-					if attacker:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-						nEnemyTeam = DOTA_TEAM_BADGUYS
-					else
-						nEnemyTeam = DOTA_TEAM_GOODGUYS
-					end
-			
-					 local creature = CreateUnitByName( "npc_dota_Orniment5" , attacker.loclist[#attacker.presentList*10+15] , true, nil, attacker, attacker:GetTeamNumber() )
-					local particle = ParticleManager:CreateParticleForPlayer("particles/basic_projectile/killer_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature, PlayerResource:GetPlayer( attacker:GetPlayerID() ))
-					ParticleManager:SetParticleControl( particle, 0, creature:GetAbsOrigin() )
-					creature.p1 = particle
-					local particle2 = ParticleManager:CreateParticleForTeam("particles/basic_projectile/friend_glow.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature,  attacker:GetTeamNumber())
-					ParticleManager:SetParticleControl( particle, 0, creature:GetAbsOrigin() )
-					creature.p2 = particle2
-					local particle3 = ParticleManager:CreateParticleForTeam("particles/basic_projectile/killer_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature, nEnemyTeam)
-						ParticleManager:SetParticleControl( particle, 0, creature:GetAbsOrigin() )
-					creature.p3 = particle3
+if attacker ~= nil and unit ~= nil and attackerUnit ~= nil then
+	if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 280 and not attacker:HasModifier("leaping") and not attacker:HasModifier("invlun") and (unit:GetTeamNumber() ~= attacker:GetTeamNumber()  or unit == attacker) and true == unit:IsAlive()  then
+		stopPhysics(unit)
+						
+						local damageTable = {
+							victim = unit,
+							attacker = attacker,
+							damage = 10000,
+							damage_type = DAMAGE_TYPE_PURE,
+						}
+						
+						local KillerName = PlayerResource:GetPlayerName( attacker:GetPlayerID())
+						
+						local KilledName = PlayerResource:GetPlayerName( unit:GetPlayerID())
+						
+						
+						
+			if true == unit:IsAlive() then
+				if unit:GetTeamNumber() ~= attacker:GetTeamNumber() then
 				
-						table.insert(attacker.presentList, creature)
-						if #attacker.presentList >100 then
-							attacker.presentList [#attacker.presentList] = nil
+				
+						if attacker:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+							nEnemyTeam = DOTA_TEAM_BADGUYS
+						else
+							nEnemyTeam = DOTA_TEAM_GOODGUYS
 						end
-						
-					
-			
-			
-			
-					if unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-						
-						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KillerName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=false})
-						
-						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
-						
-						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KilledName, duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
-						
-						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
-						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {image="file://{images}/custom_game/angelinfo.png", style={height="35px", width = "35px"} , continue=true})
-
-						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KillerName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=false})
-						
-						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
-						
-						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KilledName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=true})
-						
-						
-						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
-						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {image="file://{images}/custom_game/angelinfo.png", style={height="35px", width = "35px"} , continue=true})
-
-
-					else
-						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KillerName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=false})
-						
-						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
-						
-						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KilledName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
-						
-						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
-						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {image="file://{images}/custom_game/angelinfo.png", style={height="35px", width = "35px"} , continue=true})
-					
-						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KillerName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=false})
-						
-						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
-						
-						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KilledName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=true})
-						
-						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
-						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {image="file://{images}/custom_game/angelinfo.png", style={height="35px", width = "35px"} , continue=true})
-					end
-				else
-					if unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-						
-						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KillerName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=false})
-						
-						
-						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_two_teamkill", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
-					
-						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KillerName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=false})
-						
-						
-						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_two_teamkill", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
-
-					else
-						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KillerName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=false})
-						
-						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_two_teamkill", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
-						
-					
-						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KillerName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=false})
-
-						
-						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_two_teamkill", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
-					
-					end
 				
+						 local creature = CreateUnitByName( "npc_dota_Orniment5" , attacker.loclist[#attacker.presentList*10+15] , true, nil, attacker, attacker:GetTeamNumber() )
+						local particle = ParticleManager:CreateParticleForPlayer("particles/basic_projectile/killer_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature, PlayerResource:GetPlayer( attacker:GetPlayerID() ))
+						ParticleManager:SetParticleControl( particle, 0, creature:GetAbsOrigin() )
+						creature.p1 = particle
+						local particle2 = ParticleManager:CreateParticleForTeam("particles/basic_projectile/friend_glow.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature,  attacker:GetTeamNumber())
+						ParticleManager:SetParticleControl( particle, 0, creature:GetAbsOrigin() )
+						creature.p2 = particle2
+						local particle3 = ParticleManager:CreateParticleForTeam("particles/basic_projectile/killer_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature, nEnemyTeam)
+							ParticleManager:SetParticleControl( particle, 0, creature:GetAbsOrigin() )
+						creature.p3 = particle3
+					
+							table.insert(attacker.presentList, creature)
+							if #attacker.presentList >100 then
+								attacker.presentList [#attacker.presentList] = nil
+							end
+							
+						
+				
+				
+				
+						if unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+							
+							Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KillerName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=false})
+							
+							Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+							
+							Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KilledName, duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
+							
+							Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+							Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {image="file://{images}/custom_game/angelinfo.png", style={height="35px", width = "35px"} , continue=true})
+
+							Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KillerName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=false})
+							
+							Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+							
+							Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KilledName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=true})
+							
+							
+							Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+							Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {image="file://{images}/custom_game/angelinfo.png", style={height="35px", width = "35px"} , continue=true})
+
+
+						else
+							Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KillerName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=false})
+							
+							Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+							
+							Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KilledName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
+							
+							Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+							Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {image="file://{images}/custom_game/angelinfo.png", style={height="35px", width = "35px"} , continue=true})
+						
+							Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KillerName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=false})
+							
+							Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+							
+							Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KilledName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=true})
+							
+							Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_two", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+							Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {image="file://{images}/custom_game/angelinfo.png", style={height="35px", width = "35px"} , continue=true})
+						end
+					else
+						if unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+							
+							Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KillerName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=false})
+							
+							
+							Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_two_teamkill", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+						
+							Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KillerName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=false})
+							
+							
+							Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_two_teamkill", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+
+						else
+							Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KillerName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=false})
+							
+							Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_two_teamkill", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+							
+						
+							Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KillerName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=false})
+
+							
+							Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_two_teamkill", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+						
+						end
+					
+				end
 			end
+							ApplyDamage(damageTable)
+							killPresents(unit)
+					
+			
 		end
-						ApplyDamage(damageTable)
-						killPresents(unit)
-				
-		
 	end
 end
 
