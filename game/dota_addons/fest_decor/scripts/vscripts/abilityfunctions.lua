@@ -358,8 +358,24 @@ if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 280 and not attacker:HasM
 					
 		if true == unit:IsAlive() then
 			if unit:GetTeamNumber() ~= attacker:GetTeamNumber() then
+			
+			
+					if attacker:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+						nEnemyTeam = DOTA_TEAM_BADGUYS
+					else
+						nEnemyTeam = DOTA_TEAM_GOODGUYS
+					end
+			
 					 local creature = CreateUnitByName( "npc_dota_Orniment5" , attacker.loclist[#attacker.presentList*10+15] , true, nil, attacker, attacker:GetTeamNumber() )
-
+					local particle = ParticleManager:CreateParticleForPlayer("particles/basic_projectile/killer_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature, PlayerResource:GetPlayer( attacker:GetPlayerID() ))
+					ParticleManager:SetParticleControl( particle, 0, creature:GetAbsOrigin() )
+					creature.p1 = particle
+					local particle2 = ParticleManager:CreateParticleForTeam("particles/basic_projectile/friend_glow.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature,  attacker:GetTeamNumber())
+					ParticleManager:SetParticleControl( particle, 0, creature:GetAbsOrigin() )
+					creature.p2 = particle2
+					local particle3 = ParticleManager:CreateParticleForTeam("particles/basic_projectile/killer_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature, nEnemyTeam)
+						ParticleManager:SetParticleControl( particle, 0, creature:GetAbsOrigin() )
+					creature.p3 = particle3
 				
 						table.insert(attacker.presentList, creature)
 						if #attacker.presentList >100 then

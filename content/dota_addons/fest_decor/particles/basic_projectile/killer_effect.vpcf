@@ -91,4 +91,10 @@
 			]
 		},
 	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/basic_projectile/killer_effect_b.vpcf"
+		},
+	]
 }
