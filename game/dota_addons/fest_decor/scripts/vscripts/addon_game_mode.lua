@@ -211,7 +211,7 @@ function CfrostGameMode:OnThink()
 				end
 			
 				if unitCount<700 then
-				numheros = 0
+				local numheros = 0
 				for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 						if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 							numheros=numheros+1

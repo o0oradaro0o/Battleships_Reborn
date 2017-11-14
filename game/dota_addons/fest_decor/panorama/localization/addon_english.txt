@@ -45,7 +45,7 @@
 	"died_one" " has shattered "
 	"died_two" "'s ornament collection! and earned an "
 	
-	"died_two_teamkill" "has shattered their own ornament collection. What a waste!"
+	"died_two_teamkill" "'s ornament collection. What a waste!"
 	
 	
 	"bellhover_lang"				"Press to toggle a festive tune!"

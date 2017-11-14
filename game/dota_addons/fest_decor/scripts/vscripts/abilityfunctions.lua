@@ -227,16 +227,31 @@ function AddGift(args, name)
 			nEnemyTeam = DOTA_TEAM_GOODGUYS
 		end
 			
+			local numheros = 0
+			for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+					if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+						numheros=numheros+1
+					end
+			end
+				
+		if numheros < 5 then
+			local particle2 = ParticleManager:CreateParticleForTeam("particles/basic_projectile/killer_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature,  Hero:GetTeamNumber())
+			ParticleManager:SetParticleControl( particle2, 0, creature:GetAbsOrigin() )
+			creature.p2 = particle2
+			local particle3 = ParticleManager:CreateParticleForTeam("particles/basic_projectile/killer_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature, nEnemyTeam)
+				ParticleManager:SetParticleControl( particle3, 0, creature:GetAbsOrigin() )
+			creature.p3 = particle3
+		else
 			local particle = ParticleManager:CreateParticleForPlayer("particles/basic_projectile/killer_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature, PlayerResource:GetPlayer( Hero:GetPlayerID() ))
 			ParticleManager:SetParticleControl( particle, 0, creature:GetAbsOrigin() )
 			creature.p1 = particle
 			local particle2 = ParticleManager:CreateParticleForTeam("particles/basic_projectile/friend_glow.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature,  Hero:GetTeamNumber())
-			ParticleManager:SetParticleControl( particle, 0, creature:GetAbsOrigin() )
+			ParticleManager:SetParticleControl( particle2, 0, creature:GetAbsOrigin() )
 			creature.p2 = particle2
-		local particle3 = ParticleManager:CreateParticleForTeam("particles/basic_projectile/killer_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature, nEnemyTeam)
-			ParticleManager:SetParticleControl( particle, 0, creature:GetAbsOrigin() )
-		creature.p3 = particle3
-		
+			local particle3 = ParticleManager:CreateParticleForTeam("particles/basic_projectile/killer_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature, nEnemyTeam)
+				ParticleManager:SetParticleControl( particle3, 0, creature:GetAbsOrigin() )
+			creature.p3 = particle3
+		end
 		
 	
 		
@@ -281,8 +296,9 @@ function killMe(args) -- keys is the information sent by the ability
 --print('[ItemFunctions] gunning_it started! ')
 		local casterUnit = args.caster
 		local targetUnit = args.target
-		hurtUnit(targetUnit, casterUnit:GetOwner(), casterUnit)
-	
+		if casterUnit ~= nil then
+			hurtUnit(targetUnit, casterUnit:GetOwner(), casterUnit)
+		end
 end
 
 
@@ -334,8 +350,19 @@ end
 
 function hurtUnit(unit, attacker, attackerUnit)
 
+local numheros = 0
+		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+				if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+					numheros=numheros+1
+				end
+		end
+		print(numheros)
+
 if attacker ~= nil and unit ~= nil and attackerUnit ~= nil then
-	if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 280 and not attacker:HasModifier("leaping") and not attacker:HasModifier("invlun") and (unit:GetTeamNumber() ~= attacker:GetTeamNumber()  or unit == attacker) and true == unit:IsAlive()  then
+	if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 280 and not attacker:HasModifier("leaping") and not attacker:HasModifier("invlun")  and ( (unit:GetTeamNumber() ~= attacker:GetTeamNumber() and numheros > 4 )  or numheros < 5 or unit == attacker) and true == unit:IsAlive()  then
+	
+
+	
 		stopPhysics(unit)
 						
 						local damageTable = {
@@ -362,16 +389,33 @@ if attacker ~= nil and unit ~= nil and attackerUnit ~= nil then
 						end
 				
 						 local creature = CreateUnitByName( "npc_dota_Orniment5" , attacker.loclist[#attacker.presentList*10+15] , true, nil, attacker, attacker:GetTeamNumber() )
+						 
+					local numheros = 0
+					for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+							if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+								numheros=numheros+1
+							end
+					end
+					if numheros < 5 then
+						local particle2 = ParticleManager:CreateParticleForTeam("particles/basic_projectile/killer_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature,  attacker:GetTeamNumber())
+						ParticleManager:SetParticleControl( particle2, 0, creature:GetAbsOrigin() )
+						creature.p2 = particle2
+						local particle3 = ParticleManager:CreateParticleForTeam("particles/basic_projectile/killer_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature, nEnemyTeam)
+							ParticleManager:SetParticleControl( particle3, 0, creature:GetAbsOrigin() )
+						creature.p3 = particle3
+					else
 						local particle = ParticleManager:CreateParticleForPlayer("particles/basic_projectile/killer_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature, PlayerResource:GetPlayer( attacker:GetPlayerID() ))
 						ParticleManager:SetParticleControl( particle, 0, creature:GetAbsOrigin() )
 						creature.p1 = particle
 						local particle2 = ParticleManager:CreateParticleForTeam("particles/basic_projectile/friend_glow.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature,  attacker:GetTeamNumber())
-						ParticleManager:SetParticleControl( particle, 0, creature:GetAbsOrigin() )
+						ParticleManager:SetParticleControl( particle2, 0, creature:GetAbsOrigin() )
 						creature.p2 = particle2
 						local particle3 = ParticleManager:CreateParticleForTeam("particles/basic_projectile/killer_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, creature, nEnemyTeam)
-							ParticleManager:SetParticleControl( particle, 0, creature:GetAbsOrigin() )
+							ParticleManager:SetParticleControl( particle3, 0, creature:GetAbsOrigin() )
 						creature.p3 = particle3
-					
+					end
+						 
+						 
 							table.insert(attacker.presentList, creature)
 							if #attacker.presentList >100 then
 								attacker.presentList [#attacker.presentList] = nil
@@ -424,29 +468,29 @@ if attacker ~= nil and unit ~= nil and attackerUnit ~= nil then
 						end
 					else
 						if unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-							
-							Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KillerName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=false})
-							
-							
-							Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_two_teamkill", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
 						
-							Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KillerName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=false})
-							
-							
-							Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_two_teamkill", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KillerName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=false})
+						
+						
+						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_two_teamkill", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+					
+						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KillerName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=false})
+						
+						
+						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_two_teamkill", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
 
-						else
-							Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KillerName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=false})
-							
-							Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_two_teamkill", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
-							
+					else
+						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=KillerName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=false})
 						
-							Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KillerName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=false})
+						Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#died_two_teamkill", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+						
+					
+						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=KillerName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=false})
 
-							
-							Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_two_teamkill", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
 						
-						end
+						Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#died_two_teamkill", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
+					
+					end
 					
 				end
 			end
@@ -516,9 +560,15 @@ function DepositOrb(args) -- keys is the information sent by the ability
 					casterUnit.pointScored=casterUnit.pointScored+1
 					pointValue = 1
 				end
-				ParticleManager:DestroyParticle(removedornament.p1, true)
-				ParticleManager:DestroyParticle(removedornament.p2, true)
-				ParticleManager:DestroyParticle(removedornament.p3, true)
+				if removedornament.p1 ~= nil then
+					ParticleManager:DestroyParticle(removedornament.p1, true)
+				elseif  removedornament.p2 ~= nil then
+					ParticleManager:DestroyParticle(removedornament.p2, true)
+				elseif  removedornament.p3 ~= nil then
+					ParticleManager:DestroyParticle(removedornament.p3, true)
+				end
+			
+				
 				
 				removedornament:SetModelScale(3)
 				
