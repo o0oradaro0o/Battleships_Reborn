@@ -28,11 +28,11 @@
 
 		
 		
-		<Button hittest="true" id="SBToggle" onactivate="ToggleSB()" class = "poppedUp" >
+		<Button hittest="true" id="SBToggle" onactivate="ToggleSB()" class = "droppedDown" >
 			<Label id="SBText" text="#sbtext_lang">  </Label>
 		</Button>
 		
-		<Panel hittest="false" id="BigHolder" class = "poppedUp" >
+		<Panel hittest="false" id="BigHolder" class = "droppedDown" >
 		<Panel hittest ="false" id="teamholder">
 			<Panel id="team_mitten"  >
 				<Label id = "BadPoints" text="0" />	

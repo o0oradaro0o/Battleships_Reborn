@@ -209,14 +209,15 @@ function CfrostGameMode:OnThink()
 						unitCount=unitCount+1
 					end
 				end
-			
-				if unitCount<700 then
-				local numheros = 0
+			local numheros = 0
 				for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 						if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 							numheros=numheros+1
 						end
 				end
+				
+			if unitCount<70*numheros+60 then
+				
 				
 				for itemSlot = 0, numheros+2, 1 do 
 						local placment = RandomVector( RandomFloat( 600, 4300 ))
