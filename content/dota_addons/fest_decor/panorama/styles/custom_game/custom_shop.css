@@ -46,14 +46,16 @@
 
 #ScoreBoardFinalholder
 {
-	visibility: collapse;
+	visibility: visible;
 	flow-children: down;
 	horizontal-align: right;
 	vertical-align: top;
-	height: 450px;	
-	width: 400px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from(#456687cc ), to( #02327f10 ) );
+	height: 465px;	
+	width: 410px;
+	background-color: #ce0000;
 	border-radius: 10px;
+	border: 4px solid #000000;
+	opacity: 1;
 }
 
 
@@ -73,8 +75,10 @@
 	border: 4px solid #000000;
 	margin: 20px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from(#bad4ff ), to( #02327f ) );
-		height: 100%;	
-	width: 100%;
+		height: 430px;	
+	width: 400px;
+	height: fit-children;
+
 }
 .labelHolderfinal
 {
@@ -314,7 +318,6 @@ opacity: 1;
 	width: 100%;
 	opacity: 1;
 	margin: 1px;
-	margin-top: -10px;
 
 
 }

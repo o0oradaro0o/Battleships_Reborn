@@ -116,12 +116,14 @@ function  TeamWin(data)
 		if(Players.GetTeam(element[3])==3)
 		{
 				$( "#ScoreName" + count ).GetParent().style.backgroundColor = "gradient( linear, 0% 0%, 0% 100%, from(#ff909055 ), to( #cc606055 ) );"
+				$( "#ScoreName" + count ).GetParent().style.backgroundColor = "#a00000;"
 		
 		}
 		else
 		{
-				$( "#ScoreName" + count ).GetParent().style.backgroundColor = "gradient( linear, 0% 0%, 0% 100%, from(#00900055 ), to( #00600055 ) );"
-			
+				//$( "#ScoreName" + count ).GetParent().style.backgroundColor = "gradient( linear, 0% 0%, 0% 100%, from(#00900055 ), to( #00600055 ) );"
+				$( "#ScoreName" + count ).GetParent().style.backgroundColor = "#016d00;"
+		
 		}
 		
 		
@@ -140,6 +142,7 @@ function  TeamWin(data)
 			$( "#WinOrLose" ).text = $.Localize("#loser")
 		}
 		$( "#mit" ).style.visibility="visible";
+		$("#ScoreBoardFinalholder").style.backgroundColor="#ff0000";
 		$( "#mit" ).SetParent($( "#mit" ).GetParent().GetParent().GetParent().GetParent());
 	}
 	else if(data.team_number== 2)
@@ -153,6 +156,7 @@ function  TeamWin(data)
 			$( "#WinOrLose" ).text = $.Localize("#loser")
 		}
 		$( "#sto" ).style.visibility="visible";
+		$("#ScoreBoardFinalholder").style.backgroundColor="#006100";
 		$( "#sto" ).SetParent($( "#sto" ).GetParent().GetParent().GetParent().GetParent());
 	}
 		$( "#ScoreBoardFinalholder" ).style.visibility="visible";
@@ -427,6 +431,7 @@ function PingLoc(data)
 		}
 	}
 	
+
 
 function ToggleSB()
 {
