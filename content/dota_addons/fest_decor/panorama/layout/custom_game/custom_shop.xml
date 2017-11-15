@@ -263,6 +263,8 @@
 		
 		<Panel hittest="false" id="AbilityHolder" onmouseover="showabilitytooltip()">
 			<Panel hittest="false" id="HotkeyHolder">
+				
+				<Image id="hotkeyframe" src="file://{images}/custom_game/hotkey.png" />
 				<Label id="Hotkey" text=""> </Label>
 			</Panel>
 			<Image id="presentclosed" src="file://{images}/custom_game/presentclosed.png" />

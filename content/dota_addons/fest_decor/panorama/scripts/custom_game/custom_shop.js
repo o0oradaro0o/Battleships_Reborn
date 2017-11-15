@@ -655,6 +655,7 @@ function SwapAbility(data)
 			$( "#leap" ).style.opacity=0;
 			if(data.ability_name == "Rocket_Boots")
 			{
+				
 				lastability = "skate";
 				hasability = true;
 				$("#presentopen").style.opacity=1;
@@ -664,6 +665,7 @@ function SwapAbility(data)
 			}
 			if(data.ability_name == "Magnet")
 			{
+				
 				lastability = "magnet";
 				hasability = true;
 				$("#presentopen").style.opacity=1;
@@ -674,6 +676,7 @@ function SwapAbility(data)
 			}
 			if(data.ability_name == "Snow_Ball")
 			{
+				
 				lastability = "snowball";
 				hasability = true;
 				$("#presentopen").style.opacity=1;
@@ -683,11 +686,13 @@ function SwapAbility(data)
 			}
 			if(data.ability_name == "leap")
 			{
+				
 				lastability = "leap";
 				hasability = true;
 				$("#presentopen").style.opacity=1;
 				//$.Msg("snow fade if")
 				LeapIn()
+				
 
 			}
 			
@@ -697,12 +702,14 @@ function SwapAbility(data)
 				hasability = false;
 				UseAbility()
 				$("#Hotkey").text = "";
+				//$("#hotkeyframe").style.visibility="collapse";
 			}
 			else
 			{
 				if( Game.GetGameTime()>1)
 				{
 					$("#Hotkey").text = Abilities.GetKeybind(Entities.GetAbility( Game.GetPlayerInfo(Players.GetLocalPlayer() ).player_selected_hero_entity_index, 0))
+					$("#hotkeyframe").style.visibility="collapse";
 				}
 				
 			}
@@ -715,6 +722,7 @@ function SkateIn()
 	//$("#presentopen").style.opacity=$("#presentopen").style.opacity-.1+.2;
 	if($("#rocketskate").style.opacity<1 && hasability == true && lastability == "skate")
 	{
+		$("#hotkeyframe").style.visibility="visible";
 		$("#rocketskate").style.opacity=$("#rocketskate").style.opacity-.1+.2;
 		$.Schedule( .1, SkateIn );	
 		
@@ -727,7 +735,8 @@ function MagnetIn()
 	//$("#presentopen").style.opacity=$("#presentopen").style.opacity-.1+.2;
 	if($("#magnet").style.opacity<1 && hasability == true && lastability == "magnet")
 	{
-		$("#magnet").style.opacity=$("#magnet").style.opacity-.1+.2;
+	$("#hotkeyframe").style.visibility="visible";	
+	$("#magnet").style.opacity=$("#magnet").style.opacity-.1+.2;
 		$.Schedule( .1, MagnetIn );	
 		
 	}
@@ -739,6 +748,7 @@ function SnowIn()
 	//$("#presentopen").style.opacity=$("#presentopen").style.opacity-.1+.2;
 	if($("#snowball").style.opacity<1 && hasability == true && lastability == "snowball")
 	{
+		$("#hotkeyframe").style.visibility="visible";
 		$("#snowball").style.opacity=$("#snowball").style.opacity-.1+.2;
 		$.Schedule( .1, SnowIn );	
 		
@@ -752,6 +762,7 @@ function LeapIn()
 	//$("#presentopen").style.opacity=$("#presentopen").style.opacity-.1+.2;
 	if($("#leap").style.opacity<1 && hasability == true && lastability == "leap")
 	{
+		$("#hotkeyframe").style.visibility="visible";
 		$("#leap").style.opacity=$("#leap").style.opacity-.1+.2;
 		$.Schedule( .1, LeapIn );	
 		
@@ -833,6 +844,7 @@ function UseAbility()
 			pulsecounter =1;
 			lastability = "none";
 			$( "#presentclosed" ).style.opacity=1;
+			$("#hotkeyframe").style.visibility="collapse";
 			$("#rocketskate").style.opacity=0;
 			$("#presentopen").style.opacity=0;
 			UseAbility()
@@ -907,6 +919,7 @@ function UseAbility()
 			pulsecounter =1;
 			lastability = "none";
 			$( "#presentclosed" ).style.opacity=1;
+			$("#hotkeyframe").style.visibility="collapse";
 			$("#snowball").style.opacity=0;
 			$("#presentopen").style.opacity=0;
 			UseAbility()
@@ -983,6 +996,7 @@ function UseAbility()
 			pulsecounter =1;
 			lastability = "none";
 			$( "#presentclosed" ).style.opacity=1;
+			$("#hotkeyframe").style.visibility="collapse";
 			$("#leap").style.opacity=0;
 			$("#presentopen").style.opacity=0;
 			UseAbility()
@@ -1059,6 +1073,7 @@ function UseAbility()
 			pulsecounter =1;
 			lastability = "none";
 			$( "#presentclosed" ).style.opacity=1;
+			$("#hotkeyframe").style.visibility="collapse";
 			$("#magnet").style.opacity=0;
 			$("#presentopen").style.opacity=0;
 			UseAbility()
@@ -1072,7 +1087,7 @@ function UseAbility()
 			$( "#magnet" ).style.opacity=0;
 			$( "#snowball" ).style.opacity=0;		
 			$( "#leap" ).style.opacity=0;	
-			
+			$("#hotkeyframe").style.visibility="collapse";
 			$( "#presentclosed" ).style.opacity=1;
 			hasability = false;
 			pulsecounter = 1;
