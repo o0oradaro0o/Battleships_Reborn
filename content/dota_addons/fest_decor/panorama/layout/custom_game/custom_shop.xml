@@ -261,6 +261,7 @@
 		
 		
 		
+		
 		<Panel hittest="false" id="AbilityHolder" onmouseover="showabilitytooltip()">
 			<Panel hittest="false" id="HotkeyHolder">
 				<Label id="Hotkey" text=""> </Label>
