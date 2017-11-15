@@ -431,6 +431,9 @@ function PingLoc(data)
 		}
 	}
 	
+	
+	
+	
 
 
 function ToggleSB()
@@ -687,11 +690,17 @@ function SwapAbility(data)
 				LeapIn()
 
 			}
+			
 			if(data.ability_name == "cast_ability")
 			{
 				//$( "#presentclosed" ).style.opacity=1;
 				hasability = false;
 				UseAbility()
+			}
+			else
+			{
+				$("#hotkey").text = Abilities.GetKeybind(Entities.GetAbility( Game.GetPlayerInfo(Players.GetLocalPlayer() ).player_selected_hero_entity_index, 0))
+				
 			}
 			
 	}
