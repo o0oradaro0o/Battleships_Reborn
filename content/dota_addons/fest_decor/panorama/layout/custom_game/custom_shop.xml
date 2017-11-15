@@ -263,7 +263,7 @@
 		
 		<Panel hittest="false" id="AbilityHolder" onmouseover="showabilitytooltip()">
 			<Panel hittest="false" id="HotkeyHolder">
-				<Label id="Hotkey" text="Q"> </Label>
+				<Label id="Hotkey" text=""> </Label>
 			</Panel>
 			<Image id="presentclosed" src="file://{images}/custom_game/presentclosed.png" />
 			<Image id="presentopen" src="file://{images}/custom_game/presentopen.png" />

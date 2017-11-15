@@ -696,10 +696,14 @@ function SwapAbility(data)
 				//$( "#presentclosed" ).style.opacity=1;
 				hasability = false;
 				UseAbility()
+				$("#Hotkey").text = "";
 			}
 			else
 			{
-				$("#Hotkey").text = Abilities.GetKeybind(Entities.GetAbility( Game.GetPlayerInfo(Players.GetLocalPlayer() ).player_selected_hero_entity_index, 0))
+				if( Game.GetGameTime()>1)
+				{
+					$("#Hotkey").text = Abilities.GetKeybind(Entities.GetAbility( Game.GetPlayerInfo(Players.GetLocalPlayer() ).player_selected_hero_entity_index, 0))
+				}
 				
 			}
 			
