@@ -699,7 +699,7 @@ function SwapAbility(data)
 			}
 			else
 			{
-				$("#hotkey").text = Abilities.GetKeybind(Entities.GetAbility( Game.GetPlayerInfo(Players.GetLocalPlayer() ).player_selected_hero_entity_index, 0))
+				$("#Hotkey").text = Abilities.GetKeybind(Entities.GetAbility( Game.GetPlayerInfo(Players.GetLocalPlayer() ).player_selected_hero_entity_index, 0))
 				
 			}
 			

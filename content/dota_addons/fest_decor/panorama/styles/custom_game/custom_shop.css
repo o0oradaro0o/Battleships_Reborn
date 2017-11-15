@@ -44,9 +44,32 @@
 	 z-index:20;	
 }
 
-#ScoreBoardFinalholder
+.HotkeyHolder
 {
 	visibility: visible;
+
+}
+#Hotkey
+{
+	vertical-align: top;
+	horizontal-align: right;
+	margin-top: 125px;
+	margin-left: 160px;
+	height: 100px;
+	width: 100px;
+	color: #ffffff;
+	text-shadow: 2px 2px 2px #ff0000;
+	font-size: 60px;
+	font-family: monospace;
+	font-weight: bold;
+	text-align: center;
+	opacity: 1;
+
+	z-index: 7;
+}
+#ScoreBoardFinalholder
+{
+	visibility: collapse;
 	flow-children: down;
 	horizontal-align: right;
 	vertical-align: top;
@@ -629,7 +652,7 @@ vertical-align: bottom;
 #magnet
 {
 	visibility: visible;
-vertical-align: bottom;
+	vertical-align: bottom;
 	horizontal-align: middle;
 	height: 45%;
 	width: 45%;

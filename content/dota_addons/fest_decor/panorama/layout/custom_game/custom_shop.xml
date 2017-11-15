@@ -262,12 +262,16 @@
 		
 		
 		<Panel hittest="false" id="AbilityHolder" onmouseover="showabilitytooltip()">
+			<Panel hittest="false" id="HotkeyHolder">
+				<Label id="Hotkey" text="Q"> </Label>
+			</Panel>
 			<Image id="presentclosed" src="file://{images}/custom_game/presentclosed.png" />
 			<Image id="presentopen" src="file://{images}/custom_game/presentopen.png" />
 			<Image id="rocketskate" src="file://{images}/custom_game/rocketskate.png" />
 			<Image id="magnet" src="file://{images}/custom_game/magnet.png" />
 			<Image id="snowball" src="file://{images}/custom_game/snowball.png" />
 			<Image id="leap" src="file://{images}/custom_game/leap.png" />
+			
 		</Panel>
 		<Panel hittest ="false" id="abilitytooltip">
 			<Label id="abilityhover" text="#SkateInfo_lang">  </Label>
