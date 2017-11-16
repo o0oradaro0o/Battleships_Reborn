@@ -659,6 +659,7 @@ function SwapAbility(data)
 				lastability = "skate";
 				hasability = true;
 				$("#presentopen").style.opacity=1;
+				$("#Hotkey").style.visibility="visible";
 				//$.Msg("skate fade if")
 				SkateIn()
 
@@ -669,6 +670,7 @@ function SwapAbility(data)
 				lastability = "magnet";
 				hasability = true;
 				$("#presentopen").style.opacity=1;
+				$("#Hotkey").style.visibility="visible";
 				//$.Msg("magnet fade if")
 				MagnetIn()
 
@@ -680,6 +682,7 @@ function SwapAbility(data)
 				lastability = "snowball";
 				hasability = true;
 				$("#presentopen").style.opacity=1;
+				$("#Hotkey").style.visibility="visible";
 				//$.Msg("snow fade if")
 				SnowIn()
 
@@ -690,6 +693,7 @@ function SwapAbility(data)
 				lastability = "leap";
 				hasability = true;
 				$("#presentopen").style.opacity=1;
+				$("#Hotkey").style.visibility="visible";
 				//$.Msg("snow fade if")
 				LeapIn()
 				
@@ -701,7 +705,6 @@ function SwapAbility(data)
 				//$( "#presentclosed" ).style.opacity=1;
 				hasability = false;
 				UseAbility()
-				$("#Hotkey").text = "";
 				//$("#hotkeyframe").style.visibility="collapse";
 			}
 			else
@@ -843,6 +846,7 @@ function UseAbility()
 			lastability = "none";
 			$( "#presentclosed" ).style.opacity=1;
 			$("#hotkeyframe").style.visibility="collapse";
+			$("#Hotkey").style.visibility="collapse";
 			$("#rocketskate").style.opacity=0;
 			$("#presentopen").style.opacity=0;
 			UseAbility()
@@ -918,6 +922,7 @@ function UseAbility()
 			lastability = "none";
 			$( "#presentclosed" ).style.opacity=1;
 			$("#hotkeyframe").style.visibility="collapse";
+			$("#Hotkey").style.visibility="collapse";
 			$("#snowball").style.opacity=0;
 			$("#presentopen").style.opacity=0;
 			UseAbility()
@@ -995,6 +1000,7 @@ function UseAbility()
 			lastability = "none";
 			$( "#presentclosed" ).style.opacity=1;
 			$("#hotkeyframe").style.visibility="collapse";
+			$("#Hotkey").style.visibility="collapse";
 			$("#leap").style.opacity=0;
 			$("#presentopen").style.opacity=0;
 			UseAbility()
@@ -1086,6 +1092,7 @@ function UseAbility()
 			$( "#snowball" ).style.opacity=0;		
 			$( "#leap" ).style.opacity=0;	
 			$("#hotkeyframe").style.visibility="collapse";
+			$("#Hotkey").style.visibility="collapse";
 			$( "#presentclosed" ).style.opacity=1;
 			hasability = false;
 			pulsecounter = 1;
