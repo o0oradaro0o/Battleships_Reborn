@@ -708,12 +708,8 @@ function SwapAbility(data)
 			{
 
 					$("#Hotkey").text = Abilities.GetKeybind(Entities.GetAbility( Game.GetPlayerInfo(Players.GetLocalPlayer() ).player_selected_hero_entity_index, 0))
-<<<<<<< HEAD
+
 					$("#hotkeyframe").style.visibility="collapse";
-				}
-				
-=======
->>>>>>> 3fae5192659775fa6b5d5198f83b95a203a89717
 			}
 			
 	}
