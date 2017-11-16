@@ -974,7 +974,7 @@
 		"SoundSet"					"n_creep_Ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
-		"ModelScale" 				"1"
+		"ModelScale" 				".9"
 		
 		"Model"						"models/papa_frosty.vmdl"	// Model.
 		// Abilities
