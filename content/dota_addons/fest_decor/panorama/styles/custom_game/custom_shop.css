@@ -48,24 +48,31 @@
 #HotkeyHolder
 {
 	z-index: 7;
-	height:46%;
-	width: 46%;
+	height:30%;
+	width: 30%;
+	transform: translate3d(20%,20%,0%);
 	
 }
-
+#hotkeyframe
+{
+	z-index: 6;
+	height:100%;
+	width: 100%;
+		vertical-align: center;
+	horizontal-align: center;
+	visibility: collapse;
+}
 #Hotkey
 {
 	text-align: right;
-	vertical-align: bottom;
-	horizontal-align: right;
-	height: 100px;
-	width: 100px;
-	color: #ff8888;
+	vertical-align: center;
+	horizontal-align: center;
+	color: #ffffff;
 	text-shadow: 2px 2px 2px #ff0000;
-	font-size: 60px;
+	font-size: 50px;
 	font-family: monospace;
 	font-weight: bold;
-	text-align: center;
+	text-align: left;
 	opacity: 1;
 
 	z-index: 7;
@@ -670,28 +677,28 @@ opacity: 0;
 
 	visibility: collapse;
 	horizontal-align: right;
-	height: 110px;
-	width: 110px;
+	height: 160px;
+	width: 160px;
 }
 #bellgrey
 {
 	visibility: visible;
 	horizontal-align: right;
-	height: 110px;
-	width: 110px;
+	height: 160px;
+	width: 160px;
 }
 .BellHolder
 {
 	margin-top: 75px;
 	horizontal-align: right;
-	height: 110px;
-	width: 110px;
+	height: 160px;
+	width: 160px;
 	font-size: 50px;
 }
 #belltooltip
 {
 
-	margin-top: 185px;
+	transform: translateY(22%);
 	horizontal-align: right;
 	height: fit-children;
 	width: 200px;
