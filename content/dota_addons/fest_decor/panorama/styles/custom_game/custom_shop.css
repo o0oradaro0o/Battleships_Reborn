@@ -82,7 +82,7 @@
 	visibility: collapse;
 	flow-children: down;
 	horizontal-align: right;
-	vertical-align: top;
+	vertical-align: bottom;
 	height: 465px;	
 	width: 410px;
 	background-color: #ce0000;
@@ -242,15 +242,19 @@ z-index:6;
 
 #mit
 {
-	width: 100%;
-	height: 100%;
+	width: 87%;
+	height: 87%;
 	visibility: collapse;
+	vertical-align: top;
+	 horizontal-align: center;
 }
 #sto
 {
-	width: 100%;
-	height: 100%;
+	width: 87%;
+	height: 87%;
 	visibility: collapse;
+	vertical-align: top;
+	 horizontal-align: center;
 }
 
 .Timer
@@ -625,33 +629,36 @@ margin: 1px;
 		visibility: visible;
 vertical-align: bottom;
 	horizontal-align: middle;
-		height: 75%;
-	width: 75%;
+		height: 50%;
+	width: 50%;
 		z-index:20;
+		margin-bottom: 90px;
+	margin-right: -5px;
+		transform: scaleX(.8) scaleY(.8);
 }
 #rocketskate
 {
 	visibility: visible;
 vertical-align: bottom;
 	horizontal-align: middle;
-	height: 45%;
-	width: 45%;
-	margin-bottom: 110px;
-	margin-right: -50px;
+	height:100%;
+	width: 100%;
+
 	opacity: 0;
 	z-index: 6;
+	transform: scaleX(.8) scaleY(.8);
 }
 #snowball
 {
 	visibility: visible;
 	vertical-align: bottom;
 	horizontal-align: middle;
-	height: 45%;
-	width: 45%;
-	margin-bottom: 105px;
-	margin-right: -5px;
+	height: 100%;
+	width: 100%;
+
 	opacity: 0;
 	z-index:6;
+	transform: scaleX(.8) scaleY(.8);
 }
 
 #leap
@@ -659,12 +666,12 @@ vertical-align: bottom;
 	visibility: visible;
 	vertical-align: bottom;
 	horizontal-align: middle;
-	height: 45%;
-	width: 45%;
-	margin-bottom: 110px;
-	margin-right: -45px;
+	height: 100%;
+	width: 100%;
+
 	opacity: 0;
 	z-index:6;
+	transform: scaleX(.8) scaleY(.8);
 }
 
 
@@ -673,11 +680,9 @@ vertical-align: bottom;
 	visibility: visible;
 	vertical-align: bottom;
 	horizontal-align: middle;
-	height: 45%;
-	width: 45%;
-	margin-bottom: 100px;
-		margin-right: -5px;
-
+	height: 100%;
+	width: 100%;
+transform: scaleX(.8) scaleY(.8);
 z-index:6;
 opacity: 0;
 }
@@ -864,6 +869,20 @@ height: fit-children;
     animation-duration: .5s;
     animation-timing-function: linear;
 	  transform: translate3d( 0px, 0px, 0px );
+}
+
+.pulsing
+{
+	    animation-name: Pulse;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+	transform: scaleX(.8) scaleY(.8);
+}
+
+@keyframes 'Pulse' {
+	0%   { transform: scaleX(.8) scaleY(.8);}
+    50%  { transform: scaleX(1.0) scaleY(1.0);}
+    100% { transform: scaleX(.8) scaleY(.8);}
 }
 
 @keyframes 'DropDown' {

@@ -803,319 +803,51 @@ function LeapIn()
 
 //this horrible mess makes the items bulge when they are used.
 
-var pulsecounter = 1;
+var imagePanel={}
 function UseAbility()
 {
 	if (lastability == "skate" && hasability == false)
 	{
-		$("#rocketskate").style.opacity=1;
-		$("#presentopen").style.opacity=1;
-		if (pulsecounter == 1)
-		{
-			//$( "#Tree" ).style.transform="rotateZ("+ currentDeg+"deg ) ;"
-			$("#rocketskate").style.width="46%";
-			$("#rocketskate").style.height="46%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 2)
-		{
-			$("#rocketskate").style.width="47%";
-			$("#rocketskate").style.height="47%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 3)
-		{
-			$("#rocketskate").style.width="48%";
-			$("#rocketskate").style.height="48%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 4)
-		{
-			$("#rocketskate").style.width="49%";
-			$("#rocketskate").style.height="49%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 5)
-		{
-			$("#rocketskate").style.width="49%";
-			$("#rocketskate").style.height="49%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
+		imagePanel = $("#rocketskate")
 		
-		else if (pulsecounter == 6)
-		{
-			$("#rocketskate").style.width="48%";
-			$("#rocketskate").style.height="48%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 7)
-		{
-			$("#rocketskate").style.width="47%";
-			$("#rocketskate").style.height="47%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 8)
-		{
-			$("#rocketskate").style.width="46%";
-			$("#rocketskate").style.height="46%";
-			pulsecounter +=1;
-			$.Schedule( .2, UseAbility );
-		}
-		else if (pulsecounter == 9)
-		{
-			$("#rocketskate").style.width="45%";
-			$("#rocketskate").style.height="45%";
-			pulsecounter =1;
-			lastability = "none";
-			$( "#presentclosed" ).style.opacity=1;
-			$("#hotkeyframe").style.visibility="collapse";
-			$("#Hotkey").style.visibility="collapse";
-			$("#rocketskate").style.opacity=0;
-			$("#presentopen").style.opacity=0;
-			UseAbility()
-		}
 	}
 	if (lastability == "snowball" && hasability == false)
 	{
-		$("#snowball").style.opacity=1;
-		$("#presentopen").style.opacity=1;
-		if (pulsecounter == 1)
-		{
-			//$( "#Tree" ).style.transform="rotateZ("+ currentDeg+"deg ) ;"
-			$("#snowball").style.width="46%";
-			$("#snowball").style.height="46%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 2)
-		{
-			$("#snowball").style.width="46%";
-			$("#snowball").style.height="46%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 3)
-		{
-			$("#snowball").style.width="47%";
-			$("#snowball").style.height="47%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 4)
-		{
-			$("#snowball").style.width="48%";
-			$("#snowball").style.height="48%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 5)
-		{
-			$("#snowball").style.width="48%";
-			$("#snowball").style.height="48%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		
-		else if (pulsecounter == 6)
-		{
-			$("#snowball").style.width="48%";
-			$("#snowball").style.height="48%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 7)
-		{
-			$("#snowball").style.width="47%";
-			$("#snowball").style.height="47%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 8)
-		{
-			$("#snowball").style.width="46%";
-			$("#snowball").style.height="46%";
-			pulsecounter +=1;
-			$.Schedule( .2, UseAbility );
-		}
-		else if (pulsecounter == 9)
-		{
-			$("#snowball").style.width="45%";
-			$("#snowball").style.height="45%";
-			pulsecounter =1;
-			lastability = "none";
-			$( "#presentclosed" ).style.opacity=1;
-			$("#hotkeyframe").style.visibility="collapse";
-			$("#Hotkey").style.visibility="collapse";
-			$("#snowball").style.opacity=0;
-			$("#presentopen").style.opacity=0;
-			UseAbility()
-		}
+		imagePanel = $("#snowball")
 
 	}
 	
 	if (lastability == "leap" && hasability == false)
 	{
-		$("#leap").style.opacity=1;
-		$("#presentopen").style.opacity=1;
-		if (pulsecounter == 1)
-		{
-			//$( "#Tree" ).style.transform="rotateZ("+ currentDeg+"deg ) ;"
-			$("#leap").style.width="46%";
-			$("#leap").style.height="46%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 2)
-		{
-			$("#leap").style.width= "27%";
-			$("#leap").style.height= "27%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 3)
-		{
-			$("#leap").style.width="48%";
-			$("#leap").style.height="48%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 4)
-		{
-			$("#leap").style.width="49%";
-			$("#leap").style.height="49%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 5)
-		{
-			$("#leap").style.width="49%";
-			$("#leap").style.height="49%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		
-		else if (pulsecounter == 6)
-		{
-			$("#leap").style.width="48%";
-			$("#leap").style.height="48%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 7)
-		{
-			$("#leap").style.width="47%";
-			$("#leap").style.height="47%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 8)
-		{
-			$("#leap").style.width="46%";
-			$("#leap").style.height="46%";
-			pulsecounter +=1;
-			$.Schedule( .2, UseAbility );
-		}
-		else if (pulsecounter == 9)
-		{
-			$("#leap").style.width="45%";
-			$("#leap").style.height="45%";
-			pulsecounter =1;
-			lastability = "none";
-			$( "#presentclosed" ).style.opacity=1;
-			$("#hotkeyframe").style.visibility="collapse";
-			$("#Hotkey").style.visibility="collapse";
-			$("#leap").style.opacity=0;
-			$("#presentopen").style.opacity=0;
-			UseAbility()
-		}
+		imagePanel = $("#leap")
 
 	}
 	
 	if (lastability == "magnet" && hasability == false)
 	{
-		$("#magnet").style.opacity=1;
+		imagePanel = $("#magnet")
+	}
+		imagePanel.style.opacity=1;
 		$("#presentopen").style.opacity=1;
-		if (pulsecounter == 1)
-		{
-			//$( "#Tree" ).style.transform="rotateZ("+ currentDeg+"deg ) ;"
-			$("#magnet").style.width="46%";
-			$("#magnet").style.height="31%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 2)
-		{
-			$("#magnet").style.width="47%";
-			$("#magnet").style.height="47%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 3)
-		{
-			$("#magnet").style.width="48%";
-			$("#magnet").style.height="48%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 4)
-		{
-			$("#magnet").style.width="49%";
-			$("#magnet").style.height="49%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 5)
-		{
-			$("#magnet").style.width="49%";
-			$("#magnet").style.height="49%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
+		imagePanel.ToggleClass("pulsing")
+		lastability="none"
+		$.Schedule( .6, finishPulse );
 		
-		else if (pulsecounter == 6)
+
+			
+
+}
+
+function finishPulse()
+{
+	imagePanel.ToggleClass("pulsing")
+	imagePanel.style.opacity=0;
+		
+		if(lastability=="none")
 		{
-			$("#magnet").style.width="48%";
-			$("#magnet").style.height="48%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 7)
-		{
-			$("#magnet").style.width="47%";
-			$("#magnet").style.height="47%";
-			pulsecounter +=1;
-			$.Schedule( .02, UseAbility );
-		}
-		else if (pulsecounter == 8)
-		{
-			$("#magnet").style.width="46%";
-			$("#magnet").style.height="46%";
-			pulsecounter +=1;
-			$.Schedule( .2, UseAbility );
-		}
-		else if (pulsecounter == 9)
-		{
-			$("#magnet").style.width="45%";
-			$("#magnet").style.height="45%";
-			pulsecounter =1;
-			lastability = "none";
 			$( "#presentclosed" ).style.opacity=1;
 			$("#hotkeyframe").style.visibility="collapse";
-			$("#magnet").style.opacity=0;
 			$("#presentopen").style.opacity=0;
-			UseAbility()
-		}
-
-	}
-	if(lastability == "none")
-	{
 			$( "#presentopen" ).style.opacity=0;
 			$( "#rocketskate" ).style.opacity=0;
 			$( "#magnet" ).style.opacity=0;
@@ -1125,10 +857,10 @@ function UseAbility()
 			$("#Hotkey").style.visibility="collapse";
 			$( "#presentclosed" ).style.opacity=1;
 			hasability = false;
-			pulsecounter = 1;
-	}
+		}
+		
+		$.Schedule( .1, finishPulse );
 }
-
 
 
 /**function SwapAbility(data)
