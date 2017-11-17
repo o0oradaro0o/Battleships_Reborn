@@ -356,7 +356,7 @@ local numheros = 0
 					numheros=numheros+1
 				end
 		end
-		print(numheros)
+
 
 if attacker ~= nil and unit ~= nil and attackerUnit ~= nil then
 	if (attackerUnit:GetOrigin()*Vector(0,0,1)):Length() < 280 and not attacker:HasModifier("leaping") and not attacker:HasModifier("invlun")  and ( (unit:GetTeamNumber() ~= attacker:GetTeamNumber() and numheros > 4 )  or numheros < 5 or unit == attacker) and true == unit:IsAlive()  then
@@ -753,7 +753,7 @@ Caster:ForceKill(true)
 	 
 	 heroUnit.AbilityName = AbilName
 	 
-	 print("granted power up" .. AbilName)
+
 	local emptyData = {
 		player_id = pId;
 		ability_name = AbilName;

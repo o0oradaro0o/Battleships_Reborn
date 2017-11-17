@@ -50,6 +50,7 @@
 		</Panel>
 		
 		
+		
 		<Panel hittest="false" class="ScoreboardHolder1" >
 			<Image id="ScoreFrame1" src="file://{images}/custom_game/scoreframe.png" class = "poppedUp"/>
 		</Panel>
@@ -270,11 +271,12 @@
 			</Panel>
 			<Image id="presentclosed" src="file://{images}/custom_game/presentclosed.png" />
 			<Image id="presentopen" src="file://{images}/custom_game/presentopen.png" />
-			<Image id="rocketskate" src="file://{images}/custom_game/rocketskate.png" />
-			<Image id="magnet" src="file://{images}/custom_game/magnet.png" />
-			<Image id="snowball" src="file://{images}/custom_game/snowball.png" />
-			<Image id="leap" src="file://{images}/custom_game/leap.png" />
-			
+			<Panel hittest="false" id="OpenContent">
+				<Image id="rocketskate" src="file://{images}/custom_game/rocketskate.png" />
+				<Image id="magnet" src="file://{images}/custom_game/magnet.png" />
+				<Image id="snowball" src="file://{images}/custom_game/snowball.png" />
+				<Image id="leap" src="file://{images}/custom_game/leap.png" />
+			</Panel>
 		</Panel>
 		<Panel hittest ="false" id="abilitytooltip">
 			<Label id="abilityhover" text="#SkateInfo_lang">  </Label>

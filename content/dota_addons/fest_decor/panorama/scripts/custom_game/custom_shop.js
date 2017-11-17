@@ -146,7 +146,7 @@ function  TeamWin(data)
 		}
 		$( "#mit" ).style.visibility="visible";
 		$("#ScoreBoardFinalholder").style.backgroundColor="gradient( linear, 0% 0%, 0% 100%, from(#a67587cc ), to( #86556755 ) );";
-		//$( "#mit" ).SetParent($( "#mit" ).GetParent().GetParent().GetParent().GetParent());
+		$( "#mit" ).SetParent($( "#mit" ).GetParent().GetParent().GetParent().GetParent());
 		
 		$.Schedule( .1, SetMitten );
 	}
@@ -162,7 +162,7 @@ function  TeamWin(data)
 		}
 		$( "#sto" ).style.visibility="visible";
 			$("#ScoreBoardFinalholder").style.backgroundColor="gradient( linear, 0% 0%, 0% 100%, from(#86c597cc ), to( #465a6755) );";
-	//$( "#sto" ).SetParent($( "#sto" ).GetParent().GetParent().GetParent().GetParent());
+	$( "#sto" ).SetParent($( "#sto" ).GetParent().GetParent().GetParent().GetParent());
 		$.Schedule( .1, SetStocking );
 	}
 		$( "#ScoreBoardFinalholder" ).style.visibility="visible";
@@ -175,6 +175,7 @@ function SetStocking()
 			if($.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd"))
 			{
 				var vicLabel = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").FindChildTraverse("VictoryLabel");
+				$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").style.visibility="collapse";
 				vicLabel.text = "Team Stocking"
 			}
 		 $.Schedule( .1, SetStocking );
@@ -185,7 +186,7 @@ function SetMitten()
 			if($.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd"))
 			{
 					var vicLabel = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").FindChildTraverse("VictoryLabel");
-			
+				$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").style.visibility="collapse";
 				vicLabel.text = "Team Mitten"
 			}
 		 $.Schedule( .1, SetMitten );

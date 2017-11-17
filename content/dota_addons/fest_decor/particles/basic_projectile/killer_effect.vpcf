@@ -11,7 +11,7 @@
 			_class = "C_OP_RenderSprites"
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
 			m_bMod2X = true
-			m_hTexture = resource:"materials/particle/items/drow/drow_immortal_ti6_symbol.vtex"
+			m_hTexture = resource:"materials/particle/elder_titan/elder_titan_ti7_immortal_ground.vtex"
 			m_nOrientationType = 2
 		},
 	]
@@ -73,7 +73,8 @@
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
-			m_flEmitRate = 30.0
+			m_flEmitRate = 5.0
+			m_bDisableOperator = true
 		},
 	]
 	m_controlPointConfigurations = 

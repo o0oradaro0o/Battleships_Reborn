@@ -7,7 +7,6 @@ function StartAddingPoints(trigger)
 
 	local hero =  trigger.activator
 	
-print('[DepositOrb]  StartAddingPoints GoodTempPoints')
 local pointValue = 1
 	if string.match(hero:GetUnitName(), "2")  then
 		pointValue=5
