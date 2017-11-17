@@ -25,6 +25,7 @@
 			</Panel>
 	</Panel>
 		
+		
 		<Panel id="CoOpHolder">
 			<Panel id="CoOp">
 				<Label class="AuthorTitle" text="Co-Op Challenge mode!" />

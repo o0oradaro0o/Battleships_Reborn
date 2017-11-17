@@ -44,6 +44,7 @@ function fixUI( )
 		 
 		 var sidenotif =   $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("combat_events");
 		 
+		
 		 var topnotif =   $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("FightRecap");
 		 
 		 
@@ -66,13 +67,13 @@ GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_PRO
 GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_GOLD, false );     //Gold display.
 GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_SHOP_SUGGESTEDITEMS, false );      //Suggested items shop panel.
 
-GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, false );      //Endgame scoreboard.    
+//GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, false );      //Endgame scoreboard.    
 GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY, false );
 GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_HEROES, false );
 GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_FLYOUT_SCOREBOARD, false );
 
 
-GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, false );
+//GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, false );
 
 
 
@@ -97,7 +98,8 @@ function  TeamWin(data)
 
 	
 	overallScore.sort(compareSecondColumn);
-
+		GameUI.SetCameraPitchMin( 24 )
+		GameUI.SetCameraPitchMax( 25 )
 	var count = 0
 	overallScore.forEach(function(element) 
 	{
@@ -130,6 +132,7 @@ function  TeamWin(data)
 		
 		
 	});
+
 	
 	if( data.team_number	== 3)
 	{
@@ -143,7 +146,9 @@ function  TeamWin(data)
 		}
 		$( "#mit" ).style.visibility="visible";
 		$("#ScoreBoardFinalholder").style.backgroundColor="gradient( linear, 0% 0%, 0% 100%, from(#a67587cc ), to( #86556755 ) );";
-		$( "#mit" ).SetParent($( "#mit" ).GetParent().GetParent().GetParent().GetParent());
+		//$( "#mit" ).SetParent($( "#mit" ).GetParent().GetParent().GetParent().GetParent());
+		
+		$.Schedule( .1, SetMitten );
 	}
 	else if(data.team_number== 2)
 	{
@@ -157,11 +162,35 @@ function  TeamWin(data)
 		}
 		$( "#sto" ).style.visibility="visible";
 			$("#ScoreBoardFinalholder").style.backgroundColor="gradient( linear, 0% 0%, 0% 100%, from(#86c597cc ), to( #465a6755) );";
-	$( "#sto" ).SetParent($( "#sto" ).GetParent().GetParent().GetParent().GetParent());
+	//$( "#sto" ).SetParent($( "#sto" ).GetParent().GetParent().GetParent().GetParent());
+		$.Schedule( .1, SetStocking );
 	}
 		$( "#ScoreBoardFinalholder" ).style.visibility="visible";
 	$( "#ScoreBoardFinalholder" ).SetParent($( "#ScoreBoardFinalholder" ).GetParent().GetParent().GetParent().GetParent());
 }
+
+function SetStocking()
+{
+			
+			if($.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd"))
+			{
+				var vicLabel = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").FindChildTraverse("VictoryLabel");
+				vicLabel.text = "Team Stocking"
+			}
+		 $.Schedule( .1, SetStocking );
+}
+
+function SetMitten()
+{
+			if($.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd"))
+			{
+					var vicLabel = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").FindChildTraverse("VictoryLabel");
+			
+				vicLabel.text = "Team Mitten"
+			}
+		 $.Schedule( .1, SetMitten );
+}
+
 
 function PingLoc(data)
 	{
@@ -1195,7 +1224,7 @@ function OnLeftButtonPressed()
 
 
 		(function () {
-	$.Msg("in subscribe");
+		 
 	GameEvents.Subscribe("Player_Spawned", fixUI );
 	GameEvents.Subscribe("Score_data", ShowScore );
 	GameEvents.Subscribe("grant_ability", SwapAbility );

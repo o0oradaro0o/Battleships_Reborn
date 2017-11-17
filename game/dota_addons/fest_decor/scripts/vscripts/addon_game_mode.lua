@@ -286,7 +286,7 @@ function sendScore()
 
 local TotalGoodScore =  storage:GetGoodPoints()
 local TotalBadScore =  storage:GetBadPoints()
-local TimeLeftInGame = 300-g_MainTimerTickCount
+local TimeLeftInGame = 20-g_MainTimerTickCount
 	local emptyData = {
 		good_score = TotalGoodScore;
 		bad_score = TotalBadScore;
@@ -318,7 +318,7 @@ local TimeLeftInGame = 300-g_MainTimerTickCount
 					
 					
 					
-					g_papa:MoveToPosition(  Vector(300,-100,0))
+					g_papa:MoveToPosition(  -1*Vector(300,-300,0))
 				
 					if TimeLeftInGame<0 then
 					
@@ -327,9 +327,9 @@ local TimeLeftInGame = 300-g_MainTimerTickCount
 					}
 					FireGameEvent( "team_win", emptyData );
 					
-					local papa_place = Vector(5000,-5000,120)
+					local papa_place = Vector(5000,-4800,120)
 					g_papa:SetOrigin(papa_place)
-					g_papa:SetForwardVector(papa_place+Vector(0,500,120))
+					g_papa:SetForwardVector(Vector(-30,300,120))
 					
 					for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 						if hero ~= nil and hero:IsOwnedByAnyPlayer() then
@@ -355,7 +355,7 @@ local TimeLeftInGame = 300-g_MainTimerTickCount
 			else
 			
 				
-				g_papa:MoveToPosition(  Vector(-300,100,0))
+				g_papa:MoveToPosition(  -1*Vector(-300,300,0))
 				
 				if TimeLeftInGame<0 then
 				
@@ -365,9 +365,9 @@ local TimeLeftInGame = 300-g_MainTimerTickCount
 					
 					FireGameEvent( "team_win", emptyData );
 				
-						local papa_place = Vector(-5000,5000,120)
+						local papa_place = Vector(-5000,5200,120)
 					g_papa:SetOrigin(papa_place)
-					g_papa:SetForwardVector(Vector(200,-300,120))
+					g_papa:SetForwardVector(Vector(-30,300,120))
 					
 					for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 						if hero ~= nil and hero:IsOwnedByAnyPlayer() then
