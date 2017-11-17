@@ -4,7 +4,7 @@
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 512
 	m_flConstantRadius = 80.0
-	m_ConstantColor = [ 125, 227, 105, 90 ]
+	m_ConstantColor = [ 125, 227, 105, 255 ]
 	m_Renderers = 
 	[
 		{
@@ -73,7 +73,7 @@
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
-			m_flEmitRate = 30.0
+			m_flEmitRate = 5.0
 		},
 	]
 	m_controlPointConfigurations = 

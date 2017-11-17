@@ -109,7 +109,7 @@
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
-			m_flEmitRate = 65.0
+			m_flEmitRate = 10.0
 		},
 	]
 	m_controlPointConfigurations = 

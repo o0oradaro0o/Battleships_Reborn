@@ -620,6 +620,15 @@ margin: 1px;
 	opacity: 0;
 }
 
+#OpenContent
+{
+		visibility: visible;
+vertical-align: bottom;
+	horizontal-align: middle;
+		height: 75%;
+	width: 75%;
+		z-index:20;
+}
 #rocketskate
 {
 	visibility: visible;

@@ -286,7 +286,7 @@ function sendScore()
 
 local TotalGoodScore =  storage:GetGoodPoints()
 local TotalBadScore =  storage:GetBadPoints()
-local TimeLeftInGame = 20-g_MainTimerTickCount
+local TimeLeftInGame = 300-g_MainTimerTickCount
 	local emptyData = {
 		good_score = TotalGoodScore;
 		bad_score = TotalBadScore;
