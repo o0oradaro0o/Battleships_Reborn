@@ -838,6 +838,7 @@ function UseAbility()
 
 }
 
+var finishCalls = 0
 function finishPulse()
 {
 	imagePanel.ToggleClass("pulsing")
@@ -856,10 +857,14 @@ function finishPulse()
 			$("#hotkeyframe").style.visibility="collapse";
 			$("#Hotkey").style.visibility="collapse";
 			$( "#presentclosed" ).style.opacity=1;
+			finishCalls = 0
 			hasability = false;
 		}
-		
-		$.Schedule( .1, finishPulse );
+		else if( finishCalls < 2)
+		{
+			$.Schedule( .1, finishPulse );
+			finishCalls++;
+		}
 }
 
 
