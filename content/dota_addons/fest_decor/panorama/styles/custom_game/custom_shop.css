@@ -50,7 +50,7 @@
 	z-index: 7;
 	height:30%;
 	width: 30%;
-	transform: translate3d(20%,20%,0%);
+	transform: translate3d(15%,15%,0%);
 	
 }
 #hotkeyframe
@@ -64,10 +64,11 @@
 }
 #Hotkey
 {
-	text-align: right;
-	vertical-align: center;
+	margin-top: 30px;
+	text-align: left;
+	vertical-align: top;
 	horizontal-align: center;
-	color: #ffffff;
+	color: #44cccc;
 	text-shadow: 2px 2px 2px #ff0000;
 	font-size: 50px;
 	font-family: monospace;
@@ -616,11 +617,33 @@ margin: 1px;
 	visibility: visible;
 	vertical-align: bottom;
 	horizontal-align: right;
-	margin-bottom: -50px;
+
 	height: 100%;	
 	width: 95%;
 	z-index:6;
 	opacity: 0;
+}
+
+#presentopen_e
+{
+	visibility: visible;
+	vertical-align: bottom;
+	horizontal-align: right;
+	margin-top: -570px;
+	height: 100%;	
+	width: 95%;
+	z-index:6;
+	opacity: .4;
+}
+#presentopen_p
+{
+	visibility: visible;
+	vertical-align: bottom;
+	horizontal-align: right;
+	margin-bottom: -50px;
+	height: 100%;	
+	width: 95%;
+	z-index:6;
 }
 
 #OpenContent
@@ -628,10 +651,10 @@ margin: 1px;
 		visibility: visible;
 vertical-align: bottom;
 	horizontal-align: middle;
-		height: 50%;
-	width:50%;
+		height: 60%;
+	width:60%;
 		z-index:20;
-		margin-bottom: 90px;
+		margin-bottom: 50px;
 	margin-right: -5px;
 transform: translate3d(0%,-15%,0%);
 }
@@ -640,9 +663,9 @@ transform: translate3d(0%,-15%,0%);
 	visibility: visible;
 	vertical-align: middle;
 	horizontal-align: middle;
-	height: 60%;
-	width: 60%;
-transform: translate3d(5%,5%,0%);
+	height: 80%;
+	width: 80%;
+transform: translate3d(5%,5%,0%) scaleX(.8) scaleY(.8);
 	opacity: 0;
 	z-index:10;
 }
@@ -651,9 +674,9 @@ transform: translate3d(5%,5%,0%);
 	visibility: visible;
 	vertical-align: middle;
 	horizontal-align: middle;
-	height: 60%;
-	width: 60%;
-transform: translate3d(5%,5%,0%);
+	height: 80%;
+	width: 80%;
+transform: translate3d(5%,5%,0%) scaleX(.8) scaleY(.8);
 	opacity: 0;
 	z-index:10;
 }
@@ -663,9 +686,9 @@ transform: translate3d(5%,5%,0%);
 	visibility: visible;
 	vertical-align: middle;
 	horizontal-align: middle;
-	height: 60%;
-	width: 60%;
-transform: translate3d(5%,5%,0%);
+	height: 80%;
+	width: 80%;
+transform: translate3d(5%,5%,0%) scaleX(.8) scaleY(.8);
 	opacity: 0;
 	z-index:10;
 }
@@ -674,11 +697,11 @@ transform: translate3d(5%,5%,0%);
 #magnet
 {
 	visibility: visible;
-	vertical-align: bottom;
+	vertical-align: middle;
 	horizontal-align: middle;
-	height: 100%;
-	width: 100%;
-transform: scaleX(.8) scaleY(.8);
+	height: 80%;
+	width: 80%;
+transform: translate3d(5%,5%,0%) scaleX(.8) scaleY(.8);
 z-index:6;
 opacity: 0;
 }
@@ -872,13 +895,14 @@ height: fit-children;
 	    animation-name: Pulse;
     animation-duration: .5s;
     animation-timing-function: linear;
-	transform: scaleX(.8) scaleY(.8);
+	transform: translate3d(5%,5%,0%) scaleX(.8) scaleY(.8);
 }
 
+
 @keyframes 'Pulse' {
-	0%   { transform: scaleX(.8) scaleY(.8);}
-    50%  { transform: scaleX(1.0) scaleY(1.0);}
-    100% { transform: scaleX(.8) scaleY(.8);}
+	0%   { transform: translate3d(5%,5%,0%) scaleX(.8) scaleY(.8);}
+    50%  { transform: translate3d(5%,5%,0%) scaleX(1) scaleY(1);}
+    100% {transform: translate3d(5%,5%,0%) scaleX(.8) scaleY(.8);}
 }
 
 @keyframes 'DropDown' {

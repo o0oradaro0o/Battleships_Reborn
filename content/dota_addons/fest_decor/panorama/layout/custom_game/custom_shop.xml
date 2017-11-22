@@ -266,11 +266,14 @@
 		<Panel hittest="false" id="AbilityHolder" onmouseover="showabilitytooltip()">
 			<Panel hittest="false" id="HotkeyHolder">
 				
-				<Image id="hotkeyframe" src="file://{images}/custom_game/hotkey.png" />
+				<Image id="hotkeyframe" src="file://{images}/custom_game/gift_open_effect.png" />
 				<Label id="Hotkey" text=""> </Label>
 			</Panel>
 			<Image id="presentclosed" src="file://{images}/custom_game/presentclosed.png" />
-			<Image id="presentopen" src="file://{images}/custom_game/presentopen.png" />
+			<Panel hittest="false" id="presentopen">
+				<Image id="presentopen_p" src="file://{images}/custom_game/gift_open_noeffect.png" />
+					<Image id="presentopen_e" src="file://{images}/custom_game/gift_open_effect.png" />
+			</Panel>
 			<Panel hittest="false" id="OpenContent">
 				<Image id="rocketskate" src="file://{images}/custom_game/rocketskate.png" />
 				<Image id="magnet" src="file://{images}/custom_game/magnet.png" />
@@ -292,14 +295,9 @@
 			
 		</Panel>
 		
-
-		
-		
-		
-		
 		
 
-	
+
 	
 		<Panel hittest="false" class="BarebonesTopNotifications">
 			<Panel hittest="false" id="TopNotifications">
