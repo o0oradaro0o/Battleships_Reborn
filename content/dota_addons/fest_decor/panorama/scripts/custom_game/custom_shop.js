@@ -33,7 +33,7 @@ function fixUI( )
 {
 	
 	
-	
+	$( "#presentclosed" ).style.opacity=1;
 	$.Msg("in fix ui--------------------------------------");
 	
 	
@@ -730,7 +730,7 @@ function SwapAbility(data)
 
 			}
 			
-			if(data.ability_name == "cast_ability")
+			if(data.ability_name == "cast_ability" && hasability==true)
 			{
 				//$( "#presentclosed" ).style.opacity=1;
 				hasability = false;
@@ -742,7 +742,7 @@ function SwapAbility(data)
 			{
 
 					$("#Hotkey").text = Abilities.GetKeybind(Entities.GetAbility( Game.GetPlayerInfo(Players.GetLocalPlayer() ).player_selected_hero_entity_index, 0))
-
+					$( "#presentclosed" ).style.opacity=1;
 					$("#hotkeyframe").style.visibility="collapse";
 			}
 			
