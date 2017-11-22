@@ -735,6 +735,7 @@ function SwapAbility(data)
 				//$( "#presentclosed" ).style.opacity=1;
 				hasability = false;
 				UseAbility()
+				lastability="none";
 				//$("#hotkeyframe").style.visibility="collapse";
 			}
 			else
