@@ -52,21 +52,22 @@
 	width: 30%;
 	transform: translate3d(15%,15%,0%);
 	
+	
 }
 #hotkeyframe
 {
 	z-index: 6;
 	height:100%;
 	width: 100%;
-		vertical-align: center;
+	vertical-align: center;
 	horizontal-align: center;
 	visibility: collapse;
 }
 #Hotkey
 {
-	margin-top: 30px;
+
 	text-align: left;
-	vertical-align: top;
+	vertical-align: center;
 	horizontal-align: center;
 	color: #44cccc;
 	text-shadow: 2px 2px 2px #ff0000;
@@ -75,7 +76,8 @@
 	font-weight: bold;
 	text-align: left;
 	opacity: 1;
-
+	transform: translate3d(-3%,-5%,0%);
+	visibility: collapse;
 	z-index: 7;
 }
 #ScoreBoardFinalholder
