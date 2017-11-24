@@ -533,7 +533,7 @@
 			"trap"
 			{	
 				
-				"ThinkInterval"		"0.15"
+				"ThinkInterval"		"0.3"
 				"OnIntervalThink"
 				{
 					"TrackingProjectile"
@@ -631,7 +631,7 @@
 			"trap"
 			{	
 				
-				"ThinkInterval"		"0.15"
+				"ThinkInterval"		"0.3"
 				"OnIntervalThink"
 				{
 					"TrackingProjectile"
@@ -731,7 +731,7 @@
 			"trap"
 			{	
 				
-				"ThinkInterval"		"0.15"
+				"ThinkInterval"		"0.3"
 				"OnIntervalThink"
 				{
 					"TrackingProjectile"
@@ -829,7 +829,7 @@
 			"trap"
 			{	
 				
-				"ThinkInterval"		"0.15"
+				"ThinkInterval"		"0.3"
 				"OnIntervalThink"
 				{
 					"TrackingProjectile"
@@ -928,7 +928,7 @@
 			"trap"
 			{	
 				
-				"ThinkInterval"		"0.15"
+				"ThinkInterval"		"0.3"
 				"OnIntervalThink"
 				{
 					"TrackingProjectile"
