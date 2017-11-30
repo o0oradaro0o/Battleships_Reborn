@@ -3115,7 +3115,6 @@ function fixBackpack(casterUnit)
 			if casterUnit ~= nil then
 				local activateItem = casterUnit:GetItemInSlot( itemSlot )
 				if activateItem ~= nil and string.match(activateItem:GetName(), "fluff") then
-					print("Item in slot is: filler")
 					casterUnit:RemoveItem(activateItem)
 				end
 			end
@@ -3149,21 +3148,21 @@ function become_boat(casterUnit, heroname)
             if casterUnit ~= nil then
                 local Item = casterUnit:GetItemInSlot( itemSlot )
 				if Item ~= nil and not string.match(Item:GetName(), "boat") and not string.match(Item:GetName(), "scroll") and not string.match(Item:GetName(), "trade_") and not string.match(Item:GetName(), "contract") then
-					print("Item in slot is: " .. Item:GetName())
+
 					itemlist[itemSlot] = Item:GetName()
 					 itemstacks[itemSlot]  = Item:GetCurrentCharges()
 						casterUnit:RemoveItem(Item)
 					
 				elseif Item ~= nil and (string.match(Item:GetName(), "boat")  or string.match(Item:GetName(), "scroll") or string.match(Item:GetName(), "trade_") or string.match(Item:GetName(), "contract")) then
-					print("Item in slot is: trade_manifest")
+
 					itemlist[itemSlot] = "item_fluff"
 					casterUnit:RemoveItem(Item)
 				
 				elseif itemSlot > 5 and itemSlot <9 then
-				print("Item in slot is: item_backpack_stuffer")
+
 					itemlist[itemSlot] = "item_backpack_stuffer"
 				else
-					print("Item in slot is: filler")
+
 					itemlist[itemSlot] = "item_fluff"
 					if string.match(heroname,"zuus") and itemSlot==0 then
 						itemlist[itemSlot]="item_hull_sail_one_combo_bow"
@@ -3311,7 +3310,6 @@ function become_boat(casterUnit, heroname)
 										activateItem:ToggleAbility()
 										
 									elseif activateItem ~= nil and string.match(activateItem:GetName(), "fluff") then
-										print("Item in slot is: filler")
 										hero:RemoveItem(activateItem)
 									end
 								end
@@ -3366,11 +3364,43 @@ end
 
 
 function fixAbilities(hero)
-	for abilitySlot = 4, 11, 1 do 
+local ultimate = ""
+local ultslot= 3
+	for abilitySlot = 3, 11, 1 do 
 		if hero:GetAbilityByIndex(abilitySlot) ~= nil  then
 			if hero:GetAbilityByIndex(abilitySlot):GetName()~= nil then
-				hero:RemoveAbility(hero:GetAbilityByIndex(abilitySlot):GetName())
+				abil =  hero:GetAbilityByIndex(abilitySlot):GetName()
+				print(abil)
+				print(abilitySlot)
+				
+				print("max level")
+				print(hero:GetAbilityByIndex(abilitySlot):GetMaxLevel())
+					if abilitySlot==3  then
+						ultimate =abil
+					elseif hero:GetAbilityByIndex(abilitySlot):GetMaxLevel()==3  then
+						ultslot = abilitySlot
+					end
+					hero:RemoveAbility(abil)
 			end
+		end
+	end
+	
+	for abilitySlot = 3, 5, 1 do 
+		if abilitySlot==5 then
+				print(ultimate)
+				hero:AddAbility(ultimate)
+		else
+				hero:AddAbility("generic_hidden")
+		end
+	end
+	
+	
+		print("printing all abilities")
+	for abilitySlot = 0, 11, 1 do 
+		if hero:GetAbilityByIndex(abilitySlot) ~= nil  then
+			abil =  hero:GetAbilityByIndex(abilitySlot):GetName()
+			print(abilitySlot)
+				print(abil)
 		end
 	end
 		

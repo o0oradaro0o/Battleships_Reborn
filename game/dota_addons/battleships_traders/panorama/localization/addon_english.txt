@@ -3159,7 +3159,7 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		
 		"News_Title"		"News!"
 		"News_Content"		"Hi all! Art update will resume but is temporarily on hold.  In the meantime I am continuing to make balance changes.
-\n\n Newest balance changes: (8-24-2017)
+\n Newest balance changes: (8-24-2017)
 \n- Catamaran no longer disjoints projectiles with leap but has much shorter cooldown
 \n- Paddlewheel dive cooldown and duration both reduced
 \n- Wind made stronger
