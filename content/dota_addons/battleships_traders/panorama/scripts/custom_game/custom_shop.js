@@ -575,7 +575,7 @@ function FadeShop()
 	
 	function hideShipShop()
 	{
-		$.Msg("-------------------------------");
+		$.Msg("---hideShipShop--------");
 		if(NewShopUI.BHasClass("ShopOpen"))
 			{
 					$.Msg("shop Open");

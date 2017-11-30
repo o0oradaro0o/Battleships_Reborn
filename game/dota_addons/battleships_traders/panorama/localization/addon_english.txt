@@ -559,11 +559,11 @@ HEAL: 1000 2000 3000 4000
 RANGE: 2500 2500 2500 2500"
 
 "mountain_battleship"									"Stuck on a Mountain"
-"mountain_battleship_Description"					"End the flood. Immobilizes you and all units around you in a large radius. \n\nHigher levels increase duration.
+"mountain_battleship_Description"					"End the flood. Immobilizes  all units around you (not including yourself) in a large radius. \n\nHigher levels increase duration.
 DURATION: 3.0 4.0 5.0"
 
 "monkey_buisness"									"Monkey Business"
-"monkey_buisness_Description"					"Your monkeys jump to a nearby enemy ship, do as much damage as they can, then escape to an allied ship.  Monkeys continue until they have no where to jump, alternating between allies and enemies.\n\nHigher levels increase damage and jump range.
+"monkey_buisness_Description"					"Your monkeys jump to a nearby enemy ship, do as much damage as they can, then escape to an allied ship.  Monkeys continue until they have nowhere to jump, alternating between allies and enemies.\n\nHigher levels increase damage and jump range.
 MONKEY JUMP RANGE: 600 700 800 900
 MONKEY ATTACK DAMAGE: 200 300 400 500"
 
@@ -3159,7 +3159,7 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		
 		"News_Title"		"News!"
 		"News_Content"		"Hi all! Art update will resume but is temporarily on hold.  In the meantime I am continuing to make balance changes.
-\n\n Newest balance changes: (8-24-2017)
+\n Newest balance changes: (8-24-2017)
 \n- Catamaran no longer disjoints projectiles with leap but has much shorter cooldown
 \n- Paddlewheel dive cooldown and duration both reduced
 \n- Wind made stronger
