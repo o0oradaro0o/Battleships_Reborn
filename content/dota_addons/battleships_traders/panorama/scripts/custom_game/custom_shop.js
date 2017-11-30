@@ -101,6 +101,7 @@ function fixUI( )
 		var topBar =   $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar");
 		NewShopUI.FindChildTraverse("GuidesButton").style.visibility = "collapse";
 		NewShopUI.FindChildTraverse("GuideFlyout").style.visibility = "collapse";
+
 		
 
 		 //------------------------------hero panel stuff--------------------------------

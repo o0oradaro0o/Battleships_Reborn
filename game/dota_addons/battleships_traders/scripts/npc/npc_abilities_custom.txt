@@ -1172,7 +1172,8 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"building_damage"		"0"
+				"shrapnel_damage"		"50 60 70 80"
+				"LinkedSpecialBonus"	"special_bonus_unique_sniper_1"
 			}
 			"04"
 			{
@@ -1193,6 +1194,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"max_charges"			"3"
+				"LinkedSpecialBonus"	"special_bonus_unique_sniper_2"
 			}
 			"08"
 			{
