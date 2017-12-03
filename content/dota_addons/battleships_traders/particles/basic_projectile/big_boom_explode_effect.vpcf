@@ -1,18 +1,18 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
 	_class = "CParticleSystemDefinition"
-	m_flConstantRadius = 48.000000
-	m_flConstantLifespan = 0.000000
+	m_flConstantRadius = 48.0
+	m_flConstantLifespan = 0.0
 	m_nConstantSequenceNumber = 6
 	m_nMaxParticles = 4
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
 		},
 		{
 			_class = "C_OP_MaxVelocity"
-			m_flMaxVelocity = 600.000000
+			m_flMaxVelocity = 600.0
 			m_nOverrideCP = 2
 			m_Notes = "Through the Movement Max Velocity op, projectiles get their velocity automatically via CP2 through code. IMPORTANT: It\'s best not to modify this op for custom effects!"
 		},
@@ -26,13 +26,13 @@
 			m_Notes = "Sets up control points for the child effects below. IMPORTANT: It\'s best not to modify this op for custom effects!"
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_CreateWithinSphere"
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"
@@ -40,27 +40,70 @@
 			m_Notes = "Emits a single \"master\" particle for the projectile. IMPORTANT: It\'s best not to modify this op for custom effects!"
 		},
 	]
-	m_ForceGenerators =
+	m_ForceGenerators = 
 	[
 		{
 			_class = "C_OP_AttractToControlPoint"
-			m_fForceAmount = 1000000.000000
-			m_fFalloffPower = 0.000000
+			m_fForceAmount = 1000000.0
+			m_fFalloffPower = 0.0
 			m_nControlPointNumber = 1
 			m_Notes = "This Force Generator pulls the projectile effect toward its target (CP1). Though the force is set extraordinarily high, the effect\'s speed is limited by the Movement Max Velocity op. IMPORTANT: It\'s best not to modify this op for custom effects!"
 		},
 	]
-	m_Children =
+	m_Children = 
 	[
-		{
-			m_ChildRef = resource:"particles/base_attacks/frostivus_throne_wraith_king_explode.vpcf"
-		},
 		{
 			m_ChildRef = resource:"particles/base_attacks/basic_projectile_trail.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_launch_smoke.vpcf"
 		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_skeletonking/wraith_king_reincarnate_explode_c.vpcf"
+		},
 	]
 	m_bShouldSort = false
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 2
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 1.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 3
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 9
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
 }

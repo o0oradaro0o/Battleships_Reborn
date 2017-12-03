@@ -653,32 +653,7 @@ function CallBatFly(args) -- keys is the information sent by the ability
 		
 		local abil1 = casterUnit:GetAbilityByIndex(3)
 			local level2 = abil1:GetLevel()
-		casterUnit:RemoveAbility(abil1:GetAbilityName())
-		casterUnit:AddAbility(ability)
-		
-		local abil2 = casterUnit:GetAbilityByIndex(3)
-		abil2:SetLevel(level)
-		abil2:CastAbility()
-		casterUnit:RemoveAbility(abil2:GetAbilityName())
-		casterUnit:AddAbility("mayday_battleship")
-		local abil3 = casterUnit:GetAbilityByIndex(3)
-		abil3:SetLevel(level2)
-end
-
-
-function CallLeapBattleship(args)
-print('[ItemFunctions] CallLeapBattleship started! ')
-
-		local casterUnit = args.caster
-		print('[ItemFunctions] CallLeapBattleship 1! ')
-		local ability = "mirana_leap_battlsehip_caller"
-		print('[ItemFunctions] CallLeapBattleship 2! ')
-		local abil = casterUnit:GetAbilityByIndex(1)
-		local level = abil:GetLevel()
-		
-		local abil1 = casterUnit:GetAbilityByIndex(3)
-			local level2 = abil1:GetLevel()
-			print('[ItemFunctions] CallLeapBattleship 3! ')
+			local removed = abil1:GetAbilityName()
 		casterUnit:RemoveAbility(abil1:GetAbilityName())
 		casterUnit:AddAbility(ability)
 		
@@ -688,18 +663,12 @@ print('[ItemFunctions] CallLeapBattleship started! ')
 		local abil2 = casterUnit:GetAbilityByIndex(3)
 		abil2:SetLevel(level)
 		abil2:CastAbility()
-		print('[ItemFunctions] CallLeapBattleship 4! ')
-		 Timers:CreateTimer(  0.5, function()
 		casterUnit:RemoveAbility(abil2:GetAbilityName())
-		print('[ItemFunctions] CallLeapBattleship 5 ')
-		casterUnit:AddAbility("batten_hatches")
-		print('[ItemFunctions] CallLeapBattleship 6! ')
-		local abil3 = casterUnit:GetAbilityByIndex(3)
-		print('[ItemFunctions] CallLeapBattleship 7! ')
-		abil3:SetLevel(level2)
-		print('[ItemFunctions] CallLeapBattleship 8! ')
-		end)
+		casterUnit:AddAbility(removed)
 end
+
+
+
 
 function CallSlarkInvis(args) -- keys is the information sent by the ability
 		print('[ItemFunctions] CallPuckDive started! ')
@@ -712,6 +681,7 @@ function CallSlarkInvis(args) -- keys is the information sent by the ability
 		
 		local abil1 = casterUnit:GetAbilityByIndex(3)
 			local level2 = abil1:GetLevel()
+			local replaced = abil1:GetAbilityName()
 		casterUnit:RemoveAbility(abil1:GetAbilityName())
 		casterUnit:AddAbility(ability)
 		
@@ -719,9 +689,9 @@ function CallSlarkInvis(args) -- keys is the information sent by the ability
 		abil2:SetLevel(level)
 		abil2:CastAbility()
 		casterUnit:RemoveAbility(abil2:GetAbilityName())
-		casterUnit:AddAbility("batten_hatches")
-		local abil3 = casterUnit:GetAbilityByIndex(3)
-		abil3:SetLevel(level2)
+		casterUnit:AddAbility(replaced)
+
+		--abil3:SetLevel(level2)
 		
 		Timers:CreateTimer( 4, function()
 		 RemoveDD(args)

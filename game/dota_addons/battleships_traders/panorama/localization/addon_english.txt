@@ -1,8 +1,5 @@
 "addon"
 {
-    "Language"        "English"
-    "Tokens"
-    {
 
 	"addon_game_name" 			"Battleships"
 	
@@ -3167,5 +3164,4 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 \n- Empire gold now based partially on team current net worth
 "
 		
-	}
 }

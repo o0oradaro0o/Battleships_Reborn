@@ -7,8 +7,7 @@ require('storage')
 require('StatCollection/init')
 -- This library can be used for starting customized animations on units from lua
 require('libraries/animations')
--- This library can be used for performing "Frankenstein" attachments on units
-require('libraries/attachments')
+
 
 
 if CBattleship8D == nil then
@@ -250,7 +249,7 @@ g_ItemCodeLookUp["item_storm_spirit_replacement_boat"] = "BJ"
 -- this is for if we need to swap a unit model 
 g_ModelLookUp = {}
 g_ModelLookUp["npc_dota_hero_zuus"] = "models/barrel_boat.vmdl"
-g_ModelLookUp["npc_dota_hero_ancient_apparition"] = "models/zodiac_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_ancient_apparition"] = "models/zodiac/sm_zodiac.vmdl"
 g_ModelLookUp["npc_dota_hero_tidehunter"] = "models/pontoon_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_crystal_maiden"] = "models/canoe_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_phantom_lancer"] = "models/air_boat.vmdl"

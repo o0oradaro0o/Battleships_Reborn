@@ -2354,24 +2354,6 @@
 <Image class="Toggled" src="file://{images}/items/breach_ult_bow.png"  />
 <Image class="Toggled" src="file://{images}/items/ice_ult_bow.png"  />
 <Image class="Toggled" src="file://{images}/items/wind_ult_bow.png"  />
-<Image class="Toggled" src="file://{images}/items/hull_one.png"  />
-<Image class="Toggled" src="file://{images}/items/hull_two.png"  />
-<Image class="Toggled" src="file://{images}/items/hull_three.png"  />
-<Image class="Toggled" src="file://{images}/items/hull_four.png"  />
-<Image class="Toggled" src="file://{images}/items/sail_one.png"  />
-<Image class="Toggled" src="file://{images}/items/sail_two.png"  />
-<Image class="Toggled" src="file://{images}/items/sail_three.png"  />
-<Image class="Toggled" src="file://{images}/items/sail_four.png"  />
-<Image class="Toggled" src="file://{images}/items/repair_one.png"  />
-<Image class="Toggled" src="file://{images}/items/repair_two.png"  />
-<Image class="Toggled" src="file://{images}/items/repair_three.png"  />
-<Image class="Toggled" src="file://{images}/items/repair_four.png"  />
-<Image class="Toggled" src="file://{images}/items/wood_one.png"  />
-<Image class="Toggled" src="file://{images}/items/wood_two.png"  />
-<Image class="Toggled" src="file://{images}/items/wood_three.png"  />
-<Image class="Toggled" src="file://{images}/items/wood_four.png"  />
-<Image class="Toggled" src="file://{images}/items/tower_debuff.png"  />
-<Image class="Toggled" src="file://{images}/items/tower_healer.png"  />
 <Image class="Toggled" src="file://{images}/items/nut_spawner" />
 
 		 

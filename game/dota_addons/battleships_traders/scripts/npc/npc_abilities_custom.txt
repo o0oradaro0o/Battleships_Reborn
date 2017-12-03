@@ -2535,7 +2535,7 @@
 					{
 						"Target" "TARGET"
 						"EffectName"		 "particles/basic_projectile/pillage_effect.vpcf" 
-						"EffectAttachType"	"follow_origin"
+						"EffectAttachType"	"follow_overhead"
 					}
 				}
 				
@@ -3863,78 +3863,10 @@
 	}
 	
 	
-	
-	
-	"mirana_leap_battlsehip"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass" 					"ability_datadriven"												// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityTextureName"				"mirana_leap_battlsehip"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15.0 13.0 11.0 9.0"
-		"AbilityDuration"				"10.0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0 0 0 0"
-
-		
-			"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
-				"Function"			"CallLeapBattleship"
-			}
-		}
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"leap_distance"			"600 650 700 750"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"leap_speed"			"2000.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"leap_acceleration"		"7000.0"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"leap_radius"		"775"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"leap_speedbonus"	"4 8 12 16"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"leap_speedbonus_as"	"8 16 24 32"
-			}
-		}
-	}
-	//=================================================================================================================
+//=================================================================================================================
 	// Ability: Mirana Leap
 	//=================================================================================================================
-	"mirana_leap_battlsehip_caller"
+	"mirana_leap_battlsehip"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -3948,8 +3880,8 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15.0 13.0 11.0 9.0"
-		"AbilityDuration"				"10.0"
+		"AbilityCooldown"				"1.5 1.5 1.5 1.5"
+		"AbilityDuration"				"0.3"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -3962,32 +3894,43 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"leap_distance"			"800 900 1000 1100"
+				"leap_distance"			"550"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"leap_speed"			"2000.0"
+				"leap_speed"			"1300.0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"leap_acceleration"		"7000.0"
+				"leap_acceleration"		"6000.0"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"leap_radius"		"775"
+				"leap_speedbonus"	"8 16 24 32"
 			}
 			"05"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"leap_speedbonus"	"4 8 12 16"
+				"var_type"				"FIELD_INTEGER"
+				"leap_speedbonus_as"	"25 50 75 100"
+				"LinkedSpecialBonus"	"special_bonus_unique_mirana_1"
 			}
 			"06"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"leap_speedbonus_as"	"8 16 24 32"
+				"var_type"				"FIELD_FLOAT"
+				"leap_bonus_duration"	"2.0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_charges"			"3"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"charge_restore_time"	"21 19 17 15"
 			}
 		}
 	}
@@ -4028,13 +3971,14 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_reduction"		"0.1 0.1 0.1 0.1"
+				"var_type"				"FIELD_INTEGER"
+				"powershot_damage"		"150 225 300 375"
+				"LinkedSpecialBonus"	"special_bonus_unique_windranger_3"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"speed_reduction"		"0.1 0.1 0.1 0.1"
+				"damage_reduction"		"0.1 0.1 0.1 0.1"
 			}
 			"03"
 			{
@@ -4044,12 +3988,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"arrow_range"			"2325"
+				"arrow_range"			"2600"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"arrow_speed"			"2300.0 2300.0 2300.0 2300.0"
+				"arrow_speed"			"3000.0 3000.0 3000.0 3000.0"
 			}
 			"06"
 			{
@@ -6848,12 +6792,12 @@
 			"RemoveModifier"
 			{
 				"Target" "CASTER"
-				"ModifierName" "aura_ice"
+				"ModifierName" "aura_de_armor"
 			}
 			"ApplyModifier"
 			{
 				"Target" "CASTER"
-				"ModifierName" "aura_ice"
+				"ModifierName" "aura_de_armor"
 			}
 		}
 		
