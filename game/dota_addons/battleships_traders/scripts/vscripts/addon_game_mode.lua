@@ -3027,6 +3027,7 @@ end
 function CBattleship8D:OnItemPurchased( keys )
   print ( '[BAREBONES] OnItemPurchased')
 
+
   -- The playerID of the hero who is buying something
   local plyID = keys.PlayerID
   if not plyID then return end
@@ -3040,11 +3041,14 @@ function CBattleship8D:OnItemPurchased( keys )
             end
 		end
     end
+	
 local itemName = keys.itemname 
+
 if g_ItemCodeLookUp[itemName] ~= nil then
 print(g_ItemCodeLookUp[itemName])
 	  storage:AddToPlayerItemHist(casterUnit:GetPlayerID(),g_ItemCodeLookUp[itemName])--math.floor(GameRules:GetGameTime()/60+0.5) .. g_ItemCodeLookUp[itemName])
 end	  
+
 
   -- The name of the item purchased
   
@@ -3052,6 +3056,32 @@ end
   local herogold = casterUnit:GetGold()
   g_HeroGoldArray[casterUnit:GetPlayerOwnerID()]=herogold
   
+  local sellItBack = false
+			for itemSlot = 0, 14, 1 do 
+				local Item = casterUnit:GetItemInSlot( itemSlot )
+				if Item ~= nil and 
+				string.match(Item:GetName(), itemName) and
+				string.match(Item:GetName(),"doubled") then
+					sellItBack=true;
+					
+				end
+			end
+			if sellItBack then
+				for itemSlot = 0, 14, 1 do 
+					local Item = casterUnit:GetItemInSlot( itemSlot )
+					if Item ~= nil and string.match( itemName, Item:GetName()) then
+						casterUnit:SetGold(herogold + GetItemCost(Item:GetName()), true)
+						casterUnit:SetGold(0, false)
+						g_HeroGoldArray[casterUnit:GetPlayerOwnerID()] = herogold + GetItemCost(Item:GetName())
+						casterUnit:RemoveItem(Item)
+						
+							 Notifications:Top(casterUnit:GetPlayerID(), {text="#max_items_1", duration=5.0, style={color="#800000",  fontSize="50px;"}})
+							  Notifications:Top(casterUnit:GetPlayerID(), {image="file://{images}/items/".. string.sub (itemName, 6)  ..".png", style={height="65px", width = "150px"} , continue=true})
+							  Notifications:Top(casterUnit:GetPlayerID(), {text="#max_items_2", duration=5.0, style={color="#800000",  fontSize="50px;"}})
+					end
+				end
+			end
+	
 	
 	if string.match(itemName, "tower_debuff") then
 		debuffTowers(casterUnit, itemName)

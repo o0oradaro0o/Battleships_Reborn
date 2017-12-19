@@ -261,6 +261,10 @@
 	"south_gets"	"South gets "
 	"for_each_player"	"each."
 	
+	//shop
+	"max_items_1" "You have the maximum number of  "
+	"max_items_2" "Try buying its next level."
+	
 	//kil self
 	"kill_self_one"	"Do not kill yourself opponents awarded "
 	"kill_self_two"	"distributed evenly "
@@ -3156,12 +3160,12 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		
 		"News_Title"		"News!"
 		"News_Content"		"Hi all! Art update will resume but is temporarily on hold.  In the meantime I am continuing to make balance changes.
-\n Newest balance changes: (8-24-2017)
-\n- Catamaran no longer disjoints projectiles with leap but has much shorter cooldown
-\n- Paddlewheel dive cooldown and duration both reduced
-\n- Wind made stronger
-\n- Ice Made weaker
-\n- Empire gold now based partially on team current net worth
+ Newest balance changes: (8-24-2017)
+- Catamaran no longer disjoints projectiles with leap but has much shorter cooldown
+- Paddlewheel dive cooldown and duration both reduced
+- Wind made stronger
+- Ice Made weaker
+- Empire gold now based partially on team current net worth
 "
 		
 }
