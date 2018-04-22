@@ -201,6 +201,8 @@ game/dota_addons/ui_example
 game/dota_addons/vpks/
 game/dota_addons/workshop_testbed/
 game/dota_addons/new_bloom_2017/
+game/dota_addons/frostivus_2017/
+game/dota_addons/last_hit_trainer/
 
 *.bin
 *.mdmp

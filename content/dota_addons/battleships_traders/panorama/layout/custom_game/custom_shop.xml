@@ -2277,6 +2277,36 @@
                     </Panel>
                 </Panel>
             </Panel>
+		/* side_shop */
+            <Panel hittest="false" id="side_shop" class="shop_guts">
+                <Image class="bkg_image" src="file://{images}/custom_game/left_top.png" />
+                <Panel class="shop_content_holder">
+				<Panel hittest="false" class="closeButtonholder">
+				<Button class="close" onactivate="hideShop()">
+						<Label  text="X" class="closeX"/>		
+				</Button>
+			</Panel>
+					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
+                    <Panel hittest="false" class="supply_guts">
+                        <Panel hittest="false" class="supply_row">
+                            <Button class="TradeBtnItm" onactivate="buyItem('spys', 500 )" oncontextmenu="buyItem('spys', 500 )">
+                                <Image class="item_image" src="file://{images}/items/tower_debuff.png" />
+								 <Label hittest="false" class="gold_cost_text" text="500  G" />
+								 <Label hittest="false" class="item_desc_text" text="#spys"/>
+                            </Button>
+							<Button class="TradeBtnItm" onactivate="buyItem('heals', 300 )" oncontextmenu="buyItem('heals', 300 )">
+                                <Image class="item_image" src="file://{images}/items/tower_healer.png" />
+								 <Label hittest="false" class="gold_cost_text" text="300 G" />
+								 <Label hittest="false" class="item_desc_text" text="#heals"/>
+                            </Button>
+                        </Panel>
+                        
+                    </Panel>
+                </Panel>
+            </Panel>
+
+
+
 		<Panel hittest="false" id="empty_guts">
             <Panel hittest="false" id="empty_guts_content" oncancel="hideShop()" onmouseover="NoFadeMap()" onmouseout="okayToFade()">
                 <Label hittest="false" id="no_trade_text" text="#no_trade" />

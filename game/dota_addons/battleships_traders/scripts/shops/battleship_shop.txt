@@ -108,11 +108,6 @@
 	{
 		
 	}
-	"secretshop"
-	{
-		 "item" "item_tower_debuff"
- "item" "item_tower_healer"
- "item" "item_nut_spawner"
-	}
+
 
 }

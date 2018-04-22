@@ -206,6 +206,9 @@
 	"buy_spy_header" "Spies have been purchased; structures have been sabotaged!"
 	"spys_reminder" "Spies can be purchased to sabotage structures from the side shops!"
 	
+	"spys" "Permanently reduces the armor of all enemy buildings by 1."
+	"heals" "Instantly restores 10% of missing health to all allied towers."
+	
 	//warnings
 	"off_wall" " Stay off the walls if you cannot fly!"
 	"dc_drop" " has disconnected they will have 3 minutes of gametime (not pauses) before their gold is distributed"	
@@ -244,8 +247,8 @@
 	"streak_reward_one_s" "Kill Streak bonus grants southern players "
 	"streak_reward_two_s"	"each."
 	
-	"team_wipe_north" "All SOUTHERN capital ships fall NORTH, you did good and should be proud."
-	"team_wipe_south" "All NORTH capital ships fall SOUTHERN, you did good and should be proud."
+	"team_wipe_north" "All NORTH capital ships fall SOUTHERN, you did good and should be proud."
+	"team_wipe_south" "All SOUTHERN capital ships fall NORTH, you did good and should be proud."
 	
 	"spawn_tide"	"TIDEHUNTER ROAMS THE SEAS!"
 	
@@ -3151,7 +3154,7 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		
 		"Author_Title"		"Presented By: radar, WeAreAllBritons, Frood, Multiplex, Penrose, and zentrix"
 		"Artist_Panel"		"Original Artwork By: Taterfish and Slapunas"
-		"Hero_Title"		"IRC heroes: Noya, BMD, Myll, Hewdraw, Sidearms, Wigguno, Jimmydorry, Crazyloon, and SinZ "
+		"Hero_Title"		"IRC heroes: Noya, BMD, Myll, VicFrank, Hewdraw, Sidearms, Wigguno, Jimmydorry, Crazyloon, and SinZ "
 		
 		"Coop_Title"		"Co-Op Challenge mode!"
 		"Coop_Desc"			"An assault challenge against waves of bots. Kill their base before you are overrun."

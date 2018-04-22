@@ -49,7 +49,7 @@ g_XpToLevel={
 
 -- creep spawn and level counters
 g_CreepLevel = 0
-g_NumSmallCreeps = 4
+g_NumSmallCreeps = 6
 g_NumBigCreeps = 3
 g_NumHugeCreeps = 2
 g_NumPrivCreeps = 1
@@ -310,6 +310,7 @@ function Precache( context )
 	PrecacheResource( "model", "models/bad_ancient_ambient_blast", context )
 	PrecacheResource( "model", "models/heroes/tidehunter/tidehunter.vmdl", context )
 	
+	
 	PrecacheResource( "model", "models/spin_one", context )
 	PrecacheResource( "model", "models/spin_two", context )
 		
@@ -401,6 +402,8 @@ function Precache( context )
 	
 	PrecacheResource( "model", "models/courier/sw_donkey/sw_donkey.vmdl", context )
 	PrecacheResource( "model", "models/items/courier/jumo/jumo.vmdl", context )
+	PrecacheResource( "model", "models/heroes/shopkeeper/shopkeeper.vmdl", context )
+
 	PrecacheResource( "model", "models/items/courier/blotto_and_stick/blotto.vmdl", context )
 	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_death_prophet.vsndevts", context )
 	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts", context )
@@ -469,9 +472,6 @@ function CBattleship8D:InitGameMode()
 	
 	GameRules:GetGameModeEntity():SetBountyRunePickupFilter( Dynamic_Wrap( CBattleship8D, "BountyRuneFilter" ), self )
 	
-	
-
-	
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
 	GameRules:GetGameModeEntity():SetRecommendedItemsDisabled(true)
 	GameRules:SetUseBaseGoldBountyOnHeroes(true)
@@ -485,7 +485,7 @@ function CBattleship8D:InitGameMode()
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(CBattleship8D, 'OnEntityKilled'), self)
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(CBattleship8D, 'OnNPCSpawned'), self)
 	ListenToGameEvent('player_connect_full', Dynamic_Wrap(CBattleship8D, 'OnConnectFull'), self)
-  ListenToGameEvent('player_disconnect', Dynamic_Wrap(CBattleship8D, 'OnDisconnect'), self)
+ 	ListenToGameEvent('player_disconnect', Dynamic_Wrap(CBattleship8D, 'OnDisconnect'), self)
   
 	CustomGameEventManager:RegisterListener("GiveEasy", GiveEasy);
 	CustomGameEventManager:RegisterListener("GiveMedium", GiveMedium);
@@ -1139,7 +1139,7 @@ function CBattleship8D:OnThink()
 															if Item ~= nil then -- makes sure that the item exists and making sure it is the correct item
 																hero:SetGold(herogold + Item:GetGoldCost(0), true)
 																hero:SetGold(0, false)
-																hero:RemoveItem(Item)
+																RemoveAndDeleteItem(hero,Item)
 															end
 													end
 											end
@@ -1223,7 +1223,7 @@ function CBattleship8D:OnThink()
 							end
 						else
 							if g_OldHeroLocations[hero]~=nil then
-								if g_OlderHeroLocations[hero] ~=nil and (g_OldHeroLocations[hero] - hero:GetOrigin()):Length() >20 then
+								if g_OlderHeroLocations[hero] ~=nil and (g_OldHeroLocations[hero] - hero:GetOrigin()):Length() >100 then
 									g_OlderHeroLocations[hero] = g_OldHeroLocations[hero]
 									--print("update ll2")
 								elseif g_OlderHeroLocations[hero]==nil then
@@ -1233,7 +1233,7 @@ function CBattleship8D:OnThink()
 								--	print("no update ll2")
 								end
 							end
-							if  g_OldHeroLocations[hero]~=nil and (g_OldHeroLocations[hero] - hero:GetOrigin()):Length() >20 then
+							if  g_OldHeroLocations[hero]~=nil and (g_OldHeroLocations[hero] - hero:GetOrigin()):Length() >100 then
 								--print((g_OldHeroLocations[hero] - hero:GetOrigin()):Length())
 								g_OldHeroLocations[hero] = hero:GetOrigin()
 							elseif g_OldHeroLocations[hero]==nil then
@@ -1262,12 +1262,10 @@ function CBattleship8D:OnThink()
 							g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + g_GoldPerTickNorth * 2
 						end
 					end
-				
 
 				end
 			end
 		end
-		
 		HandleTideAbil()
 		
 		if g_MainTimerTickCount % 2 == 0 then
@@ -1420,7 +1418,7 @@ if g_BoatJustBaught ==0 then
 			elseif npc:GetLevel() >= 13 then
 				item:ApplyDataDrivenModifier(npc, npc, "pergatory_3", nil)
 			end
-		npc:RemoveItem(item)
+		RemoveAndDeleteItem(npc,item)
 		Timers:CreateTimer( 0.1, function()
 			if npc:IsHero() or npc:HasInventory() then 
 						for itemSlot = 6, 11, 1 do 
@@ -1505,8 +1503,8 @@ function CBattleship8D:HandleEmpGold()
 				end
 			end
 			
-			goodGoldEach = GetEmpGoldForTeam(DOTA_TEAM_GOODGUYS)
-			badGoldEach = GetEmpGoldForTeam(DOTA_TEAM_BADGUYS)
+			goodGoldEach = GetEmpGoldForTeam(DOTA_TEAM_GOODGUYS)+g_SpyCountSouth*500
+			badGoldEach = GetEmpGoldForTeam(DOTA_TEAM_BADGUYS)+g_SpyCountNorth*500
 
 			Notifications:TopToAll({text="#emp_gold", duration=5.0, style={color="#B2B2B2",  fontSize="50px;"}})
 			Notifications:TopToAll({text="#north_gets", duration=5.0, style={color="#B2B2B2",  fontSize="30px;"}})
@@ -1596,6 +1594,7 @@ if g_CoOpMode==0 then
 					end
 				end
 			end
+			
 			if team_players==0 then
 				team_players=1
 			end
@@ -1750,9 +1749,9 @@ function CBattleship8D:QuickSpawn(team, lane, tier, level, number)
 				--print ("team is: " .. team .. "     spawn is: " .. team .. "_spawn_" .. lane .. "     comparison yields" .. tostring(team == "north"))
                 --hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
 				if team == "north" then
-					 creature = CreateUnitByName( "npc_dota_boat_" .. team .. "_" .. tier , spawnLocation:GetAbsOrigin() + Vector(-300 + i * 200,0,0), true, nil, nil, DOTA_TEAM_BADGUYS )
+					 creature = CreateUnitByName( "npc_dota_boat_" .. team .. "_" .. tier , spawnLocation:GetAbsOrigin() + Vector(-350 + i * 150,0,0), true, nil, nil, DOTA_TEAM_BADGUYS )
 				else
-					 creature = CreateUnitByName( "npc_dota_boat_" .. team .. "_" .. tier , spawnLocation:GetAbsOrigin() + Vector(-300 + i * 200,0,0), true, nil, nil, DOTA_TEAM_GOODGUYS )
+					 creature = CreateUnitByName( "npc_dota_boat_" .. team .. "_" .. tier , spawnLocation:GetAbsOrigin() + Vector(-350 + i * 150,0,0), true, nil, nil, DOTA_TEAM_GOODGUYS )
 				end
                 --Sets the waypath to follow. path_wp1 in this example
 				if creature~=nil then
@@ -2299,10 +2298,6 @@ function sellBoat(hero)
 end
 
 
-
-
-
-
 function CBattleship8D:OnDisconnect(keys)
   print('[BAREBONES] Player Disconnected ' .. tostring(keys.userid))
     PrintTable(keys)
@@ -2351,7 +2346,7 @@ function CBattleship8D:OnConnectFull(keys)
 								local Item = hero:GetItemInSlot( itemSlot )
 								if Item ~= nil then
 									if string.match(Item:GetName(),"contract") then
-										hero:RemoveItem(Item)
+										RemoveAndDeleteItem(hero,Item)
 										local allyteamnumber=hero:GetPlayerID()
 										local data =
 										{
@@ -3036,7 +3031,6 @@ function CBattleship8D:OnItemPurchased( keys )
 		if hero ~= nil then
             local id = hero:GetPlayerOwnerID()
             if id == plyID then
-                print("Reconnecting hero for player ")
 				casterUnit = hero
             end
 		end
@@ -3073,8 +3067,7 @@ end
 						casterUnit:SetGold(herogold + GetItemCost(Item:GetName()), true)
 						casterUnit:SetGold(0, false)
 						g_HeroGoldArray[casterUnit:GetPlayerOwnerID()] = herogold + GetItemCost(Item:GetName())
-						casterUnit:RemoveItem(Item)
-						
+						RemoveAndDeleteItem(casterUnit,Item)
 							 Notifications:Top(casterUnit:GetPlayerID(), {text="#max_items_1", duration=5.0, style={color="#800000",  fontSize="50px;"}})
 							  Notifications:Top(casterUnit:GetPlayerID(), {image="file://{images}/items/".. string.sub (itemName, 6)  ..".png", style={height="65px", width = "150px"} , continue=true})
 							  Notifications:Top(casterUnit:GetPlayerID(), {text="#max_items_2", duration=5.0, style={color="#800000",  fontSize="50px;"}})
@@ -3098,8 +3091,18 @@ end
 	
 	if GameRules:GetGameTime() < 300 and  string.match(itemName, "lorne") then
 		g_LorneItemBuyers = g_LorneItemBuyers + 1
-		
+		if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
+			for itemSlot = 0, 14, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
+					if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
+							local Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
+							if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
+								RemoveAndDeleteItem(casterUnit,Item)
+							end
+					end
+			end
+		end	
 	end
+
 	if g_LorneItemBuyers == g_PlayerCount and g_PlayerCount ~= 0 then
 		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
@@ -3121,13 +3124,12 @@ function fixBackpack(casterUnit)
             if casterUnit ~= nil then
                 local Item = casterUnit:GetItemInSlot( itemSlot )
 				if Item ~= nil and string.match(Item:GetName(), "backpack_stuffer")  then
-					casterUnit:RemoveItem(Item)
+					RemoveAndDeleteItem(casterUnit,Item)
 					local newItem = CreateItem("item_fluff", casterUnit, casterUnit)
 					casterUnit:AddItem(newItem)
 				
 				elseif itemSlot > 5 and itemSlot <9 then
-					casterUnit:RemoveItem(Item)
-					
+					RemoveAndDeleteItem(casterUnit,Item)
 				else
 					local newItem = CreateItem("item_fluff", casterUnit, casterUnit)
 					casterUnit:AddItem(newItem)
@@ -3144,7 +3146,7 @@ function fixBackpack(casterUnit)
 			if casterUnit ~= nil then
 				local activateItem = casterUnit:GetItemInSlot( itemSlot )
 				if activateItem ~= nil and string.match(activateItem:GetName(), "fluff") then
-					casterUnit:RemoveItem(activateItem)
+					RemoveAndDeleteItem(casterUnit,activateItem)
 				end
 			end
 		end
@@ -3167,7 +3169,7 @@ function become_boat(casterUnit, heroname)
                 local Item = casterUnit:GetItemInSlot( itemSlot )
 				if Item ~= nil and string.match(Item:GetName(), "scroll") then
 
-						casterUnit:RemoveItem(Item)
+						RemoveAndDeleteItem(casterUnit,Item)
 					end
 				end
 	end
@@ -3180,13 +3182,11 @@ function become_boat(casterUnit, heroname)
 
 					itemlist[itemSlot] = Item:GetName()
 					 itemstacks[itemSlot]  = Item:GetCurrentCharges()
-						casterUnit:RemoveItem(Item)
-					
+						RemoveAndDeleteItem(casterUnit,Item)
 				elseif Item ~= nil and (string.match(Item:GetName(), "boat")  or string.match(Item:GetName(), "scroll") or string.match(Item:GetName(), "trade_") or string.match(Item:GetName(), "contract")) then
 
 					itemlist[itemSlot] = "item_fluff"
-					casterUnit:RemoveItem(Item)
-				
+					RemoveAndDeleteItem(casterUnit,Item)
 				elseif itemSlot > 5 and itemSlot <9 then
 
 					itemlist[itemSlot] = "item_backpack_stuffer"
@@ -3322,7 +3322,7 @@ function become_boat(casterUnit, heroname)
 								elseif not  string.match(itemlist[b],"fluff") then
 									hero:AddItem(newItem)
 								else
-										hero:RemoveItem(newItem)
+										RemoveAndDeleteItem(hero,newItem)
 								end
 								
 								if itemstacks[b] then
@@ -3339,7 +3339,7 @@ function become_boat(casterUnit, heroname)
 										activateItem:ToggleAbility()
 										
 									elseif activateItem ~= nil and string.match(activateItem:GetName(), "fluff") then
-										hero:RemoveItem(activateItem)
+										RemoveAndDeleteItem(hero,activateItem)
 									end
 								end
 							end
@@ -3363,7 +3363,7 @@ function become_boat(casterUnit, heroname)
 					local Item = casterUnit:GetItemInSlot( itemSlot )
 					
 					if Item ~= nil and  string.match(Item:GetName(), "boat") then
-						casterUnit:RemoveItem(Item)
+						RemoveAndDeleteItem(casterUnit,Item)
 					end
 				end
 			end
@@ -3437,8 +3437,7 @@ local ultslot= 3
 		  if hero ~= nil then
                 local Item = hero:GetItemInSlot( itemSlot )
 				if Item ~= nil and string.match(Item:GetName(), "scroll") then
-
-						hero:RemoveItem(Item)
+						RemoveAndDeleteItem(hero,Item)
 					end
 				end
 	end
@@ -3446,7 +3445,7 @@ local ultslot= 3
 end
 
 
-function debuffTowers(casterUnit, itemName)
+function debuffTowers(casterUnit)
 print('[ItemFunctions] dubuffTower started!')
 	if casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 		g_SpyCountSouth = g_SpyCountSouth + 1
@@ -3454,16 +3453,6 @@ print('[ItemFunctions] dubuffTower started!')
 		g_SpyCountNorth = g_SpyCountNorth + 1
 	end
 	g_SpyAnnouncmentFlag = 1
-	if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
-		for itemSlot = 0, 14, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
-	        	if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
-                		local Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
-                		if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
-                			casterUnit:RemoveItem(Item)
-                		end
-	        	end
-		end
-	end
 	for _,curTower in pairs( Entities:FindAllByClassname( "npc_dota_tow*")) do
 			--	 print('[ItemFunctions] dubuffTower found a tower!')
 				local curArmor = curTower:GetPhysicalArmorBaseValue()
@@ -3477,18 +3466,8 @@ print('[ItemFunctions] dubuffTower started!')
 			
 	end
 end
-function healTowers(casterUnit, itemName)
+function healTowers(casterUnit)
 print('[ItemFunctions] healTowers started!')
-	if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
-		for itemSlot = 0, 14, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
-	        	if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
-                		local Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
-                		if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
-                			casterUnit:RemoveItem(Item)
-                		end
-	        	end
-		end
-	end
 	for _,curTower in pairs( Entities:FindAllByClassname( "npc_dota_tow*")) do
 				-- print('[ItemFunctions] healTowers found a tower!')
 				local curArmor = curTower:GetPhysicalArmorBaseValue()
@@ -3509,7 +3488,7 @@ function spawnNuts(casterUnit, itemName)
 	        	if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
                 		local Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
                 		if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
-                			casterUnit:RemoveItem(Item)
+							RemoveAndDeleteItem(casterUnit,Item)
                 		end
 	        	end
 		end
@@ -3598,7 +3577,7 @@ print("in unstick")
 			if herogold>0 then
 				if hero:GetPlayerID() == pID then
 					if false == hero:HasModifier("pergatory_3") then
-						 if g_OlderHeroLocations[hero]~= nil and ((g_OlderHeroLocations[hero] - hero:GetOrigin()):Length() <1000 or (g_OlderHeroLocations[hero] - hero:GetOrigin()):Length()<50) then
+						 if g_OlderHeroLocations[hero]~= nil and ((g_OlderHeroLocations[hero] - hero:GetOrigin()):Length() <600 and (g_OlderHeroLocations[hero] - hero:GetOrigin()):Length()>50) then
 							local vecorig = g_OlderHeroLocations[hero]
 							hero:SetOrigin(vecorig)
 							stopPhysics(hero)
@@ -3608,8 +3587,7 @@ print("in unstick")
 					end
 					local item = CreateItem( "item_spawn_stunner", hero, hero)
 					item:ApplyDataDrivenModifier(hero, hero, "pergatory_3", nil)
-					hero:RemoveItem(item)
-					
+					RemoveAndDeleteItem(hero,item)
 				end
 			end
 		end
@@ -3816,7 +3794,30 @@ function buyItem(eventSourceIndex, args)
 	end
 	
 	if heroBuying~=nil and heroBuying:IsAlive() then
-		
+		local cost=tonumber(args.cost)
+		local herogold = heroBuying:GetGold()
+		if string.match(args.text,"spy") then
+			if herogold>cost-1 then
+				debuffTowers(heroBuying)
+				heroBuying:SetGold(herogold-cost,true)
+				heroBuying:SetGold(0,false)
+				g_HeroGoldArray[heroBuying:GetPlayerOwnerID()]=herogold-cost
+			else
+				EmitSoundOnClient("ui.contract_fail",PlayerResource:GetPlayer(pID))
+			end
+			return
+		elseif string.match(args.text,"heals") then
+			if herogold>cost-1 then
+				healTowers(heroBuying)
+				heroBuying:SetGold(herogold-cost,true)
+				heroBuying:SetGold(0,false)
+				g_HeroGoldArray[heroBuying:GetPlayerOwnerID()]=herogold-cost
+			else
+				EmitSoundOnClient("ui.contract_fail",PlayerResource:GetPlayer(pID))
+			end
+			return
+		end
+
 		 local tempItem = CreateItem("item_" .. tostring(args.text), hero, hero)
 		 local continue=false
 		 if tempItem:IsStackable() then
@@ -3828,8 +3829,7 @@ function buyItem(eventSourceIndex, args)
 			end
 		end
 		if continue or not CheckInvFull(heroBuying,1) then
-			local cost=tonumber(args.cost)
-			local herogold = heroBuying:GetGold()
+
 			if herogold>cost-1 then
 				EmitSoundOnClient("General.Buy",PlayerResource:GetPlayer(pID))
 				print(tempItem:GetName())
@@ -4014,7 +4014,7 @@ function HandleShopChecks(hero)
 			for itemSlot = 0, 5, 1 do 
 				local Item = hero:GetItemInSlot( itemSlot )
 				if Item ~= nil  and string.match(Item:GetName(),"contract_empty") and ShopDist:Length()<600 then	
-							hero:RemoveItem(Item)
+							RemoveAndDeleteItem(hero,Item)
 							hero:SetGold(hero:GetGold()+300*g_EmpireGoldCount/4,true)
 							hero:SetGold(0,false)
 							g_HeroGoldArray[hero:GetPlayerOwnerID()]=hero:GetGold()+300*g_EmpireGoldCount/4
@@ -4025,11 +4025,7 @@ function HandleShopChecks(hero)
 				end		
 			end
 			
-		
-
-			
-		if ShopDist:Length()<500 and (directionOne:Length() > 1000 and directionTwo:Length() > 1000) and cotinue==1 then
-			
+		if ShopDist:Length()<500 and (directionOne:Length() > 1000 and directionTwo:Length() > 1000) and (cotinue==1) then
 			if g_WasNearShop[hero]==false then
 				print("sending entershop")
 				g_WasNearShop[hero]=true
@@ -4051,7 +4047,7 @@ function HandleShopChecks(hero)
 						local itemStrippedMedium=string.gsub(Item:GetName(),"item_contract_medium","")
 						local itemStrippedHard=string.gsub(Item:GetName(),"item_contract_hard","")
 						if  string.match(nearestShop:GetUnitName(),itemStrippedEasy) then
-							hero:RemoveItem(Item)
+							RemoveAndDeleteItem(hero,Item)
 							hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()]+100*g_EmpireGoldCount/4,true)
 							hero:SetGold(0,false)
 							g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()]+100*g_EmpireGoldCount/4
@@ -4097,7 +4093,7 @@ function HandleShopChecks(hero)
 						Notifications:Top(hero:GetPlayerID(), {text=math.floor(50*g_EmpireGoldCount/numPlayers), duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 						elseif string.match(nearestShop:GetUnitName(),itemStrippedMedium) then
-							hero:RemoveItem(Item)
+							RemoveAndDeleteItem(hero,Item)
 							hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()]+300*g_EmpireGoldCount/4,true)
 							hero:SetGold(0,false)
 								g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()]+300*g_EmpireGoldCount/4
@@ -4148,7 +4144,7 @@ function HandleShopChecks(hero)
 						Notifications:Top(hero:GetPlayerID(),{text=math.floor(75*g_EmpireGoldCount/numPlayers), duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 						elseif string.match(nearestShop:GetUnitName(),itemStrippedHard) then
-							hero:RemoveItem(Item)
+							RemoveAndDeleteItem(hero,Item)
 							hero:SetGold(hero:GetGold()+300*g_EmpireGoldCount/4,true)
 							hero:SetGold(0,false)
 							g_HeroGoldArray[hero:GetPlayerOwnerID()]=hero:GetGold()+300*g_EmpireGoldCount/4
@@ -4529,3 +4525,17 @@ g_BattleModeLocation=0
 end
 
 
+
+
+--======================================= utilities ================================
+
+function RemoveAndDeleteItem(hero,item)
+	print(item:GetClassname())
+	print(item:GetName())
+
+		item:RemoveSelf()
+
+	
+	
+	
+end
