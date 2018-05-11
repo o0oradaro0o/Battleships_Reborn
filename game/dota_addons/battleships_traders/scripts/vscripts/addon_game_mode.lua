@@ -1503,8 +1503,8 @@ function CBattleship8D:HandleEmpGold()
 				end
 			end
 			
-			goodGoldEach = GetEmpGoldForTeam(DOTA_TEAM_GOODGUYS)+g_SpyCountSouth*500
-			badGoldEach = GetEmpGoldForTeam(DOTA_TEAM_BADGUYS)+g_SpyCountNorth*500
+			goodGoldEach = GetEmpGoldForTeam(DOTA_TEAM_GOODGUYS)
+			badGoldEach = GetEmpGoldForTeam(DOTA_TEAM_BADGUYS)
 
 			Notifications:TopToAll({text="#emp_gold", duration=5.0, style={color="#B2B2B2",  fontSize="50px;"}})
 			Notifications:TopToAll({text="#north_gets", duration=5.0, style={color="#B2B2B2",  fontSize="30px;"}})
@@ -1594,7 +1594,15 @@ if g_CoOpMode==0 then
 					end
 				end
 			end
-			
+
+			if team == DOTA_TEAM_GOODGUYS then
+				team_gold=team_gold+g_SpyCountSouth*500
+				other_team_gold=other_team_gold+g_SpyCountNorth*500
+			else
+				team_gold=team_gold+g_SpyCountNorth*500
+				other_team_gold=other_team_gold+g_SpyCountSouth*500
+			end
+
 			if team_players==0 then
 				team_players=1
 			end
@@ -1606,11 +1614,8 @@ if g_CoOpMode==0 then
 				local balanceAmount  =  (other_team_gold-team_gold)
 					goldEach = goldEach + balanceAmount * (g_DockAliveNorthLeft + g_DockAliveNorthRight)/2 * (0.1 + 0.8 * (1/g_EmpireGoldCount))
 			end
-			
 		return goldEach / team_players
-		
 	end
-		
 end
 
 function GetNetWorth(hero)
@@ -1670,61 +1675,42 @@ end
 function GetBoatValue(hero)
 	if string.match(hero:GetName(),"disruptor") then
 		return 3000
-		
 	elseif string.match(hero:GetName(),"ursa") then
 		 return 12000
-
 	elseif string.match(hero:GetName(),"meepo") then
 		 return 6000
-	
 	elseif string.match(hero:GetName(),"tidehunter") then
 		return 1000
-	
 	elseif string.match(hero:GetName(),"apparition") then
 		return 1000
-		
 	elseif string.match(hero:GetName(),"rattletrap") then
 		return 1000
-		
 	elseif string.match(hero:GetName(),"winter_wyvern") then
 		return 3000
-
 	elseif string.match(hero:GetName(),"storm_spirit") then
 		 return 3000
-
 	elseif string.match(hero:GetName(),"ember_spirit") then
 		 return 6000
-
 	elseif string.match(hero:GetName(),"slark") then
 		return 6000
-
 	elseif string.match(hero:GetName(),"jakiro") then
 		return 6000
-
 	elseif string.match(hero:GetName(),"lion") then
 		return 3000
-
 	elseif string.match(hero:GetName(),"tusk") then
 		 return 12000
-
 	elseif string.match(hero:GetName(),"visage") then
 		 return 12000
-
 	elseif string.match(hero:GetName(),"nevermore") then
 		return 3000
-
 	elseif string.match(hero:GetName(),"sniper") then
 		return 6000
-
 	elseif string.match(hero:GetName(),"wind") then
 		return 12000
-
 	elseif string.match(hero:GetName(),"crystal") then
 		return 1000
-
 	elseif string.match(hero:GetName(),"phantom") then
 		return 1000
-
 	elseif string.match(hero:GetName(),"vengefulspirit") then
 		 return 750
 	elseif string.match(hero:GetName(),"enigma") then
@@ -2059,7 +2045,7 @@ function HandleTideAbil()
 						end
 					end
 					
-					end
+		end
 
 
 
@@ -2085,11 +2071,6 @@ function HandleCoOp()
 								hero:SetOrigin( Vector(0,4300,0)+RandomVector( RandomFloat( 200, 300 )))
 								
 							end
-							
-							 
-							
-							
-						
 							local nearby=FindUnitsInRadius( DOTA_TEAM_BADGUYS, hero:GetOrigin(), nil, 1200, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING, 0, 0, false )
 							if #nearby==0 then
 									 local waypoint = Entities:FindByNameNearest( "north_wp_*", hero:GetOrigin(), 0 )
