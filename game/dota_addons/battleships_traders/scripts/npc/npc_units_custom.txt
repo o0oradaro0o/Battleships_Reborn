@@ -779,6 +779,7 @@
 			"Level"						"1"
 			"Ability1"					"kill_rng_on_death"			// Ability 1
 			"Ability2"					"armor_remover"
+			"Ability3"					"anti_backdoor"
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"18"		// Physical protection.
@@ -927,6 +928,7 @@
 			
 			"Ability1"					"kill_rng_on_death"			// Ability 1
 			"Ability2"					"armor_remover"
+			"Ability3"					"anti_backdoor"
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"18"		// Physical protection.
@@ -999,7 +1001,7 @@
 			"MinimapIconSize"			"0"
 			"Level"						"1"
 			"Ability2"					"armor_remover"
-			
+			"Ability3"					"anti_backdoor"
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"18"		// Physical protection.
@@ -1062,7 +1064,7 @@
 			"MinimapIconSize"			"0"
 			"Level"						"1"
 			"Ability2"					"armor_remover"
-			
+			"Ability3"					"anti_backdoor"
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"18"		// Physical protection.
@@ -1126,6 +1128,7 @@
 			"MinimapIconSize"			"0"
 			"Level"						"1"
 			"Ability2"					"armor_remover"
+			"Ability3"					"anti_backdoor"
 			
 			// Armor
 			//----------------------------------------------------------------
@@ -1189,7 +1192,7 @@
 			"MinimapIconSize"			"0"
 			"Level"						"1"
 			"Ability2"					"armor_remover"
-			
+			"Ability3"					"anti_backdoor"
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"18"		// Physical protection.

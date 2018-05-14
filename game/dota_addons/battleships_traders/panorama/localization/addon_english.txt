@@ -1310,19 +1310,19 @@ DURATION: 2.5 3.0 3.5 4.0"
 		
 		"DOTA_Tooltip_ability_item_sail_one"						"Tattered Sail"
 
-		"DOTA_Tooltip_ability_item_sail_one_Description"				"\n\n Poor Sail \n Speed Boost: 35 \n Does not stack with other sails"
+		"DOTA_Tooltip_ability_item_sail_one_Description"				"\n\n Poor Sail \n Speed Boost: 40 \n Active Boost: 40\n Does not stack with other sails"
 		
 		"DOTA_Tooltip_ability_item_sail_two"						"Canvas Sail"
 
-		"DOTA_Tooltip_ability_item_sail_two_Description"				"\n\n Reasonable Sail \n Speed Boost: 50\n Does not stack with other sails"
+		"DOTA_Tooltip_ability_item_sail_two_Description"				"\n\n Reasonable Sail \n Speed Boost: 60 \n Active Boost: 60\n Does not stack with other sails"
 		
 		"DOTA_Tooltip_ability_item_sail_three"						"Carbon Fiber Sail"
 
-		"DOTA_Tooltip_ability_item_sail_three_Description"				"\n\n Good Sail \n Speed Boost: 75\n Does not stack with other sails"
+		"DOTA_Tooltip_ability_item_sail_three_Description"				"\n\n Good Sail \n Speed Boost: 85 \n Active Boost: 85\n Does not stack with other sails"
 		
 		"DOTA_Tooltip_ability_item_sail_four"						"Admiral's Sail"
 
-		"DOTA_Tooltip_ability_item_sail_four_Description"				"\n\n Great Sail \n speed Boost: 100\n Does not stack with other sails"
+		"DOTA_Tooltip_ability_item_sail_four_Description"				"\n\n Great Sail \n speed Boost: 110 \n Active Boost: 110\n Does not stack with other sails"
 		
 		"DOTA_Tooltip_ability_item_hull_one"						"Battered Hull"
 
@@ -3152,9 +3152,9 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		
 				//*************************load screen*****************************
 		
-		"Author_Title"		"Presented By: radar, WeAreAllBritons, Frood, Multiplex, Penrose, and zentrix"
+		"Author_Title"		"Presented By: radar, VicFrank, WeAreAllBritons, Frood, Multiplex, Penrose, and zentrix"
 		"Artist_Panel"		"Original Artwork By: Taterfish and Slapunas"
-		"Hero_Title"		"IRC heroes: Noya, BMD, Myll, VicFrank, Hewdraw, Sidearms, Wigguno, Jimmydorry, Crazyloon, and SinZ "
+		"Hero_Title"		"IRC heroes: Noya, BMD, Myll, Hewdraw, Sidearms, Wigguno, Jimmydorry, Crazyloon, and SinZ "
 		
 		"Coop_Title"		"Co-Op Challenge mode!"
 		"Coop_Desc"			"An assault challenge against waves of bots. Kill their base before you are overrun."

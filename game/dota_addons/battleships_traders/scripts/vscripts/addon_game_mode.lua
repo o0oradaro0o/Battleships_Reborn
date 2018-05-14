@@ -1742,6 +1742,7 @@ function CBattleship8D:QuickSpawn(team, lane, tier, level, number)
                 --Sets the waypath to follow. path_wp1 in this example
 				if creature~=nil then
 						creature:CreatureLevelUp(level)
+						creature.side = lane
 				end
 				
                 i = i + 1
@@ -2751,7 +2752,14 @@ function CBattleship8D:OnEntityKilled( keys )
 		
 		
   if killedUnit:GetGoldBounty() and killerEntity:IsRealHero() and killerEntity:IsOwnedByAnyPlayer() then
-  
+	
+	local deathEffect = ParticleManager:CreateParticleForPlayer( "particles/basic_projectile/last_hit.vpcf", PATTACH_ABSORIGIN_FOLLOW, killedUnit,PlayerResource:GetPlayer(killerEntity:GetPlayerID()))
+	Timers:CreateTimer(1, function() 
+		ParticleManager:DestroyParticle(deathEffect,false)
+	end)
+	
+		EmitSoundOnClient("General.Coins",PlayerResource:GetPlayer(killerEntity:GetPlayerID()))
+
 		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 			print(hero:GetName())

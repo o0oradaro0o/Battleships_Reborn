@@ -2234,6 +2234,48 @@ function maintainNoFireZone(keys)
 		end
 	end
 end
+function AntiBackdoor(keys)
+	local casterUnit = keys.caster
+	if casterUnit.hasBuff == nil then
+		casterUnit.hasBuff=false
+	end
+	allys =
+			FindUnitsInRadius(
+				casterUnit:GetTeam(),
+			casterUnit:GetOrigin(),
+			nil,
+			100000,
+			DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+			DOTA_UNIT_TARGET_BASIC,
+			0,
+			0,
+			false
+		)
+	local comp="right"
+	if casterUnit:GetOrigin().x < 0 then
+		comp="left"
+	end
+	local ShouldBeBoosted=false
+	for _, creep in pairs(allys) do
+		if creep.side~=nil and string.match(creep.side,comp) then
+			ShouldBeBoosted=true
+			break 
+		end
+	end
+
+		if  ShouldBeBoosted == true and casterUnit.hasBuff==false then
+			local curArmor = casterUnit:GetPhysicalArmorBaseValue()
+			casterUnit:SetPhysicalArmorBaseValue(curArmor+30.0)
+			casterUnit.hasBuff=true
+		elseif ShouldBeBoosted == false and casterUnit.hasBuff==true then
+			local curArmor = casterUnit:GetPhysicalArmorBaseValue()
+			casterUnit:SetPhysicalArmorBaseValue(curArmor-30.0)
+			casterUnit.hasBuff=false
+	end	
+
+	
+
+end
 
 function killNoFireZone(keys)
 	local casterUnit = keys.caster

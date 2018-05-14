@@ -1693,12 +1693,11 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_sail_one"
 
-
-
+		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"150"
@@ -1708,7 +1707,17 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemAlertable"					"1"
 		"ItemAliases"					"mana;mb"
-	
+		"AbilityCastRange"              "0"
+		"AbilityManaCost"               "0"
+		"AbilityCooldown"               "25"
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "extra_speed"
+			}
+		}
 
 		"Modifiers"
 		{
@@ -1721,6 +1730,15 @@
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"  "%bonus_movement"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"			 "%bonus_hp"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+				}
+			}
+			extra_speed
+			{
+				"Duration"  "%remove"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "%bonus_speed"
+
 				}
 			}
 		}
@@ -1736,15 +1754,16 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"0"
+				"remove"				"3"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"0"
+				"bonus_speed"			"40"
 			}
 		}
 	}
+
 	//=================================================================================================================
 	// sail_two
 	//=================================================================================================================
@@ -1754,7 +1773,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_sail_two"
 
@@ -1769,7 +1788,17 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemAlertable"					"1"
 		"ItemAliases"					"mana;mb"
-	
+	"AbilityCastRange"              "0"
+		"AbilityManaCost"               "0"
+		"AbilityCooldown"               "25"
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "extra_speed"
+			}
+		}
 
 		"Modifiers"
 		{
@@ -1782,6 +1811,15 @@
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"  "%bonus_movement"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"			 "%bonus_hp"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+				}
+			}
+			extra_speed
+			{
+				"Duration"  "%remove"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "%bonus_speed"
+
 				}
 			}
 		}
@@ -1797,12 +1835,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"0"
+				"remove"				"3"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"0"
+				"bonus_speed"			"60"
 			}
 		}
 	}
@@ -1815,7 +1853,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_sail_three"
 
@@ -1830,7 +1868,17 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemAlertable"					"1"
 		"ItemAliases"					"mana;mb"
-	
+	"AbilityCastRange"              "0"
+		"AbilityManaCost"               "0"
+		"AbilityCooldown"               "25"
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "extra_speed"
+			}
+		}
 
 		"Modifiers"
 		{
@@ -1843,6 +1891,15 @@
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"  "%bonus_movement"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"			 "%bonus_hp"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+				}
+			}
+			extra_speed
+			{
+				"Duration"  "%remove"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "%bonus_speed"
+
 				}
 			}
 		}
@@ -1858,12 +1915,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"0"
+				"remove"				"3"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"0"
+				"bonus_speed"			"85"
 			}
 		}
 	}
@@ -1877,7 +1934,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_sail_four"
 
@@ -1892,7 +1949,17 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemAlertable"					"1"
 		"ItemAliases"					"mana;mb"
-	
+	"AbilityCastRange"              "0"
+		"AbilityManaCost"               "0"
+		"AbilityCooldown"               "25"
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "extra_speed"
+			}
+		}
 
 		"Modifiers"
 		{
@@ -1905,6 +1972,15 @@
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"  "%bonus_movement"
 					"MODIFIER_PROPERTY_HEALTH_BONUS"			 "%bonus_hp"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+				}
+			}
+			extra_speed
+			{
+				"Duration"  "%remove"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "%bonus_speed"
+
 				}
 			}
 		}
@@ -1920,12 +1996,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"0"
+				"remove"				"3"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"0"
+				"bonus_speed"			"110"
 			}
 		}
 	}
@@ -7567,7 +7643,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"dmg"		"96"
+				"dmg"		"48"
 			}
 			"02"
 			{

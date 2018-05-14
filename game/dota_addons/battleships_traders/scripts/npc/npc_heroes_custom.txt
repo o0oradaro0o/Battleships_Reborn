@@ -138,7 +138,7 @@
 		"AttributeBaseAgility"      "1"                                     // Base agility
 		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
 		
-		"MovementSpeed"				"300"									// Speed.
+		"MovementSpeed"				"270"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 		
 		"StatusHealth"				"750"		// Base health.
@@ -427,7 +427,7 @@
 		"MovementSpeed"				"285"									// Speed.
 		"MovementTurnRate"			"0.3"									// Turning rate.
 		
-		"StatusHealth"				"650"		// Base health.
+		"StatusHealth"				"700"		// Base health.
 		"StatusHealthRegen"			"8.0"		// Health regeneration rate.
 		
 		"ArmorPhysical"				"0"
@@ -1109,7 +1109,7 @@
 		"MovementTurnRate"			"0.5"									// Turning rate.
 		
 		"StatusHealth"				"5000"		// Base health.
-		"StatusHealthRegen"			"70.0"		// Health regeneration rate.
+		"StatusHealthRegen"			"100.0"		// Health regeneration rate.
 		
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
