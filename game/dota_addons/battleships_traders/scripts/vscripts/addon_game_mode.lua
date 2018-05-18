@@ -156,6 +156,10 @@ g_ItemCodeLookUp["item_poison_bow"] = "OO"
 g_ItemCodeLookUp["item_light_bow"] = "LO"
 g_ItemCodeLookUp["item_ice_bow"] = "IO"
 g_ItemCodeLookUp["item_wind_bow"] = "WO"
+g_ItemCodeLookUp["item_caulk_bow"] = "LO"
+g_ItemCodeLookUp["item_spin_bow"] = "SO"
+g_ItemCodeLookUp["item_chaos_bow"] = "KO"
+g_ItemCodeLookUp["item_breach_bow"] = "BO"
 
 g_ItemCodeLookUp["item_coal_two_bow"] = "CT"
 g_ItemCodeLookUp["item_fire_two_bow"] = "FT"
@@ -164,6 +168,10 @@ g_ItemCodeLookUp["item_poison_two_bow"] = "OT"
 g_ItemCodeLookUp["item_light_two_bow"] = "LT"
 g_ItemCodeLookUp["item_ice_two_bow"] = "IT"
 g_ItemCodeLookUp["item_wind_two_bow"] = "WT"
+g_ItemCodeLookUp["item_caulk_two_bow"] = "LT"
+g_ItemCodeLookUp["item_spin_two_bow"] = "ST"
+g_ItemCodeLookUp["item_chaos_two_bow"] = "KT"
+g_ItemCodeLookUp["item_breach_two_bow"] = "BT"
 
 g_ItemCodeLookUp["item_coal_three_bow"] = "CH"
 g_ItemCodeLookUp["item_fire_three_bow"] = "FH"
@@ -172,6 +180,11 @@ g_ItemCodeLookUp["item_poison_three_bow"] = "OH"
 g_ItemCodeLookUp["item_light_three_bow"] = "LH"
 g_ItemCodeLookUp["item_ice_three_bow"] = "IH"
 g_ItemCodeLookUp["item_wind_three_bow"] = "WH"
+g_ItemCodeLookUp["item_caulk_three_bow"] = "LH"
+g_ItemCodeLookUp["item_spin_three_bow"] = "SH"
+g_ItemCodeLookUp["item_chaos_three_bow"] = "KH"
+g_ItemCodeLookUp["item_breac_threeh_bow"] = "BH"
+
 g_ItemCodeLookUp["item_recipe_coal_ult_bow"] = "CU"
 
 g_ItemCodeLookUp["item_recipe_fire_ult_bow"] = "FU"
@@ -180,6 +193,10 @@ g_ItemCodeLookUp["item_recipe_poison_ult_bow"] = "OU"
 g_ItemCodeLookUp["item_recipe_light_ult_bow"] = "LU"
 g_ItemCodeLookUp["item_recipe_ice_ult_bow"] = "IU"
 g_ItemCodeLookUp["item_recipe_wind_ult_bow"] = "WU"
+g_ItemCodeLookUp["item_recipe_caulk_ult_bow"] = "LU"
+g_ItemCodeLookUp["item_recipe_spin_ult_bow"] = "SU"
+g_ItemCodeLookUp["item_recipe_chaos_ult_bow"] = "KU"
+g_ItemCodeLookUp["item_recipe_breach_ult_bow"] = "BU"
 
 g_ItemCodeLookUp["item_hull_one"] = "HO"
 g_ItemCodeLookUp["item_hull_two"] = "HT"
@@ -430,12 +447,45 @@ function Precache( context )
 	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts", context )
 	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts", context )
 	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts", context )
+	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_naga_siren.vsndevts", context )
+	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts", context )
+	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts", context )
+	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts", context )
+	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_slardar.vsndevts", context )
+	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts", context )
+	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_techies.vsndevts", context )
+	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts", context )
+	
+	PrecacheResource( "soundfile","soundevents/voscripts/game_sounds_vo_techies.vsndevts", context )
+
+	PrecacheResource( "soundfile","soundevents/game_sounds_items.vsndevts", context )
+	PrecacheResource( "soundfile","soundevents/voscripts/game_sounds_vo_tusk.vsndevts", context )
+	
 	PrecacheResource( "soundfile","soundevents/voscripts/game_sounds_vo_announcer_dlc_bastion.vsndevts", context )
 	PrecacheResource( "soundfile","soundevents/voscripts/game_sounds_vo_announcer_dlc_axe.vsndevts", context )
 	PrecacheResource( "soundfile","soundevents/voscripts/game_sounds_vo_announcer_dlc_lina.vsndevts", context )
 	PrecacheResource( "soundfile","soundevents/voscripts/game_sounds_vo_announcer_dlc_bristleback.vsndevts", context )
 	PrecacheResource( "soundfile","soundevents/voscripts/game_sounds_vo_announcer_dlc_stormspirit.vsndevts", context )
 	PrecacheResource( "soundfile","soundevents/voscripts/game_sounds_vo_announcer_dlc_workshop_pirate.vsndevts", context )
+	
+PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts", context )
+PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts", context )
+PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts", context )
+PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts", context )
+PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts", context )
+PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_witchdoctor.vsndevts", context )
+PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts", context )
+PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_death_prophet.vsndevts", context )
+PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts", context )
+PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts", context )
+PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_slark.vsndevts", context )
+PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_troll_warlord.vsndevts", context )
+PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_shredder.vsndevts", context )
+PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_lina.vsndevts", context )
+PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_rattletrap.vsndevts", context )
+PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_lich.vsndevts", context )
+PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts", context )
+	PrecacheResource( "soundfile","soundevents/music/dsadowski_01/soundevents_music.vsndevts", context )
 	PrecacheUnitByNameSync("npc_dota_shop_right_mid", context)
 	PrecacheUnitByNameSync("npc_dota_shop_right_top", context)
 	PrecacheUnitByNameSync("npc_dota_shop_right_bot", context)
@@ -855,6 +905,7 @@ function CBattleship8D:OnThink()
 		if GameRules:GetGameTime() ~= g_PreviousTickCount then
 			
 					if g_MainTimerTickCount == 5 then
+						
 					if g_BattleMode==1 then
 						local battleTimerData = {
 							TimeTillBattle = g_BattleModeTimer;
@@ -1094,9 +1145,6 @@ function CBattleship8D:OnThink()
 							local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
 						
 						
-						
-		
-
 						
 						if PlayerResource:GetConnectionState( hero:GetPlayerID() ) ~= 2 or hero:HasOwnerAbandoned() or hero:HasModifier("pergatory_perm") then
 								print('inside disconnect')
@@ -1514,10 +1562,11 @@ function CBattleship8D:HandleEmpGold()
 			Notifications:TopToAll({text=tostring(math.floor(goodGoldEach+0.5)) .. " ", duration=5.0, style={color="#FFD700",  fontSize="30px;"}, continue=true})
 			Notifications:TopToAll({text="#for_each_player", duration=5.0, style={color="#B2B2B2",  fontSize="30px;"}, continue=true})
 			 table.insert(g_EmpGoldArray,{
-			 g_EmpireGoldCount=g_EmpireGoldCount,
+			 EmpireGoldCount=g_EmpireGoldCount,
 			 South_Gold=goodGoldEach,
 			 North_gold=badGoldEach,
 			 })
+			 
 			
 			for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 				if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and not hero:HasModifier("pergatory_perm") and hero:IsRealHero()  then
@@ -2412,6 +2461,7 @@ function CBattleship8D:OnEntityKilled( keys )
 				
 				if g_DockAliveNorthLeft+g_DockAliveNorthRight==1 then
 
+					storage:SetEmpGoldHist(GetempGoldHistString())
 					
 					GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 					storage:SetWinner("South")
@@ -2431,7 +2481,7 @@ function CBattleship8D:OnEntityKilled( keys )
 				
 			elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
 				if g_DockAliveSouthLeft+g_DockAliveSouthRight==1 then
-
+					storage:SetEmpGoldHist(GetempGoldHistString())
 					GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 					storage:SetWinner("North")
 					GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
@@ -2607,20 +2657,13 @@ function CBattleship8D:OnEntityKilled( keys )
 	if killedUnit:GetPlayerID()~=nil then
 		killedName=PlayerResource:GetPlayerName( killedUnit:GetPlayerID())
 	end
-		
 
-		
-		
 		if killerEntity:IsRealHero() and killerEntity:GetTeamNumber()~=killedUnit:GetTeamNumber() then
 			if killerEntity:GetPlayerID()~=nil then
 				killerName=PlayerResource:GetPlayerName( killerEntity:GetPlayerID())
 			end
 			
 			if killedUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-				
-				
-				
-				
 				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {hero=killerEntity:GetName(), style={height="15px", width="20px",  marginRight="3px"}, imagestyle="landscape", duration=10.0})
 				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=killerName .. " ", duration=10.0, style={color="#AA3333",  fontSize="18px;"}, continue=true})
 				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#got_kill_one", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
@@ -2672,10 +2715,7 @@ function CBattleship8D:OnEntityKilled( keys )
 			Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text=tostring(math.floor(killedUnit:GetGoldBounty()/2+0.5)) .. " ", duration=10.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
 			
 				Notifications:BottomToTeam(DOTA_TEAM_BADGUYS, {text="#got_kill_four", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
-				
-			
-			
-			
+
 			Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {hero=killerEntity:GetName(), style={height="15px", width="20px",  marginRight="3px"}, imagestyle="landscape", duration=10.0})
 				Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text=killerName .. " ", duration=10.0, style={color="#66FF66",  fontSize="18px;"}, continue=true})
 				
@@ -2757,9 +2797,9 @@ function CBattleship8D:OnEntityKilled( keys )
 	Timers:CreateTimer(1, function() 
 		ParticleManager:DestroyParticle(deathEffect,false)
 	end)
-	
-		EmitSoundOnClient("General.Coins",PlayerResource:GetPlayer(killerEntity:GetPlayerID()))
-
+	SendOverheadEventMessage(PlayerResource:GetPlayer(killerEntity:GetPlayerID()), OVERHEAD_ALERT_GOLD, killedUnit,  killedUnit:GetGoldBounty()/2, PlayerResource:GetPlayer(killerEntity:GetPlayerID()))
+	 
+		
 		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 			print(hero:GetName())
@@ -4201,6 +4241,17 @@ function GetPlayerHist(playerID)
 		return playerItemHist[playerID]
 	end
 	return "none"
+end
+
+function GetempGoldHistString()
+	local s=""
+	DeepPrintTable(g_EmpGoldArray)
+	if #g_EmpGoldArray > 0 then
+		for _,empGold in pairs(g_EmpGoldArray) do
+			s=s .. "#" .. empGold.EmpireGoldCount .. "S" .. empGold.South_Gold .. "N" .. empGold.North_gold
+		end
+	end
+	return s
 end
 
 function GetDisconnectState(playerID)

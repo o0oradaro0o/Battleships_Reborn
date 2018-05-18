@@ -67,6 +67,11 @@
 						"ProvidesVision" "0"
 						"EffectName"    "particles/basic_projectile/pistol_projectile.vpcf" 
 					}
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+						"Function"			"pistolSound"
+					}
 				}
 				
 			}
@@ -147,6 +152,11 @@
 				"Target" "CASTER"
 				"ModifierName" "bailing_water"
 			}
+			"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+						"Function"			"bailWaterSound"
+					}
 		}
 
 		"Modifiers"
@@ -533,6 +543,11 @@
 					"Target" "CASTER"
 					"ModifierName" "discoing"
 			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"startDiscoSound"
+			}
 		}
 		"OnToggleOff"
 		{
@@ -545,6 +560,11 @@
 			{
 					"Target" "CASTER"
 					"ModifierName" "discoing"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"stopDiscoSound"
 			}
 		}
 		"Modifiers"
@@ -731,6 +751,11 @@
 				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"RemoveWeps"
 			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"diveSound"
+			}
 		}
 		
 		"OnAbilityEndChannel"
@@ -901,7 +926,11 @@
 						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 						"Function"			"startRammingIt"
 					}
-
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"ramSound"
+			}
 			
 		}
 			
@@ -998,8 +1027,11 @@
 				"Target" "CASTER"
 				"ModifierName" "above_water"
 			}
-		
-
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"headAboveWaterSoundStart"
+			}
 		}
 
 		"OnChannelInterrupted"
@@ -1010,6 +1042,12 @@
 				"Target" "CASTER"
 				"ModifierName" "above_water"
 			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"headAboveWaterSoundStop"
+			}
+			
 
 		}
 		"OnChannelFinish"
@@ -1019,6 +1057,11 @@
 				"Target" "CASTER"
 				"ModifierName" "above_water"
 			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"headAboveWaterSoundStop"
+			}
 		}
 		"OnChannelSucceeded"
 		{
@@ -1026,6 +1069,11 @@
 			{
 				"Target" "CASTER"
 				"ModifierName" "above_water"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"headAboveWaterSoundStop"
 			}
 		}
 
@@ -1039,6 +1087,15 @@
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "50"
+				}
+				"OnCreated"
+				{
+				"AttachEffect"
+					{
+						"Target" "CASTER"
+						"EffectName"		 "particles/basic_projectile/headabove_effect.vpcf" 
+						"EffectAttachType"	"follow_overhead"
+					}
 				}
 			}
 		}
@@ -1798,6 +1855,11 @@
 				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"startGunningIt"
 			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"gunItSound"
+			}
 			
 		}
 		"OnToggleOff"
@@ -1817,6 +1879,11 @@
 			{
 				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"stopGunningIt"
+			}
+				"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"gunItSoundOff"
 			}
 		}
 		"Modifiers"
@@ -1930,6 +1997,11 @@
 				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"bomberSpawn"
 			}
+			"RunScript"
+				{
+					"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+					"Function"			"bomberSound"
+				}
 			"ApplyModifier"
 			{
 					"Target" "CASTER"
@@ -1979,6 +2051,7 @@
             "ThinkInterval" ".8"
             "OnIntervalThink"
             {
+				
                 "Damage"
                 {
                     "Type"   "DAMAGE_TYPE_PHYSICAL"
@@ -1990,11 +2063,6 @@
 
 
 		}
-		
-		
-
-		
-		
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -2043,6 +2111,11 @@
 				"UnitCount"             "7"
 				"Duration"				"%duration"
 			}
+			"RunScript"
+				{
+					"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+					"Function"			"launchSound"
+				}
 		}
 
 		// Special
@@ -2472,6 +2545,11 @@
 				"Target" "TARGET"
 				"ModifierName" "building_dearmor"
 			}
+			"RunScript"
+				{
+					"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+					"Function"			"pillageSound"
+				}
 		}
 		"OnChannelInterrupted"
 		{
@@ -2618,6 +2696,11 @@
 				"Target" "CASTER"
 				"ModifierName" "big_boom_explode"
 			}
+			"RunScript"
+				{
+					"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+					"Function"			"vahSound"
+				}
 
 		}
 
@@ -2670,6 +2753,11 @@
 							"Target" "TARGET"
 							"ModifierName" "big_boom_explode"
 						}
+						"RunScript"
+						{
+							"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+							"Function"			"vahBoomSound"
+						}
 						
 					
 				}
@@ -2679,7 +2767,7 @@
 					{
 						"Target" "CASTER"
 						"EffectName"		  "particles/basic_projectile/big_boom_charge_effect.vpcf" 
-						"EffectAttachType"	"follow_origin"
+						"EffectAttachType"	"follow_overhead"
 					}
 				}
 					
@@ -2769,9 +2857,12 @@
 				"UnitName"              "npc_dota_boat_pleasure_craft"
 				"UnitCount"             "1"
 				"Duration"				"15"
-				
 			}
-
+			"RunScript"
+				{
+					"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+					"Function"			"dropCraftSound"
+				}
 		}
 		
 
@@ -2964,6 +3055,11 @@
 						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 						"Function"			"ShowShip"
 					}
+					"RunScript"
+				{
+					"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+					"Function"			"hitSound"
+				}
 		}
 
 	
@@ -3017,6 +3113,11 @@
 				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"peak"
 			}
+			"RunScript"
+				{
+					"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+					"Function"			"pingSound"
+				}
 		}
 
 		
@@ -3117,8 +3218,11 @@
 				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"RainbowDied"
 			}
-			
-
+				"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+						"Function"			"rainbowSound"
+					}
 		}
 		
 		"AbilitySpecial"
@@ -3298,7 +3402,11 @@
 				"EffectName"    "particles/basic_projectile/stuck_effect.vpcf" 
 				"EffectAttachType"	"follow_origin"
 			}
-			
+			"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+						"Function"			"mountainSound"
+					}
 			
 		}
 
@@ -3719,7 +3827,11 @@
 							"Target" "CASTER"
 							"ModifierName" "mayday_ind"
 						}
-						
+						"RunScript"
+						{
+							"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+							"Function"			"maydaySound"
+						}
 						
 					}
 					"OnCreated"
@@ -3796,10 +3908,19 @@
 				"Target" "CASTER"
 				"ModifierName" "goHome"
 			}
+			"RunScript"
+						{
+							"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+							"Function"			"teleSoundStart"
+						}
 		}
 		"OnChannelFinish"
 		{
-			
+			"RunScript"
+						{
+							"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+							"Function"			"teleSoundStop"
+						}
 		}
 		"OnChannelInterrupted"
 		{
@@ -3808,6 +3929,11 @@
 				"Target" "CASTER"
 				"ModifierName" "goHome"
 			}
+			"RunScript"
+						{
+							"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+							"Function"			"teleSoundStop"
+						}
 		}
 		"OnChannelSucceeded"
 		{
@@ -3821,6 +3947,11 @@
 					"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 					"Function"			"TeleHome"
 				}	
+				"RunScript"
+						{
+							"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+							"Function"			"teleSoundStop"
+						}
 				"AttachEffect"
 						{
 							"Target"				"CASTER"
@@ -4049,6 +4180,11 @@
 				"Target" "CASTER"
 				"ModifierName" "swimbreak"
 			}
+			"RunScript"
+						{
+							"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+							"Function"			"swimSoundStart"
+						}
 		}
 		"OnChannelInterrupted"
 		{
@@ -4058,7 +4194,11 @@
 				"Target" "CASTER"
 				"ModifierName" "swimbreak"
 			}
-
+			"RunScript"
+						{
+							"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+							"Function"			"swimSoundStop"
+						}
 		}
 		
 		
@@ -4327,7 +4467,11 @@
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/monkey_buisness_effect.vpcf" 
 			}
-			
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"monkeySound"
+			}	
 			
 		}
 		
@@ -4521,6 +4665,11 @@
 				"Target" "CASTER"
 				"ModifierName" "move_carrier_in"
 			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"bomberSound"
+			}	
 		}
 		
 		
@@ -4666,7 +4815,11 @@
 				"Target" "CASTER"
 				"ModifierName" "submerged"
 			}
-
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"subDiveSound"
+			}	
 		}
 		
 		"OnToggleOn"
@@ -4681,6 +4834,11 @@
 						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 						"Function"			"submerge"
 					}
+					"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"subDiveSound"
+			}	
 		}
 		"OnToggleOff"
 		{
@@ -4699,6 +4857,11 @@
 						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 						"Function"			"rise"
 					}
+					"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"subDiveSound"
+			}	
 		}
 		"Modifiers"
 		{
@@ -4840,6 +5003,11 @@
 				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"inTheHoldSpawn"
 			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"holdSound"
+			}	
 		}
 		
 		"Modifiers"
@@ -4955,6 +5123,11 @@
 						{
 							"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 							"Function"			"salvagePercent"
+						}	
+						"RunScript"
+						{
+							"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+							"Function"			"salvageSound"
 						}			
 					}
 			}
@@ -4973,9 +5146,6 @@
                         "var_type"                                      "FIELD_FLOAT"
                         "heal_amount_other"                          "30"
                 }
-				
-				
-
         }
 	}
 
@@ -5015,6 +5185,11 @@
 				"UnitCount"             "1"
 				"Duration"				"15"
 			}
+			"RunScript"
+						{
+							"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+							"Function"			"turretSound"
+						}	
 		}
 		
 	}
@@ -5203,6 +5378,12 @@
 				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"pushBackRefund"
 			}
+
+			"RunScript"
+						{
+							"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+							"Function"			"shoveSound"
+						}	
 		}
 			
 		
@@ -5503,6 +5684,11 @@
 				"ScriptFile"	"scripts/vscripts/abilityfunctions.lua"
 				"Function"		"reflectGetStartHp"
 			}
+			"RunScript"
+						{
+							"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+							"Function"			"ruseSoundStart"
+						}	
 		}
 
 		"Modifiers"
@@ -5520,6 +5706,11 @@
 						"ScriptFile"	"scripts/vscripts/abilityfunctions.lua"
 						"Function"		"reflect"
 					}
+					"RunScript"
+						{
+							"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+							"Function"			"ruseSoundStop"
+						}	
 				}
 			}		
 		}
@@ -5656,6 +5847,11 @@
 				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"DrumbAnimate"
 			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"drumSound"
+			}	
 			
 		}
 
@@ -5759,6 +5955,11 @@
 				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"mightStart"
 			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"mightSound"
+			}	
 			"ApplyModifier"
 			{
 				"Target" "CASTER"
@@ -5863,6 +6064,11 @@
 						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 						"Function"			"fireGas"
 					}
+					"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"swampSound"
+			}	
 		}
 		
 		"Modifiers"
@@ -5950,6 +6156,11 @@
 				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"airBlast"
 			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"fanSound"
+			}	
 		}
 
 		"Modifiers"
@@ -6142,9 +6353,14 @@
 				"Target"            "POINT"
 				"UnitName"              "npc_dota_vision_granter"
 				"UnitCount"             "1"
-					"Duration"				"4 5.5 7 8.5"
+					"Duration"				"%duration"
 				
 			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"fireworkSound"
+			}	
 
 		}
 		
@@ -6159,12 +6375,12 @@
 						"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"		"3 4 5 6"
+				"duration"		"5 6 7 8"
 			}
 					"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range"		"1500 2000 3000 5000"
+				"range"		"3000 3500 4000 4500"
 			}
 			
 		}
@@ -6205,6 +6421,11 @@
 			{
 				"Target" "CASTER"
 				"ModifierName" "nav_mess"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"navHackSound"
 			}
 		}
 		
@@ -6366,6 +6587,11 @@
 				"UnitName"              "npc_dota_iceberg"
 				"UnitCount"             "1"
 				"Duration"				"240"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"icebergSound"
 			}
 		}
 		"AbilitySpecial"
@@ -6659,6 +6885,11 @@
 						{
 							"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 							"Function"			"RemoveSelf"
+						}
+						"RunScript"
+						{
+							"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+							"Function"			"icebergSoundHit"
 						}
                        "Damage"
                         {
@@ -7080,7 +7311,11 @@
 				"Target" "CASTER"
 				"ModifierName" "bursting_it"
 			}
-
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"gunItSound"
+			}
 		}
 		
 		"OnToggleOn"
@@ -7094,6 +7329,11 @@
 			{
 					"Target" "CASTER"
 					"ModifierName" "remove_wreaking_it"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"gunItSound"
 			}
 			
 		}
@@ -7114,6 +7354,11 @@
 			{
 				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"stopGunningIt"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"gunItSoundOff"
 			}
 		}
 		"Modifiers"
@@ -7298,6 +7543,11 @@
 						"Function"			"route"
 							"Target"		"POINT"
 					}
+			"RunScript"
+				{
+					"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+					"Function"			"icebergSoundit"
+				}
 			"ApplyModifier"
 			{
 				"Target"		"CASTER"
@@ -7391,6 +7641,11 @@
 				{
 					"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 					"Function"			"RemoveWeps"
+				}
+				"RunScript"
+				{
+					"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+					"Function"			"ceaseFireSound"
 				}
 				
 		}

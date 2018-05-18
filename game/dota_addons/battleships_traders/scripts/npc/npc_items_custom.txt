@@ -1522,7 +1522,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4200"	
+		"ItemCost"						"3600"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -3807,12 +3807,12 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dmg"			"27"
+				"dmg"			"22"
 			}
 			"02"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"1.2"
+				"fire_rate"		"0.8"
 			}
 			"03"
 			{
@@ -3827,7 +3827,7 @@
 			"05"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"22.5"
+				"dps"			"27"
 			}
 
 		}
@@ -7918,7 +7918,7 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dmg"			"32"
+				"dmg"			"22"
 			}
 			"02"
 			{
@@ -7938,7 +7938,7 @@
 			"05"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"54"
+				"dps"			"27"
 			}
 		}
 	}
@@ -12616,7 +12616,7 @@
 		"AbilityCastRange"              "%range"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "10450" 
+		"ItemCost"                      "9950" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"

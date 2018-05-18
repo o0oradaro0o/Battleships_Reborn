@@ -24,6 +24,7 @@ function coalSoundFire(keys)
 	handles.types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING + DOTA_UNIT_TARGET_HERO
 	handles.flags = DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
 		
+		
 	if #getEnemies(casterUnit,range,handles) > 0 then
 		if string.match(item, "two") then--level-2 coal-type
 			EmitSoundOn("Hero_Lion.Attack", casterUnit) 			

@@ -18,13 +18,15 @@
 		 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	     "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
 		"MovementSpeed"				"225"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 		
@@ -64,6 +66,7 @@
 		"BountyGoldMin"				"150"		// Gold earned min.
 		"BountyGoldMax"				"151"		// Gold earned max.
 	}
+
 	  "npc_dota_hero_abaddon_battleship8d" 
     {
 
@@ -76,13 +79,16 @@
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	    "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
+
 		"MovementSpeed"				"225"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 		
@@ -131,13 +137,15 @@
 		"ModelScale"        "1.25"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	    "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
 		"MovementSpeed"				"270"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 		
@@ -186,13 +194,16 @@
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "0"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	   "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "50"
+        "StatusManaRegen"           "0.0"
+
+
 		"MovementSpeed"				"290"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 		
@@ -264,13 +275,15 @@
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	    "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
 		"MovementSpeed"				"310"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 		
@@ -339,13 +352,16 @@
                "SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	    "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
+
 		"MovementSpeed"				"280"									// Speed.
 		"MovementTurnRate"			"0.3"									// Turning rate.
 		
@@ -417,13 +433,16 @@
 		        "SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	   "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
+
 		"MovementSpeed"				"285"									// Speed.
 		"MovementTurnRate"			"0.3"									// Turning rate.
 		
@@ -497,13 +516,16 @@
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	   "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
+
 		"MovementSpeed"				"300"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 		
@@ -570,13 +592,15 @@
         "Model" "models/speed_boat.vmdl"  // Model.
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	   "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
 		"MovementSpeed"				"350"									// Speed.
 		"MovementTurnRate"			"0.5"									// Turning rate.
 		
@@ -645,13 +669,15 @@
         "Model" "models/junk_boat.vmdl"   // Model.
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	   "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
 		"MovementSpeed"				"330"									// Speed.
 		"MovementTurnRate"			"0.5"									// Turning rate.
 		
@@ -722,13 +748,16 @@
 		        "SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	   "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
+
 		"MovementSpeed"				"320"									// Speed.
 		"MovementTurnRate"			"0.3"									// Turning rate.
 		
@@ -799,13 +828,16 @@
         "SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	  "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
+
 		"MovementSpeed"				"330"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 		
@@ -874,13 +906,16 @@
      "Model" "models/house_boat.vmdl"    // Model.	        "SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	   "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
+
 		"MovementSpeed"				"350"									// Speed.
 		"MovementTurnRate"			"0.5"									// Turning rate.
 		
@@ -948,13 +983,16 @@
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	   "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
+
 		"MovementSpeed"				"360"									// Speed.
 		"MovementTurnRate"			"0.5"									// Turning rate.
 		
@@ -1023,13 +1061,16 @@
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	   "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
+
 		"MovementSpeed"				"340"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 		
@@ -1098,13 +1139,15 @@
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	   "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
 		"MovementSpeed"				"350"									// Speed.
 		"MovementTurnRate"			"0.5"									// Turning rate.
 		
@@ -1171,13 +1214,14 @@
 		 "SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	   "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+        "StatusManaRegen"           "0.0"
+
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		
@@ -1307,13 +1351,15 @@
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	   "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
 		"MovementSpeed"				"390"									// Speed.
 		"MovementTurnRate"			"0.3"									// Turning rate.
 		
@@ -1382,13 +1428,16 @@
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	   "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
+
 		"MovementSpeed"				"360"									// Speed.
 		"MovementTurnRate"			"0.3"									// Turning rate.
 		
@@ -1459,13 +1508,16 @@
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	   "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
+
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		
@@ -1538,13 +1590,16 @@
 		 "SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	    "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
+
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		
@@ -1591,13 +1646,16 @@
 		 "SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	   "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
+
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		
@@ -1647,13 +1705,15 @@
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	   "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
 		"MovementSpeed"				"300"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 		
@@ -1725,13 +1785,14 @@
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	   "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
 	
 		"MovementSpeed"				"360"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
@@ -1803,14 +1864,15 @@
 		
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+		"AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+
+        "StatusManaRegen"           "0.0"
 		"MovementSpeed"				"325"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 		
@@ -1887,13 +1949,15 @@
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			""			// Speed of projectile.
 
-	    "AttributeBaseStrength"     "1"                                     // Base strength
-		"AttributeStrengthGain"     "0"                                     // Strength bonus per level.
-		"AttributeBaseIntelligence" "1"                                     // Base intelligence
-		"AttributeIntelligenceGain" "0"                                     // Intelligence bonus per level.
-		"AttributeBaseAgility"      "1"                                     // Base agility
-		"AttributeAgilityGain"      "0"                                     // Agility bonus per level.
-		
+	    "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		
@@ -1928,14 +1992,5 @@
 		"BountyGoldMax"				"305"		// Gold earned max.
 		"DisableWearables" "1"
 	}
-	
-	
-	
-	
-
-
-
-	
-	
 	
 }
