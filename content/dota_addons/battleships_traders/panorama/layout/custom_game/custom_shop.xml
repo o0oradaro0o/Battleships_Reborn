@@ -47,8 +47,12 @@
 				<Label id="SouthScoreVal" text="" class="battleTimerLabelVal"/>
 			</Panel>
 			<Panel class="timerRow">
-				<Label id="gpt" text="#gold_per_tick" class="battleTimerLabel" />
-				<Label id="gptval" text="" class="battlegoldLabelVal"/>
+				<Label id="gptn" text="#gold_per_tick_n" class="battleTimerLabel" />
+				<Label id="gptvaln" text="" class="battlegoldLabelVal"/>
+			</Panel>
+			<Panel class="timerRow">
+				<Label id="gpts" text="#gold_per_tick_s" class="battleTimerLabel" />
+				<Label id="gptvals" text="" class="battlegoldLabelVal"/>
 			</Panel>
 		</Panel>
 	</Panel>
@@ -513,6 +517,76 @@
 					</Panel>
 		</Panel>	
 	</Panel>
+
+
+
+<Panel hittest="false" id="batrider">	
+		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
+		<Label hittest="false" class="boat_title" text="#batrider" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/batrider.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#batrider_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="800" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="300" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="2" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('batrider','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('batrider','harpoon_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/clinkz_searing_arrows.png" />
+                       <Label hittest="false" class="ability_name" text="#harpoon_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('batrider','wale_bait_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/naga_siren_rip_tide.png" />
+                       <Label hittest="false" class="ability_name" text="#wale_bait_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('batrider','batten_hatches')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/hatches.png" />
+                       <Label hittest="false" class="ability_name" text="#batten_hatches"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="batrider_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="batrider_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('batrider', 1000)" oncontextmenu="buyBoat('batrider', 1000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="1000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
 	<Panel hittest="false" id="disruptor">	
 		<Panel hittest="false" class="ship_details_holder" >
 		
@@ -707,6 +781,74 @@
 			</Panel>
 					<Panel hittest="false" class="buy_box" >
 						<Button class="buy_ship_button" onactivate="buyBoat('storm_spirit', 3000)" oncontextmenu="buyBoat('storm_spirit', 3000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="3000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
+
+	<Panel hittest="false" id="brewmaster">	
+		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
+		<Label hittest="false" class="boat_title" text="#brewmaster" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/brewmaster.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#brewmaster_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="2550" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="330" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="14" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('brewmaster','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('brewmaster','dragon_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/lina_dragon_slave_alt1.png" />
+                       <Label hittest="false" class="ability_name" text="#dragon_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('brewmaster','firework_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/puck_illusory_orb_merry.png" />
+                       <Label hittest="false" class="ability_name" text="#firework_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('brewmaster','nav_hack_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/techies_focused_detonate.png" />
+                       <Label hittest="false" class="ability_name" text="#nav_hack_battleship"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="brewmaster_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="brewmaster_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('brewmaster', 3000)" oncontextmenu="buyBoat('brewmaster', 3000)">
 							<Label hittest="false" class="buy_text" text="#buy" />
 							<Label hittest="false" class="buy_text_g" text="3000 G" />
 						</Button>
@@ -1752,6 +1894,10 @@
 									<Image class="boat_image" src="file://{images}/custom_game/boats/crystal_maiden.png" />
 									 <Label hittest="false" class="boat_name_text" text="#crystal_maiden" />
 								</Button>
+								<Button class="boat_btn_item"  onactivate="showDetails('batrider')" oncontextmenu="buyBoat('batrider', 1000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/batrider.png" />
+									 <Label hittest="false" class="boat_name_text" text="#batrider" />
+								</Button>
 							</Panel>
 							<Panel hittest="false" class="supply_row">
 								 <Button class="boat_btn_item"  onactivate="showDetails('tidehunter')" oncontextmenu="buyBoat('tidehunter', 1000)">
@@ -1783,6 +1929,10 @@
 								<Button class="boat_btn_item"  onactivate="showDetails('morphling')" oncontextmenu="buyBoat('winter_wyvern', 3000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/morphling.png" />
 									 <Label hittest="false" class="boat_name_text" text="#morphling" />
+								</Button>
+								<Button class="boat_btn_item"  onactivate="showDetails('brewmaster')" oncontextmenu="buyBoat('brewmaster', 3000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/brewmaster.png" />
+									 <Label hittest="false" class="boat_name_text" text="#brewmaster" />
 								</Button>
 							</Panel>
 							<Panel hittest="false" class="supply_row">
@@ -2328,9 +2478,11 @@
 		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_phantom_lancer.png"  />
 		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_pugna.png"  />
 		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_rattletrap.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_batrider.png"  />
 		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_slark.png"  />
 		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_sniper.png"  />
 		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_storm_spirit.png"  />
+		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_brewmaster.png"  />
 		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_tidehunter.png"  />
 		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_tusk.png"  />
 		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_ursa.png"  />

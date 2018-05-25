@@ -52,7 +52,8 @@
 		"TimeInBattle"		"long"
 		"NorthScore"		"long"
 		"SouthScore"		"long"
-		"gpt"					"long"
+		"gptn"					"long"
+		"gpts"					"long"
     }
 	"Battle_Started"
     {

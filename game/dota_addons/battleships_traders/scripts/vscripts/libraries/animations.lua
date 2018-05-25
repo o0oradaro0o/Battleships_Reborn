@@ -458,14 +458,14 @@ function StartAnimation(unit, table)
 
   if translate ~= nil then
     if _ANIMATION_TRANSLATE_TO_CODE[translate] == nil then
-      print("[ANIMATIONS.lua] ERROR, no translate-code found for '" .. translate .. "'.  This translate may be misspelled or need to be added to the enum manually.")
+       --print("[ANIMATIONS.lua] ERROR, no translate-code found for '" .. translate .. "'.  This translate may be misspelled or need to be added to the enum manually.")
       return
     end
     stacks = stacks + bit.lshift(_ANIMATION_TRANSLATE_TO_CODE[translate],19)
   end
 
   if translate2 ~= nil and _ANIMATION_TRANSLATE_TO_CODE[translate2] == nil then
-    print("[ANIMATIONS.lua] ERROR, no translate-code found for '" .. translate2 .. "'.  This translate may be misspelled or need to be added to the enum manually.")
+     --print("[ANIMATIONS.lua] ERROR, no translate-code found for '" .. translate2 .. "'.  This translate may be misspelled or need to be added to the enum manually.")
     return
   end
 
@@ -513,7 +513,7 @@ end
 
 function AddAnimationTranslate(unit, translate)
   if translate == nil or _ANIMATION_TRANSLATE_TO_CODE[translate] == nil then
-    print("[ANIMATIONS.lua] ERROR, no translate-code found for '" .. translate .. "'.  This translate may be misspelled or need to be added to the enum manually.")
+     --print("[ANIMATIONS.lua] ERROR, no translate-code found for '" .. translate .. "'.  This translate may be misspelled or need to be added to the enum manually.")
     return
   end
 

@@ -13,7 +13,7 @@ function storage:new( o )
 end
 
 function storage:start() -- Runs whenever the itemFunctions.lua is ran
-	print('[storage] itemFunctions started!')
+	 --print('[storage] itemFunctions started!')
 	  storage = self
   self.storage = {}
 end
@@ -21,8 +21,11 @@ end
 tideKiller=""
 empGoldHist=""
 playerItemHist={}
+playerSaleHist={}
+playerBoatHist={}
 DisconnectKicked={}
 winner=""
+settingsString=""
 name_lookup = {}
 name_lookup["npc_dota_hero_zuus"] = "Barrel"
 name_lookup["npc_dota_hero_ancient_apparition"] = "Zodiac"
@@ -30,6 +33,7 @@ name_lookup["npc_dota_hero_tidehunter"] = "Pontoon Boat"
 name_lookup["npc_dota_hero_crystal_maiden"] = "Canoe"
 name_lookup["npc_dota_hero_phantom_lancer"] = "Airboat"
 name_lookup["npc_dota_hero_rattletrap"] = "Catamaran"
+name_lookup["npc_dota_hero_batrider"] = "Whaling Dinghy"
 name_lookup["npc_dota_hero_jakiro"] = "Galleon"
 name_lookup["npc_dota_hero_nevermore"] = "Broken Sea Plane"
 name_lookup["npc_dota_hero_meepo"] = "House Boat"
@@ -48,6 +52,7 @@ name_lookup["npc_dota_hero_tusk"] = "Battleship"
 name_lookup["npc_dota_hero_vengefulspirit"] = "Phoenician"
 name_lookup["npc_dota_hero_enigma"] = "Ghost"
 name_lookup["npc_dota_hero_bane"] = "Cargo"
+name_lookup["npc_dota_hero_brewmaster"] = "Riverboat"
 
 
 
@@ -75,19 +80,53 @@ end
 function storage:AddToPlayerItemHist(pid, ic)
 
 	if playerItemHist[pid]==nil then
-		 playerItemHist[pid]=""
-		 print("Created Array")
+		 playerItemHist[pid]={}
+		  --print("Created Array")
 	end
 	if ic~=nil then
-		if string.len(tostring(playerItemHist[pid]))<96 then
-		  playerItemHist[pid]=playerItemHist[pid] .. ic .. ","
-	  end
+		table.insert( playerItemHist[pid], ic)
+	end
+end
+
+function storage:AddToPlayerSaleHist(pid, ic)
+
+	if playerSaleHist[pid]==nil then
+		playerSaleHist[pid]={}
+		  --print("Created Array")
+	end
+	if ic~=nil then
+		table.insert( playerSaleHist[pid], ic)
+	end
+end
+
+function storage:AddToPlayerBoatHist(pid, ic)
+
+	if playerBoatHist[pid]==nil then
+		playerBoatHist[pid]={}
+		  --print("Created Array")
+	end
+	if ic~=nil then
+		table.insert( playerBoatHist[pid], ic)
 	end
 end
 
 function storage:GetPlayerHist(playerID)
 	if playerItemHist[playerID] ~= nil then
 		return playerItemHist[playerID]
+	end
+	return "none"
+end
+
+function storage:GetPlayerSaleHist(playerID)
+	if playerSaleHist[playerID] ~= nil then
+		return playerSaleHist[playerID]
+	end
+	return "none"
+end
+
+function storage:GetPlayerBoatHist(playerID)
+	if playerBoatHist[playerID] ~= nil then
+		return playerBoatHist[playerID]
 	end
 	return "none"
 end
@@ -99,6 +138,13 @@ function storage:SetWinner(w)
 	 winner=w
 end
 
+function storage:getGameSettings(playerID)
+	return settingsString
+end
+function storage:SetGameSettings(SS)
+	settingsString=SS
+end
+
 
 
 function  storage:SetDisconnectState(dissconeects)
@@ -106,7 +152,7 @@ function  storage:SetDisconnectState(dissconeects)
 end
 
 function  storage:GetDisconnectState(playerID)
-	print("getDisconnect")
+	 --print("getDisconnect")
 	for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 				if hero:GetPlayerID() == playerID then

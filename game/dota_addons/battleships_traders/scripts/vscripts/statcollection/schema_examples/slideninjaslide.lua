@@ -117,11 +117,11 @@ end
 -- Stat Functions         --
 -------------------------------------
 function PrintSchema(gameArray, playerArray)
-    print("-------- GAME DATA --------")
+     --print("-------- GAME DATA --------")
     DeepPrintTable(gameArray)
-    print("\n-------- PLAYER DATA --------")
+     --print("\n-------- PLAYER DATA --------")
     DeepPrintTable(playerArray)
-    print("-------------------------------------")
+     --print("-------------------------------------")
 end
 
 function GetHeroName(playerID)
@@ -147,7 +147,7 @@ function GetItemName(hero, slot)
     local item = hero:GetItemInSlot(slot)
     if item then
         local itemName = item:GetAbilityName()
-        print(itemName)
+         --print(itemName)
         return itemName
     else
         return ""

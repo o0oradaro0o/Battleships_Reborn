@@ -63,7 +63,7 @@ function Projectiles:Think()
         end
       else
         Projectiles.timers[k] = nil
-        print('[PROJECTILES] Timer error:' .. nextCall)
+         --print('[PROJECTILES] Timer error:' .. nextCall)
       end
     end  
   end
@@ -73,7 +73,7 @@ end
 
 function Projectiles:CreateTimer(name, args)
   if not args.endTime or not args.callback then
-    print("Invalid timer created: "..name)
+     --print("Invalid timer created: "..name)
     return
   end
 
@@ -314,7 +314,7 @@ function Projectiles:CreateProjectile(projectile)
         if projectile.OnFinish then
           local status, out = pcall(projectile.OnFinish, projectile, pos)
           if not status then
-            print('[PROJECTILES] Collision UnitTest Failure!: ' .. out)
+             --print('[PROJECTILES] Collision UnitTest Failure!: ' .. out)
           end
         end
         return
@@ -345,7 +345,7 @@ function Projectiles:CreateProjectile(projectile)
       local framehalf = pos + (vel * div * (tot-1))/2
       local framerad = (framehalf - pos):Length() + radius
 
-      --print(tostring(framehalf) .. ' -- ' .. tostring(pos) .. ' -- ' .. (framehalf-pos):Length() .. ' -- ' .. radius)
+      -- --print(tostring(framehalf) .. ' -- ' .. tostring(pos) .. ' -- ' .. (framehalf-pos):Length() .. ' -- ' .. radius)
       --DebugDrawSphere(framehalf, Vector(0,0,200), 0, framerad, true, .01)
       --local ents = Entities:FindAllInSphere(framehalf, framerad)
 
@@ -358,7 +358,7 @@ function Projectiles:CreateProjectile(projectile)
           local status = nil
           status, ents = pcall(projectile.filter, projectile)
           if not status then
-            print('[PROJECTILES] Projectile Filter Failure!: ' .. ents)
+             --print('[PROJECTILES] Projectile Filter Failure!: ' .. ents)
           end
         end
       else
@@ -404,11 +404,11 @@ function Projectiles:CreateProjectile(projectile)
               local status, test = pcall(projectile.UnitTest, projectile, v)
 
               if not status then
-                print('[PROJECTILES] Projectile UnitTest Failure!: ' .. test)
+                 --print('[PROJECTILES] Projectile UnitTest Failure!: ' .. test)
               elseif test then
                 local status, action = pcall(projectile.OnUnitHit, projectile, v)
                 if not status then
-                  print('[PROJECTILES] Projectile OnUnitHit Failure!: ' .. action)
+                   --print('[PROJECTILES] Projectile OnUnitHit Failure!: ' .. action)
                 end
 
                 if projectile.UnitBehavior == PROJECTILES_DESTROY then
@@ -416,7 +416,7 @@ function Projectiles:CreateProjectile(projectile)
                   if projectile.OnFinish then
                     local status, out = pcall(projectile.OnFinish, projectile, subpos)
                     if not status then
-                      print('[PROJECTILES] Projectile OnFinish Failure!: ' .. out)
+                       --print('[PROJECTILES] Projectile OnFinish Failure!: ' .. out)
                     end
                   end
                   return
@@ -436,12 +436,12 @@ function Projectiles:CreateProjectile(projectile)
 
         local navConnect = not GridNav:IsTraversable(subpos) or GridNav:IsBlocked(subpos) -- GNV connect
         local ground = GetGroundPosition(subpos, projectile.Source) + Vector(0,0,projectile.fGroundOffset)
-        --print(tostring(ground.z) .. ' -- ' .. tostring(pos.z))
+        -- --print(tostring(ground.z) .. ' -- ' .. tostring(pos.z))
         local groundConnect = ground.z > pos.z -- ground
         if navConnect then
           if projectile.bCutTrees or projectile.TreeBehavior ~= PROJECTILES_NOTHING then
             local ents = GridNav:GetAllTreesAroundPoint(subpos, projectile.radius, projectile.bTreeFullCollision)
-            --print('tree hit')
+            -- --print('tree hit')
             --local vec = Vector(GridNav:GridPosToWorldCenterX(GridNav:WorldToGridPosX(subpos.x)), GridNav:GridPosToWorldCenterY(GridNav:WorldToGridPosY(subpos.y)), ground.z - projectile.fGroundOffset)
             --DebugDrawCircle(vec, Vector(200,200,200), 100, 10, true, .5)
             --local ents = Entities:FindAllByClassnameWithin("ent_dota_tree", vec, 70)
@@ -457,7 +457,7 @@ function Projectiles:CreateProjectile(projectile)
                 if projectile.bCutTrees or projectile.TreeBehavior ~= PROJECTILES_NOTHING then
                   local status, action = pcall(projectile.OnTreeHit, projectile, tree)
                   if not status then
-                    print('[PROJECTILES] Projectile OnTreeHit Failure!: ' .. action)
+                     --print('[PROJECTILES] Projectile OnTreeHit Failure!: ' .. action)
                   end
                 end
 
@@ -466,7 +466,7 @@ function Projectiles:CreateProjectile(projectile)
                   if projectile.OnFinish then
                     local status, out = pcall(projectile.OnFinish, projectile, subpos)
                     if not status then
-                      print('[PROJECTILES] Projectile OnFinish Failure!: ' .. out)
+                       --print('[PROJECTILES] Projectile OnFinish Failure!: ' .. out)
                     end
                   end
                   return
@@ -479,12 +479,12 @@ function Projectiles:CreateProjectile(projectile)
         end
         if projectile.WallBehavior ~= PROJECTILES_NOTHING and groundConnect then--ground.z > projectile.prevPos.z then
           local normal = Projectiles:CalcNormal(ground, projectile.Source, 32)
-          --print(normal)
+          -- --print(normal)
           if normal.z < .6 then
             local vec = Vector(GridNav:GridPosToWorldCenterX(GridNav:WorldToGridPosX(subpos.x)), GridNav:GridPosToWorldCenterY(GridNav:WorldToGridPosY(subpos.y)), ground.z)
             local status, action = pcall(projectile.OnWallHit, projectile, vec)
             if not status then
-              print('[PROJECTILES] Projectile OnWallHit Failure!: ' .. action)
+               --print('[PROJECTILES] Projectile OnWallHit Failure!: ' .. action)
             end
 
             if projectile.WallBehavior == PROJECTILES_DESTROY then
@@ -492,7 +492,7 @@ function Projectiles:CreateProjectile(projectile)
               if projectile.OnFinish then
                 local status, out = pcall(projectile.OnFinish, projectile, subpos)
                 if not status then
-                  print('[PROJECTILES] Projectile OnFinish Failure!: ' .. out)
+                   --print('[PROJECTILES] Projectile OnFinish Failure!: ' .. out)
                 end
               end
               return
@@ -510,18 +510,18 @@ function Projectiles:CreateProjectile(projectile)
           end
         end
         if projectile.GroundBehavior ~= PROJECTILES_NOTHING and groundConnect then
-            --print('groundConnect')
+            -- --print('groundConnect')
             if projectile.GroundBehavior == PROJECTILES_DESTROY then
               ParticleManager:DestroyParticle(projectile.id, projectile.bDestroyImmediate)
               local status, action = pcall(projectile.OnGroundHit, projectile, ground)
               if not status then
-                print('[PROJECTILES] Projectile OnGroundHit Failure!: ' .. action)
+                 --print('[PROJECTILES] Projectile OnGroundHit Failure!: ' .. action)
               end
 
               if projectile.OnFinish then
                 local status, out = pcall(projectile.OnFinish, projectile, subpos)
                 if not status then
-                  print('[PROJECTILES] Projectile OnFinish Failure!: ' .. out)
+                   --print('[PROJECTILES] Projectile OnFinish Failure!: ' .. out)
                 end
               end
               return
@@ -529,7 +529,7 @@ function Projectiles:CreateProjectile(projectile)
               -- bounce calculation
               local status, action = pcall(projectile.OnGroundHit, projectile, ground)
               if not status then
-                print('[PROJECTILES] Projectile OnGroundHit Failure!: ' .. action)
+                 --print('[PROJECTILES] Projectile OnGroundHit Failure!: ' .. action)
               end
 
               local normal = Projectiles:CalcNormal(ground, projectile.Source)
@@ -543,14 +543,14 @@ function Projectiles:CreateProjectile(projectile)
               local slope = Projectiles:CalcSlope(ground, projectile.Source, vel)
               local dir = vel:Normalized()
               --projectile.fGroundOffset = projectile.fGroundOffset - 10
-              --print('follow ' .. slope:Dot(vel:Normalized()) .. ' -- ' .. projectile.changes)
+              -- --print('follow ' .. slope:Dot(vel:Normalized()) .. ' -- ' .. projectile.changes)
               if dir.z < slope.z and slope:Dot(dir) < 1 then
                 local status, action = pcall(projectile.OnGroundHit, projectile, ground)
                 if not status then
-                  print('[PROJECTILES] Projectile OnGroundHit Failure!: ' .. action)
+                   --print('[PROJECTILES] Projectile OnGroundHit Failure!: ' .. action)
                 end
                 --projectile.fGroundOffset = projectile.fGroundOffset - 10
-                --print('follow under')
+                -- --print('follow under')
                 projectile:SetVelocity(velLength * 30 * slope, subpos)
               end
               break
@@ -564,7 +564,7 @@ function Projectiles:CreateProjectile(projectile)
           if projectile.OnFinish then
             local status, out = pcall(projectile.OnFinish, projectile, subpos)
             if not status then
-              print('[PROJECTILES] Projectile OnFinish Failure!: ' .. out)
+               --print('[PROJECTILES] Projectile OnFinish Failure!: ' .. out)
             end
           end
           return

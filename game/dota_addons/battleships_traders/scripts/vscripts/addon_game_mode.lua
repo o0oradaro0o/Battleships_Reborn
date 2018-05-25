@@ -66,7 +66,8 @@ g_CoOpUnitPool={}
 
 -- battle mode variables
 g_BattleMode=0
-g_BattleModeNumber=1
+g_BattleModeNumberNorth=1
+g_BattleModeNumberSouth=1
 g_BattleModeNorthScore=0
 g_BattleModeSouthScore=0
 g_BattleModeTimer=120
@@ -149,6 +150,7 @@ g_HeroGoldArray={}
 
 -- this shit is all for stat tracking.  we can look at recent games to check item builds and see what items are most popular
 g_ItemCodeLookUp={}
+g_ItemCodeLookUp["item_hull_sail_one_combo_bow"] = "XX"
 g_ItemCodeLookUp["item_coal_bow"] = "CO"
 g_ItemCodeLookUp["item_fire_bow"] = "FO"
 g_ItemCodeLookUp["item_plasma_bow"] = "PO"
@@ -197,6 +199,17 @@ g_ItemCodeLookUp["item_recipe_caulk_ult_bow"] = "LU"
 g_ItemCodeLookUp["item_recipe_spin_ult_bow"] = "SU"
 g_ItemCodeLookUp["item_recipe_chaos_ult_bow"] = "KU"
 g_ItemCodeLookUp["item_recipe_breach_ult_bow"] = "BU"
+
+g_ItemCodeLookUp["item_fire_ult_bow"] = "FU"
+g_ItemCodeLookUp["item_plasma_ult_bow"] = "PU"
+g_ItemCodeLookUp["item_poison_ult_bow"] = "OU"
+g_ItemCodeLookUp["item_light_ult_bow"] = "LU"
+g_ItemCodeLookUp["item_ice_ult_bow"] = "IU"
+g_ItemCodeLookUp["item_wind_ult_bow"] = "WU"
+g_ItemCodeLookUp["item_caulk_ult_bow"] = "LU"
+g_ItemCodeLookUp["item_spin_ult_bow"] = "SU"
+g_ItemCodeLookUp["item_chaos_ult_bow"] = "KU"
+g_ItemCodeLookUp["item_breach_ult_bow"] = "BU"
 
 g_ItemCodeLookUp["item_hull_one"] = "HO"
 g_ItemCodeLookUp["item_hull_two"] = "HT"
@@ -261,7 +274,9 @@ g_ItemCodeLookUp["item_crystal_maiden_replacement_boat"] = "BN"
 --Canoe
 g_ItemCodeLookUp["item_storm_spirit_replacement_boat"] = "BJ"
 --Junk
-
+g_ItemCodeLookUp["npc_dota_hero_brewmaster"] = "BK"
+--riveer
+g_heroCache = {}
 
 -- this is for if we need to swap a unit model 
 g_ModelLookUp = {}
@@ -271,12 +286,14 @@ g_ModelLookUp["npc_dota_hero_tidehunter"] = "models/pontoon_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_crystal_maiden"] = "models/canoe_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_phantom_lancer"] = "models/air_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_rattletrap"] = "models/cat_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_batrider"] = "models/whaling_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_jakiro"] = "models/galleon_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_nevermore"] = "models/plane_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_meepo"] = "models/house_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_disruptor"] = "models/coast_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_morphling"] = "models/speed_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_storm_spirit"] = "models/junk_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_brewmaster"] = "models/river_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_lion"] = "models/yacht_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_ember_spirit"] = "models/tug_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_slark"] = "models/viking_boat.vmdl"
@@ -344,59 +361,60 @@ function Precache( context )
 	PrecacheResource( "model", "models/building_south_tower.vmdl", context )
 	
 	PrecacheResource( "materials", "materials/", context )
-	PrecacheUnitByNameSync("npc_dota_hero_abaddon", context)
-	PrecacheUnitByNameSync("npc_dota_hero_zuus", context)
-	PrecacheUnitByNameSync("npc_dota_hero_tiny", context)
-	PrecacheUnitByNameSync("npc_dota_hero_kunkka", context)
-	PrecacheUnitByNameSync("npc_dota_hero_bane", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_abaddon", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_zuus", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_tiny", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_kunkka", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_bane", context)
 	
-	PrecacheUnitByNameSync("npc_dota_hero_vengefulspirit", context)
-	PrecacheUnitByNameSync("npc_dota_hero_brewmaster", context)
-	PrecacheUnitByNameSync("npc_dota_hero_puck", context)
-	PrecacheUnitByNameSync("npc_dota_hero_tidehunter", context)
-	PrecacheUnitByNameSync("npc_dota_hero_jakiro", context)
-	PrecacheUnitByNameSync("npc_dota_hero_sniper", context)
-	PrecacheUnitByNameSync("npc_dota_hero_meepo", context)
-	PrecacheUnitByNameSync("npc_dota_hero_pudge", context)
-	PrecacheUnitByNameSync("npc_dota_hero_morphling", context)
-	PrecacheUnitByNameSync("npc_dota_hero_spirit_breaker", context)
-	PrecacheUnitByNameSync("npc_dota_hero_batrider", context)
-	PrecacheUnitByNameSync("npc_dota_hero_pugna", context)
-	PrecacheUnitByNameSync("npc_dota_hero_gyrocopter", context)
-	PrecacheUnitByNameSync("npc_dota_hero_magnataur", context)
-	PrecacheUnitByNameSync("npc_dota_hero_ursa", context)
-	PrecacheUnitByNameSync("npc_dota_hero_meepo", context)
-	PrecacheUnitByNameSync("npc_dota_hero_disruptor", context)
-	PrecacheUnitByNameSync("npc_dota_hero_ancient_apparition", context)
-	PrecacheUnitByNameSync("npc_dota_hero_winter_wyvern", context)
-	PrecacheUnitByNameSync("npc_dota_hero_lion", context)
-	PrecacheUnitByNameSync("npc_dota_hero_alchemist", context)
-	PrecacheUnitByNameSync("npc_dota_hero_invoker", context)
-	PrecacheUnitByNameSync("npc_dota_hero_doom_bringer", context)
-	PrecacheUnitByNameSync("npc_dota_hero_lycan", context)
-	PrecacheUnitByNameSync("npc_dota_hero_visage", context)
-	PrecacheUnitByNameSync("npc_dota_hero_nevermore", context)
-	PrecacheUnitByNameSync("npc_dota_hero_slark", context)
-	PrecacheUnitByNameSync("npc_dota_hero_naga_siren", context)
-	PrecacheUnitByNameSync("npc_dota_hero_chen", context)
-	PrecacheUnitByNameSync("npc_dota_hero_rubick", context)
-	PrecacheUnitByNameSync("npc_dota_hero_mirana", context)
-	PrecacheUnitByNameSync("npc_dota_hero_windrunner", context)
-	PrecacheUnitByNameSync("npc_dota_hero_rattletrap", context)
-	PrecacheUnitByNameSync("npc_dota_hero_antimage", context)
-	PrecacheUnitByNameSync("npc_dota_hero_riki", context)
-	PrecacheUnitByNameSync("npc_dota_hero_enigma", context)
-	PrecacheUnitByNameSync("npc_dota_hero_shredder", context)
-	PrecacheUnitByNameSync("npc_dota_hero_silencer", context)
-	PrecacheUnitByNameSync("npc_dota_hero_treant", context)
-	PrecacheUnitByNameSync("npc_dota_hero_bane", context)
-	PrecacheUnitByNameSync("npc_dota_hero_lone_druid", context)
-	PrecacheUnitByNameSync("npc_dota_hero_shadow_shaman", context)
-	PrecacheUnitByNameSync("npc_dota_hero_crystal_maiden", context)
-	PrecacheUnitByNameSync("npc_dota_hero_phantom_lancer", context)
-	PrecacheUnitByNameSync("npc_dota_hero_storm_spirit", context)
-	PrecacheUnitByNameSync("npc_dota_hero_ember_spirit", context)
-	PrecacheUnitByNameSync("npc_dota_hero_wisp", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_vengefulspirit", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_brewmaster", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_puck", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_tidehunter", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_jakiro", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_sniper", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_meepo", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_pudge", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_morphling", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_spirit_breaker", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_batrider", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_pugna", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_gyrocopter", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_magnataur", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_ursa", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_meepo", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_disruptor", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_ancient_apparition", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_winter_wyvern", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_lion", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_alchemist", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_invoker", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_doom_bringer", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_lycan", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_visage", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_nevermore", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_slark", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_naga_siren", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_chen", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_rubick", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_mirana", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_windrunner", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_rattletrap", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_batrider", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_antimage", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_riki", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_enigma", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_shredder", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_silencer", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_treant", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_bane", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_lone_druid", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_shadow_shaman", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_crystal_maiden", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_phantom_lancer", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_storm_spirit", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_ember_spirit", context)
+	-- PrecacheUnitByNameSync("npc_dota_hero_wisp", context)
 
 
 	PrecacheUnitByNameSync("npc_dota_vision_granter", context)
@@ -514,7 +532,7 @@ end
 
 
 function CBattleship8D:InitGameMode()
-	print( "Template addon is loaded." )
+	 --print( "Template addon is loaded." )
 	GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap(CBattleship8D, "FilterModifyGold"), self)
 	
 	--register the 'UnstickMe' command in our console
@@ -736,10 +754,6 @@ table.insert(g_HardMissionsSouth["npc_dota_shop_right_bot"], "item_contract_medi
 table.insert(g_HardMissionsSouth["npc_dota_shop_right_top"], "item_contract_medium_right_mid")
 table.insert(g_HardMissionsSouth["npc_dota_shop_right_top"], "item_contract_medium_right_bot")
 table.insert(g_HardMissionsSouth["npc_dota_shop_right_top"], "item_contract_medium_mid_bot")
-
-
-
-
 table.insert(g_EasyMissionsNorth["npc_dota_shop_left_top"], "item_contract_medium_left_bot")
 table.insert(g_EasyMissionsNorth["npc_dota_shop_mid_mid"], "item_contract_medium_left_top")
 table.insert(g_EasyMissionsNorth["npc_dota_shop_mid_mid"], "item_contract_medium_left_mid")
@@ -779,7 +793,6 @@ table.insert(g_EasyMissionsSouth["npc_dota_shop_right_top"], "item_contract_medi
 table.insert(g_EasyMissionsSouth["npc_dota_shop_right_top"], "item_contract_medium_right_bot")
 table.insert(g_EasyMissionsSouth["npc_dota_shop_right_top"], "item_contract_medium_mid_bot")
 
-
 	table.insert(g_CoOpItemPool,"item_coal_bow")
 	table.insert(g_CoOpItemPool,"item_fire_bow")
 	table.insert(g_CoOpItemPool,"item_plasma_bow")
@@ -793,17 +806,13 @@ table.insert(g_EasyMissionsSouth["npc_dota_shop_right_top"], "item_contract_medi
 	table.insert(g_CoOpItemPool,"item_hull_one")
 	table.insert(g_CoOpItemPool,"item_sail_one")
 	table.insert(g_CoOpItemPool,"item_repair_one")
-	
 	table.insert(g_CoOpUnitPool,"npc_dota_hero_zuus")
 
-
-
-	
 end
 
 function CBattleship8D:FilterModifyGold(event)
     --Check if the order is the glyph type
-	print("i'm in ModifyGoldFilter!!!!!!!!!!!!!!!!!!!")
+	 --print("i'm in ModifyGoldFilter!!!!!!!!!!!!!!!!!!!")
 	
     event["gold"] = 0
 
@@ -813,13 +822,13 @@ end
 
 function CBattleship8D:BountyRuneFilter(filterTable)
     --Check if the order is the glyph type
-	print("i'm in BountyRuneFilter!!!!!!!!!!!!!!!!!!!")
+	 --print("i'm in BountyRuneFilter!!!!!!!!!!!!!!!!!!!")
 	
    for k, v in pairs( filterTable ) do
-		print("rune spawn: " .. k .. " " .. tostring(v) )
+		 --print("rune spawn: " .. k .. " " .. tostring(v) )
 	end
-	print(g_EmpireGoldCount)
-	print(filterTable["gold_bounty"])
+	 --print(g_EmpireGoldCount)
+	 --print(filterTable["gold_bounty"])
 	filterTable["gold_bounty"]=filterTable["gold_bounty"]*.5*g_EmpireGoldCount
 	if PlayerResource:GetTeam(filterTable["player_id_const"]) == DOTA_TEAM_GOODGUYS then
 		
@@ -837,7 +846,7 @@ end
 
 function CBattleship8D:FilterRuneSpawn( filterTable )
 	for k, v in pairs( filterTable ) do
-		print("rune spawn: " .. k .. " " .. tostring(v) )
+		 --print("rune spawn: " .. k .. " " .. tostring(v) )
 	end
 	return true
 end
@@ -852,23 +861,26 @@ function CBattleship8D:OrderExecutionFilter(keys)
   local orderType = keys.order_type
   local queuePos = keys.queue
   local player = PlayerResource:GetPlayer(playerID)
-  
-  if orderType == DOTA_UNIT_ORDER_SELL_ITEM then
+  if orderType == DOTA_UNIT_ORDER_SELL_ITEM or (orderType == DOTA_UNIT_ORDER_GIVE_ITEM and target~=nil and not target:IsOwnedByAnyPlayer()) then
   DeepPrintTable( keys )
-	print("i'm in DOTA_UNIT_ORDER_SELL_ITEM")
-	print(ability:GetName())
-	print(ability:GetCaster():GetName())
+	 --print("i'm in DOTA_UNIT_ORDER_SELL_ITEM")
+	 --print(ability:GetName())
+	 --print(ability:GetCaster():GetName())
 	if ability:GetCaster() ~= nil and ability:GetCaster():IsOwnedByAnyPlayer() and ability:GetCaster():IsRealHero() then
 	
 		local sellGold = GetItemCost(ability:GetName())*.5
 		if  ability:GetPurchaseTime()+10>GameRules:GetGameTime() then
 			sellGold=sellGold*2
 		end
-		print(sellGold)
-		print(GetItemCost(ability:GetName()))
-		print(ability:GetGoldCost(1))
+		 --print(sellGold)
+		 --print(GetItemCost(ability:GetName()))
+		 --print(ability:GetGoldCost(1))
 		g_HeroGoldArray[ability:GetCaster():GetPlayerOwnerID()]=g_HeroGoldArray[ability:GetCaster():GetPlayerOwnerID()]+sellGold
-
+		if g_ItemCodeLookUp[ability:GetName()]~=nil then
+			storage:AddToPlayerSaleHist(playerID,{item=g_ItemCodeLookUp[ability:GetName()] , time=math.floor(GameRules:GetGameTime()/60+0.5)})--math.floor(GameRules:GetGameTime()/60+0.5) .. g_ItemCodeLookUp[itemName])
+		else
+			storage:AddToPlayerSaleHist(playerID,{item=ability:GetName() , time=math.floor(GameRules:GetGameTime()/60+0.5)})--math.floor(GameRules:GetGameTime()/60+0.5) .. g_ItemCodeLookUp[itemName])
+		end
 	end
   end
   
@@ -905,7 +917,7 @@ function CBattleship8D:OnThink()
 		if GameRules:GetGameTime() ~= g_PreviousTickCount then
 			
 					if g_MainTimerTickCount == 5 then
-						
+						storage:SetGameSettings({battle=g_BattleMode ,coOp = g_CoOpMode , trading = g_TradeMode})
 					if g_BattleMode==1 then
 						local battleTimerData = {
 							TimeTillBattle = g_BattleModeTimer;
@@ -919,7 +931,7 @@ function CBattleship8D:OnThink()
 						}
 						FireGameEvent( "Battle_Over", battleTimerData ); 
 					end
-					print("g_TradeMode is" .. g_TradeMode)
+					 --print("g_TradeMode is" .. g_TradeMode)
 					if g_TradeMode==1 then
 						local empty = {}
 							FireGameEvent( "Trade_Mode_Enabled", empty ); 
@@ -994,8 +1006,8 @@ function CBattleship8D:OnThink()
 		end
 		
 		if g_MainTimerTickCount ==13 and g_BattleMode==1 then	
-			Notifications:TopToAll({text="#g_BattleMode", duration=5.0, style={color="#F2B2B2",  fontSize="40px;"}})
-			Notifications:TopToAll({text="#g_BattleMode_1", duration=5.0, style={color="#F2B2B2",  fontSize="20px;"}})
+			Notifications:TopToAll({text="#BattleMode", duration=5.0, style={color="#F2B2B2",  fontSize="40px;"}})
+			Notifications:TopToAll({text="#BattleMode_1", duration=5.0, style={color="#F2B2B2",  fontSize="20px;"}})
 			
 			
 			
@@ -1103,8 +1115,8 @@ function CBattleship8D:OnThink()
 					end
 					if string.match(hero:GetName(),"tusk") then
 							local casterUnit = hero
-							--print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
-							--print('[AbilityFunctions] battleshipHealth started!')
+							-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+							-- --print('[AbilityFunctions] battleshipHealth started!')
 							if casterUnit:IsAlive() and hero:IsOwnedByAnyPlayer() and g_HeroHP[casterUnit:GetPlayerID()] == nil then
 								g_HeroHP[casterUnit:GetPlayerID()] = casterUnit:GetHealthPercent() 
 								casterUnit:SetModel("models/battleship_boat0")
@@ -1114,24 +1126,24 @@ function CBattleship8D:OnThink()
 								if casterUnit:GetHealthPercent() < 7  and g_HeroHP[casterUnit:GetPlayerID()] > 6 then
 									casterUnit:SetModel("models/battleship_boat4")
 									casterUnit:SetOriginalModel("models/battleship_boat4")
-								--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
+								-- --print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
 								elseif casterUnit:GetHealthPercent() < 25 and g_HeroHP[casterUnit:GetPlayerID()] > 24 then
 									casterUnit:SetModel("models/battleship_boat3")
 									casterUnit:SetOriginalModel("models/battleship_boat3")
-									--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
+									-- --print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
 								elseif casterUnit:GetHealthPercent() < 50 and g_HeroHP[casterUnit:GetPlayerID()] > 49 then
 									casterUnit:SetModel("models/battleship_boat2")
 									casterUnit:SetOriginalModel("models/battleship_boat2")
-									--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
+									-- --print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
 								elseif casterUnit:GetHealthPercent() < 75 and g_HeroHP[casterUnit:GetPlayerID()] > 74 then
 									casterUnit:SetModel("models/battleship_boat1")
 									casterUnit:SetOriginalModel("models/battleship_boat1")
-									--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
+									-- --print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
 								elseif casterUnit:GetHealthPercent() > 74 and g_HeroHP[casterUnit:GetPlayerID()] < 75 then
 									casterUnit:SetModel("models/battleship_boat0")
 									casterUnit:SetOriginalModel("models/battleship_boat0")
-									--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
-								--print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
+									-- --print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
+								-- --print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
 								end
 									g_HeroHP[casterUnit:GetPlayerID()] = casterUnit:GetHealthPercent() 
 							end
@@ -1147,10 +1159,10 @@ function CBattleship8D:OnThink()
 						
 						
 						if PlayerResource:GetConnectionState( hero:GetPlayerID() ) ~= 2 or hero:HasOwnerAbandoned() or hero:HasModifier("pergatory_perm") then
-								print('inside disconnect')
+								 --print('inside disconnect')
 										if g_DisconnectTime[hero]~= nil then
 											g_DisconnectTime[hero]=g_DisconnectTime[hero]+2
-											print('disconnect time: ' .. g_DisconnectTime[hero])
+											 --print('disconnect time: ' .. g_DisconnectTime[hero])
 											else
 											g_DisconnectTime[hero]=1
 										end
@@ -1160,7 +1172,7 @@ function CBattleship8D:OnThink()
 											 					
 											end
 											if g_DisconnectTime[hero]>180 or hero:HasOwnerAbandoned() then
-											print('bigger than 180')
+											 --print('bigger than 180')
 												local casterPos = hero:GetAbsOrigin()
 												local targetUnitOne = Entities:FindByName( nil, "south_kicker")
 												local targetUnitTwo = Entities:FindByName( nil, "north_kicker")
@@ -1245,7 +1257,7 @@ function CBattleship8D:OnThink()
 							
 							local abil1 = hero:GetAbilityByIndex(1)
 							
-							print( 'player found at z of: ' .. tostring(height:Length()) .. "and cd check is " .. tostring(abil1:GetCooldownTimeRemaining() > abil1:GetCooldown(abil1:GetLevel())-2) .. " and name of hero is " .. hero:GetName() .. " so name check is " .. tostring(string.match(hero:GetName(),"winter_wyvern")))
+							 --print( 'player found at z of: ' .. tostring(height:Length()) .. "and cd check is " .. tostring(abil1:GetCooldownTimeRemaining() > abil1:GetCooldown(abil1:GetLevel())-2) .. " and name of hero is " .. hero:GetName() .. " so name check is " .. tostring(string.match(hero:GetName(),"winter_wyvern")))
 						
 							if abil1:GetCooldownTimeRemaining() >= abil1:GetCooldown(abil1:GetLevel())-2 and (string.match(hero:GetName(),"winter_wyvern") or string.match(hero:GetName(),"kunkka")) then
 							
@@ -1273,23 +1285,23 @@ function CBattleship8D:OnThink()
 							if g_OldHeroLocations[hero]~=nil then
 								if g_OlderHeroLocations[hero] ~=nil and (g_OldHeroLocations[hero] - hero:GetOrigin()):Length() >100 then
 									g_OlderHeroLocations[hero] = g_OldHeroLocations[hero]
-									--print("update ll2")
+									-- --print("update ll2")
 								elseif g_OlderHeroLocations[hero]==nil then
 									g_OlderHeroLocations[hero] = g_OldHeroLocations[hero]
-								--	print("irst time ll2")
+								--	 --print("irst time ll2")
 								else
-								--	print("no update ll2")
+								--	 --print("no update ll2")
 								end
 							end
 							if  g_OldHeroLocations[hero]~=nil and (g_OldHeroLocations[hero] - hero:GetOrigin()):Length() >100 then
-								--print((g_OldHeroLocations[hero] - hero:GetOrigin()):Length())
+								-- --print((g_OldHeroLocations[hero] - hero:GetOrigin()):Length())
 								g_OldHeroLocations[hero] = hero:GetOrigin()
 							elseif g_OldHeroLocations[hero]==nil then
-							--	print("first time")
+							--	 --print("first time")
 								g_OldHeroLocations[hero] = hero:GetOrigin()
-								--print((g_OldHeroLocations[hero] - hero:GetOrigin()):Length())
+								-- --print((g_OldHeroLocations[hero] - hero:GetOrigin()):Length())
 								else
-							--	print("no update ll")
+							--	 --print("no update ll")
 							end
 							
 							
@@ -1333,7 +1345,7 @@ function CBattleship8D:OnThink()
 		end
 		
 		if g_MainTimerTickCount % 45 == 0 or g_MainTimerTickCount == 1 then
-			print("g_TradeMode is" .. g_TradeMode)
+			 --print("g_TradeMode is" .. g_TradeMode)
 			if g_TradeMode==1 then
 				local empty = {}
 					FireGameEvent( "Trade_Mode_Enabled", empty ); 
@@ -1435,7 +1447,7 @@ function CBattleship8D:OnThink()
 			g_TicksSinceEmpireGold=g_TicksSinceEmpireGold+1
 			g_PreviousTickCount=GameRules:GetGameTime()		
 		end
-		--print( "Template addon script is running." )
+		-- --print( "Template addon script is running." )
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		return nil
 	end
@@ -1444,7 +1456,16 @@ end
 
 function CBattleship8D:OnNPCSpawned(keys)
 if g_BoatJustBaught ==0 then
-  local npc = EntIndexToHScript(keys.entindex)
+	local npc = EntIndexToHScript(keys.entindex)
+
+	-- VicFrank
+	local npcName = npc:GetUnitName()
+
+	if not g_heroCache[npcName] then
+		g_heroCache[npcName] = true
+		PrecacheUnitByNameAsync(npcName, function(...) end)
+	end
+	
   if g_MainTimerTickCount > 20 then
   if npc:IsIllusion() then
 			npc:SetModel( "models/noah_boat.vmdl" )
@@ -1455,7 +1476,7 @@ if g_BoatJustBaught ==0 then
 		AttachCosmetics(npc)
 		stopPhysics(npc)
 		npc:SetBaseStrength(1)
-		print("hero level is" .. npc:GetLevel())
+		 --print("hero level is" .. npc:GetLevel())
 		local item = CreateItem( "item_spawn_stunner", npc, npc)
 			if npc:GetLevel() >= 22 then
 				item:ApplyDataDrivenModifier(npc, npc, "pergatory_12", nil)
@@ -1474,20 +1495,20 @@ if g_BoatJustBaught ==0 then
 								local Item = npc:GetItemInSlot( itemSlot )
 									if Item ~= nil and string.match(Item:GetName(),"hull") then -- makes sure that the item exists and making sure it is the correct item
 									npc:RemoveModifierByName("modifier_item_hull_one")
-									print( "hull found." )
+									 --print( "hull found." )
 								elseif Item ~= nil and string.match(Item:GetName(),"doubled") then -- makes sure that the item exists and making sure it is the correct item
 									local doubledstring = string.gsub(Item:GetName(),"_bow", "_bow_shooting")
 									npc:RemoveModifierByName(doubledstring)
-									print( "doubled found." )
+									 --print( "doubled found." )
 								elseif Item ~= nil and string.match(Item:GetName(),"bow") then -- makes sure that the item exists and making sure it is the correct item
 									npc:RemoveModifierByName(Item:GetName() .. "_shooting")
-									print( "bow found." )
+									 --print( "bow found." )
 								elseif Item ~= nil and string.match(Item:GetName(),"sail") then -- makes sure that the item exists and making sure it is the correct item
 									npc:RemoveModifierByName("modifier_item_sail_one")
-									print( "sail found." )
+									 --print( "sail found." )
 								elseif Item ~= nil and string.match(Item:GetName(),"repair") then -- makes sure that the item exists and making sure it is the correct item
 									npc:RemoveModifierByName("modifier_item_repair_one")
-									print( "sail found." )
+									 --print( "sail found." )
 								end
 							end
 						end
@@ -1519,7 +1540,7 @@ function AttachCosmetics(hero)
 				 hero.particleM = ParticleManager:CreateParticle( "particles/basic_projectile/smoke_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 					ParticleManager:SetParticleControlEnt(hero.particleM, 0, hero, PATTACH_POINT_FOLLOW, "Pipe_emitter", hero:GetAbsOrigin(), true)
 			
-				print( "partical attachment." )
+				 --print( "partical attachment." )
 				end
 		end
 
@@ -1573,13 +1594,13 @@ function CBattleship8D:HandleEmpGold()
 					if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 						hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + goodGoldEach, true)   
 						g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + goodGoldEach
-						print("hero's is good guy (south) had " .. g_HeroGoldArray[hero:GetPlayerOwnerID()] .. " got " .. goodGoldEach .. "new gold is: " .. g_HeroGoldArray[hero:GetPlayerOwnerID()] + goodGoldEach)
+						 --print("hero's is good guy (south) had " .. g_HeroGoldArray[hero:GetPlayerOwnerID()] .. " got " .. goodGoldEach .. "new gold is: " .. g_HeroGoldArray[hero:GetPlayerOwnerID()] + goodGoldEach)
 						hero:SetGold(0, false)
 						g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + goodGoldEach
 					elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 						hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + badGoldEach, true)
 						g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + badGoldEach
-						print("hero's is bad guy (north) had " .. g_HeroGoldArray[hero:GetPlayerOwnerID()] .. " got " .. badGoldEach .. "new gold is: " .. g_HeroGoldArray[hero:GetPlayerOwnerID()] + badGoldEach)
+						 --print("hero's is bad guy (north) had " .. g_HeroGoldArray[hero:GetPlayerOwnerID()] .. " got " .. badGoldEach .. "new gold is: " .. g_HeroGoldArray[hero:GetPlayerOwnerID()] + badGoldEach)
 						hero:SetGold(0, false)
 						g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + badGoldEach
 					end
@@ -1606,13 +1627,13 @@ function CBattleship8D:HandleEmpGold()
 					if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 						hero:SetGold(herogold + goodGoldEach, true)   
 						g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + goodGoldEach
-						print("hero's is good guy (south) had " .. herogold .. " got " .. goodGoldEach .. "new gold is: " .. herogold + goodGoldEach)
+						 --print("hero's is good guy (south) had " .. herogold .. " got " .. goodGoldEach .. "new gold is: " .. herogold + goodGoldEach)
 						hero:SetGold(0, false)
 						g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + goodGoldEach
 					elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 						hero:SetGold(herogold + badGoldEach, true)
 						g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + badGoldEach
-						print("hero's is bad guy (north) had " .. herogold .. " got " .. badGoldEach .. "new gold is: " .. herogold + badGoldEach)
+						 --print("hero's is bad guy (north) had " .. herogold .. " got " .. badGoldEach .. "new gold is: " .. herogold + badGoldEach)
 						hero:SetGold(0, false)
 						g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + badGoldEach
 					end
@@ -1734,10 +1755,14 @@ function GetBoatValue(hero)
 		return 1000
 	elseif string.match(hero:GetName(),"rattletrap") then
 		return 1000
+	elseif string.match(hero:GetName(),"batrider") then
+		return 1000
 	elseif string.match(hero:GetName(),"winter_wyvern") then
 		return 3000
 	elseif string.match(hero:GetName(),"storm_spirit") then
 		 return 3000
+	elseif string.match(hero:GetName(),"brewmaster") then
+		return 3000
 	elseif string.match(hero:GetName(),"ember_spirit") then
 		 return 6000
 	elseif string.match(hero:GetName(),"slark") then
@@ -1808,6 +1833,7 @@ if g_CoOpDiffLevel==5-g_CoOpDiffSetting then
 		table.insert(g_CoOpUnitPool,"npc_dota_hero_phantom_lancer")
 		table.insert(g_CoOpUnitPool,"npc_dota_hero_tidehunter")
 		table.insert(g_CoOpUnitPool,"npc_dota_hero_rattletrap")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_batrider")
 	end
 
 	if g_CoOpDiffLevel==10-g_CoOpDiffSetting*2 then
@@ -1828,6 +1854,7 @@ if g_CoOpDiffLevel==5-g_CoOpDiffSetting then
 		table.insert(g_CoOpUnitPool,"npc_dota_hero_disruptor")
 		table.insert(g_CoOpUnitPool,"npc_dota_hero_winter_wyvern")
 		table.insert(g_CoOpUnitPool,"npc_dota_hero_storm_spirit")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_brewmaster")
 		table.insert(g_CoOpUnitPool,"npc_dota_hero_nevermore")
 		table.insert(g_CoOpUnitPool,"npc_dota_hero_lion")
 		
@@ -1854,6 +1881,8 @@ if g_CoOpDiffLevel==5-g_CoOpDiffSetting then
 		table.insert(g_CoOpUnitPool,"npc_dota_hero_storm_spirit")
 		table.insert(g_CoOpUnitPool,"npc_dota_hero_nevermore")
 		table.insert(g_CoOpUnitPool,"npc_dota_hero_lion")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_brewmaster")
+		
 		
 		table.insert(g_CoOpItemPool,"item_coal_two_bow_doubled")
 		table.insert(g_CoOpItemPool,"item_fire_two_bow_doubled")
@@ -2009,7 +2038,7 @@ function HandleTideAbil()
 						if hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 							otherTeam=DOTA_TEAM_GOODGUYS
 						end
-						print("haveTide!!")
+						 --print("haveTide!!")
 							local nearby=FindUnitsInRadius(  hero:GetTeamNumber(), hero:GetOrigin(), nil, 1200, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING, 0, 0, false )
 							if #nearby==0 then
 							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
@@ -2023,12 +2052,12 @@ function HandleTideAbil()
 													local wpName=string.gsub(waypoint:GetName(),tostring(wpNextNum),tostring(wpNextNum+1))
 													waypoint2 = Entities:FindByName(nil, wpName)
 													if waypoint2 then
-														print(waypoint2:GetName())
+														 --print(waypoint2:GetName())
 														hero:MoveToPosition( waypoint2:GetOrigin())
 													 end
 													 else
 													   hero:MoveToPosition( Vector(60,-5568,0))
-													   print("othermove")
+													    --print("othermove")
 										end
 										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS and (hero:GetOrigin()* Vector(0,1,0)- Vector(0,6100,0)):Length()<200 or g_ConfusedCreeps[hero]==1 then
 											 hero:MoveToPositionAggressive( Vector(-58,5390,0))
@@ -2085,7 +2114,7 @@ function HandleTideAbil()
 										end
 								if hero:IsNull()==false and hero:IsAlive() == false then
 									Timers:CreateTimer( 10, function()
-											print("Removing Tide!!!!")
+											 --print("Removing Tide!!!!")
 											hero:RemoveSelf()
 									end)
 									
@@ -2106,7 +2135,7 @@ function HandleCoOp()
 						if  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 							local height = hero:GetOrigin() * Vector(0,0,1)
 							if height:Length() > 80 then
-								print("moving wall stuck")
+								 --print("moving wall stuck")
 								hero:SetOrigin(hero:GetOrigin() * Vector(.9,.9,.9))
 								if hero:GetOrigin():Length() < 1000 then
 										hero:SetOrigin( Vector(0,4300,0)+RandomVector( RandomFloat( 200, 300 )))
@@ -2117,7 +2146,7 @@ function HandleCoOp()
 							
 							local ycord = hero:GetOrigin() * Vector(0,1,0)
 							if ycord:Length() > 4300 then
-								print("moving to base, too far back")
+								 --print("moving to base, too far back")
 								hero:SetOrigin( Vector(0,4300,0)+RandomVector( RandomFloat( 200, 300 )))
 								
 							end
@@ -2200,18 +2229,18 @@ function HandleCoOp()
 
 
 if (g_CoOpHeroCount<math.sqrt(g_CoOpDiffLevel)*.2*g_PlayerCountSouth*(g_CoOpDiffSetting+1)+1 or g_CoOpHeroCount==0) and g_CoOpHeroCount<25 and g_MainTimerTickCount%2==0 then
-		print(g_CoOpHeroCount .. "   out of a possable " .. math.sqrt(g_CoOpDiffLevel)*.5*g_PlayerCountSouth+1)
-		print("current diff level is" .. g_CoOpDiffLevel)
+		 --print(g_CoOpHeroCount .. "   out of a possable " .. math.sqrt(g_CoOpDiffLevel)*.5*g_PlayerCountSouth+1)
+		 --print("current diff level is" .. g_CoOpDiffLevel)
 		local spawnPicked=0
 		local spawnPos=Vector(0,0,0)
 		local tries=0
 			while spawnPicked == 0 and tries<10 do
 				 tries=tries+1
 				spawnPos=Vector(RandomFloat( -6000, 6000 ),RandomFloat( 0, 6000 ),0)
-				print(spawnPos)
+				 --print(spawnPos)
 				local allUnits = FindUnitsInRadius( DOTA_TEAM_BADGUYS, spawnPos, nil, 1500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
 				if #allUnits == 0 then
-					print(#allUnits)
+					 --print(#allUnits)
 					spawnPicked=1
 				end
 			end
@@ -2330,7 +2359,7 @@ end
 
 
 function CBattleship8D:OnDisconnect(keys)
-  print('[BAREBONES] Player Disconnected ' .. tostring(keys.userid))
+   --print('[BAREBONES] Player Disconnected ' .. tostring(keys.userid))
     PrintTable(keys)
 		local plyID
 		for ind = 0, 20, 1 do 
@@ -2342,9 +2371,9 @@ function CBattleship8D:OnDisconnect(keys)
 		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 			if hero ~= nil then
 				local id = hero:GetPlayerOwnerID()
-				print("this hero's id" .. tostring(hero:GetPlayerOwnerID()))
+				 --print("this hero's id" .. tostring(hero:GetPlayerOwnerID()))
 				if id == plyID then
-					print("this is the DCd hero")
+					 --print("this is the DCd hero")
 					g_IsHeroDisconnected[hero] = 1
 				end
 			end
@@ -2368,9 +2397,9 @@ function CBattleship8D:OnConnectFull(keys)
 			
 			
 				local id = hero:GetPlayerOwnerID()
-				print("this hero's id" .. tostring(hero:GetPlayerOwnerID()))
+				 --print("this hero's id" .. tostring(hero:GetPlayerOwnerID()))
 				if id == keys.index then
-					print("this is the DCd hero reconnecting")
+					 --print("this is the DCd hero reconnecting")
 					if hero ~= nil then
 						for itemSlot = 0, 5, 1 do 
 							if hero ~= nil then
@@ -2406,21 +2435,21 @@ function CBattleship8D:OnEntityKilled( keys )
 	for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 		
 		if hero:GetPlayerOwnerID() ==nil then
-			print("nobody owns me! and nobody will")
+			 --print("nobody owns me! and nobody will")
 		else
 			if g_HeroGoldArray[hero:GetPlayerOwnerID()] == nil then
 				g_HeroGoldArray[hero:GetPlayerOwnerID()]=0
-				print("owned but no array! got one now")
+				 --print("owned but no array! got one now")
 			end
 		end
 	end
 	
 	--handle tower gold
 	if killedUnit:IsTower()  then
-			print( "Tower Killed" )
+			 --print( "Tower Killed" )
 			if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS and not string.match(killedUnit:GetUnitName(), "dock") then
 				g_GoldPerTickSouth = g_GoldPerTickSouth + 2
-				print( "Bad Tower, Good guys gold per tick is now: " .. g_GoldPerTickSouth )
+				 --print( "Bad Tower, Good guys gold per tick is now: " .. g_GoldPerTickSouth )
 				Notifications:TopToAll({text="#north_tower_died", duration=5.0, style={color="#FF6600",  fontSize="18px;"}})
 				Notifications:TopToAll({text=tostring(100), duration=5.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
 
@@ -2437,7 +2466,7 @@ function CBattleship8D:OnEntityKilled( keys )
 				end
 			elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS and not string.match(killedUnit:GetUnitName(), "dock") then
 				g_GoldPerTickNorth = g_GoldPerTickNorth + 2
-				print( "Good Tower, Bad guys gold per tick is now: " .. g_GoldPerTickNorth )
+				 --print( "Good Tower, Bad guys gold per tick is now: " .. g_GoldPerTickNorth )
 				Notifications:TopToAll({text="#south_tower_died", duration=5.0, style={color="#FF6600",  fontSize="18px;"}})
 				Notifications:TopToAll({text=tostring(100), duration=5.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
 
@@ -2455,13 +2484,13 @@ function CBattleship8D:OnEntityKilled( keys )
 			
 		--handle docks dieing and changing the empire gold redistribution
 		if string.match(killedUnit:GetUnitName(), "dock") then
-		print( "base killed" )
+		 --print( "base killed" )
 			
 			if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS then
 				
 				if g_DockAliveNorthLeft+g_DockAliveNorthRight==1 then
 
-					storage:SetEmpGoldHist(GetempGoldHistString())
+					storage:SetEmpGoldHist(g_EmpGoldArray)
 					
 					GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 					storage:SetWinner("South")
@@ -2481,7 +2510,7 @@ function CBattleship8D:OnEntityKilled( keys )
 				
 			elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
 				if g_DockAliveSouthLeft+g_DockAliveSouthRight==1 then
-					storage:SetEmpGoldHist(GetempGoldHistString())
+					storage:SetEmpGoldHist(g_EmpGoldArray)
 					GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 					storage:SetWinner("North")
 					GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
@@ -2499,13 +2528,13 @@ function CBattleship8D:OnEntityKilled( keys )
 				end
 				
 			end
-			print( "North docks:" .. g_DockAliveNorthLeft .. g_DockAliveNorthRight )
-			print( "South docks:" .. g_DockAliveSouthLeft .. g_DockAliveSouthRight )
+			 --print( "North docks:" .. g_DockAliveNorthLeft .. g_DockAliveNorthRight )
+			 --print( "South docks:" .. g_DockAliveSouthLeft .. g_DockAliveSouthRight )
 		end
 		
 		--handle ending game
 		if string.match(killedUnit:GetUnitName(), "base") then
-			print( "MATCHED BASE IS TRUE" )
+			 --print( "MATCHED BASE IS TRUE" )
 			if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS then
 				storage:SetWinner("South")
 				GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
@@ -2640,7 +2669,7 @@ function CBattleship8D:OnEntityKilled( keys )
 		if g_CoOpMode and killedUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS and killedUnit:IsRealHero() then
 			if RandomInt(1,g_PlayerCountSouth*2+5)<5 then
 				g_CoOpDiffLevel=g_CoOpDiffLevel+1
-				print( "g_CoOpDiffLevel: " .. g_CoOpDiffLevel )
+				 --print( "g_CoOpDiffLevel: " .. g_CoOpDiffLevel )
 			end
 			g_CoOpHeroCount=g_CoOpHeroCount-1
 			UpdateCoOpTables()
@@ -2802,7 +2831,7 @@ function CBattleship8D:OnEntityKilled( keys )
 		
 		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-			print(hero:GetName())
+			 --print(hero:GetName())
 				if hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS and killedUnit ~= nil and g_HeroGoldArray[hero:GetPlayerOwnerID()] ~= nil then
 					hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + (killedUnit:GetGoldBounty()/g_PlayerCountSouth)/2, true)
 					hero:SetGold(0, false)
@@ -2830,7 +2859,7 @@ function CBattleship8D:OnEntityKilled( keys )
 			g_HeroGoldArray[killerEntity:GetPlayerOwnerID()]=g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] - killedUnit:GetGoldBounty()/2
 		end
 		
-		print("gold bounty for hero was " .. killedUnit:GetGoldBounty())
+		 --print("gold bounty for hero was " .. killedUnit:GetGoldBounty())
   end
   
   if killedUnit:IsRealHero() then
@@ -3024,7 +3053,7 @@ end
 									while  hero:HasModifier(Item:GetName() .. "_shooting") do
 										hero:RemoveModifierByName(Item:GetName() .. "_shooting")
 									end
-									print( "bow found." )
+									 --print( "bow found." )
 								end
 							end
 						end
@@ -3036,7 +3065,7 @@ end
 									Item:ApplyDataDrivenModifier(hero, hero, doubledstring, nil)
 								elseif Item ~= nil and string.match(Item:GetName(),"bow") then -- makes sure that the item exists and making sure it is the correct item
 									Item:ApplyDataDrivenModifier(hero, hero, Item:GetName() .. "_shooting", nil)
-									print( "bow found." )
+									 --print( "bow found." )
 								end
 							end
 						end
@@ -3067,10 +3096,10 @@ function CBattleship8D:OnItemPurchased( keys )
 	
 local itemName = keys.itemname 
 
-if g_ItemCodeLookUp[itemName] ~= nil then
-print(g_ItemCodeLookUp[itemName])
-	  storage:AddToPlayerItemHist(casterUnit:GetPlayerID(),g_ItemCodeLookUp[itemName])--math.floor(GameRules:GetGameTime()/60+0.5) .. g_ItemCodeLookUp[itemName])
-end	  
+
+ --print(g_ItemCodeLookUp[itemName])
+	  storage:AddToPlayerItemHist(casterUnit:GetPlayerID(),{item=itemName, time=math.floor(GameRules:GetGameTime()/60+0.5)})--math.floor(GameRules:GetGameTime()/60+0.5) .. g_ItemCodeLookUp[itemName])
+  
 
 
   -- The name of the item purchased
@@ -3184,8 +3213,8 @@ function fixBackpack(casterUnit)
 end
 
 function become_boat(casterUnit, heroname)
-    print('[ItemFunctions] become_bristleback started!')
-
+     --print('[ItemFunctions] become_bristleback started!')
+	
     local a = 0
     local plyID = casterUnit:GetPlayerOwnerID()
     local itemlist = {}
@@ -3230,12 +3259,12 @@ function become_boat(casterUnit, heroname)
 		end
     end
 	for _,item in pairs( Entities:FindAllByName("item_*")) do
-								print("found an item")
+								 --print("found an item")
 
 				if item~=nil and item:GetName()~=nil and item:GetName()~=""then
-				print("found an item with a name")
+				 --print("found an item with a name")
 					if item:GetPurchaser() == casterUnit then
-						print("insertingItem")
+						 --print("insertingItem")
 						table.insert(droppeditemlist, item)
 					end
 				end
@@ -3243,12 +3272,12 @@ function become_boat(casterUnit, heroname)
 	if heroname ~= casterUnit:GetName() then
 			local gold = casterUnit:GetGold()
 			local xp = casterUnit:GetCurrentXP()
-			print("calling replace hero")
+			 --print("calling replace hero")
 			g_BoatJustBaught=1
 			local hero = PlayerResource:ReplaceHeroWith( casterUnit:GetPlayerID(), heroname , 0, 0 )
 			SendToServerConsole( "dota_combine_models 0" ) 
 			casterUnit:RemoveSelf()
-				print("called replace hero")
+				 --print("called replace hero")
 				if hero ~= nil then
 					local id = hero:GetPlayerOwnerID()
 					
@@ -3256,7 +3285,7 @@ function become_boat(casterUnit, heroname)
 					RemoveWearables( hero )
 					AttachCosmetics(hero)
 					fixAbilities(hero)
-						print("this is the new hero, put items in " .. hero:GetName())
+						 --print("this is the new hero, put items in " .. hero:GetName())
 						hero:SetGold(gold, true)
 						hero:SetGold(0, false)
 						g_HeroGoldArray[hero:GetPlayerOwnerID()]=gold
@@ -3342,7 +3371,7 @@ function become_boat(casterUnit, heroname)
 								
 								if (string.match(heroname,"vengefulspirit") or string.match(heroname,"enigma") or string.match(heroname,"bane")) and (b==13 or b==14) and not string.match(itemlist[b],"fluff") then
 										CreateItemOnPositionSync(hero:GetOrigin(), newItem)
-										print("ejecting")
+										 --print("ejecting")
 								end
 								if (string.match(heroname,"vengefulspirit") or string.match(heroname,"enigma") or string.match(heroname,"bane")) and  string.match(itemlist[b],"backpack") then
 									
@@ -3364,7 +3393,7 @@ function become_boat(casterUnit, heroname)
 								if hero ~= nil then
 									local activateItem = hero:GetItemInSlot( itemSlot )
 									if activateItem ~= nil and string.match(activateItem:GetName(), "bow") then
-										print("activating " .. activateItem:GetName())
+										 --print("activating " .. activateItem:GetName())
 										activateItem:ToggleAbility()
 										
 									elseif activateItem ~= nil and string.match(activateItem:GetName(), "fluff") then
@@ -3401,7 +3430,8 @@ function become_boat(casterUnit, heroname)
 	end
 	Timers:CreateTimer( 1, function()
 		local data ={}
-		
+		storage:AddToPlayerBoatHist(plyID,{item=storage:GetHeroName(plyID) , time= math.floor(GameRules:GetGameTime()/60+0.5)})
+					 --print(storage:GetHeroName(plyID) .. math.floor(GameRules:GetGameTime()/60+0.5))
 
 		
 	FireGameEvent("Boat_Spawned",data)
@@ -3428,11 +3458,11 @@ local ultslot= 3
 		if hero:GetAbilityByIndex(abilitySlot) ~= nil  then
 			if hero:GetAbilityByIndex(abilitySlot):GetName()~= nil then
 				abil =  hero:GetAbilityByIndex(abilitySlot):GetName()
-				print(abil)
-				print(abilitySlot)
+				 --print(abil)
+				 --print(abilitySlot)
 				
-				print("max level")
-				print(hero:GetAbilityByIndex(abilitySlot):GetMaxLevel())
+				 --print("max level")
+				 --print(hero:GetAbilityByIndex(abilitySlot):GetMaxLevel())
 					if abilitySlot==3  then
 						ultimate =abil
 					elseif hero:GetAbilityByIndex(abilitySlot):GetMaxLevel()==3  then
@@ -3445,7 +3475,7 @@ local ultslot= 3
 	
 	for abilitySlot = 3, 5, 1 do 
 		if abilitySlot==5 then
-				print(ultimate)
+				 --print(ultimate)
 				hero:AddAbility(ultimate)
 		else
 				hero:AddAbility("generic_hidden")
@@ -3453,12 +3483,12 @@ local ultslot= 3
 	end
 	
 	
-		print("printing all abilities")
+		 --print("printing all abilities")
 	for abilitySlot = 0, 11, 1 do 
 		if hero:GetAbilityByIndex(abilitySlot) ~= nil  then
 			abil =  hero:GetAbilityByIndex(abilitySlot):GetName()
-			print(abilitySlot)
-				print(abil)
+			 --print(abilitySlot)
+				 --print(abil)
 		end
 	end
 		
@@ -3475,7 +3505,7 @@ end
 
 
 function debuffTowers(casterUnit)
-print('[ItemFunctions] dubuffTower started!')
+ --print('[ItemFunctions] dubuffTower started!')
 	if casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 		g_SpyCountSouth = g_SpyCountSouth + 1
 	elseif  casterUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS then
@@ -3483,29 +3513,29 @@ print('[ItemFunctions] dubuffTower started!')
 	end
 	g_SpyAnnouncmentFlag = 1
 	for _,curTower in pairs( Entities:FindAllByClassname( "npc_dota_tow*")) do
-			--	 print('[ItemFunctions] dubuffTower found a tower!')
+			--	  --print('[ItemFunctions] dubuffTower found a tower!')
 				local curArmor = curTower:GetPhysicalArmorBaseValue()
 				if curTower ~= nil and curTower:IsTower() then
-			--	print('[ItemFunctions] dubuffTower really found a tower! cur armor is' .. curArmor)
+			--	 --print('[ItemFunctions] dubuffTower really found a tower! cur armor is' .. curArmor)
 					if curTower:GetTeamNumber() ~=  casterUnit:GetTeamNumber()  then
 						curTower:SetPhysicalArmorBaseValue(curArmor-1.0)
-				--		print('[ItemFunctions] dubuffTower found an enamy tower.  new armor is' .. curArmor-1.0)
+				--		 --print('[ItemFunctions] dubuffTower found an enamy tower.  new armor is' .. curArmor-1.0)
 					end
 				end
 			
 	end
 end
 function healTowers(casterUnit)
-print('[ItemFunctions] healTowers started!')
+ --print('[ItemFunctions] healTowers started!')
 	for _,curTower in pairs( Entities:FindAllByClassname( "npc_dota_tow*")) do
-				-- print('[ItemFunctions] healTowers found a tower!')
+				--  --print('[ItemFunctions] healTowers found a tower!')
 				local curArmor = curTower:GetPhysicalArmorBaseValue()
 				if curTower ~= nil and curTower:IsTower() then
-				--print('[ItemFunctions] healTowers really found a tower!')
+				-- --print('[ItemFunctions] healTowers really found a tower!')
 					if curTower:GetTeamNumber() ==  casterUnit:GetTeamNumber()  then
 						local hp1 = (curTower:GetMaxHealth()-curTower:GetHealth())*.1
 						curTower:SetHealth(curTower:GetHealth()+hp1)
-				--		print('[ItemFunctions] healTowers found an ally tower.')
+				--		 --print('[ItemFunctions] healTowers found an ally tower.')
 					end
 				end
 			
@@ -3596,12 +3626,12 @@ end
 
 
 function UnstickPlayer(eventSourceIndex, args)
-print("in unstick")
+ --print("in unstick")
 	  local pID = args.PlayerID
 
     for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-			print("unsticking" .. hero:GetName())
+			 --print("unsticking" .. hero:GetName())
 			local herogold = hero:GetGold()
 			if herogold>0 then
 				if hero:GetPlayerID() == pID then
@@ -3644,17 +3674,17 @@ function PrintTable(t, indent, done)
 
             if type(value) == "table" and not done[value] then
                 done [value] = true
-                print(string.rep ("\t", indent)..tostring(v)..":")
+                 --print(string.rep ("\t", indent)..tostring(v)..":")
                 PrintTable (value, indent + 2, done)
             elseif type(value) == "userdata" and not done[value] then
                 done [value] = true
-                print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
+                 --print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
                 PrintTable ((getmetatable(value) and getmetatable(value).__index) or getmetatable(value), indent + 2, done)
             else
                 if t.FDesc and t.FDesc[v] then
-                    print(string.rep ("\t", indent)..tostring(t.FDesc[v]))
+                     --print(string.rep ("\t", indent)..tostring(t.FDesc[v]))
                 else
-                    print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
+                     --print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
                 end
             end
         end
@@ -3713,7 +3743,7 @@ function buyBoat(eventSourceIndex, args)
 		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 				if hero:GetPlayerID() == pID then
 					casterUnit= hero
-					print("assignedHero")
+					 --print("assignedHero")
 				end
 		end
 	end
@@ -3729,8 +3759,8 @@ function buyBoat(eventSourceIndex, args)
 		local directionOne =  casterPos - targetUnitOne:GetAbsOrigin()
 		local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
 		
-		print(itemName .. " vs " .. casterUnit:GetName())
-		if (directionOne:Length() < 1000 or directionTwo:Length() < 1000) and herogold>cost-1 and not string.match(casterUnit:GetName(),itemName ) and  GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+		 --print(itemName .. " vs " .. casterUnit:GetName())
+		if (directionOne:Length() < 1000 or directionTwo:Length() < 1000) and herogold>cost-1 and not string.match(casterUnit:GetName(),itemName ) then -- and  GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 			boat=true
 			casterUnit:SetGold(herogold-cost,true)
 			casterUnit:SetGold(0,false)
@@ -3753,6 +3783,8 @@ function buyBoat(eventSourceIndex, args)
 				become_boat(casterUnit, "npc_dota_hero_winter_wyvern")
 			elseif string.match(itemName,"storm_spirit") then
 				become_boat(casterUnit, "npc_dota_hero_storm_spirit")
+			elseif string.match(itemName,"brewmaster") then
+				become_boat(casterUnit, "npc_dota_hero_brewmaster")
 			elseif string.match(itemName,"ember_spirit") then
 				become_boat(casterUnit, "npc_dota_hero_ember_spirit")
 			elseif string.match(itemName,"slark") then
@@ -3769,6 +3801,8 @@ function buyBoat(eventSourceIndex, args)
 				become_boat(casterUnit, "npc_dota_hero_nevermore")
 			elseif string.match(itemName,"rattletrap") then
 				become_boat(casterUnit, "npc_dota_hero_rattletrap")
+			elseif string.match(itemName,"batrider") then
+				become_boat(casterUnit, "npc_dota_hero_batrider")
 			elseif string.match(itemName,"sniper") then
 				become_boat(casterUnit, "npc_dota_hero_sniper")
 			elseif string.match(itemName,"windrunner") then
@@ -3803,7 +3837,7 @@ function buyBoat(eventSourceIndex, args)
 end
 function ChooseDiff(eventSourceIndex, args)
 g_CoOpDiffSetting=args.diff
-print("diff set to " .. args.diff) 
+ --print("diff set to " .. args.diff) 
 end
 
 function buyItem(eventSourceIndex, args)
@@ -3817,7 +3851,7 @@ function buyItem(eventSourceIndex, args)
 		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 			if hero:GetPlayerID() == pID then
 				heroBuying= hero
-				print("assignedHero")
+				 --print("assignedHero")
 			end
 		end
 	end
@@ -3861,7 +3895,7 @@ function buyItem(eventSourceIndex, args)
 
 			if herogold>cost-1 then
 				EmitSoundOnClient("General.Buy",PlayerResource:GetPlayer(pID))
-				print(tempItem:GetName())
+				 --print(tempItem:GetName())
 				heroBuying:AddItem(tempItem)
 				heroBuying:SetGold(herogold-cost,true)
 				heroBuying:SetGold(0,false)
@@ -3874,7 +3908,7 @@ function buyItem(eventSourceIndex, args)
 end
 
 function GiveEasy(eventSourceIndex, args)
-	print("in give easy")
+	 --print("in give easy")
 	local pID = args.PlayerID
 	local teamNum=PlayerResource:GetTeam(pID)
 	local heroBuying
@@ -3884,7 +3918,7 @@ function GiveEasy(eventSourceIndex, args)
 		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 				if hero:GetPlayerID() == pID then
 					heroBuying= hero
-					print("assignedHero")
+					 --print("assignedHero")
 				end
 		end
 	end
@@ -3893,10 +3927,10 @@ function GiveEasy(eventSourceIndex, args)
 		local casterPos = heroBuying:GetAbsOrigin()
 		local ShopDist =  casterPos - nearestShop:GetAbsOrigin()
 		if ShopDist:Length()<600 then
-			print("inrange")
+			 --print("inrange")
 			local missionPool
 			if heroBuying:GetTeamNumber()==DOTA_TEAM_GOODGUYS then
-				print(nearestShop:GetUnitName())
+				 --print(nearestShop:GetUnitName())
 				PrintTable(g_EasyMissionsSouth[nearestShop:GetUnitName()])
 				missionPool=g_EasyMissionsSouth[nearestShop:GetUnitName()]
 				else
@@ -3905,12 +3939,12 @@ function GiveEasy(eventSourceIndex, args)
 			local chosenMission=missionPool[RandomInt( 1, #missionPool )]
 			newItem = CreateItem(chosenMission, hero, hero)
 			if newItem ~= nil then -- makes sure that the item exists and making sure it is the correct item
-				print("Item Is: " .. newItem:GetName() )
+				 --print("Item Is: " .. newItem:GetName() )
 				
 				heroBuying:AddItem(newItem)
 				EmitSoundOnClient("ui.npe_objective_given",PlayerResource:GetPlayer(heroBuying:GetPlayerID()))
 				
-					print(newItem)
+					 --print(newItem)
 					local itemStrippedEasy=string.gsub(newItem:GetName(),"item_contract_easy","")
 					local itemStrippedMedium=string.gsub(newItem:GetName(),"item_contract_medium","")
 					local itemStrippedHard=string.gsub(newItem:GetName(),"item_contract_hard","")
@@ -3938,7 +3972,7 @@ function GiveEasy(eventSourceIndex, args)
 end
 
 function GiveMedium(eventSourceIndex, args)
-		print("in give easy")
+		 --print("in give easy")
 	local pID = args.PlayerID
 	local teamNum=PlayerResource:GetTeam(pID)
 	local heroBuying
@@ -3948,7 +3982,7 @@ function GiveMedium(eventSourceIndex, args)
 		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 				if hero:GetPlayerID() == pID then
 					heroBuying= hero
-					print("assignedHero")
+					 --print("assignedHero")
 				end
 		end
 	end
@@ -3957,7 +3991,7 @@ function GiveMedium(eventSourceIndex, args)
 		local casterPos = heroBuying:GetAbsOrigin()
 		local ShopDist =  casterPos - nearestShop:GetAbsOrigin()
 		if ShopDist:Length()<600 then
-			print("inrange")
+			 --print("inrange")
 			local missionPool
 			if heroBuying:GetTeamNumber()==DOTA_TEAM_GOODGUYS then
 				missionPool=g_HardMissionsSouth[nearestShop:GetUnitName()]
@@ -3967,11 +4001,11 @@ function GiveMedium(eventSourceIndex, args)
 			local chosenMission=missionPool[RandomInt( 1, #missionPool )]
 			newItem = CreateItem(chosenMission, hero, hero)
 			if newItem ~= nil then -- makes sure that the item exists and making sure it is the correct item
-				print("Item Is: " .. newItem:GetName() )
+				 --print("Item Is: " .. newItem:GetName() )
 				
 				heroBuying:AddItem(newItem)
 				EmitSoundOnClient("ui.npe_objective_given",PlayerResource:GetPlayer(heroBuying:GetPlayerID()))
-					print(newItem)
+					 --print(newItem)
 					local itemStrippedEasy=string.gsub(newItem:GetName(),"item_contract_easy","")
 					local itemStrippedMedium=string.gsub(newItem:GetName(),"item_contract_medium","")
 					local itemStrippedHard=string.gsub(newItem:GetName(),"item_contract_hard","")
@@ -4001,6 +4035,10 @@ end
 function HandleShopChecks(hero)
 	local cotinue=0
 	local hasContract=0
+	local TradeValueCount = g_EmpireGoldCount
+	if TradeValueCount>5 then
+		TradeValueCount=5
+	end
 	if hero ~= nil then
 
 			for itemSlot = 0, 5, 1 do 
@@ -4044,19 +4082,19 @@ function HandleShopChecks(hero)
 				local Item = hero:GetItemInSlot( itemSlot )
 				if Item ~= nil  and string.match(Item:GetName(),"contract_empty") and ShopDist:Length()<600 then	
 							RemoveAndDeleteItem(hero,Item)
-							hero:SetGold(hero:GetGold()+300*g_EmpireGoldCount/4,true)
+							hero:SetGold(hero:GetGold()+300*TradeValueCount/4,true)
 							hero:SetGold(0,false)
-							g_HeroGoldArray[hero:GetPlayerOwnerID()]=hero:GetGold()+300*g_EmpireGoldCount/4
+							g_HeroGoldArray[hero:GetPlayerOwnerID()]=hero:GetGold()+300*TradeValueCount/4
 							hero:AddExperience(200,0,false,true)
 							Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=4.0, style={ color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-							Notifications:Top(hero:GetPlayerID(),{text=300*g_EmpireGoldCount/4, duration=4.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+							Notifications:Top(hero:GetPlayerID(),{text=300*TradeValueCount/4, duration=4.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 
 				end		
 			end
 			
 		if ShopDist:Length()<500 and (directionOne:Length() > 1000 and directionTwo:Length() > 1000) and (cotinue==1) then
 			if g_WasNearShop[hero]==false then
-				print("sending entershop")
+				 --print("sending entershop")
 				g_WasNearShop[hero]=true
 				local data =
 				{
@@ -4077,14 +4115,14 @@ function HandleShopChecks(hero)
 						local itemStrippedHard=string.gsub(Item:GetName(),"item_contract_hard","")
 						if  string.match(nearestShop:GetUnitName(),itemStrippedEasy) then
 							RemoveAndDeleteItem(hero,Item)
-							hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()]+100*g_EmpireGoldCount/4,true)
+							hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()]+100*TradeValueCount/4,true)
 							hero:SetGold(0,false)
-							g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()]+100*g_EmpireGoldCount/4
+							g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()]+100*TradeValueCount/4
 							hero:AddExperience(g_XpToLevel[hero:GetLevel()]*.25,0,false,true)
 							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-								g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 100*g_EmpireGoldCount/4
+								g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 100*TradeValueCount/4
 							elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-								g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 100*g_EmpireGoldCount/4
+								g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 100*TradeValueCount/4
 							end
 						
 							local allyteamnumber=hero:GetPlayerID()
@@ -4102,36 +4140,36 @@ function HandleShopChecks(hero)
 									if otherHero:GetTeamNumber() == hero:GetTeam()  and otherHero~=hero then
 										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 											numPlayers=g_PlayerCountSouth
-											otherHero:SetGold(herogold + 50*g_EmpireGoldCount/numPlayers, true)
+											otherHero:SetGold(herogold + 50*TradeValueCount/numPlayers, true)
 											otherHero:SetGold(0, false)
-											g_HeroGoldArray[otherHero:GetPlayerOwnerID()]=herogold + 50*g_EmpireGoldCount/numPlayers
-											g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 50*g_EmpireGoldCount/numPlayers
+											g_HeroGoldArray[otherHero:GetPlayerOwnerID()]=herogold + 50*TradeValueCount/numPlayers
+											g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 50*TradeValueCount/numPlayers
 										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 											numPlayers=g_PlayerCountNorth
-											otherHero:SetGold(herogold + 50*g_EmpireGoldCount/numPlayers, true)
+											otherHero:SetGold(herogold + 50*TradeValueCount/numPlayers, true)
 											otherHero:SetGold(0, false)
-											g_HeroGoldArray[otherHero:GetPlayerOwnerID()]=herogold + 50*g_EmpireGoldCount/numPlayers
-											g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 50*g_EmpireGoldCount/numPlayers
+											g_HeroGoldArray[otherHero:GetPlayerOwnerID()]=herogold + 50*TradeValueCount/numPlayers
+											g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 50*TradeValueCount/numPlayers
 										end
 									end
 								end
 							end
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(), {text=100*g_EmpireGoldCount/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(), {text=100*TradeValueCount/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(), {text=math.floor(50*g_EmpireGoldCount/numPlayers), duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(), {text=math.floor(50*TradeValueCount/numPlayers), duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 						elseif string.match(nearestShop:GetUnitName(),itemStrippedMedium) then
 							RemoveAndDeleteItem(hero,Item)
-							hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()]+300*g_EmpireGoldCount/4,true)
+							hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()]+300*TradeValueCount/4,true)
 							hero:SetGold(0,false)
-								g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()]+300*g_EmpireGoldCount/4
-								print("hero level: " .. hero:GetLevel())
-								print("nect level: " .. g_XpToLevel[hero:GetLevel()])
+								g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()]+300*TradeValueCount/4
+								 --print("hero level: " .. hero:GetLevel())
+								 --print("nect level: " .. g_XpToLevel[hero:GetLevel()])
 							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-								g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 300*g_EmpireGoldCount/4
+								g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 300*TradeValueCount/4
 							elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-								g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 300*g_EmpireGoldCount/4
+								g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 300*TradeValueCount/4
 							end
 							
 							hero:AddExperience(g_XpToLevel[hero:GetLevel()]*.25,0,false,true)
@@ -4142,17 +4180,17 @@ function HandleShopChecks(hero)
 										
 										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 											numPlayers=g_PlayerCountSouth
-											otherHero:SetGold(herogold + 75*g_EmpireGoldCount/numPlayers, true)
+											otherHero:SetGold(herogold + 75*TradeValueCount/numPlayers, true)
 											otherHero:SetGold(0, false)
-												g_HeroGoldArray[otherHero:GetPlayerOwnerID()]=herogold + 75*g_EmpireGoldCount/numPlayers
-											g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 75*g_EmpireGoldCount/numPlayers
+												g_HeroGoldArray[otherHero:GetPlayerOwnerID()]=herogold + 75*TradeValueCount/numPlayers
+											g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 75*TradeValueCount/numPlayers
 										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 											numPlayers=g_PlayerCountNorth
-											otherHero:SetGold(herogold + 75*g_EmpireGoldCount/numPlayers, true)
+											otherHero:SetGold(herogold + 75*TradeValueCount/numPlayers, true)
 											otherHero:SetGold(0, false)
-											g_HeroGoldArray[otherHero:GetPlayerOwnerID()]=herogold + 75*g_EmpireGoldCount/numPlayers
+											g_HeroGoldArray[otherHero:GetPlayerOwnerID()]=herogold + 75*TradeValueCount/numPlayers
 											
-											g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 75*g_EmpireGoldCount/numPlayers
+											g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 75*TradeValueCount/numPlayers
 										end
 									end
 								end
@@ -4168,20 +4206,20 @@ function HandleShopChecks(hero)
 							FireGameEvent("Team_Can_Buy",data)
 							EmitSoundOnClient("ui.npe_objective_complete",PlayerResource:GetPlayer(hero:GetPlayerID()))
 							Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(),{text=300*g_EmpireGoldCount/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(),{text=300*TradeValueCount/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(),{text=math.floor(75*g_EmpireGoldCount/numPlayers), duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(),{text=math.floor(75*TradeValueCount/numPlayers), duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 						elseif string.match(nearestShop:GetUnitName(),itemStrippedHard) then
 							RemoveAndDeleteItem(hero,Item)
-							hero:SetGold(hero:GetGold()+300*g_EmpireGoldCount/4,true)
+							hero:SetGold(hero:GetGold()+300*TradeValueCount/4,true)
 							hero:SetGold(0,false)
-							g_HeroGoldArray[hero:GetPlayerOwnerID()]=hero:GetGold()+300*g_EmpireGoldCount/4
+							g_HeroGoldArray[hero:GetPlayerOwnerID()]=hero:GetGold()+300*TradeValueCount/4
 							hero:AddExperience(g_XpToLevel[hero:GetLevel()]*.33,0,false,true)
 							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-								g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 300*g_EmpireGoldCount/4
+								g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 300*TradeValueCount/4
 							elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-								g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 300*g_EmpireGoldCount/4
+								g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 300*TradeValueCount/4
 							end
 						
 							local allyteamnumber=hero:GetPlayerID()
@@ -4192,17 +4230,17 @@ function HandleShopChecks(hero)
 										
 										if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 											numPlayers=g_PlayerCountSouth
-											otherHero:SetGold(herogold + 100*g_EmpireGoldCount/g_PlayerCountSouth, true)
+											otherHero:SetGold(herogold + 100*TradeValueCount/g_PlayerCountSouth, true)
 											otherHero:SetGold(0, false)
-												g_HeroGoldArray[otherHero:GetPlayerOwnerID()]=herogold + 100*g_EmpireGoldCount/g_PlayerCountNorth
-											g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 100*g_EmpireGoldCount/g_PlayerCountSouth
+												g_HeroGoldArray[otherHero:GetPlayerOwnerID()]=herogold + 100*TradeValueCount/g_PlayerCountNorth
+											g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 100*TradeValueCount/g_PlayerCountSouth
 										elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 											numPlayers=g_PlayerCountNorth
-											otherHero:SetGold(herogold + 100*g_EmpireGoldCount/g_PlayerCountNorth, true)
+											otherHero:SetGold(herogold + 100*TradeValueCount/g_PlayerCountNorth, true)
 											otherHero:SetGold(0, false)
-											g_HeroGoldArray[otherHero:GetPlayerOwnerID()]=herogold + 100*g_EmpireGoldCount/g_PlayerCountNorth
+											g_HeroGoldArray[otherHero:GetPlayerOwnerID()]=herogold + 100*TradeValueCount/g_PlayerCountNorth
 											
-											g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 100*g_EmpireGoldCount/g_PlayerCountNorth
+											g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 100*TradeValueCount/g_PlayerCountNorth
 										end
 									end
 								end
@@ -4215,16 +4253,16 @@ function HandleShopChecks(hero)
 							FireGameEvent("Team_Can_Buy",data)
 							EmitSoundOnClient("ui.npe_objective_complete",PlayerResource:GetPlayer(hero:GetPlayerID()))
 						 Notifications:Top(hero:GetPlayerID(), {text="#mission_done", duration=3.0, style={color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
-						 Notifications:Top(hero:GetPlayerID(),{text=300*g_EmpireGoldCount/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
+						 Notifications:Top(hero:GetPlayerID(),{text=300*TradeValueCount/4, duration=3.0, style={color="#FFD700",  fontSize="45px;"}, continue=true})
 						Notifications:Top(hero:GetPlayerID(), {text="#mission_done_team", duration=3.0, style={ color=" #60A0D6;", fontSize= "35px;", textShadow= "2px 2px 2px #662222;"}})
-						Notifications:Top(hero:GetPlayerID(),{text=math.floor(100*g_EmpireGoldCount/numPlayers), duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
+						Notifications:Top(hero:GetPlayerID(),{text=math.floor(100*TradeValueCount/numPlayers), duration=3.0, style={color="#FFD700",  fontSize="35px;"}, continue=true})
 						
 							end
 					end
 				end
 			end
 			elseif g_WasNearShop[hero]==true then
-				print("sending leftshop")
+				 --print("sending leftshop")
 				g_WasNearShop[hero]=false
 				local data =
 				{
@@ -4243,19 +4281,10 @@ function GetPlayerHist(playerID)
 	return "none"
 end
 
-function GetempGoldHistString()
-	local s=""
-	DeepPrintTable(g_EmpGoldArray)
-	if #g_EmpGoldArray > 0 then
-		for _,empGold in pairs(g_EmpGoldArray) do
-			s=s .. "#" .. empGold.EmpireGoldCount .. "S" .. empGold.South_Gold .. "N" .. empGold.North_gold
-		end
-	end
-	return s
-end
+
 
 function GetDisconnectState(playerID)
-	print("getDisconnect")
+	 --print("getDisconnect")
 	for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 			if hero:GetPlayerID() == playerID then
@@ -4292,7 +4321,7 @@ function GetItemInSlot(playerID,itemSlot)
 end
 
 function GetHeroLevel(playerID)
-	print(playerID)
+	 --print(playerID)
     for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 			if hero:GetPlayerID() == playerID then
@@ -4308,27 +4337,27 @@ end
 
 
 function ActivateCoOp(eventSourceIndex, args)
-print(args.text)
+ --print(args.text)
 	if string.match(args.text,"normal") then
 		g_CoOpMode=0
 		
 	else
 		g_CoOpMode=1
 	end
-	print(g_CoOpMode)
+	 --print(g_CoOpMode)
 		
 		
 end
 
 
 function tradeMode(eventSourceIndex, args)
-print(args.text)
+ --print(args.text)
 	if string.match(args.text,"normal") then
 		g_TradeMode=0
 		else
 		g_TradeMode=1
 	end
-	print(g_TradeMode)
+	 --print(g_TradeMode)
 end
 
 
@@ -4336,13 +4365,13 @@ end
 
 
 function battleMode(eventSourceIndex, args)
-print(args.text)
+ --print(args.text)
 	if string.match(args.text,"normal") then
 		g_BattleMode=0
 		else
 		g_BattleMode=1
 	end
-	print(g_BattleMode)
+	 --print(g_BattleMode)
 end
 
 function startBattle()
@@ -4473,7 +4502,7 @@ function HandleBattle()
 
   local waypointlocation = Entities:FindByName ( nil,  "battle_" .. g_BattleModeLocation )
   
-  	print( "battle time remaining" .. g_BattleModeRemaining)
+  	 --print( "battle time remaining" .. g_BattleModeRemaining)
 	
 
  for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
@@ -4483,16 +4512,19 @@ function HandleBattle()
 				
 				if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 					g_BattleModeSouthScore=g_BattleModeSouthScore+1
-					hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + g_BattleModeNumber*3+2, true)   
-					g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] +  (g_BattleModeNumber*3+2)
-					g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + g_BattleModeNumber*3+2
-					hero:AddExperience(g_BattleModeNumber*3+2, true,false)
+					hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + g_BattleModeNumberSouth*3+2, true)   
+					g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] +  (g_BattleModeNumberSouth*3+2)
+					g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + g_BattleModeNumberSouth*3+2
+					hero:AddExperience(g_BattleModeNumberSouth*3+2, true,false)
+					SendOverheadEventMessage(PlayerResource:GetPlayer(hero:GetPlayerID()), OVERHEAD_ALERT_GOLD, hero,  g_BattleModeNumberSouth*3+2, PlayerResource:GetPlayer(hero:GetPlayerID()))
+	 
 				elseif	hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 					g_BattleModeNorthScore=g_BattleModeNorthScore+1
-					hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + g_BattleModeNumber*3+2, true)   
-					g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] +  (g_BattleModeNumber*3+2)
-					g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + g_BattleModeNumber*3+2
-					hero:AddExperience(g_BattleModeNumber*3+2, true,false)
+					hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + g_BattleModeNumberNorth*3+2, true)   
+					g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] +  (g_BattleModeNumberNorth*3+2)
+					g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + g_BattleModeNumberNorth*3+2
+					hero:AddExperience(g_BattleModeNumberNorth*3+2, true,false)
+					SendOverheadEventMessage(PlayerResource:GetPlayer(hero:GetPlayerID()), OVERHEAD_ALERT_GOLD, hero,  g_BattleModeNumberNorth*3+2, PlayerResource:GetPlayer(hero:GetPlayerID()))
 				end
 			end
 		end
@@ -4503,7 +4535,8 @@ function HandleBattle()
 						TimeInBattle = g_BattleModeRemaining;
 						NorthScore = g_BattleModeNorthScore;
 						SouthScore = g_BattleModeSouthScore;
-						gpt = g_BattleModeNumber*3+2;
+						gptn = g_BattleModeNumberNorth*3+2;
+						gpts = g_BattleModeNumberSouth*3+2;
 					}
 		FireGameEvent( "Battle_in_Progress", battleTimerData ); 
 		
@@ -4530,33 +4563,38 @@ function endBattle()
 			if hero:IsRealHero() then
 				if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS and g_BattleModeNorthScore < g_BattleModeSouthScore then
 					g_BattleModeSouthScore=g_BattleModeSouthScore+1
-					hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + (g_BattleModeNumber*3+2)*15, true)  
-					g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] +  (g_BattleModeNumber*3+2)*15
-					g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + (g_BattleModeNumber*4+2)*15			
-					hero:AddExperience((g_BattleModeNumber*4+2)*15, true,false)					
+					hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + (g_BattleModeNumberNorth*3+2)*15, true)  
+					g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] +  (g_BattleModeNumberNorth*3+2)*15
+					g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + (g_BattleModeNumberNorth*4+2)*15			
+					hero:AddExperience((g_BattleModeNumberNorth*4+2)*15, true,false)					
 				elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS and g_BattleModeNorthScore > g_BattleModeSouthScore then
 					g_BattleModeNorthScore=g_BattleModeNorthScore+1
-					hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] +  (g_BattleModeNumber*3+2)*15, true)   
-					g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] +  (g_BattleModeNumber*3+2)*15
-					g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + (g_BattleModeNumber*4+2)*15
-					hero:AddExperience((g_BattleModeNumber*4+2)*15, true,false)
+					hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] +  (g_BattleModeNumberSouth*3+2)*15, true)   
+					g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] +  (g_BattleModeNumberSouth*3+2)*15
+					g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + (g_BattleModeNumberSouth*4+2)*15
+					hero:AddExperience((g_BattleModeNumberSouth*4+2)*15, true,false)
 				end
 			end
 		end
 	end
 	if  g_BattleModeNorthScore < g_BattleModeSouthScore then
 		Notifications:TopToAll({text="#south_won_battle", duration=5.0, style={color="#F2B2B2",  fontSize="30px;"}})
-	
+		g_BattleModeNumberSouth=g_BattleModeNumberNorth+1
+		Notifications:TopToAll({text=" " .. tostring((g_BattleModeNumberSouth*4+2)*15) .. " ", duration=5.0, style={color="#FFD700",  fontSize="30px;"}, continue=true})
+		Notifications:TopToAll({text="#gold", duration=5.0, style={color="#F2B2B2",  fontSize="30px;"}, continue=true})
+
 	elseif g_BattleModeNorthScore > g_BattleModeSouthScore then
 		Notifications:TopToAll({text="#north_won_battle", duration=5.0, style={color="#F2B2B2",  fontSize="30px;"}})
+		g_BattleModeNumberNorth=g_BattleModeNumberSouth+1
+		Notifications:TopToAll({text=" " .. tostring((g_BattleModeNumberNorth*4+2)*15) .. " ", duration=5.0, style={color="#FFD700",  fontSize="30px;"}, continue=true})
+		Notifications:TopToAll({text="#gold", duration=5.0, style={color="#F2B2B2",  fontSize="30px;"}, continue=true})
+
 	else
 		Notifications:TopToAll({text="#nobody_won_battle", duration=5.0, style={color="#F2B2B2",  fontSize="30px;"}})
+		g_BattleModeNumberSouth=g_BattleModeNumberSouth+1
+		g_BattleModeNumberNorth=g_BattleModeNumberNorth+1
 	end
-	Notifications:TopToAll({text=" " .. tostring((g_BattleModeNumber*4+2)*15) .. " ", duration=5.0, style={color="#FFD700",  fontSize="30px;"}, continue=true})
-	Notifications:TopToAll({text="#gold", duration=5.0, style={color="#F2B2B2",  fontSize="30px;"}, continue=true})
-
-
-g_BattleModeNumber=g_BattleModeNumber+1
+	
 g_BattleModeNorthScore=0
 g_BattleModeSouthScore=0
 g_BattleModeTimer=180
@@ -4570,8 +4608,8 @@ end
 --======================================= utilities ================================
 
 function RemoveAndDeleteItem(hero,item)
-	print(item:GetClassname())
-	print(item:GetName())
+	 --print(item:GetClassname())
+	 --print(item:GetName())
 
 		item:RemoveSelf()
 

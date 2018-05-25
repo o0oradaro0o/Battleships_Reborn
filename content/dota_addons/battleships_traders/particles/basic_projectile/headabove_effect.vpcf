@@ -68,6 +68,10 @@
 		},
 		{
 			_class = "C_INIT_CreateWithinSphere"
+			m_fRadiusMin = 100.0
+			m_fRadiusMax = 100.0
+			m_vecDistanceBias = [ 0.0, 0.0, 1.0 ]
+			m_vecDistanceBiasAbs = [ 0.0, 0.0, 1.0 ]
 		},
 		{
 			_class = "C_INIT_RandomLifeTime"
@@ -85,7 +89,7 @@
 	m_Children = 
 	[
 		{
-			m_ChildRef = resource:"particles/econ/events/ti6/mjollnir_shield_ti6_e.vpcf"
+			m_ChildRef = resource:"particles/headabove.vpcf"
 		},
 	]
 	m_controlPointConfigurations = 

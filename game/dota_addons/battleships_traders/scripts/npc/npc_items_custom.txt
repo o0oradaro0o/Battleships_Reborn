@@ -1732,7 +1732,7 @@
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
 				}
 			}
-			extra_speed
+			"extra_speed"
 			{
 				"Duration"  "%remove"
 				"Properties"
@@ -1813,7 +1813,7 @@
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
 				}
 			}
-			extra_speed
+			"extra_speed"
 			{
 				"Duration"  "%remove"
 				"Properties"
@@ -1893,7 +1893,7 @@
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
 				}
 			}
-			extra_speed
+			"extra_speed"
 			{
 				"Duration"  "%remove"
 				"Properties"
@@ -1974,7 +1974,7 @@
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
 				}
 			}
-			extra_speed
+			"extra_speed"
 			{
 				"Duration"  "%remove"
 				"Properties"
@@ -4078,7 +4078,7 @@
 		"AbilityCastRange"              "%range"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "350" 
+		"ItemCost"                      "300" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
@@ -5390,7 +5390,7 @@
 		"AbilityCastRange"              "%range"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "950" 
+		"ItemCost"                      "850" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
@@ -6695,7 +6695,7 @@
 		"AbilityCastRange"              "%range"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "2200" 
+		"ItemCost"                      "2000" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
@@ -7923,7 +7923,7 @@
 			"02"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"1.2"
+				"fire_rate"		"0.8"
 			}
 			"03"
 			{
@@ -13003,12 +13003,12 @@
 		"AbilityCastRange"              "%range"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "10700" 
+		"ItemCost"                      "10000" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
-	
+		
 		
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		

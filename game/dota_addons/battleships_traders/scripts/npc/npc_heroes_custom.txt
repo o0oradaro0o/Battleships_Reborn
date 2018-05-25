@@ -502,6 +502,60 @@
 		"DisableWearables" "1"
 	}
 
+	"npc_dota_hero_batrider_battleship8d" 
+    {
+
+        "override_hero"             "npc_dota_hero_batrider"          // Hero to override
+
+
+       "Model" "models/whaling_boat.vmdl"     // Model.
+        "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
+		
+		"ModelScale"        "0.8"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		
+	    "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
+		"MovementSpeed"				"300"									// Speed.
+		"MovementTurnRate"			"0.7"									// Turning rate.
+		
+		"StatusHealth"				"800"		// Base health.
+		"StatusHealthRegen"			"2.0"		// Health regeneration rate.
+		
+				"ArmorPhysical"				"0"
+		"MagicalResistance"				"0"
+		
+		"AbilityLayout"				"3"
+		"Ability1"					"pistols_battleship"
+		"Ability2"					"harpoon_battleship"
+		"Ability3"					"wale_bait_battleship"
+		"Ability4"					"batten_hatches"
+		"Ability5"					"ability_empty"
+		"Ability10"					"ability_empty"
+		"Ability11"					"ability_empty"
+		"Ability12"					"ability_empty"
+		"Ability13"					"ability_empty"
+		"Ability14"					"ability_empty"
+		"Ability15"					"ability_empty"
+		"Ability16"					"ability_empty"
+		"Ability17"					"ability_empty"
+		"Ability18"					"ability_empty"
+		"RingRadius"				"100"
+		"DisableWearables" "1"
+		"ItemSlots" {}
+		"AttachWearables" {}
+		"BountyGoldMin"				"240"		// Gold earned min.
+		"BountyGoldMax"				"260"		// Gold earned max.
+		
+	}
+
 
 	//=================================================================================================================
     // HERO: KUNKKA smuggler
@@ -732,6 +786,61 @@
 		"BountyGoldMax"				"601"		// Gold earned max.
 		"DisableWearables" "1"
 	}
+
+	"npc_dota_hero_brewmaster_battleship" 
+    {
+
+        "override_hero"             "npc_dota_hero_brewmaster"          // Hero to override
+
+
+       "Model" "models/whaling_boat.vmdl"     // Model.
+        "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
+		
+		"ModelScale"        "0.8"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		
+	    "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
+		"MovementSpeed"				"290"									// Speed.
+		"MovementTurnRate"			"0.7"									// Turning rate.
+		
+		"StatusHealth"				"3000"		// Base health.
+		"StatusHealthRegen"			"13.0"		// Health regeneration rate.
+		
+				"ArmorPhysical"				"0"
+		"MagicalResistance"				"0"
+		
+		"AbilityLayout"				"4"
+		"Ability1"					"pistols_battleship"
+		"Ability2"					"gamble_diamond"
+		"Ability3"					"gamble_bar"
+		"Ability4"					"gamble_horseshoe"
+		"Ability5"					"roll_ability_battleship"
+		"Ability10"					"ability_empty"
+		"Ability11"					"ability_empty"
+		"Ability12"					"ability_empty"
+		"Ability13"					"ability_empty"
+		"Ability14"					"ability_empty"
+		"Ability15"					"ability_empty"
+		"Ability16"					"ability_empty"
+		"Ability17"					"ability_empty"
+		"Ability18"					"ability_empty"
+		"RingRadius"				"100"
+		"DisableWearables" "1"
+		"ItemSlots" {}
+		"AttachWearables" {}
+		"BountyGoldMin"				"240"		// Gold earned min.
+		"BountyGoldMax"				"260"		// Gold earned max.
+		
+	}
+
 	
 	
 	

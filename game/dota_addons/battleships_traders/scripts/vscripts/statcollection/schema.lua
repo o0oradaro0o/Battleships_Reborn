@@ -43,8 +43,10 @@ function BuildGameArray()
     local game = {}
 
     -- Add game values here as game.someValue = GetSomeGameValue()
-    game.eh=storage:GetEmpGoldHist()		-- Team advantage history
+    game.eh=""
+    game.empGoldHist=storage:GetEmpGoldHist()		-- Team advantage history
     game.wn=storage:getWinner()			-- Team winner
+    game.settings=storage:getGameSettings()
     --game.th=storage:GetTideKillers()
 
     return game
@@ -81,9 +83,12 @@ function BuildPlayersArray()
                     dth  = hero:GetDeaths(),  			--Player Deaths
                     lvl = hero:GetLevel(),			--Player Levels
                     afk = kickStatus,				--Custom Player status
-                    
+                    lh = PlayerResource:GetLastHits(playerID),
                     -- Item List
-                    bo=storage:GetPlayerHist(playerID)
+                    bo="",
+                    buildOrder=storage:GetPlayerHist(playerID),
+                    saleOrder=storage:GetPlayerSaleHist(playerID),
+                    boatOrder=storage:GetPlayerBoatHist(playerID)
                 })
             end
         end
@@ -94,11 +99,11 @@ end
 
 -- Prints the custom schema, required to get an schemaID
 function PrintSchema( gameArray, playerArray )
-    print("-------- GAME DATA --------")
+     print("-------- GAME DATA --------")
     DeepPrintTable(gameArray)
-    print("\n-------- PLAYER DATA --------")
+     print("\n-------- PLAYER DATA --------")
     DeepPrintTable(playerArray)
-    print("-------------------------------------")
+     print("-------------------------------------")
 end
 
 -- Write 'test_schema' on the console to test your current functions instead of having to end the game

@@ -234,7 +234,7 @@ ApplyPassives = function(container, item, entOverride)
       for _, buff in ipairs(buffs) do
         if buff:GetAbility() == item then
           Timers:CreateTimer(function()
-            --print("FOUND, rerunning until removed")
+            -- --print("FOUND, rerunning until removed")
             ApplyPassives(container, item, entOverride)
           end)
           return
@@ -284,7 +284,7 @@ function unitInventory:AddItem(item, slot)
   local size = self:GetSize()
 
   if slot > size then
-    print("[containers.lua]  Request to add item in slot " .. slot .. " -- exceeding dota inventory size " .. size)
+     --print("[containers.lua]  Request to add item in slot " .. slot .. " -- exceeding dota inventory size " .. size)
     return false
   end
 
@@ -453,7 +453,7 @@ function Containers:start()
             for _, func in ipairs(__ACTIVATE_HOOK.funcs) do
               local status, err = pcall(func)
               if not status then
-                print("__ACTIVATE_HOOK callback error: " .. err)
+                 --print("__ACTIVATE_HOOK callback error: " .. err)
               end
             end
 
@@ -469,7 +469,7 @@ function Containers:start()
     mode:SetExecuteOrderFilter(Dynamic_Wrap(Containers, 'OrderFilter'), Containers)
     Containers.oldFilter = mode.SetExecuteOrderFilter
     mode.SetExecuteOrderFilter = function(mode, fun, context)
-      --print('SetExecuteOrderFilter', fun, context)
+      -- --print('SetExecuteOrderFilter', fun, context)
       Containers.nextFilter = fun
       Containers.nextContext = context
     end
@@ -579,7 +579,7 @@ function Containers:start()
 
           if (dist.x * dist.x + dist.y * dist.y) <= range2 then
             local status, err = pcall(action.action, action.playerID, action.container, unit, action.entity or action.position, action.fromContainer or action.orderType, action.item)
-            if not status then print('[containers.lua] RangeAction failure:' .. err) end
+            if not status then  --print('[containers.lua] RangeAction failure:' .. err) end
             Containers.rangeActions[id] = nil  
           end
         end
@@ -640,7 +640,7 @@ end
 
 function Containers:SetDisableItemLimit(disable)
   if not self.initialized then
-    print('[containers.lua] FATAL: Containers:Init() has not been initialized!')
+     --print('[containers.lua] FATAL: Containers:Init() has not been initialized!')
     return
   end
   --self.disableItemLimit = disable
@@ -666,7 +666,7 @@ function Containers:EmitSoundOnClient(pid, sound)
 end
 
 function Containers:OrderFilter(order)
-  --print('Containers:OrderFilter')
+  -- --print('Containers:OrderFilter')
   --PrintTable(order)
 
   local ret = true
@@ -1040,7 +1040,7 @@ function Containers:Containers_Select(args)
     if c._OnDeselect then
       local res, err = pcall(c._OnDeselect, playerID, c, prev)
       if err then
-        print('[containers.lua] Error in OnDeselect: ' .. err)
+         --print('[containers.lua] Error in OnDeselect: ' .. err)
       end
     end
   end
@@ -1052,7 +1052,7 @@ function Containers:Containers_Select(args)
     if c._OnSelect then
       local res, err = pcall(c._OnSelect, playerID, c, newEnt)
       if err then
-        print('[containers.lua] Error in OnSelect: ' .. err)
+         --print('[containers.lua] Error in OnSelect: ' .. err)
       end
     end
   end
@@ -1067,7 +1067,7 @@ function Containers:Containers_HideProxy(args)
 end
 
 function Containers:Containers_OnSell(args)
-  Containers:print('Containers_OnSell')
+  Containers: --print('Containers_OnSell')
   Containers:PrintTable(args)
 
   local playerID = args.PlayerID
@@ -1124,7 +1124,7 @@ function Containers:Containers_OnSell(args)
 end
 
 function Containers:Containers_OnLeftClick(args)
-  Containers:print('Containers_OnLeftClick')
+  Containers: --print('Containers_OnLeftClick')
   Containers:PrintTable(args)
 
   local playerID = args.PlayerID
@@ -1164,7 +1164,7 @@ function Containers:Containers_OnLeftClick(args)
 end
 
 function Containers:Containers_OnRightClick(args)
-  Containers:print('Containers_OnRightClick')
+  Containers: --print('Containers_OnRightClick')
   Containers:PrintTable(args)
 
   local playerID = args.PlayerID
@@ -1204,7 +1204,7 @@ function Containers:Containers_OnRightClick(args)
 end
 
 function Containers:Containers_OnDragFrom(args)
-  Containers:print('Containers_OnDragFrom')
+  Containers: --print('Containers_OnDragFrom')
   Containers:PrintTable(args)
 
   local playerID = args.PlayerID
@@ -1289,7 +1289,7 @@ function Containers:Containers_OnDragFrom(args)
 end
 
 function Containers:Containers_OnDragWorld(args)
-  Containers:print('Containers_OnDragWorld')
+  Containers: --print('Containers_OnDragWorld')
   Containers:PrintTable(args)
 
   local playerID = args.PlayerID
@@ -1349,7 +1349,7 @@ function Containers:Containers_OnDragWorld(args)
 end
 
 function Containers:Containers_OnCloseClicked(args)
-  Containers:print('Containers_OnCloseClicked')
+  Containers: --print('Containers_OnCloseClicked')
   Containers:PrintTable(args)
 
   local playerID = args.PlayerID
@@ -1372,7 +1372,7 @@ function Containers:Containers_OnCloseClicked(args)
 end
 
 function Containers:Containers_OnButtonPressed(args)
-  Containers:print('Containers_OnButtonPressed')
+  Containers: --print('Containers_OnButtonPressed')
   Containers:PrintTable(args)
 
   local playerID = args.PlayerID
@@ -1411,24 +1411,24 @@ end
 
 
 function Containers:OnLeftClick(playerID, container, unit, item, slot)
-  Containers:print("Containers:OnLeftClick", playerID, container, unit, item:GetEntityIndex(), slot)
+  Containers: --print("Containers:OnLeftClick", playerID, container, unit, item:GetEntityIndex(), slot)
 
   local hero = PlayerResource:GetSelectedHeroEntity(playerID)
   container:ActivateItem(hero, item, playerID)
 end
 
 function Containers:OnRightClick(playerID, container, unit, item, slot)
-  Containers:print("Containers:OnRightClick", playerID, container, unit, item:GetEntityIndex(), slot)
+  Containers: --print("Containers:OnRightClick", playerID, container, unit, item:GetEntityIndex(), slot)
 end
 
 function Containers:OnDragWithin(playerID, container, unit, item, fromSlot, toSlot)
-  Containers:print('Containers:OnDragWithin', playerID, container, unit, item, fromSlot, toSlot)
+  Containers: --print('Containers:OnDragWithin', playerID, container, unit, item, fromSlot, toSlot)
 
   container:SwapSlots(fromSlot, toSlot, true)
 end
 
 function Containers:OnDragFrom(playerID, container, unit, item, fromSlot, toContainer, toSlot)
-  Containers:print('Containers:OnDragFrom', playerID, container, unit, item, fromSlot, toContainer, toSlot)
+  Containers: --print('Containers:OnDragFrom', playerID, container, unit, item, fromSlot, toContainer, toSlot)
 
   local canChange = Containers.itemKV[item:GetAbilityName()].ItemCanChangeContainer
   if toContainer._OnDragTo == false or canChange == 0 then return end
@@ -1447,7 +1447,7 @@ function Containers:OnDragFrom(playerID, container, unit, item, fromSlot, toCont
 end
 
 function Containers:OnDragTo(playerID, container, unit, item, fromSlot, toContainer, toSlot)
-  Containers:print('Containers:OnDragTo', playerID, container, unit, item, fromSlot, toContainer, toSlot)
+  Containers: --print('Containers:OnDragTo', playerID, container, unit, item, fromSlot, toContainer, toSlot)
 
   local item2 = toContainer:GetItemInSlot(toSlot)
   local addItem = nil
@@ -1480,7 +1480,7 @@ function Containers:OnDragTo(playerID, container, unit, item, fromSlot, toContai
 end
 
 function Containers:OnDragWorld(playerID, container, unit, item, slot, position, entity)
-  Containers:print('Containers:OnDragWorld', playerID, container, unit, item, slot, position, entity)
+  Containers: --print('Containers:OnDragWorld', playerID, container, unit, item, slot, position, entity)
 
   local unitpos = unit:GetAbsOrigin()
   local diff = unitpos - position
@@ -1603,12 +1603,12 @@ end
 
 
 function Containers:OnCloseClicked(playerID, container, unit)
-  Containers:print('Containers:OnCloseClicked', playerID, container, unit)
+  Containers: --print('Containers:OnCloseClicked', playerID, container, unit)
   container:Close(playerID)
 end
 
 function Containers:OnButtonPressed(playerID, container, unit, buttonNumber, buttonName)
-  print('Button ' .. buttonNumber .. ':\'' .. buttonName .. '\' Pressed by player:' .. playerID .. ' for container ' .. container.id .. '.  No OnButtonPressed handler.')
+   --print('Button ' .. buttonNumber .. ':\'' .. buttonName .. '\' Pressed by player:' .. playerID .. ' for container ' .. container.id .. '.  No OnButtonPressed handler.')
 end
 
 
@@ -1663,7 +1663,7 @@ end
 
 function Containers:SetDefaultInventory(unit, container)
   if not self.initialized then
-    print('[containers.lua] FATAL: Containers:Init() has not been called in the Activate() function chain!')
+     --print('[containers.lua] FATAL: Containers:Init() has not been called in the Activate() function chain!')
     return
   end
   self.defaultInventories[unit:GetEntityIndex()] = container
@@ -1773,20 +1773,20 @@ function Containers:CreateShop(cont)
   if not cont.OnLeftClick then shop:OnLeftClick(false) end
   if not cont.OnDragTo then 
     shop:OnDragTo(function(playerID, container, unit, item, fromSlot, toContainer, toSlot)
-      Containers:print('Shop:OnDragTo', playerID, container, unit, item, fromSlot, toContainer, toSlot)
+      Containers: --print('Shop:OnDragTo', playerID, container, unit, item, fromSlot, toContainer, toSlot)
     end)
   end
   if not cont.OnDragFrom then
     shop:OnDragFrom(function(playerID, container, unit, item, fromSlot, toContainer, toSlot)
-      Containers:print('Shop:OnDragFrom', playerID, container, unit, item, fromSlot, toContainer, toSlot)
+      Containers: --print('Shop:OnDragFrom', playerID, container, unit, item, fromSlot, toContainer, toSlot)
     end)
   end
   --[[shop:OnLeftClick(function(playerID, container, unit, item, slot)
-    print("Shop:OnLeftClick", playerID, container, unit, item:GetEntityIndex(), slot)
+     --print("Shop:OnLeftClick", playerID, container, unit, item:GetEntityIndex(), slot)
   end)]]
   if not cont.OnRightClick then
     shop:OnRightClick(function(playerID, container, unit, item, slot)
-      Containers:print("Shop:OnRightClick", playerID, container, unit, item:GetEntityIndex(), slot)
+      Containers: --print("Shop:OnRightClick", playerID, container, unit, item:GetEntityIndex(), slot)
 
       local defInventory = Containers:GetDefaultInventory(unit)
       if not defInventory and not unit:HasInventory() then return end
@@ -1802,7 +1802,7 @@ end
 
 function Containers:CreateContainer(cont)
   if not self.initialized then
-    print('[containers.lua] FATAL: Containers:Init() has not been called in the Activate() function chain!')
+     --print('[containers.lua] FATAL: Containers:Init() has not been called in the Activate() function chain!')
     return
   end
   local pt =
@@ -2023,7 +2023,7 @@ function Containers:CreateContainer(cont)
         end
 
         if abilSlot == -1 then
-          print("[containers.lua]  ERROR: 'containers_lua-targeting' ability not found for unit '" .. unit:GetUnitName() .. '" and all ability slots are full.')
+           --print("[containers.lua]  ERROR: 'containers_lua-targeting' ability not found for unit '" .. unit:GetUnitName() .. '" and all ability slots are full.')
           return
         end
 
@@ -2294,7 +2294,7 @@ function Containers:CreateContainer(cont)
     if slot and type(slot) == "number" and column and type(column) == "number" then
       local rowStarts = PlayerTables:GetTableValue(self.ptID, "rowStarts")
       if not rowStarts[slot] then
-        print("[containers.lua]  Request to add item in row " .. slot .. " -- row not found. ")
+         --print("[containers.lua]  Request to add item in row " .. slot .. " -- row not found. ")
         return false
       end
 
@@ -2302,7 +2302,7 @@ function Containers:CreateContainer(cont)
       local newslot = rowStarts[slot] + column - 1
 
       if newslot >= nextRowStart then
-        print("[containers.lua]  Request to add item in row " .. slot .. ", column " .. column .. " -- column exceeds row length. ")
+         --print("[containers.lua]  Request to add item in row " .. slot .. ", column " .. column .. " -- column exceeds row length. ")
         return false
       end
 
@@ -2314,7 +2314,7 @@ function Containers:CreateContainer(cont)
 
     local size = self:GetSize()
     if slot > size then
-      print("[containers.lua]  Request to add item in slot " .. slot .. " -- exceeding container size " .. size)
+       --print("[containers.lua]  Request to add item in slot " .. slot .. " -- exceeding container size " .. size)
       return false
     end
 
@@ -2322,7 +2322,7 @@ function Containers:CreateContainer(cont)
     if not bypassFilter and c.AddItemFilter then
       local status, result = pcall(c.AddItemFilter, c, item, findstack and -1 or slot)
       if not status then
-        print("[containers.lua] AddItemFilter callback error: " .. result)
+         --print("[containers.lua] AddItemFilter callback error: " .. result)
         return false
       end
 
@@ -2930,9 +2930,9 @@ function Containers:DeleteContainer(c, deleteContents)
   end
 end
 
-function Containers:print(...)
+function Containers: --print(...)
   if CONTAINERS_DEBUG then 
-    print(unpack({...})) 
+     --print(unpack({...})) 
   end
 end
 

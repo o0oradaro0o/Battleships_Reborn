@@ -71,21 +71,21 @@ end
 function statCollection:init()
     -- Only allow init to be run once
     if self.doneInit then
-        statCollection:print(errorInitCalledTwice)
+        statCollection: print(errorInitCalledTwice)
         return
     end
     self.doneInit = true
 
     -- Print the intro message
-    statCollection:print(messageStarting)
+    statCollection: print(messageStarting)
 
     -- Check for a modIdentifier
     local modIdentifier = statInfo.modID
     if not modIdentifier then
-        statCollection:print(errorMissingModIdentifier)
+        statCollection: print(errorMissingModIdentifier)
 
     elseif modIdentifier == 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' then
-        statCollection:print(errorDefaultModIdentifier)
+        statCollection: print(errorDefaultModIdentifier)
 
         self.doneInit = false
         return
@@ -215,13 +215,13 @@ function statCollection:setFlags(flags)
         for flagKey, flagValue in pairs(flags) do
             self.flags[flagKey] = flagValue
             if self.TESTING then
-                statCollection:print(messageFlagsSet .. " {" .. flagKey .. ":" .. tostring(flagValue) .. "}")
+                statCollection: print(messageFlagsSet .. " {" .. flagKey .. ":" .. tostring(flagValue) .. "}")
             end
         end
 
     else
         -- Yell at the developer
-        statCollection:print(errorFlags)
+        statCollection: print(errorFlags)
     end
 end
 
@@ -229,8 +229,8 @@ end
 function statCollection:sendStage1()
     -- If we are missing required parameters, then don't send
     if not self.doneInit then
-        statCollection:print("sendStage1 ERROR")
-        statCollection:print(errorRunInit)
+        statCollection: print("sendStage1 ERROR")
+        statCollection: print(errorRunInit)
         return
     end
 
@@ -238,7 +238,7 @@ function statCollection:sendStage1()
     if self.sentStage1 then return end
 
     -- Print the intro message
-    statCollection:print(messagePhase1Starting)
+    statCollection: print(messagePhase1Starting)
 
     -- Grab a reference to self
     local this = self
@@ -285,9 +285,9 @@ function statCollection:sendStage1()
         self.sentStage1 = true
 
         -- Tell the user
-        statCollection:print(messagePhase1Complete)
-        statCollection:print("Auth Key: ", self.authKey)
-        statCollection:print("MatchID: ", self.matchID)
+        statCollection: print(messagePhase1Complete)
+        statCollection: print("Auth Key: ", self.authKey)
+        statCollection: print("MatchID: ", self.matchID)
     end)
 
     -- Custom staging
@@ -312,7 +312,7 @@ function statCollection:sendStage2()
     if self.sentStage2 then return end
 
     -- Print the intro message
-    statCollection:print(messagePhase2Starting)
+    statCollection: print(messagePhase2Starting)
 
     -- Client check in
     CustomGameEventManager:Send_ServerToAllClients("statcollection_client", { modID = self.modIdentifier, matchID = self.matchID, schemaVersion = schemaVersion })
@@ -359,7 +359,7 @@ function statCollection:sendStage2()
         self.sentStage2 = true
 
         -- Tell the user
-        statCollection:print(messagePhase2Complete)
+        statCollection: print(messagePhase2Complete)
     end)
 
     -- Custom staging
@@ -395,7 +395,7 @@ function statCollection:sendStage3(winners, lastRound)
     self.roundID = self.roundID + 1
 
     -- Print the intro message
-    statCollection:print(messagePhase3Starting)
+    statCollection: print(messagePhase3Starting)
 
     -- Build players array
     local players = {}
@@ -436,7 +436,7 @@ function statCollection:sendStage3(winners, lastRound)
         end
 
         -- Tell the user
-        statCollection:print(messagePhase3Complete)
+        statCollection: print(messagePhase3Complete)
     end)
 
     -- Custom staging
@@ -452,7 +452,7 @@ end
 -- Sends custom
 function statCollection:sendCustom(args)
     if not self.HAS_SCHEMA then
-        statCollection:print("sendCustom", errorDefaultSchemaIdentifier)
+        statCollection: print("sendCustom", errorDefaultSchemaIdentifier)
         return
     end
 
@@ -463,9 +463,9 @@ function statCollection:sendCustom(args)
     end
     -- If we are missing required parameters, then don't send
     if not self.doneInit or not self.authKey or not self.matchID or not self.SCHEMA_KEY then
-        statCollection:print(errorRunInit)
+        statCollection: print(errorRunInit)
         if not self.SCHEMA_KEY then
-            statCollection:print(errorRunInit)
+            statCollection: print(errorRunInit)
         end
         return
     end
@@ -477,7 +477,7 @@ function statCollection:sendCustom(args)
     end
 
     -- Print the intro message
-    statCollection:print(messageCustomStarting)
+    statCollection: print(messageCustomStarting)
 
     -- Build rounds table
     local rounds = {}
@@ -503,7 +503,7 @@ function statCollection:sendCustom(args)
         end
 
         -- Tell the user
-        statCollection:print(messageCustomComplete)
+        statCollection: print(messageCustomComplete)
     end)
 
     -- Custom staging
@@ -533,12 +533,12 @@ end
 -- Optional override_host can be added to reutilize this function for other sites
 function statCollection:sendStage(stageName, payload, callback, override_host)
     local host = override_host or postLocation
-    print("host: " .. host)
+     print("host: " .. host)
     -- Create the request
     local req = CreateHTTPRequestScriptVM('POST', host .. stageName)
     local encoded = json.encode(payload)
     if self.TESTING then
-        statCollection:print(encoded)
+        statCollection: print(encoded)
     end
 
     -- Add the data
@@ -547,15 +547,15 @@ function statCollection:sendStage(stageName, payload, callback, override_host)
     -- Send the request
     req:Send(function(res)
         if res.StatusCode ~= 200 then
-            statCollection:print(errorFailedToContactServer)
-            statCollection:print("Status Code", res.StatusCode or "nil")
-            statCollection:print("Body", res.Body or "nil")
+            statCollection: print(errorFailedToContactServer)
+            statCollection: print("Status Code", res.StatusCode or "nil")
+            statCollection: print("Body", res.Body or "nil")
             return
         end
          
         if not res.Body then
-            statCollection:print(errorEmptyServerResponse)
-            statCollection:print("Status Code", res.StatusCode or "nil")
+            statCollection: print(errorEmptyServerResponse)
+            statCollection: print("Status Code", res.StatusCode or "nil")
             return
         end
 
@@ -567,21 +567,21 @@ function statCollection:sendStage(stageName, payload, callback, override_host)
     end)
     if not override_host then
         statCollection:sendStage(stageName, payload, callback, "https://g9ai9j8ush.execute-api.us-east-1.amazonaws.com/alpha/test")
-        print("sendToBryce!!")
+         print("sendToBryce!!")
     end
 end
 
 -- Checks the error and result objects and returns whether its invalid or not
 function statCollection:ReturnedErrors(err, res)
     if err then
-        statCollection:print(errorJsonDecode)
-        statCollection:print(err)
+        statCollection: print(errorJsonDecode)
+        statCollection: print(err)
         return true
     end
 
     if res.error then
-        statCollection:print(errorSomethingWentWrong)
-        statCollection:print(res.error)
+        statCollection: print(errorSomethingWentWrong)
+        statCollection: print(res.error)
         return true
     end
 
@@ -590,13 +590,13 @@ function statCollection:ReturnedErrors(err, res)
 end
 
 function statCollection:printError(where, msg)
-    statCollection:print("ERROR at "..where)
-    statCollection:print(msg)
-    statCollection:print("Auth Key: ", self.authKey)
-    statCollection:print("MatchID: ", self.matchID)
+    statCollection: print("ERROR at "..where)
+    statCollection: print(msg)
+    statCollection: print("Auth Key: ", self.authKey)
+    statCollection: print("MatchID: ", self.matchID)
 end
 
-function statCollection:print(s1, s2)
+function statCollection: print(s1, s2)
     local str = s1
     if s1 then
         str = printPrefix .. tostring(s1)
@@ -612,7 +612,7 @@ function statCollection:print(s1, s2)
     else
     -- print to vscript developer console, or non-dedi server
         if self.TESTING or Convars:GetBool("developer") then
-            print(str)
+             print(str)
         end
     end
 end

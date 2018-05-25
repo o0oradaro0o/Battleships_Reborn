@@ -80,7 +80,7 @@ padding-top: 0px;
 	horizontal-align: Left;
 	vertical-align: top;
 	width: 193px;
-	height: 86px;
+	height: 110px;
 
 
 	 margin-top:140px;
@@ -92,7 +92,7 @@ padding-top: 0px;
 {
 	flow-children: down;
 	width: 190px;
-	height: 80px;
+	height: 100px;
 	margin:3px;
 
 	horizontal-align: center;
@@ -1118,6 +1118,16 @@ border-radius: 10px;
 	border-radius: 10px;
  background-color: gradient( linear, 0% 0%, 0% 100%, from( #40354555 ), color-stop( 0.25, #22292e77 ), color-stop( 0.5, #5A454588 ), color-stop( 0.75, #22246e99 ), to( #504545aa ) );
 }
+#brewmaster
+{
+	height: 0px;
+	width: 650px;
+	horizontal-align: center;
+	vertical-align: center;
+	transition: height 0.5s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
+	border-radius: 10px;
+ background-color: gradient( linear, 0% 0%, 0% 100%, from( #40354555 ), color-stop( 0.25, #22292e77 ), color-stop( 0.5, #5A454588 ), color-stop( 0.75, #22246e99 ), to( #504545aa ) );
+}
 #nevermore
 {
 	height: 0px;
@@ -1239,6 +1249,16 @@ border-radius: 10px;
  background-color: gradient( linear, 0% 0%, 0% 100%, from( #40354555 ), color-stop( 0.25, #22292e77 ), color-stop( 0.5, #5A454588 ), color-stop( 0.75, #22246e99 ), to( #504545aa ) );
 }
 #rattletrap
+{
+	height: 0px;
+	width: 650px;
+	horizontal-align: center;
+	vertical-align: center;
+	transition: height 0.5s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
+	border-radius: 10px;
+ background-color: gradient( linear, 0% 0%, 0% 100%, from( #40354555 ), color-stop( 0.25, #22292e77 ), color-stop( 0.5, #5A454588 ), color-stop( 0.75, #22246e99 ), to( #504545aa ) );
+}
+#batrider
 {
 	height: 0px;
 	width: 650px;

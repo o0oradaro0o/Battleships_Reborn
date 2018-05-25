@@ -278,6 +278,7 @@ function showDetails(BoatName) {
 		$("#disruptor").style.height = "0px";
 		$("#morphling").style.height = "0px";
 		$("#storm_spirit").style.height = "0px";
+		$("#brewmaster").style.height = "0px";
 		$("#nevermore").style.height = "0px";
 		$("#lion").style.height = "0px";
 		$("#meepo").style.height = "0px";
@@ -291,6 +292,7 @@ function showDetails(BoatName) {
 		$("#windrunner").style.height = "0px";
 		$("#pugna").style.height = "0px";
 		$("#rattletrap").style.height = "0px";
+		$("#batrider").style.height = "0px";
 		$("#tidehunter").style.height = "0px";
 		$("#crystal_maiden").style.height = "0px";
 		$("#phantom_lancer").style.height = "0px";
@@ -306,6 +308,7 @@ function showDetails(BoatName) {
 		$("#disruptor").style.height = "0px";
 		$("#morphling").style.height = "0px";
 		$("#storm_spirit").style.height = "0px";
+		$("#brewmaster").style.height = "0px";
 		$("#nevermore").style.height = "0px";
 		$("#lion").style.height = "0px";
 		$("#meepo").style.height = "0px";
@@ -319,6 +322,7 @@ function showDetails(BoatName) {
 		$("#windrunner").style.height = "0px";
 		$("#pugna").style.height = "0px";
 		$("#rattletrap").style.height = "0px";
+		$("#batrider").style.height = "0px";
 		$("#tidehunter").style.height = "0px";
 		$("#crystal_maiden").style.height = "0px";
 		$("#phantom_lancer").style.height = "0px";
@@ -397,95 +401,103 @@ function fillAndShow() {
 	var closeEnough = false;
 	var nearistShop;
 	var i = 0;
-	for (var shop in Entities.GetAllEntities()) {
-		i++;
-		if (Entities.IsBuilding(i) && !Entities.IsTower(i)) {
-			var bldgloc = Entities.GetAbsOrigin(i);
+	var buildings = Entities.GetAllEntitiesByClassname('npc_dota_building')
+	for (var i = 0; i < buildings.length; i++)
+	{
+		$.Msg(i)
+
+		if (!Entities.IsTower(buildings[i])) {
+			
+			var bldgloc = Entities.GetAbsOrigin((buildings[i]));
 			if (bldgloc) {
+				
 				var dist = Math.sqrt(Math.pow(heroloc[0] - bldgloc[0], 2) + Math.pow(heroloc[1] - bldgloc[1], 2))
 				if (dist < 600) {
+					$.Msg("building + "+Entities.IsDisarmed((buildings[i])))
 					closeEnough = true;
-					nearistShop = i;
+					nearistShop = buildings[i];
 				}
 			}
 		}
 	}
-
+	$.Msg(closeEnough);
 	$.Msg(heroloc);
-	var hide=true;
+	var hide = true;
 	if (Math.abs(heroloc[1]) < 5000 && Math.abs(heroloc[0]) > 1000 && Math.abs(heroloc[0]) < 4000 && closeEnough) {
 		$("#side_shop").style.visibility = "visible";
 		Game.EmitSound("announcer_dlc_bristleback_bris_ann_negative_event_03");
 		$.Msg("showing side shop");
-		hide=false;
+		hide = false;
 	}
+	else {
 
-	if (hidden && !tradeHidden) {
-		
-		$.Msg(nearistShop);
-		if (closeEnough) {
-			hidden = false;
-			if (heroloc[0] > 3000) {
-				if (heroloc[1] < -2000) {
-					$("#right_bot_shop").style.visibility = "visible";
-					Game.EmitSound("crystalmaiden_cm_respawn_01");
+		if (hidden && !tradeHidden) {
+
+			$.Msg(nearistShop);
+			if (closeEnough) {
+				hidden = false;
+				if (heroloc[0] > 3000) {
+					if (heroloc[1] < -2000) {
+						$("#right_bot_shop").style.visibility = "visible";
+						Game.EmitSound("crystalmaiden_cm_respawn_01");
+					}
+					else if (heroloc[1] > 2000) {
+						$("#right_top_shop").style.visibility = "visible";
+						Game.EmitSound("announcer_dlc_stormspirit_announcer_ally_pos_09");
+					}
+					else {
+						$("#right_mid_shop").style.visibility = "visible";
+						Game.EmitSound("announcer_dlc_bastion_announcer_welcome_01");
+					}
 				}
-				else if (heroloc[1] > 2000) {
-					$("#right_top_shop").style.visibility = "visible";
-					Game.EmitSound("announcer_dlc_stormspirit_announcer_ally_pos_09");
+				else if (heroloc[0] < -2800) {
+					if (heroloc[1] < -2000) {
+						$("#left_bot_shop").style.visibility = "visible";
+						Game.EmitSound("announcer_dlc_lina_announcer_followup_neg_progress_05");
+					}
+					else if (heroloc[1] > 2000) {
+						$("#left_top_shop").style.visibility = "visible";
+						Game.EmitSound("announcer_dlc_bristleback_bris_ann_negative_event_03");
+					}
+					else {
+						$("#left_mid_shop").style.visibility = "visible";
+						Game.EmitSound("announcer_dlc_workshop_pirate_announcer_capn_misc2");
+					}
 				}
 				else {
-					$("#right_mid_shop").style.visibility = "visible";
-					Game.EmitSound("announcer_dlc_bastion_announcer_welcome_01");
+					if (heroloc[1] < -2000 && heroloc[1] > -5000) {
+						$("#mid_bot_shop").style.visibility = "visible";
+						Game.EmitSound("death_prophet_dpro_move_14");
+
+					}
+					else if (heroloc[1] > 2000 && heroloc[1] < 5000) {
+						$("#mid_top_shop").style.visibility = "visible";
+						Game.EmitSound("announcer_dlc_axe_announcer_ally_pos_11");
+					}
+					else if (heroloc[1] < 5000 && heroloc[1] > -5000 && Math.abs(heroloc[0]) < 1000) {
+						$("#mid_mid_shop").style.visibility = "visible";
+						Game.EmitSound("announcer_announcer_welcome_04");
+
+					}
+					else {
+						$("#empty_guts").style.visibility = "visible";
+						$("#empty_guts").style.opacity = 1;
+						hidden = false;
+						$.Schedule(4.0, FadeShop);
+					}
 				}
-			}
-			else if (heroloc[0] < -2800) {
-				if (heroloc[1] < -2000) {
-					$("#left_bot_shop").style.visibility = "visible";
-					Game.EmitSound("announcer_dlc_lina_announcer_followup_neg_progress_05");
-				}
-				else if (heroloc[1] > 2000) {
-					$("#left_top_shop").style.visibility = "visible";
-					Game.EmitSound("announcer_dlc_bristleback_bris_ann_negative_event_03");
-				}
-				else {
-					$("#left_mid_shop").style.visibility = "visible";
-					Game.EmitSound("announcer_dlc_workshop_pirate_announcer_capn_misc2");
-				}
+				hideMissionsIfNeeded();
 			}
 			else {
-				if (heroloc[1] < -2000 && heroloc[1] > -5000) {
-					$("#mid_bot_shop").style.visibility = "visible";
-					Game.EmitSound("death_prophet_dpro_move_14");
-
-				}
-				else if (heroloc[1] > 2000 && heroloc[1] < 5000) {
-					$("#mid_top_shop").style.visibility = "visible";
-					Game.EmitSound("announcer_dlc_axe_announcer_ally_pos_11");
-				}
-				else if (heroloc[1] < 5000 && heroloc[1] > -5000 && Math.abs(heroloc[0]) < 1000) {
-					$("#mid_mid_shop").style.visibility = "visible";
-					Game.EmitSound("announcer_announcer_welcome_04");
-
-				}
-				else {
-					$("#empty_guts").style.visibility = "visible";
-					$("#empty_guts").style.opacity = 1;
-					hidden = false;
-					$.Schedule(4.0, FadeShop);
-				}
+				$("#empty_guts").style.visibility = "visible";
+				$("#empty_guts").style.opacity = 1;
+				hidden = false;
+				$.Schedule(4.0, FadeShop);
 			}
-			hideMissionsIfNeeded();
 		}
-		else {
-			$("#empty_guts").style.visibility = "visible";
-			$("#empty_guts").style.opacity = 1;
-			hidden = false;
-			$.Schedule(4.0, FadeShop);
+		else if (hide) {
+			hideShop();
 		}
-	}
-	else if (hide){
-		hideShop();
 	}
 }
 
@@ -503,7 +515,7 @@ function hideShop() {
 	$("#mid_mid_shop").style.visibility = "collapse";
 	$("#side_shop").style.visibility = "collapse";
 	$("#empty_guts").style.visibility = "collapse";
-	
+
 	Game.EmitSound("ui.chat_close");
 }
 
@@ -544,6 +556,7 @@ function closeShipShop() {
 	$("#disruptor").style.height = "0px";
 	$("#morphling").style.height = "0px";
 	$("#storm_spirit").style.height = "0px";
+	$("#brewmaster").style.height = "0px";
 	$("#nevermore").style.height = "0px";
 	$("#lion").style.height = "0px";
 	$("#meepo").style.height = "0px";
@@ -557,6 +570,7 @@ function closeShipShop() {
 	$("#windrunner").style.height = "0px";
 	$("#pugna").style.height = "0px";
 	$("#rattletrap").style.height = "0px";
+	$("#batrider").style.height = "0px";
 	$("#tidehunter").style.height = "0px";
 	$("#crystal_maiden").style.height = "0px";
 	$("#phantom_lancer").style.height = "0px";
@@ -723,7 +737,8 @@ function OnBattleProgressTimer(eventData) {
 	$("#BattleProgressTimeVal").text = eventData.TimeInBattle;
 	$("#NorthScoreVal").text = eventData.NorthScore;
 	$("#SouthScoreVal").text = eventData.SouthScore;
-	$("#gptval").text = eventData.gpt;
+	$("#gptvaln").text = eventData.gptn;
+	$("#gptvals").text = eventData.gpts;
 
 }
 
@@ -758,7 +773,7 @@ function OnBsuiTimer(eventData) {
 }
 
 function buyItem(itemName, cost) {
-	if (showMission[Players.GetLocalPlayer()] > -1 || itemName=="spys" || itemName=="heals") {
+	if (showMission[Players.GetLocalPlayer()] > -1 || itemName == "spys" || itemName == "heals") {
 		GameEvents.SendCustomGameEventToServer("buyItem", { "text": itemName, "cost": cost });
 	}
 }

@@ -85,6 +85,9 @@
 	"rattletrap"				"Catamaran"
 	"rattletrap_desc"			"Light and fast, the Catamaran jumps out of reach and fires a deadly arrow."
 	
+	"batrider"				"Whaling Dinghy"
+	"batrider_desc"			"Equipped with a powerful harpoon this light ship can quickly get into the action. Whether this is brave or brazen is up to you."
+	
 	"windrunner"				"Construction Ship"
 	"windrunner_desc"			"The construction ship is a floating dock, capable of using the scrap around it to repair itself, protect its allies and even construct ships for the empire."
 	
@@ -376,6 +379,18 @@ LEAP DISTANCE: 600 650 700 750
 LEAP SPEED: 2000.0
 LEAP ALLIED SPEED BOOST: 2000.0
 LEAP SPEED BONUS AREA: 775"
+
+
+"harpoon_battleship"									"Harpoon"
+"harpoon_battleship_Description"						"Launch a harpoon at target enamy ship. If it connects, the two of you will be pulled together (mostly you). \n \nHigher levels pull the target more and you less.
+RANGE: 1500
+FRACTION OF DISTANCE YOU MOVE: .9 .8 .7 .6"
+
+"wale_bait_battleship"									"Bait the whale"
+"wale_bait_battleship_Description"						"Lure an old foe to the target location. the whale is so large he blocks vision and obstructs movment. \n \nHigher levels increase cast range and lower cooldown.
+DURATION:"
+
+
 
 "windrunner_powershot_battleship"									"Steady Shot"
 "windrunner_powershot_battleship_Description"					"The Catamaran's pontoons steady it on the open ocean. After channeling, release a long-range arrow that does damage to each target it passes through. Damage diminishes as it passes through each target. Steady Shot can be fired early for reduced damage. \n\nHigher levels increase damage.
@@ -732,7 +747,8 @@ DURATION: 2.5 3.0 3.5 4.0"
 		
 		"north_score" "North Score:"
 		"south_score" "South Score:"
-		"gold_per_tick" "gold per tick:"
+		"gold_per_tick_n" "gold/tick N:"
+		"gold_per_tick_s" "gold/tick S:"
 		
 //----------------old stuff----------
 
@@ -2740,6 +2756,11 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"DOTA_Tooltip_ability_icy_waters_battleship_Description"						"All nearby Enemy ships are slowed. \n \nHigher levels increase slowing effect."
 		"DOTA_Tooltip_ability_icy_waters_battleship_fun_bonus_move_speed"	"SLOW:"
 
+		"DOTA_Tooltip_ability_harpoon_battleship"									"Harpoon"
+		"DOTA_Tooltip_ability_harpoon_battleship_Description"						"Launch a harpoon at target enamy ship. If it connects, the two of you will be pulled together (mostly you). \n \nHigher levels pull the target more and you less."
+		"DOTA_Tooltip_ability_harpoon_battleship_cast_range"	"RANGE:"
+		"DOTA_Tooltip_ability_harpoon_battleship_range"	"FRACTION OF DISTANCE YOU MOVE:"
+
 
 		
 		"DOTA_Tooltip_fire_pistols" "Pistols Firing"
@@ -3163,12 +3184,14 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		
 		"News_Title"		"News!"
 		"News_Content"		"Hi all! Art update will resume but is temporarily on hold.  In the meantime I am continuing to make balance changes.
- Newest balance changes: (8-24-2017)
-- Catamaran no longer disjoints projectiles with leap but has much shorter cooldown
-- Paddlewheel dive cooldown and duration both reduced
-- Wind made stronger
+ Newest balance changes: (5-19-2018)
+- Viking regen increased
+- Paddlewheel base speed reduced
 - Ice Made weaker
-- Empire gold now based partially on team current net worth
+- junk ship abilites buffed
+- sea plane mayday weakened
+
+
 "
 		
 }

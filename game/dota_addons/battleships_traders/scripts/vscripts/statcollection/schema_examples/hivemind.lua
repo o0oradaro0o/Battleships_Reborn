@@ -81,11 +81,11 @@ end
 
 -- Prints the custom schema, required to get an schemaID
 function PrintSchema(gameArray, playerArray)
-    print("-------- GAME DATA --------")
+     --print("-------- GAME DATA --------")
     DeepPrintTable(gameArray)
-    print("\n-------- PLAYER DATA --------")
+     --print("\n-------- PLAYER DATA --------")
     DeepPrintTable(playerArray)
-    print("-------------------------------------")
+     --print("-------------------------------------")
 end
 
 -- Write 'test_schema' on the console to test your current functions instead of having to end the game

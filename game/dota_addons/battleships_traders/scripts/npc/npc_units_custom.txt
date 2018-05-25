@@ -3383,6 +3383,19 @@
 	"Ability1"					"dummy_passive_fly"
 }
 
+	
+		"dummy_whale"
+{
+	"BaseClass"					"npc_dota_creature"
+	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+	"VisionDaytimeRange"		"10"	
+	"VisionNighttimeRange"		"10"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+	"Ability1"					"root_whale"
+}
+
+
 	"dummy_vision3000"
 {
 	"BaseClass"					"npc_dota_creature"
