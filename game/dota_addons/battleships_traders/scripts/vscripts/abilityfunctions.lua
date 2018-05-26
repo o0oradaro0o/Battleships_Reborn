@@ -2369,13 +2369,13 @@ function RealityRift( keys )
 	-- Ability variables
 
 	-- Set the positions to be one on each side of the rift
-	target:SetAbsOrigin(ability.reality_rift_location - ability.reality_rift_direction * 25)
-	caster:SetAbsOrigin(ability.reality_rift_location + ability.reality_rift_direction * 25)
+	target:SetAbsOrigin(ability.reality_rift_location + ability.reality_rift_direction * 50)
+	caster:SetAbsOrigin(ability.reality_rift_location - ability.reality_rift_direction * 50)
 
 	-- Set the targets to face eachother
-	target:SetForwardVector(ability.reality_rift_direction)
+	target:SetForwardVector(ability.reality_rift_direction * -1)
 	caster:Stop() 
-	caster:SetForwardVector(ability.reality_rift_direction * -1)
+	caster:SetForwardVector(ability.reality_rift_direction)
 
 	-- Add the phased modifier to prevent getting stuck
 	target:AddNewModifier(caster, nil, "modifier_phased", {duration = 0.03})
@@ -2385,19 +2385,18 @@ end
 
 
 
-function WhaleBait(keys)
-	local caster = keys.caster
-	local ability = keys.ability
-	local point = ability:GetCursorPosition()
-	local duration = ability:GetLevelSpecialValueFor("duration", (ability:GetLevel() -1))
+function WhaleBait(args)
+	local targetPos = args.target:GetAbsOrigin()
+	local targetUnit = args.target
+	print('[WhaleBait]')
+	local casterPos = args.caster:GetAbsOrigin()
+	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	local direction = casterPos - targetPos
+	local vec = direction:Normalized()
+
+	targetUnit:SetAbsOrigin(targetUnit:GetAbsOrigin() + vec*2)
+
 	-- Creates 8 temporary trees at each 45 degree interval around the clicked point
-	Timers:CreateTimer(
-		0.75,
-		function()
-			CreateTempTree(point, duration)
-			
-		end
-	)
 
 end
 

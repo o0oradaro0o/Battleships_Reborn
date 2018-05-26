@@ -387,8 +387,8 @@ RANGE: 1500
 FRACTION OF DISTANCE YOU MOVE: .9 .8 .7 .6"
 
 "wale_bait_battleship"									"Bait the whale"
-"wale_bait_battleship_Description"						"Lure an old foe to the target location. the whale is so large he blocks vision and obstructs movment. \n \nHigher levels increase cast range and lower cooldown.
-DURATION:"
+"wale_bait_battleship_Description"						"Lure an old foe to the target location. the whale creates a wherl pool, sucking in and damaging friends and foes alike (nonleathal 20dps). \n \nHigher levels increase cast range and lower cooldown.
+DURATION: 7"
 
 
 

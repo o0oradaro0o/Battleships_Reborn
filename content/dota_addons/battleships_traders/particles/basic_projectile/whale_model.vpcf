@@ -101,5 +101,8 @@
 			m_ChildRef = resource:"particles/econ/items/kunkka/divine_anchor/hero_kunkka_dafx_skills/kunkka_spell_torrent_splash_fxset.vpcf"
 			m_flDelay = 0.25
 		},
+		{
+			m_ChildRef = resource:"particles/basic_projectile/wherl_pool.vpcf"
+		},
 	]
 }

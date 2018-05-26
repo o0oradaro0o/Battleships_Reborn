@@ -91,6 +91,15 @@
 		{
 			m_ChildRef = resource:"particles/harpoon_rtail_a.vpcf"
 		},
+		{
+			m_ChildRef = resource:"particles/harpoon_rtail_b.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_chaos_knight/chaos_knight_reality_rift_e.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/basic_projectile/harpoon_splash.vpcf"
+		},
 	]
 	m_controlPointConfigurations = 
 	[

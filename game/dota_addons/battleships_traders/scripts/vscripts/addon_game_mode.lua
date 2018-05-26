@@ -74,6 +74,8 @@ g_BattleModeTimer=120
 g_BattleModeRemaining=0
 g_BattleModeLocation=0
 
+g_TugMode=0
+
 -- trade mode variables
 g_TradeMode=0
 
@@ -326,9 +328,9 @@ function Precache( context )
 		g_PlayerIdsToNames[ind]=0;
 	end
 
-	for k, v in pairs( g_ModelLookUp ) do
-    PrecacheResource( "model", v, context )
-  end
+-- 	for k, v in pairs( g_ModelLookUp ) do
+--     PrecacheResource( "model", v, context )
+--   end
 	PrecacheResource( "particle_folder", "particles/basic_projectile", context )
 	PrecacheResource( "model", "models/battleship_boat0.vmdl", context )
 	PrecacheResource( "model", "models/battleship_boat1.vmdl", context )
@@ -532,6 +534,7 @@ end
 
 
 function CBattleship8D:InitGameMode()
+	self.vUserIds = {}
 	 --print( "Template addon is loaded." )
 	GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap(CBattleship8D, "FilterModifyGold"), self)
 	
@@ -554,6 +557,7 @@ function CBattleship8D:InitGameMode()
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(CBattleship8D, 'OnNPCSpawned'), self)
 	ListenToGameEvent('player_connect_full', Dynamic_Wrap(CBattleship8D, 'OnConnectFull'), self)
  	ListenToGameEvent('player_disconnect', Dynamic_Wrap(CBattleship8D, 'OnDisconnect'), self)
+	 ListenToGameEvent('player_chat', Dynamic_Wrap(CBattleship8D, 'OnPlayerChat'), self)
   
 	CustomGameEventManager:RegisterListener("GiveEasy", GiveEasy);
 	CustomGameEventManager:RegisterListener("GiveMedium", GiveMedium);
@@ -562,6 +566,7 @@ function CBattleship8D:InitGameMode()
 	CustomGameEventManager:RegisterListener("buyBoat", buyBoat);
 	
 	CustomGameEventManager:RegisterListener("BattleMode", battleMode);
+	CustomGameEventManager:RegisterListener("TugMode", tugmode);
 	CustomGameEventManager:RegisterListener("TradeMode", tradeMode);
 	CustomGameEventManager:RegisterListener("Activate_Co_Op", ActivateCoOp);
 	
@@ -820,6 +825,23 @@ function CBattleship8D:FilterModifyGold(event)
     return true
 end
 
+function CBattleship8D:OnPlayerChat(keys)
+	local teamonly = keys.teamonly
+	local userID = keys.userid
+	print("Chat!!")
+	local playerID = self.vUserIds[userID] and self.vUserIds[userID]:GetPlayerID()
+	print("playerID" .. playerID)
+	if playerID~=nil then
+		steamID32 = PlayerResource:GetSteamAccountID(playerID)
+	end
+	print("userID" .. steamID32)
+	local text = keys.text
+	if string.match(text,"TUG MODE ACTIVATE!") and  GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+		g_TugMode=1
+		print("tug mode!!")
+	end
+  end
+
 function CBattleship8D:BountyRuneFilter(filterTable)
     --Check if the order is the glyph type
 	 --print("i'm in BountyRuneFilter!!!!!!!!!!!!!!!!!!!")
@@ -831,7 +853,6 @@ function CBattleship8D:BountyRuneFilter(filterTable)
 	 --print(filterTable["gold_bounty"])
 	filterTable["gold_bounty"]=filterTable["gold_bounty"]*.5*g_EmpireGoldCount
 	if PlayerResource:GetTeam(filterTable["player_id_const"]) == DOTA_TEAM_GOODGUYS then
-		
 		g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + filterTable["gold_bounty"]
 	else
 		g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + filterTable["gold_bounty"]
@@ -905,7 +926,11 @@ function CBattleship8D:OnThink()
 						hero.changed=1
 					
 						g_PlayerCount=g_PlayerCount+1
-						become_boat(hero, "npc_dota_hero_zuus")
+						if g_TugMode==0 then
+							become_boat(hero, "npc_dota_hero_zuus")
+						else
+							become_boat(hero,"npc_dota_hero_ember_spirit")
+						end
 						
 						
 						RemoveWearables( hero )
@@ -1477,17 +1502,6 @@ if g_BoatJustBaught ==0 then
 		stopPhysics(npc)
 		npc:SetBaseStrength(1)
 		 --print("hero level is" .. npc:GetLevel())
-		local item = CreateItem( "item_spawn_stunner", npc, npc)
-			if npc:GetLevel() >= 22 then
-				item:ApplyDataDrivenModifier(npc, npc, "pergatory_12", nil)
-			elseif npc:GetLevel() >= 19 then
-				item:ApplyDataDrivenModifier(npc, npc, "pergatory_9", nil)
-			elseif npc:GetLevel() >= 16 then
-				item:ApplyDataDrivenModifier(npc, npc, "pergatory_6", nil)
-			elseif npc:GetLevel() >= 13 then
-				item:ApplyDataDrivenModifier(npc, npc, "pergatory_3", nil)
-			end
-		RemoveAndDeleteItem(npc,item)
 		Timers:CreateTimer( 0.1, function()
 			if npc:IsHero() or npc:HasInventory() then 
 						for itemSlot = 6, 11, 1 do 
@@ -1513,11 +1527,8 @@ if g_BoatJustBaught ==0 then
 							end
 						end
 					end
-    
     end
   )
-		
-		
 	  end
   end
   else
@@ -1539,17 +1550,13 @@ function AttachCosmetics(hero)
 			if hero.particleM==nil then
 				 hero.particleM = ParticleManager:CreateParticle( "particles/basic_projectile/smoke_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 					ParticleManager:SetParticleControlEnt(hero.particleM, 0, hero, PATTACH_POINT_FOLLOW, "Pipe_emitter", hero:GetAbsOrigin(), true)
-			
-				 --print( "partical attachment." )
 				end
 		end
 
 end
 
 function CBattleship8D:HandleEmpGold()
-
-			GameRules:SetTimeOfDay(0.25)
-		
+		GameRules:SetTimeOfDay(0.25)
 		if g_CoOpMode==0 then
 			g_TicksSinceEmpireGold = 0
 			local goodGold = 0
@@ -2385,7 +2392,10 @@ end
 function CBattleship8D:OnConnectFull(keys)
   print ( '[BAREBONES] OnConnectFull' )
   PrintTable(keys)
-  
+  local entIndex = keys.index+1
+  local ply = EntIndexToHScript(entIndex)
+  local playerID = ply:GetPlayerID()
+  self.vUserIds[keys.userid] = ply
   Timers:CreateTimer( 5, function()
 		local data ={}
 	FireGameEvent("Boat_Spawned",data)
@@ -2818,6 +2828,12 @@ function CBattleship8D:OnEntityKilled( keys )
 		
   end
 
+
+		  if killedUnit:IsRealHero() and killedUnit:GetPlayerID()~=nil then
+				Timers:CreateTimer(.1, function() 
+					killedUnit:SetTimeUntilRespawn(killedUnit:GetTimeUntilRespawn()+killedUnit:GetLevel()/2-1)
+				end)
+		end
 		
 		
   if killedUnit:GetGoldBounty() and killerEntity:IsRealHero() and killerEntity:IsOwnedByAnyPlayer() then
@@ -3733,6 +3749,10 @@ end
 
 
 function buyBoat(eventSourceIndex, args)
+	
+	if g_TugMode==1 then
+		return
+	end
 	local pID = args.PlayerID
 	local teamNum=PlayerResource:GetTeam(pID)
 	local casterUnit
@@ -3760,7 +3780,7 @@ function buyBoat(eventSourceIndex, args)
 		local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
 		
 		 --print(itemName .. " vs " .. casterUnit:GetName())
-		if (directionOne:Length() < 1000 or directionTwo:Length() < 1000) and herogold>cost-1 and not string.match(casterUnit:GetName(),itemName ) then -- and  GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+		if (directionOne:Length() < 1000 or directionTwo:Length() < 1000) and herogold>cost-1 and not string.match(casterUnit:GetName(),itemName )  then -- GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 			boat=true
 			casterUnit:SetGold(herogold-cost,true)
 			casterUnit:SetGold(0,false)
@@ -4373,6 +4393,16 @@ function battleMode(eventSourceIndex, args)
 	end
 	 --print(g_BattleMode)
 end
+
+function tugMode(eventSourceIndex, args)
+	--print(args.text)
+	   if string.match(args.text,"normal") then
+		   g_TugMode=0
+		   else
+			g_TugMode=1
+	   end
+		--print(g_BattleMode)
+   end
 
 function startBattle()
 	g_BattleModeLocation=RandomInt(1,3)

@@ -76,6 +76,10 @@
 			m_fLifetimeMax = 0.1
 			m_fLifetimeMin = 0.1
 		},
+		{
+			_class = "C_INIT_GlobalScale"
+			m_flScale = 2.8
+		},
 	]
 	m_Emitters = 
 	[
