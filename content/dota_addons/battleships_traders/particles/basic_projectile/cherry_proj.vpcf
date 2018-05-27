@@ -16,7 +16,7 @@
 			m_ModelList = 
 			[
 				{
-					m_model = resource:"models/bell_model.vmdl"
+					m_model = resource:"models/cherry_model.vmdl"
 				},
 			]
 			m_bAnimated = true
@@ -79,7 +79,7 @@
 		{
 			_class = "C_INIT_RandomRotation"
 			m_flDegrees = 180.0
-			m_flDegreesMax = 30.0
+			m_flDegreesMax = 0.0
 			m_bRandomlyFlipDirection = false
 		},
 		{
@@ -105,10 +105,7 @@
 	m_Children = 
 	[
 		{
-			m_ChildRef = resource:"particles/units/heroes/hero_silencer/silencer_base_attack_trail_c.vpcf"
-		},
-		{
-			m_ChildRef = resource:"particles/units/heroes/hero_lone_druid/lone_druid_base_attack_glow.vpcf"
+			m_ChildRef = resource:"particles/neutral_fx/thunderlizard_base_attack_trail_c.vpcf"
 		},
 	]
 	m_controlPointConfigurations = 

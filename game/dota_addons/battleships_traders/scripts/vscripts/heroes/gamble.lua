@@ -5,7 +5,12 @@ require("libraries/timers")
 
 function gamble:OnSpellStart()
   local ability = self
-	local caster = self:GetCaster()
+    local caster = self:GetCaster()
+    for _,mod in pairs( caster:FindAllModifiers()) do
+        if  string.match(mod:GetName(), "gamble") then
+            caster:RemoveModifierByName(mod:GetName())
+        end
+    end
 	
   local abilityNames = {
     "gamble_heart",
@@ -52,8 +57,8 @@ function gamble:OnSpellStart()
     local oldAbilityName = oldAbilities[i]["name"]
     caster:RemoveAbility(oldAbilityName)
   end
-
-
+  EmitSoundOn("Hero_EarthSpirit.RollingBoulder.Loop", caster)
+  
     for i=startIndex,endIndex do
         local oldAbilityLevel = oldAbilities[i]["level"]
 
@@ -113,7 +118,7 @@ Timers:CreateTimer(.3, function()
 
     local newAbilityName = GetRandomTableElement(abilityNames)
     newAbilitySet[newAbilityName] = true
-    local newAbility = caster:AddAbility(newAbilityName)
+    local newAbility = caster:AddAbility(newAbilityName .. "_one")
 
     newAbility:SetAbilityIndex(0)
     newAbility:SetLevel(oldAbilityLevel)
@@ -175,7 +180,7 @@ Timers:CreateTimer(.6, function()
 
     local newAbilityName = GetRandomTableElement(abilityNames)
     newAbilitySet[newAbilityName] = true
-    local newAbility = caster:AddAbility(newAbilityName)
+    local newAbility = caster:AddAbility(newAbilityName .. "_two")
 
     newAbility:SetAbilityIndex(1)
     newAbility:SetLevel(oldAbilityLevel)
@@ -238,11 +243,11 @@ Timers:CreateTimer(.9, function()
 
     local newAbilityName = GetRandomTableElement(abilityNames)
     newAbilitySet[newAbilityName] = true
-    local newAbility = caster:AddAbility(newAbilityName)
+    local newAbility = caster:AddAbility(newAbilityName .. "_three")
 
     newAbility:SetAbilityIndex(2)
     newAbility:SetLevel(oldAbilityLevel)
-
+    StopSoundOn("Hero_EarthSpirit.RollingBoulder.Loop", caster)
 
 end)
 

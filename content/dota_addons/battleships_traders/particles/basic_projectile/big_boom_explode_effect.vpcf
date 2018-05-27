@@ -1,4 +1,4 @@
-<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf1:version{d47d07e6-072c-49cb-9718-5bfd8d6c3d21} -->
 {
 	_class = "CParticleSystemDefinition"
 	m_flConstantRadius = 48.0
@@ -60,6 +60,9 @@
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_skeletonking/wraith_king_reincarnate_explode_c.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/ancient_apparition/aa_blast_ti_5/ancient_apparition_ice_blast_initial_explode_ti5.vpcf"
 		},
 	]
 	m_bShouldSort = false

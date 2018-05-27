@@ -793,10 +793,10 @@
         "override_hero"             "npc_dota_hero_brewmaster"          // Hero to override
 
 
-       "Model" "models/whaling_boat.vmdl"     // Model.
+       "Model" "models/river_boat.vmdl"     // Model.
         "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
 		
-		"ModelScale"        "0.8"
+		"ModelScale"        "0.1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
 	    "AttributeBaseStrength"     "0"
@@ -818,9 +818,9 @@
 		"MagicalResistance"				"0"
 		
 		"AbilityLayout"				"4"
-		"Ability1"					"gamble_diamond"
-		"Ability2"					"gamble_bell"
-		"Ability3"					"gamble_horseshoe"
+		"Ability1"					"gamble_cherry_one"
+		"Ability2"					"gamble_bell_one"
+		"Ability3"					"gamble_horseshoe_one"
 		"Ability4"					"gamble"
 		"Ability5"					"ability_empty"
 		"Ability10"					"ability_empty"

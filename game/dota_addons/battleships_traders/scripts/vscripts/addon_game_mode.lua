@@ -1024,6 +1024,13 @@ function CBattleship8D:OnThink()
 			end
 			
 		end
+
+		if g_MainTimerTickCount ==18 and g_TugMode==1 then	
+			Notifications:TopToAll({text="tug_one", duration=6.0, style={color="#07C300",  fontSize="80px;"}})
+
+		   
+		   end
+
 		if g_MainTimerTickCount ==13 and g_CoOpMode==1 then	
 		 Notifications:TopToAll({text="#co_op_one", duration=6.0, style={color="#07C300",  fontSize="30px;"}})
 		 Notifications:TopToAll({text="#co_op_two", duration=6.0, style={color="#07C300",  fontSize="30px;"}})
@@ -1546,6 +1553,13 @@ function AttachCosmetics(hero)
 			 hero.particleM = ParticleManager:CreateParticle( "particles/basic_projectile/smoke_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 				ParticleManager:SetParticleControlEnt(hero.particleM, 0, hero, PATTACH_POINT_FOLLOW, "M_chim3", hero:GetAbsOrigin(), true)
 			end
+		elseif string.match(hero:GetName(),"brewmaster") then
+				if hero.particleR==nil then
+				 hero.particleR = ParticleManager:CreateParticle( "particles/basic_projectile/smoke_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+					ParticleManager:SetParticleControlEnt(hero.particleR, 0, hero, PATTACH_POINT_FOLLOW, "attach_smoke_1", hero:GetAbsOrigin(), true)
+				 hero.particleL = ParticleManager:CreateParticle( "particles/basic_projectile/smoke_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+					ParticleManager:SetParticleControlEnt(hero.particleL, 0, hero, PATTACH_POINT_FOLLOW, "attach_smoke_2", hero:GetAbsOrigin(), true)
+				end
 			elseif string.match(hero:GetName(),"phantom") then
 			if hero.particleM==nil then
 				 hero.particleM = ParticleManager:CreateParticle( "particles/basic_projectile/smoke_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
@@ -3750,10 +3764,13 @@ end
 
 function buyBoat(eventSourceIndex, args)
 	
+	
+	local pID = args.PlayerID
 	if g_TugMode==1 then
+		Notifications:Top(casterUnit:GetPlayerID(), {text="#tug_buy_boat", duration=3.0, style={color="#800000",  fontSize="70px;"}})
+
 		return
 	end
-	local pID = args.PlayerID
 	local teamNum=PlayerResource:GetTeam(pID)
 	local casterUnit
 	PrintTable(args)

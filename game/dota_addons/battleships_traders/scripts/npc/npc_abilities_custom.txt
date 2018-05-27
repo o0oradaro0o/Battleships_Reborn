@@ -8837,352 +8837,6 @@
 		
 	}
 	
-	"gamble_heart"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityTextureName"				"heart"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		
-		"BaseClass" 					"ability_datadriven"
-		"MaxLevel"						"4"
-		"LevelsBetweenUpgrades"					"2"
-		"RequiredLevel"						"2"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0"
-		"OnUpgrade"
-		{
-			"RemoveModifier"
-			{
-				"Target" "CASTER"
-				"ModifierName" "heart_hatches"
-			}
-			"ApplyModifier"
-			{
-				"Target" "CASTER"
-				"ModifierName" "heart_hatches"
-			}
-		}
-		"OnOwnerSpawned"
-		{
-			"ApplyModifier"
-			{
-				"Target" "CASTER"
-				"ModifierName" "heart_hatches"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"heart_hatches"
-			{
-			
-				"Properties"
-				{
-					 "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen"
-
-				}
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-			}
-			
-		}
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-					"var_type"                                      "FIELD_FLOAT"
-					"health_regen"                          "10.0 12.0 14.0 16.0"
-			}
-		}
-	}
-    "gamble_bar"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityTextureName"				"bar"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		
-		"BaseClass" 					"ability_datadriven"
-		"MaxLevel"						"4"
-		"LevelsBetweenUpgrades"					"2"
-		"RequiredLevel"						"2"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0"
-		"OnUpgrade"
-		{
-			"RemoveModifier"
-			{
-				"Target" "CASTER"
-				"ModifierName" "bar_hp"
-			}
-			"ApplyModifier"
-			{
-				"Target" "CASTER"
-				"ModifierName" "bar_hp"
-			}
-		}
-		"OnOwnerSpawned"
-		{
-			"ApplyModifier"
-			{
-				"Target" "CASTER"
-				"ModifierName" "bar_hp"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"bar_hp"
-			{
-			
-				"Properties"
-				{
-					 "MODIFIER_PROPERTY_HEALTH_BONUS"             "%health_bonus"
-
-				}
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-			}
-		}
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-					"var_type"                                      "FIELD_FLOAT"
-					"health_bonus"                          "200 300 400 500"
-			}
-		}
-	}
-     "gamble_diamond"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityTextureName"				"diamond"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		
-		"BaseClass" 					"ability_datadriven"
-		"MaxLevel"						"4"
-		"LevelsBetweenUpgrades"					"2"
-		"RequiredLevel"						"2"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0"
-		"OnUpgrade"
-		{
-			"RemoveModifier"
-			{
-				"Target" "CASTER"
-				"ModifierName" "diamond_armor"
-			}
-			"ApplyModifier"
-			{
-				"Target" "CASTER"
-				"ModifierName" "diamond_armor"
-			}
-		}
-		"OnOwnerSpawned"
-		{
-			"ApplyModifier"
-			{
-				"Target" "CASTER"
-				"ModifierName" "diamond_armor"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"diamond_armor"
-			{
-			
-				"Properties"
-				{
-					 "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"             "%armor_bonus"
-
-				}
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-			}
-		}
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-					"var_type"                                      "FIELD_FLOAT"
-					"armor_bonus"                          "3 4 5 6"
-			}
-		}
-	}
-
-    "gamble_horseshoe"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityTextureName"				"horseshoe"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		
-		"BaseClass" 					"ability_datadriven"
-		"MaxLevel"						"4"
-		"LevelsBetweenUpgrades"					"2"
-		"RequiredLevel"						"2"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0"
-		"OnUpgrade"
-		{
-			"RemoveModifier"
-			{
-				"Target" "CASTER"
-				"ModifierName" "shoe_speed"
-			}
-			"ApplyModifier"
-			{
-				"Target" "CASTER"
-				"ModifierName" "shoe_speed"
-			}
-		}
-		"OnOwnerSpawned"
-		{
-			"ApplyModifier"
-			{
-				"Target" "CASTER"
-				"ModifierName" "shoe_speed"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"shoe_speed"
-			{
-			
-				"Properties"
-				{
-					 "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"             "%move_bonus"
-
-				}
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-			}
-		}
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-					"var_type"                                      "FIELD_FLOAT"
-					"move_bonus"                          "30 40 50 60"
-			}
-		}
-	}
-
-	"gamble_bell"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"BaseClass" 					"ability_datadriven"
-		"AbilityTextureName"				"bells"
-		
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700 800 900 1000"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-		"AbilityManaCost"				"0 0 0 0"
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14.0 13.0 12.0 11.0"
-		"OnSpellStart"
-		{
-			"TrackingProjectile"
-			{
-				"Target" "TARGET"
-					
-				"MoveSpeed" "900"
-				"ProvidesVision" "0"
-				"EffectName"    "particles/basic_projectile/coast_heal_proj.vpcf" 
-			}
-			
-			
-		}
-			
-				
-
-		"Modifiers"
-		{
-			"bell_silence"
-			{
-			
-				"EffectName"            "particles/basic_projectile/silenced.vpcf"
-				"EffectAttachType"      "follow_overhead"
-				"Duration"  "%duration"
-				"States"
-				{
-					"MODIFIER_STATE_SILENCED" "MODIFIER_STATE_VALUE_ENABLED"
-				} 
-			}
-		}
-		
-		
-		"OnProjectileHitUnit"
-		{
-			"DeleteOnHit"                           "false"
-			"ApplyModifier"
-			{
-				"Target" "TARGET"
-				"ModifierName" "bell_silence"
-			}
-		}
-		
-		
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"		"2 2.5 3 3.5"
-			}
-
-		}
-	}
-
-
-
 	
 	
 	"root_chain"
@@ -9884,7 +9538,407 @@
 		}
 
 	}
+	"gamble_heart_one"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"heart"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		"BaseClass" 					"ability_datadriven"
+		"MaxLevel"						"4"
+		"LevelsBetweenUpgrades"					"2"
+		"RequiredLevel"						"2"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"OnUpgrade"
+		{
+			"RemoveModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_heart_hatches_one"
+			}
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_heart_hatches_one"
+			}
+		}
+		"OnOwnerSpawned"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_heart_hatches_one"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"gamble_heart_hatches_one"
+			{
+			
+				"Properties"
+				{
+					 "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen"
+
+				}
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+			
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+					"var_type"                                      "FIELD_FLOAT"
+					"health_regen"                          "10.0 12.0 14.0 16.0"
+			}
+		}
+	}
+    "gamble_bar_one"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"bar"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		"BaseClass" 					"ability_datadriven"
+		"MaxLevel"						"4"
+		"LevelsBetweenUpgrades"					"2"
+		"RequiredLevel"						"2"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+		
+		"AbilityManaCost"				"0"
+		"OnUpgrade"
+		{
+			"RemoveModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_bar_hp_one"
+			}
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_bar_hp_one"
+			}
+		}
+		"OnOwnerSpawned"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_bar_hp_one"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"gamble_bar_hp_one"
+			{
+			
+				"Properties"
+				{
+					 "MODIFIER_PROPERTY_HEALTH_BONUS"             "%health_bonus"
+
+				}
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
 	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+					"var_type"                                      "FIELD_FLOAT"
+					"health_bonus"                          "200 300 400 500"
+			}
+		}
+	}
+     "gamble_diamond_one"
+	{
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"diamond"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		"BaseClass" 					"ability_datadriven"
+		"MaxLevel"						"4"
+		"LevelsBetweenUpgrades"					"2"
+		"RequiredLevel"						"2"
+		
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+		
+		"AbilityManaCost"				"0"
+		"OnUpgrade"
+		{
+			"RemoveModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_diamond_armor_one"
+			}
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_diamond_armor_one"
+			}
+		}
+		"OnOwnerSpawned"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_diamond_armor_one"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"gamble_diamond_armor_one"
+			{
+			
+				"Properties"
+				{
+					 "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"             "%armor_bonus"
+
+				}
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+					"var_type"                                      "FIELD_FLOAT"
+					"armor_bonus"                          "2.5 3 3.5 4"
+			}
+		}
+	}
+
+    "gamble_horseshoe_one"
+	{
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"horseshoe"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		"BaseClass" 					"ability_datadriven"
+		"MaxLevel"						"4"
+		"LevelsBetweenUpgrades"					"2"
+		"RequiredLevel"						"2"
+		
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+	
+		"AbilityManaCost"				"0"
+		"OnUpgrade"
+		{
+			"RemoveModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_shoe_speed_one"
+			}
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_shoe_speed_one"
+			}
+		}
+		"OnOwnerSpawned"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_shoe_speed_one"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"gamble_shoe_speed_one"
+			{
+			
+				"Properties"
+				{
+					 "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"             "%move_bonus"
+
+				}
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+					"var_type"                                      "FIELD_FLOAT"
+					"move_bonus"                          "30 40 50 60"
+			}
+		}
+	}
+
+	"gamble_bell_one"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"				"bells"
+		
+		
+		"AbilityCastRange"				"700 800 900 1000"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityManaCost"				"0 0 0 0"
+		"AbilityCooldown"				"999"
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target" "TARGET"
+					
+				"MoveSpeed" "900"
+				"ProvidesVision" "0"
+				"EffectName"    "particles/basic_projectile/bell_projectile.vpcf" 
+			}
+			
+			
+		}
+			
+		"Modifiers"
+		{
+			"bell_silence"
+			{
+			
+				"EffectName"            "particles/basic_projectile/silenced.vpcf"
+				"EffectAttachType"      "follow_overhead"
+				"Duration"  "%duration"
+				"States"
+				{
+					"MODIFIER_STATE_SILENCED" "MODIFIER_STATE_VALUE_ENABLED"
+				} 
+			}
+		}
+		
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"                           "false"
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "bell_silence"
+			}
+		}
+		
+		
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"		"2 2.5 3 3.5"
+			}
+
+		}
+	}
+
+
+    "gamble_cherry_one"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"				"cherries"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"950 1050 1150 1250"
+		"AbilityCastPoint"				"0.1"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"999"
+		"AOERadius" 	"%radius"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"CherryLaunch"
+				"Target"		"POINT"
+			}
+			
+		}
+			
+		
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"                           "false"
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"CherryExplode"
+				
+			}
+		}
+		
+		
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"200 250 300"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"dmg"					"150 200 250 300"
+			}
+			
+		}
+	}
+
 	
 
 	

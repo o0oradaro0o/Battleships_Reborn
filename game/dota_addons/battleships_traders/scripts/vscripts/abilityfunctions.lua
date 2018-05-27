@@ -2400,6 +2400,76 @@ function WhaleBait(args)
 
 end
 
+
+
+function CherryLaunch(args)
+	print("IN CherryLaunch")
+	PrintTable(args)
+	local targetPos = args.target_points[1]
+	local caster = args.caster
+	
+	dummy = CreateUnitByName("dummy_vision10", targetPos, true, nil, nil, caster:GetTeam())
+   
+	   local info = {
+		   Ability = args.ability,
+		   Source = caster,
+		   Target = dummy,
+		   vSourceLoc = caster:GetAbsOrigin(),
+		   EffectName = "particles/basic_projectile/cherry_proj.vpcf",
+		   bProvidesVision = false,
+		   iVisionRadius = 1000,
+		   iVisionTeamNumber = caster:GetTeamNumber(),
+		   bDeleteOnHit = false,
+		   iMoveSpeed = 700,
+		   vVelocity = 700
+	   }
+	   projectile = ProjectileManager:CreateTrackingProjectile(info)
+
+end
+
+function CherryExplode(args)
+	print("IN CherryExplode")
+	PrintTable(args)
+	local targetUnit = args.target
+	local newTarget
+	local caster = args.caster
+	local abil = args.ability
+	local enemies =
+		FindUnitsInRadius(
+			caster:GetTeamNumber(),
+			targetUnit:GetOrigin(),
+		nil,
+		abil:GetLevelSpecialValueFor("radius", abil:GetLevel() - 1),
+		DOTA_UNIT_TARGET_TEAM_ENEMY,
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+		0,
+		0,
+		false
+	)
+	local particle = ParticleManager:CreateParticle("particles/basic_projectile/cherry_explode.vpcf", PATTACH_CUSTOMORIGIN, target)
+	ParticleManager:SetParticleControlEnt(particle, 0, targetUnit, PATTACH_POINT_FOLLOW, "attach_hitloc", targetUnit:GetOrigin(), true)
+	ParticleManager:ReleaseParticleIndex(particle) 
+	
+	local dmg = abil:GetLevelSpecialValueFor("dmg", abil:GetLevel() - 1)
+	for _, fucker in pairs(enemies) do
+		local damageTable = {
+			victim = fucker,
+			attacker = caster,
+			damage = dmg,
+			damage_type = DAMAGE_TYPE_MAGICAL
+		}
+
+		ApplyDamage(damageTable)
+	end
+	Timers:CreateTimer(
+			.5,
+			function()
+				targetUnit:RemoveSelf()
+			end
+		)
+	
+end
+
 function creatredwhale(keys)
 	print("made the unit")
 
@@ -2428,17 +2498,17 @@ function PrintTable(t, indent, done)
 
 			if type(value) == "table" and not done[value] then
 				done[value] = true
-				 --print(string.rep("\t", indent) .. tostring(v) .. ":")
+				 print(string.rep("\t", indent) .. tostring(v) .. ":")
 				PrintTable(value, indent + 2, done)
 			elseif type(value) == "userdata" and not done[value] then
 				done[value] = true
-				 --print(string.rep("\t", indent) .. tostring(v) .. ": " .. tostring(value))
+				 print(string.rep("\t", indent) .. tostring(v) .. ": " .. tostring(value))
 				PrintTable((getmetatable(value) and getmetatable(value).__index) or getmetatable(value), indent + 2, done)
 			else
 				if t.FDesc and t.FDesc[v] then
-					 --print(string.rep("\t", indent) .. tostring(t.FDesc[v]))
+					 print(string.rep("\t", indent) .. tostring(t.FDesc[v]))
 				else
-					 --print(string.rep("\t", indent) .. tostring(v) .. ": " .. tostring(value))
+					 print(string.rep("\t", indent) .. tostring(v) .. ": " .. tostring(value))
 				end
 			end
 		end
