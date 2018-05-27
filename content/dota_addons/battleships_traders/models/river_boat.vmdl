@@ -182,8 +182,13 @@
 					m_Animationname = "river_boat_idle"
 					m_Filepath = "models/river_boat_idle.fbx"
 					m_nStartframe = 0
+<<<<<<< HEAD
 					m_nEndframe = 59
 					m_flFps = 24.0
+=======
+					m_nEndframe = 119
+					m_flFps = 12.0
+>>>>>>> a562dd7828c7d5bb509a5f63a5b9348cf3e3f54a
 					m_Loop = 
 					{
 						m_bLoop = true
@@ -199,6 +204,7 @@
 					}
 					m_bHidden = false
 					m_bDisable = false
+<<<<<<< HEAD
 					m_Activities = 
 					[
 						{
@@ -206,6 +212,9 @@
 							m_nWeight = 1
 						},
 					]
+=======
+					m_Activities = [  ]
+>>>>>>> a562dd7828c7d5bb509a5f63a5b9348cf3e3f54a
 					m_AnimationEvents = [  ]
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
@@ -225,10 +234,17 @@
 					m_MotionFramesRootBone = ""
 				},
 				{
+<<<<<<< HEAD
 					m_Animationname = "river_boat_move"
 					m_Filepath = "models/river_boat_move.fbx"
 					m_nStartframe = 0
 					m_nEndframe = 59
+=======
+					m_Animationname = "river_boat_run"
+					m_Filepath = "models/river_boat_run.fbx"
+					m_nStartframe = 0
+					m_nEndframe = 119
+>>>>>>> a562dd7828c7d5bb509a5f63a5b9348cf3e3f54a
 					m_flFps = 24.0
 					m_Loop = 
 					{
@@ -245,6 +261,7 @@
 					}
 					m_bHidden = false
 					m_bDisable = false
+<<<<<<< HEAD
 					m_Activities = 
 					[
 						{
@@ -254,6 +271,28 @@
 					]
 					m_AnimationEvents = [  ]
 					m_MotionFrames = [  ]
+=======
+					m_Activities = [  ]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = 
+					[
+						{
+							m_nFrame = 0
+							m_bExtractTX = true
+							m_bExtractTY = true
+							m_bExtractTZ = false
+							m_bExtractRX = false
+							m_bExtractRY = false
+							m_bExtractRZ = false
+							m_bDiscardTX = false
+							m_bDiscardTY = false
+							m_bDiscardTZ = false
+							m_bDiscardRX = false
+							m_bDiscardRY = false
+							m_bDiscardRZ = false
+						},
+					]
+>>>>>>> a562dd7828c7d5bb509a5f63a5b9348cf3e3f54a
 					m_pIkRules = [  ]
 					m_pAlignAnimation = null
 					m_adjustAnimation = 
