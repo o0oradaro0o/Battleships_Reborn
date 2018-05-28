@@ -277,8 +277,8 @@ end)
 end
 
 function RewardGold(caster, rewardAmount)
-    for i=0,rewardAmount do
-        Timers:CreateTimer( i*.2, function()
+    for i=1,rewardAmount do
+        Timers:CreateTimer( .5+i*.3, function()
             caster.earnedbonusgold=rewardAmount
             caster:ModifyGold(1, false, 1)
             SendOverheadEventMessage(

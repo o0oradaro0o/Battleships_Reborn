@@ -8742,7 +8742,7 @@
     "BaseClass"                     "ability_lua"
     "AbilityType"										"DOTA_ABILITY_TYPE_ULTIMATE"
     "ScriptFile"                    "heroes/gamble.lua"
-    "AbilityTextureName"            "alchemist_goblins_greed"
+    "AbilityTextureName"            "gamble"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"MaxLevel"						"3"
 		"LevelsBetweenUpgrades"			"2"
@@ -9944,7 +9944,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"200 250 300"
+				"radius"					"200 225 250 275"
 			}
 			"02"
 			{
@@ -10469,7 +10469,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"200 250 300"
+				"radius"					"200 225 250 275"
 			}
 			"02"
 			{
@@ -10994,7 +10994,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"200 250 300"
+				"radius"					"200 225 250 275"
 			}
 			"02"
 			{
