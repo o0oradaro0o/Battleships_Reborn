@@ -796,7 +796,7 @@
        "Model" "models/river_boat.vmdl"     // Model.
         "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
 		
-		"ModelScale"        "0.1"
+		"ModelScale"        ".3"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
 	    "AttributeBaseStrength"     "0"
@@ -820,7 +820,7 @@
 		"AbilityLayout"				"4"
 		"Ability1"					"gamble_cherry_one"
 		"Ability2"					"gamble_bell_one"
-		"Ability3"					"gamble_horseshoe_one"
+		"Ability3"					"gamble_seven_one"
 		"Ability4"					"gamble"
 		"Ability5"					"ability_empty"
 		"Ability10"					"ability_empty"

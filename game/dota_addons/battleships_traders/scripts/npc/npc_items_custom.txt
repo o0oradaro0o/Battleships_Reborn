@@ -2540,11 +2540,7 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
-					"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-						"Function"			"poisonSoundFire"
-					}
+
 					"TrackingProjectile"
 					{
 						"Target"

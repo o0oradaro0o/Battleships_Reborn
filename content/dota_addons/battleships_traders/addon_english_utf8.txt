@@ -2606,7 +2606,1054 @@
 		
 		"remove_player"		"<font color='#800000'> A player is being removed from the game. Their gold and 75 percent of their items and boat value will be distributed with the empire gold </font>"
 		"wrap_up"			"<font color='#58ACFA'> Questions? Comments? Bugs? tell us in </font><font color='#BFA300'>/r/dota2bships</font><font color='#58ACFA'> or email us at</font><font color='#BFA300'> dota2bships@gmail.com </font> "
-	
+			// DOTA 2 MODKIT GENERATED TOOLTIPS FOR: battleships_traders
+		// Keys already defined in addon_english.txt are not listed, nor are Modifiers with the property "IsHidden" "1".
+
+		// ******************** HEROES ********************
+		"npc_dota_hero_abaddon"                                                           "Npc Dota Hero Abaddon Battleship8d"
+		"npc_dota_hero_brewmaster"                                                        "Npc Dota Hero Brewmaster Battleship"
+
+		// ******************** UNITS ********************
+		"npc_dota_rainbow_unit"                                                           "Dota Rainbow Unit"
+		"npc_dota_turret"                                                                 "Dota Turret"
+		"npc_dota_creep_upgrade"                                                          "Dota Creep Upgrade"
+		"npc_dota_vision_granter"                                                         "Dota Vision Granter"
+		"npc_dota_rng_ind"                                                                "Dota Rng Ind"
+		"npc_dota_iceberg"                                                                "Dota Iceberg"
+		"npc_dota_side_shop"                                                              "Dota Side Shop"
+		"npc_dota_trap"                                                                   "Dota Trap"
+		"npc_dota_chain"                                                                  "Dota Chain"
+		"npc_dota_shop_ship"                                                              "Dota Shop Ship"
+		"dummy_vision10"                                                                  "Dummy Vision10"
+		"dummy_whale"                                                                     "Dummy Whale"
+		"dummy_vision3000"                                                                "Dummy Vision3000"
+		"dummy_vision800"                                                                 "Dummy Vision800"
+		"dummy_unit_cluster"                                                              "Dummy Unit Cluster"
+		"daralect_vessle"                                                                 "Daralect Vessle"
+		"npc_dota_battle_ind"                                                             "Dota Battle Ind"
+		"npc_dota_booey"                                                                  "Dota Booey"
+		"npc_dota_hero_tiny_battleship8d"                                                 "Dota Hero Tiny Battleship8d"
+		"npc_dota_hero_abaddon_battleship8d"                                              "Dota Hero Abaddon Battleship8d"
+		"npc_dota_hero_puck_battleship8d"                                                 "Dota Hero Puck Battleship8d"
+		"npc_dota_hero_crystal_maiden_battleship8d"                                       "Dota Hero Crystal Maiden Battleship8d"
+		"npc_dota_hero_phantom_lancer_battleship8d"                                       "Dota Hero Phantom Lancer Battleship8d"
+		"npc_dota_hero_tidehunter_battleship8d"                                           "Dota Hero Tidehunter Battleship8d"
+		"npc_dota_hero_rubick_battleship8d"                                               "Dota Hero Rubick Battleship8d"
+		"npc_dota_hero_batrider_battleship8d"                                             "Dota Hero Batrider Battleship8d"
+		"npc_dota_hero_kunkka_bships"                                                     "Dota Hero Kunkka Bships"
+		"npc_dota_hero_morphling_battleship8d"                                            "Dota Hero Morphling Battleship8d"
+		"npc_dota_hero_storm_spirit_battleship8d"                                         "Dota Hero Storm Spirit Battleship8d"
+		"npc_dota_hero_brewmaster_battleship"                                             "Dota Hero Brewmaster Battleship"
+		"npc_dota_hero_nevermore_battleship8d"                                            "Dota Hero Nevermore Battleship8d"
+		"npc_dota_hero_lion_battleship8d"                                                 "Dota Hero Lion Battleship8d"
+		"npc_dota_hero_brewmaster_battleship8d"                                           "Dota Hero Brewmaster Battleship8d"
+		"npc_dota_hero_jakiro_battleship8d"                                               "Dota Hero Jakiro Battleship8d"
+		"npc_dota_hero_zuus_battleship8d"                                                 "Dota Hero Zuus Battleship8d"
+		"npc_dota_hero_magnus_battleship8d"                                               "Dota Hero Magnus Battleship8d"
+		"npc_dota_hero_shredder_battleship8d"                                             "Dota Hero Shredder Battleship8d"
+		"npc_dota_hero_visage_battleship8d"                                               "Dota Hero Visage Battleship8d"
+		"npc_dota_hero_gyrocopter_battleship8d"                                           "Dota Hero Gyrocopter Battleship8d"
+		"npc_dota_hero_spectre_battleship8d"                                              "Dota Hero Spectre Battleship8d"
+		"npc_dota_hero_treant_battleship8d"                                               "Dota Hero Treant Battleship8d"
+		"npc_dota_hero_wisp_battleship8d"                                                 "Dota Hero Wisp Battleship8d"
+		"npc_dota_hero_vengefulspirit_battleship8d"                                       "Dota Hero Vengefulspirit Battleship8d"
+		"npc_dota_hero_enigma_battleship8d"                                               "Dota Hero Enigma Battleship8d"
+		"npc_dota_hero_bane_battleship8d"                                                 "Dota Hero Bane Battleship8d"
+		"npc_dota_hero_tide_coOp"                                                         "Dota Hero Tide CoOp"
+
+		// ******************** ABILITY MODIFIERS ********************
+		"DOTA_Tooltip_start_fire"                                                         "Start Fire"
+		"DOTA_Tooltip_start_fire_Description"                                             ""
+
+		"DOTA_Tooltip_fire_area"                                                          "Fire Area"
+		"DOTA_Tooltip_fire_area_Description"                                              ""
+
+		"DOTA_Tooltip_create_fire_area_aura"                                              "Create Fire Area Aura"
+		"DOTA_Tooltip_create_fire_area_aura_Description"                                  ""
+
+		"DOTA_Tooltip_OnOwnerDied"                                                        "OnOwnerDied"
+		"DOTA_Tooltip_OnOwnerDied_Description"                                            ""
+
+		"DOTA_Tooltip_move_carrier_in"                                                    "Move Carrier In"
+		"DOTA_Tooltip_move_carrier_in_Description"                                        ""
+
+		"DOTA_Tooltip_start_go_back"                                                      "Start Go Back"
+		"DOTA_Tooltip_start_go_back_Description"                                          ""
+
+		"DOTA_Tooltip_kill_self"                                                          "Kill Self"
+		"DOTA_Tooltip_kill_self_Description"                                              ""
+
+		"DOTA_Tooltip_big_boom_recover"                                                   "Big Boom Recover"
+		"DOTA_Tooltip_big_boom_recover_Description"                                       ""
+
+		"DOTA_Tooltip_creator"                                                            "Creator"
+		"DOTA_Tooltip_creator_Description"                                                ""
+
+		"DOTA_Tooltip_rainbow"                                                            "Rainbow"
+		"DOTA_Tooltip_rainbow_Description"                                                ""
+
+		"DOTA_Tooltip_killSelf"                                                           "KillSelf"
+		"DOTA_Tooltip_killSelf_Description"                                               ""
+
+		"DOTA_Tooltip_goHome"                                                             "GoHome"
+		"DOTA_Tooltip_goHome_Description"                                                 ""
+
+		"DOTA_Tooltip_keep_up_good"                                                       "Keep Up Good"
+		"DOTA_Tooltip_keep_up_good_Description"                                           ""
+
+		"DOTA_Tooltip_keep_up_bad"                                                        "Keep Up Bad"
+		"DOTA_Tooltip_keep_up_bad_Description"                                            ""
+
+		"DOTA_Tooltip_keep_up_effect"                                                     "Keep Up Effect"
+		"DOTA_Tooltip_keep_up_effect_Description"                                         ""
+
+		"DOTA_Tooltip_elephant_intimidation"                                              "Elephant Intimidation"
+		"DOTA_Tooltip_elephant_intimidation_Description"                                  ""
+
+		"DOTA_Tooltip_giraffe_grab"                                                       "Giraffe Grab"
+		"DOTA_Tooltip_giraffe_grab_Description"                                           ""
+
+		"DOTA_Tooltip_in_the_hold_finder"                                                 "In The Hold Finder"
+		"DOTA_Tooltip_in_the_hold_finder_Description"                                     ""
+
+		"DOTA_Tooltip_creep_buffer"                                                       "Creep Buffer"
+		"DOTA_Tooltip_creep_buffer_Description"                                           ""
+
+		"DOTA_Tooltip_reflected"                                                          "Reflected"
+		"DOTA_Tooltip_reflected_Description"                                              ""
+
+		"DOTA_Tooltip_speed_aura"                                                         "Speed Aura"
+		"DOTA_Tooltip_speed_aura_Description"                                             ""
+
+		"DOTA_Tooltip_might_stun"                                                         "Might Stun"
+		"DOTA_Tooltip_might_stun_Description"                                             ""
+
+		"DOTA_Tooltip_hp_boost"                                                           "Hp Boost"
+		"DOTA_Tooltip_hp_boost_Description"                                               ""
+
+		"DOTA_Tooltip_blasted"                                                            "Blasted"
+		"DOTA_Tooltip_blasted_Description"                                                ""
+
+		"DOTA_Tooltip_dragon_death_thinker"                                               "Dragon Death Thinker"
+		"DOTA_Tooltip_dragon_death_thinker_Description"                                   ""
+
+		"DOTA_Tooltip_nav_mess"                                                           "Nav Mess"
+		"DOTA_Tooltip_nav_mess_Description"                                               ""
+
+		"DOTA_Tooltip_keep_alive"                                                         "Keep Alive"
+		"DOTA_Tooltip_keep_alive_Description"                                             ""
+
+		"DOTA_Tooltip_alive"                                                              "Alive"
+		"DOTA_Tooltip_alive_Description"                                                  ""
+
+		"DOTA_Tooltip_aura_ice"                                                           "Aura Ice"
+		"DOTA_Tooltip_aura_ice_Description"                                               ""
+
+		"DOTA_Tooltip_ice_aura"                                                           "Ice Aura"
+		"DOTA_Tooltip_ice_aura_Description"                                               ""
+
+		"DOTA_Tooltip_aura_de_armor"                                                      "Aura De Armor"
+		"DOTA_Tooltip_aura_de_armor_Description"                                          ""
+
+		"DOTA_Tooltip_bursting_it"                                                        "Bursting It"
+		"DOTA_Tooltip_bursting_it_Description"                                            ""
+
+		"DOTA_Tooltip_remove_wreaking_it"                                                 "Remove Wreaking It"
+		"DOTA_Tooltip_remove_wreaking_it_Description"                                     ""
+
+		"DOTA_Tooltip_route_set"                                                          "Route Set"
+		"DOTA_Tooltip_route_set_Description"                                              ""
+
+		"DOTA_Tooltip_cease_fire_mod"                                                     "Cease Fire Mod"
+		"DOTA_Tooltip_cease_fire_mod_Description"                                         ""
+
+		"DOTA_Tooltip_trap_bear"                                                          "Trap Bear"
+		"DOTA_Tooltip_trap_bear_Description"                                              ""
+
+		"DOTA_Tooltip_unghost_ship"                                                       "Unghost Ship"
+		"DOTA_Tooltip_unghost_ship_Description"                                           ""
+
+		"DOTA_Tooltip_ghost_ship_creep"                                                   "Ghost Ship Creep"
+		"DOTA_Tooltip_ghost_ship_creep_Description"                                       ""
+
+		"DOTA_Tooltip_terror"                                                             "Terror"
+		"DOTA_Tooltip_terror_Description"                                                 ""
+
+		"DOTA_Tooltip_modifier_reality_rift_datadriven"                                   "Reality Rift Datadriven"
+		"DOTA_Tooltip_modifier_reality_rift_datadriven_Description"                       ""
+
+		"DOTA_Tooltip_whale_effect"                                                       "Whale Effect"
+		"DOTA_Tooltip_whale_effect_Description"                                           ""
+
+		"DOTA_Tooltip_whale_mess"                                                         "Whale Mess"
+		"DOTA_Tooltip_whale_mess_Description"                                             ""
+
+		"DOTA_Tooltip_messed_whale"                                                       "Messed Whale"
+		"DOTA_Tooltip_messed_whale_Description"                                           ""
+
+		"DOTA_Tooltip_gamble_heart_hatches"                                               "Gamble Heart Hatches"
+		"DOTA_Tooltip_gamble_heart_hatches_Description"                                   ""
+
+		"DOTA_Tooltip_gamble_bar_hp"                                                      "Gamble Bar Hp"
+		"DOTA_Tooltip_gamble_bar_hp_Description"                                          ""
+
+		"DOTA_Tooltip_gamble_diamond_armor"                                               "Gamble Diamond Armor"
+		"DOTA_Tooltip_gamble_diamond_armor_Description"                                   ""
+
+		"DOTA_Tooltip_gamble_shoe_speed"                                                  "Gamble Shoe Speed"
+		"DOTA_Tooltip_gamble_shoe_speed_Description"                                      ""
+
+		"DOTA_Tooltip_bell_silence"                                                       "Bell Silence"
+		"DOTA_Tooltip_bell_silence_Description"                                           ""
+
+		"DOTA_Tooltip_trap_chain"                                                         "Trap Chain"
+		"DOTA_Tooltip_trap_chain_Description"                                             ""
+
+		"DOTA_Tooltip_dummy_modifier"                                                     "Dummy Modifier"
+		"DOTA_Tooltip_dummy_modifier_Description"                                         ""
+
+		"DOTA_Tooltip_fight_effect"                                                       "Fight Effect"
+		"DOTA_Tooltip_fight_effect_Description"                                           ""
+
+		"DOTA_Tooltip_battle_show_effect"                                                 "Battle Show Effect"
+		"DOTA_Tooltip_battle_show_effect_Description"                                     ""
+
+		"DOTA_Tooltip_hpBonus"                                                            "HpBonus"
+		"DOTA_Tooltip_hpBonus_Description"                                                ""
+
+		"DOTA_Tooltip_noBackdoor"                                                         "NoBackdoor"
+		"DOTA_Tooltip_noBackdoor_Description"                                             ""
+
+
+		// ******************** ITEM MODIFIERS ********************
+		"DOTA_Tooltip_extra_speed"                                                        "Extra Speed"
+		"DOTA_Tooltip_extra_speed_Description"                                            ""
+
+		"DOTA_Tooltip_item_poison_dot_show"                                               "Item Poison Dot Show"
+		"DOTA_Tooltip_item_poison_dot_show_Description"                                   ""
+
+		"DOTA_Tooltip_create_fire_area_aura_1"                                            "Create Fire Area Aura 1"
+		"DOTA_Tooltip_create_fire_area_aura_1_Description"                                ""
+
+		"DOTA_Tooltip_item_ice_slow_show"                                                 "Item Ice Slow Show"
+		"DOTA_Tooltip_item_ice_slow_show_Description"                                     ""
+
+		"DOTA_Tooltip_item_coal_bow_stunned"                                              "Item Coal Bow Stunned"
+		"DOTA_Tooltip_item_coal_bow_stunned_Description"                                  ""
+
+		"DOTA_Tooltip_item_plasma_bow_dearmored"                                          "Item Plasma Bow Dearmored"
+		"DOTA_Tooltip_item_plasma_bow_dearmored_Description"                              ""
+
+		"DOTA_Tooltip_create_fire_area_aura_2"                                            "Create Fire Area Aura 2"
+		"DOTA_Tooltip_create_fire_area_aura_2_Description"                                ""
+
+		"DOTA_Tooltip_item_coal_two_bow_stunned"                                          "Item Coal Two Bow Stunned"
+		"DOTA_Tooltip_item_coal_two_bow_stunned_Description"                              ""
+
+		"DOTA_Tooltip_item_plasma_two_bow_dearmored"                                      "Item Plasma Two Bow Dearmored"
+		"DOTA_Tooltip_item_plasma_two_bow_dearmored_Description"                          ""
+
+		"DOTA_Tooltip_item_caulk_two_bow_doubled_shooting"                                "Item Caulk Two Bow Doubled Shooting"
+		"DOTA_Tooltip_item_caulk_two_bow_doubled_shooting_Description"                    ""
+
+		"DOTA_Tooltip_create_fire_area_aura_3"                                            "Create Fire Area Aura 3"
+		"DOTA_Tooltip_create_fire_area_aura_3_Description"                                ""
+
+		"DOTA_Tooltip_item_coal_three_bow_stunned"                                        "Item Coal Three Bow Stunned"
+		"DOTA_Tooltip_item_coal_three_bow_stunned_Description"                            ""
+
+		"DOTA_Tooltip_item_plasma_three_bow_dearmored"                                    "Item Plasma Three Bow Dearmored"
+		"DOTA_Tooltip_item_plasma_three_bow_dearmored_Description"                        ""
+
+		"DOTA_Tooltip_item_caulk_three_bow_doubled_shooting"                              "Item Caulk Three Bow Doubled Shooting"
+		"DOTA_Tooltip_item_caulk_three_bow_doubled_shooting_Description"                  ""
+
+		"DOTA_Tooltip_create_fire_area_aura_4"                                            "Create Fire Area Aura 4"
+		"DOTA_Tooltip_create_fire_area_aura_4_Description"                                ""
+
+		"DOTA_Tooltip_item_coal_ult_bow_stunned"                                          "Item Coal Ult Bow Stunned"
+		"DOTA_Tooltip_item_coal_ult_bow_stunned_Description"                              ""
+
+		"DOTA_Tooltip_item_plasma_ult_bow_dearmored"                                      "Item Plasma Ult Bow Dearmored"
+		"DOTA_Tooltip_item_plasma_ult_bow_dearmored_Description"                          ""
+
+		"DOTA_Tooltip_monkey_buisness_item"                                               "Monkey Buisness Item"
+		"DOTA_Tooltip_monkey_buisness_item_Description"                                   ""
+
+		"DOTA_Tooltip_monkey_buisness_rest_item"                                          "Monkey Buisness Rest Item"
+		"DOTA_Tooltip_monkey_buisness_rest_item_Description"                              ""
+
+		"DOTA_Tooltip_pergatory_perm"                                                     "Pergatory Perm"
+		"DOTA_Tooltip_pergatory_perm_Description"                                         ""
+
+		"DOTA_Tooltip_cease_fire_mod"                                                     "Cease Fire Mod"
+		"DOTA_Tooltip_cease_fire_mod_Description"                                         ""
+
+
+		// ******************** ABILITIES ********************
+		"DOTA_Tooltip_ability_pistols_battleship_tooltip_range"                           "TOOLTIP RANGE:"
+
+		"DOTA_Tooltip_ability_kunkka_torrent_bships_radius"                               "RADIUS:"
+		"DOTA_Tooltip_ability_kunkka_torrent_bships_movespeed_bonus"                      "MOVESPEED BONUS:"
+
+		"DOTA_Tooltip_ability_kunkka_x_marks_the_spot_bships_fow_range"                   "FOW RANGE:"
+		"DOTA_Tooltip_ability_kunkka_x_marks_the_spot_bships_fow_duration"                "FOW DURATION:"
+
+		"DOTA_Tooltip_ability_kunkka_return_bships"                                       "Kunkka Return Bships"
+		"DOTA_Tooltip_ability_kunkka_return_bships_Description"                           ""
+
+		"DOTA_Tooltip_ability_kunkka_ghostship_bships_tooltip_delay"                      "TOOLTIP DELAY:"
+		"DOTA_Tooltip_ability_kunkka_ghostship_bships_movespeed_bonus"                    "MOVESPEED BONUS:"
+		"DOTA_Tooltip_ability_kunkka_ghostship_bships_buff_duration"                      "BUFF DURATION:"
+		"DOTA_Tooltip_ability_kunkka_ghostship_bships_ghostship_speed"                    "GHOSTSHIP SPEED:"
+
+		"DOTA_Tooltip_ability_dive_battleship_puck"                                       "Dive Battleship Puck"
+		"DOTA_Tooltip_ability_dive_battleship_puck_Description"                           ""
+		"DOTA_Tooltip_ability_dive_battleship_puck_duration"                              "DURATION:"
+
+		"DOTA_Tooltip_ability_ramming_speed_battleship_turn_rate"                         "TURN RATE:"
+
+		"DOTA_Tooltip_ability_meepo_earthbind_battleship_radius"                          "RADIUS:"
+		"DOTA_Tooltip_ability_meepo_earthbind_battleship_speed"                           "SPEED:"
+		"DOTA_Tooltip_ability_meepo_earthbind_battleship_tooltip_range"                   "TOOLTIP RANGE:"
+
+		"DOTA_Tooltip_ability_sniper_shrapnel_battleship_shrapnel_damage"                 "SHRAPNEL DAMAGE:"
+		"DOTA_Tooltip_ability_sniper_shrapnel_battleship_LinkedSpecialBonus"              "LINKEDSPECIALBONUS:"
+		"DOTA_Tooltip_ability_sniper_shrapnel_battleship_damage_delay"                    "DAMAGE DELAY:"
+		"DOTA_Tooltip_ability_sniper_shrapnel_battleship_max_charges"                     "MAX CHARGES:"
+		"DOTA_Tooltip_ability_sniper_shrapnel_battleship_LinkedSpecialBonus"              "LINKEDSPECIALBONUS:"
+		"DOTA_Tooltip_ability_sniper_shrapnel_battleship_charge_restore_time"             "CHARGE RESTORE TIME:"
+
+		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_hook_width"                      "HOOK WIDTH:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_vision_radius"                   "VISION RADIUS:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_vision_duration"                 "VISION DURATION:"
+
+		"DOTA_Tooltip_ability_pudge_meat_hook_lua"                                        "Pudge Meat Hook Lua"
+		"DOTA_Tooltip_ability_pudge_meat_hook_lua_Description"                            ""
+		"DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_speed"                             "HOOK SPEED:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_width"                             "HOOK WIDTH:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_distance"                          "HOOK DISTANCE:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_lua_vision_radius"                          "VISION RADIUS:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_lua_vision_duration"                        "VISION DURATION:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_followthrough_constant"            "HOOK FOLLOWTHROUGH CONSTANT:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_damage"                            "HOOK DAMAGE:"
+
+		"DOTA_Tooltip_ability_tidehunter_gush_battleship_projectile_speed"                "PROJECTILE SPEED:"
+
+		"DOTA_Tooltip_ability_riki_blink_strike_battleship_bonus_damage"                  "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_riki_blink_strike_battleship_max_charges"                   "MAX CHARGES:"
+		"DOTA_Tooltip_ability_riki_blink_strike_battleship_charge_restore_time"           "CHARGE RESTORE TIME:"
+
+		"DOTA_Tooltip_ability_spirit_breaker_charge_of_darkness_battleship_bash_radius"   "BASH RADIUS:"
+		"DOTA_Tooltip_ability_spirit_breaker_charge_of_darkness_battleship_vision_duration"		"VISION DURATION:"
+
+		"DOTA_Tooltip_ability_gun_it_hero_damage"                                         "HERO DAMAGE:"
+
+		"DOTA_Tooltip_ability_gyrocopter_call_down_battleship_range_scepter"              "RANGE SCEPTER:"
+		"DOTA_Tooltip_ability_gyrocopter_call_down_battleship_damage_second_scepter"      "DAMAGE SECOND SCEPTER:"
+
+		"DOTA_Tooltip_ability_aircraft_bomb_move_duration"                                "MOVE DURATION:"
+		"DOTA_Tooltip_ability_aircraft_bomb_pull_duration"                                "PULL DURATION:"
+
+		"DOTA_Tooltip_ability_repair_aura"                                                "Repair Aura"
+		"DOTA_Tooltip_ability_repair_aura_Description"                                    ""
+
+		"DOTA_Tooltip_ability_Pillage_damage_per_second"                                  "DAMAGE PER SECOND:"
+
+		"DOTA_Tooltip_ability_hit_battleship_vision_radius"                               "VISION RADIUS:"
+
+		"DOTA_Tooltip_ability_terrorblade_conjure_image_battleship_illusion_outgoing_damage"		"ILLUSION OUTGOING DAMAGE:"
+		"DOTA_Tooltip_ability_terrorblade_conjure_image_battleship_illusion_outgoing_tooltip"		"ILLUSION OUTGOING TOOLTIP:"
+
+		"DOTA_Tooltip_ability_rainbow_cast_battleship"                                    "Rainbow Cast Battleship"
+		"DOTA_Tooltip_ability_rainbow_cast_battleship_Description"                        ""
+
+		"DOTA_Tooltip_ability_mountain_battleship_ele_armor_reduction"                    "ELE ARMOR REDUCTION:"
+
+		"DOTA_Tooltip_ability_plane_fly_battleship_tick_interval"                         "TICK INTERVAL:"
+		"DOTA_Tooltip_ability_plane_fly_battleship_tree_radius"                           "TREE RADIUS:"
+
+		"DOTA_Tooltip_ability_batrider_firefly_battleship"                                "Batrider Firefly Battleship"
+		"DOTA_Tooltip_ability_batrider_firefly_battleship_Description"                    ""
+		"DOTA_Tooltip_ability_batrider_firefly_battleship_damage_per_second"              "DAMAGE PER SECOND:"
+		"DOTA_Tooltip_ability_batrider_firefly_battleship_radius"                         "RADIUS:"
+		"DOTA_Tooltip_ability_batrider_firefly_battleship_duration"                       "DURATION:"
+		"DOTA_Tooltip_ability_batrider_firefly_battleship_tick_interval"                  "TICK INTERVAL:"
+		"DOTA_Tooltip_ability_batrider_firefly_battleship_tree_radius"                    "TREE RADIUS:"
+
+		"DOTA_Tooltip_ability_mirana_leap_battlsehip_leap_acceleration"                   "LEAP ACCELERATION:"
+		"DOTA_Tooltip_ability_mirana_leap_battlsehip_leap_speedbonus_as"                  "LEAP SPEEDBONUS AS:"
+		"DOTA_Tooltip_ability_mirana_leap_battlsehip_LinkedSpecialBonus"                  "LINKEDSPECIALBONUS:"
+		"DOTA_Tooltip_ability_mirana_leap_battlsehip_leap_bonus_duration"                 "LEAP BONUS DURATION:"
+		"DOTA_Tooltip_ability_mirana_leap_battlsehip_max_charges"                         "MAX CHARGES:"
+		"DOTA_Tooltip_ability_mirana_leap_battlsehip_charge_restore_time"                 "CHARGE RESTORE TIME:"
+
+		"DOTA_Tooltip_ability_windrunner_powershot_battleship_powershot_damage"           "POWERSHOT DAMAGE:"
+		"DOTA_Tooltip_ability_windrunner_powershot_battleship_LinkedSpecialBonus"         "LINKEDSPECIALBONUS:"
+		"DOTA_Tooltip_ability_windrunner_powershot_battleship_damage_reduction"           "DAMAGE REDUCTION:"
+		"DOTA_Tooltip_ability_windrunner_powershot_battleship_arrow_width"                "ARROW WIDTH:"
+		"DOTA_Tooltip_ability_windrunner_powershot_battleship_arrow_speed"                "ARROW SPEED:"
+		"DOTA_Tooltip_ability_windrunner_powershot_battleship_tree_width"                 "TREE WIDTH:"
+
+		"DOTA_Tooltip_ability_antimage_blink_battleship_min_blink_range"                  "MIN BLINK RANGE:"
+
+		"DOTA_Tooltip_ability_keeping_up_battleship_movment_slow"                         "MOVMENT SLOW:"
+
+		"DOTA_Tooltip_ability_Over_And_Out_move_duration"                                 "MOVE DURATION:"
+
+		"DOTA_Tooltip_ability_root_turret"                                                "Root Turret"
+		"DOTA_Tooltip_ability_root_turret_Description"                                    ""
+
+		"DOTA_Tooltip_ability_shove_battleship_turn_rate"                                 "TURN RATE:"
+
+		"DOTA_Tooltip_ability_creep_buff"                                                 "Creep Buff"
+		"DOTA_Tooltip_ability_creep_buff_Description"                                     ""
+
+		"DOTA_Tooltip_ability_puck_waning_rift_battleship_radius"                         "RADIUS:"
+
+		"DOTA_Tooltip_ability_shadow_shaman_shackles_battleship_tick_interval"            "TICK INTERVAL:"
+
+		"DOTA_Tooltip_ability_dragon_battleship_radius"                                   "RADIUS:"
+
+		"DOTA_Tooltip_ability_firework_battleship_range"                                  "RANGE:"
+
+		"DOTA_Tooltip_ability_kill_rng_on_death"                                          "Kill Rng On Death"
+		"DOTA_Tooltip_ability_kill_rng_on_death_Description"                              ""
+
+		"DOTA_Tooltip_ability_jakiro_ice_path_battleship_path_delay"                      "PATH DELAY:"
+		"DOTA_Tooltip_ability_jakiro_ice_path_battleship_path_radius"                     "PATH RADIUS:"
+
+		"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_explosion_interval"		"EXPLOSION INTERVAL:"
+		"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_attack_slow"       "ATTACK SLOW:"
+		"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_slow_duration"     "SLOW DURATION:"
+		"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_explosion_min_dist"		"EXPLOSION MIN DIST:"
+		"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_explosion_max_dist"		"EXPLOSION MAX DIST:"
+		"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_damage_scepter"    "DAMAGE SCEPTER:"
+		"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_movespeed_slow_scepter"		"MOVESPEED SLOW SCEPTER:"
+		"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_attack_slow_scepter"		"ATTACK SLOW SCEPTER:"
+
+		"DOTA_Tooltip_ability_root_iceberg"                                               "Root Iceberg"
+		"DOTA_Tooltip_ability_root_iceberg_Description"                                   ""
+
+		"DOTA_Tooltip_ability_armor_remover"                                              "Armor Remover"
+		"DOTA_Tooltip_ability_armor_remover_Description"                                  ""
+		"DOTA_Tooltip_ability_armor_remover_armor_debuff"                                 "ARMOR DEBUFF:"
+
+		"DOTA_Tooltip_ability_tidehunter_ravage_battleship"                               "Tidehunter Ravage Battleship"
+		"DOTA_Tooltip_ability_tidehunter_ravage_battleship_Description"                   ""
+		"DOTA_Tooltip_ability_tidehunter_ravage_battleship_radius"                        "RADIUS:"
+		"DOTA_Tooltip_ability_tidehunter_ravage_battleship_speed"                         "SPEED:"
+		"DOTA_Tooltip_ability_tidehunter_ravage_battleship_duration"                      "DURATION:"
+
+		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide"                            "Pudge Meat Hook Battleship Tide"
+		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_Description"                ""
+		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_hook_speed"                 "HOOK SPEED:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_hook_width"                 "HOOK WIDTH:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_hook_distance"              "HOOK DISTANCE:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_vision_radius"              "VISION RADIUS:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_vision_duration"            "VISION DURATION:"
+
+		"DOTA_Tooltip_ability_tide_wep_battleship"                                        "Tide Wep Battleship"
+		"DOTA_Tooltip_ability_tide_wep_battleship_Description"                            ""
+		"DOTA_Tooltip_ability_tide_wep_battleship_fun_bonus_move_speed"                   "FUN BONUS MOVE SPEED:"
+
+		"DOTA_Tooltip_ability_engine_burst_hero_damage"                                   "HERO DAMAGE:"
+
+		"DOTA_Tooltip_ability_panic_battleship_panic_duration"                            "PANIC DURATION:"
+
+		"DOTA_Tooltip_ability_slark_shadow_dance_battleship"                              "Slark Shadow Dance Battleship"
+		"DOTA_Tooltip_ability_slark_shadow_dance_battleship_Description"                  ""
+		"DOTA_Tooltip_ability_slark_shadow_dance_battleship_duration"                     "DURATION:"
+		"DOTA_Tooltip_ability_slark_shadow_dance_battleship_fade_time"                    "FADE TIME:"
+		"DOTA_Tooltip_ability_slark_shadow_dance_battleship_bonus_movement_speed"         "BONUS MOVEMENT SPEED:"
+		"DOTA_Tooltip_ability_slark_shadow_dance_battleship_bonus_regen_pct"              "BONUS REGEN PCT:"
+		"DOTA_Tooltip_ability_slark_shadow_dance_battleship_activation_delay"             "ACTIVATION DELAY:"
+		"DOTA_Tooltip_ability_slark_shadow_dance_battleship_neutral_disable"              "NEUTRAL DISABLE:"
+
+		"DOTA_Tooltip_ability_building_frozen"                                            "Building Frozen"
+		"DOTA_Tooltip_ability_building_frozen_Description"                                ""
+
+		"DOTA_Tooltip_ability_building_hexed"                                             "Building Hexed"
+		"DOTA_Tooltip_ability_building_hexed_Description"                                 ""
+
+		"DOTA_Tooltip_ability_ghost_ship_creep"                                           "Ghost Ship Creep"
+		"DOTA_Tooltip_ability_ghost_ship_creep_Description"                               ""
+		"DOTA_Tooltip_ability_ghost_ship_creep_hoop_bonus_armor"                          "HOOP BONUS ARMOR:"
+		"DOTA_Tooltip_ability_ghost_ship_creep_health_regen"                              "HEALTH REGEN:"
+
+		"DOTA_Tooltip_ability_harpoon_battleship_bonus_damage"                            "BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_harpoon_battleship_bonus_duration"                          "BONUS DURATION:"
+		"DOTA_Tooltip_ability_harpoon_battleship_illusion_search_radius"                  "ILLUSION SEARCH RADIUS:"
+
+		"DOTA_Tooltip_ability_wale_bait_battleship_range"                                 "RANGE:"
+
+		"DOTA_Tooltip_ability_root_whale"                                                 "Root Whale"
+		"DOTA_Tooltip_ability_root_whale_Description"                                     ""
+
+		"DOTA_Tooltip_ability_dump_cargo_base_speed"                                      "BASE SPEED:"
+
+		"DOTA_Tooltip_ability_gamble"                                                     "Gamble"
+		"DOTA_Tooltip_ability_gamble_Description"                                         ""
+		"DOTA_Tooltip_ability_gamble_lesser_reward"                                       "LESSER REWARD:"
+		"DOTA_Tooltip_ability_gamble_greater_reward"                                      "GREATER REWARD:"
+
+		"DOTA_Tooltip_ability_gamble_spin1"                                               "Gamble Spin1"
+		"DOTA_Tooltip_ability_gamble_spin1_Description"                                   ""
+
+		"DOTA_Tooltip_ability_gamble_spin2"                                               "Gamble Spin2"
+		"DOTA_Tooltip_ability_gamble_spin2_Description"                                   ""
+
+		"DOTA_Tooltip_ability_gamble_spin3"                                               "Gamble Spin3"
+		"DOTA_Tooltip_ability_gamble_spin3_Description"                                   ""
+
+		"DOTA_Tooltip_ability_gamble_heart"                                               "Gamble Heart"
+		"DOTA_Tooltip_ability_gamble_heart_Description"                                   ""
+		"DOTA_Tooltip_ability_gamble_heart_health_regen"                                  "HEALTH REGEN:"
+
+		"DOTA_Tooltip_ability_gamble_bar"                                                 "Gamble Bar"
+		"DOTA_Tooltip_ability_gamble_bar_Description"                                     ""
+		"DOTA_Tooltip_ability_gamble_bar_health_bonus"                                    "HEALTH BONUS:"
+
+		"DOTA_Tooltip_ability_gamble_diamond"                                             "Gamble Diamond"
+		"DOTA_Tooltip_ability_gamble_diamond_Description"                                 ""
+		"DOTA_Tooltip_ability_gamble_diamond_armor_bonus"                                 "ARMOR BONUS:"
+
+		"DOTA_Tooltip_ability_gamble_horseshoe"                                           "Gamble Horseshoe"
+		"DOTA_Tooltip_ability_gamble_horseshoe_Description"                               ""
+		"DOTA_Tooltip_ability_gamble_horseshoe_move_bonus"                                "MOVE BONUS:"
+
+		"DOTA_Tooltip_ability_gamble_bell"                                                "Gamble Bell"
+		"DOTA_Tooltip_ability_gamble_bell_Description"                                    ""
+		"DOTA_Tooltip_ability_gamble_bell_duration"                                       "DURATION:"
+
+		"DOTA_Tooltip_ability_dummy_passive_fly"                                          "Dummy Passive Fly"
+		"DOTA_Tooltip_ability_dummy_passive_fly_Description"                              ""
+
+		"DOTA_Tooltip_ability_dummy_passive_fly"                                          "Dummy Passive Fly"
+		"DOTA_Tooltip_ability_dummy_passive_fly_Description"                              ""
+
+		"DOTA_Tooltip_ability_dummy_explode"                                              "Dummy Explode"
+		"DOTA_Tooltip_ability_dummy_explode_Description"                                  ""
+		"DOTA_Tooltip_ability_dummy_explode_fire_rate"                                    "FIRE RATE:"
+		"DOTA_Tooltip_ability_dummy_explode_dmg"                                          "DMG:"
+
+		"DOTA_Tooltip_ability_dummy_explode_two"                                          "Dummy Explode Two"
+		"DOTA_Tooltip_ability_dummy_explode_two_Description"                              ""
+		"DOTA_Tooltip_ability_dummy_explode_two_fire_rate"                                "FIRE RATE:"
+		"DOTA_Tooltip_ability_dummy_explode_two_dmg"                                      "DMG:"
+
+		"DOTA_Tooltip_ability_give_all_vision"                                            "Give All Vision"
+		"DOTA_Tooltip_ability_give_all_vision_Description"                                ""
+		"DOTA_Tooltip_ability_give_all_vision_hoop_bonus_armor"                           "HOOP BONUS ARMOR:"
+		"DOTA_Tooltip_ability_give_all_vision_health_regen"                               "HEALTH REGEN:"
+
+		"DOTA_Tooltip_ability_battle_effect"                                              "Battle Effect"
+		"DOTA_Tooltip_ability_battle_effect_Description"                                  ""
+
+		"DOTA_Tooltip_ability_battle_effect"                                              "Battle Effect"
+		"DOTA_Tooltip_ability_battle_effect_Description"                                  ""
+
+		"DOTA_Tooltip_ability_anti_backdoor"                                              "Anti Backdoor"
+		"DOTA_Tooltip_ability_anti_backdoor_Description"                                  ""
+
+
+		// ******************** ITEMS ********************
+		"DOTA_Tooltip_ability_item_recipe_fluff"                                          "Recipe Fluff"
+		"DOTA_Tooltip_ability_item_recipe_fluff_Description"                              ""
+
+		"DOTA_Tooltip_ability_item_recipe_fluff2"                                         "Recipe Fluff2"
+		"DOTA_Tooltip_ability_item_recipe_fluff2_Description"                             ""
+
+		"DOTA_Tooltip_ability_item_recipe_fluff3"                                         "Recipe Fluff3"
+		"DOTA_Tooltip_ability_item_recipe_fluff3_Description"                             ""
+
+		"DOTA_Tooltip_ability_item_recipe_fluff4"                                         "Recipe Fluff4"
+		"DOTA_Tooltip_ability_item_recipe_fluff4_Description"                             ""
+
+		"DOTA_Tooltip_ability_item_recipe_fluff5"                                         "Recipe Fluff5"
+		"DOTA_Tooltip_ability_item_recipe_fluff5_Description"                             ""
+
+		"DOTA_Tooltip_ability_item_recipe_fluff6"                                         "Recipe Fluff6"
+		"DOTA_Tooltip_ability_item_recipe_fluff6_Description"                             ""
+
+		"DOTA_Tooltip_ability_item_recipe_fluff7"                                         "Recipe Fluff7"
+		"DOTA_Tooltip_ability_item_recipe_fluff7_Description"                             ""
+
+		"DOTA_Tooltip_ability_item_recipe_fluff8"                                         "Recipe Fluff8"
+		"DOTA_Tooltip_ability_item_recipe_fluff8_Description"                             ""
+
+		"DOTA_Tooltip_ability_item_recipe_fluff9"                                         "Recipe Fluff9"
+		"DOTA_Tooltip_ability_item_recipe_fluff9_Description"                             ""
+
+		"DOTA_Tooltip_ability_SideShop"                                                   "SideShop"
+		"DOTA_Tooltip_ability_SideShop_Description"                                       ""
+
+		"DOTA_Tooltip_ability_SideShop"                                                   "SideShop"
+		"DOTA_Tooltip_ability_SideShop_Description"                                       ""
+
+		"DOTA_Tooltip_ability_item_recipe_poison_bow_doubled"                             "Recipe Poison Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_poison_bow_doubled_Description"                 ""
+
+		"DOTA_Tooltip_ability_item_recipe_fire_bow_doubled"                               "Recipe Fire Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_fire_bow_doubled_Description"                   ""
+
+		"DOTA_Tooltip_ability_item_recipe_ice_bow_doubled"                                "Recipe Ice Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_ice_bow_doubled_Description"                    ""
+
+		"DOTA_Tooltip_ability_item_recipe_wind_bow_doubled"                               "Recipe Wind Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_wind_bow_doubled_Description"                   ""
+
+		"DOTA_Tooltip_ability_item_recipe_light_bow_doubled"                              "Recipe Light Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_light_bow_doubled_Description"                  ""
+
+		"DOTA_Tooltip_ability_item_recipe_coal_bow_doubled"                               "Recipe Coal Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_coal_bow_doubled_Description"                   ""
+
+		"DOTA_Tooltip_ability_item_recipe_plasma_bow_doubled"                             "Recipe Plasma Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_plasma_bow_doubled_Description"                 ""
+
+		"DOTA_Tooltip_ability_item_recipe_spin_bow_doubled"                               "Recipe Spin Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_spin_bow_doubled_Description"                   ""
+
+		"DOTA_Tooltip_ability_item_recipe_caulk_bow_doubled"                              "Recipe Caulk Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_caulk_bow_doubled_Description"                  ""
+
+		"DOTA_Tooltip_ability_item_recipe_breach_bow_doubled"                             "Recipe Breach Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_breach_bow_doubled_Description"                 ""
+
+		"DOTA_Tooltip_ability_item_recipe_chaos_bow_doubled"                              "Recipe Chaos Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_chaos_bow_doubled_Description"                  ""
+
+		"DOTA_Tooltip_ability_item_recipe_poison_two_bow_doubled"                         "Recipe Poison Two Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_poison_two_bow_doubled_Description"             ""
+
+		"DOTA_Tooltip_ability_item_recipe_fire_two_bow_doubled"                           "Recipe Fire Two Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_fire_two_bow_doubled_Description"               ""
+
+		"DOTA_Tooltip_ability_item_recipe_ice_two_bow_doubled"                            "Recipe Ice Two Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_ice_two_bow_doubled_Description"                ""
+
+		"DOTA_Tooltip_ability_item_recipe_wind_two_bow_doubled"                           "Recipe Wind Two Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_wind_two_bow_doubled_Description"               ""
+
+		"DOTA_Tooltip_ability_item_recipe_light_two_bow_doubled"                          "Recipe Light Two Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_light_two_bow_doubled_Description"              ""
+
+		"DOTA_Tooltip_ability_item_recipe_coal_two_bow_doubled"                           "Recipe Coal Two Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_coal_two_bow_doubled_Description"               ""
+
+		"DOTA_Tooltip_ability_item_recipe_plasma_two_bow_doubled"                         "Recipe Plasma Two Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_plasma_two_bow_doubled_Description"             ""
+
+		"DOTA_Tooltip_ability_item_recipe_spin_two_bow_doubled"                           "Recipe Spin Two Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_spin_two_bow_doubled_Description"               ""
+
+		"DOTA_Tooltip_ability_item_recipe_caulk_two_bow_doubled"                          "Recipe Caulk Two Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_caulk_two_bow_doubled_Description"              ""
+
+		"DOTA_Tooltip_ability_item_recipe_breach_two_bow_doubled"                         "Recipe Breach Two Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_breach_two_bow_doubled_Description"             ""
+
+		"DOTA_Tooltip_ability_item_recipe_chaos_two_bow_doubled"                          "Recipe Chaos Two Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_chaos_two_bow_doubled_Description"              ""
+
+		"DOTA_Tooltip_ability_item_recipe_poison_three_bow_doubled"                       "Recipe Poison Three Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_poison_three_bow_doubled_Description"           ""
+
+		"DOTA_Tooltip_ability_item_recipe_fire_three_bow_doubled"                         "Recipe Fire Three Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_fire_three_bow_doubled_Description"             ""
+
+		"DOTA_Tooltip_ability_item_recipe_ice_three_bow_doubled"                          "Recipe Ice Three Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_ice_three_bow_doubled_Description"              ""
+
+		"DOTA_Tooltip_ability_item_recipe_wind_three_bow_doubled"                         "Recipe Wind Three Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_wind_three_bow_doubled_Description"             ""
+
+		"DOTA_Tooltip_ability_item_recipe_light_three_bow_doubled"                        "Recipe Light Three Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_light_three_bow_doubled_Description"            ""
+
+		"DOTA_Tooltip_ability_item_recipe_coal_three_bow_doubled"                         "Recipe Coal Three Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_coal_three_bow_doubled_Description"             ""
+
+		"DOTA_Tooltip_ability_item_recipe_plasma_three_bow_doubled"                       "Recipe Plasma Three Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_plasma_three_bow_doubled_Description"           ""
+
+		"DOTA_Tooltip_ability_item_recipe_spin_three_bow_doubled"                         "Recipe Spin Three Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_spin_three_bow_doubled_Description"             ""
+
+		"DOTA_Tooltip_ability_item_recipe_caulk_three_bow_doubled"                        "Recipe Caulk Three Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_caulk_three_bow_doubled_Description"            ""
+
+		"DOTA_Tooltip_ability_item_recipe_breach_three_bow_doubled"                       "Recipe Breach Three Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_breach_three_bow_doubled_Description"           ""
+
+		"DOTA_Tooltip_ability_item_recipe_chaos_three_bow_doubled"                        "Recipe Chaos Three Bow Doubled"
+		"DOTA_Tooltip_ability_item_recipe_chaos_three_bow_doubled_Description"            ""
+
+		"DOTA_Tooltip_ability_item_recipe_poison_ult_bow"                                 "Recipe Poison Ult Bow"
+		"DOTA_Tooltip_ability_item_recipe_poison_ult_bow_Description"                     ""
+
+		"DOTA_Tooltip_ability_item_recipe_fire_ult_bow"                                   "Recipe Fire Ult Bow"
+		"DOTA_Tooltip_ability_item_recipe_fire_ult_bow_Description"                       ""
+
+		"DOTA_Tooltip_ability_item_recipe_ice_ult_bow"                                    "Recipe Ice Ult Bow"
+		"DOTA_Tooltip_ability_item_recipe_ice_ult_bow_Description"                        ""
+
+		"DOTA_Tooltip_ability_item_recipe_wind_ult_bow"                                   "Recipe Wind Ult Bow"
+		"DOTA_Tooltip_ability_item_recipe_wind_ult_bow_Description"                       ""
+
+		"DOTA_Tooltip_ability_item_recipe_light_ult_bow"                                  "Recipe Light Ult Bow"
+		"DOTA_Tooltip_ability_item_recipe_light_ult_bow_Description"                      ""
+
+		"DOTA_Tooltip_ability_item_recipe_coal_ult_bow"                                   "Recipe Coal Ult Bow"
+		"DOTA_Tooltip_ability_item_recipe_coal_ult_bow_Description"                       ""
+
+		"DOTA_Tooltip_ability_item_recipe_plasma_ult_bow"                                 "Recipe Plasma Ult Bow"
+		"DOTA_Tooltip_ability_item_recipe_plasma_ult_bow_Description"                     ""
+
+		"DOTA_Tooltip_ability_item_recipe_spin_ult_bow"                                   "Recipe Spin Ult Bow"
+		"DOTA_Tooltip_ability_item_recipe_spin_ult_bow_Description"                       ""
+
+		"DOTA_Tooltip_ability_item_recipe_caulk_ult_bow"                                  "Recipe Caulk Ult Bow"
+		"DOTA_Tooltip_ability_item_recipe_caulk_ult_bow_Description"                      ""
+
+		"DOTA_Tooltip_ability_item_recipe_breach_ult_bow"                                 "Recipe Breach Ult Bow"
+		"DOTA_Tooltip_ability_item_recipe_breach_ult_bow_Description"                     ""
+
+		"DOTA_Tooltip_ability_item_recipe_chaos_ult_bow"                                  "Recipe Chaos Ult Bow"
+		"DOTA_Tooltip_ability_item_recipe_chaos_ult_bow_Description"                      ""
+
+		"DOTA_Tooltip_ability_item_sail_one_remove"                                       "REMOVE:"
+		"DOTA_Tooltip_ability_item_sail_one_bonus_speed"                                  "BONUS SPEED:"
+
+		"DOTA_Tooltip_ability_item_sail_two_remove"                                       "REMOVE:"
+		"DOTA_Tooltip_ability_item_sail_two_bonus_speed"                                  "BONUS SPEED:"
+
+		"DOTA_Tooltip_ability_item_sail_three_remove"                                     "REMOVE:"
+		"DOTA_Tooltip_ability_item_sail_three_bonus_speed"                                "BONUS SPEED:"
+
+		"DOTA_Tooltip_ability_item_sail_four_remove"                                      "REMOVE:"
+		"DOTA_Tooltip_ability_item_sail_four_bonus_speed"                                 "BONUS SPEED:"
+
+		"DOTA_Tooltip_ability_item_hull_one_bonus_movement"                               "BONUS MOVEMENT:"
+
+		"DOTA_Tooltip_ability_item_hull_two_bonus_movement"                               "BONUS MOVEMENT:"
+
+		"DOTA_Tooltip_ability_item_hull_three_bonus_movement"                             "BONUS MOVEMENT:"
+
+		"DOTA_Tooltip_ability_item_hull_four_bonus_movement"                              "BONUS MOVEMENT:"
+
+		"DOTA_Tooltip_ability_AbilityTextureName"                                         "AbilityTextureName"
+		"DOTA_Tooltip_ability_AbilityTextureName_Description"                             ""
+
+		"DOTA_Tooltip_ability_AbilityCastAnimation"                                       "AbilityCastAnimation"
+		"DOTA_Tooltip_ability_AbilityCastAnimation_Description"                           ""
+
+		"DOTA_Tooltip_ability_item_wood_one_heal_amount"                                  "HEAL AMOUNT:"
+
+		"DOTA_Tooltip_ability_item_wood_two_heal_amount"                                  "HEAL AMOUNT:"
+
+		"DOTA_Tooltip_ability_item_wood_three_heal_amount"                                "HEAL AMOUNT:"
+
+		"DOTA_Tooltip_ability_item_wood_four_heal_amount"                                 "HEAL AMOUNT:"
+
+		"DOTA_Tooltip_ability_item_repair_one_bonus_regen"                                "BONUS REGEN:"
+		"DOTA_Tooltip_ability_item_repair_one_health_regen"                               "HEALTH REGEN:"
+
+		"DOTA_Tooltip_ability_item_repair_two_bonus_regen"                                "BONUS REGEN:"
+		"DOTA_Tooltip_ability_item_repair_two_health_regen"                               "HEALTH REGEN:"
+
+		"DOTA_Tooltip_ability_item_repair_three_bonus_regen"                              "BONUS REGEN:"
+		"DOTA_Tooltip_ability_item_repair_three_health_regen"                             "HEALTH REGEN:"
+
+		"DOTA_Tooltip_ability_item_repair_four_bonus_regen"                               "BONUS REGEN:"
+		"DOTA_Tooltip_ability_item_repair_four_health_regen"                              "HEALTH REGEN:"
+
+		"DOTA_Tooltip_ability_item_poison_bow_damage"                                     "DAMAGE:"
+		"DOTA_Tooltip_ability_item_poison_bow_psn_dur"                                    "PSN DUR:"
+
+		"DOTA_Tooltip_ability_item_fire_bow_damage"                                       "DAMAGE:"
+
+		"DOTA_Tooltip_ability_item_ice_bow_slow_amt"                                      "SLOW AMT:"
+		"DOTA_Tooltip_ability_item_ice_bow_slow_dur"                                      "SLOW DUR:"
+
+		"DOTA_Tooltip_ability_item_wind_bow_max_range"                                    "MAX RANGE:"
+		"DOTA_Tooltip_ability_item_wind_bow_bonus_dmg"                                    "BONUS DMG:"
+		"DOTA_Tooltip_ability_item_wind_bow_min_range_dmg_pct"                            "MIN RANGE DMG PCT:"
+
+		"DOTA_Tooltip_ability_item_light_bow_vision_rad"                                  "VISION RAD:"
+
+		"DOTA_Tooltip_ability_item_coal_bow_stun_pct"                                     "STUN PCT:"
+		"DOTA_Tooltip_ability_item_coal_bow_stun_dur"                                     "STUN DUR:"
+
+		"DOTA_Tooltip_ability_item_plasma_bow_armor_down"                                 "ARMOR DOWN:"
+		"DOTA_Tooltip_ability_item_plasma_bow_armor_dur"                                  "ARMOR DUR:"
+
+		"DOTA_Tooltip_ability_item_spin_bow_bounces"                                      "BOUNCES:"
+		"DOTA_Tooltip_ability_item_spin_bow_bounce_dmg"                                   "BOUNCE DMG:"
+		"DOTA_Tooltip_ability_item_spin_bow_bounce_range"                                 "BOUNCE RANGE:"
+
+		"DOTA_Tooltip_ability_item_caulk_bow_dmg_aoe"                                     "DMG AOE:"
+		"DOTA_Tooltip_ability_item_caulk_bow_dmg_range"                                   "DMG RANGE:"
+		"DOTA_Tooltip_ability_item_caulk_bow_dmg_pct"                                     "DMG PCT:"
+
+		"DOTA_Tooltip_ability_item_breach_bow_remove"                                     "REMOVE:"
+		"DOTA_Tooltip_ability_item_breach_bow_pure_pct"                                   "PURE PCT:"
+
+		"DOTA_Tooltip_ability_item_chaos_bow_dmg_bonus"                                   "DMG BONUS:"
+		"DOTA_Tooltip_ability_item_chaos_bow_bonus_rate"                                  "BONUS RATE:"
+
+		"DOTA_Tooltip_ability_item_poison_two_bow_damage"                                 "DAMAGE:"
+		"DOTA_Tooltip_ability_item_poison_two_bow_psn_dur"                                "PSN DUR:"
+
+		"DOTA_Tooltip_ability_item_fire_two_bow_damage"                                   "DAMAGE:"
+
+		"DOTA_Tooltip_ability_item_ice_two_bow_slow_amt"                                  "SLOW AMT:"
+		"DOTA_Tooltip_ability_item_ice_two_bow_slow_dur"                                  "SLOW DUR:"
+
+		"DOTA_Tooltip_ability_item_wind_two_bow_max_range"                                "MAX RANGE:"
+		"DOTA_Tooltip_ability_item_wind_two_bow_bonus_dmg"                                "BONUS DMG:"
+		"DOTA_Tooltip_ability_item_wind_two_bow_min_range_dmg_pct"                        "MIN RANGE DMG PCT:"
+
+		"DOTA_Tooltip_ability_item_light_two_bow_vision_rad"                              "VISION RAD:"
+
+		"DOTA_Tooltip_ability_item_coal_two_bow_stun_pct"                                 "STUN PCT:"
+		"DOTA_Tooltip_ability_item_coal_two_bow_stun_dur"                                 "STUN DUR:"
+		"DOTA_Tooltip_ability_item_coal_two_bow_dps"                                      "DPS:"
+
+		"DOTA_Tooltip_ability_item_plasma_two_bow_armor_down"                             "ARMOR DOWN:"
+		"DOTA_Tooltip_ability_item_plasma_two_bow_armor_dur"                              "ARMOR DUR:"
+
+		"DOTA_Tooltip_ability_item_spin_two_bow_bounces"                                  "BOUNCES:"
+		"DOTA_Tooltip_ability_item_spin_two_bow_bounce_dmg"                               "BOUNCE DMG:"
+		"DOTA_Tooltip_ability_item_spin_two_bow_bounce_range"                             "BOUNCE RANGE:"
+
+		"DOTA_Tooltip_ability_item_caulk_two_bow_dmg_aoe"                                 "DMG AOE:"
+		"DOTA_Tooltip_ability_item_caulk_two_bow_dmg_range"                               "DMG RANGE:"
+		"DOTA_Tooltip_ability_item_caulk_two_bow_dmg_pct"                                 "DMG PCT:"
+
+		"DOTA_Tooltip_ability_item_breach_two_bow_remove"                                 "REMOVE:"
+		"DOTA_Tooltip_ability_item_breach_two_bow_pure_pct"                               "PURE PCT:"
+
+		"DOTA_Tooltip_ability_item_chaos_two_bow_dmg_bonus"                               "DMG BONUS:"
+		"DOTA_Tooltip_ability_item_chaos_two_bow_bonus_rate"                              "BONUS RATE:"
+
+		"DOTA_Tooltip_ability_item_poison_three_bow_damage"                               "DAMAGE:"
+		"DOTA_Tooltip_ability_item_poison_three_bow_psn_dur"                              "PSN DUR:"
+
+		"DOTA_Tooltip_ability_item_fire_three_bow_damage"                                 "DAMAGE:"
+
+		"DOTA_Tooltip_ability_item_ice_three_bow_slow_amt"                                "SLOW AMT:"
+		"DOTA_Tooltip_ability_item_ice_three_bow_slow_dur"                                "SLOW DUR:"
+
+		"DOTA_Tooltip_ability_item_wind_three_bow_max_range"                              "MAX RANGE:"
+		"DOTA_Tooltip_ability_item_wind_three_bow_bonus_dmg"                              "BONUS DMG:"
+		"DOTA_Tooltip_ability_item_wind_three_bow_min_range_dmg_pct"                      "MIN RANGE DMG PCT:"
+
+		"DOTA_Tooltip_ability_item_light_three_bow_vision_rad"                            "VISION RAD:"
+
+		"DOTA_Tooltip_ability_item_coal_three_bow_stun_pct"                               "STUN PCT:"
+		"DOTA_Tooltip_ability_item_coal_three_bow_stun_dur"                               "STUN DUR:"
+
+		"DOTA_Tooltip_ability_item_plasma_three_bow_armor_down"                           "ARMOR DOWN:"
+		"DOTA_Tooltip_ability_item_plasma_three_bow_armor_dur"                            "ARMOR DUR:"
+
+		"DOTA_Tooltip_ability_item_spin_three_bow_range"                                  "RANGE:"
+		"DOTA_Tooltip_ability_item_spin_three_bow_bounces"                                "BOUNCES:"
+		"DOTA_Tooltip_ability_item_spin_three_bow_bounce_dmg"                             "BOUNCE DMG:"
+		"DOTA_Tooltip_ability_item_spin_three_bow_bounce_range"                           "BOUNCE RANGE:"
+
+		"DOTA_Tooltip_ability_item_caulk_three_bow_dmg_aoe"                               "DMG AOE:"
+		"DOTA_Tooltip_ability_item_caulk_three_bow_dmg_range"                             "DMG RANGE:"
+		"DOTA_Tooltip_ability_item_caulk_three_bow_dmg_pct"                               "DMG PCT:"
+
+		"DOTA_Tooltip_ability_item_breach_three_bow_remove"                               "REMOVE:"
+		"DOTA_Tooltip_ability_item_breach_three_bow_pure_pct"                             "PURE PCT:"
+
+		"DOTA_Tooltip_ability_item_chaos_three_bow_dmg_bonus"                             "DMG BONUS:"
+		"DOTA_Tooltip_ability_item_chaos_three_bow_bonus_rate"                            "BONUS RATE:"
+
+		"DOTA_Tooltip_ability_item_poison_bow_doubled_damage"                             "DAMAGE:"
+		"DOTA_Tooltip_ability_item_poison_bow_doubled_psn_dur"                            "PSN DUR:"
+
+		"DOTA_Tooltip_ability_item_fire_bow_doubled_damage"                               "DAMAGE:"
+
+		"DOTA_Tooltip_ability_item_ice_bow_doubled_slow_amt"                              "SLOW AMT:"
+		"DOTA_Tooltip_ability_item_ice_bow_doubled_slow_dur"                              "SLOW DUR:"
+
+		"DOTA_Tooltip_ability_item_wind_bow_doubled_max_range"                            "MAX RANGE:"
+		"DOTA_Tooltip_ability_item_wind_bow_doubled_bonus_dmg"                            "BONUS DMG:"
+		"DOTA_Tooltip_ability_item_wind_bow_doubled_min_range_dmg_pct"                    "MIN RANGE DMG PCT:"
+
+		"DOTA_Tooltip_ability_item_light_bow_doubled_vision_rad"                          "VISION RAD:"
+
+		"DOTA_Tooltip_ability_item_coal_bow_doubled_stun_pct"                             "STUN PCT:"
+		"DOTA_Tooltip_ability_item_coal_bow_doubled_stun_dur"                             "STUN DUR:"
+
+		"DOTA_Tooltip_ability_item_plasma_bow_doubled_armor_down"                         "ARMOR DOWN:"
+		"DOTA_Tooltip_ability_item_plasma_bow_doubled_armor_dur"                          "ARMOR DUR:"
+
+		"DOTA_Tooltip_ability_item_spin_bow_doubled_bounces"                              "BOUNCES:"
+		"DOTA_Tooltip_ability_item_spin_bow_doubled_bounce_dmg"                           "BOUNCE DMG:"
+		"DOTA_Tooltip_ability_item_spin_bow_doubled_bounce_range"                         "BOUNCE RANGE:"
+
+		"DOTA_Tooltip_ability_item_caulk_bow_doubled_dmg_aoe"                             "DMG AOE:"
+		"DOTA_Tooltip_ability_item_caulk_bow_doubled_dmg_range"                           "DMG RANGE:"
+		"DOTA_Tooltip_ability_item_caulk_bow_doubled_dmg_pct"                             "DMG PCT:"
+
+		"DOTA_Tooltip_ability_item_breach_bow_doubled_remove"                             "REMOVE:"
+		"DOTA_Tooltip_ability_item_breach_bow_doubled_pure_pct"                           "PURE PCT:"
+
+		"DOTA_Tooltip_ability_item_chaos_bow_doubled_dmg_bonus"                           "DMG BONUS:"
+		"DOTA_Tooltip_ability_item_chaos_bow_doubled_bonus_rate"                          "BONUS RATE:"
+
+		"DOTA_Tooltip_ability_item_poison_two_bow_doubled_damage"                         "DAMAGE:"
+		"DOTA_Tooltip_ability_item_poison_two_bow_doubled_drange"                         "DRANGE:"
+		"DOTA_Tooltip_ability_item_poison_two_bow_doubled_psn_dur"                        "PSN DUR:"
+
+		"DOTA_Tooltip_ability_item_fire_two_bow_doubled_damage"                           "DAMAGE:"
+
+		"DOTA_Tooltip_ability_item_ice_two_bow_doubled_slow_amt"                          "SLOW AMT:"
+		"DOTA_Tooltip_ability_item_ice_two_bow_doubled_slow_dur"                          "SLOW DUR:"
+
+		"DOTA_Tooltip_ability_item_wind_two_bow_doubled_max_range"                        "MAX RANGE:"
+		"DOTA_Tooltip_ability_item_wind_two_bow_doubled_bonus_dmg"                        "BONUS DMG:"
+		"DOTA_Tooltip_ability_item_wind_two_bow_doubled_min_range_dmg_pct"                "MIN RANGE DMG PCT:"
+
+		"DOTA_Tooltip_ability_item_light_two_bow_doubled_vision_rad"                      "VISION RAD:"
+
+		"DOTA_Tooltip_ability_item_coal_two_bow_doubled_stun_pct"                         "STUN PCT:"
+		"DOTA_Tooltip_ability_item_coal_two_bow_doubled_stun_dur"                         "STUN DUR:"
+
+		"DOTA_Tooltip_ability_item_plasma_two_bow_doubled_armor_down"                     "ARMOR DOWN:"
+		"DOTA_Tooltip_ability_item_plasma_two_bow_doubled_armor_dur"                      "ARMOR DUR:"
+
+		"DOTA_Tooltip_ability_item_spin_two_bow_doubled_bounces"                          "BOUNCES:"
+		"DOTA_Tooltip_ability_item_spin_two_bow_doubled_bounce_dmg"                       "BOUNCE DMG:"
+		"DOTA_Tooltip_ability_item_spin_two_bow_doubled_bounce_range"                     "BOUNCE RANGE:"
+
+		"DOTA_Tooltip_ability_item_caulk_two_bow_doubled_dmg_aoe"                         "DMG AOE:"
+		"DOTA_Tooltip_ability_item_caulk_two_bow_doubled_dmg_range"                       "DMG RANGE:"
+		"DOTA_Tooltip_ability_item_caulk_two_bow_doubled_dmg_pct"                         "DMG PCT:"
+
+		"DOTA_Tooltip_ability_item_breach_two_bow_doubled_remove"                         "REMOVE:"
+		"DOTA_Tooltip_ability_item_breach_two_bow_doubled_pure_pct"                       "PURE PCT:"
+
+		"DOTA_Tooltip_ability_item_chaos_two_bow_doubled_dmg_bonus"                       "DMG BONUS:"
+		"DOTA_Tooltip_ability_item_chaos_two_bow_doubled_bonus_rate"                      "BONUS RATE:"
+
+		"DOTA_Tooltip_ability_item_poison_three_bow_doubled_damage"                       "DAMAGE:"
+		"DOTA_Tooltip_ability_item_poison_three_bow_doubled_psn_dur"                      "PSN DUR:"
+
+		"DOTA_Tooltip_ability_item_fire_three_bow_doubled_damage"                         "DAMAGE:"
+
+		"DOTA_Tooltip_ability_item_ice_three_bow_doubled_slow_amt"                        "SLOW AMT:"
+		"DOTA_Tooltip_ability_item_ice_three_bow_doubled_slow_dur"                        "SLOW DUR:"
+
+		"DOTA_Tooltip_ability_item_wind_three_bow_doubled_max_range"                      "MAX RANGE:"
+		"DOTA_Tooltip_ability_item_wind_three_bow_doubled_bonus_dmg"                      "BONUS DMG:"
+		"DOTA_Tooltip_ability_item_wind_three_bow_doubled_min_range_dmg_pct"              "MIN RANGE DMG PCT:"
+
+		"DOTA_Tooltip_ability_item_light_three_bow_doubled_vision_rad"                    "VISION RAD:"
+
+		"DOTA_Tooltip_ability_item_coal_three_bow_doubled_stun_pct"                       "STUN PCT:"
+		"DOTA_Tooltip_ability_item_coal_three_bow_doubled_stun_dur"                       "STUN DUR:"
+
+		"DOTA_Tooltip_ability_item_plasma_three_bow_doubled_armor_down"                   "ARMOR DOWN:"
+		"DOTA_Tooltip_ability_item_plasma_three_bow_doubled_armor_dur"                    "ARMOR DUR:"
+
+		"DOTA_Tooltip_ability_item_spin_three_bow_doubled_bounces"                        "BOUNCES:"
+		"DOTA_Tooltip_ability_item_spin_three_bow_doubled_bounce_dmg"                     "BOUNCE DMG:"
+		"DOTA_Tooltip_ability_item_spin_three_bow_doubled_bounce_range"                   "BOUNCE RANGE:"
+
+		"DOTA_Tooltip_ability_item_caulk_three_bow_doubled_dmg_aoe"                       "DMG AOE:"
+		"DOTA_Tooltip_ability_item_caulk_three_bow_doubled_dmg_range"                     "DMG RANGE:"
+		"DOTA_Tooltip_ability_item_caulk_three_bow_doubled_dmg_pct"                       "DMG PCT:"
+
+		"DOTA_Tooltip_ability_item_breach_three_bow_doubled_remove"                       "REMOVE:"
+		"DOTA_Tooltip_ability_item_breach_three_bow_doubled_pure_pct"                     "PURE PCT:"
+
+		"DOTA_Tooltip_ability_item_chaos_three_bow_doubled_dmg_bonus"                     "DMG BONUS:"
+		"DOTA_Tooltip_ability_item_chaos_three_bow_doubled_bonus_rate"                    "BONUS RATE:"
+
+		"DOTA_Tooltip_ability_item_poison_ult_bow_damage"                                 "DAMAGE:"
+		"DOTA_Tooltip_ability_item_poison_ult_bow_psn_dur"                                "PSN DUR:"
+
+		"DOTA_Tooltip_ability_item_fire_ult_bow_duration"                                 "DURATION:"
+		"DOTA_Tooltip_ability_item_fire_ult_bow_damage"                                   "DAMAGE:"
+
+		"DOTA_Tooltip_ability_item_ice_ult_bow_slow_amt"                                  "SLOW AMT:"
+		"DOTA_Tooltip_ability_item_ice_ult_bow_slow_dur"                                  "SLOW DUR:"
+
+		"DOTA_Tooltip_ability_item_wind_ult_bow_max_range"                                "MAX RANGE:"
+		"DOTA_Tooltip_ability_item_wind_ult_bow_bonus_dmg"                                "BONUS DMG:"
+		"DOTA_Tooltip_ability_item_wind_ult_bow_min_range_dmg_pct"                        "MIN RANGE DMG PCT:"
+
+		"DOTA_Tooltip_ability_item_light_ult_bow_vision_rad"                              "VISION RAD:"
+
+		"DOTA_Tooltip_ability_item_coal_ult_bow_stun_pct"                                 "STUN PCT:"
+		"DOTA_Tooltip_ability_item_coal_ult_bow_stun_dur"                                 "STUN DUR:"
+
+		"DOTA_Tooltip_ability_item_plasma_ult_bow_armor_down"                             "ARMOR DOWN:"
+		"DOTA_Tooltip_ability_item_plasma_ult_bow_armor_dur"                              "ARMOR DUR:"
+
+		"DOTA_Tooltip_ability_item_spin_ult_bow_bounces"                                  "BOUNCES:"
+		"DOTA_Tooltip_ability_item_spin_ult_bow_bounce_dmg"                               "BOUNCE DMG:"
+		"DOTA_Tooltip_ability_item_spin_ult_bow_bounce_range"                             "BOUNCE RANGE:"
+
+		"DOTA_Tooltip_ability_item_caulk_ult_bow_dmg_aoe"                                 "DMG AOE:"
+		"DOTA_Tooltip_ability_item_caulk_ult_bow_dmg_range"                               "DMG RANGE:"
+		"DOTA_Tooltip_ability_item_caulk_ult_bow_dmg_pct"                                 "DMG PCT:"
+
+		"DOTA_Tooltip_ability_item_breach_ult_bow_remove"                                 "REMOVE:"
+		"DOTA_Tooltip_ability_item_breach_ult_bow_pure_pct"                               "PURE PCT:"
+
+		"DOTA_Tooltip_ability_item_chaos_ult_bow_dmg"                                     "DMG:"
+		"DOTA_Tooltip_ability_item_chaos_ult_bow_dmg_bonus"                               "DMG BONUS:"
+		"DOTA_Tooltip_ability_item_chaos_ult_bow_bonus_rate"                              "BONUS RATE:"
+
+		"DOTA_Tooltip_ability_item_fluff"                                                 "Fluff"
+		"DOTA_Tooltip_ability_item_fluff_Description"                                     ""
+
+		"DOTA_Tooltip_ability_item_tower_debuff"                                          "Tower Debuff"
+		"DOTA_Tooltip_ability_item_tower_debuff_Description"                              ""
+
+		"DOTA_Tooltip_ability_item_fluff3"                                                "Fluff3"
+		"DOTA_Tooltip_ability_item_fluff3_Description"                                    ""
+
+		"DOTA_Tooltip_ability_item_fluff4"                                                "Fluff4"
+		"DOTA_Tooltip_ability_item_fluff4_Description"                                    ""
+
+		"DOTA_Tooltip_ability_item_fluff5"                                                "Fluff5"
+		"DOTA_Tooltip_ability_item_fluff5_Description"                                    ""
+
+		"DOTA_Tooltip_ability_item_fluff6"                                                "Fluff6"
+		"DOTA_Tooltip_ability_item_fluff6_Description"                                    ""
+
+		"DOTA_Tooltip_ability_item_fluff7"                                                "Fluff7"
+		"DOTA_Tooltip_ability_item_fluff7_Description"                                    ""
+
+		"DOTA_Tooltip_ability_item_fluff8"                                                "Fluff8"
+		"DOTA_Tooltip_ability_item_fluff8_Description"                                    ""
+
+		"DOTA_Tooltip_ability_item_monkey_buisness"                                       "Monkey Buisness"
+		"DOTA_Tooltip_ability_item_monkey_buisness_Description"                           ""
+
+		"DOTA_Tooltip_ability_item_spawn_stunner"                                         "Spawn Stunner"
+		"DOTA_Tooltip_ability_item_spawn_stunner_Description"                             ""
+
+		"DOTA_Tooltip_ability_item_tower_healer"                                          "Tower Healer"
+		"DOTA_Tooltip_ability_item_tower_healer_Description"                              ""
+
+		"DOTA_Tooltip_ability_item_nut_spawner"                                           "Nut Spawner"
+		"DOTA_Tooltip_ability_item_nut_spawner_Description"                               ""
+
+		"DOTA_Tooltip_ability_item_oneshot_ham_duration"                                  "DURATION:"
+
+		"DOTA_Tooltip_ability_item_backpack_stuffer"                                      "Backpack Stuffer"
+		"DOTA_Tooltip_ability_item_backpack_stuffer_Description"                          ""
+
+
 
 	}
 }

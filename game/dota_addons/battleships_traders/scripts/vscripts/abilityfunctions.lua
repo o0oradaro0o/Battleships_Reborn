@@ -2427,6 +2427,36 @@ function CherryLaunch(args)
 
 end
 
+
+function CherrySevenLaunch(args)
+	print("IN CherryLaunch")
+	PrintTable(args)
+
+	for i=0,7 do
+		local caster = args.caster
+		local targetPos = caster:GetOrigin() + RandomVector(RandomFloat(0, 1000))
+		
+		
+		dummy = CreateUnitByName("dummy_vision10", targetPos, true, nil, nil, caster:GetTeam())
+	
+		local info = {
+			Ability = args.ability,
+			Source = caster,
+			Target = dummy,
+			vSourceLoc = caster:GetAbsOrigin(),
+			EffectName = "particles/basic_projectile/cherry_proj.vpcf",
+			bProvidesVision = false,
+			iVisionRadius = 1000,
+			iVisionTeamNumber = caster:GetTeamNumber(),
+			bDeleteOnHit = false,
+			iMoveSpeed = 700,
+			vVelocity = 700
+		}
+		projectile = ProjectileManager:CreateTrackingProjectile(info)
+	end
+
+end
+
 function CherryExplode(args)
 	print("IN CherryExplode")
 	PrintTable(args)

@@ -8744,9 +8744,11 @@
     "ScriptFile"                    "heroes/gamble.lua"
     "AbilityTextureName"            "alchemist_goblins_greed"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-
+	"MaxLevel"						"3"
+		"LevelsBetweenUpgrades"			"2"
+		"RequiredLevel"					"1"
     "AbilityCastPoint"              "0.4"
-    "AbilityCooldown"               "5"
+    "AbilityCooldown"               "13 12 11"
     "AbilityManaCost"               "0" 
 
     "AbilitySpecial"
@@ -8754,12 +8756,12 @@
       "01"
       {
         "var_type"              "FIELD_INTEGER"
-        "lesser_reward"         "100"
+        "lesser_reward"         "3 4 5"
       }
       "02"
       {
         "var_type"              "FIELD_INTEGER"
-        "greater_reward"        "1000"
+        "greater_reward"        "10 20 30"
       }
     }
 	}
@@ -9358,14 +9360,9 @@
 			}
 			
 		}
-       
-  
-	
-		
-
 	}
 	
-		"no_fire_zone"
+	"no_fire_zone"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -9538,6 +9535,1057 @@
 		}
 
 	}
+	
+	"gamble_heart_three"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"heart"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		"BaseClass" 					"ability_datadriven"
+		"MaxLevel"						"4"
+		"LevelsBetweenUpgrades"					"2"
+		"RequiredLevel"						"2"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"OnUpgrade"
+		{
+			"RemoveModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_heart_hatches_three"
+			}
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_heart_hatches_three"
+			}
+		}
+		"OnOwnerSpawned"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_heart_hatches_three"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"gamble_heart_hatches_three"
+			{
+			
+				"Properties"
+				{
+					 "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen"
+
+				}
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+			
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+					"var_type"                                      "FIELD_FLOAT"
+					"health_regen"                          "10.0 12.0 14.0 16.0"
+			}
+		}
+	}
+    "gamble_bar_three"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"bar"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		"BaseClass" 					"ability_datadriven"
+		"MaxLevel"						"4"
+		"LevelsBetweenUpgrades"					"2"
+		"RequiredLevel"						"2"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+		
+		"AbilityManaCost"				"0"
+		"OnUpgrade"
+		{
+			"RemoveModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_bar_hp_three"
+			}
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_bar_hp_three"
+			}
+		}
+		"OnOwnerSpawned"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_bar_hp_three"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"gamble_bar_hp_three"
+			{
+			
+				"Properties"
+				{
+					 "MODIFIER_PROPERTY_HEALTH_BONUS"             "%health_bonus"
+
+				}
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+					"var_type"                                      "FIELD_FLOAT"
+					"health_bonus"                          "200 300 400 500"
+			}
+		}
+	}
+     "gamble_diamond_three"
+	{
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"diamond"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		"BaseClass" 					"ability_datadriven"
+		"MaxLevel"						"4"
+		"LevelsBetweenUpgrades"					"2"
+		"RequiredLevel"						"2"
+		
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+		
+		"AbilityManaCost"				"0"
+		"OnUpgrade"
+		{
+			"RemoveModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_diamond_armor_three"
+			}
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_diamond_armor_three"
+			}
+		}
+		"OnOwnerSpawned"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_diamond_armor_three"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"gamble_diamond_armor_three"
+			{
+			
+				"Properties"
+				{
+					 "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"             "%armor_bonus"
+
+				}
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+					"var_type"                                      "FIELD_FLOAT"
+					"armor_bonus"                          "2.5 3 3.5 4"
+			}
+		}
+	}
+
+    "gamble_horseshoe_three"
+	{
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"horseshoe"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		"BaseClass" 					"ability_datadriven"
+		"MaxLevel"						"4"
+		"LevelsBetweenUpgrades"					"2"
+		"RequiredLevel"						"2"
+		
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+	
+		"AbilityManaCost"				"0"
+		"OnUpgrade"
+		{
+			"RemoveModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_shoe_speed_three"
+			}
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_shoe_speed_three"
+			}
+		}
+		"OnOwnerSpawned"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_shoe_speed_three"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"gamble_shoe_speed_three"
+			{
+			
+				"Properties"
+				{
+					 "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"             "%move_bonus"
+
+				}
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+					"var_type"                                      "FIELD_FLOAT"
+					"move_bonus"                          "30 40 50 60"
+			}
+		}
+	}
+
+	"gamble_bell_three"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"				"bells"
+		
+		
+		"AbilityCastRange"				"700 800 900 1000"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityManaCost"				"0 0 0 0"
+		"AbilityCooldown"				"999"
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target" "TARGET"
+					
+				"MoveSpeed" "900"
+				"ProvidesVision" "0"
+				"EffectName"    "particles/basic_projectile/bell_projectile.vpcf" 
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"bellLaunchSound"
+			}
+			
+			
+		}
+			
+		"Modifiers"
+		{
+			"bell_silence"
+			{
+			
+				"EffectName"            "particles/basic_projectile/silenced.vpcf"
+				"EffectAttachType"      "follow_overhead"
+				"Duration"  "%duration"
+				"States"
+				{
+					"MODIFIER_STATE_SILENCED" "MODIFIER_STATE_VALUE_ENABLED"
+				} 
+			}
+		}
+		
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"                           "false"
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "bell_silence"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"bellHitSound"
+			}
+		}
+		
+		
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"		"2 2.5 3 3.5"
+			}
+
+		}
+	}
+
+
+    "gamble_cherry_three"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"				"cherries"
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"950 1050 1150 1250"
+		"AbilityCastPoint"				"0.1"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"999"
+		"AOERadius" 	"%radius"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"CherryLaunch"
+				"Target"		"POINT"
+			}
+			"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+						"Function"			"cherryLaunchSound"
+					}
+			
+		}
+			
+		
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"                           "false"
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"CherryExplode"
+				
+			}
+			"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+						"Function"			"cherryExplodeSound"
+					}
+		}
+		
+		
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"200 250 300"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"dmg"					"150 200 250 300"
+			}
+			
+		}
+	}
+
+
+    "gamble_seven_three"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"				"seven"
+		
+		
+		"AbilityCastRange"				"777"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+        "AbilityChannelTime"			"7.0"
+		"AbilityManaCost"				"0 0 0 0"
+		"AbilityCooldown"				"999"
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "seven_shot"
+			}
+		}
+        "OnChannelInterrupted"
+		{
+		
+			"RemoveModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "seven_shot"
+			}
+		}
+        "OnChannelFinish"
+		{
+			"RemoveModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "seven_shot"
+			}
+		}
+			
+		"Modifiers"
+		{
+			"seven_shot"
+			{
+				"Duration" "7.0"
+				"ThinkInterval"		".99"
+				"OnIntervalThink"
+				{
+					"TrackingProjectile"
+					{
+						"Target"  "TARGET"
+						
+						"MoveSpeed" "1200"
+						"ProvidesVision" "0"
+						"EffectName"    "particles/basic_projectile/seven_proj.vpcf" 
+					}
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+						"Function"			"sevenSound"
+					}
+				}
+				
+			}
+		}
+		
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"		"DAMAGE_TYPE_PHYSICAL"
+					"Damage"	"%damage"
+					"Target"	"TARGET"
+			}
+			"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+						"Function"			"sevenSoundhit"
+					}
+		}
+		
+		
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"		"55 77 99 121"
+			}
+
+		}
+    }
+	
+	"gamble_heart_two"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"heart"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		"BaseClass" 					"ability_datadriven"
+		"MaxLevel"						"4"
+		"LevelsBetweenUpgrades"					"2"
+		"RequiredLevel"						"2"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"OnUpgrade"
+		{
+			"RemoveModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_heart_hatches_two"
+			}
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_heart_hatches_two"
+			}
+		}
+		"OnOwnerSpawned"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_heart_hatches_two"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"gamble_heart_hatches_two"
+			{
+			
+				"Properties"
+				{
+					 "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen"
+
+				}
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+			
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+					"var_type"                                      "FIELD_FLOAT"
+					"health_regen"                          "10.0 12.0 14.0 16.0"
+			}
+		}
+	}
+    "gamble_bar_two"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"bar"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		"BaseClass" 					"ability_datadriven"
+		"MaxLevel"						"4"
+		"LevelsBetweenUpgrades"					"2"
+		"RequiredLevel"						"2"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+		
+		"AbilityManaCost"				"0"
+		"OnUpgrade"
+		{
+			"RemoveModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_bar_hp_two"
+			}
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_bar_hp_two"
+			}
+		}
+		"OnOwnerSpawned"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_bar_hp_two"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"gamble_bar_hp_two"
+			{
+			
+				"Properties"
+				{
+					 "MODIFIER_PROPERTY_HEALTH_BONUS"             "%health_bonus"
+
+				}
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+					"var_type"                                      "FIELD_FLOAT"
+					"health_bonus"                          "200 300 400 500"
+			}
+		}
+	}
+     "gamble_diamond_two"
+	{
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"diamond"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		"BaseClass" 					"ability_datadriven"
+		"MaxLevel"						"4"
+		"LevelsBetweenUpgrades"					"2"
+		"RequiredLevel"						"2"
+		
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+		
+		"AbilityManaCost"				"0"
+		"OnUpgrade"
+		{
+			"RemoveModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_diamond_armor_two"
+			}
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_diamond_armor_two"
+			}
+		}
+		"OnOwnerSpawned"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_diamond_armor_two"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"gamble_diamond_armor_two"
+			{
+			
+				"Properties"
+				{
+					 "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"             "%armor_bonus"
+
+				}
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+					"var_type"                                      "FIELD_FLOAT"
+					"armor_bonus"                          "2.5 3 3.5 4"
+			}
+		}
+	}
+
+    "gamble_horseshoe_two"
+	{
+		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"horseshoe"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		"BaseClass" 					"ability_datadriven"
+		"MaxLevel"						"4"
+		"LevelsBetweenUpgrades"					"2"
+		"RequiredLevel"						"2"
+		
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+	
+		"AbilityManaCost"				"0"
+		"OnUpgrade"
+		{
+			"RemoveModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_shoe_speed_two"
+			}
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_shoe_speed_two"
+			}
+		}
+		"OnOwnerSpawned"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "gamble_shoe_speed_two"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"gamble_shoe_speed_two"
+			{
+			
+				"Properties"
+				{
+					 "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"             "%move_bonus"
+
+				}
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+					"var_type"                                      "FIELD_FLOAT"
+					"move_bonus"                          "30 40 50 60"
+			}
+		}
+	}
+
+	"gamble_bell_two"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"				"bells"
+		
+		
+		"AbilityCastRange"				"700 800 900 1000"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityManaCost"				"0 0 0 0"
+		"AbilityCooldown"				"999"
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target" "TARGET"
+					
+				"MoveSpeed" "900"
+				"ProvidesVision" "0"
+				"EffectName"    "particles/basic_projectile/bell_projectile.vpcf" 
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"bellLaunchSound"
+			}
+			
+			
+		}
+			
+		"Modifiers"
+		{
+			"bell_silence"
+			{
+			
+				"EffectName"            "particles/basic_projectile/silenced.vpcf"
+				"EffectAttachType"      "follow_overhead"
+				"Duration"  "%duration"
+				"States"
+				{
+					"MODIFIER_STATE_SILENCED" "MODIFIER_STATE_VALUE_ENABLED"
+				} 
+			}
+		}
+		
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"                           "false"
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "bell_silence"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"bellHitSound"
+			}
+		}
+		
+		
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"		"2 2.5 3 3.5"
+			}
+
+		}
+	}
+
+
+    "gamble_cherry_two"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"				"cherries"
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"950 1050 1150 1250"
+		"AbilityCastPoint"				"0.1"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"999"
+		"AOERadius" 	"%radius"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"CherryLaunch"
+				"Target"		"POINT"
+			}
+			"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+						"Function"			"cherryLaunchSound"
+					}
+			
+		}
+			
+		
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"                           "false"
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"CherryExplode"
+				
+			}
+			"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+						"Function"			"cherryExplodeSound"
+					}
+		}
+		
+		
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"200 250 300"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"dmg"					"150 200 250 300"
+			}
+			
+		}
+	}
+
+
+    "gamble_seven_two"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"				"seven"
+		
+		
+		"AbilityCastRange"				"777"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+        "AbilityChannelTime"			"7.0"
+		"AbilityManaCost"				"0 0 0 0"
+		"AbilityCooldown"				"999"
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "seven_shot"
+			}
+		}
+        "OnChannelInterrupted"
+		{
+		
+			"RemoveModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "seven_shot"
+			}
+		}
+        "OnChannelFinish"
+		{
+			"RemoveModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "seven_shot"
+			}
+		}
+			
+		"Modifiers"
+		{
+			"seven_shot"
+			{
+				"Duration" "7.0"
+				"ThinkInterval"		".99"
+				"OnIntervalThink"
+				{
+					"TrackingProjectile"
+					{
+						"Target"  "TARGET"
+						
+						"MoveSpeed" "1200"
+						"ProvidesVision" "0"
+						"EffectName"    "particles/basic_projectile/seven_proj.vpcf" 
+					}
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+						"Function"			"sevenSound"
+					}
+				}
+				
+			}
+		}
+		
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"		"DAMAGE_TYPE_PHYSICAL"
+					"Damage"	"%damage"
+					"Target"	"TARGET"
+			}
+			"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+						"Function"			"sevenSoundhit"
+					}
+		}
+		
+		
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"		"55 77 99 121"
+			}
+
+		}
+    }
+	
 	"gamble_heart_one"
 	{
 		// General
@@ -9797,7 +10845,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"				"bells"
@@ -9816,6 +10864,11 @@
 				"MoveSpeed" "900"
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/bell_projectile.vpcf" 
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"bellLaunchSound"
 			}
 			
 			
@@ -9844,6 +10897,11 @@
 			{
 				"Target" "TARGET"
 				"ModifierName" "bell_silence"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"bellHitSound"
 			}
 		}
 		
@@ -9876,9 +10934,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"				"cherries"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		
-		
+	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"950 1050 1150 1250"
@@ -9899,6 +10955,11 @@
 				"Function"			"CherryLaunch"
 				"Target"		"POINT"
 			}
+			"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+						"Function"			"cherryLaunchSound"
+					}
 			
 		}
 			
@@ -9913,6 +10974,11 @@
 				"Function"			"CherryExplode"
 				
 			}
+			"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+						"Function"			"cherryExplodeSound"
+					}
 		}
 		
 		
@@ -9939,7 +11005,114 @@
 		}
 	}
 
+
+    "gamble_seven_one"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"				"seven"
+		
+		
+		"AbilityCastRange"				"777"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+        "AbilityChannelTime"			"7.0"
+		"AbilityManaCost"				"0 0 0 0"
+		"AbilityCooldown"				"999"
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "seven_shot"
+			}
+		}
+        "OnChannelInterrupted"
+		{
+		
+			"RemoveModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "seven_shot"
+			}
+		}
+        "OnChannelFinish"
+		{
+			"RemoveModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "seven_shot"
+			}
+		}
+			
+		"Modifiers"
+		{
+			"seven_shot"
+			{
+				"Duration" "7.0"
+				"ThinkInterval"		".99"
+				"OnIntervalThink"
+				{
+					"TrackingProjectile"
+					{
+						"Target"  "TARGET"
+						
+						"MoveSpeed" "1200"
+						"ProvidesVision" "0"
+						"EffectName"    "particles/basic_projectile/seven_proj.vpcf" 
+					}
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+						"Function"			"sevenSound"
+					}
+				}
+				
+			}
+		}
+		
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+					"Type"		"DAMAGE_TYPE_PHYSICAL"
+					"Damage"	"%damage"
+					"Target"	"TARGET"
+			}
+			"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+						"Function"			"sevenSoundhit"
+					}
+		}
+		
+		
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"		"55 77 99 121"
+			}
+
+		}
+    }
 	
+
+
 
 	
 }

@@ -475,7 +475,10 @@ function Precache( context )
 	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts", context )
 	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_techies.vsndevts", context )
 	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts", context )
-	
+	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_sven.vsndevts", context )
+	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts", context )
+	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts", context )
+
 	PrecacheResource( "soundfile","soundevents/voscripts/game_sounds_vo_techies.vsndevts", context )
 
 	PrecacheResource( "soundfile","soundevents/game_sounds_items.vsndevts", context )
@@ -1352,6 +1355,14 @@ function CBattleship8D:OnThink()
 							hero:SetGold(0, false)
 							g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + g_GoldPerTickNorth * 2
 							g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + g_GoldPerTickNorth * 2
+						end
+						if hero.earnedbonusgold ~= nil and hero.earnedbonusgold >0 then
+							print(g_HeroGoldArray[hero:GetPlayerOwnerID()] .. "before bonus")
+							hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + hero.earnedbonusgold, true)
+							hero:SetGold(0, false)
+							g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + hero.earnedbonusgold
+							print(g_HeroGoldArray[hero:GetPlayerOwnerID()] .. "after bonus")
+							hero.earnedbonusgold=0
 						end
 					end
 
@@ -2974,7 +2985,7 @@ if g_HeroKills[killerEntity:GetPlayerID()] ~=nil then
 						if hero:GetTeamNumber() == killerEntity:GetTeam()  then
 							hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + killerEntity:GetStreak() * 30, true)
 							hero:SetGold(0, false)
-							g_HeroGoldArray[hero:GetPlayerOwnerID()]=killergold + killerEntity:GetStreak() * 30
+							g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + killerEntity:GetStreak() * 30
 			
 							if killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 								g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + killerEntity:GetStreak() * 30
