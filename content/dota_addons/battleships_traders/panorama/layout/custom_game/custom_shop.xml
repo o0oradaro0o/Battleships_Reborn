@@ -810,39 +810,57 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="2550" />
+							<Label hittest="false" class="boat_stat_label_val" text="3000" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
-							<Label hittest="false" class="boat_stat_label_val" text="330" />
+							<Label hittest="false" class="boat_stat_label_val" text="290" />
 					</Panel>
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#regen" />
-							<Label hittest="false" class="boat_stat_label_val" text="14" />
+							<Label hittest="false" class="boat_stat_label_val" text="13" />
 					</Panel>
 				</Panel>	
 			</Panel>	
 			<Panel hittest="false" class="boat_row">
 				
-					<Panel hittest="false" class="ability" onmouseover="showText('brewmaster','pistols_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" />	
-                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
+					<Panel hittest="false" class="ability" onmouseover="showText('brewmaster','gamble_cherry_one')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/cherries.png" />	
+                       <Label hittest="false" class="ability_name" text="#gamble_cherry_one"/>"
 					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('brewmaster','dragon_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/lina_dragon_slave_alt1.png" />
-                       <Label hittest="false" class="ability_name" text="#dragon_battleship"/>"
+					<Panel hittest="false" class="ability" onmouseover="showText('brewmaster','gamble_bell_one')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/bells.png" />
+                       <Label hittest="false" class="ability_name" text="#gamble_bell_one"/>"
 					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('brewmaster','firework_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/puck_illusory_orb_merry.png" />
-                       <Label hittest="false" class="ability_name" text="#firework_battleship"/>"
+					<Panel hittest="false" class="ability" onmouseover="showText('brewmaster','gamble_seven_one')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/seven.png" />
+                       <Label hittest="false" class="ability_name" text="#gamble_seven_one"/>"
 					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('brewmaster','nav_hack_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/techies_focused_detonate.png" />
-                       <Label hittest="false" class="ability_name" text="#nav_hack_battleship"/>"
+					<Panel hittest="false" class="ability" onmouseover="showText('brewmaster','gamble_horseshoe_one')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/horseshoe.png" />
+                       <Label hittest="false" class="ability_name" text="#gamble_horseshoe_one"/>"
 					</Panel>
 				</Panel>
 				<Panel hittest="false" class="boat_row">
-					<Panel hittest="false" class="abilities_details_holder"  >
+					<Panel hittest="false" class="ability" onmouseover="showText('brewmaster','gamble_diamond_one')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/diamond.png" />	
+                       <Label hittest="false" class="ability_name" text="#gamble_diamond_one"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('brewmaster','gamble_bar_one')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/bar.png" />
+                       <Label hittest="false" class="ability_name" text="#gamble_bar_one"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('brewmaster','gamble_heart_one')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/heart.png" />
+                       <Label hittest="false" class="ability_name" text="#gamble_heart_one"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('brewmaster','gamble')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/gamble.png" />
+                       <Label hittest="false" class="ability_name" text="#gamble"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder_brew"  >
 						<Label hittest="false" class="ship_desc_title" text=" "  id="brewmaster_ability"/>
 						<Label hittest="false" class="boat_stat_label" text=" "  id="brewmaster_ability_desc"/>
 					</Panel>

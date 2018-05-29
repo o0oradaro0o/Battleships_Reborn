@@ -18,6 +18,8 @@ function gamble:OnSpellStart()
     "gamble_diamond",
     "gamble_horseshoe",
     "gamble_bell",
+    "gamble_cherry",
+    "gamble_seven",
   }
 
   local spinSet = {
@@ -58,6 +60,7 @@ function gamble:OnSpellStart()
     caster:RemoveAbility(oldAbilityName)
   end
   EmitSoundOn("Hero_EarthSpirit.RollingBoulder.Loop", caster)
+  
   
     for i=startIndex,endIndex do
         local oldAbilityLevel = oldAbilities[i]["level"]
@@ -119,10 +122,11 @@ Timers:CreateTimer(.3, function()
     local newAbilityName = GetRandomTableElement(abilityNames)
     newAbilitySet[newAbilityName] = true
     local newAbility = caster:AddAbility(newAbilityName .. "_one")
-
+    
     newAbility:SetAbilityIndex(0)
     newAbility:SetLevel(oldAbilityLevel)
-
+    newAbility:EndCooldown()
+    EmitSoundOn("Hero_OgreMagi.Fireblast.x1", caster)
     for i=startIndex,endIndex do
         local oldAbilityLevel = oldAbilities[i]["level"]
     
@@ -170,7 +174,7 @@ Timers:CreateTimer(.5, function()
 end)
 
 Timers:CreateTimer(.6, function()
-        
+    EmitSoundOn("Hero_OgreMagi.Fireblast.x1", caster)
     for i=startIndex,endIndex do
         local tempAbility = caster:GetAbilityByIndex(i):GetName()
         caster:RemoveAbility(tempAbility)
@@ -184,7 +188,7 @@ Timers:CreateTimer(.6, function()
 
     newAbility:SetAbilityIndex(1)
     newAbility:SetLevel(oldAbilityLevel)
-
+    newAbility:EndCooldown()
     for i=startIndex,endIndex do
         local oldAbilityLevel = oldAbilities[i]["level"]
     
@@ -233,7 +237,7 @@ Timers:CreateTimer(.8, function()
 end)
 
 Timers:CreateTimer(.9, function()
-        
+    EmitSoundOn("Hero_OgreMagi.Fireblast.x1", caster)
     for i=startIndex,endIndex do
         local tempAbility = caster:GetAbilityByIndex(i):GetName()
         caster:RemoveAbility(tempAbility)
@@ -247,6 +251,7 @@ Timers:CreateTimer(.9, function()
 
     newAbility:SetAbilityIndex(2)
     newAbility:SetLevel(oldAbilityLevel)
+    newAbility:EndCooldown()
     StopSoundOn("Hero_EarthSpirit.RollingBoulder.Loop", caster)
 
 end)
@@ -272,14 +277,19 @@ end)
 end
 
 function RewardGold(caster, rewardAmount)
-  caster:ModifyGold(rewardAmount, false, 1)
-  SendOverheadEventMessage(
-    caster:GetPlayerOwner(), 
-    OVERHEAD_ALERT_GOLD, 
-    caster, 
-    rewardAmount, 
-    caster:GetPlayerOwner()
-  )
+    for i=1,rewardAmount do
+        Timers:CreateTimer( .5+i*.3, function()
+            caster.earnedbonusgold=rewardAmount
+            caster:ModifyGold(1, false, 1)
+            SendOverheadEventMessage(
+                caster:GetPlayerOwner(), 
+                OVERHEAD_ALERT_GOLD, 
+                caster, 
+                1, 
+                caster:GetPlayerOwner()
+            )
+        end)
+    end
 end
 
 

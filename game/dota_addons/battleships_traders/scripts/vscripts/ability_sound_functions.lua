@@ -263,3 +263,39 @@ function ceaseFireSound(keys)
 end
 
 
+function sevenSound(keys)
+	print("sevenSound")
+   local casterUnit = keys.caster
+   EmitSoundOn("Hero_SkywrathMage.ConcussiveShot.Cast", casterUnit)
+end
+
+function sevenSoundhit(keys)
+	print("sevenSoundhit")
+   local casterUnit = keys.target
+   EmitSoundOn("Hero_SkywrathMage.ConcussiveShot.Target", casterUnit)
+end
+
+
+function cherryLaunchSound(keys)
+	print("cherryLaunchSound")
+   local casterUnit = keys.caster
+   EmitSoundOn("Hero_ChaosKnight.idle_throw", casterUnit)
+end
+
+function cherryExplodeSound(keys)
+	print("cherryExplodeSound")
+   local casterUnit = keys.target
+   EmitSoundOn("ParticleDriven.Rocket.Explode", casterUnit)
+end
+
+function bellLaunchSound(keys)
+	print("bellLaunchSound")
+   local casterUnit = keys.caster
+   EmitSoundOn("Hero_Sven.Attack.Ring", casterUnit)
+end
+
+function bellHitSound(keys)
+	print("bellHitSound")
+   local casterUnit = keys.target
+   EmitSoundOn("Hero_Meepo.Poof.End.Crystal04", casterUnit)
+end

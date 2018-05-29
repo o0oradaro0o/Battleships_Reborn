@@ -1426,6 +1426,18 @@ border-radius: 10px;
 	background-color: gradient( linear, 0% 50%, 0% 100%, from( #62696ecc ), to( #454545ff ) );
 
 }
+.abilities_details_holder_brew
+{
+	flow-children: down;
+	border-radius: 10px;
+	height: 80px;
+	width: 100%;
+	border-radius: 10px;
+	margin: 5px;
+	margin-top: 5px;
+	background-color: gradient( linear, 0% 50%, 0% 100%, from( #62696ecc ), to( #454545ff ) );
+
+}
 .ability_image
 {
 	border-radius: 10px;
