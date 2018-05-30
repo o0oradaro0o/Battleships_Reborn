@@ -1,4 +1,4 @@
-"addon"
+﻿"addon"
 {
 
 	"addon_game_name" 			"Battleships"
@@ -403,26 +403,26 @@ DURATION: 7"
 LESSER REWARD: 3 4 5
 GREATER REWARD: 10 20 30"
 "gamble_heart_one"                                           "Heart"
-"gamble_heart_one_Description"                               "Increases HP regen
+"gamble_heart_one_Description"                               "Increases HP regen.
 HEALTH REGEN: 10.0 12.0 14.0 16.0"
 "gamble_bar_one"                                             "Bar"
-"gamble_bar_one_Description"                                 "Increasdes max HP
+"gamble_bar_one_Description"                                 "Increases max HP.
 HEALTH BONUS: 200 300 400 500"
 "gamble_diamond_one"                                         "Diamond"
-"gamble_diamond_one_Description"                             "Increases Armor
+"gamble_diamond_one_Description"                             "Increases Armor.
 ARMOR BONUS: 2.5 3 3.5 4"
 "gamble_horseshoe_one"                                       "Horseshoe"
-"gamble_horseshoe_one_Description"                           "Increases Movement Speed
+"gamble_horseshoe_one_Description"                           "Increases Movement Speed.
 MOVE BONUS: 30 40 50 60"
 "gamble_bell_one"                                            "Bell"
-"gamble_bell_one_Description"                                "Silences target Captain for the listed duration
+"gamble_bell_one_Description"                                "Silences target Captain's ship for the listed duration.
 DURATION: 2 2.5 3 3.5"
 "gamble_cherry_one"                                          "Cherry"
-"gamble_cherry_one_Description"                              "Throws a Cherry Bomb dealing dmg to target area                                  
+"gamble_cherry_one_Description"                              "Throws a Cherry Bomb dealing damage to target area.                                  
 RADIUS: 200 225 250 275                           
 DMG: 150 200 250 300"
 "gamble_seven_one"                                           "Seven"
-"gamble_seven_one_Description"                               "Fires 7 powerful shots at target enamy, moving stops shooting.
+"gamble_seven_one_Description"                               "Fires 7 powerful shots at target enemy, moving stops shooting.
 DAMAGE: 55 77 99 121"
 
 
@@ -2792,7 +2792,7 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"DOTA_Tooltip_ability_icy_waters_battleship_fun_bonus_move_speed"	"SLOW:"
 
 		"DOTA_Tooltip_ability_harpoon_battleship"									"Harpoon"
-		"DOTA_Tooltip_ability_harpoon_battleship_Description"						"Launch a harpoon at target enamy ship. If it connects, the two of you will be pulled together (mostly you). \n \nHigher levels pull the target more and you less."
+		"DOTA_Tooltip_ability_harpoon_battleship_Description"						"Launch a harpoon at target enemy ship. If it connects, the two of you will be pulled together (mostly you). \n \nHigher levels pull the target more and you less."
 		"DOTA_Tooltip_ability_harpoon_battleship_cast_range"	"RANGE:"
 		"DOTA_Tooltip_ability_harpoon_battleship_range"	"FRACTION OF DISTANCE YOU MOVE:"
 
@@ -2861,7 +2861,7 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"DOTA_Tooltip_root_self" "Rooted"
 		"DOTA_Tooltip_root_self_Description" "cannot move."
 		"DOTA_Tooltip_push_back" "Being Pushed"
-		"DOTA_Tooltip_push_back_Description" "you are being pushed backwards."
+		"DOTA_Tooltip_push_back_Description" "You are being pushed backwards."
 		"DOTA_Tooltip_gag_order" "Gag Order"
 		"DOTA_Tooltip_gag_order_Description" "Silenced."
 		"DOTA_Tooltip_gas_mod" "Swap Gas"
@@ -3219,12 +3219,16 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		
 		"News_Title"		"News!"
 		"News_Content"		"Hi all! Art update will resume but is temporarily on hold.  In the meantime I am continuing to make balance changes.
- Newest balance changes: (5-19-2018)
+ Newest balance changes: (5-29-2018)
+-NEW BOATS ADDED!
+-New 1k: Whaling Dinghy
+-New 3k: Riverboat!
+-Two more new boats to come!
 - Viking regen increased
 - Paddlewheel base speed reduced
 - Ice Made weaker
-- junk ship abilites buffed
-- sea plane mayday weakened
+- Junk Ship abilites buffed
+- Sea Plane mayday weakened
 
 
 "
