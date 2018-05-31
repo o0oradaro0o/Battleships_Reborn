@@ -4384,9 +4384,8 @@
 							"EffectName" 			"particles/basic_projectile/joanses.vpcf"
 							"EffectAttachType" 		"follow_origin"
 						}
-						
 					}
-			}
+						}
 			
 		}
 		

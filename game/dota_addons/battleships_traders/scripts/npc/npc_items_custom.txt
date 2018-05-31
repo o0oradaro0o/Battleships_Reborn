@@ -4390,7 +4390,21 @@
 			{
 				"EffectName" 			"particles/basic_projectile/breach_ind.vpcf"
 				"EffectAttachType"	"follow_overhead"
-				"Duration"  "%remove"					
+				"Duration"  "%remove"	
+				"OnDestroyed"
+				{
+					"AttachEffect"
+					{
+						"Target"				"CASTER"
+						"EffectName" 			"particles/basic_projectile/breach_boom.vpcf"
+						"EffectAttachType" 		"follow_origin"
+					}
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"BreachExplode"
+					}
+				}				
 			}
 			
 			
@@ -5706,7 +5720,21 @@
 			{
 				"EffectName" 			"particles/basic_projectile/breach_ind.vpcf"
 				"EffectAttachType"	"follow_overhead"
-				"Duration"  "%remove"					
+				"Duration"  "%remove"	
+				"OnDestroyed"
+				{
+					"AttachEffect"
+					{
+						"Target"				"CASTER"
+						"EffectName" 			"particles/basic_projectile/breach_boom.vpcf"
+						"EffectAttachType" 		"follow_origin"
+					}
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"BreachExplode"
+					}
+				}				
 			}
 			
 			
@@ -7006,7 +7034,21 @@
 			{
 				"EffectName" 			"particles/basic_projectile/breach_ind.vpcf"
 				"EffectAttachType"	"follow_overhead"
-				"Duration"  "%remove"					
+				"Duration"  "%remove"	
+				"OnDestroyed"
+				{
+					"AttachEffect"
+					{
+						"Target"				"CASTER"
+						"EffectName" 			"particles/basic_projectile/breach_boom.vpcf"
+						"EffectAttachType" 		"follow_origin"
+					}
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"BreachExplode"
+					}
+				}				
 			}
 			
 			
@@ -8635,11 +8677,22 @@
 			{
 				"EffectName" 			"particles/basic_projectile/breach_ind.vpcf"
 				"EffectAttachType"	"follow_overhead"
-				"Duration"  "%remove"					
+				"Duration"  "%remove"	
+				"OnDestroyed"
+				{
+					"AttachEffect"
+					{
+						"Target"				"CASTER"
+						"EffectName" 			"particles/basic_projectile/breach_boom.vpcf"
+						"EffectAttachType" 		"follow_origin"
+					}
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"BreachExplode"
+					}
+				}				
 			}
-			
-			
-			
 		}
 		"OnProjectileHitUnit"
 		{
@@ -10239,7 +10292,21 @@
 			{
 				"EffectName" 			"particles/basic_projectile/breach_ind.vpcf"
 				"EffectAttachType"	"follow_overhead"
-				"Duration"  "%remove"					
+				"Duration"  "%remove"	
+				"OnDestroyed"
+				{
+					"AttachEffect"
+					{
+						"Target"				"CASTER"
+						"EffectName" 			"particles/basic_projectile/breach_boom.vpcf"
+						"EffectAttachType" 		"follow_origin"
+					}
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"BreachExplode"
+					}
+				}				
 			}
 			
 			
@@ -10836,7 +10903,7 @@
 			{
 				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
 				"Function"			"iceSoundImpact"
-			} 		
+			}
 			"DeleteOnHit"                           "false"
 			"Damage"
 			{
@@ -11858,7 +11925,21 @@
 			{
 				"EffectName" 			"particles/basic_projectile/breach_ind.vpcf"
 				"EffectAttachType"	"follow_overhead"
-				"Duration"  "%remove"					
+				"Duration"  "%remove"	
+				"OnDestroyed"
+				{
+					"AttachEffect"
+					{
+						"Target"				"CASTER"
+						"EffectName" 			"particles/basic_projectile/breach_boom.vpcf"
+						"EffectAttachType" 		"follow_origin"
+					}
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"BreachExplode"
+					}
+				}				
 			}
 			
 			
@@ -12199,7 +12280,7 @@
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"				"item_fire_ult_bow"
-		"AbilityCastRange"              "%range"
+		"AbilityCastRange"              "%radius"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
 		"ItemCost"                      "10000" 
@@ -12238,7 +12319,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "700"
+							"Radius" "%radius"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -12262,7 +12343,7 @@
 				"IsHidden"	 "1"
 				"Passive"	 "1"
 				"Aura" "create_fire_area_aura_4"
-				"Aura_Radius" "700"
+				"Aura_Radius" "%radius"
 				"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Aura_Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 			}
@@ -12309,7 +12390,8 @@
 			{
 				"var_type"	"FIELD_FLOAT"
 				"duration"	"4.0"
-			}"03"
+			}
+			"03"
 			{
 				"var_type"	"FIELD_INTEGER"
 				"radius"	"700"
@@ -13330,7 +13412,21 @@
 			{
 				"EffectName" 			"particles/basic_projectile/breach_ind.vpcf"
 				"EffectAttachType"	"follow_overhead"
-				"Duration"  "%remove"					
+				"Duration"  "%remove"	
+				"OnDestroyed"
+				{
+					"AttachEffect"
+					{
+						"Target"				"CASTER"
+						"EffectName" 			"particles/basic_projectile/breach_boom.vpcf"
+						"EffectAttachType" 		"follow_origin"
+					}
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
+						"Function"			"BreachExplode"
+					}
+				}				
 			}
 			
 			

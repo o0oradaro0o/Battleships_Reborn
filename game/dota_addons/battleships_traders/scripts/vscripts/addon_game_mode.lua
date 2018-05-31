@@ -478,7 +478,9 @@ function Precache( context )
 	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_sven.vsndevts", context )
 	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts", context )
 	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts", context )
+	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_visage.vsndevts", context )
 
+	
 	PrecacheResource( "soundfile","soundevents/voscripts/game_sounds_vo_techies.vsndevts", context )
 
 	PrecacheResource( "soundfile","soundevents/game_sounds_items.vsndevts", context )
@@ -830,19 +832,24 @@ end
 
 function CBattleship8D:OnPlayerChat(keys)
 	local teamonly = keys.teamonly
+	print(teamonly)
 	local userID = keys.userid
-	print("Chat!!")
 	local playerID = self.vUserIds[userID] and self.vUserIds[userID]:GetPlayerID()
 	print("playerID" .. playerID)
 	if playerID~=nil then
 		steamID32 = PlayerResource:GetSteamAccountID(playerID)
+		print("userID" .. steamID32)
+		local text = keys.text
+		if (steamID32 == 35695824 or steamID32 == 6883638 or steamID32 == 5879425 or steamID32 == 93116118) and string.match(text,"TUG MODE ACTIVATE!") and  GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+			g_TugMode=1
+			print("tug mode!!")
+		end
+		if steamID32 == 6883638 and teamonly==0 and string.match(text,"to zoom") and GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+			Notifications:TopToAll({text="Thank you David!", duration=5.0, style={color="#888888",  fontSize="70px;"}})
+		
+		end
 	end
-	print("userID" .. steamID32)
-	local text = keys.text
-	if string.match(text,"TUG MODE ACTIVATE!") and  GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		g_TugMode=1
-		print("tug mode!!")
-	end
+	
   end
 
 function CBattleship8D:BountyRuneFilter(filterTable)
@@ -3777,11 +3784,7 @@ function buyBoat(eventSourceIndex, args)
 	
 	
 	local pID = args.PlayerID
-	if g_TugMode==1 then
-		Notifications:Top(casterUnit:GetPlayerID(), {text="#tug_buy_boat", duration=3.0, style={color="#800000",  fontSize="70px;"}})
-
-		return
-	end
+	
 	local teamNum=PlayerResource:GetTeam(pID)
 	local casterUnit
 	PrintTable(args)
@@ -3795,6 +3798,12 @@ function buyBoat(eventSourceIndex, args)
 				end
 		end
 	end
+	if g_TugMode==1 then
+		Notifications:Top(casterUnit:GetPlayerID(), {text="#tug_buy_boat", duration=3.0, style={color="#800000",  fontSize="70px;"}})
+
+		return
+	end
+
 	local itemName=args.text
 	if casterUnit~=nil then
 	
