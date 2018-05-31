@@ -18,7 +18,8 @@ function coalSoundFire(keys)
 	
 	local casterUnit = keys.caster
 	local item = keys.ability:GetAbilityName() --ability is how item name is passed in
-	local range = 600	 
+	local itemHandle = keys.ability
+	local range = itemHandle:GetSpecialValueFor("range")
 	local handles = {}
 	handles.team = DOTA_UNIT_TARGET_TEAM_ENEMY
 	handles.types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING + DOTA_UNIT_TARGET_HERO
@@ -100,7 +101,8 @@ function plasmaSoundFire(keys)
 	
 	local casterUnit = keys.caster
 	local item = keys.ability:GetAbilityName() --ability is how item name is passed in
-	local range = 800	 
+	local itemHandle = keys.ability
+	local range = itemHandle:GetSpecialValueFor("range")
 	local handles = {}
 	handles.team = DOTA_UNIT_TARGET_TEAM_ENEMY
 	handles.types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING + DOTA_UNIT_TARGET_HERO
@@ -126,12 +128,21 @@ function plasmaSoundImpact(keys)
 	EmitSoundOn("Hero_VengefulSpirit.ProjectileImpact", targetUnit)	
 end 
 
+function BreachExplode(keys)
+	--Play sound for impacting plasma-type weapons
+		local targetUnit = keys.target	
+		--Very simple now. All plasma-type impacts have the same sound. 
+		EmitSoundOn("Hero_Visage.projectileImpact", targetUnit)	
+end 
+
+
 function poisonSoundFire(keys)
 --Play sound for firing poison-type weapons
 	
 	local casterUnit = keys.caster
 	local item = keys.ability:GetAbilityName() --ability is how item name is passed in
-	local range = 900	 
+	local itemHandle = keys.ability
+	local range = itemHandle:GetSpecialValueFor("range")
 	local handles = {}
 	handles.team = DOTA_UNIT_TARGET_TEAM_ENEMY
 	handles.types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING + DOTA_UNIT_TARGET_HERO
@@ -169,7 +180,8 @@ function lightSoundFire(keys)
 	
 	local casterUnit = keys.caster
 	local item = keys.ability:GetAbilityName() --ability is how item name is passed in
-	local range = 1000	 
+	local itemHandle = keys.ability
+	local range = itemHandle:GetSpecialValueFor("range")
 	local handles = {}
 	handles.team = DOTA_UNIT_TARGET_TEAM_ENEMY
 	handles.types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING + DOTA_UNIT_TARGET_HERO
@@ -200,7 +212,8 @@ function iceSoundFire(keys)
 	
 	local casterUnit = keys.caster
 	local item = keys.ability:GetAbilityName() --ability is how item name is passed in
-	local range = 1200
+	local itemHandle = keys.ability
+	local range = itemHandle:GetSpecialValueFor("range")
 	local handles = {}
 	handles.team = DOTA_UNIT_TARGET_TEAM_ENEMY
 	handles.types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO
@@ -241,7 +254,8 @@ function windSoundFire(keys)
 	
 	local casterUnit = keys.caster
 	local item = keys.ability:GetAbilityName() --ability is how item name is passed in
-	local range = 1400
+	local itemHandle = keys.ability
+	local range = itemHandle:GetSpecialValueFor("range")
 	local handles = {}
 	handles.team = DOTA_UNIT_TARGET_TEAM_ENEMY
 	handles.types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO
