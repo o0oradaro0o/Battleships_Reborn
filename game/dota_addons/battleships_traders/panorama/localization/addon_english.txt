@@ -3222,7 +3222,7 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
  Newest balance changes: (5-29-2018)
 -NEW BOATS ADDED!
 -New 1k: Whaling Dinghy
--New 3k: Riverboat!
+-New 3k: Riverboat! (texture will be improved soon)
 -Two more new boats to come!
 - Viking regen increased
 - Paddlewheel base speed reduced
