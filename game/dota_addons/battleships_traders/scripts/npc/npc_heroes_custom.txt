@@ -53,6 +53,8 @@
 		"Ability18"					"bships_empty"
         "ModelScale"        ".6"
 		"RingRadius"				"100"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 
 	"RenderablePortrait"
 	{
@@ -114,7 +116,8 @@
 		"Ability16"					"bships_empty"
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
-		
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 		"ItemSlots" {}
 		
 		"BountyGoldMin"				"150"		// Gold earned min.
@@ -177,6 +180,8 @@
 		"AttachWearables" {}
 		"BountyGoldMin"				"240"		// Gold earned min.
 		"BountyGoldMax"				"260"		// Gold earned max.
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 		
 	}
 	//=================================================================================================================
@@ -230,6 +235,8 @@
 		"Ability18"					"bships_empty"
         "ModelScale"        "1.0"
 		"RingRadius"				"100"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 		"AttachWearables"
 		{
 			"Wearable1"
@@ -308,6 +315,8 @@
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
 		"RingRadius"				"100"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 		"AttachWearables"
 		{
 			"Wearable1"
@@ -415,6 +424,8 @@
 		"BountyGoldMin"				"240"		// Gold earned min.
 		"BountyGoldMax"				"260"		// Gold earned max.
 		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 
 	
@@ -500,6 +511,8 @@
 		"BountyGoldMin"				"240"		// Gold earned min.
 		"BountyGoldMax"				"260"		// Gold earned max.
 		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 
 	"npc_dota_hero_batrider_battleship8d" 
@@ -526,11 +539,11 @@
 		"MovementSpeed"				"300"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 		
-		"StatusHealth"				"800"		// Base health.
+		"StatusHealth"				"1000"		// Base health.
 		"StatusHealthRegen"			"2.0"		// Health regeneration rate.
 		
-				"ArmorPhysical"				"0"
-		"MagicalResistance"				"0"
+		"ArmorPhysical"				"0"
+		"MagicalResistance"			"0"
 		
 		"AbilityLayout"				"3"
 		"Ability1"					"pistols_battleship"
@@ -553,6 +566,8 @@
 		"AttachWearables" {}
 		"BountyGoldMin"				"240"		// Gold earned min.
 		"BountyGoldMax"				"260"		// Gold earned max.
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 		
 	}
 
@@ -634,6 +649,8 @@
 		"BountyGoldMin"				"599"		// Gold earned min.
 		"BountyGoldMax"				"601"		// Gold earned max.
 		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 		//=================================================================================================================
     // HERO: npc_dota_hero_winter_wyvern
@@ -710,6 +727,8 @@
 		"BountyGoldMin"				"599"		// Gold earned min.
 		"BountyGoldMax"				"601"		// Gold earned max.
 		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 	
 	//=================================================================================================================
@@ -785,6 +804,8 @@
 		"BountyGoldMin"				"599"		// Gold earned min.
 		"BountyGoldMax"				"601"		// Gold earned max.
 		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 
 	"npc_dota_hero_brewmaster_battleship" 
@@ -796,7 +817,7 @@
        "Model" "models/river_boat.vmdl"     // Model.
         "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
 		
-		"ModelScale"        ".3"
+		"ModelScale"        ".25"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
 	    "AttributeBaseStrength"     "0"
@@ -838,6 +859,8 @@
 		"AttachWearables" {}
 		"BountyGoldMin"				"240"		// Gold earned min.
 		"BountyGoldMax"				"260"		// Gold earned max.
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 		
 	}
 
@@ -923,6 +946,8 @@
 		"BountyGoldMin"				"599"		// Gold earned min.
 		"BountyGoldMax"				"601"		// Gold earned max.
 		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 	
 	//=================================================================================================================
@@ -1001,6 +1026,8 @@
 		"BountyGoldMin"				"599"		// Gold earned min.
 		"BountyGoldMax"				"601"		// Gold earned max.
 		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 
 	
@@ -1078,6 +1105,8 @@
 		"BountyGoldMin"				"1049"		// Gold earned min.
 		"BountyGoldMax"				"1051"		// Gold earned max.
 		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 	
 	//=================================================================================================================
@@ -1156,6 +1185,8 @@
 		"BountyGoldMin"				"1049"		// Gold earned min.
 		"BountyGoldMax"				"1051"		// Gold earned max.
 		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 	
 	//=================================================================================================================
@@ -1234,6 +1265,8 @@
 		"BountyGoldMin"				"1049"		// Gold earned min.
 		"BountyGoldMax"				"1051"		// Gold earned max.
 		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 	
 	//=================================================================================================================
@@ -1310,6 +1343,8 @@
 		"BountyGoldMin"				"1049"		// Gold earned min.
 		"BountyGoldMax"				"1051"		// Gold earned max.
 		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 	//=================================================================================================================
     // HERO: npc_dota_hero_sniper battleship
@@ -1445,6 +1480,8 @@
 		"BountyGoldMin"				"1049"		// Gold earned min.
 		"BountyGoldMax"				"1051"		// Gold earned max.
 		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 
 	
@@ -1523,6 +1560,8 @@
 		"BountyGoldMin"				"1599"		// Gold earned min.
 		"BountyGoldMax"				"1601"		// Gold earned max.
 		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 	
 		//=================================================================================================================
@@ -1601,6 +1640,8 @@
 		"BountyGoldMin"				"1599"		// Gold earned min.
 		"BountyGoldMax"				"1601"		// Gold earned max.
 		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 	
 	
@@ -1684,6 +1725,8 @@
 		"DisableWearables" "1"
 		"BountyGoldMin"				"1490"		// Gold earned min.
 		"BountyGoldMax"				"1510"		// Gold earned max."DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 
 	
@@ -1741,6 +1784,8 @@
 		"BountyGoldMin"				"1490"		// Gold earned min.
 		"BountyGoldMax"				"1510"		// Gold earned max.
 		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 	
 	//=================================================================================================================
@@ -1797,6 +1842,8 @@
 		"BountyGoldMin"				"1490"		// Gold earned min.
 		"BountyGoldMax"				"1510"		// Gold earned max.
 		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 	
 	//=================================================================================================================
@@ -1876,7 +1923,8 @@
 		"BountyGoldMin"				"340"		// Gold earned min.
 		"BountyGoldMax"				"360"		// Gold earned max.
 		"DisableWearables" "1"
-		
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 	
 		//=================================================================================================================
@@ -1956,6 +2004,8 @@
 		"BountyGoldMin"				"599"		// Gold earned min.
 		"BountyGoldMax"				"601"		// Gold earned max.
 		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 		
 	}
 	
@@ -2034,6 +2084,9 @@
 		"BountyGoldMin"				"1490"		// Gold earned min.
 		"BountyGoldMax"				"1510"		// Gold earned max.
 		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
 		
 	}
 	
@@ -2100,6 +2153,8 @@
 		"BountyGoldMin"				"300"		// Gold earned min.
 		"BountyGoldMax"				"305"		// Gold earned max.
 		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 	
 }

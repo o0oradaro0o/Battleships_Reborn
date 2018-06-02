@@ -2420,7 +2420,7 @@ function CherryLaunch(args)
 		   iVisionRadius = 1000,
 		   iVisionTeamNumber = caster:GetTeamNumber(),
 		   bDeleteOnHit = false,
-		   iMoveSpeed = 700,
+		   iMoveSpeed = 1300,
 		   vVelocity = 700
 	   }
 	   projectile = ProjectileManager:CreateTrackingProjectile(info)
@@ -2449,7 +2449,7 @@ function CherrySevenLaunch(args)
 			iVisionRadius = 1000,
 			iVisionTeamNumber = caster:GetTeamNumber(),
 			bDeleteOnHit = false,
-			iMoveSpeed = 700,
+			iMoveSpeed = 900,
 			vVelocity = 700
 		}
 		projectile = ProjectileManager:CreateTrackingProjectile(info)
