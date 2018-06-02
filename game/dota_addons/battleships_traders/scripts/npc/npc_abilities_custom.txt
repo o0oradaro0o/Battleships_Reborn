@@ -1494,7 +1494,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"200 250 300 400"
+		"AbilityDamage"					"200 250 300 350"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -3564,7 +3564,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"150 200 250 300"
+				"radius"				"200 250 300 350"
 			}
 			"03"
 			{
@@ -3625,7 +3625,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"150 200 250 300"
+				"radius"				"200 250 300 350"
 			}
 			"03"
 			{
@@ -8526,7 +8526,7 @@
 
 	// Stats
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"500 600 700 800"
+	"AbilityCastRange"				"800 900 1000 1100"
 	"AbilityCastPoint"				"0.35 0.35 0.35 0.35"
 	"AbilityCooldown"				"15 14 13 12"
 	"AbilityManaCost"				"0 0 0 0"
@@ -8538,7 +8538,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"range"			"500 600 700 800"
+			"range"			"800 900 1000 1100"
 		}
 		"02"
 		{
@@ -8739,7 +8739,7 @@
 	"gamble"
   {
     "BaseClass"                     "ability_lua"
-    "AbilityType"										"DOTA_ABILITY_TYPE_ULTIMATE"
+    "AbilityType"										"DOTA_ABILITY_TYPE_ULTIMATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
     "ScriptFile"                    "heroes/gamble.lua"
     "AbilityTextureName"            "gamble"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -9943,12 +9943,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"200 225 250 275"
+				"radius"					"275 275 275 275"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"dmg"					"150 200 250 300"
+				"dmg"					"200 250 300 350"
 			}
 			
 		}
@@ -10054,7 +10054,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"		"55 77 99 121"
+				"damage"		"99 121 154 187"
 			}
 
 		}
@@ -10468,12 +10468,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"200 225 250 275"
+				"radius"					"275 275 275 275"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"dmg"					"150 200 250 300"
+				"dmg"					"200 250 300 350"
 			}
 			
 		}
@@ -10579,7 +10579,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"		"55 77 99 121"
+				"damage"		"99 121 154 187"
 			}
 
 		}
@@ -10993,12 +10993,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"200 225 250 275"
+				"radius"					"275 275 275 275"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"dmg"					"150 200 250 300"
+				"dmg"					"200 250 300 350"
 			}
 			
 		}
@@ -11104,7 +11104,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"		"55 77 99 121"
+				"damage"		"99 121 154 187"
 			}
 
 		}

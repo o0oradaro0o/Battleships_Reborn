@@ -419,11 +419,11 @@ MOVE BONUS: 30 40 50 60"
 DURATION: 2 2.5 3 3.5"
 "gamble_cherry_one"                                          "Cherry"
 "gamble_cherry_one_Description"                              "Throws a Cherry Bomb dealing damage to target area.                                  
-RADIUS: 200 225 250 275                           
-DMG: 150 200 250 300"
+RADIUS: 275 275 275 275                           
+DMG: 200 250 300 350"
 "gamble_seven_one"                                           "Seven"
 "gamble_seven_one_Description"                               "Fires 7 powerful shots at target enemy, moving stops shooting.
-DAMAGE: 55 77 99 121"
+DAMAGE: 99 121 154 187"
 
 
 
@@ -462,7 +462,7 @@ DAMAGE: 250 300 350"
 WAVE SPEED: 1450
 MOVEMENT SPEED REDUCTION: 1450
 WAVE WIDTH: 200
-DAMAGE: 200 250 300 400"
+DAMAGE: 200 250 300 350"
 
 "gun_it"								"Overcharge!"
 "gun_it_Description"					"Overcharge your engine, increasing acceleration at the cost of health. Damage continues until the engine cools off. (momentum continues through stuns and holds)\n\nHigher levels increase base speed bonus.
@@ -490,7 +490,7 @@ DURATION: 2.0 2.5 3.0"
 "plane_fly_battleship"									"Short Flight"
 "plane_fly_battleship_Description"					"Attempt to take off, and fly for a short time. Spews flaming oil that damages enemies. If your flight ends on land, you will crash and die. (momentum continues through stuns and holds) \n\nHigher levels increase duration, damage, and damage radius.
 DPS: 50 60 70 80
-AREA: 150 200 250 300
+AREA: 200 250 300 350
 DURATION: 4.0 4.0 4.0 4.0
 SPEED BONUS: 150 150 150 150"
 
@@ -3222,7 +3222,7 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
  Newest balance changes: (5-29-2018)
 -NEW BOATS ADDED!
 -New 1k: Whaling Dinghy
--New 3k: Riverboat!
+-New 3k: Riverboat! (texture will be improved soon)
 -Two more new boats to come!
 - Viking regen increased
 - Paddlewheel base speed reduced
