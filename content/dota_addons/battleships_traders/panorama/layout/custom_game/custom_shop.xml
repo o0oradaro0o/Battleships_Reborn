@@ -788,7 +788,6 @@
 		</Panel>	
 	</Panel>
 
-
 	<Panel hittest="false" id="brewmaster">	
 		<Panel hittest="false" class="ship_details_holder" >
 		

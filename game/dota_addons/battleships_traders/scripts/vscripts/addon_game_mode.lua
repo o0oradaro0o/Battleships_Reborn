@@ -3816,7 +3816,7 @@ function buyBoat(eventSourceIndex, args)
 		local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
 		
 		 --print(itemName .. " vs " .. casterUnit:GetName())
-		if (directionOne:Length() < 1000 or directionTwo:Length() < 1000) and herogold>cost-1 and not string.match(casterUnit:GetName(),itemName )  and GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+		if (directionOne:Length() < 1000 or directionTwo:Length() < 1000) and herogold>cost-1 and not string.match(casterUnit:GetName(),itemName )  and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or  g_LorneItemBuyers == g_PlayerCount) then
 			boat=true
 			casterUnit:SetGold(herogold-cost,true)
 			casterUnit:SetGold(0,false)

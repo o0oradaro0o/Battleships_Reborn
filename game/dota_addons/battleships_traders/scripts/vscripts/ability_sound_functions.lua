@@ -39,12 +39,16 @@ function headAboveWaterSoundStart(keys)
 	 --print("headAboveWaterSoundStart")
 	local casterUnit = keys.caster
 	EmitSoundOn("Hero_Dark_Seer.Ion_Shield_lp", casterUnit)
+	StartAnimation(casterUnit, {duration = 10, activity = ACT_SCRIPT_CUSTOM_1, rate = .1})
+
 end
 
 function headAboveWaterSoundStop(keys)
 	 --print("headAboveWaterSoundStop")
 	local casterUnit = keys.caster
 	StopSoundOn("Hero_Dark_Seer.Ion_Shield_lp", casterUnit)
+	StartAnimation(casterUnit, {duration = 1, activity = ACT_DOTA_RUN, rate = 1})
+
 end
 
 function gunItSound(keys)
