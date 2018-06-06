@@ -1677,6 +1677,74 @@
 					</Panel>
 		</Panel>	
 	</Panel>
+
+
+		<Panel hittest="false" id="razor">	
+		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
+		<Label hittest="false" class="boat_title" text="#razor" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/razor.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#razor_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="9200" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="380" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="20" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('razor','jakiro_ice_path_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/jakiro_ice_path.png" />	
+                       <Label hittest="false" class="ability_name" text="#jakiro_ice_path_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('razor','iceberg_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/invoker_ice_wall.png" />
+                       <Label hittest="false" class="ability_name" text="#iceberg_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('razor','icy_waters_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/tusk_ice_shards.png" />
+                       <Label hittest="false" class="ability_name" text="#icy_waters_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('razor','crystal_maiden_freezing_field_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/crystal_maiden_freezing_field.png" />
+                       <Label hittest="false" class="ability_name" text="#crystal_maiden_freezing_field_battleship"/>"
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="razor_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="razor_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('razor', 12000)" oncontextmenu="buyBoat('razor', 12000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="12000 G" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
 	
 	
 	<Panel hittest="false" id="vengefulspirit">	
@@ -2020,6 +2088,10 @@
 								<Button class="boat_btn_item"  onactivate="showDetails('windrunner')" oncontextmenu="buyBoat('windrunner', 12000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/windrunner.png" />
 									 <Label hittest="false" class="boat_name_text" text="#windrunner" />
+								</Button>
+								<Button class="boat_btn_item"  onactivate="showDetails('razor')" oncontextmenu="buyBoat('razor', 12000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/razor.png" />
+									 <Label hittest="false" class="boat_name_text" text="#razor" />
 								</Button>
 							</Panel>
 							<Panel hittest="false" class="supply_row">

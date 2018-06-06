@@ -69,46 +69,6 @@
 			m_Vanim = 
 			[
 				{
-					m_Animationname = "stormchaser_idle"
-					m_Filepath = "models/stormchaser_idle.fbx"
-					m_nStartframe = 0
-					m_nEndframe = 119
-					m_flFps = 24.0
-					m_Loop = 
-					{
-						m_bLoop = true
-						m_bSmoothLoop = false
-						m_nSmoothLoopStart = 0
-						m_nSmoothLoopEnd = 0
-						m_StartLoop = 
-						{
-							_class = "CVAnimCmdStartLoop"
-							m_bEnabled = false
-							m_nLoopRestart = 0
-						}
-					}
-					m_bHidden = false
-					m_bDisable = false
-					m_Activities = [  ]
-					m_AnimationEvents = [  ]
-					m_MotionFrames = [  ]
-					m_pIkRules = [  ]
-					m_pAlignAnimation = null
-					m_adjustAnimation = 
-					{
-						m_translation = [ 0.0, 0.0, 0.0 ]
-						m_rotation = [ 0.0, 0.0, 0.0 ]
-					}
-					m_Keywords = [  ]
-					m_sequenceParams = 
-					{
-						m_flFadeInTime = 0.7
-						m_flFadeOutTime = 0.7
-					}
-					m_folderName = ""
-					m_MotionFramesRootBone = ""
-				},
-				{
 					m_Animationname = "stormchaser_move"
 					m_Filepath = "models/stormchaser_move.fbx"
 					m_nStartframe = 0
@@ -129,7 +89,13 @@
 					}
 					m_bHidden = false
 					m_bDisable = false
-					m_Activities = [  ]
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_RUN"
+							m_nWeight = 1
+						},
+					]
 					m_AnimationEvents = [  ]
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
@@ -142,8 +108,54 @@
 					m_Keywords = [  ]
 					m_sequenceParams = 
 					{
-						m_flFadeInTime = 0.7
-						m_flFadeOutTime = 0.7
+						m_flFadeInTime = 1.0
+						m_flFadeOutTime = 1.0
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "stormchaser_idle"
+					m_Filepath = "models/stormchaser_idle.fbx"
+					m_nStartframe = 0
+					m_nEndframe = 119
+					m_flFps = 24.0
+					m_Loop = 
+					{
+						m_bLoop = true
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_IDLE"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 1.0
+						m_flFadeOutTime = 1.0
 					}
 					m_folderName = ""
 					m_MotionFramesRootBone = ""

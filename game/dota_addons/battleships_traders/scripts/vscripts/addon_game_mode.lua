@@ -303,6 +303,8 @@ g_ModelLookUp["npc_dota_hero_sniper"] = "models/sub_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_visage"] = "models/noah_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_ursa"] = "models/Aircraft_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_pugna"] = "models/ice_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_razor"] = "models/stormchaser_boat.vmdl"
+
 g_ModelLookUp["npc_dota_hero_windrunner"] = "models/const_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_tusk"] = "models/battleship_boat0.vmdl"
 g_ModelLookUp["npc_dota_hero_vengefulspirit"] = "models/trade_one_boat.vmdl"
@@ -1831,6 +1833,8 @@ function GetBoatValue(hero)
 		 return 4000
 	elseif string.match(hero:GetName(),"pugna") then
 		 return 12000
+	elseif string.match(hero:GetName(),"razor") then
+		return 12000
 	 else
 		 return 0
 end
@@ -2040,6 +2044,7 @@ if g_CoOpDiffLevel==5-g_CoOpDiffSetting then
 		table.insert(g_CoOpUnitPool,"npc_dota_hero_tusk")
 		table.insert(g_CoOpUnitPool,"npc_dota_hero_windrunner")
 		table.insert(g_CoOpUnitPool,"npc_dota_hero_pugna")
+		table.insert(g_CoOpUnitPool,"npc_dota_hero_razor")
 		table.insert(g_CoOpUnitPool,"npc_dota_hero_spirit_breaker")
 		
 		if g_CoOpDiffSetting==3 or g_CoOpDiffSetting==2 then
@@ -3869,6 +3874,8 @@ function buyBoat(eventSourceIndex, args)
 				become_boat(casterUnit, "npc_dota_hero_phantom_lancer")
 			elseif string.match(itemName,"pugna") then
 				become_boat(casterUnit, "npc_dota_hero_pugna")
+			elseif string.match(itemName,"razor") then
+				become_boat(casterUnit, "npc_dota_hero_razor")
 			elseif string.match(itemName,"vengefulspirit") then
 				become_boat(casterUnit, "npc_dota_hero_vengefulspirit")
 			elseif string.match(itemName,"enigma") then
