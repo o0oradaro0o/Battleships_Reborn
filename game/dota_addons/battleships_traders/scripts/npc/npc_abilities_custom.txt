@@ -11112,6 +11112,70 @@
 	
 
 
+	"thunder_storm"
+	{
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "heroes/thunder_storm.lua"
+		"AbilityTextureName"            "zuus_lightning_bolt"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySound"                  "Hero_Zuus.GodsWrath"
+		"AbilityCastRange"							"%lightning_radius"
+
+		"precache"
+		{           
+		"particle"          "particles/units/heroes/hero_invoker/invoker_invoke.vpcf"
+		"particle"          "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+		"soundfile"         "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+		}
+
+
+		
+		"AbilitySpecial"
+		{
+		"01"
+		{
+			"var_type"              "FIELD_INTEGER"
+			"lightning_radius"                "600"
+		}
+		"02"
+		{
+			"var_type"              				"FIELD_FLOAT"
+			"lightning_tick_interval_min"   "0.5"
+		}
+		"03"
+		{
+			"var_type"              				"FIELD_FLOAT"
+			"lightning_tick_interval_max"   ".8"
+		}
+		"04"
+		{
+			"var_type"              "FIELD_INTEGER"
+			"damage"                "100"
+		}
+		"05"
+		{
+			"var_type"              "FIELD_INTEGER"
+			"duration"              "12"
+		}
+		"06"
+		{
+			"var_type"              "FIELD_INTEGER"
+			"sight_radius"          "900"
+		}
+		"07"
+		{
+			"var_type"              "FIELD_INTEGER"
+			"sight_duration"        "3"
+		}
+		"08"
+		{
+			"var_type"              					"FIELD_INTEGER"
+			"lightning_bolt_search_radius"    "300"
+		}
+		}
+	}
+
+
 
 	
 }

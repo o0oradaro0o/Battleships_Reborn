@@ -291,6 +291,7 @@ function showDetails(BoatName) {
 		$("#tusk").style.height = "0px";
 		$("#windrunner").style.height = "0px";
 		$("#pugna").style.height = "0px";
+		$("#razor").style.height = "0px";
 		$("#rattletrap").style.height = "0px";
 		$("#batrider").style.height = "0px";
 		$("#tidehunter").style.height = "0px";
@@ -321,6 +322,7 @@ function showDetails(BoatName) {
 		$("#tusk").style.height = "0px";
 		$("#windrunner").style.height = "0px";
 		$("#pugna").style.height = "0px";
+		$("#razor").style.height = "0px";
 		$("#rattletrap").style.height = "0px";
 		$("#batrider").style.height = "0px";
 		$("#tidehunter").style.height = "0px";
@@ -569,6 +571,7 @@ function closeShipShop() {
 	$("#tusk").style.height = "0px";
 	$("#windrunner").style.height = "0px";
 	$("#pugna").style.height = "0px";
+	$("#razor").style.height = "0px";
 	$("#rattletrap").style.height = "0px";
 	$("#batrider").style.height = "0px";
 	$("#tidehunter").style.height = "0px";
