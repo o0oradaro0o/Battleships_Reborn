@@ -107,6 +107,10 @@
 	"pugna"						"Ice Breaker"
 	"pugna_desc"				"The Ice Breaker survives the cold better than any other ship and brings with it all the power of frost."
 	
+	"razor"						"Stormchaser Hydrofoil"
+	"razor_desc"				"Fast light craft that harnesses the power of nature."
+	
+
 	"vengefulspirit"			"Phoenician Trader"
 	"vengefulspirit_desc"		"The Phoenician Trader is a simple but fully licensed trading ship."
 	

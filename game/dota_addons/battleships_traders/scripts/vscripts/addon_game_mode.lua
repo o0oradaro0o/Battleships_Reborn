@@ -1516,7 +1516,7 @@ if g_BoatJustBaught ==0 then
 		g_heroCache[npcName] = true
 		PrecacheUnitByNameAsync(npcName, function(...) end)
 	end
-	
+
   if g_MainTimerTickCount > 20 then
   if npc:IsIllusion() then
 			npc:SetModel( "models/noah_boat.vmdl" )
@@ -1526,6 +1526,8 @@ if g_BoatJustBaught ==0 then
 		RemoveWearables( npc )
 		AttachCosmetics(npc)
 		stopPhysics(npc)
+		
+		
 		npc:SetBaseStrength(1)
 		 --print("hero level is" .. npc:GetLevel())
 		Timers:CreateTimer( 0.1, function()
@@ -3337,6 +3339,9 @@ function become_boat(casterUnit, heroname)
 					RemoveWearables( hero )
 					AttachCosmetics(hero)
 					fixAbilities(hero)
+					if string.match(hero:GetName(),"razor") then
+						hero:SetMana(0)
+					end
 						 --print("this is the new hero, put items in " .. hero:GetName())
 						hero:SetGold(gold, true)
 						hero:SetGold(0, false)
@@ -3484,7 +3489,7 @@ function become_boat(casterUnit, heroname)
 		local data ={}
 		storage:AddToPlayerBoatHist(plyID,{item=storage:GetHeroName(plyID) , time= math.floor(GameRules:GetGameTime()/60+0.5)})
 					 --print(storage:GetHeroName(plyID) .. math.floor(GameRules:GetGameTime()/60+0.5))
-
+		
 		
 	FireGameEvent("Boat_Spawned",data)
 	end)

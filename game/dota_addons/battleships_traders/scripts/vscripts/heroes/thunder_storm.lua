@@ -1,38 +1,46 @@
+LinkLuaModifier("modifier_thunder_storm", "heroes/thunder_storm.lua", LUA_MODIFIER_MOTION_NONE)
+
 thunder_storm = class({})
+modifier_thunder_storm = class({})
 
-hasEnded = true
-function thunder_storm:OnUpgrade()
-    if hasEnded == nil or hasEnded then
-        thunder_storm:CreateStorm(self)
+function modifier_thunder_storm:OnCreated()
+
+
+    if IsServer() then
+        self:StartIntervalThink(.2)
     end
 end
-function thunder_storm:OnOwnerSpawned()
-    if hasEnded == nil or self.hasEnded then
-        thunder_storm:CreateStorm(self)
+
+function modifier_thunder_storm:OnDestroy()
+    if IsServer() then
+        self:GetParent():RemoveModifierByName("modifier_aoe_rupture_lua")
     end
 end
-function thunder_storm:OnOwnerDied()
-    hasEnded = true
-end
+function modifier_thunder_storm:GetEffectName()
+	return "particles/units/heroes/hero_razor/razor_rain_storm.vpcf"
+  end
 
+ function modifier_thunder_storm:GetEffectAttachType()
+	return PATTACH_ABSORIGIN_FOLLOW
+  end
 
-function thunder_storm:CreateStorm(ability)
-    local caster = ability:GetCaster()
+function  modifier_thunder_storm:OnIntervalThink()
+	
+	
+	local caster =  self:GetAbility():GetCaster()
+	if RandomInt(0, 100)>caster:GetMana()/10+10 then
+		return
+	end
 	local sound = "Hero_Zuus.GodsWrath"
-	local ability = ability
-    hasEnded = false
-
+	local ability =  self:GetAbility()
 	local lightning_radius = ability:GetSpecialValueFor("lightning_radius")
 	local lightning_bolt_search_radius = ability:GetSpecialValueFor("lightning_bolt_search_radius")
 	local duration = ability:GetSpecialValueFor("duration")
 	local lightning_tick_interval_min =  ability:GetSpecialValueFor("lightning_tick_interval_min")
 	local lightning_tick_interval_max = ability:GetSpecialValueFor("lightning_tick_interval_max")
 
-	Timers:CreateTimer(.5, function()
-		if hasEnded then return end
-
 		-- Find an initial strike point
-		local targetPoint = caster:GetAbsOrigin() + RandomVector( RandomFloat( 0, lightning_radius ) )
+		local targetPoint = caster:GetAbsOrigin() + RandomVector( RandomFloat( 100, lightning_radius ) )
 		-- If there's a nearby unit, strike it instead
 		local enemies = FindUnitsInRadius(
 			caster:GetTeam(),
@@ -55,9 +63,22 @@ function thunder_storm:CreateStorm(ability)
 
     thunder_storm:CastLightningBolt(ability, targetUnit, targetPoint)
 
-		return RandomFloat(lightning_tick_interval_min, lightning_tick_interval_max)
-	end)
+	return RandomFloat(lightning_tick_interval_min, lightning_tick_interval_max)
 end
+
+
+
+function thunder_storm:OnUpgrade()
+	local caster = self:GetCaster()
+	caster:AddNewModifier(self:GetCaster(), self, "modifier_thunder_storm", {})
+end
+
+function thunder_storm:OnOwnerSpawned()
+	local caster = self:GetCaster()
+	caster:AddNewModifier(self:GetCaster(), self, "modifier_thunder_storm", {})
+end
+
+
 
 function thunder_storm:CastLightningBolt(ability, targetUnit, targetPoint)
 	local caster = ability:GetCaster()
@@ -93,8 +114,12 @@ function thunder_storm:CastLightningBolt(ability, targetUnit, targetPoint)
       damage = damage,
       damage_type = DAMAGE_TYPE_MAGICAL,
       ability = ability
-    }
-        
+	}
+	if targetUnit:IsRealHero() then
+		caster:SetMana(caster:GetMana()+50)
+	else
+		caster:SetMana(caster:GetMana()+15)
+	end
     ApplyDamage(damageTable)
 	end
 end

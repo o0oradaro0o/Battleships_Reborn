@@ -11140,7 +11140,7 @@
 		"02"
 		{
 			"var_type"              				"FIELD_FLOAT"
-			"lightning_tick_interval_min"   "0.5"
+			"lightning_tick_interval_min"   "0.1"
 		}
 		"03"
 		{
@@ -11150,7 +11150,7 @@
 		"04"
 		{
 			"var_type"              "FIELD_INTEGER"
-			"damage"                "100"
+			"damage"                "200 300 400 500"
 		}
 		"05"
 		{
