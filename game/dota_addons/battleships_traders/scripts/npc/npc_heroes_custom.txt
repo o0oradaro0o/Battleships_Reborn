@@ -521,10 +521,10 @@
         "override_hero"             "npc_dota_hero_batrider"          // Hero to override
 
 
-       "Model" "models/whaling_boat.vmdl"     // Model.
+       "Model" "models/dinghy_boat.vmdl"     // Model.
         "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
 		
-		"ModelScale"        "0.8"
+		"ModelScale"        "0.30"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
 	    "AttributeBaseStrength"     "0"

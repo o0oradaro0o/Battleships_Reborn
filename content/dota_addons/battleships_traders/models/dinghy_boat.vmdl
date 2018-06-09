@@ -46,8 +46,265 @@
 	{
 		m_pObject = null
 	}
-	m_pHitBoxSetLists = [  ]
-	m_pAttachmentLists = [  ]
+	m_pHitBoxSetLists = 
+	[
+		{
+			m_pObject = 
+			{
+				m_HitBoxSets = 
+				[
+					{
+						m_name = "default"
+						m_HitBoxes = 
+						[
+							{
+								m_name = "Main2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Main2"
+								m_vMinBounds = [ -228.565964, -427.212769, -91.922638 ]
+								m_vMaxBounds = [ 232.107742, 330.819214, 312.778992 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "tobow"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "tobow"
+								m_vMinBounds = [ -48.530563, 116.121605, -59.937515 ]
+								m_vMaxBounds = [ 43.918671, 208.570831, -8.706429 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "accordion"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "accordion"
+								m_vMinBounds = [ -43.918983, 7.565147, -43.248489 ]
+								m_vMaxBounds = [ 48.530922, 78.872856, 49.722679 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "wheelr"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "wheelr"
+								m_vMinBounds = [ -39.243851, 9.270538, -38.645088 ]
+								m_vMaxBounds = [ 38.103256, 53.34874, 38.757309 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "stand"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "stand"
+								m_vMinBounds = [ -164.475922, 1.743546, -99.380264 ]
+								m_vMaxBounds = [ 169.084381, 94.82682, 111.7285 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "pinr"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "pinr"
+								m_vMinBounds = [ -3.079941, 2.438934, -3.157364 ]
+								m_vMaxBounds = [ 3.079025, 26.05899, 3.053486 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "wheelL"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "wheelL"
+								m_vMinBounds = [ -39.466003, 9.70076, -38.994766 ]
+								m_vMaxBounds = [ 37.873154, 53.739014, 38.403152 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "puller"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "puller"
+								m_vMinBounds = [ -22.247061, -6.102661, -12.97641 ]
+								m_vMaxBounds = [ 19.00279, 106.733215, 13.95491 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "arm2r"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "arm2r"
+								m_vMinBounds = [ -6.801437, -6.939133, -7.741898 ]
+								m_vMaxBounds = [ 7.349243, 92.802795, 7.141068 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "arm2L"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "arm2L"
+								m_vMinBounds = [ -7.261551, -7.080109, -7.523346 ]
+								m_vMaxBounds = [ 6.863251, 92.643814, 7.053268 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "chain"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "chain"
+								m_vMinBounds = [ -1.109843, 0.930786, -1.314453 ]
+								m_vMaxBounds = [ 3.057407, 9.387634, 0.64859 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "stringR"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "stringR"
+								m_vMinBounds = [ -1.974228, -7.782623, -1.570999 ]
+								m_vMaxBounds = [ 10.217529, 232.587952, 6.588512 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "stringl"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "stringl"
+								m_vMinBounds = [ -10.459946, -5.216217, -0.955173 ]
+								m_vMaxBounds = [ 3.179443, 235.152527, 5.397732 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone"
+								m_vMinBounds = [ -4.466811, -16.105499, -16.383072 ]
+								m_vMaxBounds = [ 4.466883, 150.722076, 7.339645 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "arm1r"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "arm1r"
+								m_vMinBounds = [ -2.345831, -0.153946, -2.247192 ]
+								m_vMaxBounds = [ 2.126034, 153.123108, 1.383423 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "propR"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "propR"
+								m_vMinBounds = [ -72.843643, 7.259186, -49.910454 ]
+								m_vMaxBounds = [ 57.965164, 100.814545, 73.62748 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "arm1L"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "arm1L"
+								m_vMinBounds = [ -3.355475, -1.99498, -0.766525 ]
+								m_vMaxBounds = [ 2.691597, 151.294861, 2.485809 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "propL"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "propL"
+								m_vMinBounds = [ -58.987549, 8.297241, -74.303627 ]
+								m_vMaxBounds = [ 72.03595, 101.611633, 48.645012 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "lantern"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "lantern"
+								m_vMinBounds = [ -23.0109, -1.277313, -22.936371 ]
+								m_vMaxBounds = [ 23.924955, 67.412613, 23.354004 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+						]
+					},
+				]
+				m_AutoCreateSetName = ""
+			}
+		},
+	]
+	m_pAttachmentLists = 
+	[
+		{
+			m_pObject = 
+			{
+				m_name = ""
+				m_attachments = 
+				[
+					{
+						m_name = "attach_attack1"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Bone"
+								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
+								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "attach_hitloc"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Bone"
+								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
+								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "flame_effect"
+						m_influences = 
+						[
+							{
+								m_influenceName = "lantern"
+								m_vTranslationOffset = [ 0.000005, 39.378632, 0.0 ]
+								m_vRotationOffset = [ -0.0, 0.000001, -0.000003 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+				]
+			}
+		},
+	]
 	m_pAnimGroup = 
 	{
 		m_pObject = 
@@ -89,54 +346,20 @@
 					}
 					m_bHidden = false
 					m_bDisable = false
-					m_Activities = [  ]
-					m_AnimationEvents = [  ]
-					m_MotionFrames = [  ]
-					m_pIkRules = [  ]
-					m_pAlignAnimation = null
-					m_adjustAnimation = 
-					{
-						m_translation = [ 0.0, 0.0, 0.0 ]
-						m_rotation = [ 0.0, 0.0, 0.0 ]
-					}
-					m_Keywords = [  ]
-					m_sequenceParams = 
-					{
-						m_flFadeInTime = 0.2
-						m_flFadeOutTime = 0.2
-					}
-					m_folderName = ""
-					m_MotionFramesRootBone = ""
-				},
-				{
-					m_Animationname = "dinghy_move"
-					m_Filepath = "models/dinghy_move.fbx"
-					m_nStartframe = 0
-					m_nEndframe = 119
-					m_flFps = 24.0
-					m_Loop = 
-					{
-						m_bLoop = false
-						m_bSmoothLoop = false
-						m_nSmoothLoopStart = 0
-						m_nSmoothLoopEnd = 0
-						m_StartLoop = 
+					m_Activities = 
+					[
 						{
-							_class = "CVAnimCmdStartLoop"
-							m_bEnabled = false
-							m_nLoopRestart = 0
-						}
-					}
-					m_bHidden = false
-					m_bDisable = false
-					m_Activities = [  ]
+							m_Name = "ACT_SCRIPT_CUSTOM_0"
+							m_nWeight = 1
+						},
+					]
 					m_AnimationEvents = [  ]
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
 					m_pAlignAnimation = null
 					m_adjustAnimation = 
 					{
-						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_translation = [ 0.0, 0.0, 100.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]
@@ -153,7 +376,7 @@
 					m_Filepath = "models/dinghy_idle.fbx"
 					m_nStartframe = 0
 					m_nEndframe = 119
-					m_flFps = 24.0
+					m_flFps = 45.0
 					m_Loop = 
 					{
 						m_bLoop = true
@@ -169,14 +392,66 @@
 					}
 					m_bHidden = false
 					m_bDisable = false
-					m_Activities = [  ]
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_IDLE"
+							m_nWeight = 1
+						},
+					]
 					m_AnimationEvents = [  ]
 					m_MotionFrames = [  ]
 					m_pIkRules = [  ]
 					m_pAlignAnimation = null
 					m_adjustAnimation = 
 					{
-						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_translation = [ 0.0, 0.0, 100.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "dinghy_move"
+					m_Filepath = "models/dinghy_move.fbx"
+					m_nStartframe = 0
+					m_nEndframe = 119
+					m_flFps = 45.0
+					m_Loop = 
+					{
+						m_bLoop = true
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_RUN"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 100.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]

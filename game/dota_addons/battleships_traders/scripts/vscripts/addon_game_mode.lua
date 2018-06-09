@@ -288,7 +288,7 @@ g_ModelLookUp["npc_dota_hero_tidehunter"] = "models/pontoon_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_crystal_maiden"] = "models/canoe_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_phantom_lancer"] = "models/air_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_rattletrap"] = "models/cat_boat.vmdl"
-g_ModelLookUp["npc_dota_hero_batrider"] = "models/whaling_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_batrider"] = "models/dinghy_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_jakiro"] = "models/galleon_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_nevermore"] = "models/plane_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_meepo"] = "models/house_boat.vmdl"
@@ -512,7 +512,9 @@ PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_lina.v
 PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_rattletrap.vsndevts", context )
 PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_lich.vsndevts", context )
 PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts", context )
-	PrecacheResource( "soundfile","soundevents/music/dsadowski_01/soundevents_music.vsndevts", context )
+PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_drowranger.vsndevts", context )
+	
+PrecacheResource( "soundfile","soundevents/music/dsadowski_01/soundevents_music.vsndevts", context )
 	PrecacheUnitByNameSync("npc_dota_shop_right_mid", context)
 	PrecacheUnitByNameSync("npc_dota_shop_right_top", context)
 	PrecacheUnitByNameSync("npc_dota_shop_right_bot", context)
@@ -1581,10 +1583,16 @@ function AttachCosmetics(hero)
 				 hero.particleL = ParticleManager:CreateParticle( "particles/basic_projectile/smoke_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 					ParticleManager:SetParticleControlEnt(hero.particleL, 0, hero, PATTACH_POINT_FOLLOW, "attach_smoke_2", hero:GetAbsOrigin(), true)
 				end
-			elseif string.match(hero:GetName(),"phantom") then
+		elseif string.match(hero:GetName(),"phantom") then
 			if hero.particleM==nil then
 				 hero.particleM = ParticleManager:CreateParticle( "particles/basic_projectile/smoke_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 					ParticleManager:SetParticleControlEnt(hero.particleM, 0, hero, PATTACH_POINT_FOLLOW, "Pipe_emitter", hero:GetAbsOrigin(), true)
+				end
+		elseif string.match(hero:GetName(),"batrider") then
+			if hero.particleM==nil then
+				print("placing particle")
+					hero.particleM = ParticleManager:CreateParticle( "particles/basic_projectile/lamp_flame.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+					ParticleManager:SetParticleControlEnt(hero.particleM, 0, hero, PATTACH_POINT_FOLLOW, "flame_effect", hero:GetAbsOrigin(), true)
 				end
 		end
 
@@ -2869,7 +2877,7 @@ function CBattleship8D:OnEntityKilled( keys )
 
 		  if killedUnit:IsRealHero() and killedUnit:GetPlayerID()~=nil then
 				Timers:CreateTimer(.1, function() 
-					killedUnit:SetTimeUntilRespawn(killedUnit:GetTimeUntilRespawn()+killedUnit:GetLevel()/2-1)
+					killedUnit:SetTimeUntilRespawn(12+killedUnit:GetLevel()/2-1)
 				end)
 		end
 		
