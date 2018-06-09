@@ -3355,6 +3355,14 @@ function become_boat(casterUnit, heroname)
 						hero:SetGold(0, false)
 						g_HeroGoldArray[hero:GetPlayerOwnerID()]=gold
 						hero:AddExperience(xp, false, false)
+						if hero:GetLevel() >= 14 then
+							for abilitySlot = 0, 5, 1 do
+								local ability = hero:GetAbilityByIndex(abilitySlot)
+								if ability then 
+									ability:SetLevel(ability:GetMaxLevel())
+								end
+							end
+						end
 						for b = 0, 14, 1 do 
 							local newItem = CreateItem(itemlist[b], hero, hero)
 							if newItem ~= nil then                   -- makes sure that the item exists and making sure it is the correct item
