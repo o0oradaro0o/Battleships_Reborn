@@ -3355,7 +3355,7 @@ function become_boat(casterUnit, heroname)
 						hero:SetGold(0, false)
 						g_HeroGoldArray[hero:GetPlayerOwnerID()]=gold
 						hero:AddExperience(xp, false, false)
-						if hero:GetLevel() >= 14 then
+						if hero:GetLevel() >= 14 and  g_LorneItemBuyers ~= g_PlayerCount then
 							for abilitySlot = 0, 5, 1 do
 								local ability = hero:GetAbilityByIndex(abilitySlot)
 								if ability then 

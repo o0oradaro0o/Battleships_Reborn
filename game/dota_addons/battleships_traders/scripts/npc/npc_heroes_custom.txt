@@ -1881,7 +1881,7 @@
 		
 		"AbilityLayout"				"3"
 		"Ability1"					"static_link_lua"
-		"Ability2"					"iceberg_battleship"
+		"Ability2"					"electric_bounce_lua"
 		"Ability3"					"thunder_storm"
 		"Ability4"					"ball_lightning_lua"
 

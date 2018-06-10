@@ -11175,19 +11175,14 @@
 		"05"
 		{
 			"var_type"              "FIELD_INTEGER"
-			"duration"              "12"
+			"sight_radius"          "900"
 		}
 		"06"
 		{
 			"var_type"              "FIELD_INTEGER"
-			"sight_radius"          "900"
-		}
-		"07"
-		{
-			"var_type"              "FIELD_INTEGER"
 			"sight_duration"        "3"
 		}
-		"08"
+		"07"
 		{
 			"var_type"              					"FIELD_INTEGER"
 			"lightning_bolt_search_radius"    "300"
@@ -11239,21 +11234,7 @@
         "var_type"        "FIELD_INTEGER"
         "drain_range_buffer"  "200"
       }
-      "04"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "radius"        "200 200 200 200"
-      }
-      "05"
-      {
-        "var_type"        "FIELD_INTEGER"
-        "vision_radius"     "800"
-      }
-      "06"
-      {
-        "var_type"        "FIELD_FLOAT"
-        "vision_duration"   "3.34"
-      }
+
     }
   }
 
@@ -11261,6 +11242,7 @@
   {
     "BaseClass"           "ability_lua"
     "ScriptFile"          "heroes/ball_lightning.lua"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
     "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
     "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
     "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -11304,6 +11286,37 @@
       {
         "var_type"          "FIELD_INTEGER"
         "damage_base"  "10"
+      }
+    }
+  }
+
+
+  "electric_bounce_lua"
+  {
+    "BaseClass"           "ability_lua"
+    "ScriptFile"          "heroes/electric_bounce.lua"
+    "AbilityTextureName"  "disruptor_kinetic_field"
+
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "SpellDispellableType"      "SPELL_DISPELLABLE_NO"
+
+    "AbilityCastPoint"        "0.0"
+    "AbilityManaCost"         "0"
+ 	"AbilityCooldown"       "22 20 18 16"
+    "precache"
+    {
+      "particle"  "particles/econ/events/ti7/mjollnir_shield_ti7.vpcf"
+      "soundfile" "sounds/weapons/hero/monkey_king/taunt_boing.vsnd"
+      "soundfile" "sounds/weapons/hero/witch_doctor/cask_bounce02.vsnd"
+      "soundfile" "sounds/items/item_mjoll_on.vsnd"
+    }
+
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"        "FIELD_FLOAT"
+        "duration"        "1 1.2 1.4 1.6"
       }
     }
   }
