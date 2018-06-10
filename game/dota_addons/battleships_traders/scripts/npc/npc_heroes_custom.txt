@@ -1855,6 +1855,7 @@
         "override_hero"             "npc_dota_hero_razor"          // Hero to override
 
       "Model" "models/stormchaser_boat.vmdl"    // Model.
+	  "ModelScale"        "0.5"
 		 "SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
@@ -1894,7 +1895,6 @@
 		"Ability16"					"bships_empty"
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
-        "ModelScale"        "0.3"
 		"RingRadius"				"100"
 		"ItemSlots"  {}
 		"BountyGoldMin"				"1490"		// Gold earned min.

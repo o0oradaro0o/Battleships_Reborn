@@ -46,7 +46,7 @@ function modifier_electric_bounce:OnTakeDamage(keys)
 
       local abilityKv = ability:GetAbilityKeyValues()
       local fire_rate = abilityKv.AbilitySpecial.fire_rate
-      if string.match(ability:GetAbilityName(), "bow") then
+      if string.match(ability:GetAbilityName(), "_bow") then
 
         local damage = keys.damage
         local sound = "Hero_WitchDoctor.Paralyzing_Cask_Bounce"
@@ -91,45 +91,4 @@ function modifier_electric_bounce:OnTakeDamage(keys)
     end
 end
   end
-end
-
-
-function PrintTable(t, indent, done)
-	--print ( string.format ('PrintTable type %s', type(keys)) )
-	if type(t) ~= "table" then
-		return
-	end
-
-	done = done or {}
-	done[t] = true
-	indent = indent or 0
-
-	local l = {}
-	for k, v in pairs(t) do
-		table.insert(l, k)
-	end
-
-	table.sort(l)
-	for k, v in ipairs(l) do
-		-- Ignore FDesc
-		if v ~= "FDesc" then
-			local value = t[v]
-
-			if type(value) == "table" and not done[value] then
-				done[value] = true
-				 print(string.rep("\t", indent) .. tostring(v) .. ":")
-				PrintTable(value, indent + 2, done)
-			elseif type(value) == "userdata" and not done[value] then
-				done[value] = true
-				 print(string.rep("\t", indent) .. tostring(v) .. ": " .. tostring(value))
-				PrintTable((getmetatable(value) and getmetatable(value).__index) or getmetatable(value), indent + 2, done)
-			else
-				if t.FDesc and t.FDesc[v] then
-					 print(string.rep("\t", indent) .. tostring(t.FDesc[v]))
-				else
-					 print(string.rep("\t", indent) .. tostring(v) .. ": " .. tostring(value))
-				end
-			end
-		end
-	end
 end
