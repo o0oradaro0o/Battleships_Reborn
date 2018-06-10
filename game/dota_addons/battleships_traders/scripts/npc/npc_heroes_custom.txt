@@ -1880,10 +1880,10 @@
 		"MagicalResistance"				"0"
 		
 		"AbilityLayout"				"3"
-		"Ability1"					"jakiro_ice_path_battleship"
+		"Ability1"					"static_link_lua"
 		"Ability2"					"iceberg_battleship"
 		"Ability3"					"thunder_storm"
-		"Ability4"					"crystal_maiden_freezing_field_battleship"
+		"Ability4"					"ball_lightning_lua"
 
 		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"

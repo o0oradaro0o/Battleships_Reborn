@@ -427,7 +427,7 @@ RADIUS: 275 275 275 275
 DMG: 200 250 300 350"
 "gamble_seven_one"                                           "Seven"
 "gamble_seven_one_Description"                               "Fires 7 powerful shots at target enemy, moving stops shooting.
-DAMAGE: 99 121 154 187"
+DAMAGE: 66 99 121 154"
 
 
 

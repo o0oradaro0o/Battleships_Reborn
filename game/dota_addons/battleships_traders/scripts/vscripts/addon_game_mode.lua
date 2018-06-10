@@ -1298,7 +1298,7 @@ function CBattleship8D:OnThink()
 					
 					--handles people stuck on cliffs
 						local height = hero:GetOrigin() * Vector(0,0,1)
-						if height:Length() > 110 and false == hero:HasModifier("line_mod")  and false == hero:HasModifier("fly_bat") and false == hero:HasModifier("fly") and false == hero:HasModifier("modifier_spirit_breaker_charge_of_darkness") and false == hero:HasModifier("modifier_kunkka_torrent") and false == hero:HasModifier("move_carrier_in")  and false == hero:HasModifier("giraffe_grabed")  and false == hero:HasModifier("modifier_batrider_flaming_lasso") and false == hero:HasModifier("modifier_mirana_leap")  and false == hero:IsStunned() and  hero:IsAlive()  then 
+						if height:Length() > 110 and false == hero:HasModifier("line_mod") and false == hero:HasModifier("modifier_ball_lightning")  and false == hero:HasModifier("fly_bat") and false == hero:HasModifier("fly") and false == hero:HasModifier("modifier_spirit_breaker_charge_of_darkness") and false == hero:HasModifier("modifier_kunkka_torrent") and false == hero:HasModifier("move_carrier_in")  and false == hero:HasModifier("giraffe_grabed")  and false == hero:HasModifier("modifier_batrider_flaming_lasso") and false == hero:HasModifier("modifier_mirana_leap")  and false == hero:IsStunned() and  hero:IsAlive()  then 
 							
 							local abil1 = hero:GetAbilityByIndex(1)
 							

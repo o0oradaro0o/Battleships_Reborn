@@ -2089,10 +2089,10 @@
 									<Image class="boat_image" src="file://{images}/custom_game/boats/windrunner.png" />
 									 <Label hittest="false" class="boat_name_text" text="#windrunner" />
 								</Button>
-								<!-- <Button class="boat_btn_item"  onactivate="showDetails('razor')" oncontextmenu="buyBoat('razor', 12000)">
+								<Button class="boat_btn_item"  onactivate="showDetails('razor')" oncontextmenu="buyBoat('razor', 12000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/razor.png" />
 									 <Label hittest="false" class="boat_name_text" text="#razor" />
-								</Button> -->
+								</Button>
 							</Panel>
 							<Panel hittest="false" class="supply_row">
 								 <Button class="boat_btn_item"  onactivate="showDetails('tusk')" oncontextmenu="buyBoat('tusk', 12000)">

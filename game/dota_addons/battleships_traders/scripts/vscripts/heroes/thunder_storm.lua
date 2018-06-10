@@ -28,7 +28,7 @@ function  modifier_thunder_storm:OnIntervalThink()
 	
 	
 	local caster =  self:GetAbility():GetCaster()
-	if RandomInt(0, 100)>caster:GetMana()/10+10 then
+	if RandomInt(0, 100)>caster:GetMana()/20+10 then
 		return
 	end
 	local sound = "Hero_Zuus.GodsWrath"
