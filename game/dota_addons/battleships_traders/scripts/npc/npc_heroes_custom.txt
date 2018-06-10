@@ -521,10 +521,10 @@
         "override_hero"             "npc_dota_hero_batrider"          // Hero to override
 
 
-       "Model" "models/whaling_boat.vmdl"     // Model.
+       "Model" "models/dinghy_boat.vmdl"     // Model.
         "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
 		
-		"ModelScale"        "0.8"
+		"ModelScale"        "0.30"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
 	    "AttributeBaseStrength"     "0"
@@ -1864,7 +1864,7 @@
         "AttributeIntelligenceGain" "0"
         "AttributeBaseAgility"      "0"
         "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
+		 "StatusMana"                "1000"
         "StatusManaRegen"           "0.0"
 
 
@@ -1880,10 +1880,10 @@
 		"MagicalResistance"				"0"
 		
 		"AbilityLayout"				"3"
-		"Ability1"					"jakiro_ice_path_battleship"
-		"Ability2"					"iceberg_battleship"
+		"Ability1"					"static_link_lua"
+		"Ability2"					"electric_bounce_lua"
 		"Ability3"					"thunder_storm"
-		"Ability4"					"crystal_maiden_freezing_field_battleship"
+		"Ability4"					"ball_lightning_lua"
 
 		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"

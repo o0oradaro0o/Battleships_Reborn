@@ -1740,6 +1740,10 @@
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "%bonus_speed"
 
 				}
+				"States"
+					{
+						"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+					}
 			}
 		}
 		// Special	
@@ -1821,6 +1825,10 @@
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "%bonus_speed"
 
 				}
+				"States"
+					{
+						"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+					}
 			}
 		}
 		// Special	
@@ -1901,6 +1909,10 @@
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "%bonus_speed"
 
 				}
+				"States"
+					{
+						"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+					}
 			}
 		}
 		// Special	
@@ -1982,6 +1994,10 @@
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"  "%bonus_speed"
 
 				}
+				"States"
+					{
+						"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+					}
 			}
 		}
 		// Special	
@@ -7327,6 +7343,7 @@
 							"Target"                                "TARGET"
 					}	
 				}
+				"EffectName"    "particles/basic_projectile/status_effect_poison.vpcf" 
 			}
 			
 		"item_poison_dot_show"
@@ -8961,6 +8978,7 @@
 							"Target"                                "TARGET"
 					}	
 				}
+				"EffectName"    "particles/basic_projectile/status_effect_poison.vpcf" 
 			}
 			
 		"item_poison_dot_show"
@@ -10573,6 +10591,7 @@
 							"Target"                                "TARGET"
 					}	
 				}
+				"EffectName"    "particles/basic_projectile/status_effect_poison.vpcf" 
 			}
 			
 		"item_poison_dot_show"
@@ -12202,6 +12221,7 @@
 							"Target"                                "TARGET"
 					}	
 				}
+				"EffectName"    "particles/basic_projectile/status_effect_poison.vpcf" 
 			}
 			
 					"item_poison_dot_show"

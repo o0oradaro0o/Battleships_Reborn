@@ -107,6 +107,10 @@
 	"pugna"						"Ice Breaker"
 	"pugna_desc"				"The Ice Breaker survives the cold better than any other ship and brings with it all the power of frost."
 	
+	"razor"						"Stormchaser Hydrofoil"
+	"razor_desc"				"Fast light craft that harnesses the power of nature."
+	
+
 	"vengefulspirit"			"Phoenician Trader"
 	"vengefulspirit_desc"		"The Phoenician Trader is a simple but fully licensed trading ship."
 	
@@ -423,7 +427,7 @@ RADIUS: 275 275 275 275
 DMG: 200 250 300 350"
 "gamble_seven_one"                                           "Seven"
 "gamble_seven_one_Description"                               "Fires 7 powerful shots at target enemy, moving stops shooting.
-DAMAGE: 99 121 154 187"
+DAMAGE: 66 99 121 154"
 
 
 

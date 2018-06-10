@@ -13,7 +13,7 @@
 			m_ModelList = 
 			[
 				{
-					m_model = resource:"models/projectiles/drow_arrow.vmdl"
+					m_model = resource:"models/hasrpoon.vmdl"
 				},
 			]
 			m_bAnimated = true
@@ -78,7 +78,7 @@
 		},
 		{
 			_class = "C_INIT_GlobalScale"
-			m_flScale = 2.8
+			m_flScale = 1.2
 		},
 	]
 	m_Emitters = 

@@ -288,7 +288,7 @@ g_ModelLookUp["npc_dota_hero_tidehunter"] = "models/pontoon_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_crystal_maiden"] = "models/canoe_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_phantom_lancer"] = "models/air_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_rattletrap"] = "models/cat_boat.vmdl"
-g_ModelLookUp["npc_dota_hero_batrider"] = "models/whaling_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_batrider"] = "models/dinghy_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_jakiro"] = "models/galleon_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_nevermore"] = "models/plane_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_meepo"] = "models/house_boat.vmdl"
@@ -512,7 +512,9 @@ PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_lina.v
 PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_rattletrap.vsndevts", context )
 PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_lich.vsndevts", context )
 PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts", context )
-	PrecacheResource( "soundfile","soundevents/music/dsadowski_01/soundevents_music.vsndevts", context )
+PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_drowranger.vsndevts", context )
+	
+PrecacheResource( "soundfile","soundevents/music/dsadowski_01/soundevents_music.vsndevts", context )
 	PrecacheUnitByNameSync("npc_dota_shop_right_mid", context)
 	PrecacheUnitByNameSync("npc_dota_shop_right_top", context)
 	PrecacheUnitByNameSync("npc_dota_shop_right_bot", context)
@@ -1296,7 +1298,7 @@ function CBattleship8D:OnThink()
 					
 					--handles people stuck on cliffs
 						local height = hero:GetOrigin() * Vector(0,0,1)
-						if height:Length() > 110 and false == hero:HasModifier("line_mod")  and false == hero:HasModifier("fly_bat") and false == hero:HasModifier("fly") and false == hero:HasModifier("modifier_spirit_breaker_charge_of_darkness") and false == hero:HasModifier("modifier_kunkka_torrent") and false == hero:HasModifier("move_carrier_in")  and false == hero:HasModifier("giraffe_grabed")  and false == hero:HasModifier("modifier_batrider_flaming_lasso") and false == hero:HasModifier("modifier_mirana_leap")  and false == hero:IsStunned() and  hero:IsAlive()  then 
+						if height:Length() > 110 and false == hero:HasModifier("line_mod") and false == hero:HasModifier("modifier_ball_lightning")  and false == hero:HasModifier("fly_bat") and false == hero:HasModifier("fly") and false == hero:HasModifier("modifier_spirit_breaker_charge_of_darkness") and false == hero:HasModifier("modifier_kunkka_torrent") and false == hero:HasModifier("move_carrier_in")  and false == hero:HasModifier("giraffe_grabed")  and false == hero:HasModifier("modifier_batrider_flaming_lasso") and false == hero:HasModifier("modifier_mirana_leap")  and false == hero:IsStunned() and  hero:IsAlive()  then 
 							
 							local abil1 = hero:GetAbilityByIndex(1)
 							
@@ -1516,7 +1518,7 @@ if g_BoatJustBaught ==0 then
 		g_heroCache[npcName] = true
 		PrecacheUnitByNameAsync(npcName, function(...) end)
 	end
-	
+
   if g_MainTimerTickCount > 20 then
   if npc:IsIllusion() then
 			npc:SetModel( "models/noah_boat.vmdl" )
@@ -1526,6 +1528,8 @@ if g_BoatJustBaught ==0 then
 		RemoveWearables( npc )
 		AttachCosmetics(npc)
 		stopPhysics(npc)
+		
+		
 		npc:SetBaseStrength(1)
 		 --print("hero level is" .. npc:GetLevel())
 		Timers:CreateTimer( 0.1, function()
@@ -1579,10 +1583,16 @@ function AttachCosmetics(hero)
 				 hero.particleL = ParticleManager:CreateParticle( "particles/basic_projectile/smoke_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 					ParticleManager:SetParticleControlEnt(hero.particleL, 0, hero, PATTACH_POINT_FOLLOW, "attach_smoke_2", hero:GetAbsOrigin(), true)
 				end
-			elseif string.match(hero:GetName(),"phantom") then
+		elseif string.match(hero:GetName(),"phantom") then
 			if hero.particleM==nil then
 				 hero.particleM = ParticleManager:CreateParticle( "particles/basic_projectile/smoke_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 					ParticleManager:SetParticleControlEnt(hero.particleM, 0, hero, PATTACH_POINT_FOLLOW, "Pipe_emitter", hero:GetAbsOrigin(), true)
+				end
+		elseif string.match(hero:GetName(),"batrider") then
+			if hero.particleM==nil then
+				print("placing particle")
+					hero.particleM = ParticleManager:CreateParticle( "particles/basic_projectile/lamp_flame.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+					ParticleManager:SetParticleControlEnt(hero.particleM, 0, hero, PATTACH_POINT_FOLLOW, "flame_effect", hero:GetAbsOrigin(), true)
 				end
 		end
 
@@ -2867,7 +2877,7 @@ function CBattleship8D:OnEntityKilled( keys )
 
 		  if killedUnit:IsRealHero() and killedUnit:GetPlayerID()~=nil then
 				Timers:CreateTimer(.1, function() 
-					killedUnit:SetTimeUntilRespawn(killedUnit:GetTimeUntilRespawn()+killedUnit:GetLevel()/2-1)
+					killedUnit:SetTimeUntilRespawn(12+killedUnit:GetLevel()/2-1)
 				end)
 		end
 		
@@ -3337,11 +3347,22 @@ function become_boat(casterUnit, heroname)
 					RemoveWearables( hero )
 					AttachCosmetics(hero)
 					fixAbilities(hero)
+					if string.match(hero:GetName(),"razor") then
+						hero:SetMana(0)
+					end
 						 --print("this is the new hero, put items in " .. hero:GetName())
 						hero:SetGold(gold, true)
 						hero:SetGold(0, false)
 						g_HeroGoldArray[hero:GetPlayerOwnerID()]=gold
 						hero:AddExperience(xp, false, false)
+						if hero:GetLevel() >= 14 and  g_LorneItemBuyers ~= g_PlayerCount then
+							for abilitySlot = 0, 5, 1 do
+								local ability = hero:GetAbilityByIndex(abilitySlot)
+								if ability then 
+									ability:SetLevel(ability:GetMaxLevel())
+								end
+							end
+						end
 						for b = 0, 14, 1 do 
 							local newItem = CreateItem(itemlist[b], hero, hero)
 							if newItem ~= nil then                   -- makes sure that the item exists and making sure it is the correct item
@@ -3484,7 +3505,7 @@ function become_boat(casterUnit, heroname)
 		local data ={}
 		storage:AddToPlayerBoatHist(plyID,{item=storage:GetHeroName(plyID) , time= math.floor(GameRules:GetGameTime()/60+0.5)})
 					 --print(storage:GetHeroName(plyID) .. math.floor(GameRules:GetGameTime()/60+0.5))
-
+		
 		
 	FireGameEvent("Boat_Spawned",data)
 	end)

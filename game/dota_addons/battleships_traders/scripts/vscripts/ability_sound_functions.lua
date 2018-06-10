@@ -43,6 +43,7 @@ function headAboveWaterSoundStart(keys)
 
 end
 
+
 function headAboveWaterSoundStop(keys)
 	 --print("headAboveWaterSoundStop")
 	local casterUnit = keys.caster
@@ -302,4 +303,12 @@ function bellHitSound(keys)
 	print("bellHitSound")
    local casterUnit = keys.target
    EmitSoundOn("Hero_Meepo.Poof.End.Crystal04", casterUnit)
+end
+
+function harpoonFireSound(keys)
+	--print("headAboveWaterSoundStart")
+   local casterUnit = keys.caster
+   EmitSoundOn("Hero_DrowRanger.Attack", casterUnit)
+   StartAnimation(casterUnit, {duration = 1, activity = ACT_SCRIPT_CUSTOM_0, rate = 1})
+
 end

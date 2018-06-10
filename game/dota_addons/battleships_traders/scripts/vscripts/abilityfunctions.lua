@@ -488,7 +488,7 @@ function PistolDamage(args) -- keys is the information sent by the ability
 	local abil = casterUnit:GetAbilityByIndex(0)
 	local level = abil:GetLevel()
 	local targetUnit = args.target
-	local dmg = casterUnit:GetMaxHealth() * 0.0005 * level + (1.7 * level)
+	local dmg = casterUnit:GetMaxHealth() * 0.00075 * level + (1.7 * level)
 	local damageTable = {
 		victim = targetUnit,
 		attacker = casterUnit,

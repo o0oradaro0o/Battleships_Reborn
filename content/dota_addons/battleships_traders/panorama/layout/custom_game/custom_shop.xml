@@ -560,7 +560,7 @@
                        <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('batrider','harpoon_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/clinkz_searing_arrows.png" />
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/harpoon.png" />
                        <Label hittest="false" class="ability_name" text="#harpoon_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('batrider','wale_bait_battleship')" >

@@ -46,7 +46,54 @@
 	{
 		m_pObject = null
 	}
-	m_pHitBoxSetLists = [  ]
+	m_pHitBoxSetLists = 
+	[
+		{
+			m_pObject = 
+			{
+				m_HitBoxSets = 
+				[
+					{
+						m_name = "default"
+						m_HitBoxes = 
+						[
+							{
+								m_name = "Bone"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone"
+								m_vMinBounds = [ -318.976166, -240.43042, -757.867676 ]
+								m_vMaxBounds = [ 796.275024, 2042.651611, 354.137451 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone.005"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone.005"
+								m_vMinBounds = [ -85.801666, 504.846313, -84.428345 ]
+								m_vMaxBounds = [ 71.672333, 688.010864, 69.456055 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "Bone.006"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "Bone.006"
+								m_vMinBounds = [ -151.07962, 238.682129, -146.487915 ]
+								m_vMaxBounds = [ 155.684662, 902.524292, 155.668091 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+						]
+					},
+				]
+				m_AutoCreateSetName = ""
+			}
+		},
+	]
 	m_pAttachmentLists = [  ]
 	m_pAnimGroup = 
 	{
