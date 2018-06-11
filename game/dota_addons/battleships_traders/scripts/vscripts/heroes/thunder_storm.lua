@@ -17,7 +17,7 @@ function modifier_thunder_storm:OnDestroy()
     end
 end
 function modifier_thunder_storm:GetEffectName()
-	return "particles/units/heroes/hero_razor/razor_rain_storm.vpcf"
+	return "particles/basic_projectile/rain_storm.vpcf"
   end
 
  function modifier_thunder_storm:GetEffectAttachType()
@@ -82,8 +82,8 @@ end
 
 function thunder_storm:CastLightningBolt(ability, targetUnit, targetPoint)
 	local caster = ability:GetCaster()
-  local sound = "Hero_Zuus.LightningBolt"
-  local particle = "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+  local sound = "Hero_Leshrac.Lightning_Storm"
+  local particle = "particles/basic_projectile/lightning_bolt.vpcf"
   local particleHeight = 2000
 
   local sight_radius = 900--ability:GetSpecialValueFor("sight_radius")

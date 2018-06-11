@@ -205,6 +205,45 @@
 							},
 						]
 					},
+					{
+						m_name = "attach_lightning_1"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Bone"
+								m_vTranslationOffset = [ -0.000002, 848.752136, -51.759247 ]
+								m_vRotationOffset = [ 0.000001, 0.000003, 0.000003 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "attach_lightning_2"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Bone"
+								m_vTranslationOffset = [ -87.42997, 788.085449, -65.555771 ]
+								m_vRotationOffset = [ 0.000004, 0.000009, 0.000002 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "attach_lightning_3"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Bone"
+								m_vTranslationOffset = [ 91.452286, 775.536438, -64.646179 ]
+								m_vRotationOffset = [ 0.000004, 0.000008, 0.000003 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
 				]
 			}
 		},
@@ -366,7 +405,7 @@
 	m_nMaxClothVertsPerMesh = 2048
 	m_bBuildClothBoneHierarchy = false
 	m_nNavType = "AUTH_NAV_MESH"
-	m_bMakeUniqueVMeshes = false
+	m_bMakeUniqueVMeshes = true
 	m_bMakeImplicitBindPoseSequence = false
 	m_bAdjustSkeletonFromBoneFlags = false
 	m_bHiddenAssetFlag = false
