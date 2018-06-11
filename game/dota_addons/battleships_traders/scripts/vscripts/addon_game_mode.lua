@@ -1595,6 +1595,15 @@ function AttachCosmetics(hero)
 					hero.particleM = ParticleManager:CreateParticle( "particles/basic_projectile/lamp_flame.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 					ParticleManager:SetParticleControlEnt(hero.particleM, 0, hero, PATTACH_POINT_FOLLOW, "flame_effect", hero:GetAbsOrigin(), true)
 				end
+		elseif string.match(hero:GetName(),"razor") then
+			if hero.particleR==nil then
+				hero.particleR = ParticleManager:CreateParticle( "particles/basic_projectile/lightning_vroom.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+				ParticleManager:SetParticleControlEnt(hero.particleR, 0, hero, PATTACH_POINT_FOLLOW, "attach_lightning_1", hero:GetAbsOrigin(), true)
+				hero.particleL = ParticleManager:CreateParticle( "particles/basic_projectile/lightning_vroom.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+				ParticleManager:SetParticleControlEnt(hero.particleL, 0, hero, PATTACH_POINT_FOLLOW, "attach_lightning_2", hero:GetAbsOrigin(), true)
+				hero.particleM = ParticleManager:CreateParticle( "particles/basic_projectile/lightning_vroom.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+				ParticleManager:SetParticleControlEnt(hero.particleM, 0, hero, PATTACH_POINT_FOLLOW, "attach_lightning_3", hero:GetAbsOrigin(), true)
+			end
 		end
 
 end
@@ -3161,7 +3170,7 @@ local itemName = keys.itemname
 
 
  --print(g_ItemCodeLookUp[itemName])
-	  storage:AddToPlayerItemHist(casterUnit:GetPlayerID(),{item=itemName, time=math.floor(GameRules:GetGameTime()/60+0.5)})--math.floor(GameRules:GetGameTime()/60+0.5) .. g_ItemCodeLookUp[itemName])
+	  storage:AddToPlayerItemHist(casterUnit:GetPlayerID(),{item=itemName, time=math.floor(GameRules:GetGameTime()/60+0.5), cost = GetItemCost(itemName)})--math.floor(GameRules:GetGameTime()/60+0.5) .. g_ItemCodeLookUp[itemName])
   
 
 
@@ -3349,7 +3358,7 @@ function become_boat(casterUnit, heroname)
 					AttachCosmetics(hero)
 					fixAbilities(hero)
 					if string.match(hero:GetName(),"razor") then
-						hero:SetMana(0)
+						hero:SetMana(500)
 					end
 						 --print("this is the new hero, put items in " .. hero:GetName())
 						hero:SetGold(gold, true)

@@ -430,6 +430,36 @@ DMG: 200 250 300 350"
 DAMAGE: 66 99 121 154"
 
 
+	"thunder_storm"                                              "Thunder Storm"
+		"thunder_storm_Description"                                  "Passivly rain lightniong around you striking your foes and building up your charge as you damage enemies.  the more charge you amass the faster the liughtning comes. \n higher levels increase damage"
+		"thunder_storm_lightning_radius"                             "LIGHTNING RADIUS:"
+		"thunder_storm_lightning_tick_interval_min"                  "LIGHTNING TICK INTERVAL MIN:"
+		"thunder_storm_lightning_tick_interval_max"                  "LIGHTNING TICK INTERVAL MAX:"
+		"thunder_storm_damage"                                       "DAMAGE:"
+		"thunder_storm_sight_radius"                                 "SIGHT RADIUS:"
+		"thunder_storm_sight_duration"                               "SIGHT DURATION:"
+		"thunder_storm_lightning_bolt_search_radius"                 "LIGHTNING BOLT SEARCH RADIUS:"
+
+		"static_link_lua"                                            "Static Surge"
+		"static_link_lua_Description"                                "Bond to target dealing damage to them and builkding up your static charge"
+		"static_link_lua_drain_length"                               "DURATION:"
+		"static_link_lua_drain_rate"                                 "SURGE RATE:"
+		"static_link_lua_drain_range_buffer"                         "DRAIN RANGE BUFFER:"
+
+		"ball_lightning_lua"                                         "Electric Slide"
+		"ball_lightning_lua_Description"                             "Discharge your static build up to serge forward at rediculous speed ignoreing walls and other ships. any enemies you pass will take samage and slightly recharge you"
+		"ball_lightning_lua_ball_speed"                              "BALL SPEED:"
+		"ball_lightning_lua_damage_radius"                           "DAMAGE RADIUS:"
+		"ball_lightning_lua_damage_per_units"                        "DAMAGE PER DISTANCE:"
+		"ball_lightning_lua_ball_vision_radius"                      "BALL VISION RADIUS:"
+		"ball_lightning_lua_damage_base"                             "DAMAGE BASE:"
+
+		"electric_bounce_lua"                                        "Electromagnetic Shielding"
+		"electric_bounce_lua_Description"                            "Incomming weapon attacks are redirected by electromagnetic forces back to their sources."
+		"electric_bounce_lua_duration"                               "DURATION:"
+
+
+
 
 "windrunner_powershot_battleship"									"Steady Shot"
 "windrunner_powershot_battleship_Description"					"The Catamaran's pontoons steady it on the open ocean. After channeling, release a long-range arrow that does damage to each target it passes through. Damage diminishes as it passes through each target. Steady Shot can be fired early for reduced damage. \n\nHigher levels increase damage.

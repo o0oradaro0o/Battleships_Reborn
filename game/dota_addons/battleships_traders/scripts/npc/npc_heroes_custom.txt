@@ -1876,7 +1876,7 @@
 		"MovementTurnRate"			"0.6"									// Turning rate.
 		
 		"StatusHealth"				"8900"		// Base health.
-		"StatusHealthRegen"			"60.0"		// Health regeneration rate.
+		"StatusHealthRegen"			"20.0"		// Health regeneration rate.
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		

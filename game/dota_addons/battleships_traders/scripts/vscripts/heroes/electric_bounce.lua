@@ -20,7 +20,7 @@ modifier_electric_bounce = class({})
 function modifier_electric_bounce:OnCreated()
   local caster = self:GetParent()
   local ability = self:GetAbility()
-  local particle = "particles/econ/events/ti7/mjollnir_shield_ti7.vpcf"
+  local particle = "particles/basic_projectile/mjollnir_shield_.vpcf"
 
   if IsServer() then
     self.index = ParticleManager:CreateParticle(particle, PATTACH_ABSORIGIN_FOLLOW, caster)

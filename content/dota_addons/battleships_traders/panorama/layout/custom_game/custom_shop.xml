@@ -1700,11 +1700,11 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="9200" />
+							<Label hittest="false" class="boat_stat_label_val" text="8900" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
-							<Label hittest="false" class="boat_stat_label_val" text="380" />
+							<Label hittest="false" class="boat_stat_label_val" text="425" />
 					</Panel>
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#regen" />
@@ -1714,21 +1714,21 @@
 			</Panel>	
 			<Panel hittest="false" class="boat_row">
 				
-					<Panel hittest="false" class="ability" onmouseover="showText('razor','jakiro_ice_path_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/jakiro_ice_path.png" />	
-                       <Label hittest="false" class="ability_name" text="#jakiro_ice_path_battleship"/>"
+					<Panel hittest="false" class="ability" onmouseover="showText('razor','static_link_lua')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/Static_Link_icon.png" />	
+                       <Label hittest="false" class="ability_name" text="#static_link_lua"/>"
 					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('razor','iceberg_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/invoker_ice_wall.png" />
-                       <Label hittest="false" class="ability_name" text="#iceberg_battleship"/>"
+					<Panel hittest="false" class="ability" onmouseover="showText('razor','electric_bounce_lua')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/Kinetic_Field_icon.png" />
+                       <Label hittest="false" class="ability_name" text="#electric_bounce_lua"/>"
 					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('razor','icy_waters_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/tusk_ice_shards.png" />
-                       <Label hittest="false" class="ability_name" text="#icy_waters_battleship"/>"
+					<Panel hittest="false" class="ability" onmouseover="showText('razor','thunder_storm')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/zuus_lightning_bolt.png" />
+                       <Label hittest="false" class="ability_name" text="#thunder_storm"/>"
 					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('razor','crystal_maiden_freezing_field_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/crystal_maiden_freezing_field.png" />
-                       <Label hittest="false" class="ability_name" text="#crystal_maiden_freezing_field_battleship"/>"
+					<Panel hittest="false" class="ability" onmouseover="showText('razor','ball_lightning_lua')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/Ball_Lightning_icon.png" />
+                       <Label hittest="false" class="ability_name" text="#ball_lightning_lua"/>"
 					</Panel>
 				</Panel>
 				<Panel hittest="false" class="boat_row">
