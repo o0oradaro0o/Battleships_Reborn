@@ -24,7 +24,7 @@ Layer0
 	g_flTexCoordRotation "0.000"
 	g_vTexCoordOffset "[0.000 0.000]"
 	g_vTexCoordScale "[1.000 1.000]"
-	TextureColor "materials/catboatsail.png"
+	TextureColor "materials/sail.tga"
 
 	//---- Fresnel ----
 	g_flFresnelModulatesAlpha "0.000"
