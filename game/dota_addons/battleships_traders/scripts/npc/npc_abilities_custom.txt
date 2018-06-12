@@ -11170,7 +11170,7 @@
 		"04"
 		{
 			"var_type"              "FIELD_INTEGER"
-			"damage"                "200 300 400 500"
+			"damage"                "200 225 250 300"
 		}
 		"05"
 		{
@@ -11180,12 +11180,12 @@
 		"06"
 		{
 			"var_type"              "FIELD_INTEGER"
-			"sight_duration"        "3"
+			"sight_duration"        "2"
 		}
 		"07"
 		{
 			"var_type"              					"FIELD_INTEGER"
-			"lightning_bolt_search_radius"    "300"
+			"lightning_bolt_search_radius"    "350"
 		}
 		}
 	}
@@ -11227,7 +11227,7 @@
       "02"
       {
         "var_type"        "FIELD_INTEGER"
-        "drain_rate"      "7 14 21 28"
+        "drain_rate"      "30 35 40 45"
       }
       "03"
       {
@@ -11265,7 +11265,7 @@
       "01"
       {
         "var_type"          "FIELD_INTEGER"
-        "ball_speed"        "1250"
+        "ball_speed"        "1850"
       }
       "02"
       {
