@@ -46,6 +46,10 @@
 	{
 		m_pObject = null
 	}
+<<<<<<< HEAD
+	m_pHitBoxSetLists = [  ]
+	m_pAttachmentLists = [  ]
+=======
 	m_pHitBoxSetLists = 
 	[
 		{
@@ -261,6 +265,7 @@
 			}
 		},
 	]
+>>>>>>> 8e818593bd2cdcb54ae6f52c554c8c7fd3c20186
 	m_pAnimGroup = 
 	{
 		m_pObject = 
