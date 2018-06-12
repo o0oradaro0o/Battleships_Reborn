@@ -289,7 +289,7 @@
 					m_flFps = 24.0
 					m_Loop = 
 					{
-						m_bLoop = false
+						m_bLoop = true
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
@@ -315,7 +315,7 @@
 					m_pAlignAnimation = null
 					m_adjustAnimation = 
 					{
-						m_translation = [ 0.0, 0.0, 70.0 ]
+						m_translation = [ 0.0, 0.0, 100.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]
@@ -361,7 +361,7 @@
 					m_pAlignAnimation = null
 					m_adjustAnimation = 
 					{
-						m_translation = [ 0.0, 0.0, 70.0 ]
+						m_translation = [ 0.0, 0.0, 60.0 ]
 						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
 					m_Keywords = [  ]
@@ -369,6 +369,52 @@
 					{
 						m_flFadeInTime = 1.0
 						m_flFadeOutTime = 1.0
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "stormchaser_boat"
+					m_Filepath = "models/stormchaser_boat.fbx"
+					m_nStartframe = 0
+					m_nEndframe = 0
+					m_flFps = 24.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_CAPTURE"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ -600.0, -130.0, 500.0 ]
+						m_rotation = [ 60.0, 30.0, 40.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
 					}
 					m_folderName = ""
 					m_MotionFramesRootBone = ""

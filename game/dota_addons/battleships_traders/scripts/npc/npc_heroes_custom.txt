@@ -1873,7 +1873,7 @@
 		"MagicalResistance"				"0"
 		
 		"MovementSpeed"				"425"									// Speed.
-		"MovementTurnRate"			"0.6"									// Turning rate.
+		"MovementTurnRate"			"0.5"									// Turning rate.
 		
 		"StatusHealth"				"8900"		// Base health.
 		"StatusHealthRegen"			"20.0"		// Health regeneration rate.
