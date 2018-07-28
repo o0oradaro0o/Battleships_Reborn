@@ -331,7 +331,7 @@ function rammingIt(args) -- keys is the information sent by the ability
 	local direction = casterUnit:GetForwardVector()
 	local abil = casterUnit:GetAbilityByIndex(2)
 	local level = abil:GetLevel()
-	local vec = direction:Normalized() * (30 * level + 80)
+	local vec = direction:Normalized() * (15 * level + 95)
 	casterUnit:AddPhysicsVelocity(vec)
 end
 
@@ -533,6 +533,37 @@ function fly2(args) -- keys is the information sent by the ability
 	local vecorig = casterUnit:GetOrigin() * Vector(1, 1, 1)
 
 	casterUnit:SetOrigin(vecorig + vec)
+end
+
+function fly3(args) -- keys is the information sent by the ability
+	-- --print('[ItemFunctions] gunning_it started! ')
+	local casterUnit = args.caster
+	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+
+	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	local direction = casterUnit:GetForwardVector()
+	local vec = direction:Normalized() * 20.0
+	local vecorig = casterUnit:GetOrigin() * Vector(1, 1, 1)
+	casterUnit:SetOrigin(vecorig + vec)
+
+	local abil = casterUnit:GetAbilityByIndex(1)
+	if abil:IsFullyCastable() then
+		print("i can cast")
+		local nearbyHero=FindUnitsInRadius( 
+			casterUnit:GetTeamNumber(), 
+			casterUnit:GetOrigin(), nil, 1000,
+			 DOTA_UNIT_TARGET_TEAM_FRIENDLY, 
+			 DOTA_UNIT_TARGET_HERO, 0, 0, false )
+			 
+		if #nearbyHero~=0 then
+			local  target=nearbyHero[RandomInt(1,#nearbyHero)]
+			print("i cast on " .. target:GetName())
+			casterUnit:CastAbilityOnTarget(target, abil, -1)
+		end
+	elseif RandomInt(1,15)==5 then
+		local hero = PlayerResource:GetSelectedHeroEntity(casterUnit:GetPlayerOwnerID())
+		casterUnit:MoveToPositionAggressive(hero:GetOrigin())
+	end
 end
 
 BurstTicks = {}
@@ -1282,7 +1313,7 @@ function mightStart(args) -- keys is the information sent by the ability
 				Target = fucker,
 				Source = args.source or casterUnit,
 				bHasFrontalCone = false,
-				iMoveSpeed = 750,
+				iMoveSpeed = 2500,
 				bReplaceExisting = false,
 				bProvidesVision = false,
 				iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
@@ -1367,9 +1398,9 @@ function airBlast(args) -- keys is the information sent by the ability
 		Ability = caster:GetAbilityByIndex(2),
 		EffectName = "particles/basic_projectile/blast_effect.vpcf",
 		vSpawnOrigin = caster:GetAbsOrigin(),
-		fDistance = 1000,
-		fStartRadius = 200,
-		fEndRadius = 200,
+		fDistance = 1500,
+		fStartRadius = 350,
+		fEndRadius = 350,
 		Source = caster,
 		bHasFrontalCone = false,
 		bReplaceExisting = false,
@@ -1378,7 +1409,7 @@ function airBlast(args) -- keys is the information sent by the ability
 		iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
 		fExpireTime = GameRules:GetGameTime() + 10.0,
 		bDeleteOnHit = false,
-		vVelocity = caster:GetForwardVector() * -1200,
+		vVelocity = caster:GetForwardVector() * -700,
 		bProvidesVision = true,
 		iVisionRadius = 600,
 		iVisionTeamNumber = caster:GetTeamNumber()

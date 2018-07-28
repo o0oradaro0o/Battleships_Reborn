@@ -683,7 +683,7 @@
 		
 		"AbilityLayout"				"3"
 		"Ability1"					"pistols_battleship"
-		"Ability2"					"morphling_waveform_battleship"
+		"Ability2"					"speed_boat_wave"
 		"Ability3"					"gun_it"
 		"Ability4"					"swim_battleship"
 		"Ability5"					"bships_empty"
@@ -1517,8 +1517,8 @@
 		
 		"AbilityLayout"				"3"
 		"Ability1"					"monkey_buisness"
-		"Ability2"					"terrorblade_conjure_image_battleship"
-		"Ability3"					"rainbow_battleship"
+		"Ability2"					"raven_battleship"
+		"Ability3"					"noah_guardian_angel_datadriven"
 		"Ability4"					"mountain_battleship"
 		"Ability6"					"bships_empty"
 				"Ability10"					"bships_empty"
@@ -1855,7 +1855,7 @@
         "override_hero"             "npc_dota_hero_razor"          // Hero to override
 
       "Model" "models/stormchaser_boat.vmdl"    // Model.
-	  "ModelScale"        "0.5"
+	  "ModelScale"        "0.4"
 		 "SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		

@@ -2033,7 +2033,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_stout_shield"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
@@ -2048,7 +2048,17 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemAlertable"					"1"
 		"ItemAliases"					"mana;mb"
-	
+		"AbilityCastRange"              "0"
+		"AbilityManaCost"               "0"
+		"AbilityCooldown"               "25"
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "extra_armor"
+			}
+		}
 
 		"Modifiers"
 		{
@@ -2063,6 +2073,15 @@
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
 				}
 			}
+			"extra_armor"
+			{
+				"Duration"  "%remove"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "%bonus_armor"
+
+				}
+			}
 		}
 		
 		// Special	
@@ -2072,17 +2091,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement"		"0"
+				"bonus_hp"				"500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"500"
+				"bonus_armor"			"2"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"1"
+				"remove"				"3"
 			}
 		}
 	}
@@ -2095,7 +2114,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_poor_mans_shield"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
@@ -2110,7 +2129,18 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemAlertable"					"1"
 		"ItemAliases"					"mana;mb"
-	
+	"AbilityCastRange"              "0"
+		"AbilityManaCost"               "0"
+		"AbilityCooldown"               "25"
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "extra_armor"
+			}
+		}
+
 
 		"Modifiers"
 		{
@@ -2125,6 +2155,15 @@
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
 				}
 			}
+			"extra_armor"
+			{
+				"Duration"  "%remove"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "%bonus_armor"
+
+				}
+			}
 		}
 		
 		// Special	
@@ -2134,17 +2173,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement"		"0"
+				"bonus_hp"				"800"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"800"
+				"bonus_armor"			"3"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"2"
+				"remove"				"3"
 			}
 		}
 	}
@@ -2157,7 +2196,7 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_buckler"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
@@ -2172,7 +2211,18 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemAlertable"					"1"
 		"ItemAliases"					"mana;mb"
-	
+	"AbilityCastRange"              "0"
+		"AbilityManaCost"               "0"
+		"AbilityCooldown"               "25"
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "extra_armor"
+			}
+		}
+
 
 		"Modifiers"
 		{
@@ -2187,6 +2237,15 @@
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
 				}
 			}
+			"extra_armor"
+			{
+				"Duration"  "%remove"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "%bonus_armor"
+
+				}
+			}
 		}
 		
 		// Special	
@@ -2196,17 +2255,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement"		"0"
+				"bonus_hp"				"1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"1500"
+				"bonus_armor"			"3"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"3"
+				"remove"				"3"
 			}
 		}
 	}
@@ -2220,10 +2279,21 @@
 
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_vanguard"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+"AbilityCastRange"              "0"
+		"AbilityManaCost"               "0"
+		"AbilityCooldown"               "25"
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "extra_armor"
+			}
+		}
 
 
 		// Item Info
@@ -2250,6 +2320,15 @@
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
 				}
 			}
+			"extra_armor"
+			{
+				"Duration"  "%remove"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"  "%bonus_armor"
+
+				}
+			}
 		}
 		
 		// Special	
@@ -2270,6 +2349,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_armor"			"4"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"remove"				"3"
 			}
 		}
 	}
@@ -3626,7 +3710,7 @@
 		"AbilityCastRange"              "%range"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "350" 
+		"ItemCost"                      "250" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
@@ -3695,7 +3779,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"dmg"				"12"
+				"dmg"				"20"
 			}
 			"02"
 			{
@@ -3730,7 +3814,7 @@
 			"08"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"dps"				"24"	
+				"dps"				"20"	
 			}
 		}
 	}
@@ -4954,7 +5038,7 @@
 		"AbilityCastRange"              "%range"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "800" 
+		"ItemCost"                      "700" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
@@ -5024,7 +5108,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"dmg"				"24"
+				"dmg"				"40"
 			}
 			"02"
 			{
@@ -5059,7 +5143,7 @@
 			"08"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"48"
+				"dps"			"40"
 			}
 		}
 	}
@@ -6272,7 +6356,7 @@
 		"AbilityCastRange"              "%range"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "1850" 
+		"ItemCost"                      "1750" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
@@ -6339,7 +6423,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"dmg"				"48"
+				"dmg"				"80"
 			}
 			"02"
 			{
@@ -6374,7 +6458,7 @@
 			"08"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"96"
+				"dps"			"80"
 			}
 		}
 	}
@@ -7275,7 +7359,7 @@
 		{
 			
 			
-			"item_poison_bow_shooting_doubled"
+			"item_poison_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -7444,7 +7528,7 @@
 		{
 			
 
-			"item_fire_bow_shooting_doubled"
+			"item_fire_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -7596,7 +7680,7 @@
 		{
 			
 
-			"item_ice_bow_shooting_doubled"
+			"item_ice_bow_doubled_shooting"
 			{
 				"Passive"	 "1"
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
@@ -7743,7 +7827,7 @@
 		"AbilityCastRange"              "%range"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "700" 
+		"ItemCost"                      "500" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
@@ -7759,7 +7843,7 @@
 		{
 			
 			
-			"item_wind_bow_shooting_doubled"
+			"item_wind_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -7832,7 +7916,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"dmg"				"12"
+				"dmg"				"20"
 			}
 			"02"
 			{
@@ -7867,7 +7951,7 @@
 			"08"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"dps"				"48"
+				"dps"				"40"
 			}
 		}
 	}
@@ -7900,7 +7984,7 @@
 		{
 			
 			
-			"item_light_bow_shooting_doubled"
+			"item_light_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -8027,7 +8111,7 @@
 		{
 			
 			
-			"item_coal_bow_shooting_doubled"
+			"item_coal_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -8176,7 +8260,7 @@
 		{
 			
 			
-			"item_plasma_bow_shooting_doubled"
+			"item_plasma_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -8327,7 +8411,7 @@
 		{
 			
 			
-			"item_spin_bow_shooting_doubled"
+			"item_spin_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -8393,17 +8477,8 @@
 			"RunScript"
 			{
 				"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
-				"Function"			"cluster1"
+				"Function"			"clusterBoom"
 			}
-			
-			"DeleteOnHit"			"false"
-			"Damage"
-			{
-					"Type"			"DAMAGE_TYPE_PHYSICAL"
-					"Damage"		"%dmg"
-					"Target"		"TARGET"
-			}
-				
 		}
 		"AbilitySpecial"
 		{
@@ -8474,7 +8549,7 @@
 		{
 			
 			
-			"item_caulk_bow_shooting_doubled"
+			"item_caulk_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -8596,7 +8671,7 @@
 		{
 			
 			
-			"item_breach_bow_shooting_doubled"
+			"item_breach_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -8801,7 +8876,7 @@
 		{
 			
 			
-			"item_chaos_bow_shooting_doubled"
+			"item_chaos_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -8910,7 +8985,7 @@
 		{
 			
 			
-			"item_poison_two_bow_shooting_doubled"
+			"item_poison_two_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -9076,7 +9151,7 @@
 		{
 			
 
-			"item_fire_two_bow_shooting_doubled"
+			"item_fire_two_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -9221,7 +9296,7 @@
 		{
 			
 			
-			"item_ice_two_bow_shooting_doubled"
+			"item_ice_two_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -9383,7 +9458,7 @@
 		{
 			
 			
-			"item_wind_two_bow_shooting_doubled"
+			"item_wind_two_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -9454,7 +9529,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"dmg"				"24"
+				"dmg"				"40"
 			}
 			"02"
 			{
@@ -9489,7 +9564,7 @@
 			"08"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"96"
+				"dps"			"80"
 			}
 
 		}
@@ -9520,7 +9595,7 @@
 	
 		"Modifiers"
 		{	
-			"item_light_two_bow_shooting_doubled"
+			"item_light_two_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -9646,7 +9721,7 @@
 		{
 			
 			
-			"item_coal_two_bow_shooting_doubled"
+			"item_coal_two_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -9796,7 +9871,7 @@
 		{
 			
 			
-			"item_plasma_two_bow_shooting_doubled"
+			"item_plasma_two_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -9947,7 +10022,7 @@
 		{
 			
 			
-			"item_spin_two_bow_shooting_doubled"
+			"item_spin_two_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -10012,17 +10087,9 @@
 			"RunScript"
 			{
 				"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
-				"Function"			"cluster2"
+				"Function"			"clusterBoom"
 			}
 		
-			"DeleteOnHit"                           "false"
-			"Damage"
-			{
-					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
-					"Damage"                                "%dmg"
-					"Target"                                "TARGET"
-			}
-				
 		}
 		"AbilitySpecial"
 		{
@@ -10213,7 +10280,7 @@
 		{
 			
 			
-			"item_breach_two_bow_shooting_doubled"
+			"item_breach_two_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -10419,7 +10486,7 @@
 		{
 			
 			
-			"item_chaos_two_bow_shooting_doubled"
+			"item_chaos_two_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -10527,7 +10594,7 @@
 		{
 			
 			
-			"item_poison_three_bow_shooting_doubled"
+			"item_poison_three_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -10690,7 +10757,7 @@
 		{
 			
 
-			"item_fire_three_bow_shooting_doubled"
+			"item_fire_three_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -10840,7 +10907,7 @@
 		{
 			
 			
-			"item_ice_three_bow_shooting_doubled"
+			"item_ice_three_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -11003,7 +11070,7 @@
 		{
 			
 			
-			"item_wind_three_bow_shooting_doubled"
+			"item_wind_three_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -11075,7 +11142,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"dmg"				"48"
+				"dmg"				"80"
 			}
 			"02"
 			{
@@ -11110,7 +11177,7 @@
 			"08"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"dps"				"192"
+				"dps"				"160"
 			}
 		}
 	}
@@ -11144,7 +11211,7 @@
 		"Modifiers"
 		{
 						
-			"item_light_three_bow_shooting_doubled"
+			"item_light_three_bow_doubled_shooting"
 			{
 				
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
@@ -11274,7 +11341,7 @@
 		{
 			
 			
-			"item_coal_three_bow_shooting_doubled"
+			"item_coal_three_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -11424,7 +11491,7 @@
 		{
 			
 			
-			"item_plasma_three_bow_shooting_doubled"
+			"item_plasma_three_bow_doubled_shooting"
 			{
 			
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
@@ -11576,7 +11643,7 @@
 		{
 			
 			
-			"item_spin_three_bow_shooting_doubled"
+			"item_spin_three_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -11641,16 +11708,12 @@
 			"RunScript"
 			{
 				"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
-				"Function"			"cluster3"
+				"Function"			"clusterBoom"
 			}
 		
-			"DeleteOnHit"                           "false"
-			"Damage"
-			{
-					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
-					"Damage"                                "%dmg"
-					"Target"                                "TARGET"
-			}
+
+
+
 				
 		}
 		"AbilitySpecial"
@@ -11848,7 +11911,7 @@
 		{
 			
 			
-			"item_breach_three_bow_shooting_doubled"
+			"item_breach_three_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -12055,7 +12118,7 @@
 		{
 			
 			
-			"item_chaos_three_bow_shooting_doubled"
+			"item_chaos_three_bow_doubled_shooting"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"%fire_rate"
@@ -12197,6 +12260,57 @@
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
 					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "900"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "700"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "900"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "700"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "900"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "700"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
+					}
 					
 				}
 				
@@ -12266,12 +12380,12 @@
 			"02"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"dmg"		"650"
+				"dmg"		"163"
 			}
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage"	"20"
+				"damage"	"5"
 			}
 			"04"
 			{
@@ -12350,7 +12464,58 @@
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/fire_ult_projectile.vpcf" 
-					}			
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "%radius"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "1000"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/fire_ult_projectile.vpcf" 
+					}	
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "%radius"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "1000"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/fire_ult_projectile.vpcf" 
+					}	
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "%radius"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "1000"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/fire_ult_projectile.vpcf" 
+					}	
 					
 				}
 				
@@ -12404,7 +12569,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"dmg"		"200"
+				"dmg"		"50"
 			}
 			"02"
 			{
@@ -12490,6 +12655,57 @@
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_ult_projectile.vpcf" 
 					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1300"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "1125"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/ice_ult_projectile.vpcf" 
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1300"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "1125"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/ice_ult_projectile.vpcf" 
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1300"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "1125"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/ice_ult_projectile.vpcf" 
+					}
 					
 				}
 				
@@ -12544,7 +12760,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"dmg"		"818"
+				"dmg"		"205"
 			}
 			"02"
 			{
@@ -12559,7 +12775,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"slow_amt"	"12"
+				"slow_amt"	"3"
 			}
 			"05"
 			{
@@ -12587,7 +12803,7 @@
 		"AbilityCastRange"              "%range"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "10100" 
+		"ItemCost"                      "9500" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
@@ -12631,7 +12847,58 @@
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/wind_ult_projectile.vpcf" 
-					}		
+					}	
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1500"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "900"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/wind_ult_projectile.vpcf" 
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1500"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "900"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/wind_ult_projectile.vpcf" 
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1500"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "900"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/wind_ult_projectile.vpcf" 
+					}	
 					
 				}
 				
@@ -12660,7 +12927,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"dmg"				"195"
+				"dmg"				"97.5"
 			}
 			"02"
 			{
@@ -12685,7 +12952,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"bonus_dmg"			"195"
+				"bonus_dmg"			"35"
 			}
 			"07"
 			{
@@ -12760,6 +13027,60 @@
 						"Dodgeable" 		"1" 
 						"EffectName"   		"particles/basic_projectile/pink_ult_projectile.vpcf" 
 					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" 		"CASTER"
+							"Radius" 		"1000"
+							"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+							"flags" 		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" 	"1"
+							"Random" 		"1"
+						}
+						"ProvidesVision" 	"1"
+						"VisionRadius" 		"800"
+						"MoveSpeed" 		"800"
+						"Dodgeable" 		"1" 
+						"EffectName"   		"particles/basic_projectile/pink_ult_projectile.vpcf" 
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" 		"CASTER"
+							"Radius" 		"1000"
+							"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+							"flags" 		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" 	"1"
+							"Random" 		"1"
+						}
+						"ProvidesVision" 	"1"
+						"VisionRadius" 		"800"
+						"MoveSpeed" 		"800"
+						"Dodgeable" 		"1" 
+						"EffectName"   		"particles/basic_projectile/pink_ult_projectile.vpcf" 
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" 		"CASTER"
+							"Radius" 		"1000"
+							"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+							"flags" 		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" 	"1"
+							"Random" 		"1"
+						}
+						"ProvidesVision" 	"1"
+						"VisionRadius" 		"800"
+						"MoveSpeed" 		"800"
+						"Dodgeable" 		"1" 
+						"EffectName"   		"particles/basic_projectile/pink_ult_projectile.vpcf" 
+					}
 				}
 			}
 		}
@@ -12785,7 +13106,7 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dmg"			"356"
+				"dmg"			"89"
 			}
 			"02"
 			{
@@ -12869,6 +13190,57 @@
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/coal_ult_projectile.vpcf" 
 					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "600"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "700"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/coal_ult_projectile.vpcf" 
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "600"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "700"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/coal_ult_projectile.vpcf" 
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "600"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "700"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/coal_ult_projectile.vpcf" 
+					}
 					
 					
 					
@@ -12919,7 +13291,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"dmg"		"966"
+				"dmg"		"242"
 			}
 			"02"
 			{
@@ -13009,6 +13381,57 @@
 						"Dodgeable" "1" 
                    "EffectName"    "particles/basic_projectile/plasma_ult_projectile.vpcf" 
 					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "800"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "750"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+                   "EffectName"    "particles/basic_projectile/plasma_ult_projectile.vpcf" 
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "800"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "750"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+                   "EffectName"    "particles/basic_projectile/plasma_ult_projectile.vpcf" 
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "800"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "750"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+                   "EffectName"    "particles/basic_projectile/plasma_ult_projectile.vpcf" 
+					}
 					
 					
 				}
@@ -13018,7 +13441,7 @@
 
 				"item_plasma_ult_bow_dearmored"
 				{
-					"Duration"              "3.0"
+					"Duration"              ".75"
 					"EffectName"            "particles/basic_projectile/dearmor.vpcf"
 					"EffectAttachType"      "follow_overhead"
 					"Properties"
@@ -13057,7 +13480,7 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dmg"			"1440"
+				"dmg"			"360"
 			}
 			"02"
 			{
@@ -13145,6 +13568,57 @@
 						"Dodgeable" "1" 
                    "EffectName"    "particles/basic_projectile/spin_ult_projectile.vpcf" 
 					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1050"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "1525"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+                   "EffectName"    "particles/basic_projectile/spin_ult_projectile.vpcf" 
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1050"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "1525"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+                   "EffectName"    "particles/basic_projectile/spin_ult_projectile.vpcf" 
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1050"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "1525"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+                   "EffectName"    "particles/basic_projectile/spin_ult_projectile.vpcf" 
+					}
 				}
 				
 			}
@@ -13154,16 +13628,11 @@
 			"RunScript"
 			{
 				"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
-				"Function"			"cluster"
+				"Function"			"clusterBoom"
 			}
 		
 			"DeleteOnHit"                           "false"
-			"Damage"
-			{
-					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
-					"Damage"                                "%dmg"
-					"Target"                                "TARGET"
-			}
+
 				
 		}
 		"AbilitySpecial"
@@ -13171,7 +13640,7 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dmg"			"110"
+				"dmg"			"28"
 			}
 			"02"
 			{
@@ -13248,7 +13717,22 @@
 						"Function"			"plasmaSoundFire"
 					}
 					
-						"RunScript"
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fireCaulkWeapon"
+					}
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fireCaulkWeapon"
+					}
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fireCaulkWeapon"
+					}
+					"RunScript"
 					{
 						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
 						"Function"			"fireCaulkWeapon"
@@ -13296,7 +13780,7 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dmg"			"392"
+				"dmg"			"98"
 			}
 			"02"
 			{
@@ -13383,6 +13867,57 @@
 						"Dodgeable" "1" 
                    "EffectName"    "particles/basic_projectile/breach_ult_projectile.vpcf" 
 					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1200"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "875"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+                   "EffectName"    "particles/basic_projectile/breach_ult_projectile.vpcf" 
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1200"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "875"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+                   "EffectName"    "particles/basic_projectile/breach_ult_projectile.vpcf" 
+					}
+					"TrackingProjectile"
+					{
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "1200"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
+							"MaxTargets" "1"
+							"Random" "1"
+						}
+						"MoveSpeed" "875"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+                   "EffectName"    "particles/basic_projectile/breach_ult_projectile.vpcf" 
+					}
 					
 										
 					
@@ -13413,7 +13948,7 @@
 					"Damage"
 					{
 							"Type"                                  "DAMAGE_TYPE_PURE"
-							"Damage"                                "60"
+							"Damage"                                "15"
 							"Target"                                "TARGET"
 					}
 					"AttachEffect"
@@ -13478,7 +14013,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"260"
+				"dmg"	"65"
 			}
 			"02"
 			{

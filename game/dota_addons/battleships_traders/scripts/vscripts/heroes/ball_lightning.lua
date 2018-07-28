@@ -82,7 +82,7 @@ function ball_lightning_lua:OnProjectileThink_ExtraData(location, ExtraData)
 
     -- Calculate the new travel distance
     self.traveled = self.traveled + ExtraData.speed
-    caster:SetMana(caster:GetMana()-8)
+    caster:SetMana(caster:GetMana()-9)
     self.units_traveled_in_last_tick = ExtraData.speed
   else
     -- Once the caster can no longer travel, remove this projectile
@@ -109,20 +109,7 @@ function ball_lightning_lua:OnProjectileHit_ExtraData(target, location, ExtraDat
       local damage = ExtraData.damage + ExtraData.damagePerUnit * math.floor(self.traveled * 0.01)
       local damage_flags = DOTA_DAMAGE_FLAG_NONE
 
-      -- Deal damage
-      local damageTable = {victim = target,
-        damage = damage,
-        damage_type = self:GetAbilityDamageType(),
-        attacker = caster,
-        ability = ability,
-        damage_flags = damage_flags
-      }
-      if target:IsRealHero() then
-		    caster:SetMana(caster:GetMana()+damage/2)
-	    else
-		    caster:SetMana(caster:GetMana()+damage/10)
-	    end
-      ApplyDamage(damageTable)
+     
     end
   end
 end

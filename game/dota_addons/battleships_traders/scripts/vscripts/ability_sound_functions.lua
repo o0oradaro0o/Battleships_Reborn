@@ -109,7 +109,7 @@ end
 function pingSound(keys)
 	 --print("launchSound")
 	local casterUnit = keys.caster
-	EmitSoundOn("Hero_EarthSpirit.RollingBoulder.StoneBell", casterUnit)
+	EmitSoundOnClient("Hero_EarthSpirit.RollingBoulder.StoneBell", casterUnit:GetPlayerOwner())
 end
 
 function rainbowSound(keys)

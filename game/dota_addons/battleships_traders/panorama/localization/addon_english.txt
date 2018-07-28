@@ -645,10 +645,15 @@ ILLUSION DURATION: 5.0"
 "rainbow_battleship_Description"					"Upon your death, heroes around you are healed up to 4000 if they are within 2500 of you. \n\nHigher levels increase healing.
 HEAL: 1000 2000 3000 4000
 RANGE: 2500 2500 2500 2500"
-
+"noah_guardian_angel_datadriven"                             "Noah's Guardian Angel"
+"noah_guardian_angel_datadriven_Description"                 "you and nearby allies do not take damage from weapons for the listed duration."
 "mountain_battleship"									"Stuck on a Mountain"
 "mountain_battleship_Description"					"End the flood. Immobilizes  all units around you (not including yourself) in a large radius. \n\nHigher levels increase duration.
 DURATION: 3.0 4.0 5.0"
+
+"raven_battleship"                                           "Devine Raven"
+"raven_battleship_Description"                               "Noah calls upon his flying friends in his time of need, to give him and his allies aid. The bird proides vision and casts healing spells on nearby allies"
+
 
 "monkey_buisness"									"Monkey Business"
 "monkey_buisness_Description"					"Your monkeys jump to a nearby enemy ship, do as much damage as they can, then escape to an allied ship.  Monkeys continue until they have nowhere to jump, alternating between allies and enemies.\n\nHigher levels increase damage and jump range.
@@ -786,7 +791,7 @@ DURATION: 2.5 3.0 3.5 4.0"
 "swap_mission_Description" "Alter your contract to show a different destionation.  Don't worry you'll still get paid in full."
 
 "peak_battleship"									"Sonar Ping"
-		"peak_battleship_Description"					"Ping the map to see where enemy ships are. \n\nHigher levels decrease cooldown."
+		"peak_battleship_Description"					"Automaticly ping the map to see where enemy ships are. \n\nHigher levels decrease cooldown."
 
 		"turret_battleship"								"Deploy Turret!"
 		"turret_battleship_Description"					"Deploy Turret that deals 500 dmg per attack in a very short range \n\nHigher levels decrease cooldown."
@@ -865,7 +870,7 @@ DURATION: 2.5 3.0 3.5 4.0"
 		"DOTA_Tooltip_ability_item_poison_ult_bow_Description"        				" 
 \n Ultimate Poison \n Range: 900 \n  DPS: 467 \n Bonus: Infects target with a plague dealing 40 damage per second for 4 seconds. "
 		"DOTA_Tooltip_ability_item_poison_ult_bow_fire_rate"							"Reload Delay(S):"
-		"DOTA_Tooltip_ability_item_poison_ult_bow_dmg"									"Damage:"
+		"DOTA_Tooltip_ability_item_poison_ult_bow_dmg"									"Damage/4:"
 		
 		"DOTA_Tooltip_ability_item_poison_ult_bow_rec"						"plague"
 
@@ -925,7 +930,7 @@ DURATION: 2.5 3.0 3.5 4.0"
 		"DOTA_Tooltip_ability_item_fire_three_bow_doubled_fire_rate"							"Reload Delay(S):"
 		"DOTA_Tooltip_ability_item_fire_three_bow_doubled_dmg"									"Damage(x2):"
 		"DOTA_Tooltip_ability_item_fire_ult_bow_fire_rate"							"Reload Delay(S):"
-		"DOTA_Tooltip_ability_item_fire_ult_bow_dmg"									"Damage:"
+		"DOTA_Tooltip_ability_item_fire_ult_bow_dmg"									"Damage/4:"
 		"DOTA_Tooltip_ability_item_fire_ult_bow_rec_fire_rate"							"Reload Delay(S):"
 		"DOTA_Tooltip_ability_item_fire_ult_bow_rec_dmg"									"Damage:"
 		
@@ -979,7 +984,7 @@ DURATION: 2.5 3.0 3.5 4.0"
 		"DOTA_Tooltip_ability_item_spin_three_bow_doubled_fire_rate"							"Reload Delay(S):"
 		"DOTA_Tooltip_ability_item_spin_three_bow_doubled_dmg"									"Damage(x2):"
 		"DOTA_Tooltip_ability_item_spin_ult_bow_fire_rate"							"Reload Delay(S):"
-		"DOTA_Tooltip_ability_item_spin_ult_bow_dmg"									"Damage:"
+		"DOTA_Tooltip_ability_item_spin_ult_bow_dmg"									"Damage/4:"
 		"DOTA_Tooltip_ability_item_spin_ult_bow_rec_fire_rate"							"Reload Delay(S):"
 		"DOTA_Tooltip_ability_item_spin_ult_bow_rec_dmg"									"Damage:"
 		
@@ -1036,7 +1041,7 @@ DURATION: 2.5 3.0 3.5 4.0"
 		"DOTA_Tooltip_ability_item_ice_three_bow_doubled_fire_rate"							"Reload Delay(S):"
 		"DOTA_Tooltip_ability_item_ice_three_bow_doubled_dmg"									"Damage(x2):"
 		"DOTA_Tooltip_ability_item_ice_ult_bow_fire_rate"							"Reload Delay(S):"
-		"DOTA_Tooltip_ability_item_ice_ult_bow_dmg"									"Damage:"
+		"DOTA_Tooltip_ability_item_ice_ult_bow_dmg"									"Damage/4:"
 		"DOTA_Tooltip_ability_item_ice_ult_bow_rec_fire_rate"							"Reload Delay(S):"
 		"DOTA_Tooltip_ability_item_ice_ult_bow_rec_dmg"									"Damage:"
 		
@@ -1099,7 +1104,7 @@ DURATION: 2.5 3.0 3.5 4.0"
 		"DOTA_Tooltip_ability_item_breach_three_bow_doubled_fire_rate"							"Reload Delay(S):"
 		"DOTA_Tooltip_ability_item_breach_three_bow_doubled_dmg"									"Damage(x2):"
 		"DOTA_Tooltip_ability_item_breach_ult_bow_fire_rate"							"Reload Delay(S):"
-		"DOTA_Tooltip_ability_item_breach_ult_bow_dmg"									"Damage:"
+		"DOTA_Tooltip_ability_item_breach_ult_bow_dmg"									"Damage/4:"
 		"DOTA_Tooltip_ability_item_breach_ult_bow_rec_fire_rate"							"Reload Delay(S):"
 		"DOTA_Tooltip_ability_item_breach_ult_bow_rec_dmg"									"Damage:"
 			"DOTA_Tooltip_ability_item_breach_ult_bow_delay"									"Damage Delay:"
@@ -1155,7 +1160,7 @@ DURATION: 2.5 3.0 3.5 4.0"
 		"DOTA_Tooltip_ability_item_caulk_three_bow_doubled_fire_rate"							"Reload Delay(S):"
 		"DOTA_Tooltip_ability_item_caulk_three_bow_doubled_dmg"									"heal(x2):"
 		"DOTA_Tooltip_ability_item_caulk_ult_bow_fire_rate"							"Reload Delay(S):"
-		"DOTA_Tooltip_ability_item_caulk_ult_bow_dmg"									"heal:"
+		"DOTA_Tooltip_ability_item_caulk_ult_bow_dmg"									"heal/4:"
 		"DOTA_Tooltip_ability_item_caulk_ult_bow_rec_fire_rate"							"Reload Delay(S):"
 		"DOTA_Tooltip_ability_item_caulk_ult_bow_rec_dmg"									"heal:"
 		
@@ -1212,7 +1217,7 @@ DURATION: 2.5 3.0 3.5 4.0"
 		"DOTA_Tooltip_ability_item_wind_three_bow_doubled_fire_rate"							"Reload Delay(S):"
 		"DOTA_Tooltip_ability_item_wind_three_bow_doubled_dmg"									"Damage(x2):"
 		"DOTA_Tooltip_ability_item_wind_ult_bow_fire_rate"							"Reload Delay(S):"
-		"DOTA_Tooltip_ability_item_wind_ult_bow_dmg"									"Damage:"
+		"DOTA_Tooltip_ability_item_wind_ult_bow_dmg"									"Damage/4:"
 		"DOTA_Tooltip_ability_item_wind_ult_bow_rec_fire_rate"							"Reload Delay(S):"
 		"DOTA_Tooltip_ability_item_wind_ult_bow_rec_dmg"									"Damage:"
 		
@@ -1267,7 +1272,7 @@ DURATION: 2.5 3.0 3.5 4.0"
 		"DOTA_Tooltip_ability_item_light_three_bow_doubled_fire_rate"							"Reload Delay(S):"
 		"DOTA_Tooltip_ability_item_light_three_bow_doubled_dmg"									"Damage(x2):"
 		"DOTA_Tooltip_ability_item_light_ult_bow_fire_rate"							"Reload Delay(S):"
-		"DOTA_Tooltip_ability_item_light_ult_bow_dmg"									"Damage:"
+		"DOTA_Tooltip_ability_item_light_ult_bow_dmg"									"Damage/4:"
 		"DOTA_Tooltip_ability_item_light_ult_bow_rec_fire_rate"							"Reload Delay(S):"
 		"DOTA_Tooltip_ability_item_light_ult_bow_rec_dmg"									"Damage:"
 		
@@ -1323,7 +1328,7 @@ DURATION: 2.5 3.0 3.5 4.0"
 		"DOTA_Tooltip_ability_item_coal_three_bow_doubled_fire_rate"							"Reload Delay(S):"
 		"DOTA_Tooltip_ability_item_coal_three_bow_doubled_dmg"									"Damage(x2):"
 		"DOTA_Tooltip_ability_item_coal_ult_bow_fire_rate"							"Reload Delay(S):"
-		"DOTA_Tooltip_ability_item_coal_ult_bow_dmg"									"Damage:"
+		"DOTA_Tooltip_ability_item_coal_ult_bow_dmg"									"Damage/4:"
 		"DOTA_Tooltip_ability_item_coal_ult_bow_rec_fire_rate"							"Reload Delay(S):"
 		"DOTA_Tooltip_ability_item_coal_ult_bow_rec_dmg"									"Damage:"
 		
@@ -1376,7 +1381,7 @@ DURATION: 2.5 3.0 3.5 4.0"
 		"DOTA_Tooltip_ability_item_plasma_three_bow_doubled_fire_rate"							"Reload Delay(S):"
 		"DOTA_Tooltip_ability_item_plasma_three_bow_doubled_dmg"									"Damage(x2):"
 		"DOTA_Tooltip_ability_item_plasma_ult_bow_fire_rate"							"Reload Delay(S):"
-		"DOTA_Tooltip_ability_item_plasma_ult_bow_dmg"									"Damage:"
+		"DOTA_Tooltip_ability_item_plasma_ult_bow_dmg"									"Damage/4:"
 		"DOTA_Tooltip_ability_item_plasma_ult_bow_rec_fire_rate"							"Reload Delay(S):"
 		"DOTA_Tooltip_ability_item_plasma_ult_bow_rec_dmg"									"Damage:"
 		
@@ -1411,19 +1416,19 @@ DURATION: 2.5 3.0 3.5 4.0"
 		
 		"DOTA_Tooltip_ability_item_hull_one"						"Battered Hull"
 
-		"DOTA_Tooltip_ability_item_hull_one_Description"				"\n\n Poor Hull \n Health Boost: 300 \n Armor Boost: 1\n Does not stack with other hulls"
+		"DOTA_Tooltip_ability_item_hull_one_Description"				"\n\n Poor Hull \n Does not stack with other hulls, Active Doubles armor bonus."
 		
 		"DOTA_Tooltip_ability_item_hull_two"						"Wooden Hull"
 
-		"DOTA_Tooltip_ability_item_hull_two_Description"				"\n\n Reasonable Hull \n Health Boost: 600 \n Armor Boost: 2\n Does not stack with other hulls"
+		"DOTA_Tooltip_ability_item_hull_two_Description"				"\n\n Reasonable Hull \n Does not stack with other hulls, Active Doubles armor bonus."
 		
 		"DOTA_Tooltip_ability_item_hull_three"						"Iron Hull"
 
-		"DOTA_Tooltip_ability_item_hull_three_Description"				"\n\n Good Hull \n Health Boost: 1100 \n Armor Boost: 4\n Does not stack with other hulls"
+		"DOTA_Tooltip_ability_item_hull_three_Description"				"\n\n Good Hull  \n Does not stack with other hulls, Active Doubles armor bonus."
 		
 		"DOTA_Tooltip_ability_item_hull_four"						"Admiral's Hull"
 
-		"DOTA_Tooltip_ability_item_hull_four_Description"				"\n\n Great Hull \n Health Boost: 2000 \n Armor Boost: 5\n Does not stack with other hulls"
+		"DOTA_Tooltip_ability_item_hull_four_Description"				"\n\n Great Hull \n Does not stack with other hulls, Active Doubles armor bonus."
 		
 		"DOTA_Tooltip_ability_item_hull_sail_one_combo"						"Lame Hull/Sail Combo"
 
@@ -2435,6 +2440,15 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"DOTA_Tooltip_ability_morphling_waveform_battleship_speed"					"WAVE SPEED:"
 		"DOTA_Tooltip_ability_morphling_waveform_battleship_width"					"WAVE WIDTH:"
 
+		"DOTA_Tooltip_ability_speed_boat_wave"                                            "Big Wake"
+		"DOTA_Tooltip_ability_speed_boat_wave_Description"                                "Rev your engine for a short burst, thrust forward, and splash enemies with a powerful wake. \n\nHigher levels increase range and damage."
+		"DOTA_Tooltip_ability_speed_boat_wave_ball_speed"                                 "WAVE SPEED:"
+		"DOTA_Tooltip_ability_speed_boat_wave_damage_radius"                              "WAVE WIDTH:"
+		"DOTA_Tooltip_ability_speed_boat_wave_damage_base"                                "DAMAGE:"
+
+
+		// ******************** ITEMS ********************
+
 		
 		"DOTA_Tooltip_Ability_tidehunter_gush_battleship"								"Bilging"
 		"DOTA_Tooltip_ability_tidehunter_gush_battleship_Description"					"Fire a blast of water at an enemy ship dealing damage, de-armoring, and slowing for a short time. also restores air to your sub. \n\nHigher levels increase damage and potency."
@@ -2566,7 +2580,7 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"DOTA_Tooltip_Ability_rainbow_battleship_Description"					"Upon your death, heroes around you are healed up to 4000 if they are within 2500 of you. \n\nHigher levels increase healing."
 "DOTA_Tooltip_Ability_rainbow_battleship_heal_amount"	"HEAL:"
 "DOTA_Tooltip_Ability_rainbow_battleship_range"	"RANGE:"
-		
+
 		"DOTA_Tooltip_Ability_mountain_battleship"									"Stuck on a Mountain"
 		"DOTA_Tooltip_Ability_mountain_battleship_Description"					"End the flood. Immobilizes you and all units around you in a large radius. \n\nHigher levels increase duration."
 		"DOTA_Tooltip_Ability_mountain_battleship_duration"					"DURATION:"
@@ -3253,17 +3267,15 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		
 		"News_Title"		"News!"
 		"News_Content"		"Hi all! Art update will resume but is temporarily on hold.  In the meantime I am continuing to make balance changes.
- Newest balance changes: (5-29-2018)
+ Newest balance changes: (7-4-2018)
 -NEW BOATS ADDED!
 -New 1k: Whaling Dinghy
--New 3k: Riverboat! (texture will be improved soon)
+-New 3k: Riverboat
+-New 12k: Stromchaser Hydrofoil
 -Two more new boats to come!
-- Viking regen increased
-- Paddlewheel base speed reduced
-- Ice Made weaker
-- Junk Ship abilites buffed
-- Sea Plane mayday weakened
-
+- Noah's ark reworked
+- spawned units no longer follow creep Ai
+- Bug fixes
 
 "
 		

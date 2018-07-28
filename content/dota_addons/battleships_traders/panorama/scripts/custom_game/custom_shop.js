@@ -6,6 +6,9 @@ var showMission = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -
 var firstcall = true;
 var starttime = 0;
 var NewShopUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop");
+var topBarGoodCont = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar").FindChildTraverse("TopBarRadiantTeam").FindChildTraverse("TopBarRadiantPlayers").FindChildTraverse("RadiantTeamScorePlayers").FindChildTraverse("TopBarRadiantPlayersContainer");
+var topBarBadCont = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar").FindChildTraverse("TopBarDireTeam").FindChildTraverse("TopBarDirePlayers").FindChildTraverse("DireTeamScorePlayers").FindChildTraverse("TopBarDirePlayersContainer");
+
 var g_BoatName = ""
 var catigoriesUI;
 
@@ -24,8 +27,93 @@ function showTrade() {
 }
 
 
-function replaceShopUI() {
+function resetHeroIcons() {
+	if (topBarGoodCont.FindChildTraverse("RadiantPlayer0")) {
+		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer0").FindChildTraverse("SlantedContainerPanel"))
+	}
+	if (topBarGoodCont.FindChildTraverse("RadiantPlayer1")) {
+		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer1").FindChildTraverse("SlantedContainerPanel"))
+	}
+	if (topBarGoodCont.FindChildTraverse("RadiantPlayer2")) {
+		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer2").FindChildTraverse("SlantedContainerPanel"))
+	}
+	if (topBarGoodCont.FindChildTraverse("RadiantPlayer3")) {
+		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer3").FindChildTraverse("SlantedContainerPanel"))
+	}
+	if (topBarGoodCont.FindChildTraverse("RadiantPlayer4")) {
+		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer4").FindChildTraverse("SlantedContainerPanel"))
+	}
+	if (topBarGoodCont.FindChildTraverse("RadiantPlayer5")) {
+		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer5").FindChildTraverse("SlantedContainerPanel"))
+	}
+	if (topBarGoodCont.FindChildTraverse("RadiantPlayer6")) {
+		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer6").FindChildTraverse("SlantedContainerPanel"))
+	}
+	if (topBarGoodCont.FindChildTraverse("RadiantPlayer7")) {
+		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer7").FindChildTraverse("SlantedContainerPanel"))
+	}
+	if (topBarGoodCont.FindChildTraverse("RadiantPlayer8")) {
+		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer8").FindChildTraverse("SlantedContainerPanel"))
+	}
+	if (topBarGoodCont.FindChildTraverse("RadiantPlayer9")) {
+		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer9").FindChildTraverse("SlantedContainerPanel"))
+	}
+	if (topBarGoodCont.FindChildTraverse("RadiantPlayer10")) {
+		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer10").FindChildTraverse("SlantedContainerPanel"))
+	}
 
+	if (topBarBadCont.FindChildTraverse("DirePlayer0")) {
+		SetImageForPanel(topBarBadCont.FindChildTraverse("DirePlayer0").FindChildTraverse("SlantedContainerPanel"))
+	}
+	if (topBarBadCont.FindChildTraverse("DirePlayer1")) {
+		SetImageForPanel(topBarBadCont.FindChildTraverse("DirePlayer1").FindChildTraverse("SlantedContainerPanel"))
+	}
+	if (topBarBadCont.FindChildTraverse("DirePlayer2")) {
+		SetImageForPanel(topBarBadCont.FindChildTraverse("DirePlayer2").FindChildTraverse("SlantedContainerPanel"))
+	}
+	if (topBarBadCont.FindChildTraverse("DirePlayer3")) {
+		SetImageForPanel(topBarBadCont.FindChildTraverse("DirePlayer3").FindChildTraverse("SlantedContainerPanel"))
+	}
+	if (topBarBadCont.FindChildTraverse("DirePlayer4")) {
+		SetImageForPanel(topBarBadCont.FindChildTraverse("DirePlayer4").FindChildTraverse("SlantedContainerPanel"))
+	}
+	if (topBarBadCont.FindChildTraverse("DirePlayer5")) {
+		SetImageForPanel(topBarBadCont.FindChildTraverse("DirePlayer5").FindChildTraverse("SlantedContainerPanel"))
+	}
+	if (topBarBadCont.FindChildTraverse("DirePlayer6")) {
+		SetImageForPanel(topBarBadCont.FindChildTraverse("DirePlayer6").FindChildTraverse("SlantedContainerPanel"))
+	}
+	if (topBarBadCont.FindChildTraverse("DirePlayer7")) {
+		SetImageForPanel(topBarBadCont.FindChildTraverse("DirePlayer7").FindChildTraverse("SlantedContainerPanel"))
+	}
+	if (topBarBadCont.FindChildTraverse("DirePlayer8")) {
+		SetImageForPanel(topBarBadCont.FindChildTraverse("DirePlayer8").FindChildTraverse("SlantedContainerPanel"))
+	}
+	if (topBarBadCont.FindChildTraverse("DirePlayer9")) {
+		SetImageForPanel(topBarBadCont.FindChildTraverse("DirePlayer9").FindChildTraverse("SlantedContainerPanel"))
+	}
+	if (topBarBadCont.FindChildTraverse("DirePlayer10")) {
+		SetImageForPanel(topBarBadCont.FindChildTraverse("DirePlayer10").FindChildTraverse("SlantedContainerPanel"))
+	}
+}
+
+
+function SetImageForPanel(topBarHeroPanel) {
+	topBarHeroPanel.FindChildTraverse("HeroImage").style.opacity = 0.01;
+	var heroimage;
+	if (!topBarHeroPanel.FindChildTraverse("ReplacmentHeroImage")) {
+		heroimage = $.CreatePanel('Image', topBarHeroPanel, 'ReplacmentHeroImage');
+		heroimage.AddClass('TopBarHeroImage')
+	}
+	else {
+		heroimage = topBarHeroPanel.FindChildTraverse("ReplacmentHeroImage");
+	}
+	heroimage.hittest = false
+	var heroImageName = "file://{images}/custom_game/Boats/" + topBarHeroPanel.FindChildTraverse("HeroImage").heroname + ".png"
+	heroimage.SetImage(heroImageName);
+}
+
+function replaceShopUI() {
 
 	if ($.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop").FindChildTraverse("GuideFlyout").FindChildTraverse("ItemsArea")) {
 		$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop").FindChildTraverse("GuideFlyout").FindChildTraverse("ItemsArea").FindChildTraverse("ItemBuildContainer").style.visibility = "visible";
@@ -35,12 +123,9 @@ function replaceShopUI() {
 
 	}
 
-
-
 	NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("GridMainShop").style.visibility = "collapse";
 
 	catigoriesUI = NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ItemsArea").FindChildTraverse("ItemBuildContainer").FindChildTraverse("ItemBuild").FindChildTraverse("Categories");
-
 
 	NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ItemsArea").FindChildTraverse("ItemBuildContainer").FindChildTraverse("ItemBuild").
 		GetChild(0).style.visibility = "collapse";
@@ -69,6 +154,7 @@ function replaceShopUI() {
 }
 function fixUI() {
 	$.Msg("in fix ui--------------------------------------");
+	resetHeroIcons()
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY, false);
 	$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar").style.visibility = "visible";
 
@@ -141,7 +227,6 @@ function fixUI() {
 	}
 	else if (g_BoatName == "razor") {
 		newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("ManaContainer").style.visibility = "visible";
-		newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("ManaContainer").FindChildTraverse("ManaLabel").style.visibility = "collapse";
 		newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("ManaContainer").FindChildTraverse("ManaRegenLabel").style.visibility = "collapse";
 
 
@@ -348,6 +433,7 @@ function showDetails(BoatName) {
 var FadeTrade = true;
 var ticksOfFade = 0;
 function buyBoat(BoatName, cost) {
+
 	g_BoatName = BoatName
 	var newCenterUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("lower_hud").FindChildTraverse("center_with_stats").FindChildTraverse("center_block");
 
@@ -369,7 +455,6 @@ function buyBoat(BoatName, cost) {
 	}
 	else if (BoatName == "razor") {
 		newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("ManaContainer").style.visibility = "visible";
-		newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("ManaContainer").FindChildTraverse("ManaLabel").style.visibility = "collapse";
 		newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("ManaContainer").FindChildTraverse("ManaRegenLabel").style.visibility = "collapse";
 
 
@@ -383,6 +468,7 @@ function buyBoat(BoatName, cost) {
 
 	GameEvents.SendCustomGameEventToServer("buyBoat", { "text": BoatName, "cost": cost });
 	$("#" + BoatName).style.height = "0px";
+	$.Schedule(.2, resetHeroIcons);
 }
 
 function NoFadeMap() {
@@ -420,18 +506,17 @@ function fillAndShow() {
 	var nearistShop;
 	var i = 0;
 	var buildings = Entities.GetAllEntitiesByClassname('npc_dota_building')
-	for (var i = 0; i < buildings.length; i++)
-	{
+	for (var i = 0; i < buildings.length; i++) {
 		$.Msg(i)
 
 		if (!Entities.IsTower(buildings[i])) {
-			
+
 			var bldgloc = Entities.GetAbsOrigin((buildings[i]));
 			if (bldgloc) {
-				
+
 				var dist = Math.sqrt(Math.pow(heroloc[0] - bldgloc[0], 2) + Math.pow(heroloc[1] - bldgloc[1], 2))
 				if (dist < 600) {
-					$.Msg("building + "+Entities.IsDisarmed((buildings[i])))
+					$.Msg("building + " + Entities.IsDisarmed((buildings[i])))
 					closeEnough = true;
 					nearistShop = buildings[i];
 				}
@@ -929,7 +1014,7 @@ function AddNotification(msg, panel) {
 	if (newNotification) {
 		lastNotification = $.CreatePanel('Panel', panel, '');
 		lastNotification.AddClass('NotificationLine')
-		lastNotification.hittest = false;
+		lastNotification.hittest = true;
 	}
 
 	var notification = null;
@@ -1165,6 +1250,7 @@ GameUI.SetMouseCallback(function (eventName, arg) {
 
 (function () {
 	hideTrade();
+	resetHeroIcons();
 	$.Msg("in subscribe");
 	GameEvents.Subscribe("Boat_Spawned", fillShop);
 	GameEvents.Subscribe("Trade_Mode_Enabled", showTrade);

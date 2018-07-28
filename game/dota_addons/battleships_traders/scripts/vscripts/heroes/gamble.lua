@@ -59,9 +59,7 @@ function gamble:OnSpellStart()
     local oldAbilityName = oldAbilities[i]["name"]
     caster:RemoveAbility(oldAbilityName)
   end
-  EmitSoundOn("Hero_EarthSpirit.RollingBoulder.Loop", caster)
-  
-  
+  EmitSoundOnClient("Hero_EarthSpirit.RollingBoulder.Loop", caster:GetPlayerOwner())
     for i=startIndex,endIndex do
         local oldAbilityLevel = oldAbilities[i]["level"]
 
@@ -126,7 +124,7 @@ Timers:CreateTimer(.3, function()
     newAbility:SetAbilityIndex(0)
     newAbility:SetLevel(oldAbilityLevel)
     newAbility:EndCooldown()
-    EmitSoundOn("Hero_OgreMagi.Fireblast.x1", caster)
+    EmitSoundOnClient("Hero_OgreMagi.Fireblast.x1", caster:GetPlayerOwner())
     for i=startIndex,endIndex do
         local oldAbilityLevel = oldAbilities[i]["level"]
     
@@ -174,7 +172,7 @@ Timers:CreateTimer(.5, function()
 end)
 
 Timers:CreateTimer(.6, function()
-    EmitSoundOn("Hero_OgreMagi.Fireblast.x1", caster)
+    EmitSoundOnClient("Hero_OgreMagi.Fireblast.x1", caster:GetPlayerOwner())
     for i=startIndex,endIndex do
         local tempAbility = caster:GetAbilityByIndex(i):GetName()
         caster:RemoveAbility(tempAbility)
@@ -237,7 +235,7 @@ Timers:CreateTimer(.8, function()
 end)
 
 Timers:CreateTimer(.9, function()
-    EmitSoundOn("Hero_OgreMagi.Fireblast.x1", caster)
+    EmitSoundOnClient("Hero_OgreMagi.Fireblast.x1", caster:GetPlayerOwner())
     for i=startIndex,endIndex do
         local tempAbility = caster:GetAbilityByIndex(i):GetName()
         caster:RemoveAbility(tempAbility)

@@ -127,7 +127,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityTextureName"			"morphling_adaptive_strike"
+		"AbilityTextureName"			"morphling_adaptive_strike_agi"
 		
 		
 		"BaseClass" 					"ability_datadriven"
@@ -931,11 +931,8 @@
 				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
 				"Function"			"ramSound"
 			}
-			
 		}
-			
 		
-
 		"Modifiers"
 		{
 			"ramming_speed"
@@ -968,13 +965,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"turn_rate"				"-9000 -9000 -9000 -9000"
-				
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.5 1.6 1.7 1.8"
-			
+				"duration"				"1.5 1.5 1.5 1.5"
 			}
 			"03"
 			{
@@ -986,7 +981,6 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"accel_boost"				"100"
-			
 			}
 		}
 	
@@ -2299,6 +2293,144 @@
 		
 
 	}
+
+	
+"fly_raven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"			"keeper_of_the_light_chakra_magic"
+		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+
+		"Modifiers"
+		{
+			"fx_test_modifier"
+			{
+				"Passive" "1"
+				"OnCreated"
+				{
+					"ApplyModifier"
+					{
+						"Target" "CASTER"
+						"ModifierName" "fly"
+					}
+				}
+			}
+			
+			"fly"
+			{
+			"Passive" "1"
+				"ThinkInterval"		"0.03"
+				"OnIntervalThink"
+				{
+					
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"fly3"
+					}
+					
+				}
+					"States"
+					{
+						"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+					} 
+			}
+		"OnOwnerDied"
+		{
+
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"aircraftDied"
+			}
+		}
+
+
+		}
+
+		
+		
+		
+
+	}
+
+
+	"raven_heal"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"AbilityTextureName"				"joanses_up"
+
+
+		
+		"BaseClass" 					"ability_datadriven"	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"3"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0 0 0 0"
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "raven_heal"
+			}
+			"TrackingProjectile"
+					{
+						"Target" "TARGET"
+						"MoveSpeed" "700"
+						"ProvidesVision" "0"
+						"EffectName"    "particles/basic_projectile/rainbow_projectile.vpcf" 
+					}
+		}
+		
+		"Modifiers"
+		{
+			"raven_heal"
+			{
+					"Duration"	"10"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE" "50"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"  "1"
+				}
+				 "EffectName"                    "particles/basic_projectile/harbor_aura.vpcf"
+				"EffectAttachType" "follow_origin"
+			}
+		}
+
+	}
 	
 	//=================================================================================================================
 	// aircraft_bomb
@@ -3080,7 +3212,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"			"keeper_of_the_light_blinding_light"
 		
@@ -3091,37 +3223,81 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20.0 15.0 10.0 5.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
-		
-		"OnSpellStart"
+	"OnUpgrade"
 		{
-			"RunScript"
+			"RemoveModifier"
 			{
-				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
-				"Function"			"peak"
+				"Target" "CASTER"
+				"ModifierName" "peak"
 			}
-			"RunScript"
-				{
-					"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
-					"Function"			"pingSound"
-				}
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "peak"
+			}
 		}
-
 		
-
-		
+		"Modifiers"
+		{
+			"peak"
+			{
+					"Passive" "1"
+					"IsHidden" "1"
+					"ThinkInterval"		"%cooldown"
+					"OnIntervalThink"
+					{
+						"RunScript"
+						{
+							"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+							"Function"			"peak"
+						}
+						"RunScript"
+						{
+							"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+							"Function"			"pingSound"
+						}
+						"ApplyModifier"
+						{
+							"Target" "CASTER"
+							"ModifierName" "peak_ind"
+						}
+						
+					}
+					"OnCreated"
+					{
+						"ApplyModifier"
+						{
+							"Target" "CASTER"
+							"ModifierName" "peak_ind"
+						}
+					}
+			}
+			"peak_ind"
+			{
+					"Duration"				"%cooldown"
+					
+				
+			}
+			
+		}
 		
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+        {
+                "01"
+                {
+                        "var_type"                                      "FIELD_FLOAT"
+                        "cooldown"                          "16.0 14.0 12.0 10.0"
+                }
 
+        }
 	}
 
 
@@ -4454,7 +4630,67 @@
 						"Radius" "%spread_range"
 						"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 						"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-						"MaxTargets" "10"
+						"MaxTargets" "1"
+						"Random" "1"
+					}
+				"MoveSpeed" "522"
+				"ProvidesVision" "0"
+				"EffectName"    "particles/basic_projectile/monkey_buisness_effect.vpcf" 
+			}
+			"TrackingProjectile"
+			{
+				"Target"
+					{
+						"Center" "CASTER"
+						"Radius" "%spread_range"
+						"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+						"MaxTargets" "1"
+						"Random" "1"
+					}
+				"MoveSpeed" "522"
+				"ProvidesVision" "0"
+				"EffectName"    "particles/basic_projectile/monkey_buisness_effect.vpcf" 
+			}
+			"TrackingProjectile"
+			{
+				"Target"
+					{
+						"Center" "CASTER"
+						"Radius" "%spread_range"
+						"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+						"MaxTargets" "1"
+						"Random" "1"
+					}
+				"MoveSpeed" "522"
+				"ProvidesVision" "0"
+				"EffectName"    "particles/basic_projectile/monkey_buisness_effect.vpcf" 
+			}
+			"TrackingProjectile"
+			{
+				"Target"
+					{
+						"Center" "CASTER"
+						"Radius" "%spread_range"
+						"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+						"MaxTargets" "1"
+						"Random" "1"
+					}
+				"MoveSpeed" "522"
+				"ProvidesVision" "0"
+				"EffectName"    "particles/basic_projectile/monkey_buisness_effect.vpcf" 
+			}
+			"TrackingProjectile"
+			{
+				"Target"
+					{
+						"Center" "CASTER"
+						"Radius" "%spread_range"
+						"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+						"MaxTargets" "1"
 						"Random" "1"
 					}
 				"MoveSpeed" "522"
@@ -4473,8 +4709,9 @@
 		{
 			"monkey_buisness"
 			{
-					"Duration"	"1.0"
-					"ThinkInterval"	".9"	
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+					"Duration"	".4"
+					"ThinkInterval"	".3"	
 					"OnIntervalThink"
 					{
 						"RunScript"
@@ -4482,8 +4719,6 @@
 							"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 							"Function"			"monkeyBuisness"
 						}
-						
-						
 					}
 			}
 		}
@@ -4525,7 +4760,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"monkey_damage"	"200 250 300 350"
+				"monkey_damage"	"100 120 140 160"
 			}
 		}
 	}
@@ -5184,6 +5419,52 @@
 							"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
 							"Function"			"turretSound"
 						}	
+		}
+		
+	}
+
+		//=================================================================================================================
+	// turret
+	//=================================================================================================================
+	"raven_battleship"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"rainbow"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50.0 45.0 40.0 35.0"
+		"AbilityCastRange"				"400 500 600 700"
+		"BaseClass" 					"ability_datadriven"
+	"AbilityDamage"					"500"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"OnSpellStart"
+		{
+			"SpawnUnit"
+			{
+				"Target"            "CASTER"
+				"UnitName"              "npc_dota_raven"
+				"UnitCount"             "1"
+				"Duration"				"15 17 19 21"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"turretSound"
+			}	
+
 		}
 		
 	}
@@ -5986,6 +6267,7 @@
                 
                
         }
+		
 
 		
 		
@@ -6064,7 +6346,7 @@
 				
 				"Duration"  "%duration"
 				
-				"ThinkInterval"		"0.75"
+				"ThinkInterval"		"0.49"
 				"OnIntervalThink"
 				{
 					
@@ -6092,7 +6374,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"6.0"
+				"duration"				"4.0"
 			}
 			"03"
 			{
@@ -8857,6 +9139,120 @@
 		//-------------------------------------------------------------------------------------------------------------
 		
 	}
+
+	"noah_guardian_angel_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"omniknight_guardian_angel"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"40.0 38.0 36.0 34.0"
+	"AbilityCastPoint"				"0.5 0.5 0.5"
+	
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"1.0 1.33 1.66 2.0"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"500 600 700 800"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+		"particle"	"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_halo_buff.vpcf"
+		"particle"  "particles/status_fx/status_effect_guardian_angel.vpcf"
+		"particle"  "particles/units/heroes/hero_omniknight/omniknight_guardian_angel_ally.vpcf"
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Omniknight.GuardianAngel.Cast"
+			"Target"		"CASTER"
+		}
+
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"  		"CASTER"
+				"Radius"		"%radius"
+				"Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+
+			"Action"
+			{
+				"ApplyModifier"
+				{
+					"Target" 		"TARGET"
+					"ModifierName"	"modifier_guardian_angel"
+				}
+			}
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_guardian_angel"
+		{
+			"IsBuff"			"1"
+			"IsPurgable"		"1"
+			"Duration"			"%duration"
+			"StatusEffectName"     "particles/status_fx/status_effect_guardian_angel.vpcf"
+			"StatusEffectPriority" "10"
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_halo_buff.vpcf"
+					"EffectAttachType"	"follow_overhead"
+					"Target"			"CASTER"
+				}
+
+			 	"AttachEffect"
+				{
+					"Target"
+					{
+						"Center"  		"CASTER"
+						"Radius"		"%radius"
+						"Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+						"Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					}
+					"EffectName"				"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_ally.vpcf"
+					"EffectAttachType"			"follow_origin"
+					"EffectRadius"				"%radius"
+				}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL"	"1"
+			}
+		}
+	}
+}
 	
 	
 	
@@ -11238,7 +11634,47 @@
     }
   }
 
-	"ball_lightning_lua"
+	"speed_boat_wave"
+  {
+    "BaseClass"           "ability_lua"
+    "ScriptFile"          "heroes/speed_boat_wave.lua"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING" "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+	"SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
+    "AbilityTextureName"      "morphling_waveform"
+    "AbilityManaCost"               "0"
+	"AbilityCooldown"				"25.0 23.0 21.0 19.0"
+    "AbilityCastPoint"        "0"
+	"AbilityCastRange"				"1200"
+    "precache"
+    {
+      "soundfile"         "soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
+      "soundfile"         "soundevents/game_sounds_heroes/game_sounds_vo_stormspirit.vsndevts"
+      "particle"          "particles/units/heroes/hero_morphling/morphling_waveform.vpcf"
+    }
+
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"          "FIELD_INTEGER"
+        "ball_speed"        "1450"
+      }
+      "02"
+      {
+        "var_type"          "FIELD_INTEGER"
+        "damage_radius"     "200"
+      }
+	  "03"
+      {
+        "var_type"          "FIELD_INTEGER"
+        "damage_base"  "200 250 300 350"
+      }
+    }
+  }
+
+  "ball_lightning_lua"
   {
     "BaseClass"           "ability_lua"
     "ScriptFile"          "heroes/ball_lightning.lua"
@@ -11249,7 +11685,7 @@
     "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
     "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
     "AbilityTextureName"      "storm_spirit_ball_lightning"
-    "AbilityManaCost"               "10"
+    "AbilityManaCost"               "100"
 
     "AbilityCastPoint"        "0.3"
 
@@ -11265,7 +11701,7 @@
       "01"
       {
         "var_type"          "FIELD_INTEGER"
-        "ball_speed"        "1850"
+        "ball_speed"        "1500 1600 1700"
       }
       "02"
       {
@@ -11301,8 +11737,8 @@
     "SpellDispellableType"      "SPELL_DISPELLABLE_NO"
 
     "AbilityCastPoint"        "0.0"
-    "AbilityManaCost"         "0"
- 	"AbilityCooldown"       "22 20 18 16"
+    "AbilityManaCost"         "250"
+ 	"AbilityCooldown"       "24 22 20 18"
     "precache"
     {
       "particle"  "particles/econ/events/ti7/mjollnir_shield_ti7.vpcf"
@@ -11316,7 +11752,7 @@
       "01"
       {
         "var_type"        "FIELD_FLOAT"
-        "duration"        "1 1.2 1.4 1.6"
+        "duration"        "2.25 2.5 2.75 3"
       }
     }
   }

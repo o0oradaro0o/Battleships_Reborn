@@ -16,7 +16,7 @@
 			m_flSourceAlphaValueToMapToOne = 0.2
 			m_bSaturateColorPreAlphaBlend = false
 			m_flOverbrightFactor = 0.5
-			m_hTexture = resource:"materials/particle/grimstroke/grimstroke_splatter.vtex"
+			m_hTexture = resource:"materials/models/heroes/morphling/watersprites/waveform_sprites2.vtex"
 		},
 		{
 			_class = "C_OP_RenderTrails"

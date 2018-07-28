@@ -63,7 +63,7 @@
 		"DOTA_Tooltip_ability_item_poison_ult_bow"							"Jar o' Plagues"
 		"DOTA_Tooltip_ability_item_poison_ult_bow_Description"        		"<h1>Weapon: Ultimate Poison</h1>Poisons targets, dealing %damage% damage per half-second for %psn_dur% seconds."
 		"DOTA_Tooltip_ability_item_poison_ult_bow_fire_rate"				"Reload Delay (s):"
-		"DOTA_Tooltip_ability_item_poison_ult_bow_dmg"						"Damage:"
+		"DOTA_Tooltip_ability_item_poison_ult_bow_dmg"						"Damage/4:"
 		"DOTA_Tooltip_ability_item_poison_ult_bow_range"					"Range:"
 		"DOTA_Tooltip_ability_item_poison_ult_bow_dps"							"\n<font  size= '3' color='#cc6400'>DPS:</font>"		
 		"DOTA_Tooltip_ability_item_poison_ult_bow_Lore"						"Let's see here… You've got ebola, tetanus, rabies… Maybe you should wear some gloves with this one."
@@ -137,7 +137,7 @@
 		"DOTA_Tooltip_ability_item_fire_ult_bow_Description"        		"<h1>Weapon: Ultimate Fire</h1>Deals %damage% damage every %fire_rate% seconds to all ships in range."
 		"DOTA_Tooltip_ability_item_fire_ult_bow_Note0"						"Fire damage over time does not stack."
 		"DOTA_Tooltip_ability_item_fire_ult_bow_fire_rate"					"Reload Delay (s):"
-		"DOTA_Tooltip_ability_item_fire_ult_bow_dmg"						"Damage:"
+		"DOTA_Tooltip_ability_item_fire_ult_bow_dmg"						"Damage/4:"
 		"DOTA_Tooltip_ability_item_fire_ult_bow_RADIUS"						"Range:"
 		"DOTA_Tooltip_ability_item_fire_ult_bow_dps"						"\n<font  size= '3' color='#cc6400'>DPS:</font>"	
 		"DOTA_Tooltip_ability_item_fire_ult_bow_Lore"						"Ah, ah, ah, ah, burnin' alive!"
@@ -207,7 +207,7 @@
 		"DOTA_Tooltip_ability_item_spin_ult_bow"							"Cluster Shuriken"
 		"DOTA_Tooltip_ability_item_spin_ult_bow_Description"        		"<h1>Weapon: Ultimate Iron</h1>Fragments on impact, hitting up to %bounces% nearby enemy unit within %bounce_range% range for %bounce_dmg% damage. \nDoes not hit structures."
 		"DOTA_Tooltip_ability_item_spin_ult_bow_fire_rate"					"Reload Delay (s):"
-		"DOTA_Tooltip_ability_item_spin_ult_bow_dmg"						"Damage:"
+		"DOTA_Tooltip_ability_item_spin_ult_bow_dmg"						"Damage/4:"
 		"DOTA_Tooltip_ability_item_spin_ult_bow_range"						"Range:"
 		"DOTA_Tooltip_ability_item_spin_ult_bow_dps"						"\n<font  size= '3' color='#cc6400'>DPS:</font>"	
 		"DOTA_Tooltip_ability_item_spin_ult_bow_Lore"						"Having shuriken guns doesn't make you a ninja ship, but it does mak you a deadly one."
@@ -278,7 +278,7 @@
 		"DOTA_Tooltip_ability_item_ice_ult_bow"								"Blizzard"
 		"DOTA_Tooltip_ability_item_ice_ult_bow_Description"        			"<h1>Weapon: Ultimate Ice</h1>Reduces target's movement speed by %slow_amt%%% for %slow_dur% seconds. \nDoes not hit structures."
 		"DOTA_Tooltip_ability_item_ice_ult_bow_fire_rate"					"Reload Delay (s):"
-		"DOTA_Tooltip_ability_item_ice_ult_bow_dmg"							"Damage:"
+		"DOTA_Tooltip_ability_item_ice_ult_bow_dmg"							"Damage/4:"
 		"DOTA_Tooltip_ability_item_ice_ult_bow_range"						"Range:"
 		"DOTA_Tooltip_ability_item_ice_ult_bow_dps"							"\n<font  size= '3' color='#cc6400'>DPS:</font>"	
 		"DOTA_Tooltip_ability_item_ice_ult_bow_Lore"						"Legends tell of a frozen ghost ship that appears once every 75 years. Its approach is heralded by a blizzard so cold, most crews are alerted by the sound of their lookout shattering on the deck."
@@ -350,7 +350,7 @@
 		"DOTA_Tooltip_ability_item_breach_ult_bow"							"Missle of Impending Doom"
 		"DOTA_Tooltip_ability_item_breach_ult_bow_Description"        		"<h1>Weapon: Ultimate Breach</h1>%pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. \nDoes not hit structures."
 		"DOTA_Tooltip_ability_item_breach_ult_bow_fire_rate"				"Reload Delay (s):"
-		"DOTA_Tooltip_ability_item_breach_ult_bow_dmg"						"Damage:"
+		"DOTA_Tooltip_ability_item_breach_ult_bow_dmg"						"Damage/4:"
 		"DOTA_Tooltip_ability_item_breach_ult_bow_delay"					"Damage Delay:"
 		"DOTA_Tooltip_ability_item_breach_ult_bow_range"					"Range:"
 		"DOTA_Tooltip_ability_item_breach_ult_bow_dps"						"\n<font  size= '3' color='#cc6400'>DPS:</font>"	
@@ -429,7 +429,7 @@
 		"DOTA_Tooltip_ability_item_caulk_ult_bow_Note0"						"Heals allied units."
 		"DOTA_Tooltip_ability_item_caulk_ult_bow_Note1"						"Does not heal structures."
 		"DOTA_Tooltip_ability_item_caulk_ult_bow_fire_rate"					"Reload Delay (s):"
-		"DOTA_Tooltip_ability_item_caulk_ult_bow_dmg"						"Heal:"
+		"DOTA_Tooltip_ability_item_caulk_ult_bow_dmg"						"Heal/4:"
 		"DOTA_Tooltip_ability_item_caulk_ult_bow_range"						"Range:"
 		"DOTA_Tooltip_ability_item_caulk_ult_bow_Lore"						"Dammit Jim, I'm a carpenter, not a miracle worker!"
 
@@ -524,7 +524,7 @@
 		"DOTA_Tooltip_ability_item_wind_ult_bow_Description"        		"<h1>Weapon: Ultimate Wind</h1>Attacks deal up to %bonus_dmg% bonus damage based on your missing health. Enemies take more damage when you are stronger. Damage also reduced by up to 50%% when enemies get close to you. \nDoes not hit structures."
 		"DOTA_Tooltip_ability_item_wind_ult_bow_Note1"						"Attacks from inside minimum range deal %min_range_dmg_pct%%% damage."
 		//"DOTA_Tooltip_ability_item_wind_ult_bow_Note2"						"Attacks from outside maximum range deal no damage."
-		"DOTA_Tooltip_ability_item_wind_ult_bow_dmg"						"Damage:"
+		"DOTA_Tooltip_ability_item_wind_ult_bow_dmg"						"Damage/4:"
 		"DOTA_Tooltip_ability_item_wind_ult_bow_range"						"Range:"
 		"DOTA_Tooltip_ability_item_wind_ult_bow_min_range"					"Minimum Hit Range:"
 		//"DOTA_Tooltip_ability_item_wind_ult_bow_max_range"					"Maximum Hit Range:"
@@ -603,7 +603,7 @@
 		"DOTA_Tooltip_ability_item_light_ult_bow"							"Radiance"
 		"DOTA_Tooltip_ability_item_light_ult_bow_Description"        		"<h1>Weapon: Ultimate Light</h1>Projectiles fired by this weapon grant vision in a %vision_rad% unit radius."
 		"DOTA_Tooltip_ability_item_light_ult_bow_fire_rate"					"Reload Delay (s):"
-		"DOTA_Tooltip_ability_item_light_ult_bow_dmg"						"Damage:"
+		"DOTA_Tooltip_ability_item_light_ult_bow_dmg"						"Damage/4:"
 		"DOTA_Tooltip_ability_item_light_ult_bow_range"						"Range:"
 		"DOTA_Tooltip_ability_item_light_ult_bow_dps"						"\n<font  size= '3' color='#cc6400'>DPS:</font>"
 		"DOTA_Tooltip_ability_item_light_ult_bow_Lore"						"This blessed weapon cuts through the strongest darkness… And the strongest ships."
@@ -672,7 +672,7 @@
 		"DOTA_Tooltip_ability_item_coal_ult_bow"							"Darkness"
 		"DOTA_Tooltip_ability_item_coal_ult_bow_Description"        		"<h1>Weapon: Ultimate Coal</h1>Shots fired by this weapon have a %stun_pct%%% chance to stun the target for %stun_dur% seconds."
 		"DOTA_Tooltip_ability_item_coal_ult_bow_fire_rate"					"Reload Delay (s):"
-		"DOTA_Tooltip_ability_item_coal_ult_bow_dmg"						"Damage:"
+		"DOTA_Tooltip_ability_item_coal_ult_bow_dmg"						"Damage/4:"
 		"DOTA_Tooltip_ability_item_coal_ult_bow_range"						"Range:"
 		"DOTA_Tooltip_ability_item_coal_ult_bow_dps"						"\n<font  size= '3' color='#cc6400'>DPS:</font>"	
 		"DOTA_Tooltip_ability_item_coal_ult_bow_Lore"						"Embrace it."
@@ -754,7 +754,7 @@
 		"DOTA_Tooltip_ability_item_plasma_ult_bow_Description"        		"<h1>Weapon: Ultimate Plasma</h1>Reduces target's armor by %armor_down% for %armor_dur% seconds."
 		"DOTA_Tooltip_ability_item_plasma_ult_bow_Note0"					"Multiple hits extend duration, not increase armor lost."
 		"DOTA_Tooltip_ability_item_plasma_ult_bow_fire_rate"				"Reload Delay (s):"
-		"DOTA_Tooltip_ability_item_plasma_ult_bow_dmg"						"Damage:"
+		"DOTA_Tooltip_ability_item_plasma_ult_bow_dmg"						"Damage/4:"
 		"DOTA_Tooltip_ability_item_plasma_ult_bow_range"					"Range:"
 		"DOTA_Tooltip_ability_item_plasma_ult_bow_dps"						"\n<font  size= '3' color='#cc6400'>DPS:</font>"	
 		"DOTA_Tooltip_ability_item_plasma_ult_bow_Lore"						"Pirates, not known for their aptitude in math, favor this weapon over its counterpart, the Integrator."
@@ -1826,7 +1826,12 @@
 		"DOTA_Tooltip_ability_morphling_waveform_battleship_Description"					"Rev your engine for a short burst, thrust forward, and splash enemies with a powerful wake. \n\nHigher levels increase range and damage."
 		"DOTA_Tooltip_ability_morphling_waveform_battleship_speed"					"WAVE SPEED:"
 		"DOTA_Tooltip_ability_morphling_waveform_battleship_width"					"WAVE WIDTH:"
-
+		
+		"DOTA_Tooltip_ability_speed_boat_wave"                                            "Big Wake"
+		"DOTA_Tooltip_ability_speed_boat_wave_Description"                                "Rev your engine for a short burst, thrust forward, and splash enemies with a powerful wake. \n\nHigher levels increase range and damage."
+		"DOTA_Tooltip_ability_speed_boat_wave_ball_speed"                                 "WAVE SPEED:"
+		"DOTA_Tooltip_ability_speed_boat_wave_damage_radius"                              "WAVE WIDTH:"
+		"DOTA_Tooltip_ability_speed_boat_wave_damage_base"                                "DAMAGE:"
 		
 		"DOTA_Tooltip_Ability_tidehunter_gush_battleship"								"Bilging"
 		"DOTA_Tooltip_ability_tidehunter_gush_battleship_Description"					"Fire a blast of water at an enemy ship dealing damage, de-armoring, and slowing for a short time. also restores air to your sub. \n\nHigher levels increase damage and potency."
@@ -2900,8 +2905,8 @@
 		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_vision_radius"                   "VISION RADIUS:"
 		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_vision_duration"                 "VISION DURATION:"
 
-		"DOTA_Tooltip_ability_pudge_meat_hook_lua"                                        "Pudge Meat Hook Lua"
-		"DOTA_Tooltip_ability_pudge_meat_hook_lua_Description"                            ""
+		"DOTA_Tooltip_ability_pudge_meat_hook_lua"                                        "Tug!"
+		"DOTA_Tooltip_ability_pudge_meat_hook_lua_Description"                            "Let loose your hook and reel in whatever it hits, friend or foe."
 		"DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_speed"                             "HOOK SPEED:"
 		"DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_width"                             "HOOK WIDTH:"
 		"DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_distance"                          "HOOK DISTANCE:"
@@ -3295,16 +3300,16 @@
 		"DOTA_Tooltip_ability_item_recipe_chaos_ult_bow"                                  "Recipe Chaos Ult Bow"
 		"DOTA_Tooltip_ability_item_recipe_chaos_ult_bow_Description"                      ""
 
-		"DOTA_Tooltip_ability_item_sail_one_remove"                                       "REMOVE:"
+		"DOTA_Tooltip_ability_item_sail_one_remove"                                       "DURATION:"
 		"DOTA_Tooltip_ability_item_sail_one_bonus_speed"                                  "BONUS SPEED:"
 
-		"DOTA_Tooltip_ability_item_sail_two_remove"                                       "REMOVE:"
+		"DOTA_Tooltip_ability_item_sail_two_remove"                                       "DURATION:"
 		"DOTA_Tooltip_ability_item_sail_two_bonus_speed"                                  "BONUS SPEED:"
 
-		"DOTA_Tooltip_ability_item_sail_three_remove"                                     "REMOVE:"
+		"DOTA_Tooltip_ability_item_sail_three_remove"                                     "DURATION:"
 		"DOTA_Tooltip_ability_item_sail_three_bonus_speed"                                "BONUS SPEED:"
 
-		"DOTA_Tooltip_ability_item_sail_four_remove"                                      "REMOVE:"
+		"DOTA_Tooltip_ability_item_sail_four_remove"                                      "DURATION:"
 		"DOTA_Tooltip_ability_item_sail_four_bonus_speed"                                 "BONUS SPEED:"
 
 		"DOTA_Tooltip_ability_item_hull_one_bonus_movement"                               "BONUS MOVEMENT:"
@@ -3765,6 +3770,194 @@
 
 		// ******************** ITEMS ********************
 
+		// DOTA 2 MODKIT GENERATED TOOLTIPS FOR: battleships_traders
+		// Keys already defined in addon_english.txt are not listed, nor are Modifiers with the property "IsHidden" "1".
+
+		// ******************** HEROES ********************
+
+		// ******************** UNITS ********************
+		"npc_dota_hero_razor_battleship8d"                                                "Stormchaser Hydrofoil"
+		// ******************** ABILITY MODIFIERS ********************
+
+		// ******************** ITEM MODIFIERS ********************
+
+		// ******************** ABILITIES ********************
+		"DOTA_Tooltip_ability_thunder_storm"                                              "Thunder Storm"
+		"DOTA_Tooltip_ability_thunder_storm_Description"                                  "Passivly rain lightniong around you striking your foes and building up your charge as you damage enemies.  the more charge you amass the faster the liughtning comes. \n higher levels increase damage"
+		"DOTA_Tooltip_ability_thunder_storm_lightning_radius"                             "LIGHTNING RADIUS:"
+		"DOTA_Tooltip_ability_thunder_storm_lightning_tick_interval_min"                  "LIGHTNING TICK INTERVAL MIN:"
+		"DOTA_Tooltip_ability_thunder_storm_lightning_tick_interval_max"                  "LIGHTNING TICK INTERVAL MAX:"
+		"DOTA_Tooltip_ability_thunder_storm_damage"                                       "DAMAGE:"
+		"DOTA_Tooltip_ability_thunder_storm_sight_radius"                                 "SIGHT RADIUS:"
+		"DOTA_Tooltip_ability_thunder_storm_sight_duration"                               "SIGHT DURATION:"
+		"DOTA_Tooltip_ability_thunder_storm_lightning_bolt_search_radius"                 "LIGHTNING BOLT SEARCH RADIUS:"
+
+		"DOTA_Tooltip_ability_static_link_lua"                                            "Static Surge"
+		"DOTA_Tooltip_ability_static_link_lua_Description"                                "Bond to target dealing damage to them and builkding up your static charge"
+		"DOTA_Tooltip_ability_static_link_lua_drain_length"                               "DURATION:"
+		"DOTA_Tooltip_ability_static_link_lua_drain_rate"                                 "SURGE RATE:"
+		"DOTA_Tooltip_ability_static_link_lua_drain_range_buffer"                         "DRAIN RANGE BUFFER:"
+
+		"DOTA_Tooltip_ability_ball_lightning_lua"                                         "Electric Slide"
+		"DOTA_Tooltip_ability_ball_lightning_lua_Description"                             "Discharge your static build up to serge forward at rediculous speed ignoreing walls and other ships. any enemies you pass will take samage and slightly recharge you"
+		"DOTA_Tooltip_ability_ball_lightning_lua_ball_speed"                              "BALL SPEED:"
+		"DOTA_Tooltip_ability_ball_lightning_lua_damage_radius"                           "DAMAGE RADIUS:"
+		"DOTA_Tooltip_ability_ball_lightning_lua_damage_per_units"                        "DAMAGE PER DISTANCE:"
+		"DOTA_Tooltip_ability_ball_lightning_lua_ball_vision_radius"                      "BALL VISION RADIUS:"
+		"DOTA_Tooltip_ability_ball_lightning_lua_damage_base"                             "DAMAGE BASE:"
+
+		"DOTA_Tooltip_ability_electric_bounce_lua"                                        "Electromagnetic Shielding"
+		"DOTA_Tooltip_ability_electric_bounce_lua_Description"                            "Incomming weapon attacks are redirected by electromagnetic forces back to their sources."
+		"DOTA_Tooltip_ability_electric_bounce_lua_duration"                               "DURATION:"
+
+
+		// ******************** ITEMS ********************
+			// DOTA 2 MODKIT GENERATED TOOLTIPS FOR: battleships_traders
+		// Keys already defined in addon_english.txt are not listed, nor are Modifiers with the property "IsHidden" "1".
+
+		// ******************** HEROES ********************
+
+		// ******************** UNITS ********************
+
+		// ******************** ABILITY MODIFIERS ********************
+		"DOTA_Tooltip_peak_ind"                                                           "Sonar cooldown"
+		"DOTA_Tooltip_peak_ind_Description"                                               ""
+
+		"DOTA_Tooltip_modifier_guardian_angel"                                            "Guardian Angel"
+		"DOTA_Tooltip_modifier_guardian_angel_Description"                                ""
+
+
+		// ******************** ITEM MODIFIERS ********************
+		"DOTA_Tooltip_item_poison_bow_doubled_shooting"                                   "Item Poison Bow Doubled Shooting"
+		"DOTA_Tooltip_item_poison_bow_doubled_shooting_Description"                       ""
+
+		"DOTA_Tooltip_item_fire_bow_doubled_shooting"                                     "Item Fire Bow Doubled Shooting"
+		"DOTA_Tooltip_item_fire_bow_doubled_shooting_Description"                         ""
+
+		"DOTA_Tooltip_item_ice_bow_doubled_shooting"                                      "Item Ice Bow Doubled Shooting"
+		"DOTA_Tooltip_item_ice_bow_doubled_shooting_Description"                          ""
+
+		"DOTA_Tooltip_item_wind_bow_doubled_shooting"                                     "Item Wind Bow Doubled Shooting"
+		"DOTA_Tooltip_item_wind_bow_doubled_shooting_Description"                         ""
+
+		"DOTA_Tooltip_item_light_bow_doubled_shooting"                                    "Item Light Bow Doubled Shooting"
+		"DOTA_Tooltip_item_light_bow_doubled_shooting_Description"                        ""
+
+		"DOTA_Tooltip_item_coal_bow_doubled_shooting"                                     "Item Coal Bow Doubled Shooting"
+		"DOTA_Tooltip_item_coal_bow_doubled_shooting_Description"                         ""
+
+		"DOTA_Tooltip_item_plasma_bow_doubled_shooting"                                   "Item Plasma Bow Doubled Shooting"
+		"DOTA_Tooltip_item_plasma_bow_doubled_shooting_Description"                       ""
+
+		"DOTA_Tooltip_item_spin_bow_doubled_shooting"                                     "Item Spin Bow Doubled Shooting"
+		"DOTA_Tooltip_item_spin_bow_doubled_shooting_Description"                         ""
+
+		"DOTA_Tooltip_item_caulk_bow_doubled_shooting"                                    "Item Caulk Bow Doubled Shooting"
+		"DOTA_Tooltip_item_caulk_bow_doubled_shooting_Description"                        ""
+
+		"DOTA_Tooltip_item_breach_bow_doubled_shooting"                                   "Item Breach Bow Doubled Shooting"
+		"DOTA_Tooltip_item_breach_bow_doubled_shooting_Description"                       ""
+
+		"DOTA_Tooltip_item_chaos_bow_doubled_shooting"                                    "Item Chaos Bow Doubled Shooting"
+		"DOTA_Tooltip_item_chaos_bow_doubled_shooting_Description"                        ""
+
+		"DOTA_Tooltip_item_poison_two_bow_doubled_shooting"                               "Item Poison Two Bow Doubled Shooting"
+		"DOTA_Tooltip_item_poison_two_bow_doubled_shooting_Description"                   ""
+
+		"DOTA_Tooltip_item_fire_two_bow_doubled_shooting"                                 "Item Fire Two Bow Doubled Shooting"
+		"DOTA_Tooltip_item_fire_two_bow_doubled_shooting_Description"                     ""
+
+		"DOTA_Tooltip_item_ice_two_bow_doubled_shooting"                                  "Item Ice Two Bow Doubled Shooting"
+		"DOTA_Tooltip_item_ice_two_bow_doubled_shooting_Description"                      ""
+
+		"DOTA_Tooltip_item_wind_two_bow_doubled_shooting"                                 "Item Wind Two Bow Doubled Shooting"
+		"DOTA_Tooltip_item_wind_two_bow_doubled_shooting_Description"                     ""
+
+		"DOTA_Tooltip_item_light_two_bow_doubled_shooting"                                "Item Light Two Bow Doubled Shooting"
+		"DOTA_Tooltip_item_light_two_bow_doubled_shooting_Description"                    ""
+
+		"DOTA_Tooltip_item_coal_two_bow_doubled_shooting"                                 "Item Coal Two Bow Doubled Shooting"
+		"DOTA_Tooltip_item_coal_two_bow_doubled_shooting_Description"                     ""
+
+		"DOTA_Tooltip_item_plasma_two_bow_doubled_shooting"                               "Item Plasma Two Bow Doubled Shooting"
+		"DOTA_Tooltip_item_plasma_two_bow_doubled_shooting_Description"                   ""
+
+		"DOTA_Tooltip_item_spin_two_bow_doubled_shooting"                                 "Item Spin Two Bow Doubled Shooting"
+		"DOTA_Tooltip_item_spin_two_bow_doubled_shooting_Description"                     ""
+
+		"DOTA_Tooltip_item_breach_two_bow_doubled_shooting"                               "Item Breach Two Bow Doubled Shooting"
+		"DOTA_Tooltip_item_breach_two_bow_doubled_shooting_Description"                   ""
+
+		"DOTA_Tooltip_item_chaos_two_bow_doubled_shooting"                                "Item Chaos Two Bow Doubled Shooting"
+		"DOTA_Tooltip_item_chaos_two_bow_doubled_shooting_Description"                    ""
+
+		"DOTA_Tooltip_item_poison_three_bow_doubled_shooting"                             "Item Poison Three Bow Doubled Shooting"
+		"DOTA_Tooltip_item_poison_three_bow_doubled_shooting_Description"                 ""
+
+		"DOTA_Tooltip_item_fire_three_bow_doubled_shooting"                               "Item Fire Three Bow Doubled Shooting"
+		"DOTA_Tooltip_item_fire_three_bow_doubled_shooting_Description"                   ""
+
+		"DOTA_Tooltip_item_ice_three_bow_doubled_shooting"                                "Item Ice Three Bow Doubled Shooting"
+		"DOTA_Tooltip_item_ice_three_bow_doubled_shooting_Description"                    ""
+
+		"DOTA_Tooltip_item_wind_three_bow_doubled_shooting"                               "Item Wind Three Bow Doubled Shooting"
+		"DOTA_Tooltip_item_wind_three_bow_doubled_shooting_Description"                   ""
+
+		"DOTA_Tooltip_item_light_three_bow_doubled_shooting"                              "Item Light Three Bow Doubled Shooting"
+		"DOTA_Tooltip_item_light_three_bow_doubled_shooting_Description"                  ""
+
+		"DOTA_Tooltip_item_coal_three_bow_doubled_shooting"                               "Item Coal Three Bow Doubled Shooting"
+		"DOTA_Tooltip_item_coal_three_bow_doubled_shooting_Description"                   ""
+
+		"DOTA_Tooltip_item_plasma_three_bow_doubled_shooting"                             "Item Plasma Three Bow Doubled Shooting"
+		"DOTA_Tooltip_item_plasma_three_bow_doubled_shooting_Description"                 ""
+
+		"DOTA_Tooltip_item_spin_three_bow_doubled_shooting"                               "Item Spin Three Bow Doubled Shooting"
+		"DOTA_Tooltip_item_spin_three_bow_doubled_shooting_Description"                   ""
+
+		"DOTA_Tooltip_item_breach_three_bow_doubled_shooting"                             "Item Breach Three Bow Doubled Shooting"
+		"DOTA_Tooltip_item_breach_three_bow_doubled_shooting_Description"                 ""
+
+		"DOTA_Tooltip_item_chaos_three_bow_doubled_shooting"                              "Item Chaos Three Bow Doubled Shooting"
+		"DOTA_Tooltip_item_chaos_three_bow_doubled_shooting_Description"                  ""
+
+
+		// ******************** ABILITIES ********************
+		"DOTA_Tooltip_ability_peak_battleship_cooldown"                                   "COOLDOWN:"
+
+		"DOTA_Tooltip_ability_noah_guardian_angel_datadriven"                             "Noah's Guardian Angel"
+		"DOTA_Tooltip_ability_noah_guardian_angel_datadriven_Description"                 "You and nearby allies do not take damage from weapons for the listed duration."
+		"DOTA_Tooltip_ability_noah_guardian_angel_datadriven_duration"                    "DURATION:"
+		"DOTA_Tooltip_ability_noah_guardian_angel_datadriven_radius"                      "RADIUS:"
+
+
+		// ******************** ITEMS ********************
+				// DOTA 2 MODKIT GENERATED TOOLTIPS FOR: battleships_traders
+		// Keys already defined in addon_english.txt are not listed, nor are Modifiers with the property "IsHidden" "1".
+
+		// ******************** HEROES ********************
+
+		// ******************** UNITS ********************
+		"npc_dota_raven"                                                                  "Divine Raven"
+
+		// ******************** ABILITY MODIFIERS ********************
+		"DOTA_Tooltip_raven_heal"                                                         "Raven Heal"
+		"DOTA_Tooltip_raven_heal_Description"                                             ""
+
+
+		// ******************** ITEM MODIFIERS ********************
+
+		// ******************** ABILITIES ********************
+		"DOTA_Tooltip_ability_fly_raven"                                                  "Fly Raven"
+		"DOTA_Tooltip_ability_fly_raven_Description"                                      ""
+
+		"DOTA_Tooltip_ability_raven_heal"                                                 "Raven Heal"
+		"DOTA_Tooltip_ability_raven_heal_Description"                                     ""
+
+		"DOTA_Tooltip_ability_raven_battleship"                                           "Divine Raven"
+		"DOTA_Tooltip_ability_raven_battleship_Description"                               "Noah calls upon his flying friends in his time of need, to give him and his allies aid. The bird proides vision and casts healing spells on nearby allies"
+
+		// ******************** ITEMS ********************
 
 	}
 }

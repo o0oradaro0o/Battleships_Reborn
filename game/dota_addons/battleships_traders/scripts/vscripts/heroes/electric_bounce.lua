@@ -17,6 +17,11 @@ end
 
 modifier_electric_bounce = class({})
 
+function modifier_electric_bounce:DeclareFunctions()
+	local decFuncs = {MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL}
+	return decFuncs
+end
+
 function modifier_electric_bounce:OnCreated()
   local caster = self:GetParent()
   local ability = self:GetAbility()
@@ -54,10 +59,7 @@ function modifier_electric_bounce:OnTakeDamage(keys)
         local radarSteamId = 35695824
         local vicFrankSteamId = 70585706
         local playerSteamId = caster:GetPlayerOwnerID()
-    
-        if playerSteamId == radarSteamId or playerSteamId == vicFrankSteamId then
-          sound = "Hero_MonkeyKing.Taunt.Pogo"
-        end
+
     
         EmitSoundOn(sound, caster)
     
@@ -68,8 +70,8 @@ function modifier_electric_bounce:OnTakeDamage(keys)
         if ability:GetAbilityName() == "item_hull_sail_one_combo_bow" then
             modifierName = "modifier_item_hull_one"
         end
-        if ability:GetCaster() ~= nil and ability:GetCaster():IsAlive() then
 
+        if ability:GetCaster() ~= nil and ability:GetCaster():IsAlive() and Target~=caster then
             local info = {
                 Ability = ability,
                 Source = caster,
@@ -85,9 +87,6 @@ function modifier_electric_bounce:OnTakeDamage(keys)
             }
             projectile = ProjectileManager:CreateTrackingProjectile(info)
         end
-
-        self.caster:SetMana(self.caster:GetMana()+damage/50)
-        caster:Heal(damage, caster)
     end
 end
   end

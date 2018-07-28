@@ -1381,13 +1381,13 @@
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/monkey_buisness.png" />	
                        <Label hittest="false" class="ability_name" text="#monkey_buisness"/>"
 					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('visage','terrorblade_conjure_image_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/terrorblade_conjure_image.png" />
-                       <Label hittest="false" class="ability_name" text="#terrorblade_conjure_image_battleship"/>"
-					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('visage','rainbow_battleship')" >
+					<Panel hittest="false" class="ability" onmouseover="showText('visage','raven_battleship')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/rainbow.png" />
-                       <Label hittest="false" class="ability_name" text="#rainbow_battleship"/>"
+                       <Label hittest="false" class="ability_name" text="#raven_battleship"/>"
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('visage','noah_guardian_angel_datadriven')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/Guardian_Angel_icon.png" />
+                       <Label hittest="false" class="ability_name" text="#noah_guardian_angel_datadriven"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('visage','mountain_battleship')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/greevil_ice_wall.png" />
@@ -2626,6 +2626,9 @@
 <Image class="Toggled" src="file://{images}/items/ice_ult_bow.png"  />
 <Image class="Toggled" src="file://{images}/items/wind_ult_bow.png"  />
 <Image class="Toggled" src="file://{images}/items/nut_spawner" />
+	<Image class="Toggled" src="file://{images}/custom_game/boats/zuus.png" />
+	<Image class="Toggled" src="file://{images}/custom_game/boats/winter_wyvern.png" />
+	
 
 		 
 		 

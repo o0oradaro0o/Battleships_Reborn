@@ -7,7 +7,7 @@ function modifier_thunder_storm:OnCreated()
 
 
     if IsServer() then
-        self:StartIntervalThink(.2)
+        self:StartIntervalThink(.4)
     end
 end
 
@@ -82,7 +82,7 @@ end
 
 function thunder_storm:CastLightningBolt(ability, targetUnit, targetPoint)
 	local caster = ability:GetCaster()
-  local sound = "Hero_Leshrac.Lightning_Storm"
+  local sound = "Hero_razor.Attack"
   local particle = "particles/basic_projectile/lightning_bolt.vpcf"
   local particleHeight = 2000
 

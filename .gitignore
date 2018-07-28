@@ -182,6 +182,7 @@ content/dota_addons/vpks/
 content/dota_addons/workshop_testbed/
 content/dota_addons/dungeon/
 content/dota_addons/new_bloom_2017/
+content/dota_addons/cavern/
 
 game/dota_addons/dungeon/
 game/dota_addons/addon_template/
@@ -203,6 +204,7 @@ game/dota_addons/workshop_testbed/
 game/dota_addons/new_bloom_2017/
 game/dota_addons/frostivus_2017/
 game/dota_addons/last_hit_trainer/
+game/dota_addons/cavern/
 
 *.bin
 *.mdmp

@@ -121,14 +121,7 @@
 	m_Children = 
 	[
 		{
-			m_flDelay = 0.015
-			m_ChildRef = resource:"particles/_2units/heroes/hero_zuus/zuus_lightning_bolt_thin.vpcf"
-		},
-		{
 			m_ChildRef = resource:"particles/_2units/heroes/hero_zuus/zuus_lightning_bolt_glow.vpcf"
-		},
-		{
-			m_ChildRef = resource:"particles/_2units/heroes/hero_zuus/zuus_lightning_bolt_modglow.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/_2units/heroes/hero_zuus/zuus_gods_wrath_sparks.vpcf"
