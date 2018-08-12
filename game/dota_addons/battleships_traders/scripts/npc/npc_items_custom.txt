@@ -3633,7 +3633,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "1125"
+						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_one_projectile.vpcf" 
@@ -4962,7 +4962,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "1125"
+						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_two_projectile.vpcf" 
@@ -6279,7 +6279,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "1125"
+						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_three_projectile.vpcf" 
@@ -7704,7 +7704,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "1125"
+						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_one_projectile.vpcf" 
@@ -7721,7 +7721,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "1125"
+						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_one_projectile.vpcf" 
@@ -9320,7 +9320,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "1125"
+						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_two_projectile.vpcf" 
@@ -9337,7 +9337,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "1125"
+						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_two_projectile.vpcf" 
@@ -10931,7 +10931,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "1125"
+						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_three_projectile.vpcf" 
@@ -10948,7 +10948,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "1125"
+						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_three_projectile.vpcf" 
@@ -12650,7 +12650,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "1125"
+						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_ult_projectile.vpcf" 
@@ -12667,7 +12667,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "1125"
+						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_ult_projectile.vpcf" 
@@ -12684,7 +12684,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "1125"
+						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_ult_projectile.vpcf" 
@@ -12701,7 +12701,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "1125"
+						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_ult_projectile.vpcf" 
@@ -12716,7 +12716,7 @@
 						"IsHidden"	 "1"
 						"Properties"
 						{
-							"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-12"
+							"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-3"
 					
 						}
 						"Duration" "2.0"

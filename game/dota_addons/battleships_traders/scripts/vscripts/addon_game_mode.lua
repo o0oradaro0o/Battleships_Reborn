@@ -3193,27 +3193,62 @@ function CBattleship8D:HandleEmpGold()
 	g_HeroGoldArray[casterUnit:GetPlayerOwnerID()]=herogold
   
 	local sellItBack = false
+	local wasHull = false
+	local wasTP = false
+	local matchingItem=""
 	for itemSlot = 0, 14, 1 do
 	  local Item = casterUnit:GetItemInSlot( itemSlot )
 	  if Item ~= nil and
 	  string.match(Item:GetName(), itemName) and
 	  string.match(Item:GetName(),"doubled") then
-		sellItBack=true;
-  
-	  end
+			sellItBack=true;
+		end
+		if Item ~= nil and
+		 not string.match(Item:GetName(),itemName) and
+	  ((string.match(itemName, "hull") and
+		string.match(Item:GetName(),"hull")) or 
+		string.match(itemName, "sail") and
+		string.match(Item:GetName(),"sail") ) then
+			wasHull = true
+			matchingItem = Item:GetName()
+		end
+		if Item ~= nil and
+			string.match(itemName, "tpscroll") then
+			wasTP = true
+		end
+
 	end
-	if sellItBack then
+	if sellItBack or wasHull or wasTP then
 	  for itemSlot = 0, 14, 1 do
 		local Item = casterUnit:GetItemInSlot( itemSlot )
 		if Item ~= nil and string.match( itemName, Item:GetName()) then
-		  casterUnit:SetGold(herogold + GetItemCost(Item:GetName()), true)
-		  casterUnit:SetGold(0, false)
-		  g_HeroGoldArray[casterUnit:GetPlayerOwnerID()] = herogold + GetItemCost(Item:GetName())
-		  RemoveAndDeleteItem(casterUnit,Item)
-		  Notifications:Top(casterUnit:GetPlayerID(), {text="#max_items_1", duration=5.0, style={color="#800000",  fontSize="50px;"}})
-		  Notifications:Top(casterUnit:GetPlayerID(), {image="file://{images}/items/".. string.sub (itemName, 6)  ..".png", style={height="65px", width = "150px"} , continue=true})
-		  Notifications:Top(casterUnit:GetPlayerID(), {text="#max_items_2", duration=5.0, style={color="#800000",  fontSize="50px;"}})
-		end
+			EmitSoundOnClient("General.Cancel", PlayerResource:GetPlayer(casterUnit:GetPlayerOwnerID()))
+				casterUnit:SetGold(herogold + GetItemCost(Item:GetName()), true)
+				casterUnit:SetGold(0, false)
+				g_HeroGoldArray[casterUnit:GetPlayerOwnerID()] = herogold + GetItemCost(Item:GetName())
+				RemoveAndDeleteItem(casterUnit,Item)
+				print(string.sub(itemName, 6)  ..".png")
+				if sellItBack then
+		
+					Notifications:Top(casterUnit:GetPlayerID(), {text="#max_items_1", duration=5.0, style={color="#E62020",  fontSize="50px;"}})
+					Notifications:Top(casterUnit:GetPlayerID(), {image="file://{images}/items/".. string.sub (itemName, 6)  ..".png", style={height="65px", width = "150px"} , continue=true})
+				
+					Notifications:Top(casterUnit:GetPlayerID(), {text="#max_items_2", duration=5.0, style={color="#E62020",  fontSize="50px;"}})
+				elseif wasHull then
+					Notifications:Top(casterUnit:GetPlayerID(), {text="#max_utility_1", duration=5.0, style={color="#E62020",  fontSize="50px;"}})
+					if(	string.match(Item:GetName(),"sail")) then
+						Notifications:Top(casterUnit:GetPlayerID(), {image="file://{images}/items/".. string.sub (matchingItem, 6)  ..".png", style={height="65px", width = "150px"} , continue=true})
+					else
+						Notifications:Top(casterUnit:GetPlayerID(), {image="file://{images}/items/".. string.sub (matchingItem, 6)  ..".png", style={height="65px", width = "85px"} , continue=true})
+					end
+					Notifications:Top(casterUnit:GetPlayerID(), {text="#max_utility_2", duration=5.0, style={color="#E62020",  fontSize="50px;"}})
+				elseif wasTP then
+					Notifications:Top(casterUnit:GetPlayerID(), {text="#no_tps", duration=5.0, style={color="#E62020",  fontSize="50px;"}})
+					
+				end
+
+
+			end
 	  end
 	end
   

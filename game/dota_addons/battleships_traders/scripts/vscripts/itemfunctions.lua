@@ -575,7 +575,7 @@ function WindDmg(args) -- keys is the information sent by the ability
     damage_type = DAMAGE_TYPE_PHYSICAL,
   }
   ApplyDamage(damageTable)
-  if string.match(args.ability:GetAbilityName(), "doubled") then
+  if string.match(args.ability:GetAbilityName(), "doubled") or string.match(args.ability:GetAbilityName(), "ult") then
     local allies
     --hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
     if args.caster:GetTeamNumber() == DOTA_TEAM_BADGUYS then
@@ -585,68 +585,28 @@ function WindDmg(args) -- keys is the information sent by the ability
     end
 
     for _,friend in pairs( allies) do
-      print("fucker")
-      local tracking_projectile =
-      {
-        EffectName = "particles/basic_projectile/rainbow_projectile.vpcf",
-        vSpawnOrigin = args.caster:GetAbsOrigin(),
-        Target = friend,
-        Source = args.caster,
-        bHasFrontalCone = false,
-        iMoveSpeed = 2000,
-        bReplaceExisting = false,
-        bProvidesVision = false,
-        iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
-      }
+      if friend ~=  args.caster then
+        local tracking_projectile =
+        {
+          EffectName = "particles/basic_projectile/rainbow_projectile.vpcf",
+          vSpawnOrigin = args.caster:GetAbsOrigin(),
+          Target = friend,
+          Source = args.caster,
+          bHasFrontalCone = false,
+          iMoveSpeed = 2000,
+          bReplaceExisting = false,
+          bProvidesVision = false,
+          iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+        }
 
-      ProjectileManager:CreateTrackingProjectile(tracking_projectile)
-      friend:Heal(bonusDamage,  args.caster)
+        ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+        friend:Heal(bonusDamage,  args.caster)
+      end
     end
   end
 
 end
 
-function WindUltDmg(args) -- keys is the information sent by the ability
-  ---- --print('[ItemFunctions] gunning_it started! ')
-  --local casterUnit = args.caster
-  ---- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
-  --local targetUnit = args.target
-  --local targetPos = args.target:GetAbsOrigin()
-  ---- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
-  --local casterPos = args.caster:GetAbsOrigin()
-  ---- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
-  --local direction =  casterPos - targetPos
-  --
-  --local itemName = tostring(args.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. keys.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
-  --if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
-  --	for itemSlot = 0, 11, 1 do --a For loop is needed to loop through each slot and check if it is the item that it needs to drop
-  --		if casterUnit ~= nil then --checks to make sure the killed unit is not nonexistent.
-  --			local Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
-  --			if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
-  --
-  --
-  --				local damageTable = {
-  --					victim = targetUnit,
-  --					attacker = casterUnit,
-  --					damage = 310,
-  --					damage_type = DAMAGE_TYPE_PHYSICAL,
-  --				}
-  --				ApplyDamage(damageTable)
-  --
-  --				local HPPercentageTaken = (targetUnit:GetHealth()/targetUnit:GetMaxHealth()) -- Calculate the target HP percentage
-  --				local damageTable = {
-  --					victim = targetUnit,
-  --					attacker = casterUnit,
-  --					damage = 310*HPPercentageTaken,
-  --					damage_type = DAMAGE_TYPE_PHYSICAL,
-  --				}
-  --				ApplyDamage(damageTable)
-  --				do return end
-  --			end
-  --		end
-  --	end
-  --end
-end
 
 function coalUltStun(args) -- keys is the information sent by the ability
   --print('[ItemFunctions] coal started! ')

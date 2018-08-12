@@ -280,6 +280,9 @@
 	//shop
 	"max_items_1" "You have the maximum number of  "
 	"max_items_2" "Try buying its next level."
+	"max_utility_1" "This item does not stack your "
+	"max_utility_2" "please sell this before upgrading."
+	"no_tps" "No..."
 	
 	//kil self
 	"kill_self_one"	"Do not kill yourself opponents awarded "
@@ -3267,15 +3270,12 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		
 		"News_Title"		"News!"
 		"News_Content"		"Hi all! Art update will resume but is temporarily on hold.  In the meantime I am continuing to make balance changes.
- Newest balance changes: (7-4-2018)
--NEW BOATS ADDED!
--New 1k: Whaling Dinghy
--New 3k: Riverboat
--New 12k: Stromchaser Hydrofoil
--Two more new boats to come!
-- Noah's ark reworked
-- spawned units no longer follow creep Ai
-- Bug fixes
+Beginer-Tips!
+-Buy a WEAPON
+-Don't forget to ZOOM
+-Items with >1000 range don't hit TOWERS
+-Weapons next to eachother in the shop can Combo
+-Buying 2 of a weapon only takes one slot
 
 "
 		

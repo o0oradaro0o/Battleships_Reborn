@@ -212,6 +212,7 @@ function Notifications:Bottom(player, table)
   end
 end
 
+
 function Notifications:BottomToAll(table)
   if table.text ~= nil then
     CustomGameEventManager:Send_ServerToAllClients("bottom_notification", {text=table.text, duration=table.duration, class=table.class, style=table.style, continue=table.continue} )

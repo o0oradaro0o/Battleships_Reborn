@@ -2628,9 +2628,11 @@
 <Image class="Toggled" src="file://{images}/items/nut_spawner" />
 	<Image class="Toggled" src="file://{images}/custom_game/boats/zuus.png" />
 	<Image class="Toggled" src="file://{images}/custom_game/boats/winter_wyvern.png" />
-	
-
-		 
+	<Image class="Toggled" src="file://{images}/items/hull_one.png" />
+	<Image class="Toggled" src="file://{images}/items/hull_two.png" />
+	<Image class="Toggled" src="file://{images}/items/hull_three.png" />
+	<Image class="Toggled" src="file://{images}/items/hull_four.png" />
+	<Image class="Toggled" src="file://{images}/items/hull_sail_one_combo_bow.png" />	 
 		 
         </Panel>
     </Panel>
