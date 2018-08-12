@@ -3236,7 +3236,7 @@ function CBattleship8D:HandleEmpGold()
 					Notifications:Top(casterUnit:GetPlayerID(), {text="#max_items_2", duration=5.0, style={color="#E62020",  fontSize="50px;"}})
 				elseif wasHull then
 					Notifications:Top(casterUnit:GetPlayerID(), {text="#max_utility_1", duration=5.0, style={color="#E62020",  fontSize="50px;"}})
-					if(	string.match(Item:GetName(),"sail")) then
+					if(	not string.match(matchingItem,"hull")) then
 						Notifications:Top(casterUnit:GetPlayerID(), {image="file://{images}/items/".. string.sub (matchingItem, 6)  ..".png", style={height="65px", width = "150px"} , continue=true})
 					else
 						Notifications:Top(casterUnit:GetPlayerID(), {image="file://{images}/items/".. string.sub (matchingItem, 6)  ..".png", style={height="65px", width = "85px"} , continue=true})
