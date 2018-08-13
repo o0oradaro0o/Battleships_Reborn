@@ -1419,19 +1419,19 @@ DURATION: 2.5 3.0 3.5 4.0"
 		
 		"DOTA_Tooltip_ability_item_hull_one"						"Battered Hull"
 
-		"DOTA_Tooltip_ability_item_hull_one_Description"				"\n\n Poor Hull \n Does not stack with other hulls, Active Doubles armor bonus."
+		"DOTA_Tooltip_ability_item_hull_one_Description"				"\n\n Poor Hull \n Does not stack with other hulls, Active doubles armor bonus."
 		
 		"DOTA_Tooltip_ability_item_hull_two"						"Wooden Hull"
 
-		"DOTA_Tooltip_ability_item_hull_two_Description"				"\n\n Reasonable Hull \n Does not stack with other hulls, Active Doubles armor bonus."
+		"DOTA_Tooltip_ability_item_hull_two_Description"				"\n\n Reasonable Hull \n Does not stack with other hulls, Active doubles armor bonus."
 		
 		"DOTA_Tooltip_ability_item_hull_three"						"Iron Hull"
 
-		"DOTA_Tooltip_ability_item_hull_three_Description"				"\n\n Good Hull  \n Does not stack with other hulls, Active Doubles armor bonus."
+		"DOTA_Tooltip_ability_item_hull_three_Description"				"\n\n Good Hull  \n Does not stack with other hulls, Active doubles armor bonus."
 		
 		"DOTA_Tooltip_ability_item_hull_four"						"Admiral's Hull"
 
-		"DOTA_Tooltip_ability_item_hull_four_Description"				"\n\n Great Hull \n Does not stack with other hulls, Active Doubles armor bonus."
+		"DOTA_Tooltip_ability_item_hull_four_Description"				"\n\n Great Hull \n Does not stack with other hulls, Active doubles armor bonus."
 		
 		"DOTA_Tooltip_ability_item_hull_sail_one_combo"						"Lame Hull/Sail Combo"
 

@@ -6281,10 +6281,26 @@
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"40.0 40.0 40.0 40.0"
 			}
+			// these ability special are hardcoded and aren't actually used
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_hp"				"57"
+				"strength_bonus_creep"				"3"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"strength_bonus_hero"				"9"
+			}			
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_tooltip"	"20"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ministun_duration"	".1"
 			}
 		}
 	}

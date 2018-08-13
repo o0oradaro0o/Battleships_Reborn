@@ -1264,7 +1264,6 @@ function mightStart(args) -- keys is the information sent by the ability
 	local numunits = 0
 
 	 --print("[ItemFunctions] mightStart started!")
-
 	local enemies
 
 	--hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
@@ -1299,7 +1298,6 @@ function mightStart(args) -- keys is the information sent by the ability
 	for _, fucker in pairs(enemies) do
 		if casterUnit.strbonus then
 			local dmg = (casterUnit.strbonus * 20) / #enemies
-			 --print(dmg)
 			local damageTable = {
 				victim = fucker,
 				attacker = casterUnit,
@@ -1356,8 +1354,8 @@ function mightStart(args) -- keys is the information sent by the ability
 	 --print("[ItemFunctions] RmightStart started! hpPer is:" .. hpPer)
 	 --print("[ItemFunctions] new max health should be" .. casterUnit:GetMaxHealth() + 35 * #numunits)
 	casterUnit:ModifyStrength(#numunits * 3 + #numheroes * 9)
-	casterUnit:SetMana((casterUnit:GetStrength() - 1) / 3)
-	casterUnit.strbonus = #numunits + #numheroes * 5
+	-- casterUnit:SetMana((casterUnit:GetStrength())
+	casterUnit.strbonus = #numunits * 3 + #numheroes * 9
 
 	for k, v in pairs(numheroes) do
 		numunits[k] = v
@@ -1378,14 +1376,13 @@ function mightStart(args) -- keys is the information sent by the ability
 		}
 
 		ProjectileManager:CreateTrackingProjectile(tracking_projectile)
-		ApplyDamage(damageTable)
 	end
 end
 
 function mightStop(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
 	 --print("[ItemFunctions] Rmightstop started")
-	casterUnit:SetBaseStrength(1)
+	casterUnit:SetBaseStrength(0)
 end
 
 function airBlast(args) -- keys is the information sent by the ability
