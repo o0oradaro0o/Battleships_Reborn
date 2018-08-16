@@ -205,7 +205,7 @@
         "AttributeIntelligenceGain" "0"
         "AttributeBaseAgility"      "0"
         "AttributeAgilityGain"      "0"
-		 "StatusMana"                "50"
+		 "StatusMana"                "0"
         "StatusManaRegen"           "0.0"
 
 

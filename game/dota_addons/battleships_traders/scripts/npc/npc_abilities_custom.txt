@@ -1274,7 +1274,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"FightRecapLevel"				"2"
 		"MaxLevel"						"3"
 		"LevelsBetweenUpgrades"			"4"
@@ -1284,9 +1284,9 @@
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1500 1700 1900"
+		"AbilityCastRange"				"1400"
 		"AbilityCastRangeBuffer"		"600"
-		"AbilityCastPoint"				"2.0 1.75 1.5"
+		"AbilityCastPoint"				"2.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -1294,7 +1294,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"600 900 1200"
+		"AbilityDamage"					"700 1000 1300"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -1316,7 +1316,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_range"				"1500 1700 1900"
+				"tooltip_range"				"1400"
 			}
 		}
 	}
@@ -2948,6 +2948,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"vah_regen"			"80 110 130"
 			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"delay"			"4"
+			}
 		}
 		
 
@@ -3188,22 +3193,45 @@
 				}
 		}
 
-	
-		
-		
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-        {
-                "01"
-                {
-                        "var_type"                                      "FIELD_FLOAT"
-                        "vision_radius"                          "1000 1100 1200 1300"
-                }
+		"Modifiers"
+		{
+			"hit_dearmor"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_debuff"
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName"		 "particles/basic_projectile/pillage_effect.vpcf" 
+						"EffectAttachType"	"follow_overhead"
+					}
+				}
+			}
+		}
 
-        }
-}
+		"AbilitySpecial"
+	  {
+	    "01"
+	    {
+        "var_type"                               "FIELD_FLOAT"
+        "vision_radius"                          "1000 1100 1200 1300"
+	    }
+	    "02"
+	    {
+        "var_type"                              "FIELD_FLOAT"
+        "armor_debuff"                          "-1.0 -2.0 -3.0 -4.0"
+	    }
+	    "02"
+	    {
+        "var_type"                              "FIELD_FLOAT"
+        "duration"                          		"4"
+	    }
+	  }
+	}
 
 	//=================================================================================================================
 	// peak
@@ -3588,7 +3616,7 @@
                         "Duration"      "3 4 5"
                         "Aura"                                  "stop_aura"
                         "Aura_Radius"                   "1000 1000 1000"
-                        "Aura_Teams"                    "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                        "Aura_Teams"                    "DOTA_UNIT_TARGET_TEAM_BOTH"
                         "Aura_Types"                    "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
                         "Aura_ApplyToCaster"    "1"
 						
@@ -6220,11 +6248,6 @@
 			{
 				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
 				"Function"			"mightSound"
-			}	
-			"ApplyModifier"
-			{
-				"Target" "CASTER"
-				"ModifierName" "hp_boost"
 			}
 		}
 
@@ -6233,8 +6256,6 @@
 		
 			"might_stun"
 			{
-
-				
 				"Duration"  "0"
 				"States"
 				{
@@ -6245,12 +6266,14 @@
             "hp_boost"
 			{
 			
-				
-					"EffectName"    "particles/basic_projectile/might_effect.vpcf" 
-					"EffectAttachType"	"follow_overhead"
+				"IsBuff"	"1"
+				"EffectName"    "particles/basic_projectile/might_effect.vpcf" 
+				"EffectAttachType"	"follow_overhead"
 				
 				
 				"Duration"  "%duration"
+
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				
 				"ThinkInterval"		"39.9"
 				"OnIntervalThink"
@@ -6281,7 +6304,7 @@
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"40.0 40.0 40.0 40.0"
 			}
-			// these ability special are hardcoded and aren't actually used
+			// these ability special are hard coded and aren't actually used
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
@@ -8862,6 +8885,16 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"duration"				"7.0 7.0 7.0 7.0"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"dps"							"-15"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"dps_tooltip"			"15"
 		}
 	}
 	

@@ -38,14 +38,21 @@ end
 
 function startDisco(keys) -- keys is the information sent by the ability
 	local casterUnit = EntIndexToHScript(keys.caster_entindex) -- EntIndexToHScript takes the keys.caster_entindex, which is the number assigned to the entity that ran the function from the ability, and finds the actual entity from it.
-	casterUnit:MakeVisibleDueToAttack(1,50)
-	casterUnit:MakeVisibleDueToAttack(2,50)
-	casterUnit:MakeVisibleDueToAttack(3,50)
-	casterUnit:MakeVisibleDueToAttack(4,50)
+	GiveVisionOfUnit(casterUnit)
+end
+
+function GiveVisionOfUnit(unit)
+	unit:MakeVisibleDueToAttack(1,50)
+	unit:MakeVisibleDueToAttack(2,50)
+	unit:MakeVisibleDueToAttack(3,50)
+	unit:MakeVisibleDueToAttack(4,50)
 end
 
 function ShowShip(keys) -- keys is the information sent by the ability
 	local casterUnit = EntIndexToHScript(keys.caster_entindex) -- EntIndexToHScript takes
+	local ability = keys.ability
+
+	local enemies
 	 --print("[AbilityFunctions] ShowShip  Called")
 	if casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 		enemies =
@@ -88,7 +95,7 @@ function ShowShip(keys) -- keys is the information sent by the ability
 
 	local tracking_projectile = {
 		EffectName = "particles/basic_projectile/hit_projectile.vpcf",
-		Ability = casterUnit:GetAbilityByIndex(2),
+		Ability = ability,
 		vSpawnOrigin = casterUnit:GetAbsOrigin(),
 		Target = fuckerWeShow,
 		Source = casterUnit,
@@ -100,192 +107,25 @@ function ShowShip(keys) -- keys is the information sent by the ability
 	}
 	ProjectileManager:CreateTrackingProjectile(tracking_projectile)
 
-	if fuckerWeShow ~= nil then
-		fuckerWeShow:MakeVisibleDueToAttack(1,50)
-		fuckerWeShow:MakeVisibleDueToAttack(2,50)
-		fuckerWeShow:MakeVisibleDueToAttack(3,50)
-		fuckerWeShow:MakeVisibleDueToAttack(4,50)
-		Timers:CreateTimer(
-			.2,
-			function()
-				fuckerWeShow:MakeVisibleDueToAttack(1,50)
-				fuckerWeShow:MakeVisibleDueToAttack(2,50)
-				fuckerWeShow:MakeVisibleDueToAttack(3,50)
-				fuckerWeShow:MakeVisibleDueToAttack(4,50)
-			end
-		)
-		Timers:CreateTimer(
-			.4,
-			function()
-				fuckerWeShow:MakeVisibleDueToAttack(1,50)
-				fuckerWeShow:MakeVisibleDueToAttack(2,50)
-				fuckerWeShow:MakeVisibleDueToAttack(3,50)
-				fuckerWeShow:MakeVisibleDueToAttack(4,50)
-			end
-		)
-		Timers:CreateTimer(
-			.6,
-			function()
-				fuckerWeShow:MakeVisibleDueToAttack(1,50)
-				fuckerWeShow:MakeVisibleDueToAttack(2,50)
-				fuckerWeShow:MakeVisibleDueToAttack(3,50)
-				fuckerWeShow:MakeVisibleDueToAttack(4,50)
-			end
-		)
-		Timers:CreateTimer(
-			.8,
-			function()
-				fuckerWeShow:MakeVisibleDueToAttack(1,50)
-				fuckerWeShow:MakeVisibleDueToAttack(2,50)
-				fuckerWeShow:MakeVisibleDueToAttack(3,50)
-				fuckerWeShow:MakeVisibleDueToAttack(4,50)
-			end
-		)
-		Timers:CreateTimer(
-			1,
-			function()
-				fuckerWeShow:MakeVisibleDueToAttack(1,50)
-				fuckerWeShow:MakeVisibleDueToAttack(2,50)
-				fuckerWeShow:MakeVisibleDueToAttack(3,50)
-				fuckerWeShow:MakeVisibleDueToAttack(4,50)
-			end
-		)
-		Timers:CreateTimer(
-			1.2,
-			function()
-				fuckerWeShow:MakeVisibleDueToAttack(1,50)
-				fuckerWeShow:MakeVisibleDueToAttack(2,50)
-				fuckerWeShow:MakeVisibleDueToAttack(3,50)
-				fuckerWeShow:MakeVisibleDueToAttack(4,50)
-			end
-		)
-		Timers:CreateTimer(
-			1.4,
-			function()
-				fuckerWeShow:MakeVisibleDueToAttack(1,50)
-				fuckerWeShow:MakeVisibleDueToAttack(2,50)
-				fuckerWeShow:MakeVisibleDueToAttack(3,50)
-				fuckerWeShow:MakeVisibleDueToAttack(4,50)
-			end
-		)
-		Timers:CreateTimer(
-			1.6,
-			function()
-				fuckerWeShow:MakeVisibleDueToAttack(1,50)
-				fuckerWeShow:MakeVisibleDueToAttack(2,50)
-				fuckerWeShow:MakeVisibleDueToAttack(3,50)
-				fuckerWeShow:MakeVisibleDueToAttack(4,50)
-			end
-		)
-		Timers:CreateTimer(
-			1.8,
-			function()
-				fuckerWeShow:MakeVisibleDueToAttack(1,50)
-				fuckerWeShow:MakeVisibleDueToAttack(2,50)
-				fuckerWeShow:MakeVisibleDueToAttack(3,50)
-				fuckerWeShow:MakeVisibleDueToAttack(4,50)
-			end
-		)
-		Timers:CreateTimer(
-			2,
-			function()
-				fuckerWeShow:MakeVisibleDueToAttack(1,50)
-				fuckerWeShow:MakeVisibleDueToAttack(2,50)
-				fuckerWeShow:MakeVisibleDueToAttack(3,50)
-				fuckerWeShow:MakeVisibleDueToAttack(4,50)
-			end
-		)
-		Timers:CreateTimer(
-			2.2,
-			function()
-				fuckerWeShow:MakeVisibleDueToAttack(1,50)
-				fuckerWeShow:MakeVisibleDueToAttack(2,50)
-				fuckerWeShow:MakeVisibleDueToAttack(3,50)
-				fuckerWeShow:MakeVisibleDueToAttack(4,50)
-			end
-		)
-		Timers:CreateTimer(
-			2.4,
-			function()
-				fuckerWeShow:MakeVisibleDueToAttack(1,50)
-				fuckerWeShow:MakeVisibleDueToAttack(2,50)
-				fuckerWeShow:MakeVisibleDueToAttack(3,50)
-				fuckerWeShow:MakeVisibleDueToAttack(4,50)
-			end
-		)
-		Timers:CreateTimer(
-			2.6,
-			function()
-				fuckerWeShow:MakeVisibleDueToAttack(1,50)
-				fuckerWeShow:MakeVisibleDueToAttack(2,50)
-				fuckerWeShow:MakeVisibleDueToAttack(3,50)
-				fuckerWeShow:MakeVisibleDueToAttack(4,50)
-			end
-		)
-		Timers:CreateTimer(
-			2.8,
-			function()
-				fuckerWeShow:MakeVisibleDueToAttack(1,50)
-				fuckerWeShow:MakeVisibleDueToAttack(2,50)
-				fuckerWeShow:MakeVisibleDueToAttack(3,50)
-				fuckerWeShow:MakeVisibleDueToAttack(4,50)
-			end
-		)
-		Timers:CreateTimer(
-			1.8,
-			function()
-				fuckerWeShow:MakeVisibleDueToAttack(1,50)
-				fuckerWeShow:MakeVisibleDueToAttack(2,50)
-				fuckerWeShow:MakeVisibleDueToAttack(3,50)
-				fuckerWeShow:MakeVisibleDueToAttack(4,50)
-			end
-		)
-		Timers:CreateTimer(
-			3,
-			function()
-				fuckerWeShow:MakeVisibleDueToAttack(1,50)
-				fuckerWeShow:MakeVisibleDueToAttack(2,50)
-				fuckerWeShow:MakeVisibleDueToAttack(3,50)
-				fuckerWeShow:MakeVisibleDueToAttack(4,50)
-			end
-		)
-		Timers:CreateTimer(
-			3.2,
-			function()
-				fuckerWeShow:MakeVisibleDueToAttack(1,50)
-				fuckerWeShow:MakeVisibleDueToAttack(2,50)
-				fuckerWeShow:MakeVisibleDueToAttack(3,50)
-				fuckerWeShow:MakeVisibleDueToAttack(4,50)
-			end
-		)
-		Timers:CreateTimer(
-			3.4,
-			function()
-				fuckerWeShow:MakeVisibleDueToAttack(1,50)
-				fuckerWeShow:MakeVisibleDueToAttack(2,50)
-				fuckerWeShow:MakeVisibleDueToAttack(3,50)
-				fuckerWeShow:MakeVisibleDueToAttack(4,50)
-			end
-		)
-		Timers:CreateTimer(
-			3.6,
-			function()
-				fuckerWeShow:MakeVisibleDueToAttack(1,50)
-				fuckerWeShow:MakeVisibleDueToAttack(2,50)
-				fuckerWeShow:MakeVisibleDueToAttack(3,50)
-				fuckerWeShow:MakeVisibleDueToAttack(4,50)
-			end
-		)
-		Timers:CreateTimer(
-			3.8,
-			function()
-				fuckerWeShow:MakeVisibleDueToAttack(1,50)
-				fuckerWeShow:MakeVisibleDueToAttack(2,50)
-				fuckerWeShow:MakeVisibleDueToAttack(3,50)
-				fuckerWeShow:MakeVisibleDueToAttack(4,50)
-			end
-		)
-	end
+	-- apply the armor debuff
+	print(ability)
+	ability:ApplyDataDrivenModifier(casterUnit, fuckerWeShow, "hit_dearmor", {duration = 3})
+
+	local visionTime = 0
+	local visionTickRate = .2
+	local visionDuration = 3
+
+	Timers:CreateTimer(function()
+		GiveVisionOfUnit(fuckerWeShow)
+
+		visionTime = visionTime + visionTickRate
+
+		if visionTime < visionDuration then
+			return visionTickRate
+		else
+			return
+		end
+	end)
 end
 
 function peak(keys) -- keys is the information sent by the ability
@@ -1261,6 +1101,7 @@ end
 
 function mightStart(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
+	local ability = args.ability
 	local numunits = 0
 
 	 --print("[ItemFunctions] mightStart started!")
@@ -1353,9 +1194,17 @@ function mightStart(args) -- keys is the information sent by the ability
 	local hpPer = casterUnit:GetHealthPercent()
 	 --print("[ItemFunctions] RmightStart started! hpPer is:" .. hpPer)
 	 --print("[ItemFunctions] new max health should be" .. casterUnit:GetMaxHealth() + 35 * #numunits)
-	casterUnit:ModifyStrength(#numunits * 3 + #numheroes * 9)
-	-- casterUnit:SetMana((casterUnit:GetStrength())
 	casterUnit.strbonus = #numunits * 3 + #numheroes * 9
+
+	casterUnit:ModifyStrength(casterUnit.strbonus)
+
+	local modifierName = "hp_boost"
+
+	if not casterUnit:HasModifier(modifierName) then
+		ability:ApplyDataDrivenModifier(casterUnit, casterUnit, modifierName, nil)
+	end
+
+	casterUnit:SetModifierStackCount(modifierName, casterUnit, casterUnit.strbonus)
 
 	for k, v in pairs(numheroes) do
 		numunits[k] = v
@@ -1464,8 +1313,8 @@ function dragonBlast(args) -- keys is the information sent by the ability
 			iVisionRadius = 1000,
 			iVisionTeamNumber = caster:GetTeamNumber(),
 			bDeleteOnHit = false,
-			iMoveSpeed = 750,
-			vVelocity = 750
+			iMoveSpeed = 950,
+			vVelocity = 950
 		}
 		projectile = ProjectileManager:CreateTrackingProjectile(info)
 	end
@@ -2372,9 +2221,9 @@ function RealityRiftPosition( keys )
 
 
 	Timers:CreateTimer(
-		0.75,
+		0.1,
 		function()
-		print("trigger")
+		-- print("trigger")
 		RealityRift(keys)
 		end
 	)
@@ -2416,7 +2265,7 @@ end
 function WhaleBait(args)
 	local targetPos = args.target:GetAbsOrigin()
 	local targetUnit = args.target
-	print('[WhaleBait]')
+	-- print('[WhaleBait]')
 	local casterPos = args.caster:GetAbsOrigin()
 	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 	local direction = casterPos - targetPos
