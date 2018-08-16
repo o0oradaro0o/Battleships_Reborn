@@ -581,7 +581,7 @@ function WindDmg(args) -- keys is the information sent by the ability
     if args.caster:GetTeamNumber() == DOTA_TEAM_BADGUYS then
       allies = FindUnitsInRadius( DOTA_TEAM_BADGUYS, args.caster:GetOrigin(), nil, 400, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, 0, 0, false )
     else
-      allies = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, args.target:GetOrigin(), nil, 400, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+      allies = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, args.caster:GetOrigin(), nil, 400, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, 0, 0, false )
     end
 
     for _,friend in pairs( allies) do

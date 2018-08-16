@@ -3875,10 +3875,10 @@ function CBattleship8D:HandleEmpGold()
 	local i=0
 	for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 	  if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-		if hero:GetPlayerID() == pID then
-		  casterUnit= hero
-		  --print("assignedHero")
-		end
+			if hero:GetPlayerID() == pID then
+				casterUnit= hero
+				--print("assignedHero")
+			end
 	  end
 	end
 	if g_TugMode==1 then
@@ -3900,7 +3900,7 @@ function CBattleship8D:HandleEmpGold()
 	  local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
   
 	  --print(itemName .. " vs " .. casterUnit:GetName())
-	  if (directionOne:Length() < 1000 or directionTwo:Length() < 1000) and herogold>cost-1 and not string.match(casterUnit:GetName(),itemName )  and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or  g_LorneItemBuyers == g_PlayerCount) then
+	  if (directionOne:Length() < 1000 and casterUnit:GetTeamNumber()==DOTA_TEAM_GOODGUYS or directionTwo:Length() < 1000 and casterUnit:GetTeamNumber()==DOTA_TEAM_BADGUYS ) and herogold>cost-1 and not string.match(casterUnit:GetName(),itemName )  and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or  g_LorneItemBuyers == g_PlayerCount) then
 		boat=true
 		casterUnit:SetGold(herogold-cost,true)
 		casterUnit:SetGold(0,false)
@@ -3967,7 +3967,7 @@ function CBattleship8D:HandleEmpGold()
 	  elseif GameRules:State_Get() ~= 	DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		Notifications:Top(casterUnit:GetPlayerID(), {text="#cant_buy", duration=3.0, style={color="#800000",  fontSize="50px;"}})
 		EmitSoundOnClient("ui.contract_fail",PlayerResource:GetPlayer(pID))
-	  elseif(directionOne:Length() > 599 and directionTwo:Length() > 599) then
+	  elseif(directionOne:Length() > 599 and casterUnit:GetTeamNumber()==DOTA_TEAM_GOODGUYS  or directionTwo:Length() > 599 and casterUnit:GetTeamNumber()==DOTA_TEAM_BADGUYS ) then
   
 		Notifications:Top(casterUnit:GetPlayerID(), {text="#to_base", duration=3.0, style={color="#800000",  fontSize="50px;"}})
 		EmitSoundOnClient("ui.contract_fail",PlayerResource:GetPlayer(pID))
