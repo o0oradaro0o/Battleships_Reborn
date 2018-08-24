@@ -1149,7 +1149,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.0"
+				"duration"				"2.0 2.5 3 3.5"
 			}
 			"02"
 			{
@@ -3116,8 +3116,6 @@
 
 		 "Modifiers"
         {
-		
-             
 				 "aura_evasion"
                 {
                         "IsHidden"                              "1"
@@ -3135,12 +3133,9 @@
                         {
                                 "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"             "%evasion"
                         }
-							"EffectName"		 "particles/basic_projectile/eva_aura.vpcf" 
-							"EffectAttachType"	"follow_origin"
-						
-                       
+						"EffectName"		 "particles/basic_projectile/eva_aura.vpcf" 
+						"EffectAttachType"	"follow_origin"  
                 }
-               
         }
         "AbilitySpecial"
         {
@@ -3294,7 +3289,6 @@
 							"Target" "CASTER"
 							"ModifierName" "peak_ind"
 						}
-						
 					}
 					"OnCreated"
 					{
@@ -3308,8 +3302,6 @@
 			"peak_ind"
 			{
 					"Duration"				"%cooldown"
-					
-				
 			}
 			
 		}
@@ -3322,9 +3314,8 @@
                 "01"
                 {
                         "var_type"                                      "FIELD_FLOAT"
-                        "cooldown"                          "16.0 14.0 12.0 10.0"
+                        "cooldown"                          "10.0 8.0 6.0 4.0"
                 }
-
         }
 	}
 
@@ -4301,7 +4292,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"powershot_damage"		"150 250 350 450"
+				"powershot_damage"		"150 300 450 600"
 				"LinkedSpecialBonus"	"special_bonus_unique_windranger_3"
 			}
 			"02"
@@ -6212,7 +6203,7 @@
 		
 		
 		"BaseClass" 					"ability_datadriven"
-		"AbilityCastRange"				"800 800 800 800"
+		"AbilityCastRange"				"600 675 750 825"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
@@ -6308,22 +6299,22 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"strength_bonus_creep"				"3"
+				"strength_bonus_creep"				"2"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"strength_bonus_hero"				"9"
+				"strength_bonus_hero"				"3"
 			}			
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_tooltip"	"20"
+				"damage_tooltip"	"10 14 18 22"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"ministun_duration"	".1"
+				"ministun_duration"	"0.1"
 			}
 		}
 	}
@@ -6408,7 +6399,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"23 31 39 47"
+				"damage"			"25 40 55 70"
 			}
 			"02"
 			{
@@ -6418,7 +6409,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"total_damage"			"184 248 312 376"
+				"total_damage"			"200 320 440 560"
 			}
 		}
 	}
@@ -6508,7 +6499,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"movement_speed"	"-50 -60 -70 -80"
+				"movement_speed"	"-40 -60 -80 -100"
 			}
 			"02"
 			{
