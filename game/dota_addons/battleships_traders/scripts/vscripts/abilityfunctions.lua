@@ -1138,7 +1138,7 @@ function mightStart(args) -- keys is the information sent by the ability
 
 	for _, fucker in pairs(enemies) do
 		if casterUnit.strbonus then
-			local dmg = (casterUnit.strbonus * ability:GetSpecialValueFor(damage_tooltip) ) / #enemies
+			local dmg = (casterUnit.strbonus * ability:GetSpecialValueFor("damage_tooltip") ) / #enemies
 			local damageTable = {
 				victim = fucker,
 				attacker = casterUnit,
@@ -1194,7 +1194,7 @@ function mightStart(args) -- keys is the information sent by the ability
 	local hpPer = casterUnit:GetHealthPercent()
 	 --print("[ItemFunctions] RmightStart started! hpPer is:" .. hpPer)
 	 --print("[ItemFunctions] new max health should be" .. casterUnit:GetMaxHealth() + 35 * #numunits)
-	casterUnit.strbonus = #numunits * ability:GetSpecialValueFor(strength_bonus_creep) + #numheroes * ability:GetSpecialValueFor(strength_bonus_hero)
+	casterUnit.strbonus = #numunits * ability:GetSpecialValueFor("strength_bonus_creep") + #numheroes * ability:GetSpecialValueFor("strength_bonus_hero")
 
 	casterUnit:ModifyStrength(casterUnit.strbonus)
 

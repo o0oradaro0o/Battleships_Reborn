@@ -67,6 +67,9 @@
 		{
 			m_ChildRef = resource:"particles/basic_projectile/coal_one_trail_two.vpcf"
 		},
+		{
+			m_ChildRef = resource:"particles/basic_projectile/coal_one.vpcf"
+		},
 	]
 	m_bShouldSort = false
 	m_controlPointConfigurations = 
