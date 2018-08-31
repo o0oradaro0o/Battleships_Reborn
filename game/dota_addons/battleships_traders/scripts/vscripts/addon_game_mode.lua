@@ -99,8 +99,8 @@ g_PlayerCount = 0
 g_MainTimerTickCount = 1
 
 -- current constant gold income for each player on the named team
-g_GoldPerTickNorth = 3
-g_GoldPerTickSouth = 3
+g_GoldPerTickNorth = 5
+g_GoldPerTickSouth = 5
 
 -- used for empire gold change and to end the game
 g_DockAliveNorthLeft = 1
@@ -1627,8 +1627,8 @@ function CBattleship8D:HandleEmpGold()
 	  local badGold = 0
 	  g_PlayerCountSouth = 0
 	  g_PlayerCountNorth = 0
-	  local goodGoldEach = 500 * g_EmpireGoldCount
-	  local badGoldEach = 500 * g_EmpireGoldCount
+	  local goodGoldEach = 750 * g_EmpireGoldCount
+	  local badGoldEach = 750 * g_EmpireGoldCount
 	  local GoldDif = 0
   
 	  for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do

@@ -249,15 +249,14 @@
 
 		"Creature"
 		{
-
 			//Level Up
-			"HPGain"					"150"
-			"DamageGain"				"4"
-			"ArmorGain"					"2.0"
+			"HPGain"					"200"
+			"DamageGain"				"3"
+			"ArmorGain"					"3.0"
 			"MagicResistGain"			"0.0"
-			"MoveSpeedGain"				"15"
-			"BountyGain"				"15"
-			"XPGain"					"7"
+			"MoveSpeedGain"				"10"
+			"BountyGain"				"20"
+			"XPGain"					"15"
 		}
 	}
 	
@@ -522,7 +521,7 @@
 			"XPGain"					"7"
 		}
 	}
-		//=================================================================================	
+	//=================================================================================	
 	// Creature: large south boat
 	//=================================================================================
 	"npc_dota_boat_north_three"	
@@ -681,8 +680,8 @@
 		"Creature"
 		{
 			//Level Up
-			"HPGain"					"200"
-			"DamageGain"				"3"
+			"HPGain"					"800"
+			"DamageGain"				"20"
 			"ArmorGain"					"3.0"
 			"MagicResistGain"			"0.0"
 			"MoveSpeedGain"				"10"
@@ -2051,7 +2050,7 @@
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"599"		// Damage range min.
-		"AttackDamageMax"			"601"		// Damage range max.
+		"AttackDamageMax"			"301"		// Damage range max.
 		"AttackRate"				"0.25"		// Speed of attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 		"AttackRange"				"500"		// Range within a target can be attacked.

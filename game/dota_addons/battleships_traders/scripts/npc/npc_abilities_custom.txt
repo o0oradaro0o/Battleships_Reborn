@@ -303,7 +303,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"200 250 300 350"
+		"AbilityDamage"					"200 350 500 650"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -3055,7 +3055,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_second"		"40 50 60 70"
+				"damage_per_second"		"40 55 70 85"
 			}
 			"02"
 			{
@@ -3763,7 +3763,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"200 250 300 350"
+				"radius"				"200 300 400 500"
 			}
 			"03"
 			{
@@ -3824,7 +3824,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"200 250 300 350"
+				"radius"				"200 300 400 500"
 			}
 			"03"
 			{
@@ -6007,7 +6007,7 @@
 			"02"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dmg"			"0.4 0.5 0.6 0.7"
+				"dmg"			"0.4 0.55 0.7 0.85"
 			}
 		}
 	}
@@ -6609,7 +6609,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"		"9 10 11 12"
+				"damage"		"9 11 13 15"
 			}
 			"03"
 			{
@@ -6887,7 +6887,7 @@
 				"Target"            "POINT"
 				"UnitName"              "npc_dota_iceberg"
 				"UnitCount"             "1"
-				"Duration"				"240"
+				"Duration"				"124"
 			}
 			"RunScript"
 			{
@@ -6900,7 +6900,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration"			"240"
+				"duration"			"124"
 			}
 		
 			"02"
@@ -9937,7 +9937,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"		"250 350 450 550"
+				"damage"		"250 400 550 700"
 			}
 
 		}
@@ -10323,7 +10323,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration"		"2 2.5 3 3.5"
+				"duration"		"2 3 4 5"
 			}
 
 		}
@@ -10404,7 +10404,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"dmg"					"200 250 300 350"
+				"dmg"					"200 300 400 500"
 			}
 			
 		}
@@ -10848,7 +10848,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration"		"2 2.5 3 3.5"
+				"duration"		"2 3 4 5"
 			}
 
 		}
@@ -10929,7 +10929,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"dmg"					"200 250 300 350"
+				"dmg"					"200 300 400 500"
 			}
 			
 		}
@@ -11373,7 +11373,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration"		"2 2.5 3 3.5"
+				"duration"		"2 3 4 5"
 			}
 
 		}
@@ -11454,7 +11454,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"dmg"					"200 250 300 350"
+				"dmg"					"200 300 400 500"
 			}
 			
 		}
@@ -11709,7 +11709,7 @@
 	  "03"
       {
         "var_type"          "FIELD_INTEGER"
-        "damage_base"  "200 250 300 350"
+        "damage_base"  "200 300 400 500"
       }
     }
   }
