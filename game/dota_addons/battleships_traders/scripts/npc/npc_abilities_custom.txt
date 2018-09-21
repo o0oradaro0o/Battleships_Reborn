@@ -14,7 +14,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"AbilityTextureName"			"sniper_assassinate"
 		
 		"AbilityCastRange"				"600"
@@ -1764,7 +1764,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"35"
+		"AbilityCooldown"				"35 30 25 20"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -2151,7 +2151,7 @@
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"5000"
+		"AbilityCastRange"				"10000"
 		"AbilityCastPoint"				"0.3 0.3 0.3"
 
 		// Time		
@@ -2849,7 +2849,10 @@
 			
 			"big_boom"
 			{
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+						"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"             "%armor"
+				}
 				"ThinkInterval"		"4.0"
 				"OnIntervalThink"
 				{
@@ -2953,6 +2956,12 @@
 				"var_type"				"FIELD_INTEGER"
 				"delay"			"4"
 			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor"			"6 7 8"
+			}
+			
 		}
 		
 
@@ -4279,7 +4288,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"150 225 300 375"
+		"AbilityDamage"					"150 300 450 600"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -5326,7 +5335,7 @@
 			 "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_armor"			"2 3 4 5"
+                "bonus_armor"			"3 3.75 4.5 5.25"
             }
 			"03"
 			{
@@ -7526,7 +7535,6 @@
         {
               "item_ice_three_bow_shooting_doubled"
 			{
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"1.05"
 				"Passive"	 "1"
 				"OnIntervalThink"
@@ -8755,7 +8763,7 @@
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_damage"				"60 100 140 180"
+			"bonus_damage"				"100 180 220 300"
 		}
 		"03"
 		{
@@ -9206,13 +9214,23 @@
 		"01"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"duration"					"1.0 1.33 1.66 2.0"
+			"duration"					"2.0 2.33 2.66 3.0"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"radius"					"500 600 700 800"
+			"radius"					"400 500 600 700"
 		}
+		"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"	"8 9 10 11"
+			}
+			"04"
+			{
+					"var_type"                                      "FIELD_FLOAT"
+					"health_regen"                          "100 120 130 140"
+			}
 	}
 
 	"precache"
@@ -9288,7 +9306,8 @@
 
 			"Properties"
 			{
-				"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL"	"1"
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	 "%health_regen"
 			}
 		}
 	}
@@ -10053,7 +10072,7 @@
 			"01"
 			{
 					"var_type"                                      "FIELD_FLOAT"
-					"health_regen"                          "10.0 12.0 14.0 16.0"
+					"health_regen"                          "10.0 14.0 18.0 22.0"
 			}
 		}
 	}
@@ -10239,7 +10258,7 @@
 			"01"
 			{
 					"var_type"                                      "FIELD_FLOAT"
-					"move_bonus"                          "30 40 50 60"
+					"move_bonus"                          "35 50 65 80"
 			}
 		}
 	}
@@ -10323,7 +10342,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration"		"2 3 4 5"
+				"duration"		"3 3.75 4.5 5.25"
 			}
 
 		}
@@ -10425,7 +10444,7 @@
 		
 		"AbilityCastRange"				"777"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-        "AbilityChannelTime"			"7.0"
+        "AbilityChannelTime"			"3.5"
 		"AbilityManaCost"				"0 0 0 0"
 		"AbilityCooldown"				"999"
 		"OnSpellStart"
@@ -10458,8 +10477,8 @@
 		{
 			"seven_shot"
 			{
-				"Duration" "7.0"
-				"ThinkInterval"		".99"
+				"Duration" "3.5"
+				"ThinkInterval"		".49"
 				"OnIntervalThink"
 				{
 					"TrackingProjectile"
@@ -10578,7 +10597,7 @@
 			"01"
 			{
 					"var_type"                                      "FIELD_FLOAT"
-					"health_regen"                          "10.0 12.0 14.0 16.0"
+					"health_regen"                          "10.0 14.0 18.0 22.0"
 			}
 		}
 	}
@@ -10764,7 +10783,7 @@
 			"01"
 			{
 					"var_type"                                      "FIELD_FLOAT"
-					"move_bonus"                          "30 40 50 60"
+					"move_bonus"                          "35 50 65 80"
 			}
 		}
 	}
@@ -10848,7 +10867,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration"		"2 3 4 5"
+				"duration"		"3 3.75 4.5 5.25"
 			}
 
 		}
@@ -10950,7 +10969,7 @@
 		
 		"AbilityCastRange"				"777"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-        "AbilityChannelTime"			"7.0"
+        "AbilityChannelTime"			"3.5"
 		"AbilityManaCost"				"0 0 0 0"
 		"AbilityCooldown"				"999"
 		"OnSpellStart"
@@ -10983,8 +11002,8 @@
 		{
 			"seven_shot"
 			{
-				"Duration" "7.0"
-				"ThinkInterval"		".99"
+				"Duration" "3.5"
+				"ThinkInterval"		".49"
 				"OnIntervalThink"
 				{
 					"TrackingProjectile"
@@ -11103,7 +11122,7 @@
 			"01"
 			{
 					"var_type"                                      "FIELD_FLOAT"
-					"health_regen"                          "10.0 12.0 14.0 16.0"
+					"health_regen"                          "10.0 14.0 18.0 22.0"
 			}
 		}
 	}
@@ -11289,7 +11308,7 @@
 			"01"
 			{
 					"var_type"                                      "FIELD_FLOAT"
-					"move_bonus"                          "30 40 50 60"
+					"move_bonus"                          "35 50 65 80"
 			}
 		}
 	}
@@ -11373,7 +11392,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration"		"2 3 4 5"
+				"duration"		"3 3.75 4.5 5.25"
 			}
 
 		}
@@ -11475,7 +11494,7 @@
 		
 		"AbilityCastRange"				"777"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-        "AbilityChannelTime"			"7.0"
+        "AbilityChannelTime"			"3.5"
 		"AbilityManaCost"				"0 0 0 0"
 		"AbilityCooldown"				"999"
 		"OnSpellStart"
@@ -11508,8 +11527,8 @@
 		{
 			"seven_shot"
 			{
-				"Duration" "7.0"
-				"ThinkInterval"		".99"
+				"Duration" "3.5"
+				"ThinkInterval"		".49"
 				"OnIntervalThink"
 				{
 					"TrackingProjectile"
@@ -11796,6 +11815,42 @@
       }
     }
   }
+
+  	//=================================================================================================================
+	// miss
+	//=================================================================================================================
+	"miss_lua"
+	{
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "heroes/miss.lua"
+		"AbilityTextureName"            "faceless_void_backtrack"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"precache"
+		{           
+		"particle"          "particles/units/heroes/hero_invoker/invoker_invoke.vpcf"
+		"particle"          "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+		"soundfile"         "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+		}
+
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+        "AbilitySpecial"
+        {
+                "01"
+                {
+                        "var_type"                                      "FIELD_FLOAT"
+                        "evasion"                          "1.0 2.0 3.0 4.0"
+                }
+
+        }
+	}
+	
 
 	
 }

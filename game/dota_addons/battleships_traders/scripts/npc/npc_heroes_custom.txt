@@ -1682,7 +1682,7 @@
 		
 		"AbilityLayout"				"3"
 		"Ability1"					"antimage_blink_battleship"
-		"Ability2"					"miss_battleship"
+		"Ability2"					"miss_lua"
 		"Ability3"					"puck_waning_rift_battleship"
 		"Ability4"					"gyrocopter_call_down_battleship"
 		"Ability6"					"bships_empty"

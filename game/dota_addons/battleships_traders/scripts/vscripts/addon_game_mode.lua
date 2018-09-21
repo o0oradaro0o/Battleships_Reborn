@@ -121,6 +121,7 @@ g_PlayerCountSouth = 0
 g_PlayerCountNorth = 0
 
 g_TidehunterLevel = 0
+g_TidehunterEnt = nil
 
 g_TicksSinceEmpireGold = 0
 
@@ -488,8 +489,7 @@ function Precache( context )
   PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts", context )
   PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_razor.vsndevts", context )
   PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts", context )
-
-
+	PrecacheResource( "soundfile","soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts", context )
 
 
   PrecacheResource( "soundfile","soundevents/voscripts/game_sounds_vo_techies.vsndevts", context )
@@ -1398,7 +1398,13 @@ function CBattleship8D:OnThink()
         CBattleship8D:HandleEmpGold()
         g_EmpireGoldCount = g_EmpireGoldCount + 1
         g_CreepLevel=g_CreepLevel+1
-        g_NumPrivCreeps=g_NumPrivCreeps+1
+				g_NumPrivCreeps=g_NumPrivCreeps+1
+				g_TidehunterLevel = g_TidehunterLevel+1
+				if g_TidehunterEnt ~= nil then
+					local hp1 = (g_TidehunterEnt:GetHealth()/g_TidehunterEnt:GetMaxHealth())
+					g_TidehunterEnt:CreatureLevelUp(1)
+					g_TidehunterEnt:SetHealth(hp1*g_TidehunterEnt:GetMaxHealth())
+				end
       end
 
       if g_MainTimerTickCount % 45 == 0 or g_MainTimerTickCount == 1 then
@@ -2674,7 +2680,10 @@ function CBattleship8D:HandleEmpGold()
 		  end
 		  if abil4~= nil then
 			abil4:SetLevel(2)
-		  end
+			end
+			creature:SetMaxHealth(3500+g_TidehunterLevel*1000)
+			creature:SetPhysicalArmorBaseValue(20+g_TidehunterLevel*1)
+			
   
 		  RemoveWearables( creature )
 		  creature:SetRespawnsDisabled(true)
@@ -2911,8 +2920,8 @@ function CBattleship8D:HandleEmpGold()
 	  ParticleManager:DestroyParticle(deathEffect,false)
 	  end)
 	  SendOverheadEventMessage(PlayerResource:GetPlayer(killerEntity:GetPlayerID()), OVERHEAD_ALERT_GOLD, killedUnit,  killedUnit:GetGoldBounty()/2, PlayerResource:GetPlayer(killerEntity:GetPlayerID()))
-  
-  
+		
+		
 	  for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 		if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 		  --print(hero:GetName())
@@ -3077,7 +3086,7 @@ function CBattleship8D:HandleEmpGold()
 			  Notifications:BottomToAll({text=PlayerResource:GetPlayerName( killerEntity:GetPlayerID()) .. " ", duration=5.0, style={color="#FF9955",  fontSize="18px;"}})
 			  Notifications:BottomToAll({text="#avenge_one", duration=5.0, style={color="#FF9900",  fontSize="18px;"}, continue=true})
 			  Notifications:BottomToAll({text=PlayerResource:GetPlayerName( hero:GetPlayerID()) .. " ", duration=5.0, style={color="#FF9955",  fontSize="18px;"}, continue=true})
-			  Notifications:BottomToAll({text="#avenge_two", duration=5.0, style={color="#FF9900",  fontSize="18px;"}, continue=true})
+			  Notifications:BottomToAll({text="#avenge_two", duration=5.0, style={color="#FF9900",  fontSize="18px;"}})
 			  Notifications:BottomToAll({text=tostring(math.floor(bounty/4+0.5)) .. " ", duration=5.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
 			  Notifications:BottomToAll({text="#avenge_three", duration=5.0, style={color="#FF9900",  fontSize="18px;"}, continue=true})
 			  Notifications:BottomToAll({text=tostring(math.floor(bounty/2+0.5)) .. " ", duration=5.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
@@ -3728,7 +3737,8 @@ function CBattleship8D:HandleEmpGold()
 	i = 0
 	while  1>i do
 	  creature = CreateUnitByName( "npc_dota_creature_tidehunter" , spawnLocation:GetAbsOrigin() + Vector(-300 + i * 100,0,0), true, nil, nil, 4 )
-	  creature:CreatureLevelUp(g_TidehunterLevel)
+		g_TidehunterEnt=creature
+		g_TidehunterEnt:CreatureLevelUp(g_TidehunterLevel)
 	  i = i + 1
 	end
 	Notifications:TopToAll({hero="npc_dota_hero_tidehunter", imagestyle="portrait", continue=true})

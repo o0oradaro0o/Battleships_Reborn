@@ -2410,7 +2410,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"9000"		// Base health.
+		"StatusHealth"				"3500"		// Base health.
 		"StatusHealthRegen"			"50.0"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -2450,9 +2450,9 @@
 			}
 
 			"DefaultState"				"Invade"	
-		"HPGain"					"2000"
+		"HPGain"					"1000"
 			"DamageGain"				"5"
-			"ArmorGain"					"2"
+			"ArmorGain"					"1"
 			"MagicResistGain"			"0.0"
 			"MoveSpeedGain"				"10"
 			"BountyGain"				"100"

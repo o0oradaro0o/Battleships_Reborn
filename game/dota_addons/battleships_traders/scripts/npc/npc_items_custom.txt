@@ -2051,6 +2051,7 @@
 		"AbilityCastRange"              "0"
 		"AbilityManaCost"               "0"
 		"AbilityCooldown"               "25"
+		"ItemDroppable"					"0"
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -2132,6 +2133,7 @@
 	"AbilityCastRange"              "0"
 		"AbilityManaCost"               "0"
 		"AbilityCooldown"               "25"
+		"ItemDroppable"					"0"
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -2214,6 +2216,7 @@
 	"AbilityCastRange"              "0"
 		"AbilityManaCost"               "0"
 		"AbilityCooldown"               "25"
+		"ItemDroppable"					"0"
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -2286,6 +2289,7 @@
 "AbilityCastRange"              "0"
 		"AbilityManaCost"               "0"
 		"AbilityCooldown"               "25"
+		"ItemDroppable"					"0"
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -2629,6 +2633,7 @@
         "ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
         "ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
         "ItemAlertable"					"1"
+		"ItemDroppable"					"0"
         "ItemAliases"					"mana;mb"
 	
 
@@ -13640,7 +13645,7 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dmg"			"28"
+				"dmg"			"80"
 			}
 			"02"
 			{
@@ -13660,7 +13665,7 @@
 			"05"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"bounce_dmg"	"80"
+				"bounce_dmg"	"11"
 			}
 			"06"
 			{
