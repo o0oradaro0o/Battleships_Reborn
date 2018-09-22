@@ -2400,7 +2400,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"			// Hull type used for navigation/locomotion.
-		"HealthBarOffset"			"380"
+		"HealthBarOffset"			"400"
 
 		// Movement
 		//----------------------------------------------------------------
@@ -2410,8 +2410,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"3500"		// Base health.
-		"StatusHealthRegen"			"50.0"		// Health regeneration rate.
+		"StatusHealth"				"2500"		// Base health.
+		"StatusHealthRegen"			"30.0"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
 

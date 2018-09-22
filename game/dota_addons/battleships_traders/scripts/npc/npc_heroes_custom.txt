@@ -149,11 +149,11 @@
 		 "StatusMana"                "0"
         "StatusManaRegen"           "0.0"
 
-		"MovementSpeed"				"270"									// Speed.
+		"MovementSpeed"				"290"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 		
-		"StatusHealth"				"750"		// Base health.
-		"StatusHealthRegen"			"5.0"		// Health regeneration rate.
+		"StatusHealth"				"825"		// Base health.
+		"StatusHealthRegen"			"6.0"		// Health regeneration rate.
 		
 				"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"

@@ -203,15 +203,15 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="750" />
+							<Label hittest="false" class="boat_stat_label_val" text="825" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
-							<Label hittest="false" class="boat_stat_label_val" text="270" />
+							<Label hittest="false" class="boat_stat_label_val" text="290" />
 					</Panel>
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#regen" />
-							<Label hittest="false" class="boat_stat_label_val" text="5" />
+							<Label hittest="false" class="boat_stat_label_val" text="6" />
 					</Panel>
 				</Panel>	
 			</Panel>	

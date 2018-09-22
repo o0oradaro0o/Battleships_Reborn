@@ -106,22 +106,22 @@ Label .xp
     height: 150px;
 }
 .DockPanel {
-    flow-children: down;
-    margin-top: -19px;
-    width: 33%;
+    flow-children: right;
+
+    width: 90%;
     height: 150px;
 }
 #TopDock {
-    height:50%;
+    width:50%;
 }
 #BottomDock {
-    height:100%;
+    width:100%;
 }
 
 #HowToWin {
     flow-children: right;
     text-align: left;
-    width: 100%;
+    width: 90%;
     margin-left:-10px;
     margin-right:20px;
 }
@@ -168,7 +168,14 @@ Label .xp
 #WeaponsChart {
     margin-top:-5px;
     margin-left: 0px;
+    width: 50%;
+    height: 350px;
 }
 #ShipsChart {
     margin-top: -5px;
+    width: 47%;
+}
+#ShipsPanel
+{
+    height: 190px;
 }

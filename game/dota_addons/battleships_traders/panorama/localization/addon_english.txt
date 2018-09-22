@@ -12,13 +12,33 @@
 	"DOTA_BadGuys"    			"Northern Alliance"
 
 	"bs_Objectives"				"Objective:"
+	"HowToPlay"				"How to Play:"
+	
+	"bs_Empire"				"Empire Gold:"
 	"bs_Weapons"				"Weapons:"
+	"bs_Weapons_2"				"Weapons II:"
 	"bs_Ships"					"Ships:"
+	"bs_Towers"					"Towers:"
+	"bs_Tide"					"Tidehunter:"
+	"bs_upgrade"					"Upgrades:"
+	"bs_Combat"					"Combat:"
+	"bs_Combat2"					"Combat II:"
+	"bs_Zoom"					"Zoom:"
+	"next"				">"
+	"prev"				"<"
 
-	"bs_HowToWin"				"Destroy the Enemy's Base located just outside their Harbor, or destroy both of their Docks, located to the Left and Right of the main base."
-	"bs_HowToWeapons"			"Weapons target random enemies in their range. You can buy pairs of weapons in the store, and they'll take up a single slot in your inventory. Weapons at lower tiers are more cost effective, and weapons at higher tiers save space. You can combine all three tiers into an Ultimate Weapon."
+	"bs_HowToWin"				"Destroy both of your opponent's Docks, located to the Left and Right of their main base."
+	"bs_HowToWeapons"			"Weapons target random enemies in their range. <br /><br />Weapons at lower tiers are more cost effective, and weapons at higher tiers save inventory space."
 	"bs_HowToShips"				"You can upgrade to new ships by heading to the Ships vendor, and purchasing from one of four classes of ships. You'll start with nothing more than a barrel, so upgrade to get bigger boats and better abilities!"
-
+	"bs_HowToWeapons2"			"You can buy pairs of weapons in the store, and they'll take up a single slot in your inventory. <br /><br />You can combine all three tiers into an Ultimate Weapon using a recipe."
+	"bs_HowToTowers"			"Towers are powerful defensive structures. <br /><br />Destroying an enemy tower increases your team’s passive income. <br /><br /> Only short range weapons can damage towers.  <br /><br /> Side shops provide means of repairing your towers and Dearmoring enemy towers."
+	"bs_HowToTide"				"Tidehunter is a boss unit that roams the left region of the map.<br /><br />Slaying Tidehunter will grant your team a gold reward and spawn a monster to fight for your team until death."
+	"bs_HowToUpgrade"			"Upgrade items add additional utility to your ship.<br /><br />Each utility item has 4 levels of effectiveness.<br /><br />These items can be found in the 'Upgrades' tab of the shop."
+	"bs_HowToCombat"			"Creeps can provide cover because weapons autotarget.<br /><br />Positioning yourself among creeps will keep you safe.<br /><br />Isolating Enemies in your weapon's range will focus your fire."
+	"bs_HowToCombat2"			"You can shoot over walls but only if you have vision of the other side.<br /><br />Be wary of areas you cannot see.<br /><br />Try to strike where you cannot be seen, relying on allys or creeps to provide vision."
+	"bs_HowToEmpire"				"Every 4 minutes you receive Empire gold.<br /><br />Whichever team is behind on net worth receives a small empire gold bonus to help them recover.<br /><br />The percentage recovered diminishes as the game goes on."
+	"bs_HowToZoom"					"There is a zoom Controller at the top center of your screen.<br /><br />Zooming out can be especially helpful when playing longer range weapons as they often strike targets that would otherwise be offscreen."
+	
 	"bs_Thanks"					"We'd like to give special thanks to the Dota2Modding IRC channel, in particular BMD, Myll, Crazyloon, Hewdrw, JimmyDorry, and Noya for their help. <br /><br />Russian Translations by React and Al1en. <br /><br /> Thanks for playing Battleships! Good Luck, Have Fun, and Don't Die! <br />- radar, WeAreAllBritons, Frood, borgel, and zentrix"
 	
 	"unstick"						"Unstick"
@@ -3280,12 +3300,10 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"News_Title"		"News!"
 		"News_Content"		"Hi all! I am continuing to make balance changes and improve abilities. The next new content will be another 6k cost ship.
 
-New Player Tips:
-   • Buy a WEAPON
-   • Don't forget to ZOOM
-   • Long range WEAPONS don't hit TOWERS
-   • Weapons in the same row in the shop can Combo
-   • Buying 2 of a weapon only takes one slot
+Recent Balance Changes 9/22/2018
+   • River boat's damaging abilities buffed.
+   • Paddlewheel Base Stats Improved.
+   • Tidehunter now becomes stronger with time, not just when killed.   
 "
 		
 }
