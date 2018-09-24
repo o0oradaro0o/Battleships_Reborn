@@ -27,8 +27,6 @@
 				<Label class="heroTitle" text="#Hero_Title"/>
 			</Panel>
 		</Panel>
-
-
 		<Panel id="CoOpHolder">
 			<Panel id="CoOp">
 				<Label class="AuthorTitle" text="#Coop_Title"/>
@@ -54,40 +52,48 @@
 
 
 		<Panel id="LearnHolder">
-			<Label class="LearnTitle" text="New Player Info:" />
+			<Label class="LearnTitle" text="#HowToPlay" />
 			<Panel id="LearnInfoHolder">
 				<Panel id="learn1" class="innerLearn">
 					<Label id="ObjectiveHeader" class="Header" html="true" text="#bs_Objectives" />
 					<Label id="HowToWin" class="TipText" html="true" text="#bs_HowToWin" />
 					<Panel id="Bases" class="InfoRow">
 						<Panel id="ShipDocks" class="DockPanel">
-							<Image id="TopDock" class="Docks" src="file://{images}/custom_game/game_info/dock_left.png" />
-							<Image id="BottomDock" class="Docks" src="file://{images}/custom_game/game_info/Dock_right.png" />
+							<Image id="TopDock" class="Docks" src="file://{images}/custom_game/game_info/Doclocs.png" />
+							<Image id="middock" class="Docks" src="file://{images}/custom_game/game_info/dock.png" />
 						</Panel>
 					</Panel>
 				</Panel>
 				<Panel id="learn2" class="innerLearn">
+					<Label id="WeaponsHeader3" class="Header" html="true" text="#bs_Weapons_3" />
+					<Panel id="WeaponsPanel3" class="InfoCol">
+						<Label id="HowToWeapons3" class="TipText" html="true" text="#bs_HowToWeapons3" />
+						<Image id="WeaponsChart3" src="file://{images}/custom_game/game_info/weapon_loc.png"/>
+					</Panel>
+				</Panel>
+				<Panel id="learn3" class="innerLearn">
 					<Label id="WeaponsHeader" class="Header" html="true" text="#bs_Weapons" />
 					<Panel id="WeaponsPanel" class="InfoRow">
 						<Image id="WeaponsChart" src="file://{images}/custom_game/game_info/weapon_layout.png"/>
 						<Label id="HowToWeapons" class="TipText" html="true" text="#bs_HowToWeapons" />
 					</Panel>
 				</Panel>
-				<Panel id="learn3" class="innerLearn">
+				<Panel id="learn4" class="innerLearn">
 					<Label id="WeaponsHeader2" class="Header" html="true" text="#bs_Weapons_2" />
 					<Panel id="WeaponsPanel2" class="InfoCol">
 						<Image id="WeaponsChart2" src="file://{images}/custom_game/game_info/upgrade_layout.png"/>
 						<Label id="HowToWeapons2" class="TipText" html="true" text="#bs_HowToWeapons2" />
 					</Panel>
 				</Panel>
-				<Panel id="learn4" class="innerLearn">
+				
+				<Panel id="learn5" class="innerLearn">
 					<Label id="ShipsHeader" class="Header" html="true" text="#bs_Ships" />
 					<Panel id="ShipsPanel" class="InfoRow">
 						<Label id="HowToShips" class="TipText" html="true" text="#bs_HowToShips" />
 						<Image id="ShipsChart" src="file://{images}/custom_game/game_info/ships.png" />
 					</Panel>
 				</Panel>
-				<Panel id="learn5" class="innerLearn">
+				<Panel id="learn6" class="innerLearn">
 					<Label id="upheader" class="Header" html="true" text="#bs_upgrade" />
 					<Panel id="upgradePanel" class="InfoCol">
 					<Image id="UpgradeChart" src="file://{images}/custom_game/game_info/upgrades.png"/>
@@ -95,43 +101,43 @@
 						
 					</Panel>
 				</Panel>
-				<Panel id="learn6" class="innerLearn">
+				<Panel id="learn7" class="innerLearn">
 					<Label id="tideheader" class="Header" html="true" text="#bs_Tide" />
 					<Panel id="TidePanel2" class="InfoCol">
 						<Label id="HowToTide" class="TipText" html="true" text="#bs_HowToTide" />
 						<Image id="TideChart" src="file://{images}/custom_game/game_info/tide.png"/>
 					</Panel>
 				</Panel>
-				<Panel id="learn7" class="innerLearn">
+				<Panel id="learn8" class="innerLearn">
 					<Label id="ShipsHeader" class="Header" html="true" text="#bs_Towers" />
 					<Panel id="ShipsPanel" class="InfoRow">
 						<Image id="TowersChart" src="file://{images}/custom_game/game_info/Towers.png" />
 						<Label id="HowToTowers" class="TipText" html="true" text="#bs_HowToTowers" />
 					</Panel>
 				</Panel>
-				<Panel id="learn8" class="innerLearn">
+				<Panel id="learn9" class="innerLearn">
 					<Label id="combatheader" class="Header" html="true" text="#bs_Combat" />
 					<Panel id="CombatPanel" class="InfoRow">
 						<Label id="HowToCombat" class="TipText" html="true" text="#bs_HowToCombat" />
 						<Image id="CombatChart" src="file://{images}/custom_game/game_info/Combat1.png"/>
 					</Panel>
 				</Panel>
-				
-				<Panel id="learn9" class="innerLearn">
+
+				<Panel id="learn10" class="innerLearn">
 					<Label id="combatheader2" class="Header" html="true" text="#bs_Combat2" />
 					<Panel id="CombatPanel2" class="InfoCol">
 						<Label id="HowToCombat2" class="TipText" html="true" text="#bs_HowToCombat2" />
 						<Image id="CombatChart2" src="file://{images}/custom_game/game_info/Combat2.png"/>
 					</Panel>
 				</Panel>
-				<Panel id="learn10" class="innerLearn">
+				<Panel id="learn11" class="innerLearn">
 					<Label id="upheader" class="Header" html="true" text="#bs_Zoom" />
 					<Panel id="ZoomPanel" class="InfoCol">
 						<Image id="ZoomChart" src="file://{images}/custom_game/game_info/Zoom.png"/>
 						<Label id="HowToZoom" class="TipText" html="true" text="#bs_HowToZoom" />
 					</Panel>
 				</Panel>
-				<Panel id="learn11" class="innerLearn">
+				<Panel id="learn12" class="innerLearn">
 					<Label id="upheader" class="Header" html="true" text="#bs_Empire" />
 					<Panel id="EmpirePanel" class="InfoCol">
 						<Label id="HowToEmpire" class="TipText" html="true" text="#bs_HowToEmpire" />
@@ -145,7 +151,7 @@
 					<Label hittest="false" class="shop_btn_text" text="#prev"/>
 				</Panel>
 
-				<Label hittest="false" id="pageCountLabel" text="1/11"/>
+				<Label hittest="false" id="pageCountLabel" text="1/12"/>
 
 				<Panel id="b3" class="learn_button" onactivate="next()">
 					<Label hittest="false" class="shop_btn_text" text="#next"/>

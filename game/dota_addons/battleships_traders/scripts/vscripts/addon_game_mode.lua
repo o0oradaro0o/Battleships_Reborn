@@ -1400,7 +1400,7 @@ function CBattleship8D:OnThink()
         g_CreepLevel=g_CreepLevel+1
 				g_NumPrivCreeps=g_NumPrivCreeps+1
 				g_TidehunterLevel = g_TidehunterLevel+1
-				if g_TidehunterEnt ~= nil then
+				if g_TidehunterEnt~=nil and not g_TidehunterEnt:IsNull() then
 					local hp1 = (g_TidehunterEnt:GetHealth()/g_TidehunterEnt:GetMaxHealth())
 					g_TidehunterEnt:CreatureLevelUp(1)
 					g_TidehunterEnt:SetHealth(hp1*g_TidehunterEnt:GetMaxHealth())
@@ -2681,10 +2681,7 @@ function CBattleship8D:HandleEmpGold()
 		  if abil4~= nil then
 			abil4:SetLevel(2)
 			end
-			creature:SetMaxHealth(3500+g_TidehunterLevel*1000)
-			creature:SetPhysicalArmorBaseValue(20+g_TidehunterLevel*1)
-			
-  
+			creature:SetPhysicalArmorBaseValue(20+g_TidehunterLevel*3)
 		  RemoveWearables( creature )
 		  creature:SetRespawnsDisabled(true)
 		end
@@ -2728,7 +2725,7 @@ function CBattleship8D:HandleEmpGold()
 			abil4:SetLevel(2)
 		  end
   
-  
+			creature:SetPhysicalArmorBaseValue(20+g_TidehunterLevel*3)
 		  RemoveWearables( creature )
 		  creature:SetRespawnsDisabled(true)
 		end
@@ -3910,7 +3907,7 @@ function CBattleship8D:HandleEmpGold()
 	  local directionTwo =  casterPos - targetUnitTwo:GetAbsOrigin()
   
 	  --print(itemName .. " vs " .. casterUnit:GetName())
-	  if (directionOne:Length() < 1000 and casterUnit:GetTeamNumber()==DOTA_TEAM_GOODGUYS or directionTwo:Length() < 1000 and casterUnit:GetTeamNumber()==DOTA_TEAM_BADGUYS ) and herogold>cost-1 and not string.match(casterUnit:GetName(),itemName )  and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or  g_LorneItemBuyers == g_PlayerCount) then
+	  if (directionOne:Length() < 1800 and casterUnit:GetTeamNumber()==DOTA_TEAM_GOODGUYS or directionTwo:Length() < 1800 and casterUnit:GetTeamNumber()==DOTA_TEAM_BADGUYS ) and herogold>cost-1 and not string.match(casterUnit:GetName(),itemName )  and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or  g_LorneItemBuyers == g_PlayerCount) then
 		boat=true
 		casterUnit:SetGold(herogold-cost,true)
 		casterUnit:SetGold(0,false)

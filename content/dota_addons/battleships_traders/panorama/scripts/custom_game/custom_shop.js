@@ -122,8 +122,8 @@ function replaceShopUI() {
 		$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop").FindChildTraverse("GuideFlyout").FindChildTraverse("ItemsArea").SetParent(NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter"));
 
 	}
-
 	NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("GridMainShop").style.visibility = "collapse";
+	NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("CommonItems").style.visibility = "collapse";
 
 	catigoriesUI = NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ItemsArea").FindChildTraverse("ItemBuildContainer").FindChildTraverse("ItemBuild").FindChildTraverse("Categories");
 
@@ -153,10 +153,9 @@ function replaceShopUI() {
 	catigoriesUI.GetChild(3).style.width = "25%"
 }
 function fixUI() {
-	$.Msg("in fix ui--------------------------------------");
 	resetHeroIcons()
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY, false);
-	$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar").style.visibility = "visible";
+	NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("CommonItems").style.visibility = "collapse";
 
 
 	var sidenotif = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("combat_events");
@@ -247,13 +246,11 @@ function showShips() {
 
 	$.Msg(NewShopUI.BHasClass("ShopOpen"))
 	if (shipShopShow == false) {
-
 		if (!NewShopUI.BHasClass("ShopOpen")) {
 			$.DispatchEvent("DOTAHUDToggleShop");
 		}
 		if (!NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder")) {
 			$("#ship_shop_content_holder").SetParent(NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter"));
-
 		}
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").style.visibility = "visible";
 		//catigoriesUI.style.visibility="collapse";
@@ -264,9 +261,6 @@ function showShips() {
 		$.Msg("callinghidedamn it");
 		hideShipShop();
 	}
-
-
-
 }
 
 function showShipsNoHide() {
@@ -393,8 +387,6 @@ function showDetails(BoatName) {
 		$("#vengefulspirit").style.height = "0px";
 		$("#bane").style.height = "0px";
 		$("#enigma").style.height = "0px";
-
-
 	}
 	else {
 		$("#ancient_apparition").style.height = "0px";
@@ -465,12 +457,18 @@ function buyBoat(BoatName, cost) {
 
 		newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("HealthContainer").style.height = "40px"
 	}
-
+	
 	GameEvents.SendCustomGameEventToServer("buyBoat", { "text": BoatName, "cost": cost });
 	$("#" + BoatName).style.height = "0px";
+	$.Schedule(.2, setSellValue);
+	
 	$.Schedule(.2, resetHeroIcons);
 }
-
+function setSellValue()
+{
+	NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("SellValueHoplder").FindChildTraverse("SellValue").text = GetBoatValue(Entities.GetUnitName(Players.GetPlayerHeroEntityIndex(Players.GetLocalPlayer())))*.75 
+	
+}
 function NoFadeMap() {
 	$("#empty_guts").style.opacity = 1;
 	ticksOfFade = 0
@@ -482,6 +480,66 @@ function okayToFade() {
 	ticksOfFade = 0
 	FadeTrade = true;
 }
+
+function GetBoatValue(BoatName) {
+	$.Msg(BoatName)
+
+if (BoatName.indexOf("disruptor")!==-1) 
+  return 3000
+else if (BoatName.indexOf("ursa")!==-1)
+  return 12000
+else if (BoatName.indexOf("meepo")!==-1) 
+  return 6000
+else if (BoatName.indexOf("tidehunter")!==-1) 
+  return 1000
+else if (BoatName.indexOf("apparition")!==-1) 
+  return 1000
+else if (BoatName.indexOf("rattletrap")!==-1) 
+  return 1000
+else if (BoatName.indexOf("batrider")!==-1) 
+  return 1000
+else if (BoatName.indexOf("winter_wyvern")!==-1) 
+  return 3000
+else if (BoatName.indexOf("storm_spirit")!==-1) 
+  return 3000
+else if (BoatName.indexOf("brewmaster")!==-1) 
+  return 3000
+else if (BoatName.indexOf("ember_spirit")!==-1) 
+  return 6000
+else if (BoatName.indexOf("slark")!==-1) 
+  return 6000
+else if (BoatName.indexOf("jakiro")!==-1) 
+  return 6000
+else if (BoatName.indexOf("lion")!==-1) 
+  return 3000
+else if (BoatName.indexOf("tusk")!==-1) 
+  return 12000
+else if (BoatName.indexOf("visage")!==-1) 
+  return 12000
+else if (BoatName.indexOf("nevermore")!==-1) 
+  return 3000
+else if (BoatName.indexOf("sniper")!==-1) 
+  return 6000
+else if (BoatName.indexOf("wind")!==-1) 
+  return 12000
+else if (BoatName.indexOf("crystal")!==-1) 
+  return 1000
+else if (BoatName.indexOf("phantom")!==-1) 
+  return 1000
+else if (BoatName.indexOf("vengefulspirit")!==-1) 
+  return 750
+else if (BoatName.indexOf("enigma")!==-1) 
+  return 8000
+else if (BoatName.indexOf("bane")!==-1) 
+  return 4000
+else if (BoatName.indexOf("pugna")!==-1) 
+  return 12000
+else if (BoatName.indexOf("razor")!==-1) 
+  return 12000
+else
+  return 0
+}
+
 
 
 function FadeShop() {
@@ -507,8 +565,7 @@ function fillAndShow() {
 	var i = 0;
 	var buildings = Entities.GetAllEntitiesByClassname('npc_dota_building')
 	for (var i = 0; i < buildings.length; i++) {
-		$.Msg(i)
-
+	
 		if (!Entities.IsTower(buildings[i])) {
 
 			var bldgloc = Entities.GetAbsOrigin((buildings[i]));
@@ -523,8 +580,6 @@ function fillAndShow() {
 			}
 		}
 	}
-	$.Msg(closeEnough);
-	$.Msg(heroloc);
 	var hide = true;
 	if (Math.abs(heroloc[1]) < 5000 && Math.abs(heroloc[0]) > 1000 && Math.abs(heroloc[0]) < 4000 && closeEnough) {
 		$("#side_shop").style.visibility = "visible";

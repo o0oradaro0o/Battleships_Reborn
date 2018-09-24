@@ -2,7 +2,7 @@
 var hidden = true;
 
 var currentlearn=1;
-var maxpages=11;
+var maxpages=12;
 
 function prev() {
 	$("#learn"+currentlearn).style.width = "0%";
