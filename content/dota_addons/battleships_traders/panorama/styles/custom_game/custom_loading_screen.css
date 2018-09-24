@@ -9,7 +9,13 @@
     background-color: blue;
     overflow: clip;
 }
-
+.Header
+{
+	font-size: 24px;
+    font-weight: bold;
+	margin-top: 36px;
+	
+}
 #GameModeDescription
 {
     font-size: 27px;
@@ -96,7 +102,7 @@
 	flow-children: down;
 	background-color: gradient( linear, 0% 50%, 0% 100%, from( #62494ecc ), to( #552525ff ) );
 		height: 230px;
-		margin-top: 230px;
+		margin-top: 700px;
 	margin-right: 30px;
 	margin-left: 500px;
 	height: 260px;
@@ -172,7 +178,16 @@
 	color: #cccccc;
 	text-shadow: 2px 2px 2px #000000;
 }
-
+.LearnTitle
+{
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-bottom: -15px;
+	vertical-align: center;
+	font-size: 25px;
+	color: #cccccc;
+	text-shadow: 2px 2px 2px #000000;
+}
 .heroTitle
 {
 	margin-bottom: -15px;
@@ -202,6 +217,7 @@
 	text-shadow: 2px 2px 2px #000000;
 }
 
+
 .SeqImg
 {
 	background-repeat: no-repeat;
@@ -222,137 +238,254 @@
 	pre-transform-scale2d: 1.35, 1.35;
 }
 
-@keyframes 'x' {}
 
-#seq_bg
-{
-	animation-name: seq_bg_anim;
-	animation-duration: TotalLength;
-	animation-timing-function: TimingFunc;
-	animation-iteration-count: IterationCount;
-    margin-left: 0px;
+.DockPanel {
+    flow-children: right;
+
+    width: 90%;
+}
+#TopDock {
+    width:50%;
+}
+#middock {
+    width:33%;
 }
 
-@keyframes 'seq_bg_anim'
-{
-	0%
-	{
-	}
-
-	100%
-	{
-	}
+#HowToWin {
+    flow-children: right;
+    text-align: left;
+    width: 90%;
+    margin-right:20px;
+}
+#HowToWeapons {
+    flow-children: right;
+    text-align: left;
+    width: 40%;
+    margin-top: 5px;
+	margin-right:20px;
+	height:100%;
 }
 
-#seq_beastmaster_pets
-{
-	margin-left: 1015px;
-	margin-top: 120px;
-	animation-name: seq_beastmaster_pets_anim;
-	animation-duration: TotalLength;
-	animation-timing-function: TimingFunc;
-	animation-iteration-count: IterationCount;
+#WeaponsChart {
+   width: 60%;
+   height: 120%;
+   margin-top: -50px;
 }
 
-@keyframes 'seq_beastmaster_pets_anim'
+#UpgradeChart {
+	width: 65%;
+	height:55%;
+	horizontal-align: center;
+	margin-top: -8px;
+	margin-bottom: -8px;
+ }
+ #WeaponsChart2 {
+	margin-top: -8px;
+	margin-bottom: -8px;
+	height:55%;
+	width: 70%;
+	horizontal-align: center;
+  }
+  
+#EmpireChart
 {
-	0%
-	{
-		transform: translateX( 50px ) translateY( 10px );
-        pre-transform-scale2d: 0.90;
-	}
-
-	100%
-	{
-	}
+	width:80%;
+	horizontal-align: center;
+  
 }
 
-#seq_beastmaster
-{
-	margin-left: 435px;
-	margin-top: 140px;
-	animation-name: seq_beastmaster_anim;
-	animation-duration: TotalLength;
-	animation-timing-function: TimingFunc;
-	animation-iteration-count: IterationCount;
+#TideChart {
+	height:70%;
+	width: 70%;
+	horizontal-align: center;
+ }
+
+#HowToShips {
+    flow-children: right;
+    text-align: left;
+    width: 34%;
+    margin-top: 5px;
+    margin-left:10px;
+    margin-right:20px;
 }
 
-@keyframes 'seq_beastmaster_anim'
-{
-	0%
-	{
-		transform: translateX( 80px ) translateY( -20px );
-	}
-
-	100%
-	{
-	}
+#ShipsChart {
+	width: 60%;
+	height:75%;
+	vertical-align: center;
 }
 
-#seq_juggernaut
-{
-	margin-left: 400px;
-	margin-top: 325px;
-	animation-name: seq_juggernaut_anim;
-	animation-duration: TotalLength;
-	animation-timing-function: TimingFunc;
-	animation-iteration-count: IterationCount;
-	pre-transform-scale2d: 0.90;
+#HowToCombat {
+    flow-children: right;
+    text-align: left;
+    width: 40%;
+    margin-top: 5px;
+    margin-left:10px;
+	margin-right:20px;
+	
 }
 
-@keyframes 'seq_juggernaut_anim'
+#ZoomPanel
 {
-	0%
-	{
-		transform: translateX( 120px ) translateY( 20px );
-	}
-
-	100%
-	{
-	}
+	width: 100%;
+}
+#CombatChart {
+	width: 60%;
+	height:100%;
+	vertical-align: center;
+}
+#ZoomChart
+{
+	width: 90%;
+	height:40%;
+	horizontal-align: center;
+}
+#HowToTowers {
+    flow-children: right;
+    text-align: left;
+    width: 60%;
+    margin-top: 5px;
+    margin-left:10px;
+	margin-right:20px;
+	height:100%;
 }
 
-#seq_luna
-{
-	margin-left: 8px;
-	margin-top: 0px;
-	animation-name: seq_luna_anim;
-	animation-duration: TotalLength;
-	animation-timing-function: TimingFunc;
-	animation-iteration-count: IterationCount;
-	pre-transform-scale2d: 1.05;
+#TowersChart {
+	width: 40%;
+	height: 70%;
+	vertical-align: center;
 }
 
-@keyframes 'seq_luna_anim'
+.BattleshipsGameInfo
 {
-	0%
-	{
-		transform: translateX( 120px ) translateY( 50px );
-	}
-
-	100%
-	{
-	}
+    width:100%;
+    flow-children: down;
 }
 
-#seq_coins
+
+
+
+#TipsHeader
 {
-	margin-left: -150px;
-	margin-top: 200px;
-	animation-name: seq_coins_anim;
-	animation-duration: TotalLength;
-	animation-timing-function: TimingFunc;
-	animation-iteration-count: IterationCount;
 }
 
-@keyframes 'seq_coins_anim'
+#TipsRow
 {
-	0%
-	{
-		transform: translateX( 200px ) translateY( -100px );
-	}
+	flow-children: down;
+	margin-right: 92px;
+	margin-top: 18px;
+}
 
-	100%
-	{
-	}
+.TipText
+{
+	margin-left: 0px;
+    margin-top: 16px;
+    margin-right:16px;
+}
+
+.InfoRow
+{
+    flow-children: left;
+    text-align: left;
+	width: 100%;
+	margin-top: 16px;
+	height: 100%;
+}
+
+.InfoCol
+{
+    flow-children: down;
+    text-align: left;
+	height: 100%;
+	margin-top: 16px;
+}
+
+.learn_button
+{
+
+	width: 50px;
+	height: 50px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #252525 ), to( #42494e ) );
+	 border: 2px solid white;
+	  border-radius: 10px;
+}
+.learn_button:hover
+{
+
+	width: 50px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #404040 ), to( #60606e ) );
+	 border: 2px solid grey;
+}
+Label
+{
+    font-size: 18px;
+    color: #999999;
+	vertical-align: top;
+
+}
+
+
+#LearnHolder
+{
+	padding:5px;
+	margin-top: 230px;
+		width: 460px;
+		height: 460px;
+		margin-left: 500px;
+		background-color: gradient( linear, 0% 50%, 0% 100%, from( #42417ecc ), to( #253025ff ) );
+		border-radius: 20px;
+		flow-children: down;
+}
+#LearnButtonHolder
+{
+	margin: 5px;
+		width: 450px;
+		height: 25px;
+		border-radius: 20px;
+		flow-children: right;
+}
+#LearnInfoHolder
+{
+	margin-top: 20px;
+		width: 100%;
+		height: 80%;
+		flow-children: right;
+		background-color: gradient( linear, 0% 50%, 0% 100%, from( #353535cc ), to( #253025ff ) );
+}
+
+.innerLearn
+{
+	padding:8px;
+	margin-top: -20px;
+	flow-children: down;
+	width: 0%;
+	height: 100%;
+	transition: width 0.3s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
+
+}
+#learn1
+{
+	padding:8px;
+	margin-top: -20px;
+	flow-children: down;
+	width: 100%;
+	height: 100%;
+	transition: width 0.3s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
+}
+#b3
+{
+	horizontal-align: right;
+	text-align: center;
+}
+.shop_btn_text
+{
+	horizontal-align: center;
+	text-align: center;
+}
+
+#pageCountLabel
+{
+	horizontal-align: center;
+	text-align: center;
+	width: 70%;
 }

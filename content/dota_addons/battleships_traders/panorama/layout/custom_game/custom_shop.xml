@@ -203,15 +203,15 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="750" />
+							<Label hittest="false" class="boat_stat_label_val" text="825" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
-							<Label hittest="false" class="boat_stat_label_val" text="270" />
+							<Label hittest="false" class="boat_stat_label_val" text="290" />
 					</Panel>
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#regen" />
-							<Label hittest="false" class="boat_stat_label_val" text="5" />
+							<Label hittest="false" class="boat_stat_label_val" text="6" />
 					</Panel>
 				</Panel>	
 			</Panel>	
@@ -1957,8 +1957,11 @@
 					<Button class="closeShip" onactivate="closeShipShop()">
 							<Label  text="#back_to_items" class="closeXship"/>		
 					</Button>
-					<Label hittest="false" class="trade_text_footer" text="#left_click" />  
-					
+					<Label hittest="false" class="trade_text_footer" text="#left_click" /> 
+					<Panel id="SellValueHoplder" class="Row">
+						<Label hittest="false" id="SellValueName" class="trade_text_footer" text="#sellBack" /> 
+						<Label hittest="false" id="SellValue" class="trade_text_footer_gold" text="0" /> 
+					</Panel>			
 					<Panel id="one_ks_tab" class="ship_shop_tier_tab" onactivate="show1ks()">
 						<Label hittest="false" class="shop_btn_text" text="#one_ks"/>
 					</Panel>

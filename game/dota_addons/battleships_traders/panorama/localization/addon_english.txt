@@ -12,13 +12,36 @@
 	"DOTA_BadGuys"    			"Northern Alliance"
 
 	"bs_Objectives"				"Objective:"
-	"bs_Weapons"				"Weapons:"
+	"HowToPlay"				"How to Play:"
+	
+	"bs_Empire"				"Empire Gold:"
+	"bs_Weapons_3"				"Weapons:"
+	"bs_Weapons"				"Weapons II:"
+	"bs_Weapons_2"				"Weapons III:"
 	"bs_Ships"					"Ships:"
+	"bs_Towers"					"Towers:"
+	"bs_Tide"					"Tidehunter:"
+	"bs_upgrade"					"Upgrades:"
+	"bs_Combat"					"Combat:"
+	"bs_Combat2"					"Combat II:"
+	"bs_Zoom"					"Zoom:"
+	"next"				">"
+	"prev"				"<"
+	"sellBack"				"Ship trade in value:"
 
-	"bs_HowToWin"				"Destroy the Enemy's Base located just outside their Harbor, or destroy both of their Docks, located to the Left and Right of the main base."
-	"bs_HowToWeapons"			"Weapons target random enemies in their range. You can buy pairs of weapons in the store, and they'll take up a single slot in your inventory. Weapons at lower tiers are more cost effective, and weapons at higher tiers save space. You can combine all three tiers into an Ultimate Weapon."
+	"bs_HowToWin"				"Destroy your enemy's <font color='#58ACFA'>harbors</font> (bases) at the <font color='#ff1111'>north</font> or <font color='#11ff11'>south</font> edge of the map."
+	"bs_HowToWeapons3"			"Buy weapons from the <font color='#ff1111'>EQUIPMENT</font> shopkeeper. <br /><br />Weapons target <font color='#ff8811'>random</font> enemies in their range."
+	"bs_HowToWeapons"			"For each weapon type (row), there are 4 tiers of weapons: <font color='#11ff11'>T1, T2, T3, and ULTIMATE</font> <br /><br />Increase in <font color='#ff1111'>damage</font> from left to right <br /><br />Increase in <font color='#ffcc66'>range</font> from top to bottom."
 	"bs_HowToShips"				"You can upgrade to new ships by heading to the Ships vendor, and purchasing from one of four classes of ships. You'll start with nothing more than a barrel, so upgrade to get bigger boats and better abilities!"
-
+	"bs_HowToWeapons2"			"If you buy two of the same <font color='#11ff11'>weapon</font>, it will stack, saving inventory space. <br /><br />Once you own <font color='#db9200'>doubled weapons</font> from each tier of weapon (T1, T2, and T3), purchase a <font color='#66aaff'>recipe</font> (4th tier weapon) to combine them all into an  <font color='#ff1111'>ultimate weapon.</font>"
+	"bs_HowToTowers"			"Towers are powerful defensive structures. <br /><br />Destroying an enemy tower increases your team’s passive income. <br /><br /> Only short range weapons can damage towers.  <br /><br /> Side shops provide means of repairing your towers and Dearmoring enemy towers."
+	"bs_HowToTide"				"Tidehunter is a boss unit that roams the left region of the map.<br /><br />Slaying Tidehunter will grant your team a gold reward and spawn a monster to fight for your team until death."
+	"bs_HowToUpgrade"			"Upgrade items add additional utility to your ship.<br /><br />Each utility item has 4 levels of effectiveness.<br /><br />These items can be found in the 'Upgrades' tab of the shop."
+	"bs_HowToCombat"			"Creeps can provide cover because weapons autotarget.<br /><br />Positioning yourself among creeps will keep you safe.<br /><br />Isolating Enemies in your weapon's range will focus your fire."
+	"bs_HowToCombat2"			"You can shoot over walls but only if you have vision of the other side.<br /><br />Be wary of areas you cannot see.<br /><br />Try to strike where you cannot be seen, relying on allys or creeps to provide vision."
+	"bs_HowToEmpire"			"Every 4 minutes you receive Empire gold.<br /><br />Whichever team is behind on net worth receives a small empire gold bonus to help them recover.<br /><br />The percentage recovered diminishes as the game goes on."
+	"bs_HowToZoom"				"There is a zoom controller at the top center of your screen.<br /><br />Zooming out can be especially helpful when playing longer range weapons as they often strike targets that would otherwise be offscreen."
+	
 	"bs_Thanks"					"We'd like to give special thanks to the Dota2Modding IRC channel, in particular BMD, Myll, Crazyloon, Hewdrw, JimmyDorry, and Noya for their help. <br /><br />Russian Translations by React and Al1en. <br /><br /> Thanks for playing Battleships! Good Luck, Have Fun, and Don't Die! <br />- radar, WeAreAllBritons, Frood, borgel, and zentrix"
 	
 	"unstick"						"Unstick"
@@ -425,7 +448,7 @@ MOVE BONUS: 30 40 50 60"
 "gamble_bell_one_Description"                                "Silences target Captain's ship for the listed duration.
 DURATION: 2 2.5 3 3.5"
 "gamble_cherry_one"                                          "Cherry"
-"gamble_cherry_one_Description"                              "Throws a Cherry Bomb dealing damage to target area.                                  
+"gamble_cherry_one_Description"                              "Throws a random number of Cherry Bombs dealing damage to target area.                                  
 RADIUS: 275 275 275 275                           
 DMG: 200 250 300 350"
 "gamble_seven_one"                                           "Seven"
@@ -623,7 +646,7 @@ BUILDING ARMOR REDUCTION: -3 -6 -9 -12
 BUILDING DPS: -3 -6 -9 -12"
 
 "big_boom"									"Visions of Valhalla!"
-"big_boom_Description"					"Valhalla awaits! Activate to deal damage to all nearby boats (friend, foe, and yourself) after four seconds. If you survive you are graces with extra regen briefly. \n \n Higher levels decrease the cooldown.
+"big_boom_Description"					"Valhalla awaits! Activate to deal damage to all nearby boats (friend, foe, and yourself) after four seconds. If you survive you are graces with extra regen briefly. Gain bonus armor during charge time. \n \n Higher levels decrease the cooldown.
 DAMAGE: 1500 1800 2100"
 
 "tidehunter_gush_battleship"								"Bilging"
@@ -649,7 +672,7 @@ ILLUSION DURATION: 5.0"
 HEAL: 1000 2000 3000 4000
 RANGE: 2500 2500 2500 2500"
 "noah_guardian_angel_datadriven"                             "Noah's Guardian Angel"
-"noah_guardian_angel_datadriven_Description"                 "you and nearby allies do not take damage from weapons for the listed duration."
+"noah_guardian_angel_datadriven_Description"                 "You call on your guardian angel to protect your ships, gaining significant Armor and HP regen to yourself and nearby allies for a short duration."
 "mountain_battleship"									"Stuck on a Mountain"
 "mountain_battleship_Description"					"End the flood. Immobilizes  all units around you (not including yourself) in a large radius. \n\nHigher levels increase duration.
 DURATION: 3.0 4.0 5.0"
@@ -686,8 +709,8 @@ SECOND NUKE SLOW: 20
 AREA: 550"
 
 "miss_battleship"									"Miss"
-"miss_battleship_Description"					"G-7. Grants armor to you and nearby allies. \n\nHigher levels increase armor. 
-armor: 1.0 2.0 3.0 4.0"
+"miss_battleship_Description"					"G-7. Grants evasion to you. \n\nHigher levels increase evade chance. 
+EVASION CHANCE: 1.0 2.0 3.0 4.0"
 
 "antimage_blink_battleship"											"Cheat"
 "antimage_blink_battleship_Description"								"Short distance teleportation that allows battleship to shift around the board.
@@ -2535,8 +2558,10 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		
 			
 		"DOTA_Tooltip_Ability_big_boom"									"Visions of Valhalla!"
-		"DOTA_Tooltip_Ability_big_boom_Description"					"Valhalla awaits! Activate to deal damage to all nearby boats (friend, foe, and yourself) after four seconds. If you survive you are graces with extra regen briefly. \n \n Higher levels decrease the cooldown."
+		"DOTA_Tooltip_Ability_big_boom_Description"					"Valhalla awaits! Activate to deal damage to all nearby boats (friend, foe, and yourself) after four seconds. If you survive you are graces with extra regen briefly. Gain bonus armor during charge time. \n \n Higher levels decrease the cooldown."
 		"DOTA_Tooltip_Ability_big_boom_vah_dmg"					"DAMAGE:"
+		"DOTA_Tooltip_Ability_big_boom_vah_vah_regen"					"REGEN:"
+		"DOTA_Tooltip_Ability_big_boom_armor"					"ARMOR:"
 
 		
 		"DOTA_Tooltip_Ability_alchemist_goblins_greed_battleship"									"Return on Investment"
@@ -2565,6 +2590,13 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"DOTA_Tooltip_Ability_miss_battleship"									"Miss"
 		"DOTA_Tooltip_Ability_miss_battleship_Description"					"G-7. Grants armor to you and nearby allies. \n\nHigher levels increase armor. "
 		"DOTA_Tooltip_Ability_miss_battleship_evasion"					"armor:"
+
+		"DOTA_Tooltip_ability_miss_lua"                                                   "Miss"
+		
+		"DOTA_Tooltip_ability_miss_lua_Description"                                       "G-7. Grants evasion to you. \n\nHigher levels increase evade chance."
+		
+		"DOTA_Tooltip_ability_miss_lua_evasion"                                           "EVASION CHANCE:"
+
 
 		"DOTA_Tooltip_Ability_hit_battleship"									"Flare"
 		"DOTA_Tooltip_Ability_hit_battleship_Description"					"Launches a flare at the nearest enemy hero, providing vision of them for 4 seconds. \n\nHigher levels decrease cooldown."
@@ -3269,14 +3301,12 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"Battle_Desc"		"Every 4 minutes a king of the hill style battle occurs.  All participants get gold and the winning team gets extra gold."
 		
 		"News_Title"		"News!"
-		"News_Content"		"Hi all! Art update will resume but is temporarily on hold.  In the meantime I am continuing to make balance changes.
-Beginer-Tips!
--Buy a WEAPON
--Don't forget to ZOOM
--Items with >1000 range don't hit TOWERS
--Weapons next to eachother in the shop can Combo
--Buying 2 of a weapon only takes one slot
+		"News_Content"		"Hi all! I am continuing to make balance changes and improve abilities. The next new content will be another 6k cost ship.
 
+Recent Balance Changes 9/22/2018
+   • River boat's damaging abilities buffed.
+   • Paddlewheel Base Stats Improved.
+   • Tidehunter now becomes stronger with time, not just when killed.   
 "
 		
 }

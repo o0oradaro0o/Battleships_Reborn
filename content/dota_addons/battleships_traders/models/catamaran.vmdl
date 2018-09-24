@@ -90,7 +90,44 @@
 			}
 		},
 	]
-	m_pAttachmentLists = [  ]
+	m_pAttachmentLists = 
+	[
+		{
+			m_pObject = 
+			{
+				m_name = ""
+				m_attachments = 
+				[
+					{
+						m_name = "attach_hitloc"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Bone"
+								m_vTranslationOffset = [ -50.088547, 190.064056, 0.000084 ]
+								m_vRotationOffset = [ 0.000034, 0.000001, -0.00005 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "attach_attack1"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Bone"
+								m_vTranslationOffset = [ -43.786942, 192.611282, 0.000088 ]
+								m_vRotationOffset = [ 0.000028, 0.000001, -0.000036 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+				]
+			}
+		},
+	]
 	m_pAnimGroup = 
 	{
 		m_pObject = null

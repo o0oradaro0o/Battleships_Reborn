@@ -65,8 +65,8 @@
 		"DisableWearables" "1"
 		"ItemSlots" {}
 		
-		"BountyGoldMin"				"150"		// Gold earned min.
-		"BountyGoldMax"				"151"		// Gold earned max.
+				"BountyGoldMin"				"74"		// Gold earned min.
+		"BountyGoldMax"				"76"		// Gold earned max.
 	}
 
 	  "npc_dota_hero_abaddon_battleship8d" 
@@ -120,8 +120,8 @@
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 		"ItemSlots" {}
 		
-		"BountyGoldMin"				"150"		// Gold earned min.
-		"BountyGoldMax"				"151"		// Gold earned max.
+		"BountyGoldMin"				"74"		// Gold earned min.
+		"BountyGoldMax"				"76"		// Gold earned max.
 		"DisableWearables" "1"
 	}
 	
@@ -149,11 +149,11 @@
 		 "StatusMana"                "0"
         "StatusManaRegen"           "0.0"
 
-		"MovementSpeed"				"270"									// Speed.
+		"MovementSpeed"				"290"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 		
-		"StatusHealth"				"750"		// Base health.
-		"StatusHealthRegen"			"5.0"		// Health regeneration rate.
+		"StatusHealth"				"825"		// Base health.
+		"StatusHealthRegen"			"6.0"		// Health regeneration rate.
 		
 				"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
@@ -178,8 +178,8 @@
 		"DisableWearables" "1"
 		"ItemSlots" {}
 		"AttachWearables" {}
-		"BountyGoldMin"				"240"		// Gold earned min.
-		"BountyGoldMax"				"260"		// Gold earned max.
+		"BountyGoldMin"				"124"		// Gold earned min.
+		"BountyGoldMax"				"126"		// Gold earned max.
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 		
@@ -224,7 +224,7 @@
 		"Ability3"					"might_battleship"
 		"Ability4"					"batten_hatches"
 		
-				"Ability10"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -262,8 +262,8 @@
 		}
 		"ItemSlots" {}
 		"AttachWearables" {}
-		"BountyGoldMin"				"240"		// Gold earned min.
-		"BountyGoldMax"				"260"		// Gold earned max.
+		"BountyGoldMin"				"124"		// Gold earned min.
+		"BountyGoldMax"				"126"		// Gold earned max.
 		"DisableWearables" "1"
 	}
 	
@@ -342,8 +342,8 @@
 		}
 		"ItemSlots" {}
 		"AttachWearables" {}
-		"BountyGoldMin"				"240"		// Gold earned min.
-		"BountyGoldMax"				"260"		// Gold earned max.
+		"BountyGoldMin"				"124"		// Gold earned min.
+		"BountyGoldMax"				"126"		// Gold earned max.
 		"DisableWearables" "1"
 	}
 	
@@ -421,8 +421,8 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"240"		// Gold earned min.
-		"BountyGoldMax"				"260"		// Gold earned max.
+		"BountyGoldMin"				"124"		// Gold earned min.
+		"BountyGoldMax"				"126"		// Gold earned max.
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
@@ -508,8 +508,8 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"240"		// Gold earned min.
-		"BountyGoldMax"				"260"		// Gold earned max.
+		"BountyGoldMin"				"124"		// Gold earned min.
+		"BountyGoldMax"				"126"		// Gold earned max.
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
@@ -564,8 +564,8 @@
 		"DisableWearables" "1"
 		"ItemSlots" {}
 		"AttachWearables" {}
-		"BountyGoldMin"				"240"		// Gold earned min.
-		"BountyGoldMax"				"260"		// Gold earned max.
+		"BountyGoldMin"				"124"		// Gold earned min.
+		"BountyGoldMax"				"126"		// Gold earned max.
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 		
@@ -646,8 +646,8 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"599"		// Gold earned min.
-		"BountyGoldMax"				"601"		// Gold earned max.
+		"BountyGoldMin"				"299"		// Gold earned min.
+		"BountyGoldMax"				"301"		// Gold earned max.
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
@@ -724,8 +724,8 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"599"		// Gold earned min.
-		"BountyGoldMax"				"601"		// Gold earned max.
+		"BountyGoldMin"				"299"		// Gold earned min.
+		"BountyGoldMax"				"301"		// Gold earned max.
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
@@ -801,8 +801,8 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"599"		// Gold earned min.
-		"BountyGoldMax"				"601"		// Gold earned max.
+		"BountyGoldMin"				"299"		// Gold earned min.
+		"BountyGoldMax"				"301"		// Gold earned max.
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
@@ -857,8 +857,8 @@
 		"DisableWearables" "1"
 		"ItemSlots" {}
 		"AttachWearables" {}
-		"BountyGoldMin"				"240"		// Gold earned min.
-		"BountyGoldMax"				"260"		// Gold earned max.
+		"BountyGoldMin"				"124"		// Gold earned min.
+		"BountyGoldMax"				"126"		// Gold earned max.
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 		
@@ -943,8 +943,8 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"599"		// Gold earned min.
-		"BountyGoldMax"				"601"		// Gold earned max.
+		"BountyGoldMin"				"299"		// Gold earned min.
+		"BountyGoldMax"				"301"		// Gold earned max.
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
@@ -1023,8 +1023,8 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"599"		// Gold earned min.
-		"BountyGoldMax"				"601"		// Gold earned max.
+		"BountyGoldMin"				"299"		// Gold earned min.
+		"BountyGoldMax"				"301"		// Gold earned max.
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
@@ -1102,8 +1102,8 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"1049"		// Gold earned min.
-		"BountyGoldMax"				"1051"		// Gold earned max.
+		"BountyGoldMin"				"524"		// Gold earned min.
+		"BountyGoldMax"				"526"		// Gold earned max.
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
@@ -1182,8 +1182,8 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"1049"		// Gold earned min.
-		"BountyGoldMax"				"1051"		// Gold earned max.
+		"BountyGoldMin"				"524"		// Gold earned min.
+		"BountyGoldMax"				"526"		// Gold earned max.
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
@@ -1262,8 +1262,8 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"1049"		// Gold earned min.
-		"BountyGoldMax"				"1051"		// Gold earned max.
+		"BountyGoldMin"				"524"		// Gold earned min.
+		"BountyGoldMax"				"526"		// Gold earned max.
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
@@ -1340,8 +1340,8 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"1049"		// Gold earned min.
-		"BountyGoldMax"				"1051"		// Gold earned max.
+		"BountyGoldMin"				"524"		// Gold earned min.
+		"BountyGoldMax"				"526"		// Gold earned max.
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
@@ -1477,8 +1477,8 @@
 			}
 
 		}
-		"BountyGoldMin"				"1049"		// Gold earned min.
-		"BountyGoldMax"				"1051"		// Gold earned max.
+		"BountyGoldMin"				"524"		// Gold earned min.
+		"BountyGoldMax"				"526"		// Gold earned max.
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
@@ -1557,8 +1557,8 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"1599"		// Gold earned min.
-		"BountyGoldMax"				"1601"		// Gold earned max.
+		"BountyGoldMin"				"799"		// Gold earned min.
+		"BountyGoldMax"				"801"		// Gold earned max.
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
@@ -1637,8 +1637,8 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"1599"		// Gold earned min.
-		"BountyGoldMax"				"1601"		// Gold earned max.
+		"BountyGoldMin"				"799"		// Gold earned min.
+		"BountyGoldMax"				"801"		// Gold earned max.
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
@@ -1682,7 +1682,7 @@
 		
 		"AbilityLayout"				"3"
 		"Ability1"					"antimage_blink_battleship"
-		"Ability2"					"miss_battleship"
+		"Ability2"					"miss_lua"
 		"Ability3"					"puck_waning_rift_battleship"
 		"Ability4"					"gyrocopter_call_down_battleship"
 		"Ability6"					"bships_empty"
@@ -1723,8 +1723,8 @@
 		}
 		"ItemSlots" {}
 		"DisableWearables" "1"
-		"BountyGoldMin"				"1490"		// Gold earned min.
-		"BountyGoldMax"				"1510"		// Gold earned max."DisableWearables" "1"
+		"BountyGoldMin"				"799"		// Gold earned min.
+		"BountyGoldMax"				"801"		// Gold earned max.
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
@@ -1781,8 +1781,8 @@
         "ModelScale"        "1.2"
 		"RingRadius"				"100"
 		"ItemSlots"  {}
-		"BountyGoldMin"				"1490"		// Gold earned min.
-		"BountyGoldMax"				"1510"		// Gold earned max.
+		"BountyGoldMin"				"799"		// Gold earned min.
+		"BountyGoldMax"				"801"		// Gold earned max.
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
@@ -1839,8 +1839,8 @@
         "ModelScale"        "0.8"
 		"RingRadius"				"100"
 		"ItemSlots"  {}
-		"BountyGoldMin"				"1490"		// Gold earned min.
-		"BountyGoldMax"				"1510"		// Gold earned max.
+		"BountyGoldMin"				"799"		// Gold earned min.
+		"BountyGoldMax"				"801"		// Gold earned max.
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
@@ -1897,8 +1897,8 @@
 		"Ability18"					"bships_empty"
 		"RingRadius"				"100"
 		"ItemSlots"  {}
-		"BountyGoldMin"				"1490"		// Gold earned min.
-		"BountyGoldMax"				"1510"		// Gold earned max.
+		"BountyGoldMin"				"799"		// Gold earned min.
+		"BountyGoldMax"				"801"		// Gold earned max.
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.

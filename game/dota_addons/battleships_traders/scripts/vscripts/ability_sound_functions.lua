@@ -30,7 +30,6 @@ function diveSound(keys)
 end
 
 function ramSound(keys)
-	
 	local casterUnit = keys.caster
 	EmitSoundOn("Hero_Shared.WaterFootsteps", casterUnit)
 end

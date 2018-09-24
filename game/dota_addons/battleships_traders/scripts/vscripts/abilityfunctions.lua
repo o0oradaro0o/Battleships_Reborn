@@ -92,7 +92,6 @@ function ShowShip(keys) -- keys is the information sent by the ability
 			 --print("[AbilityFunctions] ShowShip  nearest is: " .. fuckerdist)
 		end
 	end
-
 	local tracking_projectile = {
 		EffectName = "particles/basic_projectile/hit_projectile.vpcf",
 		Ability = ability,
@@ -106,9 +105,7 @@ function ShowShip(keys) -- keys is the information sent by the ability
 		iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
 	}
 	ProjectileManager:CreateTrackingProjectile(tracking_projectile)
-
 	-- apply the armor debuff
-	print(ability)
 	ability:ApplyDataDrivenModifier(casterUnit, fuckerWeShow, "hit_dearmor", {duration = 3})
 
 	local visionTime = 0
@@ -754,6 +751,7 @@ function toggle_item(keys) -- keys is the information sent by the ability
 		end
 	end
 end
+
 function TeleHome(keys) -- keys is the information sent by the ability
 	Timers:CreateTimer(
 		0.1,
@@ -2286,21 +2284,27 @@ function CherryLaunch(args)
 	local caster = args.caster
 	
 	dummy = CreateUnitByName("dummy_vision10", targetPos, true, nil, nil, caster:GetTeam())
-   
-	   local info = {
-		   Ability = args.ability,
-		   Source = caster,
-		   Target = dummy,
-		   vSourceLoc = caster:GetAbsOrigin(),
-		   EffectName = "particles/basic_projectile/cherry_proj.vpcf",
-		   bProvidesVision = false,
-		   iVisionRadius = 1000,
-		   iVisionTeamNumber = caster:GetTeamNumber(),
-		   bDeleteOnHit = false,
-		   iMoveSpeed = 1300,
-		   vVelocity = 700
-	   }
-	   projectile = ProjectileManager:CreateTrackingProjectile(info)
+  
+   for i=1, RandomInt(1,3) do
+		Timers:CreateTimer(.1*i,function()
+
+		
+		local info = {
+			Ability = args.ability,
+			Source = caster,
+			Target = dummy,
+			vSourceLoc = caster:GetAbsOrigin(),
+			EffectName = "particles/basic_projectile/cherry_proj.vpcf",
+			bProvidesVision = false,
+			iVisionRadius = 1000,
+			iVisionTeamNumber = caster:GetTeamNumber(),
+			bDeleteOnHit = false,
+			iMoveSpeed = 1300,
+			vVelocity = 700
+		}
+		projectile = ProjectileManager:CreateTrackingProjectile(info)
+		end)
+	end
 
 end
 
