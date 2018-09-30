@@ -12259,7 +12259,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/poison_ult_projectile2/venomancer_venomous_gale.vpcf" 
+						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -12276,7 +12276,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/poison_ult_projectile2/venomancer_venomous_gale.vpcf" 
+						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -12293,7 +12293,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/poison_ult_projectile2/venomancer_venomous_gale.vpcf" 
+						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -12310,7 +12310,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/poison_ult_projectile2/venomancer_venomous_gale.vpcf" 
+						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
 					}
 					
 				}
