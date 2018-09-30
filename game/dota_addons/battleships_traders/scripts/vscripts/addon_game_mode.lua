@@ -1540,7 +1540,8 @@ function CBattleship8D:OnNPCSpawned(keys)
         stopPhysics(npc)
         print(npc:GetName())
         if string.match(npc:GetName(),"razor") then
-          npc:SetMana(333)
+          print("Razor Killed")
+          Timers:CreateTimer(function() npc:SetMana(333) end)
         end
 
         npc:AddNewModifier(npc, nil, "modifier_movespeed_cap", nil)

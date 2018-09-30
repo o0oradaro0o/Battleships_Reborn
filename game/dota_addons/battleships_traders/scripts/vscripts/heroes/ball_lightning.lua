@@ -143,12 +143,12 @@ end
 --   return "particles/units/heroes/hero_stormspirit/stormspirit_ball_lightning.vpcf"
 -- end
 
--- function modifier_ball_lightning:CheckState()
---   local state = {
---    [MODIFIER_STATE_MAGIC_IMMUNE] = true
---   }
---   return state
--- end
+function modifier_ball_lightning:CheckState()
+  local state = {
+   [MODIFIER_STATE_MAGIC_IMMUNE] = true
+  }
+  return state
+end
 
 -- function modifier_ball_lightning:GetEffectAttachType()
 --   -- Yep, this is a thing.
@@ -169,14 +169,14 @@ end
 --   return ACT_DOTA_OVERRIDE_ABILITY_4
 -- end
 
--- function modifier_ball_lightning:GetAbsoluteNoDamagePhysical()
---   return 1
--- end
+function modifier_ball_lightning:GetAbsoluteNoDamagePhysical()
+  return 1
+end
 
--- function modifier_ball_lightning:GetAbsoluteNoDamageMagical()
---   return 1
--- end
+function modifier_ball_lightning:GetAbsoluteNoDamageMagical()
+  return 1
+end
 
--- function modifier_ball_lightning:GetAbsoluteNoDamagePure()
---   return 1
--- end
+function modifier_ball_lightning:GetAbsoluteNoDamagePure()
+  return 1
+end
