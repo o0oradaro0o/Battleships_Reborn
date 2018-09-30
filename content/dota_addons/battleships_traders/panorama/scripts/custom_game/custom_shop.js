@@ -461,14 +461,14 @@ function buyBoat(BoatName, cost) {
 	GameEvents.SendCustomGameEventToServer("buyBoat", { "text": BoatName, "cost": cost });
 	$("#" + BoatName).style.height = "0px";
 	
-	$.Schedule(.2, setSellValue);
+	setSellValue(BoatName);
 	
 	$.Schedule(.2, resetHeroIcons);
 }
 
-function setSellValue()
+function setSellValue(BoatName)
 {
-	NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("SellValueHoplder").FindChildTraverse("SellValue").text = GetBoatValue(Entities.GetUnitName(Players.GetPlayerHeroEntityIndex(Players.GetLocalPlayer())))*.75 
+	NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("SellValueHoplder").FindChildTraverse("SellValue").text = GetBoatValue(BoatName)*.75 
 }
 
 function NoFadeMap() {
