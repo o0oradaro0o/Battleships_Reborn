@@ -11820,7 +11820,7 @@
     "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
     "AbilityTextureName"      "storm_spirit_ball_lightning"
     "AbilityCastRange"       "900"
-    "AbilityCooldown"        "7.0 6.0 5.0 4.0"
+    "AbilityCooldown"        "4 3 2 1"
     "AbilityManaCost"        "100"
 
     "AbilityCastPoint"        "0.3"

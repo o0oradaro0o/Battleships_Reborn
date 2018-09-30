@@ -104,8 +104,12 @@ function getEnemies(casterUnit, range, handles)
 		local range = itemHandle:GetSpecialValueFor("range")
 		local handles = {}
 		handles.team = DOTA_UNIT_TARGET_TEAM_ENEMY
-		handles.types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING + DOTA_UNIT_TARGET_HERO
-		handles.flags = DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
+		if range>1000 then
+			handles.types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO
+		else
+			handles.types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING + DOTA_UNIT_TARGET_HERO
+		end
+			handles.flags = DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
 			
 		if #getEnemies(casterUnit,range,handles) > 0 then
 			if string.match(item, "two") then--level-2 plasma-type

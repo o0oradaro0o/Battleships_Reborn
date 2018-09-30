@@ -130,7 +130,7 @@ function CastUlt:Evaluate()
 		local allEnemies2 = FindUnitsInRadius( DOTA_TEAM_GOODGUYS, thisEntity:GetOrigin(), nil, 1200, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 0, 0, false )
 		for k,v in pairs(allEnemies2) do allEnemies[k] = v end
 		
-		if #allEnemies > 0 then
+		if #allEnemies > 1 then
 			target = allEnemies[RandomInt( 1, #allEnemies )]
 		end
 		
