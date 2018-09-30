@@ -465,11 +465,12 @@ function buyBoat(BoatName, cost) {
 	
 	$.Schedule(.2, resetHeroIcons);
 }
+
 function setSellValue()
 {
 	NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("SellValueHoplder").FindChildTraverse("SellValue").text = GetBoatValue(Entities.GetUnitName(Players.GetPlayerHeroEntityIndex(Players.GetLocalPlayer())))*.75 
-	
 }
+
 function NoFadeMap() {
 	$("#empty_guts").style.opacity = 1;
 	ticksOfFade = 0

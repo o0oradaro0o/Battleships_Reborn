@@ -1539,8 +1539,10 @@ function CBattleship8D:OnNPCSpawned(keys)
         AttachCosmetics(npc)
         stopPhysics(npc)
         print(npc:GetName())
-        if string.match(npc:GetName(),"razor") then
-          npc:SetMana(333)
+				if string.match(npc:GetName(),"razor") then
+					Timers:CreateTimer(function()
+					npc:SetMana(333)
+					end)
         end
 
         npc:AddNewModifier(npc, nil, "modifier_movespeed_cap", nil)
