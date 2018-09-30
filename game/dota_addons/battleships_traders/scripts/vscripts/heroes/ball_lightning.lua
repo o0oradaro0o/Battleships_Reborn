@@ -82,7 +82,7 @@ function ball_lightning_lua:OnProjectileThink_ExtraData(location, ExtraData)
 
     -- Calculate the new travel distance
     self.traveled = self.traveled + ExtraData.speed
-    caster:SetMana(caster:GetMana()-9)
+    caster:SetMana(caster:GetMana()-5)
     self.units_traveled_in_last_tick = ExtraData.speed
   else
     -- Once the caster can no longer travel, remove this projectile
@@ -158,9 +158,9 @@ end
 function modifier_ball_lightning:DeclareFunctions()
   local funcs = {
     MODIFIER_PROPERTY_OVERRIDE_ANIMATION,
-    -- MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL,
-    -- MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL,
-    -- MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE,
+    MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL,
+    MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL,
+    MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE,
   }
   return funcs
 end

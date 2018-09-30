@@ -5865,7 +5865,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"300 400 500 600"
+				"radius"					"300 300 300 300"
 			}
 			"02"
 			{
@@ -11566,14 +11566,6 @@
 					}
 		}
 		
-		
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -11583,69 +11575,78 @@
 			}
 
 		}
-    }
+   }
 	
-
-
 	"thunder_storm"
 	{
 		"BaseClass"                     "ability_lua"
 		"ScriptFile"                    "heroes/thunder_storm.lua"
 		"AbilityTextureName"            "zuus_lightning_bolt"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilitySound"                  "Hero_Zuus.GodsWrath"
-		"AbilityCastRange"							"%lightning_radius"
+		"AbilityCastRange"              "600"
+		"AbilityManaCost"               "500"
+		"AbilityCooldown"               "30"
 
 		"precache"
-		{           
-		"particle"          "particles/units/heroes/hero_invoker/invoker_invoke.vpcf"
-		"particle"          "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
-		"soundfile"         "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+		{
+			"particle"          "particles/units/heroes/hero_invoker/invoker_invoke.vpcf"
+			"particle"          "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+			"soundfile"         "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
 		}
 
-
-		
 		"AbilitySpecial"
 		{
-		"01"
-		{
-			"var_type"              "FIELD_INTEGER"
-			"lightning_radius"                "600"
-		}
-		"02"
-		{
-			"var_type"              				"FIELD_FLOAT"
-			"lightning_tick_interval_min"   "0.1"
-		}
-		"03"
-		{
-			"var_type"              				"FIELD_FLOAT"
-			"lightning_tick_interval_max"   ".8"
-		}
-		"04"
-		{
-			"var_type"              "FIELD_INTEGER"
-			"damage"                "200 225 250 300"
-		}
-		"05"
-		{
-			"var_type"              "FIELD_INTEGER"
-			"sight_radius"          "900"
-		}
-		"06"
-		{
-			"var_type"              "FIELD_INTEGER"
-			"sight_duration"        "2"
-		}
-		"07"
-		{
-			"var_type"              					"FIELD_INTEGER"
-			"lightning_bolt_search_radius"    "350"
-		}
+			"01"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"lightning_radius"                "600"
+			}
+			"02"
+			{
+				"var_type"              				"FIELD_FLOAT"
+				"lightning_tick_interval_min"     "0.2"
+			}
+      "03"
+      {
+        "var_type"                      "FIELD_FLOAT"
+        "lightning_tick_interval_max"     "0.7"
+      }
+			"04"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"damage"                "300 400 500"
+			}
+			"05"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"sight_radius"          "900"
+			}
+			"06"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"sight_duration"        "2"
+			}
+			"07"
+			{
+				"var_type"              					"FIELD_INTEGER"
+				"lightning_bolt_search_radius"    "400"
+			}
+			"08"
+			{
+				"var_type"              				"FIELD_FLOAT"
+				"percent_health_as_damage"   		"2.5 3.0 3.5 4.0"
+			}
+      "09"
+      {
+        "var_type"                "FIELD_INTEGER"
+        "duration"                "15"
+      }
 		}
 	}
 
-"static_link_lua"
+	"static_link_lua"
   {
     "BaseClass"           "ability_lua"
     "ScriptFile"          "heroes/static_link.lua"
@@ -11677,23 +11678,107 @@
       "01"
       {
         "var_type"        "FIELD_FLOAT"
-        "drain_length"      "8 9 10 11 12"
+        "drain_length"      "8.0 9.0 10.0 11.0"
       }
       "02"
       {
         "var_type"        "FIELD_INTEGER"
-        "drain_rate"      "30 35 40 45"
+        "drain_rate"      "60 70 80 90"
       }
       "03"
       {
         "var_type"        "FIELD_INTEGER"
-        "drain_range_buffer"  "200"
+        "drain_range_buffer"  "600"
       }
 
     }
   }
 
-	"speed_boat_wave"
+  "ball_lightning_lua"
+  {
+    "BaseClass"           "ability_lua"
+    "ScriptFile"          "heroes/ball_lightning.lua"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
+    "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
+    "AbilityTextureName"      "storm_spirit_ball_lightning"
+    "AbilityCastRange"       "900"
+    "AbilityCooldown"        "7.0 6.0 5.0 4.0"
+    "AbilityManaCost"        "100"
+
+    "AbilityCastPoint"        "0.3"
+
+    "precache"
+    {
+      "soundfile"         "soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
+      "soundfile"         "soundevents/game_sounds_heroes/game_sounds_vo_stormspirit.vsndevts"
+      "particle"          "particles/units/heroes/hero_stormspirit/stormspirit_ball_lightning.vpcf"
+    }
+
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"          "FIELD_INTEGER"
+        "ball_speed"        "1500"
+      }
+      "02"
+      {
+        "var_type"          "FIELD_INTEGER"
+        "damage_radius"     "125 200 275"
+      }
+      "03"
+      {
+        "var_type"          "FIELD_INTEGER"
+        "damage_per_units"  "50"
+      }
+      "04"
+      {   
+        "var_type"           "FIELD_INTEGER"
+        "ball_vision_radius" "1400"
+      }
+	  	"03"
+      {
+        "var_type"          "FIELD_INTEGER"
+        "damage_base"  "10"
+      }
+    }
+  }
+
+  "electric_bounce_lua"
+  {
+    "BaseClass"           "ability_lua"
+    "ScriptFile"          "heroes/electric_bounce.lua"
+    "AbilityTextureName"  "disruptor_kinetic_field"
+
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "SpellDispellableType"      "SPELL_DISPELLABLE_NO"
+
+    "AbilityCastPoint"        "0.0"
+    "AbilityManaCost"         "250"
+ 		"AbilityCooldown"       "24 22 20 18"
+
+    "precache"
+    {
+      "particle"  "particles/econ/events/ti7/mjollnir_shield_ti7.vpcf"
+      "soundfile" "sounds/weapons/hero/monkey_king/taunt_boing.vsnd"
+      "soundfile" "sounds/weapons/hero/witch_doctor/cask_bounce02.vsnd"
+      "soundfile" "sounds/items/item_mjoll_on.vsnd"
+    }
+
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"        "FIELD_FLOAT"
+        "duration"        "2.25 2.5 2.75 3"
+      }
+    }
+  }
+
+  "speed_boat_wave"
   {
     "BaseClass"           "ability_lua"
     "ScriptFile"          "heroes/speed_boat_wave.lua"
@@ -11729,89 +11814,6 @@
       {
         "var_type"          "FIELD_INTEGER"
         "damage_base"  "200 300 400 500"
-      }
-    }
-  }
-
-  "ball_lightning_lua"
-  {
-    "BaseClass"           "ability_lua"
-    "ScriptFile"          "heroes/ball_lightning.lua"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
-    "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
-    "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
-    "AbilityTextureName"      "storm_spirit_ball_lightning"
-    "AbilityManaCost"               "100"
-
-    "AbilityCastPoint"        "0.3"
-
-    "precache"
-    {
-      "soundfile"         "soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
-      "soundfile"         "soundevents/game_sounds_heroes/game_sounds_vo_stormspirit.vsndevts"
-      "particle"          "particles/units/heroes/hero_stormspirit/stormspirit_ball_lightning.vpcf"
-    }
-
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"          "FIELD_INTEGER"
-        "ball_speed"        "1500 1600 1700"
-      }
-      "02"
-      {
-        "var_type"          "FIELD_INTEGER"
-        "damage_radius"     "125 200 275"
-      }
-      "03"
-      {
-        "var_type"          "FIELD_INTEGER"
-        "damage_per_units"  "50"
-      }
-      "04"
-      {   
-        "var_type"           "FIELD_INTEGER"
-        "ball_vision_radius" "1400"
-      }
-	  "03"
-      {
-        "var_type"          "FIELD_INTEGER"
-        "damage_base"  "10"
-      }
-    }
-  }
-
-
-  "electric_bounce_lua"
-  {
-    "BaseClass"           "ability_lua"
-    "ScriptFile"          "heroes/electric_bounce.lua"
-    "AbilityTextureName"  "disruptor_kinetic_field"
-
-    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-    "SpellDispellableType"      "SPELL_DISPELLABLE_NO"
-
-    "AbilityCastPoint"        "0.0"
-    "AbilityManaCost"         "250"
- 	"AbilityCooldown"       "24 22 20 18"
-    "precache"
-    {
-      "particle"  "particles/econ/events/ti7/mjollnir_shield_ti7.vpcf"
-      "soundfile" "sounds/weapons/hero/monkey_king/taunt_boing.vsnd"
-      "soundfile" "sounds/weapons/hero/witch_doctor/cask_bounce02.vsnd"
-      "soundfile" "sounds/items/item_mjoll_on.vsnd"
-    }
-
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"        "FIELD_FLOAT"
-        "duration"        "2.25 2.5 2.75 3"
       }
     }
   }
