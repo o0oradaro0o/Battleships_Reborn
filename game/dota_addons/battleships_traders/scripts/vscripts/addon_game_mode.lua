@@ -8,6 +8,7 @@ require('StatCollection/init')
 -- This library can be used for starting customized animations on units from lua
 require('libraries/animations')
 
+require('util')
 
 
 if CBattleship8D == nil then
@@ -1732,7 +1733,7 @@ function CBattleship8D:HandleEmpGold()
   
 	  for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 		if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and hero:IsRealHero() then
-		  if g_HeroGoldArray[hero:GetPlayerOwnerID()]>0 and not hero:HasModifier("pergatory_perm") then
+		  if g_HeroGoldArray and g_HeroGoldArray[hero:GetPlayerOwnerID()]>0 and not hero:HasModifier("pergatory_perm") then
 			if hero:GetTeamNumber() == team then
 			  team_players = team_players + 1
 			  team_gold=team_gold + GetNetWorth(hero)
@@ -2907,15 +2908,11 @@ function CBattleship8D:HandleEmpGold()
   
 	end
   
-  
-  
-  
-  
-	if killedUnit:GetGoldBounty() and killerEntity:IsRealHero() and killerEntity:IsOwnedByAnyPlayer() then
-  
+	if killedUnit:GetGoldBounty() and killerEntity:IsOwnedByAnyPlayer() then
+
 	  local deathEffect = ParticleManager:CreateParticleForPlayer( "particles/basic_projectile/last_hit.vpcf", PATTACH_ABSORIGIN_FOLLOW, killedUnit,PlayerResource:GetPlayer(killerEntity:GetPlayerID()))
 	  Timers:CreateTimer(1, function()
-	  ParticleManager:DestroyParticle(deathEffect,false)
+	   ParticleManager:DestroyParticle(deathEffect,false)
 	  end)
 	  SendOverheadEventMessage(PlayerResource:GetPlayer(killerEntity:GetPlayerID()), OVERHEAD_ALERT_GOLD, killedUnit,  killedUnit:GetGoldBounty()/2, PlayerResource:GetPlayer(killerEntity:GetPlayerID()))
 		

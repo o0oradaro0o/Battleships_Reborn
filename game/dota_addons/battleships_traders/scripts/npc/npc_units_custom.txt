@@ -3,6 +3,35 @@
 {
 	"Version"	"1"
 	
+	"npc_dota_cloud_dragon_statue"
+  {
+    "BaseClass"                 "npc_dota_creature"
+    "Model"                     "models/props/traps/barking_dog/barking_dog.vmdl"
+    "Level"                     "1"
+    "VisbibleInPortraitOnly"    "0"
+    "IsSummoned"                "1"
+    
+    "Ability1"                  "cloud_dragon_breathe_fire_lua"
+    "Ability2"                  ""
+    "Ability3"                  ""
+    "Ability4"                  ""
+    "Ability5"                  ""
+    "Ability6"                  ""
+    "Ability7"                  ""
+    "Ability8"                  "ability_unselectable"
+
+    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"             "0"
+    "MovementTurnRate"          "0.25"
+
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+    "VisionDaytimeRange"        "500"
+    "VisionNighttimeRange"      "500"
+  }
+
 	//=================================================================================	
 	// Creature: small south boat
 	//=================================================================================

@@ -101,7 +101,7 @@ function thunder_storm:CastLightningBolt(ability, targetUnit, targetPoint)
 	if targetUnit then
     if targetUnit:IsRealHero() then
       caster:SetMana(caster:GetMana()+50)
-      damage = targetUnit:GetHealth() * percent_health_as_damage
+      damage = damage + (targetUnit:GetHealth() * percent_health_as_damage * .01)
     else
       caster:SetMana(caster:GetMana()+15)
     end

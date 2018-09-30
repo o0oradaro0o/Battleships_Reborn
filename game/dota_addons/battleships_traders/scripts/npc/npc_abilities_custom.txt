@@ -3,9 +3,141 @@
 {
 	"Version"		"1"
 
+	"ability_unselectable"
+  {
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    
+    "BaseClass"             "ability_datadriven"
+
+    "IsOnCastBar"                   "0"
+    
+    "Modifiers"
+    {
+      "modifier_unselectable"
+      {
+        "Passive" "1"
+        "States"
+        {
+          "MODIFIER_STATE_UNSELECTABLE"           "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_NO_UNIT_COLLISION"      "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_NOT_ON_MINIMAP"         "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_PROVIDES_VISION"        "MODIFIER_STATE_VALUE_DISABLED"
+          "MODIFIER_STATE_ROOTED"                 "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_DISARMED"               "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_INVULNERABLE"           "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_LOW_ATTACK_PRIORITY"    "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_BLOCK_DISABLED"         "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_NO_HEALTH_BAR"          "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_OUT_OF_GAME"            "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_BLIND"                  "MODIFIER_STATE_VALUE_ENABLED"
+        }
+      }
+    }
+  }
+
+	"ability_hide_healthbar"
+  {
+    "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"           "ability_datadriven"
+    "AbilityTextureName"  "rubick_empty1"
+    "MaxLevel"            "1"
+
+    "Modifiers"
+    {
+      "dummy_unit"
+      {
+      "Passive"           "1"
+      "IsHidden"          "1"    
+      "States"
+        {
+          "MODIFIER_STATE_NO_HEALTH_BAR"  "MODIFIER_STATE_VALUE_ENABLED"
+        }
+      }
+    }
+  }
+
+	"cloud_dragon_breathe_fire_lua"
+	{
+		"BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/junk_ship/cloud_dragon_breathe_fire"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "IsOnCastBar"                   "1"
+
+    "precache"
+    {
+      "particle"  "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+      "soundfile" "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+    }
+
+    "AbilityCastPoint"              "0"
+    "AbilityCooldown"               "0"
+    "AbilityManaCost"               "0"
+    
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"              "FIELD_INTEGER"
+        "start_radius"          "100"
+      }
+      "02"
+      {
+        "var_type"              "FIELD_INTEGER"
+        "end_radius"            "200"
+      }
+      "043"
+      {
+        "var_type"              "FIELD_INTEGER"
+        "speed"                 "750"
+      }
+      "04"
+      {
+        "var_type"              "FIELD_INTEGER"
+        "damage"           "100 200 300 400"
+      }
+      "05"
+      {
+        "var_type"              "FIELD_INTEGER"
+        "range"           			"600"
+      }
+    }
+	}
 	
-	
-	
+	"cloud_dragon_lua"
+	{
+		"BaseClass"									"ability_lua"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityTextureName"				"lina_dragon_slave_alt1"
+		"ScriptFile"								"heroes/junk_ship/cloud_dragon.lua"	
+
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"18.0 17.0 16.0 15.0"
+		"AbilityManaCost"				"0"
+
+		"precache"
+		{
+			"model"			"models/props/traps/barking_dog/barking_dog.vmdl"
+			"particle"  "particles/fire_trap/trap_breathe_fire.vpcf"
+      "soundfile" "soundevents/game_sounds_dungeon_enemies.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_tooltip"	"100 200 300 400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"6 7 8 9"
+			}
+		}
+	}
+
 	//=================================================================================================================
 	// pistols
 	//=================================================================================================================
@@ -198,23 +330,14 @@
 	//=================================================================================================================
 	"tighten_hoop"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"tinker_rearm"
 		
 		
 		"BaseClass" 					"ability_datadriven"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		
@@ -253,18 +376,10 @@
 
 				}
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				
-				
 			}
 			
 		}
 
-		
-		
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -274,7 +389,7 @@
 			}
 			"02"
 			{
-					"var_type"                                      "FIELD_FLOAT"
+					"var_type"                              "FIELD_FLOAT"
 					"health_regen"                          "4.0 6.0 8.0 10.0"
 			}
 		}
