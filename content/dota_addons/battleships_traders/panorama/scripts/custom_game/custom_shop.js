@@ -460,6 +460,7 @@ function buyBoat(BoatName, cost) {
 	
 	GameEvents.SendCustomGameEventToServer("buyBoat", { "text": BoatName, "cost": cost });
 	$("#" + BoatName).style.height = "0px";
+	
 	$.Schedule(.2, setSellValue);
 	
 	$.Schedule(.2, resetHeroIcons);

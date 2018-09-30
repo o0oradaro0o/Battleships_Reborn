@@ -1686,11 +1686,14 @@ function CBattleship8D:HandleEmpGold()
   
 	else
 	  g_TicksSinceEmpireGold = 0
-	  local goodGoldEach = 500 * g_EmpireGoldCount
-	  local badGoldEach = 500 * g_EmpireGoldCount
-	  if g_PlayerCountSouth ~= 0 and g_PlayerCountNorth ~= 0 then
-		goodGoldEach = goodGoldEach / g_PlayerCountSouth
-		badGoldEach = badGoldEach / g_PlayerCountNorth
+	  local goodGoldEach = 750 * g_EmpireGoldCount
+		local extra_base_gold = 0
+		if g_PlayerCountSouth>3 then
+			extra_base_gold = 166 * g_PlayerCountSouth-3
+		end
+		goodGoldEach=goodGoldEach+extra_base_gold
+	  if g_PlayerCountSouth ~= 0  then
+			goodGoldEach = goodGoldEach / g_PlayerCountSouth
 	  end
 	  Notifications:TopToAll({text="#emp_gold", duration=5.0, style={color="#B2B2B2",  fontSize="50px;"}})
 	  Notifications:TopToAll({text="#south_gets", duration=5.0, style={color="#B2B2B2",  fontSize="30px;"}})

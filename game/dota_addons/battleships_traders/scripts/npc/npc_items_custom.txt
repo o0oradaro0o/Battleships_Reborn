@@ -2051,7 +2051,6 @@
 		"AbilityCastRange"              "0"
 		"AbilityManaCost"               "0"
 		"AbilityCooldown"               "25"
-		"ItemDroppable"					"0"
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -2133,7 +2132,6 @@
 	"AbilityCastRange"              "0"
 		"AbilityManaCost"               "0"
 		"AbilityCooldown"               "25"
-		"ItemDroppable"					"0"
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -2216,7 +2214,6 @@
 	"AbilityCastRange"              "0"
 		"AbilityManaCost"               "0"
 		"AbilityCooldown"               "25"
-		"ItemDroppable"					"0"
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -2289,7 +2286,6 @@
 "AbilityCastRange"              "0"
 		"AbilityManaCost"               "0"
 		"AbilityCooldown"               "25"
-		"ItemDroppable"					"0"
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -13645,7 +13641,7 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dmg"			"80"
+				"dmg"			"55"
 			}
 			"02"
 			{
