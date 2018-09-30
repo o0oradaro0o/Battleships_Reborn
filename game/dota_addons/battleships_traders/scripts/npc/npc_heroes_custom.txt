@@ -1883,8 +1883,8 @@
 		"AbilityLayout"				"3"
 		"Ability1"					"static_link_lua"
 		"Ability2"					"electric_bounce_lua"
-		"Ability3"					"thunder_storm"
-		"Ability4"					"ball_lightning_lua"
+		"Ability3"					"ball_lightning_lua"
+		"Ability4"					"thunder_storm"
 
 		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"

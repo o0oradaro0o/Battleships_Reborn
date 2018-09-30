@@ -2708,11 +2708,11 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_rate"	".3"
+				"fire_rate"	"0.3"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"dmg"	"12"
 			}
 
@@ -12263,7 +12263,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/poison_ult_projectile2/venomancer_venomous_gale.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -12280,7 +12280,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/poison_ult_projectile2/venomancer_venomous_gale.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -12297,7 +12297,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/poison_ult_projectile2/venomancer_venomous_gale.vpcf" 
 					}
 					"TrackingProjectile"
 					{
@@ -12314,7 +12314,7 @@
 						"MoveSpeed" "700"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
+						"EffectName"    "particles/basic_projectile/poison_ult_projectile2/venomancer_venomous_gale.vpcf" 
 					}
 					
 				}
@@ -12384,12 +12384,12 @@
 			}
 			"02"
 			{
-				"var_type"	"FIELD_FLOAT"
+				"var_type"	"FIELD_INTEGER"
 				"dmg"		"163"
 			}
 			"03"
 			{
-				"var_type"	"FIELD_FLOAT"
+				"var_type"	"FIELD_INTEGER"
 				"damage"	"5"
 			}
 			"04"
