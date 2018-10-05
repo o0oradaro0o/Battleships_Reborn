@@ -53,10 +53,7 @@
 	m_Children = 
 	[
 		{
-			m_ChildRef = resource:"particles/basic_projectile/caulk_ult.vpcf"
-		},
-		{
-			m_ChildRef = resource:"particles/basic_projectile/caulk_ult_2.vpcf"
+			m_ChildRef = resource:"particles/basic_projectile/caulk_three_damage.vpcf"
 		},
 	]
 	m_bShouldSort = false

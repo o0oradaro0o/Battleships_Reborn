@@ -1736,13 +1736,19 @@ function CBattleship8D:HandleEmpGold()
   
 	  for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 		if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and hero:IsRealHero() then
-		  if g_HeroGoldArray and g_HeroGoldArray[hero:GetPlayerOwnerID()]>0 and not hero:HasModifier("pergatory_perm") then
-			if hero:GetTeamNumber() == team then
-			  team_players = team_players + 1
-			  team_gold=team_gold + GetNetWorth(hero)
-			else
-			  other_team_gold = other_team_gold + GetNetWorth(hero)
-			end
+      if not g_HeroGoldArray[hero:GetPlayerOwnerID()] then
+        if IsInToolsMode() then
+          g_HeroGoldArray[hero:GetPlayerOwnerID()] = 100000
+          print("Radar I'm So Sorry (Line ~1739 in addon_game_mode)")
+        end
+      end
+		  if g_HeroGoldArray[hero:GetPlayerOwnerID()]>0 and not hero:HasModifier("pergatory_perm") then
+  			if hero:GetTeamNumber() == team then
+  			  team_players = team_players + 1
+  			  team_gold=team_gold + GetNetWorth(hero)
+  			else
+  			  other_team_gold = other_team_gold + GetNetWorth(hero)
+  			end
 		  end
 		end
 	  end

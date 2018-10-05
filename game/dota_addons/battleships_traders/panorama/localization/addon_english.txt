@@ -1136,64 +1136,6 @@ DURATION: 2.5 3.0 3.5 4.0"
 			"DOTA_Tooltip_ability_item_breach_ult_bow_delay"									"Damage Delay:"
 		
 		
-		
-		"DOTA_Tooltip_ability_item_caulk_bow"									"caulk I"
-
-		"DOTA_Tooltip_ability_item_caulk_bow_Description"        				"Buy 2x to collapse to one slot 
-\n Level 1 caulk \n DOES NOT HIT ENEMIES \n DOES NOT HIT TOWERS \n Range: 650 \n  Heal Per Second: 20 \nWhen doubled, deals 10% of heal amount to enemies within 300 of the target"
-		
-		"DOTA_Tooltip_ability_item_caulk_bow_doubled"							"Double caulk I"
-
-		"DOTA_Tooltip_ability_item_caulk_bow_doubled_Description"					"\n Level 1 caulk Combo\n DOES NOT HIT ENEMIES \n DOES NOT HIT TOWERS \n  Range: 650 \n  Heal Per Second: 40 \nDoubled: Deals 10% of heal amount to enemies within 300 of the target"
-		
-		"DOTA_Tooltip_ability_item_caulk_two_bow"								"caulk II"
-
-		"DOTA_Tooltip_ability_item_caulk_two_bow_Description"        				"Buy 2x to collapse to one slot 
-\n Level 2 caulk\n DOES NOT HIT ENEMIES \n DOES NOT HIT TOWERS \n Range: 650 \n  Heal Per Second: 43 \nWhen doubled, deals 10% of heal amount to enemies within 300 of the target"
-		
-		"DOTA_Tooltip_ability_item_caulk_two_bow_doubled"						"Double caulk II"
-
-		"DOTA_Tooltip_ability_item_caulk_two_bow_doubled_Description"				"\n Level 2 caulk Combo\n DOES NOT HIT ENEMIES \n DOES NOT HIT TOWERS \n  Range: 650 \n  Heal Per Second: 86 \nDoubled: Deals 10% of heal amount to enemies within 300 of the target"
-		
-		"DOTA_Tooltip_ability_item_caulk_three_bow"							"caulk III"
-
-		"DOTA_Tooltip_ability_item_caulk_three_bow_Description"        				"Buy 2x to collapse to one slot 
-\n Level 3 caulk\n DOES NOT HIT ENEMIES \n DOES NOT HIT TOWERS \n Range: 650 \n  Heal Per Second: 86 \nWhen doubled, deals 10% of heal amount to enemies within 300 of the target"
-		
-		"DOTA_Tooltip_ability_item_caulk_three_bow_doubled"					"Double caulk III"
-
-		"DOTA_Tooltip_ability_item_caulk_three_bow_doubled_Description"			"\n Level 3 caulk Combo\n DOES NOT HIT ENEMIES \n DOES NOT HIT TOWERS \n Range: 650 \n  Heal Per Second: 173 \nDoubled: Deals 10% of heal amount to enemies within 300 of the target"
-		
-		"DOTA_Tooltip_ability_item_caulk_ult_bow"								"caulking gun"
-
-		"DOTA_Tooltip_ability_item_caulk_ult_bow_Description"        				" 
-\n Ultimate caulk\n DOES NOT HIT ENEMIES \n  DOES NOT HIT TOWERS \n Range: 650 \n  Heal Per Second: 345 \n Bonus: Deals 10% of heal amount to enemies within 300 of the target"
-
-		"DOTA_Tooltip_ability_item_caulk_ult_bow_rec"							"caulking gun"
-
-		"DOTA_Tooltip_ability_item_caulk_ult_bow_rec_Description"					"\n Ultimate caulk \n Range: 650 \n  Heal Per Second: 390 \n Bonus: Deals 10% of heal amount to enemies within 300 of the target"
-		
-				"DOTA_Tooltip_ability_item_caulk_bow_fire_rate"							"Reload Delay(S):"
-		"DOTA_Tooltip_ability_item_caulk_bow_dmg"									"Damage:"
-		"DOTA_Tooltip_ability_item_caulk_bow_doubled_fire_rate"							"Reload Delay(S):"
-		"DOTA_Tooltip_ability_item_caulk_bow_doubled_dmg"									"heal(x2):"
-		"DOTA_Tooltip_ability_item_caulk_two_bow_fire_rate"							"Reload Delay(S):"
-		"DOTA_Tooltip_ability_item_caulk_two_bow_dmg"									"heal:"
-		"DOTA_Tooltip_ability_item_caulk_two_bow_doubled_fire_rate"							"Reload Delay(S):"
-		"DOTA_Tooltip_ability_item_caulk_two_bow_doubled_dmg"									"heal(x2):"
-		"DOTA_Tooltip_ability_item_caulk_three_bow_fire_rate"							"Reload Delay(S):"
-		"DOTA_Tooltip_ability_item_caulk_three_bow_dmg"									"heal:"
-		"DOTA_Tooltip_ability_item_caulk_three_bow_doubled_fire_rate"							"Reload Delay(S):"
-		"DOTA_Tooltip_ability_item_caulk_three_bow_doubled_dmg"									"heal(x2):"
-		"DOTA_Tooltip_ability_item_caulk_ult_bow_fire_rate"							"Reload Delay(S):"
-		"DOTA_Tooltip_ability_item_caulk_ult_bow_dmg"									"heal/4:"
-		"DOTA_Tooltip_ability_item_caulk_ult_bow_rec_fire_rate"							"Reload Delay(S):"
-		"DOTA_Tooltip_ability_item_caulk_ult_bow_rec_dmg"									"heal:"
-		
-			
-		
-		
-		
 	"DOTA_Tooltip_ability_item_wind_bow"								"Wind I"
 
 		"DOTA_Tooltip_ability_item_wind_bow_Description"        				"Buy 2x to collapse to one slot 
@@ -1859,45 +1801,6 @@ DURATION: 2.5 3.0 3.5 4.0"
 		"DOTA_Tooltip_item_spin_ult_bow_shooting_rec"							"Cluster shuriken"
 
 		"DOTA_Tooltip_item_spin_ult_bow_shooting_rec_Description"					"\n Ultimate Iron \n Range: 1100 \n  DPS: 220 \n Bonus: Reduces target's movement speed by 15 percent for 2 seconds"
-		
-		
-		
-
-		
-		"DOTA_Tooltip_item_caulk_bow_shooting"								"caulk I"
-
-		"DOTA_Tooltip_item_caulk_bow_shooting_Description"						"\n Level 1 caulk \n DOES NOT HIT ENEMIES \n DOES NOT HIT TOWERS \n Range: 650 \n  Heal Per Second: 20 \nWhen doubled, deals 10% of heal amount to enemies within 300 of the target"
-		
-		"DOTA_Tooltip_item_caulk_bow_shooting_doubled"						"Double caulk I"
-		
-		"DOTA_Tooltip_item_caulk_bow_shooting_doubled_Description"				"\n Level 1 caulk Combo\n DOES NOT HIT ENEMIES \n DOES NOT HIT TOWERS \n  Range: 650 \n  Heal Per Second: 40 \nDoubled: Deals 10% of heal amount to enemies within 300 of the target"
-		
-		"DOTA_Tooltip_item_caulk_two_bow_shooting"							"caulk II"
-
-		"DOTA_Tooltip_item_caulk_two_bow_shooting_Description"					"\n Level 2 caulk\n DOES NOT HIT ENEMIES \n DOES NOT HIT TOWERS \n Range: 650 \n  Heal Per Second: 43 \nWhen doubled, deals 10% of heal amount to enemies within 300 of the target"
-		
-		"DOTA_Tooltip_item_caulk_two_bow_shooting_doubled"					"Double caulk II"
-
-		"DOTA_Tooltip_item_caulk_two_bow_shooting_doubled_Description"			"\n Level 2 caulk Combo\n DOES NOT HIT ENEMIES \n DOES NOT HIT TOWERS \n  Range: 650 \n  Heal Per Second: 86 \nDoubled: Deals 10% of heal amount to enemies within 300 of the target"
-		
-		
-		"DOTA_Tooltip_item_caulk_three_bow_shooting"							"caulk III"
-
-		"DOTA_Tooltip_item_caulk_three_bow_shooting_Description"					"\n Level 3 caulk\n DOES NOT HIT ENEMIES \n DOES NOT HIT TOWERS \n Range: 650 \n  Heal Per Second: 86 \nWhen doubled, deals 10% of heal amount to enemies within 300 of the target"
-		
-		
-		"DOTA_Tooltip_item_caulk_three_bow_shooting_doubled"					"Double caulk III"
-
-		"DOTA_Tooltip_item_caulk_three_bow_shooting_doubled_Description"		"\n Level 3 caulk Combo\n DOES NOT HIT ENEMIES \n DOES NOT HIT TOWERS \n Range: 650 \n  Heal Per Second: 173 \nDoubled: Deals 10% of heal amount to enemies within 300 of the target"
-		
-		"DOTA_Tooltip_item_caulk_ult_bow_shooting"							"caulking gun"
-
-		"DOTA_Tooltip_item_caulk_ult_bow_shooting_Description"				"\n Ultimate caulk\n DOES NOT HIT ENEMIES \n  DOES NOT HIT TOWERS \n Range: 650 \n  Heal Per Second: 345 \n Bonus: Deals 10% of heal amount to enemies within 300 of the target"
-
-		"DOTA_Tooltip_item_caulk_ult_bow_shooting_rec"						"caulking gun"
-		
-		
-		
 		
 		
 			"DOTA_Tooltip_item_breach_bow_shooting"									"Hull Breaching Mines I"
