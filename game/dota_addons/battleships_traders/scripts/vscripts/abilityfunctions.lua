@@ -760,7 +760,7 @@ function TeleHome(keys) -- keys is the information sent by the ability
 			local casterUnit = EntIndexToHScript(keys.caster_entindex)
 			local vecorig = Vector(0, 0, 0)
 			if casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-				vecorig = Vector(-30, -5604, 0) + RandomVector(RandomFloat(0, 100))
+				vecorig = Vector(-30, -5104, 0) + RandomVector(RandomFloat(0, 100))
 			elseif casterUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 				vecorig = Vector(0, 5540, 0) + RandomVector(RandomFloat(0, 100))
 			end

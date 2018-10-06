@@ -221,7 +221,7 @@
 		"AbilityLayout"				"3"
 		"Ability1"					"pistols_battleship"
 		"Ability2"					"war_drumbs_battleship"
-		"Ability3"					"might_battleship"
+		"Ability3"					"might_battleship_two"
 		"Ability4"					"batten_hatches"
 		
 		"Ability10"					"bships_empty"
