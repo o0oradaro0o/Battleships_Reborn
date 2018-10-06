@@ -1,7 +1,418 @@
 "DOTAAbilities"
 {
 
+  "item_caulk_bow"
+  {
+    "ID"                            "2222"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"                     "item_lua"
+    "ScriptFile"                    "items/item_caulk"
+    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+    "AbilityTextureName"            "item_caulk_bow"
+    "AbilityCastRange"              "650"
+    "AbilityCooldown"               "0"
+    "AbilityManaCost"               "0"
+    "ItemCost"                      "350" 
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemKillable"          "0"
+    "ItemQuality"         "epic"
+  
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "damage"      "18.0"
+      }
+      "02"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "fire_rate"   "1.2"
+      }
+      "03"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "range"       "650"
+      }
+      "04"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "level"       "1"
+      }
+      "05"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "doubled"     "0"
+      }
+      "06"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "speed"       "950"
+      }
+      "07"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dps"         "15.0"
+      }
+    }
+  }
 
+  "item_caulk_bow_doubled"
+  {
+    "ID"                            "2223"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"                     "item_lua"
+    "ScriptFile"                    "items/item_caulk"
+    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+    "AbilityTextureName"            "item_caulk_bow_doubled"
+    "AbilityCastRange"              "650"
+    "AbilityCooldown"               "0"
+    "AbilityManaCost"               "0"
+    "ItemCost"                      "350" 
+    "ItemDroppable"                 "1"
+    "ItemSellable"                  "1"
+    "ItemKillable"                  "0"
+    "ItemQuality"                   "epic"
+  
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "damage"      "18.0"
+      }
+      "02"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "fire_rate"   "1.2"
+      }
+      "03"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "range"       "650"
+      }
+      "04"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "level"       "1"
+      }
+      "05"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "doubled"     "1"
+      }
+      "06"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "speed"       "950"
+      }
+      "07"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dps"         "30.0"
+      }
+    }
+  }
+
+  "item_caulk_two_bow"
+  {
+    "ID"                            "2224"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"                     "item_lua"
+    "ScriptFile"                    "items/item_caulk"
+    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+    "AbilityTextureName"            "item_caulk_two_bow"
+    "AbilityCastRange"              "650"
+    "AbilityCooldown"               "0"
+    "AbilityManaCost"               "0"
+    "ItemCost"                      "350" 
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemKillable"          "0"
+    "ItemQuality"         "epic"
+  
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "damage"      "39.0"
+      }
+      "02"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "fire_rate"   "1.2"
+      }
+      "03"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "range"       "650"
+      }
+      "04"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "level"     "2"
+      }
+      "05"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "doubled"     "0"
+      }
+      "06"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "speed"       "950"
+      }
+      "07"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dps"         "32.0"
+      }
+    }
+  }
+
+  "item_caulk_two_bow_doubled"
+  {
+    "ID"                            "2225"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"                     "item_lua"
+    "ScriptFile"                    "items/item_caulk"
+    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+    "AbilityTextureName"            "item_caulk_two_bow_doubled"
+    "AbilityCastRange"              "650"
+    "AbilityCooldown"               "0"
+    "AbilityManaCost"               "0"
+    "ItemCost"                      "350" 
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemKillable"          "0"
+    "ItemQuality"         "epic"
+  
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "damage"      "39.0"
+      }
+      "02"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "fire_rate"   "1.2"
+      }
+      "03"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "range"       "650"
+      }
+      "04"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "level"       "2"
+      }
+      "05"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "doubled"     "1"
+      }
+      "06"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "speed"       "950"
+      }
+      "07"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dps"         "65.0"
+      }
+    }
+  }
+
+  "item_caulk_three_bow"
+  {
+    "ID"                            "2226"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"                     "item_lua"
+    "ScriptFile"                    "items/item_caulk"
+    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+    "AbilityTextureName"            "item_caulk_three_bow"
+    "AbilityCastRange"              "650"
+    "AbilityCooldown"               "0"
+    "AbilityManaCost"               "0"
+    "ItemCost"                      "350" 
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemKillable"          "0"
+    "ItemQuality"         "epic"
+  
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "damage"      "96.0"
+      }
+      "02"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "fire_rate"   "1.2"
+      }
+      "03"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "range"       "650"
+      }
+      "04"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "level"     "3"
+      }
+      "05"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "doubled"     "0"
+      }
+      "06"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "speed"       "950"
+      }
+      "07"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dps"         "80.0"
+      }
+    }
+  }
+
+  "item_caulk_three_bow_doubled"
+  {
+    "ID"                            "2227"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"                     "item_lua"
+    "ScriptFile"                    "items/item_caulk"
+    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+    "AbilityTextureName"            "item_caulk_three_bow_doubled"
+    "AbilityCastRange"              "650"
+    "AbilityCooldown"               "0"
+    "AbilityManaCost"               "0"
+    "ItemCost"                      "350" 
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemKillable"          "0"
+    "ItemQuality"         "epic"
+  
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "damage"      "96.0"
+      }
+      "02"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "fire_rate"   "1.2"
+      }
+      "03"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "range"       "650"
+      }
+      "04"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "level"       "3"
+      }
+      "05"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "doubled"     "1"
+      }
+      "06"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "speed"       "950"
+      }
+      "07"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dps"         "160.0"
+      }
+    }
+  }
+
+  "item_caulk_ult_bow"
+  {
+    "ID"                            "2228"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"                     "item_lua"
+    "ScriptFile"                    "items/item_caulk"
+    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+    "AbilityTextureName"            "item_caulk_ult_bow"
+    "AbilityCastRange"              "650"
+    "AbilityCooldown"               "0"
+    "AbilityManaCost"               "0"
+    "ItemCost"                      "350" 
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemKillable"          "0"
+    "ItemQuality"         "epic"
+  
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "damage"      "96.0"
+      }
+      "02"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "fire_rate"   "1.2"
+      }
+      "03"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "range"       "650"
+      }
+      "04"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "level"       "4"
+      }
+      "05"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "doubled"     "1"
+      }
+      "06"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "speed"       "950"
+      }
+      "07"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dps"         "320.0"
+      }
+    }
+  }
 
 	//=================================================================================================
 	//=================================================================================================
@@ -4282,113 +4693,7 @@
 
 		}
 	}
-	
-	
-	//===============================================
-	// caulk-bow
-	//===============================================
-    "item_caulk_bow"
-	{
-		"ID"                            "1009"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"                     "item_datadriven"
-		"Model"							"models/props_gameplay/divine_rapier.vmdl"
-		"AbilityTextureName"			"item_caulk_bow"
-		"AbilityCastRange"              "%range"
-		"AbilityCooldown"               "0"
-		"AbilityManaCost"               "0"
-		"ItemCost"                      "350" 
-		"ItemDroppable"					"1"
-		"ItemSellable"					"1"
-		"ItemKillable"					"0"
-		"ItemQuality"					"epic"
-	
-		
-		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		
-		
-		"Modifiers"
-		{
-			
-			
-			"item_caulk_bow_shooting"
-			{
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"ThinkInterval"		"%fire_rate"
-				"Passive"	 		"1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-						"Function"			"plasmaSoundFire"
-					}
-					
-					"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/itemfunctions.lua"
-						"Function"			"fireCaulkWeapon"
-					}
-					
-					
-					
-				}
-				
-			}
-		}
-		"OnProjectileHitUnit"
-		{
-			"RunScript"
-			{
-				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-				"Function"			"plasmaSoundImpact"
-			}
-		
-			"DeleteOnHit"                           "false"
-			"Heal"
-			{
-					"HealAmount"                            "%dmg"
-					"Target"                                "TARGET"
-			}
-				
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg"			"24"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"1.2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"range"			"650"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_aoe"		"2.4"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_range"		"300"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_pct"		"10"
-			}
 
-		}
-	}
-	
-	
 	//===============================================
 	// breach-bow
 	//===============================================
@@ -5606,118 +5911,8 @@
 				"var_type"		"FIELD_FLOAT"
 				"dps"			"52"
 			}
-
-
 		}
-	}
-	
-	//===============================================
-	// caulk-bow two
-	//===============================================
-    "item_caulk_two_bow"
-	{
-		"ID"                            "1109"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"                     "item_datadriven"
-		"Model"								"models/props_gameplay/divine_rapier.vmdl"
-		"AbilityTextureName"				"item_caulk_two_bow"
-		"AbilityCastRange"              "%range"
-		"AbilityCooldown"               "0"
-		"AbilityManaCost"               "0"
-		"ItemCost"                      "950" 
-		"ItemDroppable"					"1"
-		"ItemSellable"					"1"
-		"ItemKillable"					"0"
-		"ItemQuality"					"epic"
-	
-		
-		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		
-		
-		"Modifiers"
-		{
-			
-			
-			"item_caulk_two_bow_shooting"
-			{
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-				"ThinkInterval"		"%fire_rate"
-				"Passive"	 "1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-						"Function"			"plasmaSoundFire"
-					}
-					
-						"RunScript"
-					{
-						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-						"Function"			"fireCaulkWeapon"
-					}
-					
-					
-					
-				}
-				
-			}
-		}
-		"OnProjectileHitUnit"
-		{
-			"RunScript"
-			{
-				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-				"Function"			"plasmaSoundImpact"
-			}
-		
-			"DeleteOnHit"                           "false"
-				"Heal"
-			{
-					"HealAmount"                                "%dmg"
-					"Target"                                "TARGET"
-			}
-				
-				
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg"			"45"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"1.2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"range"			"650"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_aoe"		"4.5"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_range"		"300"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_pct"		"10"
-			}
-		}
-	}
-	
-	
-	
-		
+	}		
 	//===============================================
 	// breach-bow two
 	//===============================================
@@ -6929,112 +7124,7 @@
 
 		}
 	}
-	
 	//===============================================
-	// caulk-bow three
-	//===============================================
-    "item_caulk_three_bow"
-	{
-		"ID"                            "1209"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"                     "item_datadriven"
-		"Model"								"models/props_gameplay/divine_rapier.vmdl"
-		"AbilityTextureName"				"item_caulk_three_bow"
-		"AbilityCastRange"              "%range"
-		"AbilityCooldown"               "0"
-		"AbilityManaCost"               "0"
-		"ItemCost"                      "2200" 
-		"ItemDroppable"					"1"
-		"ItemSellable"					"1"
-		"ItemKillable"					"0"
-		"ItemQuality"					"epic"
-	
-		
-		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		
-		
-		"Modifiers"
-		{
-			
-			
-			"item_caulk_three_bow_shooting"
-			{
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-				"ThinkInterval"		"%fire_rate"
-				"Passive"	 "1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-						"Function"			"plasmaSoundFire"
-					}
-					
-						"RunScript"
-					{
-						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-						"Function"			"fireCaulkWeapon"
-					}
-					
-					
-					
-				}
-				
-			}
-		}
-		"OnProjectileHitUnit"
-		{
-			"RunScript"
-			{
-				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-				"Function"			"plasmaSoundImpact"
-			}
-		
-			"DeleteOnHit"                           "false"
-			"Heal"
-			{
-					"HealAmount"                                "%dmg"
-					"Target"                                "TARGET"
-			}
-				
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg"			"103"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"1.2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"range"			"650"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_aoe"		"10.3"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_range"		"300"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_pct"		"10"
-			}
-
-		}
-	}
-	
-		//===============================================
 	// breach-bow three
 	//===============================================
     "item_breach_three_bow"
@@ -8519,128 +8609,6 @@
 				"dps"			"52"
 			}
 
-
-		}
-	}
-	
-	//===============================================
-	// caulk-bow_doubled
-	//===============================================
-    "item_caulk_bow_doubled"
-	{
-		"ID"                            "1509"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"                     "item_datadriven"
-		"Model"								"models/props_gameplay/divine_rapier.vmdl"
-		"AbilityTextureName"				"item_caulk_bow_doubled"
-		"AbilityCastRange"              "%range"
-		"AbilityCooldown"               "0"
-		"AbilityManaCost"               "0"
-		"ItemCost"                      "700" 
-		"ItemDroppable"					"1"
-		"ItemSellable"					"1"
-		"ItemKillable"					"0"
-		"ItemQuality"					"epic"
-	
-		
-		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		
-		
-		"Modifiers"
-		{
-			
-			
-			"item_caulk_bow_doubled_shooting"
-			{
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-				"ThinkInterval"		"%fire_rate"
-				"Passive"	 "1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-						"Function"			"plasmaSoundFire"
-					}
-					
-						"RunScript"
-					{
-						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-						"Function"			"fireCaulkWeapon"
-					}
-						"RunScript"
-					{
-						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-						"Function"			"fireCaulkWeapon"
-					}
-					
-					
-				}
-				
-			}
-		}
-		"OnProjectileHitUnit"
-		{
-			"RunScript"
-			{
-				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-				"Function"			"plasmaSoundImpact"
-			}
-		
-			"DeleteOnHit"                           "false"
-			"Heal"
-			{
-					"HealAmount"                                "%dmg"
-					"Target"                                "TARGET"
-			}
-			"Damage"
-			{
-					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
-					"Damage"                                "dmg_aoe"
-					"Target"
-					{
-						"Center" "TARGET"
-						"Radius" "300"
-						"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-						"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-						"MaxTargets" "30"
-					}
-			}
-				
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg"			"24"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"1.2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"range"			"650"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_aoe"		"2.4"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_range"		"300"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_pct"		"10"
-			}
 
 		}
 	}
@@ -10133,126 +10101,6 @@
 
 		}
 	}
-		//===============================================
-	// caulk-bow two doubled
-	//===============================================
-    "item_caulk_two_bow_doubled"
-	{
-		"ID"                            "1609"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"                     "item_datadriven"
-		"Model"								"models/props_gameplay/divine_rapier.vmdl"
-		"AbilityTextureName"				"item_caulk_two_bow_doubled"
-		"AbilityCastRange"              "%range"
-		"AbilityCooldown"               "0"
-		"AbilityManaCost"               "0"
-		"ItemCost"                      "1900" 
-		"ItemDroppable"					"1"
-		"ItemSellable"					"1"
-		"ItemKillable"					"0"
-		"ItemQuality"					"epic"
-	
-		
-		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		
-		
-		"Modifiers"
-		{
-			
-			
-			"item_caulk_two_bow_doubled_shooting"
-			{
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-				"ThinkInterval"		"%fire_rate"
-				"Passive"	 "1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-						"Function"			"plasmaSoundFire"
-					}
-						"RunScript"
-					{
-						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-						"Function"			"fireCaulkWeapon"
-					}
-						"RunScript"
-					{
-						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-						"Function"			"fireCaulkWeapon"
-					}
-					
-				}
-				
-			}
-		}
-		"OnProjectileHitUnit"
-		{
-			"RunScript"
-			{
-				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-				"Function"			"plasmaSoundImpact"
-			}
-		
-			"DeleteOnHit"                           "false"
-				"Heal"
-			{
-					"HealAmount"                                "%dmg"
-					"Target"                                "TARGET"
-			}
-			"Damage"
-			{
-					"Type"                                  "DAMAGE_TYPE_PHYSICAL"
-					"Damage"                                "dmg_aoe"
-					"Target"
-					{
-						"Center" "TARGET"
-						"Radius" "300"
-						"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-						"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-						"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-						"MaxTargets" "30"
-					}
-			}
-				
-				
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg"			"45"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"1.2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"range"			"650"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_aoe"		"4.5"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_range"		"300"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_pct"		"10"
-			}
-		}
-	}
-	
 	
 	//===============================================
 	// breach-bow_doubled two
@@ -11758,132 +11606,6 @@
 
 		}
 	}
-	
-		
-	//===============================================
-	// caulk-bow three_doubled
-	//===============================================
-    "item_caulk_three_bow_doubled"
-	{
-		"ID"                            "1709"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"                     "item_datadriven"
-		"Model"								"models/props_gameplay/divine_rapier.vmdl"
-		"AbilityTextureName"				"item_caulk_three_bow_doubled"
-		"AbilityCastRange"              "%range"
-		"AbilityCooldown"               "0"
-		"AbilityManaCost"               "0"
-		"ItemCost"                      "4400" 
-		"ItemDroppable"					"1"
-		"ItemSellable"					"1"
-		"ItemKillable"					"0"
-		"ItemQuality"					"epic"
-	
-		
-		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		
-		
-		"Modifiers"
-		{
-			
-			
-			"item_caulk_three_bow_doubled_shooting"
-			{
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-				"ThinkInterval"		"%fire_rate"
-				"Passive"	 "1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-						"Function"			"plasmaSoundFire"
-					}
-					
-						"RunScript"
-					{
-						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-						"Function"			"fireCaulkWeapon"
-					}
-						"RunScript"
-					{
-						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-						"Function"			"fireCaulkWeapon"
-					}
-					
-					
-					
-				}
-				
-			}
-		}
-		"OnProjectileHitUnit"
-		{
-			"RunScript"
-			{
-				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-				"Function"			"plasmaSoundImpact"
-			}
-		
-			"DeleteOnHit"                           "false"
-			"Heal"
-			{
-					"HealAmount"                                "%dmg"
-					"Target"                                "TARGET"
-			}
-			
-				"Damage"
-				{
-						"Type"                                  "DAMAGE_TYPE_PHYSICAL"
-						"Damage"                                "dmg_aoe"
-						"Target"
-						{
-							"Center" "TARGET"
-							"Radius" "300"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "30"
-						}
-				}
-				
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg"			"103"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"1.2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"range"			"650"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_aoe"		"10.3"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_range"		"300"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_pct"		"10"
-			}
-
-		}
-	}
-	
 	
 	//===============================================
 	// breach-bow_doubled three
@@ -13677,140 +13399,7 @@
 
 		}
 	}
-	
-	//===============================================
-	// caulk-bow ult
-	//===============================================
-    "item_caulk_ult_bow"
-	{
-		"ID"                            "1309"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"                     "item_datadriven"
-		"Model"								"models/props_gameplay/divine_rapier.vmdl"
-		"AbilityTextureName"				"item_caulk_ult_bow"
-		"AbilityCastRange"              "%range"
-		"AbilityCooldown"               "0"
-		"AbilityManaCost"               "0"
-		"ItemCost"                      "10700" 
-		"ItemDroppable"					"1"
-		"ItemSellable"					"1"
-		"ItemKillable"					"0"
-		"ItemQuality"					"epic"
-	
-		
-		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		
-		
-		"Modifiers"
-		{
-			
-			
-			"item_caulk_ult_bow_shooting"
-			{
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-				"ThinkInterval"		"%fire_rate"
-				"Passive"	 "1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-						"Function"			"plasmaSoundFire"
-					}
-					
-					"RunScript"
-					{
-						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-						"Function"			"fireCaulkWeapon"
-					}
-					"RunScript"
-					{
-						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-						"Function"			"fireCaulkWeapon"
-					}
-					"RunScript"
-					{
-						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-						"Function"			"fireCaulkWeapon"
-					}
-					"RunScript"
-					{
-						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
-						"Function"			"fireCaulkWeapon"
-					}
-					
-					
-					
-				}
-				
-			}
-		}
-		"OnProjectileHitUnit"
-		{
-			"RunScript"
-			{
-				"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
-				"Function"			"plasmaSoundImpact"
-			}
-		
-			"DeleteOnHit"                           "false"
-			"Heal"
-			{
-					"HealAmount"                                "%dmg"
-					"Target"                                "TARGET"
-			}
-			"Damage"
-				{
-						"Type"                                  "DAMAGE_TYPE_PHYSICAL"
-						"Damage"                                "dmg_aoe"
-						"Target"
-						{
-							"Center" "TARGET"
-							"Radius" "300"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "30"
-						}
-				}
-				
-				
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg"			"98"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"1.2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"range"			"650"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_aoe"		"39.2"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_range"		"300"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"dmg_pct"		"10"
-			}
-		}
-	}
-	
+
 	//===============================================
 	// breach-bow ult
 	//===============================================

@@ -289,24 +289,3 @@ function RewardGold(caster, rewardAmount)
         end)
     end
 end
-
-
-
-function GetRandomTableElement( myTable )
-    -- iterate over whole table to get all keys
-    
-    local keyset = {}
-    for k in pairs(myTable) do
-        table.insert(keyset, k)
-    end
-    -- now you can reliably return a random key
-    return myTable[keyset[RandomInt(1, #keyset)]]
-  end
-  
-  function TableCount( t )
-    local n = 0
-    for _ in pairs( t ) do
-      n = n + 1
-    end
-    return n
-  end

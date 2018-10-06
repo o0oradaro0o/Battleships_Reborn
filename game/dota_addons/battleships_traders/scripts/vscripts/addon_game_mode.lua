@@ -8,6 +8,7 @@ require('StatCollection/init')
 -- This library can be used for starting customized animations on units from lua
 require('libraries/animations')
 
+require('util')
 
 
 if CBattleship8D == nil then
@@ -1735,13 +1736,19 @@ function CBattleship8D:HandleEmpGold()
   
 	  for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 		if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and hero:IsRealHero() then
+      if not g_HeroGoldArray[hero:GetPlayerOwnerID()] then
+        if IsInToolsMode() then
+          g_HeroGoldArray[hero:GetPlayerOwnerID()] = 100000
+          print("Radar I'm So Sorry (Line ~1739 in addon_game_mode)")
+        end
+      end
 		  if g_HeroGoldArray[hero:GetPlayerOwnerID()]>0 and not hero:HasModifier("pergatory_perm") then
-			if hero:GetTeamNumber() == team then
-			  team_players = team_players + 1
-			  team_gold=team_gold + GetNetWorth(hero)
-			else
-			  other_team_gold = other_team_gold + GetNetWorth(hero)
-			end
+  			if hero:GetTeamNumber() == team then
+  			  team_players = team_players + 1
+  			  team_gold=team_gold + GetNetWorth(hero)
+  			else
+  			  other_team_gold = other_team_gold + GetNetWorth(hero)
+  			end
 		  end
 		end
 	  end
@@ -2910,15 +2917,11 @@ function CBattleship8D:HandleEmpGold()
   
 	end
   
-  
-  
-  
-  
-	if killedUnit:GetGoldBounty() and killerEntity:IsRealHero() and killerEntity:IsOwnedByAnyPlayer() then
-  
+	if killedUnit:GetGoldBounty() and killerEntity:IsOwnedByAnyPlayer() then
+
 	  local deathEffect = ParticleManager:CreateParticleForPlayer( "particles/basic_projectile/last_hit.vpcf", PATTACH_ABSORIGIN_FOLLOW, killedUnit,PlayerResource:GetPlayer(killerEntity:GetPlayerID()))
 	  Timers:CreateTimer(1, function()
-	  ParticleManager:DestroyParticle(deathEffect,false)
+	   ParticleManager:DestroyParticle(deathEffect,false)
 	  end)
 	  SendOverheadEventMessage(PlayerResource:GetPlayer(killerEntity:GetPlayerID()), OVERHEAD_ALERT_GOLD, killedUnit,  killedUnit:GetGoldBounty()/2, PlayerResource:GetPlayer(killerEntity:GetPlayerID()))
 		
