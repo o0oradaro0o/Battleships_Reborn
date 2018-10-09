@@ -25,7 +25,7 @@
       "01"
       {
         "var_type"    "FIELD_FLOAT"
-        "damage"      "18.0"
+        "dmg"      "18.0"
       }
       "02"
       {
@@ -45,7 +45,7 @@
       "05"
       {
         "var_type"    "FIELD_INTEGER"
-        "doubled"     "0"
+        "doubled_wep"     "0"
       }
       "06"
       {
@@ -84,7 +84,7 @@
       "01"
       {
         "var_type"    "FIELD_FLOAT"
-        "damage"      "18.0"
+        "dmg"      "18.0"
       }
       "02"
       {
@@ -104,7 +104,7 @@
       "05"
       {
         "var_type"    "FIELD_INTEGER"
-        "doubled"     "1"
+        "doubled_wep"     "1"
       }
       "06"
       {
@@ -143,7 +143,7 @@
       "01"
       {
         "var_type"    "FIELD_FLOAT"
-        "damage"      "39.0"
+        "dmg"      "39.0"
       }
       "02"
       {
@@ -163,7 +163,7 @@
       "05"
       {
         "var_type"    "FIELD_INTEGER"
-        "doubled"     "0"
+        "doubled_wep"     "0"
       }
       "06"
       {
@@ -202,7 +202,7 @@
       "01"
       {
         "var_type"    "FIELD_FLOAT"
-        "damage"      "39.0"
+        "dmg"      "39.0"
       }
       "02"
       {
@@ -222,7 +222,7 @@
       "05"
       {
         "var_type"    "FIELD_INTEGER"
-        "doubled"     "1"
+        "doubled_wep"     "1"
       }
       "06"
       {
@@ -261,7 +261,7 @@
       "01"
       {
         "var_type"    "FIELD_FLOAT"
-        "damage"      "96.0"
+        "dmg"      "96.0"
       }
       "02"
       {
@@ -281,7 +281,7 @@
       "05"
       {
         "var_type"    "FIELD_INTEGER"
-        "doubled"     "0"
+        "doubled_wep"     "0"
       }
       "06"
       {
@@ -320,7 +320,7 @@
       "01"
       {
         "var_type"    "FIELD_FLOAT"
-        "damage"      "96.0"
+        "dmg"      "96.0"
       }
       "02"
       {
@@ -340,7 +340,7 @@
       "05"
       {
         "var_type"    "FIELD_INTEGER"
-        "doubled"     "1"
+        "doubled_wep"     "1"
       }
       "06"
       {
@@ -379,7 +379,7 @@
       "01"
       {
         "var_type"    "FIELD_FLOAT"
-        "damage"      "96.0"
+        "dmg"      "96.0"
       }
       "02"
       {
@@ -399,7 +399,7 @@
       "05"
       {
         "var_type"    "FIELD_INTEGER"
-        "doubled"     "1"
+        "doubled_wep"     "1"
       }
       "06"
       {

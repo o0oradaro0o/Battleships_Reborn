@@ -6,7 +6,7 @@
 	"npc_dota_cloud_dragon_statue"
   {
     "BaseClass"                 "npc_dota_creature"
-    "Model"                     "models/props/traps/barking_dog/barking_dog.vmdl"
+    "Model"                     "models/props_structures/tower_dragon_wght_dest_lvl1.vmdl"
     "Level"                     "1"
     "VisbibleInPortraitOnly"    "0"
     "IsSummoned"                "1"

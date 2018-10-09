@@ -55,7 +55,7 @@ function cloud_dragon_breathe_fire_lua:OnProjectileHit( hTarget, vLocation )
     
     local damage = {
       victim = hTarget,
-      attacker = self:GetCaster(),
+      attacker = self:GetCaster():GetOwner(),
       damage = damage,
       damage_type = DAMAGE_TYPE_MAGICAL,
       ability = self

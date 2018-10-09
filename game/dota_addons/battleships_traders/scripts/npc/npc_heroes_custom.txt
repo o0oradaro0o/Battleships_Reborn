@@ -762,7 +762,7 @@
 		
 		"AbilityLayout"				"3"
 		"Ability1"					"pistols_battleship"
-		"Ability2"					"dragon_battleship"
+		"Ability2"					"cloud_dragon_lua"
 		"Ability3"					"firework_battleship"
 		"Ability4"					"nav_hack_battleship"
 				"Ability10"					"bships_empty"

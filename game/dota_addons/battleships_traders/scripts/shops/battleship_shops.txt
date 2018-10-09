@@ -4,6 +4,7 @@
 	{
 		 "item" "item_coal_bow"
  "item" "item_fire_bow"
+  "item" "item_caulk_bow"
  "item" "item_plasma_bow"
  "item" "item_chaos_bow"
  "item" "item_poison_bow"
@@ -18,6 +19,7 @@
 	{
 		 "item" "item_coal_two_bow"
  "item" "item_fire_two_bow"
+   "item" "item_caulk_two_bow"
  "item" "item_plasma_two_bow"
  "item" "item_chaos_two_bow"
  "item" "item_poison_two_bow"
@@ -33,6 +35,7 @@
 	{
 		 "item" "item_coal_three_bow"
  "item" "item_fire_three_bow"
+   "item" "item_caulk_three_bow"
  "item" "item_plasma_three_bow"
  "item" "item_chaos_three_bow"
  "item" "item_poison_three_bow"
@@ -46,6 +49,7 @@
 	{
  "item"  "item_coal_ult_bow"
  "item"  "item_fire_ult_bow"
+   "item" "item_caulk_ult_bow"
  "item"  "item_plasma_ult_bow"
  "item" "item_chaos_ult_bow"
  "item" "item_poison_ult_bow"

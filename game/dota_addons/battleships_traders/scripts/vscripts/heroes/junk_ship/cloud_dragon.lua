@@ -9,7 +9,7 @@ function cloud_dragon_lua:OnSpellStart()
     local unit_name = "npc_dota_cloud_dragon_statue"
 
     local duration = ability:GetSpecialValueFor("duration")
-    local fire_interval = 2
+    local fire_interval = 1
     local radius = 500
 
     local statue = CreateUnitByName(

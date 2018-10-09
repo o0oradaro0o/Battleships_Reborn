@@ -82,7 +82,7 @@ function item_caulk:OnProjectileHit(ability, caster, target, location)
   local hit_sound = hit_sounds[ability:GetLevel()]
 
   EmitSoundOn(hit_sound, target)
-
+print("im in on hit!")
   if caster:GetTeam() == target:GetTeam() then
     target:Heal(damage, caster)
   else
@@ -122,7 +122,7 @@ function modifier_item_caulk:OnCreated( kv )
     self.level = self.ability:GetSpecialValueFor( "level" )    
     self.speed = self.ability:GetSpecialValueFor( "speed" )
     -- boolean
-    self.doubled = self.ability:GetSpecialValueFor( "doubled" ) == 1
+    self.doubled = self.ability:GetSpecialValueFor( "doubled_wep" ) == 1
 
     self.num_attacks = 0
 
@@ -202,21 +202,16 @@ function modifier_item_caulk:OnIntervalThink()
       end, 
       allies
     )
+    if  self.num_attacks > 1 and (TableCount(allies) < 0 or TableCount(enemies) < 0) then
+      for k,v in pairs(enemies) do table.insert(allies, v) end
+    end
 
     -- Fire the weapon
     for i=1,self.num_attacks do
       local target
 
-      if TableCount(allies) > 0 and TableCount(enemies) > 0 then
-        if RandomInt(0, 100) < 50 then
-          target = GetRandomTableElement(enemies)
-        else
+      if TableCount(allies) > 0 then
           target = GetRandomTableElement(allies)
-        end
-      elseif TableCount(allies) > 0 and TableCount(enemies) == 0 then
-        target = GetRandomTableElement(allies)
-      elseif TableCount(allies) == 0 and TableCount(enemies) > 0 then
-        target = GetRandomTableElement(enemies)
       else
         return
       end
@@ -241,7 +236,7 @@ function modifier_item_caulk:OnIntervalThink()
         bProvidesVision = false,
         iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
       }
-
+      print(self.ability:GetAbilityName())
       ProjectileManager:CreateTrackingProjectile(projectile)
       EmitSoundOn(self.fire_sound, caster)
     end
