@@ -426,7 +426,7 @@ RANGE: 1500
 FRACTION OF DISTANCE YOU MOVE: .9 .8 .7 .6"
 
 "wale_bait_battleship"									"Bait the whale"
-"wale_bait_battleship_Description"						"Lure an old foe to the target location. the whale creates a wherl pool, sucking in and damaging friends and foes alike (nonleathal 20dps). \n \nHigher levels increase cast range and lower cooldown.
+"wale_bait_battleship_Description"						"Lure an old foe to the target location. the whale creates a wherl pool, sucking in and damaging friends and foes alike (nonlethal 20dps). \n \nHigher levels increase cast range and lower cooldown.
 DURATION: 7"
 "gamble"                                                     "Gamble"
 "gamble_Description"                                         "Rolls 3 random new abilities and resets cooldowns on all other abilities.  Gain small gold bonus if abilities match

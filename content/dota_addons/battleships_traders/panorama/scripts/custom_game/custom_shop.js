@@ -468,7 +468,11 @@ function buyBoat(BoatName, cost) {
 
 function setSellValue(BoatName)
 {
-	NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("SellValueHoplder").FindChildTraverse("SellValue").text = GetBoatValue(BoatName)*.75 
+	var currentGold = Players.GetGold(Players.GetLocalPlayer());
+
+	if(currentGold > GetBoatValue(BoatName)) {
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("SellValueHoplder").FindChildTraverse("SellValue").text = GetBoatValue(BoatName)*.75 
+	}
 }
 
 function NoFadeMap() {
