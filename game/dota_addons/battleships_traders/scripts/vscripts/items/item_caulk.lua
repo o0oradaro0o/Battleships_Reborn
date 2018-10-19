@@ -70,7 +70,7 @@ end
 function item_caulk:OnProjectileHit(ability, caster, target, location)
   if not IsServer() then return end
 
-  local damage = ability:GetSpecialValueFor( "damage" )
+  local damage = ability:GetSpecialValueFor( "dmg" )
 
   local hit_sounds = {
     "Hero_VengefulSpirit.ProjectileImpact",
@@ -81,8 +81,7 @@ function item_caulk:OnProjectileHit(ability, caster, target, location)
 
   local hit_sound = hit_sounds[ability:GetLevel()]
 
-  EmitSoundOn(hit_sound, target)
-print("im in on hit!")
+print( caster:GetTeam() ..  target:GetTeam() .. damage)
   if caster:GetTeam() == target:GetTeam() then
     target:Heal(damage, caster)
   else
@@ -117,7 +116,7 @@ function modifier_item_caulk:OnCreated( kv )
     self.parent = self:GetParent()
 
     self.fire_rate = self.ability:GetSpecialValueFor( "fire_rate" )
-    self.damage = self.ability:GetSpecialValueFor( "damage" )
+    self.damage = self.ability:GetSpecialValueFor( "dmg" )
     self.range = self.ability:GetSpecialValueFor( "range" )
     self.level = self.ability:GetSpecialValueFor( "level" )    
     self.speed = self.ability:GetSpecialValueFor( "speed" )
@@ -202,7 +201,7 @@ function modifier_item_caulk:OnIntervalThink()
       end, 
       allies
     )
-    if  self.num_attacks > 1 and (TableCount(allies) < 0 or TableCount(enemies) < 0) then
+    if  self.num_attacks > 1 and (TableCount(allies) > 0 or TableCount(enemies) > 0) then
       for k,v in pairs(enemies) do table.insert(allies, v) end
     end
 

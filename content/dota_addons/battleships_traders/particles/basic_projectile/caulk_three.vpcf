@@ -1,4 +1,4 @@
-<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf10:version{b5ef673d-0450-4fb0-a91b-bacae6864827} -->
 {
 	_class = "CParticleSystemDefinition"
 	m_ConstantColor = [ 64, 0, 128, 255 ]
@@ -24,21 +24,21 @@
 		},
 		{
 			_class = "C_OP_Noise"
-			m_nFieldOutput = 4
+			m_nFieldOutput = "4"
 			m_flOutputMax = 60.0
 			m_fl4NoiseScale = 0.00131
 			m_bAdditive = true
 		},
 		{
 			_class = "C_OP_VectorNoise"
-			m_nFieldOutput = 0
+			m_nFieldOutput = "0"
 			m_vecOutputMin = [ -1.0, -1.0, -1.0 ]
 			m_fl4NoiseScale = 1.0
 			m_bAdditive = true
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
-			m_flStartScale = 2.0
+			m_flStartScale = 3.0
 			m_flEndScale = 0.0
 			m_flBias = 0.45
 		},
@@ -58,7 +58,7 @@
 	[
 		{
 			_class = "C_OP_RenderSprites"
-			m_flMaxSize = 1.0
+			m_flMaxSize = 0.75
 			m_flStartFadeSize = 0.575
 			m_flEndFadeSize = 0.65
 			m_flAnimationRate = 2.0
@@ -72,15 +72,14 @@
 				m_flRadiusScaleMax = 3.0
 				m_flProxyRadius = 3.0
 			}
-			m_flMinSize = 0.03
 		},
 	]
 	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMin = 0.01
-			m_fLifetimeMax = 0.03
+			m_fLifetimeMin = 0.15
+			m_fLifetimeMax = 0.31
 		},
 		{
 			_class = "C_INIT_RandomColor"
@@ -91,21 +90,14 @@
 		},
 		{
 			_class = "C_INIT_CreateWithinSphere"
-			m_fRadiusMax = 20.0
+			m_fRadiusMax = 15.0
 			m_nControlPointNumber = 3
 			m_fSpeedMin = 1.0
 			m_fSpeedMax = 5.0
 			m_LocalCoordinateSystemSpeedMin = [ 5.0, 0.0, 0.0 ]
 			m_LocalCoordinateSystemSpeedMax = [ 10.0, 0.0, 0.0 ]
-			m_fRadiusMin = 10.0
+			m_fRadiusMin = 6.0
 			m_vecDistanceBias = [ 1.0, 1.0, 0.0 ]
-		},
-		{
-			_class = "C_INIT_InitialVelocityNoise"
-			m_flOffset = 1.0
-			m_vecOutputMin = [ -4.0, -4.0, -6.0 ]
-			m_vecOutputMax = [ 4.0, 4.0, 6.0 ]
-			m_bLocalSpace = true
 		},
 		{
 			_class = "C_INIT_CreationNoise"
@@ -117,11 +109,18 @@
 			_class = "C_INIT_RandomRotation"
 		},
 		{
-			_class = "C_INIT_RandomYawFlip"
-		},
-		{
 			_class = "C_INIT_RandomSequence"
 			m_nSequenceMax = 10
+		},
+		{
+			_class = "C_INIT_InitialVelocityNoise"
+			m_flOffset = 1.0
+			m_vecOutputMin = [ -4.0, -4.0, -6.0 ]
+			m_vecOutputMax = [ 4.0, 4.0, 6.0 ]
+			m_bLocalSpace = true
+		},
+		{
+			_class = "C_INIT_RandomYawFlip"
 		},
 	]
 	m_Emitters = 
@@ -159,6 +158,37 @@
 			m_fMaxDistance = 60.0
 			m_nControlPointNumber = 3
 			m_bDisableOperator = true
+		},
+	]
+	m_nBehaviorVersion = 2
+	m_nFirstMultipleOverride_BackwardCompat = 6
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 3
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
 		},
 	]
 }

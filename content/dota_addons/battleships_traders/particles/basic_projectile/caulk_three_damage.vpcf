@@ -38,7 +38,7 @@
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
-			m_flStartScale = 2.0
+			m_flStartScale = 3.0
 			m_flEndScale = 0.0
 			m_flBias = 0.45
 		},
@@ -58,7 +58,7 @@
 	[
 		{
 			_class = "C_OP_RenderSprites"
-			m_flMaxSize = 1.0
+			m_flMaxSize = 0.75
 			m_flStartFadeSize = 0.575
 			m_flEndFadeSize = 0.65
 			m_flAnimationRate = 2.0
@@ -72,15 +72,14 @@
 				m_flRadiusScaleMax = 3.0
 				m_flProxyRadius = 3.0
 			}
-			m_flMinSize = 0.03
 		},
 	]
 	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMin = 0.01
-			m_fLifetimeMax = 0.03
+			m_fLifetimeMin = 0.15
+			m_fLifetimeMax = 0.31
 		},
 		{
 			_class = "C_INIT_RandomColor"
@@ -92,13 +91,13 @@
 		},
 		{
 			_class = "C_INIT_CreateWithinSphere"
-			m_fRadiusMax = 20.0
+			m_fRadiusMax = 15.0
 			m_nControlPointNumber = 3
 			m_fSpeedMin = 1.0
 			m_fSpeedMax = 5.0
 			m_LocalCoordinateSystemSpeedMin = [ 5.0, 0.0, 0.0 ]
 			m_LocalCoordinateSystemSpeedMax = [ 10.0, 0.0, 0.0 ]
-			m_fRadiusMin = 10.0
+			m_fRadiusMin = 6.0
 			m_vecDistanceBias = [ 1.0, 1.0, 0.0 ]
 		},
 		{

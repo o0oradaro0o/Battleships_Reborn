@@ -93,11 +93,6 @@
 	</Panel>
 	
 	
-		<Panel hittest="false" id="UnstickButton" onload="setZoom()">
-        <Button class="unstickbox" onactivate="Unstick()">
-             <Label text="#unstick" class="UnstickLabel"/>
-		 </Button>
-	</Panel>
 	
 	<Panel hittest="false" class="zoomSliderBorder" id="ZoomSliderBox">
 		<Button class="zoomSliderholder">

@@ -4,7 +4,7 @@ function cloud_dragon_breathe_fire_lua:OnSpellStart()
   local caster = self:GetCaster()
   local casterPosition = caster:GetAbsOrigin()
   local ability = self
-  local particle = "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+  local particle = "particles/basic_projectile/custom_fire_ball.vpcf"
   local sound = "Hero_DragonKnight.BreathFire"
 
   local start_radius = ability:GetSpecialValueFor( "start_radius" )
@@ -29,7 +29,7 @@ function cloud_dragon_breathe_fire_lua:OnSpellStart()
     Ability = ability,
     EffectName = particle,
     vSpawnOrigin = caster:GetAbsOrigin(),
-    fDistance = range,
+    fDistance = range*2,
     fStartRadius = start_radius,
     fEndRadius = end_radius,
     Source = caster,
