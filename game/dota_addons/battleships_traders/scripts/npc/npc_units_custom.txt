@@ -24,7 +24,7 @@
 
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementSpeed"             "0"
-    "MovementTurnRate"          "0.25"
+    "MovementTurnRate"          "1"
 
     "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
