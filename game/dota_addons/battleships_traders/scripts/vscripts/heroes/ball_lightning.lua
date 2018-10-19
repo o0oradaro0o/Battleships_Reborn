@@ -17,15 +17,13 @@ function ball_lightning_lua:OnSpellStart()
     local caster_loc = caster:GetAbsOrigin()
     -- Ability parameters
     local speed       = self:GetSpecialValueFor("ball_speed")
-    local damage_radius   =   self:GetSpecialValueFor("damage_radius")
     local vision      =   self:GetSpecialValueFor("ball_vision_radius")
     local tree_radius     =   100
-    local damagePerUnit      =   self:GetSpecialValueFor("damage_per_units")
-    local damage      =   self:GetSpecialValueFor("damage_base")
+    local max_distance = self:GetSpecialValueFor("max_distance")
 
     -- Motion control properties
     self.traveled   = 0
-    self.distance   = (target_loc - caster_loc):Length2D()
+    self.distance   = math.min((target_loc - caster_loc):Length2D(),  max_distance)
     self.direction  = (target_loc - caster_loc):Normalized()
 
     -- Play the cast sound

@@ -1070,30 +1070,48 @@ function reflect(args)
 	 --print("[ItemFunctions] Start reflection return.")
 
 	-- Set up ability, get HP from cast time.
-	local casterUnit = args.caster
-	local abil = casterUnit:GetAbilityByIndex(2)
-	local startHP = herohp[casterUnit:GetOwner():GetPlayerID()]
+	local caster = args.caster
+	local abil = caster:GetAbilityByIndex(2)
+	local startHP = herohp[caster:GetOwner():GetPlayerID()]
 	 --print("[ItemFunctions] Starting HP is:" .. startHP)
 
 	-- Calculate the amount of damage to be reflected / healed
-	local ruseDmg = (startHP - casterUnit:GetHealth()) * abil:GetLevelSpecialValueFor("dmg", abil:GetLevel() - 1)
-	 --print("[ItemFunctions] Current HP IS:" .. casterUnit:GetHealth() .. ". Will deal " .. ruseDmg .. "to target.")
-
-	-- Add back reflected damage as health
-	casterUnit:SetHealth(casterUnit:GetHealth() + ruseDmg)
-	 --print("[ItemFunctions] New HP IS:" .. casterUnit:GetHealth() .. ". Should have healed " .. ruseDmg .. ".")
+	local ruseDmg = (startHP - caster:GetHealth()) * abil:GetLevelSpecialValueFor("dmg", abil:GetLevel() - 1)
+	 --print("[ItemFunctions] Current HP IS:" .. caster:GetHealth() .. ". Will deal " .. ruseDmg .. "to target.")
 
 	-- Deal reflected damage to the enemy
-	local targetUnit = args.target
+	local target = args.target
 	local damageTable = {
-		victim = targetUnit,
-		attacker = casterUnit,
+		victim = target,
+		attacker = caster,
 		damage = ruseDmg,
 		damage_type = DAMAGE_TYPE_PURE
 	}
-	if casterUnit:IsAlive() then
+
+	if caster:IsAlive() and target:IsAlive() then
 		ApplyDamage(damageTable)
+
+    -- Add back reflected damage as health
+    caster:SetHealth(caster:GetHealth() + ruseDmg)
+    --print("[ItemFunctions] New HP IS:" .. caster:GetHealth() .. ". Should have healed " .. ruseDmg .. ".")
+
+    local sound = "Hero_Terrorblade.Sunder.Target"
+    target:EmitSound(sound)
+
+    -- Show the particle caster-> target
+    local particleName = "particles/units/heroes/hero_terrorblade/terrorblade_sunder.vpcf"  
+    local particle = ParticleManager:CreateParticle( particleName, PATTACH_POINT_FOLLOW, target )
+
+    ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+    ParticleManager:SetParticleControlEnt(particle, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+
+    -- Show the particle target-> caster
+    local particle = ParticleManager:CreateParticle( particleName, PATTACH_POINT_FOLLOW, caster )
+
+    ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+    ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
 	end
+
 	 --print("[ItemFunctions] damage done")
 end
 
