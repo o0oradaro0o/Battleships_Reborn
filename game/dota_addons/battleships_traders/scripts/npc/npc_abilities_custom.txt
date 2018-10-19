@@ -85,7 +85,7 @@
         "var_type"              "FIELD_INTEGER"
         "end_radius"            "60"
       }
-      "043"
+      "03"
       {
         "var_type"              "FIELD_INTEGER"
         "speed"                 "1250"
@@ -93,7 +93,7 @@
       "04"
       {
         "var_type"              "FIELD_INTEGER"
-        "damage"           "100 115 130 145"
+        "damage"           			"100 150 200 250"
       }
       "05"
       {
@@ -1879,7 +1879,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18 16 14 12"
+		"AbilityCooldown"				"35 30 25 20"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -8971,13 +8971,7 @@
 			"var_type"					"FIELD_FLOAT"
 			"bonus_duration"			"1.2"
 		}
-		// Extra
 		"04"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"illusion_search_radius"	"1375"
-		}
-		"06"
 		{
 			"var_type"					"FIELD_FLOAT"
 			"range"					"0.9 0.8 0.7 0.6"
@@ -9021,32 +9015,6 @@
 			"reality_rift_particle"	"particles/basic_projectile/harpoon_effect.vpcf"
 		}
 		
-	}
-
-	"Modifiers"
-	{
-		"modifier_reality_rift_datadriven"
-		{
-			"IsBuff"		"1"
-	
-			"EffectName"		"particles/units/heroes/hero_chaos_knight/chaos_knight_reality_rift_buff.vpcf"
-			"EffectAttachType"	"attach_attack"
-
-			"OnAttackLanded"
-			// "%attack_damage" is set to the damage value before mitigation
-			{
-				"RemoveModifier"
-				{
-					"ModifierName"	"modifier_reality_rift_datadriven"
-					"Target" 		"ATTACKER"
-				}
-			}
-	
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
-			}
-		}
 	}
 }
 
@@ -11867,7 +11835,7 @@
       "particle"  "particles/units/heroes/hero_razor/razor_static_link.vpcf"
     }
 
-    "AbilityCastRange"        "600"
+    "AbilityCastRange"        "700"
     "AbilityCastPoint"        "0.3"
 
     "AbilityCooldown"       "8"
@@ -11889,7 +11857,7 @@
       "03"
       {
         "var_type"        "FIELD_INTEGER"
-        "drain_range_buffer"  "600"
+        "drain_range_buffer"  "300"
       }
 
     }
@@ -11905,7 +11873,6 @@
     "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
     "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
     "AbilityTextureName"      "storm_spirit_ball_lightning"
-    "AbilityCastRange"       "900"
     "AbilityCooldown"        "4 3 2 1"
     "AbilityManaCost"        "100"
 
@@ -11926,24 +11893,14 @@
         "ball_speed"        "1500"
       }
       "02"
-      {
-        "var_type"          "FIELD_INTEGER"
-        "damage_radius"     "125 200 275"
-      }
-      "03"
-      {
-        "var_type"          "FIELD_INTEGER"
-        "damage_per_units"  "50"
-      }
-      "04"
       {   
         "var_type"           "FIELD_INTEGER"
         "ball_vision_radius" "1400"
       }
-	  	"03"
-      {
-        "var_type"          "FIELD_INTEGER"
-        "damage_base"  "10"
+      "03"
+      {   
+        "var_type"           "FIELD_INTEGER"
+        "max_distance" 			 "900"
       }
     }
   }
