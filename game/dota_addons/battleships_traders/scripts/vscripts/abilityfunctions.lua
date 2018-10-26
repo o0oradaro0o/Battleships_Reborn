@@ -1765,7 +1765,7 @@ function ApplyDD(args) -- keys is the information sent by the ability
 		if hero ~= nil then
 			local Item = hero:GetItemInSlot(itemSlot)
 			if Item ~= nil and string.match(Item:GetName(), "doubled") then -- makes sure that the item exists and making sure it is the correct item
-				local doubledstring = string.gsub(Item:GetName(), "_bow", "_bow_shooting")
+				local doubledstring = string.gsub(Item:GetName(), "_doubled", "_doubled_shooting")
 				Item:ApplyDataDrivenModifier(hero, hero, doubledstring, nil)
 			elseif Item ~= nil and string.match(Item:GetName(), "bow") then -- makes sure that the item exists and making sure it is the correct item
 				Item:ApplyDataDrivenModifier(hero, hero, Item:GetName() .. "_shooting", nil)
@@ -1785,7 +1785,7 @@ function ApplyRandomDD(args) -- keys is the information sent by the ability
 			if hero ~= nil then
 				local Item = hero:GetItemInSlot(itemSlot)
 				if Item ~= nil and string.match(Item:GetName(), "doubled") and RandomInt(0, 4) == 2 then -- makes sure that the item exists and making sure it is the correct item
-					local doubledstring = string.gsub(Item:GetName(), "_bow", "_bow_shooting")
+					local doubledstring = string.gsub(Item:GetName(), "_doubled", "_doubled_shooting")
 					Item:ApplyDataDrivenModifier(hero, hero, doubledstring, nil)
 					done = 1
 				elseif Item ~= nil and string.match(Item:GetName(), "bow") and RandomInt(0, 4) == 2 then -- makes sure that the item exists and making sure it is the correct item
@@ -1805,7 +1805,7 @@ function RemoveDD(args) -- keys is the information sent by the ability
 		if hero ~= nil then
 			local Item = hero:GetItemInSlot(itemSlot)
 			if Item ~= nil and string.match(Item:GetName(), "doubled") then -- makes sure that the item exists and making sure it is the correct item
-				local doubledstring = string.gsub(Item:GetName(), "_bow", "_bow_shooting")
+				local doubledstring = string.gsub(Item:GetName(), "_doubled", "_doubled_shooting")
 				while hero:HasModifier(doubledstring) do
 					hero:RemoveModifierByName(doubledstring)
 				end
@@ -1821,7 +1821,7 @@ function RemoveDD(args) -- keys is the information sent by the ability
 		if hero ~= nil then
 			local Item = hero:GetItemInSlot(itemSlot)
 			if Item ~= nil and string.match(Item:GetName(), "doubled") then -- makes sure that the item exists and making sure it is the correct item
-				local doubledstring = string.gsub(Item:GetName(), "_bow", "_bow_shooting")
+				local doubledstring = string.gsub(Item:GetName(), "_doubled", "_doubled_shooting")
 				Item:ApplyDataDrivenModifier(hero, hero, doubledstring, nil)
 			elseif Item ~= nil and string.match(Item:GetName(), "bow") then -- makes sure that the item exists and making sure it is the correct item
 				Item:ApplyDataDrivenModifier(hero, hero, Item:GetName() .. "_shooting", nil)
@@ -1839,7 +1839,7 @@ function RemoveWeps(args) -- keys is the information sent by the ability
 		if hero ~= nil then
 			local Item = hero:GetItemInSlot(itemSlot)
 			if Item ~= nil and string.match(Item:GetName(), "doubled") then -- makes sure that the item exists and making sure it is the correct item
-				local doubledstring = string.gsub(Item:GetName(), "_bow", "_bow_shooting")
+				local doubledstring = string.gsub(Item:GetName(), "_doubled", "_doubled_shooting")
 				while hero:HasModifier(doubledstring) do
 					hero:RemoveModifierByName(doubledstring)
 				end
@@ -1858,7 +1858,7 @@ function removeAllBows(hero)
 		if hero ~= nil then
 			local Item = hero:GetItemInSlot(itemSlot)
 			if Item ~= nil and string.match(Item:GetName(), "doubled") then -- makes sure that the item exists and making sure it is the correct item
-				local doubledstring = string.gsub(Item:GetName(), "_bow", "_bow_shooting")
+				local doubledstring = string.gsub(Item:GetName(), "_doubled", "_doubled_shooting")
 				while hero:HasModifier(doubledstring) do
 					hero:RemoveModifierByName(doubledstring)
 				end
@@ -1877,7 +1877,7 @@ function reapplyAllBowsIfRemoved(hero)
 		if hero ~= nil then
 			local Item = hero:GetItemInSlot(itemSlot)
 			if Item ~= nil and string.match(Item:GetName(), "doubled") then -- makes sure that the item exists and making sure it is the correct item
-				local doubledstring = string.gsub(Item:GetName(), "_bow", "_bow_shooting")
+				local doubledstring = string.gsub(Item:GetName(), "_doubled", "_doubled_shooting")
 				if hero:HasModifier(doubledstring) then
 					return
 				end
@@ -1894,7 +1894,7 @@ function reapplyAllBowsIfRemoved(hero)
 		if hero ~= nil then
 			local Item = hero:GetItemInSlot(itemSlot)
 			if Item ~= nil and string.match(Item:GetName(), "doubled") then -- makes sure that the item exists and making sure it is the correct item
-				local doubledstring = string.gsub(Item:GetName(), "_bow", "_bow_shooting")
+				local doubledstring = string.gsub(Item:GetName(), "_doubled", "_doubled_shooting")
 				Item:ApplyDataDrivenModifier(hero, hero, doubledstring, nil)
 			elseif Item ~= nil and string.match(Item:GetName(), "bow") then -- makes sure that the item exists and making sure it is the correct item
 				Item:ApplyDataDrivenModifier(hero, hero, Item:GetName() .. "_shooting", nil)
@@ -1923,7 +1923,7 @@ function ApplyLuck(args) -- keys is the information sent by the ability
 		if hero ~= nil then
 			local Item = hero:GetItemInSlot(itemSlot)
 			if Item ~= nil and string.match(Item:GetName(), "doubled") then -- makes sure that the item exists and making sure it is the correct item
-				local doubledstring = string.gsub(Item:GetName(), "_bow", "_bow_shooting")
+				local doubledstring = string.gsub(Item:GetName(), "_doubled", "_doubled_shooting")
 				weps[#weps + 1] = doubledstring
 			elseif Item ~= nil and string.match(Item:GetName(), "bow") then -- makes sure that the item exists and making sure it is the correct item
 				weps[#weps + 1] = Item:GetName() .. "_shooting"

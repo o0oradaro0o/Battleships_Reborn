@@ -571,7 +571,7 @@ function WindDmg(args) -- keys is the information sent by the ability
   local damageTable = {
     victim 		= args.target,
     attacker 	= args.caster,
-    damage		= baseDamage*distVal,
+    damage		= baseDamage,
     damage_type = DAMAGE_TYPE_PHYSICAL,
   }
   ApplyDamage(damageTable)

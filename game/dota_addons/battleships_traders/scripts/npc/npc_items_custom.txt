@@ -4038,7 +4038,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1300"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -4155,7 +4155,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1500"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -4201,7 +4201,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"range"				"1400"
+				"range"				"1300"
 			}
 			"04"
 			{
@@ -5261,7 +5261,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1300"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -5375,7 +5375,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1500"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -5424,7 +5424,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"range"				"1400"
+				"range"				"1300"
 			}
 			"04"
 			{
@@ -6468,7 +6468,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1300"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -6584,7 +6584,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1500"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -6629,7 +6629,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"range"				"1400"
+				"range"				"1300"
 			}
 			"04"
 			{
@@ -7788,7 +7788,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1300"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -7805,7 +7805,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1300"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -7952,7 +7952,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1500"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -7969,7 +7969,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1500"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -8017,7 +8017,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"range"				"1400"
+				"range"				"1300"
 			}
 			"04"
 			{
@@ -9282,7 +9282,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1300"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -9299,7 +9299,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1300"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -9444,7 +9444,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1500"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -9461,7 +9461,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1500"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -9508,7 +9508,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"range"				"1400"
+				"range"				"1300"
 			}
 			"04"
 			{
@@ -10773,7 +10773,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1300"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -10790,7 +10790,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1300"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -10936,7 +10936,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1500"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -10953,7 +10953,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1500"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -11001,7 +11001,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"range"				"1400"
+				"range"				"1300"
 			}
 			"04"
 			{
@@ -12366,7 +12366,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1300"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -12383,7 +12383,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1300"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -12400,7 +12400,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1300"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -12417,7 +12417,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1300"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -12559,7 +12559,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1500"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -12576,7 +12576,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1500"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -12593,7 +12593,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1500"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -12610,7 +12610,7 @@
 						"Target"
 						{
 							"Center" "CASTER"
-							"Radius" "1500"
+							"Radius" "%range"
 							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
@@ -12660,7 +12660,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"range"				"1400"
+				"range"				"1300"
 			}
 			"04"
 			{
