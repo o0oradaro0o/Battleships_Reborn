@@ -34,10 +34,18 @@ function toggle_item(keys) -- keys is the information sent by the ability
     end
   end
 end
+
 function sendMission(keys)
   local casterUnit = keys.caster
   Notifications:Top(casterUnit:GetPlayerID(), {text="#mission_empty", duration=5.0, style={ color=" #60A0D6;", fontSize= "45px;", textShadow= "2px 2px 2px #662222;"}})
+end
 
+function startWeaponCooldown(keys)
+  local ability = keys.ability
+
+  local cooldown = ability:GetSpecialValueFor("fire_rate")
+
+  ability:StartCooldown(cooldown)
 end
 
 function del_fluff(keys) -- keys is the information sent by the ability
