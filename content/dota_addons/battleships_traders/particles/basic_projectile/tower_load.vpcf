@@ -8,7 +8,7 @@
 	m_Children = 
 	[
 		{
-			m_ChildRef = resource:"particles/econ/items/puck/puck_alliance_set/puck_base_attack_trail_b_addin_2_aproset.vpcf"
+			m_ChildRef = resource:"particles/base_attacks/tower_load_part.vpcf"
 		},
 	]
 	m_bShouldSort = false

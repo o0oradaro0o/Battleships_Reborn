@@ -1211,7 +1211,7 @@
         "StatusManaRegen"           "0.0"
 
 
-		"MovementSpeed"				"340"									// Speed.
+		"MovementSpeed"				"350"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 		
 		"StatusHealth"				"6000"		// Base health.
@@ -1293,7 +1293,7 @@
 		"MovementSpeed"				"350"									// Speed.
 		"MovementTurnRate"			"0.5"									// Turning rate.
 		
-		"StatusHealth"				"5000"		// Base health.
+		"StatusHealth"				"5500"		// Base health.
 		"StatusHealthRegen"			"100.0"		// Health regeneration rate.
 		
 		"ArmorPhysical"				"0"
@@ -1372,7 +1372,7 @@
 		"MovementSpeed"				"270"									// Speed.
 		"MovementTurnRate"			"0.6"									// Turning rate.
 		
-		"StatusHealth"				"4700"		// Base health.
+		"StatusHealth"				"4900"		// Base health.
 		"StatusHealthRegen"			"20.0"		// Health regeneration rate.
 		"StatusManaRegen"			"50.0"
 		"ArmorPhysical"				"0"

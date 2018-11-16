@@ -39,7 +39,7 @@ function cloud_dragon_breathe_fire_lua:OnSpellStart()
     iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,        
     bDeleteOnHit = false,
     vVelocity = vDirection * speed,
-    bProvidesVision = false,              
+    bProvidesVision = false,
   }
 
   ProjectileManager:CreateLinearProjectile(projectile)

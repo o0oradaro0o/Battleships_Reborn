@@ -9,8 +9,8 @@ function cloud_dragon_lua:OnSpellStart()
     local unit_name = "npc_dota_cloud_dragon_statue"
 
     local duration = ability:GetSpecialValueFor("duration")
-    local fire_interval = .5
-    local radius = 500
+    local fire_interval = 1.5
+    local radius = 900
 
     local statue = CreateUnitByName(
       unit_name, 
@@ -31,8 +31,6 @@ function cloud_dragon_lua:OnSpellStart()
 
     local ability_breathe_fire = statue:FindAbilityByName("cloud_dragon_breathe_fire_lua")
     ability_breathe_fire:SetLevel(ability:GetLevel())
-    
-
 
     Timers:CreateTimer(.1, function()
       if statue:IsNull() or not statue:IsAlive() then

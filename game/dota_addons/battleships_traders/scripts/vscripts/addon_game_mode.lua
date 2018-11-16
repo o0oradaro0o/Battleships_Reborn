@@ -2865,7 +2865,7 @@ function CBattleship8D:HandleEmpGold()
   
 	end
   
-	if killedUnit:GetGoldBounty() and killerEntity:IsOwnedByAnyPlayer() then
+	if killedUnit:GetGoldBounty() and killerEntity:IsOwnedByAnyPlayer() and killedUnit ~= killerEntity then
 
 	  local deathEffect = ParticleManager:CreateParticleForPlayer( "particles/basic_projectile/last_hit.vpcf", PATTACH_ABSORIGIN_FOLLOW, killedUnit,PlayerResource:GetPlayer(killerEntity:GetPlayerID()))
 	  Timers:CreateTimer(1, function()

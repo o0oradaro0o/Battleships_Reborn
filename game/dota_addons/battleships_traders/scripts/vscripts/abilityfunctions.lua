@@ -926,7 +926,7 @@ function submerge(args) -- keys is the information sent by the ability
 		local damageTable = {
 			victim = casterUnit,
 			attacker = casterUnit,
-			damage = 10,
+			damage = 11,
 			damage_type = DAMAGE_TYPE_PURE
 		}
 
@@ -934,8 +934,7 @@ function submerge(args) -- keys is the information sent by the ability
 	end
 end
 
-function submergedmg(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+function submergedmg(args) 
 	local casterUnit = args.caster
 	if casterUnit:GetMana() < 10 then
 		local damageTable = {
@@ -944,7 +943,6 @@ function submergedmg(args) -- keys is the information sent by the ability
 			damage = 35,
 			damage_type = DAMAGE_TYPE_PURE
 		}
-
 		ApplyDamage(damageTable)
 	end
 end
@@ -952,9 +950,11 @@ end
 function rise(args) -- keys is the information sent by the ability
 	-- --print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
+	args.ability:GetName()
 	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	casterUnit:SetModel("models/sub_boat")
 	casterUnit:SetOriginalModel("models/sub_boat")
+	args.ability:StartCooldown(1.0)
 end
 
 function inTheHold(args) -- keys is the information sent by the ability
@@ -1028,7 +1028,7 @@ function inTheHoldSpawn(args) -- keys is the information sent by the ability
 	creature.vOwner = casterUnit:GetOwner()
 	creature:SetControllableByPlayer(casterUnit:GetOwner():GetPlayerID(), true)
 	creature:SetInitialGoalEntity(waypointlocation)
-	creature:CreatureLevelUp(20)
+	creature:CreatureLevelUp(7)
 end
 
 function pushBack(args) -- keys is the information sent by the ability
@@ -2397,6 +2397,163 @@ function CherryExplode(args)
 			end
 		)
 	
+end
+
+
+function aoeTowerHit(keys)
+	local enemies
+	local caster = keys.caster
+	local targetUnit = keys.target
+	if keys.caster == keys.target then
+		if caster:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+			enemies =
+				FindUnitsInRadius(
+				DOTA_TEAM_BADGUYS,
+				caster:GetOrigin(),
+				nil,
+				1150,
+				DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+				DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+				0,
+				0,
+				false
+			)
+		else
+			enemies =
+				FindUnitsInRadius(
+				DOTA_TEAM_GOODGUYS,
+				caster:GetOrigin(),
+				nil,
+				1150,
+				DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+				DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+				0,
+				0,
+				false
+			)
+
+		end
+		
+		if #enemies > 0 then
+			local index = RandomInt(1, #enemies)
+			newTarget = enemies[index]
+			local info2 = {
+				Ability = caster:GetAbilityByIndex(0),
+				Source = caster,
+				Target = newTarget,
+				vSourceLoc = caster:GetOrigin(),
+				EffectName = "particles/basic_projectile/tower_fire.vpcf",
+				bProvidesVision = false,
+				iVisionRadius = 1150,
+				iVisionTeamNumber = caster:GetTeamNumber(),
+				bDeleteOnHit = false,
+				iMoveSpeed = 950,
+				vVelocity = 950
+			}
+			projectile = ProjectileManager:CreateTrackingProjectile(info2)
+		end
+		return
+	end
+	
+	
+
+	if caster:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+		enemies =
+			FindUnitsInRadius(
+			DOTA_TEAM_BADGUYS,
+			targetUnit:GetOrigin(),
+			nil,
+			120,
+			DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+			0,
+			0,
+			false
+		)
+	else
+		enemies =
+			FindUnitsInRadius(
+			DOTA_TEAM_GOODGUYS,
+			targetUnit:GetOrigin(),
+			nil,
+			120,
+			DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+			0,
+			0,
+			false
+		)
+	end
+	for _, fucker in pairs(enemies) do
+		print((caster:GetOrigin()-fucker:GetOrigin()):Length())
+		if (caster:GetOrigin()-fucker:GetOrigin()):Length()<1180 then
+			local dmg = fucker:GetMaxHealth() * 0.10
+			local damageTable = {
+				victim = fucker,
+				attacker = caster,
+				damage = dmg,
+				damage_type = DAMAGE_TYPE_PURE
+			}
+
+			ApplyDamage(damageTable)
+		end
+	end
+end
+
+function aoeTowerFire(keys)
+	local newTarget
+	local caster = keys.caster
+	local enemies
+	local allies
+	
+	--hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
+	if caster:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+		allies =
+			FindUnitsInRadius(
+			DOTA_TEAM_GOODGUYS,
+			caster:GetOrigin(),
+			nil,
+			1150,
+			DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+			DOTA_UNIT_TARGET_HERO,
+			0,
+			0,
+			false
+		)
+	else
+		allies =
+			FindUnitsInRadius(
+			DOTA_TEAM_BADGUYS,
+			caster:GetOrigin(),
+			nil,
+			1150,
+			DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+			DOTA_UNIT_TARGET_HERO,
+			0,
+			0,
+			false
+		)
+	end
+
+	if #allies > 0 then
+		
+		local index = RandomInt(1, #allies)
+			newTarget = allies[index]
+		local info = {
+			Ability = caster:GetAbilityByIndex(0),
+			Source = caster,
+			Target = caster,
+			vSourceLoc = newTarget:GetOrigin(),
+			EffectName = "particles/basic_projectile/tower_load.vpcf",
+			bProvidesVision = false,
+			iVisionRadius = 1100,
+			iVisionTeamNumber = caster:GetTeamNumber(),
+			bDeleteOnHit = false,
+			iMoveSpeed = 2000,
+			vVelocity = 2000
+		}
+		projectile = ProjectileManager:CreateTrackingProjectile(info)
+	end
 end
 
 function creatredwhale(keys)

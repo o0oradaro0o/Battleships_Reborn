@@ -35,7 +35,7 @@
     }
   }
 
-	"ability_hide_healthbar"
+"ability_hide_healthbar"
   {
     "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "BaseClass"           "ability_datadriven"
@@ -93,7 +93,7 @@
       "04"
       {
         "var_type"              "FIELD_INTEGER"
-        "damage"           			"100 150 200 250"
+        "damage"           			"100 125 150 175"
       }
       "05"
       {
@@ -128,12 +128,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_tooltip"	"100 200 300 400"
+				"damage_tooltip"	"100 125 150 175"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"6 7 8 9"
+				"duration"				"4.6 6.1 7.6 9.1"
 			}
 		}
 	}
@@ -2867,8 +2867,6 @@
 						"EffectAttachType"	"follow_overhead"
 					}
 				}
-				
-				
 			}
 		}
 		
@@ -3180,18 +3178,26 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_per_second"		"40 55 70 85"
+				"LinkedSpecialBonus"	"special_bonus_unique_doom_4"				
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"600 600 600 600"
+				"regen"					"40 55 70 85"
+				"LinkedSpecialBonus"	"special_bonus_unique_doom_4"				
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_movement_speed_pct"	"20 23 25 27"
+				"LinkedSpecialBonus"	"special_bonus_unique_doom_6"
 			}
 			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"600 600 600 600"
+			}
+			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"6.0 6.5 7.0 7.5"
@@ -4708,8 +4714,20 @@
 							"EffectName" 			"particles/basic_projectile/joanses.vpcf"
 							"EffectAttachType" 		"follow_origin"
 						}
-					}
+						"AttachEffect"
+						{
+							"EffectName"		"particles/basic_projectile/jonses_tether.vpcf"
+							"EffectAttachType"	"attach_hitloc"
+							"Target"			"TARGET"
+							
+							"ControlPointEntities"
+							{
+								"CASTER"	"attach_hitloc"
+								"TARGET"	"attach_hitloc"
+							}
 						}
+					}
+			}
 			
 		}
 		
@@ -4721,17 +4739,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"	"2.5 3.0 3.5 4.0"
+				"duration"	"1.0 1.5 2.0 2.5"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"movment"	"40 50 60 70"
+				"movment"	"150 175 200 225"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"movment_slow"	"-40 -50 -60 -70"
+				"movment_slow"	"-150 -175 -200 -225"
 			}
 		}
 	}
@@ -5163,8 +5181,6 @@
 		"MaxLevel"						"3"
 		"LevelsBetweenUpgrades"					"3"
 		"RequiredLevel"						"2"
-
-
 		
 		"BaseClass" 					"ability_datadriven"
 
@@ -6333,7 +6349,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"400 500 600 700"
+		"AbilityCastRange"				"1000 1000 1000 1000"
 		"AbilityCastPoint"				"0.15"
 
 		// Cost
@@ -6352,7 +6368,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range_tooltip"	"400 500 600 700"
+				"cast_range_tooltip"	"1000"
 			}
 			"02"
 			{
@@ -6367,7 +6383,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"500"
+				"radius"				"750"
 				"LinkedSpecialBonus"	"special_bonus_unique_grimstroke_1"
 			}
 			"05"
@@ -6408,10 +6424,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"			"earthshaker_enchant_totem"
-
-
-		
-		
 		"BaseClass" 					"ability_datadriven"
 		"AbilityCastRange"				"600 675 750 825"
 		// Casting
@@ -12009,6 +12021,63 @@
                 }
 
         }
+	}
+	"aoe_shot"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"tusk_ice_shards"
+		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		 "Modifiers"
+        {
+              "aoe_shot_modifier"
+			{
+				"ThinkInterval"		"1.5"
+				"Passive"	 "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"aoeTowerFire"
+					}
+				}
+				
+			}
+		}
+		"OnProjectileHitUnit"
+                {
+                       "DeleteOnHit"		"false"
+                       "RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"aoeTowerHit"
+					}
+                        
+                }
+       
+        "AbilitySpecial"
+        {
+               
+        }
+	
 	}
 	
 
