@@ -24,6 +24,9 @@ function showTrade() {
 	tradeHidden = false;
 	$("#missionButton").style.visibility = "visible";
 	$("#traders_tab").style.height = "40px";
+	var newBotRightUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("lower_hud").FindChildTraverse("shop_launcher_block");
+
+	newBotRightUI.FindChildTraverse("shop_launcher_bg").style.width = "440px";
 }
 
 
@@ -167,7 +170,7 @@ function fixUI() {
 	var newCenterUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("lower_hud").FindChildTraverse("center_with_stats").FindChildTraverse("center_block");
 
 	newCenterUI.FindChildTraverse("death_panel_buyback").FindChildTraverse("BuybackButton").style.visibility = "collapse";
-
+	newCenterUI.FindChildTraverse("inventory_tpscroll_container").style.visibility = "collapse";
 	sidenotif.style.visibility = "collapse";
 	topnotif.style.visibility = "collapse";
 
@@ -193,7 +196,7 @@ function fixUI() {
 
 	var newBotRightUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("lower_hud").FindChildTraverse("shop_launcher_block");
 
-	newBotRightUI.FindChildTraverse("shop_launcher_bg").style.width = "440px"
+	newBotRightUI.FindChildTraverse("shop_launcher_bg").style.width = "300px"
 
 	newBotRightUI.FindChildTraverse("quickbuy").FindChildTraverse("ShopCourierControls").FindChildTraverse("courier").style.visibility = "collapse";
 	newBotRightUI.FindChildTraverse("quickbuy").FindChildTraverse("ShopCourierControls").FindChildTraverse("ShopButton").style.horizontalAlign = "right";
@@ -201,7 +204,7 @@ function fixUI() {
 	newBotRightUI.FindChildTraverse("quickbuy").FindChildTraverse("ShopCourierControls").style.width = "100%";
 
 	newBotRightUI.FindChildTraverse("quickbuy").FindChildTraverse("ShopCourierControls").style.marginRight = "12px";
-
+	newBotRightUI.FindChildTraverse("quickbuy").FindChildTraverse("QuickBuyRows").FindChildTraverse("StickyItemSlotContainer").style.visibility = "collapse";
 
 
 	newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("ManaContainer").style.visibility = "collapse";

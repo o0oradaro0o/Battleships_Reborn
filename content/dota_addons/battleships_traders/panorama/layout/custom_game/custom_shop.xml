@@ -88,17 +88,17 @@
 	</Panel>
 	<Panel hittest="false" class="zoomHiderButton" id="ZoomButton" onload="setZoom()">
         <Button class="zoomHider" onactivate="toggleZoom()">
-             <Image class="item_image" src="file://{images}/custom_game/mag.png" />
+             <Image hittest="false" class="item_image" src="file://{images}/custom_game/mag.png" />
         </Button>
 	</Panel>
 	
 	
 	
 	<Panel hittest="false" class="zoomSliderBorder" id="ZoomSliderBox">
-		<Button class="zoomSliderholder">
-			<Panel class="SliderRow">
-				<Label id="zoomLbl" text="#zoom_lbl" class="ZoomLabel"/>
-				<Label id="zoomLblVal" text="" class="ZoomLabelVal"/>
+		<Button hittest="false" class="zoomSliderholder">
+			<Panel hittest="false" class="SliderRow">
+				<Label hittest="false" id="zoomLbl" text="#zoom_lbl" class="ZoomLabel"/>
+				<Label hittest="false" id="zoomLblVal" text="" class="ZoomLabelVal"/>
 			</Panel>
 			<DOTASettingsSlider hittest="false" id="ZoomSlider" >
 			</DOTASettingsSlider>

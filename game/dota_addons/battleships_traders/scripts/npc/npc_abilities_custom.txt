@@ -1836,9 +1836,6 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -1855,6 +1852,21 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"break_distance"		"700 700 700"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"grab_radius"		"400"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"grab_radius_scepter"		"400"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"		"20 40 60"
 			}
 		}
 	}
@@ -1896,7 +1908,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movement_speed"		"580 590 600 610"
+				"movement_speed"		"200 225 250 275"
 			}
 			"02"
 			{
@@ -3183,24 +3195,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"regen"					"40 55 70 85"
-				"LinkedSpecialBonus"	"special_bonus_unique_doom_4"				
+				"radius"				"600 600 600 600"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed_pct"	"20 23 25 27"
-				"LinkedSpecialBonus"	"special_bonus_unique_doom_6"
+				"bonus_movement_speed_pct" "20 23 25 27"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"600 600 600 600"
-			}
-			"05"
-			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"6.0 6.5 7.0 7.5"
+				"duration"				"10.0 12.0 14.0 16.0"
 			}
 		}
 	}
@@ -6378,7 +6383,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movespeed_bonus_pct"	"18 22 26 30"
+				"movespeed_bonus_pct"	"18"
 			}
 			"04"
 			{
@@ -6389,7 +6394,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage"			"220 280 340 400"
+				"max_damage"			"280 320 360 400"
 			}
 			"06"
 			{
@@ -11952,7 +11957,8 @@
   {
     "BaseClass"           "ability_lua"
     "ScriptFile"          "heroes/speed_boat_wave.lua"
-    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING" "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING" 
+	"AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
     "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
     "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 	"SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"

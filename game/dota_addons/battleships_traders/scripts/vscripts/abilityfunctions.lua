@@ -2405,34 +2405,18 @@ function aoeTowerHit(keys)
 	local caster = keys.caster
 	local targetUnit = keys.target
 	if keys.caster == keys.target then
-		if caster:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 			enemies =
 				FindUnitsInRadius(
-				DOTA_TEAM_BADGUYS,
+				caster:GetTeamNumber(),
 				caster:GetOrigin(),
 				nil,
 				1150,
-				DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+				DOTA_UNIT_TARGET_TEAM_ENEMY,
 				DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-				0,
-				0,
+				DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, 
+				FIND_ANY_ORDER, 
 				false
 			)
-		else
-			enemies =
-				FindUnitsInRadius(
-				DOTA_TEAM_GOODGUYS,
-				caster:GetOrigin(),
-				nil,
-				1150,
-				DOTA_UNIT_TARGET_TEAM_FRIENDLY,
-				DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-				0,
-				0,
-				false
-			)
-
-		end
 		
 		if #enemies > 0 then
 			local index = RandomInt(1, #enemies)
@@ -2466,8 +2450,8 @@ function aoeTowerHit(keys)
 			120,
 			DOTA_UNIT_TARGET_TEAM_FRIENDLY,
 			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-			0,
-			0,
+			DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, 
+			FIND_ANY_ORDER, 
 			false
 		)
 	else
@@ -2479,8 +2463,8 @@ function aoeTowerHit(keys)
 			120,
 			DOTA_UNIT_TARGET_TEAM_FRIENDLY,
 			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-			0,
-			0,
+			DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, 
+			FIND_ANY_ORDER, 
 			false
 		)
 	end
@@ -2508,16 +2492,15 @@ function aoeTowerFire(keys)
 	
 	--hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
 	if caster:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-		allies =
-			FindUnitsInRadius(
+		allies =FindUnitsInRadius(
 			DOTA_TEAM_GOODGUYS,
 			caster:GetOrigin(),
 			nil,
 			1150,
 			DOTA_UNIT_TARGET_TEAM_FRIENDLY,
 			DOTA_UNIT_TARGET_HERO,
-			0,
-			0,
+			DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, 
+			FIND_ANY_ORDER, 
 			false
 		)
 	else
@@ -2529,8 +2512,8 @@ function aoeTowerFire(keys)
 			1150,
 			DOTA_UNIT_TARGET_TEAM_FRIENDLY,
 			DOTA_UNIT_TARGET_HERO,
-			0,
-			0,
+			DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, 
+			FIND_ANY_ORDER, 
 			false
 		)
 	end

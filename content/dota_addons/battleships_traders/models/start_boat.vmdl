@@ -1,9 +1,8 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
-	_class = "CVModel"
-	m_meshList =
+	m_meshList = 
 	{
-		m_meshList =
+		m_meshList = 
 		[
 			{
 				m_meshName = "anim_barrelboat_idle"
@@ -12,627 +11,272 @@
 				m_bSkinParentedObjects = true
 				m_bLegacySkinParentedTransforms = false
 				m_bExpensiveTangents = false
-				m_bExpensiveVertices = false
+				m_bHighPrecisionTexCoords = false
+				m_bPerVertexCurvature = false
+				m_bBentNormals = false
 				m_bIgnoreCloth = false
 				m_bGetSkinningFromLod0 = false
+				m_bPreferHighDensityTrianglesInUvDensityCalculation = false
 				m_pMorphInfo = null
 			},
 		]
 	}
-	m_clothProxyMeshList =
+	m_clothProxyMeshList = 
 	{
 		_class = "CVClothProxyMeshList"
-		m_flClothEnableThreshold = 0.050000
+		m_flClothEnableThreshold = 0.05
 		m_bCreateStaticBone = false
 		m_nMaxBonesPerVertex = 4
 		m_bRemoveUnusedBonesEnabled = false
 		m_bDriveMeshesWithBacksolvedJointsOnly = true
-		m_flMatchProxiesToMeshes = 1.000000
-		m_flReservedFloat = 0.000000
+		m_flMatchProxiesToMeshes = 1.0
+		m_flFallbackEnvelope = 1.0
 		m_nReservedInt = 0
-		m_bReservedBool1 = false
+		m_bSoftSkinAnimation = false
 		m_bReservedBool2 = false
 		m_bReservedBool3 = false
 		m_bReservedBool4 = false
-		m_clothProxyMeshList =
-		[
-		]
+		m_clothProxyMeshList = [  ]
 	}
-	m_physicsMeshList =
+	m_physicsMeshList = 
 	{
-		m_meshList =
-		[
-		]
+		m_meshList = [  ]
 	}
 	m_pModelInfo = null
-	m_pBoneFlagList =
+	m_pBoneFlagList = 
 	{
-		_class = "CVBoneFlagListReference"
 		m_pObject = null
 	}
-	m_pHitBoxSetLists =
+	m_pHitBoxSetLists = 
 	[
 		{
-			_class = "CVhitBoxSetListReference"
-			m_pObject =
+			m_pObject = 
 			{
-				m_HitBoxSets =
+				m_HitBoxSets = 
 				[
 					{
 						m_name = "default"
-						m_HitBoxes =
+						m_HitBoxes = 
 						[
 							{
 								m_name = "barrelboat_base"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "barrelboat_base"
-								m_vMinBounds =
-								[
-									-91.605560,
-									0.000000,
-									-74.982216,
-								]
-								m_vMaxBounds =
-								[
-									91.605576,
-									114.149338,
-									73.436562,
-								]
+								m_vMinBounds = [ -91.60556, 0.0, -74.982216 ]
+								m_vMaxBounds = [ 91.605576, 114.149338, 73.436562 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "Sail_construct"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Sail_construct"
-								m_vMinBounds =
-								[
-									-40.135460,
-									-17.231476,
-									-112.065231,
-								]
-								m_vMaxBounds =
-								[
-									76.518288,
-									220.009277,
-									46.202118,
-								]
+								m_vMinBounds = [ -40.13546, -17.231476, -112.065231 ]
+								m_vMaxBounds = [ 76.518288, 220.009277, 46.202118 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "Sail_rotator"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Sail_rotator"
-								m_vMinBounds =
-								[
-									-63.563663,
-									-11.062820,
-									-166.349823,
-								]
-								m_vMaxBounds =
-								[
-									2.314922,
-									198.079132,
-									0.841125,
-								]
+								m_vMinBounds = [ -63.563663, -11.06282, -166.349823 ]
+								m_vMaxBounds = [ 2.314922, 198.079132, 0.841125 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "sail_cloth1"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "sail_cloth1"
-								m_vMinBounds =
-								[
-									-17.560490,
-									27.994564,
-									-59.281063,
-								]
-								m_vMaxBounds =
-								[
-									10.040462,
-									132.951599,
-									35.955959,
-								]
+								m_vMinBounds = [ -17.56049, 27.994564, -59.281063 ]
+								m_vMaxBounds = [ 10.040462, 132.951599, 35.955959 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "bot_rope"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "bot_rope"
-								m_vMinBounds =
-								[
-									-49.767227,
-									0.000000,
-									-0.956089,
-								]
-								m_vMaxBounds =
-								[
-									0.000000,
-									133.885300,
-									21.452696,
-								]
+								m_vMinBounds = [ -49.767227, 0.0, -0.956089 ]
+								m_vMaxBounds = [ 0.0, 133.8853, 21.452696 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "small_barrel1"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "small_barrel1"
-								m_vMinBounds =
-								[
-									-22.454021,
-									-22.454033,
-									-26.370716,
-								]
-								m_vMaxBounds =
-								[
-									22.454025,
-									22.454025,
-									26.103493,
-								]
+								m_vMinBounds = [ -22.454021, -22.454033, -26.370716 ]
+								m_vMaxBounds = [ 22.454025, 22.454025, 26.103493 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "small_barrel2"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "small_barrel2"
-								m_vMinBounds =
-								[
-									-22.319675,
-									-22.319679,
-									-26.370712,
-								]
-								m_vMaxBounds =
-								[
-									22.319679,
-									22.319679,
-									26.103493,
-								]
+								m_vMinBounds = [ -22.319675, -22.319679, -26.370712 ]
+								m_vMaxBounds = [ 22.319679, 22.319679, 26.103493 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "small_barrel3"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "small_barrel3"
-								m_vMinBounds =
-								[
-									-22.439323,
-									-22.439331,
-									-26.370712,
-								]
-								m_vMaxBounds =
-								[
-									22.439335,
-									22.439327,
-									26.103493,
-								]
+								m_vMinBounds = [ -22.439323, -22.439331, -26.370712 ]
+								m_vMaxBounds = [ 22.439335, 22.439327, 26.103493 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "small_barrel4"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "small_barrel4"
-								m_vMinBounds =
-								[
-									-22.234070,
-									-22.234070,
-									-26.370712,
-								]
-								m_vMaxBounds =
-								[
-									22.234070,
-									22.234070,
-									26.103493,
-								]
+								m_vMinBounds = [ -22.23407, -22.23407, -26.370712 ]
+								m_vMaxBounds = [ 22.23407, 22.23407, 26.103493 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "sailstand_top"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "sailstand_top"
-								m_vMinBounds =
-								[
-									-5.428658,
-									-7.434448,
-									-5.131477,
-								]
-								m_vMaxBounds =
-								[
-									4.451622,
-									0.191162,
-									4.905586,
-								]
+								m_vMinBounds = [ -5.428658, -7.434448, -5.131477 ]
+								m_vMaxBounds = [ 4.451622, 0.191162, 4.905586 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "birdsnest"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "birdsnest"
-								m_vMinBounds =
-								[
-									-3.111445,
-									-3.447174,
-									-4.388210,
-								]
-								m_vMaxBounds =
-								[
-									3.007918,
-									4.081665,
-									3.858393,
-								]
+								m_vMinBounds = [ -3.111445, -3.447174, -4.38821 ]
+								m_vMaxBounds = [ 3.007918, 4.081665, 3.858393 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "sail_rope"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "sail_rope"
-								m_vMinBounds =
-								[
-									-1.294685,
-									-0.827972,
-									-1.632660,
-								]
-								m_vMaxBounds =
-								[
-									0.552349,
-									0.000000,
-									0.000000,
-								]
+								m_vMinBounds = [ -1.294685, -0.827972, -1.63266 ]
+								m_vMaxBounds = [ 0.552349, 0.0, 0.0 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "sail_bot_end"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "sail_bot_end"
-								m_vMinBounds =
-								[
-									-1.547840,
-									-1.566597,
-									-0.562428,
-								]
-								m_vMaxBounds =
-								[
-									1.547855,
-									1.566612,
-									0.562412,
-								]
+								m_vMinBounds = [ -1.54784, -1.566597, -0.562428 ]
+								m_vMaxBounds = [ 1.547855, 1.566612, 0.562412 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "sail_cloth2"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "sail_cloth2"
-								m_vMinBounds =
-								[
-									-34.530457,
-									12.234886,
-									-60.232304,
-								]
-								m_vMaxBounds =
-								[
-									-22.814575,
-									39.700104,
-									-32.691906,
-								]
+								m_vMinBounds = [ -34.530457, 12.234886, -60.232304 ]
+								m_vMaxBounds = [ -22.814575, 39.700104, -32.691906 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "sail_cloth4"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "sail_cloth4"
-								m_vMinBounds =
-								[
-									-11.158754,
-									-42.736053,
-									-2.052576,
-								]
-								m_vMaxBounds =
-								[
-									-1.076349,
-									0.425354,
-									0.841135,
-								]
+								m_vMinBounds = [ -11.158754, -42.736053, -2.052576 ]
+								m_vMaxBounds = [ -1.076349, 0.425354, 0.841135 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "sail_cloth5"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "sail_cloth5"
-								m_vMinBounds =
-								[
-									-2.000000,
-									-2.000000,
-									-2.000000,
-								]
-								m_vMaxBounds =
-								[
-									2.000000,
-									2.000000,
-									2.000000,
-								]
+								m_vMinBounds = [ -2.0, -2.0, -2.0 ]
+								m_vMaxBounds = [ 2.0, 2.0, 2.0 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "sail_cloth6"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "sail_cloth6"
-								m_vMinBounds =
-								[
-									-2.000000,
-									-2.000000,
-									-2.000000,
-								]
-								m_vMaxBounds =
-								[
-									2.000000,
-									2.000000,
-									2.000000,
-								]
+								m_vMinBounds = [ -2.0, -2.0, -2.0 ]
+								m_vMaxBounds = [ 2.0, 2.0, 2.0 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "sail_cloth7"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "sail_cloth7"
-								m_vMinBounds =
-								[
-									-2.000000,
-									-2.000000,
-									-2.000000,
-								]
-								m_vMaxBounds =
-								[
-									2.000000,
-									2.000000,
-									2.000000,
-								]
+								m_vMinBounds = [ -2.0, -2.0, -2.0 ]
+								m_vMaxBounds = [ 2.0, 2.0, 2.0 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "life_wheel"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "life_wheel"
-								m_vMinBounds =
-								[
-									-21.906233,
-									-21.906239,
-									-5.055283,
-								]
-								m_vMaxBounds =
-								[
-									21.906237,
-									21.906231,
-									5.055290,
-								]
+								m_vMinBounds = [ -21.906233, -21.906239, -5.055283 ]
+								m_vMaxBounds = [ 21.906237, 21.906231, 5.05529 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "Steer"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Steer"
-								m_vMinBounds =
-								[
-									-7.564022,
-									-45.110931,
-									-51.815628,
-								]
-								m_vMaxBounds =
-								[
-									6.828480,
-									45.552917,
-									46.500465,
-								]
+								m_vMinBounds = [ -7.564022, -45.110931, -51.815628 ]
+								m_vMaxBounds = [ 6.82848, 45.552917, 46.500465 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "mid_rope"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "mid_rope"
-								m_vMinBounds =
-								[
-									-0.828003,
-									-1.434135,
-									-0.956085,
-								]
-								m_vMaxBounds =
-								[
-									0.000000,
-									0.000000,
-									0.956089,
-								]
+								m_vMinBounds = [ -0.828003, -1.434135, -0.956085 ]
+								m_vMaxBounds = [ 0.0, 0.0, 0.956089 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 							{
 								m_name = "bot_rope_end"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "bot_rope_end"
-								m_vMinBounds =
-								[
-									-1.188721,
-									-0.809357,
-									-0.956085,
-								]
-								m_vMaxBounds =
-								[
-									0.000000,
-									0.000000,
-									0.956091,
-								]
+								m_vMinBounds = [ -1.188721, -0.809357, -0.956085 ]
+								m_vMaxBounds = [ 0.0, 0.0, 0.956091 ]
 								m_bTranslationOnly = false
-								m_cRenderColor =
-								[
-									0,
-									0,
-									0,
-									0,
-								]
+								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
 						]
 					},
@@ -641,57 +285,49 @@
 			}
 		},
 	]
-	m_pAttachmentLists =
+	m_pAttachmentLists = 
 	[
 		{
-			_class = "CVattachmentListReference"
-			m_pObject =
+			m_pObject = 
 			{
 				m_name = ""
-				m_attachments =
+				m_attachments = 
 				[
 					{
 						m_name = "attach_attack1"
-						m_influences =
+						m_influences = 
 						[
 							{
 								m_influenceName = "barrelboat_base"
-								m_vTranslationOffset =
-								[
-									1.795857,
-									112.695084,
-									-2.240340,
-								]
-								m_vRotationOffset =
-								[
-									-1.201733,
-									-0.295689,
-									-0.957312,
-								]
-								m_flWeight = 1.000000
+								m_vTranslationOffset = [ 1.795857, 112.695084, -2.24034 ]
+								m_vRotationOffset = [ -1.201733, -0.295689, -0.957312 ]
+								m_flWeight = 1.0
 								m_bRoot = false
 							},
 						]
 					},
 					{
 						m_name = "attach_hitloc"
-						m_influences =
+						m_influences = 
 						[
 							{
 								m_influenceName = "barrelboat_base"
-								m_vTranslationOffset =
-								[
-									0.000000,
-									103.466614,
-									0.000000,
-								]
-								m_vRotationOffset =
-								[
-									0.000000,
-									-0.000000,
-									0.000000,
-								]
-								m_flWeight = 1.000000
+								m_vTranslationOffset = [ 0.0, 103.466614, 0.0 ]
+								m_vRotationOffset = [ 0.0, -0.0, 0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "HatPoint"
+						m_influences = 
+						[
+							{
+								m_influenceName = "birdsnest"
+								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
+								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
+								m_flWeight = 1.0
 								m_bRoot = false
 							},
 						]
@@ -700,45 +336,39 @@
 			}
 		},
 	]
-	m_pAnimGroup =
+	m_pAnimGroup = 
 	{
-		_class = "CVanimGroupReference"
-		m_pObject =
+		m_pObject = 
 		{
 			m_Name = ""
-			m_pReferenceSkeleton =
+			m_pReferenceSkeleton = 
 			{
-				_class = "CVReferenceSkeletonReference"
 				m_pObject = null
 			}
-			m_pBoneFlagList =
+			m_pBoneFlagList = 
 			{
-				_class = "CVBoneFlagListReference"
 				m_pObject = null
 			}
-			m_pSeqGroup =
+			m_pSeqGroup = 
 			{
-				_class = "CVseqGroupReference"
 				m_pObject = null
 			}
-			m_pAnimGroups =
-			[
-			]
-			m_Vanim =
+			m_pAnimGroups = [  ]
+			m_Vanim = 
 			[
 				{
 					m_Animationname = "anim_barrelboat_idle"
 					m_Filepath = "models/barrelboat/anim_barrelboat_idle.fbx"
 					m_nStartframe = 0
 					m_nEndframe = 59
-					m_flFps = 25.000000
-					m_Loop =
+					m_flFps = 25.0
+					m_Loop = 
 					{
 						m_bLoop = true
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
-						m_StartLoop =
+						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
 							m_bEnabled = false
@@ -747,45 +377,27 @@
 					}
 					m_bHidden = false
 					m_bDisable = false
-					m_Activities =
+					m_Activities = 
 					[
 						{
 							m_Name = "ACT_DOTA_IDLE"
 							m_nWeight = 1
 						},
 					]
-					m_AnimationEvents =
-					[
-					]
-					m_MotionFrames =
-					[
-					]
-					m_pIkRules =
-					[
-					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
 					m_pAlignAnimation = null
-					m_adjustAnimation =
+					m_adjustAnimation = 
 					{
-						m_translation =
-						[
-							0.000000,
-							0.000000,
-							20.000000,
-						]
-						m_rotation =
-						[
-							0.000000,
-							0.000000,
-							0.000000,
-						]
+						m_translation = [ 0.0, 0.0, 20.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
-					m_Keywords =
-					[
-					]
-					m_sequenceParams =
+					m_Keywords = [  ]
+					m_sequenceParams = 
 					{
-						m_flFadeInTime = 0.200000
-						m_flFadeOutTime = 0.200000
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
 					}
 					m_folderName = ""
 					m_MotionFramesRootBone = ""
@@ -795,14 +407,14 @@
 					m_Filepath = "models/barrelboat/anim_barrelboat_moving.fbx"
 					m_nStartframe = 0
 					m_nEndframe = 59
-					m_flFps = 30.000000
-					m_Loop =
+					m_flFps = 30.0
+					m_Loop = 
 					{
 						m_bLoop = true
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
-						m_StartLoop =
+						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
 							m_bEnabled = false
@@ -811,45 +423,27 @@
 					}
 					m_bHidden = false
 					m_bDisable = false
-					m_Activities =
+					m_Activities = 
 					[
 						{
 							m_Name = "ACT_DOTA_RUN"
 							m_nWeight = 1
 						},
 					]
-					m_AnimationEvents =
-					[
-					]
-					m_MotionFrames =
-					[
-					]
-					m_pIkRules =
-					[
-					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
 					m_pAlignAnimation = null
-					m_adjustAnimation =
+					m_adjustAnimation = 
 					{
-						m_translation =
-						[
-							0.000000,
-							0.000000,
-							20.000000,
-						]
-						m_rotation =
-						[
-							0.000000,
-							0.000000,
-							0.000000,
-						]
+						m_translation = [ 0.0, 0.0, 20.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
 					}
-					m_Keywords =
-					[
-					]
-					m_sequenceParams =
+					m_Keywords = [  ]
+					m_sequenceParams = 
 					{
-						m_flFadeInTime = 0.200000
-						m_flFadeOutTime = 0.200000
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
 					}
 					m_folderName = ""
 					m_MotionFramesRootBone = ""
@@ -859,14 +453,14 @@
 					m_Filepath = "models/barrelboat/anim_barrelboat_idle.fbx"
 					m_nStartframe = 0
 					m_nEndframe = 59
-					m_flFps = 25.000000
-					m_Loop =
+					m_flFps = 25.0
+					m_Loop = 
 					{
 						m_bLoop = true
 						m_bSmoothLoop = false
 						m_nSmoothLoopStart = 0
 						m_nSmoothLoopEnd = 0
-						m_StartLoop =
+						m_StartLoop = 
 						{
 							_class = "CVAnimCmdStartLoop"
 							m_bEnabled = false
@@ -875,104 +469,67 @@
 					}
 					m_bHidden = false
 					m_bDisable = false
-					m_Activities =
+					m_Activities = 
 					[
 						{
 							m_Name = "ACT_DOTA_CAPTURE"
 							m_nWeight = 1
 						},
 					]
-					m_AnimationEvents =
-					[
-					]
-					m_MotionFrames =
-					[
-					]
-					m_pIkRules =
-					[
-					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
 					m_pAlignAnimation = null
-					m_adjustAnimation =
+					m_adjustAnimation = 
 					{
-						m_translation =
-						[
-							-400.000000,
-							80.000000,
-							300.000000,
-						]
-						m_rotation =
-						[
-							10.000000,
-							30.000000,
-							10.000000,
-						]
+						m_translation = [ -400.0, 80.0, 300.0 ]
+						m_rotation = [ 10.0, 30.0, 10.0 ]
 					}
-					m_Keywords =
-					[
-					]
-					m_sequenceParams =
+					m_Keywords = [  ]
+					m_sequenceParams = 
 					{
-						m_flFadeInTime = 0.200000
-						m_flFadeOutTime = 0.200000
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
 					}
 					m_folderName = ""
 					m_MotionFramesRootBone = ""
 				},
 			]
-			m_sScripts =
-			[
-			]
-			m_folderNames =
-			[
-			]
+			m_sScripts = [  ]
+			m_folderNames = [  ]
+			m_sCompileScripts = [  ]
 		}
 	}
-	m_pMaterialGroupList =
+	m_pMaterialGroupList = 
 	{
-		_class = "CVNodeMaterialGroupListReference"
 		m_pObject = null
 	}
-	m_pMeshGroupList =
+	m_pMeshGroupList = 
 	{
-		_class = "CVMeshGroupListReference"
 		m_pObject = null
 	}
-	m_pLodGroupList =
+	m_pLodGroupList = 
 	{
-		_class = "CVLODGroupListReference"
 		m_pObject = null
 	}
-	m_pPropBreakableList =
+	m_pPropBreakableList = 
 	{
-		_class = "CVpropBreakableListReference"
 		m_pObject = null
 	}
-	m_pPropDataList =
+	m_pPropDataList = 
 	{
-		_class = "CVpropDataListReference"
 		m_pObject = null
 	}
-	m_pConstraintLists =
-	[
-	]
+	m_pConstraintLists = [  ]
 	m_collision = ""
 	m_softbody = ""
 	m_sMDLFilename = ""
-	m_sOffsetHitboxSets =
-	[
-	]
-	m_vHitboxSetOffset =
-	[
-		0.000000,
-		0.000000,
-		0.000000,
-	]
-	m_scriptFiles =
-	[
-	]
-	m_pMaterialRemapList =
+	m_sOffsetHitboxSets = [  ]
+	m_vHitboxSetOffset = [ 0.0, 0.0, 0.0 ]
+	m_scriptFiles = [  ]
+	m_pMaterialRemapList = 
 	{
-		m_vMaterialRemapList =
+		m_vMaterialRemapList = 
 		[
 			{
 				m_sSearchMaterial = "*"
@@ -980,26 +537,20 @@
 			},
 		]
 	}
-	m_flFbxScale = 1.000000
-	m_flQCScale = 1.000000
-	m_vOrigin =
-	[
-		0.000000,
-		0.000000,
-		0.000000,
-	]
+	m_flFbxScale = 1.0
+	m_flQCScale = 1.0
+	m_vOrigin = [ 0.0, 0.0, 0.0 ]
 	m_pPsfList = null
 	m_keyValueText = ""
 	m_bStaticProp = false
 	m_bEnableClothProcessing = true
-	m_flClothEnableThreshold = 0.050000
+	m_flClothEnableThreshold = 0.05
 	m_nMaxClothVertsPerMesh = 2048
 	m_bBuildClothBoneHierarchy = false
 	m_nNavType = "AUTH_NAV_MESH"
 	m_bMakeUniqueVMeshes = false
 	m_bMakeImplicitBindPoseSequence = false
 	m_bAdjustSkeletonFromBoneFlags = false
-	m_pAnimGroups =
-	[
-	]
+	m_bHiddenAssetFlag = false
+	m_pAnimGroups = [  ]
 }

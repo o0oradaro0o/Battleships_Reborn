@@ -45,7 +45,7 @@ function startWeaponCooldown(keys)
 
   local cooldown = ability:GetSpecialValueFor("fire_rate")
 
-  ability:StartCooldown(cooldown)
+  --ability:StartCooldown(cooldown)
 end
 
 function del_fluff(keys) -- keys is the information sent by the ability

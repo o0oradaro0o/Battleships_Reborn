@@ -901,9 +901,12 @@ function CBattleship8D:OnThink()
         g_PlayerCount=g_PlayerCount+1
         if g_TugMode==0 then
           become_boat(hero, "npc_dota_hero_zuus")
-        else
+				else
+					hero:SetGold(6000, true)
+					hero:SetGold(0, false)
+					g_HeroGoldArray[hero:GetPlayerOwnerID()] = 6000
           become_boat(hero,"npc_dota_hero_ember_spirit")
-          g_HeroGoldArray[hero:GetPlayerOwnerID()] = 6000
+          
         end
 
 
@@ -1534,6 +1537,10 @@ end
 
 
 function AttachCosmetics(hero)
+	if hero.particlehAT==nil then
+		hero.particleR = ParticleManager:CreateParticle( "particles/basic_projectile/hat.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+		ParticleManager:SetParticleControlEnt(hero.particleR, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
+	end
 	if string.match(hero:GetName(),"apparition") then
 	  if hero.particleR==nil then
 		hero.particleR = ParticleManager:CreateParticle( "particles/basic_projectile/smoke_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
@@ -1723,7 +1730,7 @@ function CBattleship8D:HandleEmpGold()
   
 	  if team_gold < other_team_gold then
 		local balanceAmount  =  (other_team_gold-team_gold)
-		goldEach = goldEach + balanceAmount * (g_DockAliveNorthLeft + g_DockAliveNorthRight)/2 * (0.1 + 0.8 * (1/g_EmpireGoldCount))
+		goldEach = goldEach + balanceAmount * (g_DockAliveNorthLeft + g_DockAliveNorthRight)/2 * (0.1 + 0.8 * (1/math.sqrt(g_EmpireGoldCount)))
 	  end
 	  return goldEach / team_players
 	end
@@ -3498,8 +3505,10 @@ function CBattleship8D:HandleEmpGold()
 		  for itemnum= 0, #droppeditemlist, 1 do
 			PrintTable(droppeditemlist)
 			if droppeditemlist[itemnum] ~= nil then
-			  local DroppedItem=droppeditemlist[itemnum]
-			  DroppedItem:SetPurchaser(hero)
+				local DroppedItem=droppeditemlist[itemnum]
+				if not DroppedItem:IsNull() and not hero:IsNull() then
+					DroppedItem:SetPurchaser(hero)
+				end
 			end
 		  end
   
