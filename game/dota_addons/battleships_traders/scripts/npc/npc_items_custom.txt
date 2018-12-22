@@ -3075,7 +3075,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/starter_one_projectile.vpcf" 
@@ -3836,7 +3836,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/poison_one_projectile.vpcf" 
@@ -4055,7 +4055,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_one_projectile.vpcf" 
@@ -4291,7 +4291,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "800"
+						"MoveSpeed" "1500"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/pink_one_projectile.vpcf" 
@@ -4321,12 +4321,12 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dmg"			"22"
+				"dmg"			"3"
 			}
 			"02"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"0.8"
+				"fire_rate"		"0.11"
 			}
 			"03"
 			{
@@ -4400,7 +4400,7 @@
 							"Random" "1"
 						}
 
-						"MoveSpeed" "600"
+						"MoveSpeed" "950"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/coal_one_projectile.vpcf" 
@@ -4517,7 +4517,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "750"
+						"MoveSpeed" "1450"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
                    "EffectName"    "particles/basic_projectile/plasma_one_projectile.vpcf" 
@@ -5068,7 +5068,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/poison_two_projectile.vpcf" 
@@ -5309,7 +5309,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_two_projectile.vpcf" 
@@ -5559,7 +5559,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "800"
+						"MoveSpeed" "1500"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/pink_two_projectile.vpcf" 
@@ -5591,12 +5591,12 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dmg"			"44"
+				"dmg"			"6"
 			}
 			"02"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"0.8"
+				"fire_rate"		"0.11"
 			}
 			"03"
 			{
@@ -5674,7 +5674,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/coal_two_projectile.vpcf" 
@@ -5794,7 +5794,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "750"
+						"MoveSpeed" "1450"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/plasma_two_projectile.vpcf" 
@@ -6333,7 +6333,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/poison_three_projectile.vpcf" 
@@ -6556,7 +6556,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_three_projectile.vpcf" 
@@ -6795,7 +6795,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "800"
+						"MoveSpeed" "1500"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
                    "EffectName"    "particles/basic_projectile/pink_three_projectile.vpcf" 
@@ -6826,12 +6826,12 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dmg"			"88"
+				"dmg"			"12"
 			}
 			"02"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"0.8"
+				"fire_rate"		"0.11"
 			}
 			"03"
 			{
@@ -6846,7 +6846,7 @@
 			"05"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"110"
+				"dps"			"109"
 			}
 		}
 	}
@@ -6904,7 +6904,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "600"
+						"MoveSpeed" "950"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/coal_three_projectile.vpcf" 
@@ -7022,7 +7022,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "750"
+						"MoveSpeed" "1450"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/plasma_three_projectile.vpcf" 
@@ -7546,7 +7546,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/poison_one_projectile.vpcf" 
@@ -7564,7 +7564,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/poison_one_projectile.vpcf" 
@@ -7864,7 +7864,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_one_projectile.vpcf" 
@@ -7881,7 +7881,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_one_projectile.vpcf" 
@@ -8167,7 +8167,7 @@
 							"Random" "1"
 						}
 
-						"MoveSpeed" "800"
+						"MoveSpeed" "1500"
 						"ProvidesVision" "1"
 						"VisionRadius" "200"
 						"Dodgeable" "1" 
@@ -8186,7 +8186,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "800"
+						"MoveSpeed" "1500"
 						"VisionRadius" "200"
 						"ProvidesVision" "1"
 						"Dodgeable" "1" 
@@ -8217,12 +8217,12 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dmg"			"22"
+				"dmg"			"3"
 			}
 			"02"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"0.8"
+				"fire_rate"		"0.11"
 			}
 			"03"
 			{
@@ -8294,7 +8294,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/coal_one_projectile.vpcf" 
@@ -8312,7 +8312,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/coal_one_projectile.vpcf" 
@@ -8441,7 +8441,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "750"
+						"MoveSpeed" "1450"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/plasma_one_projectile.vpcf" 
@@ -8458,7 +8458,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "750"
+						"MoveSpeed" "1450"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/plasma_one_projectile.vpcf" 
@@ -9022,7 +9022,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/poison_two_projectile.vpcf" 
@@ -9039,7 +9039,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/poison_two_projectile.vpcf" 
@@ -9331,7 +9331,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_two_projectile.vpcf" 
@@ -9348,7 +9348,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_two_projectile.vpcf" 
@@ -9629,7 +9629,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "800"
+						"MoveSpeed" "1500"
 						"ProvidesVision" "1"
 						"VisionRadius" "400"
 						"Dodgeable" "1" 
@@ -9648,7 +9648,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "800"
+						"MoveSpeed" "1500"
 						"ProvidesVision" "1"
 						"VisionRadius" "400"
 						"Dodgeable" "1" 
@@ -9679,12 +9679,12 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dmg"			"44"
+				"dmg"			"6"
 			}
 			"02"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"0.8"
+				"fire_rate"		"0.11"
 			}
 			"03"
 			{
@@ -9699,7 +9699,7 @@
 			"05"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"110"
+				"dps"			"109"
 			}
 		}
 	}
@@ -9756,7 +9756,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/coal_two_projectile.vpcf" 
@@ -9773,7 +9773,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/coal_two_projectile.vpcf" 
@@ -9903,7 +9903,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "750"
+						"MoveSpeed" "1450"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/plasma_two_projectile.vpcf" 
@@ -9921,7 +9921,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "750"
+						"MoveSpeed" "1450"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/plasma_two_projectile.vpcf" 
@@ -10482,7 +10482,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/poison_three_projectile.vpcf" 
@@ -10499,7 +10499,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/poison_three_projectile.vpcf" 
@@ -10794,7 +10794,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_three_projectile.vpcf" 
@@ -10811,7 +10811,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_three_projectile.vpcf" 
@@ -11088,7 +11088,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "800"
+						"MoveSpeed" "1500"
 						"ProvidesVision" "1"
 						"VisionRadius" "600"
 						"Dodgeable" "1" 
@@ -11106,7 +11106,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "800"
+						"MoveSpeed" "1500"
 						"ProvidesVision" "1"
 						"VisionRadius" "600"
 						"Dodgeable" "1" 
@@ -11137,12 +11137,12 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dmg"			"88"
+				"dmg"			"12"
 			}
 			"02"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"0.8"
+				"fire_rate"		"0.11"
 			}
 			"03"
 			{
@@ -11157,7 +11157,7 @@
 			"05"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"220"
+				"dps"			"218"
 			}
 		}
 	}
@@ -11215,7 +11215,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/coal_three_projectile.vpcf" 
@@ -11233,7 +11233,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/coal_three_projectile.vpcf" 
@@ -11363,7 +11363,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "750"
+						"MoveSpeed" "1450"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/plasma_three_projectile.vpcf" 
@@ -11381,7 +11381,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "750"
+						"MoveSpeed" "1450"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/plasma_three_projectile.vpcf" 
@@ -11942,7 +11942,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
@@ -11959,7 +11959,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
@@ -11976,7 +11976,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
@@ -11993,7 +11993,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
@@ -12329,7 +12329,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_ult_projectile.vpcf" 
@@ -12346,7 +12346,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_ult_projectile.vpcf" 
@@ -12363,7 +12363,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_ult_projectile.vpcf" 
@@ -12380,7 +12380,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_ult_projectile.vpcf" 
@@ -12782,12 +12782,12 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dmg"			"89"
+				"dmg"			"12"
 			}
 			"02"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"0.8"
+				"fire_rate"		"0.11"
 			}
 			"03"
 			{
@@ -12802,7 +12802,7 @@
 			"05"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"445"
+				"dps"			"436"
 			}
 		}
 	}
@@ -12860,7 +12860,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/coal_ult_projectile.vpcf" 
@@ -12877,7 +12877,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/coal_ult_projectile.vpcf" 
@@ -12894,7 +12894,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/coal_ult_projectile.vpcf" 
@@ -12911,7 +12911,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "700"
+						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/coal_ult_projectile.vpcf" 
@@ -13037,7 +13037,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "750"
+						"MoveSpeed" "1450"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
             "EffectName"    "particles/basic_projectile/plasma_ult_projectile.vpcf" 
@@ -13054,7 +13054,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "750"
+						"MoveSpeed" "1450"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
                    "EffectName"    "particles/basic_projectile/plasma_ult_projectile.vpcf" 
@@ -13071,7 +13071,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "750"
+						"MoveSpeed" "1450"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
             "EffectName"    "particles/basic_projectile/plasma_ult_projectile.vpcf" 
@@ -13088,7 +13088,7 @@
 							"MaxTargets" "1"
 							"Random" "1"
 						}
-						"MoveSpeed" "750"
+						"MoveSpeed" "1450"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
             "EffectName"    "particles/basic_projectile/plasma_ult_projectile.vpcf" 
@@ -14190,7 +14190,7 @@
 									"MaxTargets" "1"
 									"Random" "1"
 								}
-							"MoveSpeed" "750"
+							"MoveSpeed" "1450"
 							"ProvidesVision" "0"
 							"EffectName"    "particles/basic_projectile/monkey_buisness_effect.vpcf" 
 						}
@@ -14229,7 +14229,7 @@
 									"MaxTargets" "1"
 									"Random" "1"
 								}
-							"MoveSpeed" "750"
+							"MoveSpeed" "1450"
 							"ProvidesVision" "0"
 							"EffectName"    "particles/basic_projectile/monkey_buisness_effect.vpcf" 
 						}
