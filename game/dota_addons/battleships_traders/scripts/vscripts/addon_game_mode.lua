@@ -991,7 +991,22 @@ function CBattleship8D:OnThink()
               local player = PlayerResource:GetPlayer(playerID)
               if GameRules:PlayerHasCustomGameHostPrivileges(player) then
                 co_op_pid = playerID
-              end
+							end
+							if playerID~=nil then
+								steamID32 = PlayerResource:GetSteamAccountID(playerID)
+								print("userID" .. steamID32)
+
+								if steamID32 == 13375544 then
+									local x = RandomInt(1,3)
+									if x==1 then
+										Notifications:TopToAll({text="Holy hell it's Kerry!! Welcome back buddy.", duration=7.0, style={color="#00ff2c",  fontSize="70px;"}})
+									elseif x==2 then
+										Notifications:TopToAll({text="Kerry is in the house!!!", duration=7.0, style={color="#00ff2c",  fontSize="70px;"}})
+									elseif x==3 then
+										Notifications:TopToAll({text="Borgel is on a boat!", duration=7.0, style={color="#00ff2c",  fontSize="70px;"}})
+									end
+								end
+							end
             end
           end
 
@@ -1537,7 +1552,7 @@ end
 
 
 function AttachCosmetics(hero)
-	if hero.particlehAT==nil then
+	if hero.particlehAT==nil and string.match(hero:GetName(),"zuus")  then
 		hero.particleR = ParticleManager:CreateParticle( "particles/basic_projectile/hat.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 		ParticleManager:SetParticleControlEnt(hero.particleR, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
 	end
