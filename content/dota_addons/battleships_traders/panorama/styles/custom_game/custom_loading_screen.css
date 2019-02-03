@@ -134,7 +134,36 @@
 	margin-right: 30px;
 	margin-left: 30px;
 }
+#Discord
+{
+	margin-top: 60px;
+	flow-children: right;
+	background-color: gradient( linear, 0% 20%, 0% 100%, from( #2c2f33 ), to( #23272a) );
+	border-radius: 20px;
+	height: 50px;
+		width: 300px;
+		horizontal-align: center;
+}
 
+.discord_text
+{
+	margin: 10px;
+	vertical-align: center;
+	font-size: 17px;
+	color: #cccccc;
+	text-shadow: 2px 2px 2px #000000;
+	horizontal-align: center;
+	text-decoration: underline;
+}
+
+#DiscordImage
+{
+	
+	margin: 5px;
+		height: 44px;
+		width: 45px;
+		horizontal-align: Right;
+}
 #ArtistPanel
 {
 	horizontal-align: Left;

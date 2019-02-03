@@ -48,6 +48,19 @@ g_XpToLevel={
   100000
 }
 
+
+-- people's steam ids
+g_zentrix = 6883638
+g_quincy = 72562802
+g_radar = 35695824
+g_rere = 65507855
+g_penrose = 64744363
+g_brit = 92315095
+g_cat = 82360838
+g_frood = 93116118
+g_vic = 70585706
+g_josh = 40159914
+g_borgel = 13375544
 -- creep spawn and level counters
 g_CreepLevel = 0
 g_NumSmallCreeps = 6
@@ -803,11 +816,11 @@ function CBattleship8D:OnPlayerChat(keys)
     steamID32 = PlayerResource:GetSteamAccountID(playerID)
     print("userID" .. steamID32)
     local text = keys.text
-    if (steamID32 == 35695824 or steamID32 == 6883638 or steamID32 == 5879425 or steamID32 == 93116118) and string.match(text,"TUG MODE ACTIVATE!") and  GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+    if (steamID32 == g_radar or steamID32 == g_zentrix or steamID32 == 5879425 or steamID32 == 93116118) and string.match(text,"TUG MODE ACTIVATE!") and  GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
       g_TugMode=1
       print("tug mode!!")
     end
-    if steamID32 == 6883638 and teamonly==0 and string.match(text,"to zoom") and GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+    if steamID32 == g_zentrix and teamonly==0 and string.match(text,"to zoom") and GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
       Notifications:TopToAll({text="Thank you David!", duration=5.0, style={color="#888888",  fontSize="70px;"}})
 
     end
@@ -996,7 +1009,7 @@ function CBattleship8D:OnThink()
 								steamID32 = PlayerResource:GetSteamAccountID(playerID)
 								print("userID" .. steamID32)
 
-								if steamID32 == 13375544 then
+								if steamID32 == g_borgel then
 									local x = RandomInt(1,3)
 									if x==1 then
 										Notifications:TopToAll({text="Holy hell it's Kerry!! Welcome back buddy.", duration=7.0, style={color="#00ff2c",  fontSize="70px;"}})
@@ -1523,7 +1536,7 @@ function CBattleship8D:OnNPCSpawned(keys)
               local Item = npc:GetItemInSlot( itemSlot )
               if Item ~= nil and string.match(Item:GetName(),"hull") then -- makes sure that the item exists and making sure it is the correct item
                 npc:RemoveModifierByName("modifier_item_hull_one")
-                --print( "hull found." )
+                --print( "hull found." )s
               elseif Item ~= nil and string.match(Item:GetName(),"doubled") then -- makes sure that the item exists and making sure it is the correct item
                 local doubledstring = string.gsub(Item:GetName(),"_bow", "_bow_shooting")
                 npc:RemoveModifierByName(doubledstring)
@@ -1552,9 +1565,51 @@ end
 
 
 function AttachCosmetics(hero)
-	if hero.particlehAT==nil and string.match(hero:GetName(),"zuus")  then
-		hero.particleR = ParticleManager:CreateParticle( "particles/basic_projectile/hat.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
-		ParticleManager:SetParticleControlEnt(hero.particleR, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
+	
+	local steamID32 = 0
+	print("player" .. hero:GetPlayerOwnerID())
+	if hero:GetPlayerOwnerID()~=nil then
+		steamID32 = PlayerResource:GetSteamAccountID(hero:GetPlayerOwnerID())
+		print("userID" .. steamID32)
+	end
+
+	if hero.particleHAT==nil and string.match(hero:GetName(),"zuus")  then
+		if steamID32 == g_zentrix then
+			hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/zentrix.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+			ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
+		elseif steamID32 == g_quincy then
+			hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/quincy.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+			ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
+		elseif steamID32 == g_rere then
+			hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/rere.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+			ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
+		elseif steamID32 == g_penrose then
+			hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/penrose.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+			ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
+		elseif steamID32 == g_brit then
+			hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/brit.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+			ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
+		elseif steamID32 == g_radar then
+			hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/radar.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+			ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
+		elseif steamID32 == g_cat then
+			hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/cat.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+			ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
+		elseif steamID32 == g_frood then
+			hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/frood.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+			ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
+		elseif steamID32 == g_vic then
+			hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/vic.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+			ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
+		elseif steamID32 == g_josh then
+			hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/josh.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+			ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
+		elseif steamID32 == g_borgel then
+			hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/borgel.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+			ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
+		end
+		
+		
 	end
 	if string.match(hero:GetName(),"apparition") then
 	  if hero.particleR==nil then
@@ -2745,6 +2800,9 @@ function CBattleship8D:HandleEmpGold()
 	--distribute the gold to the team, add it to the empire gold and remove the origional bounty gold from the killer
   
 	if killedUnit:IsRealHero() then
+		for _,modifier in pairs(killedUnit:FindAllModifiers()) do
+      killedUnit:RemoveModifierByName(modifier:GetName())
+    end
 	  local killerName="Unknown"
 	  local KilledName="Unknown"
 	  if killedUnit:GetPlayerID()~=nil then

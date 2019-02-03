@@ -171,6 +171,13 @@
 	text-shadow: 2px 2px 2px #550000;
 }
 
+.discord_text
+{
+	vertical-align: center;
+	font-size: 25px;
+	color: #cccccc;
+	text-shadow: 2px 2px 2px #000000;
+}
 .AuthorTitle
 {
 	vertical-align: center;

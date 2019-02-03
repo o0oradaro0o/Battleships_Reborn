@@ -916,6 +916,43 @@ function killMe(args) -- keys is the information sent by the ability
 	ApplyDamage(damageTable)
 end
 
+function DmgAura(keys)
+	local casterUnit = keys.caster
+	local range = 400
+	local handles = {}
+	handles.team = DOTA_UNIT_TARGET_TEAM_ENEMY
+	handles.types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING + DOTA_UNIT_TARGET_HERO
+	handles.flags = DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
+	local dmg=25;
+	if #getEnemies(casterUnit,range,handles) > 0 then
+	  for _,en in pairs(getEnemies(casterUnit,range,handles)) do
+		local damageTable = {
+		  victim = en,
+		  attacker = casterUnit,
+		  damage = dmg,
+		  damage_type = DAMAGE_TYPE_PHYSICAL,
+		}
+		ApplyDamage(damageTable)
+	  end
+  
+	end
+  end
+
+  
+function getEnemies(casterUnit, range, handles)
+
+	local enemies = FindUnitsInRadius(casterUnit:GetTeamNumber(),
+	casterUnit:GetOrigin(),
+	nil,
+	range,
+	handles.team,
+	handles.types,
+	handles.flags,
+	0,
+	false)
+	return enemies
+  end
+
 function submerge(args) -- keys is the information sent by the ability
 	-- --print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster

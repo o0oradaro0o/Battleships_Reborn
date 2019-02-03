@@ -2644,6 +2644,11 @@
 						"EffectName"		  "particles/base_attacks/bomber_boom_projectile.vpcf" 
 						"EffectAttachType"	"follow_origin"
 					}
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"DmgAura"
+					}
 				}
 			
 			}
@@ -2701,11 +2706,6 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"move_duration"	"2.5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"pull_duration"	"2.25 2.5 2.75"
 			}
 
 		}

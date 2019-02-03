@@ -26,6 +26,10 @@
 			<Panel id="HeroPanel">
 				<Label class="heroTitle" text="#Hero_Title"/>
 			</Panel>
+			<Panel id="Discord" onactivate="ExternalBrowserGoToURL('https://discord.gg/DFc8MBt');">
+				<Label class="discord_text" text="#discord" />
+				<Image id="DiscordImage" src="file://{images}/custom_game/game_info/Discord.png" />
+				</Panel>
 		</Panel>
 		<Panel id="CoOpHolder">
 			<Panel id="CoOp">
@@ -44,9 +48,6 @@
 				<Label class="AuthorTitle" text="#News_Title" />
 
 				<Label class="newsTitle" text="#News_Content" />
-
-
-
 			</Panel>
 		</Panel>
 
