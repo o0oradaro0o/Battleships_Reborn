@@ -93,7 +93,7 @@ end
 
 function speed_boat_wave:OnProjectileHit_ExtraData(target, location, ExtraData)
     if IsServer() then
-      print("inProjHit")
+      --print("inProjHit")
     if target then
       local caster = self:GetCaster()
       local damage_flags = DOTA_DAMAGE_FLAG_NONE

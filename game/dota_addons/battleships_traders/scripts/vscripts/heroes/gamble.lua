@@ -64,7 +64,7 @@ function gamble:OnSpellStart()
         local oldAbilityLevel = oldAbilities[i]["level"]
 
         local newAbilityName = spinSet[1][i+1]
-        print(i .. spinSet[1][i+1])
+        --print(i .. spinSet[1][i+1])
         local newAbility = caster:AddAbility(newAbilityName)
 
         newAbility:SetAbilityIndex(i)

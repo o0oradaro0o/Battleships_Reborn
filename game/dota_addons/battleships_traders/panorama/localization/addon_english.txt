@@ -12,37 +12,46 @@
 	"DOTA_BadGuys"    			"Northern Alliance"
 
 	"bs_Objectives"				"Objective:"
-	"HowToPlay"				"How to Play:"
+	"HowToPlay"					"How to Play:"
 	
-	"bs_Empire"				"Empire Gold:"
+	"Options_title"				"Options"
+	"credits"					"Credits"
+	"empty_ship"				"Empty Ship"
+	
+	"bs_Empire"					"Empire Gold:"
 	"bs_Weapons_3"				"Weapons:"
 	"bs_Weapons"				"Weapons II:"
 	"bs_Weapons_2"				"Weapons III:"
 	"bs_Ships"					"Ships:"
 	"bs_Towers"					"Towers:"
 	"bs_Tide"					"Tidehunter:"
-	"bs_upgrade"					"Upgrades:"
+	"bs_upgrade"				"Upgrades:"
 	"bs_Combat"					"Combat:"
-	"bs_Combat2"					"Combat II:"
+	"bs_Combat2"				"Combat II:"
 	"bs_Zoom"					"Zoom:"
 	"next"				">"
 	"prev"				"<"
-	"sellBack"				"Ship trade in value:"
+	"sellBack"				"Ship trade-in value:"
 
-	"bs_HowToWin"				"Destroy your enemy's <font color='#58ACFA'>harbors</font> (bases) at the <font color='#ff1111'>north</font> or <font color='#11ff11'>south</font> edge of the map."
+	"bs_HowToWin"				"<br />Destroy your enemy's <font color='#58ACFA'>harbors</font> (bases) at the <font color='#ff1111'>north</font> or <font color='#11ff11'>south</font> edge of the map."
 	"bs_HowToWeapons3"			"Buy weapons from the <font color='#ff1111'>EQUIPMENT</font> shopkeeper. <br /><br />Weapons target <font color='#ff8811'>random</font> enemies in their range."
 	"bs_HowToWeapons"			"For each weapon type (row), there are 4 tiers of weapons: <font color='#11ff11'>T1, T2, T3, and ULTIMATE</font> <br /><br />Increase in <font color='#ff1111'>damage</font> from left to right <br /><br />Increase in <font color='#ffcc66'>range</font> from top to bottom."
-	"bs_HowToShips"				"You can upgrade to new ships by heading to the Ships vendor, and purchasing from one of four classes of ships. You'll start with nothing more than a barrel, so upgrade to get bigger boats and better abilities!"
+	"bs_HowToShips"				"<br /><br />You can upgrade to new ships by heading to the Ships vendor, and purchasing from one of four classes of ships. You'll start with nothing more than a barrel, so upgrade to get bigger boats and better abilities!"
 	"bs_HowToWeapons2"			"If you buy two of the same <font color='#11ff11'>weapon</font>, it will stack, saving inventory space. <br /><br />Once you own <font color='#db9200'>doubled weapons</font> from each tier of weapon (T1, T2, and T3), purchase a <font color='#66aaff'>recipe</font> (4th tier weapon) to combine them all into an  <font color='#ff1111'>ultimate weapon.</font>"
 	"bs_HowToTowers"			"Towers are powerful defensive structures. <br /><br />Destroying an enemy tower increases your team’s passive income. <br /><br /> Only short range weapons can damage towers.  <br /><br /> Side shops provide means of repairing your towers and Dearmoring enemy towers."
 	"bs_HowToTide"				"Tidehunter is a boss unit that roams the left region of the map.<br /><br />Slaying Tidehunter will grant your team a gold reward and spawn a monster to fight for your team until death."
-	"bs_HowToUpgrade"			"Upgrade items add additional utility to your ship.<br /><br />Each utility item has 4 levels of effectiveness.<br /><br />These items can be found in the 'Upgrades' tab of the shop."
+	"bs_HowToUpgrade"			"<br />Upgrade items add additional utility to your ship.<br /><br />Each utility item has 4 levels of effectiveness.<br /><br />These items can be found in the 'Upgrades' tab of the shop."
 	"bs_HowToCombat"			"Creeps can provide cover because weapons autotarget.<br /><br />Positioning yourself among creeps will keep you safe.<br /><br />Isolating Enemies in your weapon's range will focus your fire."
-	"bs_HowToCombat2"			"You can shoot over walls but only if you have vision of the other side.<br /><br />Be wary of areas you cannot see.<br /><br />Try to strike where you cannot be seen, relying on allys or creeps to provide vision."
+	"bs_HowToCombat2"			"You can shoot over walls but only if you have vision of the other side.<br /><br />Be wary of areas you cannot see.<br />Try to strike where you cannot be seen, relying on allys or creeps to <br />provide vision.<br />"
 	"bs_HowToEmpire"			"Every 4 minutes you receive Empire gold.<br /><br />Whichever team is behind on net worth receives a small empire gold bonus to help them recover.<br /><br />The percentage recovered diminishes as the game goes on."
 	"bs_HowToZoom"				"There is a zoom controller at the top center of your screen.<br /><br />Zooming out can be especially helpful when playing longer range weapons as they often strike targets that would otherwise be offscreen."
 	
-	"bs_Thanks"					"We'd like to give special thanks to the Dota2Modding IRC channel, in particular BMD, Myll, Crazyloon, Hewdrw, JimmyDorry, and Noya for their help. <br /><br />Russian Translations by React and Al1en. <br /><br /> Thanks for playing Battleships! Good Luck, Have Fun, and Don't Die! <br />- radar, WeAreAllBritons, Frood, borgel, and zentrix"
+	"PresentedBy"				"Presented By:"
+	"developers"				"radar<br/>Vicfrank<br/>WeAreAllBritons<br/>Frood<br/>Multiplex<br/>Penrose<br/>Zentrix<br/>Flam3s"
+	"ArtworkBy"					"Artwork By:"
+	"Artwork"					"Taterfish<br/>Slapunas"
+	"HeroesBy"					"Our Heroes:"
+	"Heroes"					"Hewdraw<br/>Sidearms<br/>Wigguno<br/>Jimmydorry<br/>Crayzloon<br/>SinZ<br/>Noya<br/>BMD<br/>Myll<br/>"
 	
 	"unstick"						"Unstick"
 	
@@ -58,8 +67,6 @@
 	//Ship Descriptions
 	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	
-	"ancient_apparition"	"Paddlewheel Diver"
-	"ancient_apparition_desc"	"A simple, maneuverable ship that can dive beneath attacks."
 	
 	"ancient_apparition"		"Paddlewheel Diver"
 	"ancient_apparition_desc"	"A simple, maneuverable ship that can dive beneath attacks."
@@ -93,6 +100,11 @@
 	"slark"						"Viking Warship"
 	"slark_desc"				"Scour the fjords in this quick, heavy-hitting berserker. Neither you nor your enemies will last long."		
 	
+	"shredder"						"Ironclad Gunship"
+
+	"shredder_desc"				"Man your battle stations and plug your ears. Eight cannons in a tin can, the Ironclad Gunship is never scared to fight, especially because it's got no cannons in the rear!"		
+	
+
 	"lion"						"Yacht"	
 	"lion_desc"					"Light and fast, this ship can drop a small pleasure craft to absorb extra damage."	
 	
@@ -109,20 +121,20 @@
 	"rattletrap_desc"			"Light and fast, the Catamaran jumps out of reach and fires a deadly arrow."
 	
 	"batrider"				"Whaling Dinghy"
-	"batrider_desc"			"Equipped with a powerful harpoon this light ship can quickly get into the action. Whether this is brave or brazen is up to you."
+	"batrider_desc"			"Equipped with a powerful harpoon, this light ship can quickly get into the action. Whether this is brave or brazen is up to you."
 	
 	"brewmaster"						"River Boat"
-	"brewmaster_desc"			"This leasurly river boat relies on lasy luck to choose its abilities. Just how sturdy it is and how much bite it has changes each time yu spinm."
+	"brewmaster_desc"			"This leisurely river boat relies on lady luck to choose its abilities. Just how sturdy it is and how much bite it has changes each time you spin."
 	
 	
 	"windrunner"				"Construction Ship"
-	"windrunner_desc"			"The construction ship is a floating dock, capable of using the scrap around it to repair itself, protect its allies and even construct ships for the empire."
+	"windrunner_desc"			"The construction ship is a floating dock, capable of using the scrap around it to repair itself, protect its allies, and even construct ships for the empire."
 	
 	"sniper"					"Submarine"
 	"sniper_desc"				"This submarine is less of a submarine and more of a boat. The sub is powerful, and even more powerful when submerged. But be wary, or you'll run out of oxygen!"		
 	
 	"crystal_maiden"			"Canoe"
-	"crystal_maiden_desc"		"The Canoe is a very simple boat whose crew gains heart from one another and inspires their allies."		
+	"crystal_maiden_desc"		"The Canoe is a very simple boat whose crew gains heart from one another and inspire their allies."		
 	
 	"phantom_lancer"			"Airboat"
 	"phantom_lancer_desc"		"The Airboat is a fast and sturdy ship with some dangerous damage abilities."
@@ -138,7 +150,7 @@
 	"vengefulspirit_desc"		"The Phoenician Trader is a simple but fully licensed trading ship."
 	
 	"bane"						"Cargo Ship"	
-	"bane_desc"					"The strongest, fastest trader in the seas. Might be radioactive... Nobody's sure."			
+	"bane_desc"					"The strongest, fastest trader in the seas. Might be radioactive... nobody's sure."			
 	
 	"enigma"					"Ghost Trader"
 	"enigma_desc"				"The SS Baychimo was lost and abandoned in 1931.  This ghost ship was last seen in 1969..."
@@ -152,7 +164,7 @@
 	"left_click"					"Left click for additional details. Right click to buy."
 	"hp"	"Hit Points:"
 	"ms"	"Move Speed:"
-	"regen"	"HP Regeneration/s:"
+	"regen"	"HP Regen/s:"
 	
 	
 	"buy" "Buy this boat:"
@@ -3198,18 +3210,52 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"Artist_Panel"		"Original Artwork By: Taterfish and Slapunas"
 		"Hero_Title"		"IRC heroes: Noya, BMD, Myll, Hewdraw, Sidearms, Wigguno, Jimmydorry, Crazyloon, and SinZ "
 		
-		"Coop_Title"		"Co-Op Challenge mode!"
+		"Coop_Title"		"Co-Op Challenge Mode"
 		"Coop_Desc"			"An assault challenge against waves of bots. Kill their base before you are overrun."
-		"Battle_Title"		"Battle mode!"
+		"Battle_Title"		"Battle Mode"
 		"Battle_Desc"		"Every 4 minutes a king of the hill style battle occurs.  All participants get gold and the winning team gets extra gold."
-		"discord"		"Click to join us on discord!"
+		"New_Title"			"New Title"
+		"Trade_Desc"			"Adds a special class of ship with limited inventory slots can take on profitable trading contracts and buy powerful consumable items. These ships drop high bounties if hunted down!"
+		"discord"			"Click to join us on discord!"
 		"News_Title"		"News!"
-		"News_Content"		"Hi all! I am continuing to make balance changes and improve abilities. The next new content will be another 6k cost ship.
+		"News_Content"		"Hi all! I am continuing to make balance changes and improve abilities. The next new content will be replacments for pistols on the 6k ships.
 
-Recent Balance Changes 9/22/2018
-   • River boat's damaging abilities buffed.
-   • Paddlewheel Base Stats Improved.
-   • Tidehunter now becomes stronger with time, not just when killed.   
+Recent Balance Changes 2/7/2019
+   • New 6K added the Ironclad Gunship.
+   • Battleship silence aoe increased.
+   • Aircraft carrier ships nerfed.
+   • Tidehunter abilitys damage adjusted.
 "
 		
+		"port_cannons"                                               "Port Cannons"
+        "port_cannons_Description"                                   "Fire the three cannons on the left side of your ship!\n\n Increasing levels lowers cooldown."
+        "starboard_cannon_damage_tooltip"                            "DAMAGE:"
+
+        "bow_cannon"                                                 "Bow Cannons"
+        "bow_cannon_Description"                                     "Fire the two cannons on the front of your ship!\n\n Increasing levels lowers cooldown."
+        "bow_cannon_damage_tooltip"                                  "DAMAGE:"
+
+        "starboard_cannon"                                           "Starboard Cannons"
+        "starboard_cannon_Description"                                "Fire the three cannons on the right side of your ship!\n\n Increasing levels lowers cooldown."
+        "starboard_cannon_damage_tooltip"                            "DAMAGE:"
+
+        "explosive_shells"                                           "Load Concussive shells!"
+        "explosive_shells_Description"                               "The damage dealt by cannons is doubled and they stun on hit for the duration."
+        "explosive_shells_duration"                                  "DURATION:"
+
+        "cannon_dmg"                                                 "Improved shells"
+        "cannon_dmg_Description"                                     "Increase the damage dealt by cannon abilities."
+        "cannon_dmg_dmg_buff"                                        "DAMAGE BONUS:"
+
+        "cannon_range"                                               "Improved Spotters"
+		"ball_lightning_lua_max_distance"                            "MAX DISTANCE:"
+		"winner" "You won!"
+		"loser" "You Were Defeated"
+		"BestCreepsKiller" "Things Killed"
+		"BestBuildingDamager""Damage Dealt to Buildings"
+		"BestHeroHitter""Damage Dealt to Heroes"
+		"BestTank""Damage Taken"
+		"BestDamageDealt" "Damage Dealt"
+		"score_Name" "radar"
+		"score_Points" "0"
 }

@@ -14,7 +14,7 @@
     //-0101---POISON-------------------------------
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     "DOTA_Tooltip_ability_item_poison_bow"                "Poison Vials"
-    "DOTA_Tooltip_ability_item_poison_bow_Description"              "<h1>Weapon: Poison Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Poisons targets, dealing %damage% damage per half-second for %psn_dur% seconds."
+    "DOTA_Tooltip_ability_item_poison_bow_Description"              "<h1>Weapon: Poison Level 1</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Poisons targets, dealing %damage% damage per half-second for %psn_dur% seconds."
     "DOTA_Tooltip_ability_item_poison_bow_Note0"            "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_poison_bow_fire_rate"          "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_poison_bow_dmg"              "DAMAGE:"
@@ -22,7 +22,7 @@
     "DOTA_Tooltip_ability_item_poison_bow_dps"              "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_poison_bow_doubled"            "Double Poison Vials"
-    "DOTA_Tooltip_ability_item_poison_bow_doubled_Description"          "<h1>Weapon: Poison Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Poisons targets, dealing %damage% damage per half-second for %psn_dur% seconds."
+    "DOTA_Tooltip_ability_item_poison_bow_doubled_Description"          "<h1>Weapon: Poison Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Poisons targets, dealing %damage% damage per half-second for %psn_dur% seconds."
     "DOTA_Tooltip_ability_item_poison_bow_doubled_fire_rate"      "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_poison_bow_doubled_dmg"          "DAMAGE (x2):"
     "DOTA_Tooltip_ability_item_poison_bow_doubled_range"        "RANGE:"
@@ -30,7 +30,7 @@
 
 
     "DOTA_Tooltip_ability_item_poison_two_bow"              "Poison Jugs"
-    "DOTA_Tooltip_ability_item_poison_two_bow_Description"            "<h1>Weapon: Poison Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Poisons targets, dealing %damage% damage per half-second for %psn_dur% seconds."
+    "DOTA_Tooltip_ability_item_poison_two_bow_Description"            "<h1>Weapon: Poison Level 2</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Poisons targets, dealing %damage% damage per half-second for %psn_dur% seconds."
     "DOTA_Tooltip_ability_item_poison_two_bow_Note0"          "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_poison_two_bow_fire_rate"        "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_poison_two_bow_dmg"            "DAMAGE:"
@@ -38,7 +38,7 @@
     "DOTA_Tooltip_ability_item_poison_two_bow_dps"            "\n<font  size= '3' color='#cc6400'>DPS:</font>"    
 
     "DOTA_Tooltip_ability_item_poison_two_bow_doubled"          "Double Poison Jugs"
-    "DOTA_Tooltip_ability_item_poison_two_bow_doubled_Description"    "<h1>Weapon: Poison Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Poisons targets, dealing %damage% damage per half-second for %psn_dur% seconds."
+    "DOTA_Tooltip_ability_item_poison_two_bow_doubled_Description"    "<h1>Weapon: Poison Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Poisons targets, dealing %damage% damage per half-second for %psn_dur% seconds."
     "DOTA_Tooltip_ability_item_poison_two_bow_doubled_fire_rate"    "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_poison_two_bow_doubled_dmg"        "DAMAGE (x2):"
     "DOTA_Tooltip_ability_item_poison_two_bow_doubled_range"      "RANGE:"
@@ -46,7 +46,7 @@
 
 
     "DOTA_Tooltip_ability_item_poison_three_bow"            "Poison Grenades"
-    "DOTA_Tooltip_ability_item_poison_three_bow_Description"          "<h1>Weapon: Poison Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Poisons targets, dealing %damage% damage per half-second for %psn_dur% seconds."
+    "DOTA_Tooltip_ability_item_poison_three_bow_Description"          "<h1>Weapon: Poison Level 3</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Poisons targets, dealing %damage% damage per half-second for %psn_dur% seconds."
     "DOTA_Tooltip_ability_item_poison_three_bow_Note0"          "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_poison_three_bow_fire_rate"        "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_poison_three_bow_dmg"          "DAMAGE:"
@@ -54,7 +54,7 @@
     "DOTA_Tooltip_ability_item_poison_three_bow_dps"          "\n<font  size= '3' color='#cc6400'>DPS:</font>"    
 
     "DOTA_Tooltip_ability_item_poison_three_bow_doubled"        "Double Poison Grenades"
-    "DOTA_Tooltip_ability_item_poison_three_bow_doubled_Description"  "<h1>Weapon: Poison Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Poisons targets, dealing %damage% damage per half-second for %psn_dur% seconds."
+    "DOTA_Tooltip_ability_item_poison_three_bow_doubled_Description"  "<h1>Weapon: Poison Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Poisons targets, dealing %damage% damage per half-second for %psn_dur% seconds."
     "DOTA_Tooltip_ability_item_poison_three_bow_doubled_fire_rate"    "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_poison_three_bow_doubled_dmg"      "DAMAGE (x2):"
     "DOTA_Tooltip_ability_item_poison_three_bow_doubled_range"      "RANGE:"  
@@ -82,7 +82,7 @@
     //-0102---FIRE---------------------------------
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     "DOTA_Tooltip_ability_item_fire_bow"                "Flimsy Torches"
-    "DOTA_Tooltip_ability_item_fire_bow_Description"              "<h1>Weapon: Fire Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Deals %damage% damage every %fire_rate% seconds to all ships in range."
+    "DOTA_Tooltip_ability_item_fire_bow_Description"              "<h1>Weapon: Fire Level 1</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Deals %damage% damage every %fire_rate% seconds to all ships in range."
     "DOTA_Tooltip_ability_item_fire_bow_Note0"              "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_fire_bow_fire_rate"            "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_fire_bow_dmg"              "DAMAGE:"
@@ -90,7 +90,7 @@
     "DOTA_Tooltip_ability_item_fire_bow_dps"              "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
 
     "DOTA_Tooltip_ability_item_fire_bow_doubled"            "Double Flimsy Torches"
-    "DOTA_Tooltip_ability_item_fire_bow_doubled_Description"      "<h1>Weapon: Fire Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Deals %damage% damage every %fire_rate% seconds to all ships in range."
+    "DOTA_Tooltip_ability_item_fire_bow_doubled_Description"      "<h1>Weapon: Fire Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Deals %damage% damage every %fire_rate% seconds to all ships in range."
     "DOTA_Tooltip_ability_item_fire_bow_doubled_Note0"          "Fire damage over time does not stack."
     "DOTA_Tooltip_ability_item_fire_bow_doubled_fire_rate"        "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_fire_bow_doubled_dmg"          "DAMAGE (x2):"
@@ -98,7 +98,7 @@
     "DOTA_Tooltip_ability_item_fire_bow_doubled_dps"          "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
 
     "DOTA_Tooltip_ability_item_fire_two_bow"              "Roman Candles"
-    "DOTA_Tooltip_ability_item_fire_two_bow_Description"            "<h1>Weapon: Fire Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Deals %damage% damage every %fire_rate% seconds to all ships in range."
+    "DOTA_Tooltip_ability_item_fire_two_bow_Description"            "<h1>Weapon: Fire Level 2</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Deals %damage% damage every %fire_rate% seconds to all ships in range."
     "DOTA_Tooltip_ability_item_fire_two_bow_Note0"            "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_fire_two_bow_fire_rate"          "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_fire_two_bow_dmg"            "DAMAGE:"
@@ -107,7 +107,7 @@
 
     
     "DOTA_Tooltip_ability_item_fire_two_bow_doubled"          "Double Roman Candles"
-    "DOTA_Tooltip_ability_item_fire_two_bow_doubled_Description"    "<h1>Weapon: Fire Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Deals %damage% damage every %fire_rate% seconds to all ships in range."
+    "DOTA_Tooltip_ability_item_fire_two_bow_doubled_Description"    "<h1>Weapon: Fire Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Deals %damage% damage every %fire_rate% seconds to all ships in range."
     "DOTA_Tooltip_ability_item_fire_two_bow_doubled_Note0"        "Fire damage over time does not stack."
     "DOTA_Tooltip_ability_item_fire_two_bow_doubled_fire_rate"      "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_fire_two_bow_doubled_dmg"        "DAMAGE (x2):"
@@ -116,7 +116,7 @@
 
     
     "DOTA_Tooltip_ability_item_fire_three_bow"              "Molotov Cocktails"
-    "DOTA_Tooltip_ability_item_fire_three_bow_Description"            "<h1>Weapon: Fire Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Deals %damage% damage every %fire_rate% seconds to all ships in range."
+    "DOTA_Tooltip_ability_item_fire_three_bow_Description"            "<h1>Weapon: Fire Level 3</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Deals %damage% damage every %fire_rate% seconds to all ships in range."
     "DOTA_Tooltip_ability_item_fire_three_bow_Note0"          "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_fire_three_bow_fire_rate"        "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_fire_three_bow_dmg"            "DAMAGE:"
@@ -125,7 +125,7 @@
 
 
     "DOTA_Tooltip_ability_item_fire_three_bow_doubled"                  "Double Molotov Cocktails"
-    "DOTA_Tooltip_ability_item_fire_three_bow_doubled_Description"    "<h1>Weapon: Fire Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Deals %damage% damage every %fire_rate% seconds to all ships in range."
+    "DOTA_Tooltip_ability_item_fire_three_bow_doubled_Description"    "<h1>Weapon: Fire Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Deals %damage% damage every %fire_rate% seconds to all ships in range."
     "DOTA_Tooltip_ability_item_fire_three_bow_doubled_Note0"      "Fire damage over time does not stack."
     "DOTA_Tooltip_ability_item_fire_three_bow_doubled_fire_rate"    "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_fire_three_bow_doubled_dmg"        "DAMAGE (x2):"
@@ -157,7 +157,7 @@
     //-0103---IRON---------------------------------
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     "DOTA_Tooltip_ability_item_spin_bow"                "Trick Shot"
-    "DOTA_Tooltip_ability_item_spin_bow_Description"              "<h1>Weapon: Iron Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Riccochets on impact, hitting up to %bounces% nearby enemy unit within %bounce_range% range for %bounce_dmg% damage. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_spin_bow_Description"              "<h1>Weapon: Iron Level 1</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Riccochets on impact, hitting up to %bounces% nearby enemy unit within %bounce_range% range for %bounce_dmg% damage. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_spin_bow_Note1"              "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_spin_bow_fire_rate"            "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_spin_bow_dmg"              "DAMAGE:"
@@ -165,7 +165,7 @@
     "DOTA_Tooltip_ability_item_spin_bow_dps"              "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_spin_bow_doubled"            "Double Trick Shot"
-    "DOTA_Tooltip_ability_item_spin_bow_doubled_Description"      "<h1>Weapon: Iron Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Riccochets on impact, hitting up to %bounces% nearby enemy unit within %bounce_range% range for %bounce_dmg% damage. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_spin_bow_doubled_Description"      "<h1>Weapon: Iron Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Riccochets on impact, hitting up to %bounces% nearby enemy unit within %bounce_range% range for %bounce_dmg% damage. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_spin_bow_doubled_fire_rate"        "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_spin_bow_doubled_dmg"          "DAMAGE (x2):"
     "DOTA_Tooltip_ability_item_spin_bow_doubled_range"          "RANGE:"
@@ -173,7 +173,7 @@
 
     
     "DOTA_Tooltip_ability_item_spin_two_bow"              "Split Shot"
-    "DOTA_Tooltip_ability_item_spin_two_bow_Description"            "<h1>Weapon: Iron Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Fragments on impact, hitting up to %bounces% nearby enemy unit within %bounce_range% range for %bounce_dmg% damage. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_spin_two_bow_Description"            "<h1>Weapon: Iron Level 2</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Fragments on impact, hitting up to %bounces% nearby enemy unit within %bounce_range% range for %bounce_dmg% damage. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_spin_two_bow_Note1"            "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_spin_two_bow_fire_rate"          "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_spin_two_bow_dmg"            "DAMAGE:"
@@ -181,7 +181,7 @@
     "DOTA_Tooltip_ability_item_spin_two_bow_dps"            "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_spin_two_bow_doubled"          "Double Split Shot"
-    "DOTA_Tooltip_ability_item_spin_two_bow_doubled_Description"    "<h1>Weapon: Iron Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Fragments on impact, hitting up to %bounces% nearby enemy unit within %bounce_range% range for %bounce_dmg% damage. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_spin_two_bow_doubled_Description"    "<h1>Weapon: Iron Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Fragments on impact, hitting up to %bounces% nearby enemy unit within %bounce_range% range for %bounce_dmg% damage. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_spin_two_bow_doubled_fire_rate"      "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_spin_two_bow_doubled_dmg"        "DAMAGE (x2):"
     "DOTA_Tooltip_ability_item_spin_two_bow_doubled_range"        "RANGE:"
@@ -189,7 +189,7 @@
 
     
     "DOTA_Tooltip_ability_item_spin_three_bow"              "Flak Gun"
-    "DOTA_Tooltip_ability_item_spin_three_bow_Description"            "<h1>Weapon: Iron Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Fragments on impact, hitting up to %bounces% nearby enemy unit within %bounce_range% range for %bounce_dmg% damage. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_spin_three_bow_Description"            "<h1>Weapon: Iron Level 3</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Fragments on impact, hitting up to %bounces% nearby enemy unit within %bounce_range% range for %bounce_dmg% damage. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_spin_three_bow_Note1"          "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_spin_three_bow_fire_rate"        "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_spin_three_bow_dmg"            "DAMAGE:"
@@ -197,7 +197,7 @@
     "DOTA_Tooltip_ability_item_spin_three_bow_dps"            "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_spin_three_bow_doubled"          "Double Flak Gun"
-    "DOTA_Tooltip_ability_item_spin_three_bow_doubled_Description"    "<h1>Weapon: Iron Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Fragments on impact, hitting up to %bounces% nearby enemy unit within %bounce_range% range for %bounce_dmg% damage. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_spin_three_bow_doubled_Description"    "<h1>Weapon: Iron Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Fragments on impact, hitting up to %bounces% nearby enemy unit within %bounce_range% range for %bounce_dmg% damage. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_spin_three_bow_doubled_fire_rate"    "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_spin_three_bow_doubled_dmg"        "DAMAGE (x2):"
     "DOTA_Tooltip_ability_item_spin_three_bow_doubled_range"      "RANGE:"
@@ -226,7 +226,7 @@
     //-0104---ICE----------------------------------
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     "DOTA_Tooltip_ability_item_ice_bow"                 "Snowflakes"
-    "DOTA_Tooltip_ability_item_ice_bow_Description"               "<h1>Weapon: Ice Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Reduces target's movement speed by %slow_amt%%% for %slow_dur% second. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_ice_bow_Description"               "<h1>Weapon: Ice Level 1</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Reduces target's movement speed by %slow_amt%%% for %slow_dur% second. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_ice_bow_Note1"             "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_ice_bow_fire_rate"           "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_ice_bow_dmg"               "DAMAGE:"
@@ -235,7 +235,7 @@
     
 
     "DOTA_Tooltip_ability_item_ice_bow_doubled"             "Double Snowflakes"
-    "DOTA_Tooltip_ability_item_ice_bow_doubled_Description"       "<h1>Weapon: Ice Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Reduces target's movement speed by %slow_amt%%% for %slow_dur% second. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_ice_bow_doubled_Description"       "<h1>Weapon: Ice Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Reduces target's movement speed by %slow_amt%%% for %slow_dur% second. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_ice_bow_doubled_fire_rate"       "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_ice_bow_doubled_dmg"           "DAMAGE (x2):"
     "DOTA_Tooltip_ability_item_ice_bow_doubled_range"         "RANGE:"
@@ -244,7 +244,7 @@
 
     
     "DOTA_Tooltip_ability_item_ice_two_bow"               "Snowfall"
-    "DOTA_Tooltip_ability_item_ice_two_bow_Description"             "<h1>Weapon: Ice Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Reduces target's movement speed by %slow_amt%%% for %slow_dur% seconds. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_ice_two_bow_Description"             "<h1>Weapon: Ice Level 2</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Reduces target's movement speed by %slow_amt%%% for %slow_dur% seconds. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_ice_two_bow_Note1"           "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_ice_two_bow_fire_rate"         "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_ice_two_bow_dmg"             "DAMAGE:"
@@ -253,14 +253,14 @@
     
 
     "DOTA_Tooltip_ability_item_ice_two_bow_doubled"           "Snowfall"
-    "DOTA_Tooltip_ability_item_ice_two_bow_doubled_Description"     "<h1>Weapon: Ice Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Reduces target's movement speed by %slow_amt%%% for %slow_dur% seconds. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_ice_two_bow_doubled_Description"     "<h1>Weapon: Ice Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Reduces target's movement speed by %slow_amt%%% for %slow_dur% seconds. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_ice_two_bow_doubled_fire_rate"     "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_ice_two_bow_doubled_dmg"         "DAMAGE (x2):"
     "DOTA_Tooltip_ability_item_ice_two_bow_doubled_range"       "RANGE:"
     "DOTA_Tooltip_ability_item_ice_two_bow_doubled_dps"         "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
 
     "DOTA_Tooltip_ability_item_ice_three_bow"             "Snowstorm"
-    "DOTA_Tooltip_ability_item_ice_three_bow_Description"           "<h1>Weapon: Ice Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Reduces target's movement speed by %slow_amt%%% for %slow_dur% seconds. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_ice_three_bow_Description"           "<h1>Weapon: Ice Level 3</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Reduces target's movement speed by %slow_amt%%% for %slow_dur% seconds. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_ice_three_bow_Note1"           "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_ice_three_bow_fire_rate"         "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_ice_three_bow_dmg"           "DAMAGE:"
@@ -268,7 +268,7 @@
     "DOTA_Tooltip_ability_item_ice_three_bow_dps"           "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_ice_three_bow_doubled"         "Double Snowstorm"
-    "DOTA_Tooltip_ability_item_ice_three_bow_doubled_Description"   "<h1>Weapon: Iron Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Reduces target's movement speed by %slow_amt%%% for %slow_dur% seconds. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_ice_three_bow_doubled_Description"   "<h1>Weapon: Iron Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Reduces target's movement speed by %slow_amt%%% for %slow_dur% seconds. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_ice_three_bow_doubled_fire_rate"     "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_ice_three_bow_doubled_dmg"       "DAMAGE (x2):"
     "DOTA_Tooltip_ability_item_ice_three_bow_doubled_range"       "RANGE:"
@@ -297,7 +297,7 @@
     //-0105---MINES--------------------------------
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     "DOTA_Tooltip_ability_item_breach_bow"                "Hull Breaching Mines"
-    "DOTA_Tooltip_ability_item_breach_bow_Description"              "<h1>Weapon: Breach Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>%pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_breach_bow_Description"              "<h1>Weapon: Breach Level 1</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>%pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_breach_bow_Note1"            "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_breach_bow_fire_rate"          "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_breach_bow_dmg"              "DAMAGE:"
@@ -306,7 +306,7 @@
     "DOTA_Tooltip_ability_item_breach_bow_dps"              "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_breach_bow_doubled"            "Double Hull Breaching Mines"
-    "DOTA_Tooltip_ability_item_breach_bow_doubled_Description"      "<h1>Weapon: Breach Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>%pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_breach_bow_doubled_Description"      "<h1>Weapon: Breach Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>%pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_breach_bow_doubled_fire_rate"      "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_breach_bow_doubled_dmg"          "DAMAGE (x2):"
     "DOTA_Tooltip_ability_item_breach_bow_doubled_delay"        "Damage Delay:"
@@ -314,7 +314,7 @@
     "DOTA_Tooltip_ability_item_breach_bow_doubled_dps"          "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_breach_two_bow"              "Tactical Torpedoes"
-    "DOTA_Tooltip_ability_item_breach_two_bow_Description"            "<h1>Weapon: Breach Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>%pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_breach_two_bow_Description"            "<h1>Weapon: Breach Level 2</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>%pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_breach_two_bow_Note1"          "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_breach_two_bow_fire_rate"        "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_breach_two_bow_dmg"            "DAMAGE:"
@@ -323,7 +323,7 @@
     "DOTA_Tooltip_ability_item_breach_two_bow_dps"            "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_breach_two_bow_doubled"          "Double Tactical Torpedoes"
-    "DOTA_Tooltip_ability_item_breach_two_bow_doubled_Description"    "<h1>Weapon: Breach Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>%pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_breach_two_bow_doubled_Description"    "<h1>Weapon: Breach Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>%pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_breach_two_bow_doubled_fire_rate"    "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_breach_two_bow_doubled_dmg"        "DAMAGE (x2):"
     "DOTA_Tooltip_ability_item_breach_two_bow_doubled_delay"      "Damage Delay:"
@@ -331,7 +331,7 @@
     "DOTA_Tooltip_ability_item_breach_two_bow_doubled_dps"        "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_breach_three_bow"            "Charging Depth Charges"
-    "DOTA_Tooltip_ability_item_breach_three_bow_Description"          "<h1>Weapon: Breach Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>%pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_breach_three_bow_Description"          "<h1>Weapon: Breach Level 3</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>%pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_breach_three_bow_Note1"          "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_breach_three_bow_fire_rate"        "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_breach_three_bow_dmg"          "DAMAGE:"
@@ -340,7 +340,7 @@
     "DOTA_Tooltip_ability_item_breach_three_bow_dps"          "\n<font  size= '3' color='#cc6400'>DPS:</font>"      
     
     "DOTA_Tooltip_ability_item_breach_three_bow_doubled"        "Double Charging Depth Charges"
-    "DOTA_Tooltip_ability_item_breach_three_bow_doubled_Description"  "<h1>Weapon: Breach Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>%pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_breach_three_bow_doubled_Description"  "<h1>Weapon: Breach Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>%pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_breach_three_bow_doubled_fire_rate"    "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_breach_three_bow_doubled_dmg"      "DAMAGE (x2):"
     "DOTA_Tooltip_ability_item_breach_three_bow_doubled_delay"      "Damage Delay:"
@@ -371,7 +371,7 @@
     //-0106---CAULK--------------------------------
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     "DOTA_Tooltip_ability_item_caulk_bow"               "A Little Caulk"
-    "DOTA_Tooltip_ability_item_caulk_bow_Description"             "<h1>Support: Caulk Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Can target enemies do deal damage as well as healing allies."
+    "DOTA_Tooltip_ability_item_caulk_bow_Description"             "<h1>Support: Caulk Level 1</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Can target enemies do deal damage as well as healing allies."
     "DOTA_Tooltip_ability_item_caulk_bow_Note0"             "Heals allied units."
     "DOTA_Tooltip_ability_item_caulk_bow_Note1"             "Does not heal structures."
     "DOTA_Tooltip_ability_item_caulk_bow_Note2"             "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
@@ -381,7 +381,7 @@
     "DOTA_Tooltip_ability_item_caulk_bow_dps"         "DPS:"
 
     "DOTA_Tooltip_ability_item_caulk_bow_doubled"           "Double Little Caulk"
-    "DOTA_Tooltip_ability_item_caulk_bow_doubled_Description"     "<h1>Support: Caulk Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Can target enemies do deal damage as well as healing allies."
+    "DOTA_Tooltip_ability_item_caulk_bow_doubled_Description"     "<h1>Support: Caulk Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Can target enemies do deal damage as well as healing allies."
     "DOTA_Tooltip_ability_item_caulk_bow_doubled_Note0"         "Heals allied units."
     "DOTA_Tooltip_ability_item_caulk_bow_doubled_Note1"         "Does not heal structures."
     "DOTA_Tooltip_ability_item_caulk_bow_doubled_fire_rate"       "RELOAD DELAY (s):"
@@ -390,7 +390,7 @@
     "DOTA_Tooltip_ability_item_caulk_bow_doubled_dps"         "DPS:"
 
     "DOTA_Tooltip_ability_item_caulk_two_bow"             "Super Glue"
-    "DOTA_Tooltip_ability_item_caulk_two_bow_Description"           "<h1>Support: Caulk Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Can target enemies do deal damage as well as healing allies."
+    "DOTA_Tooltip_ability_item_caulk_two_bow_Description"           "<h1>Support: Caulk Level 2</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Can target enemies do deal damage as well as healing allies."
     "DOTA_Tooltip_ability_item_caulk_two_bow_Note0"           "Heals allied units."
     "DOTA_Tooltip_ability_item_caulk_two_bow_Note1"           "Does not heal structures."
     "DOTA_Tooltip_ability_item_caulk_two_bow_Note2"           "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
@@ -400,7 +400,7 @@
     "DOTA_Tooltip_ability_item_caulk_two_bow_dps"         "DPS:"
 
     "DOTA_Tooltip_ability_item_caulk_two_bow_doubled"         "Double Super Glue"
-    "DOTA_Tooltip_ability_item_caulk_two_bow_doubled_Description"   "<h1>Support: Caulk Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Can target enemies do deal damage as well as healing allies."
+    "DOTA_Tooltip_ability_item_caulk_two_bow_doubled_Description"   "<h1>Support: Caulk Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Can target enemies do deal damage as well as healing allies."
     "DOTA_Tooltip_ability_item_caulk_two_bow_Note0"           "Heals allied units."
     "DOTA_Tooltip_ability_item_caulk_two_bow_Note1"           "Does not heal structures."
     "DOTA_Tooltip_ability_item_caulk_two_bow_doubled_fire_rate"     "RELOAD DELAY (s):"
@@ -409,7 +409,7 @@
     "DOTA_Tooltip_ability_item_caulk_two_bow_doubled_dps"         "DPS:"
 
     "DOTA_Tooltip_ability_item_caulk_three_bow"             "Tar and Pitch"
-    "DOTA_Tooltip_ability_item_caulk_three_bow_Description"           "<h1>Support: Caulk Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Can target enemies do deal damage as well as healing allies."
+    "DOTA_Tooltip_ability_item_caulk_three_bow_Description"           "<h1>Support: Caulk Level 3</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Can target enemies do deal damage as well as healing allies."
     "DOTA_Tooltip_ability_item_caulk_three_bow_Note0"         "Heals allied units."
     "DOTA_Tooltip_ability_item_caulk_three_bow_Note1"         "Does not heal structures."
     "DOTA_Tooltip_ability_item_caulk_three_bow_Note2"         "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
@@ -420,7 +420,7 @@
     
     
     "DOTA_Tooltip_ability_item_caulk_three_bow_doubled"         "Double Tar and Pitch"
-    "DOTA_Tooltip_ability_item_caulk_three_bow_doubled_Description"   "<h1>Support: Caulk Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Can target enemies do deal damage as well as healing allies."
+    "DOTA_Tooltip_ability_item_caulk_three_bow_doubled_Description"   "<h1>Support: Caulk Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Can target enemies do deal damage as well as healing allies."
     "DOTA_Tooltip_ability_item_caulk_three_bow_Note0"         "Heals allied units."
     "DOTA_Tooltip_ability_item_caulk_three_bow_Note1"         "Does not heal structures."
     "DOTA_Tooltip_ability_item_caulk_three_bow_doubled_fire_rate"   "RELOAD DELAY (s):"
@@ -453,7 +453,7 @@
     //-0108---WIND---------------------------------
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     "DOTA_Tooltip_ability_item_wind_bow"                "Stiff Breeze"
-    "DOTA_Tooltip_ability_item_wind_bow_Description"              "<h1>Weapon: Wind Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Attacks heal %bonus_dmg% to friendly units within 400 aoe of you (excluding you) when they hit enemies. Damage also reduced by up to 50%% when enemies get close to you. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_wind_bow_Description"              "<h1>Weapon: Wind Level 1</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Attacks heal %bonus_dmg% to friendly units within 400 aoe of you (excluding you) when they hit enemies. Damage also reduced by up to 50%% when enemies get close to you. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_wind_bow_Note1"              "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_wind_bow_Note2"              "Attacks from inside minimum range deal %min_range_dmg_pct%%% damage."
     //"DOTA_Tooltip_ability_item_wind_bow_Note3"              "Attacks from outside maximum range deal no damage."
@@ -466,7 +466,7 @@
     
 
     "DOTA_Tooltip_ability_item_wind_bow_doubled"            "Double Stiff Breeze"
-    "DOTA_Tooltip_ability_item_wind_bow_doubled_Description"      "<h1>Weapon: Wind Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Attacks heal %bonus_dmg% to friendly units within 400 aoe of you (excluding you) when they hit enemies. Damage also reduced by up to 50%% when enemies get close to you. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_wind_bow_doubled_Description"      "<h1>Weapon: Wind Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Attacks heal %bonus_dmg% to friendly units within 400 aoe of you (excluding you) when they hit enemies. Damage also reduced by up to 50%% when enemies get close to you. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_wind_bow_doubled_Note1"          "Attacks from inside minimum range deal %min_range_dmg_pct%%% damage."
     //"DOTA_Tooltip_ability_item_wind_bow_doubled_Note2"          "Attacks from outside maximum range deal no damage."
     "DOTA_Tooltip_ability_item_wind_bow_doubled_dmg"          "DAMAGE:"
@@ -478,7 +478,7 @@
     
 
     "DOTA_Tooltip_ability_item_wind_two_bow"              "Squall"
-    "DOTA_Tooltip_ability_item_wind_two_bow_Description"            "<h1>Weapon: Wind Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Attacks heal %bonus_dmg% to friendly units within 400 aoe of you (excluding you) when they hit enemies. Damage also reduced by up to 50%% when enemies get close to you. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_wind_two_bow_Description"            "<h1>Weapon: Wind Level 2</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Attacks heal %bonus_dmg% to friendly units within 400 aoe of you (excluding you) when they hit enemies. Damage also reduced by up to 50%% when enemies get close to you. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_wind_two_bow_Note1"            "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_wind_two_bow_Note2"            "Attacks from inside minimum range deal %min_range_dmg_pct%%% damage."
     //"DOTA_Tooltip_ability_item_wind_two_bow_Note3"            "Attacks from outside maximum range deal no damage."
@@ -490,7 +490,7 @@
     "DOTA_Tooltip_ability_item_wind_two_bow_dps"            "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_wind_two_bow_doubled"          "Double Squall"
-    "DOTA_Tooltip_ability_item_wind_two_bow_doubled_Description"    "<h1>Weapon: Wind Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Attacks heal %bonus_dmg% to friendly units within 400 aoe of you (excluding you) when they hit enemies. Damage also reduced by up to 50%% when enemies get close to you. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_wind_two_bow_doubled_Description"    "<h1>Weapon: Wind Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Attacks heal %bonus_dmg% to friendly units within 400 aoe of you (excluding you) when they hit enemies. Damage also reduced by up to 50%% when enemies get close to you. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_wind_two_bow_doubled_Note1"        "Attacks from inside minimum range deal %min_range_dmg_pct%%% damage."
     //"DOTA_Tooltip_ability_item_wind_two_bow_doubled_Note2"        "Attacks from outside maximum range deal no damage."
     "DOTA_Tooltip_ability_item_wind_two_bow_doubled_dmg"        "DAMAGE:"
@@ -502,7 +502,7 @@
     
 
     "DOTA_Tooltip_ability_item_wind_three_bow"              "Monsoon"
-    "DOTA_Tooltip_ability_item_wind_three_bow_Description"            "<h1>Weapon: Wind Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Attacks heal %bonus_dmg% to friendly units within 400 aoe of you (excluding you) when they hit enemies. Damage also reduced by up to 50%% when enemies get close to you. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_wind_three_bow_Description"            "<h1>Weapon: Wind Level 3</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Attacks heal %bonus_dmg% to friendly units within 400 aoe of you (excluding you) when they hit enemies. Damage also reduced by up to 50%% when enemies get close to you. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_wind_three_bow_Note1"          "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_wind_three_bow_Note2"          "Attacks from inside minimum range deal %min_range_dmg_pct%%% damage."
     //"DOTA_Tooltip_ability_item_wind_three_bow_Note3"          "Attacks from outside maximum range deal no damage."
@@ -514,7 +514,7 @@
     "DOTA_Tooltip_ability_item_wind_three_bow_dps"            "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_wind_three_bow_doubled"          "Double Monsoon"
-    "DOTA_Tooltip_ability_item_wind_three_bow_doubled_Description"    "<h1>Weapon: Wind Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Attacks heal %bonus_dmg% to friendly units within 400 aoe of you (excluding you) when they hit enemies. Damage also reduced by up to 50%% when enemies get close to you. \nDoes not hit structures."
+    "DOTA_Tooltip_ability_item_wind_three_bow_doubled_Description"    "<h1>Weapon: Wind Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Attacks heal %bonus_dmg% to friendly units within 400 aoe of you (excluding you) when they hit enemies. Damage also reduced by up to 50%% when enemies get close to you. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_wind_three_bow_doubled_Note1"      "Attacks from inside minimum range deal %min_range_dmg_pct%%% damage."
     //"DOTA_Tooltip_ability_item_wind_three_bow_doubled_Note2"      "Attacks from outside maximum range deal no damage."
     "DOTA_Tooltip_ability_item_wind_three_bow_doubled_dmg"        "DAMAGE:"
@@ -555,7 +555,7 @@
     //-0109---LIGHT--------------------------------
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     "DOTA_Tooltip_ability_item_light_bow"               "Focused Light Lens"
-    "DOTA_Tooltip_ability_item_light_bow_Description"             "<h1>Weapon: Light Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Projectiles fired by this weapon grant vision in a %vision_rad% unit radius."
+    "DOTA_Tooltip_ability_item_light_bow_Description"             "<h1>Weapon: Light Level 1</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Projectiles fired by this weapon grant vision in a %vision_rad% unit radius."
     "DOTA_Tooltip_ability_item_light_bow_Note0"             "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_light_bow_fire_rate"           "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_light_bow_dmg"             "DAMAGE:"
@@ -564,7 +564,7 @@
     
     
     "DOTA_Tooltip_ability_item_light_bow_doubled"           "Double Focused Light Lens"
-    "DOTA_Tooltip_ability_item_light_bow_doubled_Description"     "<h1>Weapon: Light Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Projectiles fired by this weapon grant vision in a %vision_rad% unit radius."
+    "DOTA_Tooltip_ability_item_light_bow_doubled_Description"     "<h1>Weapon: Light Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Projectiles fired by this weapon grant vision in a %vision_rad% unit radius."
     "DOTA_Tooltip_ability_item_light_bow_doubled_fire_rate"       "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_light_bow_doubled_dmg"         "DAMAGE (x2):"
     "DOTA_Tooltip_ability_item_light_bow_doubled_range"         "RANGE:"
@@ -573,7 +573,7 @@
     
 
     "DOTA_Tooltip_ability_item_light_two_bow"             "High Beams"
-    "DOTA_Tooltip_ability_item_light_two_bow_Description"           "<h1>Weapon: Light Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Projectiles fired by this weapon grant vision in a %vision_rad% unit radius."
+    "DOTA_Tooltip_ability_item_light_two_bow_Description"           "<h1>Weapon: Light Level 2</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Projectiles fired by this weapon grant vision in a %vision_rad% unit radius."
     "DOTA_Tooltip_ability_item_light_two_bow_Note0"           "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_light_two_bow_fire_rate"         "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_light_two_bow_dmg"           "DAMAGE:"
@@ -582,7 +582,7 @@
     
     
     "DOTA_Tooltip_ability_item_light_two_bow_doubled"         "Double High Beams"
-    "DOTA_Tooltip_ability_item_light_two_bow_doubled_Description"   "<h1>Weapon: Light Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Projectiles fired by this weapon grant vision in a %vision_rad% unit radius."
+    "DOTA_Tooltip_ability_item_light_two_bow_doubled_Description"   "<h1>Weapon: Light Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Projectiles fired by this weapon grant vision in a %vision_rad% unit radius."
     "DOTA_Tooltip_ability_item_light_two_bow_doubled_fire_rate"     "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_light_two_bow_doubled_dmg"       "DAMAGE (x2):"
     "DOTA_Tooltip_ability_item_light_two_bow_doubled_range"       "RANGE:"
@@ -590,7 +590,7 @@
     
 
     "DOTA_Tooltip_ability_item_light_three_bow"             "Solar Flare"
-    "DOTA_Tooltip_ability_item_light_three_bow_Description"           "<h1>Weapon: Light Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Projectiles fired by this weapon grant vision in a %vision_rad% unit radius."
+    "DOTA_Tooltip_ability_item_light_three_bow_Description"           "<h1>Weapon: Light Level 3</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Projectiles fired by this weapon grant vision in a %vision_rad% unit radius."
     "DOTA_Tooltip_ability_item_light_three_bow_Note0"         "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_light_three_bow_fire_rate"       "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_light_three_bow_dmg"           "DAMAGE:"
@@ -598,7 +598,7 @@
     "DOTA_Tooltip_ability_item_light_three_bow_dps"           "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_light_three_bow_doubled"         "Double Solar Flare"
-    "DOTA_Tooltip_ability_item_light_three_bow_doubled_Description"   "<h1>Weapon: Light Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Projectiles fired by this weapon grant vision in a %vision_rad% unit radius."
+    "DOTA_Tooltip_ability_item_light_three_bow_doubled_Description"   "<h1>Weapon: Light Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Projectiles fired by this weapon grant vision in a %vision_rad% unit radius."
     "DOTA_Tooltip_ability_item_light_three_bow_doubled_fire_rate"   "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_light_three_bow_doubled_dmg"       "DAMAGE (x2):"
     "DOTA_Tooltip_ability_item_light_three_bow_doubled_range"     "RANGE:"
@@ -627,7 +627,7 @@
     //-0110---COAL---------------------------------
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     "DOTA_Tooltip_ability_item_coal_bow"                "Smoke Bombs"
-    "DOTA_Tooltip_ability_item_coal_bow_Description"              "<h1>Weapon: Coal Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Shots fired by this weapon have a %stun_pct%%% chance to stun the target for %stun_dur% seconds."
+    "DOTA_Tooltip_ability_item_coal_bow_Description"              "<h1>Weapon: Coal Level 1</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Shots fired by this weapon have a %stun_pct%%% chance to stun the target for %stun_dur% seconds."
     "DOTA_Tooltip_ability_item_coal_bow_Note0"              "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_coal_bow_fire_rate"            "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_coal_bow_dmg"              "DAMAGE:"
@@ -635,7 +635,7 @@
     "DOTA_Tooltip_ability_item_coal_bow_dps"              "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_coal_bow_doubled"            "Double Smoke Bombs"
-    "DOTA_Tooltip_ability_item_coal_bow_doubled_Description"      "<h1>Weapon: Coal Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots fired by this weapon have a %stun_pct%%% chance to stun the target for %stun_dur% seconds."
+    "DOTA_Tooltip_ability_item_coal_bow_doubled_Description"      "<h1>Weapon: Coal Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots fired by this weapon have a %stun_pct%%% chance to stun the target for %stun_dur% seconds."
     "DOTA_Tooltip_ability_item_coal_bow_doubled_fire_rate"        "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_coal_bow_doubled_dmg"          "DAMAGE (x2):"
     "DOTA_Tooltip_ability_item_coal_bow_doubled_range"          "RANGE:"
@@ -643,7 +643,7 @@
     
 
     "DOTA_Tooltip_ability_item_coal_two_bow"              "Cherry Bombs"
-    "DOTA_Tooltip_ability_item_coal_two_bow_Description"            "<h1>Weapon: Coal Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Shots fired by this weapon have a %stun_pct%%% chance to stun the target for %stun_dur% seconds."
+    "DOTA_Tooltip_ability_item_coal_two_bow_Description"            "<h1>Weapon: Coal Level 2</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Shots fired by this weapon have a %stun_pct%%% chance to stun the target for %stun_dur% seconds."
     "DOTA_Tooltip_ability_item_coal_two_bow_Note0"            "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_coal_two_bow_fire_rate"          "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_coal_two_bow_dmg"            "DAMAGE:"
@@ -651,7 +651,7 @@
     "DOTA_Tooltip_ability_item_coal_two_bow_dps"            "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_coal_two_bow_doubled"          "Double Cherry Bombs"
-    "DOTA_Tooltip_ability_item_coal_two_bow_doubled_Description"    "<h1>Weapon: Coal Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots fired by this weapon have a %stun_pct%%% chance to stun the target for %stun_dur% seconds."
+    "DOTA_Tooltip_ability_item_coal_two_bow_doubled_Description"    "<h1>Weapon: Coal Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots fired by this weapon have a %stun_pct%%% chance to stun the target for %stun_dur% seconds."
     "DOTA_Tooltip_ability_item_coal_two_bow_doubled_fire_rate"      "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_coal_two_bow_doubled_dmg"        "DAMAGE (x2):"
     "DOTA_Tooltip_ability_item_coal_two_bow_doubled_range"        "RANGE:"
@@ -659,7 +659,7 @@
     
 
     "DOTA_Tooltip_ability_item_coal_three_bow"              "Coal Cannon"
-    "DOTA_Tooltip_ability_item_coal_three_bow_Description"            "<h1>Weapon: Coal Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Shots fired by this weapon have a %stun_pct%%% chance to stun the target for %stun_dur% seconds."
+    "DOTA_Tooltip_ability_item_coal_three_bow_Description"            "<h1>Weapon: Coal Level 3</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Shots fired by this weapon have a %stun_pct%%% chance to stun the target for %stun_dur% seconds."
     "DOTA_Tooltip_ability_item_coal_three_bow_Note0"          "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_coal_three_bow_fire_rate"        "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_coal_three_bow_dmg"            "DAMAGE:"
@@ -667,7 +667,7 @@
     "DOTA_Tooltip_ability_item_coal_three_bow_dps"            "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_coal_three_bow_doubled"          "Double Coal Cannon"
-    "DOTA_Tooltip_ability_item_coal_three_bow_doubled_Description"    "<h1>Weapon: Coal Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots fired by this weapon have a %stun_pct%%% chance to stun the target for %stun_dur% seconds."
+    "DOTA_Tooltip_ability_item_coal_three_bow_doubled_Description"    "<h1>Weapon: Coal Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots fired by this weapon have a %stun_pct%%% chance to stun the target for %stun_dur% seconds."
     "DOTA_Tooltip_ability_item_coal_three_bow_doubled_fire_rate"    "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_coal_three_bow_doubled_dmg"        "DAMAGE (x2):"
     "DOTA_Tooltip_ability_item_coal_three_bow_doubled_range"      "RANGE:"
@@ -696,7 +696,7 @@
     //-0111---PLASMA-------------------------------
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     "DOTA_Tooltip_ability_item_plasma_bow"                "Plasma Gun"
-    "DOTA_Tooltip_ability_item_plasma_bow_Description"              "<h1>Weapon: Plasma Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Reduces target's armor by %armor_down% for %armor_dur% seconds."
+    "DOTA_Tooltip_ability_item_plasma_bow_Description"              "<h1>Weapon: Plasma Level 1</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Reduces target's armor by %armor_down% for %armor_dur% seconds."
     "DOTA_Tooltip_ability_item_plasma_bow_Note0"            "Multiple hits extend duration, not increase armor lost."
     "DOTA_Tooltip_ability_item_plasma_bow_Note1"            "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_plasma_bow_fire_rate"          "RELOAD DELAY (s):"
@@ -706,7 +706,7 @@
     
 
     "DOTA_Tooltip_ability_item_plasma_bow_doubled"            "Double Plasma Gun"
-    "DOTA_Tooltip_ability_item_plasma_bow_doubled_Description"      "<h1>Weapon: Plasma Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Reduces target's armor by %armor_down% for %armor_dur% seconds."
+    "DOTA_Tooltip_ability_item_plasma_bow_doubled_Description"      "<h1>Weapon: Plasma Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Reduces target's armor by %armor_down% for %armor_dur% seconds."
     "DOTA_Tooltip_ability_item_plasma_bow_doubled_Note0"        "Multiple hits extend duration, not increase armor lost."
     "DOTA_Tooltip_ability_item_plasma_bow_doubled_fire_rate"      "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_plasma_bow_doubled_dmg"          "DAMAGE (x2):"
@@ -716,7 +716,7 @@
     
     
     "DOTA_Tooltip_ability_item_plasma_two_bow"              "Railgun"
-    "DOTA_Tooltip_ability_item_plasma_two_bow_Description"            "<h1>Weapon: Plasma Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Reduces target's armor by %armor_down% for %armor_dur% seconds."
+    "DOTA_Tooltip_ability_item_plasma_two_bow_Description"            "<h1>Weapon: Plasma Level 2</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Reduces target's armor by %armor_down% for %armor_dur% seconds."
     "DOTA_Tooltip_ability_item_plasma_two_bow_Note0"          "Multiple hits extend duration, not increase armor lost."
     "DOTA_Tooltip_ability_item_plasma_two_bow_Note1"          "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_plasma_two_bow_fire_rate"        "RELOAD DELAY (s):"
@@ -726,7 +726,7 @@
     
     
     "DOTA_Tooltip_ability_item_plasma_two_bow_doubled"          "Double Railgun"
-    "DOTA_Tooltip_ability_item_plasma_two_bow_doubled_Description"    "<h1>Weapon: Plasma Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Reduces target's armor by %armor_down% for %armor_dur% seconds."
+    "DOTA_Tooltip_ability_item_plasma_two_bow_doubled_Description"    "<h1>Weapon: Plasma Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Reduces target's armor by %armor_down% for %armor_dur% seconds."
     "DOTA_Tooltip_ability_item_plasma_two_bow_doubled_Note0"      "Multiple hits extend duration, not increase armor lost."
     "DOTA_Tooltip_ability_item_plasma_two_bow_doubled_fire_rate"    "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_plasma_two_bow_doubled_dmg"        "DAMAGE (x2):"
@@ -736,7 +736,7 @@
     
 
     "DOTA_Tooltip_ability_item_plasma_three_bow"            "Ion Cannon"
-    "DOTA_Tooltip_ability_item_plasma_three_bow_Description"          "<h1>Weapon: Plasma Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Reduces target's armor by %armor_down% for %armor_dur% seconds."
+    "DOTA_Tooltip_ability_item_plasma_three_bow_Description"          "<h1>Weapon: Plasma Level 3</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Reduces target's armor by %armor_down% for %armor_dur% seconds."
     "DOTA_Tooltip_ability_item_plasma_three_bow_Note0"          "Multiple hits extend duration, not increase armor lost."
     "DOTA_Tooltip_ability_item_plasma_three_bow_Note1"          "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_plasma_three_bow_fire_rate"        "RELOAD DELAY (s):"
@@ -746,7 +746,7 @@
     
     
     "DOTA_Tooltip_ability_item_plasma_three_bow_doubled"        "Double Ion Cannon"
-    "DOTA_Tooltip_ability_item_plasma_three_bow_doubled_Description"  "<h1>Weapon: Plasma Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>Reduces target's armor by %armor_down% for %armor_dur% seconds."
+    "DOTA_Tooltip_ability_item_plasma_three_bow_doubled_Description"  "<h1>Weapon: Plasma Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Reduces target's armor by %armor_down% for %armor_dur% seconds."
     "DOTA_Tooltip_ability_item_plasma_three_bow_doubled_Note0"      "Multiple hits extend duration, not increase armor lost."
     "DOTA_Tooltip_ability_item_plasma_three_bow_doubled_fire_rate"    "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_plasma_three_bow_doubled_dmg"      "DAMAGE (x2):"
@@ -779,7 +779,7 @@
     //-0112---CHAOS--------------------------------
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     "DOTA_Tooltip_ability_item_chaos_bow"               "Unstable Cannon"
-    "DOTA_Tooltip_ability_item_chaos_bow_Description"             "<h1>Weapon: Chaos Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>%bonus_rate%%% of all %max_rate% second shots deal an additional %dmg_bonus%%% bonus damage."
+    "DOTA_Tooltip_ability_item_chaos_bow_Description"             "<h1>Weapon: Chaos Level 1</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>%bonus_rate%%% of all %max_rate% second shots deal an additional %dmg_bonus%%% bonus damage."
     "DOTA_Tooltip_ability_item_chaos_bow_Note1"             "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_chaos_bow_dmg"             "DAMAGE AT FULL CHARGE:"
     "DOTA_Tooltip_ability_item_chaos_bow_fire_rate"           "MIN RELOAD DELAY (s):"
@@ -788,7 +788,7 @@
     "DOTA_Tooltip_ability_item_chaos_bow_dps"             "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_chaos_bow_doubled"           "Double Unstable Cannon"
-    "DOTA_Tooltip_ability_item_chaos_bow_doubled_Description"     "<h1>Weapon: Chaos Level 1</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>%bonus_rate%%% of all %max_rate% second shots deal an additional %dmg_bonus%%% bonus damage."
+    "DOTA_Tooltip_ability_item_chaos_bow_doubled_Description"     "<h1>Weapon: Chaos Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>%bonus_rate%%% of all %max_rate% second shots deal an additional %dmg_bonus%%% bonus damage."
     "DOTA_Tooltip_ability_item_chaos_bow_doubled_dmg"         "DAMAGE AT FULL CHARGE (x2):"
     "DOTA_Tooltip_ability_item_chaos_bow_doubled_fire_rate"       "MIN RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_chaos_bow_doubled_max_rate"        "MAX RELOAD DELAY (s):"
@@ -797,7 +797,7 @@
     
 
     "DOTA_Tooltip_ability_item_chaos_two_bow"             "Chaos Magnum"
-    "DOTA_Tooltip_ability_item_chaos_two_bow_Description"           "<h1>Weapon: Chaos Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>%bonus_rate%%% of all %max_rate% second shots deal an additional %dmg_bonus%%% bonus damage."
+    "DOTA_Tooltip_ability_item_chaos_two_bow_Description"           "<h1>Weapon: Chaos Level 2</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>%bonus_rate%%% of all %max_rate% second shots deal an additional %dmg_bonus%%% bonus damage."
     "DOTA_Tooltip_ability_item_chaos_two_bow_Note1"           "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_chaos_two_bow_dmg"           "DAMAGE AT FULL CHARGE:"
     "DOTA_Tooltip_ability_item_chaos_two_bow_fire_rate"         "MIN RELOAD DELAY (s):"
@@ -806,7 +806,7 @@
     "DOTA_Tooltip_ability_item_chaos_two_bow_dps"           "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_chaos_two_bow_doubled"         "Double Chaos Magnum"
-    "DOTA_Tooltip_ability_item_chaos_two_bow_doubled_Description"   "<h1>Weapon: Chaos Level 2</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>%bonus_rate%%% of all %max_rate% second shots deal an additional %dmg_bonus%%% bonus damage."
+    "DOTA_Tooltip_ability_item_chaos_two_bow_doubled_Description"   "<h1>Weapon: Chaos Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>%bonus_rate%%% of all %max_rate% second shots deal an additional %dmg_bonus%%% bonus damage."
     "DOTA_Tooltip_ability_item_chaos_two_bow_doubled_dmg"       "DAMAGE AT FULL CHARGE (x2):"
     "DOTA_Tooltip_ability_item_chaos_two_bow_doubled_fire_rate"     "MIN RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_chaos_two_bow_doubled_max_rate"      "MAX RELOAD DELAY (s):"
@@ -815,7 +815,7 @@
     
 
     "DOTA_Tooltip_ability_item_chaos_three_bow"             "Entropy Ray"
-    "DOTA_Tooltip_ability_item_chaos_three_bow_Description"           "<h1>Weapon: Chaos Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>%bonus_rate%%% of all %max_rate% second shots deal an additional %dmg_bonus%%% bonus damage."
+    "DOTA_Tooltip_ability_item_chaos_three_bow_Description"           "<h1>Weapon: Chaos Level 3</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>%bonus_rate%%% of all %max_rate% second shots deal an additional %dmg_bonus%%% bonus damage."
     "DOTA_Tooltip_ability_item_chaos_three_bow_Note1"         "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
     "DOTA_Tooltip_ability_item_chaos_three_bow_dmg"           "DAMAGE AT FULL CHARGE:"
     "DOTA_Tooltip_ability_item_chaos_three_bow_fire_rate"       "MIN RELOAD DELAY (s):"
@@ -824,7 +824,7 @@
     "DOTA_Tooltip_ability_item_chaos_three_bow_dps"           "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_chaos_three_bow_doubled"         "Double Entropy Ray"
-    "DOTA_Tooltip_ability_item_chaos_three_bow_doubled_Description"   "<h1>Weapon: Chaos Level 3</h1>Support weapon that targets allies with a heal.<b>Doubles Bonus <font color='#007700'>Active</font></b><br>%bonus_rate%%% of all %max_rate% second shots deal an additional %dmg_bonus%%% bonus damage."
+    "DOTA_Tooltip_ability_item_chaos_three_bow_doubled_Description"   "<h1>Weapon: Chaos Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>%bonus_rate%%% of all %max_rate% second shots deal an additional %dmg_bonus%%% bonus damage."
     "DOTA_Tooltip_ability_item_chaos_three_bow_doubled_dmg"       "DAMAGE AT FULL CHARGE (x2):"
     "DOTA_Tooltip_ability_item_chaos_three_bow_doubled_fire_rate"   "MIN RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_chaos_three_bow_doubled_max_rate"    "MAX RELOAD DELAY (s):"
@@ -1666,6 +1666,8 @@
     "npc_dota_hero_zuus"              "Barrel"
     "npc_dota_hero_ursa"              "Aircraft Carrier"
     "npc_dota_hero_slark"             "Viking Warship"
+    "npc_dota_hero_shredder"  "Ironclad Gunship"
+
     "npc_dota_hero_lion"              "Yacht"
     "npc_dota_hero_tusk"              "Battleship"
     "npc_dota_hero_visage"              "Noah's Ark"
@@ -3961,6 +3963,151 @@
 		"DOTA_Tooltip_ability_might_battleship_two_max_stun"				"MAX STUN DURATION:"
 		"DOTA_Tooltip_ability_might_battleship_two_tick_dps_tooltip"		"MIGHT TENDRILS DPS:"
 		"DOTA_Tooltip_ability_might_battleship_two_cast_range_tooltip"	"CAST RANGE:"
+
+
+
+        		// DOTA 2 MODKIT GENERATED TOOLTIPS FOR: battleships_traders
+		// Keys already defined in addon_english.txt are not listed, nor are Modifiers with the property "IsHidden" "1".
+
+		// ******************** HEROES ********************
+
+		// ******************** UNITS ********************
+		"npc_dota_cloud_dragon_statue"                                                    "Cloud Dragon Statue"
+
+		// ******************** ABILITY MODIFIERS ********************
+		"DOTA_Tooltip_modifier_unselectable"                                              "Unselectable"
+		"DOTA_Tooltip_modifier_unselectable_Description"                                  ""
+
+
+		// ******************** ITEM MODIFIERS ********************
+
+		// ******************** ABILITIES ********************
+		"DOTA_Tooltip_ability_ability_unselectable"                                       "Ability Unselectable"
+		"DOTA_Tooltip_ability_ability_unselectable_Description"                           ""
+
+		"DOTA_Tooltip_ability_ability_hide_healthbar"                                     "Ability Hide Healthbar"
+		"DOTA_Tooltip_ability_ability_hide_healthbar_Description"                         ""
+
+		"DOTA_Tooltip_ability_cloud_dragon_breathe_fire_lua"                              "Cloud Dragon Breathe Fire"
+		"DOTA_Tooltip_ability_cloud_dragon_breathe_fire_lua_Description"                  ""
+		"DOTA_Tooltip_ability_cloud_dragon_breathe_fire_lua_start_radius"                 "START RADIUS:"
+		"DOTA_Tooltip_ability_cloud_dragon_breathe_fire_lua_end_radius"                   "END RADIUS:"
+		"DOTA_Tooltip_ability_cloud_dragon_breathe_fire_lua_speed"                        "SPEED:"
+		"DOTA_Tooltip_ability_cloud_dragon_breathe_fire_lua_damage"                       "DAMAGE:"
+		"DOTA_Tooltip_ability_cloud_dragon_breathe_fire_lua_range"                        "RANGE:"
+
+		"DOTA_Tooltip_ability_cloud_dragon_lua"                                           "Cloud Dragon"
+		"DOTA_Tooltip_ability_cloud_dragon_lua_Description"                               "Creates a Dragon Statue that fries one shot per second at a random target within 500 units. shot travels for 1000 units damaging anything it touches."
+		"DOTA_Tooltip_ability_cloud_dragon_lua_damage_tooltip"                            "DAMAGE:"
+		"DOTA_Tooltip_ability_cloud_dragon_lua_duration"                                  "DURATION:"
+
+		"DOTA_Tooltip_ability_sniper_shrapnel_battleship_LinkedSpecialBonus"              "LINKEDSPECIALBONUS:"
+		"DOTA_Tooltip_ability_sniper_shrapnel_battleship_damage_delay"                    "DAMAGE DELAY:"
+		"DOTA_Tooltip_ability_sniper_shrapnel_battleship_LinkedSpecialBonus"              "LINKEDSPECIALBONUS:"
+
+		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_hook_width"                      "HOOK WIDTH:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_vision_radius"                   "VISION RADIUS:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_vision_duration"                 "VISION DURATION:"
+
+		"DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_speed"                             "HOOK SPEED:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_width"                             "HOOK WIDTH:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_lua_vision_radius"                          "VISION RADIUS:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_lua_vision_duration"                        "VISION DURATION:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_followthrough_constant"            "HOOK FOLLOWTHROUGH CONSTANT:"
+
+		"DOTA_Tooltip_ability_tidehunter_gush_battleship_projectile_speed"                "PROJECTILE SPEED:"
+
+		"DOTA_Tooltip_ability_riki_blink_strike_battleship_bonus_damage"                  "BONUS DAMAGE:"
+
+		"DOTA_Tooltip_ability_big_boom_delay"                                             "DELAY:"
+
+		"DOTA_Tooltip_ability_terrorblade_conjure_image_battleship_illusion_outgoing_damage"		"ILLUSION OUTGOING DAMAGE:"
+
+		"DOTA_Tooltip_ability_mirana_leap_battlsehip_leap_speed"                          "LEAP SPEED:"
+		"DOTA_Tooltip_ability_mirana_leap_battlsehip_leap_acceleration"                   "LEAP ACCELERATION:"
+		"DOTA_Tooltip_ability_mirana_leap_battlsehip_leap_speedbonus_as"                  "LEAP SPEEDBONUS AS:"
+		"DOTA_Tooltip_ability_mirana_leap_battlsehip_LinkedSpecialBonus"                  "LINKEDSPECIALBONUS:"
+		"DOTA_Tooltip_ability_mirana_leap_battlsehip_leap_bonus_duration"                 "LEAP BONUS DURATION:"
+
+		"DOTA_Tooltip_ability_windrunner_powershot_battleship_LinkedSpecialBonus"         "LINKEDSPECIALBONUS:"
+		"DOTA_Tooltip_ability_windrunner_powershot_battleship_arrow_width"                "ARROW WIDTH:"
+		"DOTA_Tooltip_ability_windrunner_powershot_battleship_arrow_speed"                "ARROW SPEED:"
+		"DOTA_Tooltip_ability_windrunner_powershot_battleship_tree_width"                 "TREE WIDTH:"
+
+		"DOTA_Tooltip_ability_submerge_battleship_mana_bonus"                             "MANA BONUS:"
+
+		"DOTA_Tooltip_ability_might_battleship_two_LinkedSpecialBonus"                    "LINKEDSPECIALBONUS:"
+		"DOTA_Tooltip_ability_might_battleship_two_damage_per_tick"                       "DAMAGE PER TICK:"
+		"DOTA_Tooltip_ability_might_battleship_two_tick_rate"                             "TICK RATE:"
+
+		"DOTA_Tooltip_ability_might_battleship_strength_bonus_hero"                       "STRENGTH BONUS HERO:"
+
+		"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_attack_slow"       "ATTACK SLOW:"
+		"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_explosion_min_dist"		"EXPLOSION MIN DIST:"
+		"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_explosion_max_dist"		"EXPLOSION MAX DIST:"
+		"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_damage_scepter"    "DAMAGE SCEPTER:"
+		"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_movespeed_slow_scepter"		"MOVESPEED SLOW SCEPTER:"
+		"DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_attack_slow_scepter"		"ATTACK SLOW SCEPTER:"
+
+		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_hook_speed"                 "HOOK SPEED:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_hook_width"                 "HOOK WIDTH:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_vision_radius"              "VISION RADIUS:"
+		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_vision_duration"            "VISION DURATION:"
+
+		"DOTA_Tooltip_ability_harpoon_battleship_illusion_search_radius"                  "ILLUSION SEARCH RADIUS:"
+
+		"DOTA_Tooltip_ability_wale_bait_battleship_dps"                                   "DPS:"
+		"DOTA_Tooltip_ability_wale_bait_battleship_dps_tooltip"                           "DPS TOOLTIP:"
+
+		"DOTA_Tooltip_ability_thunder_storm_lightning_tick_interval_min"                  "LIGHTNING TICK INTERVAL MIN:"
+		"DOTA_Tooltip_ability_thunder_storm_lightning_tick_interval_max"                  "LIGHTNING TICK INTERVAL MAX:"
+		"DOTA_Tooltip_ability_thunder_storm_sight_radius"                                 "SIGHT RADIUS:"
+		"DOTA_Tooltip_ability_thunder_storm_sight_duration"                               "SIGHT DURATION:"
+		"DOTA_Tooltip_ability_thunder_storm_lightning_bolt_search_radius"                 "LIGHTNING BOLT SEARCH RADIUS:"
+		"DOTA_Tooltip_ability_thunder_storm_percent_health_as_damage"                     "PERCENT HEALTH AS DAMAGE:"
+		"DOTA_Tooltip_ability_thunder_storm_duration"                                     "DURATION:"
+
+		"DOTA_Tooltip_ability_ball_lightning_lua_damage_radius"                           "DAMAGE RADIUS:"
+		"DOTA_Tooltip_ability_ball_lightning_lua_damage_per_units"                        "DAMAGE PER UNITS:"
+		"DOTA_Tooltip_ability_ball_lightning_lua_ball_vision_radius"                      "BALL VISION RADIUS:"
+		"DOTA_Tooltip_ability_ball_lightning_lua_damage_base"                             "DAMAGE BASE:"
+
+		"DOTA_Tooltip_ability_speed_boat_wave_ball_speed"                                 "BALL SPEED:"
+		"DOTA_Tooltip_ability_speed_boat_wave_damage_radius"                              "DAMAGE RADIUS:"
+
+
+		// ******************** ITEMS ********************
+		"DOTA_Tooltip_ability_item_caulk_bow_level"                                       "LEVEL:"
+		"DOTA_Tooltip_ability_item_caulk_bow_doubled_wep"                                 "DOUBLED WEP:"
+		"DOTA_Tooltip_ability_item_caulk_bow_speed"                                       "SPEED:"
+
+		"DOTA_Tooltip_ability_item_caulk_bow_doubled_level"                               "LEVEL:"
+		"DOTA_Tooltip_ability_item_caulk_bow_doubled_doubled_wep"                         "DOUBLED WEP:"
+		"DOTA_Tooltip_ability_item_caulk_bow_doubled_speed"                               "SPEED:"
+
+		"DOTA_Tooltip_ability_item_caulk_two_bow_level"                                   "LEVEL:"
+		"DOTA_Tooltip_ability_item_caulk_two_bow_doubled_wep"                             "DOUBLED WEP:"
+		"DOTA_Tooltip_ability_item_caulk_two_bow_speed"                                   "SPEED:"
+
+		"DOTA_Tooltip_ability_item_caulk_two_bow_doubled_level"                           "LEVEL:"
+		"DOTA_Tooltip_ability_item_caulk_two_bow_doubled_doubled_wep"                     "DOUBLED WEP:"
+		"DOTA_Tooltip_ability_item_caulk_two_bow_doubled_speed"                           "SPEED:"
+
+		"DOTA_Tooltip_ability_item_caulk_three_bow_level"                                 "LEVEL:"
+		"DOTA_Tooltip_ability_item_caulk_three_bow_doubled_wep"                           "DOUBLED WEP:"
+		"DOTA_Tooltip_ability_item_caulk_three_bow_speed"                                 "SPEED:"
+
+		"DOTA_Tooltip_ability_item_caulk_three_bow_doubled_level"                         "LEVEL:"
+		"DOTA_Tooltip_ability_item_caulk_three_bow_doubled_doubled_wep"                   "DOUBLED WEP:"
+		"DOTA_Tooltip_ability_item_caulk_three_bow_doubled_speed"                         "SPEED:"
+
+		"DOTA_Tooltip_ability_item_caulk_ult_bow_level"                                   "LEVEL:"
+		"DOTA_Tooltip_ability_item_caulk_ult_bow_doubled_wep"                             "DOUBLED WEP:"
+		"DOTA_Tooltip_ability_item_caulk_ult_bow_speed"                                   "SPEED:"
+
+		"DOTA_Tooltip_ability_item_hull_four_bonus_movement"                              "BONUS MOVEMENT:"
+
+
 
   }
 }

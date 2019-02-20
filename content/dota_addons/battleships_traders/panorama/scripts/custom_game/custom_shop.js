@@ -5,6 +5,7 @@ var hiddenship = true;
 var showMission = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
 var firstcall = true;
 var starttime = 0;
+var yaw = 0;
 var NewShopUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop");
 var topBarGoodCont = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar").FindChildTraverse("TopBarRadiantTeam").FindChildTraverse("TopBarRadiantPlayers").FindChildTraverse("RadiantTeamScorePlayers").FindChildTraverse("TopBarRadiantPlayersContainer");
 var topBarBadCont = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar").FindChildTraverse("TopBarDireTeam").FindChildTraverse("TopBarDirePlayers").FindChildTraverse("DireTeamScorePlayers").FindChildTraverse("TopBarDirePlayersContainer");
@@ -155,6 +156,7 @@ function replaceShopUI() {
 	catigoriesUI.GetChild(3).GetChild(1).GetChild(11).style.marginTop = "40px";
 	catigoriesUI.GetChild(3).style.width = "25%"
 }
+
 function fixUI() {
 	resetHeroIcons()
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY, false);
@@ -362,7 +364,7 @@ function showText(BoatName, AbilityName) {
 function showDetails(BoatName) {
 
 	$.Msg(BoatName);
-	if (BoatName == "hide" || $("#" + BoatName).style.height == "650.0px") {
+	if (BoatName == "hide" || $("#" + BoatName).style.height == "460.0px") {
 		$("#ancient_apparition").style.height = "0px";
 		$("#crystal_maiden").style.height = "0px";
 		$("#disruptor").style.height = "0px";
@@ -375,6 +377,7 @@ function showDetails(BoatName) {
 		$("#jakiro").style.height = "0px";
 		$("#ember_spirit").style.height = "0px";
 		$("#slark").style.height = "0px";
+		$("#shredder").style.height = "0px";
 		$("#sniper").style.height = "0px";
 		$("#visage").style.height = "0px";
 		$("#ursa").style.height = "0px";
@@ -404,6 +407,7 @@ function showDetails(BoatName) {
 		$("#jakiro").style.height = "0px";
 		$("#ember_spirit").style.height = "0px";
 		$("#slark").style.height = "0px";
+		$("#shredder").style.height = "0px";
 		$("#sniper").style.height = "0px";
 		$("#visage").style.height = "0px";
 		$("#ursa").style.height = "0px";
@@ -419,7 +423,7 @@ function showDetails(BoatName) {
 		$("#vengefulspirit").style.height = "0px";
 		$("#bane").style.height = "0px";
 		$("#enigma").style.height = "0px";
-		$("#" + BoatName).style.height = "650px";
+		$("#" + BoatName).style.height = "460px";
 	}
 
 }
@@ -516,6 +520,8 @@ else if (BoatName.indexOf("brewmaster")!==-1)
 else if (BoatName.indexOf("ember_spirit")!==-1) 
   return 6000
 else if (BoatName.indexOf("slark")!==-1) 
+  return 6000
+else if (BoatName.indexOf("shredder")!==-1) 
   return 6000
 else if (BoatName.indexOf("jakiro")!==-1) 
   return 6000
@@ -730,6 +736,7 @@ function closeShipShop() {
 	$("#jakiro").style.height = "0px";
 	$("#ember_spirit").style.height = "0px";
 	$("#slark").style.height = "0px";
+	$("#shredder").style.height = "0px";
 	$("#sniper").style.height = "0px";
 	$("#visage").style.height = "0px";
 	$("#ursa").style.height = "0px";
@@ -1223,7 +1230,82 @@ function AddNotificationbot(msg, panel) {
 	}
 }
 
+function  TeamWin(data)
+{
+		GameUI.SetCameraPitchMin( 24 )
+		GameUI.SetCameraPitchMax( 25 )
 
+		$( "#BestTank" ).text = data.BestTank
+		$( "#BestTankVal" ).text = Math.round(data.BestTankVal)
+		$( "#BestDamageDealt" ).text = data.BestDamageDealt
+		$( "#BestDamageDealtVal" ).text = Math.round(data.BestDamageDealtVal)
+		$( "#BestCreepsKiller" ).text = data.BestCreepsKiller
+		$( "#BestCreepsKillerVal" ).text = Math.round(data.BestCreepsKillerVal)
+		$( "#BestHeroHitter" ).text = data.BestHeroHitter
+		$( "#BestHeroHitterVal" ).text = Math.round(data.BestHeroHitterVal)
+		$( "#BestBuildingDamager" ).text = data.BestBuildingDamager
+		$( "#BestBuildingDamagerVal" ).text = Math.round(data.BestBuildingDamagerVal)
+
+		
+	if( data.team_number== 3)
+	{
+		if(Game.GetLocalPlayerInfo().player_team_id==3)
+		{
+			$( "#WinOrLose" ).text = $.Localize("#winner")
+		}
+		else
+		{
+			$( "#WinOrLose" ).text = $.Localize("#loser")
+		}
+		$.Schedule( .1, SetNorth );
+	}
+	else if(data.team_number== 2)
+	{
+		if(Game.GetLocalPlayerInfo().player_team_id==2)
+		{
+			$( "#WinOrLose" ).text = $.Localize("#winner")
+		}
+		else
+		{
+			$( "#WinOrLose" ).text = $.Localize("#loser")
+		}
+		$.Schedule( .1, SetSouth );
+	}
+		$( "#ScoreBoardFinalholder" ).style.visibility="visible";
+	$( "#ScoreBoardFinalholder" ).SetParent($( "#ScoreBoardFinalholder" ).GetParent().GetParent().GetParent().GetParent());
+	$.Schedule( .01, spinCam );
+	
+}
+
+function spinCam()
+{
+	yaw=yaw+.3;
+	GameUI.SetCameraYaw(yaw)
+	$.Schedule( .01, spinCam );
+}
+
+function SetSouth()
+{
+			
+			if($.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd"))
+			{
+				var vicLabel = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").FindChildTraverse("VictoryLabel");
+				$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").style.visibility="visible";
+				vicLabel.text = "South Empire Wins!"
+			}
+		 $.Schedule( .1, SetSouth );
+}
+
+function SetNorth()
+{
+			if($.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd"))
+			{
+					var vicLabel = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").FindChildTraverse("VictoryLabel");
+				$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").style.visibility="visible";
+				vicLabel.text = "North Empire Wins!"
+			}
+		 $.Schedule( .1, SetNorth );
+}
 
 
 
@@ -1316,9 +1398,11 @@ GameUI.SetMouseCallback(function (eventName, arg) {
 	hideTrade();
 	resetHeroIcons();
 	$.Msg("in subscribe");
+	
 	GameEvents.Subscribe("Boat_Spawned", fillShop);
 	GameEvents.Subscribe("Trade_Mode_Enabled", showTrade);
-
+	GameEvents.Subscribe("team_win", TeamWin );
+	
 	GameEvents.Subscribe("Hero_Near_Shop", NearShop);
 	GameEvents.Subscribe("Hero_Near_Ship_Shop", showShips);
 	GameEvents.Subscribe("Hero_Left_Shop", LeftShop);

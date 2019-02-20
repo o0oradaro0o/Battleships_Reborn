@@ -13,7 +13,7 @@ function storage:new( o )
 end
 
 function storage:start() -- Runs whenever the itemFunctions.lua is ran
-	 --print('[storage] itemFunctions started!')
+	 ----print('[storage] itemFunctions started!')
 	  storage = self
   self.storage = {}
 end
@@ -43,6 +43,8 @@ name_lookup["npc_dota_hero_storm_spirit"] = "Junk Ship"
 name_lookup["npc_dota_hero_lion"] = "Yacht"
 name_lookup["npc_dota_hero_ember_spirit"] = "Tug Boat"
 name_lookup["npc_dota_hero_slark"] = "Viking Warship"
+name_lookup["npc_dota_hero_shredder"] = "Ironclad Gunship"
+
 name_lookup["npc_dota_hero_sniper"] = "Submarine"
 name_lookup["npc_dota_hero_visage"] = "Noah's Ark"
 name_lookup["npc_dota_hero_ursa"] = "Aircraft Carrier"
@@ -82,7 +84,7 @@ function storage:AddToPlayerItemHist(pid, ic)
 
 	if playerItemHist[pid]==nil then
 		 playerItemHist[pid]={}
-		  --print("Created Array")
+		  ----print("Created Array")
 	end
 	if ic~=nil then
 		table.insert( playerItemHist[pid], ic)
@@ -93,7 +95,7 @@ function storage:AddToPlayerSaleHist(pid, ic)
 
 	if playerSaleHist[pid]==nil then
 		playerSaleHist[pid]={}
-		  --print("Created Array")
+		  ----print("Created Array")
 	end
 	if ic~=nil then
 		table.insert( playerSaleHist[pid], ic)
@@ -104,7 +106,7 @@ function storage:AddToPlayerBoatHist(pid, ic)
 
 	if playerBoatHist[pid]==nil then
 		playerBoatHist[pid]={}
-		  --print("Created Array")
+		  ----print("Created Array")
 	end
 	if ic~=nil then
 		table.insert( playerBoatHist[pid], ic)
@@ -153,7 +155,7 @@ function  storage:SetDisconnectState(dissconeects)
 end
 
 function  storage:GetDisconnectState(playerID)
-	 --print("getDisconnect")
+	 ----print("getDisconnect")
 	for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 			if hero ~= nil and hero:IsOwnedByAnyPlayer() then
 				if hero:GetPlayerID() == playerID then

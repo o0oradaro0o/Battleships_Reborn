@@ -59,7 +59,7 @@ local function utf16to8(str)
     elseif b < 0x10000 then tow = 3
     elseif b < 0x110000 then tow = 4
     end
-    -- --print(b,tow)
+    -- ----print(b,tow)
 
     local toww = tow
 
@@ -126,7 +126,7 @@ local function utf8to16(str)
       i = i+1
     end
 
-    -- --print(extra, c, UTFMagicOffsets[extra+1], c - UTFMagicOffsets[extra+1])
+    -- ----print(extra, c, UTFMagicOffsets[extra+1], c - UTFMagicOffsets[extra+1])
 
     c = c - UTFMagicOffsets[extra+1]
     table.insert(out, string.char(bit.band(c, 0x00FF)))
@@ -156,9 +156,9 @@ local function GetAPI(t, sub, done)
   for k, v in ipairs(l) do
     -- Ignore FDesc
     if v == 'CDesc' then
-      -- --print('======================')
+      -- ----print('======================')
       --PrintTable(t[v])
-      -- --print('======================')
+      -- ----print('======================')
       GetAPI (t[v], nil, done)
       ret = true
     elseif v ~= 'FDesc' then
@@ -217,7 +217,7 @@ function ModMaker:start()
             for _, func in ipairs(__ACTIVATE_HOOK.funcs) do
               local status, err = pcall(func)
               if not status then
-                 --print("__ACTIVATE_HOOK callback error: " .. err)
+                 ----print("__ACTIVATE_HOOK callback error: " .. err)
               end
             end
 
@@ -229,12 +229,12 @@ function ModMaker:start()
   end
 
   --[[__ACTIVATE_HOOK(function()
-     --print('activate hook called')
+     ----print('activate hook called')
     local mode = GameRules:GetGameModeEntity()
     mode:SetExecuteOrderFilter(Dynamic_Wrap(ModMaker, 'OrderFilter'), ModMaker)
     ModMaker.oldFilter = mode.SetExecuteOrderFilter
     mode.SetExecuteOrderFilter = function(mode, fun, context)
-      -- --print('SetExecuteOrderFilter', fun, context)
+      -- ----print('SetExecuteOrderFilter', fun, context)
       ModMaker.nextFilter = fun
       ModMaker.nextContext = context
     end
@@ -244,7 +244,7 @@ function ModMaker:start()
   self.api = {__GLOBAL__ = {}}
 
   local src = debug.getinfo(1).source
-  -- --print(src)
+  -- ----print(src)
 
   self.gameDir = ""
   self.contentDir = ""
@@ -267,16 +267,16 @@ function ModMaker:start()
     SendToServerConsole("script_reload_code " .. src:sub(2))
   end
 
-  -- --print(ModMaker.addonName)
-  -- --print(ModMaker.contentDir )
-  -- --print(ModMaker.gameDir)
+  -- ----print(ModMaker.addonName)
+  -- ----print(ModMaker.contentDir )
+  -- ----print(ModMaker.gameDir)
 end
 
 function ModMaker:ModMaker_OpenGithub(msg)
   local search = msg.search
   local language = msg.language
 
-   --print("ModMaker_OpenGithub",search,language)
+   ----print("ModMaker_OpenGithub",search,language)
 
   local url = "https://github.com/search?utf8=%E2%9C%93&q=" .. search .. "&l=" .. language .. "&type=Code"
 
@@ -319,7 +319,7 @@ function ModMaker:LoadFile(fileName, content)
 
   local str = table.concat(str)
   if str:byte(1) == 0xFF and str:byte(2) == 0xFE then
-     --print("UCS2LE")
+     ----print("UCS2LE")
     str = utf16to8(str:sub(3))
   end
 
@@ -334,17 +334,17 @@ function ModMaker:SendFile(fileName, content)
   local str = self.gameFiles[fileName]
   if content then str = self.contentFiles[fileName] end
   if str == nil then
-     --print("No file to send, " .. fileName)
+     ----print("No file to send, " .. fileName)
   end
   local msg = 1
   local max = math.floor((str:len()-1) / 500000) + 1
   for i=1,str:len(),500000 do
     local rest = math.min(str:len() - i+1, 500000)
-     --print("ASD",i,rest)
+     ----print("ASD",i,rest)
     local r = {}
     for j=i,i+rest,32000 do
       local rest2 = math.min(i+rest - j, 32000)
-       --print(j, rest2, j+rest2-1)
+       ----print(j, rest2, j+rest2-1)
       table.insert(r, str:sub(j,j+rest2-1))
     end
     if msg == 1 then

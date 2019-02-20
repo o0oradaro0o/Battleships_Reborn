@@ -14,7 +14,7 @@ function item_containers_lua_pack:OnSpellStart()
       self.toggled = true
     end
   else
-     --print("INVALID CONTAINER", container)
+     ----print("INVALID CONTAINER", container)
   end
 end
 

@@ -37,7 +37,20 @@
     {
     }
 	
-	
+	"team_win"
+	{
+		"team_number"  "float"
+		"BestTank" "string"
+		"BestTankVal" "float"
+		"BestDamageDealt" "string"
+		"BestDamageDealtVal" "float"
+		"BestCreepsKiller" "string"
+		"BestCreepsKillerVal" "float"
+		"BestHeroHitter" "string"
+		"BestHeroHitterVal" "float"
+		"BestBuildingDamager" "string"
+		"BestBuildingDamagerVal" "float"
+	}
 	 "co_op_mode"
     {
 		"Player_ID"		"short"

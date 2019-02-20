@@ -9,7 +9,6 @@
     width: 100%;
     height: 100%;
 	flow-children: right;
-    //background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.01, #202327 ), color-stop( 0.2, #141619 ), to( #000000 ) );
 }
 
 #TeamsSelectEmptySpace
@@ -20,14 +19,12 @@
 #TeamsList
 {
     width: 400px;
-	height: 100%;
+	height: 850px;
+	margin-top: 144px;
 	flow-children: down;    
     padding-left: 16px;
 	padding-right: 16px;
     margin-left: 16px;
-    background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.01, #202327 ), color-stop( 0.2, #141619ff ), to( #000000dd ) );
-    box-shadow: black -4px -4px 8px 8px;
-   
 	animation-name: TeamsListAppear;
 	animation-duration: 0.75s;
 }
@@ -49,25 +46,56 @@
 {
     width: 100%;
     vertical-align: center;
-    flow-children: down;    
+    flow-children: down;   
+    margin-top: -69px;	
+}
+
+@keyframes 'blinker' {
+    50% {
+        opacity: 0.5;
+    }
+}
+
+#DiscordButton
+{
+	width: 325px;
+	height: 80px;
+	padding: 4px 12px 4px 12px;
+    horizontal-align: right;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #7289DA ), to( #7289DA ) );
+	border-top: 1px solid #2C2F33;
+	border-bottom: 1px solid #2C2F33;
+	border-left: 1px solid #2C2F33; 
+	border-right: 1px solid #2C2F33;
+	border-radius: 8px;
+	margin-bottom: 85px;
+	margin-right: 75px;
+	animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: 10;
+}
+
+#DiscordButton:hover
+{
+	pre-transform-scale2d: 1.01;
+    box-shadow: #000000ff 0px 0px 16px 0px;
+}
+
+#DiscordImage
+{
+	background-size: 100%;
+	horizontal-align: center;
 }
 
 #TeamListHeader
 {
-    width: 100%;
-    flow-children: right;
-	color: #323232;
-//	border: 2px solid red;	
+	visibility: collapse;
 }
 
 #TeamListHeaderLabel
 {
-	text-transform: uppercase;
-    font-size: 22px;
-	letter-spacing: 1px;
-    color: #667273;
-	//margin-top: 16px;
-	margin-left: 8px;
+	visibility: collapse;
 }
 
 #TeamListLockedIcon 
@@ -88,16 +116,20 @@
 #TeamsListRoot
 {
 	width: 100%;
+	height: 450px;
     flow-children: down;
     overflow: clip scroll;
+	background-color: gradient(linear, 0% 0%, 0.1% 0%, from(#00000000), color-stop(0.1, #202327), color-stop(0.1, #141619ff), to(#000000ee));
+	border-radius: 8px;
 }
 
 #ShuffleTeamAssignmentButton
 {    
     height: 32px;
-    margin-top: 8px;
-    margin-left: 6px;
-    horizontal-align: left;
+    margin-top: 188px;
+    margin-right: 10px;
+    vertical-align: top;
+    horizontal-align: right;
     flow-children: right;
     visibility: collapse;
 }
@@ -109,11 +141,11 @@
 
 #ShuffleTeamAssignmentButton Label
 {
-    font-size: 24px;
+    font-size: 20px;
 	text-transform: uppercase;
     margin-top: 2px;
-    margin-right: 5px;
-    color: #6e6f6f;
+    margin-left: 5px;
+    color: white;
     vertical-align: center;
 }
 
@@ -129,9 +161,9 @@
 
 #ShuffleTeamAssignmentButton Image
 {
-    width: 24px;
-	height: 24px;
-	wash-color: #888888;
+    width: 22px;
+	height: 22px;
+	wash-color: orange;
     vertical-align: center;
 }
 
@@ -145,8 +177,6 @@
     width: 400px;
     height: 100%;
     flow-children: down;
- 	background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.01, #202327 ), color-stop( 0.2, #141619 ), to( #000000 ) );
-    box-shadow: black -4px -4px 16px 16px;
 }
 
 #GameInfoPanel 
@@ -157,20 +187,20 @@
 
 #GameModeNameLabel 
 {
-    font-size: 32px;
-	text-transform: uppercase;
+	visibility: collapse;
 }
 
 #MapInfoLabel
 {
-    color: #a9aaaa;
-	text-transform: uppercase;
+    visibility: collapse;
 }
 
 #StartGameCountdownTimer
 {
 	width: 96px;
-	margin-top: 32px;
+	margin-top: 65px;
+	horizontal-align: right;
+	margin-right: 30px;
 }
 
 #TeamSelectTimer
@@ -256,19 +286,19 @@
     width: 100%;
 	height: fill-parent-flow (1);
     flow-children: down;
-	margin-left: 16px;
-	margin-right: 58px;
+	margin-left: 0px;
+	margin-right: 74px;
 }
 
 #UnassignedPlayersButton
 {
     flow-children: down;
 	height: fill-parent-flow (1);
-	max-height: 80%;
+	max-height: 680px;
+	margin-top: 128px;
 	width: 100%;
-	background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.00, #272b30 ), color-stop( 0.6, #181a1e ), to( #181a1e ) );
-	box-shadow: inset #000000 0px 2px 6px 3px;
-    border-bottom: 1px solid #404b4a11;
+	background-color: gradient(linear, 0% 0%, 0.1% 0%, from(#00000000), color-stop(0.1, #202327), color-stop(0.1, #141619ff), to(#000000ee));
+	border-radius: 8px;
 }
 
 #UnassignedPlayersHeader
@@ -280,13 +310,15 @@
 
 #UnassignedPlayersHeader Label
 {
+	padding: 0px;
     font-size: 20px;
 	letter-spacing: 1px;
-	color: #667273;
+	color: white;
     text-transform: uppercase;
-
+	margin-left: 50px;
     transition-property: color;
 	transition-duration: 0.2s;
+	margin-top: -9px;
 }
 
 
@@ -304,7 +336,8 @@
 	height: 2px;
     margin-left: 8px;
     margin-right: 8px;
-	background-color: #49525555;
+	background-color: gray;
+	margin-top: -2px;
 }
 
 #UnassignedPlayersContainer
@@ -318,8 +351,8 @@
 #AutoAssignButton
 {
     height: 32px;
-    margin-top: 8px;
-    margin-right: 8px;
+    margin-top: 188px;
+    margin-left: 10px;
     vertical-align: top;
     horizontal-align: left;
     flow-children: right;
@@ -333,11 +366,11 @@
 
 #AutoAssignButton Label
 {
-    font-size: 24px;
+    font-size: 20px;
 	text-transform: uppercase;
     margin-top: 2px;
     margin-left: 5px;
-    color: #6e6f6f;
+    color: white;
     vertical-align: center;
 }
 
@@ -353,10 +386,11 @@
 
 #AutoAssignButton Image
 {
-    width: 24px;
-	height: 24px;
-	wash-color: #888888;
+    width: 22px;
+	height: 22px;
+	wash-color: orange;
     vertical-align: center;
+	margin-top: 4px;
 }
 
 .unassigned_players #AutoAssignButton:hover Image
@@ -372,36 +406,117 @@
 	border-top: 1px solid #ffffff03;
 	border-left: 1px solid #ffffff03; 
     visibility: collapse;
+	margin-left: 0px;
+	margin-right: 74px;
+	border-radius: 8px;
 }
 
-#coOpButton
-{ 
-    horizontal-align: center;
-	
-	width:80%;
+#OptionList {
+    width: 400px;
+	height: 230px;
+    flow-children: down;
+    animation-name: TeamsListAppear;
+    animation-duration: 0.75s;
+	margin-top: 0px;
+	background-color: gradient(linear, 0% 0%, 0.1% 0%, from(#00000000), color-stop(0.1, #202327), color-stop(0.1, #141619ff), to(#000000ee));
+	border-radius: 8px;
+}
+
+#OptionListGroup {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    vertical-align: middle;
+	border-radius: 8px;
+}
+
+#OptionTitle {
+    text-transform: uppercase;
+	text-shadow: 2px 2px 2px black;
+	white-space: nowrap;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: white;
+	margin-top: 0px;
+	horizontal-align: center;
+	font-family: Arial;
+	margin-top: 5px;
+	transition-property: color;
+	transition-duration: 0.2s;
+}
+
+#OptionDivider 
+{	
+    width: 100%;
+	height: 2px;
+    margin-left: 8px;
+    margin-right: 8px;
+	margin-top: 30px;
+	background-color: gray;
+}
+
+#OptionDivider2
+{	
+    width: 100%;
+	height: 2px;
+    margin-left: 8px;
+    margin-right: 8px;
+	margin-top: 184px;
+	background-color: gray;
+}
+
+#Options {
+	width: 100%;
+	height: 100%;
+    margin-top: 0px;
+    text-transform: uppercase;
+    flow-children: down;
 }
 
 #battleButton
 {
-	horizontal-align: center;
-	margin-top: 10px;
-	margin-bottom: 70px;
-	width:80%;
-vertical-align: center;
-	
+	width: 180px;
+	height: 40px;
+	align: left center;
+	margin-top: 43px;
+	margin-left: 8px;
 }
 
 #tradeButton
 {
-	horizontal-align: center;
-	margin-top: 10px;
-	margin-bottom: 70px;
-	width:80%;
-vertical-align: center;
-	
+	width: 180px;
+	height: 40px;
+	align: left center;
+	margin-top: 5px;
+	margin-left: 8px;
 }
 
-.untoggled
+#coOpButton
+{ 
+	width: 180px;
+	height: 40px;
+	align: left center;
+	margin-top: 5px;
+	margin-bottom: 40px;
+	margin-left: 8px;
+}
+.toggled
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #84acff ) );
+	box-shadow: fill #486ca922 -4px -4px 8px 8px;
+	border-top: 1px solid #ffffff03;
+	border-left: 1px solid #ffffff03; 
+}
+
+.untoggled 
+{ 
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #486ca9cc ) );
+	box-shadow: fill #486ca922 -4px -4px 8px 8px;
+	border-top: 1px solid #ffffff03;
+	border-left: 1px solid #ffffff03; 
+}
+
+.toggled:hover
 {
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #486ca9cc ) );
 	box-shadow: fill #486ca922 -4px -4px 8px 8px;
@@ -409,38 +524,50 @@ vertical-align: center;
 	border-left: 1px solid #ffffff03; 
 }
 
-.toggled 
-{ 
-    horizontal-align: center;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #9d4881cc ), to( #986ca9cc ) );
-	box-shadow: fill #ff6ca922 -4px -4px 8px 8px;
+.untoggled:hover
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #84acff ) );
+	box-shadow: fill #486ca922 -4px -4px 8px 8px;
+	border-top: 1px solid #ffffff03;
+	border-left: 1px solid #ffffff03; 
+}
+
+.tradetoggled
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #486ca9cc ) );
+	box-shadow: fill #486ca922 -4px -4px 8px 8px;
 	border-top: 1px solid #ffffff03;
 	border-left: 1px solid #ffffff03; 
 }
 
 .tradeuntoggled
 {
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2dff81cc ), to( #486f66cc ) );
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #84acff ) );
 	box-shadow: fill #486ca922 -4px -4px 8px 8px;
 	border-top: 1px solid #ffffff03;
 	border-left: 1px solid #ffffff03; 
 }
 
-#coOpLabel
+.tradetoggled:hover
 {
-	font-size: 20px;
-	 text-align: center;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #84acff ) );
+	box-shadow: fill #486ca922 -4px -4px 8px 8px;
+	border-top: 1px solid #ffffff03;
+	border-left: 1px solid #ffffff03; 
+}
 
-	text-shadow: 2px 2px 2px black;
-	text-transform: uppercase;
-	width: 100%;
+.tradeuntoggled:hover
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #486ca9cc ) );
+	box-shadow: fill #486ca922 -4px -4px 8px 8px;
+	border-top: 1px solid #ffffff03;
+	border-left: 1px solid #ffffff03; 
 }
 
 #battleLabel
 {
-	margin:5px;
-	font-size: 25px;
-	 text-align: center;
+	font-size: 18px;
+	text-align: center;
 	vertical-align: center;
 	text-shadow: 2px 2px 2px black;
 	text-transform: uppercase;
@@ -449,15 +576,23 @@ vertical-align: center;
 
 #TradeLabel
 {
-	margin:5px;
-	font-size: 25px;
-	 text-align: center;
+	font-size: 18px;
+	text-align: center;
 	vertical-align: center;
 	text-shadow: 2px 2px 2px black;
 	text-transform: uppercase;
 	width: 100%;
 }
 
+#coOpLabel
+{
+	font-size: 18px;
+	text-align: center;
+	vertical-align: center;
+	text-shadow: 2px 2px 2px black;
+	text-transform: uppercase;
+	width: 100%;
+}
 
 .unassigned_players #LockAndStartButton 
 {
@@ -502,11 +637,10 @@ vertical-align: center;
 #CancelAndUnlockButton
 { 
     horizontal-align: right;
-    //background-color: gradient( linear, 0% 0%, 0% 100%, from( #722217 ), to( #DD4A29 ) );
-	//box-shadow: fill #DD4A2922 -4px -4px 8px 8px;
-	//border-top: 1px solid #ffffff03;
-	//border-left: 1px solid #ffffff03; 
     visibility: collapse;
+	margin-left: 0px;
+	margin-right: 74px;
+	border-radius: 8px;
 
     background-color: gradient( linear, 0% 0%, 0% 100%, from( #2c1b1b ), to( #482e2f ) );
     box-shadow: fill #552e2f00 -4px -4px 8px 9px;
@@ -545,19 +679,10 @@ vertical-align: center;
 {
     width: 100%;
     margin: 6px;
-	background-color: gradient( linear, 100% 0%, 100% 100%, from( #272b30 ), color-stop( 0.6, #181a1e ), to( #181a1e ) );
-    
-    //box-shadow: fill #44444430 -5px -5px 9px 9px;
-    //border-top: 1px solid #ffffff10;
-	//border-right: 1px solid #000000ff;
-	//border-left: 1px solid #ffffff10;
-	//border-bottom: 1px solid #000000ff;
 }
 
 .TeamSelectTeam.local_player_on_this_team
 {
-    box-shadow: fill #ffffff40 -3px -3px 3px 6px;
-    //box-shadow: -3px -3px 12px 6px #FFFFFF88;
 }
 
 .TeamSelectTeam:hover
@@ -592,7 +717,7 @@ vertical-align: center;
 {
 	background-color: transparent;
     width: 100%;
-    padding: 4px;
+    padding: 0px;
     flow-children: down;
 }
 
@@ -607,11 +732,12 @@ vertical-align: center;
 	font-size: 20px;
 	vertical-align: top;
 	text-shadow: 2px 2px 2px black;
-   	margin-left: 1px;
+   	margin-left: 90px;
     margin-top: 1px;    
 	text-transform: uppercase;
 	white-space: nowrap;
 	width: 100%;
+	color: white;
 }
 
 #JoinTeamLabel
@@ -650,10 +776,13 @@ vertical-align: center;
 
 #TeamPlayerDivider 
 {
-	width: 100%;
-    margin: 2px;
-	height: 1px;
-	background-color: #49525555;
+    width: 340px;
+	height: 2px;
+    margin-left: 8px;
+    margin-right: 8px;
+	margin-top: -5px;
+	margin-bottom: 5px;
+	background-color: gray;
 }
 
 #PlayerList
@@ -674,6 +803,7 @@ vertical-align: center;
     width: 100%;
     flow-children: right;
     margin-top: 2px;
+	margin-left: 7px;
 }
 
 
@@ -723,6 +853,7 @@ DOTAAvatarImage
     text-shadow: 2px 2px 2px black;
     width: fill-parent-flow( 1 );
 	white-space: nowrap;
+	margin-top: 6px;
 }
 
 #PlayerLeaveTeamButton 
@@ -736,7 +867,7 @@ DOTAAvatarImage
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	margin: 4px;
-        
+    margin-right: 17px; 
     visibility: collapse;
 }
 
@@ -757,7 +888,7 @@ DOTAAvatarImage
 
 .TeamSelectEmptySlot #PlayerName
 {
-	color: #454545;
+	color: white;
 	letter-spacing: 1px;
 	font-size: 18px;
 }
@@ -767,7 +898,7 @@ DOTAAvatarImage
     width: 32px;
 	height: 32px;
     opacity: 0.7;
-    background-image: url("file://{images}/custom_game/empty_slot_avatar.png");
+    background-image: url("file://{images}/custom_game/heroes/npc_dota_hero_vengefulspirit.png");
     background-size: 32px 32px;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;

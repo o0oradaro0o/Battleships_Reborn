@@ -15,11 +15,11 @@ function itemFunctions:new() -- Creates the new class
 end
 
 function itemFunctions:start() -- Runs whenever the itemFunctions.lua is ran
-  --print('[ItemFunctions] itemFunctions started!')
+  ----print('[ItemFunctions] itemFunctions started!')
 end
 
 function toggle_item(keys) -- keys is the information sent by the ability
-  --print( '[ItemFunctions] toggle_item  Called' )
+  ----print( '[ItemFunctions] toggle_item  Called' )
 
   local casterUnit = EntIndexToHScript( keys.caster_entindex ) -- EntIndexToHScript takes the keys.caster_entindex, which is the number assigned to the entity that ran the function from the ability, and finds the actual entity from it.
   local itemName = tostring(keys.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. keys.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
@@ -49,7 +49,7 @@ function startWeaponCooldown(keys)
 end
 
 function del_fluff(keys) -- keys is the information sent by the ability
-  --print( '[ItemFunctions] itemfluff  Called' )
+  ----print( '[ItemFunctions] itemfluff  Called' )
   local casterUnit = EntIndexToHScript( keys.caster_entindex ) -- EntIndexToHScript takes the keys.caster_entindex, which is the number assigned to the entity that ran the function from the ability, and finds the actual entity from it.
   local itemName = tostring(keys.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. keys.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
   if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
@@ -65,7 +65,7 @@ function del_fluff(keys) -- keys is the information sent by the ability
 end
 
 function give_gold(keys) -- keys is the information sent by the ability
-  --print( '[ItemFunctions] give_gold  Called' )
+  ----print( '[ItemFunctions] give_gold  Called' )
 
   local casterUnit = EntIndexToHScript( keys.caster_entindex ) -- EntIndexToHScript takes the keys.caster_entindex, which is the number assigned to the entity that ran the function from the ability, and finds the actual entity from it.
   --casterUnit:SetGold(80000, true)
@@ -84,7 +84,7 @@ function give_gold(keys) -- keys is the information sent by the ability
 end
 
 function use_wood(keys) -- keys is the information sent by the ability
-  --print( '[ItemFunctions] use_wood  Called' )
+  ----print( '[ItemFunctions] use_wood  Called' )
   local casterUnit = EntIndexToHScript( keys.caster_entindex ) -- EntIndexToHScript takes the keys.caster_entindex, which is the number assigned to the entity that ran the function from the ability, and finds the actual entity from it.
   local itemName = tostring(keys.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. keys.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
   if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
@@ -93,7 +93,7 @@ function use_wood(keys) -- keys is the information sent by the ability
         local Item = casterUnit:GetItemInSlot( itemSlot ) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
         if  Item ~= nil and string.match(Item:GetName(), "wood") then -- makes sure that the item exists and making sure it is the correct item
           Item:StartCooldown(35.0)
-          --print( '[ItemFunctions] StartCooldown  Called' )
+          ----print( '[ItemFunctions] StartCooldown  Called' )
         end
 
         if Item ~= nil and Item:GetName() == itemName then
@@ -129,12 +129,12 @@ end
 
 
 function wind_ult_buffet(args)
-  -- --print('[ItemFunctions] wind_ult_buffet started! redux!')
+  -- ----print('[ItemFunctions] wind_ult_buffet started! redux!')
   local targetPos = args.target:GetAbsOrigin()
   local targetUnit = args.target
-  -- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+  -- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
   local casterPos = args.caster:GetAbsOrigin()
-  -- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+  -- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
   local direction =  casterPos - targetPos
   local vec = direction:Normalized() * -25.0
   if direction:Length() > 500 then
@@ -204,6 +204,12 @@ function become_magnus(keys)
 
 end
 
+function become_shredder(keys)
+
+  become_boat(keys, "npc_dota_hero_shredder")
+
+end
+
 function become_lion(keys)
 
   become_boat(keys, "npc_dota_hero_lion")
@@ -242,12 +248,12 @@ function become_boat(keys, heroname)
 end
 
 function debuffTowers(keys)
-  --print('[ItemFunctions] dubuffTower started!')
+  ----print('[ItemFunctions] dubuffTower started!')
 
 end
 
 function healTowers(keys)
-  --print('[ItemFunctions] healTowers started!')
+  ----print('[ItemFunctions] healTowers started!')
   local casterUnit = EntIndexToHScript( keys.caster_entindex ) -- EntIndexToHScript takes the keys.caster_entindex, which is the number assigned to the entity that ran the function from the ability, and finds the actual entity from it.
   local itemName = tostring(keys.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. keys.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
   if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
@@ -261,14 +267,14 @@ function healTowers(keys)
     end
   end
   for _,curTower in pairs( Entities:FindAllByClassname( "npc_dota_tow*")) do
-    --print('[ItemFunctions] healTowers found a tower!')
+    ----print('[ItemFunctions] healTowers found a tower!')
     local curArmor = curTower:GetPhysicalArmorBaseValue()
     if curTower ~= nil and curTower:IsTower() then
-      --print('[ItemFunctions] healTowers really found a tower!')
+      ----print('[ItemFunctions] healTowers really found a tower!')
       if curTower:GetTeamNumber() ==  casterUnit:GetTeamNumber()  then
         local hp1 = (curTower:GetMaxHealth()-curTower:GetHealth())*.1
         curTower:SetHealth(curTower:GetHealth()+hp1)
-        --print('[ItemFunctions] healTowers found an ally tower.')
+        ----print('[ItemFunctions] healTowers found an ally tower.')
       end
     end
   end
@@ -350,7 +356,7 @@ function clusterBoom(args,lvl)
     CapTheseFuckers=enemies
   end
   for _,fucker in pairs( CapTheseFuckers) do
-    print("fucker")
+    --print("fucker")
     local tracking_projectile =
     {
       EffectName = "particles/basic_projectile/spin_one_projectile.vpcf",
@@ -388,7 +394,7 @@ function dearmorUlt(args)
 
 
   local casterUnit = args.caster
-  -- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+  -- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
   local targetUnit = args.target
   local Item
   local plasmaItem
@@ -422,7 +428,7 @@ end
 function dearmor3(args)
   Timers:CreateTimer( .05, function()
   local casterUnit = args.caster
-  -- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+  -- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
   local targetUnit = args.target
   local Item
   local plasmaItem
@@ -455,7 +461,7 @@ end
 function dearmor2(args)
   Timers:CreateTimer( .05, function()
   local casterUnit = args.caster
-  --print('plasma dearmor start' )
+  ----print('plasma dearmor start' )
   local targetUnit = args.target
   local Item
   local plasmaItem
@@ -479,7 +485,7 @@ function dearmor2(args)
         fucker:SetDuration(fucker:GetRemainingTime()+2,true)
       end
     else
-      --print('didnt exist, added' )
+      ----print('didnt exist, added' )
       plasmaItem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_plasma_two_bow_dearmored", nil)
     end
   end
@@ -489,7 +495,7 @@ end
 function dearmor1(args)
   Timers:CreateTimer( .05, function()
   local casterUnit = args.caster
-  -- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+  -- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
   local targetUnit = args.target
   local Item
   local plasmaItem
@@ -542,17 +548,17 @@ function PrintTable(t, indent, done)
 
       if type(value) == "table" and not done[value] then
         done [value] = true
-        print(string.rep ("\t", indent)..tostring(v)..":")
+        --print(string.rep ("\t", indent)..tostring(v)..":")
         PrintTable (value, indent + 2, done)
       elseif type(value) == "userdata" and not done[value] then
         done [value] = true
-        print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
+        --print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
         PrintTable ((getmetatable(value) and getmetatable(value).__index) or getmetatable(value), indent + 2, done)
       else
         if t.FDesc and t.FDesc[v] then
-          print(string.rep ("\t", indent)..tostring(t.FDesc[v]))
+          --print(string.rep ("\t", indent)..tostring(t.FDesc[v]))
         else
-          print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
+          --print(string.rep ("\t", indent)..tostring(v)..": "..tostring(value))
         end
       end
     end
@@ -561,7 +567,7 @@ end
 
 
 function WindDmg(args) -- keys is the information sent by the ability
-  -- --print('[ItemFunctions] gunning_it started! ')
+  -- ----print('[ItemFunctions] gunning_it started! ')
   local item 			= args.ability
 
   local minRange		= item:GetSpecialValueFor("min_range")
@@ -617,9 +623,9 @@ end
 
 
 function coalUltStun(args) -- keys is the information sent by the ability
-  --print('[ItemFunctions] coal started! ')
+  ----print('[ItemFunctions] coal started! ')
   local casterUnit = args.caster
-  -- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+  -- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
   local targetUnit = args.target
   local Item
   local coalitem
@@ -636,19 +642,19 @@ function coalUltStun(args) -- keys is the information sent by the ability
       end
     end
   end
-  --print('[ItemFunctions] stunmult! ' .. stunmult)
+  ----print('[ItemFunctions] stunmult! ' .. stunmult)
   if coalitem ~= nil and RandomInt(0,40) == 0 then
-    --print('[ItemFunctions] random_hit! ')
+    ----print('[ItemFunctions] random_hit! ')
     coalitem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_coal_ult_bow_stunned", nil)
     coalSoundStun(args)
-    --print('[ItemFunctions] stunned from coal! ')
+    ----print('[ItemFunctions] stunned from coal! ')
   end
 end
 
 function coalThreeStun(args) -- keys is the information sent by the ability
-  --print('[ItemFunctions] coal started! ')
+  ----print('[ItemFunctions] coal started! ')
   local casterUnit = args.caster
-  -- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+  -- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
   local targetUnit = args.target
   local Item
   local coalitem
@@ -665,19 +671,19 @@ function coalThreeStun(args) -- keys is the information sent by the ability
       end
     end
   end
-  --print('[ItemFunctions] stunmult! ' .. stunmult)
+  ----print('[ItemFunctions] stunmult! ' .. stunmult)
   if coalitem ~= nil and RandomInt(0,15) == 0 then
-    --print('[ItemFunctions] random_hit! ')
+    ----print('[ItemFunctions] random_hit! ')
     coalitem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_coal_three_bow_stunned", nil)
     coalSoundStun(args)
-    --print('[ItemFunctions] stunned from coal! ')
+    ----print('[ItemFunctions] stunned from coal! ')
   end
 end
 
 function coalTwoStun(args) -- keys is the information sent by the ability
-  --print('[ItemFunctions] coal started! ')
+  ----print('[ItemFunctions] coal started! ')
   local casterUnit = args.caster
-  -- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+  -- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
   local targetUnit = args.target
   local Item
   local coalitem
@@ -694,19 +700,19 @@ function coalTwoStun(args) -- keys is the information sent by the ability
       end
     end
   end
-  --print('[ItemFunctions] stunmult! ' .. stunmult)
+  ----print('[ItemFunctions] stunmult! ' .. stunmult)
   if coalitem ~= nil and RandomInt(0,15) == 0 then
-    --print('[ItemFunctions] random_hit! ')
+    ----print('[ItemFunctions] random_hit! ')
     coalitem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_coal_three_bow_stunned", nil)
     coalSoundStun(args)
-    --print('[ItemFunctions] stunned from coal! ')
+    ----print('[ItemFunctions] stunned from coal! ')
   end
 end
 
 function coalStun(args) -- keys is the information sent by the ability
-  --print('[ItemFunctions] coal started! ')
+  ----print('[ItemFunctions] coal started! ')
   local casterUnit = args.caster
-  -- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+  -- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
   local targetUnit = args.target
   local Item
   local coalitem
@@ -723,12 +729,12 @@ function coalStun(args) -- keys is the information sent by the ability
       end
     end
   end
-  --print('[ItemFunctions] stunmult! ' .. stunmult)
+  ----print('[ItemFunctions] stunmult! ' .. stunmult)
   if coalitem ~= nil and RandomInt(0,15) == 0 then
-    --print('[ItemFunctions] random_hit! ')
+    ----print('[ItemFunctions] random_hit! ')
     coalitem:ApplyDataDrivenModifier(casterUnit, targetUnit, "item_coal_bow_stunned", nil)
     coalSoundStun(args)
-    --print('[ItemFunctions] stunned from coal! ')
+    ----print('[ItemFunctions] stunned from coal! ')
   end
 end
 
@@ -1106,7 +1112,7 @@ end
 function ChaosWeaponHit(args)
 
   local casterUnit = args.caster
-  -- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+  -- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
   local targetUnit = args.target
   local casterUnit = args.caster
   if chaosDmgHolder[args.ability][1]~=nil then

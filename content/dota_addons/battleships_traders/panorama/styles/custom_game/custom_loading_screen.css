@@ -9,12 +9,45 @@
     background-color: blue;
     overflow: clip;
 }
+#seq
+{
+    overflow: clip;
+	pre-transform-scale2d: 1.35, 1.35;
+}
+.SeqBg
+{
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100% 100%;
+}
+.MenuRoot
+{
+	width: 610px;
+	height: 790px;
+	margin-top: 52px;
+    margin-left: 74px;
+    padding: 8px;
+    border-radius: 16px;
+    flow-children: down;
+    background-color: gradient(linear, 0% 0%, 0.1% 0%, from(#111111), color-stop(0.01, #202327), color-stop(0.2, #141619ff), to(#000000dd));
+}
+#BattleshipsTitle
+{
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+	horizontal-align: center;
+}
+
+
 .Header
 {
 	font-size: 24px;
     font-weight: bold;
-	margin-top: 36px;
-	
+	margin-top: 18px;
+	color: white;
+	text-decoration: underline;
 }
 #GameModeDescription
 {
@@ -38,18 +71,6 @@
 
 	box-shadow: inset black 5px 5px 10px 10px;
 }
-
-
-
-#TitlePanel
-{
-	horizontal-align: left;
-	vertical-align: top;
-	margin-top: 150px;
-	margin-left: 100px;
-	flow-children: right;
-}
-
 #AuthorPanel
 {
 	horizontal-align: Left;
@@ -73,198 +94,137 @@
 #CoOp
 {
 	flow-children: down;
-
 	horizontal-align: Left;
 	vertical-align: top;
 	margin-top: 20px;
-		margin-left: 30px;
+	margin-left: 30px;
 	margin-right: 30px;
 	width: 400px;
 	height: 100px;
-	
 }
 #battle
 {
 	flow-children: down;
-
 	horizontal-align: Left;
 	vertical-align: top;
 	margin-top: 20px;
-		margin-left: 30px;
+	margin-left: 30px;
 	margin-right: 30px;
 	width: 400px;
 	height: 100px;
 	
 }
-#CoOpHolder
-{
-		border-radius: 20px;
-	flow-children: down;
-	background-color: gradient( linear, 0% 50%, 0% 100%, from( #62494ecc ), to( #552525ff ) );
-		height: 230px;
-		margin-top: 700px;
-	margin-right: 30px;
-	margin-left: 500px;
-	height: 260px;
-}
-
-
-
-#News
-{
-	flow-children: down;
-
-	horizontal-align: Left;
-	vertical-align: top;
-	margin-top: 20px;
-		margin-left: 30px;
-	margin-right: 10px;
-	
-	height: 320px;
-	overflow: squish scroll;
-}
-#NewsHolder
-{
-		border-radius: 20px;
-	flow-children: down;
-	background-color: gradient( linear, 0% 50%, 0% 100%, from( #42694ecc ), to( #252525ff) );
-		height: 400px;
-		width: 450px;
-		margin-top: 600px;
-	margin-right: 30px;
-	margin-left: 30px;
-}
-#Discord
-{
-	margin-top: 60px;
-	flow-children: right;
-	background-color: gradient( linear, 0% 20%, 0% 100%, from( #2c2f33 ), to( #23272a) );
-	border-radius: 20px;
-	height: 50px;
-		width: 300px;
-		horizontal-align: center;
-}
-
-.discord_text
-{
-	margin: 10px;
-	vertical-align: center;
-	font-size: 17px;
-	color: #cccccc;
-	text-shadow: 2px 2px 2px #000000;
-	horizontal-align: center;
-	text-decoration: underline;
-}
-
-#DiscordImage
-{
-	
-	margin: 5px;
-		height: 44px;
-		width: 45px;
-		horizontal-align: Right;
-}
-#ArtistPanel
-{
-	horizontal-align: Left;
-	vertical-align: top;
-	margin-top: 30px;
-	margin-right: 30px;
-	flow-children: down;
-	margin-left: 30px;
-}
-#HeroPanel
-{
-	horizontal-align: Left;
-	vertical-align: top;
-	margin-top: 30px;
-	margin-right: 30px;
-	flow-children: down;
-	margin-left: 30px;
-}
-#OverthrowIcon
-{
-	width: 80px;
-	height: 80px;
-	vertical-align: center;
-	margin-right: 15px;
-}
-
-#BattleshipsTitle
-{
-	margin-bottom: -15px;
-	vertical-align: center;
-	text-transform: uppercase;
-	font-size: 80px;
-	color: #cccccc;
-	text-shadow: 2px 2px 2px #550000;
-}
-
-.AuthorTitle
-{
-	vertical-align: center;
-	font-size: 25px;
-	color: #cccccc;
-	text-shadow: 2px 2px 2px #000000;
-}
 .LearnTitle
 {
 	margin-top: 5px;
-	margin-left: 5px;
-	margin-bottom: -15px;
+	margin-bottom: -35px;
+	margin-left: 15px;
 	vertical-align: center;
 	font-size: 25px;
-	color: #cccccc;
+	color: white;
 	text-shadow: 2px 2px 2px #000000;
+	text-decoration: underline;
 }
-.heroTitle
+.NewsTitle
 {
+	margin-top: 20px;
 	margin-bottom: -15px;
+	margin-left: 15px;
 	vertical-align: center;
+	font-size: 25px;
+	color: white;
+	text-shadow: 2px 2px 2px #000000;
+	text-decoration: underline;
+}
+
+#NewsHolder
+{
+	padding:5px;
+	width: 660px;
+	height: 320px;
+	flow-children: down;
+	border-radius: 8px;
+	margin-top: 16px;
+}
+
+.NewsContent
+{
+	margin-left: 15px;
 	font-size: 20px;
-	color: #cccccc;
+	color: white;
 	text-shadow: 2px 2px 2px #000000;
 }
-.newsTitle
+
+#CoOpHolder
 {
-	margin-top:10px;
-	margin-bottom: 0px;
-	vertical-align: center;
-	font-size: 17px;
-	color: #cccccc;
-	text-shadow: 2px 2px 2px #000000;
+	padding:5px;
+	width: 450px;
+	height: 370px;
+	flow-children: down;
+	border-radius: 15px;
+	margin-top: 560px;
+	margin-left: 650px;
+    background-color: gradient(linear, 0% 0%, 0.1% 0%, from(#111111), color-stop(0.01, #202327), color-stop(0.2, #141619ff), to(#000000dd));
 }
-.SpecialTitle
+
+.CoOpTitle
 {
-	horizontal-align: left;
+	margin-top: 12px;
+	margin-left: 15px;
 	vertical-align: top;
-	margin-top: 1030px;
-	margin-left: 100px;
-	flow-children: right;
+	font-size: 25px;
+	color: white;
+	text-shadow: 2px 2px 2px #000000;
+	text-decoration: underline;
+}
+
+.CoOpContent
+{
+	margin-top: 5px;
+	margin-left: 15px;
 	font-size: 20px;
-	color: #cccccc;
+	color: white;
 	text-shadow: 2px 2px 2px #000000;
 }
 
-
-.SeqImg
+.BattleTitle
 {
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	background-size: 100% 100%;
+	margin-top: 12px;
+	margin-left: 15px;
+	vertical-align: top;
+	font-size: 25px;
+	color: white;
+	text-shadow: 2px 2px 2px #000000;
+	text-decoration: underline;
 }
 
-.SeqBg
+.BattleContent
 {
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	background-size: 100% 100%;
+	margin-top: 5px;
+	margin-left: 15px;
+	font-size: 20px;
+	color: white;
+	text-shadow: 2px 2px 2px #000000;
 }
 
-#seq
+.NewTitle
 {
-    overflow: clip;
-	pre-transform-scale2d: 1.35, 1.35;
+	margin-top: 12px;
+	margin-left: 15px;
+	vertical-align: top;
+	font-size: 25px;
+	color: white;
+	text-shadow: 2px 2px 2px #000000;
+	text-decoration: underline;
+}
+
+.NewContent
+{
+	margin-top: 5px;
+	margin-left: 15px;
+	font-size: 20px;
+	color: white;
+	text-shadow: 2px 2px 2px #000000;
 }
 
 
@@ -289,7 +249,7 @@
 #HowToWeapons {
     flow-children: right;
     text-align: left;
-    width: 40%;
+    width: 100%;
     margin-top: 5px;
 	margin-right:20px;
 	height:100%;
@@ -391,9 +351,6 @@
     flow-children: down;
 }
 
-
-
-
 #TipsHeader
 {
 }
@@ -408,8 +365,8 @@
 .TipText
 {
 	margin-left: 0px;
-    margin-top: 16px;
-    margin-right:16px;
+    margin-left: 2px;
+	color: white;
 }
 
 .InfoRow
@@ -429,57 +386,80 @@
 	margin-top: 16px;
 }
 
+
+#LearnButtonHolder
+{
+	margin: 5px;
+	width: 300px;
+	height: 28px;
+	flow-children: right;
+	margin-left: 220px;
+	margin-top: -80px;
+}
 .learn_button
 {
 
-	width: 50px;
-	height: 50px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #252525 ), to( #42494e ) );
-	 border: 2px solid white;
-	  border-radius: 10px;
+	width: 100%;
+	height: 100%;
+	background-image: url("s2r://panorama/images/custom_gameinfo_close_psd.vtex");
+	background-size: 27px;
+	background-repeat: no-repeat;
+	wash-color: #ffffff;
+	transition-property: background-color, wash-color;
+	transition-delay: 0.0s;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-out;
 }
-.learn_button:hover
+
+#pageCountLabel
+{
+    font-size: 18px;
+    color: white;
+	vertical-align: top;
+	margin-top: 3px;
+	horizontal-align: center;
+	margin-left: -330px;
+}
+
+.learn_button2
 {
 
-	width: 50px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #404040 ), to( #60606e ) );
-	 border: 2px solid grey;
+	width: 100%;
+	height: 100%;
+	background-image: url("s2r://panorama/images/custom_gameinfo_open_psd.vtex");
+	background-size: 27px;
+	background-repeat: no-repeat;
+	wash-color: #ffffff;
+	margin-left: -50px;
+	transition-property: background-color, wash-color;
+	transition-delay: 0.0s;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-out;
 }
 Label
 {
     font-size: 18px;
-    color: #999999;
+    color: white;
 	vertical-align: top;
 
 }
 
-
 #LearnHolder
 {
 	padding:5px;
-	margin-top: 230px;
-		width: 460px;
-		height: 460px;
-		margin-left: 500px;
-		background-color: gradient( linear, 0% 50%, 0% 100%, from( #42417ecc ), to( #253025ff ) );
-		border-radius: 20px;
-		flow-children: down;
+	width: 660px;
+	height: 460px;
+	flow-children: down;
+	border-radius: 8px;
+	margin-top: 15px;
 }
-#LearnButtonHolder
-{
-	margin: 5px;
-		width: 450px;
-		height: 25px;
-		border-radius: 20px;
-		flow-children: right;
-}
+
 #LearnInfoHolder
 {
 	margin-top: 20px;
-		width: 100%;
-		height: 80%;
-		flow-children: right;
-		background-color: gradient( linear, 0% 50%, 0% 100%, from( #353535cc ), to( #253025ff ) );
+	width: 100%;
+	height: 80%;
+	flow-children: right;
 }
 
 .innerLearn
@@ -503,7 +483,7 @@ Label
 }
 #b3
 {
-	horizontal-align: right;
+	horizontal-align: center;
 	text-align: center;
 }
 .shop_btn_text

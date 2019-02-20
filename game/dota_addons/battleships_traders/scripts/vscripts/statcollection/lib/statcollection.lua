@@ -533,7 +533,7 @@ end
 -- Optional override_host can be added to reutilize this function for other sites
 function statCollection:sendStage(stageName, payload, callback, override_host)
     local host = override_host or postLocation
-     print("host: " .. host)
+     --print("host: " .. host)
     -- Create the request
     local req = CreateHTTPRequestScriptVM('POST', host .. stageName)
     local encoded = json.encode(payload)
@@ -567,7 +567,7 @@ function statCollection:sendStage(stageName, payload, callback, override_host)
     end)
     if not override_host then
         statCollection:sendStage(stageName, payload, callback, "https://g9ai9j8ush.execute-api.us-east-1.amazonaws.com/alpha/test")
-         print("sendToBryce!!")
+         --print("sendToBryce!!")
     end
 end
 
@@ -612,7 +612,7 @@ function statCollection: print(s1, s2)
     else
     -- print to vscript developer console, or non-dedi server
         if self.TESTING or Convars:GetBool("developer") then
-             print(str)
+             --print(str)
         end
     end
 end

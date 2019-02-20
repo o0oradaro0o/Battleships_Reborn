@@ -6,54 +6,14 @@
 		<include src="file://{resources}/scripts/custom_game/custom_load.js" />
 	</scripts>
 	<Panel class="BattleshipsLoadingRoot">
-
 		<Panel id="seq">
 			<Image id="seq_bg" class="SeqBg" src="file://{images}/custom_game/loading_screen/loading.png" />
 		</Panel>
-
-		<Panel id="TitlePanel">
+		<Panel class="MenuRoot">
 			<Label id="BattleshipsTitle" text="#addon_game_name" style="" />
-		</Panel>
-
-		<Panel id="AuthorPanelHolder">
-			<Panel id="AuthorPanel">
-				<Label class="AuthorTitle" text="#Author_Title"/>
-			</Panel>
-
-			<Panel id="ArtistPanel">
-				<Label class="heroTitle" text="#Artist_Panel"/>
-			</Panel>
-			<Panel id="HeroPanel">
-				<Label class="heroTitle" text="#Hero_Title"/>
-			</Panel>
-			<Panel id="Discord" onactivate="ExternalBrowserGoToURL('https://discord.gg/DFc8MBt');">
-				<Label class="discord_text" text="#discord" />
-				<Image id="DiscordImage" src="file://{images}/custom_game/game_info/Discord.png" />
-				</Panel>
-		</Panel>
-		<Panel id="CoOpHolder">
-			<Panel id="CoOp">
-				<Label class="AuthorTitle" text="#Coop_Title"/>
-				<Label class="heroTitle" text="#Coop_Desc" />
-			</Panel>
-			<Panel id="battle">
-				<Label class="AuthorTitle" text="#Battle_Title" />
-				<Label class="heroTitle" text="#Battle_Desc" />
-			</Panel>
-		</Panel>
-
-
-		<Panel id="NewsHolder">
-			<Panel id="News">
-				<Label class="AuthorTitle" text="#News_Title" />
-
-				<Label class="newsTitle" text="#News_Content" />
-			</Panel>
-		</Panel>
-
-
-		<Panel id="LearnHolder">
 			<Label class="LearnTitle" text="#HowToPlay" />
+			
+		<Panel id="LearnHolder">
 			<Panel id="LearnInfoHolder">
 				<Panel id="learn1" class="innerLearn">
 					<Label id="ObjectiveHeader" class="Header" html="true" text="#bs_Objectives" />
@@ -146,21 +106,22 @@
 					</Panel>
 				</Panel>
 			</Panel>
-
-			<Panel id="LearnButtonHolder">
-				<Panel id="b1" class="learn_button" onactivate="prev()">
-					<Label hittest="false" class="shop_btn_text" text="#prev"/>
-				</Panel>
-
-				<Label hittest="false" id="pageCountLabel" text="1/12"/>
-
-				<Panel id="b3" class="learn_button" onactivate="next()">
-					<Label hittest="false" class="shop_btn_text" text="#next"/>
-				</Panel>
-			</Panel>
-
 		</Panel>
+			
+			<Panel id="LearnButtonHolder">
+				<Panel id="b1" class="learn_button" onactivate="prev()" />
+				<Label hittest="false" id="pageCountLabel" text="1/12"/>
+				<Panel id="b3" class="learn_button2" onactivate="next()" />
+			</Panel>
+			
+			<Label class="NewsTitle" text="#News" />
+			<Panel id="NewsHolder">
+				<Label class="NewsContent" text="#News_Content" />
+			</Panel>
+		</Panel>
+		
+					
+		
 	</Panel>
-
 </root>
 

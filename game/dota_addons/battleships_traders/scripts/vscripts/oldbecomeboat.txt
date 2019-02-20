@@ -1,4 +1,4 @@
-   --print('[ItemFunctions] become_bristleback started!')
+   ----print('[ItemFunctions] become_bristleback started!')
     local a = 0
     local plyID = casterUnit:GetPlayerOwnerID()
     local itemlist = {}
@@ -8,15 +8,15 @@
                 local Item = casterUnit:GetItemInSlot( itemSlot )
 				
 				if Item ~= nil and not string.match(Item:GetName(), "boat") then
-					 --print("Item in slot is: " .. Item:GetName())
+					 ----print("Item in slot is: " .. Item:GetName())
 					itemlist[itemSlot] = Item:GetName()
 					
 				elseif Item ~= nil and string.match(Item:GetName(), "boat") then
-					 --print("Item in slot is: filler")
+					 ----print("Item in slot is: filler")
 					itemlist[itemSlot] = "item_fluff"
 				
 				else
-					 --print("Item in slot is: filler")
+					 ----print("Item in slot is: filler")
 					itemlist[itemSlot] = "item_fluff"
 					
 				end
@@ -40,14 +40,14 @@
 					local id = hero:GetPlayerOwnerID()
 					RemoveWearables( hero )
 					if id == plyID then
-						 --print("this is the new hero, put items in " .. hero:GetName())
+						 ----print("this is the new hero, put items in " .. hero:GetName())
 						hero:SetGold(gold, true)
 						hero:SetGold(0, false)
 						hero:AddExperience(xp, false, false)
 						for b = 0, 5, 1 do 
 							local newItem = CreateItem(itemlist[b], hero, hero)
 							if newItem ~= nil then                   -- makes sure that the item exists and making sure it is the correct item
-								 --print("Item Is: " .. newItem:GetName() )
+								 ----print("Item Is: " .. newItem:GetName() )
 								hero:AddItem(newItem)
 							end
 						end
@@ -56,11 +56,11 @@
 								if hero ~= nil then
 									local activateItem = hero:GetItemInSlot( itemSlot )
 									if activateItem ~= nil and string.match(activateItem:GetName(), "bow") then
-										 --print("activating " .. activateItem:GetName())
+										 ----print("activating " .. activateItem:GetName())
 										activateItem:ToggleAbility()
 										
 									elseif activateItem ~= nil and string.match(activateItem:GetName(), "fluff") then
-										 --print("Item in slot is: filler")
+										 ----print("Item in slot is: filler")
 										activateItem:ToggleAbility()
 									end
 								end

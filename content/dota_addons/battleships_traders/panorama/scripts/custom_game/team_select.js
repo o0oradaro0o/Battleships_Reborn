@@ -317,20 +317,20 @@ function UpdateTimer()
 		
 		if(timeleft>84 && timeleft<87)
 		{
-				$( "#battleLabel" ).text = "Game Mode: Battle";
+				$( "#battleLabel" ).text = "GAME MODE: BATTLE";
 			$( "#battleButton" ).RemoveClass("untoggled");
 				$( "#battleButton" ).SetHasClass( "toggled", true);
 		}
 		if(timeleft>94 && timeleft <97)
 		{
-			$( "#battleLabel" ).text = "Game Mode: Normal";
+			$( "#battleLabel" ).text = "GAME MODE: NORMAL";
 			$( "#battleButton" ).RemoveClass("toggled");
 				$( "#battleButton" ).SetHasClass( "untoggled", true);
 		}
 		
 		if(timeleft>94 && timeleft <97)
 		{
-			$( "#battleLabel" ).text = "Game Mode: Normal";
+			$( "#battleLabel" ).text = "GAME MODE: NORMAL";
 			$( "#battleButton" ).RemoveClass("toggled");
 				$( "#battleButton" ).SetHasClass( "untoggled", true);
 		}
@@ -338,15 +338,15 @@ function UpdateTimer()
 		if(timeleft>104 && timeleft <107)
 		{
 			$.Msg("here")
-			$( "#TradeLabel" ).text = "trading: Enabled";
-			$( "#tradeButton" ).RemoveClass("toggled");
+			$( "#TradeLabel" ).text = "TRADING: ENABLED";
+			$( "#tradeButton" ).RemoveClass("tradetoggled");
 				$( "#tradeButton" ).SetHasClass( "tradeuntoggled", true);
 		}
 		if(timeleft>114 && timeleft <117)
 		{
-			$( "#TradeLabel" ).text = "trading: Disabled";
+			$( "#TradeLabel" ).text = "TRADING: DISABLED";
 			$( "#tradeButton" ).RemoveClass("tradeuntoggled");
-				$( "#tradeButton" ).SetHasClass( "toggled", true);
+				$( "#tradeButton" ).SetHasClass( "tradetoggled", true);
 		}
 		
 	$.Schedule( 0.1, UpdateTimer );
@@ -419,7 +419,7 @@ function TradeMode()
 	if(playerInfo.player_has_host_privileges )
 	{
 		$.Msg(playerInfo.player_has_host_privileges)
-		if($( "#tradeButton" ).BHasClass("toggled"))
+		if($( "#tradeButton" ).BHasClass("tradetoggled"))
 		{
 			Game.SetRemainingSetupTime( 106 ); 
 			$.Schedule( 1.0, SetTimerToDefault );

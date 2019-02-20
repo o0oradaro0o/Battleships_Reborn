@@ -407,8 +407,8 @@ function modifier_animation_translate_permanent:DeclareFunctions()
 end
 
 function modifier_animation_translate_permanent:GetActivityTranslationModifiers(...)
-  -- --print('TRANSLATE MODIFIER', IsServer())
-  -- --print(self.translate)
+  -- ----print('TRANSLATE MODIFIER', IsServer())
+  -- ----print(self.translate)
   return self.translate or 0
 end
 

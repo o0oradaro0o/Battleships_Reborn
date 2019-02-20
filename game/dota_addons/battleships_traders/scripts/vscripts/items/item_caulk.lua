@@ -81,7 +81,7 @@ function item_caulk:OnProjectileHit(ability, caster, target, location)
 
   local hit_sound = hit_sounds[ability:GetLevel()]
 
-print( caster:GetTeam() ..  target:GetTeam() .. damage)
+--print( caster:GetTeam() ..  target:GetTeam() .. damage)
   if caster:GetTeam() == target:GetTeam() then
     target:Heal(damage, caster)
   else
@@ -134,7 +134,7 @@ function modifier_item_caulk:OnCreated( kv )
     elseif self.level == 4 then
       self.num_attacks = 4
     else
-      print(self.ability:GetAbilityName() ..  " Weapon Level should be 1-4, is actually: " .. self.level)
+      --print(self.ability:GetAbilityName() ..  " Weapon Level should be 1-4, is actually: " .. self.level)
       self.num_attacks = 0
     end
 
@@ -235,7 +235,7 @@ function modifier_item_caulk:OnIntervalThink()
         bProvidesVision = false,
         iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
       }
-      print(self.ability:GetAbilityName())
+      --print(self.ability:GetAbilityName())
       ProjectileManager:CreateTrackingProjectile(projectile)
       EmitSoundOn(self.fire_sound, caster)
     end

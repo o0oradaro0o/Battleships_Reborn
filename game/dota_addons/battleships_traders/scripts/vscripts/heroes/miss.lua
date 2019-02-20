@@ -36,9 +36,9 @@ function modifier_miss:OnTakeDamage(keys)
           local abilityKv = ability:GetAbilityKeyValues()
           local fire_rate = abilityKv.AbilitySpecial.fire_rate
           local x = RandomInt(1, 100)
-          print(x)
+          --print(x)
           if x<=self:GetAbility():GetSpecialValueFor("evasion") then
-            print("missed!")
+            --print("missed!")
               local damage = keys.damage
               local sound = "Hero_Medusa.ManaShield.Proc"
               EmitSoundOn(sound, caster)

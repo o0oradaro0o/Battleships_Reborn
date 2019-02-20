@@ -1,18 +1,18 @@
 if abilityFunctions == nil then
-	 --print("[AbilityFunctions] creating abilityFunctions")
+	 ----print("[AbilityFunctions] creating abilityFunctions")
 	abilityFunctions = {} -- Creates an array to let us beable to index abilityFunctions when creating new functions
 	abilityFunctions.__index = abilityFunctions
 end
 
 function abilityFunctions:new() -- Creates the new class
-	 --print("[AbilityFunctions] abilityFunctions:new")
+	 ----print("[AbilityFunctions] abilityFunctions:new")
 	o = o or {}
 	setmetatable(o, abilityFunctions)
 	return o
 end
 
 function abilityFunctions:start() -- Runs whenever the abilityFunctions.lua is ran
-	 --print("[AbilityFunctions] abilityFunctions started!")
+	 ----print("[AbilityFunctions] abilityFunctions started!")
 end
 
 function battleshipHealth(args)
@@ -24,14 +24,14 @@ end
 
 function removeAircrafts(keys)
 	local casterUnit = keys.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	casterUnit:SetModel("models/Aircraft_boat_e.vmdl")
 	casterUnit:SetOriginalModel("models/Aircraft_boat_e.vmdl")
 end
 
 function restoreAircrafts(keys)
 	local casterUnit = keys.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	casterUnit:SetModel("models/Aircraft_boat2.vmdl")
 	casterUnit:SetOriginalModel("models/Aircraft_boat2.vmdl")
 end
@@ -53,7 +53,7 @@ function ShowShip(keys) -- keys is the information sent by the ability
 	local ability = keys.ability
 
 	local enemies
-	 --print("[AbilityFunctions] ShowShip  Called")
+	 ----print("[AbilityFunctions] ShowShip  Called")
 	if casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 		enemies =
 			FindUnitsInRadius(
@@ -89,7 +89,7 @@ function ShowShip(keys) -- keys is the information sent by the ability
 		if heroDist:Length() < fuckerdist then
 			fuckerdist = heroDist:Length()
 			fuckerWeShow = fucker
-			 --print("[AbilityFunctions] ShowShip  nearest is: " .. fuckerdist)
+			 ----print("[AbilityFunctions] ShowShip  nearest is: " .. fuckerdist)
 		end
 	end
 	local tracking_projectile = {
@@ -126,11 +126,11 @@ function ShowShip(keys) -- keys is the information sent by the ability
 end
 
 function peak(keys) -- keys is the information sent by the ability
-	 --print("[AbilityFunctions] peak  Called")
+	 ----print("[AbilityFunctions] peak  Called")
 	local casterUnit = EntIndexToHScript(keys.caster_entindex)
 
 	for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
-		 --print("[ItemFunctions] peak found a hero!")
+		 ----print("[ItemFunctions] peak found a hero!")
 		if hero ~= nil and hero:IsRealHero() then
 			if hero:GetTeamNumber() ~= casterUnit:GetTeamNumber() then
 				hero:MakeVisibleDueToAttack(1,50)
@@ -152,19 +152,19 @@ function peak(keys) -- keys is the information sent by the ability
 end
 
 function startGunningIt(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
 	GunTicks[casterUnit:GetOwner():GetPlayerID()] = 1
 end
 
 function rammingIt(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	if not IsPhysicsUnit(casterUnit) then
 		Physics:Unit(casterUnit)
 	end
-	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 	local direction = casterUnit:GetForwardVector()
 	local abil = casterUnit:GetAbilityByIndex(2)
 	local level = abil:GetLevel()
@@ -173,9 +173,9 @@ function rammingIt(args) -- keys is the information sent by the ability
 end
 
 function startRammingIt(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 
 	local abil = casterUnit:GetAbilityByIndex(2)
 	local level = abil:GetLevel()
@@ -183,9 +183,9 @@ function startRammingIt(args) -- keys is the information sent by the ability
 end
 
 function DrumbAnimate(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 
 	local abil = casterUnit:GetAbilityByIndex(2)
 	local level = abil:GetLevel()
@@ -194,17 +194,17 @@ end
 
 dumpingItDir = {}
 function dumpingIt(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 
 	local casterUnit = args.caster
 	if dumpingItDir[casterUnit] == nil or dumpingItDir[casterUnit] == 0 then
 		dumpingItDir[casterUnit] = casterUnit:GetForwardVector()
 	end
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	if not IsPhysicsUnit(casterUnit) then
 		Physics:Unit(casterUnit)
 	end
-	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 	local direction = casterUnit:GetForwardVector()
 	local abil = casterUnit:GetAbilityByIndex(3)
 	local level = abil:GetLevel()
@@ -264,13 +264,13 @@ end
 
 GunTicks = {}
 function gunningIt(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	if not IsPhysicsUnit(casterUnit) then
 		Physics:Unit(casterUnit)
 	end
-	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 	local direction = casterUnit:GetForwardVector()
 	local abil = casterUnit:GetAbilityByIndex(2)
 	local level = abil:GetLevel()
@@ -288,11 +288,11 @@ function gunningIt(args) -- keys is the information sent by the ability
 end
 
 function gunningItDamage(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 
 	local casterUnit = args.caster
 	if GunTicks[casterUnit:GetOwner():GetPlayerID()] ~= nil and GunTicks[casterUnit:GetOwner():GetPlayerID()] > 0 then
-		-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+		-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 		local abil = casterUnit:GetAbilityByIndex(2)
 		local level = abil:GetLevel()
 		local dmg = casterUnit:GetMaxHealth() * 0.0005 * GunTicks[casterUnit:GetOwner():GetPlayerID()]
@@ -311,7 +311,7 @@ function gunningItDamage(args) -- keys is the information sent by the ability
 	end
 end
 function gunningItDamageRemove(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
 	if GunTicks[casterUnit:GetOwner():GetPlayerID()] ~= nil and GunTicks[casterUnit:GetOwner():GetPlayerID()] > 0 then
 		GunTicks[casterUnit:GetOwner():GetPlayerID()] = GunTicks[casterUnit:GetOwner():GetPlayerID()] - 1
@@ -319,9 +319,9 @@ function gunningItDamageRemove(args) -- keys is the information sent by the abil
 end
 
 function PistolDamage(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	local abil = casterUnit:GetAbilityByIndex(0)
 	local level = abil:GetLevel()
 	local targetUnit = args.target
@@ -337,9 +337,9 @@ function PistolDamage(args) -- keys is the information sent by the ability
 end
 
 function unstick(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local hero = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	local direction = hero:GetForwardVector()
 	local vec = direction:Normalized() * 5.0
 	local vecorig = hero:GetOrigin()
@@ -347,11 +347,11 @@ function unstick(args) -- keys is the information sent by the ability
 end
 
 function fly(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 
-	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 	local direction = casterUnit:GetForwardVector()
 	local vec = direction:Normalized() * 21.0
 	local vecorig = casterUnit:GetOrigin() * Vector(1, 1, 0) + Vector(0, 0, 300)
@@ -360,11 +360,11 @@ function fly(args) -- keys is the information sent by the ability
 end
 
 function fly2(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 
-	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 	local direction = casterUnit:GetForwardVector()
 	local vec = direction:Normalized() * 21.0
 	local vecorig = casterUnit:GetOrigin() * Vector(1, 1, 1)
@@ -373,11 +373,11 @@ function fly2(args) -- keys is the information sent by the ability
 end
 
 function fly3(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 
-	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 	local direction = casterUnit:GetForwardVector()
 	local vec = direction:Normalized() * 20.0
 	local vecorig = casterUnit:GetOrigin() * Vector(1, 1, 1)
@@ -385,7 +385,7 @@ function fly3(args) -- keys is the information sent by the ability
 
 	local abil = casterUnit:GetAbilityByIndex(1)
 	if abil:IsFullyCastable() then
-		print("i can cast")
+		--print("i can cast")
 		local nearbyHero=FindUnitsInRadius( 
 			casterUnit:GetTeamNumber(), 
 			casterUnit:GetOrigin(), nil, 1000,
@@ -394,7 +394,7 @@ function fly3(args) -- keys is the information sent by the ability
 			 
 		if #nearbyHero~=0 then
 			local  target=nearbyHero[RandomInt(1,#nearbyHero)]
-			print("i cast on " .. target:GetName())
+			--print("i cast on " .. target:GetName())
 			casterUnit:CastAbilityOnTarget(target, abil, -1)
 		end
 	elseif RandomInt(1,15)==5 then
@@ -406,15 +406,15 @@ end
 BurstTicks = {}
 cooloffCalls = {}
 function burstingIt(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
 
 	casterUnit:AddNewModifier(casterUnit, nil, "modifier_bloodseeker_thirst", {})
 end
 function burstingItDamage(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	local abil = casterUnit:GetAbilityByIndex(2)
 	local level = abil:GetLevel()
 	if casterUnit:HasModifier("bursting_it") then
@@ -440,7 +440,7 @@ function burstingItDamage(args) -- keys is the information sent by the ability
 end
 
 function burstingItDamageRemove(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
 
 	if BurstTicks[casterUnit:GetOwner():GetPlayerID()] ~= nil and BurstTicks[casterUnit:GetOwner():GetPlayerID()] > 0 then
@@ -455,13 +455,13 @@ function burstingItDamageRemove(args) -- keys is the information sent by the abi
 end
 
 function panic(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
 	local abil = casterUnit:GetAbilityByIndex(2)
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	local level = abil:GetLevel()
 	moveBonus = casterUnit:GetHealthPercent()
-	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 	local i = 0
 	abil:ApplyDataDrivenModifier(casterUnit, casterUnit, "panic_time", nil)
 	while i < 100 - moveBonus do
@@ -496,7 +496,7 @@ function SwapMission(args)
 	end
 
 	if diff ~= 0 then
-		 --print("inrange")
+		 ----print("inrange")
 		local missionPool = Entities:FindAllByName("npc_dota_buil*")
 		local chosenMission
 		local missionDist
@@ -521,7 +521,7 @@ function SwapMission(args)
 		end
 
 		if newItem ~= nil then -- makes sure that the item exists and making sure it is the correct item
-			 --print("Item Is: " .. newItem:GetName())
+			 ----print("Item Is: " .. newItem:GetName())
 			heroBuying:AddItem(newItem)
 
 			EmitSoundOnClient("ui.npe_objective_given", PlayerResource:GetPlayer(heroBuying:GetPlayerID()))
@@ -539,7 +539,7 @@ function SwapMission(args)
 end
 
 function CallBatFly(args) -- keys is the information sent by the ability
-	 --print("[ItemFunctions] CallPuckDive started! ")
+	 ----print("[ItemFunctions] CallPuckDive started! ")
 
 	local casterUnit = args.caster
 	local ability = "batrider_firefly_battleship"
@@ -564,7 +564,7 @@ function CallBatFly(args) -- keys is the information sent by the ability
 end
 
 function CallSlarkInvis(args) -- keys is the information sent by the ability
-	 --print("[ItemFunctions] CallPuckDive started! ")
+	 ----print("[ItemFunctions] CallPuckDive started! ")
 
 	local casterUnit = args.caster
 	local ability = "slark_shadow_dance_battleship"
@@ -626,7 +626,7 @@ function checkCliff(args) -- keys is the information sent by the ability
 		allUnits[k] = v
 	end
 
-	 --print("[check cliff] found " .. tostring(#allUnits))
+	 ----print("[check cliff] found " .. tostring(#allUnits))
 	if height:Length() > 110 and #allUnits == 1 then
 		local damageTable = {
 			victim = casterUnit,
@@ -672,7 +672,7 @@ function CheckForRing(args) -- keys is the information sent by the ability
 end
 
 function CallPuckDive(args) -- keys is the information sent by the ability
-	 --print("[ItemFunctions] CallPuckDive started! ")
+	 ----print("[ItemFunctions] CallPuckDive started! ")
 	local casterUnit = args.caster
 	local ability = "dive_battleship_puck"
 
@@ -682,7 +682,7 @@ function CallPuckDive(args) -- keys is the information sent by the ability
 end
 
 function stopGunningIt(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
 	local direction = casterUnit:GetForwardVector()
 	local vec = direction:Normalized() * 0.0
@@ -693,12 +693,12 @@ function stopGunningIt(args) -- keys is the information sent by the ability
 end
 
 function stopGunningItAbility(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
 	local direction = casterUnit:GetForwardVector()
 	local vec = direction:Normalized() * 0.0
 	local abil = casterUnit:GetAbilityByIndex(2)
-	 --print(GunTicks[casterUnit:GetOwner():GetPlayerID()])
+	 ----print(GunTicks[casterUnit:GetOwner():GetPlayerID()])
 	if
 		abil:GetLevel() ~= 0 and not casterUnit:HasModifier("remove_wreaking_it") and
 			GunTicks[casterUnit:GetOwner():GetPlayerID()] ~= nil and
@@ -712,7 +712,7 @@ function stopGunningItAbility(args) -- keys is the information sent by the abili
 end
 
 function RainbowDied(args)
-	 --print("[ability] rainbow died started! ")
+	 ----print("[ability] rainbow died started! ")
 	local casterUnit = args.caster
 	local abil = casterUnit:GetAbilityByIndex(2)
 	local level = abil:GetLevel()
@@ -736,7 +736,7 @@ end
 -- uses a variable which gets the actual ability in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
 -- makes sure that the ability exists and making sure it is the correct ability
 function toggle_item(keys) -- keys is the information sent by the ability
-	 --print("[AbilityFunctions] toggle_item  Called")
+	 ----print("[AbilityFunctions] toggle_item  Called")
 
 	local casterUnit = EntIndexToHScript(keys.caster_entindex) -- EntIndexToHScript takes the keys.caster_entindex, which is the number assigned to the entity that ran the function from the ability, and finds the actual entity from it.
 	local itemName = tostring(keys.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. keys.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as earthshaker_blade_dance.
@@ -756,7 +756,7 @@ function TeleHome(keys) -- keys is the information sent by the ability
 	Timers:CreateTimer(
 		0.1,
 		function()
-			 --print("[AbilityFunctions] toggle_item  Called")
+			 ----print("[AbilityFunctions] toggle_item  Called")
 			local casterUnit = EntIndexToHScript(keys.caster_entindex)
 			local vecorig = Vector(0, 0, 0)
 			if casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
@@ -770,12 +770,12 @@ function TeleHome(keys) -- keys is the information sent by the ability
 end
 
 function keepUp(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	local targetUnit = args.target
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
-	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 	local hp1 = casterUnit:GetHealth() / casterUnit:GetMaxHealth()
 	local hp2 = targetUnit:GetHealth() / targetUnit:GetMaxHealth()
 	local newhp = (hp1 + hp2) / 2
@@ -796,7 +796,7 @@ function keepUp(args) -- keys is the information sent by the ability
 	end
 end
 function swapToGiraffe(args) -- keys is the information sent by the ability
-	 --print("[ItemFunctions] swaptogiraffe started! ")
+	 ----print("[ItemFunctions] swaptogiraffe started! ")
 
 	local casterUnit = args.caster
 	local ability = "giraffe_grab"
@@ -811,7 +811,7 @@ function swapToGiraffe(args) -- keys is the information sent by the ability
 end
 
 function monkeyBuisness(args) -- keys is the information sent by the ability
-	 --print("[ItemFunctions] drag started! ")
+	 ----print("[ItemFunctions] drag started! ")
 	local targetUnit = args.target
 	local newTarget
 	local caster = args.caster
@@ -847,14 +847,14 @@ function monkeyBuisness(args) -- keys is the information sent by the ability
 		projectile = ProjectileManager:CreateTrackingProjectile(info)
 	end
 
-	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 end
 
 function getDown(args)
 	local casterUnit = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 
-	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 	local direction = casterUnit:GetForwardVector()
 	local vec = direction:Normalized() * 50.0
 	local vecorig = casterUnit:GetOrigin()
@@ -863,13 +863,13 @@ function getDown(args)
 end
 
 function giraffeGrab(args) -- keys is the information sent by the ability
-	 --print("[ItemFunctions] drag started! ")
+	 ----print("[ItemFunctions] drag started! ")
 
 	local targetPos = args.target:GetAbsOrigin()
 	local targetUnit = args.target
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	local casterPos = args.caster:GetAbsOrigin()
-	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 	local direction = casterPos - targetPos
 	local vec = direction:Normalized() * 22.0
 	if direction:Length() > 200 and not string.match(targetUnit:GetUnitName(), "rng") then
@@ -879,11 +879,11 @@ function giraffeGrab(args) -- keys is the information sent by the ability
 end
 
 function moceCarrierIn(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 
-	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 	local direction = casterUnit:GetForwardVector()
 	local vec = direction:Normalized() * 50.0
 	local vecorig = casterUnit:GetOrigin()
@@ -891,11 +891,11 @@ function moceCarrierIn(args) -- keys is the information sent by the ability
 	casterUnit:SetOrigin((vecorig + vec) * Vector(1, 1, 0) + Vector(0, 0, 300))
 end
 function moceCarrierOut(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 
-	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 	local direction = casterUnit:GetForwardVector()
 	local vec = direction:Normalized() * -50.0
 	local vecorig = casterUnit:GetOrigin()
@@ -904,7 +904,7 @@ function moceCarrierOut(args) -- keys is the information sent by the ability
 end
 
 function killMe(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
 	local damageTable = {
 		victim = casterUnit,
@@ -954,9 +954,9 @@ function getEnemies(casterUnit, range, handles)
   end
 
 function submerge(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
-	 --print("[ItemFunctions]  sub down " .. tostring(casterUnit:GetMana()))
+	 ----print("[ItemFunctions]  sub down " .. tostring(casterUnit:GetMana()))
 	casterUnit:SetModel("models/sub_boat_down")
 	casterUnit:SetOriginalModel("models/sub_boat_down")
 	if casterUnit:GetMana() < 10 then
@@ -985,20 +985,20 @@ function submergedmg(args)
 end
 
 function rise(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
 	args.ability:GetName()
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	casterUnit:SetModel("models/sub_boat")
 	casterUnit:SetOriginalModel("models/sub_boat")
 	args.ability:StartCooldown(1.0)
 end
 
 function inTheHold(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
 	local targetUnit = args.target
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 
 	local direction = casterUnit:GetForwardVector()
 	local vec = direction:Normalized() * 5
@@ -1009,7 +1009,7 @@ end
 function salvagePercent(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
 	local targetUnit = args.unit
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 
 	local abil = casterUnit:GetAbilityByIndex(2)
 	local level = abil:GetLevel()
@@ -1027,7 +1027,7 @@ function bilgeMana(args) -- keys is the information sent by the ability
 end
 
 function bomberSpawn(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
 
 	local creature
@@ -1042,7 +1042,7 @@ function bomberSpawn(args) -- keys is the information sent by the ability
 end
 
 function turnAround(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
 	local direction = casterUnit:GetForwardVector() * Vector(-1, -1, 1)
 	casterUnit:SetForwardVector(direction)
@@ -1069,12 +1069,12 @@ function inTheHoldSpawn(args) -- keys is the information sent by the ability
 end
 
 function pushBack(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	local targetPos = args.target:GetAbsOrigin()
 	local targetUnit = args.target
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	local casterPos = args.caster:GetAbsOrigin()
-	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 	local direction = casterPos - targetPos
 	local vec = direction:Normalized() * -90.0
 	if not IsPhysicsUnit(targetUnit) then
@@ -1083,7 +1083,7 @@ function pushBack(args) -- keys is the information sent by the ability
 	targetUnit:AddPhysicsVelocity(vec)
 end
 function pushBackRefund(args) -- keys is the information sent by the ability
-	-- --print('[ItemFunctions] gunning_it started! ')
+	-- ----print('[ItemFunctions] gunning_it started! ')
 	if args.target ~= args.caster then --not self target
 	else --disable self target, refund spell. callback event.ability:OnChannelFinish(true) not needed
 		args.ability:RefundManaCost()
@@ -1104,17 +1104,17 @@ end
 
 -- Deals damage to the enemy and heals self.
 function reflect(args)
-	 --print("[ItemFunctions] Start reflection return.")
+	 ----print("[ItemFunctions] Start reflection return.")
 
 	-- Set up ability, get HP from cast time.
 	local caster = args.caster
 	local abil = caster:GetAbilityByIndex(2)
 	local startHP = herohp[caster:GetOwner():GetPlayerID()]
-	 --print("[ItemFunctions] Starting HP is:" .. startHP)
+	 ----print("[ItemFunctions] Starting HP is:" .. startHP)
 
 	-- Calculate the amount of damage to be reflected / healed
 	local ruseDmg = (startHP - caster:GetHealth()) * abil:GetLevelSpecialValueFor("dmg", abil:GetLevel() - 1)
-	 --print("[ItemFunctions] Current HP IS:" .. caster:GetHealth() .. ". Will deal " .. ruseDmg .. "to target.")
+	 ----print("[ItemFunctions] Current HP IS:" .. caster:GetHealth() .. ". Will deal " .. ruseDmg .. "to target.")
 
 	-- Deal reflected damage to the enemy
 	local target = args.target
@@ -1130,7 +1130,7 @@ function reflect(args)
 
     -- Add back reflected damage as health
     caster:SetHealth(caster:GetHealth() + ruseDmg)
-    --print("[ItemFunctions] New HP IS:" .. caster:GetHealth() .. ". Should have healed " .. ruseDmg .. ".")
+    ----print("[ItemFunctions] New HP IS:" .. caster:GetHealth() .. ". Should have healed " .. ruseDmg .. ".")
 
     local sound = "Hero_Terrorblade.Sunder.Target"
     target:EmitSound(sound)
@@ -1149,7 +1149,7 @@ function reflect(args)
     ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
 	end
 
-	 --print("[ItemFunctions] damage done")
+	 ----print("[ItemFunctions] damage done")
 end
 
 function mightStart(args) -- keys is the information sent by the ability
@@ -1157,7 +1157,7 @@ function mightStart(args) -- keys is the information sent by the ability
 	local ability = args.ability
 	local numunits = 0
 
-	 --print("[ItemFunctions] mightStart started!")
+	 ----print("[ItemFunctions] mightStart started!")
 	local enemies
 
 	--hscript CreateUnitByName( string name, vector origin, bool findOpenSpot, hscript, hscript, int team)
@@ -1191,7 +1191,7 @@ function mightStart(args) -- keys is the information sent by the ability
 
 	for _, fucker in pairs(enemies) do
 		if casterUnit.strbonus then
-			local dmg = (casterUnit.strbonus * ability:GetSpecialValueFor(damage_tooltip) ) / #enemies
+			local dmg = (casterUnit.strbonus * ability:GetLevelSpecialValueFor("damage_tooltip", ability:GetLevel() - 1) ) / #enemies
 			local damageTable = {
 				victim = fucker,
 				attacker = casterUnit,
@@ -1241,13 +1241,13 @@ function mightStart(args) -- keys is the information sent by the ability
 		0,
 		false
 	)
-	 --print("[ItemFunctions] RmightStart started! units is:" .. #numunits)
-	 --print("[ItemFunctions] RmightStart started! heroes is:" .. #numheroes)
+	 ----print("[ItemFunctions] RmightStart started! units is:" .. #numunits)
+	 ----print("[ItemFunctions] RmightStart started! heroes is:" .. #numheroes)
 
 	local hpPer = casterUnit:GetHealthPercent()
-	 --print("[ItemFunctions] RmightStart started! hpPer is:" .. hpPer)
-	 --print("[ItemFunctions] new max health should be" .. casterUnit:GetMaxHealth() + 35 * #numunits)
-	casterUnit.strbonus = #numunits * ability:GetSpecialValueFor(strength_bonus_creep) + #numheroes * ability:GetSpecialValueFor(strength_bonus_hero)
+	 ----print("[ItemFunctions] RmightStart started! hpPer is:" .. hpPer)
+	 ----print("[ItemFunctions] new max health should be" .. casterUnit:GetMaxHealth() + 35 * #numunits)
+	casterUnit.strbonus = #numunits * ability:GetLevelSpecialValueFor("strength_bonus_creep", ability:GetLevel() - 1) + #numheroes * ability:GetLevelSpecialValueFor("strength_bonus_hero", ability:GetLevel() - 1) 
 
 	casterUnit:ModifyStrength(casterUnit.strbonus)
 
@@ -1283,12 +1283,12 @@ end
 
 function mightStop(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
-	 --print("[ItemFunctions] Rmightstop started")
+	 ----print("[ItemFunctions] Rmightstop started")
 	casterUnit:SetBaseStrength(0)
 end
 
 function airBlast(args) -- keys is the information sent by the ability
-	 --print("[ItemFunctions] drag started! ")
+	 ----print("[ItemFunctions] drag started! ")
 	local targetUnit = args.target
 	local newTarget
 	local caster = args.caster
@@ -1318,7 +1318,7 @@ function airBlast(args) -- keys is the information sent by the ability
 end
 
 function dragonBlast(args) -- keys is the information sent by the ability
-	 --print("[ItemFunctions] dragonBlast started! ")
+	 ----print("[ItemFunctions] dragonBlast started! ")
 
 	local targetUnit = args.target
 	local newTarget
@@ -1374,7 +1374,7 @@ function dragonBlast(args) -- keys is the information sent by the ability
 end
 
 function fireGas(args) -- keys is the information sent by the ability
-	 --print("[ItemFunctions] dragonBlast started! ")
+	 ----print("[ItemFunctions] dragonBlast started! ")
 
 	local targetUnit = args.target
 	local caster = args.caster
@@ -1397,13 +1397,13 @@ function fireGas(args) -- keys is the information sent by the ability
 end
 
 function hackNav(args) -- keys is the information sent by the ability
-	 --print("[ItemFunctions] dragonBlast started! ")
+	 ----print("[ItemFunctions] dragonBlast started! ")
 
 	local targetPos = args.target:GetAbsOrigin()
 	local targetUnit = args.target
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	local casterPos = args.caster:GetAbsOrigin()
-	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 	local direction = casterPos - targetPos
 	local vec = direction:Normalized() * -1.0
 	if math.abs((targetUnit:GetForwardVector() + vec):Length()) < 1.85 then
@@ -1412,9 +1412,9 @@ function hackNav(args) -- keys is the information sent by the ability
 end
 function unstickPush(args)
 	local casterUnit = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
-	 --print("unstick push is going wooo! ")
-	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	 ----print("unstick push is going wooo! ")
+	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 	if not IsPhysicsUnit(casterUnit) then
 		Physics:Unit(casterUnit)
 	end
@@ -1431,16 +1431,16 @@ end
 
 function faceRan(args)
 	local casterUnit = args.caster
-	 --print("[faceRan]  called  ")
+	 ----print("[faceRan]  called  ")
 	local vec = RandomVector(RandomFloat(0, 100))
-	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 	casterUnit:SetForwardVector(vec)
 	casterUnit:SetOrigin(casterUnit:GetOrigin() * Vector(1, 1, 0))
 end
 
 function Rise(args)
 	local casterUnit = args.caster
-	 --print("[rise]  called  ")
+	 ----print("[rise]  called  ")
 	local height = casterUnit:GetOrigin() * Vector(0, 0, 1)
 	if height:Length() < 190 then
 		casterUnit:SetOrigin(casterUnit:GetOrigin() + Vector(0, 0, 2))
@@ -1452,9 +1452,9 @@ function aircraftDied(args)
 	if casterUnit ~= nil and casterUnit:IsOwnedByAnyPlayer() and casterUnit:GetPlayerOwnerID() ~= -1 then
 		local id = casterUnit:GetOwner():GetPlayerID()
 		for _, plane in pairs(Entities:FindAllByClassname("npc_dota_creat*")) do
-			 --print("[aircraftDied]  found a plane  ")
+			 ----print("[aircraftDied]  found a plane  ")
 			if plane ~= nil and string.match(plane:GetUnitName(), "air") and id == plane:GetOwner():GetPlayerID() then
-				 --print("[aircraftDied]  killed a plane  ")
+				 ----print("[aircraftDied]  killed a plane  ")
 				plane:ForceKill(true)
 			end
 		end
@@ -1473,9 +1473,9 @@ function RemoveSelf(args)
 end
 
 function PingDest(args)
-	 --print("[ItemFunctions] PingDest ")
+	 ----print("[ItemFunctions] PingDest ")
 	local itemName = args.ability:GetName()
-	 --print(itemName)
+	 ----print(itemName)
 	local itemStrippedEasy = string.gsub(itemName, "item_contract_easy", "")
 	local itemStrippedMedium = string.gsub(itemName, "item_contract_medium", "")
 	local itemStrippedHard = string.gsub(itemName, "item_contract_hard", "")
@@ -1489,7 +1489,7 @@ function PingDest(args)
 		end
 	end
 
-	 --print(chosenMission:GetUnitName())
+	 ----print(chosenMission:GetUnitName())
 	if chosenMission ~= nil then
 		local data = {
 			Player_ID = args.caster:GetOwner():GetPlayerID(),
@@ -1515,25 +1515,25 @@ function killCdHalf(args)
 	local caster = args.caster
 	local cdleft = caster:GetAbilityByIndex(0):GetCooldownTimeRemaining()
 	if cdleft > 0 then
-		 --print(cdleft)
+		 ----print(cdleft)
 		caster:GetAbilityByIndex(0):EndCooldown()
 		caster:GetAbilityByIndex(0):StartCooldown(cdleft / 2)
 	end
 	cdleft = caster:GetAbilityByIndex(1):GetCooldownTimeRemaining()
 	if cdleft > 0 then
-		 --print(cdleft)
+		 ----print(cdleft)
 		caster:GetAbilityByIndex(1):EndCooldown()
 		caster:GetAbilityByIndex(1):StartCooldown(cdleft / 2)
 	end
 	cdleft = caster:GetAbilityByIndex(2):GetCooldownTimeRemaining()
 	if cdleft > 0 then
-		 --print(cdleft)
+		 ----print(cdleft)
 		caster:GetAbilityByIndex(2):EndCooldown()
 		caster:GetAbilityByIndex(2):StartCooldown(cdleft / 2)
 	end
 	cdleft = caster:GetAbilityByIndex(3):GetCooldownTimeRemaining()
 	if cdleft > 0 then
-		 --print(cdleft)
+		 ----print(cdleft)
 		caster:GetAbilityByIndex(3):EndCooldown()
 		caster:GetAbilityByIndex(3):StartCooldown(cdleft / 2)
 	end
@@ -1563,7 +1563,7 @@ function latchOn(args)
 end
 
 function throwJav(args) -- keys is the information sent by the ability
-	 --print("[ItemFunctions] drag started! ")
+	 ----print("[ItemFunctions] drag started! ")
 	local targetUnit = args.target
 	local newTarget
 	local caster = args.caster
@@ -1636,7 +1636,7 @@ function moveToRandomTradePost(args)
 		local i = RandomInt(1, #missionPool)
 		if not string.match(missionPool[i]:GetUnitName(), "ship") then
 			chosenMission = missionPool[i]
-			 --print(chosenMission:GetOrigin())
+			 ----print(chosenMission:GetOrigin())
 		end
 	end
 	casterUnit:MoveToPosition(chosenMission:GetOrigin())
@@ -1722,7 +1722,7 @@ function DropOrGo(args)
 			0.03,
 			function()
 				creature:MoveToPositionAggressive(chosenMission:GetOrigin())
-				 --print(chosenMission:GetOrigin())
+				 ----print(chosenMission:GetOrigin())
 			end
 		)
 	else
@@ -1741,14 +1741,14 @@ function DropOrGo(args)
 			0.03,
 			function()
 				creature:MoveToPositionAggressive(chosenMission:GetOrigin())
-				 --print(chosenMission:GetOrigin())
+				 ----print(chosenMission:GetOrigin())
 			end
 		)
 	end
 end
 
 function killDaralect(args)
-	 --print(daralectArray[casterUnit])
+	 ----print(daralectArray[casterUnit])
 	if daralectArray[casterUnit] ~= nil then
 		daralectArray[casterUnit]:RemoveSelf()
 	end
@@ -1760,9 +1760,9 @@ function pullToCaster(keys)
 	end
 	local targetPos = keys.target:GetAbsOrigin()
 	local targetUnit = keys.target
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	local casterPos = keys.caster:GetAbsOrigin()
-	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 	local direction = casterPos - targetPos
 	if direction:Length() > 150 then
 		targetUnit:SetPhysicsVelocity(direction:Normalized() * 400.0)
@@ -1771,7 +1771,7 @@ end
 
 function FirstAid(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 
 	casterUnit:SetHealth(casterUnit:GetHealth() + (casterUnit:GetMaxHealth() * .2))
 end
@@ -1779,14 +1779,14 @@ end
 modle_scales = {}
 function grow(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	modle_scales[casterUnit] = casterUnit:GetModelScale()
 	casterUnit:SetModelScale(1.5)
 end
 
 function shrink(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	if modle_scales[casterUnit] ~= nil then
 		casterUnit:SetModelScale(modle_scales[casterUnit])
 	else
@@ -1797,7 +1797,7 @@ end
 function ApplyDD(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
 	local hero = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	for itemSlot = 0, 5, 1 do
 		if hero ~= nil then
 			local Item = hero:GetItemInSlot(itemSlot)
@@ -1806,7 +1806,7 @@ function ApplyDD(args) -- keys is the information sent by the ability
 				Item:ApplyDataDrivenModifier(hero, hero, doubledstring, nil)
 			elseif Item ~= nil and string.match(Item:GetName(), "bow") then -- makes sure that the item exists and making sure it is the correct item
 				Item:ApplyDataDrivenModifier(hero, hero, Item:GetName() .. "_shooting", nil)
-				 --print("bow found.")
+				 ----print("bow found.")
 			end
 		end
 	end
@@ -1815,7 +1815,7 @@ end
 function ApplyRandomDD(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
 	local hero = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	local done = 0
 	while done == 0 do
 		for itemSlot = 0, 5, 1 do
@@ -1827,7 +1827,7 @@ function ApplyRandomDD(args) -- keys is the information sent by the ability
 					done = 1
 				elseif Item ~= nil and string.match(Item:GetName(), "bow") and RandomInt(0, 4) == 2 then -- makes sure that the item exists and making sure it is the correct item
 					Item:ApplyDataDrivenModifier(hero, hero, Item:GetName() .. "_shooting", nil)
-					 --print("bow found.")
+					 ----print("bow found.")
 					done = 1
 				end
 			end
@@ -1837,7 +1837,7 @@ end
 
 function RemoveDD(args) -- keys is the information sent by the ability
 	local hero = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	for itemSlot = 0, 5, 1 do
 		if hero ~= nil then
 			local Item = hero:GetItemInSlot(itemSlot)
@@ -1850,7 +1850,7 @@ function RemoveDD(args) -- keys is the information sent by the ability
 				while hero:HasModifier(Item:GetName() .. "_shooting") do
 					hero:RemoveModifierByName(Item:GetName() .. "_shooting")
 				end
-				 --print("bow found.")
+				 ----print("bow found.")
 			end
 		end
 	end
@@ -1862,7 +1862,7 @@ function RemoveDD(args) -- keys is the information sent by the ability
 				Item:ApplyDataDrivenModifier(hero, hero, doubledstring, nil)
 			elseif Item ~= nil and string.match(Item:GetName(), "bow") then -- makes sure that the item exists and making sure it is the correct item
 				Item:ApplyDataDrivenModifier(hero, hero, Item:GetName() .. "_shooting", nil)
-				 --print("bow found.")
+				 ----print("bow found.")
 			end
 		end
 	end
@@ -1870,8 +1870,8 @@ end
 function RemoveWeps(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
 	local hero = args.caster
-	 --print("[ItemFunctions] CallPuckDive removing weps! ")
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	 ----print("[ItemFunctions] CallPuckDive removing weps! ")
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	for itemSlot = 0, 5, 1 do
 		if hero ~= nil then
 			local Item = hero:GetItemInSlot(itemSlot)
@@ -1884,7 +1884,7 @@ function RemoveWeps(args) -- keys is the information sent by the ability
 				while hero:HasModifier(Item:GetName() .. "_shooting") do
 					hero:RemoveModifierByName(Item:GetName() .. "_shooting")
 				end
-				 --print("bow found.")
+				 ----print("bow found.")
 			end
 		end
 	end
@@ -1903,7 +1903,7 @@ function removeAllBows(hero)
 				while hero:HasModifier(Item:GetName() .. "_shooting") do
 					hero:RemoveModifierByName(Item:GetName() .. "_shooting")
 				end
-				 --print("bow found.")
+				 ----print("bow found.")
 			end
 		end
 	end
@@ -1922,7 +1922,7 @@ function reapplyAllBowsIfRemoved(hero)
 				if hero:HasModifier(Item:GetName() .. "_shooting") then
 					return
 				end
-				 --print("bow found.")
+				 ----print("bow found.")
 			end
 		end
 	end
@@ -1935,7 +1935,7 @@ function reapplyAllBowsIfRemoved(hero)
 				Item:ApplyDataDrivenModifier(hero, hero, doubledstring, nil)
 			elseif Item ~= nil and string.match(Item:GetName(), "bow") then -- makes sure that the item exists and making sure it is the correct item
 				Item:ApplyDataDrivenModifier(hero, hero, Item:GetName() .. "_shooting", nil)
-				 --print("bow found.")
+				 ----print("bow found.")
 			end
 		end
 	end
@@ -1944,7 +1944,7 @@ end
 function ApplyStun(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
 	local targetUnit = args.target
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	local item = CreateItem("item_oneshot_brew", casterUnit, casterUnit)
 
 	item:ApplyDataDrivenModifier(targetUnit, targetUnit, "sick", nil)
@@ -1955,7 +1955,7 @@ end
 function ApplyLuck(args) -- keys is the information sent by the ability
 	local weps = {}
 	local hero = args.caster
-	-- --print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	for itemSlot = 0, 5, 1 do
 		if hero ~= nil then
 			local Item = hero:GetItemInSlot(itemSlot)
@@ -2056,7 +2056,7 @@ function visionGrant(args)
 end
 
 function DropEmptyOnDeath(keys) -- keys is the information sent by the ability
-	 --print("[ItemFunctions] DropItemOnDeath Called")
+	 ----print("[ItemFunctions] DropItemOnDeath Called")
 	local killedUnit = EntIndexToHScript(keys.caster_entindex) -- EntIndexToHScript takes the keys.caster_entindex, which is the number assigned to the entity that ran the function from the ability, and finds the actual entity from it.
 	local itemName = tostring(keys.ability:GetAbilityName()) -- In order to drop only the item that ran the ability, the name needs to be grabbed. keys.ability gets the actual ability and then GetAbilityName() gets the configname of that ability such as juggernaut_blade_dance.
 	if killedUnit:IsHero() or killedUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
@@ -2095,7 +2095,7 @@ function CreateNoFireZone(keys)
 	local point = keys.target_points[1]
 	local radius = ability:GetLevelSpecialValueFor("radius", (ability:GetLevel() - 1))
 	local rand = RandomInt(1, 40)
-	 --print(rand)
+	 ----print(rand)
 	local by = 40
 
 	for i = 0, 330, by do
@@ -2138,7 +2138,7 @@ function maintainNoFireZone(keys)
 		for _, boo in pairs(allUnits2) do
 			if boo:HasModifier("dummy_modifier") then
 				if boo:GetOwner() ~= nil and boo:GetOwner():GetPlayerID() ~= nil then
-					 --print(tostring(boo:GetUnitName()) .. tostring(boo:GetOwner():GetPlayerID()))
+					 ----print(tostring(boo:GetUnitName()) .. tostring(boo:GetOwner():GetPlayerID()))
 					if string.match(boo:GetUnitName(), "booey") and boo:GetOwner():GetPlayerID() == casterUnit:GetOwner():GetPlayerID() then
 						for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
 							local heroDist = hero:GetAbsOrigin() - point
@@ -2217,7 +2217,7 @@ function killNoFireZone(keys)
 		Timers:CreateTimer(
 			.2,
 			function()
-				 --print("gimme my bows wqhore!!!")
+				 ----print("gimme my bows wqhore!!!")
 				reapplyAllBowsIfRemoved(hero)
 				gotNoBows[hero] = 0
 			end
@@ -2227,12 +2227,12 @@ function killNoFireZone(keys)
 	local allUnits2 = Entities:FindAllInSphere(point, 1000)
 	if #allUnits2 > 0 then
 		for _, boo in pairs(allUnits2) do
-			 --print("kill me!")
+			 ----print("kill me!")
 			if boo:HasModifier("dummy_modifier") then
 				if boo:GetOwner() ~= nil and boo:GetOwner():GetPlayerID() ~= nil then
-					 --print(tostring(boo:GetUnitName()) .. tostring(boo:GetOwner():GetPlayerID()))
+					 ----print(tostring(boo:GetUnitName()) .. tostring(boo:GetOwner():GetPlayerID()))
 					if string.match(boo:GetUnitName(), "booey") and boo:GetOwner():GetPlayerID() == casterUnit:GetOwner():GetPlayerID() then
-						 --print("killed me!")
+						 ----print("killed me!")
 						RemoveSelf(boo)
 						boo:RemoveSelf()
 					end
@@ -2276,7 +2276,7 @@ function RealityRiftPosition( keys )
 	Timers:CreateTimer(
 		0.1,
 		function()
-		-- print("trigger")
+		-- --print("trigger")
 		RealityRift(keys)
 		end
 	)
@@ -2318,9 +2318,9 @@ end
 function WhaleBait(args)
 	local targetPos = args.target:GetAbsOrigin()
 	local targetUnit = args.target
-	-- print('[WhaleBait]')
+	-- --print('[WhaleBait]')
 	local casterPos = args.caster:GetAbsOrigin()
-	-- --print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 	local direction = casterPos - targetPos
 	local vec = direction:Normalized()
 
@@ -2333,7 +2333,7 @@ end
 
 
 function CherryLaunch(args)
-	print("IN CherryLaunch")
+	--print("IN CherryLaunch")
 	PrintTable(args)
 	local targetPos = args.target_points[1]
 	local caster = args.caster
@@ -2365,7 +2365,7 @@ end
 
 
 function CherrySevenLaunch(args)
-	print("IN CherryLaunch")
+	--print("IN CherryLaunch")
 	PrintTable(args)
 
 	for i=0,7 do
@@ -2394,7 +2394,7 @@ function CherrySevenLaunch(args)
 end
 
 function CherryExplode(args)
-	print("IN CherryExplode")
+	--print("IN CherryExplode")
 	PrintTable(args)
 	local targetUnit = args.target
 	local newTarget
@@ -2506,7 +2506,7 @@ function aoeTowerHit(keys)
 		)
 	end
 	for _, fucker in pairs(enemies) do
-		print((caster:GetOrigin()-fucker:GetOrigin()):Length())
+		--print((caster:GetOrigin()-fucker:GetOrigin()):Length())
 		if (caster:GetOrigin()-fucker:GetOrigin()):Length()<1180 then
 			local dmg = fucker:GetMaxHealth() * 0.10
 			local damageTable = {
@@ -2577,7 +2577,7 @@ function aoeTowerFire(keys)
 end
 
 function creatredwhale(keys)
-	print("made the unit")
+	--print("made the unit")
 
 end
 
@@ -2618,5 +2618,178 @@ function PrintTable(t, indent, done)
 				end
 			end
 		end
+	end
+end
+
+
+function portCannon(args) -- keys is the information sent by the ability
+
+	local caster = args.caster
+	if caster.fireingCannon~=nil and  caster.fireingCannon==3 then
+		return
+	end
+   local targetUnit = args.target
+   
+   
+   caster.fireingCannon = 3
+
+   local effect = "particles/basic_projectile/b_ball.vpcf"
+   if caster:HasModifier("concus_ammo") then
+	effect = "particles/basic_projectile/c_ball_incin.vpcf"
+   end 
+   local rangebuff = caster:GetAbilityByIndex(4)
+  
+   local range=1000+rangebuff:GetLevelSpecialValueFor("range_buff", rangebuff:GetLevel() - 1)*1.5
+   --print(range)  
+   local pos=3
+   local attachname = "p"
+   local startradl=math.atan2(caster:GetForwardVector().y,caster:GetForwardVector().x)
+   startradl=startradl+.1
+	for ind =1, 3, 1 do
+		local modrad=-.1*(ind-2)
+		--print(modrad)
+		fireCannon(caster, pos, range, attachname, modrad, ind)
+	end
+end
+
+function starboardCannon(args) -- keys is the information sent by the ability
+	local caster = args.caster
+	if  caster.fireingCannon~=nil and  caster.fireingCannon==1 then
+		return
+	end
+	local targetUnit = args.target
+	
+   local rangebuff = caster:GetAbilityByIndex(4)
+   local range=1000+rangebuff:GetLevelSpecialValueFor("range_buff", rangebuff:GetLevel() - 1)*1.5
+   caster.fireingCannon = 1
+   local pos=1
+   local attachname = "s"
+   local startradl=math.atan2(caster:GetForwardVector().y,caster:GetForwardVector().x)
+   startradl=startradl+.1
+   for ind =1, 3, 1 do
+	
+  	
+	local modrad=.1*(ind-2)
+	--print(modrad)
+	fireCannon(caster, pos, range, attachname, modrad, ind)
+	end
+end
+function bowCannon(args) -- keys is the information sent by the ability
+	local caster = args.caster
+	if caster.fireingCannon~=nil and  caster.fireingCannon==0 then
+		return
+	end
+	local targetUnit = args.target
+   local caster = args.caster
+   local rangebuff = caster:GetAbilityByIndex(4)
+   local range=1000+rangebuff:GetLevelSpecialValueFor("range_buff", rangebuff:GetLevel() - 1)*1.5
+   
+   local pos=0
+   caster.fireingCannon = 0
+   local attachname = "b"
+   local startradl=math.atan2(caster:GetForwardVector().y,caster:GetForwardVector().x)
+   startradl=startradl+.1
+   for ind =1, 2, 1 do
+	local modrad=startradl
+  	
+		if ind==1 then
+			modrad=-.05
+		end
+		if ind==2 then
+			modrad=.05
+		end
+		fireCannon(caster, pos, range, attachname, modrad, ind)
+	end
+end
+function stopCannons(args)
+	local caster = args.caster
+	if caster.fireingCannon~=nil then
+		caster.fireingCannon=-1
+	end
+end
+
+function fireCannon(caster, pos, range, attachname, modrad, ind)
+	local startradl=math.atan2(caster:GetForwardVector().y,caster:GetForwardVector().x)
+	local effect = "particles/basic_projectile/b_ball.vpcf"
+	if caster:HasModifier("concus_ammo") then
+		effect = "particles/basic_projectile/c_ball_incin.vpcf"
+	   end 
+	local dir =Vector(math.sin(pos*2*3.1415926/(4)-(startradl+modrad)+3.1415926/4+3.1415926/5+3.1415926/11),math.cos(pos*2*3.1415926/(4)-(startradl+modrad)+3.1415926/4+3.1415926/5+3.1415926/11),0)
+	EmitSoundOn("Hero_Gyrocopter.FlackCannon", caster)
+	local attachID = caster:ScriptLookupAttachment(attachname .. ind)
+    local attachOrigin = caster:GetAttachmentOrigin(attachID)
+	local info = {
+		Ability = caster:GetAbilityByIndex(0),
+		EffectName = effect,
+		vSpawnOrigin = attachOrigin,
+		fDistance = range,
+		fStartRadius = 60,
+		fEndRadius = 60,
+		Source = caster,
+		bHasFrontalCone = false,
+		bReplaceExisting = false,
+		iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
+		iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_NONE,
+		iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+		fExpireTime = GameRules:GetGameTime() + 10.0,
+		bDeleteOnHit = true,
+		vVelocity = dir*1600,
+		bProvidesVision = true,
+		iVisionRadius = 600,
+		iVisionTeamNumber = caster:GetTeamNumber()
+	}
+	print(caster.fireingCannon .. pos)
+	projectile = ProjectileManager:CreateLinearProjectile(info)
+		Timers:CreateTimer(
+					1,
+					function()
+						if caster.fireingCannon == pos then
+							fireCannon(caster, pos, range, attachname, modrad, ind)
+						end
+					end
+				)
+end
+
+function cannonHit(args)
+	--print("hit!!!!")
+	
+	local ability = args.ability
+	local casterUnit = args.caster
+	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	local targetUnit = args.target
+	local dmgbuff = casterUnit:GetAbilityByIndex(3)
+	local dmg = ability:GetLevelSpecialValueFor("damage_tooltip", ability:GetLevel() - 1)+dmgbuff:GetLevelSpecialValueFor("dmg_buff", dmgbuff:GetLevel() - 1)
+	
+	if casterUnit:HasModifier("concus_ammo") then
+		targetUnit:AddNewModifier(casterUnit, nil, "modifier_stunned", {duration = .5})
+		dmg=dmg*2
+	end 
+
+	local damageTable = {
+		victim = targetUnit,
+		attacker = casterUnit,
+		damage = dmg,
+		damage_type = DAMAGE_TYPE_MAGICAL
+	}
+
+	ApplyDamage(damageTable)
+end
+
+function levelCannons(args)
+	--print("level!!!!")
+	local ability = args.ability
+	local casterUnit = args.caster
+	local level = ability:GetLevel()
+	local abil1 = casterUnit:GetAbilityByIndex(0)
+	if abil1:GetLevel()~=level then
+		abil1:SetLevel(level)
+	end
+	local abil2 = casterUnit:GetAbilityByIndex(1)
+	if abil2:GetLevel()~=level then
+		abil2:SetLevel(level)
+	end 
+	local abil3 = casterUnit:GetAbilityByIndex(2)
+	if abil3:GetLevel()~=level then
+		abil3:SetLevel(level)
 	end
 end

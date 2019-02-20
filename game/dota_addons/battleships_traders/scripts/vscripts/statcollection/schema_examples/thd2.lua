@@ -216,11 +216,11 @@ end
 -- Stat Functions         --
 -------------------------------------
 function PrintSchema(gameArray, playerArray)
-     --print("-------- GAME DATA --------")
+     ----print("-------- GAME DATA --------")
     DeepPrintTable(gameArray)
-     --print("\n-------- PLAYER DATA --------")
+     ----print("\n-------- PLAYER DATA --------")
     DeepPrintTable(playerArray)
-     --print("-------------------------------------")
+     ----print("-------------------------------------")
 end
 
 --NOTE THAT THIS FUNCTION RELIES ON YOUR npc_items_custom.txt

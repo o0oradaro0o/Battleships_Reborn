@@ -109,7 +109,7 @@ function Physics:Think()
 
   -- Track game time, since the dt passed in to think is actually wall-clock time not simulation time.
   local now = GameRules:GetGameTime()
-  -- --print("now: " .. now)
+  -- ----print("now: " .. now)
   if Physics.t0 == nil then
     Physics.t0 = now
   end
@@ -138,7 +138,7 @@ function Physics:Think()
     else
       -- Nope, handle the error
       Physics.timers[k] = nil
-       --print('[PHYSICS] Timer error:' .. nextCall)
+       ----print('[PHYSICS] Timer error:' .. nextCall)
     end
   end
 
@@ -168,7 +168,7 @@ function Physics:Think()
                 local status = nil
                 status, ents = pcall(collider.filter, collider)
                 if not status then
-                   --print('[PHYSICS] Collision Filter Failure!: ' .. ents)
+                   ----print('[PHYSICS] Collision Filter Failure!: ' .. ents)
                 end
               end
             else
@@ -180,22 +180,22 @@ function Physics:Think()
                 local status, test = pcall(collider.test, collider, unit, v)
 
                 if not status then
-                   --print('[PHYSICS] Collision Test Failure!: ' .. test)
+                   ----print('[PHYSICS] Collision Test Failure!: ' .. test)
                 elseif test then
                   if collider.preaction then
                     local status, action = pcall(collider.preaction, collider, unit, v)
                     if not status then
-                       --print('[PHYSICS] Collision preaction Failure!: ' .. action)
+                       ----print('[PHYSICS] Collision preaction Failure!: ' .. action)
                     end
                   end
                   local status, action = pcall(collider.action, collider, unit, v)
                   if not status then
-                     --print('[PHYSICS] Collision action Failure!: ' .. action)
+                     ----print('[PHYSICS] Collision action Failure!: ' .. action)
                   end
                   if collider.postaction then
                     local status, action = pcall(collider.postaction, collider, unit, v)
                     if not status then
-                       --print('[PHYSICS] Collision postaction Failure!: ' .. action)
+                       ----print('[PHYSICS] Collision postaction Failure!: ' .. action)
                     end
                   end
 
@@ -239,7 +239,7 @@ function Physics:Think()
               local status = nil
               status, ents = pcall(collider.filter, collider)
               if not status then
-                 --print('[PHYSICS] Collision Filter Failure!: ' .. ents)
+                 ----print('[PHYSICS] Collision Filter Failure!: ' .. ents)
               end
             end
           else
@@ -260,22 +260,22 @@ function Physics:Think()
                     local status, test = pcall(collider.test, collider, v)
 
                     if not status then
-                       --print('[PHYSICS] Collision Test Failure!: ' .. test)
+                       ----print('[PHYSICS] Collision Test Failure!: ' .. test)
                     elseif test then
                       if collider.preaction then
                         local status, action = pcall(collider.preaction, collider, box, v)
                         if not status then
-                           --print('[PHYSICS] Collision preaction Failure!: ' .. action)
+                           ----print('[PHYSICS] Collision preaction Failure!: ' .. action)
                         end
                       end
                       local status, action = pcall(collider.action, collider, box, v)
                       if not status then
-                         --print('[PHYSICS] Collision action Failure!: ' .. action)
+                         ----print('[PHYSICS] Collision action Failure!: ' .. action)
                       end
                       if collider.postaction then
                         local status, action = pcall(collider.postaction, collider, box, v)
                         if not status then
-                           --print('[PHYSICS] Collision postaction Failure!: ' .. action)
+                           ----print('[PHYSICS] Collision postaction Failure!: ' .. action)
                         end
                       end
                     end
@@ -310,7 +310,7 @@ function Physics:Think()
               local status = nil
               status, ents = pcall(collider.filter, collider)
               if not status then
-                 --print('[PHYSICS] Collision Filter Failure!: ' .. ents)
+                 ----print('[PHYSICS] Collision Filter Failure!: ' .. ents)
               end
             end
           else
@@ -328,22 +328,22 @@ function Physics:Think()
                 local status, test = pcall(collider.test, collider, v)
 
                 if not status then
-                   --print('[PHYSICS] Collision Test Failure!: ' .. test)
+                   ----print('[PHYSICS] Collision Test Failure!: ' .. test)
                 elseif test then
                   if collider.preaction then
                     local status, action = pcall(collider.preaction, collider, box, v)
                     if not status then
-                       --print('[PHYSICS] Collision preaction Failure!: ' .. action)
+                       ----print('[PHYSICS] Collision preaction Failure!: ' .. action)
                     end
                   end
                   local status, action = pcall(collider.action, collider, box, v)
                   if not status then
-                     --print('[PHYSICS] Collision action Failure!: ' .. action)
+                     ----print('[PHYSICS] Collision action Failure!: ' .. action)
                   end
                   if collider.postaction then
                     local status, action = pcall(collider.postaction, collider, box, v)
                     if not status then
-                       --print('[PHYSICS] Collision postaction Failure!: ' .. action)
+                       ----print('[PHYSICS] Collision postaction Failure!: ' .. action)
                     end
                   end
                 end
@@ -360,7 +360,7 @@ end
 
 function Physics:CreateTimer(name, args)
   if not args.endTime or not args.callback then
-     --print("Invalid timer created: "..name)
+     ----print("Invalid timer created: "..name)
     return
   end
 
@@ -409,8 +409,8 @@ function Physics:GenerateAngleGrid()
   local worldMin = Vector(GetWorldMinX(), GetWorldMinY(), 0)
   local worldMax = Vector(GetWorldMaxX(), GetWorldMaxY(), 0)
 
-   --print(worldMin)
-   --print(worldMax)
+   ----print(worldMin)
+   ----print(worldMax)
 
   local boundX1 = GridNav:WorldToGridPosX(worldMin.x)
   local boundX2 = GridNav:WorldToGridPosX(worldMax.x)
@@ -419,10 +419,10 @@ function Physics:GenerateAngleGrid()
   local offsetX = boundX1 * -1 + 1
   local offsetY = boundY1 * -1 + 1
 
-   --print(boundX1 .. " -- " .. boundX2)
-   --print(boundY1 .. " -- " .. boundY2)
-   --print(offsetX)
-   --print(offsetY)
+   ----print(boundX1 .. " -- " .. boundX2)
+   ----print(boundY1 .. " -- " .. boundY2)
+   ----print(offsetX)
+   ----print(offsetY)
 
   local vecs = {
     {vec = Vector(0,1,0):Normalized(), x=0,y=1},-- N
@@ -435,7 +435,7 @@ function Physics:GenerateAngleGrid()
     {vec = Vector(-1,1,0):Normalized(), x=-1,y=1} -- NW
   }
 
-   --print('----------------------')
+   ----print('----------------------')
 
   anggrid[1] = {}
   for j=boundY1,boundY2 do
@@ -503,11 +503,11 @@ function Physics:GenerateAngleGrid()
   end
   anggrid[boundX2+offsetX][boundY2+offsetY] = -1
 
-   --print('--------------')
-   --print(#anggrid)
-   --print(#anggrid[1])
-   --print(#anggrid[2])
-   --print(#anggrid[3])
+   ----print('--------------')
+   ----print(#anggrid)
+   ----print(#anggrid[1])
+   ----print(#anggrid[2])
+   ----print(#anggrid[3])
 
   if MAP_DATA  then
     MAP_DATA.anggrid = anggrid
@@ -517,7 +517,7 @@ end
 
 function Physics:AngleGrid( anggrid, angoffsets )
   self.anggrid = anggrid
-   --print('[PHYSICS] Angle Grid Set')
+   ----print('[PHYSICS] Angle Grid Set')
   local worldMin = Vector(GetWorldMinX(), GetWorldMinY(), 0)
   local worldMax = Vector(GetWorldMaxX(), GetWorldMaxY(), 0)
   local boundX1 = GridNav:WorldToGridPosX(worldMin.x)
@@ -877,7 +877,7 @@ function Physics:Unit(unit)
       if unit.bSlide and unit.nSkipSlide <= 0 then
         slideVelocity = ((position - prevPosition) - lastVelocity + unit.vSlideVelocity) * unit.fSlideMultiplier
       else
-        -- --print(unit.nSkipSlide)
+        -- ----print(unit.nSkipSlide)
         unit.vSlideVelocity = Vector(0,0,0)
       end
       
@@ -886,7 +886,7 @@ function Physics:Unit(unit)
       -- Adjust velocity
       local newVelocity = unit.vVelocity + unit.vAcceleration + (-1 * unit.fFriction * unit.vVelocity) + slideVelocity
       
-      -- --print('vel: ' .. tostring(unit.vVelocity:Length()) .. ' -- svel: ' .. tostring(slideVelocity:Length()) .. " -- nvel: " .. tostring(newVelocity:Length()))
+      -- ----print('vel: ' .. tostring(unit.vVelocity:Length()) .. ' -- svel: ' .. tostring(slideVelocity:Length()) .. " -- nvel: " .. tostring(newVelocity:Length()))
       
       -- Calculate new position
       local newPos = position + unit.vVelocity
@@ -916,7 +916,7 @@ function Physics:Unit(unit)
         newVelocity = newVelocity:Normalized() * unit.nVelocityMax
       end
       if unit.vAcceleration.x == 0 and unit.vAcceleration.y == 0 and newVelLength < unit.fVelocityClamp then
-        -- --print('clamp')
+        -- ----print('clamp')
         newVelocity = Vector(0,0,newVelocity.z)
         if unit:HasModifier("modifier_rooted") then
           unit:RemoveModifierByName("modifier_rooted")
@@ -929,18 +929,18 @@ function Physics:Unit(unit)
             if ent.IsHero ~= nil and ent ~= unit then
               blocked = true
             end
-            -- --print(ent:GetClassname() .. " -- " .. ent:GetName() .. " -- " .. tostring(ent.IsHero))
+            -- ----print(ent:GetClassname() .. " -- " .. ent:GetName() .. " -- " .. tostring(ent.IsHero))
             ent = Entities:FindInSphere(ent, position, 35)
           end
           if blocked or blockedPos or GridNav:IsNearbyTree(position, 30, true) then
             FindClearSpaceForUnit(unit, position, true)
             unit.nSkipSlide = 1
-            -- --print('FCS hib')
+            -- ----print('FCS hib')
           end
           if unit.PhysicsHibernateCallback ~= nil then
             local status, nextCall = pcall(unit.PhysicsHibernateCallback, unit)
             if not status then
-               --print('[PHYSICS] Failed HibernateCallback: ' .. nextCall)
+               ----print('[PHYSICS] Failed HibernateCallback: ' .. nextCall)
             end
           end
           return
@@ -952,13 +952,13 @@ function Physics:Unit(unit)
           if ent.IsHero ~= nil and ent ~= unit then
             blocked = true
           end
-          -- --print(ent:GetClassname() .. " -- " .. ent:GetName() .. " -- " .. tostring(ent.IsHero))
+          -- ----print(ent:GetClassname() .. " -- " .. ent:GetName() .. " -- " .. tostring(ent.IsHero))
           ent = Entities:FindInSphere(ent, position, 35)
         end
         if blocked or not GridNav:IsTraversable(position) or GridNav:IsBlocked(position) or GridNav:IsNearbyTree(position, 30, true) then
           FindClearSpaceForUnit(unit, position, true)
           unit.nSkipSlide = 1
-          -- --print('FCS nothib lowv + blocked')
+          -- ----print('FCS nothib lowv + blocked')
         end 
         --return curTime
       end
@@ -1012,33 +1012,33 @@ function Physics:Unit(unit)
               local angX = navX + offX
               local angY = navY + offY
 
-              -- --print(offX .. ' -- ' .. angX .. ' == ' .. angY .. ' -- ' .. offY)
+              -- ----print(offX .. ' -- ' .. angX .. ' == ' .. angY .. ' -- ' .. offY)
               
               local angle = anggrid[angX][angY]
               if angle ~= -1 then
                 angle = angle
                 normal = -1 * RotatePosition(Vector(0,0,0), QAngle(0,angle,0), Vector(1,0,0))
-                -- --print(angle)
-                -- --print(normal)
-                -- --print('----------')
+                -- ----print(angle)
+                -- ----print(normal)
+                -- ----print('----------')
               end
             end
             
             local dir = navPos - position
             if normal == nil then
               --local face = navPos - position
-              -- --print("face: " .. tostring(face)) 
+              -- ----print("face: " .. tostring(face)) 
               dir.z = 0
               dir = dir:Normalized()
               -- Nav bounce checks
               --local angx = (math.acos(dir.x)/ math.pi * 180)
               --local angy = (math.acos(dir.y)/ math.pi * 180)
-              -- --print(tostring(dir:Length()) .. " -- " .. tostring(dir))
-              -- --print(dir:Dot(Vector(1,0,0)))
-              -- --print(dir:Dot(Vector(-1,0,0)))
-              -- --print(dir:Dot(Vector(0,1,0)))
-              -- --print(dir:Dot(Vector(0,-1,0)))
-              -- --print('---------------')
+              -- ----print(tostring(dir:Length()) .. " -- " .. tostring(dir))
+              -- ----print(dir:Dot(Vector(1,0,0)))
+              -- ----print(dir:Dot(Vector(-1,0,0)))
+              -- ----print(dir:Dot(Vector(0,1,0)))
+              -- ----print(dir:Dot(Vector(0,-1,0)))
+              -- ----print('---------------')
               local vVelocity = unit.vVelocity
               if dir:Dot(Vector(1,0,0)) > .707 then
                 normal = Vector(1,0,0)
@@ -1126,13 +1126,13 @@ function Physics:Unit(unit)
                 end
               end
               --FindClearSpaceForUnit(unit, newPos, true)
-              -- --print(tostring(unit:GetAbsOrigin()) .. " -- " .. tostring(navPos))
+              -- ----print(tostring(unit:GetAbsOrigin()) .. " -- " .. tostring(navPos))
             end
 
             if unit.PhysicsOnPreSlide then
               local status, nextCall = pcall(unit.PhysicsOnPreSlide, unit, normal)
               if not status then
-                 --print('[PHYSICS] Failed OnPreSlide: ' .. nextCall)
+                 ----print('[PHYSICS] Failed OnPreSlide: ' .. nextCall)
               end
             end
 
@@ -1147,7 +1147,7 @@ function Physics:Unit(unit)
             if unit.PhysicsOnSlide then
               local status, nextCall = pcall(unit.PhysicsOnSlide, unit, normal)
               if not status then
-                 --print('[PHYSICS] Failed OnSlide: ' .. nextCall)
+                 ----print('[PHYSICS] Failed OnSlide: ' .. nextCall)
               end
             end
           elseif unit.nRebounceFrames <= 0 and unit.nNavCollision == PHYSICS_NAV_BOUNCE and navConnect then
@@ -1165,20 +1165,20 @@ function Physics:Unit(unit)
               local angX = navX + offX
               local angY = navY + offY
 
-              -- --print(offX .. ' -- ' .. angX .. ' == ' .. angY .. ' -- ' .. offY)
+              -- ----print(offX .. ' -- ' .. angX .. ' == ' .. angY .. ' -- ' .. offY)
               
               local angle = anggrid[angX][angY]
               if angle ~= -1 then
                 angle = angle
                 normal = RotatePosition(Vector(0,0,0), QAngle(0,angle,0), Vector(1,0,0))
-                -- --print(normal)
-                -- --print('----------')
+                -- ----print(normal)
+                -- ----print('----------')
               end
             end
             
             if normal == nil then
               --local face = navPos - position
-              -- --print("face: " .. tostring(face))
+              -- ----print("face: " .. tostring(face))
               --local dir = navPos - position
               local dir = navPos - position
               dir.z = 0
@@ -1186,12 +1186,12 @@ function Physics:Unit(unit)
               -- Nav bounce checks
               --local angx = (math.acos(dir.x)/ math.pi * 180)
               --local angy = (math.acos(dir.y)/ math.pi * 180)
-              -- --print(tostring(dir:Length()) .. " -- " .. tostring(dir))
-              -- --print(dir:Dot(Vector(1,0,0)))
-              -- --print(dir:Dot(Vector(-1,0,0)))
-              -- --print(dir:Dot(Vector(0,1,0)))
-              -- --print(dir:Dot(Vector(0,-1,0)))
-              -- --print('---------------')
+              -- ----print(tostring(dir:Length()) .. " -- " .. tostring(dir))
+              -- ----print(dir:Dot(Vector(1,0,0)))
+              -- ----print(dir:Dot(Vector(-1,0,0)))
+              -- ----print(dir:Dot(Vector(0,1,0)))
+              -- ----print(dir:Dot(Vector(0,-1,0)))
+              -- ----print('---------------')
               local vVelocity = unit.vVelocity
               if dir:Dot(Vector(1,0,0)) > .707 then
                 normal = Vector(1,0,0)
@@ -1279,13 +1279,13 @@ function Physics:Unit(unit)
                 end
               end
               --FindClearSpaceForUnit(unit, newPos, true)
-              -- --print(tostring(unit:GetAbsOrigin()) .. " -- " .. tostring(navPos))
+              -- ----print(tostring(unit:GetAbsOrigin()) .. " -- " .. tostring(navPos))
             end
 
             if unit.PhysicsOnPreBounce then
               local status, nextCall = pcall(unit.PhysicsOnPreBounce, unit, normal)
               if not status then
-                 --print('[PHYSICS] Failed OnPreBounce: ' .. nextCall)
+                 ----print('[PHYSICS] Failed OnPreBounce: ' .. nextCall)
               end
             end
             newVelocity = ((-2 * newVelocity:Dot(normal) * normal) + newVelocity) * unit.fBounceMultiplier
@@ -1293,7 +1293,7 @@ function Physics:Unit(unit)
             if unit.PhysicsOnBounce then
               local status, nextCall = pcall(unit.PhysicsOnBounce, unit, normal)
               if not status then
-                 --print('[PHYSICS] Failed OnBounce: ' .. nextCall)
+                 ----print('[PHYSICS] Failed OnBounce: ' .. nextCall)
               end
             end
           end
@@ -1308,7 +1308,7 @@ function Physics:Unit(unit)
       if unit.PhysicsFrameCallback ~= nil then
         local status, nextCall = pcall(unit.PhysicsFrameCallback, unit)
         if not status then
-           --print('[PHYSICS] Failed FrameCallback: ' .. nextCall)
+           ----print('[PHYSICS] Failed FrameCallback: ' .. nextCall)
         end
       end
       
@@ -1327,13 +1327,13 @@ function Physics:Unit(unit)
           local angX = navX + offX
           local angY = navY + offY
 
-          -- --print(offX .. ' -- ' .. angX .. ' == ' .. angY .. ' -- ' .. offY)
+          -- ----print(offX .. ' -- ' .. angX .. ' == ' .. angY .. ' -- ' .. offY)
           
           local angle = anggrid[angX][angY]
           if angle ~= -1 then
             local normal = RotatePosition(Vector(0,0,0), QAngle(0,angle,0), Vector(1,0,0))
-            -- --print(normal)
-            -- --print('----------')
+            -- ----print(normal)
+            -- ----print('----------')
 
             unit:SetAbsOrigin(position + normal * 64)
           else
@@ -1397,30 +1397,30 @@ function Physics:PhysicsTestCommand(...)
   local hero = ply:GetAssignedHero()
 
   if text == "" or string.find(text, "^help") then
-     --print("PHYSTEST Help")
-     --print('---------------------')
-     --print("vel X Y Z        -- Adds the given velocity X,Y,Z to the current hero's velocity.")
-     --print("velmax X         -- Sets the maximum velocity of the current hero to X.")
-     --print("clamp X          -- Sets the to-zero velocity clamp to X hammer units per second.")
-     --print("acc X Y Z        -- Sets the given acceleration X,Y,Z to the current hero's acceleration.")
-     --print("fric X           -- Sets the frcition of the current hero to X / 100.")
-     --print("prevent          -- Toggles Directional Influence prevention (aka right click moving).")
-     --print("slidemult X      -- Sets the slide multiplier to X / 100.")
-     --print("slide            -- Toggles Slide on/off.")
-     --print("nav              -- Toggles FollowNavMesh on/off.  Nav collision will not trigger if this is not set.")
-     --print("navtype          -- Cycles through the navtype collision types.")
-     --print("hibernate        -- Toggles hibernate on/off.")
-     --print("ground           -- Cycles through the ground behavior.")
-     --print("mass X           -- Sets the mass of this unit to X for momentum collision calculations.")
-     --print("bouncemult X     -- Sets the bounce multiplier to X / 100.")
-     --print("unstuck          -- Toggles AutoUnstuck on/off.")
-     --print("stuckframes X    -- Sets the number of frames to wait before triggering an Unstuck.")
-     --print("rebounceframes X -- Sets the number of frames to wait between NAV_BOUNCE bounces.")
-     --print("lookahead X      -- Sets the number of lookahead frames for nav collision detection.")
-     --print("phys             -- Activates this hero as a physics unit.")
-     --print("regrow           -- Regrow all trees on the map.")
-     --print("anggrid          -- Process the map into an anglegrid to use with SLIDE/BOUNCE nav collision.")
-     --print('---------------------')
+     ----print("PHYSTEST Help")
+     ----print('---------------------')
+     ----print("vel X Y Z        -- Adds the given velocity X,Y,Z to the current hero's velocity.")
+     ----print("velmax X         -- Sets the maximum velocity of the current hero to X.")
+     ----print("clamp X          -- Sets the to-zero velocity clamp to X hammer units per second.")
+     ----print("acc X Y Z        -- Sets the given acceleration X,Y,Z to the current hero's acceleration.")
+     ----print("fric X           -- Sets the frcition of the current hero to X / 100.")
+     ----print("prevent          -- Toggles Directional Influence prevention (aka right click moving).")
+     ----print("slidemult X      -- Sets the slide multiplier to X / 100.")
+     ----print("slide            -- Toggles Slide on/off.")
+     ----print("nav              -- Toggles FollowNavMesh on/off.  Nav collision will not trigger if this is not set.")
+     ----print("navtype          -- Cycles through the navtype collision types.")
+     ----print("hibernate        -- Toggles hibernate on/off.")
+     ----print("ground           -- Cycles through the ground behavior.")
+     ----print("mass X           -- Sets the mass of this unit to X for momentum collision calculations.")
+     ----print("bouncemult X     -- Sets the bounce multiplier to X / 100.")
+     ----print("unstuck          -- Toggles AutoUnstuck on/off.")
+     ----print("stuckframes X    -- Sets the number of frames to wait before triggering an Unstuck.")
+     ----print("rebounceframes X -- Sets the number of frames to wait between NAV_BOUNCE bounces.")
+     ----print("lookahead X      -- Sets the number of lookahead frames for nav collision detection.")
+     ----print("phys             -- Activates this hero as a physics unit.")
+     ----print("regrow           -- Regrow all trees on the map.")
+     ----print("anggrid          -- Process the map into an anglegrid to use with SLIDE/BOUNCE nav collision.")
+     ----print('---------------------')
   end
 
   if string.find(text, "^regrow") then
@@ -1429,7 +1429,7 @@ function Physics:PhysicsTestCommand(...)
 
   if string.find(text, "^unstuck") then    
     hero:SetAutoUnstuck(not hero:GetAutoUnstuck())
-     --print(hero:GetAutoUnstuck())
+     ----print(hero:GetAutoUnstuck())
   end
 
   local mass1 = string.match(text, "^mass%s+(-?%d+)")
@@ -1462,18 +1462,18 @@ function Physics:PhysicsTestCommand(...)
     local worldMin = Vector(GetWorldMinX(), GetWorldMinY(), 0)
     local worldMax = Vector(GetWorldMaxX(), GetWorldMaxY(), 0)
 
-     --print(worldMin)
-     --print(worldMax)
+     ----print(worldMin)
+     ----print(worldMax)
 
     local boundX1 = GridNav:WorldToGridPosX(worldMin.x)
     local boundX2 = GridNav:WorldToGridPosX(worldMax.x)
     local boundY1 = GridNav:WorldToGridPosX(worldMin.y)
     local boundY2 = GridNav:WorldToGridPosX(worldMax.y)
 
-     --print(boundX1 .. " -- " .. boundX2)
-     --print(boundY1 .. " -- " .. boundY2)
+     ----print(boundX1 .. " -- " .. boundX2)
+     ----print(boundY1 .. " -- " .. boundY2)
 
-     --print('----------------------')
+     ----print('----------------------')
 
     InitLogFile("addons/dotadash/spider.txt", "")
     AppendToLogFile("addons/dotadash/spider.txt", "P1")
@@ -1554,7 +1554,7 @@ function Physics:PhysicsTestCommand(...)
     end
 
     --PrintTable(pseudoGNV)
-    -- --print('---------------')
+    -- ----print('---------------')
 
     local s = ""
 
@@ -1617,9 +1617,9 @@ function Physics:PhysicsTestCommand(...)
     addString(s, "}")
 
     s = table.concat(s)
-     --print('------------')
-     --print(fname)
-     --print(s)
+     ----print('------------')
+     ----print(fname)
+     ----print(s)
 
     InitLogFile("addons/dotadash/" .. fname .. ".txt", s)
   end
@@ -1705,7 +1705,7 @@ function Physics:PhysicsTestCommand(...)
   
   if string.find(text, "^prevent") then
     hero:PreventDI(not hero:IsPreventDI())
-     --print(hero:IsPreventDI())
+     ----print(hero:IsPreventDI())
   end
 
   if string.find(text, "^phys") and hero.IsSlide == nil then
@@ -1715,18 +1715,18 @@ function Physics:PhysicsTestCommand(...)
   if string.find(text, "^onframe") then
     hero:OnPhysicsFrame(function(unit)
       --PrintTable(unit)
-      -- --print('----------------')
+      -- ----print('----------------')
     end)
   end
   
   if string.find(text, "^slide$") then
     hero:Slide(not hero:IsSlide())
-     --print(hero:IsSlide())
+     ----print(hero:IsSlide())
   end
   
   if string.find(text, "^nav$") then
     hero:FollowNavMesh(not hero:IsFollowNavMesh())
-     --print(hero:IsFollowNavMesh())
+     ----print(hero:IsFollowNavMesh())
   end
   
   local clamp1 = string.match(text, "^clamp%s+(%d+)")
@@ -1736,7 +1736,7 @@ function Physics:PhysicsTestCommand(...)
   
   if string.find(text, "^hibernate") then
     hero:Hibernate(not hero:IsHibernate())
-     --print(hero:IsHibernate())
+     ----print(hero:IsHibernate())
   end
   
   if string.find(text, "^navtype") then
@@ -1752,7 +1752,7 @@ function Physics:PhysicsTestCommand(...)
       elseif navType == PHYSICS_NAV_SLIDE then
         navStr = "SLIDE"
       end
-       --print('navtype: ' .. navStr)
+       ----print('navtype: ' .. navStr)
       hero:SetNavCollisionType(navType)
   end
   
@@ -1767,7 +1767,7 @@ function Physics:PhysicsTestCommand(...)
     elseif ground == PHYSICS_GROUND_LOCK then
       groundStr = "LOCK"
     end
-     --print('ground: ' .. groundStr)
+     ----print('ground: ' .. groundStr)
     hero:SetGroundBehavior(ground)
   end
 end

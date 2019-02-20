@@ -16,7 +16,7 @@ function AIThink()
 		return nil -- deactivate this think function
 	end
 	if next(behaviorSystem) == nil then
-		print("cop_ai behavior system not loaded, attempting to reload. This usually happens after a script_reload")
+		--print("cop_ai behavior system not loaded, attempting to reload. This usually happens after a script_reload")
 		behaviorSystem = AICore:CreateBehaviorSystem( { BehaviorRun } )
 	end
 	return behaviorSystem:Think()

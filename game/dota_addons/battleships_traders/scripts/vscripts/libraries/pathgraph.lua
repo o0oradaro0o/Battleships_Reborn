@@ -24,7 +24,7 @@ PATHGRAPH_VERSION = "0.80"
   --Iterate through all connected edges starting from a path_corner node named "start_node"
     local node = Entities:FindByName(nil, "start_node")
     for _,edge in pairs(node.edges) do
-       --print("'start_node' is connected to '" .. edge:GetName() .. "'")
+       ----print("'start_node' is connected to '" .. edge:GetName() .. "'")
     end
 
 ]]
@@ -53,7 +53,7 @@ function PathGraph:Initialize()
   for _,corner in ipairs(corners) do
     local name = corner:GetName()
     if names[name] ~= nil then
-       --print("[PathGraph] Initialization error, duplicate path_corner named '" .. name .. "' found. Skipping...")
+       ----print("[PathGraph] Initialization error, duplicate path_corner named '" .. name .. "' found. Skipping...")
     else
       local parents = Entities:FindAllByTarget(corner:GetName())
       corner.edges = corner.edges or {}
@@ -72,7 +72,7 @@ function PathGraph:DrawPaths(pathCorner, duration, color)
   color = color or Vector(255,255,255)
   if pathCorner ~= nil then
     if pathCorner:GetClassname() ~= "path_corner" or pathCorner.edges == nil then
-       --print("[PathGraph] An invalid path_corner was passed to PathGraph:DrawPaths.")
+       ----print("[PathGraph] An invalid path_corner was passed to PathGraph:DrawPaths.")
       return
     end
 
