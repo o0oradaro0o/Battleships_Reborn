@@ -523,6 +523,7 @@ end
 
 
 function CBattleship8D:InitGameMode()
+
   self.vUserIds = {}
   ----print( "Template addon is loaded." )
   GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap(CBattleship8D, "FilterModifyGold"), self)
@@ -800,7 +801,6 @@ function CBattleship8D:InitGameMode()
   table.insert(g_CoOpItemPool,"item_sail_one")
   table.insert(g_CoOpItemPool,"item_repair_one")
   table.insert(g_CoOpUnitPool,"npc_dota_hero_zuus")
-
 end
 
 
@@ -4860,111 +4860,124 @@ function fixAbilities(hero)
   
   --======================================= utilities ================================
   
-  function RemoveAndDeleteItem(hero,item)
-	----print(item:GetClassname())
-	----print(item:GetName())
-  
-	item:RemoveSelf()
-  
-  
-  
-  
-	end
-	
+function RemoveAndDeleteItem(hero,item)
+----print(item:GetClassname())
+----print(item:GetName())
+    item:RemoveSelf()
+end
 
-
-	function setupWin(winner)
-		local papa_place = Vector(-44,-4349,5)
-		if winner == DOTA_TEAM_BADGUYS then
-			storage:SetEmpGoldHist(g_EmpGoldArray)
-			GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
-			storage:SetWinner("North")
-			GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
-			GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
-			papa_place = Vector(-244,4349,5)
-			GameRules:SetSafeToLeave( true )
-		elseif winner == DOTA_TEAM_GOODGUYS then
+function setupWin(winner)
+	local papa_place = Vector(-44,-4349,5)
+	if winner == DOTA_TEAM_BADGUYS then
 		storage:SetEmpGoldHist(g_EmpGoldArray)
-  
 		GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
-		storage:SetWinner("South")
-		GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
-		GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
+		storage:SetWinner("North")
+		GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
+		GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
+		papa_place = Vector(-244,4349,5)
+		GameRules:SetSafeToLeave( true )
+	elseif winner == DOTA_TEAM_GOODGUYS then
+  	storage:SetEmpGoldHist(g_EmpGoldArray)
 
-		GameRules:SetSafeToLeave( true )	
-	end
+  	GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
+  	storage:SetWinner("South")
+  	GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+  	GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
 
-		local winnerData = {
-			team_number = winner,
-			BestTank=PlayerResource:GetPlayerName(maxKey(g_DamageTanked)),
-			BestTankVal=maxValue(g_DamageTanked),
-			BestDamageDealt=PlayerResource:GetPlayerName(maxKey(g_DamageDealt)),
-			BestDamageDealtVal=maxValue(g_DamageDealt),
-			BestCreepsKiller=PlayerResource:GetPlayerName(maxKey(g_CreepsKilled)),
-			BestCreepsKillerVal=maxValue(g_CreepsKilled),
-			BestHeroHitter=PlayerResource:GetPlayerName(maxKey(g_HeroDamage)),
-			BestHeroHitterVal=maxValue(g_HeroDamage),
-			BestBuildingDamager=PlayerResource:GetPlayerName(maxKey(g_BuildingDamage)),
-			BestBuildingDamagerVal=maxValue(g_BuildingDamage),
-		}
-		FireGameEvent( "team_win", winnerData );
-		
-	
+  	GameRules:SetSafeToLeave( true )	
+  end
 
-		local i=0
-		local j=0
-		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-			if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetTeamNumber() == winner then
-				i=i+1
-				PlayerResource:SetCameraTarget(hero:GetPlayerID(), hero)
-				hero:SetOrigin(papa_place + Vector(-500 + i * 250,200,0))
-				hero:SetForwardVector(papa_place-hero:GetOrigin())
-			elseif hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetTeamNumber() ~= winner then
-				j=j+1
-				PlayerResource:SetCameraTarget(hero:GetPlayerID(), hero)
-				hero:SetOrigin(papa_place + Vector(-500 + j * 250,-400,0))
-				hero:SetForwardVector(papa_place-hero:GetOrigin())
-				if hero:IsHero() or hero:HasInventory() then
-          for itemSlot = 0, 14, 1 do
-            if hero ~= nil then
-              local Item = hero:GetItemInSlot( itemSlot )
-              if Item ~= nil and string.match(Item:GetName(),"hull") then -- makes sure that the item exists and making sure it is the correct item
-                hero:RemoveModifierByName("modifier_item_hull_one")
-                ----print( "hull found." )s
-              elseif Item ~= nil and string.match(Item:GetName(),"doubled") then -- makes sure that the item exists and making sure it is the correct item
-                local doubledstring = string.gsub(Item:GetName(),"_bow", "_bow_shooting")
-                hero:RemoveModifierByName(doubledstring)
-                ----print( "doubled found." )
-              elseif Item ~= nil and string.match(Item:GetName(),"bow") then -- makes sure that the item exists and making sure it is the correct item
-                hero:RemoveModifierByName(Item:GetName() .. "_shooting")
-								----print( "bow found." )
-							end
+  for _,hero in pairs(HeroList:GetAllHeroes()) do
+    local playerID = hero:GetPlayerOwnerID()
+
+    local damageTanked = g_DamageTanked[playerID]
+    local damageDealt = g_DamageDealt[playerID]
+    local creepsKilled = g_CreepsKilled[playerID]
+    local heroDamage = g_HeroDamage[playerID]
+    local buildingDamage = g_BuildingDamage[playerID]
+    local kills = PlayerResource:GetKills(playerID)
+    local deaths = PlayerResource:GetDeaths(playerID)
+
+    -- I'm pretty sure playerIDs aren't consistent, so here's a simple test that should prove it
+    if playerID < 5 and hero:GetTeam() ~= DOTA_TEAM_GOODGUYS then
+      print("PlayerIDs aren't consistent radar")
+    elseif playerID >= 5 and hero:GetTeam() ~= DOTA_TEAM_BADGUYS then
+      print("PlayerIDs aren't consistent radar")
+    end
+
+    local playerData = {
+      playerID = playerID,
+      damageTanked = damageTanked,
+      damageDealt = damageDealt,
+      creepsKilled = creepsKilled,
+      heroDamage = heroDamage,
+      buildingDamage = buildingDamage,
+      kills = kills,
+      deaths = deaths,
+    }
+
+    CustomGameEventManager:Send_ServerToAllClients("AddGameOverPlayerData", playerData)
+  end
+
+	local winnerData = {
+		team_number = winner
+	}
+	FireGameEvent( "team_win", winnerData );
+
+	local i=0
+	local j=0
+	for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
+		if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetTeamNumber() == winner then
+			i=i+1
+			PlayerResource:SetCameraTarget(hero:GetPlayerID(), hero)
+			hero:SetOrigin(papa_place + Vector(-500 + i * 250,200,0))
+			hero:SetForwardVector(papa_place-hero:GetOrigin())
+		elseif hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetTeamNumber() ~= winner then
+			j=j+1
+			PlayerResource:SetCameraTarget(hero:GetPlayerID(), hero)
+			hero:SetOrigin(papa_place + Vector(-500 + j * 250,-400,0))
+			hero:SetForwardVector(papa_place-hero:GetOrigin())
+			if hero:IsHero() or hero:HasInventory() then
+        for itemSlot = 0, 14, 1 do
+          if hero ~= nil then
+            local Item = hero:GetItemInSlot( itemSlot )
+            if Item ~= nil and string.match(Item:GetName(),"hull") then -- makes sure that the item exists and making sure it is the correct item
+              hero:RemoveModifierByName("modifier_item_hull_one")
+              ----print( "hull found." )s
+            elseif Item ~= nil and string.match(Item:GetName(),"doubled") then -- makes sure that the item exists and making sure it is the correct item
+              local doubledstring = string.gsub(Item:GetName(),"_bow", "_bow_shooting")
+              hero:RemoveModifierByName(doubledstring)
+              ----print( "doubled found." )
+            elseif Item ~= nil and string.match(Item:GetName(),"bow") then -- makes sure that the item exists and making sure it is the correct item
+              hero:RemoveModifierByName(Item:GetName() .. "_shooting")
+							----print( "bow found." )
 						end
 					end
 				end
 			end
 		end
-
 	end
 
-	function maxValue(a)
-		local values = {}
-	
-		for k,v in pairs(a) do
-			if type(k) == "number" and type(v) == "number" then
-				values[#values+1] = v
-			end
-		end
-		table.sort(values) -- automatically sorts lowest to highest
-	
-		return values[#values]
-	end
+end
 
-	function maxKey(a)
-		local maxval = maxValue(a)
-		local inv={}
-		for k,v in pairs(a) do
-			inv[v]=k
+function maxValue(a)
+	local values = {}
+
+	for k,v in pairs(a) do
+		if type(k) == "number" and type(v) == "number" then
+			values[#values+1] = v
 		end
-		return inv[maxval]
-	 end
+	end
+	table.sort(values) -- automatically sorts lowest to highest
+
+	return values[#values]
+end
+
+function maxKey(a)
+	local maxval = maxValue(a)
+	local inv={}
+	for k,v in pairs(a) do
+		inv[v]=k
+	end
+	return inv[maxval]
+ end
