@@ -357,7 +357,7 @@
                        <Label hittest="false" class="ability_name" text="#swamp_gas_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('phantom_lancer','fan_blast_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/brewmaster_storm_cyclone.png" onmouseover="DOTAShowAbilityTooltip('fan_blast_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/fan.png" onmouseover="DOTAShowAbilityTooltip('fan_blast_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
                        <Label hittest="false" class="ability_name" text="#fan_blast_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('phantom_lancer','batten_hatches')" >
@@ -632,11 +632,11 @@
                        <Label hittest="false" class="ability_name" text="#kunkka_torrent_bships"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('disruptor','coast_heal_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/modifier_halloffame_glow.png" onmouseover="DOTAShowAbilityTooltip('coast_heal_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/rescue.png" onmouseover="DOTAShowAbilityTooltip('coast_heal_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
                        <Label hittest="false" class="ability_name" text="#coast_heal_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('disruptor','no_fire_zone')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/lone_druid_savage_roar.png" onmouseover="DOTAShowAbilityTooltip('no_fire_zone')" onmouseout="DOTAHideAbilityTooltip()" />
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/nofire.png" onmouseover="DOTAShowAbilityTooltip('no_fire_zone')" onmouseout="DOTAHideAbilityTooltip()" />
                        <Label hittest="false" class="ability_name" text="#no_fire_zone"/>"
 					</Panel>
 				</Panel>
@@ -700,11 +700,11 @@
                        <Label hittest="false" class="ability_name" text="#morphling_waveform_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('morphling','gun_it')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/keeper_of_the_light_chakra_magic.png" onmouseover="DOTAShowAbilityTooltip('gun_it')" onmouseout="DOTAHideAbilityTooltip()" />
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/overcharge.png" onmouseover="DOTAShowAbilityTooltip('gun_it')" onmouseout="DOTAHideAbilityTooltip()" />
                        <Label hittest="false" class="ability_name" text="#gun_it"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('morphling','swim_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/elder_titan_echo_stomp.png" onmouseover="DOTAShowAbilityTooltip('swim_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/swimbreak.png" onmouseover="DOTAShowAbilityTooltip('swim_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
                        <Label hittest="false" class="ability_name" text="#swim_battleship"/>"
 					</Panel>
 				</Panel>
@@ -772,7 +772,7 @@
                        <Label hittest="false" class="ability_name" text="#firework_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('storm_spirit','nav_hack_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/techies_focused_detonate.png" onmouseover="DOTAShowAbilityTooltip('nav_hack_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/comp.png" onmouseover="DOTAShowAbilityTooltip('nav_hack_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
                        <Label hittest="false" class="ability_name" text="#nav_hack_battleship"/>"
 					</Panel>
 				</Panel>
@@ -922,7 +922,7 @@
                        <Label hittest="false" class="ability_name" text="#plane_fly_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('nevermore','ruse_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/necronomicon_warrior_sight.png" onmouseover="DOTAShowAbilityTooltip('ruse_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/ruse.png" onmouseover="DOTAShowAbilityTooltip('ruse_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
                        <Label hittest="false" class="ability_name" text="#ruse_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('nevermore','mayday_battleship')" >
@@ -1258,7 +1258,7 @@
                        <Label hittest="false" class="ability_name" text="#pistols_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('slark','spirit_breaker_charge_of_darkness_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/charge.psd" onmouseover="DOTAShowAbilityTooltip('spirit_breaker_charge_of_darkness_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/spirit_breaker_charge_of_darkness.png" onmouseover="DOTAShowAbilityTooltip('spirit_breaker_charge_of_darkness_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
                        <Label hittest="false" class="ability_name" text="#spirit_breaker_charge_of_darkness_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('slark','Pillage')" >
@@ -1406,7 +1406,7 @@
                        <Label hittest="false" class="ability_name" text="#tidehunter_gush_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('sniper','peak_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/keeper_of_the_light_blinding_light.png" onmouseover="DOTAShowAbilityTooltip('peak_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sonar.png" onmouseover="DOTAShowAbilityTooltip('peak_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
                        <Label hittest="false" class="ability_name" text="#peak_battleship"/>"
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('sniper','submerge_battleship')" >

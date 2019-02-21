@@ -3034,8 +3034,6 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"charge"
-
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -3094,7 +3092,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityTextureName"				"keeper_of_the_light_chakra_magic"
+		"AbilityTextureName"				"overcharge"
 		
 		
 		"BaseClass" 					"ability_datadriven"
@@ -4525,7 +4523,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityTextureName"			"keeper_of_the_light_blinding_light"
+		"AbilityTextureName"			"sonar"
 		
 		
 		"BaseClass" 					"ability_datadriven"
@@ -5629,7 +5627,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"AbilityTextureName"			"elder_titan_echo_stomp"
+		"AbilityTextureName"			"swimbreak"
 		"AbilityCastRange"				"600"
 		"BaseClass" 					"ability_datadriven"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
@@ -7311,7 +7309,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"BaseClass" 					"ability_datadriven"
-		"AbilityTextureName"			"necronomicon_warrior_sight"
+		"AbilityTextureName"			"ruse"
 		
 		
 		// Casting
@@ -11253,7 +11251,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-			"AbilityTextureName"				"lone_druid_savage_roar"
+			"AbilityTextureName"				"nofire"
 			"BaseClass" 					"ability_datadriven"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 				"MaxLevel"						"3"
@@ -11318,7 +11316,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"BaseClass" 					"ability_datadriven"
-		"AbilityTextureName"				"modifier_halloffame_glow"
+		"AbilityTextureName"				"rescue"
 		
 		
 		// Casting
