@@ -1232,7 +1232,7 @@ function AddNotificationbot(msg, panel) {
 
 function AddGameOverPlayerData(data)
 {
-	var rowPanel = $("#GameOverRow_" + data.playerID);
+	var rowPanel = $("#GameOverRow_" + data.rowPosition);
 	var steamid = Game.GetPlayerInfo(data.playerID).player_steamid;
 
 	rowPanel.GetChild(0).steamid = steamid;
@@ -1241,9 +1241,9 @@ function AddGameOverPlayerData(data)
 	rowPanel.GetChild(1).RemoveClass("Invisible");
 	rowPanel.GetChild(2).text = data.kills;
 	rowPanel.GetChild(3).text = data.deaths;
-	rowPanel.GetChild(4).text = data.damageTanked;
-	rowPanel.GetChild(5).text = data.heroDamage;
-	rowPanel.GetChild(6).text = data.buildingDamage;
+	rowPanel.GetChild(4).text = Math.round(data.damageTanked);
+	rowPanel.GetChild(5).text = Math.round(data.heroDamage);
+	rowPanel.GetChild(6).text = Math.round(data.buildingDamage);
 	rowPanel.GetChild(7).text = data.creepsKilled;
 }
 

@@ -4887,6 +4887,9 @@ function setupWin(winner)
   	GameRules:SetSafeToLeave( true )	
   end
 
+  local radiantPosition = 0
+  local direPosition = 5
+
   for _,hero in pairs(HeroList:GetAllHeroes()) do
     local playerID = hero:GetPlayerOwnerID()
 
@@ -4898,15 +4901,18 @@ function setupWin(winner)
     local kills = PlayerResource:GetKills(playerID)
     local deaths = PlayerResource:GetDeaths(playerID)
 
-    -- I'm pretty sure playerIDs aren't consistent, so here's a simple test that should prove it
-    if playerID < 5 and hero:GetTeam() ~= DOTA_TEAM_GOODGUYS then
-      print("PlayerIDs aren't consistent radar")
-    elseif playerID >= 5 and hero:GetTeam() ~= DOTA_TEAM_BADGUYS then
-      print("PlayerIDs aren't consistent radar")
+    local rowPosition
+    if hero:GetTeam() == DOTA_TEAM_GOODGUYS then
+      rowPosition = radiantPosition
+      radiantPosition = radiantPosition + 1
+    else
+      rowPosition = direPosition
+      direPosition = direPosition + 1
     end
 
     local playerData = {
       playerID = playerID,
+      rowPosition = rowPosition,
       damageTanked = damageTanked,
       damageDealt = damageDealt,
       creepsKilled = creepsKilled,

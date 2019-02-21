@@ -1950,7 +1950,7 @@ width: 100%;
 	height: 80%;
 	width: 100%;
 	horizontal-align: center;
-	vertical-align: center;
+	vertical-align: bottom;
 	position: 0 0px -.01px;
 	transition: height 0.5s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
 	border-radius: 10px;
@@ -1960,7 +1960,7 @@ width: 100%;
 {
 	flow-children: down;
 	horizontal-align: center;
-	vertical-align: center;
+	vertical-align: bottom;
 	height: 900px;
 	width: 1300px;
 	background-color: #111920bb;
@@ -2012,7 +2012,7 @@ width: 100%;
 	flow-children: right;
 	margin-top: 5px;
 	width: 100%;
-	height: 64px;
+	height: 48px;
 	background-color: #111920bb;
 	border-top: 1px solid #ffffff05;
 	border-bottom: 1px solid #ffffff03;
@@ -2024,8 +2024,8 @@ width: 100%;
 .GameOverAvatar
 {
 	margin-left: 20px;
-	width: 64px;
-  height: 64px;
+	width: 48px;
+  height: 48px;
 }
 .GameOverUsername
 {
