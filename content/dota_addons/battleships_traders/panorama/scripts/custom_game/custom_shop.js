@@ -1230,23 +1230,28 @@ function AddNotificationbot(msg, panel) {
 	}
 }
 
-function  TeamWin(data)
+function AddGameOverPlayerData(data)
+{
+	var rowPanel = $("#GameOverRow_" + data.playerID);
+	var steamid = Game.GetPlayerInfo(data.playerID).player_steamid;
+
+	rowPanel.GetChild(0).steamid = steamid;
+	rowPanel.GetChild(0).RemoveClass("Invisible");
+	rowPanel.GetChild(1).steamid = steamid;
+	rowPanel.GetChild(1).RemoveClass("Invisible");
+	rowPanel.GetChild(2).text = data.kills;
+	rowPanel.GetChild(3).text = data.deaths;
+	rowPanel.GetChild(4).text = data.damageTanked;
+	rowPanel.GetChild(5).text = data.heroDamage;
+	rowPanel.GetChild(6).text = data.buildingDamage;
+	rowPanel.GetChild(7).text = data.creepsKilled;
+}
+
+function TeamWin(data)
 {
 		GameUI.SetCameraPitchMin( 24 )
 		GameUI.SetCameraPitchMax( 25 )
 
-		$( "#BestTank" ).text = data.BestTank
-		$( "#BestTankVal" ).text = Math.round(data.BestTankVal)
-		$( "#BestDamageDealt" ).text = data.BestDamageDealt
-		$( "#BestDamageDealtVal" ).text = Math.round(data.BestDamageDealtVal)
-		$( "#BestCreepsKiller" ).text = data.BestCreepsKiller
-		$( "#BestCreepsKillerVal" ).text = Math.round(data.BestCreepsKillerVal)
-		$( "#BestHeroHitter" ).text = data.BestHeroHitter
-		$( "#BestHeroHitterVal" ).text = Math.round(data.BestHeroHitterVal)
-		$( "#BestBuildingDamager" ).text = data.BestBuildingDamager
-		$( "#BestBuildingDamagerVal" ).text = Math.round(data.BestBuildingDamagerVal)
-
-		
 	if( data.team_number== 3)
 	{
 		if(Game.GetLocalPlayerInfo().player_team_id==3)
@@ -1401,6 +1406,7 @@ GameUI.SetMouseCallback(function (eventName, arg) {
 	
 	GameEvents.Subscribe("Boat_Spawned", fillShop);
 	GameEvents.Subscribe("Trade_Mode_Enabled", showTrade);
+	GameEvents.Subscribe("AddGameOverPlayerData", AddGameOverPlayerData );
 	GameEvents.Subscribe("team_win", TeamWin );
 	
 	GameEvents.Subscribe("Hero_Near_Shop", NearShop);

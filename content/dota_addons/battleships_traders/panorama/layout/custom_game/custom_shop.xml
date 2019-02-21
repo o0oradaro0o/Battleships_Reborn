@@ -198,7 +198,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="825" />
+							<Label hittest="false" class="boat_stat_label_val" text="25" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
@@ -266,7 +266,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="800" />
+							<Label hittest="false" class="boat_stat_label_val" text="00" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
@@ -406,7 +406,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
-							<Label hittest="false" class="boat_stat_label_val" text="280" />
+							<Label hittest="false" class="boat_stat_label_val" text="20" />
 					</Panel>
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#regen" />
@@ -475,11 +475,11 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
-							<Label hittest="false" class="boat_stat_label_val" text="285" />
+							<Label hittest="false" class="boat_stat_label_val" text="25" />
 					</Panel>
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#regen" />
-							<Label hittest="false" class="boat_stat_label_val" text="8" />
+							<Label hittest="false" class="boat_stat_label_val" text="" />
 					</Panel>
 				</Panel>	
 			</Panel>	
@@ -899,7 +899,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="2250" />
+							<Label hittest="false" class="boat_stat_label_val" text="50" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
@@ -967,7 +967,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="2800" />
+							<Label hittest="false" class="boat_stat_label_val" text="200" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
@@ -1035,7 +1035,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="5800" />
+							<Label hittest="false" class="boat_stat_label_val" text="500" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
@@ -1659,7 +1659,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
-							<Label hittest="false" class="boat_stat_label_val" text="380" />
+							<Label hittest="false" class="boat_stat_label_val" text="30" />
 					</Panel>
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#regen" />
@@ -1728,7 +1728,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
-							<Label hittest="false" class="boat_stat_label_val" text="380" />
+							<Label hittest="false" class="boat_stat_label_val" text="30" />
 					</Panel>
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#regen" />
@@ -1793,7 +1793,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="8900" />
+							<Label hittest="false" class="boat_stat_label_val" text="900" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
@@ -1940,7 +1940,7 @@
 					</Panel>
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#regen" />
-							<Label hittest="false" class="boat_stat_label_val" text="18.0" />
+							<Label hittest="false" class="boat_stat_label_val" text="1.0" />
 					</Panel>
 				</Panel>	
 			</Panel>	
@@ -1999,7 +1999,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="2200" />
+							<Label hittest="false" class="boat_stat_label_val" text="00" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
@@ -2366,9 +2366,9 @@
 								 <Label hittest="false" class="gold_cost_text" text="50 G  " />
 								 <Label hittest="false" class="item_desc_text" text="#info_desc"/>
                             </Button>
-							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_firecrackers', 80 )" oncontextmenu="buyItem('oneshot_firecrackers', 80 )">
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_firecrackers', 0 )" oncontextmenu="buyItem('oneshot_firecrackers', 0 )">
                                 <Image class="item_image" src="file://{images}/custom_game/firecrackers.png" />
-								 <Label hittest="false" class="gold_cost_text" text="80  G" />
+								 <Label hittest="false" class="gold_cost_text" text="0  G" />
 								 <Label hittest="false" class="item_desc_text" text="#firecrackers_desc"/>
                             </Button>
                         </Panel>
@@ -2400,9 +2400,9 @@
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
-                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_brew', 80 )" oncontextmenu="buyItem('oneshot_brew', 80 )">
+                            <Button class="TradeBtnItm" onactivate="buyItem('oneshot_brew', 0 )" oncontextmenu="buyItem('oneshot_brew', 0 )">
                                 <Image class="item_image" src="file://{images}/custom_game/brew.png" />
-								 <Label hittest="false" class="gold_cost_text" text="80  G" />
+								 <Label hittest="false" class="gold_cost_text" text="0  G" />
 								 <Label hittest="false" class="item_desc_text" text="#brew_desc"/>
                             </Button>
 							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_power', 150)" oncontextmenu="buyItem('oneshot_power', 150)">
@@ -2530,9 +2530,9 @@
 								 <Label hittest="false" class="gold_cost_text" text="60  G" />
 								 <Label hittest="false" class="item_desc_text" text="#fish_desc"/>
                             </Button>
-							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_line', 80 )" oncontextmenu="buyItem('oneshot_line', 80 )">
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_line', 0 )" oncontextmenu="buyItem('oneshot_line', 0 )">
                                 <Image class="item_image" src="file://{images}/custom_game/line.png" />
-								 <Label hittest="false" class="gold_cost_text" text="80  G" />
+								 <Label hittest="false" class="gold_cost_text" text="0  G" />
 								 <Label hittest="false" class="item_desc_text" text="#line_desc"/>
                             </Button>
                         </Panel>
@@ -2549,7 +2549,7 @@
 				</Button>
 			</Panel>
                     <Label hittest="false" class="trade_text_title" text="#Right_Mid_Missions" />
-                    <Panel hittest="false" id="mission_hider_8" class="mission_guts">
+                    <Panel hittest="false" id="mission_hider_" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
                         <Panel hittest="false" class="mission_guts">
                             <Button class="tradeBtnMission" onactivate="GiveEasy()" oncontextmenu="GiveEasy()">
@@ -2560,7 +2560,7 @@
                             </Button>
                         </Panel>
                     </Panel>
-                     <Label hittest="false"  id="must_be_trader_8" class="no_trade_text_subtitle" text="#must_be_trader" />
+                     <Label hittest="false"  id="must_be_trader_" class="no_trade_text_subtitle" text="#must_be_trader" />
 				
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
@@ -2570,9 +2570,9 @@
 								 <Label hittest="false" class="gold_cost_text" text="90  G" />
 								 <Label hittest="false" class="item_desc_text" text="#trap_desc"/>
                             </Button>
-							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_chain', 80 )"  oncontextmenu="buyItem('oneshot_chain', 80 )">
+							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_chain', 0 )"  oncontextmenu="buyItem('oneshot_chain', 0 )">
                                 <Image class="item_image" src="file://{images}/custom_game/chain.png" />
-								 <Label hittest="false" class="gold_cost_text" text="80  G" />
+								 <Label hittest="false" class="gold_cost_text" text="0  G" />
 								 <Label hittest="false" class="item_desc_text" text="#chain_desc"/>
                             </Button>
                         </Panel>
@@ -2743,64 +2743,159 @@
         </Panel>
 			<Panel hittest="false" id="ScoreBoardFinalholder" >
 				
-			<Panel hittest="false" class="Scoreboardfianal" >		
+			<Panel hittest="false" class="ScoreboardFinal" >		
 				<Panel hittest="false" class="WinOrLoseHolder" >
 					<Label id="WinOrLose" text="You Win!">  </Label>
 				</Panel>
-				<Panel hittest="false" class="labelHolderfinal" >
-					<!--Scoreboard Title-->
-					<Panel hittest="false" class="scoreRow">
-						<Label class="cat_header" text="Damage Dominator">  </Label>
-						<Label id="BestDamageDealt" class="player_name" text="#score_Name">  </Label>
-						<Panel hittest="false" class="scoreRowInner">
-						<Label id="BestDamageDealtVal" class="score_value" text="#score_Points">  </Label>
-						<Label class="score_value" text="#BestDamageDealt">  </Label>
-						</Panel>
-					</Panel>
-					<Panel hittest="false" class="scoreRow">
-						<Label class="cat_header" text="Sturdiest Ship">  </Label>
-						
-						<Label id="BestTank" class="player_name" text="#score_Name">  </Label>
-						<Panel hittest="false" class="scoreRowInner">
-						
-						<Label id="BestTankVal" class="score_value" text="#score_Points">  </Label>
-						<Label class="score_value" text="#BestTank">  </Label>
-					</Panel>
-					</Panel>
-					<Panel hittest="false" class="scoreRow">
-						<Label class="cat_header" text="Hero Hitter">  </Label>
-						
-						<Label id="BestHeroHitter" class="player_name" text="#score_Name">  </Label>
-						<Panel hittest="false" class="scoreRowInner">
-						
-						<Label id="BestHeroHitterVal" class="score_value" text="#score_Points">  </Label>
-						<Label class="score_value" text="#BestHeroHitter">  </Label>
-					</Panel>
-					</Panel>
-					<Panel hittest="false" class="scoreRow">
-						<Label class="cat_header" text="Tower Toppler">  </Label>
-						
-						<Label id="BestBuildingDamager" class="player_name" text="#score_Name">  </Label>
-						<Panel hittest="false" class="scoreRowInner">
-						
-						<Label id="BestBuildingDamagerVal" class="score_value" text="#score_Points">  </Label>
-						<Label class="score_value" text="#BestBuildingDamager">  </Label>
-					</Panel>
-					</Panel>
-					<Panel hittest="false" class="scoreRow">
-						<Label class="cat_header" text="Farming Fiend">  </Label>
-						
-						<Label id="BestCreepsKiller" class="player_name" text="#score_Name">  </Label>
-						<Panel hittest="false" class="scoreRowInner">
-						
-						<Label id="BestCreepsKillerVal" class="score_value" text="#score_Points">  </Label>
-						<Label class="score_value" text="#BestCreepsKiller">  </Label>
-					</Panel>
-					</Panel>
+
+				<Panel hittest="false" class="LeftRightFlow">
+					<Label id="GameOverNorthHeader" class="TeamNameGameOverLabel" text="North Empire" />
+					<Label class="GameOverKillsHeader" text="Kills" />
+					<Label class="GameOverDeathsHeader" text="Deaths" />
+					<Label class="GameOverHeader" text="Damage Taken" />
+					<Label class="GameOverHeader" text="Hero Damage" />
+					<Label class="GameOverHeader" text="Siege Damage" />
+					<Label class="GameOverHeader" text="Creeps Killed" />
 				</Panel>
-					
+				
+				<Panel hittest="false" id="GameOverRow_5" class="GameOverRow">
+					<DOTAAvatarImage steamid="" class="GameOverAvatar Invisible" />
+					<DOTAUserName steamid="" class="GameOverUsername Invisible" />
+					<Label class="GameOverKillsScore" text="" />
+					<Label class="GameOverDeathsScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					 <!-- For some reason I need a blank label here for alignment to work properly -->
+					<Label text="" />
+				</Panel>
+
+				<Panel hittest="false" id="GameOverRow_6" class="GameOverRow">
+					<DOTAAvatarImage steamid="" class="GameOverAvatar Invisible" />
+					<DOTAUserName steamid="" class="GameOverUsername Invisible" />
+					<Label class="GameOverKillsScore" text="" />
+					<Label class="GameOverDeathsScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					 <!-- For some reason I need a blank label here for alignment to work properly -->
+					<Label text="" />
+				</Panel>
+
+				<Panel hittest="false" id="GameOverRow_7" class="GameOverRow">
+					<DOTAAvatarImage steamid="" class="GameOverAvatar Invisible" />
+					<DOTAUserName steamid="" class="GameOverUsername Invisible" />
+					<Label class="GameOverKillsScore" text="" />
+					<Label class="GameOverDeathsScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					 <!-- For some reason I need a blank label here for alignment to work properly -->
+					<Label text="" />
+				</Panel>
+
+				<Panel hittest="false" id="GameOverRow_" class="GameOverRow">
+					<DOTAAvatarImage steamid="" class="GameOverAvatar Invisible" />
+					<DOTAUserName steamid="" class="GameOverUsername Invisible" />
+					<Label class="GameOverKillsScore" text="" />
+					<Label class="GameOverDeathsScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					 <!-- For some reason I need a blank label here for alignment to work properly -->
+					<Label text="" />
+				</Panel>
+
+				<Panel hittest="false" id="GameOverRow_9" class="GameOverRow">
+					<DOTAAvatarImage steamid="" class="GameOverAvatar Invisible" />
+					<DOTAUserName steamid="" class="GameOverUsername Invisible" />
+					<Label class="GameOverKillsScore" text="" />
+					<Label class="GameOverDeathsScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					 <!-- For some reason I need a blank label here for alignment to work properly -->
+					<Label text="" />
+				</Panel>				
+
+				<Panel hittest="false" class="LeftRightFlow">
+					<Label id="GameOverSouthHeader" class="TeamNameGameOverLabel" text="South Empire" />
+				</Panel>
+
+				<Panel hittest="false" id="GameOverRow_0" class="GameOverRow">
+					<DOTAAvatarImage steamid="" class="GameOverAvatar Invisible" />
+					<DOTAUserName steamid="" class="GameOverUsername Invisible" />
+					<Label class="GameOverKillsScore" text="" />
+					<Label class="GameOverDeathsScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					 <!-- For some reason I need a blank label here for alignment to work properly -->
+					<Label text="" />
+				</Panel>
+
+
+				<Panel hittest="false" id="GameOverRow_1" class="GameOverRow">
+					<DOTAAvatarImage steamid="" class="GameOverAvatar Invisible" />
+					<DOTAUserName steamid="" class="GameOverUsername Invisible" />
+					<Label class="GameOverKillsScore" text="" />
+					<Label class="GameOverDeathsScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					 <!-- For some reason I need a blank label here for alignment to work properly -->
+					<Label text="" />
+				</Panel>
+
+				<Panel hittest="false" id="GameOverRow_2" class="GameOverRow">
+					<DOTAAvatarImage steamid="" class="GameOverAvatar Invisible" />
+					<DOTAUserName steamid="" class="GameOverUsername Invisible" />
+					<Label class="GameOverKillsScore" text="" />
+					<Label class="GameOverDeathsScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					 <!-- For some reason I need a blank label here for alignment to work properly -->
+					<Label text="" />
+				</Panel>
+
+				<Panel hittest="false" id="GameOverRow_3" class="GameOverRow">
+					<DOTAAvatarImage steamid="" class="GameOverAvatar Invisible" />
+					<DOTAUserName steamid="" class="GameOverUsername Invisible" />
+					<Label class="GameOverKillsScore" text="" />
+					<Label class="GameOverDeathsScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					 <!-- For some reason I need a blank label here for alignment to work properly -->
+					<Label text="" />
+				</Panel>
+
+				<Panel hittest="false" id="GameOverRow_4" class="GameOverRow">
+					<DOTAAvatarImage steamid="" class="GameOverAvatar Invisible" />
+					<DOTAUserName steamid="" class="GameOverUsername Invisible" />
+					<Label class="GameOverKillsScore" text="" />
+					<Label class="GameOverDeathsScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
+					 <!-- For some reason I need a blank label here for alignment to work properly -->
+					<Label text="" />
+				</Panel>
+
 		</Panel>
 	</Panel>
 
     </Panel>
 </root>
+
