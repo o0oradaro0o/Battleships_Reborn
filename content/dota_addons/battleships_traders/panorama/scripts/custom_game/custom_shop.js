@@ -1232,7 +1232,7 @@ function AddNotificationbot(msg, panel) {
 
 function AddGameOverPlayerData(data)
 {
-	var rowPanel = $("#GameOverRow_" + data.playerID);
+	var rowPanel = $("#GameOverRow_" + data.rowPosition);
 	var steamid = Game.GetPlayerInfo(data.playerID).player_steamid;
 
 	rowPanel.GetChild(0).steamid = steamid;
@@ -1241,9 +1241,9 @@ function AddGameOverPlayerData(data)
 	rowPanel.GetChild(1).RemoveClass("Invisible");
 	rowPanel.GetChild(2).text = data.kills;
 	rowPanel.GetChild(3).text = data.deaths;
-	rowPanel.GetChild(4).text = data.damageTanked;
-	rowPanel.GetChild(5).text = data.heroDamage;
-	rowPanel.GetChild(6).text = data.buildingDamage;
+	rowPanel.GetChild(4).text = Math.round(data.damageTanked);
+	rowPanel.GetChild(5).text = Math.round(data.heroDamage);
+	rowPanel.GetChild(6).text = Math.round(data.buildingDamage);
 	rowPanel.GetChild(7).text = data.creepsKilled;
 }
 
@@ -1295,8 +1295,16 @@ function SetSouth()
 			if($.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd"))
 			{
 				var vicLabel = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").FindChildTraverse("VictoryLabel");
-				$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").style.visibility="visible";
+				var vicBak = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").FindChildTraverse("VictoryBackgroundScene");
+				vicBak.style.visibility="collapse"
+				var vicHoldder = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer");
+				vicHoldder.style.visibility="visible"
+				vicHoldder.style.marginTop = "-220px"
 				vicLabel.text = "South Empire Wins!"
+				vicLabel.style.fontSize="80px"
+				var continueButton = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("ContinueButton");
+				continueButton.style.marginBottom ="5px"
+				$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").style.height="100%"
 			}
 		 $.Schedule( .1, SetSouth );
 }
@@ -1306,8 +1314,18 @@ function SetNorth()
 			if($.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd"))
 			{
 					var vicLabel = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").FindChildTraverse("VictoryLabel");
-				$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").style.visibility="visible";
-				vicLabel.text = "North Empire Wins!"
+					var vicBak = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").FindChildTraverse("VictoryBackgroundScene");
+					vicBak.style.visibility="collapse"
+				
+					$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").style.visibility="visible";
+					var vicHoldder = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer");
+					vicHoldder.style.visibility="visible"
+					vicHoldder.style.marginTop = "-220px"
+					vicLabel.text = "North Empire Wins!"
+				vicLabel.style.fontSize="80px"
+				var continueButton = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("ContinueButton");
+				continueButton.style.marginBottom ="5px"
+				$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").style.height="100%"
 			}
 		 $.Schedule( .1, SetNorth );
 }

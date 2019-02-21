@@ -2825,6 +2825,12 @@
 
 				<Panel hittest="false" class="LeftRightFlow">
 					<Label id="GameOverSouthHeader" class="TeamNameGameOverLabel" text="South Empire" />
+					<Label class="GameOverKillsHeader" text="Kills" />
+					<Label class="GameOverDeathsHeader" text="Deaths" />
+					<Label class="GameOverHeader" text="Damage Taken" />
+					<Label class="GameOverHeader" text="Hero Damage" />
+					<Label class="GameOverHeader" text="Siege Damage" />
+					<Label class="GameOverHeader" text="Creeps Killed" />
 				</Panel>
 
 				<Panel hittest="false" id="GameOverRow_0" class="GameOverRow">
