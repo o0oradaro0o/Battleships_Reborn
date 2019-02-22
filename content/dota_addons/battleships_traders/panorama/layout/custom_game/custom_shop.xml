@@ -2686,6 +2686,14 @@
 		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_windrunner.png"  />
 		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_winter_wyvern.png"  />
 		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_zuus.png"  />
+
+		<Image class="Toggled" src="file://{images}/custom_game/trophies/creeps.png"  />
+		<Image class="Toggled" src="file://{images}/custom_game/trophies/deaths.png"  />
+		<Image class="Toggled" src="file://{images}/custom_game/trophies/herodmg.png"  />
+		<Image class="Toggled" src="file://{images}/custom_game/trophies/kills.png"  />
+		<Image class="Toggled" src="file://{images}/custom_game/trophies/tower.png"  />
+		<Image class="Toggled" src="file://{images}/custom_game/trophies/tank.png"  />
+		 
 		 
 	<Image class="Toggled" src="file://{images}/items/coal_bow.png"  />
 <Image class="Toggled" src="file://{images}/items/caulk_bow.png"  />
@@ -2797,7 +2805,7 @@
 					<Label text="" />
 				</Panel>
 
-				<Panel hittest="false" id="GameOverRow_" class="GameOverRow">
+				<Panel hittest="false" id="GameOverRow_8" class="GameOverRow">
 					<DOTAAvatarImage steamid="" class="GameOverAvatar Invisible" />
 					<DOTAUserName steamid="" class="GameOverUsername Invisible" />
 					<Label class="GameOverKillsScore" text="" />

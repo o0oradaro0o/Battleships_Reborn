@@ -1229,28 +1229,120 @@ function AddNotificationbot(msg, panel) {
 		}
 	}
 }
+var highestKills=0
+var lowestDeaths=10000
+var highestDamageTanked=0
+var highestHeroDamage=0
+var highestBuildingDamage=0
+var highestCreepsKilled=0
 
 function AddGameOverPlayerData(data)
 {
 	var rowPanel = $("#GameOverRow_" + data.rowPosition);
 	var steamid = Game.GetPlayerInfo(data.playerID).player_steamid;
-
+	if(data.playerID == Players.GetLocalPlayer())
+	{
+		rowPanel.AddClass("LocalPlayer")
+	}
+	if(highestKills<data.kills)
+	{
+		highestKills=data.kills
+	}
+	if(lowestDeaths>data.deaths)
+	{
+		lowestDeaths=data.deaths
+	}
+	if(highestDamageTanked<data.damageTanked)
+	{
+		highestDamageTanked=Math.round(data.damageTanked)
+	}
+	if(highestHeroDamage<data.heroDamage)
+	{
+		highestHeroDamage=Math.round(data.heroDamage)
+	}
+	if(highestBuildingDamage<data.buildingDamage)
+	{
+		highestBuildingDamage=Math.round(data.buildingDamage)
+	}
+	if(highestCreepsKilled<data.creepsKilled)
+	{
+		highestCreepsKilled=data.creepsKilled
+	}
 	rowPanel.GetChild(0).steamid = steamid;
 	rowPanel.GetChild(0).RemoveClass("Invisible");
 	rowPanel.GetChild(1).steamid = steamid;
 	rowPanel.GetChild(1).RemoveClass("Invisible");
-	rowPanel.GetChild(2).text = data.kills;
-	rowPanel.GetChild(3).text = data.deaths;
-	rowPanel.GetChild(4).text = Math.round(data.damageTanked);
-	rowPanel.GetChild(5).text = Math.round(data.heroDamage);
-	rowPanel.GetChild(6).text = Math.round(data.buildingDamage);
-	rowPanel.GetChild(7).text = data.creepsKilled;
+	
+	
+	$.CreatePanel('Label', rowPanel.GetChild(2), 'kills');
+	rowPanel.GetChild(2).GetChild(0).text = data.kills;
+	$.CreatePanel('Label', rowPanel.GetChild(3), 'kills');
+	rowPanel.GetChild(3).GetChild(0).text = data.deaths;
+	$.CreatePanel('Label', rowPanel.GetChild(4), 'kills');
+	rowPanel.GetChild(4).GetChild(0).text = Math.round(data.damageTanked);
+	$.CreatePanel('Label', rowPanel.GetChild(5), 'kills');
+	rowPanel.GetChild(5).GetChild(0).text = Math.round(data.heroDamage);
+	$.CreatePanel('Label', rowPanel.GetChild(6), 'kills');
+	rowPanel.GetChild(6).GetChild(0).text = Math.round(data.buildingDamage);
+	$.CreatePanel('Label', rowPanel.GetChild(7), 'kills');
+	rowPanel.GetChild(7).GetChild(0).text = data.creepsKilled;
+	rowPanel.GetChild(2).GetChild(0).AddClass( "GameOverScorefont");
+	rowPanel.GetChild(3).GetChild(0).AddClass( "GameOverScorefont");
+	rowPanel.GetChild(4).GetChild(0).AddClass( "GameOverScorefont");
+	rowPanel.GetChild(5).GetChild(0).AddClass( "GameOverScorefont");
+	rowPanel.GetChild(6).GetChild(0).AddClass( "GameOverScorefont");
+	rowPanel.GetChild(7).GetChild(0).AddClass( "GameOverScorefont");
 }
 
 function TeamWin(data)
 {
 		GameUI.SetCameraPitchMin( 24 )
 		GameUI.SetCameraPitchMax( 25 )
+		for (var i = 0; i < 9; i++) {
+			var rowPanel = $("#GameOverRow_" + i);
+			if(rowPanel.GetChild(2).GetChild(0).text===highestKills+"")
+			{
+				rowPanel.GetChild(2).AddClass( "TopGameOverScore");
+				var image = $.CreatePanel('Image', rowPanel.GetChild(2), 'highestKills');
+				image.AddClass('ScoreTrophy')
+				image.SetImage("file://{images}/custom_game/trophies/kills.png");
+			}
+			if(rowPanel.GetChild(3).GetChild(0).text===lowestDeaths+"")
+			{
+				rowPanel.GetChild(3).AddClass( "TopGameOverScore");
+				var image = $.CreatePanel('Image', rowPanel.GetChild(3), 'highestKills');
+				image.AddClass('ScoreTrophy')
+				image.SetImage("file://{images}/custom_game/trophies/deaths.png");
+			}
+			if(rowPanel.GetChild(4).GetChild(0).text===highestDamageTanked+"")
+			{
+				rowPanel.GetChild(4).AddClass( "TopGameOverScore");
+				var image = $.CreatePanel('Image', rowPanel.GetChild(4), 'highestKills');
+				image.AddClass('ScoreTrophy')
+				image.SetImage("file://{images}/custom_game/trophies/tank.png");
+			}
+			if(rowPanel.GetChild(5).GetChild(0).text===highestHeroDamage+"")
+			{
+				rowPanel.GetChild(5).AddClass( "TopGameOverScore");
+				var image = $.CreatePanel('Image', rowPanel.GetChild(5), 'highestKills');
+				image.AddClass('ScoreTrophy')
+				image.SetImage("file://{images}/custom_game/trophies/herodmg.png");
+			}
+			if(rowPanel.GetChild(6).GetChild(0).text===highestBuildingDamage+"")
+			{
+				rowPanel.GetChild(6).AddClass( "TopGameOverScore");
+				var image = $.CreatePanel('Image', rowPanel.GetChild(6), 'highestKills');
+				image.AddClass('ScoreTrophy')
+				image.SetImage("file://{images}/custom_game/trophies/tower.png");
+			}
+			if(rowPanel.GetChild(7).GetChild(0).text===highestCreepsKilled+"")
+			{
+				rowPanel.GetChild(7).AddClass( "TopGameOverScore");
+				var image = $.CreatePanel('Image', rowPanel.GetChild(7), 'highestKills');
+				image.AddClass('ScoreTrophy')
+				image.SetImage("file://{images}/custom_game/trophies/creeps.png");
+			}
+		}
 
 	if( data.team_number== 3)
 	{
