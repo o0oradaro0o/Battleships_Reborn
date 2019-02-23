@@ -24,6 +24,11 @@ playerItemHist={}
 playerSaleHist={}
 playerBoatHist={}
 DisconnectKicked={}
+DamageTanked={}
+HeroDamage={}
+BuildingDamage={}
+
+
 winner=""
 settingsString=""
 name_lookup = {}
@@ -74,6 +79,34 @@ end
 
 function storage:SetTideKillers(tk)
 	 tideKiller=tk
+end
+function storage:SetTanked(data)
+	DamageTanked=data
+end
+function storage:SetHeroDmg(data)
+	HeroDamage=data
+end
+function storage:SetBuildingDamage(data)
+	BuildingDamage=data
+end
+
+function storage:GetTanked(pid)
+	if DamageTanked[pid] ~= nil then
+		return DamageTanked[pid]
+	end
+	return "none"
+end
+function storage:GetHeroDmg(pid)
+	if HeroDamage[pid] ~= nil then
+		return HeroDamage[pid]
+	end
+	return "none"
+end
+function storage:GetBuildingDamage(pid)
+	if BuildingDamage[pid] ~= nil then
+		return BuildingDamage[pid]
+	end
+	return "none"
 end
 
 function storage:GetVersion()

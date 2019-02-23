@@ -87,6 +87,9 @@ function BuildPlayersArray()
                     lh = PlayerResource:GetLastHits(playerID),
                     -- Item List
                     bo="",
+                    damageTanked = storage:GetTanked(playerID),
+                    buildingDamage = storage:GetBuildingDamage(playerID),
+                    creepsKilled = storage:GetHeroDmg(playerID),
                     buildOrder=storage:GetPlayerHist(playerID),
                     saleOrder=storage:GetPlayerSaleHist(playerID),
                     boatOrder=storage:GetPlayerBoatHist(playerID)

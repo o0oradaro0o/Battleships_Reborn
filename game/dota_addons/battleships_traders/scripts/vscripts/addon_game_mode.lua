@@ -1146,7 +1146,10 @@ function CBattleship8D:OnThink()
           Notifications:TopToAll({text="#spys_end", duration=4.0, style={color="#CC33FF",  fontSize="30px;"}, continue=true})
 
 
-        end
+				end
+				local goodDisconnected = 0
+				local badDisconnected = 0
+
         for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
           if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 then
 
@@ -1213,11 +1216,15 @@ function CBattleship8D:OnThink()
                 ----print('disconnect time: ' .. g_DisconnectTime[hero])
               else
                 g_DisconnectTime[hero]=1
-              end
+							end
+							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS and g_DisconnectTime[hero]>4 then
+								goodDisconnected=goodDisconnected+1
+              elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS and g_DisconnectTime[hero]>4 then
+								badDisconnected=badDisconnected+1
+							end
+								
               if g_DisconnectTime[hero]==180 or g_DisconnectTime[hero]==181 then
                 Notifications:TopToAll({text="#player_kickable", duration=6.0, style={color="#800000",  fontSize="30px;"}})
-
-
               end
               if g_DisconnectTime[hero]>180 or hero:HasOwnerAbandoned() then
                 ----print('bigger than 180')
@@ -1368,8 +1375,13 @@ function CBattleship8D:OnThink()
               end
             end
 
-          end
-        end
+					end
+				end
+				if  g_PlayerCountSouth ~= nil and goodDisconnected==g_PlayerCountSouth and g_PlayerCountSouth>0 then
+					setupWin(DOTA_TEAM_BADGUYS)
+				elseif g_PlayerCountNorth ~= nil and badDisconnected==g_PlayerCountNorth and g_PlayerCountNorth>0 then
+					setupWin(DOTA_TEAM_GOODGUYS)
+				end
       end
       HandleTideAbil()
 
@@ -4867,25 +4879,6 @@ function RemoveAndDeleteItem(hero,item)
 end
 
 function setupWin(winner)
-	local papa_place = Vector(-44,-4349,5)
-	if winner == DOTA_TEAM_BADGUYS then
-		storage:SetEmpGoldHist(g_EmpGoldArray)
-		GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
-		storage:SetWinner("North")
-		GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
-		GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
-		papa_place = Vector(-244,4349,5)
-		GameRules:SetSafeToLeave( true )
-	elseif winner == DOTA_TEAM_GOODGUYS then
-  	storage:SetEmpGoldHist(g_EmpGoldArray)
-
-  	GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
-  	storage:SetWinner("South")
-  	GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
-  	GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
-
-  	GameRules:SetSafeToLeave( true )	
-  end
 
   local radiantPosition = 0
   local direPosition = 5
@@ -4923,6 +4916,31 @@ function setupWin(winner)
     }
 
     CustomGameEventManager:Send_ServerToAllClients("AddGameOverPlayerData", playerData)
+  end
+
+
+
+	local papa_place = Vector(-44,-4349,5)
+	if winner == DOTA_TEAM_BADGUYS then
+		storage:SetEmpGoldHist(g_EmpGoldArray)
+		storage:SetTanked(g_DamageTanked)
+		storage:SetHeroDmg(g_HeroDamage)
+		storage:SetBuildingDamage(g_BuildingDamage)
+		GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
+		storage:SetWinner("North")
+		GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
+		GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
+		papa_place = Vector(-244,4349,5)
+		GameRules:SetSafeToLeave( true )
+	elseif winner == DOTA_TEAM_GOODGUYS then
+  	storage:SetEmpGoldHist(g_EmpGoldArray)
+
+  	GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
+  	storage:SetWinner("South")
+  	GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+  	GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
+
+  	GameRules:SetSafeToLeave( true )	
   end
 
 	local winnerData = {
