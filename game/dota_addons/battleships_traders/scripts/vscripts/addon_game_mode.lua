@@ -1370,9 +1370,9 @@ function CBattleship8D:OnThink()
 
 					end
 				end
-				if  g_PlayerCountSouth ~= nil and goodDisconnected==g_PlayerCountSouth and g_PlayerCountSouth>0 then
+				if  g_PlayerCountSouth ~= nil and goodDisconnected == g_PlayerCountSouth and g_PlayerCountSouth>0 then
 					setupWin(DOTA_TEAM_BADGUYS)
-				elseif g_PlayerCountNorth ~= nil and badDisconnected==g_PlayerCountNorth and g_PlayerCountNorth>0 then
+				elseif g_PlayerCountNorth ~= nil and badDisconnected == g_PlayerCountNorth and g_PlayerCountNorth>0 then
 					setupWin(DOTA_TEAM_GOODGUYS)
 				end
       end
@@ -1380,10 +1380,9 @@ function CBattleship8D:OnThink()
 
       if g_MainTimerTickCount % 2 == 0 then
         reapplyWP()
-
       end
 
-      if g_MainTimerTickCount % 3 == 0 and g_CoOpMode==1 then
+      if g_MainTimerTickCount % 3 == 0 and g_CoOpMode == 1 then
         HandleCoOp()
       end
 
