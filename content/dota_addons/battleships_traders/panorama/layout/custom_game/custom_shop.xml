@@ -2749,14 +2749,11 @@
 	<Image class="Toggled" src="file://{images}/items/hull_sail_one_combo_bow.png" />	 
 		 
         </Panel>
-			<Panel hittest="false" id="ScoreBoardFinalholder" >
+			<Panel hittest="false" id="ScoreBoardFinalholder" class="ScoreboardHidden" >
 				
-			<Panel hittest="false" class="ScoreboardFinal" >		
-				<Panel hittest="false" class="WinOrLoseHolder" >
-					<Label id="WinOrLose" text="You Win!">  </Label>
-				</Panel>
+			<Panel hittest="false" class="ScoreboardFinal" >
 
-				<Panel hittest="false" class="LeftRightFlow">
+				<Panel hittest="false" class="HeaderRow">
 					<Label id="GameOverNorthHeader" class="TeamNameGameOverLabel" text="North Empire" />
 					<Label class="GameOverKillsHeader" text="Kills" />
 					<Label class="GameOverDeathsHeader" text="Deaths" />
@@ -2831,7 +2828,7 @@
 					<Label text="" />
 				</Panel>				
 
-				<Panel hittest="false" class="LeftRightFlow">
+				<Panel hittest="false" class="HeaderRow">
 					<Label id="GameOverSouthHeader" class="TeamNameGameOverLabel" text="South Empire" />
 					<Label class="GameOverKillsHeader" text="Kills" />
 					<Label class="GameOverDeathsHeader" text="Deaths" />

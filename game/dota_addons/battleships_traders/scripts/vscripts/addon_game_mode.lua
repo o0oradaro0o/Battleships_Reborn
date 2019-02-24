@@ -373,6 +373,7 @@ function Precache( context )
   PrecacheResource( "model", "models/bad_ancient_ambient_blast", context )
   PrecacheResource( "model", "models/heroes/tidehunter/tidehunter.vmdl", context )
   PrecacheResource( "model", "models/props_wildlife/wildlife_birdlarge001.vmdl", context )
+  PrecacheResource( "model", "models/items/courier/nexon_turtle_15_red/nexon_turtle_15_red_flying.vmdl", context )
 
 
   PrecacheResource( "model", "models/spin_one", context )
@@ -512,15 +513,11 @@ function Precache( context )
 
 end
 
-
-
 -- Create the game mode when we activate
 function Activate()
   GameRules.battleship = CBattleship8D()
   GameRules.battleship:InitGameMode()
 end
-
-
 
 function CBattleship8D:InitGameMode()
 
@@ -931,9 +928,6 @@ function CBattleship8D:OnThink()
           become_boat(hero,"npc_dota_hero_ember_spirit")
           
 				end
-				
-				
-        RemoveWearables( hero )
       end
     end
   end
@@ -978,7 +972,6 @@ function CBattleship8D:OnThink()
               ParticleManager:SetParticleControl(rangeParticle, 0, tower:GetAbsOrigin())
               ParticleManager:SetParticleControl(rangeParticle, 1, Vector(1170, 0, 0))
             end
-
           end
         end
         Notifications:TopToAll({text="#Welcome", duration=6.0, style={color="#58ACFA",  fontSize="40px;"}})
@@ -1535,7 +1528,6 @@ function CBattleship8D:OnNPCSpawned(keys)
         npc:SetOriginalModel( "models/noah_boat.vmdl" )
       end
       if npc:IsRealHero() then
-        RemoveWearables( npc )
         AttachCosmetics(npc)
         stopPhysics(npc)
          if string.match(npc:GetName(),"razor") then
@@ -2426,7 +2418,6 @@ function CBattleship8D:HandleEmpGold()
 		  end
   
 		end
-		RemoveWearables( creature )
 		creature:SetRespawnsDisabled(true)
 		creature:MoveToPosition( Vector(60,-5568,0))
 	  else
@@ -2779,7 +2770,6 @@ function CBattleship8D:HandleEmpGold()
 			abil4:SetLevel(2)
 			end
 			creature:SetPhysicalArmorBaseValue(20+g_TidehunterLevel*3)
-		  RemoveWearables( creature )
 		  creature:SetRespawnsDisabled(true)
 		end
 		GameRules:SendCustomMessage("#north_tide", DOTA_TEAM_GOODGUYS, 0)
@@ -2823,7 +2813,6 @@ function CBattleship8D:HandleEmpGold()
 		  end
   
 			creature:SetPhysicalArmorBaseValue(20+g_TidehunterLevel*3)
-		  RemoveWearables( creature )
 		  creature:SetRespawnsDisabled(true)
 		end
 		Notifications:TopToAll({hero="npc_dota_hero_tidehunter", imagestyle="portrait", continue=true})
@@ -3510,7 +3499,6 @@ function CBattleship8D:HandleEmpGold()
 		local id = hero:GetPlayerOwnerID()
   
 		if id == plyID then
-		  RemoveWearables( hero )
 		  AttachCosmetics(hero)
 		  fixAbilities(hero)
 		  if string.match(hero:GetName(),"razor") then
@@ -3834,38 +3822,19 @@ function fixAbilities(hero)
   
   
   function spawnTide()
-	spawnLocation = Entities:FindByName( nil, "tide_spawn")
-	i = 0
-	while  1>i do
-	  creature = CreateUnitByName( "npc_dota_creature_tidehunter" , spawnLocation:GetAbsOrigin() + Vector(-300 + i * 100,0,0), true, nil, nil, 4 )
-		g_TidehunterEnt=creature
-		g_TidehunterEnt:CreatureLevelUp(g_TidehunterLevel)
-	  i = i + 1
-	end
-	Notifications:TopToAll({hero="npc_dota_hero_tidehunter", imagestyle="portrait", continue=true})
-	Notifications:TopToAll({text="#spawn_tide", duration=5.0, style={color="#80BB44",  fontSize="50px;"}, continue=true})
-  
-  
+    	local spawnLocation = Entities:FindByName( nil, "tide_spawn")
+      creature = CreateUnitByName( "npc_dota_creature_tidehunter" , spawnLocation:GetAbsOrigin(), true, nil, nil, 4 )
+    	g_TidehunterEnt=creature
+    	g_TidehunterEnt:CreatureLevelUp(g_TidehunterLevel)
+    	Notifications:TopToAll({hero="npc_dota_hero_tidehunter", imagestyle="portrait", continue=true})
+    	Notifications:TopToAll({text="#spawn_tide", duration=5.0, style={color="#80BB44",  fontSize="50px;"}, continue=true})
   end
   
   function spawnCop()
-	spawnLocation = Entities:FindByName( nil, "cop_spawn")
-	i = 0
-	while  1>i do
-	  creature = CreateUnitByName( "npc_dota_creature_cop" , spawnLocation:GetAbsOrigin() + Vector(-300 + i * 100,0,0), true, nil, nil, 4 )
-	  creature:CreatureLevelUp(g_TidehunterLevel)
-	  i = i + 1
-	end
-  
-  end
-  
-  
-  
-  function RemoveWearables( hero )
-	-- Setup variables
-  
-  end
-  
+	  -- local spawnLocation = Entities:FindByName( nil, "cop_spawn")
+	  -- creature = CreateUnitByName( "npc_dota_creature_cop" , spawnLocation:GetAbsOrigin(), true, nil, nil, 4 )
+	  -- creature:CreatureLevelUp(g_TidehunterLevel)
+  end  
   
   function UnstickPlayer(eventSourceIndex, args)
 	----print("in unstick")

@@ -1344,34 +1344,34 @@ function TeamWin(data)
 			}
 		}
 
-	if( data.team_number== 3)
-	{
-		if(Game.GetLocalPlayerInfo().player_team_id==3)
-		{
-			$( "#WinOrLose" ).text = $.Localize("#winner")
-		}
-		else
-		{
-			$( "#WinOrLose" ).text = $.Localize("#loser")
-		}
-		$.Schedule( .1, SetNorth );
-	}
-	else if(data.team_number== 2)
-	{
-		if(Game.GetLocalPlayerInfo().player_team_id==2)
-		{
-			$( "#WinOrLose" ).text = $.Localize("#winner")
-		}
-		else
-		{
-			$( "#WinOrLose" ).text = $.Localize("#loser")
-		}
-		$.Schedule( .1, SetSouth );
-	}
-		$( "#ScoreBoardFinalholder" ).style.visibility="visible";
+	// if( data.team_number== 3)
+	// {
+	// 	if(Game.GetLocalPlayerInfo().player_team_id==3)
+	// 	{
+	// 		$( "#WinOrLose" ).text = $.Localize("#winner")
+	// 	}
+	// 	else
+	// 	{
+	// 		$( "#WinOrLose" ).text = $.Localize("#loser")
+	// 	}
+	// 	$.Schedule( .1, SetNorth );
+	// }
+	// else if(data.team_number== 2)
+	// {
+	// 	if(Game.GetLocalPlayerInfo().player_team_id==2)
+	// 	{
+	// 		$( "#WinOrLose" ).text = $.Localize("#winner")
+	// 	}
+	// 	else
+	// 	{
+	// 		$( "#WinOrLose" ).text = $.Localize("#loser")
+	// 	}
+	// 	$.Schedule( .1, SetSouth );
+	// }
+		$( "#ScoreBoardFinalholder" ).SetHasClass( "endgame", true );
 	$( "#ScoreBoardFinalholder" ).SetParent($( "#ScoreBoardFinalholder" ).GetParent().GetParent().GetParent().GetParent());
 	$.Schedule( .01, spinCam );
-	
+	 
 }
 
 function spinCam()
@@ -1382,8 +1382,7 @@ function spinCam()
 }
 
 function SetSouth()
-{
-			
+{			
 			if($.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd"))
 			{
 				var vicLabel = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").FindChildTraverse("VictoryLabel");

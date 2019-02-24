@@ -1921,50 +1921,55 @@ horizontal-align: center;
 {
 	visibility: collapse;
 }
-.WinOrLoseHolder
-{
-	border-radius: 10px;
-	horizontal-align: center;
-	text-align: center;
-	color: white;
-    font-size: 90px;
-    font-weight: bold;
-	text-shadow: 4px 4px 4px #121212;
-width: 100%;
-	text-align: center;
-}
-#WinOrLose
-{
-	margin: 5px;
-	text-shadow: 4px 4px 4px #121212;
-	color: white;
-	font-weight: bold;
-    font-size: 30px;
-	width: 100%;
-	text-align: center;
-}
 #ScoreBoardFinalholder
 {
-	visibility: collapse;
+	visibility: visible;
 	flow-children: down;
-	height: 80.5%;
+	height: fit-children;
 	width: 100%;
 	horizontal-align: center;
-	vertical-align: bottom;
+	vertical-align: top;
+	margin-top: 100px;
 	position: 0 0px -.01px;
-	transition: height 0.5s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
 	border-radius: 10px;
- background-color: gradient( linear, 0% 0%, 0% 100%, from( #40354555 ), color-stop( 0.25, #22292e77 ), color-stop( 0.5, #5A454588 ), color-stop( 0.75, #22246e99 ), to( #504545aa ) );
+ 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #40354555 ), color-stop( 0.25, #22292e77 ), color-stop( 0.5, #5A454588 ), color-stop( 0.75, #22246e99 ), to( #504545aa ) );
 }
+
+.ScoreboardHidden
+{
+	transition-property: opacity, transform;
+    transition-duration: 0.5s;
+	opacity: 0;
+	transform: scaleX(0) scaleY(0) translatey(-50px);
+}
+
+.endgame
+{
+	opacity: 1;
+	transform: scaleX(1) scaleY(1);
+}
+
+.endgame #ScoreBoardFinalholder
+{
+	opacity: 1;
+	transform: scaleX(1) scaleY(1);
+}
+
 .ScoreboardFinal
 {
 	flow-children: down;
 	horizontal-align: center;
 	vertical-align: bottom;
-	height: 925px;
+	height: fit-children;
 	width: 1300px;
 	background-color: #111920bb;
 	background-size: 100%;
+}
+.HeaderRow
+{
+	flow-children: right;
+	vertical-align: center;
+	margin-top: 4px;
 }
 .TeamNameGameOverLabel
 {
@@ -2010,9 +2015,9 @@ width: 100%;
 .GameOverRow
 {
 	flow-children: right;
-	margin-top: 5px;
+	margin-top: 2px;	
 	width: 100%;
-	height: 64px;
+	height: 48px;
 	background-color: #111920bb;
 	border-top: 1px solid #ffffff05;
 	border-bottom: 1px solid #ffffff03;
@@ -2024,8 +2029,8 @@ width: 100%;
 .GameOverAvatar
 {
 	margin-left: 20px;
-	width: 64px;
-  height: 64px;
+	width: 48px;
+  height: 48px;
 }
 .GameOverUsername
 {

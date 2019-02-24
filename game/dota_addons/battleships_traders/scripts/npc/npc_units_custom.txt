@@ -3776,11 +3776,6 @@
 	//=================================================================
 	"npc_dota_creature_cop"
 	{
-	
-	"precache"
-			{
-				"model"							"models/items/courier/nexon_turtle_15_red/nexon_turtle_15_red_flying.vmdl"// Model.
-			}
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
@@ -3795,7 +3790,7 @@
 		//----------------------------------------------------------------
 		
 		"Ability1"					"give_all_vision"			// Ability 1.
-		"Ability2"					"take_contracts"		// Ability 2.
+		"Ability2"					""		// Ability 2.
 		"Ability3"					""			// 
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.

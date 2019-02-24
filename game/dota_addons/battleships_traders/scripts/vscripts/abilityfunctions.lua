@@ -1980,11 +1980,12 @@ end
 function visionGrant(args)
 	local casterUnit = args.caster
 
-	local creature
-	creature1 = CreateUnitByName("dummy_vision800", casterUnit:GetOrigin(), true, nil, nil, DOTA_TEAM_GOODGUYS)
-	creature1:AddNewModifier(creature, nil, "modifier_kill", {duration = .1})
-	creature2 = CreateUnitByName("dummy_vision800", casterUnit:GetOrigin(), true, nil, nil, DOTA_TEAM_BADGUYS)
-	creature2:AddNewModifier(creature, nil, "modifier_kill", {duration = .1})
+	-- THIS CRASHES THE GAME
+	-- local creature
+	-- creature1 = CreateUnitByName("dummy_vision800", casterUnit:GetOrigin(), true, nil, nil, DOTA_TEAM_GOODGUYS)
+	-- creature1:AddNewModifier(creature, nil, "modifier_kill", {duration = .1})
+	-- creature2 = CreateUnitByName("dummy_vision800", casterUnit:GetOrigin(), true, nil, nil, DOTA_TEAM_BADGUYS)
+	-- creature2:AddNewModifier(creature, nil, "modifier_kill", {duration = .1})
 
 	local allUnits =
 		FindUnitsInRadius(
@@ -2010,6 +2011,8 @@ function visionGrant(args)
 		0,
 		false
 	)
+
+	-- Why is this in the vision providing function??
 	for k, v in pairs(allUnits2) do
 		allUnits[k] = v
 	end
