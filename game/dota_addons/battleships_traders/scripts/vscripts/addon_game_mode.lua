@@ -906,7 +906,7 @@ end
 function CBattleship8D:OnThink()
   if g_MainTimerTickCount < 500 then
     for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero_abad*")) do
-      if hero ~= nil and hero:IsOwnedByAnyPlayer() and string.match(hero:GetName(),"abaddon") and hero.changed==nil then
+			if hero ~= nil and hero:IsOwnedByAnyPlayer() and string.match(hero:GetName(),"abaddon") and hero.changed==nil then
 				hero.changed=1
 				g_DamageTanked[hero:GetPlayerID()]=0
 				g_DamageDealt[hero:GetPlayerID()]=0
@@ -926,7 +926,6 @@ function CBattleship8D:OnThink()
 					hero:SetGold(0, false)
 					g_HeroGoldArray[hero:GetPlayerOwnerID()] = 6000
           become_boat(hero,"npc_dota_hero_ember_spirit")
-          
 				end
       end
     end

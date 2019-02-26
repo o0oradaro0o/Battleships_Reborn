@@ -8,7 +8,10 @@ var starttime = 0;
 var yaw = 0;
 var NewShopUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop");
 var topBarGoodCont = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar").FindChildTraverse("TopBarRadiantTeam").FindChildTraverse("TopBarRadiantPlayers").FindChildTraverse("RadiantTeamScorePlayers").FindChildTraverse("TopBarRadiantPlayersContainer");
+
 var topBarBadCont = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar").FindChildTraverse("TopBarDireTeam").FindChildTraverse("TopBarDirePlayers").FindChildTraverse("DireTeamScorePlayers").FindChildTraverse("TopBarDirePlayersContainer");
+
+var buttontext = ""
 
 var g_BoatName = ""
 var catigoriesUI;
@@ -1343,33 +1346,35 @@ function TeamWin(data)
 				image.SetImage("file://{images}/custom_game/trophies/creeps.png");
 			}
 		}
-
-	// if( data.team_number== 3)
-	// {
-	// 	if(Game.GetLocalPlayerInfo().player_team_id==3)
-	// 	{
-	// 		$( "#WinOrLose" ).text = $.Localize("#winner")
-	// 	}
-	// 	else
-	// 	{
-	// 		$( "#WinOrLose" ).text = $.Localize("#loser")
-	// 	}
-	// 	$.Schedule( .1, SetNorth );
-	// }
-	// else if(data.team_number== 2)
-	// {
-	// 	if(Game.GetLocalPlayerInfo().player_team_id==2)
-	// 	{
-	// 		$( "#WinOrLose" ).text = $.Localize("#winner")
-	// 	}
-	// 	else
-	// 	{
-	// 		$( "#WinOrLose" ).text = $.Localize("#loser")
-	// 	}
-	// 	$.Schedule( .1, SetSouth );
-	// }
 		$( "#ScoreBoardFinalholder" ).SetHasClass( "endgame", true );
-	$( "#ScoreBoardFinalholder" ).SetParent($( "#ScoreBoardFinalholder" ).GetParent().GetParent().GetParent().GetParent());
+		$( "#ScoreBoardFinalholder" ).SetParent($( "#ScoreBoardFinalholder" ).GetParent().GetParent().GetParent().GetParent());
+
+	
+		if( data.team_number== 3)
+	{
+		if(Game.GetLocalPlayerInfo().player_team_id==3)
+		{
+			buttontext = $.Localize("#winner")
+		}
+		else
+		{
+			 buttontext = $.Localize("#loser")
+		}
+		$.Schedule( .1, SetNorth );
+	}
+	else if(data.team_number== 2)
+	{
+			if(Game.GetLocalPlayerInfo().player_team_id==2)
+		{	
+			buttontext = $.Localize("#winner")
+		}
+		else
+		{
+			buttontext = $.Localize("#loser")
+		}
+		$.Schedule( .1, SetSouth );
+	}
+		
 	$.Schedule( .01, spinCam );
 	 
 }
@@ -1390,11 +1395,12 @@ function SetSouth()
 				vicBak.style.visibility="collapse"
 				var vicHoldder = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer");
 				vicHoldder.style.visibility="visible"
-				vicHoldder.style.marginTop = "-220px"
+				vicHoldder.style.marginTop = "-250px"
 				vicLabel.text = "South Empire Wins!"
-				vicLabel.style.fontSize="80px"
+				vicLabel.style.fontSize="40px"
 				var continueButton = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("ContinueButton");
-				continueButton.style.marginBottom ="5px"
+				//continueButton.style.marginBottom ="5px"
+				continueButton.GetChild(0).text = buttontext
 				$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").style.height="100%"
 			}
 		 $.Schedule( .1, SetSouth );
@@ -1411,11 +1417,12 @@ function SetNorth()
 					$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").style.visibility="visible";
 					var vicHoldder = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer");
 					vicHoldder.style.visibility="visible"
-					vicHoldder.style.marginTop = "-220px"
+					vicHoldder.style.marginTop = "-250px"
 					vicLabel.text = "North Empire Wins!"
-				vicLabel.style.fontSize="80px"
+				vicLabel.style.fontSize="40px"
 				var continueButton = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("ContinueButton");
-				continueButton.style.marginBottom ="5px"
+				//continueButton.style.marginBottom ="5px"
+				continueButton.GetChild(0).text = buttontext
 				$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").style.height="100%"
 			}
 		 $.Schedule( .1, SetNorth );

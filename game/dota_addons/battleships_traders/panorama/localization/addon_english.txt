@@ -3199,7 +3199,7 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"DOTA_Tooltip_target_mod_Description"                                             ""
 		
 		"remove_player"		"<font color='#800000'> A player is being removed from the game. Their gold and 75 percent of their items and boat value will be distributed with the empire gold </font>"
-		"wrap_up"			"<font color='#58ACFA'> Questions? Comments? Bugs? tell us in </font><font color='#BFA300'>/r/dota2bships</font><font color='#58ACFA'> or email us at</font><font color='#BFA300'> dota2bships@gmail.com </font> "
+		"wrap_up"			"<font color='#58ACFA'> Questions? Comments? Bugs? Find us on Discord (link on the loading page) or </font><font color='#BFA300'>/r/dota2bships</font><font color='#58ACFA'> or email us at</font><font color='#BFA300'> dota2bships@gmail.com </font> "
 		
 		
 		"back_to_items" "Back to Items"
@@ -3249,8 +3249,10 @@ Recent Balance Changes 2/7/2019
 
         "cannon_range"                                               "Improved Spotters"
 		"ball_lightning_lua_max_distance"                            "MAX DISTANCE:"
-		"winner" "You won!"
-		"loser" "You Were Defeated"
+		"winner" "You Were Victorious!
+Continue"
+		"loser" "You Were Defeated
+Continue"
 		"BestCreepsKiller" "Things Killed"
 		"BestBuildingDamager""Damage Dealt to Buildings"
 		"BestHeroHitter""Damage Dealt to Heroes"
