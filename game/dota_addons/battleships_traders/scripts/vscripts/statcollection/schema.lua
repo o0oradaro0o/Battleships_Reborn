@@ -47,7 +47,8 @@ function BuildGameArray()
     game.empGoldHist=storage:GetEmpGoldHist()		-- Team advantage history
     game.wn=storage:getWinner()			-- Team winner
     game.settings=storage:getGameSettings()
-    game.mapVersion=6
+    game.combatLog=storage:GetCombatLog()
+    game.mapVersion=7
     --game.th=storage:GetTideKillers()
 
     return game

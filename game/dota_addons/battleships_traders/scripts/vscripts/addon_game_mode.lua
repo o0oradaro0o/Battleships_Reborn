@@ -143,6 +143,7 @@ g_TicksSinceEmpireGold = 0
 g_EmpGoldArray={}
 
 g_tideKillerArray={}
+g_combatLogArray={}
 
 g_HeroKills = {}
 g_HeroHP = {}
@@ -1616,9 +1617,9 @@ function AttachCosmetics(hero)
 		elseif steamID32 == g_borgel then
 			hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/borgel.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 			ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
-		else
-			hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/genericHat.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
-			ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
+		-- else
+		-- 	hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/genericHat.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+		-- 	ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
 		end
 		
 		
@@ -2636,7 +2637,8 @@ function CBattleship8D:HandleEmpGold()
 		----print( "Bad Tower, Good guys gold per tick is now: " .. g_GoldPerTickSouth )
 		Notifications:TopToAll({text="#north_tower_died", duration=5.0, style={color="#FF6600",  fontSize="18px;"}})
 		Notifications:TopToAll({text=tostring(100), duration=5.0, style={color="#FFD700",  fontSize="18px;"}, continue=true})
-  
+		
+		
   
 		for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
 		  if hero ~= nil and hero:IsOwnedByAnyPlayer() then
@@ -2644,7 +2646,12 @@ function CBattleship8D:HandleEmpGold()
 			  hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + 100, true)
 			  hero:SetGold(0, false)
 			  g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + 100
-			  g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 100
+				g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 100
+				table.insert(g_combatLogArray,{
+					killer_name=PlayerResource:GetPlayerName(hero:GetPlayerOwnerID()),
+					killed_name="Tower",
+					Game_time=math.floor(GameRules:GetGameTime()/60+0.5),
+				})
 			end
 		  end
 		end
@@ -2660,7 +2667,12 @@ function CBattleship8D:HandleEmpGold()
 			  hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + 100, true)
 			  hero:SetGold(0, false)
 			  g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 100
-			  g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + 100
+				g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + 100
+				table.insert(g_combatLogArray,{
+					killer_name=PlayerResource:GetPlayerName(hero:GetPlayerOwnerID()),
+					killed_name="Dock",
+					Game_time=math.floor(GameRules:GetGameTime()/60+0.5),
+				})
 			end
 		  end
 		end
@@ -2777,7 +2789,7 @@ function CBattleship8D:HandleEmpGold()
   
 		table.insert(g_tideKillerArray,{
 		  Killer_Team="North",
-		  Game_time=GameRules:GetGameTime()/60+0.5,
+		  Game_time=math.floor(GameRules:GetGameTime()/60+0.5),
 		})
 		tideKiller=tideKiller .. "N" .. math.floor(GameRules:GetGameTime()/60+0.5)
 		storage:SetTideKillers(tideKiller)
@@ -2817,7 +2829,7 @@ function CBattleship8D:HandleEmpGold()
 		Notifications:TopToAll({text="#south_tide", duration=5.0, style={color="#44BB44",  fontSize="50px;"}, continue=true})
 		table.insert(g_tideKillerArray,{
 		  Killer_Team="South",
-		  Game_time=GameRules:GetGameTime()/60+0.5,
+		  Game_time=math.floor(GameRules:GetGameTime()/60+0.5),
 		})
 		tideKiller=tideKiller .. "S" .. math.floor(GameRules:GetGameTime()/60+0.5)
 		storage:SetTideKillers(tideKiller)
@@ -2855,14 +2867,19 @@ function CBattleship8D:HandleEmpGold()
 			end
     end
 	  local killerName="Unknown"
-	  local KilledName="Unknown"
+	  local killedName="Unknown"
 	  if killedUnit:GetPlayerID()~=nil then
 		killedName=PlayerResource:GetPlayerName( killedUnit:GetPlayerID())
 	  end
   
 	  if killerEntity:IsRealHero() and killerEntity:GetTeamNumber()~=killedUnit:GetTeamNumber() then
 		if killerEntity:GetPlayerID()~=nil then
-		  killerName=PlayerResource:GetPlayerName( killerEntity:GetPlayerID())
+			killerName=PlayerResource:GetPlayerName( killerEntity:GetPlayerID())
+			table.insert(g_combatLogArray,{
+					killer_name=killerName,
+					killed_name=killedName,
+					Game_time=math.floor(GameRules:GetGameTime()/60+0.5),
+				})
 		end
   
 		if killedUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
@@ -2937,7 +2954,11 @@ function CBattleship8D:HandleEmpGold()
   
 		  Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {text="#got_kill_four", duration=10.0, style={color="#8888FF",  fontSize="18px;"}, continue=true})
 		end
-	  else
+		else
+			table.insert(g_combatLogArray,{
+					killed_name=killedName,
+					Game_time=math.floor(GameRules:GetGameTime()/60+0.5),
+				})
   
 		if killedUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 		  Notifications:BottomToTeam(DOTA_TEAM_GOODGUYS, {hero=killedUnit:GetName(), style={height="15px", width="20px",  marginRight="3px"}, imagestyle="landscape", duration=10.0})
@@ -2990,7 +3011,7 @@ function CBattleship8D:HandleEmpGold()
   
 	  if killedUnit:IsRealHero() and killedUnit:GetPlayerID()~=nil then
 		Timers:CreateTimer(.1, function()
-		killedUnit:SetTimeUntilRespawn(12+killedUnit:GetLevel()/2-1)
+		killedUnit:SetTimeUntilRespawn(12+killedUnit:GetLevel()/2+g_EmpireGoldCount)
 		end)
 	  end
   
@@ -4888,11 +4909,14 @@ function setupWin(winner)
 
 
 	local papa_place = Vector(-44,-4349,5)
+
+	storage:SetTideKillers(g_tideKillerArray)
+	storage:SetCombatLog(g_combatLogArray)
+	storage:SetTanked(g_DamageTanked)
+	storage:SetHeroDmg(g_HeroDamage)
+	storage:SetBuildingDamage(g_BuildingDamage)
+	storage:SetEmpGoldHist(g_EmpGoldArray)
 	if winner == DOTA_TEAM_BADGUYS then
-		storage:SetEmpGoldHist(g_EmpGoldArray)
-		storage:SetTanked(g_DamageTanked)
-		storage:SetHeroDmg(g_HeroDamage)
-		storage:SetBuildingDamage(g_BuildingDamage)
 		GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
 		storage:SetWinner("North")
 		GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
@@ -4900,7 +4924,6 @@ function setupWin(winner)
 		papa_place = Vector(-244,4349,5)
 		GameRules:SetSafeToLeave( true )
 	elseif winner == DOTA_TEAM_GOODGUYS then
-  	storage:SetEmpGoldHist(g_EmpGoldArray)
 
   	GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
   	storage:SetWinner("South")

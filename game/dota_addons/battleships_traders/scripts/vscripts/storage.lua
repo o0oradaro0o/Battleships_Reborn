@@ -27,6 +27,7 @@ DisconnectKicked={}
 DamageTanked={}
 HeroDamage={}
 BuildingDamage={}
+combatLogArray={}
 
 
 winner=""
@@ -89,6 +90,14 @@ end
 function storage:SetBuildingDamage(data)
 	BuildingDamage=data
 end
+function storage:SetCombatLog(data)
+	combatLogArray=data
+end
+
+function storage:GetCombatLog()
+	return combatLogArray
+end
+
 
 function storage:GetTanked(pid)
 	if DamageTanked[pid] ~= nil then

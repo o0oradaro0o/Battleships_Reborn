@@ -2549,7 +2549,7 @@
 				</Button>
 			</Panel>
                     <Label hittest="false" class="trade_text_title" text="#Right_Mid_Missions" />
-                    <Panel hittest="false" id="mission_hider_" class="mission_guts">
+                    <Panel hittest="false" id="mission_hider_8" class="mission_guts">
                         <Label hittest="false" class="trade_text_subtitle" text="#Mission" />
                         <Panel hittest="false" class="mission_guts">
                             <Button class="tradeBtnMission" onactivate="GiveEasy()" oncontextmenu="GiveEasy()">
