@@ -1380,9 +1380,9 @@
 		"Ability1"					"port_cannons"
 		"Ability2"					"bow_cannon"
 		"Ability3"					"starboard_cannon"
-		"Ability4"					"cannon_dmg"
-		"Ability5"					"cannon_range"
-		"Ability6"					"explosive_shells"
+		"Ability4"					"ironclad_weapon_fire"
+		"Ability5"					"ironclad_heavy_armor"
+		"Ability6"					"ironclad_cannon_barrage"
 
         "ModelScale"        "1"
 		"RingRadius"				"100"
