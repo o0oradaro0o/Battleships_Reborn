@@ -79,9 +79,7 @@
 						<Panel id="UnassignedPlayersContainer" />
 					</Button>						
 				</Panel>
-				<Button id="DiscordButton"  onactivate="ExternalBrowserGoToURL('https://discord.gg/DFc8MBt');" onmouseover="UIShowTextTooltip( Click to join us on Discord!  )"  onmouseout="UIHideTextTooltip()">
-					<Image id="DiscordImage" src="file://{images}/custom_game/game_info/Discord.png" />
-				</Button>
+				
 				<Button id="LockAndStartButton" class="PlayButton" onactivate="OnLockAndStartPressed()">
 					<Label text="#custom_game_team_select_lock_start" />
 				</Button>

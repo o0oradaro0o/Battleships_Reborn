@@ -4107,7 +4107,8 @@ function fixAbilities(hero)
 		  debuffTowers(heroBuying)
 		  heroBuying:SetGold(herogold-cost,true)
 		  heroBuying:SetGold(0,false)
-		  g_HeroGoldArray[heroBuying:GetPlayerOwnerID()]=herogold-cost
+			g_HeroGoldArray[heroBuying:GetPlayerOwnerID()]=herogold-cost
+			EmitSoundOnClient("General.Buy",PlayerResource:GetPlayer(pID))
 		else
 		  EmitSoundOnClient("ui.contract_fail",PlayerResource:GetPlayer(pID))
 		end
@@ -4117,7 +4118,8 @@ function fixAbilities(hero)
 		  healTowers(heroBuying)
 		  heroBuying:SetGold(herogold-cost,true)
 		  heroBuying:SetGold(0,false)
-		  g_HeroGoldArray[heroBuying:GetPlayerOwnerID()]=herogold-cost
+			g_HeroGoldArray[heroBuying:GetPlayerOwnerID()]=herogold-cost
+			EmitSoundOnClient("General.Buy",PlayerResource:GetPlayer(pID))
 		else
 		  EmitSoundOnClient("ui.contract_fail",PlayerResource:GetPlayer(pID))
 		end

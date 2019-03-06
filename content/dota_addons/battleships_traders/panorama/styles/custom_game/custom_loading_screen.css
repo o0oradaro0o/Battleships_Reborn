@@ -498,3 +498,58 @@ Label
 	text-align: center;
 	width: 70%;
 }
+#DiscordButton
+{
+	width: 325px;
+	height: 80px;
+	padding: 4px 12px 4px 12px;
+    horizontal-align: center;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #7289DA ), to( #7289DA ) );
+	border-top: 1px solid #2C2F33;
+	border-bottom: 1px solid #2C2F33;
+	border-left: 1px solid #2C2F33; 
+	border-right: 1px solid #2C2F33;
+	border-radius: 8px;
+	animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: 10;
+}
+#DiscordHolder
+{
+	padding: 8px;
+	width: 325px;
+	height: 120px;
+	margin-left:-45px;
+	horizontal-align: center;
+    border-radius: 16px;
+    flow-children: down;
+    background-color: gradient(linear, 0% 0%, 0.1% 0%, from(#111111), color-stop(0.01, #202327), color-stop(0.2, #141619ff), to(#000000dd));
+	margin-top: 52px;
+}
+#DiscordHeader
+{
+	font-size: 24px;
+    font-weight: bold;
+	color: white;
+	horizontal-align: center;
+}
+
+
+#DiscordButton:hover
+{
+	pre-transform-scale2d: 1.01;
+    box-shadow: #000000ff 0px 0px 16px 0px;
+}
+
+#DiscordImage
+{
+	background-size: 100%;
+	horizontal-align: center;
+}
+
+@keyframes 'blinker' {
+    50% {
+        opacity: 0.5;
+    }
+}

@@ -607,8 +607,19 @@ margin-top:300px;
 	vertical-align: bottom;
 	text-shadow: 2px 2px 2px #000000;
 }
+.side_gold_cost_text
+{
+	margin-left:-85px;
+	 margin-bottom:-5px;
+	color: #FFFF99;
+    font-size: 18px;
+    font-weight: bold;
+	vertical-align: bottom;
+	text-shadow: 2px 2px 2px #000000;
+}
 .item_desc_text
 {
+	visibility: collapse;
 	margin-left:20px;
 	width:180px;
 	height: 60px;
@@ -621,6 +632,11 @@ margin-top:300px;
 .item_image
 {
 	width: 80px;
+	height: 60px;
+}
+.side_item_image
+{
+	width: 110px;
 	height: 60px;
 }
 .panelHiderHolder
@@ -783,6 +799,7 @@ background-color: gradient( linear, 0% 0%, 0% 100%, from( #a53333 ),  to( #6E232
 
 .TradeBtnItm
 {
+	overflow: clip;
 	horizontal-align: center;
 	flow-children: right;
 	width: 80px;
@@ -792,7 +809,45 @@ background-color: gradient( linear, 0% 0%, 0% 100%, from( #a53333 ),  to( #6E232
 	 vertical-align: center;
 	 margin: 15px;
 }
+.TradeBtnItm:hover
+{
 
+flow-children: right-wrap;
+	horizontal-align: center;
+	height: 60px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #404040 ), to( #60606e ) );
+	 border: 1px solid grey;
+	 vertical-align: center;
+	 margin: 15px;
+	  
+	 
+}
+
+.SideBtnItm
+{
+	overflow: clip;
+	horizontal-align: center;
+	flow-children: right;
+	width: 80px;
+	height: 60px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #252525 ), to( #42494e ) );
+	 border: 2px solid white;
+	 vertical-align: center;
+	 margin: 15px;
+}
+.SideBtnItm:hover
+{
+
+flow-children: right-wrap;
+	horizontal-align: center;
+	height: 60px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #404040 ), to( #60606e ) );
+	 border: 1px solid grey;
+	 vertical-align: center;
+	 margin: 15px;
+	  
+	 
+}
 .tradeBtnMission
 {
 	horizontal-align: center;
@@ -826,20 +881,7 @@ background-color: gradient( linear, 0% 0%, 0% 100%, from( #a53333 ),  to( #6E232
 	 border: 2px solid white;
 	 margin: 10px;
 }
-.TradeBtnItm:hover
-{
 
-flow-children: right-wrap;
-	horizontal-align: center;
-	width: 240px;
-	height: 60px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #404040 ), to( #60606e ) );
-	 border: 1px solid grey;
-	 vertical-align: center;
-	 margin: 15px;
-	  
-	 
-}
 
 .TradeBtn:active
 {
@@ -957,6 +999,18 @@ horizontal-align: center;
 	flow-children: down;
 	width: 500px;
 	height: 700px;
+	border: 0px solid black;
+   background-color: gradient( linear, 0% 0%, 0% 100%, from( #90858500 ), color-stop( 0.25, #62696e44 ), color-stop( 0.5, #AA959566 ), color-stop( 0.75, #62696e ), to( #908585 ) );
+	horizontal-align: right;
+	visibility: collapse;
+	margin-right: -10px;
+		 border-radius: 10px;
+}
+#side_shop
+{
+	flow-children: down;
+	width: 500px;
+	height: 480px;
 	border: 0px solid black;
    background-color: gradient( linear, 0% 0%, 0% 100%, from( #90858500 ), color-stop( 0.25, #62696e44 ), color-stop( 0.5, #AA959566 ), color-stop( 0.75, #62696e ), to( #908585 ) );
 	horizontal-align: right;

@@ -114,13 +114,19 @@
 				<Panel id="b3" class="learn_button2" onactivate="next()" />
 			</Panel>
 			
+			
 			<Label class="NewsTitle" text="#News" />
 			<Panel id="NewsHolder">
 				<Label class="NewsContent" text="#News_Content" />
 			</Panel>
 		</Panel>
-		
-					
+		<Panel id="DiscordHolder">
+			<Label id="DiscordHeader" html="true" text="Click to join us on Discord!" />
+			<Button id="DiscordButton"  onactivate="ExternalBrowserGoToURL('https://discord.gg/DFc8MBt');" >
+			
+						<Image id="DiscordImage" src="file://{images}/custom_game/game_info/Discord.png" />
+			</Button>
+		</Panel>			
 		
 	</Panel>
 </root>

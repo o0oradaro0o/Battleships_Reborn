@@ -598,12 +598,16 @@ function fillAndShow() {
 			}
 		}
 	}
-	var hide = true;
-	if (Math.abs(heroloc[1]) < 5000 && Math.abs(heroloc[0]) > 1000 && Math.abs(heroloc[0]) < 4000 && closeEnough) {
+	var hide=true;
+	if (Math.abs(heroloc[1]) < 5000 && Math.abs(heroloc[0]) > 1000 && Math.abs(heroloc[0]) < 4000 && closeEnough && $("#side_shop").style.visibility != "visible") {
 		$("#side_shop").style.visibility = "visible";
 		Game.EmitSound("announcer_dlc_bristleback_bris_ann_negative_event_03");
 		$.Msg("showing side shop");
-		hide = false;
+		hide=false;
+	}
+	else if($("#side_shop").style.visibility === "visible")
+	{
+		$("#side_shop").style.visibility = "collapse";
 	}
 	else {
 
@@ -797,6 +801,7 @@ function hideMissionsIfNeeded() {
 		$("#must_be_trader_7").style.height = "170px";
 		$("#must_be_trader_8").style.height = "170px";
 		$("#must_be_trader_9").style.height = "170px";
+		
 	}
 	else {
 		$("#must_be_trader_1").style.height = "0px";

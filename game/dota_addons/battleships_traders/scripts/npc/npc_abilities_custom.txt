@@ -5013,9 +5013,9 @@
 						
 					}
 						"Properties"
-                        {
-                               "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"-300"
-                        }
+           {
+                 "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"-300"
+           }
 					
 				}
 				"checkCliff"

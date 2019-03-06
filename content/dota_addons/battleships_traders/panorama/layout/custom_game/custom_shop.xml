@@ -2278,12 +2278,12 @@
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
                             <Button class="TradeBtnItm" onactivate="buyItem('oneshot_mango', 25)">
-                                <Image class="item_image" src="file://{images}/custom_game/enchanted_mango.png" />
+                                <Image class="item_image" src="file://{images}/custom_game/enchanted_mango.png" onmouseover="DOTAShowAbilityTooltip('item_oneshot_mango')" onmouseout="DOTAHideAbilityTooltip()" />
 								 <Label hittest="false" class="gold_cost_text" text="25  G" />
 								 <Label hittest="false" class="item_desc_text" text="#mango_desc"/>
                             </Button>
 							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_ham', 50)">
-                                <Image class="item_image" src="file://{images}/custom_game/winter_ham.png" />
+                                <Image class="item_image" src="file://{images}/custom_game/winter_ham.png" onmouseover="DOTAShowAbilityTooltip('item_oneshot_ham')" onmouseout="DOTAHideAbilityTooltip()" />
 								 <Label hittest="false" class="gold_cost_text" text="50  G" />
 								 <Label hittest="false" class="item_desc_text" text="#ham_desc"/>
                             </Button>
@@ -2321,12 +2321,12 @@
                         <Panel hittest="false" class="supply_row">
 							
 							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_sand', 50 )" oncontextmenu="buyItem('oneshot_sand', 50 )" >
-                                <Image class="item_image" src="file://{images}/custom_game/dust.png" />
+                                <Image class="item_image" src="file://{images}/custom_game/dust.png" onmouseover="DOTAShowAbilityTooltip('item_oneshot_sand')" onmouseout="DOTAHideAbilityTooltip()" />
 								 <Label hittest="false" class="gold_cost_text" text="50  G" />
 								 <Label hittest="false" class="item_desc_text" text="#dust_desc"/>
                             </Button>
 							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_luck', 77 )" oncontextmenu="buyItem('oneshot_luck', 77 )">
-                                <Image class="item_image" src="file://{images}/custom_game/luck.png" />
+                                <Image class="item_image" src="file://{images}/custom_game/luck.png" onmouseover="DOTAShowAbilityTooltip('item_oneshot_luck')" onmouseout="DOTAHideAbilityTooltip()" />
 								 <Label hittest="false" class="gold_cost_text" text="77  G" />
 								 <Label hittest="false" class="item_desc_text" text="#luck_desc"/>
                             </Button>
@@ -2362,12 +2362,12 @@
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
                             <Button class="TradeBtnItm" onactivate="buyItem('oneshot_info', 50)"  oncontextmenu="buyItem('oneshot_info', 50)">
-                                <Image class="item_image" src="file://{images}/custom_game/recipe_scroll.png" />
+                                <Image class="item_image" src="file://{images}/custom_game/recipe_scroll.png" onmouseover="DOTAShowAbilityTooltip('item_oneshot_info')" onmouseout="DOTAHideAbilityTooltip()" />
 								 <Label hittest="false" class="gold_cost_text" text="50 G  " />
 								 <Label hittest="false" class="item_desc_text" text="#info_desc"/>
                             </Button>
 							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_firecrackers', 0 )" oncontextmenu="buyItem('oneshot_firecrackers', 0 )">
-                                <Image class="item_image" src="file://{images}/custom_game/firecrackers.png" />
+                                <Image class="item_image" src="file://{images}/custom_game/firecrackers.png" onmouseover="DOTAShowAbilityTooltip('item_oneshot_firecrackers')" onmouseout="DOTAHideAbilityTooltip()" />
 								 <Label hittest="false" class="gold_cost_text" text="0  G" />
 								 <Label hittest="false" class="item_desc_text" text="#firecrackers_desc"/>
                             </Button>
@@ -2401,12 +2401,12 @@
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
                             <Button class="TradeBtnItm" onactivate="buyItem('oneshot_brew', 0 )" oncontextmenu="buyItem('oneshot_brew', 0 )">
-                                <Image class="item_image" src="file://{images}/custom_game/brew.png" />
+                                <Image class="item_image" src="file://{images}/custom_game/brew.png" onmouseover="DOTAShowAbilityTooltip('item_oneshot_brew')" onmouseout="DOTAHideAbilityTooltip()" />
 								 <Label hittest="false" class="gold_cost_text" text="0  G" />
 								 <Label hittest="false" class="item_desc_text" text="#brew_desc"/>
                             </Button>
 							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_power', 150)" oncontextmenu="buyItem('oneshot_power', 150)">
-                                <Image class="item_image" src="file://{images}/custom_game/flask.png" />
+                                <Image class="item_image" src="file://{images}/custom_game/flask.png" onmouseover="DOTAShowAbilityTooltip('item_oneshot_power')" onmouseout="DOTAHideAbilityTooltip()" />
 								 <Label hittest="false" class="gold_cost_text" text="150" />
 								 <Label hittest="false" class="item_desc_text" text="#flask_desc"/>
                             </Button>
@@ -2445,12 +2445,12 @@
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
                             <Button class="TradeBtnItm" onactivate="buyItem('oneshot_good_stuff', 120 )" oncontextmenu="buyItem('oneshot_good_stuff', 120 )">
-                                <Image class="item_image" src="file://{images}/custom_game/good_stuff.png" />
+                                <Image class="item_image" src="file://{images}/custom_game/good_stuff.png" onmouseover="DOTAShowAbilityTooltip('item_oneshot_good_stuff')" onmouseout="DOTAHideAbilityTooltip()" />
 								 <Label hittest="false" class="gold_cost_text" text="120  G" />
 								 <Label hittest="false" class="item_desc_text" text="#good_stuff_desc"/>
                             </Button>
 							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_booze', 40 )" oncontextmenu="buyItem('oneshot_booze', 200 )">
-                                <Image class="item_image" src="file://{images}/custom_game/booze.png" />
+                                <Image class="item_image" src="file://{images}/custom_game/booze.png" onmouseover="DOTAShowAbilityTooltip('item_oneshot_booze')" onmouseout="DOTAHideAbilityTooltip()" />
 								 <Label hittest="false" class="gold_cost_text" text="200" />
 								 <Label hittest="false" class="item_desc_text" text="#booze_desc"/>
                             </Button>
@@ -2486,12 +2486,12 @@
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
                             <Button class="TradeBtnItm" onactivate="buyItem('oneshot_camo', 60 )" oncontextmenu="buyItem('oneshot_camo', 60 )">
-                                <Image class="item_image" src="file://{images}/custom_game/cloak.png" />
+                                <Image class="item_image" src="file://{images}/custom_game/cloak.png" onmouseover="DOTAShowAbilityTooltip('item_oneshot_camo')" onmouseout="DOTAHideAbilityTooltip()" />
 								 <Label hittest="false" class="gold_cost_text" text="60  G" />
 								 <Label hittest="false" class="item_desc_text" text="#camo_desc"/>
                             </Button>
 							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_scope', 40 )" oncontextmenu="buyItem('oneshot_scope', 40 )">
-                                <Image class="item_image" src="file://{images}/custom_game/scope.png" />
+                                <Image class="item_image" src="file://{images}/custom_game/scope.png" onmouseover="DOTAShowAbilityTooltip('item_oneshot_scope')" onmouseout="DOTAHideAbilityTooltip()" />
 								 <Label hittest="false" class="gold_cost_text" text="40  G" />
 								 <Label hittest="false" class="item_desc_text" text="#scope_desc"/>
                             </Button>
@@ -2526,12 +2526,12 @@
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
                             <Button class="TradeBtnItm" onactivate="buyItem('oneshot_fish', 60 )" oncontextmenu="buyItem('oneshot_fish', 60 )">
-                                <Image class="item_image" src="file://{images}/custom_game/winter_greevil_treat.png" />
+                                <Image class="item_image" src="file://{images}/custom_game/winter_greevil_treat.png" onmouseover="DOTAShowAbilityTooltip('item_oneshot_fish')" onmouseout="DOTAHideAbilityTooltip()" />
 								 <Label hittest="false" class="gold_cost_text" text="60  G" />
 								 <Label hittest="false" class="item_desc_text" text="#fish_desc"/>
                             </Button>
 							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_line', 0 )" oncontextmenu="buyItem('oneshot_line', 0 )">
-                                <Image class="item_image" src="file://{images}/custom_game/line.png" />
+                                <Image class="item_image" src="file://{images}/custom_game/line.png" onmouseover="DOTAShowAbilityTooltip('item_oneshot_line')" onmouseout="DOTAHideAbilityTooltip()" />
 								 <Label hittest="false" class="gold_cost_text" text="0  G" />
 								 <Label hittest="false" class="item_desc_text" text="#line_desc"/>
                             </Button>
@@ -2560,18 +2560,18 @@
                             </Button>
                         </Panel>
                     </Panel>
-                     <Label hittest="false"  id="must_be_trader_" class="no_trade_text_subtitle" text="#must_be_trader" />
+                     <Label hittest="false"  id="must_be_trader_8" class="no_trade_text_subtitle" text="#must_be_trader" />
 				
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
                             <Button class="TradeBtnItm" onactivate="buyItem('oneshot_trap', 90 )" oncontextmenu="buyItem('oneshot_trap', 90 )">
-                                <Image class="item_image" src="file://{images}/custom_game/trap.png" />
+                                <Image class="item_image" src="file://{images}/custom_game/trap.png" onmouseover="DOTAShowAbilityTooltip('item_oneshot_trap')" onmouseout="DOTAHideAbilityTooltip()" />
 								 <Label hittest="false" class="gold_cost_text" text="90  G" />
 								 <Label hittest="false" class="item_desc_text" text="#trap_desc"/>
                             </Button>
 							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_chain', 0 )"  oncontextmenu="buyItem('oneshot_chain', 0 )">
-                                <Image class="item_image" src="file://{images}/custom_game/chain.png" />
+                                <Image class="item_image" src="file://{images}/custom_game/chain.png" onmouseover="DOTAShowAbilityTooltip('item_oneshot_chain')" onmouseout="DOTAHideAbilityTooltip()" />
 								 <Label hittest="false" class="gold_cost_text" text="0  G" />
 								 <Label hittest="false" class="item_desc_text" text="#chain_desc"/>
                             </Button>
@@ -2607,12 +2607,12 @@
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
                             <Button class="TradeBtnItm" onactivate="buyItem('oneshot_earth', 70 )" oncontextmenu="buyItem('oneshot_earth', 70 )">
-                                <Image class="item_image" src="file://{images}/custom_game/gem_of_true_sight.png" />
+                                <Image class="item_image" src="file://{images}/custom_game/gem_of_true_sight.png" onmouseover="DOTAShowAbilityTooltip('item_oneshot_earth')" onmouseout="DOTAHideAbilityTooltip()" />
 								 <Label hittest="false" class="gold_cost_text" text="70  G" />
 								 <Label hittest="false" class="item_desc_text" text="#earth_desc"/>
                             </Button>
 							<Button class="TradeBtnItm" onactivate="buyItem('oneshot_sun_screen', 40 )" oncontextmenu="buyItem('oneshot_sun_screen', 40 )">
-                                <Image class="item_image" src="file://{images}/custom_game/greater_clarity.png" />
+                                <Image class="item_image" src="file://{images}/custom_game/greater_clarity.png" onmouseover="DOTAShowAbilityTooltip('item_oneshot_sun_screen')" onmouseout="DOTAHideAbilityTooltip()" />
 								 <Label hittest="false" class="gold_cost_text" text="40  G" />
 								 <Label hittest="false" class="item_desc_text" text="#screen_desc"/>
                             </Button>
@@ -2621,7 +2621,7 @@
                 </Panel>
             </Panel>
 		/* side_shop */
-            <Panel hittest="false" id="side_shop" class="shop_guts">
+            <Panel hittest="false" id="side_shop">
                 <Image class="bkg_image" src="file://{images}/custom_game/left_top.png" />
                 <Panel class="shop_content_holder">
 				<Panel hittest="false" class="closeButtonholder">
@@ -2632,18 +2632,15 @@
 					  <Label hittest="false" class="trade_text_subtitle" text="#supply" />
                     <Panel hittest="false" class="supply_guts">
                         <Panel hittest="false" class="supply_row">
-                            <Button class="TradeBtnItm" onactivate="buyItem('spys', 500 )" oncontextmenu="buyItem('spys', 500 )">
-                                <Image class="item_image" src="file://{images}/items/tower_debuff.png" />
-								 <Label hittest="false" class="gold_cost_text" text="500  G" />
-								 <Label hittest="false" class="item_desc_text" text="#spys"/>
+                            <Button class="SideBtnItm" onactivate="buyItem('spys', 500 )" oncontextmenu="buyItem('spys', 500 )">
+                                <Image class="side_item_image" src="file://{images}/items/tower_debuff.png" onmouseover="DOTAShowAbilityTooltip('item_tower_debuff')" onmouseout="DOTAHideAbilityTooltip()"/>
+								 <Label hittest="false" class="side_gold_cost_text" text="500 G" />
                             </Button>
-							<Button class="TradeBtnItm" onactivate="buyItem('heals', 300 )" oncontextmenu="buyItem('heals', 300 )">
-                                <Image class="item_image" src="file://{images}/items/tower_healer.png" />
-								 <Label hittest="false" class="gold_cost_text" text="300" />
-								 <Label hittest="false" class="item_desc_text" text="#heals"/>
+							<Button class="SideBtnItm" onactivate="buyItem('heals', 300 )" oncontextmenu="buyItem('heals', 300 )">
+                                <Image class="side_item_image" src="file://{images}/items/tower_healer.png" onmouseover="DOTAShowAbilityTooltip('item_tower_healer')" onmouseout="DOTAHideAbilityTooltip()"/>
+								 <Label hittest="false" class="side_gold_cost_text" text="300 G" />
                             </Button>
                         </Panel>
-                        
                     </Panel>
                 </Panel>
             </Panel>

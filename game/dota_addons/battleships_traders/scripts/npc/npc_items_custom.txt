@@ -13735,7 +13735,7 @@
 		"AbilityCastRange"              "0"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "800" 
+		"ItemCost"                      "500" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
@@ -14316,7 +14316,7 @@
 		"AbilityCastRange"              "0"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "1500" 
+		"ItemCost"                      "300" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
@@ -15559,7 +15559,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -15599,7 +15599,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -15640,7 +15640,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -15674,7 +15674,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_one"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -15710,7 +15710,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_one"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -15745,7 +15745,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_one"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -15780,7 +15780,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_one"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -15815,7 +15815,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_one"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -15850,7 +15850,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_one"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -15885,7 +15885,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_one"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -15921,7 +15921,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_two"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -15956,7 +15956,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_two"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -15991,7 +15991,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_two"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -16027,7 +16027,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_two"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -16062,7 +16062,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_two"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -16097,7 +16097,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_two"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -16132,7 +16132,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_two"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -16167,7 +16167,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_two"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -16202,7 +16202,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_two"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -16238,7 +16238,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_three"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -16273,7 +16273,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_three"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -16309,7 +16309,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_three"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -16344,7 +16344,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_three"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -16379,7 +16379,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_three"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -16413,7 +16413,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_three"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -16447,7 +16447,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_three"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -16482,7 +16482,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_three"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -16517,7 +16517,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_contract_three"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -16597,7 +16597,7 @@
 		}
 
     "ItemPurchasable"				"0"
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -16802,7 +16802,7 @@
 		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"0"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -16885,7 +16885,7 @@
 		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"0"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -16937,7 +16937,7 @@
 		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"0"
 		"AbilityChannelTime"			"3.0"
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -17005,7 +17005,7 @@
 		"AbilityTextureName"			"item_first_aid"
 		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"0"
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -17063,7 +17063,7 @@
 
 		"AbilityManaCost"				"0"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -17165,7 +17165,7 @@
 		"AbilityTextureName"			"item_flask"
 		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"0"
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -17319,7 +17319,7 @@
 		"AbilityCooldown"				"8.0"
 		"AbilityManaCost"				"0"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -17403,7 +17403,7 @@
 		"AbilityTextureName"			"item_gem_of_true_sight"
 		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"0"
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -17465,7 +17465,7 @@
 		"AbilityTextureName"			"item_greater_clarity"
 		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"0"
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -17533,7 +17533,7 @@
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"8.0"
 		"AbilityManaCost"				"0"
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -17681,7 +17681,7 @@
 
 		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"0"
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -17745,7 +17745,7 @@
 		"AbilityTextureName"			"item_good_stuff"
 		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"0"
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -17822,7 +17822,7 @@
 		"AbilityTextureName"			"item_booze"
 		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"0"
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -17862,7 +17862,7 @@
 		"AbilityTextureName"			"item_satanic"
 		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"0"
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -17925,7 +17925,7 @@
 
 		"AbilityManaCost"				"0"
 
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -17990,7 +17990,7 @@
 		"AbilityTextureName"			"item_cease"
 		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"0"
-		"ItemCost"						"150"
+	
 		"ItemSellable"					"0"
 		"ItemShopTags"					"move_speed"
 		
@@ -18070,7 +18070,7 @@
 		"AbilityTextureName"			"item_scope"
 		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"0"
-		"ItemCost"						"150"
+	
 		"ItemSellable"					"0"
 		"ItemShopTags"					"move_speed"
 		
@@ -18135,7 +18135,7 @@
 		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"0"
 		
-		"ItemCost"						"150"
+	
 		"ItemShopTags"					"move_speed"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
@@ -18178,7 +18178,7 @@
 		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"0"
 		"ItemPurchasable"				"0"
-		"ItemCost"						"150"
+	
 		"ItemSellable"					"0"
 		"ItemShopTags"					"move_speed"
 		
@@ -18241,7 +18241,7 @@
 		"AbilityTextureName"			"item_manifest"
 		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"0"
-		"ItemCost"						"150"
+	
 		"ItemSellable"					"0"
 		"ItemShopTags"					"move_speed"
 		"ItemPurchasable"				"0"
