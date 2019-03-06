@@ -596,47 +596,7 @@ end
 
 function checkCliff(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
-	local height = casterUnit:GetOrigin() * Vector(0, 0, 1)
-
-	local allUnits =
-		FindUnitsInRadius(
-		DOTA_TEAM_BADGUYS,
-		casterUnit:GetOrigin(),
-		nil,
-		100,
-		DOTA_UNIT_TARGET_TEAM_ENEMY,
-		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-		0,
-		0,
-		false
-	)
-	local allUnits2 =
-		FindUnitsInRadius(
-		DOTA_TEAM_GOODGUYS,
-		casterUnit:GetOrigin(),
-		nil,
-		100,
-		DOTA_UNIT_TARGET_TEAM_ENEMY,
-		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-		0,
-		0,
-		false
-	)
-	for k, v in pairs(allUnits2) do
-		allUnits[k] = v
-	end
-
-	 ----print("[check cliff] found " .. tostring(#allUnits))
-	if height:Length() > 110 and #allUnits == 1 then
-		local damageTable = {
-			victim = casterUnit,
-			attacker = casterUnit,
-			damage = 10000,
-			damage_type = DAMAGE_TYPE_PURE
-		}
-
-		ApplyDamage(damageTable)
-	end
+	FindClearSpaceForUnit(casterUnit, casterUnit:GetAbsOrigin(), true)
 end
 
 function CheckForRing(args) -- keys is the information sent by the ability
@@ -764,7 +724,7 @@ function TeleHome(keys) -- keys is the information sent by the ability
 			elseif casterUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 				vecorig = Vector(0, 5540, 0) + RandomVector(RandomFloat(0, 100))
 			end
-			casterUnit:SetOrigin(vecorig)
+			FindClearSpaceForUnit(casterUnit, vecorig, true)
 		end
 	)
 end
@@ -1082,6 +1042,7 @@ function pushBack(args) -- keys is the information sent by the ability
 	end
 	targetUnit:AddPhysicsVelocity(vec)
 end
+
 function pushBackRefund(args) -- keys is the information sent by the ability
 	-- ----print('[ItemFunctions] gunning_it started! ')
 	if args.target ~= args.caster then --not self target
@@ -1559,7 +1520,7 @@ function latchOn(args)
 	local vec = direction:Normalized() * -15
 	local vecorig = target:GetOrigin() + vec
 	local vecorig = target:GetOrigin()
-	casterUnit:SetOrigin(vecorig)
+	FindClearSpaceForUnit(casterUnit, vecorig, true)
 end
 
 function throwJav(args) -- keys is the information sent by the ability
@@ -2302,8 +2263,8 @@ function RealityRift( keys )
 	-- Ability variables
 
 	-- Set the positions to be one on each side of the rift
-	target:SetAbsOrigin(ability.reality_rift_location + ability.reality_rift_direction * 50)
-	caster:SetAbsOrigin(ability.reality_rift_location - ability.reality_rift_direction * 50)
+	FindClearSpaceForUnit(target, ability.reality_rift_location + ability.reality_rift_direction * 50, true)
+	FindClearSpaceForUnit(caster, ability.reality_rift_location - ability.reality_rift_direction * 50, true)
 
 	-- Set the targets to face eachother
 	target:SetForwardVector(ability.reality_rift_direction * -1)
@@ -2327,7 +2288,7 @@ function WhaleBait(args)
 	local direction = casterPos - targetPos
 	local vec = direction:Normalized()
 
-	targetUnit:SetAbsOrigin(targetUnit:GetAbsOrigin() + vec*2)
+	FindClearSpaceForUnit(targetUnit, targetUnit:GetAbsOrigin() + vec*2, true)
 
 	-- Creates 8 temporary trees at each 45 degree interval around the clicked point
 
@@ -2624,31 +2585,21 @@ function PrintTable(t, indent, done)
 	end
 end
 
-
 function portCannon(args) -- keys is the information sent by the ability
-
 	local caster = args.caster
-	if caster.fireingCannon~=nil and  caster.fireingCannon==3 then
-		return
-	end
+	local ability = args.ability
    local targetUnit = args.target
-   
-   
-   caster.fireingCannon = 3
-
    local effect = "particles/basic_projectile/b_ball.vpcf"
    if caster:HasModifier("concus_ammo") then
-	effect = "particles/basic_projectile/c_ball_incin.vpcf"
+		effect = "particles/basic_projectile/c_ball_incin.vpcf"
    end 
-   local rangebuff = caster:GetAbilityByIndex(4)
   
-   local range=1000+rangebuff:GetLevelSpecialValueFor("range_buff", rangebuff:GetLevel() - 1)*1.5
-   --print(range)  
+   local range = ability:GetSpecialValueFor("range")
    local pos=3
    local attachname = "p"
    local startradl=math.atan2(caster:GetForwardVector().y,caster:GetForwardVector().x)
    startradl=startradl+.1
-	for ind =1, 3, 1 do
+	for ind =1,3 do
 		local modrad=-.1*(ind-2)
 		--print(modrad)
 		fireCannon(caster, pos, range, attachname, modrad, ind)
@@ -2657,70 +2608,76 @@ end
 
 function starboardCannon(args) -- keys is the information sent by the ability
 	local caster = args.caster
-	if  caster.fireingCannon~=nil and  caster.fireingCannon==1 then
-		return
-	end
+	local ability = args.ability
 	local targetUnit = args.target
-	
-   local rangebuff = caster:GetAbilityByIndex(4)
-   local range=1000+rangebuff:GetLevelSpecialValueFor("range_buff", rangebuff:GetLevel() - 1)*1.5
-   caster.fireingCannon = 1
-   local pos=1
-   local attachname = "s"
-   local startradl=math.atan2(caster:GetForwardVector().y,caster:GetForwardVector().x)
-   startradl=startradl+.1
-   for ind =1, 3, 1 do
-	
-  	
-	local modrad=.1*(ind-2)
-	--print(modrad)
-	fireCannon(caster, pos, range, attachname, modrad, ind)
-	end
-end
-function bowCannon(args) -- keys is the information sent by the ability
-	local caster = args.caster
-	if caster.fireingCannon~=nil and  caster.fireingCannon==0 then
-		return
-	end
-	local targetUnit = args.target
-   local caster = args.caster
-   local rangebuff = caster:GetAbilityByIndex(4)
-   local range=1000+rangebuff:GetLevelSpecialValueFor("range_buff", rangebuff:GetLevel() - 1)*1.5
-   
-   local pos=0
-   caster.fireingCannon = 0
-   local attachname = "b"
-   local startradl=math.atan2(caster:GetForwardVector().y,caster:GetForwardVector().x)
-   startradl=startradl+.1
-   for ind =1, 2, 1 do
-	local modrad=startradl
-  	
-		if ind==1 then
-			modrad=-.05
-		end
-		if ind==2 then
-			modrad=.05
-		end
+	local rangebuff = caster:FindAbilityByName("cannon_range")
+	local range = ability:GetSpecialValueFor("range")
+	local pos=1
+	local attachname = "s"
+	local startradl=math.atan2(caster:GetForwardVector().y,caster:GetForwardVector().x) + .1
+
+	for ind = 1,3 do
+		local modrad=.1*(ind-2)
 		fireCannon(caster, pos, range, attachname, modrad, ind)
 	end
 end
-function stopCannons(args)
+
+function bowCannon(args) -- keys is the information sent by the ability
 	local caster = args.caster
-	if caster.fireingCannon~=nil then
-		caster.fireingCannon=-1
-	end
+	local ability = args.ability
+	local targetUnit = args.target
+	local caster = args.caster
+	local ability = args.ability
+	local rangebuff = caster:FindAbilityByName("cannon_range")
+	local range = ability:GetSpecialValueFor("range")
+	local num_shots = ability:GetSpecialValueFor("num_shots")
+	local pos = 0
+	local attachname = "b"
+	local secondShotDelay = .5
+
+	-- First Volley
+	for i=1,2 do
+			local modrad = -.1 + (.1 * i)
+			fireCannon(caster, pos, range, attachname, modrad, i)
+		end
+
+	-- Second Volley
+	Timers:CreateTimer(secondShotDelay, function()
+		for i=1,2 do
+			local modrad = -.1 + (.1 * i)
+			fireCannon(caster, pos, range, attachname, modrad, i)
+		end
+	end)
+	
 end
 
 function fireCannon(caster, pos, range, attachname, modrad, ind)
-	local startradl=math.atan2(caster:GetForwardVector().y,caster:GetForwardVector().x)
+	local startradl = math.atan2(caster:GetForwardVector().y,caster:GetForwardVector().x)
 	local effect = "particles/basic_projectile/b_ball.vpcf"
-	if caster:HasModifier("concus_ammo") then
-		effect = "particles/basic_projectile/c_ball_incin.vpcf"
-	   end 
-	local dir =Vector(math.sin(pos*2*3.1415926/(4)-(startradl+modrad)+3.1415926/4+3.1415926/5+3.1415926/11),math.cos(pos*2*3.1415926/(4)-(startradl+modrad)+3.1415926/4+3.1415926/5+3.1415926/11),0)
+
+	local pi = 3.1415926
+	local dir = Vector(
+		math.sin(pos*2*pi/(4)-(startradl+modrad)+pi/4+pi/5+pi/11),
+		math.cos(pos*2*pi/(4)-(startradl+modrad)+pi/4+pi/5+pi/11),
+		0
+	)
+
 	EmitSoundOn("Hero_Gyrocopter.FlackCannon", caster)
+
 	local attachID = caster:ScriptLookupAttachment(attachname .. ind)
-    local attachOrigin = caster:GetAttachmentOrigin(attachID)
+  local attachOrigin = caster:GetAttachmentOrigin(attachID)
+
+  local providesVision = false
+
+  if caster:HasModifier("cannon_fire_buff") then
+  	providesVision = true
+		effect = "particles/basic_projectile/c_ball_incin.vpcf"
+	elseif caster:HasModifier("cannon_ice_buff") then
+		effect = "particles/basic_projectile/c_ball_incin.vpcf"
+	elseif caster:HasModifier("cannon_splash_buff") then
+		-- effect = "particles/basic_projectile/c_ball_incin.vpcf"
+	end
+
 	local info = {
 		Ability = caster:GetAbilityByIndex(0),
 		EffectName = effect,
@@ -2737,41 +2694,133 @@ function fireCannon(caster, pos, range, attachname, modrad, ind)
 		fExpireTime = GameRules:GetGameTime() + 10.0,
 		bDeleteOnHit = true,
 		vVelocity = dir*1600,
-		bProvidesVision = true,
+		bProvidesVision = providesVision,
 		iVisionRadius = 600,
 		iVisionTeamNumber = caster:GetTeamNumber()
 	}
-	print(caster.fireingCannon .. pos)
+
 	projectile = ProjectileManager:CreateLinearProjectile(info)
-		Timers:CreateTimer(
-					1,
-					function()
-						if caster.fireingCannon == pos then
-							fireCannon(caster, pos, range, attachname, modrad, ind)
-						end
-					end
-				)
+end
+
+function fireForwardCannons(args)
+	bowCannon(args)
+end
+
+function fireSideCannons(args)
+	local ability = args.ability
+	local casterUnit = args.caster
+
+	starboardCannon(args)
+	portCannon(args)
+
+	local abil1 = casterUnit:FindAbilityByName("port_cannons")
+	local abil3 = casterUnit:FindAbilityByName("starboard_cannon")
+
+	local cooldown = abil1:GetCooldown(abil1:GetLevel())
+
+	abil1:StartCooldown(cooldown)
+	abil3:StartCooldown(cooldown)
+end
+
+function FireAllCannons(args)
+	starboardCannon(args)
+	portCannon(args)
+	bowCannon(args)
+end
+
+function ChangeWeapons(caster, oldWeaponAbility, newWeaponName)
+	local level = oldWeaponAbility:GetLevel()
+	local index = oldWeaponAbility:GetAbilityIndex()
+	local oldWeaponName = oldWeaponAbility:GetAbilityName()
+
+	caster:RemoveAbility(oldWeaponName)
+
+	caster:RemoveModifierByName("cannon_fire_buff")
+	caster:RemoveModifierByName("cannon_ice_buff")
+	caster:RemoveModifierByName("cannon_splash_buff")
+
+	local newWeaponAbility = caster:AddAbility(newWeaponName)
+	newWeaponAbility:SetLevel(level)
+	newWeaponAbility:SetAbilityIndex(index)
+end
+
+function ChangeWeaponToFire(args)
+	local ability = args.ability
+	local caster = args.caster
+
+	local newAbility = "ironclad_weapon_fire"
+
+	ChangeWeapons(caster, ability, newAbility)
+end
+
+function ChangeWeaponToIce(args)
+	local ability = args.ability
+	local caster = args.caster
+
+	local newAbility = "ironclad_weapon_ice"
+
+	ChangeWeapons(caster, ability, newAbility)
+end
+
+function ChangeWeaponToSplash(args)
+	local ability = args.ability
+	local caster = args.caster
+
+	local newAbility = "ironclad_weapon_splash"
+
+	ChangeWeapons(caster, ability, newAbility)
 end
 
 function cannonHit(args)
-	--print("hit!!!!")
-	
 	local ability = args.ability
 	local casterUnit = args.caster
-	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	local targetUnit = args.target
-	local dmgbuff = casterUnit:GetAbilityByIndex(3)
-	local dmg = ability:GetLevelSpecialValueFor("damage_tooltip", ability:GetLevel() - 1)+dmgbuff:GetLevelSpecialValueFor("dmg_buff", dmgbuff:GetLevel() - 1)
-	
-	if casterUnit:HasModifier("concus_ammo") then
-		targetUnit:AddNewModifier(casterUnit, nil, "modifier_stunned", {duration = .5})
-		dmg=dmg*2
-	end 
+
+	local damage = ability:GetSpecialValueFor("damage_tooltip")
+
+	if casterUnit:HasModifier("cannon_fire_buff") then
+		local weaponBuffAbility = casterUnit:FindAbilityByName("ironclad_weapon_fire")
+		damage = damage + weaponBuffAbility:GetSpecialValueFor("damage")
+	elseif casterUnit:HasModifier("cannon_ice_buff") then
+		local weaponBuffAbility = casterUnit:FindAbilityByName("ironclad_weapon_ice")
+		-- Apply the slow modifier
+		weaponBuffAbility:ApplyDataDrivenModifier(casterUnit, targetUnit, "cannon_ice_slow", {})
+	elseif casterUnit:HasModifier("cannon_splash_buff") then
+		local weaponBuffAbility = casterUnit:FindAbilityByName("ironclad_weapon_splash")
+		local splash_pct = weaponBuffAbility:GetSpecialValueFor("splash_pct")
+		local aoe = weaponBuffAbility:GetSpecialValueFor("aoe")
+		-- Splash
+		local nearbyUnits = FindUnitsInRadius(
+			casterUnit:GetTeam(),
+		 	targetUnit:GetAbsOrigin(), 
+		 	nil, 
+		 	aoe,
+		 	DOTA_UNIT_TARGET_TEAM_ENEMY, 
+		 	DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
+		 	DOTA_UNIT_TARGET_FLAG_NONE, 
+		 	FIND_ANY_ORDER, 
+		 	false
+		 )
+
+		for _,unit in pairs(nearbyUnits) do
+			if unit ~= targetUnit then
+				local splashDamage = damage * splash_pct * .01
+				local damageTable = {
+					victim = unit,
+					attacker = casterUnit,
+					damage = splashDamage,
+					damage_type = DAMAGE_TYPE_MAGICAL
+				}
+
+				ApplyDamage(damageTable)
+			end
+		end
+	end
 
 	local damageTable = {
 		victim = targetUnit,
 		attacker = casterUnit,
-		damage = dmg,
+		damage = damage,
 		damage_type = DAMAGE_TYPE_MAGICAL
 	}
 
@@ -2779,19 +2828,22 @@ function cannonHit(args)
 end
 
 function levelCannons(args)
-	--print("level!!!!")
 	local ability = args.ability
 	local casterUnit = args.caster
 	local level = ability:GetLevel()
-	local abil1 = casterUnit:GetAbilityByIndex(0)
+
+	local abil1 = casterUnit:FindAbilityByName("port_cannons")
+	local abil2 = casterUnit:FindAbilityByName("bow_cannon")
+	local abil3 = casterUnit:FindAbilityByName("starboard_cannon")
+
 	if abil1:GetLevel()~=level then
 		abil1:SetLevel(level)
 	end
-	local abil2 = casterUnit:GetAbilityByIndex(1)
+	
 	if abil2:GetLevel()~=level then
 		abil2:SetLevel(level)
 	end 
-	local abil3 = casterUnit:GetAbilityByIndex(2)
+	
 	if abil3:GetLevel()~=level then
 		abil3:SetLevel(level)
 	end

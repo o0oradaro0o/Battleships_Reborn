@@ -2436,10 +2436,6 @@
 		}
 	}
 	
-	
-	
-	
-	
 	//=================================================================================================================
 	// Sniper: Shrapnel
 	//=================================================================================================================
@@ -3490,34 +3486,18 @@
 			}
 		}
 	}
-	
-	//=================================================================================================================
-	// fly
-	//=================================================================================================================
 	"fly"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityTextureName"			"keeper_of_the_light_chakra_magic"
-		
+		"AbilityTextureName"			"keeper_of_the_light_chakra_magic"		
 		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
-
 
 		"Modifiers"
 		{
@@ -3555,48 +3535,27 @@
 			}
 		"OnOwnerDied"
 		{
-
 			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"aircraftDied"
 			}
 		}
-
-
 		}
-
-		
-		
-		
-
 	}
-
 	
-"fly_raven"
+	"fly_raven"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityTextureName"			"keeper_of_the_light_chakra_magic"
-		
+		"AbilityTextureName"			"keeper_of_the_light_chakra_magic"		
 		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
-
 		"Modifiers"
 		{
 			"fx_test_modifier"
@@ -6248,8 +6207,6 @@
 	
 	"Over_And_Out"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
@@ -6261,18 +6218,10 @@
 		"LevelsBetweenUpgrades"					"3"
 		"RequiredLevel"						"2"
 
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700 800 900"
 		"AbilityCooldown"				"22.0 20.0 18.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 		"OnSpellStart"
 		{
@@ -6293,12 +6242,8 @@
 			}	
 		}
 		
-		
 		"Modifiers"
-		{
-		
-
-			
+		{	
 			"move_carrier_in"
 			{
 				"EffectName" "particles/basic_projectile/ramming_speed.vpcf" 
@@ -6323,13 +6268,20 @@
 						"ModifierName" "start_go_back"
 					}
 					"AttachEffect"
-						{
-							"Target" "CASTER"
-							"EffectName"		  "particles/basic_projectile/over_and_out_effect.vpcf" 
-							"EffectAttachType"	"follow_origin"
-						}
+					{
+						"Target" "CASTER"
+						"EffectName"		  "particles/basic_projectile/over_and_out_effect.vpcf" 
+						"EffectAttachType"	"follow_origin"
+					}
 				}
-			
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"checkCliff"
+					}					
+				}
 			}
 			"start_go_back"
 			{	
@@ -6378,9 +6330,6 @@
                 }
 		}
 		
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -6393,7 +6342,6 @@
 				"var_type"				"FIELD_FLOAT"
 				"pull_duration"	"2.25 2.5 2.75"
 			}
-
 		}
 	}
 
@@ -6991,14 +6939,8 @@
 			}
 		}
 	}
-	
-	//=================================================================================================================
-	// shove
-	//=================================================================================================================
 	"shove_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -7006,16 +6948,10 @@
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"				"shove_battleship"
 		
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"200 250 300 350"
 		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
 		"AbilityManaCost"				"0 0 0 0"
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"18.0 16.0 14.0 12.0"
-
 		
 		"OnSpellStart"
 		{
@@ -7026,15 +6962,15 @@
 			}
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"pushBackRefund"
 			}
 
 			"RunScript"
-						{
-							"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
-							"Function"			"shoveSound"
-						}	
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"shoveSound"
+			}	
 		}
 			
 		
@@ -11191,57 +11127,39 @@
 		 "Modifiers"
         {
                        
-                "battle_show_effect"
-                {
-					"Passive"                               "1"
-                        "ThinkInterval"		".5"
-						"OnIntervalThink"
-						{
-							"RunScript"
-							{
-								"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
-								"Function"			"startDisco"
-							}
-						}
-                }
-               
+            "battle_show_effect"
+            {
+				"Passive"                               "1"
+                "ThinkInterval"		".5"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"startDisco"
+					}
+				}
+            }               
         }
-       
-  
-	
-		
-
 	}
 	
-		"bships_talent1"
+	"bships_talent1"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		
 		"BaseClass" 					"ability_datadriven"
-
-		// Casting
-		
-
-
 		"Modifiers"
 		{
 			"hpBonus"
-			{
-			
+			{			
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_HEALTH_BONUS"	"300"
 
 				}
-					"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				
-				
-			}
-			
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			}			
 		}
 	}
 	
@@ -13079,7 +12997,6 @@
     "AbilityCastPoint"        "0.3"
 
     "AbilityCooldown"       "8"
-
     "AbilityManaCost"       "0"
 
     "AbilitySpecial"
@@ -13099,38 +13016,23 @@
         "var_type"        "FIELD_INTEGER"
         "drain_range_buffer"  "300"
       }
-
     }
   }
 
-
-	
-		//=================================================================================================================
-	// port_cannon
-	//=================================================================================================================
 	"port_cannons"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"AbilityTextureName"			"c_port"
 
 		"BaseClass" 					"ability_datadriven"
-		"AbilityCastRange"				"0"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1600"
+
 		"AbilityCastPoint"				"0.1"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"17 15 13 10"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
-"OnUpgrade"
+		"OnUpgrade"
 		{
 			"RunScript"
 			{
@@ -13138,34 +13040,82 @@
 				"Function"			"levelCannons"
 			}	
 		}
-		"OnOwnerDied"
-		{
-
-			"RunScript"
-			{
-				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
-				"Function"			"stopCannons"
-			}
-		}
-
 		"OnSpellStart"
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
-				"Function"			"portCannon"
+				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"fireSideCannons"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"cannonFire"
+			}			
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"     "1"
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"cannonHit"
+			}	
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_tooltip"	"150 225 300 350"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"1600"
+			}
+		}
+	}
+	"bow_cannon"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityTextureName"			"c_bow"
+
+		"BaseClass" 					"ability_datadriven"
+		"AbilityCastRange"				"1600"
+
+		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"17 15 13 10"
+		"AbilityManaCost"				"0"
+		
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"levelCannons"
+			}	
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"fireForwardCannons"
 			}
 			"RunScript"
 			{
 				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
 				"Function"			"cannonFire"
 			}
-			
 		}
 		
 		"OnProjectileHitUnit"
 		{
-			"DeleteOnHit"                           "1"
+			"DeleteOnHit"  "1"
 			"RunScript"
 			{
 				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
@@ -13173,117 +13123,36 @@
 			}	
 		}
 		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_tooltip"	"100"
+				"damage_tooltip"	"150 225 300 350"
 			}
-		}
-	}
-//=================================================================================================================
-	// bow_cannon
-	//=================================================================================================================
-	"bow_cannon"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"AbilityTextureName"			"c_bow"
-
-		"BaseClass" 					"ability_datadriven"
-		"AbilityCastRange"				"0"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.1"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"17 15 13 10"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0"
-		
-		"OnUpgrade"
-		{
-			"RunScript"
-			{
-				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
-				"Function"			"levelCannons"
-			}	
-		}
-		"OnOwnerDied"
-		{
-
-			"RunScript"
-			{
-				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
-				"Function"			"stopCannons"
-			}
-		}
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
-				"Function"			"bowCannon"
-			}
-			"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
-						"Function"			"cannonFire"
-					}
-		}
-		
-		"OnProjectileHitUnit"
-		{
-			"DeleteOnHit"                           "1"
-			"RunScript"
-			{
-				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
-				"Function"			"cannonHit"
-			}	
-		}
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
+			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_tooltip"	"100"
+				"num_shots"	"2"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"1600"
 			}
 		}
 	}
-	//=================================================================================================================
-	// starboard_cannon
-	//=================================================================================================================
 	"starboard_cannon"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"AbilityTextureName"			"c_star"
 
 		"BaseClass" 					"ability_datadriven"
-		"AbilityCastRange"				"0"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1600"
+
 		"AbilityCastPoint"				"0.1"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"17 15 13 10"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		"OnUpgrade"
@@ -13295,27 +13164,18 @@
 			}	
 			
 		}
-		"OnOwnerDied"
-		{
-
-			"RunScript"
-			{
-				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
-				"Function"			"stopCannons"
-			}
-		}
 		"OnSpellStart"
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
-				"Function"			"starboardCannon"
+				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"fireSideCannons"
 			}
 			"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
-						"Function"			"cannonFire"
-					}
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"cannonFire"
+			}
 		}
 		
 		"OnProjectileHitUnit"
@@ -13328,174 +13188,267 @@
 			}	
 		}
 		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_tooltip"	"100"
+				"damage_tooltip"	"150 225 300 350"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"1600"
 			}
 		}
 	}
 
-
-		//=================================================================================================================
-	// war drumbs
-	//=================================================================================================================
-	"explosive_shells"
+	"ironclad_heavy_armor"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityTextureName"			"techies_suicide"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-
-
-		
-		
-		"BaseClass" 					"ability_datadriven"
-		"AbilityCastRange"				"0"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20 18 16"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0"
-		
-		
-		"OnSpellStart"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/ironclad/ironclad_heavy_armor"
+		"AbilityTextureName"			"mars_bulwark"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"4"
+		"precache"
 		{
-			"ApplyModifier"
-			{
-				"Target" "CASTER"
-				"ModifierName" "concus_ammo"
-			}
-			
-			
+			"particle"	"particles/units/heroes/hero_mars/mars_shield_of_mars.vpcf"
+			"particle"	"particles/units/heroes/hero_mars/mars_shield_of_mars_small.vpcf"
 		}
+		
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
-		 "Modifiers"
-        {
-                "concus_ammo"
-                {
-                    
-                        "Duration" "%duration"
-                       
-						"EffectName"    "particles/basic_projectile/explosive_shells_effect.vpcf" 
-				"EffectAttachType"	"follow_origin"
-                }   
-        }
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"3 4 5"
+				"var_type"						"FIELD_INTEGER"
+				"physical_damage_reduction"		"10 15 20 25"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"forward_angle"					"140"
+			}
+			"03"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"physical_damage_reduction_side"	"5 8 10 13"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"side_angle"					"240"
 			}
 		}
 	}
-	//=================================================================================================================
-	// harbor_repair
-	//=================================================================================================================
-	"cannon_dmg"
+
+	"ironclad_cannon_barrage"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"AbilityTextureName"				"gyrocopter_rocket_barrage"
-		
+		"AbilityTextureName"			"techies_suicide"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"0"
+		"AbilityChannelTime"			"3 4 5"
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_cannon_barrage"
+				"Target" 		"CASTER"
+			}
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"FireAllCannons"
+			}
+		}
+
+		"OnChannelInterrupted"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_cannon_barrage"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnChannelFinish"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_cannon_barrage"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_cannon_barrage"
+			{		
+				"EffectName"		"particles/basic_projectile/explosive_shells_effect.vpcf"
+				"EffectAttachType"	"follow_origin"
 		
-
-		 "Modifiers"
+				"ThinkInterval"	"%fire_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"FireAllCannons"
+					}
+				}
+			}
+		}
+		
+        "AbilitySpecial"
         {
-                "cannon_dmg_buff"
-                {
-                        "Passive"                               "1"
-						
-						
-                }
-
-        }
-         "AbilitySpecial"
-        {
-                "01"
-                {
-                        "var_type"                                      "FIELD_FLOAT"
-                        "dmg_buff"                          "50 75 100 125"
-                }
-
+            "01"
+            {
+                "var_type"                          "FIELD_INTEGER"
+                "duration"                          "3 4 5"
+            }
+            "02"
+            {
+                "var_type"                          "FIELD_INTEGER"
+                "fire_interval"                     "1"
+            }
         }
 	}
-	"cannon_range"
+	"ironclad_weapon_fire"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityTextureName"				"sniper_take_aim"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"ironclad_fire_ammo"		
 		
-		"AbilityCastRange"				"1100 1300 1500 1700"
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
 		"AbilityManaCost"				"0"
-		
 
-		 "Modifiers"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"ChangeWeaponToIce"
+			}
+		}
+
+		"Modifiers"
         {
-                "cannon_range_buff"
-                {
-                        "Passive"                               "1"
-						"Properties"
-						{
-							"MODIFIER_PROPERTY_CAST_RANGE_BONUS"	"200 400 600 800"
-						}
-						
-                }
-
+            "cannon_fire_buff"
+            {
+                "Passive"                               "1"					
+            }
         }
-         "AbilitySpecial"
+		
+        "AbilitySpecial"
         {
-                "01"
-                {
-                        "var_type"                                      "FIELD_FLOAT"
-                        "range_buff"                          "200 400 600 800"
-                }
-
+            "01"
+            {
+                "var_type"                          "FIELD_INTEGER"
+                "dmg_buff"                          "50 75 100 125"
+            }
         }
 	}
+	"ironclad_weapon_ice"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"ironclad_ice_ammo"		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		"AbilityCooldown"				"1"
+		"AbilityManaCost"				"0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"ChangeWeaponToSplash"
+			}
+		}
+
+		"Modifiers"
+        {
+            "cannon_ice_buff"
+            {
+                "Passive"          "1"					
+            }
+            "cannon_ice_slow"
+            {
+            	"Duration"	"%duration"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%slow_pct"
+				}
+            }
+        }
+		
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                          "FIELD_INTEGER"
+                "slow_pct"                          "-10 -15 -20 -25"
+            }
+            "02"
+            {
+                "var_type"                          "FIELD_INTEGER"
+                "duration"                          "3"
+            }
+        }
+	}
+	"ironclad_weapon_splash"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"ironclad_splash_ammo"		
+		
+		"BaseClass" 					"ability_datadriven"
+
+		"AbilityCooldown"				"1"
+		"AbilityManaCost"				"0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"ChangeWeaponToFire"
+			}
+		}
+
+		"Modifiers"
+        {
+            "cannon_splash_buff"
+            {
+                "Passive"                               "1"					
+            }
+        }
+		
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                   "FIELD_FLOAT"
+                "splash_pct"                 "30 40 50 60"
+            }
+            "02"
+            {
+                "var_type"                   "FIELD_FLOAT"
+                "aoe"                 		 "200"
+            }
+        }
+	}
+	
   "ball_lightning_lua"
   {
     "BaseClass"           "ability_lua"

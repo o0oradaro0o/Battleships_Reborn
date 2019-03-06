@@ -1303,23 +1303,23 @@ function CBattleship8D:OnThink()
             local height = hero:GetOrigin() * Vector(0,0,1)
             if height:Length() > 110 and false == hero:HasModifier("line_mod") and false == hero:HasModifier("modifier_ball_lightning")  and false == hero:HasModifier("fly_bat") and false == hero:HasModifier("fly") and false == hero:HasModifier("modifier_spirit_breaker_charge_of_darkness") and false == hero:HasModifier("modifier_kunkka_torrent") and false == hero:HasModifier("move_carrier_in")  and false == hero:HasModifier("giraffe_grabed")  and false == hero:HasModifier("modifier_batrider_flaming_lasso") and false == hero:HasModifier("modifier_mirana_leap")  and false == hero:IsStunned() and  hero:IsAlive()  then
 
-              local abil1 = hero:GetAbilityByIndex(1)
+              -- local abil1 = hero:GetAbilityByIndex(1)
 
-              ----print( 'player found at z of: ' .. tostring(height:Length()) .. "and cd check is " .. tostring(abil1:GetCooldownTimeRemaining() > abil1:GetCooldown(abil1:GetLevel())-2) .. " and name of hero is " .. hero:GetName() .. " so name check is " .. tostring(string.match(hero:GetName(),"winter_wyvern")))
+              -- ----print( 'player found at z of: ' .. tostring(height:Length()) .. "and cd check is " .. tostring(abil1:GetCooldownTimeRemaining() > abil1:GetCooldown(abil1:GetLevel())-2) .. " and name of hero is " .. hero:GetName() .. " so name check is " .. tostring(string.match(hero:GetName(),"winter_wyvern")))
 
-              if abil1:GetCooldownTimeRemaining() >= abil1:GetCooldown(abil1:GetLevel())-2 and (string.match(hero:GetName(),"winter_wyvern") or string.match(hero:GetName(),"kunkka")) then
+              -- if abil1:GetCooldownTimeRemaining() >= abil1:GetCooldown(abil1:GetLevel())-2 and (string.match(hero:GetName(),"winter_wyvern") or string.match(hero:GetName(),"kunkka")) then
 
-              else
-                lasth=g_OldHeroLocations[hero]*Vector(0,0,1)
-                if	lasth:Length() <110 then
-                  hero:SetOrigin(g_OldHeroLocations[hero])
-                else
-                  hero:SetOrigin(g_OlderHeroLocations[hero])
-                end
+              -- else
+              --   lasth=g_OldHeroLocations[hero]*Vector(0,0,1)
+              --   if	lasth:Length() <110 then
+              --     hero:SetOrigin(g_OldHeroLocations[hero])
+              --   else
+              --     hero:SetOrigin(g_OlderHeroLocations[hero])
+              --   end
 
-                Notifications:Top(hero:GetPlayerID(), {text="#off_wall", duration=3.0, style={color="#800000",  fontSize="50px;"}})
+              --   Notifications:Top(hero:GetPlayerID(), {text="#off_wall", duration=3.0, style={color="#800000",  fontSize="50px;"}})
 
-              end
+              -- end
             else
               if g_OldHeroLocations[hero]~=nil then
                 if g_OlderHeroLocations[hero] ~=nil and (g_OldHeroLocations[hero] - hero:GetOrigin()):Length() >100 then
