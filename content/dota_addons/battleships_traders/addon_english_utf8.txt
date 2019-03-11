@@ -2399,11 +2399,11 @@
     "DOTA_Tooltip_ability_item_contract_empty_Description"                            "Bring these goods to any merchant for a reward."
 
     "DOTA_Tooltip_ability_item_oneshot_net"                                           "Net"
-    "DOTA_Tooltip_ability_item_oneshot_net_Description"                               "Consumable. Immobilizes target for a time."
+    "DOTA_Tooltip_ability_item_oneshot_net_Description"                               "Consumable.\n Immobilizes target for a time."
     "DOTA_Tooltip_ability_item_oneshot_net_duration"                                  "DURATION:"
 
     "DOTA_Tooltip_ability_item_oneshot_info"                                          "Info"
-    "DOTA_Tooltip_ability_item_oneshot_info_Description"                              "Consumable. Reveals all enemy convoys on the map for a moment when used."
+    "DOTA_Tooltip_ability_item_oneshot_info_Description"                              "Consumable.\n Reveals all enemy convoys on the map for a moment when used."
     "DOTA_Tooltip_ability_item_oneshot_info_duration"                                 "DURATION:"
 
     "DOTA_Tooltip_ability_item_oneshot_ham"               "Ham"
@@ -2416,70 +2416,70 @@
     "DOTA_Tooltip_ability_item_oneshot_first_aid_Note0"         "Disappears after use."
 
     "DOTA_Tooltip_ability_item_oneshot_brew"                                          "Vile Brew"
-    "DOTA_Tooltip_ability_item_oneshot_brew_Description"                              "Consumable. Stuns target every 2 seconds for the duration."
+    "DOTA_Tooltip_ability_item_oneshot_brew_Description"                              "Consumable.\n Stuns target every 2 seconds for the duration."
     "DOTA_Tooltip_ability_item_oneshot_brew_duration"                                 "DURATION:"
     "DOTA_Tooltip_ability_item_oneshot_brew_stun_duration"                            "STUN DURATION:"
 
     "DOTA_Tooltip_ability_item_oneshot_power"                                         "Liquid Power"
-    "DOTA_Tooltip_ability_item_oneshot_power_Description"                             "Consumable. Grants a huge health reserve and doubles attack damage for the duration."
+    "DOTA_Tooltip_ability_item_oneshot_power_Description"                             "Consumable.\n Grants a huge health reserve and doubles attack damage for the duration."
     "DOTA_Tooltip_ability_item_oneshot_power_duration"                                "DURATION:"
     
     "DOTA_Tooltip_ability_item_oneshot_first_aid_duration"                            "DURATION:"
 
     "DOTA_Tooltip_ability_item_oneshot_fish"                                          "Smelly Fish"
-    "DOTA_Tooltip_ability_item_oneshot_fish_Description"                              "Consumable. Applies a significant slow to all nearby enemies."
+    "DOTA_Tooltip_ability_item_oneshot_fish_Description"                              "Consumable.\n Applies a significant slow to all nearby enemies."
     "DOTA_Tooltip_ability_item_oneshot_fish_duration"                                 "DURATION:"
     "DOTA_Tooltip_ability_item_oneshot_fish_slow"                                     "SLOW:"
 
     "DOTA_Tooltip_ability_item_oneshot_line"                                          "Fishing Line"
-    "DOTA_Tooltip_ability_item_oneshot_line_Description"                              "Consumable. Pulls target toward you constant for 5 seconds. Can pull over cliffs"
+    "DOTA_Tooltip_ability_item_oneshot_line_Description"                              "Consumable.\n Pulls target toward you constant for 5 seconds. Can pull over cliffs"
     "DOTA_Tooltip_ability_item_oneshot_line_duration"                                 "DURATION:"
 
     "DOTA_Tooltip_ability_item_oneshot_earth"                                         "Earth Stone"
-    "DOTA_Tooltip_ability_item_oneshot_earth_Description"                             "Consumable. Renders you one with the earth, becoming untargetable for the duration."
+    "DOTA_Tooltip_ability_item_oneshot_earth_Description"                             "Consumable.\n Renders you one with the earth, becoming untargetable for the duration."
     "DOTA_Tooltip_ability_item_oneshot_earth_duration"                                "DURATION:"
 
     "DOTA_Tooltip_ability_item_oneshot_sun_screen"                                    "Sun Screen"
-    "DOTA_Tooltip_ability_item_oneshot_sun_screen_Description"                        "Consumable. Grants magic immunity for the duration."
+    "DOTA_Tooltip_ability_item_oneshot_sun_screen_Description"                        "Consumable.\n Grants magic immunity for the duration."
     "DOTA_Tooltip_ability_item_oneshot_sun_screen_duration"                           "DURATION:"
 
     "DOTA_Tooltip_ability_item_oneshot_sand"                                          "Pocket Sand"
-    "DOTA_Tooltip_ability_item_oneshot_sand_Description"                              "Consumable. Eliminates enemy vision for the duration."
+    "DOTA_Tooltip_ability_item_oneshot_sand_Description"                              "Consumable.\n Eliminates enemy vision for the duration."
     "DOTA_Tooltip_ability_item_oneshot_sand_duration"                                 "DURATION:"
 
     "DOTA_Tooltip_ability_item_oneshot_firecrackers"                                  "Firecrackers"
-    "DOTA_Tooltip_ability_item_oneshot_firecrackers_Description"                      "Consumable. Silences all nearby enemies for the duration."
+    "DOTA_Tooltip_ability_item_oneshot_firecrackers_Description"                      "Consumable.\n Silences all nearby enemies for the duration."
     "DOTA_Tooltip_ability_item_oneshot_firecrackers_duration"                         "DURATION:"
 
     "DOTA_Tooltip_ability_item_oneshot_luck"                                          "Luck of the sea"
-    "DOTA_Tooltip_ability_item_oneshot_luck_Description"                              "Consumable. Disables a random gun on target ship for 4 seconds."
+    "DOTA_Tooltip_ability_item_oneshot_luck_Description"                              "Consumable.\n Disables a random gun on target ship for 4 seconds."
     
 
     "DOTA_Tooltip_ability_item_oneshot_good_stuff"                                    "The Good Stuff"
-    "DOTA_Tooltip_ability_item_oneshot_good_stuff_Description"                        "Consumable. double your weapons, but lose 10 armor in your drunken frenzy."
+    "DOTA_Tooltip_ability_item_oneshot_good_stuff_Description"                        "Consumable.\n double your weapons, but lose 10 armor in your drunken frenzy."
     "DOTA_Tooltip_ability_item_oneshot_good_stuff_duration"                           "DURATION:"
 
     "DOTA_Tooltip_ability_item_oneshot_booze"                                         "Still Booze"
-    "DOTA_Tooltip_ability_item_oneshot_booze_Description"                             "Consumable. Clear all current ability cooldowns."
+    "DOTA_Tooltip_ability_item_oneshot_booze_Description"                             "Consumable.\n Clear all current ability cooldowns."
 
     "DOTA_Tooltip_ability_item_oneshot_mango"                                         "Mango"
-    "DOTA_Tooltip_ability_item_oneshot_mango_Description"                             "Consumable. Cut all active ability cooldowns in half."
+    "DOTA_Tooltip_ability_item_oneshot_mango_Description"                             "Consumable.\n Cut all active ability cooldowns in half."
 
     "DOTA_Tooltip_ability_item_oneshot_trap"                                          "Bear Trap"
-    "DOTA_Tooltip_ability_item_oneshot_trap_Description"                              "Consumable. Leave a trap that deals damage and stuns the first opponent to encounter it."
+    "DOTA_Tooltip_ability_item_oneshot_trap_Description"                              "Consumable.\n Leave a trap that deals damage and stuns the first opponent to encounter it."
     "DOTA_Tooltip_ability_item_oneshot_trap_duration"                                 "DURATION:"
     "DOTA_Tooltip_ability_item_oneshot_trap_damage"                                   "DAMAGE:"
 
     "DOTA_Tooltip_ability_item_oneshot_chain"                                         "Unlawful Augmentation"
-    "DOTA_Tooltip_ability_item_oneshot_chain_Description"                            "Consumable. Attach an unlawful augmentation to target unit, causing the shore guard to dispatch a ship to its location"
+    "DOTA_Tooltip_ability_item_oneshot_chain_Description"                            "Consumable.\n Attach an unlawful augmentation to target unit, causing the shore guard to dispatch a ship to its location"
     "DOTA_Tooltip_ability_item_oneshot_chain_duration"                                "DURATION:"
 
     "DOTA_Tooltip_ability_item_oneshot_camo"                                          "Camouflage Cloak"
-    "DOTA_Tooltip_ability_item_oneshot_camo_Description"                              "Consumable. Grants invisibility to the user for the duration."
+    "DOTA_Tooltip_ability_item_oneshot_camo_Description"                              "Consumable.\n Grants invisibility to the user for the duration."
     "DOTA_Tooltip_ability_item_oneshot_camo_duration"                                 "DURATION:"
 
     "DOTA_Tooltip_ability_item_oneshot_scope"                                         "Scope"
-    "DOTA_Tooltip_ability_item_oneshot_scope_Description"                             "Consumable. Grants an additional 1000 vision for the duration."
+    "DOTA_Tooltip_ability_item_oneshot_scope_Description"                             "Consumable.\n Grants an additional 1000 vision for the duration."
     "DOTA_Tooltip_ability_item_oneshot_scope_duration"                                "DURATION:"
     
     "DOTA_Tooltip_ability_item_trade_manifest"                                         "Trade Manifest"
@@ -2602,8 +2602,8 @@
     "DOTA_Tooltip_target_mod_Description"                                             ""
     
     "remove_player"   "<font color='#800000'> A player is being removed from the game. Their gold and 75 percent of their items and boat value will be distributed with the empire gold </font>"
-    "wrap_up"     "<font color='#58ACFA'> Questions? Comments? Bugs? tell us in </font><font color='#BFA300'>/r/dota2bships</font><font color='#58ACFA'> or email us at</font><font color='#BFA300'> dota2bships@gmail.com </font> "
-      // DOTA 2 MODKIT GENERATED TOOLTIPS FOR: battleships_traders
+   "wrap_up"			"<font color='#58ACFA'> Questions? Comments? Bugs? Find us on Discord (link on the loading page) or </font><font color='#BFA300'>/r/dota2bships</font><font color='#58ACFA'> or email us at</font><font color='#BFA300'> dota2bships@gmail.com </font> "
+		  // DOTA 2 MODKIT GENERATED TOOLTIPS FOR: battleships_traders
     // Keys already defined in addon_english.txt are not listed, nor are Modifiers with the property "IsHidden" "1".
 
     // ******************** HEROES ********************
@@ -2917,7 +2917,7 @@
     "DOTA_Tooltip_ability_sniper_shrapnel_battleship_max_charges"                     "MAX CHARGES:"
     "DOTA_Tooltip_ability_sniper_shrapnel_battleship_charge_restore_time"             "CHARGE RESTORE TIME:"
 
-    "DOTA_Tooltip_ability_pudge_meat_hook_lua"                                        "Tug!"
+    "DOTA_Tooltip_ability_pudge_meat_hook_lua"                                        "Grab!"
     "DOTA_Tooltip_ability_pudge_meat_hook_lua_Description"                            "Let loose your hook and reel in whatever it hits, friend or foe."
     "DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_distance"                          "DISTANCE:"
     "DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_damage"                            "DAMAGE:"
@@ -3568,8 +3568,8 @@
     "DOTA_Tooltip_ability_item_fluff"                                                 "Fluff"
     "DOTA_Tooltip_ability_item_fluff_Description"                                     ""
 
-    "DOTA_Tooltip_ability_item_tower_debuff"                                          "Tower Debuff"
-    "DOTA_Tooltip_ability_item_tower_debuff_Description"                              ""
+    "DOTA_Tooltip_ability_item_tower_debuff"                                          "Spys"
+    "DOTA_Tooltip_ability_item_tower_debuff_Description"                              "Permanently reduces the armor of all enemy buildings by 1."
 
     "DOTA_Tooltip_ability_item_fluff3"                                                "Fluff3"
     "DOTA_Tooltip_ability_item_fluff3_Description"                                    ""
@@ -3596,7 +3596,7 @@
     "DOTA_Tooltip_ability_item_spawn_stunner_Description"                             ""
 
     "DOTA_Tooltip_ability_item_tower_healer"                                          "Tower Healer"
-    "DOTA_Tooltip_ability_item_tower_healer_Description"                              ""
+    "DOTA_Tooltip_ability_item_tower_healer_Description"                              "Instantly restores 10% of missing health to all allied towers."
 
     "DOTA_Tooltip_ability_item_nut_spawner"                                           "Nut Spawner"
     "DOTA_Tooltip_ability_item_nut_spawner_Description"                               ""
@@ -3775,9 +3775,8 @@
     "DOTA_Tooltip_ability_ball_lightning_lua_ball_speed"                              "SPEED:"
 
     "DOTA_Tooltip_ability_electric_bounce_lua"                                        "Electromagnetic Shielding"
-    "DOTA_Tooltip_ability_electric_bounce_lua_Description"                            "Incoming weapon attacks are redirected by electromagnetic forces back to their sources."
-    "DOTA_Tooltip_ability_electric_bounce_lua_duration"                               "DURATION:"
-
+    "DOTA_Tooltip_ability_electric_bounce_lua_Description"                            "Incoming weapon attacks are redirected by electromagnetic forces back to their sources. Bounces back every %chance%th hit"
+  
 
     // ******************** ITEMS ********************
       // DOTA 2 MODKIT GENERATED TOOLTIPS FOR: battleships_traders
@@ -4107,7 +4106,65 @@
 
 		"DOTA_Tooltip_ability_item_hull_four_bonus_movement"                              "BONUS MOVEMENT:"
 
+		// DOTA 2 MODKIT GENERATED TOOLTIPS FOR: battleships_traders
+		// Keys already defined in addon_english.txt are not listed, nor are Modifiers with the property "IsHidden" "1".
 
+		// ******************** HEROES ********************
+
+		// ******************** UNITS ********************
+		"npc_dota_hero_shredder_forreal_battleship8d"                                     "Ironclad Gunship"
+
+		// ******************** ABILITY MODIFIERS ********************
+		"DOTA_Tooltip_concus_ammo"                                                        "Concussive Ammo"
+		"DOTA_Tooltip_concus_ammo_Description"                                            "deals double damage and stuns targets for half a second"
+
+		"DOTA_Tooltip_cannon_dmg_buff"                                                    "Cannon Damage Buff"
+		"DOTA_Tooltip_cannon_dmg_buff_Description"                                        "Your cannon abilities deal extra damage"
+
+		"DOTA_Tooltip_cannon_range_buff"                                                  "Cannon Range Buff"
+		"DOTA_Tooltip_cannon_range_buff_Description"                                      "Your cannons fire farther"
+
+		"DOTA_Tooltip_aoe_shot_modifier"                                                  "Aoe Shot Modifier"
+		"DOTA_Tooltip_aoe_shot_modifier_Description"                                      ""
+
+
+		// ******************** ITEM MODIFIERS ********************
+
+		// ******************** ABILITIES ********************
+		"DOTA_Tooltip_ability_batrider_flaming_lasso_battleship_grab_radius"              "GRAB RADIUS:"
+		"DOTA_Tooltip_ability_batrider_flaming_lasso_battleship_grab_radius_scepter"      "GRAB RADIUS SCEPTER:"
+		"DOTA_Tooltip_ability_batrider_flaming_lasso_battleship_damage"                   "DAMAGE:"
+
+		"DOTA_Tooltip_ability_doom_bringer_scorched_earth_battleship_LinkedSpecialBonus"		"LINKEDSPECIALBONUS:"
+
+		"DOTA_Tooltip_ability_port_cannons"                                               "Port Cannons"
+        "DOTA_Tooltip_ability_port_cannons_Description"                                   "Fire the three cannons on the left side of your ship once each second until you select a new direction.\n\n Increasing levels lowers cooldown."
+        "DOTA_Tooltip_ability_port_cannons_damage_tooltip"                            "DAMAGE:"
+
+        "DOTA_Tooltip_ability_bow_cannon"                                                 "Bow Cannons"
+        "DOTA_Tooltip_ability_bow_cannon_Description"                                     "Fire the two cannons on the front of your ship once each second until you select a new direction.\n\n Increasing levels lowers cooldown."
+        "DOTA_Tooltip_ability_bow_cannon_damage_tooltip"                                  "DAMAGE:"
+
+        "DOTA_Tooltip_ability_starboard_cannon"                                           "Starboard Cannons"
+        "DOTA_Tooltip_ability_starboard_cannon_Description"                                "Fire the three cannons on the right side of your ship once each second until you select a new direction.\n\n Increasing levels lowers cooldown."
+        "DOTA_Tooltip_ability_starboard_cannon_damage_tooltip"                            "DAMAGE:"
+
+        "DOTA_Tooltip_ability_explosive_shells"                                           "Load Concussive shells!"
+        "DOTA_Tooltip_ability_explosive_shells_Description"                               "The damage dealt by cannons is doubled and they stun for .5s on hit for the duration."
+        "DOTA_Tooltip_ability_explosive_shells_duration"                                  "DURATION:"
+
+        "DOTA_Tooltip_ability_cannon_dmg"                                                 "Improved shells"
+        "DOTA_Tooltip_ability_cannon_dmg_Description"                                     "Increase the damage dealt by cannon abilities."
+        "DOTA_Tooltip_ability_cannon_dmg_dmg_buff"                                        "DAMAGE BONUS:"
+
+        "DOTA_Tooltip_ability_cannon_range"                                               "Improved Spotters"
+        "DOTA_Tooltip_ability_cannon_range_Description"                                   "Increase the Fireing Range of cannon abilities (base range is 900)"
+		"DOTA_Tooltip_ability_cannon_range_range_buff"                                    "RANGE BUFF:"
+
+		"DOTA_Tooltip_ability_ball_lightning_lua_max_distance"                            "MAX DISTANCE:"
+
+		"DOTA_Tooltip_ability_aoe_shot"                                                   "Aoe Shot"
+		"DOTA_Tooltip_ability_aoe_shot_Description"                                       ""
 
   }
 }

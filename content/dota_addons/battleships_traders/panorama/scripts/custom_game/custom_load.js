@@ -4,6 +4,10 @@ var hidden = true;
 var currentlearn=1;
 var maxpages=12;
 
+
+
+	$.Schedule(10, next);
+
 function prev() {
 	$("#learn"+currentlearn).style.width = "0%";
 if(currentlearn==1)

@@ -1210,12 +1210,13 @@ function CBattleship8D:OnThink()
               else
                 g_DisconnectTime[hero]=1
 							end
-							if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS and g_DisconnectTime[hero]>4 then
-								goodDisconnected=goodDisconnected+1
-              elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS and g_DisconnectTime[hero]>4 then
-								badDisconnected=badDisconnected+1
+							if not IsInToolsMode() then
+								if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS and g_DisconnectTime[hero]>4 then
+									goodDisconnected=goodDisconnected+1
+								elseif  hero:GetTeamNumber() == DOTA_TEAM_BADGUYS and g_DisconnectTime[hero]>4 then
+									badDisconnected=badDisconnected+1
+								end
 							end
-								
               if g_DisconnectTime[hero]==180 or g_DisconnectTime[hero]==181 then
                 Notifications:TopToAll({text="#player_kickable", duration=6.0, style={color="#800000",  fontSize="30px;"}})
               end
@@ -4932,7 +4933,7 @@ function setupWin(winner)
   	GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
   	GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
 
-  	GameRules:SetSafeToLeave( true )	
+  	GameRules:SetSafeToLeave( true )
   end
 
 	local winnerData = {

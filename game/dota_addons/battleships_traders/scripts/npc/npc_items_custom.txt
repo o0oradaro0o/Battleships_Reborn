@@ -3063,25 +3063,17 @@
 				"OnIntervalThink"
 				{
 
-					"TrackingProjectile"
+					"RunScript"
 					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "650"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fire_weapon"
 						"MoveSpeed" "1200"
+						"NumShots" "1"
 						"ProvidesVision" "0"
-						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/starter_one_projectile.vpcf" 
 					}
 				}
-            }
+      }
 		}
 		"OnProjectileHitUnit"
 		{
@@ -3126,6 +3118,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"dmg"	"12"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"	"650"
 			}
 
         }
@@ -3824,18 +3821,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -3934,18 +3924,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "700"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "1000"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -4043,18 +4026,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -4157,18 +4133,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "900"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -4279,18 +4248,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1000"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "1500"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -4387,19 +4349,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "600"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "950"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -4505,18 +4459,11 @@
             "Function"      "startWeaponCooldown"
           }
 					
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "800"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "1450"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -4627,18 +4574,11 @@
             "Function"      "startWeaponCooldown"
           }
 					
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1050"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "1525"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -4753,18 +4693,11 @@
             "Function"      "startWeaponCooldown"
           }
 					
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "875"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -5056,18 +4989,11 @@
             "ScriptFile"    "scripts/vscripts/itemfunctions.lua"
             "Function"      "startWeaponCooldown"
           }
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -5178,18 +5104,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "700"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "1000"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -5297,18 +5216,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -5417,18 +5329,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "900"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -5547,18 +5452,11 @@
             "Function"      "startWeaponCooldown"
           }          
 				
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1000"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "1500"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -5662,19 +5560,12 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "600"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
 						"MoveSpeed" "1200"
+						"NumShots" "1"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/coal_two_projectile.vpcf" 
@@ -5782,18 +5673,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "800"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "1450"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -5902,18 +5786,11 @@
             "Function"      "startWeaponCooldown"
           }
 					
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "1525"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -6026,27 +5903,16 @@
             "ScriptFile"    "scripts/vscripts/itemfunctions.lua"
             "Function"      "startWeaponCooldown"
           }
-					
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "875"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
                    "EffectName"    "particles/basic_projectile/breach_two_projectile.vpcf" 
 					}
-					
-					
-					
 				}
 				
 			}
@@ -6320,19 +6186,11 @@
             "ScriptFile"    "scripts/vscripts/itemfunctions.lua"
             "Function"      "startWeaponCooldown"
           }
-
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -6435,18 +6293,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "700"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "1000"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -6544,18 +6395,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -6661,18 +6505,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "900"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -6783,18 +6620,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1000"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "1500"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -6891,19 +6721,11 @@
             "ScriptFile"    "scripts/vscripts/itemfunctions.lua"
             "Function"      "startWeaponCooldown"
           }
-
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "600"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "950"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -7010,18 +6832,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "800"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "1450"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -7126,18 +6941,11 @@
             "Function"      "startWeaponCooldown"
           }
 					
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1050"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "1525"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -7249,18 +7057,11 @@
             "Function"      "startWeaponCooldown"
           }
 					
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots" "1"
 						"MoveSpeed" "875"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -7534,42 +7335,16 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/poison_one_projectile.vpcf" 
 					}
-					
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1200"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/poison_one_projectile.vpcf" 
-					}
-					
 					
 				}
 				
@@ -7706,42 +7481,16 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "700"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "1000"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/fire_one_projectile.vpcf" 
 					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "700"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1000"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/fire_one_projectile.vpcf" 
-					}
-					
-					
 				}
 				
 			}
@@ -7852,42 +7601,16 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_one_projectile.vpcf" 
 					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1200"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/ice_one_projectile.vpcf" 
-					}
-					
-					
 				}
 				
 			}
@@ -8015,40 +7738,17 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "900"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/wind_one_projectile.vpcf" 
 					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "900"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/wind_one_projectile.vpcf" 
-					}					
+				
 				}
 			}
 		}
@@ -8154,18 +7854,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1000"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+				"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 
 						"MoveSpeed" "1500"
 						"ProvidesVision" "1"
@@ -8174,24 +7867,6 @@
 						"EffectName"    "particles/basic_projectile/pink_one_projectile.vpcf" 
 					}
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1000"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1500"
-						"VisionRadius" "200"
-						"ProvidesVision" "1"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/pink_one_projectile.vpcf" 
-					}
 				}
 			}
 		}
@@ -8232,7 +7907,7 @@
 			"04"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"vision_rad"	"600"
+				"vision_rad"	"200"
 			}
 			"05"
 			{
@@ -8282,36 +7957,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "600"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1200"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/coal_one_projectile.vpcf" 
-					}
-					
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "600"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+				"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -8429,40 +8079,17 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "800"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "1450"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/plasma_one_projectile.vpcf" 
 					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "800"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1450"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/plasma_one_projectile.vpcf" 
-					}
+				
 				}
 			}
 			"item_plasma_bow_dearmored"
@@ -8573,42 +8200,16 @@
             "Function"      "startWeaponCooldown"
           }
 					
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1050"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "1525"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
             "EffectName"    "particles/basic_projectile/spin_one_projectile.vpcf" 
-					}
-
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1050"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1525"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-            "EffectName"    "particles/basic_projectile/spin_one_projectile.vpcf" 
-					}					
+					}			
 				}				
 			}
 		}
@@ -8709,41 +8310,17 @@
             "Function"      "startWeaponCooldown"
           }
 					
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "875"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
             "EffectName"    "particles/basic_projectile/breach_one_projectile.vpcf" 
 					}
 					
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "875"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-            "EffectName"    "particles/basic_projectile/breach_one_projectile.vpcf" 
-					}
 				}
 			}
 			
@@ -9010,40 +8587,16 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/poison_two_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "900"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1200"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/poison_two_projectile.vpcf" 
-					}					
+					}			
 				}
 			}
 
@@ -9177,41 +8730,17 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "1000"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/fire_two_projectile.vpcf" 
 					}
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1000"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/fire_two_projectile.vpcf" 
-					}
 				}
 			}
 			"fire_area_2"
@@ -9319,35 +8848,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1200"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/ice_two_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+					"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -9477,41 +8982,16 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "900"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/wind_two_projectile.vpcf" 
-					}
-
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "900"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/wind_two_projectile.vpcf" 
-					}					
+					}				
 				}				
 			}
 		}
@@ -9617,43 +9097,18 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1000"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "1500"
 						"ProvidesVision" "1"
 						"VisionRadius" "400"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/pink_two_projectile.vpcf" 
 					}
-
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1000"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1500"
-						"ProvidesVision" "1"
-						"VisionRadius" "400"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/pink_two_projectile.vpcf" 
-					}										
+									
 				}				
 			}
 		}
@@ -9744,35 +9199,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "600"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1200"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/coal_two_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "600"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -9891,41 +9322,18 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "800"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "1450"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/plasma_two_projectile.vpcf" 
 					}
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "800"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1450"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/plasma_two_projectile.vpcf" 
-					}
+
 				}				
 			}
 
@@ -10038,41 +9446,16 @@
             "Function"      "startWeaponCooldown"
           }
 					
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1050"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "1525"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
                    "EffectName"    "particles/basic_projectile/spin_two_projectile.vpcf" 
 					}
-
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1050"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1525"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-            "EffectName"    "particles/basic_projectile/spin_two_projectile.vpcf" 
-					}					
 				}				
 			}
 		}
@@ -10173,35 +9556,11 @@
             "Function"      "startWeaponCooldown"
           }
 					
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "875"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-            "EffectName"    "particles/basic_projectile/breach_two_projectile.vpcf" 
-					}
-						"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "875"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -10470,40 +9829,17 @@
             "ScriptFile"    "scripts/vscripts/itemfunctions.lua"
             "Function"      "startWeaponCooldown"
           }
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/poison_three_projectile.vpcf" 
 					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "900"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1200"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/poison_three_projectile.vpcf" 
-					}					
+				
 				}				
 			}
 
@@ -10638,36 +9974,11 @@
             "ScriptFile"    "scripts/vscripts/itemfunctions.lua"
             "Function"      "startWeaponCooldown"
           }
-
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "700"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1000"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/fire_three_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "700"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "1000"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -10782,35 +10093,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1200"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/ice_three_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -10941,35 +10228,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "900"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/wind_three_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+					"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "900"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -11076,42 +10339,17 @@
 						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
 						"Function"			"lightSoundFire"
 					}					
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1000"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "1500"
 						"ProvidesVision" "1"
 						"VisionRadius" "600"
 						"Dodgeable" "1" 
             "EffectName"    "particles/basic_projectile/pink_three_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1000"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1500"
-						"ProvidesVision" "1"
-						"VisionRadius" "600"
-						"Dodgeable" "1" 
-            "EffectName"    "particles/basic_projectile/pink_three_projectile.vpcf" 
-					}				
+					}	
 				}				
 			}
 		}
@@ -11202,42 +10440,17 @@
             "ScriptFile"    "scripts/vscripts/itemfunctions.lua"
             "Function"      "startWeaponCooldown"
           }
-
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "600"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/coal_three_projectile.vpcf" 
 					}
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "600"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1200"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/coal_three_projectile.vpcf" 
-					}
 				}
 			}
 
@@ -11351,41 +10564,18 @@
             "Function"      "startWeaponCooldown"
           }	
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "800"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+					"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "1450"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/plasma_three_projectile.vpcf" 
 					}
 					
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "800"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1450"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/plasma_three_projectile.vpcf" 
-					}
+					
 				}
 			}
 			"item_plasma_three_bow_dearmored"
@@ -11497,35 +10687,11 @@
             "Function"      "startWeaponCooldown"
           }
 					
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1050"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1525"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-            "EffectName"    "particles/basic_projectile/spin_three_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1050"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+					"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "1525"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
@@ -11631,41 +10797,18 @@
             "Function"      "startWeaponCooldown"
           }
 					
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+					"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"MoveSpeed" "875"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
             "EffectName"    "particles/basic_projectile/breach_three_projectile.vpcf" 
 					}
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "875"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-            "EffectName"    "particles/basic_projectile/breach_three_projectile.vpcf" 
-					}
+					
 				}				
 			}
 			
@@ -11930,74 +11073,17 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "900"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+					"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"4"
 						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
 					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "900"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1200"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "900"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1200"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "900"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1200"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/poison_ult_projectile.vpcf" 
-					}					
+					
 				}				
 			}
 			
@@ -12120,6 +11206,16 @@
 				{
 					"RunScript"
 					{
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fire_weapon"
+						"NumShots"			"4"
+						"MoveSpeed" "1000"
+						"ProvidesVision" "0"
+						"Dodgeable" "1" 
+						"EffectName"    "particles/basic_projectile/fire_ult_projectile.vpcf" 
+					}
+					"RunScript"
+					{
 						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
 						"Function"			"fireSoundFire"
 					}
@@ -12134,74 +11230,8 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%radius"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1000"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/fire_ult_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%radius"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1000"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/fire_ult_projectile.vpcf" 
-					}	
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%radius"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1000"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/fire_ult_projectile.vpcf" 
-					}	
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%radius"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1000"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/fire_ult_projectile.vpcf" 
-					}					
+					
+						
 				}				
 			}
 
@@ -12273,6 +11303,11 @@
 				"var_type"		"FIELD_FLOAT"
 				"dps"			"500"
 			}
+			"07"
+			{
+				"var_type"	"FIELD_INTEGER"
+				"range"	"700"
+			}
 		}
 	}
 	
@@ -12318,74 +11353,17 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+			"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"4"
 						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/ice_ult_projectile.vpcf" 
 					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1200"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/ice_ult_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1200"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/ice_ult_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1200"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/ice_ult_projectile.vpcf" 
-					}					
+				
 				}				
 			}
 
@@ -12510,74 +11488,17 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+					"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"4"
 						"MoveSpeed" "900"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/wind_ult_projectile.vpcf" 
 					}	
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "900"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/wind_ult_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "900"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/wind_ult_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "900"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/wind_ult_projectile.vpcf" 
-					}						
+				
 				}
 			}
 		}
@@ -12685,36 +11606,11 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" 		"CASTER"
-							"Radius" 		"1000"
-							"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" 		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" 		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" 	"1"
-							"Random" 		"1"
-						}
-						"ProvidesVision" 	"1"
-						"VisionRadius" 		"800"
-						"MoveSpeed" 		"800"
-						"Dodgeable" 		"1" 
-						"EffectName"   		"particles/basic_projectile/pink_ult_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" 		"CASTER"
-							"Radius" 		"1000"
-							"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" 		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" 		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" 	"1"
-							"Random" 		"1"
-						}
+					"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"2"
 						"ProvidesVision" 	"1"
 						"VisionRadius" 		"800"
 						"MoveSpeed" 		"800"
@@ -12813,74 +11709,17 @@
             "Function"      "startWeaponCooldown"
           }
 
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "600"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"4"
 						"MoveSpeed" "1200"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
 						"EffectName"    "particles/basic_projectile/coal_ult_projectile.vpcf" 
 					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "600"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1200"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/coal_ult_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "600"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1200"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/coal_ult_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "600"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1200"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-						"EffectName"    "particles/basic_projectile/coal_ult_projectile.vpcf" 
-					}
+				
 				}				
 			}
 			
@@ -12990,74 +11829,17 @@
 						"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
 						"Function"			"plasmaSoundFire"
 					}									
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "800"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"4"
 						"MoveSpeed" "1450"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
             "EffectName"    "particles/basic_projectile/plasma_ult_projectile.vpcf" 
 					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "800"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1450"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/plasma_ult_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "800"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1450"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-            "EffectName"    "particles/basic_projectile/plasma_ult_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "800"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1450"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-            "EffectName"    "particles/basic_projectile/plasma_ult_projectile.vpcf" 
-					}
+					
 				}
 			}		
 				"item_plasma_ult_bow_dearmored"
@@ -13170,74 +11952,17 @@
             "Function"      "startWeaponCooldown"
           }
 					
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1050"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"4"
 						"MoveSpeed" "1525"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
             "EffectName"    "particles/basic_projectile/spin_ult_projectile.vpcf" 
 					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1050"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1525"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-            "EffectName"    "particles/basic_projectile/spin_ult_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1050"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1525"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-            "EffectName"    "particles/basic_projectile/spin_ult_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1050"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "1525"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-            "EffectName"    "particles/basic_projectile/spin_ult_projectile.vpcf" 
-					}
+				
 				}
 				
 			}
@@ -13333,74 +12058,17 @@
             "Function"      "startWeaponCooldown"
           }
 					
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
+				"RunScript"
+			{
+				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+				"Function"			"fire_weapon"
+				"NumShots"			"4"
 						"MoveSpeed" "875"
 						"ProvidesVision" "0"
 						"Dodgeable" "1" 
             "EffectName"    "particles/basic_projectile/breach_ult_projectile.vpcf" 
 					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "875"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-            "EffectName"    "particles/basic_projectile/breach_ult_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "875"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-            "EffectName"    "particles/basic_projectile/breach_ult_projectile.vpcf" 
-					}
-					"TrackingProjectile"
-					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "%range"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE"
-							"MaxTargets" "1"
-							"Random" "1"
-						}
-						"MoveSpeed" "875"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-            "EffectName"    "particles/basic_projectile/breach_ult_projectile.vpcf" 
-					}
+				
 				}
 			}
 			
@@ -14259,7 +12927,8 @@
 				{
 					"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_INVISIBLE" "MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_SILENCED" "MODIFIER_STATE_VALUE_ENABLED""MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
 					
 				} 
 			}
@@ -15571,7 +14240,7 @@
 		"ItemDroppable"					"0"
 		"ItemPurchasable"				"0"
 		
-		OnEquip
+		"OnEquip"
 		{
 			"RunScript"
 			{
@@ -16859,7 +15528,7 @@
       "ModifierName" "netted"
       }
 
-      SpendCharge {}
+      "SpendCharge" {}
     }
 
 		"AbilitySpecial"
@@ -16909,7 +15578,7 @@
 				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"peak"
 			}
-			SpendCharge {}
+			"SpendCharge" {}
 		}
 
 		"AbilitySpecial"
@@ -16964,7 +15633,7 @@
 				"Function"			"RemoveWeps"
 			}			
 		}
-		OnChannelFinish
+		"OnChannelFinish"
 		{
 			"RunScript"
 			{
@@ -16980,7 +15649,7 @@
 					"HealAmount"			"50000"
 					"Target"			"CASTER"
 				}	
-				SpendCharge {}
+				"SpendCharge" {}
 		}
 
 		"AbilitySpecial"
@@ -17031,7 +15700,7 @@
 				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"FirstAid"
 			}
-			SpendCharge {}
+			"SpendCharge" {}
 		}
 
 		"AbilitySpecial"
@@ -17133,7 +15802,7 @@
 						"Target" "TARGET"
 						"ModifierName" "brew_mod"
 					}
-						SpendCharge {}		
+						"SpendCharge" {}		
                 }
 
 		"AbilitySpecial"
@@ -17195,7 +15864,7 @@
 					"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 					"Function"			"grow"
 				}
-				SpendCharge {}	
+				"SpendCharge" {}	
 		}
 		 
 		"Modifiers"
@@ -17208,7 +15877,7 @@
 					"MODIFIER_PROPERTY_HEALTH_BONUS" "2000"
 					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "100"
                 }
-				OnDestroy
+				"OnDestroy"
 				{
 					"RunScript"
 					{
@@ -17262,7 +15931,7 @@
 					"Target" "CASTER"
 					"ModifierName" "fish_slow_aura"
 				}
-				SpendCharge {}	
+				"SpendCharge" {}	
 		}
 		
 		 "Modifiers"
@@ -17378,7 +16047,7 @@
 						"Target" "TARGET"
 						"ModifierName" "line_mod"
 					}
-						SpendCharge {}		
+						"SpendCharge" {}		
                 }
 
 		"AbilitySpecial"
@@ -17427,7 +16096,7 @@
 					"Target" "CASTER"
 					"ModifierName" "no_target_mod"
 				}
-				SpendCharge {}	
+				"SpendCharge" {}	
 		}
 		 
 		"Modifiers"
@@ -17489,7 +16158,7 @@
 					"Target" "CASTER"
 					"ModifierName" "no_target_mod"
 				}
-				SpendCharge {}	
+				"SpendCharge" {}	
 		}
 		 
 		"Modifiers"
@@ -17584,7 +16253,7 @@
 						"Target" "TARGET"
 						"ModifierName" "sand_mod"
 					}
-						SpendCharge {}		
+						"SpendCharge" {}		
                 }
 
 		"AbilitySpecial"
@@ -17629,7 +16298,7 @@
 					"Target" "CASTER"
 					"ModifierName" "firecrackers_aura"
 				}
-				SpendCharge {}	
+				"SpendCharge" {}	
 		}
 		
 		 "Modifiers"
@@ -17707,7 +16376,7 @@
 					"Target" "TARGET"
 					"ModifierName" "luck_mod"
 				}						
-				SpendCharge {}	
+				"SpendCharge" {}	
 		}
 		 
 		"Modifiers"
@@ -17776,7 +16445,7 @@
 					"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 					"Function"			"ApplyRandomDD"
 				}
-				SpendCharge {}	
+				"SpendCharge" {}	
 		}
 		 
 		"Modifiers"
@@ -17789,7 +16458,7 @@
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"-10"
                 }
-				OnDestroy
+				"OnDestroy"
 				{
 					"RunScript"
 					{
@@ -17848,7 +16517,7 @@
 				"ScriptFile"			"scripts/vscripts/abilityFunctions.lua"
 				"Function"			"killCd"
 			}
-      SpendCharge {}	
+      "SpendCharge" {}	
 		}
 	}
 	"item_oneshot_trap"
@@ -17889,7 +16558,7 @@
 				"UnitCount"             "1"
 				"Duration"				"120"
 			}
-			SpendCharge {}
+			"SpendCharge" {}
 		}
 		"AbilitySpecial"
 		{
@@ -17965,7 +16634,7 @@
 						"Duration"				"5"
 					}
 				
-						SpendCharge {}		
+						"SpendCharge" {}		
                 }
 
 		"AbilitySpecial"
@@ -18021,7 +16690,7 @@
 					"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 					"Function"			"RemoveWeps"
 				}
-				SpendCharge {}					
+				"SpendCharge" {}					
 		}
 		 
 		"Modifiers"
@@ -18036,7 +16705,7 @@
 				}
 				"EffectName"     "particles/basic_projectile/camo_effect.vpcf"
 				"EffectAttachType"	"follow_origin"
-				OnDestroy
+				"OnDestroy"
 				{
 					"RunScript"
 					{
@@ -18095,7 +16764,7 @@
 					"Target" "CASTER"
 					"ModifierName" "scope_mod"
 				}
-				SpendCharge {}	
+				"SpendCharge" {}	
 		}
 		 
 		"Modifiers"
@@ -18161,7 +16830,7 @@
 				"ScriptFile"			"scripts/vscripts/abilityFunctions.lua"
 				"Function"			"killCdHalf"
 			}
-			SpendCharge {}	
+			"SpendCharge" {}	
 		}
 	}
 
@@ -18225,7 +16894,7 @@
 				"ScriptFile"			"scripts/vscripts/abilityFunctions.lua"
 				"Function"			"giveGold"
 			}							
-			SpendCharge {}	
+			"SpendCharge" {}	
 		}
 	}
 	

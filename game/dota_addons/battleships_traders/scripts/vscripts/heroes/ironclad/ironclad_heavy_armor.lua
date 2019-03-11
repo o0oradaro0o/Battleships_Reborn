@@ -63,16 +63,15 @@ function modifier_ironclad_heavy_armor:GetModifierPhysical_ConstantBlock( params
 end
 
 function modifier_ironclad_heavy_armor:PlayEffects(isBack)
-  local particle_cast = "particles/units/heroes/hero_mars/mars_shield_of_mars.vpcf"
+  local particle_cast = "particles/basic_projectile/shield_model.vpcf"
   local sound_cast = "Hero_Mars.Shield.Block"
 
   if not isBack then
-    particle_cast = "particles/units/heroes/hero_mars/mars_shield_of_mars_small.vpcf"
+    particle_cast = "particles/basic_projectile/shield_model_small.vpcf"
     sound_cast = "Hero_Mars.Shield.BlockSmall"
   end
 
   local effect_cast = ParticleManager:CreateParticle(particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
   ParticleManager:ReleaseParticleIndex(effect_cast)
-
   self.parent:EmitSound(sound_cast)
 end

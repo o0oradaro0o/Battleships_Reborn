@@ -3220,11 +3220,10 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"News_Title"		"News!"
 		"News_Content"		"Hi all! I am continuing to make balance changes and improve abilities. The next new content will be replacments for pistols on the 6k ships.
 
-Recent Balance Changes 2/7/2019
-   • New 6K added the Ironclad Gunship.
-   • Battleship silence aoe increased.
-   • Aircraft carrier ships nerfed.
-   • Tidehunter abilitys damage adjusted.
+Recent Balance Changes 3/10/2019
+   • The Ironclad Gunship has been reworked with ammo types
+   • The seaplane no longer crashes if it lands on a wall
+   • Death firing has been fixed
 "
 		
 		"port_cannons"                                               "Port Cannons"
@@ -3248,6 +3247,9 @@ Recent Balance Changes 2/7/2019
         "cannon_dmg_dmg_buff"                                        "DAMAGE BONUS:"
 
         "cannon_range"                                               "Improved Spotters"
+		"heavy_armor"                                       "Heavy Armor"
+		"change_ammo"										"Change Ammo"
+		"cannon_barrage"                                    "Cannon Barrage"
 		"ball_lightning_lua_max_distance"                            "MAX DISTANCE:"
 		"winner" "You Were Victorious!
 Continue"

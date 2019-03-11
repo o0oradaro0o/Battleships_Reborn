@@ -18,6 +18,47 @@ function itemFunctions:start() -- Runs whenever the itemFunctions.lua is ran
   ----print('[ItemFunctions] itemFunctions started!')
 end
 
+
+function fire_weapon(keys)
+
+  local casterUnit = keys.caster
+  local ability = keys.ability
+  for k,v in pairs(keys) do print(k,v) end
+  local badGuys = FindUnitsInRadius( casterUnit:GetTeamNumber(), casterUnit:GetOrigin(), nil, ability:GetSpecialValueFor("range"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC+ DOTA_UNIT_TARGET_BUILDING, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE, 0, false )
+ 
+  if ability:GetSpecialValueFor("range") >1001 then
+    badGuys = FindUnitsInRadius( casterUnit:GetTeamNumber(), casterUnit:GetOrigin(), nil, ability:GetSpecialValueFor("range"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE, 0, false )
+  end
+   if casterUnit:IsAlive() then
+    for shot = 1,keys.NumShots do
+      if #badGuys>0 then
+      Targetfucker=badGuys[RandomInt( 1, #badGuys )]
+      local visionrad=0
+      if keys.ProvidesVision ==1 then
+        visionrad = ability:GetSpecialValueFor("vision_rad")
+      end
+          local tracking_projectile =
+          {
+            EffectName = keys.EffectName,
+            Ability = keys.ability,
+            vSpawnOrigin = casterUnit:GetAbsOrigin(),
+            Target = Targetfucker,
+            Source = keys.source or casterUnit,
+            bHasFrontalCone = false,
+            iMoveSpeed = keys.MoveSpeed,
+            bReplaceExisting = false,
+            bProvidesVision = keys.ProvidesVision,
+            iVisionRadius =visionrad,
+            iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+          }
+          ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+      end
+    end
+  end
+end
+
+
+
 function toggle_item(keys) -- keys is the information sent by the ability
   ----print( '[ItemFunctions] toggle_item  Called' )
 
@@ -41,9 +82,9 @@ function sendMission(keys)
 end
 
 function startWeaponCooldown(keys)
-  local ability = keys.ability
+  --local ability = keys.ability
 
-  local cooldown = ability:GetSpecialValueFor("fire_rate")
+  --local cooldown = ability:GetSpecialValueFor("fire_rate")
 
   --ability:StartCooldown(cooldown)
 end
@@ -744,7 +785,7 @@ function fireCaulkWeapon(args)
   local itemName = tostring(args.ability:GetAbilityName())
   local casterUnit = args.caster
 
-  friends = FindUnitsInRadius( casterUnit:GetTeamNumber(), casterUnit:GetOrigin(), nil, 650, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+ local friends = FindUnitsInRadius( casterUnit:GetTeamNumber(), casterUnit:GetOrigin(), nil, 650, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, 0, 0, false )
 
   TargetFriend=friends[RandomInt( 1, #friends )]
 
@@ -841,11 +882,13 @@ function fireChaosWeapon(args)
   if chaosDmgHolder[args.ability]==nil then
     chaosDmgHolder[args.ability]={}
   end
-
+  if not casterUnit:IsAlive() then
+    return
+  end
 
   if RandomInt(1,5)==4 or args.ability.counter==4 then
 
-    fuckers = FindUnitsInRadius( casterUnit:GetTeamNumber(), casterUnit:GetOrigin(), nil, 850, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC+ DOTA_UNIT_TARGET_BUILDING, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE, 0, false )
+    local fuckers = FindUnitsInRadius( casterUnit:GetTeamNumber(), casterUnit:GetOrigin(), nil, 850, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC+ DOTA_UNIT_TARGET_BUILDING, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE, 0, false )
 
     Targetfucker=fuckers[RandomInt( 1, #fuckers )]
     if string.match(itemName, "doubled") then

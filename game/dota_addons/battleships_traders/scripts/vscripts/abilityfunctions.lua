@@ -2673,9 +2673,9 @@ function fireCannon(caster, pos, range, attachname, modrad, ind)
   	providesVision = true
 		effect = "particles/basic_projectile/c_ball_incin.vpcf"
 	elseif caster:HasModifier("cannon_ice_buff") then
-		effect = "particles/basic_projectile/c_ball_incin.vpcf"
+		effect = "particles/basic_projectile/c_ball_ice.vpcf"
 	elseif caster:HasModifier("cannon_splash_buff") then
-		-- effect = "particles/basic_projectile/c_ball_incin.vpcf"
+		 effect = "particles/basic_projectile/c_ball_splash.vpcf"
 	end
 
 	local info = {
@@ -2698,7 +2698,7 @@ function fireCannon(caster, pos, range, attachname, modrad, ind)
 		iVisionRadius = 600,
 		iVisionTeamNumber = caster:GetTeamNumber()
 	}
-
+	print("CreateLinearProjectile")
 	projectile = ProjectileManager:CreateLinearProjectile(info)
 end
 
@@ -2723,6 +2723,7 @@ function fireSideCannons(args)
 end
 
 function FireAllCannons(args)
+	print("fireall")
 	starboardCannon(args)
 	portCannon(args)
 	bowCannon(args)
@@ -2775,12 +2776,13 @@ function cannonHit(args)
 	local ability = args.ability
 	local casterUnit = args.caster
 	local targetUnit = args.target
-
+	local damageType = DAMAGE_TYPE_MAGICAL
 	local damage = ability:GetSpecialValueFor("damage_tooltip")
 
 	if casterUnit:HasModifier("cannon_fire_buff") then
 		local weaponBuffAbility = casterUnit:FindAbilityByName("ironclad_weapon_fire")
 		damage = damage + weaponBuffAbility:GetSpecialValueFor("damage")
+		local damageType = DAMAGE_TYPE_PURE
 	elseif casterUnit:HasModifier("cannon_ice_buff") then
 		local weaponBuffAbility = casterUnit:FindAbilityByName("ironclad_weapon_ice")
 		-- Apply the slow modifier
@@ -2816,12 +2818,11 @@ function cannonHit(args)
 			end
 		end
 	end
-
 	local damageTable = {
 		victim = targetUnit,
 		attacker = casterUnit,
 		damage = damage,
-		damage_type = DAMAGE_TYPE_MAGICAL
+		damage_type = damageType
 	}
 
 	ApplyDamage(damageTable)

@@ -13029,7 +13029,7 @@
 		"AbilityCastRange"				"1600"
 
 		"AbilityCastPoint"				"0.1"
-		"AbilityCooldown"				"17 15 13 10"
+		"AbilityCooldown"				"11 9 7 5"
 		"AbilityManaCost"				"0"
 		
 		"OnUpgrade"
@@ -13088,7 +13088,7 @@
 		"AbilityCastRange"				"1600"
 
 		"AbilityCastPoint"				"0.1"
-		"AbilityCooldown"				"17 15 13 10"
+		"AbilityCooldown"				"14 12 10 8"
 		"AbilityManaCost"				"0"
 		
 		"OnUpgrade"
@@ -13152,7 +13152,7 @@
 		"AbilityCastRange"				"1600"
 
 		"AbilityCastPoint"				"0.1"
-		"AbilityCooldown"				"17 15 13 10"
+		"AbilityCooldown"				"11 9 7 5"
 		"AbilityManaCost"				"0"
 		
 		"OnUpgrade"
@@ -13248,9 +13248,9 @@
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"AbilityTextureName"			"techies_suicide"
+		"AbilityTextureName"			"ironclad_ult"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		
+		"AbilityCastRange"				"1600"
 		"BaseClass" 					"ability_datadriven"
 
 		"AbilityCooldown"				"30"
@@ -13320,6 +13320,11 @@
                 "var_type"                          "FIELD_INTEGER"
                 "fire_interval"                     "1"
             }
+						"03"
+						{
+							"var_type"			"FIELD_INTEGER"
+							"range"				"1600"
+						}
         }
 	}
 	"ironclad_weapon_fire"
@@ -13329,7 +13334,7 @@
 		
 		"BaseClass" 					"ability_datadriven"
 
-		"AbilityCooldown"				"1"
+		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"0"
 
 		"OnSpellStart"
@@ -13365,7 +13370,7 @@
 		
 		"BaseClass" 					"ability_datadriven"
 
-		"AbilityCooldown"				"1"
+		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"0"
 
 		"OnSpellStart"
@@ -13388,7 +13393,7 @@
             	"Duration"	"%duration"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%slow_pct"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_pct"
 				}
             }
         }
@@ -13414,7 +13419,7 @@
 		
 		"BaseClass" 					"ability_datadriven"
 
-		"AbilityCooldown"				"1"
+		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"0"
 
 		"OnSpellStart"

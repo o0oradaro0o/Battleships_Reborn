@@ -367,7 +367,7 @@ function showText(BoatName, AbilityName) {
 function showDetails(BoatName) {
 
 	$.Msg(BoatName);
-	if (BoatName == "hide" || $("#" + BoatName).style.height == "460.0px") {
+	if (BoatName == "hide" || $("#" + BoatName).style.height == "460.0px" || $("#" + BoatName).style.height == "490.0px" ) {
 		$("#ancient_apparition").style.height = "0px";
 		$("#crystal_maiden").style.height = "0px";
 		$("#disruptor").style.height = "0px";
@@ -426,7 +426,14 @@ function showDetails(BoatName) {
 		$("#vengefulspirit").style.height = "0px";
 		$("#bane").style.height = "0px";
 		$("#enigma").style.height = "0px";
-		$("#" + BoatName).style.height = "460px";
+		if(BoatName=="shredder")
+		{
+			$("#" + BoatName).style.height = "490px";
+		}
+		else
+		{
+			$("#" + BoatName).style.height = "460px";
+		}
 	}
 
 }
