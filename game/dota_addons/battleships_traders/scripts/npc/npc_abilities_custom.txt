@@ -3472,7 +3472,7 @@
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"300"
+				"radius"					"500"
 			}
 			"08"
 			{
@@ -12963,13 +12963,18 @@
 			"08"
 			{
 				"var_type"              				"FIELD_FLOAT"
-				"percent_health_as_damage"   		"2.5 3.0 3.5 4.0"
+				"percent_slow"   		"2.5 3.0 3.5 4.0"
 			}
       "09"
       {
         "var_type"                "FIELD_INTEGER"
         "duration"                "15"
       }
+			"10"
+			{
+				"var_type"              				"FIELD_FLOAT"
+				"slow_duration"   		"2.5 3.0 3.5 4.0"
+			}
 		}
 	}
 
@@ -13464,7 +13469,7 @@
     "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
     "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
     "AbilityTextureName"      "storm_spirit_ball_lightning"
-    "AbilityCooldown"        "4 3 2 1"
+    "AbilityCooldown"        "6 5 4 3"
     "AbilityManaCost"        "100"
 
     "AbilityCastPoint"        "0.3"
@@ -13595,7 +13600,7 @@
                 "01"
                 {
                         "var_type"                                      "FIELD_FLOAT"
-                        "evasion"                          "1.0 2.0 3.0 4.0"
+                        "evasion"                          "4.0 6.0 8.0 10.0"
                 }
 
         }

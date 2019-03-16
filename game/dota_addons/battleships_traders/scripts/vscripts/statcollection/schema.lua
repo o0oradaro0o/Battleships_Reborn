@@ -48,7 +48,8 @@ function BuildGameArray()
     game.wn=storage:getWinner()			-- Team winner
     game.settings=storage:getGameSettings()
     game.combatLog=storage:GetCombatLog()
-    game.mapVersion=7
+    game.mapVersion=8
+    game.gameDuration = math.floor(GameRules:GetGameTime()+0.5)
     --game.th=storage:GetTideKillers()
 
     return game

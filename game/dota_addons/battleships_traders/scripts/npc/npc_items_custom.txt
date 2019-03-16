@@ -1,418 +1,418 @@
 "DOTAAbilities"
 {
 
-  "item_caulk_bow"
-  {
-    "ID"                            "2222"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    "BaseClass"                     "item_lua"
-    "ScriptFile"                    "items/item_caulk"
-    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
-    "AbilityTextureName"            "item_caulk_bow"
-    "AbilityCastRange"              "650"
-    "AbilityCooldown"               "0"
-    "AbilityManaCost"               "0"
-    "ItemCost"                      "350" 
-    "ItemDroppable"         "1"
-    "ItemSellable"          "1"
-    "ItemKillable"          "0"
-    "ItemQuality"         "epic"
+  // "item_caulk_bow"
+  // {
+  //   "ID"                            "2222"
+  //   "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  //   "BaseClass"                     "item_lua"
+  //   "ScriptFile"                    "items/item_caulk"
+  //   "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+  //   "AbilityTextureName"            "item_caulk_bow"
+  //   "AbilityCastRange"              "650"
+  //   "AbilityCooldown"               "0"
+  //   "AbilityManaCost"               "0"
+  //   "ItemCost"                      "350" 
+  //   "ItemDroppable"         "1"
+  //   "ItemSellable"          "1"
+  //   "ItemKillable"          "0"
+  //   "ItemQuality"         "epic"
   
-    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+  //   "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "dmg"      "18.0"
-      }
-      "02"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "fire_rate"   "1.2"
-      }
-      "03"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "range"       "650"
-      }
-      "04"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "level"       "1"
-      }
-      "05"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "doubled_wep"     "0"
-      }
-      "06"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "speed"       "950"
-      }
-      "07"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "dps"         "15.0"
-      }
-    }
-  }
+  //   "AbilitySpecial"
+  //   {
+  //     "01"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "dmg"      "18.0"
+  //     }
+  //     "02"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "fire_rate"   "1.2"
+  //     }
+  //     "03"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "range"       "650"
+  //     }
+  //     "04"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "level"       "1"
+  //     }
+  //     "05"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "doubled_wep"     "0"
+  //     }
+  //     "06"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "speed"       "950"
+  //     }
+  //     "07"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "dps"         "15.0"
+  //     }
+  //   }
+  // }
 
-  "item_caulk_bow_doubled"
-  {
-    "ID"                            "2223"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    "BaseClass"                     "item_lua"
-    "ScriptFile"                    "items/item_caulk"
-    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
-    "AbilityTextureName"            "item_caulk_bow_doubled"
-    "AbilityCastRange"              "650"
-    "AbilityCooldown"               "0"
-    "AbilityManaCost"               "0"
-    "ItemCost"                      "350" 
-    "ItemDroppable"                 "1"
-    "ItemSellable"                  "1"
-    "ItemKillable"                  "0"
-    "ItemQuality"                   "epic"
+  // "item_caulk_bow_doubled"
+  // {
+  //   "ID"                            "2223"
+  //   "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  //   "BaseClass"                     "item_lua"
+  //   "ScriptFile"                    "items/item_caulk"
+  //   "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+  //   "AbilityTextureName"            "item_caulk_bow_doubled"
+  //   "AbilityCastRange"              "650"
+  //   "AbilityCooldown"               "0"
+  //   "AbilityManaCost"               "0"
+  //   "ItemCost"                      "350" 
+  //   "ItemDroppable"                 "1"
+  //   "ItemSellable"                  "1"
+  //   "ItemKillable"                  "0"
+  //   "ItemQuality"                   "epic"
   
-    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+  //   "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "dmg"      "18.0"
-      }
-      "02"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "fire_rate"   "1.2"
-      }
-      "03"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "range"       "650"
-      }
-      "04"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "level"       "1"
-      }
-      "05"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "doubled_wep"     "1"
-      }
-      "06"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "speed"       "950"
-      }
-      "07"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "dps"         "30.0"
-      }
-    }
-  }
+  //   "AbilitySpecial"
+  //   {
+  //     "01"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "dmg"      "18.0"
+  //     }
+  //     "02"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "fire_rate"   "1.2"
+  //     }
+  //     "03"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "range"       "650"
+  //     }
+  //     "04"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "level"       "1"
+  //     }
+  //     "05"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "doubled_wep"     "1"
+  //     }
+  //     "06"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "speed"       "950"
+  //     }
+  //     "07"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "dps"         "30.0"
+  //     }
+  //   }
+  // }
 
-  "item_caulk_two_bow"
-  {
-    "ID"                            "2224"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    "BaseClass"                     "item_lua"
-    "ScriptFile"                    "items/item_caulk"
-    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
-    "AbilityTextureName"            "item_caulk_two_bow"
-    "AbilityCastRange"              "650"
-    "AbilityCooldown"               "0"
-    "AbilityManaCost"               "0"
-    "ItemCost"                      "850" 
-    "ItemDroppable"         "1"
-    "ItemSellable"          "1"
-    "ItemKillable"          "0"
-    "ItemQuality"         "epic"
+  // "item_caulk_two_bow"
+  // {
+  //   "ID"                            "2224"
+  //   "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  //   "BaseClass"                     "item_lua"
+  //   "ScriptFile"                    "items/item_caulk"
+  //   "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+  //   "AbilityTextureName"            "item_caulk_two_bow"
+  //   "AbilityCastRange"              "650"
+  //   "AbilityCooldown"               "0"
+  //   "AbilityManaCost"               "0"
+  //   "ItemCost"                      "850" 
+  //   "ItemDroppable"         "1"
+  //   "ItemSellable"          "1"
+  //   "ItemKillable"          "0"
+  //   "ItemQuality"         "epic"
   
-    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+  //   "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "dmg"      "39.0"
-      }
-      "02"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "fire_rate"   "1.2"
-      }
-      "03"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "range"       "650"
-      }
-      "04"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "level"     "2"
-      }
-      "05"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "doubled_wep"     "0"
-      }
-      "06"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "speed"       "950"
-      }
-      "07"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "dps"         "32.0"
-      }
-    }
-  }
+  //   "AbilitySpecial"
+  //   {
+  //     "01"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "dmg"      "39.0"
+  //     }
+  //     "02"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "fire_rate"   "1.2"
+  //     }
+  //     "03"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "range"       "650"
+  //     }
+  //     "04"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "level"     "2"
+  //     }
+  //     "05"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "doubled_wep"     "0"
+  //     }
+  //     "06"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "speed"       "950"
+  //     }
+  //     "07"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "dps"         "32.0"
+  //     }
+  //   }
+  // }
 
-  "item_caulk_two_bow_doubled"
-  {
-    "ID"                            "2225"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    "BaseClass"                     "item_lua"
-    "ScriptFile"                    "items/item_caulk"
-    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
-    "AbilityTextureName"            "item_caulk_two_bow_doubled"
-    "AbilityCastRange"              "650"
-    "AbilityCooldown"               "0"
-    "AbilityManaCost"               "0"
-    "ItemCost"                      "1700" 
-    "ItemDroppable"         "1"
-    "ItemSellable"          "1"
-    "ItemKillable"          "0"
-    "ItemQuality"         "epic"
+  // "item_caulk_two_bow_doubled"
+  // {
+  //   "ID"                            "2225"
+  //   "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  //   "BaseClass"                     "item_lua"
+  //   "ScriptFile"                    "items/item_caulk"
+  //   "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+  //   "AbilityTextureName"            "item_caulk_two_bow_doubled"
+  //   "AbilityCastRange"              "650"
+  //   "AbilityCooldown"               "0"
+  //   "AbilityManaCost"               "0"
+  //   "ItemCost"                      "1700" 
+  //   "ItemDroppable"         "1"
+  //   "ItemSellable"          "1"
+  //   "ItemKillable"          "0"
+  //   "ItemQuality"         "epic"
   
-    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+  //   "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "dmg"      "39.0"
-      }
-      "02"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "fire_rate"   "1.2"
-      }
-      "03"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "range"       "650"
-      }
-      "04"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "level"       "2"
-      }
-      "05"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "doubled_wep"     "1"
-      }
-      "06"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "speed"       "950"
-      }
-      "07"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "dps"         "65.0"
-      }
-    }
-  }
+  //   "AbilitySpecial"
+  //   {
+  //     "01"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "dmg"      "39.0"
+  //     }
+  //     "02"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "fire_rate"   "1.2"
+  //     }
+  //     "03"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "range"       "650"
+  //     }
+  //     "04"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "level"       "2"
+  //     }
+  //     "05"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "doubled_wep"     "1"
+  //     }
+  //     "06"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "speed"       "950"
+  //     }
+  //     "07"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "dps"         "65.0"
+  //     }
+  //   }
+  // }
 
-  "item_caulk_three_bow"
-  {
-    "ID"                            "2226"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    "BaseClass"                     "item_lua"
-    "ScriptFile"                    "items/item_caulk"
-    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
-    "AbilityTextureName"            "item_caulk_three_bow"
-    "AbilityCastRange"              "650"
-    "AbilityCooldown"               "0"
-    "AbilityManaCost"               "0"
-    "ItemCost"                      "2000" 
-    "ItemDroppable"         "1"
-    "ItemSellable"          "1"
-    "ItemKillable"          "0"
-    "ItemQuality"         "epic"
+  // "item_caulk_three_bow"
+  // {
+  //   "ID"                            "2226"
+  //   "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  //   "BaseClass"                     "item_lua"
+  //   "ScriptFile"                    "items/item_caulk"
+  //   "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+  //   "AbilityTextureName"            "item_caulk_three_bow"
+  //   "AbilityCastRange"              "650"
+  //   "AbilityCooldown"               "0"
+  //   "AbilityManaCost"               "0"
+  //   "ItemCost"                      "2000" 
+  //   "ItemDroppable"         "1"
+  //   "ItemSellable"          "1"
+  //   "ItemKillable"          "0"
+  //   "ItemQuality"         "epic"
   
-    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+  //   "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "dmg"      "96.0"
-      }
-      "02"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "fire_rate"   "1.2"
-      }
-      "03"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "range"       "650"
-      }
-      "04"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "level"     "3"
-      }
-      "05"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "doubled_wep"     "0"
-      }
-      "06"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "speed"       "950"
-      }
-      "07"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "dps"         "80.0"
-      }
-    }
-  }
+  //   "AbilitySpecial"
+  //   {
+  //     "01"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "dmg"      "96.0"
+  //     }
+  //     "02"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "fire_rate"   "1.2"
+  //     }
+  //     "03"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "range"       "650"
+  //     }
+  //     "04"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "level"     "3"
+  //     }
+  //     "05"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "doubled_wep"     "0"
+  //     }
+  //     "06"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "speed"       "950"
+  //     }
+  //     "07"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "dps"         "80.0"
+  //     }
+  //   }
+  // }
 
-  "item_caulk_three_bow_doubled"
-  {
-    "ID"                            "2227"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    "BaseClass"                     "item_lua"
-    "ScriptFile"                    "items/item_caulk"
-    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
-    "AbilityTextureName"            "item_caulk_three_bow_doubled"
-    "AbilityCastRange"              "650"
-    "AbilityCooldown"               "0"
-    "AbilityManaCost"               "0"
-    "ItemCost"                      "4000" 
-    "ItemDroppable"         "1"
-    "ItemSellable"          "1"
-    "ItemKillable"          "0"
-    "ItemQuality"         "epic"
+  // "item_caulk_three_bow_doubled"
+  // {
+  //   "ID"                            "2227"
+  //   "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  //   "BaseClass"                     "item_lua"
+  //   "ScriptFile"                    "items/item_caulk"
+  //   "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+  //   "AbilityTextureName"            "item_caulk_three_bow_doubled"
+  //   "AbilityCastRange"              "650"
+  //   "AbilityCooldown"               "0"
+  //   "AbilityManaCost"               "0"
+  //   "ItemCost"                      "4000" 
+  //   "ItemDroppable"         "1"
+  //   "ItemSellable"          "1"
+  //   "ItemKillable"          "0"
+  //   "ItemQuality"         "epic"
   
-    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+  //   "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "dmg"      "96.0"
-      }
-      "02"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "fire_rate"   "1.2"
-      }
-      "03"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "range"       "650"
-      }
-      "04"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "level"       "3"
-      }
-      "05"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "doubled_wep"     "1"
-      }
-      "06"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "speed"       "950"
-      }
-      "07"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "dps"         "160.0"
-      }
-    }
-  }
+  //   "AbilitySpecial"
+  //   {
+  //     "01"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "dmg"      "96.0"
+  //     }
+  //     "02"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "fire_rate"   "1.2"
+  //     }
+  //     "03"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "range"       "650"
+  //     }
+  //     "04"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "level"       "3"
+  //     }
+  //     "05"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "doubled_wep"     "1"
+  //     }
+  //     "06"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "speed"       "950"
+  //     }
+  //     "07"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "dps"         "160.0"
+  //     }
+  //   }
+  // }
 
-  "item_caulk_ult_bow"
-  {
-    "ID"                            "2228"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    "BaseClass"                     "item_lua"
-    "ScriptFile"                    "items/item_caulk"
-    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
-    "AbilityTextureName"            "item_caulk_ult_bow"
-    "AbilityCastRange"              "650"
-    "AbilityCooldown"               "0"
-    "AbilityManaCost"               "0"
-    "ItemCost"                      "350" 
-    "ItemDroppable"         "1"
-    "ItemSellable"          "1"
-    "ItemKillable"          "0"
-    "ItemQuality"         "epic"
+  // "item_caulk_ult_bow"
+  // {
+  //   "ID"                            "2228"
+  //   "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  //   "BaseClass"                     "item_lua"
+  //   "ScriptFile"                    "items/item_caulk"
+  //   "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+  //   "AbilityTextureName"            "item_caulk_ult_bow"
+  //   "AbilityCastRange"              "650"
+  //   "AbilityCooldown"               "0"
+  //   "AbilityManaCost"               "0"
+  //   "ItemCost"                      "350" 
+  //   "ItemDroppable"         "1"
+  //   "ItemSellable"          "1"
+  //   "ItemKillable"          "0"
+  //   "ItemQuality"         "epic"
   
-    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+  //   "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "dmg"      "96.0"
-      }
-      "02"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "fire_rate"   "1.2"
-      }
-      "03"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "range"       "650"
-      }
-      "04"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "level"       "4"
-      }
-      "05"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "doubled_wep"     "1"
-      }
-      "06"
-      {
-        "var_type"    "FIELD_INTEGER"
-        "speed"       "950"
-      }
-      "07"
-      {
-        "var_type"    "FIELD_FLOAT"
-        "dps"         "320.0"
-      }
-    }
-  }
+  //   "AbilitySpecial"
+  //   {
+  //     "01"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "dmg"      "96.0"
+  //     }
+  //     "02"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "fire_rate"   "1.2"
+  //     }
+  //     "03"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "range"       "650"
+  //     }
+  //     "04"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "level"       "4"
+  //     }
+  //     "05"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "doubled_wep"     "1"
+  //     }
+  //     "06"
+  //     {
+  //       "var_type"    "FIELD_INTEGER"
+  //       "speed"       "950"
+  //     }
+  //     "07"
+  //     {
+  //       "var_type"    "FIELD_FLOAT"
+  //       "dps"         "320.0"
+  //     }
+  //   }
+  // }
 
 	//=================================================================================================
 	//=================================================================================================
@@ -1860,7 +1860,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"4500"	
+		"ItemCost"						"3800"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -1956,7 +1956,7 @@
 		"Model"							"models/props_gameplay/recipe.mdl"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"3700"	
+		"ItemCost"						"3500"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -5070,7 +5070,7 @@
 		"AbilityCastRange"              "%range"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "700" 
+		"ItemCost"                      "800" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
@@ -5527,7 +5527,7 @@
 		"AbilityCastRange"              "%range"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "700" 
+		"ItemCost"                      "800" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
@@ -8702,7 +8702,7 @@
 		"AbilityCastRange"              "%range"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "1400" 
+		"ItemCost"                      "1600" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
@@ -9171,7 +9171,7 @@
 		"AbilityCastRange"              "%range"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "1400" 
+		"ItemCost"                      "1600" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
@@ -11187,7 +11187,7 @@
 		"AbilityCastRange"              "%radius"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "10000" 
+		"ItemCost"                      "9500" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"

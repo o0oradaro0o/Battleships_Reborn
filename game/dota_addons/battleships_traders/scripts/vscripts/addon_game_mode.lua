@@ -61,6 +61,7 @@ g_frood = 93116118
 g_vic = 70585706
 g_josh = 40159914
 g_borgel = 13375544
+g_planit = 5879425
 -- creep spawn and level counters
 g_CreepLevel = 0
 g_NumSmallCreeps = 6
@@ -1217,7 +1218,7 @@ function CBattleship8D:OnThink()
 									badDisconnected=badDisconnected+1
 								end
 							end
-              if g_DisconnectTime[hero]==180 or g_DisconnectTime[hero]==181 then
+              if g_DisconnectTime[hero]==180 or g_DisconnectTime[hero]==181 and g_DisconnectKicked[hero] ~= 1 then
                 Notifications:TopToAll({text="#player_kickable", duration=6.0, style={color="#800000",  fontSize="30px;"}})
               end
               if g_DisconnectTime[hero]>180 or hero:HasOwnerAbandoned() then
@@ -1618,7 +1619,12 @@ function AttachCosmetics(hero)
 		elseif steamID32 == g_borgel then
 			hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/borgel.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 			ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
-		-- else
+		elseif steamID32 == g_planit then
+			hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/planit.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+			ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
+
+			
+			-- else
 		-- 	hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/genericHat.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 		-- 	ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
 		end
@@ -2649,9 +2655,9 @@ function CBattleship8D:HandleEmpGold()
 			  g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + 100
 				g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 100
 				table.insert(g_combatLogArray,{
-					killer_name=PlayerResource:GetPlayerName(hero:GetPlayerOwnerID()),
+					killer_name=PlayerResource:GetSteamAccountID(hero:GetPlayerOwnerID()),
 					killed_name="Tower",
-					Game_time=math.floor(GameRules:GetGameTime()/60+0.5),
+					Game_time=GameRules:GetGameTime()/60,
 				})
 			end
 		  end
@@ -2670,9 +2676,9 @@ function CBattleship8D:HandleEmpGold()
 			  g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 100
 				g_HeroGoldArray[hero:GetPlayerOwnerID()]=g_HeroGoldArray[hero:GetPlayerOwnerID()] + 100
 				table.insert(g_combatLogArray,{
-					killer_name=PlayerResource:GetPlayerName(hero:GetPlayerOwnerID()),
+					killer_name=PlayerResource:GetSteamAccountID(hero:GetPlayerOwnerID()),
 					killed_name="Dock",
-					Game_time=math.floor(GameRules:GetGameTime()/60+0.5),
+					Game_time=GameRules:GetGameTime()/60,
 				})
 			end
 		  end
@@ -2877,9 +2883,9 @@ function CBattleship8D:HandleEmpGold()
 		if killerEntity:GetPlayerID()~=nil then
 			killerName=PlayerResource:GetPlayerName( killerEntity:GetPlayerID())
 			table.insert(g_combatLogArray,{
-					killer_name=killerName,
-					killed_name=killedName,
-					Game_time=math.floor(GameRules:GetGameTime()/60+0.5),
+					killer_name=PlayerResource:GetSteamAccountID(killerEntity:GetPlayerID()),
+					killed_name=PlayerResource:GetSteamAccountID(killedUnit:GetPlayerID()),
+					Game_time=GameRules:GetGameTime()/60,
 				})
 		end
   
@@ -2957,8 +2963,8 @@ function CBattleship8D:HandleEmpGold()
 		end
 		else
 			table.insert(g_combatLogArray,{
-					killed_name=killedName,
-					Game_time=math.floor(GameRules:GetGameTime()/60+0.5),
+					killed_name=PlayerResource:GetSteamAccountID( killedUnit:GetPlayerID()),
+					Game_time=GameRules:GetGameTime()/60,
 				})
   
 		if killedUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then

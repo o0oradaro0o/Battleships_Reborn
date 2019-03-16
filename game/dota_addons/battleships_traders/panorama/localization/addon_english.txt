@@ -3220,10 +3220,10 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"News_Title"		"News!"
 		"News_Content"		"Hi all! I am continuing to make balance changes and improve abilities. The next new content will be replacments for pistols on the 6k ships.
 
-Recent Balance Changes 3/10/2019
-   • The Ironclad Gunship has been reworked with ammo types
-   • The seaplane no longer crashes if it lands on a wall
+Recent Balance Changes 3/13/2019
    • Death firing has been fixed
+   • Coal 2 and fire 2 both cost 100 extra gold
+   • Coal and fire ultimate recipes have had their costs reduced
 "
 		
 		"port_cannons"                                               "Port Cannons"
