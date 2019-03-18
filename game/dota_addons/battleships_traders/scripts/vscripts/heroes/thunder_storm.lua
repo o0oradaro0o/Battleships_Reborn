@@ -1,7 +1,30 @@
 LinkLuaModifier("modifier_thunder_storm", "heroes/thunder_storm.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_thunder_storm_debuff", "heroes/static_link.lua", LUA_MODIFIER_MOTION_NONE)
 
 thunder_storm = class({})
 modifier_thunder_storm = class({})
+
+
+modifier_thunder_storm_debuff = modifier_thunder_storm_debuff or class({})
+
+function modifier_thunder_storm_debuff:IsDebuff()  return true end
+function modifier_thunder_storm_debuff:IsHidden()  return false end
+function modifier_thunder_storm_debuff:IsPurgable() return false end
+function modifier_thunder_storm_debuff:DeclareFunctions()
+  local funcs = {
+      MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
+      MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+  }
+
+  return funcs
+end
+function modifier_thunder_storm_debuff:GetModifierPhysicalArmorBonus( params )
+	return self.armor_debuff*-1
+end
+function modifier_thunder_storm_debuff:GetModifierMoveSpeedBonus_Constant( params )
+	return self.percent_slow*-1
+end
+
 
 function modifier_thunder_storm:OnCreated()
     if IsServer() then
@@ -116,7 +139,7 @@ function thunder_storm:CastLightningBolt(ability, targetUnit, targetPoint)
       damage_type = DAMAGE_TYPE_MAGICAL,
       ability = ability
 	  }
-	
+    targetUnit:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_thunder_storm_debuff", { duration = self.debuff_duration } )
     ApplyDamage(damageTable)
 	end
 end
