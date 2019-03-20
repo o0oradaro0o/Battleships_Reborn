@@ -3220,10 +3220,11 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"News_Title"		"News!"
 		"News_Content"		"Hi all! I am continuing to make balance changes and improve abilities. The next new content will be replacments for pistols on the 6k ships.
 
-Recent Balance Changes 3/13/2019
-   • Death firing has been fixed
-   • Coal 2 and fire 2 both cost 100 extra gold
-   • Coal and fire ultimate recipes have had their costs reduced
+Recent Balance Changes 3/18/2019
+   • Stormchaser ultimate damage reduced but it now slows and de-armors
+   • Stormchaser now has a 3 second cooldown between electric slides
+   • Battleship evasion buffed
+   • Battleship ult AOE increased
 "
 		
 		"port_cannons"                                               "Port Cannons"
