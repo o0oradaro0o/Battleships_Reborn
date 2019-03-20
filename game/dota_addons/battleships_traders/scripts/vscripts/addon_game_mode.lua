@@ -414,7 +414,6 @@ function Precache( context )
   PrecacheUnitByNameSync( "npc_dota_air_craft_bomber", context )
   PrecacheUnitByNameSync( "npc_dota_boat_pleasure_craft", context )
   PrecacheResource( "model", "models/courier/donkey_unicorn/donkey_unicorn.vmdl", context )
-  PrecacheResource( "model", "models/courier/donkey_unicorn/donkey_unicorn.vmdyl", context )
 
   PrecacheResource( "model", "models/courier/sw_donkey/sw_donkey.vmdl", context )
   PrecacheResource( "model", "models/items/courier/jumo/jumo.vmdl", context )

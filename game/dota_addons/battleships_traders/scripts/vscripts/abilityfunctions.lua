@@ -636,6 +636,9 @@ function CallPuckDive(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
 	local ability = "dive_battleship_puck"
 
+	--disjoint
+	ProjectileManager:ProjectileDodge(casterUnit)
+
 	local abil = casterUnit:GetAbilityByIndex(1)
 	local level = abil:GetLevel()
 	StartAnimation(casterUnit, {duration = .3 + .2 * level, activity = ACT_SCRIPT_CUSTOM_0, rate = 2 / (.3 + .1 * level)})
@@ -2251,8 +2254,6 @@ end
 	Date: 09.04.2015.
 	Relocates the target, caster and any illusions under the casters control]]
 function RealityRift( keys )
-	
-	
 	local caster = keys.caster
 	local target = keys.target
 	local caster_location = caster:GetAbsOrigin()
@@ -2274,10 +2275,7 @@ function RealityRift( keys )
 	-- Add the phased modifier to prevent getting stuck
 	target:AddNewModifier(caster, nil, "modifier_phased", {duration = 0.03})
 	caster:AddNewModifier(caster, nil, "modifier_phased", {duration = 0.03})
-
 end
-
-
 
 function WhaleBait(args)
 	local targetPos = args.target:GetAbsOrigin()
@@ -2288,13 +2286,8 @@ function WhaleBait(args)
 	local direction = casterPos - targetPos
 	local vec = direction:Normalized()
 
-	FindClearSpaceForUnit(targetUnit, targetUnit:GetAbsOrigin() + vec*2, true)
-
-	-- Creates 8 temporary trees at each 45 degree interval around the clicked point
-
+	targetUnit:SetAbsOrigin(targetUnit:GetAbsOrigin() + vec*2)
 end
-
-
 
 function CherryLaunch(args)
 	--print("IN CherryLaunch")
@@ -2306,7 +2299,6 @@ function CherryLaunch(args)
   
    for i=1, RandomInt(1,3) do
 		Timers:CreateTimer(.1*i,function()
-
 		
 		local info = {
 			Ability = args.ability,

@@ -36,7 +36,7 @@ function cloud_dragon_breathe_fire_lua:OnSpellStart()
     bHasFrontalCone = false,
     bReplaceExisting = false,
     iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
-    iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,        
+    iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
     bDeleteOnHit = false,
     vVelocity = vDirection * speed,
     bProvidesVision = false,

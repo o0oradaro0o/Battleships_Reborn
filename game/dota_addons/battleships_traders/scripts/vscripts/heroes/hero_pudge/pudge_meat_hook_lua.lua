@@ -133,8 +133,6 @@ function pudge_meat_hook_lua:OnProjectileHit( hTarget, vLocation )
 				ParticleManager:ReleaseParticleIndex( nFXIndex )
 			end
 
-			
-
 			AddFOWViewer( self:GetCaster():GetTeamNumber(), hTarget:GetOrigin(), self.vision_radius, self.vision_duration, false )
 			self.hVictim = hTarget
 			bTargetPulled = true
