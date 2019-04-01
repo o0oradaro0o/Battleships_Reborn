@@ -12,6 +12,8 @@
 			<!--Empty space to let the loading screen and chat be visible-->
 			<Panel hittest="false" id="TeamsSelectEmptySpace" />
 			<!--Teams List, left hand panel-->
+			<Panel id="HatListholder">
+			<Label id = "PointTracker" text="My Pts:" />
 			<Panel id="HatList">
 				<Label class="HatRankHeader" html="true" text="Captain Hats (750 pts)" />
 				<Panel class="Divider" />
@@ -32,6 +34,11 @@
 						
 						<Image class="HatImage" src="file://{images}/custom_game/hats/cap3.png" />
 						<Label class="HatImageLabel" text="Flashy" />
+					</Button>
+					<Button class="HatSelectButton" onactivate="RandHat(680,'gun')">
+						<Image class="RandImage" src="file://{images}/custom_game/hats/rand.png" />
+						<Label class="RandImageLabel" text="Random" />
+						<Label class="RandImageLabel" text="(680pts)" />
 					</Button>
 				</Panel>
 				<Label class="HatRankHeader" html="true" text="First Mate Hats (500 pts)" />
@@ -54,6 +61,11 @@
 						<Image class="HatImage" src="file://{images}/custom_game/hats/first3.png" />
 						<Label class="HatImageLabel" text="Bright" />
 					</Button>
+					<Button class="HatSelectButton" onactivate="RandHat(450,'gun')">
+						<Image class="RandImage" src="file://{images}/custom_game/hats/rand.png" />
+						<Label class="RandImageLabel" text="Random" />
+						<Label class="RandImageLabel" text="(450pts)" />
+					</Button>
 				</Panel>
 				<Label class="HatRankHeader" html="true" text="Gunner Hats (250 pts)" />
 				<Panel class="Divider" />
@@ -74,6 +86,11 @@
 						
 						<Image class="HatImage" src="file://{images}/custom_game/hats/gun3.png" />
 						<Label class="HatImageLabel" text="Bright" />
+					</Button>
+					<Button class="HatSelectButton" onactivate="RandHat(220,'gun')">
+						<Image class="RandImage" src="file://{images}/custom_game/hats/rand.png" />
+						<Label class="RandImageLabel" text="Random" />
+						<Label class="RandImageLabel" text="(220pts)" />
 					</Button>
 				</Panel>
 				<Label class="HatRankHeader" html="true" text="Boatswain Hats (100 pts)" />
@@ -97,6 +114,11 @@
 						<Image class="HatImage" src="file://{images}/custom_game/hats/swine2.png" />
 						<Label class="HatImageLabel" text="Bright" />
 					</Button>
+					<Button class="HatSelectButton" onactivate="RandHat(85,'swine')">
+						<Image class="RandImage" src="file://{images}/custom_game/hats/rand.png" />
+						<Label class="RandImageLabel" text="Random" />
+						<Label class="RandImageLabel" text="(85pts)" />
+					</Button>
 				</Panel>
 				<Label class="HatRankHeader" html="true" text="DeckHand Hats (50 pts)" />
 				<Panel class="Divider" />
@@ -119,15 +141,22 @@
 						<Image class="HatImage" src="file://{images}/custom_game/hats/deck1.png" />
 						<Label class="HatImageLabel" text="Bright" />
 					</Button>
+					<Button class="HatSelectButton" onactivate="RandHat(40,'deck')">
+						<Image class="RandImage" src="file://{images}/custom_game/hats/rand.png" />
+						<Label class="RandImageLabel" text="Random" />
+						<Label class="RandImageLabel" text="(40pts)" />
+					</Button>
 				</Panel>
-				<Label id = "PointTracker" class="HatImageLabel" text="My Pts:" />
+				
 				<Panel class="HatRow">
 				
 				<Button id="noHat" class="HatSelectButton" onactivate="PickHat(0,'noHat')">
+					
 					<Image class="HatImage" src="file://{images}/custom_game/hats/noHat.png" />
 					<Label class="HatImageLabel" text="No hat" />
 				</Button>
 				</Panel>
+			</Panel>
 			</Panel>
 			<Panel id="TeamsList">
 				<Panel id="TeamsListGroup">

@@ -521,16 +521,30 @@ function TradeMode()
 function ShowHats()
 {
 	$( "#PointTracker").text="my Points: "+g_myPts
-	if($( "#HatList" ).style.width==="400.0px")
+	if($( "#HatListholder" ).style.width==="400.0px")
 	{
-		$( "#HatList" ).style.width="0px";
+		$( "#HatListholder" ).style.width="0px";
 	}
 	else
 	{
-		$( "#HatList" ).style.width="400px";
+		$( "#HatListholder" ).style.width="400px";
 	}
 	
 }
+function RandHat(cost, hat) {
+	if (!$("#" + hat + 1).BHasClass("locked") && !$("#" + hat + 2).BHasClass("locked") && !$("#" + hat + 3).BHasClass("locked")) {
+		return
+	}
+	var done = false
+	while (!done) {
+		var i = Math.floor(Math.random() * 3) + 1;
+		if ($("#" + hat + i).BHasClass("locked")) {
+			PickHat(cost, hat + i)
+			done = true
+		}
+	}
+}
+
 function PickHat(cost,hat)
 {
 
@@ -550,13 +564,28 @@ function PickHat(cost,hat)
 			return;
 		}
 	}
+	var childimage=1
+	
+
 	if(g_HatChoice[GetSteamID32()])
 	{
-		$( "#"+g_HatChoice[GetSteamID32()] ).RemoveClass("SelectedHat");
+		if (g_HatChoice[GetSteamID32()]==="noHat")
+		{
+			childimage=0
+		}
+		$( "#"+g_HatChoice[GetSteamID32()] ).GetChild(childimage).RemoveClass("SelectedHat");
+	}
+	if (hat==="noHat")
+	{
+		childimage=0
+	}
+	else
+	{
+		childimage=1
 	}
 	//$( "#coOpButton" ).SetHasClass( "toggled", true);
 	g_HatChoice[GetSteamID32()]=hat
-	$( "#"+hat ).SetHasClass( "SelectedHat", true)
+	$( "#"+hat ).GetChild(childimage).SetHasClass( "SelectedHat", true)
 	$( "#CurrentHat" ).SetImage("file://{images}/custom_game/hats/"+hat+".png")
 	GameEvents.SendCustomGameEventToServer( "SendPlayerHat", { "playerSteamId": GetSteamID32(), "text": hat});
 	}
@@ -586,7 +615,7 @@ function GetLocalPlayerHats() {
 		LocalPlayerHatInfo = data;
 		$.Msg(data);
 		g_myPts=data.Content[0].points
-		$( "#PointTracker").text="my Points: "+g_myPts
+		$( "#PointTracker").text="My Points: "+g_myPts
 		data.Content[0].hats.forEach(function(hat) {
 			if($( "#"+hat ).BHasClass("locked"))
 			{

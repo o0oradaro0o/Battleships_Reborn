@@ -31,19 +31,28 @@
 
 #HatList
 {
+	width: 100%;
+	height:660px;
+	flow-children: down;    
+
+	border-radius: 8px;
+	visibility: visible;
+	overflow: clip scroll;
+}
+#HatListholder
+{
     width: 0px;
 	height:680px;
 	margin-top: 200px;
 	flow-children: down;    
-    padding-left: 16px;
-	padding-right: 16px;
+
     margin-left: 16px;
 	transition: width 0.3s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
 	background-color: gradient(linear, 0% 0%, 0.1% 0%, from(#00000000), color-stop(0.1, #202327), color-stop(0.1, #141619ff), to(#000000ee));
 	border-radius: 8px;
 	visibility: visible;
-	overflow: clip scroll;
 }
+
 
 
 @keyframes 'TeamsListAppear'
@@ -948,7 +957,7 @@ DOTAAvatarImage
 .HatRow
 {
 flow-children:right;
-height:100px;
+height:115px;
 width:100%;
 }
 .HatImage
@@ -958,12 +967,19 @@ width:100%;
 	horizontal-align: center;
 	border-radius: 8px;
 }
+.RandImage
+{
+	width:80px;
+	height:65px;
+	horizontal-align: center;
+	border-radius: 8px;
+}
 .HatSelectButton
 {
 	flow-children:down;
-	margin: 6px;
-	padding: 4px;
-	width:29%;
+	margin: 3px;
+	padding: 6px;
+	width:23%;
 	height:100%;
 	
 }
@@ -971,13 +987,16 @@ width:100%;
 {
 	border-radius: 8px;
 	flow-children:down;
-	width:29%;
-	height:100%;
 	background-color: gradient(linear, 0% 0%, 0.1% 0%, from(#555555), color-stop(0.1, #202327), color-stop(0.1, #141619ff), to(#555555));
 	
 }
 .HatImageLabel
 {
+	horizontal-align: center;
+}
+.RandImageLabel
+{
+	margin-top: -5px;
 	horizontal-align: center;
 }
 .Divider 
@@ -990,14 +1009,15 @@ width:100%;
 }
 .SelectedHat{
 	border-radius: 8px;
-	background-color: gradient(linear, 0% 0%, 0.1% 0%, from(#555588), color-stop(0.1, #202327), color-stop(0.1, #141619ff), to(#555588));
-	
+	box-shadow: 0px 0px 20px #BFAF50;
 }
 #noHat
 {
 	vertical-align: bottom;
 	horizontal-align: right;
 	height: 90px;
+	margin: 10px;
+	padding: 6px;
 }
 .locked
 {
@@ -1010,8 +1030,18 @@ width:100%;
 	width:40%;
 	height:60%;
 	padding-top: 15px;
-	margin-bottom:-53px;
+	margin-bottom:-62px;
 	
 	z-index: 5;
 	opacity: .3;
+}
+#PointTracker
+{
+	font-size: 20px;
+	text-align: right;
+	vertical-align: center;
+	text-shadow: 2px 2px 2px black;
+	width: 100%;
+	margin-right: 6px;
+	padding:4px;
 }
