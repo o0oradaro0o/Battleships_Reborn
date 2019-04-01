@@ -16,6 +16,7 @@
 				m_bBentNormals = false
 				m_bIgnoreCloth = false
 				m_bGetSkinningFromLod0 = false
+				m_bPreferHighDensityTrianglesInUvDensityCalculation = false
 				m_pMorphInfo = null
 			},
 		]
@@ -296,6 +297,19 @@
 								m_influenceName = "lantern"
 								m_vTranslationOffset = [ 0.000005, 39.378632, 0.0 ]
 								m_vRotationOffset = [ -0.0, 0.000001, -0.000003 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "HatPoint"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Main"
+								m_vTranslationOffset = [ -0.0, 401.089996, 290.427185 ]
+								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
 								m_flWeight = 1.0
 								m_bRoot = false
 							},

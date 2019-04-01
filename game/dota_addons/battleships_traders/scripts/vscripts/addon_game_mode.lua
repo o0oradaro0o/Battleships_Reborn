@@ -171,7 +171,8 @@ g_OlderHeroLocations ={}
 
 -- this replaces dotas default gold tracking.
 g_HeroGoldArray={}
-
+-- this holds the player ids and the hats they selected
+g_PlayerHatList={}
 
 
 -- this shit is all for stat tracking.  we can look at recent games to check item builds and see what items are most popular
@@ -556,8 +557,12 @@ function CBattleship8D:InitGameMode()
   CustomGameEventManager:RegisterListener("TugMode", tugmode);
   CustomGameEventManager:RegisterListener("TradeMode", tradeMode);
   CustomGameEventManager:RegisterListener("Activate_Co_Op", ActivateCoOp);
-
-  CustomGameEventManager:RegisterListener("Unstick", UnstickPlayer);
+	CustomGameEventManager:RegisterListener("TradeMode", tradeMode);
+	CustomGameEventManager:RegisterListener("SendPlayerHat", SetHat);
+	CustomGameEventManager:RegisterListener("BuyPlayerHat", BuyHat);
+	CustomGameEventManager:RegisterListener("AddPoints", AddPoints);
+	
+	
   mode = GameRules:GetGameModeEntity()
   mode:SetHUDVisible(12, false)
   LinkLuaModifier("modifier_movespeed_cap", "Modifiers/move_speed.lua", LUA_MODIFIER_MOTION_NONE)
@@ -979,7 +984,6 @@ function CBattleship8D:OnThink()
         Notifications:TopToAll({text="#inst_two", duration=6.0, style={color="#58ACFA",  fontSize="18px;"}, continue=true})
         Notifications:TopToAll({text="#inst_three", duration=6.0, style={color="#B03060",  fontSize="18px;"}, continue=true})
         Notifications:TopToAll({text="#inst_four", duration=6.0, style={color="#58ACFA",  fontSize="18px;"}, continue=true})
-
 
       end
 			if g_MainTimerTickCount == 7 then
@@ -1582,8 +1586,16 @@ function AttachCosmetics(hero)
 		steamID32 = PlayerResource:GetSteamAccountID(hero:GetPlayerOwnerID())
 	
 	end
-
-	if hero.particleHAT==nil and string.match(hero:GetName(),"zuus")  then
+	if hero.particleHAT==nil then
+		for playerSteamId,hatname in pairs( g_PlayerHatList) do
+		print(playerSteamId..hatname)
+			if string.match( steamID32,playerSteamId ) then
+				hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/".. hatname ..".vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+				ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
+			end
+		end
+	end
+	if hero.particleHAT==nil then
 		-- if steamID32 == g_zentrix then
 		if steamID32 == g_zentrix then
 			hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/zentrix.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
@@ -1627,8 +1639,6 @@ function AttachCosmetics(hero)
 		-- 	hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/genericHat.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
 		-- 	ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
 		end
-		
-		
 	end
 	if string.match(hero:GetName(),"apparition") then
 	  if hero.particleR==nil then
@@ -1738,7 +1748,7 @@ function CBattleship8D:HandleEmpGold()
 			extra_base_gold = 166 * g_PlayerCountSouth-3
 		end
 		goodGoldEach=goodGoldEach+extra_base_gold
-	  if g_PlayerCountSouth ~= 0  then
+	  if g_PlayerCountSouth ~= 0 then
 			goodGoldEach = goodGoldEach / g_PlayerCountSouth
 	  end
 	  Notifications:TopToAll({text="#emp_gold", duration=5.0, style={color="#B2B2B2",  fontSize="50px;"}})
@@ -4609,8 +4619,68 @@ function fixAbilities(hero)
 	  g_TradeMode=1
 	end
 	----print(g_TradeMode)
-  end
-  
+	end
+	  
+  function SetHat(eventSourceIndex, args)
+		print(args.playerSteamId .. args.text)
+		g_PlayerHatList[args.playerSteamId]=args.text;
+		local request = CreateHTTPRequestScriptVM("POST", "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/".. args.playerSteamId);
+		local data={}
+		local CurHat={}
+		CurHat.CurHat=args.text
+		data.patch="true"
+		data.SET=CurHat
+		request:SetHTTPRequestRawPostBody("application/json", json.encode(data));
+		request:SetHTTPRequestHeaderValue("x-api-key","FX5Tqd1joL2CC3p1tjCoF7hJCIoRrNDv4m0tqmvo");
+		request:SetHTTPRequestGetOrPostParameter("server_key", GetDedicatedServerKeyV2(SERVER_KEY));
+		request:Send(function(res)
+				print(res.StatusCode);
+        if res.StatusCode ~= 200 then
+        end
+    end);
+		----print(g_TradeMode)
+	end
+
+  function BuyHat(eventSourceIndex, args)
+		----print(args.text)
+
+		local request = CreateHTTPRequestScriptVM("POST", "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/".. args.playerSteamId .."/buy-hat");
+		local data={}
+		data.points=args.cost
+		data.hat=args.text
+		print(data)
+		request:SetHTTPRequestRawPostBody("application/json", json.encode(data));
+		request:SetHTTPRequestHeaderValue("x-api-key","FX5Tqd1joL2CC3p1tjCoF7hJCIoRrNDv4m0tqmvo");
+		request:SetHTTPRequestGetOrPostParameter("server_key", GetDedicatedServerKeyV2(SERVER_KEY));
+		request:Send(function(res)
+				print(res.StatusCode);
+        if res.StatusCode ~= 200 then
+        end
+    end);
+		----print(g_TradeMode)
+	end
+
+
+	function AddPoints(eventSourceIndex, args)
+		----print(args.text)
+		local request = CreateHTTPRequestScriptVM("POST", "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/".. args.playerSteamId);
+		local data={}
+		local points={}
+		points.points=args.points
+		data.patch="true"
+		data.ADD=points
+		request:SetHTTPRequestRawPostBody("application/json", json.encode(data));
+		request:SetHTTPRequestHeaderValue("x-api-key","FX5Tqd1joL2CC3p1tjCoF7hJCIoRrNDv4m0tqmvo");
+		request:SetHTTPRequestGetOrPostParameter("server_key", GetDedicatedServerKeyV2(SERVER_KEY));
+		request:Send(function(res)
+				print(res.StatusCode);
+        if res.StatusCode ~= 200 then
+        end
+    end);
+		----print(g_TradeMode)
+	end
+	
+	
   
   ---------------------------BATTLE MODE CODE---------------------------
   

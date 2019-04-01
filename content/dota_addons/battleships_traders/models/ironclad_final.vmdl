@@ -387,6 +387,19 @@
 							},
 						]
 					},
+					{
+						m_name = "HatPoint"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Bone"
+								m_vTranslationOffset = [ -0.0, 58.23315, 44.961197 ]
+								m_vRotationOffset = [ -0.0, -0.0, -0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
 				]
 			}
 		},

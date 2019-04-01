@@ -367,7 +367,7 @@ function showText(BoatName, AbilityName) {
 function showDetails(BoatName) {
 
 	$.Msg(BoatName);
-	if (BoatName == "hide" || $("#" + BoatName).style.height == "460.0px" || $("#" + BoatName).style.height == "490.0px" ) {
+	if (BoatName == "hide" || $("#" + BoatName).style.height == "460.0px" || $("#" + BoatName).style.height == "490.0px") {
 		$("#ancient_apparition").style.height = "0px";
 		$("#crystal_maiden").style.height = "0px";
 		$("#disruptor").style.height = "0px";
@@ -426,12 +426,10 @@ function showDetails(BoatName) {
 		$("#vengefulspirit").style.height = "0px";
 		$("#bane").style.height = "0px";
 		$("#enigma").style.height = "0px";
-		if(BoatName=="shredder")
-		{
+		if (BoatName == "shredder") {
 			$("#" + BoatName).style.height = "490px";
 		}
-		else
-		{
+		else {
 			$("#" + BoatName).style.height = "460px";
 		}
 	}
@@ -474,21 +472,20 @@ function buyBoat(BoatName, cost) {
 
 		newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("HealthContainer").style.height = "40px"
 	}
-	
+
 	GameEvents.SendCustomGameEventToServer("buyBoat", { "text": BoatName, "cost": cost });
 	$("#" + BoatName).style.height = "0px";
-	
+
 	setSellValue(BoatName);
-	
+
 	$.Schedule(.2, resetHeroIcons);
 }
 
-function setSellValue(BoatName)
-{
+function setSellValue(BoatName) {
 	var currentGold = Players.GetGold(Players.GetLocalPlayer());
 
-	if(currentGold > GetBoatValue(BoatName)) {
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("SellValueHoplder").FindChildTraverse("SellValue").text = GetBoatValue(BoatName)*.75 
+	if (currentGold > GetBoatValue(BoatName)) {
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("SellValueHoplder").FindChildTraverse("SellValue").text = GetBoatValue(BoatName) * .75
 	}
 }
 
@@ -507,62 +504,62 @@ function okayToFade() {
 function GetBoatValue(BoatName) {
 	$.Msg(BoatName)
 
-if (BoatName.indexOf("disruptor")!==-1) 
-  return 3000
-else if (BoatName.indexOf("ursa")!==-1)
-  return 12000
-else if (BoatName.indexOf("meepo")!==-1) 
-  return 6000
-else if (BoatName.indexOf("tidehunter")!==-1) 
-  return 1000
-else if (BoatName.indexOf("apparition")!==-1) 
-  return 1000
-else if (BoatName.indexOf("rattletrap")!==-1) 
-  return 1000
-else if (BoatName.indexOf("batrider")!==-1) 
-  return 1000
-else if (BoatName.indexOf("winter_wyvern")!==-1) 
-  return 3000
-else if (BoatName.indexOf("storm_spirit")!==-1) 
-  return 3000
-else if (BoatName.indexOf("brewmaster")!==-1) 
-  return 3000
-else if (BoatName.indexOf("ember_spirit")!==-1) 
-  return 6000
-else if (BoatName.indexOf("slark")!==-1) 
-  return 6000
-else if (BoatName.indexOf("shredder")!==-1) 
-  return 6000
-else if (BoatName.indexOf("jakiro")!==-1) 
-  return 6000
-else if (BoatName.indexOf("lion")!==-1) 
-  return 3000
-else if (BoatName.indexOf("tusk")!==-1) 
-  return 12000
-else if (BoatName.indexOf("visage")!==-1) 
-  return 12000
-else if (BoatName.indexOf("nevermore")!==-1) 
-  return 3000
-else if (BoatName.indexOf("sniper")!==-1) 
-  return 6000
-else if (BoatName.indexOf("wind")!==-1) 
-  return 12000
-else if (BoatName.indexOf("crystal")!==-1) 
-  return 1000
-else if (BoatName.indexOf("phantom")!==-1) 
-  return 1000
-else if (BoatName.indexOf("vengefulspirit")!==-1) 
-  return 750
-else if (BoatName.indexOf("enigma")!==-1) 
-  return 8000
-else if (BoatName.indexOf("bane")!==-1) 
-  return 4000
-else if (BoatName.indexOf("pugna")!==-1) 
-  return 12000
-else if (BoatName.indexOf("razor")!==-1) 
-  return 12000
-else
-  return 0
+	if (BoatName.indexOf("disruptor") !== -1)
+		return 3000
+	else if (BoatName.indexOf("ursa") !== -1)
+		return 12000
+	else if (BoatName.indexOf("meepo") !== -1)
+		return 6000
+	else if (BoatName.indexOf("tidehunter") !== -1)
+		return 1000
+	else if (BoatName.indexOf("apparition") !== -1)
+		return 1000
+	else if (BoatName.indexOf("rattletrap") !== -1)
+		return 1000
+	else if (BoatName.indexOf("batrider") !== -1)
+		return 1000
+	else if (BoatName.indexOf("winter_wyvern") !== -1)
+		return 3000
+	else if (BoatName.indexOf("storm_spirit") !== -1)
+		return 3000
+	else if (BoatName.indexOf("brewmaster") !== -1)
+		return 3000
+	else if (BoatName.indexOf("ember_spirit") !== -1)
+		return 6000
+	else if (BoatName.indexOf("slark") !== -1)
+		return 6000
+	else if (BoatName.indexOf("shredder") !== -1)
+		return 6000
+	else if (BoatName.indexOf("jakiro") !== -1)
+		return 6000
+	else if (BoatName.indexOf("lion") !== -1)
+		return 3000
+	else if (BoatName.indexOf("tusk") !== -1)
+		return 12000
+	else if (BoatName.indexOf("visage") !== -1)
+		return 12000
+	else if (BoatName.indexOf("nevermore") !== -1)
+		return 3000
+	else if (BoatName.indexOf("sniper") !== -1)
+		return 6000
+	else if (BoatName.indexOf("wind") !== -1)
+		return 12000
+	else if (BoatName.indexOf("crystal") !== -1)
+		return 1000
+	else if (BoatName.indexOf("phantom") !== -1)
+		return 1000
+	else if (BoatName.indexOf("vengefulspirit") !== -1)
+		return 750
+	else if (BoatName.indexOf("enigma") !== -1)
+		return 8000
+	else if (BoatName.indexOf("bane") !== -1)
+		return 4000
+	else if (BoatName.indexOf("pugna") !== -1)
+		return 12000
+	else if (BoatName.indexOf("razor") !== -1)
+		return 12000
+	else
+		return 0
 }
 
 
@@ -590,7 +587,7 @@ function fillAndShow() {
 	var i = 0;
 	var buildings = Entities.GetAllEntitiesByClassname('npc_dota_building')
 	for (var i = 0; i < buildings.length; i++) {
-	
+
 		if (!Entities.IsTower(buildings[i])) {
 
 			var bldgloc = Entities.GetAbsOrigin((buildings[i]));
@@ -605,15 +602,14 @@ function fillAndShow() {
 			}
 		}
 	}
-	var hide=true;
+	var hide = true;
 	if (Math.abs(heroloc[1]) < 5000 && Math.abs(heroloc[0]) > 1000 && Math.abs(heroloc[0]) < 4000 && closeEnough && $("#side_shop").style.visibility != "visible") {
 		$("#side_shop").style.visibility = "visible";
 		Game.EmitSound("announcer_dlc_bristleback_bris_ann_negative_event_03");
 		$.Msg("showing side shop");
-		hide=false;
+		hide = false;
 	}
-	else if($("#side_shop").style.visibility === "visible")
-	{
+	else if ($("#side_shop").style.visibility === "visible") {
 		$("#side_shop").style.visibility = "collapse";
 	}
 	else {
@@ -808,7 +804,7 @@ function hideMissionsIfNeeded() {
 		$("#must_be_trader_7").style.height = "170px";
 		$("#must_be_trader_8").style.height = "170px";
 		$("#must_be_trader_9").style.height = "170px";
-		
+
 	}
 	else {
 		$("#must_be_trader_1").style.height = "0px";
@@ -1244,51 +1240,55 @@ function AddNotificationbot(msg, panel) {
 		}
 	}
 }
-var highestKills=0
-var lowestDeaths=10000
-var highestDamageTanked=0
-var highestHeroDamage=0
-var highestBuildingDamage=0
-var highestCreepsKilled=0
+function GetSteamID32(playerID) {
+	var playerInfo = Game.GetPlayerInfo(playerID);
 
-function AddGameOverPlayerData(data)
-{
+	var steamID64 = playerInfo.player_steamid,
+		steamIDPart = Number(steamID64.substring(3)),
+		steamID32 = String(steamIDPart - 61197960265728);
+
+	return steamID32;
+}
+
+var highestKills = 0
+var lowestDeaths = 10000
+var highestDamageTanked = 0
+var highestHeroDamage = 0
+var highestBuildingDamage = 0
+var highestCreepsKilled = 0
+var PlayerPointsMap = []
+
+function AddGameOverPlayerData(data) {
+	PlayerPointsMap[data.rowPosition] = { "pid": data.playerID, "points": 10 }
 	var rowPanel = $("#GameOverRow_" + data.rowPosition);
 	var steamid = Game.GetPlayerInfo(data.playerID).player_steamid;
-	if(data.playerID == Players.GetLocalPlayer())
-	{
+	if (data.playerID == Players.GetLocalPlayer()) {
 		rowPanel.AddClass("LocalPlayer")
 	}
-	if(highestKills<data.kills)
-	{
-		highestKills=data.kills
+	if (highestKills < data.kills) {
+		highestKills = data.kills
 	}
-	if(lowestDeaths>data.deaths)
-	{
-		lowestDeaths=data.deaths
+	if (lowestDeaths > data.deaths) {
+		lowestDeaths = data.deaths
 	}
-	if(highestDamageTanked<data.damageTanked)
-	{
-		highestDamageTanked=Math.round(data.damageTanked)
+	if (highestDamageTanked < data.damageTanked) {
+		highestDamageTanked = Math.round(data.damageTanked)
 	}
-	if(highestHeroDamage<data.heroDamage)
-	{
-		highestHeroDamage=Math.round(data.heroDamage)
+	if (highestHeroDamage < data.heroDamage) {
+		highestHeroDamage = Math.round(data.heroDamage)
 	}
-	if(highestBuildingDamage<data.buildingDamage)
-	{
-		highestBuildingDamage=Math.round(data.buildingDamage)
+	if (highestBuildingDamage < data.buildingDamage) {
+		highestBuildingDamage = Math.round(data.buildingDamage)
 	}
-	if(highestCreepsKilled<data.creepsKilled)
-	{
-		highestCreepsKilled=data.creepsKilled
+	if (highestCreepsKilled < data.creepsKilled) {
+		highestCreepsKilled = data.creepsKilled
 	}
 	rowPanel.GetChild(0).steamid = steamid;
 	rowPanel.GetChild(0).RemoveClass("Invisible");
 	rowPanel.GetChild(1).steamid = steamid;
 	rowPanel.GetChild(1).RemoveClass("Invisible");
-	
-	
+
+
 	$.CreatePanel('Label', rowPanel.GetChild(2), 'kills');
 	rowPanel.GetChild(2).GetChild(0).text = data.kills;
 	$.CreatePanel('Label', rowPanel.GetChild(3), 'kills');
@@ -1301,143 +1301,144 @@ function AddGameOverPlayerData(data)
 	rowPanel.GetChild(6).GetChild(0).text = Math.round(data.buildingDamage);
 	$.CreatePanel('Label', rowPanel.GetChild(7), 'kills');
 	rowPanel.GetChild(7).GetChild(0).text = data.creepsKilled;
-	rowPanel.GetChild(2).GetChild(0).AddClass( "GameOverScorefont");
-	rowPanel.GetChild(3).GetChild(0).AddClass( "GameOverScorefont");
-	rowPanel.GetChild(4).GetChild(0).AddClass( "GameOverScorefont");
-	rowPanel.GetChild(5).GetChild(0).AddClass( "GameOverScorefont");
-	rowPanel.GetChild(6).GetChild(0).AddClass( "GameOverScorefont");
-	rowPanel.GetChild(7).GetChild(0).AddClass( "GameOverScorefont");
+	rowPanel.GetChild(2).GetChild(0).AddClass("GameOverScorefont");
+	rowPanel.GetChild(3).GetChild(0).AddClass("GameOverScorefont");
+	rowPanel.GetChild(4).GetChild(0).AddClass("GameOverScorefont");
+	rowPanel.GetChild(5).GetChild(0).AddClass("GameOverScorefont");
+	rowPanel.GetChild(6).GetChild(0).AddClass("GameOverScorefont");
+	rowPanel.GetChild(7).GetChild(0).AddClass("GameOverScorefont");
+	
 }
 
-function TeamWin(data)
-{
-		GameUI.SetCameraPitchMin( 24 )
-		GameUI.SetCameraPitchMax( 25 )
-		for (var i = 0; i <= 9; i++) {
+function TeamWin(data) {
+	GameUI.SetCameraPitchMin(24)
+	GameUI.SetCameraPitchMax(25)
+	for (var i = 0; i <= 9; i++) {
+		var rowPanel = $("#GameOverRow_" + i);
+		if (rowPanel.GetChild(2).GetChildCount() > 0 && rowPanel.GetChild(2).GetChild(0).text === highestKills + "") {
+			rowPanel.GetChild(2).AddClass("TopGameOverScore");
+			var image = $.CreatePanel('Image', rowPanel.GetChild(2), 'highestKills');
+			image.AddClass('ScoreTrophy')
+			image.SetImage("file://{images}/custom_game/trophies/kills.png");
+			PlayerPointsMap[i].points = PlayerPointsMap[i].points + 5
+		}
+		if (rowPanel.GetChild(2).GetChildCount() > 0 && rowPanel.GetChild(3).GetChild(0).text === lowestDeaths + "") {
+			rowPanel.GetChild(3).AddClass("TopGameOverScore");
+			var image = $.CreatePanel('Image', rowPanel.GetChild(3), 'highestKills');
+			image.AddClass('ScoreTrophy')
+			image.SetImage("file://{images}/custom_game/trophies/deaths.png");
+			PlayerPointsMap[i].points = PlayerPointsMap[i].points + 5
+		}
+		if (rowPanel.GetChild(2).GetChildCount() > 0 && rowPanel.GetChild(4).GetChild(0).text === highestDamageTanked + "") {
+			rowPanel.GetChild(4).AddClass("TopGameOverScore");
+			var image = $.CreatePanel('Image', rowPanel.GetChild(4), 'highestKills');
+			image.AddClass('ScoreTrophy')
+			image.SetImage("file://{images}/custom_game/trophies/tank.png");
+			PlayerPointsMap[i].points = PlayerPointsMap[i].points + 5
+		}
+		if (rowPanel.GetChild(2).GetChildCount() > 0 && rowPanel.GetChild(5).GetChild(0).text === highestHeroDamage + "") {
+			rowPanel.GetChild(5).AddClass("TopGameOverScore");
+			var image = $.CreatePanel('Image', rowPanel.GetChild(5), 'highestKills');
+			image.AddClass('ScoreTrophy')
+			image.SetImage("file://{images}/custom_game/trophies/herodmg.png");
+			PlayerPointsMap[i].points = PlayerPointsMap[i].points + 5
+		}
+		if (rowPanel.GetChild(2).GetChildCount() > 0 && rowPanel.GetChild(6).GetChild(0).text === highestBuildingDamage + "") {
+			rowPanel.GetChild(6).AddClass("TopGameOverScore");
+			var image = $.CreatePanel('Image', rowPanel.GetChild(6), 'highestKills');
+			image.AddClass('ScoreTrophy')
+			image.SetImage("file://{images}/custom_game/trophies/tower.png");
+			PlayerPointsMap[i].points = PlayerPointsMap[i].points + 5
+		}
+		if (rowPanel.GetChild(2).GetChildCount() > 0 && rowPanel.GetChild(7).GetChild(0).text === highestCreepsKilled + "") {
+			rowPanel.GetChild(7).AddClass("TopGameOverScore");
+			var image = $.CreatePanel('Image', rowPanel.GetChild(7), 'highestKills');
+			image.AddClass('ScoreTrophy')
+			image.SetImage("file://{images}/custom_game/trophies/creeps.png");
+			PlayerPointsMap[i].points = PlayerPointsMap[i].points + 5
+		}
+		if ('undefined' !== typeof PlayerPointsMap[i]) {
+			if (Players.GetTeam(PlayerPointsMap[i].pid) == data.team_number) {
+				PlayerPointsMap[i].points = PlayerPointsMap[i].points + 10
+			}
+			GameEvents.SendCustomGameEventToServer("AddPoints", { "playerSteamId": GetSteamID32(PlayerPointsMap[i].pid), "points": PlayerPointsMap[i].points });
 			var rowPanel = $("#GameOverRow_" + i);
-			if( rowPanel.GetChild(2).GetChildCount()>0 && rowPanel.GetChild(2).GetChild(0).text===highestKills+"")
-			{
-				rowPanel.GetChild(2).AddClass( "TopGameOverScore");
-				var image = $.CreatePanel('Image', rowPanel.GetChild(2), 'highestKills');
-				image.AddClass('ScoreTrophy')
-				image.SetImage("file://{images}/custom_game/trophies/kills.png");
-			}
-			if(rowPanel.GetChild(2).GetChildCount()>0 && rowPanel.GetChild(3).GetChild(0).text===lowestDeaths+"")
-			{
-				rowPanel.GetChild(3).AddClass( "TopGameOverScore");
-				var image = $.CreatePanel('Image', rowPanel.GetChild(3), 'highestKills');
-				image.AddClass('ScoreTrophy')
-				image.SetImage("file://{images}/custom_game/trophies/deaths.png");
-			}
-			if(rowPanel.GetChild(2).GetChildCount()>0 && rowPanel.GetChild(4).GetChild(0).text===highestDamageTanked+"")
-			{
-				rowPanel.GetChild(4).AddClass( "TopGameOverScore");
-				var image = $.CreatePanel('Image', rowPanel.GetChild(4), 'highestKills');
-				image.AddClass('ScoreTrophy')
-				image.SetImage("file://{images}/custom_game/trophies/tank.png");
-			}
-			if(rowPanel.GetChild(2).GetChildCount()>0 && rowPanel.GetChild(5).GetChild(0).text===highestHeroDamage+"")
-			{
-				rowPanel.GetChild(5).AddClass( "TopGameOverScore");
-				var image = $.CreatePanel('Image', rowPanel.GetChild(5), 'highestKills');
-				image.AddClass('ScoreTrophy')
-				image.SetImage("file://{images}/custom_game/trophies/herodmg.png");
-			}
-			if(rowPanel.GetChild(2).GetChildCount()>0 && rowPanel.GetChild(6).GetChild(0).text===highestBuildingDamage+"")
-			{
-				rowPanel.GetChild(6).AddClass( "TopGameOverScore");
-				var image = $.CreatePanel('Image', rowPanel.GetChild(6), 'highestKills');
-				image.AddClass('ScoreTrophy')
-				image.SetImage("file://{images}/custom_game/trophies/tower.png");
-			}
-			if(rowPanel.GetChild(2).GetChildCount()>0 && rowPanel.GetChild(7).GetChild(0).text===highestCreepsKilled+"")
-			{
-				rowPanel.GetChild(7).AddClass( "TopGameOverScore");
-				var image = $.CreatePanel('Image', rowPanel.GetChild(7), 'highestKills');
-				image.AddClass('ScoreTrophy')
-				image.SetImage("file://{images}/custom_game/trophies/creeps.png");
-			}
+			$.CreatePanel('Label', rowPanel.GetChild(8), 'kills');
+			rowPanel.GetChild(8).GetChild(0).text = PlayerPointsMap[i].points;
+			rowPanel.GetChild(8).GetChild(0).AddClass("GameOverScorefont");
+			rowPanel.GetChild(8).GetChild(0).AddClass("TopGameOverScore");
 		}
-		$( "#ScoreBoardFinalholder" ).SetHasClass( "endgame", true );
-		$( "#ScoreBoardFinalholder" ).SetParent($( "#ScoreBoardFinalholder" ).GetParent().GetParent().GetParent().GetParent());
 
-	
-		if( data.team_number== 3)
-	{
-		if(Game.GetLocalPlayerInfo().player_team_id==3)
-		{
-			buttontext = $.Localize("#winner")
-		}
-		else
-		{
-			 buttontext = $.Localize("#loser")
-		}
-		$.Schedule( .1, SetNorth );
 	}
-	else if(data.team_number== 2)
-	{
-			if(Game.GetLocalPlayerInfo().player_team_id==2)
-		{	
+	$("#ScoreBoardFinalholder").SetHasClass("endgame", true);
+	$("#ScoreBoardFinalholder").SetParent($("#ScoreBoardFinalholder").GetParent().GetParent().GetParent().GetParent());
+
+
+	if (data.team_number == 3) {
+		if (Game.GetLocalPlayerInfo().player_team_id == 3) {
 			buttontext = $.Localize("#winner")
 		}
-		else
-		{
+		else {
 			buttontext = $.Localize("#loser")
 		}
-		$.Schedule( .1, SetSouth );
+		$.Schedule(.1, SetNorth);
 	}
-		
-	$.Schedule( .01, spinCam );
-	 
+	else if (data.team_number == 2) {
+		if (Game.GetLocalPlayerInfo().player_team_id == 2) {
+			buttontext = $.Localize("#winner")
+		}
+		else {
+			buttontext = $.Localize("#loser")
+		}
+		$.Schedule(.1, SetSouth);
+	}
+
+	$.Schedule(.01, spinCam);
+
 }
 
-function spinCam()
-{
-	yaw=yaw+.3;
+function spinCam() {
+	yaw = yaw + .3;
 	GameUI.SetCameraYaw(yaw)
-	$.Schedule( .01, spinCam );
+	$.Schedule(.01, spinCam);
 }
 
-function SetSouth()
-{			
-			if($.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd"))
-			{
-				var vicLabel = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").FindChildTraverse("VictoryLabel");
-				var vicBak = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").FindChildTraverse("VictoryBackgroundScene");
-				vicBak.style.visibility="collapse"
-				var vicHoldder = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer");
-				vicHoldder.style.visibility="visible"
-				vicHoldder.style.marginTop = "-250px"
-				vicLabel.text = "South Empire Wins!"
-				vicLabel.style.fontSize="40px"
-				var continueButton = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("ContinueButton");
-				//continueButton.style.marginBottom ="5px"
-				continueButton.GetChild(0).text = buttontext
-				$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").style.height="100%"
-			}
-		 $.Schedule( .1, SetSouth );
+function SetSouth() {
+	if ($.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd")) {
+		var vicLabel = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").FindChildTraverse("VictoryLabel");
+		var vicBak = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").FindChildTraverse("VictoryBackgroundScene");
+		vicBak.style.visibility = "collapse"
+		var vicHoldder = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer");
+		vicHoldder.style.visibility = "visible"
+		vicHoldder.style.marginTop = "-250px"
+		vicLabel.text = "South Empire Wins!"
+		vicLabel.style.fontSize = "40px"
+		var continueButton = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("ContinueButton");
+		//continueButton.style.marginBottom ="5px"
+		continueButton.GetChild(0).text = buttontext
+		$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").style.height = "100%"
+	}
+	$.Schedule(.1, SetSouth);
 }
 
-function SetNorth()
-{
-			if($.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd"))
-			{
-					var vicLabel = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").FindChildTraverse("VictoryLabel");
-					var vicBak = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").FindChildTraverse("VictoryBackgroundScene");
-					vicBak.style.visibility="collapse"
-				
-					$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").style.visibility="visible";
-					var vicHoldder = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer");
-					vicHoldder.style.visibility="visible"
-					vicHoldder.style.marginTop = "-250px"
-					vicLabel.text = "North Empire Wins!"
-				vicLabel.style.fontSize="40px"
-				var continueButton = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("ContinueButton");
-				//continueButton.style.marginBottom ="5px"
-				continueButton.GetChild(0).text = buttontext
-				$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").style.height="100%"
-			}
-		 $.Schedule( .1, SetNorth );
+function SetNorth() {
+	if ($.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd")) {
+		var vicLabel = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").FindChildTraverse("VictoryLabel");
+		var vicBak = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").FindChildTraverse("VictoryBackgroundScene");
+		vicBak.style.visibility = "collapse"
+
+		$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer").style.visibility = "visible";
+		var vicHoldder = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("WinLabelContainer");
+		vicHoldder.style.visibility = "visible"
+		vicHoldder.style.marginTop = "-250px"
+		vicLabel.text = "North Empire Wins!"
+		vicLabel.style.fontSize = "40px"
+		var continueButton = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").FindChildTraverse("ContinueButton");
+		//continueButton.style.marginBottom ="5px"
+		continueButton.GetChild(0).text = buttontext
+		$.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("GameEndContainer").FindChildTraverse("GameEnd").style.height = "100%"
+	}
+	$.Schedule(.1, SetNorth);
 }
 
 
@@ -1531,12 +1532,12 @@ GameUI.SetMouseCallback(function (eventName, arg) {
 	hideTrade();
 	resetHeroIcons();
 	$.Msg("in subscribe");
-	
+
 	GameEvents.Subscribe("Boat_Spawned", fillShop);
 	GameEvents.Subscribe("Trade_Mode_Enabled", showTrade);
-	GameEvents.Subscribe("AddGameOverPlayerData", AddGameOverPlayerData );
-	GameEvents.Subscribe("team_win", TeamWin );
-	
+	GameEvents.Subscribe("AddGameOverPlayerData", AddGameOverPlayerData);
+	GameEvents.Subscribe("team_win", TeamWin);
+
 	GameEvents.Subscribe("Hero_Near_Shop", NearShop);
 	GameEvents.Subscribe("Hero_Near_Ship_Shop", showShips);
 	GameEvents.Subscribe("Hero_Left_Shop", LeftShop);

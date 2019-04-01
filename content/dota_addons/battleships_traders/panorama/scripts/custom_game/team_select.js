@@ -7,8 +7,10 @@ var myToggle;
 // Global list of panels representing each of the players (1 per-player). These are reparented
 // to the appropriate team panel to indicate which team the player is on.
 var g_PlayerPanels = [];
+var g_HatChoice = [];
 
 var g_TEAM_SPECATOR = 1;
+var g_myPts = 36;
 
 //--------------------------------------------------------------------------------------------------
 // Handeler for when the unssigned players panel is clicked that causes the player to be reassigned
@@ -452,6 +454,7 @@ function TradeMode()
 	myToggle=false;
 	var bShowSpectatorTeam = false;
 	var bAutoAssignTeams = true;
+	
 	// get any custom config
 	if ( GameUI.CustomUIConfig().team_select )
 	{
@@ -507,7 +510,7 @@ function TradeMode()
 
 	// Start updating the timer, this function will schedule itself to be called periodically
 	UpdateTimer();
-
+	$.Schedule( 2.0, GetLocalPlayerHats );
 	// Register a listener for the event which is brodcast when the team assignment of a player is actually assigned
 	$.RegisterForUnhandledEvent( "DOTAGame_TeamPlayerListChanged", OnTeamPlayerListChanged );
 
@@ -515,3 +518,106 @@ function TradeMode()
 	$.RegisterForUnhandledEvent( "DOTAGame_PlayerSelectedCustomTeam", OnPlayerSelectedTeam );
 
 })();
+function ShowHats()
+{
+	$( "#PointTracker").text="my Points: "+g_myPts
+	if($( "#HatList" ).style.width==="400.0px")
+	{
+		$( "#HatList" ).style.width="0px";
+	}
+	else
+	{
+		$( "#HatList" ).style.width="400px";
+	}
+	
+}
+function PickHat(cost,hat)
+{
+
+	$.Msg("#"+hat)
+	if($( "#"+hat ).BHasClass("locked"))
+	{
+		if(g_myPts>=cost)
+		{
+			g_myPts=g_myPts-cost
+			$( "#PointTracker").text="My Points: "+g_myPts
+			$( "#"+hat ).RemoveClass("locked");
+			$( "#"+hat ).GetChild( 0 ).style.visibility="collapse";
+			GameEvents.SendCustomGameEventToServer( "BuyPlayerHat", { "playerSteamId": GetSteamID32(), "text": hat, "cost": cost});
+		}
+		else
+		{
+			return;
+		}
+	}
+	if(g_HatChoice[GetSteamID32()])
+	{
+		$( "#"+g_HatChoice[GetSteamID32()] ).RemoveClass("SelectedHat");
+	}
+	//$( "#coOpButton" ).SetHasClass( "toggled", true);
+	g_HatChoice[GetSteamID32()]=hat
+	$( "#"+hat ).SetHasClass( "SelectedHat", true)
+	$( "#CurrentHat" ).SetImage("file://{images}/custom_game/hats/"+hat+".png")
+	GameEvents.SendCustomGameEventToServer( "SendPlayerHat", { "playerSteamId": GetSteamID32(), "text": hat});
+	}
+
+
+function GetSteamID32() {
+    var playerInfo = Game.GetPlayerInfo(Game.GetLocalPlayerID());
+
+    var steamID64 = playerInfo.player_steamid,
+        steamIDPart = Number(steamID64.substring(3)),
+        steamID32 = String(steamIDPart - 61197960265728);
+
+    return steamID32;
+}
+
+
+var url = "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships";
+var LocalPlayerHatInfo = {}
+function GetLocalPlayerHats() {
+	var request = url  + "/battleships_players/"+GetSteamID32();
+	$.AsyncWebRequest(request, {
+	  type: 'GET',
+	  headers: {
+		  "x-api-key":"FX5Tqd1joL2CC3p1tjCoF7hJCIoRrNDv4m0tqmvo"
+	  },
+	  success: function (data) {
+		LocalPlayerHatInfo = data;
+		$.Msg(data);
+		g_myPts=data.Content[0].points
+		$( "#PointTracker").text="my Points: "+g_myPts
+		data.Content[0].hats.forEach(function(hat) {
+			if($( "#"+hat ).BHasClass("locked"))
+			{
+					$( "#"+hat ).RemoveClass("locked");
+					$( "#"+hat ).GetChild( 0 ).style.visibility="collapse";
+			}
+		  });
+		  if ('undefined' !== typeof data.Content[0].CurHat) {
+			PickHat(0,data.Content[0].CurHat)
+		  }
+		  
+	  },
+	  error: function () {
+		$.Msg("player didn't exist... creating");
+		$.AsyncWebRequest(request, {
+			type: 'PUT',
+			headers: {
+				"x-api-key":"FX5Tqd1joL2CC3p1tjCoF7hJCIoRrNDv4m0tqmvo"
+			},
+			data: {
+				"playerID":GetSteamID32()
+			},
+			success: function (data) {
+				$.Msg("added Player");
+			},
+			error: function () {
+			  $.Msg("failed to add player :-(");
+			}
+		  });
+
+
+	  }
+	});
+  }

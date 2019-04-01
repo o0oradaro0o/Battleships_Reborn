@@ -2767,6 +2767,7 @@
 					<Label class="GameOverHeader" text="Hero Damage" />
 					<Label class="GameOverHeader" text="Siege Damage" />
 					<Label class="GameOverHeader" text="Creeps Killed" />
+					<Label class="GameOverHeader" text="Points Earned" />
 				</Panel>
 				
 				<Panel hittest="false" id="GameOverRow_5" class="GameOverRow">
@@ -2774,6 +2775,7 @@
 					<DOTAUserName steamid="" class="GameOverUsername Invisible" />
 					<Label class="GameOverKillsScore" text="" />
 					<Label class="GameOverDeathsScore" text="" />
+					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
@@ -2791,6 +2793,7 @@
 					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
 					 <!-- For some reason I need a blank label here for alignment to work properly -->
 					<Label text="" />
 				</Panel>
@@ -2800,6 +2803,7 @@
 					<DOTAUserName steamid="" class="GameOverUsername Invisible" />
 					<Label class="GameOverKillsScore" text="" />
 					<Label class="GameOverDeathsScore" text="" />
+					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
@@ -2817,6 +2821,7 @@
 					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
 					 <!-- For some reason I need a blank label here for alignment to work properly -->
 					<Label text="" />
 				</Panel>
@@ -2826,6 +2831,7 @@
 					<DOTAUserName steamid="" class="GameOverUsername Invisible" />
 					<Label class="GameOverKillsScore" text="" />
 					<Label class="GameOverDeathsScore" text="" />
+					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
@@ -2842,6 +2848,7 @@
 					<Label class="GameOverHeader" text="Hero Damage" />
 					<Label class="GameOverHeader" text="Siege Damage" />
 					<Label class="GameOverHeader" text="Creeps Killed" />
+					<Label class="GameOverHeader" text="Points Earned" />
 				</Panel>
 
 				<Panel hittest="false" id="GameOverRow_0" class="GameOverRow">
@@ -2849,6 +2856,7 @@
 					<DOTAUserName steamid="" class="GameOverUsername Invisible" />
 					<Label class="GameOverKillsScore" text="" />
 					<Label class="GameOverDeathsScore" text="" />
+					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
@@ -2867,6 +2875,7 @@
 					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
 					 <!-- For some reason I need a blank label here for alignment to work properly -->
 					<Label text="" />
 				</Panel>
@@ -2876,6 +2885,7 @@
 					<DOTAUserName steamid="" class="GameOverUsername Invisible" />
 					<Label class="GameOverKillsScore" text="" />
 					<Label class="GameOverDeathsScore" text="" />
+					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
@@ -2893,6 +2903,7 @@
 					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
+					<Label class="GameOverScore" text="" />
 					 <!-- For some reason I need a blank label here for alignment to work properly -->
 					<Label text="" />
 				</Panel>
@@ -2902,6 +2913,7 @@
 					<DOTAUserName steamid="" class="GameOverUsername Invisible" />
 					<Label class="GameOverKillsScore" text="" />
 					<Label class="GameOverDeathsScore" text="" />
+					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />
 					<Label class="GameOverScore" text="" />

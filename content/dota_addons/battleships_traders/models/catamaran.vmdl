@@ -16,6 +16,7 @@
 				m_bBentNormals = false
 				m_bIgnoreCloth = false
 				m_bGetSkinningFromLod0 = false
+				m_bPreferHighDensityTrianglesInUvDensityCalculation = false
 				m_pMorphInfo = null
 			},
 		]
@@ -119,6 +120,19 @@
 								m_influenceName = "Bone"
 								m_vTranslationOffset = [ -43.786942, 192.611282, 0.000088 ]
 								m_vRotationOffset = [ 0.000028, 0.000001, -0.000036 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "HatPoint"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Bone"
+								m_vTranslationOffset = [ -226.315994, 110.743538, -76.021431 ]
+								m_vRotationOffset = [ 0.000111, 0.000008, -0.000167 ]
 								m_flWeight = 1.0
 								m_bRoot = false
 							},

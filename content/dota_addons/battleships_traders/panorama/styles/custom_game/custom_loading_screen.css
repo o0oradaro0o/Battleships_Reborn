@@ -276,8 +276,7 @@
 	horizontal-align: center;
   }
   
-#EmpireChart
-{
+#EmpireChart {
 	width:80%;
 	horizontal-align: center;
   
@@ -507,7 +506,7 @@ Label
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #7289DA ), to( #7289DA ) );
 	border-top: 1px solid #2C2F33;
 	border-bottom: 1px solid #2C2F33;
-	border-left: 1px solid #2C2F33; 
+	border-left: 1px solid #2C2F33;
 	border-right: 1px solid #2C2F33;
 	border-radius: 8px;
 	animation-name: blinker;

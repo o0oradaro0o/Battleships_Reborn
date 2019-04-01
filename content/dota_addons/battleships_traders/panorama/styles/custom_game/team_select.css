@@ -29,6 +29,23 @@
 	animation-duration: 0.75s;
 }
 
+#HatList
+{
+    width: 0px;
+	height:680px;
+	margin-top: 200px;
+	flow-children: down;    
+    padding-left: 16px;
+	padding-right: 16px;
+    margin-left: 16px;
+	transition: width 0.3s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
+	background-color: gradient(linear, 0% 0%, 0.1% 0%, from(#00000000), color-stop(0.1, #202327), color-stop(0.1, #141619ff), to(#000000ee));
+	border-radius: 8px;
+	visibility: visible;
+	overflow: clip scroll;
+}
+
+
 @keyframes 'TeamsListAppear'
 {
 	0%
@@ -259,8 +276,8 @@
 {
     flow-children: down;
 	height: fill-parent-flow (1);
-	max-height: 680px;
-	margin-top: 128px;
+	max-height: 761px;
+	margin-top: 88px;
 	width: 100%;
 	background-color: gradient(linear, 0% 0%, 0.1% 0%, from(#00000000), color-stop(0.1, #202327), color-stop(0.1, #141619ff), to(#000000ee));
 	border-radius: 8px;
@@ -869,3 +886,132 @@ DOTAAvatarImage
 	background-position: 50% 50%;
 }
 
+#HatSelection
+{
+	padding: 8px;
+	width: 100%;
+	height: 80px;
+
+	horizontal-align: center;
+    flow-children: down;
+    background-color: gradient(linear, 0% 0%, 0.1% 0%, from(#00000000), color-stop(0.1, #202327), color-stop(0.1, #141619ff), to(#000000ee));
+	border-radius: 8px;
+}
+#HatHeader
+{
+	font-size: 24px;
+    font-weight: bold;
+	color: white;
+	horizontal-align: center;
+}
+
+
+#HatButton:hover
+{
+	pre-transform-scale2d: 1.01;
+    box-shadow: #000000ff 0px 0px 16px 0px;
+}
+#HatButton
+{
+	horizontal-align: center;
+	width:70%;
+}
+
+#CurrentHat
+{
+	width:80px;
+	horizontal-align: center;
+	border-radius: 8px;
+}
+
+#CurrentHatText
+{
+	margin-top: -25px;
+	margin-right: 95px;
+	horizontal-align: right;
+}
+.HatRankHeader
+{
+	text-transform: uppercase;
+	text-shadow: 2px 2px 2px black;
+	white-space: nowrap;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: white;
+	margin-top: 0px;
+	horizontal-align: center;
+	font-family: Arial;
+	margin-top: 5px;
+	transition-property: color;
+	transition-duration: 0.2s;
+}
+.HatRow
+{
+flow-children:right;
+height:100px;
+width:100%;
+}
+.HatImage
+{
+	width:80px;
+	height:65px;
+	horizontal-align: center;
+	border-radius: 8px;
+}
+.HatSelectButton
+{
+	flow-children:down;
+	margin: 6px;
+	padding: 4px;
+	width:29%;
+	height:100%;
+	
+}
+.HatSelectButton:hover
+{
+	border-radius: 8px;
+	flow-children:down;
+	width:29%;
+	height:100%;
+	background-color: gradient(linear, 0% 0%, 0.1% 0%, from(#555555), color-stop(0.1, #202327), color-stop(0.1, #141619ff), to(#555555));
+	
+}
+.HatImageLabel
+{
+	horizontal-align: center;
+}
+.Divider 
+{	
+    width: 100%;
+	height: 2px;
+    margin-left: 8px;
+    margin-right: 8px;
+	background-color: gray;
+}
+.SelectedHat{
+	border-radius: 8px;
+	background-color: gradient(linear, 0% 0%, 0.1% 0%, from(#555588), color-stop(0.1, #202327), color-stop(0.1, #141619ff), to(#555588));
+	
+}
+#noHat
+{
+	vertical-align: bottom;
+	horizontal-align: right;
+	height: 90px;
+}
+.locked
+{
+
+}
+.ButtonLocked
+{
+	vertical-align: center;
+	horizontal-align: center;
+	width:40%;
+	height:60%;
+	padding-top: 15px;
+	margin-bottom:-53px;
+	
+	z-index: 5;
+	opacity: .3;
+}
