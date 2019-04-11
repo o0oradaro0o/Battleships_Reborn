@@ -35,7 +35,7 @@
 						<Image class="HatImage" src="file://{images}/custom_game/hats/cap3.png" />
 						<Label class="HatImageLabel" text="Flashy" />
 					</Button>
-					<Button class="HatSelectButton" onactivate="RandHat(680,'gun')">
+					<Button class="HatSelectButton" onactivate="RandHat(680,'cap')">
 						<Image class="RandImage" src="file://{images}/custom_game/hats/rand.png" />
 						<Label class="RandImageLabel" text="Random" />
 						<Label class="RandImageLabel" text="(680pts)" />

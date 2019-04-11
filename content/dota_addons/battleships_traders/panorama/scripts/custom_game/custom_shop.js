@@ -187,8 +187,20 @@ function fixUI() {
 	NewShopUI.FindChildTraverse("GuidesButton").style.visibility = "collapse";
 	NewShopUI.FindChildTraverse("GuideFlyout").style.visibility = "collapse";
 
+	//--------------------------scoreboard stuff------------------------
 
-
+	var scoreboard = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("scoreboard").FindChildTraverse("Background");
+	
+	scoreboard.MoveChildBefore(scoreboard.FindChildTraverse("DireTeamContainer"),scoreboard.FindChildTraverse("RadiantTeamContainer") )
+	scoreboard.MoveChildBefore(scoreboard.FindChildTraverse("DireHeader"),scoreboard.FindChildTraverse("RadiantTeamContainer") )
+	scoreboard.FindChildTraverse("DireHeader").FindChildTraverse("DireTeamLabel").text="The South Empire"
+	scoreboard.FindChildTraverse("RadiantHeader").FindChildTraverse("RadiantTeamLabel").text="The North Empire"
+	scoreboard.FindChildTraverse("RadiantHeader").FindChildTraverse("RadiantTeamLabel").style.textShadow="0px 0px 6px 1.0 #E74D088F"
+	scoreboard.FindChildTraverse("DireHeader").FindChildTraverse("DireTeamLabel").style.textShadow="0px 0px 6px 1.0 #9BE40C8F"
+	scoreboard.FindChildTraverse("RadiantHeader").FindChildTraverse("RadiantScoreLabel").style.textShadow="0px 0px 6px 1.0 #E74D088F"
+	scoreboard.FindChildTraverse("DireHeader").FindChildTraverse("DireScoreLabel").style.textShadow="0px 0px 6px 1.0 #9BE40C8F"
+	
+	$.Msg("movecalled")
 	//------------------------------hero panel stuff--------------------------------
 
 	//try the neat way to remove the tree itself
@@ -1257,9 +1269,11 @@ var highestHeroDamage = 0
 var highestBuildingDamage = 0
 var highestCreepsKilled = 0
 var PlayerPointsMap = []
+var numPlayers = 0
 
 function AddGameOverPlayerData(data) {
 	PlayerPointsMap[data.rowPosition] = { "pid": data.playerID, "points": 10 }
+	numPlayers++;
 	var rowPanel = $("#GameOverRow_" + data.rowPosition);
 	var steamid = Game.GetPlayerInfo(data.playerID).player_steamid;
 	if (data.playerID == Players.GetLocalPlayer()) {
@@ -1361,6 +1375,8 @@ function TeamWin(data) {
 			if (Players.GetTeam(PlayerPointsMap[i].pid) == data.team_number) {
 				PlayerPointsMap[i].points = PlayerPointsMap[i].points + 10
 			}
+			PlayerPointsMap[i].points=Math.floor(PlayerPointsMap[i].points* numPlayers/10*2)
+			
 			GameEvents.SendCustomGameEventToServer("AddPoints", { "playerSteamId": GetSteamID32(PlayerPointsMap[i].pid), "points": PlayerPointsMap[i].points });
 			var rowPanel = $("#GameOverRow_" + i);
 			$.CreatePanel('Label', rowPanel.GetChild(8), 'kills');
@@ -1531,6 +1547,7 @@ GameUI.SetMouseCallback(function (eventName, arg) {
 (function () {
 	hideTrade();
 	resetHeroIcons();
+	fixUI();
 	$.Msg("in subscribe");
 
 	GameEvents.Subscribe("Boat_Spawned", fillShop);

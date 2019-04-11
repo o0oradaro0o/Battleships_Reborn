@@ -14,7 +14,8 @@ require('util')
 if CBattleship8D == nil then
   CBattleship8D = class({})
 end
-
+g_GameOver=0
+g_GotPoints={}
 -- global variable fun!!!
 
 --tracksif a hero needs a shop to auto open or close
@@ -4662,7 +4663,17 @@ function fixAbilities(hero)
 
 
 	function AddPoints(eventSourceIndex, args)
-		----print(args.text)
+		if g_GameOver~=1 then
+			return
+		end
+		for k,v in pairs( g_GotPoints) do
+			if args.playerSteamId==k then
+				return
+			end
+		end
+		
+		g_GotPoints[args.playerSteamId]=args.points
+		
 		local request = CreateHTTPRequestScriptVM("POST", "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/".. args.playerSteamId);
 		local data={}
 		local points={}
@@ -4677,7 +4688,6 @@ function fixAbilities(hero)
         if res.StatusCode ~= 200 then
         end
     end);
-		----print(g_TradeMode)
 	end
 	
 	
@@ -4816,10 +4826,6 @@ function fixAbilities(hero)
 		end
 	  end
 	end
-  
-  
-  
-  
 	local dummy = CreateUnitByName( "npc_dota_battle_ind", waypointlocation:GetAbsOrigin(), true, nil, nil, 4 )
 	dummy:AddNewModifier(dummy, nil, "modifier_kill", {duration = 60})
 	g_BattleModeRemaining=60
@@ -4948,7 +4954,7 @@ function setupWin(winner)
 
   local radiantPosition = 0
   local direPosition = 5
-
+	g_GameOver=1
   for _,hero in pairs(HeroList:GetAllHeroes()) do
     local playerID = hero:GetPlayerOwnerID()
 
@@ -5073,3 +5079,47 @@ function maxKey(a)
 	end
 	return inv[maxval]
  end
+
+
+ function AddMMR(eventSourceIndex, mmr)
+	----print(args.text)
+	local request = CreateHTTPRequestScriptVM("POST", "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/".. args.playerSteamId);
+	local data={}
+	local mmr={}
+	mmr.mmr=mmr
+	data.patch="true"
+	data.ADD=mmr
+	request:SetHTTPRequestRawPostBody("application/json", json.encode(data));
+	request:SetHTTPRequestHeaderValue("x-api-key","FX5Tqd1joL2CC3p1tjCoF7hJCIoRrNDv4m0tqmvo");
+	request:SetHTTPRequestGetOrPostParameter("server_key", GetDedicatedServerKeyV2(SERVER_KEY));
+	request:Send(function(res)
+			print(res.StatusCode);
+			if res.StatusCode ~= 200 then
+			end
+	end);
+	----print(g_TradeMode)
+end
+
+function GetMMR(eventSourceIndex, mmr)
+	----print(args.text)
+	local request = CreateHTTPRequestScriptVM("GET", "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/".. args.playerSteamId);
+	local data={}
+	local mmr={}
+	mmr.mmr=mmr
+	data.patch="true"
+	data.ADD=mmr
+	request:SetHTTPRequestHeaderValue("x-api-key","FX5Tqd1joL2CC3p1tjCoF7hJCIoRrNDv4m0tqmvo");
+	request:SetHTTPRequestGetOrPostParameter("server_key", GetDedicatedServerKeyV2(SERVER_KEY));
+	request:Send(function(res)
+			print(res.StatusCode);
+			if res.StatusCode ~= 200 then
+				local body = json.decode(res.Body);
+        print(res.Body);
+        if body and body.highscore then
+            AllTimeHighScores[playerID] = body.highscore;
+        end
+			end
+	end);
+end
+
+

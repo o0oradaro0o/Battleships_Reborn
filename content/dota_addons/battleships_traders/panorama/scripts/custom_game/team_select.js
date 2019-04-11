@@ -10,7 +10,7 @@ var g_PlayerPanels = [];
 var g_HatChoice = [];
 
 var g_TEAM_SPECATOR = 1;
-var g_myPts = 36;
+var g_myPts = 75;
 
 //--------------------------------------------------------------------------------------------------
 // Handeler for when the unssigned players panel is clicked that causes the player to be reassigned
@@ -520,7 +520,7 @@ function TradeMode()
 })();
 function ShowHats()
 {
-	$( "#PointTracker").text="my Points: "+g_myPts
+	$( "#PointTracker").text="My Points: "+g_myPts
 	if($( "#HatListholder" ).style.width==="400.0px")
 	{
 		$( "#HatListholder" ).style.width="0px";
@@ -532,9 +532,12 @@ function ShowHats()
 	
 }
 function RandHat(cost, hat) {
+
+	
 	if (!$("#" + hat + 1).BHasClass("locked") && !$("#" + hat + 2).BHasClass("locked") && !$("#" + hat + 3).BHasClass("locked")) {
 		return
 	}
+
 	var done = false
 	while (!done) {
 		var i = Math.floor(Math.random() * 3) + 1;
@@ -554,7 +557,7 @@ function PickHat(cost,hat)
 		if(g_myPts>=cost)
 		{
 			g_myPts=g_myPts-cost
-			$( "#PointTracker").text="My Points: "+g_myPts
+			$( "#PointTracker").text=": "+g_myPts
 			$( "#"+hat ).RemoveClass("locked");
 			$( "#"+hat ).GetChild( 0 ).style.visibility="collapse";
 			GameEvents.SendCustomGameEventToServer( "BuyPlayerHat", { "playerSteamId": GetSteamID32(), "text": hat, "cost": cost});
@@ -629,22 +632,8 @@ function GetLocalPlayerHats() {
 		  
 	  },
 	  error: function () {
-		$.Msg("player didn't exist... creating");
-		$.AsyncWebRequest(request, {
-			type: 'PUT',
-			headers: {
-				"x-api-key":"FX5Tqd1joL2CC3p1tjCoF7hJCIoRrNDv4m0tqmvo"
-			},
-			data: {
-				"playerID":GetSteamID32()
-			},
-			success: function (data) {
-				$.Msg("added Player");
-			},
-			error: function () {
-			  $.Msg("failed to add player :-(");
-			}
-		  });
+			GameEvents.SendCustomGameEventToServer("AddPoints", { "playerSteamId": GetSteamID32(), "points": 75 });
+			$.Schedule( 1.0, GetLocalPlayerHats );
 
 
 	  }
