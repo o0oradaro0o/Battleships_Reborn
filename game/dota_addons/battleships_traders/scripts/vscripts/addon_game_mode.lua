@@ -5103,71 +5103,125 @@ end
 
 function SendMMRsToServer(eventSourceIndex, args)
 	----print(args.text)
+  local steamid = args.playerSteamId
 	local request = CreateHTTPRequestScriptVM("GET", "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/".. args.playerSteamId);
 	local data={}
-	print(args.playerSteamId)
 	request:SetHTTPRequestHeaderValue("x-api-key","FX5Tqd1joL2CC3p1tjCoF7hJCIoRrNDv4m0tqmvo");
 	--request:SetHTTPRequestGetOrPostParameter("server_key", GetDedicatedServerKeyV2(SERVER_KEY));
 	request:Send(function(res)
-			print(res.StatusCode);
+			print(res.StatusCode)
+      local mmr = 1000
+
 			if res.StatusCode == 200 then
-				local body = json.decode(res.Body);
+				local body = json.decode(res.Body)
 			
 				if body and body.Content[1] and body.Content[1].mmr then
-						g_PlayerMMRList[args.playerSteamId]=body.Content[1].mmr;
-						print(g_PlayerMMRList)
+						mmr = body.Content[1].mmr
 				end
-			else
-				g_PlayerMMRList[args.playerSteamId]=1000;
 			end
+
+      local playerData = {
+        playerID = args.PlayerID,
+        mmr = mmr,
+      }
+      table.insert(g_PlayerMMRList, playerData)
+
 			print("table.getn(g_PlayerMMRList):" .. TableCount(g_PlayerMMRList) .. "  PlayerResource:GetPlayerCount():" .. PlayerResource:GetPlayerCount())
 			if	g_PlayerMMRList and TableCount(g_PlayerMMRList)==PlayerResource:GetPlayerCount() then
 				CustomGameEventManager:Send_ServerToAllClients("MMRData", g_PlayerMMRList)
 			end
-	end);
+	end)
+end
+
+function generateTestMMRData()
+  g_PlayerMMRList = {}
+
+  g_PlayerMMRList = {}
+    table.insert(g_PlayerMMRList, {
+      playerID = 1,
+      mmr = 900,
+    })
+    table.insert(g_PlayerMMRList, {
+      playerID = 2,
+      mmr = 1100,
+    })
+    table.insert(g_PlayerMMRList, {
+      playerID = 3,
+      mmr = 1000,
+    })
+    table.insert(g_PlayerMMRList, {
+      playerID = 4,
+      mmr = 1234,
+    })
+    table.insert(g_PlayerMMRList, {
+      playerID = 5,
+      mmr = 976,
+    })
+    table.insert(g_PlayerMMRList, {
+      playerID = 6,
+      mmr = 865,
+    })
+    table.insert(g_PlayerMMRList, {
+      playerID = 7,
+      mmr = 1200,
+    })
+    table.insert(g_PlayerMMRList, {
+      playerID = 8,
+      mmr = 1111,
+    })
+    table.insert(g_PlayerMMRList, {
+      playerID = 9,
+      mmr = 999,
+    })
+    table.insert(g_PlayerMMRList, {
+      playerID = 10,
+      mmr = 888,
+    })
+end
+
+-- don't ask, it's magic
+local function map(f, a, ...) if a then return f(a), map(f, ...) end end
+local function incr(k) return function(a) return k > a and a or a+1 end end
+local function combs(m, n)
+  if m * n == 0 then return {{}} end
+  local ret, old = {}, combs(m-1, n-1)
+  for i = 1, n do
+    for k, v in ipairs(old) do ret[#ret+1] = {i, map(incr(i), unpack(v))} end
+  end
+  return ret
 end
 
 function CreateEvenTeams(eventSourceIndex)
 	local teamsWithRatings={}
-	print(g_PlayerMMRList)
-	print(permutation(g_PlayerMMRList, TableCount(g_PlayerMMRList)))
-	for k, v in pairs( permutation(g_PlayerMMRList, TableCount(g_PlayerMMRList)) ) do
+  local totalMMR = 0
+  local numPlayers = TableCount(g_PlayerMMRList)
 
-	local ratings = {}
-	
-	local teamOneAveMMR=0
-	local teamtwoAveMMR=0
-	teamOneSize=math.floor( PlayerResource:GetPlayerCount()/2)
-	teamTwoSize=math.floor( PlayerResource:GetPlayerCount()/2+.5)
-	local i=1
-		for PlayerID, mmr in pairs( v ) do
-			if i<=teamOneSize then
-				teamOneAveMMR=teamOneAveMMR+mmr
-			else
-				teamtwoAveMMR=teamtwoAveMMR+mmr
-			end
-			i=i+1
-		end
-		teamOneAveMMR=teamOneAveMMR/teamOneSize
-		teamtwoAveMMR=teamtwoAveMMR/teamOneSize
-		ratings[i]=math.abs(teamOneAveMMR-teamtwoAveMMR)
-		local TeamAndRating={}
-		TeamAndRating.team=v
-		TeamAndRating.rating=math.abs(teamOneAveMMR-teamtwoAveMMR)
-		table.insert( teamsWithRatings, TeamAndRating) 
-	end
-	table.sort(ratings)
-	local threshold =1000000
-	if #ratings>10 then
-		threshold=ratings[math.random(1, 10)]
-	end
+  if numPlayers % 2 ~= 0 then
+    print("Can't balance teams with an odd number of players")
+    return
+  end
 
-	for k, v in pairs( teamsWithRatings) do
-		if TeamAndRating.rating==threshold then
-				CustomGameEventManager:Send_ServerToAllClients("ShuffledTeamResult", TeamAndRating.team)
-			return
-		end
-	end
+  for _,playerData in pairs(g_PlayerMMRList) do
+    totalMMR = totalMMR + playerData.mmr
+  end
 
+  local targetMMR = totalMMR / 2
+
+  for k, v in ipairs(combs(numPlayers / 2, numPlayers)) do 
+    local teamMMR = 0
+    for _,i in pairs(v) do
+      local playerData = g_PlayerMMRList[i]
+      -- print(playerData.playerID, playerData.mmr)
+      teamMMR = teamMMR + playerData.mmr
+    end
+    print(math.abs(teamMMR - targetMMR))
+  end
+
+	-- for k, v in pairs( teamsWithRatings) do
+	-- 	if TeamAndRating.rating==threshold then
+	-- 			CustomGameEventManager:Send_ServerToAllClients("ShuffledTeamResult", TeamAndRating.team)
+	-- 		return
+	-- 	end
+	-- end
 end
 

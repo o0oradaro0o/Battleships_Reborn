@@ -1,3 +1,19 @@
+-- The probability that the winner beats the loser
+function Probability(winnerRank, loserRank)
+  return 1.0 * 1.0 / (1 + 1.0 * (10 ^ (1.0 * (loserRank - winnerRank) / 400))) 
+end
+-- This takes the average mmr of each team, and returns how much each side
+-- should win / lose
+-- K is a hyperparameter that determines how much mmr is at stake
+function GetEloRatingChange(winnerRank, loserRank, K)
+  K = K or 50
+  Pa = Probability(winnerRank, loserRank) 
+
+  rankChange = K * (1 - Pa) 
+
+  return rankChange
+end
+
 function GetRandomTableElement( myTable )
   -- iterate over whole table to get all keys
   local keyset = {}
@@ -16,19 +32,6 @@ function TableCount( t )
   return n
 end
 
-
-function permutation(a, n)
-	if n == 0 then
-		return a
-	else
-		for i = 1, n do
-			a[i], a[n] = a[n], a[i]
-			permutation(a, n - 1)
-			a[i], a[n] = a[n], a[i]
-		end
-	end
-end
- 
 function maxValue(a)
 	local values = {}
 
