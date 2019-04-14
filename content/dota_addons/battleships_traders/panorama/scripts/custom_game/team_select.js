@@ -8,6 +8,7 @@ var myToggle;
 // to the appropriate team panel to indicate which team the player is on.
 var g_PlayerPanels = [];
 var g_HatChoice = [];
+var g_MMRValues = [];
 
 var g_TEAM_SPECATOR = 1;
 var g_myPts = 75;
@@ -71,10 +72,18 @@ function OnAutoAssignPressed()
 //--------------------------------------------------------------------------------------------------
 function OnShufflePlayersPressed()
 {
-	// Shuffle the team assignments of any players which are assigned to a team, 
-	// this will not assign any players to a team which are currently unassigned. 
-	// This will also not attempt to keep players in a party on the same team.
+	//now a balanced shuffle
+		
+	if(g_MMRValues)
+	{
+		GameEvents.SendCustomGameEventToServer( "CreateEvenTeams", {}); 
+
+		
+	}
+	else{
+		$.Msg("old shuffle")
 	Game.ShufflePlayerTeamAssignments();
+	}
 }
 
 
@@ -442,14 +451,26 @@ function TradeMode()
 }
 
 
+function UseMMRData(data)
+{
+	g_MMRValues=data
+}
+function handleShuffledTeamResult(data)
+{
+	data.forEach(function(player) {
+		$.Msg(player)
 
-
+		});
+}
 
 //--------------------------------------------------------------------------------------------------
 // Entry point called when the team select panel is created
 //--------------------------------------------------------------------------------------------------
 (function()
 {
+	GameEvents.Subscribe("MMRData", UseMMRData);
+	GameEvents.Subscribe("ShuffledTeamResult", handleShuffledTeamResult);
+	
 	 hostToggle=false;
 	myToggle=false;
 	var bShowSpectatorTeam = false;
@@ -511,6 +532,10 @@ function TradeMode()
 	// Start updating the timer, this function will schedule itself to be called periodically
 	UpdateTimer();
 	$.Schedule( 2.0, GetLocalPlayerHats );
+	$.Msg(GetSteamID32())
+	GameEvents.SendCustomGameEventToServer( "SendMMRsToServer", { "playerSteamId": GetSteamID32()});
+	
+	
 	// Register a listener for the event which is brodcast when the team assignment of a player is actually assigned
 	$.RegisterForUnhandledEvent( "DOTAGame_TeamPlayerListChanged", OnTeamPlayerListChanged );
 

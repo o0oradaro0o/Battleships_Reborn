@@ -7,7 +7,7 @@ var firstcall = true;
 var starttime = 0;
 var yaw = 0;
 var NewShopUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop");
-var topBarGoodCont = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar").FindChildTraverse("TopBarRadiantTeam").FindChildTraverse("TopBarRadiantPlayers").FindChildTraverse("RadiantTeamScorePlayers").FindChildTraverse("TopBarRadiantPlayersContainer");
+var scoreBoardGoodCont = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar").FindChildTraverse("TopBarRadiantTeam").FindChildTraverse("TopBarRadiantPlayers").FindChildTraverse("RadiantTeamScorePlayers").FindChildTraverse("TopBarRadiantPlayersContainer");
 
 var topBarBadCont = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar").FindChildTraverse("TopBarDireTeam").FindChildTraverse("TopBarDirePlayers").FindChildTraverse("DireTeamScorePlayers").FindChildTraverse("TopBarDirePlayersContainer");
 
@@ -35,38 +35,38 @@ function showTrade() {
 
 
 function resetHeroIcons() {
-	if (topBarGoodCont.FindChildTraverse("RadiantPlayer0")) {
-		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer0").FindChildTraverse("SlantedContainerPanel"))
+	if (scoreBoardGoodCont.FindChildTraverse("RadiantPlayer0")) {
+		SetImageForPanel(scoreBoardGoodCont.FindChildTraverse("RadiantPlayer0").FindChildTraverse("SlantedContainerPanel"))
 	}
-	if (topBarGoodCont.FindChildTraverse("RadiantPlayer1")) {
-		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer1").FindChildTraverse("SlantedContainerPanel"))
+	if (scoreBoardGoodCont.FindChildTraverse("RadiantPlayer1")) {
+		SetImageForPanel(scoreBoardGoodCont.FindChildTraverse("RadiantPlayer1").FindChildTraverse("SlantedContainerPanel"))
 	}
-	if (topBarGoodCont.FindChildTraverse("RadiantPlayer2")) {
-		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer2").FindChildTraverse("SlantedContainerPanel"))
+	if (scoreBoardGoodCont.FindChildTraverse("RadiantPlayer2")) {
+		SetImageForPanel(scoreBoardGoodCont.FindChildTraverse("RadiantPlayer2").FindChildTraverse("SlantedContainerPanel"))
 	}
-	if (topBarGoodCont.FindChildTraverse("RadiantPlayer3")) {
-		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer3").FindChildTraverse("SlantedContainerPanel"))
+	if (scoreBoardGoodCont.FindChildTraverse("RadiantPlayer3")) {
+		SetImageForPanel(scoreBoardGoodCont.FindChildTraverse("RadiantPlayer3").FindChildTraverse("SlantedContainerPanel"))
 	}
-	if (topBarGoodCont.FindChildTraverse("RadiantPlayer4")) {
-		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer4").FindChildTraverse("SlantedContainerPanel"))
+	if (scoreBoardGoodCont.FindChildTraverse("RadiantPlayer4")) {
+		SetImageForPanel(scoreBoardGoodCont.FindChildTraverse("RadiantPlayer4").FindChildTraverse("SlantedContainerPanel"))
 	}
-	if (topBarGoodCont.FindChildTraverse("RadiantPlayer5")) {
-		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer5").FindChildTraverse("SlantedContainerPanel"))
+	if (scoreBoardGoodCont.FindChildTraverse("RadiantPlayer5")) {
+		SetImageForPanel(scoreBoardGoodCont.FindChildTraverse("RadiantPlayer5").FindChildTraverse("SlantedContainerPanel"))
 	}
-	if (topBarGoodCont.FindChildTraverse("RadiantPlayer6")) {
-		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer6").FindChildTraverse("SlantedContainerPanel"))
+	if (scoreBoardGoodCont.FindChildTraverse("RadiantPlayer6")) {
+		SetImageForPanel(scoreBoardGoodCont.FindChildTraverse("RadiantPlayer6").FindChildTraverse("SlantedContainerPanel"))
 	}
-	if (topBarGoodCont.FindChildTraverse("RadiantPlayer7")) {
-		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer7").FindChildTraverse("SlantedContainerPanel"))
+	if (scoreBoardGoodCont.FindChildTraverse("RadiantPlayer7")) {
+		SetImageForPanel(scoreBoardGoodCont.FindChildTraverse("RadiantPlayer7").FindChildTraverse("SlantedContainerPanel"))
 	}
-	if (topBarGoodCont.FindChildTraverse("RadiantPlayer8")) {
-		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer8").FindChildTraverse("SlantedContainerPanel"))
+	if (scoreBoardGoodCont.FindChildTraverse("RadiantPlayer8")) {
+		SetImageForPanel(scoreBoardGoodCont.FindChildTraverse("RadiantPlayer8").FindChildTraverse("SlantedContainerPanel"))
 	}
-	if (topBarGoodCont.FindChildTraverse("RadiantPlayer9")) {
-		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer9").FindChildTraverse("SlantedContainerPanel"))
+	if (scoreBoardGoodCont.FindChildTraverse("RadiantPlayer9")) {
+		SetImageForPanel(scoreBoardGoodCont.FindChildTraverse("RadiantPlayer9").FindChildTraverse("SlantedContainerPanel"))
 	}
-	if (topBarGoodCont.FindChildTraverse("RadiantPlayer10")) {
-		SetImageForPanel(topBarGoodCont.FindChildTraverse("RadiantPlayer10").FindChildTraverse("SlantedContainerPanel"))
+	if (scoreBoardGoodCont.FindChildTraverse("RadiantPlayer10")) {
+		SetImageForPanel(scoreBoardGoodCont.FindChildTraverse("RadiantPlayer10").FindChildTraverse("SlantedContainerPanel"))
 	}
 
 	if (topBarBadCont.FindChildTraverse("DirePlayer0")) {
@@ -102,6 +102,98 @@ function resetHeroIcons() {
 	if (topBarBadCont.FindChildTraverse("DirePlayer10")) {
 		SetImageForPanel(topBarBadCont.FindChildTraverse("DirePlayer10").FindChildTraverse("SlantedContainerPanel"))
 	}
+	var scoreboard = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("scoreboard").FindChildTraverse("Background");
+	
+	
+
+
+// for scoreboard
+	if (scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer0")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer0"))
+	}
+	if (scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer1")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer1"))
+	}
+	if (scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer2")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer2"))
+	}
+	if (scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer3")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer3"))
+	}
+	if (scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer4")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer4"))
+	}
+	if (scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer5")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer5"))
+	}
+	if (scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer6")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer6"))
+	}
+	if (scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer7")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer7"))
+	}
+	if (scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer8")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer8"))
+	}
+	if (scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer9")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer9"))
+	}
+	if (scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer10")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("RadiantTeamContainer").FindChildTraverse("RadiantPlayer10"))
+	}
+
+	if (scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer0")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer0"))
+	}
+	if (scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer1")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer1"))
+	}
+	if (scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer2")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer2"))
+	}
+	if (scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer3")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer3"))
+	}
+	if (scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer4")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer4"))
+	}
+	if (scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer5")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer5"))
+	}
+	if (scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer6")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer6"))
+	}
+	if (scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer7")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer7"))
+	}
+	if (scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer8")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer8"))
+	}
+	if (scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer9")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer9"))
+	}
+	if (scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer10")) {
+		SetImageForScorePanel(scoreboard.FindChildTraverse("DireTeamContainer").FindChildTraverse("DirePlayer10"))
+	}
+}
+
+function SetImageForScorePanel(topBarHeroPanel) {
+	topBarHeroPanel.FindChildTraverse("HeroImage").style.width = "0.0px";
+	var heroimage;
+	if (!topBarHeroPanel.FindChildTraverse("ReplacmentHeroImage")) {
+		heroimage = $.CreatePanel('Image', topBarHeroPanel, 'ReplacmentHeroImage');
+		heroimage.AddClass('TopBarHeroImage')
+	}
+	else {
+		heroimage = topBarHeroPanel.FindChildTraverse("ReplacmentHeroImage");
+	}
+	topBarHeroPanel.MoveChildBefore(topBarHeroPanel.FindChildTraverse("ReplacmentHeroImage"),topBarHeroPanel.FindChildTraverse("HeroImage") )
+	topBarHeroPanel.FindChildTraverse("ReplacmentHeroImage").style.width="67px"
+	topBarHeroPanel.FindChildTraverse("ReplacmentHeroImage").style.height="38px"
+	topBarHeroPanel.FindChildTraverse("ReplacmentHeroImage").style.verticalAlign="center"
+	heroimage.hittest = false
+	var heroImageName = "file://{images}/custom_game/Boats/" + topBarHeroPanel.FindChildTraverse("HeroImage").heroname + ".png"
+	heroimage.SetImage(heroImageName);
 }
 
 

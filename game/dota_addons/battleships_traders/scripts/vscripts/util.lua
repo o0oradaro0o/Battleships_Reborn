@@ -16,6 +16,41 @@ function TableCount( t )
   return n
 end
 
+
+function permutation(a, n)
+	if n == 0 then
+		return a
+	else
+		for i = 1, n do
+			a[i], a[n] = a[n], a[i]
+			permutation(a, n - 1)
+			a[i], a[n] = a[n], a[i]
+		end
+	end
+end
+ 
+function maxValue(a)
+	local values = {}
+
+	for k,v in pairs(a) do
+		if type(k) == "number" and type(v) == "number" then
+			values[#values+1] = v
+		end
+	end
+	table.sort(values) -- automatically sorts lowest to highest
+
+	return values[#values]
+end
+
+function maxKey(a)
+	local maxval = maxValue(a)
+	local inv={}
+	for k,v in pairs(a) do
+		inv[v]=k
+	end
+	return inv[maxval]
+ end
+
 ----------------------------------------------------------------------
 --- Returns a list of units that your weapon can hit
 --- Weapons with >1000 range can't hit towers

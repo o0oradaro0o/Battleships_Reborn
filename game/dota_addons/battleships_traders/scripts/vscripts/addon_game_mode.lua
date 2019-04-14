@@ -175,7 +175,7 @@ g_HeroGoldArray={}
 -- this holds the player ids and the hats they selected
 g_PlayerHatList={}
 
-
+g_PlayerMMRList={}
 -- this shit is all for stat tracking.  we can look at recent games to check item builds and see what items are most popular
 g_ItemCodeLookUp={}
 g_ItemCodeLookUp["item_hull_sail_one_combo_bow"] = "XX"
@@ -562,6 +562,9 @@ function CBattleship8D:InitGameMode()
 	CustomGameEventManager:RegisterListener("SendPlayerHat", SetHat);
 	CustomGameEventManager:RegisterListener("BuyPlayerHat", BuyHat);
 	CustomGameEventManager:RegisterListener("AddPoints", AddPoints);
+	CustomGameEventManager:RegisterListener("SendMMRsToServer", SendMMRsToServer);
+	CustomGameEventManager:RegisterListener("CreateEvenTeams", CreateEvenTeams);
+
 	
 	
   mode = GameRules:GetGameModeEntity()
@@ -4623,7 +4626,6 @@ function fixAbilities(hero)
 	end
 	  
   function SetHat(eventSourceIndex, args)
-		print(args.playerSteamId .. args.text)
 		g_PlayerHatList[args.playerSteamId]=args.text;
 		local request = CreateHTTPRequestScriptVM("POST", "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/".. args.playerSteamId);
 		local data={}
@@ -5058,27 +5060,7 @@ function setupWin(winner)
 
 end
 
-function maxValue(a)
-	local values = {}
 
-	for k,v in pairs(a) do
-		if type(k) == "number" and type(v) == "number" then
-			values[#values+1] = v
-		end
-	end
-	table.sort(values) -- automatically sorts lowest to highest
-
-	return values[#values]
-end
-
-function maxKey(a)
-	local maxval = maxValue(a)
-	local inv={}
-	for k,v in pairs(a) do
-		inv[v]=k
-	end
-	return inv[maxval]
- end
 
 
  function AddMMR(eventSourceIndex, mmr)
@@ -5100,26 +5082,92 @@ function maxKey(a)
 	----print(g_TradeMode)
 end
 
-function GetMMR(eventSourceIndex, mmr)
+function SetMMR(eventSourceIndex, mmr)
 	----print(args.text)
-	local request = CreateHTTPRequestScriptVM("GET", "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/".. args.playerSteamId);
+	local request = CreateHTTPRequestScriptVM("POST", "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/".. args.playerSteamId);
 	local data={}
 	local mmr={}
 	mmr.mmr=mmr
 	data.patch="true"
-	data.ADD=mmr
+	data.SET=mmr
+	request:SetHTTPRequestRawPostBody("application/json", json.encode(data));
 	request:SetHTTPRequestHeaderValue("x-api-key","FX5Tqd1joL2CC3p1tjCoF7hJCIoRrNDv4m0tqmvo");
 	request:SetHTTPRequestGetOrPostParameter("server_key", GetDedicatedServerKeyV2(SERVER_KEY));
 	request:Send(function(res)
 			print(res.StatusCode);
 			if res.StatusCode ~= 200 then
+			end
+	end);
+	----print(g_TradeMode)
+end
+
+function SendMMRsToServer(eventSourceIndex, args)
+	----print(args.text)
+	local request = CreateHTTPRequestScriptVM("GET", "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/".. args.playerSteamId);
+	local data={}
+	print(args.playerSteamId)
+	request:SetHTTPRequestHeaderValue("x-api-key","FX5Tqd1joL2CC3p1tjCoF7hJCIoRrNDv4m0tqmvo");
+	--request:SetHTTPRequestGetOrPostParameter("server_key", GetDedicatedServerKeyV2(SERVER_KEY));
+	request:Send(function(res)
+			print(res.StatusCode);
+			if res.StatusCode == 200 then
 				local body = json.decode(res.Body);
-        print(res.Body);
-        if body and body.highscore then
-            AllTimeHighScores[playerID] = body.highscore;
-        end
+			
+				if body and body.Content[1] and body.Content[1].mmr then
+						g_PlayerMMRList[args.playerSteamId]=body.Content[1].mmr;
+						print(g_PlayerMMRList)
+				end
+			else
+				g_PlayerMMRList[args.playerSteamId]=1000;
+			end
+			print("table.getn(g_PlayerMMRList):" .. TableCount(g_PlayerMMRList) .. "  PlayerResource:GetPlayerCount():" .. PlayerResource:GetPlayerCount())
+			if	g_PlayerMMRList and TableCount(g_PlayerMMRList)==PlayerResource:GetPlayerCount() then
+				CustomGameEventManager:Send_ServerToAllClients("MMRData", g_PlayerMMRList)
 			end
 	end);
 end
 
+function CreateEvenTeams(eventSourceIndex)
+	local teamsWithRatings={}
+	print(g_PlayerMMRList)
+	print(permutation(g_PlayerMMRList, TableCount(g_PlayerMMRList)))
+	for k, v in pairs( permutation(g_PlayerMMRList, TableCount(g_PlayerMMRList)) ) do
+
+	local ratings = {}
+	
+	local teamOneAveMMR=0
+	local teamtwoAveMMR=0
+	teamOneSize=math.floor( PlayerResource:GetPlayerCount()/2)
+	teamTwoSize=math.floor( PlayerResource:GetPlayerCount()/2+.5)
+	local i=1
+		for PlayerID, mmr in pairs( v ) do
+			if i<=teamOneSize then
+				teamOneAveMMR=teamOneAveMMR+mmr
+			else
+				teamtwoAveMMR=teamtwoAveMMR+mmr
+			end
+			i=i+1
+		end
+		teamOneAveMMR=teamOneAveMMR/teamOneSize
+		teamtwoAveMMR=teamtwoAveMMR/teamOneSize
+		ratings[i]=math.abs(teamOneAveMMR-teamtwoAveMMR)
+		local TeamAndRating={}
+		TeamAndRating.team=v
+		TeamAndRating.rating=math.abs(teamOneAveMMR-teamtwoAveMMR)
+		table.insert( teamsWithRatings, TeamAndRating) 
+	end
+	table.sort(ratings)
+	local threshold =1000000
+	if #ratings>10 then
+		threshold=ratings[math.random(1, 10)]
+	end
+
+	for k, v in pairs( teamsWithRatings) do
+		if TeamAndRating.rating==threshold then
+				CustomGameEventManager:Send_ServerToAllClients("ShuffledTeamResult", TeamAndRating.team)
+			return
+		end
+	end
+
+end
 
