@@ -988,7 +988,6 @@ function CBattleship8D:OnThink()
         Notifications:TopToAll({text="#inst_two", duration=6.0, style={color="#58ACFA",  fontSize="18px;"}, continue=true})
         Notifications:TopToAll({text="#inst_three", duration=6.0, style={color="#B03060",  fontSize="18px;"}, continue=true})
         Notifications:TopToAll({text="#inst_four", duration=6.0, style={color="#58ACFA",  fontSize="18px;"}, continue=true})
-
       end
 			if g_MainTimerTickCount == 7 then
         Notifications:TopToAll({text="#inst_five", duration=6.0, style={color="#07C300",  fontSize="18px;"}})
@@ -4955,41 +4954,47 @@ end
 function setupWin(winner)
 
   local radiantPosition = 0
-  local direPosition = 5
+	local direPosition = 5
+	local winnerRank=0
+	local loserRank=0
+	local winners={}
+	local losers={}
 	g_GameOver=1
-  for _,hero in pairs(HeroList:GetAllHeroes()) do
-    local playerID = hero:GetPlayerOwnerID()
+	for _,hero in pairs(HeroList:GetAllHeroes()) do
+		if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and hero:IsRealHero() then
+			local playerID = hero:GetPlayerOwnerID()
 
-    local damageTanked = g_DamageTanked[playerID]
-    local damageDealt = g_DamageDealt[playerID]
-    local creepsKilled = g_CreepsKilled[playerID]
-    local heroDamage = g_HeroDamage[playerID]
-    local buildingDamage = g_BuildingDamage[playerID]
-    local kills = PlayerResource:GetKills(playerID)
-    local deaths = PlayerResource:GetDeaths(playerID)
+			local damageTanked = g_DamageTanked[playerID]
+			local damageDealt = g_DamageDealt[playerID]
+			local creepsKilled = g_CreepsKilled[playerID]
+			local heroDamage = g_HeroDamage[playerID]
+			local buildingDamage = g_BuildingDamage[playerID]
+			local kills = PlayerResource:GetKills(playerID)
+			local deaths = PlayerResource:GetDeaths(playerID)
 
-    local rowPosition
-    if hero:GetTeam() == DOTA_TEAM_GOODGUYS then
-      rowPosition = radiantPosition
-      radiantPosition = radiantPosition + 1
-    else
-      rowPosition = direPosition
-      direPosition = direPosition + 1
-    end
+			local rowPosition
+			if hero:GetTeam() == DOTA_TEAM_GOODGUYS then
+				rowPosition = radiantPosition
+				radiantPosition = radiantPosition + 1
+			else
+				rowPosition = direPosition
+				direPosition = direPosition + 1
+			end
 
-    local playerData = {
-      playerID = playerID,
-      rowPosition = rowPosition,
-      damageTanked = damageTanked,
-      damageDealt = damageDealt,
-      creepsKilled = creepsKilled,
-      heroDamage = heroDamage,
-      buildingDamage = buildingDamage,
-      kills = kills,
-      deaths = deaths,
-    }
+			local playerData = {
+				playerID = playerID,
+				rowPosition = rowPosition,
+				damageTanked = damageTanked,
+				damageDealt = damageDealt,
+				creepsKilled = creepsKilled,
+				heroDamage = heroDamage,
+				buildingDamage = buildingDamage,
+				kills = kills,
+				deaths = deaths,
+			}
 
-    CustomGameEventManager:Send_ServerToAllClients("AddGameOverPlayerData", playerData)
+			CustomGameEventManager:Send_ServerToAllClients("AddGameOverPlayerData", playerData)
+		end
   end
 
 
@@ -5026,13 +5031,29 @@ function setupWin(winner)
 
 	local i=0
 	local j=0
+
+	
+
 	for _,hero in pairs( Entities:FindAllByClassname( "npc_dota_hero*")) do
-		if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetTeamNumber() == winner then
+		if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and hero:IsRealHero() and hero:GetTeamNumber() == winner then
+
+			for _,playerData in pairs(g_PlayerMMRList) do
+				if  tonumber(PlayerResource:GetSteamAccountID(hero:GetPlayerOwnerID())) == tonumber(playerData.playerSteamID) then
+					winnerRank = winnerRank + playerData.mmr
+					table.insert( winners, playerData.playerSteamID)
+				end
+			end
 			i=i+1
 			PlayerResource:SetCameraTarget(hero:GetPlayerID(), hero)
 			hero:SetOrigin(papa_place + Vector(-500 + i * 250,200,0))
 			hero:SetForwardVector(papa_place-hero:GetOrigin())
-		elseif hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetTeamNumber() ~= winner then
+		elseif hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and hero:IsRealHero() and hero:GetTeamNumber() ~= winner then
+		for _,playerData in pairs(g_PlayerMMRList) do
+				if  tonumber(PlayerResource:GetSteamAccountID(hero:GetPlayerOwnerID())) == tonumber(playerData.playerSteamID) then
+					loserRank = loserRank + playerData.mmr
+					table.insert( losers, playerData.playerSteamID)
+				end
+			end
 			j=j+1
 			PlayerResource:SetCameraTarget(hero:GetPlayerID(), hero)
 			hero:SetOrigin(papa_place + Vector(-500 + j * 250,-400,0))
@@ -5057,15 +5078,26 @@ function setupWin(winner)
 			end
 		end
 	end
-
+	if #g_PlayerMMRList>5 then
+		winnerRank=winnerRank/#winners
+		loserRank=loserRank/#losers
+		print("winnerRank " .. winnerRank)
+		print("loserRank " .. loserRank)
+		for _,winner in pairs(winners) do
+			AddMMR(GetEloRatingChange(winnerRank, loserRank,50), winner)
+		end
+		for _,losers in pairs(winners) do
+			AddMMR(0-GetEloRatingChange(winnerRank, loserRank,50), losers)
+		end
+	end
 end
 
 
 
 
- function AddMMR(eventSourceIndex, mmr)
-	----print(args.text)
-	local request = CreateHTTPRequestScriptVM("POST", "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/".. args.playerSteamId);
+ function AddMMR(mmr, playerSteamId)
+	print(mmr .. " added to player id " .. playerSteamId)
+	local request = CreateHTTPRequestScriptVM("POST", "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/".. playerSteamId);
 	local data={}
 	local mmr={}
 	mmr.mmr=mmr
@@ -5121,11 +5153,10 @@ function SendMMRsToServer(eventSourceIndex, args)
 			end
 
       local playerData = {
-        playerID = args.PlayerID,
+        playerSteamID = args.playerSteamId,
         mmr = mmr,
       }
       table.insert(g_PlayerMMRList, playerData)
-
 			print("table.getn(g_PlayerMMRList):" .. TableCount(g_PlayerMMRList) .. "  PlayerResource:GetPlayerCount():" .. PlayerResource:GetPlayerCount())
 			if	g_PlayerMMRList and TableCount(g_PlayerMMRList)==PlayerResource:GetPlayerCount() then
 				CustomGameEventManager:Send_ServerToAllClients("MMRData", g_PlayerMMRList)
@@ -5138,43 +5169,43 @@ function generateTestMMRData()
 
   g_PlayerMMRList = {}
     table.insert(g_PlayerMMRList, {
-      playerID = 1,
+      playerSteamID = 1,
       mmr = 900,
     })
     table.insert(g_PlayerMMRList, {
-      playerID = 2,
+      playerSteamID = 2,
       mmr = 1100,
     })
     table.insert(g_PlayerMMRList, {
-      playerID = 3,
+      playerSteamID = 3,
       mmr = 1000,
     })
     table.insert(g_PlayerMMRList, {
-      playerID = 4,
+      playerSteamID = 4,
       mmr = 1234,
     })
     table.insert(g_PlayerMMRList, {
-      playerID = 5,
+      playerSteamID = 5,
       mmr = 976,
     })
     table.insert(g_PlayerMMRList, {
-      playerID = 6,
+      playerSteamID = 6,
       mmr = 865,
     })
     table.insert(g_PlayerMMRList, {
-      playerID = 7,
+      playerSteamID = 7,
       mmr = 1200,
     })
     table.insert(g_PlayerMMRList, {
-      playerID = 8,
+      playerSteamID = 8,
       mmr = 1111,
     })
     table.insert(g_PlayerMMRList, {
-      playerID = 9,
+      playerSteamID = 9,
       mmr = 999,
     })
     table.insert(g_PlayerMMRList, {
-      playerID = 10,
+      playerSteamID = 10,
       mmr = 888,
     })
 end
@@ -5193,35 +5224,44 @@ end
 
 function CreateEvenTeams(eventSourceIndex)
 	local teamsWithRatings={}
+	local ratings={}
   local totalMMR = 0
   local numPlayers = TableCount(g_PlayerMMRList)
 
-  if numPlayers % 2 ~= 0 then
-    print("Can't balance teams with an odd number of players")
-    return
-  end
-
+	
   for _,playerData in pairs(g_PlayerMMRList) do
     totalMMR = totalMMR + playerData.mmr
   end
 
   local targetMMR = totalMMR / 2
+	for k, v in ipairs(combs(math.floor( numPlayers / 2+0.5 ), numPlayers)) do 
 
-  for k, v in ipairs(combs(numPlayers / 2, numPlayers)) do 
-    local teamMMR = 0
-    for _,i in pairs(v) do
+		local teamMMR = 0
+		local teamSteamIds={}
+		for _,i in pairs(v) do
       local playerData = g_PlayerMMRList[i]
-      -- print(playerData.playerID, playerData.mmr)
-      teamMMR = teamMMR + playerData.mmr
-    end
-    print(math.abs(teamMMR - targetMMR))
-  end
+			teamMMR = teamMMR + playerData.mmr
+			table.insert(teamSteamIds,playerData.playerSteamID)
+		end
+		ratings[#ratings+1]=math.abs(teamMMR - targetMMR)
+		local TeamAndRating={}
+		TeamAndRating.team=teamSteamIds
+		TeamAndRating.rating=math.abs(math.abs(teamMMR - targetMMR))
+		table.insert( teamsWithRatings, TeamAndRating) 
+	end
+	local threshold=ratings[1]
 
-	-- for k, v in pairs( teamsWithRatings) do
-	-- 	if TeamAndRating.rating==threshold then
-	-- 			CustomGameEventManager:Send_ServerToAllClients("ShuffledTeamResult", TeamAndRating.team)
-	-- 		return
-	-- 	end
-	-- end
+		table.sort(ratings)
+		
+		if #ratings>10 then
+			threshold=ratings[math.random(1, math.floor(#ratings/10))]
+		end
+
+	for k, v in pairs( teamsWithRatings) do
+		if v.rating==threshold then
+				CustomGameEventManager:Send_ServerToAllClients("ShuffledTeamResult", v)
+			return
+		end
+	end
 end
 

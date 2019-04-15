@@ -184,7 +184,7 @@
 								<Label text="#custom_game_team_select_auto_assign" />
 							</Button>
 							<Button id="ShuffleTeamAssignmentButton" onactivate="OnShufflePlayersPressed()">
-								<Label text="#custom_game_team_select_shuffle" />
+								<Label text="BALANCE MMR" />
 								<Image src="file://{images}/control_icons/shuffle.psd" />
 							</Button>
 							<Panel id="Options">

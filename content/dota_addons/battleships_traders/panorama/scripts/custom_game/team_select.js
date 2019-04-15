@@ -457,10 +457,28 @@ function UseMMRData(data)
 }
 function handleShuffledTeamResult(data)
 {
-	data.forEach(function(player) {
-		$.Msg(player)
-
-		});
+		$.Msg(data)
+		Game.PlayerJoinTeam( DOTATeam_t.DOTA_TEAM_NOTEAM );
+		for(var player in data.team)
+		{
+			
+			$.Msg(GetSteamID32()+"  playerid:"+	data.team[player])
+			if(data.team[player]+""==GetSteamID32()+"")
+			{
+				$.Schedule( .1, joinTeamNorth );
+				return
+			}
+		}
+			
+			$.Schedule( .1, joinTeamSouth );
+}
+function joinTeamNorth()
+{
+	Game.PlayerJoinTeam( DOTATeam_t.DOTA_TEAM_BADGUYS );
+}
+function joinTeamSouth()
+{
+	Game.PlayerJoinTeam( DOTATeam_t.DOTA_TEAM_GOODGUYS );
 }
 
 //--------------------------------------------------------------------------------------------------
