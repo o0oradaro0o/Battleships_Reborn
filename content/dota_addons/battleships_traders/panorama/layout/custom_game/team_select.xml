@@ -148,13 +148,18 @@
 					</Button>
 				</Panel>
 				
-				<Panel class="HatRow">
-				
+				<Panel class="HatRowbot">
+				<Button id="specHat" class="HatSelectButton" onactivate="PickHat(0,'specHat')">
+					<Label class="HatImageLabel" text="You have a" />
+					<Image class="HatImage" src="file://{images}/custom_game/hats/specHat.png" />
+					<Label class="HatImageLabel" text="Special Hat" />
+				</Button>
 				<Button id="noHat" class="HatSelectButton" onactivate="PickHat(0,'noHat')">
 					
 					<Image class="HatImage" src="file://{images}/custom_game/hats/noHat.png" />
 					<Label class="HatImageLabel" text="No hat" />
 				</Button>
+				
 				</Panel>
 			</Panel>
 			</Panel>

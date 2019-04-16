@@ -960,6 +960,12 @@ flow-children:right;
 height:115px;
 width:100%;
 }
+.HatRowbot
+{
+flow-children:right;
+height:120px;
+width:100%;
+}
 .HatImage
 {
 	width:80px;
@@ -1015,8 +1021,18 @@ width:100%;
 {
 	vertical-align: bottom;
 	horizontal-align: right;
-	height: 90px;
+	height: 91px;
 	margin: 10px;
+	padding: 6px;
+}
+#specHat
+{
+	visibility: collapse;
+	vertical-align: bottom;
+	horizontal-align: left;
+	height: 120px;
+	margin-top: -25px;
+	margin-left: 10px;
 	padding: 6px;
 }
 .locked
