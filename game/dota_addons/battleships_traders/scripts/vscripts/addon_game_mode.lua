@@ -1789,15 +1789,7 @@ function CBattleship8D:OrderExecutionFilter(keys)
             ----print(GetItemCost(ability:GetName()))
             ----print(ability:GetGoldCost(1))
             g_HeroGoldArray[ability:GetCaster():GetPlayerOwnerID()] = g_HeroGoldArray[ability:GetCaster():GetPlayerOwnerID()] + sellGold
-            if g_ItemCodeLookUp[ability:GetName()] ~= nil then
-                storage:AddToPlayerSaleHist(
-                    playerID,
-                    {
-                        item = g_ItemCodeLookUp[ability:GetName()],
-                        time = math.floor(GameRules:GetGameTime() / 60 + 0.5)
-                    }
-                ) -- math.floor(GameRules:GetGameTime()/60+0.5) .. g_ItemCodeLookUp[itemName])
-            else
+
                 storage:AddToPlayerSaleHist(
                     playerID,
                     {
@@ -1805,7 +1797,6 @@ function CBattleship8D:OrderExecutionFilter(keys)
                         time = math.floor(GameRules:GetGameTime() / 60 + 0.5)
                     }
                 ) -- math.floor(GameRules:GetGameTime()/60+0.5) .. g_ItemCodeLookUp[itemName])
-            end
         end
     end
 
@@ -6998,11 +6989,7 @@ function SetHat(eventSourceIndex, args)
     data.patch = "true"
     data.SET = CurHat
     request:SetHTTPRequestRawPostBody("application/json", json.encode(data))
-    request:SetHTTPRequestHeaderValue(
-        "x-api-key",
-        "FX5Tqd1joL2CC3p1tjCoF7hJCIoRrNDv4m0tqmvo"
-    )
-    request:SetHTTPRequestHeaderValue("server_key", GetDedicatedServerKeyV2(SERVER_KEY))
+    request:SetHTTPRequestHeaderValue("x-api-key", GetDedicatedServerKeyV2(SERVER_KEY))
     request:Send(function(res)
         print(res.StatusCode)
         if res.StatusCode ~= 200 then end
@@ -7023,11 +7010,7 @@ function BuyHat(eventSourceIndex, args)
     data.hat = args.text
     print(data)
     request:SetHTTPRequestRawPostBody("application/json", json.encode(data))
-    request:SetHTTPRequestHeaderValue(
-        "x-api-key",
-        "FX5Tqd1joL2CC3p1tjCoF7hJCIoRrNDv4m0tqmvo"
-    )
-    request:SetHTTPRequestHeaderValue("server_key", GetDedicatedServerKeyV2(SERVER_KEY))
+    request:SetHTTPRequestHeaderValue("x-api-key", GetDedicatedServerKeyV2(SERVER_KEY))
     request:Send(function(res)
         print(res.StatusCode)
         if res.StatusCode ~= 200 then end
@@ -7051,11 +7034,7 @@ function AddPoints(eventSourceIndex, args)
     data.patch = "true"
     data.ADD = points
     request:SetHTTPRequestRawPostBody("application/json", json.encode(data))
-    request:SetHTTPRequestHeaderValue(
-        "x-api-key",
-        "FX5Tqd1joL2CC3p1tjCoF7hJCIoRrNDv4m0tqmvo"
-    )
-    request:SetHTTPRequestHeaderValue("server_key", GetDedicatedServerKeyV2(SERVER_KEY))
+    request:SetHTTPRequestHeaderValue("x-api-key", GetDedicatedServerKeyV2(SERVER_KEY))
     request:Send(function(res)
         print(res.StatusCode)
         if res.StatusCode ~= 200 then end
@@ -7524,7 +7503,7 @@ function setupWin(winner)
         print("loserRank " .. loserRank)
         local mmrChange = GetEloRatingChange(winnerRank, loserRank, 50)
         for _, winner in pairs(winners) do AddMMR(mmrChange, winner) end
-        for _, losers in pairs(winners) do AddMMR(0 - mmrChange, losers) end
+        for _, loser in pairs(losers) do AddMMR(0 - mmrChange, loser) end
     end
 end
 
@@ -7537,11 +7516,8 @@ function AddMMR(mmrchange, playerSteamId)
     local data = {}
     data.mmr = mmrchange
     request:SetHTTPRequestRawPostBody("application/json", json.encode(data))
-    request:SetHTTPRequestHeaderValue(
-        "x-api-key",
-        "FX5Tqd1joL2CC3p1tjCoF7hJCIoRrNDv4m0tqmvo"
-    )
-    request:SetHTTPRequestHeaderValue("server_key", GetDedicatedServerKeyV2(SERVER_KEY))
+
+    request:SetHTTPRequestHeaderValue("x-api-key", GetDedicatedServerKeyV2(SERVER_KEY))
     request:Send(function(res)
         print(res.StatusCode)
         if res.StatusCode ~= 200 then end
@@ -7619,7 +7595,6 @@ function CreateEvenTeams(eventSourceIndex)
 
     local targetMMR = totalMMR / 2
     for k, v in ipairs(combs(math.floor(numPlayers / 2 + 0.5), numPlayers)) do
-
         local teamMMR = 0
         local teamSteamIds = {}
         for _, i in pairs(v) do
@@ -7634,18 +7609,19 @@ function CreateEvenTeams(eventSourceIndex)
         table.insert(teamsWithRatings, TeamAndRating)
     end
     local threshold = ratings[1]
-
+		print(threshold)
     table.sort(ratings)
 
     if #ratings > 10 then
-        threshold = ratings[math.random(1, math.floor(#ratings / 10))]
+        threshold = ratings[ math.floor(#ratings / 10)]
     end
-
+		local topPercent={}
     for k, v in pairs(teamsWithRatings) do
-        if v.rating == threshold then
-            CustomGameEventManager:Send_ServerToAllClients("ShuffledTeamResult", v)
-            return
+				if v.rating <= threshold then
+					table.insert(topPercent,v)
         end
-    end
+		end
+		local combo =topPercent[math.random(1, #topPercent)]
+		print(combo)
+		CustomGameEventManager:Send_ServerToAllClients("ShuffledTeamResult", combo)
 end
-

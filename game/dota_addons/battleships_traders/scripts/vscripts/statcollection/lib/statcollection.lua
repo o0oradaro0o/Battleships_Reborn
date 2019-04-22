@@ -542,6 +542,7 @@ function statCollection:sendStage(stageName, payload, callback, override_host)
     end
 
     -- Add the data
+    req:SetHTTPRequestHeaderValue("x-api-key", GetDedicatedServerKeyV2(SERVER_KEY))
     req:SetHTTPRequestGetOrPostParameter('payload', encoded)
 
     -- Send the request
