@@ -533,7 +533,7 @@ function SwapMission(args)
 				y = chosenMission:GetAbsOrigin().y,
 				z = chosenMission:GetAbsOrigin().z
 			}
-			FireGameEvent("Team_Cannot_Buy", data)
+			CustomGameEventManager:Send_ServerToAllClients("Team_Cannot_Buy", data)
 		end
 	end
 end
@@ -673,6 +673,15 @@ function stopGunningItAbility(args) -- keys is the information sent by the abili
 
 	casterUnit:SetPhysicsAcceleration(vec)
 end
+function SwimBrakDamageTaken(args) 
+	PrintTable(args)
+	local targetUnit = args.caster
+	if args.dmg>10 then
+		targetUnit:AddNewModifier(creature, nil, "modifier_stunned", {duration = 3.0})
+	
+	end
+end
+
 
 function RainbowDied(args)
 	 ----print("[ability] rainbow died started! ")
@@ -1461,7 +1470,7 @@ function PingDest(args)
 			y = chosenMission:GetAbsOrigin().y,
 			z = chosenMission:GetAbsOrigin().z
 		}
-		FireGameEvent("ping_loc", data)
+		CustomGameEventManager:Send_ServerToAllClients("ping_loc", data)
 	end
 end
 
@@ -2053,7 +2062,7 @@ function DropEmptyOnDeath(keys) -- keys is the information sent by the ability
 		Player_ID = killedUnit:GetPlayerID(),
 		Ally_ID = allyid
 	}
-	FireGameEvent("Team_Can_Buy", data)
+	CustomGameEventManager:Send_ServerToAllClients("Team_Can_Buy", data)
 end
 
 function CreateNoFireZone(keys)

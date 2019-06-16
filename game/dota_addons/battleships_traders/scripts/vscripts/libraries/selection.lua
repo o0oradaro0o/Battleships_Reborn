@@ -110,7 +110,7 @@ end
 
 function CDOTA_PlayerResource:RefreshSelection()
     Timers:CreateTimer(0.03, function()
-        FireGameEvent("dota_player_update_selected_unit", {})
+        CustomGameEventManager:Send_ServerToAllClients("dota_player_update_selected_unit", {})
     end)
 end
 

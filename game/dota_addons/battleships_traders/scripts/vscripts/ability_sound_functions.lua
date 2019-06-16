@@ -83,6 +83,10 @@ function vahSound(keys)
 	local casterUnit = keys.caster
 	EmitSoundOn("Hero_LegionCommander.Duel.FP", casterUnit)
 end
+function stopVahSound(keys)
+	local casterUnit = keys.caster
+	StopSoundOn("Hero_LegionCommander.Duel.FP", casterUnit)
+end
 function vahBoomSound(keys)
 	 ----print("launchSound")
 	local casterUnit = keys.caster

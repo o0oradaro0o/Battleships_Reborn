@@ -1882,7 +1882,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"miss_chance"				"2 3 4 5"
+				"miss_chance"				"1 2 3 4"
 			}
 		}
 	}
@@ -2395,7 +2395,7 @@
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"950 1050 1150 1250"
+		"AbilityCastRange"				"1050 1150 1250 1350"
 		"AbilityCastPoint"				"0.1"
 		
 		// Time		
@@ -2423,12 +2423,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"speed"					"1400"
+				"speed"					"2000"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_range"			"950 1050 1150 1250"
+				"tooltip_range"			"1050 1150 1250 1350"
 			}
 		}
 	}
@@ -3896,7 +3896,7 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30 25 20 15"
-		"AbilityChannelTime"			"500 500 500 500"
+		"AbilityChannelTime"			"4 5 6 7"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -4071,6 +4071,14 @@
 				}
 
 		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+				{
+					"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+					"Function"			"stopVahSound"
+				}
+		}
 
 		
 		
@@ -4086,6 +4094,7 @@
 						"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"             "%armor"
 				}
 				"ThinkInterval"		"4.0"
+				"Duration" "4.1"
 				"OnIntervalThink"
 				{
 					"Damage"
@@ -5645,20 +5654,11 @@
 				"EffectName"                    "particles/basic_projectile/fun_aura.vpcf"
 				"OnTakeDamage"
 				{
-					"ApplyModifier"
-					{
-						"Target" "CASTER"
-						"ModifierName" "stunned_from_relaxing"
-					}
-					"RemoveModifier"
-					{
-						"Target" "CASTER"
-						"ModifierName" "swimbreak"
-					}
 					"RunScript"
 					{
 						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
-						"Function"			"stopGunningItAbility"
+						"Function"			"SwimBrakDamageTaken"
+						"dmg"						"%attack_damage"
 					}
 				}
 			}
@@ -10147,7 +10147,7 @@
 		"04"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"range"					"0.9 0.8 0.7 0.6"
+			"range"					"1.0 0.95 0.9 0.85"
 		}
 	}
 
@@ -11248,7 +11248,7 @@
 			{
 				"Target" "TARGET"
 					
-				"MoveSpeed" "900"
+				"MoveSpeed" "1500"
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/coast_heal_proj.vpcf" 
 			}
@@ -11396,7 +11396,7 @@
 			"01"
 			{
 					"var_type"                                      "FIELD_FLOAT"
-					"health_regen"                          "10.0 14.0 18.0 22.0"
+					"health_regen"                          "14.0 18.0 22.0 26.0"
 			}
 		}
 	}
@@ -11459,7 +11459,7 @@
 			"01"
 			{
 					"var_type"                                      "FIELD_FLOAT"
-					"health_bonus"                          "200 300 400 500"
+					"health_bonus"                          "300 400 500 600"
 			}
 		}
 	}
@@ -11520,7 +11520,7 @@
 			"01"
 			{
 					"var_type"                                      "FIELD_FLOAT"
-					"armor_bonus"                          "2.5 3 3.5 4"
+					"armor_bonus"                          "2 3 4 5"
 			}
 		}
 	}
@@ -11609,7 +11609,7 @@
 			{
 				"Target" "TARGET"
 					
-				"MoveSpeed" "900"
+				"MoveSpeed" "1500"
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/bell_projectile.vpcf" 
 			}
@@ -11921,7 +11921,7 @@
 			"01"
 			{
 					"var_type"                                      "FIELD_FLOAT"
-					"health_regen"                          "10.0 14.0 18.0 22.0"
+					"health_regen"                          "14.0 18.0 22.0 26.0"
 			}
 		}
 	}
@@ -11984,7 +11984,7 @@
 			"01"
 			{
 					"var_type"                                      "FIELD_FLOAT"
-					"health_bonus"                          "200 300 400 500"
+					"health_bonus"                          "300 400 500 600"
 			}
 		}
 	}
@@ -12045,7 +12045,7 @@
 			"01"
 			{
 					"var_type"                                      "FIELD_FLOAT"
-					"armor_bonus"                          "2.5 3 3.5 4"
+					"armor_bonus"                          "2 3 4 5"
 			}
 		}
 	}
@@ -12134,7 +12134,7 @@
 			{
 				"Target" "TARGET"
 					
-				"MoveSpeed" "900"
+				"MoveSpeed" "1500"
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/bell_projectile.vpcf" 
 			}
@@ -12446,7 +12446,7 @@
 			"01"
 			{
 					"var_type"                                      "FIELD_FLOAT"
-					"health_regen"                          "10.0 14.0 18.0 22.0"
+					"health_regen"                          "14.0 18.0 22.0 26.0"
 			}
 		}
 	}
@@ -12509,7 +12509,7 @@
 			"01"
 			{
 					"var_type"                                      "FIELD_FLOAT"
-					"health_bonus"                          "200 300 400 500"
+					"health_bonus"                          "300 400 500 600"
 			}
 		}
 	}
@@ -12570,7 +12570,7 @@
 			"01"
 			{
 					"var_type"                                      "FIELD_FLOAT"
-					"armor_bonus"                          "2.5 3 3.5 4"
+					"armor_bonus"                          "2 3 4 5"
 			}
 		}
 	}
@@ -12659,7 +12659,7 @@
 			{
 				"Target" "TARGET"
 					
-				"MoveSpeed" "900"
+				"MoveSpeed" "1500"
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/bell_projectile.vpcf" 
 			}

@@ -1636,6 +1636,7 @@ GameUI.SetMouseCallback(function (eventName, arg) {
 })();
 
 
+
 (function () {
 	hideTrade();
 	resetHeroIcons();

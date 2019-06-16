@@ -1854,17 +1854,17 @@ function CBattleship8D:OnThink()
                 })
                 if g_BattleMode == 1 then
                     local battleTimerData = {TimeTillBattle = g_BattleModeTimer,}
-                    FireGameEvent("Battle_Over", battleTimerData)
+                    CustomGameEventManager:Send_ServerToAllClients("Battle_Over", battleTimerData)
                 end
 
                 if g_BattleMode == 1 then
                     local battleTimerData = {TimeTillBattle = g_BattleModeTimer,}
-                    FireGameEvent("Battle_Over", battleTimerData)
+                    CustomGameEventManager:Send_ServerToAllClients("Battle_Over", battleTimerData)
                 end
                 ----print("g_TradeMode is" .. g_TradeMode)
                 if g_TradeMode == 1 then
                     local empty = {}
-                    FireGameEvent("Trade_Mode_Enabled", empty)
+                    CustomGameEventManager:Send_ServerToAllClients("Trade_Mode_Enabled", empty)
                 end
 
                 Timers:CreateTimer(300, function() spawnTide() end)
@@ -1993,7 +1993,7 @@ function CBattleship8D:OnThink()
                     end
 
                     local data = {Player_ID = co_op_pid,}
-                    FireGameEvent("co_op_mode", data)
+                    CustomGameEventManager:Send_ServerToAllClients("co_op_mode", data)
                 end
 
             end
@@ -2059,7 +2059,7 @@ function CBattleship8D:OnThink()
                                 y = 320,
                                 z = -68
                             }
-                            FireGameEvent("ping_loc", Data)
+                            CustomGameEventManager:Send_ServerToAllClients("ping_loc", Data)
 
                             local Data = {
                                 player_id = hero:GetPlayerOwnerID(),
@@ -2067,7 +2067,7 @@ function CBattleship8D:OnThink()
                                 y = -320,
                                 z = -68
                             }
-                            FireGameEvent("ping_loc", Data)
+                            CustomGameEventManager:Send_ServerToAllClients("ping_loc", Data)
                         end
                     end
                 end
@@ -2088,7 +2088,7 @@ function CBattleship8D:OnThink()
                                 y = 320,
                                 z = -68
                             }
-                            FireGameEvent("ping_loc", Data)
+                            CustomGameEventManager:Send_ServerToAllClients("ping_loc", Data)
 
                             local Data = {
                                 player_id = hero:GetPlayerOwnerID(),
@@ -2096,7 +2096,7 @@ function CBattleship8D:OnThink()
                                 y = -320,
                                 z = -68
                             }
-                            FireGameEvent("ping_loc", Data)
+                            CustomGameEventManager:Send_ServerToAllClients("ping_loc", Data)
                         end
                     end
                 end
@@ -2274,7 +2274,7 @@ function CBattleship8D:OnThink()
                                 hero:SetGold(0, false)
                                 hero:SetGold(0, true)
                                 g_DisconnectKicked[hero] = 2
-                                local vecorig = Vector(-8000, 384, 0)
+                                local vecorig = Vector(-8000, 484, 0)
                                 hero:SetOrigin(vecorig)
                                 local item = CreateItem("item_spawn_stunner", npc, npc)
 
@@ -2282,6 +2282,8 @@ function CBattleship8D:OnThink()
                             end
 
                             if g_DisconnectKicked[hero] == 2 or hero:HasOwnerAbandoned() or hero:HasModifier("pergatory_perm") then
+                                local vecorig = Vector(-8000, 484, 0)
+                                hero:SetOrigin(vecorig)
                                 if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                                     hero:SetGold(0, true)
                                     g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + g_GoldPerTickNorth * 2
@@ -2425,7 +2427,7 @@ function CBattleship8D:OnThink()
                 ----print("g_TradeMode is" .. g_TradeMode)
                 if g_TradeMode == 1 then
                     local empty = {}
-                    FireGameEvent("Trade_Mode_Enabled", empty)
+                    CustomGameEventManager:Send_ServerToAllClients("Trade_Mode_Enabled", empty)
                 end
 
                 if g_DockAliveSouthRight == 1 then
@@ -2553,7 +2555,7 @@ function CBattleship8D:OnThink()
                     g_BattleModeTimer = 5000
                 elseif g_BattleModeRemaining == 0 then
                     local battleTimerData = {TimeTillBattle = g_BattleModeTimer,}
-                    FireGameEvent("Battle_Timer", battleTimerData)
+                    CustomGameEventManager:Send_ServerToAllClients("Battle_Timer", battleTimerData)
                 end
             end
 
@@ -2564,7 +2566,7 @@ function CBattleship8D:OnThink()
                 nSouthGold = GetEmpGoldForTeam(DOTA_TEAM_GOODGUYS),
 
             }
-            FireGameEvent("bsui_timer_data", bsuiTimerData)
+            CustomGameEventManager:Send_ServerToAllClients("bsui_timer_data", bsuiTimerData)
             g_MainTimerTickCount = g_MainTimerTickCount + 1
             g_TicksSinceEmpireGold = g_TicksSinceEmpireGold + 1
             g_PreviousTickCount = GameRules:GetGameTime()
@@ -4006,7 +4008,7 @@ function CBattleship8D:OnConnectFull(keys)
         5,
         function()
             local data = {}
-            FireGameEvent("Boat_Spawned", data)
+            CustomGameEventManager:Send_ServerToAllClients("Boat_Spawned", data)
         end
     )
 
@@ -4028,7 +4030,7 @@ function CBattleship8D:OnConnectFull(keys)
                                     Player_ID = hero:GetPlayerID(),
                                     Ally_ID = allyteamnumber,
                                 }
-                                FireGameEvent("Team_Can_Buy", data)
+                                CustomGameEventManager:Send_ServerToAllClients("Team_Can_Buy", data)
                                 EmitSoundOnClient(
                                     "ui.npe_objective_complete",
                                     PlayerResource:GetPlayer(hero:GetPlayerID())
@@ -5121,13 +5123,13 @@ function CBattleship8D:OnEntityKilled(keys)
                     y = 99999999,
                     z = 99999999,
                 }
-                FireGameEvent("Team_Cannot_Buy", data)
+                CustomGameEventManager:Send_ServerToAllClients("Team_Cannot_Buy", data)
             else
                 local data = {
                     Player_ID = killedUnit:GetPlayerID(),
                     Ally_ID = allyteamnumber,
                 }
-                FireGameEvent("Team_Can_Buy", data)
+                CustomGameEventManager:Send_ServerToAllClients("Team_Can_Buy", data)
             end
         end
 
@@ -5462,14 +5464,7 @@ function CBattleship8D:OnItemPurchased(keys)
     local itemName = keys.itemname
 
     ----print(g_ItemCodeLookUp[itemName])
-    storage:AddToPlayerItemHist(
-        casterUnit:GetPlayerID(),
-        {
-            item = itemName,
-            time = math.floor(GameRules:GetGameTime() / 60 + 0.5),
-            cost = GetItemCost(itemName)
-        }
-    ) -- math.floor(GameRules:GetGameTime()/60+0.5) .. g_ItemCodeLookUp[itemName])
+    -- math.floor(GameRules:GetGameTime()/60+0.5) .. g_ItemCodeLookUp[itemName])
 
     -- The name of the item purchased
 
@@ -5581,6 +5576,15 @@ function CBattleship8D:OnItemPurchased(keys)
 
             end
         end
+    else
+        storage:AddToPlayerItemHist(
+            casterUnit:GetPlayerID(),
+            {
+                item = itemName,
+                time = math.floor(GameRules:GetGameTime() / 60 + 0.5),
+                cost = GetItemCost(itemName)
+            }
+        ) 
     end
 
     if string.match(itemName, "tower_debuff") then
@@ -5724,7 +5728,18 @@ function become_boat(casterUnit, heroname)
             if id == plyID then
                 AttachCosmetics(hero)
                 fixAbilities(hero)
-                if string.match(hero:GetName(), "razor") then hero:SetMana(500) end
+                if string.match(heroname, "razor") then hero:SetMana(500) end
+                print(heroname)
+                if string.match(heroname, "brewmaster") then 
+                    print(heroname .. "inside")
+                    for abilitySlot = 0, 5, 1 do
+                        local ability = hero:GetAbilityByIndex(abilitySlot)
+                        if not string.match(ability:GetName(), "_") then 
+                            print(ability:GetName() .. " " .. abilitySlot)
+                            ability:SetLevel(1) 
+                        end
+                    end
+                end
 
                 ----print("this is the new hero, put items in " .. hero:GetName())
                 hero:SetGold(gold, true)
@@ -5757,7 +5772,7 @@ function become_boat(casterUnit, heroname)
                                         y = MissionLoc:GetAbsOrigin().y,
                                         z = MissionLoc:GetAbsOrigin().z,
                                     }
-                                    FireGameEvent("Team_Cannot_Buy", data)
+                                    CustomGameEventManager:Send_ServerToAllClients("Team_Cannot_Buy", data)
                                     hero:AddItem(newItem3)
                                     local newItem2 = CreateItem("item_trade_manifest", hero, hero)
                                     local newItem3 = CreateItem("item_backpack_stuffer", hero, hero)
@@ -5781,7 +5796,7 @@ function become_boat(casterUnit, heroname)
                                         y = MissionLoc:GetAbsOrigin().y,
                                         z = MissionLoc:GetAbsOrigin().z,
                                     }
-                                    FireGameEvent("Team_Cannot_Buy", data)
+                                    CustomGameEventManager:Send_ServerToAllClients("Team_Cannot_Buy", data)
                                     hero:AddItem(newItem3)
                                     local newItem2 = CreateItem("item_trade_manifest", hero, hero)
                                     local newItem3 = CreateItem("item_backpack_stuffer", hero, hero)
@@ -5804,7 +5819,7 @@ function become_boat(casterUnit, heroname)
                                 y = 99999999,
                                 z = 99999999,
                             }
-                            FireGameEvent("Team_Cannot_Buy", data)
+                            CustomGameEventManager:Send_ServerToAllClients("Team_Cannot_Buy", data)
                         end
 
                         if (string.match(heroname, "vengefulspirit") or string.match(heroname, "enigma") or string.match(heroname, "bane")) and (b == 13 or b == 14) and not string.match(itemlist[b], "fluff") then
@@ -5875,28 +5890,28 @@ function become_boat(casterUnit, heroname)
             )
             ----print(storage:GetHeroName(plyID) .. math.floor(GameRules:GetGameTime()/60+0.5))
 
-            FireGameEvent("Boat_Spawned", data)
+            CustomGameEventManager:Send_ServerToAllClients("Boat_Spawned", data)
         end
     )
     Timers:CreateTimer(
         3,
         function()
             local data = {}
-            FireGameEvent("Boat_Spawned", data)
+            CustomGameEventManager:Send_ServerToAllClients("Boat_Spawned", data)
         end
     )
     Timers:CreateTimer(
         5,
         function()
             local data = {}
-            FireGameEvent("Boat_Spawned", data)
+            CustomGameEventManager:Send_ServerToAllClients("Boat_Spawned", data)
         end
     )
     Timers:CreateTimer(
         7,
         function()
             local data = {}
-            FireGameEvent("Boat_Spawned", data)
+            CustomGameEventManager:Send_ServerToAllClients("Boat_Spawned", data)
         end
     )
 end
@@ -6464,7 +6479,7 @@ function GiveEasy(eventSourceIndex, args)
                     y = MissionLoc:GetAbsOrigin().y,
                     z = MissionLoc:GetAbsOrigin().z,
                 }
-                FireGameEvent("Team_Cannot_Buy", data)
+                CustomGameEventManager:Send_ServerToAllClients("Team_Cannot_Buy", data)
             end
         end
     end
@@ -6523,7 +6538,7 @@ function GiveMedium(eventSourceIndex, args)
                     y = MissionLoc:GetAbsOrigin().y,
                     z = MissionLoc:GetAbsOrigin().z,
                 }
-                FireGameEvent("Team_Cannot_Buy", data)
+                CustomGameEventManager:Send_ServerToAllClients("Team_Cannot_Buy", data)
             end
         end
     end
@@ -6551,7 +6566,7 @@ function HandleShopChecks(hero)
             Player_ID = hero:GetPlayerID(),
             Ally_ID = hero:GetPlayerID(),
         }
-        FireGameEvent("Team_Can_Buy", data)
+        CustomGameEventManager:Send_ServerToAllClients("Team_Can_Buy", data)
     end
 
     if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 then -- and string.match(hero:GetName(),"*trade*") then
@@ -6604,7 +6619,7 @@ function HandleShopChecks(hero)
                     ----print("sending entershop")
                     g_WasNearShop[hero] = true
                     local data = {Player_ID = hero:GetPlayerID()}
-                    FireGameEvent("Hero_Near_Shop", data)
+                    CustomGameEventManager:Send_ServerToAllClients("Hero_Near_Shop", data)
                 end
 
                 -- saves number of peoplke on this traders team
@@ -6637,7 +6652,7 @@ function HandleShopChecks(hero)
                                     Player_ID = hero:GetPlayerID(),
                                     Ally_ID = allyteamnumber,
                                 }
-                                FireGameEvent("Team_Can_Buy", data)
+                                CustomGameEventManager:Send_ServerToAllClients("Team_Can_Buy", data)
                                 EmitSoundOnClient(
                                     "ui.npe_objective_complete",
                                     PlayerResource:GetPlayer(hero:GetPlayerID())
@@ -6752,7 +6767,7 @@ function HandleShopChecks(hero)
                                     Player_ID = hero:GetPlayerID(),
                                     Ally_ID = allyteamnumber,
                                 }
-                                FireGameEvent("Team_Can_Buy", data)
+                                CustomGameEventManager:Send_ServerToAllClients("Team_Can_Buy", data)
                                 EmitSoundOnClient(
                                     "ui.npe_objective_complete",
                                     PlayerResource:GetPlayer(hero:GetPlayerID())
@@ -6845,7 +6860,7 @@ function HandleShopChecks(hero)
                                     Player_ID = hero:GetPlayerID(),
                                     Ally_ID = allyteamnumber,
                                 }
-                                FireGameEvent("Team_Can_Buy", data)
+                                CustomGameEventManager:Send_ServerToAllClients("Team_Can_Buy", data)
                                 EmitSoundOnClient(
                                     "ui.npe_objective_complete",
                                     PlayerResource:GetPlayer(hero:GetPlayerID())
@@ -6901,7 +6916,7 @@ function HandleShopChecks(hero)
                 ----print("sending leftshop")
                 g_WasNearShop[hero] = false
                 local data = {Player_ID = hero:GetPlayerID()}
-                FireGameEvent("Hero_Left_Shop", data)
+                CustomGameEventManager:Send_ServerToAllClients("Hero_Left_Shop", data)
             end
         end
     end
@@ -7073,7 +7088,7 @@ function startBattle()
     })
 
     local battleTimerData = {TimeTillBattle = g_BattleModeTimer,}
-    FireGameEvent("Battle_Started", battleTimerData)
+    CustomGameEventManager:Send_ServerToAllClients("Battle_Started", battleTimerData)
 
     local waypointlocation = Entities:FindByName(nil, "battle_" .. g_BattleModeLocation)
 
@@ -7087,7 +7102,7 @@ function startBattle()
                     y = waypointlocation:GetAbsOrigin().y,
                     z = waypointlocation:GetAbsOrigin().z,
                 }
-                FireGameEvent("ping_loc", Data)
+                CustomGameEventManager:Send_ServerToAllClients("ping_loc", Data)
 
                 Timers:CreateTimer(
                     2,
@@ -7098,7 +7113,7 @@ function startBattle()
                             y = waypointlocation:GetAbsOrigin().y,
                             z = waypointlocation:GetAbsOrigin().z,
                         }
-                        FireGameEvent("ping_loc", Data)
+                        CustomGameEventManager:Send_ServerToAllClients("ping_loc", Data)
                     end
                 )
 
@@ -7111,7 +7126,7 @@ function startBattle()
                             y = waypointlocation:GetAbsOrigin().y,
                             z = waypointlocation:GetAbsOrigin().z,
                         }
-                        FireGameEvent("ping_loc", Data)
+                        CustomGameEventManager:Send_ServerToAllClients("ping_loc", Data)
                     end
                 )
                 Timers:CreateTimer(
@@ -7123,7 +7138,7 @@ function startBattle()
                             y = waypointlocation:GetAbsOrigin().y,
                             z = waypointlocation:GetAbsOrigin().z,
                         }
-                        FireGameEvent("ping_loc", Data)
+                        CustomGameEventManager:Send_ServerToAllClients("ping_loc", Data)
                     end
                 )
                 Timers:CreateTimer(
@@ -7135,7 +7150,7 @@ function startBattle()
                             y = waypointlocation:GetAbsOrigin().y,
                             z = waypointlocation:GetAbsOrigin().z,
                         }
-                        FireGameEvent("ping_loc", Data)
+                        CustomGameEventManager:Send_ServerToAllClients("ping_loc", Data)
                     end
                 )
                 Timers:CreateTimer(
@@ -7147,7 +7162,7 @@ function startBattle()
                             y = waypointlocation:GetAbsOrigin().y,
                             z = waypointlocation:GetAbsOrigin().z,
                         }
-                        FireGameEvent("ping_loc", Data)
+                        CustomGameEventManager:Send_ServerToAllClients("ping_loc", Data)
                     end
                 )
                 Timers:CreateTimer(
@@ -7159,7 +7174,7 @@ function startBattle()
                             y = waypointlocation:GetAbsOrigin().y,
                             z = waypointlocation:GetAbsOrigin().z,
                         }
-                        FireGameEvent("ping_loc", Data)
+                        CustomGameEventManager:Send_ServerToAllClients("ping_loc", Data)
                     end
                 )
                 Timers:CreateTimer(
@@ -7171,7 +7186,7 @@ function startBattle()
                             y = waypointlocation:GetAbsOrigin().y,
                             z = waypointlocation:GetAbsOrigin().z,
                         }
-                        FireGameEvent("ping_loc", Data)
+                        CustomGameEventManager:Send_ServerToAllClients("ping_loc", Data)
                     end
                 )
                 Timers:CreateTimer(
@@ -7183,7 +7198,7 @@ function startBattle()
                             y = waypointlocation:GetAbsOrigin().y,
                             z = waypointlocation:GetAbsOrigin().z,
                         }
-                        FireGameEvent("ping_loc", Data)
+                        CustomGameEventManager:Send_ServerToAllClients("ping_loc", Data)
                     end
                 )
                 Timers:CreateTimer(
@@ -7195,7 +7210,7 @@ function startBattle()
                             y = waypointlocation:GetAbsOrigin().y,
                             z = waypointlocation:GetAbsOrigin().z,
                         }
-                        FireGameEvent("ping_loc", Data)
+                        CustomGameEventManager:Send_ServerToAllClients("ping_loc", Data)
                     end
                 )
             end
@@ -7271,7 +7286,7 @@ function HandleBattle()
             gptn = g_BattleModeNumberNorth * 3 + 2,
             gpts = g_BattleModeNumberSouth * 3 + 2,
         }
-        FireGameEvent("Battle_in_Progress", battleTimerData)
+        CustomGameEventManager:Send_ServerToAllClients("Battle_in_Progress", battleTimerData)
 
         Timers:CreateTimer(1, function() HandleBattle() end)
     else
@@ -7283,7 +7298,7 @@ end
 function endBattle()
 
     local battleTimerData = {TimeTillBattle = g_BattleModeTimer,}
-    FireGameEvent("Battle_Over", battleTimerData)
+    CustomGameEventManager:Send_ServerToAllClients("Battle_Over", battleTimerData)
 
     for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
         if hero ~= nil and hero:IsOwnedByAnyPlayer() then
@@ -7447,7 +7462,7 @@ function setupWin(winner)
     end
 
     local winnerData = {team_number = winner}
-    FireGameEvent("team_win", winnerData)
+    CustomGameEventManager:Send_ServerToAllClients("team_win", winnerData)
 
     local i = 0
     local j = 0

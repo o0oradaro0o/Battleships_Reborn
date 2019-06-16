@@ -3874,7 +3874,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"psn_dur"	"3"
+				"psn_dur"	"5"
 			}
 			"06"
 			{
@@ -4071,12 +4071,12 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"range"		"1200"
+				"range"		"1250"
 			}
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"slow_amt"	"1"
+				"slow_amt"	"2"
 			}
 			"05"
 			{
@@ -5047,7 +5047,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"psn_dur"	"3"
+				"psn_dur"	"5"
 			}
 			"06"
 			{
@@ -5263,12 +5263,12 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"range"		"1200"
+				"range"		"1250"
 			}
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"slow_amt"	"1.5"
+				"slow_amt"	"3"
 			}
 			"05"
 			{
@@ -6241,7 +6241,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"psn_dur"	"3"
+				"psn_dur"	"5"
 			}
 			"06"
 			{
@@ -6443,12 +6443,12 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"range"		"1200"
+				"range"		"1250"
 			}
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"slow_amt"	"3"
+				"slow_amt"	"4"
 			}
 			"05"
 			{
@@ -7351,7 +7351,7 @@
 			}
 		"item_poison_ult_bow_pleagued_1"
 			{			
-				"Duration"  "3"
+				"Duration"  "%psn_dur"
 				"IsHidden"	 "1"
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"0.5"
@@ -7369,7 +7369,7 @@
 			
 		"item_poison_dot_show"
 					{
-						"Duration" "3"
+						"Duration" "%psn_dur"
 						
 					}
 		}
@@ -7424,7 +7424,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"psn_dur"	"3"
+				"psn_dur"	"5"
 			}
 			"06"
 			{
@@ -7620,7 +7620,7 @@
 						"IsHidden"	 "1"
 						"Properties"
 						{
-							"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-1"
+							"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-2"
 					
 						}
 						"Duration" "1"
@@ -7675,12 +7675,12 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"range"		"1200"
+				"range"		"1250"
 			}
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"slow_amt"	"1"
+				"slow_amt"	"2"
 			}
 			"05"
 			{
@@ -8602,7 +8602,7 @@
 
 			"item_poison_ult_bow_pleagued_2"
 			{			
-				"Duration"  "3"
+				"Duration"  "%psn_dur"
 				"IsHidden"	 "1"
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"0.5"
@@ -8620,7 +8620,7 @@
 			
   		"item_poison_dot_show"
   		{
-  			"Duration" "3"  			
+  			"Duration" "%psn_dur" 			
   		}
 		}
 
@@ -8680,7 +8680,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"psn_dur"	"3"
+				"psn_dur"	"5"
 			}
 			"06"
 			{
@@ -8867,7 +8867,7 @@
   			"IsHidden"	 "1"
   			"Properties"
   			{
-  				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-1.5"
+  				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-3"
   			}
   			"Duration" "2"
   		}
@@ -8921,12 +8921,12 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"range"		"1200"
+				"range"		"1250"
 			}
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"slow_amt"	"1.5"
+				"slow_amt"	"3"
 			}
 			"05"
 			{
@@ -9846,7 +9846,7 @@
 			"item_poison_ult_bow_pleagued_3"
 			{			
 							"IsHidden"	 "1"
-				"Duration"  "3"
+				"Duration"  "%psn_dur"
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"0.5"
 				"OnIntervalThink"
@@ -9863,7 +9863,7 @@
 			
 		"item_poison_dot_show"
 					{
-						"Duration" "3"
+						"Duration" "%psn_dur"
 						
 					}
 		}
@@ -9920,7 +9920,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"psn_dur"	"3"
+				"psn_dur"	"5"
 			}
 			"06"
 			{
@@ -10112,7 +10112,7 @@
   			"IsHidden"	 "1"
   			"Properties"
   			{
-  				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-2"  		
+  				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-4"  		
   			}
   			"Duration" "3"  			
   		}
@@ -10166,12 +10166,12 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"range"		"1200"
+				"range"		"1250"
 			}
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"slow_amt"	"3"
+				"slow_amt"	"4"
 			}
 			"05"
 			{
@@ -11090,7 +11090,7 @@
 			"item_poison_ult_bow_pleagued"
 			{			
 							"IsHidden"	 "1"
-				"Duration"  "4"
+				"Duration"  "%psn_dur"
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval"		"0.5"
 				"OnIntervalThink"
@@ -11108,7 +11108,7 @@
 			
 			"item_poison_dot_show"
 			{
-				"Duration" "4"
+				"Duration" "%psn_dur"
 				
 			}
 		}
@@ -11165,7 +11165,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"psn_dur"	"3"
+				"psn_dur"	"5"
 			}
 			"06"
 			{
@@ -11373,7 +11373,7 @@
 				"IsHidden"	 "1"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-3"					
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-4"					
 				}
 				"Duration" "2.0"						
 			}
@@ -11427,12 +11427,12 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"range"		"1200"
+				"range"		"1250"
 			}
 			"04"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"slow_amt"	"3"
+				"slow_amt"	"4"
 			}
 			"05"
 			{
