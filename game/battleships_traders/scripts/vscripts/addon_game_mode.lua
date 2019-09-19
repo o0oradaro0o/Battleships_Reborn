@@ -163,8 +163,6 @@ g_DisconnectKicked = {}
 g_OldHeroLocations = {}
 g_OlderHeroLocations = {}
 
--- this replaces dotas default gold tracking.
-g_HeroGoldArray = {}
 -- this holds the player ids and the hats they selected
 g_PlayerHatList = {}
 
@@ -1757,7 +1755,6 @@ function CBattleship8D:BountyRuneFilter(filterTable)
     else
         g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + filterTable["gold_bounty"]
     end
-    g_HeroGoldArray[filterTable["player_id_const"]] = g_HeroGoldArray[filterTable["player_id_const"]] + filterTable["gold_bounty"]
     -- Return true by default to keep all other orders the same
     return true
 end
@@ -1788,7 +1785,7 @@ function CBattleship8D:OrderExecutionFilter(keys)
             ----print(sellGold)
             ----print(GetItemCost(ability:GetName()))
             ----print(ability:GetGoldCost(1))
-            g_HeroGoldArray[ability:GetCaster():GetPlayerOwnerID()] = g_HeroGoldArray[ability:GetCaster():GetPlayerOwnerID()] + sellGold
+            ability:GetCaster():SetGold(ability:GetCaster():GetGold()+ sellGold)
 
                 storage:AddToPlayerSaleHist(
                     playerID,
@@ -1836,7 +1833,6 @@ function CBattleship8D:OnThink()
                 else
                     hero:SetGold(6000, true)
                     hero:SetGold(0, false)
-                    g_HeroGoldArray[hero:GetPlayerOwnerID()] = 6000
                     become_boat(hero, "npc_dota_hero_ember_spirit")
                 end
             end
@@ -2249,7 +2245,7 @@ function CBattleship8D:OnThink()
                                 if directionOne:Length() < 600 or directionTwo:Length() < 600 or hero:HasOwnerAbandoned() then g_DisconnectKicked[hero] = 1 end
                             end
                             local herogold = 0
-                            if hero:IsOwnedByAnyPlayer() then herogold = g_HeroGoldArray[hero:GetPlayerOwnerID()] end
+                            if hero:IsOwnedByAnyPlayer() then herogold = hero:GetGold() end
                             if (g_DisconnectKicked[hero] == 1 and g_PlayerCount > 1 or hero:HasOwnerAbandoned()) and herogold > 30 and false == hero:HasModifier("pergatory_perm") and g_PlayerCount > 1 then
                                 GameRules:SendCustomMessage("#remove_player", DOTA_TEAM_GOODGUYS, 0)
                                 storage:SetDisconnectState(g_DisconnectKicked)
@@ -2266,11 +2262,11 @@ function CBattleship8D:OnThink()
                                     end
                                 end
                                 local herogoldaftersell = hero:GetGold()
-                                if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-                                    g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + herogoldaftersell
-                                elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-                                    g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + herogoldaftersell
-                                end
+                                -- if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+                                --     g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + herogoldaftersell
+                                -- elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+                                --     g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + herogoldaftersell
+                                -- end
                                 hero:SetGold(0, false)
                                 hero:SetGold(0, true)
                                 g_DisconnectKicked[hero] = 2
@@ -2367,31 +2363,28 @@ function CBattleship8D:OnThink()
                         -- gives gold per tick
 
                         if hero:IsOwnedByAnyPlayer() then
-                            local herogold = g_HeroGoldArray[hero:GetPlayerOwnerID()]
+                            local herogold = hero:GetGold()
                             if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                                 hero:SetGold(
-                                    g_HeroGoldArray[hero:GetPlayerOwnerID()] + g_GoldPerTickSouth * 2,
+                                    hero:GetGold() + g_GoldPerTickSouth * 2,
                                     true
                                 )
                                 hero:SetGold(0, false)
-                                g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + g_GoldPerTickSouth * 2
                                 g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + g_GoldPerTickSouth * 2
                             elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
                                 hero:SetGold(
-                                    g_HeroGoldArray[hero:GetPlayerOwnerID()] + g_GoldPerTickNorth * 2,
+                                    hero:GetGold() + g_GoldPerTickNorth * 2,
                                     true
                                 )
                                 hero:SetGold(0, false)
-                                g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + g_GoldPerTickNorth * 2
                                 g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + g_GoldPerTickNorth * 2
                             end
                             if hero.earnedbonusgold ~= nil and hero.earnedbonusgold > 0 then
                                 hero:SetGold(
-                                    g_HeroGoldArray[hero:GetPlayerOwnerID()] + hero.earnedbonusgold,
+                                    hero:GetGold() + hero.earnedbonusgold,
                                     true
                                 )
                                 hero:SetGold(0, false)
-                                g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + hero.earnedbonusgold
                                 hero.earnedbonusgold = 0
                             end
                         end
@@ -3031,7 +3024,7 @@ function CBattleship8D:HandleEmpGold()
 
         for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
             if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and hero:IsRealHero() then
-                if g_HeroGoldArray[hero:GetPlayerOwnerID()] > 0 and not hero:HasModifier("pergatory_perm") then
+                if not hero:HasModifier("pergatory_perm") then
                     if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                         g_PlayerCountSouth = g_PlayerCountSouth + 1
                     elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
@@ -3096,22 +3089,20 @@ function CBattleship8D:HandleEmpGold()
             if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and not hero:HasModifier("pergatory_perm") and hero:IsRealHero() then
                 if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                     hero:SetGold(
-                        g_HeroGoldArray[hero:GetPlayerOwnerID()] + goodGoldEach,
+                        hero:GetGold() + goodGoldEach,
                         true
                     )
                     g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + goodGoldEach
-                    ----print("hero's is good guy (south) had " .. g_HeroGoldArray[hero:GetPlayerOwnerID()] .. " got " .. goodGoldEach .. "new gold is: " .. g_HeroGoldArray[hero:GetPlayerOwnerID()] + goodGoldEach)
+                    ----print("hero's is good guy (south) had " .. hero:GetGold() .. " got " .. goodGoldEach .. "new gold is: " .. hero:GetGold() + goodGoldEach)
                     hero:SetGold(0, false)
-                    g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + goodGoldEach
                 elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
                     hero:SetGold(
-                        g_HeroGoldArray[hero:GetPlayerOwnerID()] + badGoldEach,
+                        hero:GetGold() + badGoldEach,
                         true
                     )
                     g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + badGoldEach
-                    ----print("hero's is bad guy (north) had " .. g_HeroGoldArray[hero:GetPlayerOwnerID()] .. " got " .. badGoldEach .. "new gold is: " .. g_HeroGoldArray[hero:GetPlayerOwnerID()] + badGoldEach)
+                    ----print("hero's is bad guy (north) had " .. hero:GetGold() .. " got " .. badGoldEach .. "new gold is: " .. hero:GetGold() + badGoldEach)
                     hero:SetGold(0, false)
-                    g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + badGoldEach
                 end
             end
         end
@@ -3154,13 +3145,11 @@ function CBattleship8D:HandleEmpGold()
                     g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + goodGoldEach
                     ----print("hero's is good guy (south) had " .. herogold .. " got " .. goodGoldEach .. "new gold is: " .. herogold + goodGoldEach)
                     hero:SetGold(0, false)
-                    g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + goodGoldEach
                 elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
                     hero:SetGold(herogold + badGoldEach, true)
                     g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + badGoldEach
                     ----print("hero's is bad guy (north) had " .. herogold .. " got " .. badGoldEach .. "new gold is: " .. herogold + badGoldEach)
                     hero:SetGold(0, false)
-                    g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + badGoldEach
                 end
             end
         end
@@ -3177,13 +3166,7 @@ function GetEmpGoldForTeam(team)
 
         for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
             if hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and hero:IsRealHero() then
-                if not g_HeroGoldArray[hero:GetPlayerOwnerID()] then
-                    if IsInToolsMode() then
-                        g_HeroGoldArray[hero:GetPlayerOwnerID()] = 100000
-                        -- print("Radar I'm So Sorry (Line ~1739 in addon_game_mode)")
-                    end
-                end
-                if g_HeroGoldArray[hero:GetPlayerOwnerID()] > 0 and not hero:HasModifier("pergatory_perm") then
+                if hero:GetGold() > 0 and not hero:HasModifier("pergatory_perm") then
                     if hero:GetTeamNumber() == team then
                         team_players = team_players + 1
                         team_gold = team_gold + GetNetWorth(hero)
@@ -3221,8 +3204,8 @@ end
 function GetNetWorth(hero)
 
     local TotalGold = 0
-    if g_HeroGoldArray[hero:GetPlayerOwnerID()] ~= nil then
-        TotalGold = TotalGold + g_HeroGoldArray[hero:GetPlayerOwnerID()]
+    if hero:GetGold() ~= nil then
+        TotalGold = TotalGold + hero:GetGold()
         TotalGold = TotalGold + GetBoatValue(hero)
         TotalGold = TotalGold + GetItemValue(hero)
     end
@@ -3959,11 +3942,10 @@ function sellBoat(hero)
     if not string.match(heroname, "vengefulspirit") and not string.match(heroname, "enigma") and not string.match(heroname, "bane") then goldVal = goldVal * .75 end
 
     hero:SetGold(
-        g_HeroGoldArray[hero:GetPlayerOwnerID()] + goldVal,
+        hero:GetGold() + goldVal,
         true
     )
     hero:SetGold(0, false)
-    g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + goldVal
 end
 
 function CBattleship8D:OnDisconnect(keys)
@@ -4092,18 +4074,6 @@ function CBattleship8D:OnEntityKilled(keys)
 
     local killedUnit = EntIndexToHScript(keys.entindex_killed)
 
-    for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
-
-        if hero:GetPlayerOwnerID() == nil then
-            ----print("nobody owns me! and nobody will")
-        else
-            if g_HeroGoldArray[hero:GetPlayerOwnerID()] == nil then
-                g_HeroGoldArray[hero:GetPlayerOwnerID()] = 0
-                ----print("owned but no array! got one now")
-            end
-        end
-    end
-
     -- handle tower gold
     if killedUnit:IsTower() then
         ----print( "Tower Killed" )
@@ -4125,9 +4095,8 @@ function CBattleship8D:OnEntityKilled(keys)
             for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
                 if hero ~= nil and hero:IsOwnedByAnyPlayer() then
                     if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-                        hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + 100, true)
+                        hero:SetGold(hero:GetGold() + 100, true)
                         hero:SetGold(0, false)
-                        g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + 100
                         g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 100
                         table.insert(
                             g_combatLogArray,
@@ -4158,10 +4127,9 @@ function CBattleship8D:OnEntityKilled(keys)
             for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
                 if hero ~= nil and hero:IsOwnedByAnyPlayer() then
                     if hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-                        hero:SetGold(g_HeroGoldArray[hero:GetPlayerOwnerID()] + 100, true)
+                        hero:SetGold(hero:GetGold() + 100, true)
                         hero:SetGold(0, false)
                         g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 100
-                        g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + 100
                         table.insert(
                             g_combatLogArray,
                             {
@@ -5009,18 +4977,16 @@ function CBattleship8D:OnEntityKilled(keys)
                 if hero ~= nil and hero:IsOwnedByAnyPlayer() then
                     if hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                         hero:SetGold(
-                            g_HeroGoldArray[hero:GetPlayerOwnerID()] + killedUnit:GetGoldBounty() / g_PlayerCountSouth,
+                            hero:GetGold() + killedUnit:GetGoldBounty() / g_PlayerCountSouth,
                             true
                         )
                         hero:SetGold(0, false)
-                        g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + (killedUnit:GetGoldBounty() / g_PlayerCountSouth)
                     elseif hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
                         hero:SetGold(
-                            g_HeroGoldArray[hero:GetPlayerOwnerID()] + killedUnit:GetGoldBounty() / g_PlayerCountNorth,
+                            hero:GetGold() + killedUnit:GetGoldBounty() / g_PlayerCountNorth,
                             true
                         )
                         hero:SetGold(0, false)
-                        g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + (killedUnit:GetGoldBounty() / g_PlayerCountNorth)
                     end
                 end
             end
@@ -5069,20 +5035,18 @@ function CBattleship8D:OnEntityKilled(keys)
         for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
             if hero ~= nil and hero:IsOwnedByAnyPlayer() then
                 ----print(hero:GetName())
-                if hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS and killedUnit ~= nil and g_HeroGoldArray[hero:GetPlayerOwnerID()] ~= nil then
+                if hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS and killedUnit ~= nil and hero:GetGold() ~= nil then
                     hero:SetGold(
-                        g_HeroGoldArray[hero:GetPlayerOwnerID()] + (killedUnit:GetGoldBounty() / g_PlayerCountSouth) / 2,
+                        hero:GetGold() + (killedUnit:GetGoldBounty() / g_PlayerCountSouth) / 2,
                         true
                     )
                     hero:SetGold(0, false)
-                    g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + (killedUnit:GetGoldBounty() / g_PlayerCountSouth) / 2
                 elseif hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS and killedUnit ~= nil then
                     hero:SetGold(
-                        g_HeroGoldArray[hero:GetPlayerOwnerID()] + killedUnit:GetGoldBounty() / g_PlayerCountNorth / 2,
+                        hero:GetGold() + killedUnit:GetGoldBounty() / g_PlayerCountNorth / 2,
                         true
                     )
                     hero:SetGold(0, false)
-                    g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + (killedUnit:GetGoldBounty() / g_PlayerCountNorth) / 2
                 end
             end
         end
@@ -5093,19 +5057,23 @@ function CBattleship8D:OnEntityKilled(keys)
             g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + killedUnit:GetGoldBounty()
         end
         killerEntity:SetGold(
-            g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] + killedUnit:GetGoldBounty() / 2,
+            killerEntity:GetGold() + killedUnit:GetGoldBounty() / 2,
             true
         )
         killerEntity:SetGold(0, false)
-        g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] = g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] + killedUnit:GetGoldBounty() / 2
-
+       
         if killedUnit:IsRealHero() then
-            g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] = g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] + killedUnit:GetGoldBounty() / 2
+            killerEntity:SetGold(
+                killerEntity:GetGold() + killedUnit:GetGoldBounty() / 2,
+                true
+            )
         else
-            g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] = g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] - killedUnit:GetGoldBounty() / 2
+            killerEntity:SetGold(
+            killerEntity:GetGold() - killedUnit:GetGoldBounty() / 2,
+            true
+        )
         end
 
-        ----print("gold bounty for hero was " .. killedUnit:GetGoldBounty())
     end
 
     if killedUnit:IsRealHero() then
@@ -5155,11 +5123,10 @@ function CBattleship8D:OnEntityKilled(keys)
                 if killerEntity ~= nil and killerEntity:IsOwnedByAnyPlayer() then
                     if killerEntity:GetTeamNumber() ~= killedUnit:GetTeam() then
                         killerEntity:SetGold(
-                            g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] + g_HeroKills[killedUnit:GetPlayerID()] * 100,
+                            killerEntity:GetGold() + g_HeroKills[killedUnit:GetPlayerID()] * 100,
                             true
                         )
                         killerEntity:SetGold(0, false)
-                        g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] = g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] + g_HeroKills[killedUnit:GetPlayerID()] * 100
                         if killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                             g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + g_HeroKills[killedUnit:GetPlayerID()] * 100
                             Notifications:BottomToAll({
@@ -5214,11 +5181,10 @@ function CBattleship8D:OnEntityKilled(keys)
                         if hero ~= nil and hero:IsOwnedByAnyPlayer() then
                             if hero:GetTeamNumber() == killerEntity:GetTeam() then
                                 hero:SetGold(
-                                    g_HeroGoldArray[hero:GetPlayerOwnerID()] + killerEntity:GetStreak() * 30,
+                                    hero:GetGold() + killerEntity:GetStreak() * 30,
                                     true
                                 )
                                 hero:SetGold(0, false)
-                                g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + killerEntity:GetStreak() * 30
 
                                 if killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                                     g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + killerEntity:GetStreak() * 30
@@ -5229,12 +5195,11 @@ function CBattleship8D:OnEntityKilled(keys)
                         end
                     end
                     killerEntity:SetGold(
-                        g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] - killerEntity:GetStreak() * 30,
+                        killerEntity:GetGold() - killerEntity:GetStreak() * 30,
                         true
                     )
                     killerEntity:SetGold(0, false)
-                    g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] = g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] - killerEntity:GetStreak() * 30
-
+                   
                     if killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                         g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth - killerEntity:GetStreak() * 30
                         Notifications:BottomToAll({
@@ -5305,15 +5270,13 @@ function CBattleship8D:OnEntityKilled(keys)
                         local bounty = hero:GetGoldBounty()
 
                         killerEntity:SetGold(
-                            g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] + bounty / 4,
+                            killerEntity:GetGold() + bounty / 4,
                             true
                         )
                         hero:SetGold(
-                            g_HeroGoldArray[hero:GetPlayerOwnerID()] + bounty / 2,
+                            hero:GetGold() + bounty / 2,
                             true
                         )
-                        g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + bounty / 2
-                        g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] = g_HeroGoldArray[killerEntity:GetPlayerOwnerID()] + bounty / 4
                         Notifications:BottomToAll({
                             text = PlayerResource:GetPlayerName(killerEntity:GetPlayerID()) .. " ",
                             duration = 5.0,
@@ -5470,7 +5433,6 @@ function CBattleship8D:OnItemPurchased(keys)
 
     print('[BAREBONES] Item Purchased was ' .. itemName)
     local herogold = casterUnit:GetGold()
-    g_HeroGoldArray[casterUnit:GetPlayerOwnerID()] = herogold
 
     local sellItBack = false
     local wasHull = false
@@ -5496,7 +5458,6 @@ function CBattleship8D:OnItemPurchased(keys)
                 )
                 casterUnit:SetGold(herogold + GetItemCost(Item:GetName()), true)
                 casterUnit:SetGold(0, false)
-                g_HeroGoldArray[casterUnit:GetPlayerOwnerID()] = herogold + GetItemCost(Item:GetName())
                 RemoveAndDeleteItem(casterUnit, Item)
                 -- print(string.sub(itemName, 6)  ..".png")
                 if sellItBack then
@@ -5619,7 +5580,6 @@ function CBattleship8D:OnItemPurchased(keys)
             if hero ~= nil and hero:IsOwnedByAnyPlayer() then
                 hero:SetGold(80000, true)
                 hero:AddExperience(80000, true, false)
-                g_HeroGoldArray[hero:GetPlayerOwnerID()] = 80000
             end
         end
     end
@@ -5669,7 +5629,7 @@ function become_boat(casterUnit, heroname)
     local itemlist = {}
     local droppeditemlist = {}
     local itemstacks = {}
-    local savedGold = g_HeroGoldArray[casterUnit:GetPlayerOwnerID()]
+    local savedGold = casterUnit:GetGold()
 
     for itemSlot = 0, 14, 1 do
         if casterUnit ~= nil then
@@ -5744,7 +5704,6 @@ function become_boat(casterUnit, heroname)
                 ----print("this is the new hero, put items in " .. hero:GetName())
                 hero:SetGold(gold, true)
                 hero:SetGold(0, false)
-                g_HeroGoldArray[hero:GetPlayerOwnerID()] = gold
                 hero:AddExperience(xp, false, false)
                 if hero:GetLevel() >= 14 and g_LorneItemBuyers ~= g_PlayerCount then
                     for abilitySlot = 0, 5, 1 do
@@ -6259,7 +6218,6 @@ function buyBoat(eventSourceIndex, args)
             boat = true
             casterUnit:SetGold(herogold - cost, true)
             casterUnit:SetGold(0, false)
-            g_HeroGoldArray[casterUnit:GetPlayerOwnerID()] = herogold - cost
             sellBoat(casterUnit)
             EmitSoundOnClient("General.Buy", PlayerResource:GetPlayer(pID))
             Timers:CreateTimer(
@@ -6380,7 +6338,6 @@ function buyItem(eventSourceIndex, args)
                 debuffTowers(heroBuying)
                 heroBuying:SetGold(herogold - cost, true)
                 heroBuying:SetGold(0, false)
-                g_HeroGoldArray[heroBuying:GetPlayerOwnerID()] = herogold - cost
                 EmitSoundOnClient("General.Buy", PlayerResource:GetPlayer(pID))
             else
                 EmitSoundOnClient("ui.contract_fail", PlayerResource:GetPlayer(pID))
@@ -6391,7 +6348,6 @@ function buyItem(eventSourceIndex, args)
                 healTowers(heroBuying)
                 heroBuying:SetGold(herogold - cost, true)
                 heroBuying:SetGold(0, false)
-                g_HeroGoldArray[heroBuying:GetPlayerOwnerID()] = herogold - cost
                 EmitSoundOnClient("General.Buy", PlayerResource:GetPlayer(pID))
             else
                 EmitSoundOnClient("ui.contract_fail", PlayerResource:GetPlayer(pID))
@@ -6415,7 +6371,6 @@ function buyItem(eventSourceIndex, args)
                 heroBuying:AddItem(tempItem)
                 heroBuying:SetGold(herogold - cost, true)
                 heroBuying:SetGold(0, false)
-                g_HeroGoldArray[heroBuying:GetPlayerOwnerID()] = herogold - cost
             else
                 EmitSoundOnClient("ui.contract_fail", PlayerResource:GetPlayer(pID))
             end
@@ -6587,7 +6542,6 @@ function HandleShopChecks(hero)
                     RemoveAndDeleteItem(hero, Item)
                     hero:SetGold(hero:GetGold() + 300 * TradeValueCount / 4, true)
                     hero:SetGold(0, false)
-                    g_HeroGoldArray[hero:GetPlayerOwnerID()] = hero:GetGold() + 300 * TradeValueCount / 4
                     hero:AddExperience(200, 0, false, true)
                     Notifications:Top(
                         hero:GetPlayerID(),
@@ -6635,11 +6589,10 @@ function HandleShopChecks(hero)
                             if string.match(nearestShop:GetUnitName(), itemStrippedEasy) then
                                 RemoveAndDeleteItem(hero, Item)
                                 hero:SetGold(
-                                    g_HeroGoldArray[hero:GetPlayerOwnerID()] + 100 * TradeValueCount / 4,
+                                    hero:GetGold() + 100 * TradeValueCount / 4,
                                     true
                                 )
                                 hero:SetGold(0, false)
-                                g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + 100 * TradeValueCount / 4
                                 hero:AddExperience(g_XpToLevel[hero:GetLevel()] * .25, 0, false, true)
                                 if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                                     g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 100 * TradeValueCount / 4
@@ -6660,19 +6613,17 @@ function HandleShopChecks(hero)
 
                                 for _, otherHero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
                                     if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
-                                        local herogold = g_HeroGoldArray[otherHero:GetPlayerOwnerID()]
+                                        local herogold = otherHero:GetGold()
                                         if otherHero:GetTeamNumber() == hero:GetTeam() and otherHero ~= hero then
                                             if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                                                 numPlayers = g_PlayerCountSouth
                                                 otherHero:SetGold(herogold + 50 * TradeValueCount / numPlayers, true)
                                                 otherHero:SetGold(0, false)
-                                                g_HeroGoldArray[otherHero:GetPlayerOwnerID()] = herogold + 50 * TradeValueCount / numPlayers
                                                 g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 50 * TradeValueCount / numPlayers
                                             elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
                                                 numPlayers = g_PlayerCountNorth
                                                 otherHero:SetGold(herogold + 50 * TradeValueCount / numPlayers, true)
                                                 otherHero:SetGold(0, false)
-                                                g_HeroGoldArray[otherHero:GetPlayerOwnerID()] = herogold + 50 * TradeValueCount / numPlayers
                                                 g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 50 * TradeValueCount / numPlayers
                                             end
                                         end
@@ -6724,11 +6675,10 @@ function HandleShopChecks(hero)
                             elseif string.match(nearestShop:GetUnitName(), itemStrippedMedium) then
                                 RemoveAndDeleteItem(hero, Item)
                                 hero:SetGold(
-                                    g_HeroGoldArray[hero:GetPlayerOwnerID()] + 300 * TradeValueCount / 4,
+                                    hero:GetGold() + 300 * TradeValueCount / 4,
                                     true
                                 )
                                 hero:SetGold(0, false)
-                                g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + 300 * TradeValueCount / 4
                                 ----print("hero level: " .. hero:GetLevel())
                                 ----print("nect level: " .. g_XpToLevel[hero:GetLevel()])
                                 if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
@@ -6740,21 +6690,19 @@ function HandleShopChecks(hero)
                                 hero:AddExperience(g_XpToLevel[hero:GetLevel()] * .25, 0, false, true)
                                 for _, otherHero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
                                     if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
-                                        local herogold = g_HeroGoldArray[otherHero:GetPlayerOwnerID()]
+                                        local herogold = otherHero:GetGold()
                                         if otherHero:GetTeamNumber() == hero:GetTeam() and otherHero ~= hero then
 
                                             if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                                                 numPlayers = g_PlayerCountSouth
                                                 otherHero:SetGold(herogold + 75 * TradeValueCount / numPlayers, true)
                                                 otherHero:SetGold(0, false)
-                                                g_HeroGoldArray[otherHero:GetPlayerOwnerID()] = herogold + 75 * TradeValueCount / numPlayers
                                                 g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 75 * TradeValueCount / numPlayers
                                             elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
                                                 numPlayers = g_PlayerCountNorth
                                                 otherHero:SetGold(herogold + 75 * TradeValueCount / numPlayers, true)
                                                 otherHero:SetGold(0, false)
-                                                g_HeroGoldArray[otherHero:GetPlayerOwnerID()] = herogold + 75 * TradeValueCount / numPlayers
-
+                                                
                                                 g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 75 * TradeValueCount / numPlayers
                                             end
                                         end
@@ -6819,7 +6767,6 @@ function HandleShopChecks(hero)
                                 RemoveAndDeleteItem(hero, Item)
                                 hero:SetGold(hero:GetGold() + 300 * TradeValueCount / 4, true)
                                 hero:SetGold(0, false)
-                                g_HeroGoldArray[hero:GetPlayerOwnerID()] = hero:GetGold() + 300 * TradeValueCount / 4
                                 hero:AddExperience(g_XpToLevel[hero:GetLevel()] * .33, 0, false, true)
                                 if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                                     g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 300 * TradeValueCount / 4
@@ -6840,7 +6787,6 @@ function HandleShopChecks(hero)
                                                     true
                                                 )
                                                 otherHero:SetGold(0, false)
-                                                g_HeroGoldArray[otherHero:GetPlayerOwnerID()] = herogold + 100 * TradeValueCount / g_PlayerCountNorth
                                                 g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + 100 * TradeValueCount / g_PlayerCountSouth
                                             elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
                                                 numPlayers = g_PlayerCountNorth
@@ -6849,8 +6795,6 @@ function HandleShopChecks(hero)
                                                     true
                                                 )
                                                 otherHero:SetGold(0, false)
-                                                g_HeroGoldArray[otherHero:GetPlayerOwnerID()] = herogold + 100 * TradeValueCount / g_PlayerCountNorth
-
                                                 g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 100 * TradeValueCount / g_PlayerCountNorth
                                             end
                                         end
@@ -7243,10 +7187,9 @@ function HandleBattle()
                 if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                     g_BattleModeSouthScore = g_BattleModeSouthScore + 1
                     hero:SetGold(
-                        g_HeroGoldArray[hero:GetPlayerOwnerID()] + g_BattleModeNumberSouth * 3 + 2,
+                        hero:GetGold() + g_BattleModeNumberSouth * 3 + 2,
                         true
                     )
-                    g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + (g_BattleModeNumberSouth * 3 + 2)
                     g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + g_BattleModeNumberSouth * 3 + 2
                     hero:AddExperience(g_BattleModeNumberSouth * 3 + 2, true, false)
                     SendOverheadEventMessage(
@@ -7260,10 +7203,9 @@ function HandleBattle()
                 elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
                     g_BattleModeNorthScore = g_BattleModeNorthScore + 1
                     hero:SetGold(
-                        g_HeroGoldArray[hero:GetPlayerOwnerID()] + g_BattleModeNumberNorth * 3 + 2,
+                        hero:GetGold() + g_BattleModeNumberNorth * 3 + 2,
                         true
                     )
-                    g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + (g_BattleModeNumberNorth * 3 + 2)
                     g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + g_BattleModeNumberNorth * 3 + 2
                     hero:AddExperience(g_BattleModeNumberNorth * 3 + 2, true, false)
                     SendOverheadEventMessage(
@@ -7306,19 +7248,17 @@ function endBattle()
                 if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS and g_BattleModeNorthScore < g_BattleModeSouthScore then
                     g_BattleModeSouthScore = g_BattleModeSouthScore + 1
                     hero:SetGold(
-                        g_HeroGoldArray[hero:GetPlayerOwnerID()] + (g_BattleModeNumberNorth * 3 + 2) * 15,
+                        hero:GetGold() + (g_BattleModeNumberNorth * 3 + 2) * 15,
                         true
                     )
-                    g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + (g_BattleModeNumberNorth * 3 + 2) * 15
                     g_TotalGoldCollectedBySouth = g_TotalGoldCollectedBySouth + (g_BattleModeNumberNorth * 4 + 2) * 15
                     hero:AddExperience((g_BattleModeNumberNorth * 4 + 2) * 15, true, false)
                 elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS and g_BattleModeNorthScore > g_BattleModeSouthScore then
                     g_BattleModeNorthScore = g_BattleModeNorthScore + 1
                     hero:SetGold(
-                        g_HeroGoldArray[hero:GetPlayerOwnerID()] + (g_BattleModeNumberSouth * 3 + 2) * 15,
+                        hero:GetGold() + (g_BattleModeNumberSouth * 3 + 2) * 15,
                         true
                     )
-                    g_HeroGoldArray[hero:GetPlayerOwnerID()] = g_HeroGoldArray[hero:GetPlayerOwnerID()] + (g_BattleModeNumberSouth * 3 + 2) * 15
                     g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + (g_BattleModeNumberSouth * 4 + 2) * 15
                     hero:AddExperience((g_BattleModeNumberSouth * 4 + 2) * 15, true, false)
                 end

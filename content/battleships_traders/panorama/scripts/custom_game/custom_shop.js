@@ -256,6 +256,7 @@ function fixUI() {
 	resetHeroIcons();
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY, false);
 	NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("GridMainShop").style.visibility = "visible";
+	$("#ship_shop_content_holder").style.visibility = "collapse";
 	NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("GridMainShop").FindChildTraverse("GridShopHeaders").FindChildTraverse("SearchAndToggleContainer").FindChildTraverse("ToggleMinimalShop").style.visibility = 
 	"collapse";
 	NewShopUI.FindChildTraverse("Main").FindChildTraverse("CommonItems").style.visibility = "collapse";
@@ -589,6 +590,8 @@ function buyBoat(BoatName, cost) {
 	setSellValue(BoatName);
 
 	$.Schedule(.2, resetHeroIcons);
+	$.Schedule(.2, closeShipShop);
+	
 }
 
 function setSellValue(BoatName) {
@@ -796,7 +799,7 @@ function fillAndShow() {
 
 function hideShop() {
 	hidden = true;
-	$.Msg("inhide");
+	$.Msg("hideShop");
 	$("#left_top_shop").style.visibility = "collapse";
 	$("#left_bot_shop").style.visibility = "collapse";
 	$("#left_mid_shop").style.visibility = "collapse";
@@ -838,12 +841,12 @@ function closeShipShop() {
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").style.visibility = "collapse";
 		//catigoriesUI.style.visibility="visible";
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("GridMainShop").style.visibility = "visible";
+		
 	}
 	shipShopShow = false;
-	$("#ship_shop_content_holder").style.visibility = "collapse";
+	NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").style.visibility = "collapse";
 	
 	hiddenship = true;
-	$.Msg("inhide");
 	$("#ship_shop").style.visibility = "collapse";
 	$("#ancient_apparition").style.height = "0px";
 	$("#crystal_maiden").style.height = "0px";
