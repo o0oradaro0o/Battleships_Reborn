@@ -1,0 +1,21 @@
+<root>
+
+	<styles>
+		<include src="file://{resources}/styles/custom_game/overthrow_game_info.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/custom_load.js" />
+	</scripts>
+	<Panel class="BattleshipsGameInfo">
+		<Panel id="Title">
+			<Label id="Battleships" text="#addon_game_name" />
+			<Label id="Credits" text="#credits" />
+		</Panel>
+		<Label id="PresentedBy" class="PresentedBy" html="true" text="#PresentedBy" />
+		<Label id="Developers" class="DevelopersLabel" html="true" text="#developers" />
+		<Label id="ArtworkBy" class="ArtworkBy" html="true" text="#ArtworkBy" />
+		<Label id="ArtworkLabel" class="ArtworkLabel" html="true" text="#Artwork" />
+		<Label id="HeroesBy" class="HeroesBy" html="true" text="#HeroesBy" />
+		<Label id="Heroes" class="Heroes" html="true" text="#Heroes" />
+	</Panel>
+</root> 

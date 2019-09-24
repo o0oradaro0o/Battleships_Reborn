@@ -1739,6 +1739,14 @@ function CBattleship8D:OnPlayerChat(keys)
             })
 
         end
+        if string.match(text, "nice build") and GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+            Notifications:TopToAll({
+                text = "Nice build Radar!",
+                duration = 5.0,
+                style = {color = "#997777", fontSize = "70px;"}
+            })
+
+        end
     end
 end
 
@@ -1773,29 +1781,6 @@ function CBattleship8D:OrderExecutionFilter(keys)
     local orderType = keys.order_type
     local queuePos = keys.queue
     local player = PlayerResource:GetPlayer(playerID)
-    if orderType == DOTA_UNIT_ORDER_SELL_ITEM or (orderType == DOTA_UNIT_ORDER_GIVE_ITEM and target ~= nil and not target:IsOwnedByAnyPlayer()) then
-        DeepPrintTable(keys)
-        ----print("i'm in DOTA_UNIT_ORDER_SELL_ITEM")
-        ----print(ability:GetName())
-        ----print(ability:GetCaster():GetName())
-        if ability:GetCaster() ~= nil and ability:GetCaster():IsOwnedByAnyPlayer() and ability:GetCaster():IsRealHero() then
-
-            local sellGold = GetItemCost(ability:GetName()) * .5
-            if ability:GetPurchaseTime() + 10 > GameRules:GetGameTime() then sellGold = sellGold * 2 end
-            ----print(sellGold)
-            ----print(GetItemCost(ability:GetName()))
-            ----print(ability:GetGoldCost(1))
-            ability:GetCaster():SetGold(ability:GetCaster():GetGold()+ sellGold)
-
-                storage:AddToPlayerSaleHist(
-                    playerID,
-                    {
-                        item = ability:GetName(),
-                        time = math.floor(GameRules:GetGameTime() / 60 + 0.5)
-                    }
-                ) -- math.floor(GameRules:GetGameTime()/60+0.5) .. g_ItemCodeLookUp[itemName])
-        end
-    end
 
     -- emits a sound every time a player issues any sort of command
     -- EmitSoundOnClient("announcer_dlc_glados_ann_glados_battle_begin_01", player)
@@ -1862,7 +1847,6 @@ function CBattleship8D:OnThink()
                     local empty = {}
                     CustomGameEventManager:Send_ServerToAllClients("Trade_Mode_Enabled", empty)
                 end
-
                 Timers:CreateTimer(300, function() spawnTide() end)
                 spawnCop()
                 for _, tower in pairs(Entities:FindAllByClassname("npc_dota_tow*")) do
@@ -1939,18 +1923,6 @@ function CBattleship8D:OnThink()
                     style = {color = "#58ACFA", fontSize = "18px;"},
                     continue = true
                 })
-                g_PlayerCountSouth = 0
-                g_PlayerCountNorth = 0
-                for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
-                    if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-                        if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-                            g_PlayerCountSouth = g_PlayerCountSouth + 1
-                        elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-                            g_PlayerCountNorth = g_PlayerCountNorth + 1
-                        end
-                        g_IsHeroDisconnected[hero] = 0
-                    end
-                end
                 if g_CoOpMode == 1 then
                     g_PlayerCountNorth = 1
                     local co_op_pid
@@ -2362,7 +2334,7 @@ function CBattleship8D:OnThink()
                         end
                         -- gives gold per tick
 
-                        if hero:IsOwnedByAnyPlayer() then
+                        if hero:IsOwnedByAnyPlayer() and not hero:HasModifier("pergatory_perm") then
                             local herogold = hero:GetGold()
                             if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                                 hero:SetGold(
@@ -4093,7 +4065,7 @@ function CBattleship8D:OnEntityKilled(keys)
             })
 
             for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
-                if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+                if hero ~= nil and hero:IsOwnedByAnyPlayer() and not hero:HasModifier("pergatory_perm") then
                     if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                         hero:SetGold(hero:GetGold() + 100, true)
                         hero:SetGold(0, false)
@@ -4126,7 +4098,7 @@ function CBattleship8D:OnEntityKilled(keys)
 
             for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
                 if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-                    if hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+                    if hero:GetTeamNumber() == DOTA_TEAM_BADGUYS and not hero:HasModifier("pergatory_perm") then
                         hero:SetGold(hero:GetGold() + 100, true)
                         hero:SetGold(0, false)
                         g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + 100
@@ -4974,7 +4946,7 @@ function CBattleship8D:OnEntityKilled(keys)
             end
 
             for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
-                if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+                if hero ~= nil and hero:IsOwnedByAnyPlayer() and not hero:HasModifier("pergatory_perm") then
                     if hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                         hero:SetGold(
                             hero:GetGold() + killedUnit:GetGoldBounty() / g_PlayerCountSouth,
@@ -5008,7 +4980,7 @@ function CBattleship8D:OnEntityKilled(keys)
 
     end
 
-    if killedUnit:GetGoldBounty() and killerEntity:IsOwnedByAnyPlayer() and killedUnit ~= killerEntity then
+    if killedUnit:GetGoldBounty() and killerEntity:IsOwnedByAnyPlayer() and killedUnit ~= killerEntity and  killedUnit:GetTeam() ~= killerEntity:GetTeam()  then
         if g_CreepsKilled[killerEntity:GetPlayerID()] == nil then g_CreepsKilled[killerEntity:GetPlayerID()] = 0 end
         g_CreepsKilled[killerEntity:GetPlayerID()] = g_CreepsKilled[killerEntity:GetPlayerID()] + 1
 
@@ -5033,7 +5005,7 @@ function CBattleship8D:OnEntityKilled(keys)
         )
 
         for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
-            if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+            if hero ~= nil and hero:IsOwnedByAnyPlayer() and not hero:HasModifier("pergatory_perm") then
                 ----print(hero:GetName())
                 if hero:GetTeamNumber() == killerEntity:GetTeamNumber() and killerEntity:GetTeamNumber() == DOTA_TEAM_GOODGUYS and killedUnit ~= nil and hero:GetGold() ~= nil then
                     hero:SetGold(
@@ -5178,7 +5150,7 @@ function CBattleship8D:OnEntityKilled(keys)
                 print("KILLEDKILLER: " .. killedUnit:GetName() .. " -- " .. killerEntity:GetName())
                 if killerEntity:GetStreak() > 2 and killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber() and killerEntity:IsOwnedByAnyPlayer() then
                     for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
-                        if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+                        if hero ~= nil and hero:IsOwnedByAnyPlayer() and not hero:HasModifier("pergatory_perm") then
                             if hero:GetTeamNumber() == killerEntity:GetTeam() then
                                 hero:SetGold(
                                     hero:GetGold() + killerEntity:GetStreak() * 30,
@@ -5265,7 +5237,7 @@ function CBattleship8D:OnEntityKilled(keys)
             end
             -- handle vengance
             for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
-                if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+                if hero ~= nil and hero:IsOwnedByAnyPlayer() and not hero:HasModifier("pergatory_perm") then
                     if false == hero:IsAlive() and false == hero:IsIllusion() and hero:GetTeamNumber() == killerEntity:GetTeam() and killerEntity ~= hero and killerEntity:GetTeam() ~= killedUnit:GetTeam() and hero:GetPlayerOwnerID() ~= -1 and killerEntity:IsOwnedByAnyPlayer() then
                         local bounty = hero:GetGoldBounty()
 
@@ -6614,7 +6586,7 @@ function HandleShopChecks(hero)
                                 for _, otherHero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
                                     if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
                                         local herogold = otherHero:GetGold()
-                                        if otherHero:GetTeamNumber() == hero:GetTeam() and otherHero ~= hero then
+                                        if otherHero:GetTeamNumber() == hero:GetTeam() and otherHero ~= hero and not otherHero:HasModifier("pergatory_perm") then
                                             if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                                                 numPlayers = g_PlayerCountSouth
                                                 otherHero:SetGold(herogold + 50 * TradeValueCount / numPlayers, true)
@@ -6691,7 +6663,7 @@ function HandleShopChecks(hero)
                                 for _, otherHero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
                                     if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
                                         local herogold = otherHero:GetGold()
-                                        if otherHero:GetTeamNumber() == hero:GetTeam() and otherHero ~= hero then
+                                        if otherHero:GetTeamNumber() == hero:GetTeam() and otherHero ~= hero and otherHero:HasModifier("pergatory_perm") then
 
                                             if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                                                 numPlayers = g_PlayerCountSouth
@@ -6778,7 +6750,7 @@ function HandleShopChecks(hero)
                                 for _, otherHero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
                                     if otherHero ~= nil and otherHero:IsOwnedByAnyPlayer() then
                                         local herogold = otherHero:GetGold()
-                                        if otherHero:GetTeamNumber() == hero:GetTeam() and otherHero ~= hero then
+                                        if otherHero:GetTeamNumber() == hero:GetTeam() and otherHero ~= hero and otherHero:HasModifier("pergatory_perm") then
 
                                             if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                                                 numPlayers = g_PlayerCountSouth

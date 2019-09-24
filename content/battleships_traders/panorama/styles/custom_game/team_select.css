@@ -1,0 +1,1063 @@
+.TeamSelect
+{
+    width: 100%;
+    height: 100%;
+}
+
+#TeamSelectContainer
+{
+    width: 100%;
+    height: 100%;
+	flow-children: right;
+}
+
+#TeamsSelectEmptySpace
+{
+    width: fill-parent-flow(1);
+}
+
+#TeamsList
+{
+    width: 400px;
+	height: 850px;
+	margin-top: 144px;
+	flow-children: down;    
+    padding-left: 16px;
+	padding-right: 16px;
+    margin-left: 16px;
+	animation-name: TeamsListAppear;
+	animation-duration: 0.75s;
+}
+
+#HatList
+{
+	width: 100%;
+	height:660px;
+	flow-children: down;    
+
+	border-radius: 8px;
+	visibility: visible;
+	overflow: clip scroll;
+}
+#HatListholder
+{
+    width: 0px;
+	height:680px;
+	margin-top: 200px;
+	flow-children: down;    
+
+    margin-left: 16px;
+	transition: width 0.3s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
+	background-color: gradient(linear, 0% 0%, 0.1% 0%, from(#00000000), color-stop(0.1, #202327), color-stop(0.1, #141619ff), to(#000000ee));
+	border-radius: 8px;
+	visibility: visible;
+}
+
+
+
+@keyframes 'TeamsListAppear'
+{
+	0%
+	{
+		transform: translatex( 100% );
+	}
+
+	100%
+	{
+		transform: translatex( 0px );
+	}
+}
+    
+#TeamsListGroup 
+{
+    width: 100%;
+    vertical-align: center;
+    flow-children: down;   
+    margin-top: -69px;	
+}
+
+
+
+
+#TeamListHeader
+{
+	visibility: collapse;
+}
+
+#TeamListHeaderLabel
+{
+	visibility: collapse;
+}
+
+#TeamListLockedIcon 
+{
+    width: 16px;
+    height: 16px;
+    vertical-align: center;
+    margin-bottom: 4px;
+    visibility: collapse;
+    wash-color: #aa0000ee;
+}
+
+.teams_locked #TeamListLockedIcon 
+{
+    visibility: visible;
+}
+
+#TeamsListRoot
+{
+	width: 100%;
+	height: 450px;
+    flow-children: down;
+    overflow: clip scroll;
+	background-color: gradient(linear, 0% 0%, 0.1% 0%, from(#00000000), color-stop(0.1, #202327), color-stop(0.1, #141619ff), to(#000000ee));
+	border-radius: 8px;
+}
+
+#ShuffleTeamAssignmentButton
+{    
+    height: 32px;
+    margin-top: 188px;
+    margin-right: 10px;
+    vertical-align: top;
+    horizontal-align: right;
+    flow-children: right;
+    visibility: collapse;
+}
+
+.player_has_host_privileges #ShuffleTeamAssignmentButton
+{
+    visibility: visible;
+}
+
+#ShuffleTeamAssignmentButton Label
+{
+    font-size: 20px;
+	text-transform: uppercase;
+    margin-top: 2px;
+    margin-left: 5px;
+    color: white;
+    vertical-align: center;
+}
+
+#ShuffleTeamAssignmentButton:hover Label
+{
+	color: white;
+}
+
+#ShuffleTeamAssignmentButton:active
+{
+	sound: "ui_team_select_shuffle";
+}
+
+#ShuffleTeamAssignmentButton Image
+{
+    width: 22px;
+	height: 22px;
+	wash-color: orange;
+    vertical-align: center;
+}
+
+#ShuffleTeamAssignmentButton:hover Image
+{
+	wash-color: white;
+}
+
+#GameAndPlayersRoot
+{
+    width: 400px;
+    height: 100%;
+    flow-children: down;
+}
+
+#GameInfoPanel 
+{
+    margin: 16px;
+    flow-children: down;
+}
+
+#GameModeNameLabel 
+{
+	visibility: collapse;
+}
+
+#MapInfoLabel
+{
+    visibility: collapse;
+}
+
+#StartGameCountdownTimer
+{
+	width: 96px;
+	margin-top: 65px;
+	horizontal-align: right;
+	margin-right: 30px;
+}
+
+#TeamSelectTimer
+{
+	margin-top: 8px;
+    font-size: 48px;
+    color: #CCCCCC;
+	horizontal-align: center;
+}
+
+#StartGameCountdownTimer.countdown_inactive #TeamSelectTimer 
+{
+    opacity: 0.0;
+}
+
+#TimerBg
+{
+	wash-color: #222222;
+}
+
+#TimerBg,
+#TimerRing
+{
+	width: 70px;
+	height: 70px;
+	margin-top: 2px;
+	horizontal-align: center;
+    transition-property: opacity;
+    transition-duration: 0.2s;
+}
+
+#TimerLabelBox 
+{
+	margin-top: 76px;
+    height: 20px;
+    width: 100%;
+}
+
+#TimerLabelAutoStart
+{
+    color: #a9aaaa;
+    font-size: 16px;
+	text-transform: uppercase;
+	horizontal-align: center;
+    visibility: collapse;
+    transition-property: opacity;
+    transition-duration: 0.2s;
+}
+
+#StartGameCountdownTimer.auto_start #TimerLabelAutoStart 
+{
+    visibility: visible;
+}
+
+#TimerLabelGameStart
+{
+    color: #a9aaaa;
+    font-size: 16px;
+	text-transform: uppercase;
+	horizontal-align: center;
+    visibility: collapse;
+    transition-property: opacity;
+    transition-duration: 0.2s;
+}
+
+#StartGameCountdownTimer.forced_start #TimerLabelGameStart 
+{
+    visibility: visible;
+}
+
+
+#StartGameCountdownTimer.countdown_inactive #TimerBg,
+#StartGameCountdownTimer.countdown_inactive #TimerRing,
+#StartGameCountdownTimer.countdown_inactive #TimerLabelAutoStart,
+#StartGameCountdownTimer.countdown_inactive #TimerLabelGameStart,
+{
+    opacity: 0;
+}
+
+
+#UnassignedPlayerPanel
+{
+    width: 100%;
+	height: fill-parent-flow (1);
+    flow-children: down;
+	margin-left: 0px;
+	margin-right: 74px;
+}
+
+#UnassignedPlayersButton
+{
+    flow-children: down;
+	height: fill-parent-flow (1);
+	max-height: 761px;
+	margin-top: 88px;
+	width: 100%;
+	background-color: gradient(linear, 0% 0%, 0.1% 0%, from(#00000000), color-stop(0.1, #202327), color-stop(0.1, #141619ff), to(#000000ee));
+	border-radius: 8px;
+}
+
+#UnassignedPlayersHeader
+{
+    horizontal-align: left;
+	margin-top: 16px;
+	margin-left: 16px;
+}
+
+#UnassignedPlayersHeader Label
+{
+	padding: 0px;
+    font-size: 20px;
+	letter-spacing: 1px;
+	color: white;
+    text-transform: uppercase;
+	margin-left: 50px;
+    transition-property: color;
+	transition-duration: 0.2s;
+	margin-top: -9px;
+}
+
+
+#UnassignedPlayersButton:hover #UnassignedPlayersHeader Label
+{
+    font-size: 20px;
+	letter-spacing: 1px;
+	color: white;
+}
+
+
+#UnassignedPlayersDivider 
+{	
+    width: 100%;
+	height: 2px;
+    margin-left: 8px;
+    margin-right: 8px;
+	background-color: gray;
+	margin-top: -2px;
+}
+
+#UnassignedPlayersContainer
+{
+	width: 100%;
+    flow-children: down;
+    overflow: clip scroll;
+	margin: 16px;
+}
+
+#AutoAssignButton
+{
+    height: 32px;
+    margin-top: 188px;
+    margin-left: 10px;
+    vertical-align: top;
+    horizontal-align: left;
+    flow-children: right;
+    visibility: collapse;
+}
+
+.player_has_host_privileges #AutoAssignButton
+{
+    visibility: visible;
+}
+
+#AutoAssignButton Label
+{
+    font-size: 20px;
+	text-transform: uppercase;
+    margin-top: 2px;
+    margin-left: 5px;
+    color: white;
+    vertical-align: center;
+}
+
+.unassigned_players #AutoAssignButton:hover Label
+{
+	color: white;
+}
+
+.unassigned_players #AutoAssignButton:active 
+{    
+	sound: "ui_team_select_auto_assign";
+}
+
+#AutoAssignButton Image
+{
+    width: 22px;
+	height: 22px;
+	wash-color: orange;
+    vertical-align: center;
+	margin-top: 4px;
+}
+
+.unassigned_players #AutoAssignButton:hover Image
+{
+	wash-color: white;
+}
+
+#LockAndStartButton
+{ 
+    horizontal-align: right;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #486ca9cc ) );
+	box-shadow: fill #486ca922 -4px -4px 8px 8px;
+	border-top: 1px solid #ffffff03;
+	border-left: 1px solid #ffffff03; 
+    visibility: collapse;
+	margin-left: 0px;
+	margin-right: 74px;
+	border-radius: 8px;
+}
+
+#OptionList {
+    width: 400px;
+	height: 230px;
+    flow-children: down;
+    animation-name: TeamsListAppear;
+    animation-duration: 0.75s;
+	margin-top: 0px;
+	background-color: gradient(linear, 0% 0%, 0.1% 0%, from(#00000000), color-stop(0.1, #202327), color-stop(0.1, #141619ff), to(#000000ee));
+	border-radius: 8px;
+}
+
+#OptionListGroup {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    vertical-align: middle;
+	border-radius: 8px;
+}
+
+#OptionTitle {
+    text-transform: uppercase;
+	text-shadow: 2px 2px 2px black;
+	white-space: nowrap;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: white;
+	margin-top: 0px;
+	horizontal-align: center;
+	font-family: Arial;
+	margin-top: 5px;
+	transition-property: color;
+	transition-duration: 0.2s;
+}
+
+#OptionDivider 
+{	
+    width: 100%;
+	height: 2px;
+    margin-left: 8px;
+    margin-right: 8px;
+	margin-top: 30px;
+	background-color: gray;
+}
+
+#OptionDivider2
+{	
+    width: 100%;
+	height: 2px;
+    margin-left: 8px;
+    margin-right: 8px;
+	margin-top: 184px;
+	background-color: gray;
+}
+
+#Options {
+	width: 100%;
+	height: 100%;
+    margin-top: 0px;
+    text-transform: uppercase;
+    flow-children: down;
+}
+
+#battleButton
+{
+	width: 180px;
+	height: 40px;
+	align: left center;
+	margin-top: 43px;
+	margin-left: 8px;
+}
+
+#tradeButton
+{
+	width: 180px;
+	height: 40px;
+	align: left center;
+	margin-top: 5px;
+	margin-left: 8px;
+}
+
+#coOpButton
+{ 
+	width: 180px;
+	height: 40px;
+	align: left center;
+	margin-top: 5px;
+	margin-bottom: 40px;
+	margin-left: 8px;
+}
+.toggled
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #84acff ) );
+	box-shadow: fill #486ca922 -4px -4px 8px 8px;
+	border-top: 1px solid #ffffff03;
+	border-left: 1px solid #ffffff03; 
+}
+
+.untoggled 
+{ 
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #486ca9cc ) );
+	box-shadow: fill #486ca922 -4px -4px 8px 8px;
+	border-top: 1px solid #ffffff03;
+	border-left: 1px solid #ffffff03; 
+}
+
+.toggled:hover
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #486ca9cc ) );
+	box-shadow: fill #486ca922 -4px -4px 8px 8px;
+	border-top: 1px solid #ffffff03;
+	border-left: 1px solid #ffffff03; 
+}
+
+.untoggled:hover
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #84acff ) );
+	box-shadow: fill #486ca922 -4px -4px 8px 8px;
+	border-top: 1px solid #ffffff03;
+	border-left: 1px solid #ffffff03; 
+}
+
+.tradetoggled
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #486ca9cc ) );
+	box-shadow: fill #486ca922 -4px -4px 8px 8px;
+	border-top: 1px solid #ffffff03;
+	border-left: 1px solid #ffffff03; 
+}
+
+.tradeuntoggled
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #84acff ) );
+	box-shadow: fill #486ca922 -4px -4px 8px 8px;
+	border-top: 1px solid #ffffff03;
+	border-left: 1px solid #ffffff03; 
+}
+
+.tradetoggled:hover
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #84acff ) );
+	box-shadow: fill #486ca922 -4px -4px 8px 8px;
+	border-top: 1px solid #ffffff03;
+	border-left: 1px solid #ffffff03; 
+}
+
+.tradeuntoggled:hover
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #486ca9cc ) );
+	box-shadow: fill #486ca922 -4px -4px 8px 8px;
+	border-top: 1px solid #ffffff03;
+	border-left: 1px solid #ffffff03; 
+}
+
+#battleLabel
+{
+	font-size: 18px;
+	text-align: center;
+	vertical-align: center;
+	text-shadow: 2px 2px 2px black;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+#TradeLabel
+{
+	font-size: 18px;
+	text-align: center;
+	vertical-align: center;
+	text-shadow: 2px 2px 2px black;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+#coOpLabel
+{
+	font-size: 18px;
+	text-align: center;
+	vertical-align: center;
+	text-shadow: 2px 2px 2px black;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+.unassigned_players #LockAndStartButton 
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #14161a ), to( #23262b ) );
+    box-shadow: fill #00000000 0px 0px 0px 0px;
+    border-top: 1px solid #ffffff03;
+    border-left: 1px solid #ffffff03;
+}
+
+#LockAndStartButton Label 
+{
+    transition-property: opacity;
+    transition-duration: 0.2s;
+}
+
+.unassigned_players #LockAndStartButton Label 
+{
+    opacity: 0.1;
+}
+
+.player_has_host_privileges #LockAndStartButton
+{
+    visibility: visible;
+}
+
+.teams_locked #LockAndStartButton 
+{    
+    visibility: collapse;
+}
+
+.no_unassigned_players #LockAndStartButton:hover
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #84acff ) );
+	box-shadow: fill #486ca966 -4px -4px 18px 8px;
+}
+
+.no_unassigned_players #LockAndStartButton:active
+{
+    sound: "ui_team_select_lock_and_start";
+}
+
+#CancelAndUnlockButton
+{ 
+    horizontal-align: right;
+    visibility: collapse;
+	margin-left: 0px;
+	margin-right: 74px;
+	border-radius: 8px;
+
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #2c1b1b ), to( #482e2f ) );
+    box-shadow: fill #552e2f00 -4px -4px 8px 9px;
+	
+	border-top: 1px solid #3d2929;
+	border-right: 1px solid #372121;
+	border-left: 1px solid #372121;
+	border-bottom: 1px solid #2e1f21;
+}
+
+#CancelAndUnlockButton:hover
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #492121 ), to( #9d4c4f ) );
+	border-top: 1px solid #7d4141;
+	border-right: 1px solid #7a3535;
+	border-left: 1px solid #7a3535;
+	border-bottom: 1px solid #2e1f21;
+	box-shadow: fill #552e2f66 -4px -4px 8px 9px;
+}
+
+#CancelAndUnlockButton:active
+{
+	//sound: "ui_custom_lobby_quit";
+    sound: "ui_team_select_cancel_and_lock";
+}
+
+
+.player_has_host_privileges.teams_locked #CancelAndUnlockButton
+{
+    visibility: visible;
+}
+
+
+
+.TeamSelectTeam
+{
+    width: 100%;
+    margin: 6px;
+}
+
+.TeamSelectTeam.local_player_on_this_team
+{
+}
+
+.TeamSelectTeam:hover
+{    
+    //background-color: #272b30dd;
+}
+
+#TeamBackgroundGradient
+{
+    width: 100%;
+    height: 100%;
+}
+
+.teams_unlocked .TeamSelectTeam:hover #TeamBackgroundGradient
+{    
+    visibility: collapse;
+}
+
+#TeamBackgroundGradientHighlight 
+{   
+    width: 100%;
+    height: 100%;
+    visibility: collapse;
+}
+
+.teams_unlocked .TeamSelectTeam:hover #TeamBackgroundGradientHighlight
+{
+    visibility: visible;
+}
+
+#TeamGroup 
+{
+	background-color: transparent;
+    width: 100%;
+    padding: 0px;
+    flow-children: down;
+}
+
+#TeamHeader
+{
+    width: 100%;
+    flow-children: right;
+}
+
+#TeamNameLabel
+{
+	font-size: 20px;
+	vertical-align: top;
+	text-shadow: 2px 2px 2px black;
+   	margin-left: 90px;
+    margin-top: 1px;    
+	text-transform: uppercase;
+	white-space: nowrap;
+	width: 100%;
+	color: white;
+}
+
+#JoinTeamLabel
+{
+    color: #444444;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 20px;
+    horizontal-align: right;
+	vertical-align: center;
+	margin-top: 4px;
+	
+	transition-property: color;
+	transition-duration: 0.2s;
+}
+
+.teams_unlocked .TeamSelectTeam:hover #JoinTeamLabel
+{
+	color: white;
+}
+
+.TeamSelectTeam.team_is_full #JoinTeamLabel
+{
+    opacity: 0;
+}
+
+.TeamSelectTeam.local_player_on_this_team #JoinTeamLabel
+{
+    opacity: 0;
+}
+
+.TeamSelectTeam.local_player_is_ready #JoinTeamLabel
+{
+    opacity: 0;
+}
+
+#TeamPlayerDivider 
+{
+    width: 340px;
+	height: 2px;
+    margin-left: 8px;
+    margin-right: 8px;
+	margin-top: -5px;
+	margin-bottom: 5px;
+	background-color: gray;
+}
+
+#PlayerList
+{
+    width: 100%;
+    flow-children: down;
+    width: 100%;
+}
+
+#player_root
+{
+	width: 100%;
+}
+
+.player_slot
+{
+    height: 32px;
+    width: 100%;
+    flow-children: right;
+    margin-top: 2px;
+	margin-left: 7px;
+}
+
+
+
+
+.TeamSelectPlayer
+{
+    width: 100%;
+    flow-children: right;
+    vertical-align: middle;
+    flow-children: right;
+}
+
+DOTAAvatarImage
+{
+    width: 32px;
+    height: 32px;
+    background-color: black;
+	vertical-align:middle;
+}
+
+#PlayerIsHostPanel
+{   
+    background-image: url( "file://{images}/icon_star.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow: noclip;
+    width: 24px;
+    height: 24px;
+    visibility: collapse;
+    margin-top: 2px;
+    margin-right: 4px;
+    margin-left: 4px;
+    visibility: collapse;
+}
+
+.TeamSelectPlayer.player_has_host_privileges #PlayerIsHostPanel
+{
+    visibility: visible;
+}
+
+#PlayerName
+{
+	color: white;
+	vertical-align:middle;
+    margin: 3px;
+    text-shadow: 2px 2px 2px black;
+    width: fill-parent-flow( 1 );
+	white-space: nowrap;
+	margin-top: 6px;
+}
+
+#PlayerLeaveTeamButton 
+{
+	width: 24px;
+	height: 24px;
+	wash-color: #aa0000ee;
+	
+	background-image: url("file://{images}/control_icons/x_close.png");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	margin: 4px;
+    margin-right: 17px; 
+    visibility: collapse;
+}
+
+#PlayerLeaveTeamButton:hover
+{
+    wash-color: red;
+}
+
+.teams_unlocked .TeamSelectTeam .player_is_local #PlayerLeaveTeamButton
+{
+    visibility: visible;
+}
+
+.TeamSelectEmptySlot 
+{
+    flow-children: right;
+}
+
+.TeamSelectEmptySlot #PlayerName
+{
+	color: white;
+	letter-spacing: 1px;
+	font-size: 18px;
+}
+
+#EmptySlotIcon 
+{	
+    width: 32px;
+	height: 32px;
+    opacity: 0.7;
+    background-image: url("file://{images}/custom_game/heroes/npc_dota_hero_vengefulspirit.png");
+    background-size: 32px 32px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
+#HatSelection
+{
+	padding: 8px;
+	width: 100%;
+	height: 80px;
+
+	horizontal-align: center;
+    flow-children: down;
+    background-color: gradient(linear, 0% 0%, 0.1% 0%, from(#00000000), color-stop(0.1, #202327), color-stop(0.1, #141619ff), to(#000000ee));
+	border-radius: 8px;
+}
+#HatHeader
+{
+	font-size: 24px;
+    font-weight: bold;
+	color: white;
+	horizontal-align: center;
+}
+
+
+#HatButton:hover
+{
+	pre-transform-scale2d: 1.01;
+    box-shadow: #000000ff 0px 0px 16px 0px;
+}
+#HatButton
+{
+	horizontal-align: center;
+	width:70%;
+}
+
+#CurrentHat
+{
+	width:80px;
+	horizontal-align: center;
+	border-radius: 8px;
+}
+
+#CurrentHatText
+{
+	margin-top: -25px;
+	margin-right: 95px;
+	horizontal-align: right;
+}
+.HatRankHeader
+{
+	text-transform: uppercase;
+	text-shadow: 2px 2px 2px black;
+	white-space: nowrap;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: white;
+	margin-top: 0px;
+	horizontal-align: center;
+	font-family: Arial;
+	margin-top: 5px;
+	transition-property: color;
+	transition-duration: 0.2s;
+}
+.HatRow
+{
+flow-children:right;
+height:115px;
+width:100%;
+}
+.HatRowbot
+{
+flow-children:right;
+height:120px;
+width:100%;
+}
+.HatImage
+{
+	width:80px;
+	height:65px;
+	horizontal-align: center;
+	border-radius: 8px;
+}
+.RandImage
+{
+	width:80px;
+	height:65px;
+	horizontal-align: center;
+	border-radius: 8px;
+}
+.HatSelectButton
+{
+	flow-children:down;
+	margin: 3px;
+	padding: 6px;
+	width:23%;
+	height:100%;
+	
+}
+.HatSelectButton:hover
+{
+	border-radius: 8px;
+	flow-children:down;
+	background-color: gradient(linear, 0% 0%, 0.1% 0%, from(#555555), color-stop(0.1, #202327), color-stop(0.1, #141619ff), to(#555555));
+	
+}
+.HatImageLabel
+{
+	horizontal-align: center;
+}
+.RandImageLabel
+{
+	margin-top: -5px;
+	horizontal-align: center;
+}
+.Divider 
+{	
+    width: 100%;
+	height: 2px;
+    margin-left: 8px;
+    margin-right: 8px;
+	background-color: gray;
+}
+.SelectedHat{
+	border-radius: 8px;
+	box-shadow: 0px 0px 20px #BFAF50;
+}
+#noHat
+{
+	vertical-align: bottom;
+	horizontal-align: right;
+	height: 91px;
+	margin: 10px;
+	padding: 6px;
+}
+#specHat
+{
+	visibility: collapse;
+	vertical-align: bottom;
+	horizontal-align: left;
+	height: 120px;
+	margin-top: -25px;
+	margin-left: 10px;
+	padding: 6px;
+}
+.locked
+{
+
+}
+.ButtonLocked
+{
+	vertical-align: center;
+	horizontal-align: center;
+	width:40%;
+	height:60%;
+	padding-top: 15px;
+	margin-bottom:-62px;
+	
+	z-index: 5;
+	opacity: .3;
+}
+#PointTracker
+{
+	font-size: 20px;
+	text-align: right;
+	vertical-align: center;
+	text-shadow: 2px 2px 2px black;
+	width: 100%;
+	margin-right: 6px;
+	padding:4px;
+}

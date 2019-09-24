@@ -24,15 +24,26 @@ function fire_weapon(keys)
   local casterUnit = keys.caster
   local ability = keys.ability
   local badGuys = FindUnitsInRadius( casterUnit:GetTeamNumber(), casterUnit:GetOrigin(), nil, ability:GetSpecialValueFor("range"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC+ DOTA_UNIT_TARGET_BUILDING, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE, 0, false )
-  if casterUnit:GetTimeUntilRespawn()>0 then
+  if casterUnit.GetTimeUntilRespawn and casterUnit:GetTimeUntilRespawn()>0 then
     return
   end
   if ability:GetSpecialValueFor("range") >1001 then
     badGuys = FindUnitsInRadius( casterUnit:GetTeamNumber(), casterUnit:GetOrigin(), nil, ability:GetSpecialValueFor("range"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE, 0, false )
   end
+  if string.match(keys.EffectName, "gush") then
+  print("---fireing from tide---")
+  ability:GetSpecialValueFor("range")
+  DeepPrintTable(badGuys)
+  end
+
    if casterUnit:IsAlive() then
     for shot = 1,keys.NumShots do
       if #badGuys>0 then
+      
+    if string.match(keys.EffectName, "gush") then
+    print("---fireing from tide---")
+      print(badGuys)
+    end
       Targetfucker=badGuys[RandomInt( 1, #badGuys )]
       local visionrad=0
       if keys.ProvidesVision ==1 then

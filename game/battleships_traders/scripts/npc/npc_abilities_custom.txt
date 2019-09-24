@@ -8916,23 +8916,17 @@
 				"Passive"	 "1"
 				"OnIntervalThink"
 				{
-					"TrackingProjectile"
+						"RunScript"
 					{
-						"Target"
-						{
-							"Center" "CASTER"
-							"Radius" "1200"
-							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-							"flags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS"
-							"MaxTargets" "1"
-							"Random" "1"
+						"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
+						"Function"			"fire_weapon"
+						"NumShots"			"2"
+							"MoveSpeed" "1200"
+							"ProvidesVision" "0"
+							"Dodgeable" "1" 
+							"EffectName"    "particles/basic_projectile/gush_battleship.vpcf"
 						}
-						"MoveSpeed" "650"
-						"ProvidesVision" "0"
-						"Dodgeable" "1" 
-                   "EffectName"    "particles/basic_projectile/gush_battleship.vpcf"
-					}
+										
 					
 				}
 				
@@ -8954,10 +8948,35 @@
         {
                
 				"01"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"fun_bonus_move_speed"	"-30 -35 -40 -45"
-				}
+			{
+				"var_type"	"FIELD_FLOAT"
+				"dmg"		"200"
+			}
+			"02"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"fire_rate"	"2.1"
+			}
+			"03"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"range"		"1250"
+			}
+			"04"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"slow_amt"	"4"
+			}
+			"05"
+			{
+				"var_type"	"FIELD_FLOAT"
+				"slow_dur"	"3.5"
+			}
+			"06"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps"			"182"
+			}
         }
 	
 		

@@ -1,0 +1,23 @@
+<root>
+<script>
+	 //------------------------------hero panel stuff--------------------------------
+		 var newCenterUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("lower_hud").FindChildTraverse("center_with_stats").FindChildTraverse("center_block");
+		//try the neat way to remove the tree itself
+        newCenterUI.FindChildTraverse("stats_container").style.visibility = "visible";
+	   //that bar that grows from level 1 to 25 is annoying
+        newCenterUI.FindChildTraverse("AbilitiesAndStatBranch").FindChildTraverse("StatBranch").style.visibility = "collapse";
+		 newCenterUI.FindChildTraverse("level_stats_frame").style.visibility = "collapse";
+	  //fuck backpack UI
+        newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("inventory_backpack_list").style.visibility = "collapse";
+	 
+	 
+	</script>
+	<Panel>
+		<CustomUIElement type="Hud"					layoutfile="file://{resources}/layout/custom_game/custom_shop.xml" />
+		<CustomUIElement type="GameInfo" 			layoutfile="file://{resources}/layout/custom_game/overthrow_game_info.xml" />
+		<CustomUIElement type="GameSetup" 			layoutfile="file://{resources}/layout/custom_game/team_select.xml" />
+	</Panel>
+	
+</root>
+
+
