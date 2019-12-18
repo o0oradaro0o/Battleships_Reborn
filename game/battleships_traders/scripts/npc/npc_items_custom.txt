@@ -5593,7 +5593,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"260"
+				"dmg"	"126"
 			}
 			"02"
 			{
@@ -9248,7 +9248,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dmg"	"260"
+				"dmg"	"126"
 			}
 			"02"
 			{
@@ -12987,7 +12987,7 @@
 		"ItemKillable"					"0"
 		"ItemQuality"					"epic"
     "SecretShop"						"1"
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		
 		"OnSpellStart"
@@ -13037,7 +13037,7 @@
   	"ItemStockMax"					"1"
 		"ItemStockInitial"				"0"
 		"ItemStockTime"					"360.0"
-		
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 	}
 	
@@ -15121,7 +15121,7 @@
 		"ItemSellable"					"0"
 		"ItemAliases"					"mana;mb"
 		"ItemDroppable"					"0"
-		
+		"ItemPurchasable"				"0"
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -15189,6 +15189,7 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemAlertable"					"1"
 		"ItemSellable"					"0"
+		"ItemPurchasable"				"0"
 		
 		"ItemAliases"					"mana;mb"
 		"ItemDroppable"					"0"

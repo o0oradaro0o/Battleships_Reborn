@@ -835,7 +835,7 @@
 		"StatusHealth"				"3000"		// Base health.
 		"StatusHealthRegen"			"13.0"		// Health regeneration rate.
 		
-				"ArmorPhysical"				"0"
+		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		
 		"AbilityLayout"				"4"
@@ -1753,7 +1753,7 @@
 		"AbilityLayout"				"3"
 		"Ability1"					"antimage_blink_battleship"
 		"Ability2"					"miss_lua"
-		"Ability3"					"puck_waning_rift_battleship"
+		"Ability3"					"disruptor_kinetic_field_battleship"
 		"Ability4"					"gyrocopter_call_down_battleship"
 		"Ability6"					"bships_empty"
 

@@ -8,7 +8,7 @@
         newCenterUI.FindChildTraverse("AbilitiesAndStatBranch").FindChildTraverse("StatBranch").style.visibility = "collapse";
 		 newCenterUI.FindChildTraverse("level_stats_frame").style.visibility = "collapse";
 	  //fuck backpack UI
-        newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("inventory_backpack_list").style.visibility = "collapse";
+       // newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("inventory_backpack_list").style.visibility = "collapse";
 	 
 	 
 	</script>

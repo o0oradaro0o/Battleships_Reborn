@@ -727,11 +727,15 @@ EVASION CHANCE: 1.0 2.0 3.0 4.0"
 "antimage_blink_battleship"											"Cheat"
 "antimage_blink_battleship_Description"								"Short distance teleportation that allows battleship to shift around the board.
 RANGE: 700 800 900 1000"
-
-"puck_waning_rift_battleship"								"Hack Their System!"
-"puck_waning_rift_battleship_Description"					"Disables the use of abilities on all units in the area and deals damage to them. \n\nHigher levels increase damage and duration.
-DURATION: 2.0 2.5 3.0 3.5
-DAMAGE: 400 450 500 550"
+		"DOTA_Tooltip_Ability_disruptor_kinetic_field_battleship"								"Peg Circle!"
+		"DOTA_Tooltip_ability_disruptor_kinetic_field_battleship_Description"					"After a short formation time, creates a circular barrier of pegs energy that enemies can't pass. \n\nHigher levels increase range and duration."
+		"DOTA_Tooltip_Ability_disruptor_kinetic_field_battleship_duration"			"DURATION:"
+		"DOTA_Tooltip_Ability_disruptor_kinetic_field_battleship_formation_time"			"Formation Time:"
+		
+"disruptor_kinetic_field_battleship"								"Peg Circle!"
+"disruptor_kinetic_field_battleship_Description"					"After a short formation time, creates a circular barrier of pegs energy that enemies can't pass. \n\nHigher levels increase range and duration.
+DURATION: 2.6 3.2 3.8 4.4
+Range: 900 1000 1100 1200"
 
 "abaddon_aphotic_shield_battleship"							"Scrap Armor"
 "abaddon_aphotic_shield_battleship_Description"	"Creates junk armor around an ally unit, forming a shield that absorbs a set amount of damage before expiring. When the shield is destroyed it will burst and deal damage equal to the amount it could absorb to an area around it. Removes certain types of negative buffs and stuns on cast.
@@ -2645,9 +2649,10 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"DOTA_Tooltip_ability_shove_battleship_Description"					"Stuns a unit and pushes it away from the tugboat. \n\nHigher levels increase push distance and duration of stun."
 		"DOTA_Tooltip_Ability_shove_battleship_duration"			"DURATION:"
 		
-		"DOTA_Tooltip_Ability_puck_waning_rift_battleship"								"Hack their system!"
-		"DOTA_Tooltip_ability_puck_waning_rift_battleship_Description"					"Disables the use of abilities on all units in the area and deals damage to them. \n\nHigher levels increase damage and duration."
-		"DOTA_Tooltip_Ability_puck_waning_rift_battleship_silence_duration"			"DURATION:"
+		"DOTA_Tooltip_Ability_disruptor_kinetic_field_battleship"								"Peg Circle!"
+		"DOTA_Tooltip_ability_disruptor_kinetic_field_battleship_Description"					"After a short formation time, creates a circular barrier of pegs energy that enemies can't pass. \n\nHigher levels increase range and duration."
+		"DOTA_Tooltip_Ability_disruptor_kinetic_field_battleship_duration"			"DURATION:"
+		"DOTA_Tooltip_Ability_disruptor_kinetic_field_battleship_formation_time"			"Formation Time:"
 		
 		"DOTA_Tooltip_Ability_turret_battleship"								"Deploy Turret!"
 		"DOTA_Tooltip_ability_turret_battleship_Description"					"Deploy Turret that deals 500 dmg per attack in a very short range \n\nHigher levels decrease cooldown."

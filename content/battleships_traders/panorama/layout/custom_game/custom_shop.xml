@@ -1618,9 +1618,9 @@
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/faceless_void_backtrack.png" onmouseover="DOTAShowAbilityTooltip('miss_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
                        <Label hittest="false" class="ability_name" text="#miss_battleship"/>
 					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('tusk','puck_waning_rift_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/puck_waning_rift.png" onmouseover="DOTAShowAbilityTooltip('puck_waning_rift_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#puck_waning_rift_battleship"/>
+					<Panel hittest="false" class="ability" onmouseover="showText('tusk','disruptor_kinetic_field_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/puck_waning_rift.png" onmouseover="DOTAShowAbilityTooltip('disruptor_kinetic_field_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
+                       <Label hittest="false" class="ability_name" text="#disruptor_kinetic_field_battleship"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('tusk','gyrocopter_call_down_battleship')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/lina_light_strike_array.png" onmouseover="DOTAShowAbilityTooltip('gyrocopter_call_down_battleship')" onmouseout="DOTAHideAbilityTooltip()" />

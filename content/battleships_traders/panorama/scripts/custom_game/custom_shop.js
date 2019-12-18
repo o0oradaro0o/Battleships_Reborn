@@ -34,6 +34,7 @@ function showTrade() {
 }
 
 
+
 function resetHeroIcons() {
 	if (scoreBoardGoodCont.FindChildTraverse("RadiantPlayer0")) {
 		SetImageForPanel(scoreBoardGoodCont.FindChildTraverse("RadiantPlayer0").FindChildTraverse("SlantedContainerPanel"))
@@ -257,7 +258,9 @@ function fixUI() {
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY, false);
 	NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("GridMainShop").style.visibility = "visible";
 	$("#ship_shop_content_holder").style.visibility = "collapse";
-	NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("GridMainShop").FindChildTraverse("GridShopHeaders").FindChildTraverse("SearchAndToggleContainer").FindChildTraverse("ToggleMinimalShop").style.visibility = 
+	NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("GridMainShop").FindChildTraverse("GridShopHeaders").FindChildTraverse("SearchAndButtonsContainer").FindChildTraverse("ToggleMinimalShop").style.visibility = 
+	"collapse";
+	NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("GridMainShop").FindChildTraverse("GridShopHeaders").FindChildTraverse("GridMainTabs").FindChildTraverse("GridNeutralsTab").style.visibility = 
 	"collapse";
 	NewShopUI.FindChildTraverse("Main").FindChildTraverse("CommonItems").style.visibility = "collapse";
 	NewShopUI.RemoveClass("ShopLarge");
