@@ -132,10 +132,11 @@ function peak(keys) -- keys is the information sent by the ability
 	for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
 		 ----print("[ItemFunctions] peak found a hero!")
 		if hero ~= nil and hero:IsRealHero() then
-			local navDist = GridNav:FindPathLength(casterUnit:GetAbsOrigin(),hero:GetAbsOrigin())
-			local lineDist = (casterUnit:GetAbsOrigin()-hero:GetAbsOrigin()):Length()
-			print("---------PING----navDist: ".. navDist .. " lineDist:" .. lineDist )
-			if hero:GetTeamNumber() ~= casterUnit:GetTeamNumber() and navDist < lineDist+1000 then
+			local casterPosition = casterUnit:GetAbsOrigin()
+			local heroPosition = hero:GetAbsOrigin()
+			local distance = (casterPosition - heroPosition):Length()
+
+			if hero:GetTeam() ~= casterUnit:GetTeam() and distance < 4000 then
 				hero:MakeVisibleDueToAttack(1,50)
 				hero:MakeVisibleDueToAttack(2,50)
 				hero:MakeVisibleDueToAttack(3,50)
