@@ -5586,13 +5586,13 @@ function fixBackpack(casterUnit)
                     local newItem = CreateItem("item_fluff", casterUnit, casterUnit)
                     casterUnit:AddItem(newItem)
 
-                elseif itemSlot > 5 and itemSlot < 10 then
+                elseif itemSlot > 5 and itemSlot < 9 then
                     RemoveAndDeleteItem(casterUnit, Item)
                 else
                     local newItem = CreateItem("item_fluff", casterUnit, casterUnit)
                     casterUnit:AddItem(newItem)
                 end
-                if itemSlot > 5 and itemSlot < 10 then
+                if itemSlot > 5 and itemSlot < 9 then
                     local newItem = CreateItem("item_backpack_stuffer", casterUnit, casterUnit)
                     casterUnit:AddItem(newItem)
                 end
@@ -5640,7 +5640,7 @@ function become_boat(casterUnit, heroname)
 
                     itemlist[itemSlot] = "item_fluff"
                     RemoveAndDeleteItem(casterUnit, Item)
-                elseif itemSlot > 5 and itemSlot < 10 then
+                elseif itemSlot > 5 and itemSlot < 9 then
 
                     itemlist[itemSlot] = "item_backpack_stuffer"
                 else
@@ -5726,12 +5726,9 @@ function become_boat(casterUnit, heroname)
                                     local newItem3 = CreateItem("item_backpack_stuffer", hero, hero)
                                     local newItem4 = CreateItem("item_backpack_stuffer", hero, hero)
                                     local newItem5 = CreateItem("item_backpack_stuffer", hero, hero)
-                                    local newItem6 = CreateItem("item_backpack_stuffer", hero, hero)
                                     hero:AddItem(newItem2)
                                     hero:AddItem(newItem3)
                                     hero:AddItem(newItem4)
-                                    hero:AddItem(newItem5)
-                                    hero:AddItem(newItem6)
                                 else
                                     local newItem3 = CreateItem("item_contract_easy_mid_top", hero, hero)
                                     local MissionLoc
@@ -5751,12 +5748,10 @@ function become_boat(casterUnit, heroname)
                                     local newItem3 = CreateItem("item_backpack_stuffer", hero, hero)
                                     local newItem4 = CreateItem("item_backpack_stuffer", hero, hero)
                                     local newItem5 = CreateItem("item_backpack_stuffer", hero, hero)
-                                    local newItem6 = CreateItem("item_backpack_stuffer", hero, hero)
                                     hero:AddItem(newItem2)
                                     hero:AddItem(newItem3)
                                     hero:AddItem(newItem4)
                                     hero:AddItem(newItem5)
-                                    hero:AddItem(newItem6)
                                 end
 
                             end

@@ -276,6 +276,7 @@ function fixUI() {
 
 	newCenterUI.FindChildTraverse("death_panel_buyback").FindChildTraverse("BuybackButton").style.visibility = "collapse";
 	newCenterUI.FindChildTraverse("inventory_tpscroll_container").style.visibility = "collapse";
+	newCenterUI.FindChildTraverse("inventory_neutral_slot_container").style.visibility = "collapse";
 	sidenotif.style.visibility = "collapse";
 	topnotif.style.visibility = "collapse";
 

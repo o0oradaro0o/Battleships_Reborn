@@ -135,8 +135,7 @@ function peak(keys) -- keys is the information sent by the ability
 			local casterPosition = casterUnit:GetAbsOrigin()
 			local heroPosition = hero:GetAbsOrigin()
 			local distance = (casterPosition - heroPosition):Length()
-
-			if hero:GetTeam() ~= casterUnit:GetTeam() and distance < 4000 then
+			if distance < 5000 then
 				hero:MakeVisibleDueToAttack(1,50)
 				hero:MakeVisibleDueToAttack(2,50)
 				hero:MakeVisibleDueToAttack(3,50)
@@ -1275,8 +1274,8 @@ function airBlast(args) -- keys is the information sent by the ability
 		EffectName = "particles/basic_projectile/blast_effect.vpcf",
 		vSpawnOrigin = caster:GetAbsOrigin(),
 		fDistance = 1500,
-		fStartRadius = 350,
-		fEndRadius = 350,
+		fStartRadius = 325,
+		fEndRadius = 325,
 		Source = caster,
 		bHasFrontalCone = false,
 		bReplaceExisting = false,

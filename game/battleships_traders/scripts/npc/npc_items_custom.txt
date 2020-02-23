@@ -11623,7 +11623,8 @@
   		{
   			"ScriptFile"		"scripts/vscripts/item_sound_functions.lua"
   			"Function"			"lightSoundImpact"
-  		}					
+  		}				
+				
   		
   		"DeleteOnHit"                           "false"
   		"Damage"

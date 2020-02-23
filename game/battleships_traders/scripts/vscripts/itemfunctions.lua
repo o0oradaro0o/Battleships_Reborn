@@ -41,13 +41,16 @@ function fire_weapon(keys)
       if #badGuys>0 then
       
     if string.match(keys.EffectName, "gush") then
-    print("---fireing from tide---")
+
       print(badGuys)
     end
       Targetfucker=badGuys[RandomInt( 1, #badGuys )]
       local visionrad=0
-      if keys.ProvidesVision ==1 then
+      local vision = false;
+      if keys.ProvidesVision == 1 then
         visionrad = ability:GetSpecialValueFor("vision_rad")
+        vision = true;
+        print("---shot provies vision---")
       end
           local tracking_projectile =
           {
@@ -59,9 +62,10 @@ function fire_weapon(keys)
             bHasFrontalCone = false,
             iMoveSpeed = keys.MoveSpeed,
             bReplaceExisting = false,
-            bProvidesVision = keys.ProvidesVision,
-            iVisionRadius =visionrad,
-            iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
+            bProvidesVision = vision,
+            iVisionRadius = visionrad,
+            iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION,
+            iVisionTeamNumber = casterUnit:GetTeamNumber()
           }
           ProjectileManager:CreateTrackingProjectile(tracking_projectile)
       end
