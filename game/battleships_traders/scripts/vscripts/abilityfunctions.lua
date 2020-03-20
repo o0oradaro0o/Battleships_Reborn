@@ -1043,18 +1043,17 @@ function inTheHoldSpawn(args) -- keys is the information sent by the ability
 	creature:CreatureLevelUp(7)
 end
 
-function pushBack(args) -- keys is the information sent by the ability
-	-- ----print('[ItemFunctions] gunning_it started! ')
+function pushBack(args)
 	local targetPos = args.target:GetAbsOrigin()
 	local targetUnit = args.target
-	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 	local casterPos = args.caster:GetAbsOrigin()
-	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
 	local direction = casterPos - targetPos
 	local vec = direction:Normalized() * -90.0
+
 	if not IsPhysicsUnit(targetUnit) then
 		Physics:Unit(targetUnit)
 	end
+
 	targetUnit:AddPhysicsVelocity(vec)
 end
 
@@ -1386,23 +1385,22 @@ function hackNav(args) -- keys is the information sent by the ability
 		targetUnit:SetForwardVector(targetUnit:GetForwardVector() + vec)
 	end
 end
+
 function unstickPush(args)
 	local casterUnit = args.caster
-	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
-	 ----print("unstick push is going wooo! ")
-	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
-	if not IsPhysicsUnit(casterUnit) then
-		Physics:Unit(casterUnit)
+	local target = args.target
+	-- print("unstick push is going wooo!")
+	if not IsPhysicsUnit(target) then
+		Physics:Unit(target)
 	end
-	local direction = casterUnit:GetPhysicsVelocity()
-
+	local direction = target:GetPhysicsVelocity()
 	local vec = direction:Normalized() * -1.0
 
-	casterUnit:SetPhysicsAcceleration(vec * 0)
+	target:SetPhysicsAcceleration(vec * 0)
 
-	local vecorig = casterUnit:GetOrigin()
+	local vecorig = target:GetOrigin()
 
-	casterUnit:SetOrigin(vecorig + vec)
+	FindClearSpaceForUnit(target, vecorig, true)
 end
 
 function faceRan(args)

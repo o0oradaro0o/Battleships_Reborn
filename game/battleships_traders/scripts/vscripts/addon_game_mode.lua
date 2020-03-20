@@ -7499,19 +7499,20 @@ function SendMMRsToServer(eventSourceIndex, args)
 end
 
 function generateTestMMRData()
-    g_PlayerMMRList = {}
+    data = {}
 
-    g_PlayerMMRList = {}
-    table.insert(g_PlayerMMRList, {playerSteamID = 1, mmr = 900,})
-    table.insert(g_PlayerMMRList, {playerSteamID = 2, mmr = 1100,})
-    table.insert(g_PlayerMMRList, {playerSteamID = 3, mmr = 1000,})
-    table.insert(g_PlayerMMRList, {playerSteamID = 4, mmr = 1234,})
-    table.insert(g_PlayerMMRList, {playerSteamID = 5, mmr = 976,})
-    table.insert(g_PlayerMMRList, {playerSteamID = 6, mmr = 865,})
-    table.insert(g_PlayerMMRList, {playerSteamID = 7, mmr = 1200,})
-    table.insert(g_PlayerMMRList, {playerSteamID = 8, mmr = 1111,})
-    table.insert(g_PlayerMMRList, {playerSteamID = 9, mmr = 999,})
-    table.insert(g_PlayerMMRList, {playerSteamID = 10, mmr = 888,})
+    table.insert(data, {playerSteamID = 1, mmr = 900,})
+    table.insert(data, {playerSteamID = 2, mmr = 1100,})
+    table.insert(data, {playerSteamID = 3, mmr = 1000,})
+    table.insert(data, {playerSteamID = 4, mmr = 1400,})
+    table.insert(data, {playerSteamID = 5, mmr = 976,})
+    table.insert(data, {playerSteamID = 6, mmr = 865,})
+    table.insert(data, {playerSteamID = 7, mmr = 1600,})
+    table.insert(data, {playerSteamID = 8, mmr = 1111,})
+    table.insert(data, {playerSteamID = 9, mmr = 999,})
+    table.insert(data, {playerSteamID = 10, mmr = 888,})
+
+    return data
 end
 
 -- don't ask, it's magic
@@ -7530,16 +7531,17 @@ function CreateEvenTeams(eventSourceIndex)
     local teamsWithRatings = {}
     local ratings = {}
     local totalMMR = 0
-    local numPlayers = TableCount(g_PlayerMMRList)
+    local playerMMRList = g_PlayerMMRList
+    local numPlayers = TableCount(playerMMRList)
 
-    for _, playerData in pairs(g_PlayerMMRList) do totalMMR = totalMMR + playerData.mmr end
+    for _, playerData in pairs(playerMMRList) do totalMMR = totalMMR + playerData.mmr end
 
     local targetMMR = totalMMR / 2
     for k, v in ipairs(combs(math.floor(numPlayers / 2 + 0.5), numPlayers)) do
         local teamMMR = 0
         local teamSteamIds = {}
         for _, i in pairs(v) do
-            local playerData = g_PlayerMMRList[i]
+            local playerData = playerMMRList[i]
             teamMMR = teamMMR + playerData.mmr
             table.insert(teamSteamIds, playerData.playerSteamID)
         end
@@ -7549,20 +7551,29 @@ function CreateEvenTeams(eventSourceIndex)
         TeamAndRating.rating = math.abs(math.abs(teamMMR - targetMMR))
         table.insert(teamsWithRatings, TeamAndRating)
     end
-    local threshold = ratings[1]
-		print(threshold)
+
     table.sort(ratings)
 
+    local threshold = ratings[1]
     if #ratings > 10 then
-        threshold = ratings[ math.floor(#ratings / 10)]
+        threshold = ratings[math.floor(#ratings / 10)]
     end
-		local topPercent={}
+
+    print(threshold)
+
+	local topPercent={}
     for k, v in pairs(teamsWithRatings) do
-				if v.rating <= threshold then
-					table.insert(topPercent,v)
+		if v.rating <= threshold then
+		  table.insert(topPercent,v)
         end
-		end
-		local combo =topPercent[math.random(1, #topPercent)]
-		print(combo)
-		CustomGameEventManager:Send_ServerToAllClients("ShuffledTeamResult", combo)
+	end
+
+    print(#topPercent)
+    -- DeepPrintTable(topPercent)
+
+	local combo = topPercent[math.random(1, #topPercent)]
+	print(combo)
+	CustomGameEventManager:Send_ServerToAllClients("ShuffledTeamResult", combo)
 end
+
+CreateEvenTeams()
