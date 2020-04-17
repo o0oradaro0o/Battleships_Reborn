@@ -25,7 +25,7 @@ require('statcollection/schema')
 local statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
 
 -- Where stuff is posted to
-local postLocation = 'https://api.getdotastats.com/'
+local postLocation = 'https://g9ai9j8ush.execute-api.us-east-1.amazonaws.com/alpha/test'
 
 -- The schema version we are currently using
 local schemaVersion = 5
@@ -532,7 +532,7 @@ end
 -- Sends the payload data for the given stage, and return the result
 -- Optional override_host can be added to reutilize this function for other sites
 function statCollection:sendStage(stageName, payload, callback, override_host)
-    local host = override_host or postLocation
+    local host = postLocation
      --print("host: " .. host)
     -- Create the request
     local req = CreateHTTPRequestScriptVM('POST', host .. stageName)
@@ -566,10 +566,6 @@ function statCollection:sendStage(stageName, payload, callback, override_host)
         -- Feed the result into our callback
         callback(err, obj)
     end)
-    if not override_host then
-        statCollection:sendStage(stageName, payload, callback, "https://g9ai9j8ush.execute-api.us-east-1.amazonaws.com/alpha/test")
-         --print("sendToBryce!!")
-    end
 end
 
 -- Checks the error and result objects and returns whether its invalid or not
