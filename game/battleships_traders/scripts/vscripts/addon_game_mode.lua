@@ -5809,7 +5809,6 @@ function become_boat(casterUnit, heroname)
 
             end
         end
-
     else
         if casterUnit:IsHero() or casterUnit:HasInventory() then
             for itemSlot = 0, 15, 1 do
@@ -5820,8 +5819,8 @@ function become_boat(casterUnit, heroname)
                 end
             end
         end
-
     end
+
     Timers:CreateTimer(
         1,
         function()
@@ -5835,27 +5834,6 @@ function become_boat(casterUnit, heroname)
             )
             ----print(storage:GetHeroName(plyID) .. math.floor(GameRules:GetGameTime()/60+0.5))
 
-            CustomGameEventManager:Send_ServerToAllClients("Boat_Spawned", data)
-        end
-    )
-    Timers:CreateTimer(
-        3,
-        function()
-            local data = {}
-            CustomGameEventManager:Send_ServerToAllClients("Boat_Spawned", data)
-        end
-    )
-    Timers:CreateTimer(
-        5,
-        function()
-            local data = {}
-            CustomGameEventManager:Send_ServerToAllClients("Boat_Spawned", data)
-        end
-    )
-    Timers:CreateTimer(
-        7,
-        function()
-            local data = {}
             CustomGameEventManager:Send_ServerToAllClients("Boat_Spawned", data)
         end
     )
@@ -7502,9 +7480,9 @@ function generateTestMMRData()
     data = {}
 
     table.insert(data, {playerSteamID = 1, mmr = 900,})
-    table.insert(data, {playerSteamID = 2, mmr = 1100,})
+    table.insert(data, {playerSteamID = 2, mmr = 1200,})
     table.insert(data, {playerSteamID = 3, mmr = 1000,})
-    table.insert(data, {playerSteamID = 4, mmr = 1400,})
+    table.insert(data, {playerSteamID = 4, mmr = 1550,})
     table.insert(data, {playerSteamID = 5, mmr = 976,})
     table.insert(data, {playerSteamID = 6, mmr = 865,})
     table.insert(data, {playerSteamID = 7, mmr = 1600,})
@@ -7532,20 +7510,40 @@ function CreateEvenTeams(eventSourceIndex)
     local ratings = {}
     local totalMMR = 0
     local playerMMRList = g_PlayerMMRList
+    playerMMRList = generateTestMMRData()
     local numPlayers = TableCount(playerMMRList)
 
     for _, playerData in pairs(playerMMRList) do totalMMR = totalMMR + playerData.mmr end
 
     local targetMMR = totalMMR / 2
-    for k, v in ipairs(combs(math.floor(numPlayers / 2 + 0.5), numPlayers)) do
+
+    local sampleTeams = combs(math.floor(numPlayers / 2 + 0.5), numPlayers)
+
+    -- Remove duplicate teams from combinations
+    local uniqueTeams = {}
+    local existingTeams = {}
+    for _,team in pairs(sampleTeams) do
+        local checksum = 0
+        for _,playerNumber in pairs(team) do
+            checksum = checksum + 2^playerNumber
+        end
+        if not existingTeams[checksum] then
+            existingTeams[checksum] = true
+            table.insert(uniqueTeams, team)
+        end
+    end
+
+    for k, v in ipairs(uniqueTeams) do
         local teamMMR = 0
         local teamSteamIds = {}
-        for _, i in pairs(v) do
+        for _, i in pairs(v) do            
             local playerData = playerMMRList[i]
             teamMMR = teamMMR + playerData.mmr
             table.insert(teamSteamIds, playerData.playerSteamID)
         end
+
         ratings[#ratings + 1] = math.abs(teamMMR - targetMMR)
+
         local TeamAndRating = {}
         TeamAndRating.team = teamSteamIds
         TeamAndRating.rating = math.abs(math.abs(teamMMR - targetMMR))
@@ -7559,8 +7557,6 @@ function CreateEvenTeams(eventSourceIndex)
         threshold = ratings[math.floor(#ratings / 10)]
     end
 
-    print(threshold)
-
 	local topPercent={}
     for k, v in pairs(teamsWithRatings) do
 		if v.rating <= threshold then
@@ -7568,12 +7564,7 @@ function CreateEvenTeams(eventSourceIndex)
         end
 	end
 
-    print(#topPercent)
-    -- DeepPrintTable(topPercent)
-
 	local combo = topPercent[math.random(1, #topPercent)]
-	print(combo)
+
 	CustomGameEventManager:Send_ServerToAllClients("ShuffledTeamResult", combo)
 end
-
-CreateEvenTeams()
