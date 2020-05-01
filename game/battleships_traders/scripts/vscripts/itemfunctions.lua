@@ -28,22 +28,39 @@ function fire_weapon(keys)
     return
   end
   if ability:GetSpecialValueFor("range") >1001 then
-    badGuys = FindUnitsInRadius( casterUnit:GetTeamNumber(), casterUnit:GetOrigin(), nil, ability:GetSpecialValueFor("range"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE, 0, false )
+    badGuys = FindUnitsInRadius(casterUnit:GetTeamNumber(), casterUnit:GetOrigin(), nil, ability:GetSpecialValueFor("range"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE, 0, false )
   end
-  if string.match(keys.EffectName, "gush") then
-  print("---fireing from tide---")
-  ability:GetSpecialValueFor("range")
-  DeepPrintTable(badGuys)
-  end
+  if casterUnit:GetTeam() == DOTA_TEAM_NEUTRALS then
+    -- For some reason, neutrals don't see anything as fog of war visible
+    badGuys = FindUnitsInRadius(
+      casterUnit:GetTeamNumber(),
+      casterUnit:GetOrigin(),
+      nil,
+      ability:GetSpecialValueFor("range"),
+      DOTA_UNIT_TARGET_TEAM_ENEMY,
+      DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+      DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE,
+      0,
+      false)
 
+    local canBeSeen = false
+
+    -- Check if any of the targets have vision of tide
+    for _,enemy in pairs(badGuys) do
+      enemyEnemies = FindUnitsInRadius(enemy:GetTeamNumber(), enemy:GetOrigin(), nil, ability:GetSpecialValueFor("range"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO+ DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE, 0, false )
+      for _,enemyEnemy in pairs(enemyEnemies) do
+        if enemyEnemy:GetEntityIndex() == casterUnit:GetEntityIndex() then
+          canBeSeen = true
+        end
+      end
+    end
+    
+    if not canBeSeen then return end
+  end
    if casterUnit:IsAlive() then
     for shot = 1,keys.NumShots do
       if #badGuys>0 then
       
-    if string.match(keys.EffectName, "gush") then
-
-      print(badGuys)
-    end
       Targetfucker=badGuys[RandomInt( 1, #badGuys )]
       local visionrad=0
       local vision = false;
@@ -72,8 +89,6 @@ function fire_weapon(keys)
     end
   end
 end
-
-
 
 function toggle_item(keys) -- keys is the information sent by the ability
   ----print( '[ItemFunctions] toggle_item  Called' )

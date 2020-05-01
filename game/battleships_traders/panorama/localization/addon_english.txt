@@ -3223,16 +3223,16 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"Trade_Desc"			"Adds a special class of ship with limited inventory slots can take on profitable trading contracts and buy powerful consumable items. These ships drop high bounties if hunted down!"
 		"discord"			"Click to join us on discord!"
 		"News_Title"		"News!"
-		"News_Content"		"I am continuing to make balance changes and improve abilities.
+		"News_Content"		"Please play this game more, it's pretty good
 
-Recent Balance Changes 5/15/2019
-   • Pontoon: Improved net ability
-   • House: Less max hp, smaller disco armor boost
-   • Viking: Pillage no longer lasts forever
-   • Whaling Dinghy: Harpoon now places you closer to it's target
-   • Speedboat: No longer gets stunned during swin break by damage less than 10
-   • Poison Weapon: DOT lasts longer with same DPS
-
+Recent Balance Changes 4/16/2020
+   • Airboat: Decreased Swamp Gas Cast Range and Damage
+   • Airboat: Increased Fan Blast Slow Duration and Damage
+   • Canoe: Increased War Drums Move Speed Duration
+   • Paddlewheel Diver: Decreased Dive Cooldown
+   • River Boat: Decreased max cherries 3 -> 2
+   • River Boat: Some other stuff is stronger
+   • Fixed Tide not using weapons
 "
 		
 		"port_cannons"                                               "Port Cannons"

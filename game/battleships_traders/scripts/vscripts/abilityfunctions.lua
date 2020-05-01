@@ -1273,8 +1273,8 @@ function airBlast(args) -- keys is the information sent by the ability
 		EffectName = "particles/basic_projectile/blast_effect.vpcf",
 		vSpawnOrigin = caster:GetAbsOrigin(),
 		fDistance = 1500,
-		fStartRadius = 325,
-		fEndRadius = 325,
+		fStartRadius = 200,
+		fEndRadius = 200,
 		Source = caster,
 		bHasFrontalCone = false,
 		bReplaceExisting = false,
@@ -2257,7 +2257,6 @@ function RealityRiftPosition( keys )
 		RealityRift(keys)
 		end
 	)
-
 end
 
 --[[Author: Pizzalol
@@ -2307,7 +2306,7 @@ function CherryLaunch(args)
 	
 	dummy = CreateUnitByName("dummy_vision10", targetPos, true, nil, nil, caster:GetTeam())
   
-   for i=1, RandomInt(1,3) do
+   for i=1, RandomInt(1,2) do
 		Timers:CreateTimer(.1*i,function()
 		
 		local info = {
@@ -2326,37 +2325,6 @@ function CherryLaunch(args)
 		projectile = ProjectileManager:CreateTrackingProjectile(info)
 		end)
 	end
-
-end
-
-
-function CherrySevenLaunch(args)
-	--print("IN CherryLaunch")
-	PrintTable(args)
-
-	for i=0,7 do
-		local caster = args.caster
-		local targetPos = caster:GetOrigin() + RandomVector(RandomFloat(0, 1000))
-		
-		
-		dummy = CreateUnitByName("dummy_vision10", targetPos, true, nil, nil, caster:GetTeam())
-	
-		local info = {
-			Ability = args.ability,
-			Source = caster,
-			Target = dummy,
-			vSourceLoc = caster:GetAbsOrigin(),
-			EffectName = "particles/basic_projectile/cherry_proj.vpcf",
-			bProvidesVision = false,
-			iVisionRadius = 1000,
-			iVisionTeamNumber = caster:GetTeamNumber(),
-			bDeleteOnHit = false,
-			iMoveSpeed = 900,
-			vVelocity = 700
-		}
-		projectile = ProjectileManager:CreateTrackingProjectile(info)
-	end
-
 end
 
 function CherryExplode(args)
@@ -2399,9 +2367,7 @@ function CherryExplode(args)
 				targetUnit:RemoveSelf()
 			end
 		)
-	
 end
-
 
 function aoeTowerHit(keys)
 	local enemies
@@ -2441,8 +2407,6 @@ function aoeTowerHit(keys)
 		end
 		return
 	end
-	
-	
 
 	if caster:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 		enemies =
@@ -2849,5 +2813,21 @@ function levelCannons(args)
 	
 	if abil3:GetLevel()~=level then
 		abil3:SetLevel(level)
+	end
+end
+
+function sevenCheck(args)
+	local ability = args.ability
+	local caster = args.caster
+	local target = args.target
+
+	local breakDistance = 1500
+
+	if target and target:IsAlive() then
+		local distance = (caster:GetAbsOrigin() - target:GetAbsOrigin()):Length2D()
+
+		if distance > breakDistance then
+			caster:InterruptChannel()
+		end
 	end
 end

@@ -170,6 +170,7 @@ function statCollection:hookFunctions()
         if self.ANCIENT_EXPLOSION then
             if state >= DOTA_GAMERULES_STATE_POST_GAME then
                 -- Send postgame stats
+                
                 self:findWinnerUsingForts()
                 this:sendStage3(this:calcWinnersByTeam(), true)
             end
@@ -369,28 +370,28 @@ end
 -- Sends stage3
 function statCollection:sendStage3(winners, lastRound)
     -- If we are missing required parameters, then don't send
-    if not self.doneInit then
-        statCollection:printError("sendStage3", errorRunInit)
-        return
-    end
+    -- if not self.doneInit then
+    --     statCollection:printError("sendStage3", errorRunInit)
+    --     return
+    -- end
 
-    -- If we are missing stage1 stuff, don't continue
-    if not self.authKey or not self.matchID then
-        statCollection:printError("sendStage3", errorMissedStage1)
-        return
-    end
+    -- -- If we are missing stage1 stuff, don't continue
+    -- if not self.authKey or not self.matchID then
+    --     statCollection:printError("sendStage3", errorMissedStage1)
+    --     return
+    -- end
 
-    -- If we are missing stage2 stuff, don't continue
-    if not self.sentStage2 then
-        statCollection:printError("sendStage3", errorMissedStage2)
-        return
-    end
+    -- -- If we are missing stage2 stuff, don't continue
+    -- if not self.sentStage2 then
+    --     statCollection:printError("sendStage3", errorMissedStage2)
+    --     return
+    -- end
 
-    -- Ensure we can only send it once, and everything is good to go
-    if not self.HAS_ROUNDS then
-        if self.sentStage3 then return end
-        self.sentStage3 = true
-    end
+    -- -- Ensure we can only send it once, and everything is good to go
+    -- if not self.HAS_ROUNDS then
+    --     if self.sentStage3 then return end
+    --     self.sentStage3 = true
+    -- end
 
     self.roundID = self.roundID + 1
 
@@ -451,23 +452,16 @@ end
 
 -- Sends custom
 function statCollection:sendCustom(args)
+    print("----------------------------------------------------LORNE YOU ARE sending custom!!----------------")
     if not self.HAS_SCHEMA then
         statCollection: print("sendCustom", errorDefaultSchemaIdentifier)
         return
     end
-
+    print("----------------------------------------------------LORNE YOU ARE sending custom!! 1----------------")
     local game = args.game or {} --Some custom gamemodes might not want this (ie, use player info only)
     local players = args.players or {} --Some custom gamemodes might not want this (ie, use game info only)
     if game == {} and players == {} then
         return --We have no info to actually send, truck it!
-    end
-    -- If we are missing required parameters, then don't send
-    if not self.doneInit or not self.authKey or not self.matchID or not self.SCHEMA_KEY then
-        statCollection: print(errorRunInit)
-        if not self.SCHEMA_KEY then
-            statCollection: print(errorRunInit)
-        end
-        return
     end
 
     -- Ensure we can only send it once, and everything is good to go
@@ -494,7 +488,7 @@ function statCollection:sendCustom(args)
         schemaVersion = schemaVersion,
         rounds = rounds
     }
-
+    print("----------------------------------------------------LORNE YOU ARE sending custom!! 3----------------")
     -- Send custom
     self:sendStage('s2_custom.php', payload, function(err, res)
         -- Check if we got an error
@@ -503,11 +497,9 @@ function statCollection:sendCustom(args)
         end
 
         -- Tell the user
-        statCollection: print(messageCustomComplete)
+     print(messageCustomComplete)
     end)
 
-    -- Custom staging
-    self:StageCustom(payload)
 end
 
 function statCollection:sendHostCheckIn()
@@ -532,19 +524,21 @@ end
 -- Sends the payload data for the given stage, and return the result
 -- Optional override_host can be added to reutilize this function for other sites
 function statCollection:sendStage(stageName, payload, callback, override_host)
-    local host = postLocation
+    local host = override_host or postLocation
+    -- VicFrank Adding this here to try and avoid sending to getdotastats (server is dead)
+    host = "https://g9ai9j8ush.execute-api.us-east-1.amazonaws.com/alpha/test"
      --print("host: " .. host)
     -- Create the request
     local req = CreateHTTPRequestScriptVM('POST', host .. stageName)
     local encoded = json.encode(payload)
-    if self.TESTING then
-        statCollection: print(encoded)
-    end
+
+    print(encoded)
+    
 
     -- Add the data
     req:SetHTTPRequestHeaderValue("x-api-key", GetDedicatedServerKeyV2(SERVER_KEY))
     req:SetHTTPRequestGetOrPostParameter('payload', encoded)
-
+    print("----------------------------------------------------LORNE YOU ARE SENDING!!!----------------")
     -- Send the request
     req:Send(function(res)
         if res.StatusCode ~= 200 then

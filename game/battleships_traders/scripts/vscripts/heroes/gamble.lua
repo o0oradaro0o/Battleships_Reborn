@@ -254,9 +254,6 @@ Timers:CreateTimer(.9, function()
 
 end)
 
-
-
-
   Timers:CreateTimer( 1, function()
 
         -- Give a reward based on the number of matching abilities
