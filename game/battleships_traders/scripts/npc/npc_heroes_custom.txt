@@ -832,7 +832,7 @@
 		"MovementSpeed"				"290"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 		
-		"StatusHealth"				"3000"		// Base health.
+		"StatusHealth"				"2600"		// Base health.
 		"StatusHealthRegen"			"13.0"		// Health regeneration rate.
 		
 		"ArmorPhysical"				"0"
@@ -1211,10 +1211,10 @@
         "StatusManaRegen"           "0.0"
 
 
-		"MovementSpeed"				"350"									// Speed.
+		"MovementSpeed"				"380"									// Speed.
 		"MovementTurnRate"			"0.7"									// Turning rate.
 		
-		"StatusHealth"				"6000"		// Base health.
+		"StatusHealth"				"9000"		// Base health.
 		"StatusHealthRegen"			"20.0"		// Health regeneration rate.
 		
 		"ArmorPhysical"				"0"
@@ -1236,7 +1236,7 @@
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
 
-        "ModelScale"        ".8"
+        "ModelScale"        "1.1"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
@@ -1825,17 +1825,17 @@
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		
-		"MovementSpeed"				"380"									// Speed.
+		"MovementSpeed"				"350"									// Speed.
 		"MovementTurnRate"			"0.6"									// Turning rate.
 		
-		"StatusHealth"				"9000"		// Base health.
+		"StatusHealth"				"6000"		// Base health.
 		"StatusHealthRegen"			"20.0"		// Health regeneration rate.
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		
 		"AbilityLayout"				"3"
-		"Ability1"					"into_the_hold"
-		"Ability2"					"abaddon_aphotic_shield_battleship"
+		"Ability1"					"pistols_battleship"
+		"Ability2"					"into_the_hold"
 		"Ability3"					"salvage_battleship"
 		"Ability4"					"shadow_shaman_shackles_battleship"
 
@@ -1848,7 +1848,7 @@
 		"Ability16"					"bships_empty"
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
-        "ModelScale"        "1.2"
+        "ModelScale"        ".9"
 		"RingRadius"				"100"
 		"ItemSlots"  {}
 		"BountyGoldMin"				"799"		// Gold earned min.
@@ -1890,13 +1890,13 @@
 		"StatusHealthRegen"			"20.0"		// Health regeneration rate.
 		"ArmorPhysical"				"2"
 		"MagicalResistance"				"0"
-		
-		"AbilityLayout"				"3"
 		"Ability1"					"jakiro_ice_path_battleship"
 		"Ability2"					"iceberg_battleship"
 		"Ability3"					"icy_waters_battleship"
-		"Ability4"					"crystal_maiden_freezing_field_battleship"
-
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"ice_blast_datadriven"
+		"Ability7"		"ice_blast_release_datadriven"
 				"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"

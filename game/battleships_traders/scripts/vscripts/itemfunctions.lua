@@ -943,6 +943,7 @@ function fireChaosWeapon(args)
             bProvidesVision = false,
             iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
           }
+          print("weak")
           table.insert(chaosDmgHolder[args.ability],433*(args.ability.counter+1)/5)
           ProjectileManager:CreateTrackingProjectile(tracking_projectile)
         else
@@ -959,12 +960,14 @@ function fireChaosWeapon(args)
             bProvidesVision = false,
             iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
           }
+          print("strong")
           if RandomInt(1,2)==2 then
             table.insert(chaosDmgHolder[args.ability],551)
           else
             table.insert(chaosDmgHolder[args.ability],660)
           end
           ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+          Targetfucker:MoveToPositionAggressive(casterUnit:GetOrigin())
         end
 
       elseif string.match(itemName, "two") then
@@ -1033,6 +1036,7 @@ function fireChaosWeapon(args)
             }
             table.insert(chaosDmgHolder[args.ability],87)
             ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+            Targetfucker:MoveToPositionAggressive(casterUnit:GetOrigin())
           end
         end
 
@@ -1102,6 +1106,7 @@ function fireChaosWeapon(args)
             }
             table.insert(chaosDmgHolder[args.ability],174)
             ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+            Targetfucker:MoveToPositionAggressive(casterUnit:GetOrigin())
           end
         end
 
@@ -1172,6 +1177,7 @@ function fireChaosWeapon(args)
             }
             table.insert(chaosDmgHolder[args.ability],39)
             ProjectileManager:CreateTrackingProjectile(tracking_projectile)
+            Targetfucker:MoveToPositionAggressive(casterUnit:GetOrigin())
           end
         end
       end

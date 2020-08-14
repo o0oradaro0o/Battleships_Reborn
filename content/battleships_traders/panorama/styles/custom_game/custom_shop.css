@@ -1110,7 +1110,7 @@ border-radius: 10.0px;
 {
 	horizontal-align: center;
 	width: 400.0px;
-	height: 40.0px;
+	height: 40.0px !important; 
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #5Aa15E ), to( #87d69533 ) );
 	background-image: url("s2r://panorama/images/hud/reborn/bg_tooltip_psd.vtex");
 	border-radius: 10.0px;

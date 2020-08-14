@@ -20,14 +20,14 @@ var shipShopShow = false;
 function hideTrade() {
 
 	$("#missionButton").style.visibility = "collapse";
-	$("#traders_tab").style.height = "40px";
+	$("#traders_tab").style.height = "0px";
 	tradeHidden = true;
 }
 
 function showTrade() {
 	tradeHidden = false;
 	$("#missionButton").style.visibility = "visible";
-	$("#traders_tab").style.height = "40px";
+	$("#traders_tab").style.height = "40px !important";
 	var newBotRightUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("lower_hud").FindChildTraverse("shop_launcher_block");
 
 	newBotRightUI.FindChildTraverse("shop_launcher_bg").style.width = "440px";

@@ -17,32 +17,35 @@ g_GotPoints = {}
 -- tracksif a hero needs a shop to auto open or close
 g_WasNearShop = {}
 g_XpToLevel = {
-    200,
-    300,
-    400,
-    400,
-    500,
+    230,
+    370,
+    480,
+    580,
     600,
-    600,
-    600,
-    1200,
-    600,
-    1000,
-    2200,
-    800,
-    1400,
+    720,
+    750,
+    890,
+    930,
+    970,
+    1010,
+    1050,
+    1225,
+    1250,
+    1275,
+    1300,
+    1325,
     1500,
+    1590,
     1600,
-    1700,
-    1800,
-    1900,
-    2000,
+    1850,
     2100,
-    2200,
-    2300,
-    2400,
-    2500,
-    100000
+    2350,
+    2600,
+    3500,
+    4500,
+    5500,
+    6500,
+    7500,
 }
 
 -- people's steam ids
@@ -1835,6 +1838,10 @@ function CBattleship8D:OnThink()
                     hero:SetGold(0, false)
                     become_boat(hero, "npc_dota_hero_ember_spirit")
                 end
+                if g_TradeMode == 1 then
+                    local empty = {}
+                    CustomGameEventManager:Send_ServerToAllClients("Trade_Mode_Enabled", empty)
+                end
             end
         end
     end
@@ -3252,7 +3259,7 @@ function GetBoatValue(hero)
     elseif string.match(hero:GetName(), "brewmaster") then
         return 3000
     elseif string.match(hero:GetName(), "ember_spirit") then
-        return 6000
+        return 12000
     elseif string.match(hero:GetName(), "slark") then
         return 6000
     elseif string.match(hero:GetName(), "shredder") then
@@ -3270,7 +3277,7 @@ function GetBoatValue(hero)
     elseif string.match(hero:GetName(), "sniper") then
         return 6000
     elseif string.match(hero:GetName(), "wind") then
-        return 12000
+        return 6000
     elseif string.match(hero:GetName(), "crystal") then
         return 1000
     elseif string.match(hero:GetName(), "phantom") then
@@ -3473,7 +3480,7 @@ function UpdateCoOpTables()
         g_CoOpUnitPool = {}
         table.insert(g_CoOpUnitPool, "npc_dota_hero_meepo")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_jakiro")
-        table.insert(g_CoOpUnitPool, "npc_dota_hero_ember_spirit")
+        table.insert(g_CoOpUnitPool, "npc_dota_hero_windrunner")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_slark")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_sniper")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_shredder")
@@ -3501,7 +3508,7 @@ function UpdateCoOpTables()
         table.insert(g_CoOpUnitPool, "npc_dota_hero_visage")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_ursa")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_tusk")
-        table.insert(g_CoOpUnitPool, "npc_dota_hero_windrunner")
+        table.insert(g_CoOpUnitPool, "npc_dota_hero_ember_spirit")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_pugna")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_razor")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_spirit_breaker")
@@ -5841,7 +5848,7 @@ end
 
 function fixAbilities(hero)
 
-    if not string.match(hero:GetName(), "shredder") then
+    if not string.match(hero:GetName(), "shredder") and not string.match(hero:GetName(), "pugna") then
         local ultimate = ""
         local ultslot = 3
         for abilitySlot = 3, 11, 1 do
@@ -7363,20 +7370,6 @@ function setupWin(winner)
         GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
 
         GameRules:SetSafeToLeave(true)
-    end
-    local game = BuildGameArray()
-
-    -- Build players array
-    local players = BuildPlayersArray()
-
-    -- Print the schema data to the console
-    if statCollection.TESTING then
-        PrintSchema(game,players)
-    end
-
-    -- Send custom stats
-    if statCollection.HAS_SCHEMA then
-        statCollection:sendCustom({game=game, players=players})
     end
     local winnerData = {team_number = winner}
     CustomGameEventManager:Send_ServerToAllClients("team_win", winnerData)

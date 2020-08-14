@@ -198,7 +198,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="25" />
+							<Label hittest="false" class="boat_stat_label_val" text="825" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
@@ -266,7 +266,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="00" />
+							<Label hittest="false" class="boat_stat_label_val" text="800" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
@@ -1171,11 +1171,11 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="6000" />
+							<Label hittest="false" class="boat_stat_label_val" text="9000" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
-							<Label hittest="false" class="boat_stat_label_val" text="350" />
+							<Label hittest="false" class="boat_stat_label_val" text="380" />
 					</Panel>
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#regen" />
@@ -1209,9 +1209,9 @@
 					</Panel>
 			</Panel>
 					<Panel hittest="false" class="buy_box" >
-						<Button class="buy_ship_button" onactivate="buyBoat('ember_spirit', 6000)" oncontextmenu="buyBoat('ember_spirit', 6000)">
+						<Button class="buy_ship_button" onactivate="buyBoat('ember_spirit', 12000)" oncontextmenu="buyBoat('ember_spirit', 12000)">
 							<Label hittest="false" class="buy_text" text="#buy" />
-							<Label hittest="false" class="buy_text_g" text="6000" />
+							<Label hittest="false" class="buy_text_g" text="12000" />
 							<Image id="GoldImage" src="s2r://panorama/images/hud/reborn/gold_small_psd.vtex" />
 						</Button>
 					</Panel>
@@ -1664,11 +1664,11 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="9000" />
+							<Label hittest="false" class="boat_stat_label_val" text="6000" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
-							<Label hittest="false" class="boat_stat_label_val" text="30" />
+							<Label hittest="false" class="boat_stat_label_val" text="350" />
 					</Panel>
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#regen" />
@@ -1702,9 +1702,9 @@
 					</Panel>
 			</Panel>
 					<Panel hittest="false" class="buy_box" >
-						<Button class="buy_ship_button" onactivate="buyBoat('windrunner', 12000)" oncontextmenu="buyBoat('windrunner', 12000)">
+						<Button class="buy_ship_button" onactivate="buyBoat('windrunner', 6000)" oncontextmenu="buyBoat('windrunner', 12000)">
 							<Label hittest="false" class="buy_text" text="#buy" />
-							<Label hittest="false" class="buy_text_g" text="12000" />
+							<Label hittest="false" class="buy_text_g" text="6000" />
 							<Image id="GoldImage" src="s2r://panorama/images/hud/reborn/gold_small_psd.vtex" />
 						</Button>
 					</Panel>
@@ -2055,7 +2055,7 @@
 		</Panel>	
 	</Panel>
 
-
+	
 		/* ship shop */
 		<Panel hittest="false" id="ship_shop" class="ship_shop_guts">
 			  <Image class="ship_bkg_image" src="file://{images}/custom_game/Kunkka.png" />
@@ -2082,7 +2082,6 @@
 									 <Label hittest="false" class="boat_name_text" text="#phantom_lancer" />
 								</Button>
 							</Panel>
-							
 							<Panel hittest="false" class="supply_row">
 								<Button class="boat_btn_item"  onactivate="showDetails('crystal_maiden')" oncontextmenu="buyBoat('crystal_maiden', 1000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/crystal_maiden.png" />
@@ -2151,11 +2150,10 @@
 									<Image class="boat_image" src="file://{images}/custom_game/boats/jakiro.png" />
 									 <Label hittest="false" class="boat_name_text" text="#jakiro" />
 								</Button>
-								<Button class="boat_btn_item"  onactivate="showDetails('ember_spirit')" oncontextmenu="buyBoat('ember_spirit', 6000)">
-									<Image class="boat_image" src="file://{images}/custom_game/boats/ember_spirit.png" />
-									 <Label hittest="false" class="boat_name_text" text="#ember_spirit" />
+								<Button class="boat_btn_item"  onactivate="showDetails('windrunner')" oncontextmenu="buyBoat('windrunner', 6000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/windrunner.png" />
+									 <Label hittest="false" class="boat_name_text" text="#windrunner" />
 								</Button>
-
 							</Panel>
 							<Panel hittest="false" class="supply_row">
 								<Button class="boat_btn_item"  onactivate="showDetails('meepo')" oncontextmenu="buyBoat('meepo', 6000)">
@@ -2177,8 +2175,6 @@
 									<Image class="boat_image" src="file://{images}/custom_game/boats/sniper.png" />
 									 <Label hittest="false" class="boat_name_text" text="#sniper" />
 								</Button>
-		
-
 							</Panel>
 						</Panel> 
 						<Panel id="ten_ks_tab" class="ship_shop_tier_tab" onactivate="show10ks()">
@@ -2197,10 +2193,9 @@
 								</Button>
 							</Panel>
 							<Panel hittest="false" class="supply_row">
-								
-								<Button class="boat_btn_item"  onactivate="showDetails('windrunner')" oncontextmenu="buyBoat('windrunner', 12000)">
-									<Image class="boat_image" src="file://{images}/custom_game/boats/windrunner.png" />
-									 <Label hittest="false" class="boat_name_text" text="#windrunner" />
+								<Button class="boat_btn_item"  onactivate="showDetails('ember_spirit')" oncontextmenu="buyBoat('ember_spirit', 12000)">
+									<Image class="boat_image" src="file://{images}/custom_game/boats/ember_spirit.png" />
+									 <Label hittest="false" class="boat_name_text" text="#ember_spirit" />
 								</Button>
 								<Button class="boat_btn_item"  onactivate="showDetails('razor')" oncontextmenu="buyBoat('razor', 12000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/razor.png" />

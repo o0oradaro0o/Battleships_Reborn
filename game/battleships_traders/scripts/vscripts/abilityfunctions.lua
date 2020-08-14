@@ -1447,9 +1447,9 @@ function RemoveSelf(args)
 end
 
 function PingDest(args)
-	 ----print("[ItemFunctions] PingDest ")
+	 print("[ItemFunctions] PingDest ")
 	local itemName = args.ability:GetName()
-	 ----print(itemName)
+	 print(itemName)
 	local itemStrippedEasy = string.gsub(itemName, "item_contract_easy", "")
 	local itemStrippedMedium = string.gsub(itemName, "item_contract_medium", "")
 	local itemStrippedHard = string.gsub(itemName, "item_contract_hard", "")
@@ -1463,7 +1463,7 @@ function PingDest(args)
 		end
 	end
 
-	 ----print(chosenMission:GetUnitName())
+	 print(chosenMission:GetUnitName())
 	if chosenMission ~= nil then
 		local data = {
 			Player_ID = args.caster:GetOwner():GetPlayerID(),
@@ -2438,7 +2438,8 @@ function aoeTowerHit(keys)
 	for _, fucker in pairs(enemies) do
 		--print((caster:GetOrigin()-fucker:GetOrigin()):Length())
 		if (caster:GetOrigin()-fucker:GetOrigin()):Length()<1180 then
-			local dmg = fucker:GetMaxHealth() * 0.10
+			local dmg = fucker:GetMaxHealth() * 0.08
+			
 			local damageTable = {
 				victim = fucker,
 				attacker = caster,

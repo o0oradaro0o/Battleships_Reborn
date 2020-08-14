@@ -98,6 +98,7 @@ function statCollection:init()
     self.ANCIENT_EXPLOSION = tobool(statInfo.ANCIENT_EXPLOSION)
     self.OVERRIDE_AUTOMATIC_SEND_STAGE_2 = tobool(statInfo.OVERRIDE_AUTOMATIC_SEND_STAGE_2)
     self.TESTING = tobool(statInfo.TESTING)
+    self.matchID=""
 
     -- Store the modIdentifier
     self.modIdentifier = modIdentifier
@@ -107,6 +108,7 @@ function statCollection:init()
 
     -- Set the default winner to -1 (no winner)
     self.winner = -1
+
 
     -- Set round to -1 (not finished)
     self.roundID = -1
@@ -161,11 +163,9 @@ function statCollection:hookFunctions()
             -- Load time flag
             statCollection:setFlags({ loadTime = math.floor(GameRules:GetGameTime()+0.5) })
 
-        elseif state == DOTA_GAMERULES_STATE_PRE_GAME then
-            if not self.OVERRIDE_AUTOMATIC_SEND_STAGE_2 then
-                -- Send pregame stats
+        elseif state == DOTA_GAMERULES_STATE_PRE_GAME then             -- Send pregame stats
                 this:sendStage2()
-            end
+
         end
         if self.ANCIENT_EXPLOSION then
             if state >= DOTA_GAMERULES_STATE_POST_GAME then
@@ -236,7 +236,7 @@ function statCollection:sendStage1()
     end
 
     -- Ensure we can only send it once, and everything is good to go
-    if self.sentStage1 then return end
+    if self.sentStage1 and self.matchID~="" then return end
 
     -- Print the intro message
     statCollection: print(messagePhase1Starting)
@@ -276,15 +276,15 @@ function statCollection:sendStage1()
     self:sendStage('s2_phase_1.php', payload, function(err, res)
         -- Check if we got an error
         if self:ReturnedErrors(err, res) then
+        print("-------------------------------------------LORNE IT ALL WENT TO HELL")
             return
         end
 
         -- Woot, store our vars
-        this.authKey = res.authKey
-        this.matchID = res.matchID
-
+        this.matchID = res
+        self.matchID = res
         self.sentStage1 = true
-
+        print("-------------------------------------------LORNE YOU GOT A MATCH ID FROM YOUR FIREND BRYCE: " .. this.matchID .. "and this.matchid: " .. self.matchID)
         -- Tell the user
         statCollection: print(messagePhase1Complete)
         statCollection: print("Auth Key: ", self.authKey)
@@ -297,17 +297,14 @@ end
 
 -- Sends stage2
 function statCollection:sendStage2()
+    if self.matchID == "" then
+        self:sendStage1()
+        -- third time is the charm
+        if self.matchID == "" then
+            self:sendStage1()
+        end
+    end
     -- If we are missing required parameters, then don't send
-    if not self.doneInit then
-        statCollection:printError("sendStage2", errorRunInit)
-        return
-    end
-
-    -- If we are missing stage1 stuff, don't continue
-    if not self.authKey or not self.matchID then
-        statCollection:printError("sendStage2", errorMissedStage1)
-        return
-    end
 
     -- Ensure we can only send it once, and everything is good to go
     if self.sentStage2 then return end
@@ -469,7 +466,6 @@ function statCollection:sendCustom(args)
         if self.sentCustom then return end
         self.sentCustom = true
     end
-
     -- Print the intro message
     statCollection: print(messageCustomStarting)
 
@@ -479,7 +475,7 @@ function statCollection:sendCustom(args)
         game = game,
         players = players
     }
-
+    print("----------------------------------------------------LORNE YOU ARE sending custom!! with a match id of----------------" .. self.matchID)
     local payload = {
         authKey = self.authKey,
         matchID = self.matchID,
@@ -542,37 +538,32 @@ function statCollection:sendStage(stageName, payload, callback, override_host)
     -- Send the request
     req:Send(function(res)
         if res.StatusCode ~= 200 then
-            statCollection: print(errorFailedToContactServer)
-            statCollection: print("Status Code", res.StatusCode or "nil")
-            statCollection: print("Body", res.Body or "nil")
+            print(errorFailedToContactServer)
+            print("Status Code", res.StatusCode or "nil")
+            print("Body", res.Body or "nil")
             return
         end
          
         if not res.Body then
-            statCollection: print(errorEmptyServerResponse)
-            statCollection: print("Status Code", res.StatusCode or "nil")
+             print(errorEmptyServerResponse)
+             print("Status Code", res.StatusCode or "nil")
             return
         end
-
+        
+        DeepPrintTable(res)
         -- Try to decode the result
         local obj, pos, err = json.decode(res.Body, 1, nil)
 
         -- Feed the result into our callback
-        callback(err, obj)
+        callback(err, res.Body)
     end)
 end
 
 -- Checks the error and result objects and returns whether its invalid or not
 function statCollection:ReturnedErrors(err, res)
     if err then
-        statCollection: print(errorJsonDecode)
-        statCollection: print(err)
-        return true
-    end
-
-    if res.error then
-        statCollection: print(errorSomethingWentWrong)
-        statCollection: print(res.error)
+        print(errorJsonDecode)
+        print(err)
         return true
     end
 
