@@ -25,7 +25,7 @@ require('statcollection/schema')
 local statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
 
 -- Where stuff is posted to
-local postLocation = 'https://api.getdotastats.com/'
+local postLocation = 'https://g9ai9j8ush.execute-api.us-east-1.amazonaws.com/alpha/test'
 
 -- The schema version we are currently using
 local schemaVersion = 5
@@ -98,6 +98,7 @@ function statCollection:init()
     self.ANCIENT_EXPLOSION = tobool(statInfo.ANCIENT_EXPLOSION)
     self.OVERRIDE_AUTOMATIC_SEND_STAGE_2 = tobool(statInfo.OVERRIDE_AUTOMATIC_SEND_STAGE_2)
     self.TESTING = tobool(statInfo.TESTING)
+    self.matchID=""
 
     -- Store the modIdentifier
     self.modIdentifier = modIdentifier
@@ -107,6 +108,7 @@ function statCollection:init()
 
     -- Set the default winner to -1 (no winner)
     self.winner = -1
+
 
     -- Set round to -1 (not finished)
     self.roundID = -1
@@ -161,15 +163,14 @@ function statCollection:hookFunctions()
             -- Load time flag
             statCollection:setFlags({ loadTime = math.floor(GameRules:GetGameTime()+0.5) })
 
-        elseif state == DOTA_GAMERULES_STATE_PRE_GAME then
-            if not self.OVERRIDE_AUTOMATIC_SEND_STAGE_2 then
-                -- Send pregame stats
+        elseif state == DOTA_GAMERULES_STATE_PRE_GAME then             -- Send pregame stats
                 this:sendStage2()
-            end
+
         end
         if self.ANCIENT_EXPLOSION then
             if state >= DOTA_GAMERULES_STATE_POST_GAME then
                 -- Send postgame stats
+                
                 self:findWinnerUsingForts()
                 this:sendStage3(this:calcWinnersByTeam(), true)
             end
@@ -235,7 +236,7 @@ function statCollection:sendStage1()
     end
 
     -- Ensure we can only send it once, and everything is good to go
-    if self.sentStage1 then return end
+    if self.sentStage1 and self.matchID~="" then return end
 
     -- Print the intro message
     statCollection: print(messagePhase1Starting)
@@ -275,15 +276,15 @@ function statCollection:sendStage1()
     self:sendStage('s2_phase_1.php', payload, function(err, res)
         -- Check if we got an error
         if self:ReturnedErrors(err, res) then
+        print("-------------------------------------------LORNE IT ALL WENT TO HELL")
             return
         end
 
         -- Woot, store our vars
-        this.authKey = res.authKey
-        this.matchID = res.matchID
-
+        this.matchID = res
+        self.matchID = res
         self.sentStage1 = true
-
+        print("-------------------------------------------LORNE YOU GOT A MATCH ID FROM YOUR FIREND BRYCE: " .. this.matchID .. "and this.matchid: " .. self.matchID)
         -- Tell the user
         statCollection: print(messagePhase1Complete)
         statCollection: print("Auth Key: ", self.authKey)
@@ -296,17 +297,14 @@ end
 
 -- Sends stage2
 function statCollection:sendStage2()
+    if self.matchID == "" then
+        self:sendStage1()
+        -- third time is the charm
+        if self.matchID == "" then
+            self:sendStage1()
+        end
+    end
     -- If we are missing required parameters, then don't send
-    if not self.doneInit then
-        statCollection:printError("sendStage2", errorRunInit)
-        return
-    end
-
-    -- If we are missing stage1 stuff, don't continue
-    if not self.authKey or not self.matchID then
-        statCollection:printError("sendStage2", errorMissedStage1)
-        return
-    end
 
     -- Ensure we can only send it once, and everything is good to go
     if self.sentStage2 then return end
@@ -369,28 +367,28 @@ end
 -- Sends stage3
 function statCollection:sendStage3(winners, lastRound)
     -- If we are missing required parameters, then don't send
-    if not self.doneInit then
-        statCollection:printError("sendStage3", errorRunInit)
-        return
-    end
+    -- if not self.doneInit then
+    --     statCollection:printError("sendStage3", errorRunInit)
+    --     return
+    -- end
 
-    -- If we are missing stage1 stuff, don't continue
-    if not self.authKey or not self.matchID then
-        statCollection:printError("sendStage3", errorMissedStage1)
-        return
-    end
+    -- -- If we are missing stage1 stuff, don't continue
+    -- if not self.authKey or not self.matchID then
+    --     statCollection:printError("sendStage3", errorMissedStage1)
+    --     return
+    -- end
 
-    -- If we are missing stage2 stuff, don't continue
-    if not self.sentStage2 then
-        statCollection:printError("sendStage3", errorMissedStage2)
-        return
-    end
+    -- -- If we are missing stage2 stuff, don't continue
+    -- if not self.sentStage2 then
+    --     statCollection:printError("sendStage3", errorMissedStage2)
+    --     return
+    -- end
 
-    -- Ensure we can only send it once, and everything is good to go
-    if not self.HAS_ROUNDS then
-        if self.sentStage3 then return end
-        self.sentStage3 = true
-    end
+    -- -- Ensure we can only send it once, and everything is good to go
+    -- if not self.HAS_ROUNDS then
+    --     if self.sentStage3 then return end
+    --     self.sentStage3 = true
+    -- end
 
     self.roundID = self.roundID + 1
 
@@ -451,23 +449,16 @@ end
 
 -- Sends custom
 function statCollection:sendCustom(args)
+    print("----------------------------------------------------LORNE YOU ARE sending custom!!----------------")
     if not self.HAS_SCHEMA then
         statCollection: print("sendCustom", errorDefaultSchemaIdentifier)
         return
     end
-
+    print("----------------------------------------------------LORNE YOU ARE sending custom!! 1----------------")
     local game = args.game or {} --Some custom gamemodes might not want this (ie, use player info only)
     local players = args.players or {} --Some custom gamemodes might not want this (ie, use game info only)
     if game == {} and players == {} then
         return --We have no info to actually send, truck it!
-    end
-    -- If we are missing required parameters, then don't send
-    if not self.doneInit or not self.authKey or not self.matchID or not self.SCHEMA_KEY then
-        statCollection: print(errorRunInit)
-        if not self.SCHEMA_KEY then
-            statCollection: print(errorRunInit)
-        end
-        return
     end
 
     -- Ensure we can only send it once, and everything is good to go
@@ -475,7 +466,6 @@ function statCollection:sendCustom(args)
         if self.sentCustom then return end
         self.sentCustom = true
     end
-
     -- Print the intro message
     statCollection: print(messageCustomStarting)
 
@@ -485,7 +475,7 @@ function statCollection:sendCustom(args)
         game = game,
         players = players
     }
-
+    print("----------------------------------------------------LORNE YOU ARE sending custom!! with a match id of----------------" .. self.matchID)
     local payload = {
         authKey = self.authKey,
         matchID = self.matchID,
@@ -494,7 +484,7 @@ function statCollection:sendCustom(args)
         schemaVersion = schemaVersion,
         rounds = rounds
     }
-
+    print("----------------------------------------------------LORNE YOU ARE sending custom!! 3----------------")
     -- Send custom
     self:sendStage('s2_custom.php', payload, function(err, res)
         -- Check if we got an error
@@ -503,11 +493,9 @@ function statCollection:sendCustom(args)
         end
 
         -- Tell the user
-        statCollection: print(messageCustomComplete)
+     print(messageCustomComplete)
     end)
 
-    -- Custom staging
-    self:StageCustom(payload)
 end
 
 function statCollection:sendHostCheckIn()
@@ -539,52 +527,43 @@ function statCollection:sendStage(stageName, payload, callback, override_host)
     -- Create the request
     local req = CreateHTTPRequestScriptVM('POST', host .. stageName)
     local encoded = json.encode(payload)
-    if self.TESTING then
-        statCollection: print(encoded)
-    end
+
+    print(encoded)
+    
 
     -- Add the data
     req:SetHTTPRequestHeaderValue("x-api-key", GetDedicatedServerKeyV2(SERVER_KEY))
     req:SetHTTPRequestGetOrPostParameter('payload', encoded)
-
+    print("----------------------------------------------------LORNE YOU ARE SENDING!!!----------------")
     -- Send the request
     req:Send(function(res)
         if res.StatusCode ~= 200 then
-            statCollection: print(errorFailedToContactServer)
-            statCollection: print("Status Code", res.StatusCode or "nil")
-            statCollection: print("Body", res.Body or "nil")
+            print(errorFailedToContactServer)
+            print("Status Code", res.StatusCode or "nil")
+            print("Body", res.Body or "nil")
             return
         end
          
         if not res.Body then
-            statCollection: print(errorEmptyServerResponse)
-            statCollection: print("Status Code", res.StatusCode or "nil")
+             print(errorEmptyServerResponse)
+             print("Status Code", res.StatusCode or "nil")
             return
         end
-
+        
+        DeepPrintTable(res)
         -- Try to decode the result
         local obj, pos, err = json.decode(res.Body, 1, nil)
 
         -- Feed the result into our callback
-        callback(err, obj)
+        callback(err, res.Body)
     end)
-    if not override_host then
-        -- statCollection:sendStage(stageName, payload, callback, "https://g9ai9j8ush.execute-api.us-east-1.amazonaws.com/alpha/test")
-         --print("sendToBryce!!")
-    end
 end
 
 -- Checks the error and result objects and returns whether its invalid or not
 function statCollection:ReturnedErrors(err, res)
     if err then
-        statCollection: print(errorJsonDecode)
-        statCollection: print(err)
-        return true
-    end
-
-    if res.error then
-        statCollection: print(errorSomethingWentWrong)
-        statCollection: print(res.error)
+        print(errorJsonDecode)
+        print(err)
         return true
     end
 

@@ -20,14 +20,14 @@ var shipShopShow = false;
 function hideTrade() {
 
 	$("#missionButton").style.visibility = "collapse";
-	$("#traders_tab").style.height = "40px";
+	$("#traders_tab").style.height = "0px";
 	tradeHidden = true;
 }
 
 function showTrade() {
 	tradeHidden = false;
 	$("#missionButton").style.visibility = "visible";
-	$("#traders_tab").style.height = "40px";
+	$("#traders_tab").style.height = "40px !important";
 	var newBotRightUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("lower_hud").FindChildTraverse("shop_launcher_block");
 
 	newBotRightUI.FindChildTraverse("shop_launcher_bg").style.width = "440px";
@@ -1596,41 +1596,45 @@ function OnLeftButtonPressed() {
 // if the units are invuln, modify the right-click behaviour
 function OnRightButtonPressed() {
 	//$.Msg("RIGHT BUTTON CAST")
-	var localHeroIndex = Players.GetPlayerHeroEntityIndex(Players.GetLocalPlayer());
-	var mouseEntities = GameUI.FindScreenEntities(GameUI.GetCursorPosition());
-	mouseEntities = mouseEntities.filter(function (e) { return e.entityIndex != localHeroIndex; });
+	try {
+		var localHeroIndex = Players.GetPlayerHeroEntityIndex(Players.GetLocalPlayer());
+		var mouseEntities = GameUI.FindScreenEntities(GameUI.GetCursorPosition());
+		mouseEntities = mouseEntities.filter(function (e) { return e.entityIndex != localHeroIndex; });
 
-	var accurateEntities = mouseEntities.filter(function (e) { return e.accurateCollision; });
-	if (accurateEntities.length > 0) {
-		for (var e of accurateEntities) {
-			if (Entities.IsDisarmed(e.entityIndex) && Entities.NoHealthBar(e.entityIndex)) {
-				//$.Msg("INVULNERABLE UNIT CLICKED")
+		var accurateEntities = mouseEntities.filter(function (e) { return e.accurateCollision; });
+		if (accurateEntities.length > 0) {
+			for (var e of accurateEntities) {
+				if (Entities.IsDisarmed(e.entityIndex) && Entities.NoHealthBar(e.entityIndex)) {
+					//$.Msg("INVULNERABLE UNIT CLICKED")
+					fillAndShow();
+					return CONSUME_EVENT;
+				}
+				if (Entities.IsHexed(e.entityIndex) && Entities.NoHealthBar(e.entityIndex)) {
+					//$.Msg("INVULNERABLE UNIT CLICKED")
+					showShips();
+					return CONSUME_EVENT;
+				}
+			}
+		}
+
+		if (mouseEntities.length > 0) {
+			//$.Msg("ENTITY")
+			var e = mouseEntities[0];
+			if (Entities.IsFrozen(e.entityIndex) && Entities.NoHealthBar(e.entityIndex)) {
+				$.Msg("IsFrozen UNIT CLICKED")
 				fillAndShow();
 				return CONSUME_EVENT;
 			}
 			if (Entities.IsHexed(e.entityIndex) && Entities.NoHealthBar(e.entityIndex)) {
-				//$.Msg("INVULNERABLE UNIT CLICKED")
+				$.Msg("IsHexed UNIT CLICKED")
 				showShips();
 				return CONSUME_EVENT;
 			}
 		}
 	}
-
-	if (mouseEntities.length > 0) {
-		//$.Msg("ENTITY")
-		var e = mouseEntities[0];
-		if (Entities.IsFrozen(e.entityIndex) && Entities.NoHealthBar(e.entityIndex)) {
-			$.Msg("IsFrozen UNIT CLICKED")
-			fillAndShow();
-			return CONSUME_EVENT;
-		}
-		if (Entities.IsHexed(e.entityIndex) && Entities.NoHealthBar(e.entityIndex)) {
-			$.Msg("IsHexed UNIT CLICKED")
-			showShips();
-			return CONSUME_EVENT;
-		}
+	catch (err) {
+		$.Msg(err.message)
 	}
-
 	return CONTINUE_PROCESSING_EVENT;
 }
 
