@@ -1221,7 +1221,7 @@
 		"MagicalResistance"				"0"
 		
 		"AbilityLayout"				"3"
-		"Ability1"					"pistols_battleship"
+		"Ability1"					"timber_chain_lua"
 		"Ability2"					"pudge_meat_hook_lua"
 		"Ability3"					"shove_battleship"
 		"Ability4"					"batrider_flaming_lasso_battleship"

@@ -13586,6 +13586,46 @@
 	
 	}
 	
+	"timber_chain_lua"
+  {
+    "BaseClass"           "ability_lua"
+    "ScriptFile"          "heroes/timber_chain.lua"
+    "AbilityTextureName"  "shredder_timber_chain"
 
-	
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+
+    "precache"
+    {
+      "soundfile" "soundevents/game_sounds_heroes/game_sounds_shredder.vsndevts"
+      "particle"  "particles/units/heroes/hero_shredder/shredder_timberchain.vpcf"
+    }
+
+    "AbilityCastRange"        "1000"
+    "AbilityCastPoint"        "0.3"
+
+    "AbilityCharges"           "3"
+		"AbilityChargeRestoreTime" "60 50 40 30"
+		"AbilityCooldown"				   "0"
+
+    "AbilityManaCost"          "0"
+
+    "AbilitySpecial"
+    {
+      "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"chain_radius"		"90"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"range"				"1000"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"speed"		"900"
+			}
+    }
+  }	
 }
