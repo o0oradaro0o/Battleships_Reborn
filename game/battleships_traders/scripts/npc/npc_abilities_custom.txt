@@ -6568,12 +6568,6 @@
 					}
 				}
 				"Duration"	"%duration"
-				"Properties"
-				{
-					
-                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
-					 "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen"
-                }
 				"States"
 				{
 					"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
@@ -6616,7 +6610,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"	"3.0 3.5 4.0 4.5"
+				"duration"	"3.0"
 			}
 			 "02"
             {
@@ -7207,7 +7201,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"total_damage"		"550 600 650"
+				"total_damage"		"250 300 350"
 			}
 		}
 	}
@@ -14005,12 +13999,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"range"				"1000"
+				"range"				"1200"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"speed"		"900"
+				"speed"		"1200"
 			}
     }
   }	

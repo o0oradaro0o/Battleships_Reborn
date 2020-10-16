@@ -1828,7 +1828,7 @@
 		"MovementSpeed"				"350"									// Speed.
 		"MovementTurnRate"			"0.6"									// Turning rate.
 		
-		"StatusHealth"				"6000"		// Base health.
+		"StatusHealth"				"5000"		// Base health.
 		"StatusHealthRegen"			"20.0"		// Health regeneration rate.
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
@@ -1895,8 +1895,8 @@
 		"Ability3"					"icy_waters_battleship"
 		"Ability4"		"generic_hidden"
 		"Ability5"		"generic_hidden"
-		"Ability6"		"ice_blast_datadriven"
-		"Ability7"		"ice_blast_release_datadriven"
+		"Ability6"		"crystal_maiden_freezing_field_battleship"
+		"Ability7"		"generic_hidden"
 				"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
