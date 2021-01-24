@@ -366,10 +366,10 @@ function Precache(context)
     PrecacheResource("model", "models/battleship_boat4.vmdl", context)
     PrecacheResource("model", "models/Aircraft_boat_e.vmdl", context)
     PrecacheResource("model", "models/Aircraft_boat2.vmdl", context)
-    PrecacheResource("model", "models/sub_boat_down", context)
-    PrecacheResource("model", "models/rng_ind", context)
+    PrecacheResource("model", "models/sub_boat_down.vmdl", context)
+    PrecacheResource("model", "models/rng_ind.vmdl", context)
     PrecacheResource("model", "models/battle_ind.vmdl", context)
-    PrecacheResource("model", "models/battle_ind", context)
+    PrecacheResource("model", "models/battle_ind.vmdl", context)
     PrecacheResource(
         "model",
         "models/bad_ancient_ambient_blast",
@@ -391,13 +391,13 @@ function Precache(context)
         context
     )
 
-    PrecacheResource("model", "models/spin_one", context)
-    PrecacheResource("model", "models/spin_two", context)
+    PrecacheResource("model", "models/spin_one.vmdl", context)
+    PrecacheResource("model", "models/spin_two.vmdl", context)
 
-    PrecacheResource("model", "models/spin_three", context)
+    PrecacheResource("model", "models/spin_three.vmdl", context)
 
-    PrecacheResource("model", "models/no_model", context)
-    PrecacheResource("model", "models/monkey", context)
+    PrecacheResource("model", "models/no_model.vmdl", context)
+    PrecacheResource("model", "models/monkey.vmdl", context)
 
     PrecacheResource("model", "models/jet.vmdl", context)
     PrecacheResource("model", "models/iceberg.vmdl", context)
@@ -899,6 +899,11 @@ function CBattleship8D:InitGameMode()
     ListenToGameEvent(
         'player_connect_full',
         Dynamic_Wrap(CBattleship8D, 'OnConnectFull'),
+        self
+    )
+    ListenToGameEvent(
+        'player_reconnected',
+        Dynamic_Wrap(CBattleship8D, 'OnReconnect'),
         self
     )
     ListenToGameEvent(
@@ -1739,11 +1744,19 @@ function CBattleship8D:OnPlayerChat(keys)
         steamID32 = PlayerResource:GetSteamAccountID(playerID)
         local text = keys.text
         if (steamID32 == g_radar or steamID32 == g_zentrix or steamID32 == 5879425 or steamID32 == 93116118) and string.match(text, "TUG MODE ACTIVATE!") and GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then g_TugMode = 1 end
-        if teamonly == 0 and string.match(text, "to zoom") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
+        if teamonly == 0 and string.match(text, "Forget to zoom") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
             Notifications:TopToAll({
                 text = "Thank you David!",
                 duration = 5.0,
                 style = {color = "#888888", fontSize = "70px;"}
+            })
+
+        end
+        if string.match(text, "rip david") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
+            Notifications:TopToAll({
+                text = "Don't Forget to Zoom!",
+                duration = 5.0,
+                style = {color = "#88FF88", fontSize = "70px;"}
             })
 
         end
@@ -1817,8 +1830,10 @@ end
 
 function CBattleship8D:OnThink()
     if g_MainTimerTickCount < 500 then
+   
         for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero_abad*")) do
             if hero ~= nil and hero:IsOwnedByAnyPlayer() and string.match(hero:GetName(), "abaddon") and hero.changed == nil then
+                 GameRules:GetGameModeEntity():SetCustomDireScore(0) 
                 hero.changed = 1
                 g_DamageTanked[hero:GetPlayerID()] = 0
                 g_DamageDealt[hero:GetPlayerID()] = 0
@@ -1845,7 +1860,7 @@ function CBattleship8D:OnThink()
             end
         end
     end
-
+    
     if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
         if GameRules:GetGameTime() ~= g_PreviousTickCount then
 
@@ -1871,27 +1886,6 @@ function CBattleship8D:OnThink()
                 end
                 Timers:CreateTimer(300, function() spawnTide() end)
                 spawnCop()
-                for _, tower in pairs(Entities:FindAllByClassname("npc_dota_tow*")) do
-                    if tower ~= nil and string.match(tower:GetName(), "tower") then
-                        if tower:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-                            local rangeParticle = ParticleManager:CreateParticle(
-                                "particles/basic_projectile/tower_range_display.vpcf",
-                                PATTACH_ABSORIGIN,
-                                tower
-                            )
-                            ParticleManager:SetParticleControl(rangeParticle, 0, tower:GetAbsOrigin())
-                            ParticleManager:SetParticleControl(rangeParticle, 1, Vector(1170, 0, 0))
-                        elseif tower:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-                            local rangeParticle = ParticleManager:CreateParticle(
-                                "particles/basic_projectile/tower_range_display.vpcf",
-                                PATTACH_ABSORIGIN,
-                                tower
-                            )
-                            ParticleManager:SetParticleControl(rangeParticle, 0, tower:GetAbsOrigin())
-                            ParticleManager:SetParticleControl(rangeParticle, 1, Vector(1170, 0, 0))
-                        end
-                    end
-                end
                 Notifications:TopToAll({
                     text = "#Welcome",
                     duration = 6.0,
@@ -2170,29 +2164,29 @@ function CBattleship8D:OnThink()
                             -- ----print('[AbilityFunctions] battleshipHealth started!')
                             if casterUnit:IsAlive() and hero:IsOwnedByAnyPlayer() and g_HeroHP[casterUnit:GetPlayerID()] == nil then
                                 g_HeroHP[casterUnit:GetPlayerID()] = casterUnit:GetHealthPercent()
-                                casterUnit:SetModel("models/battleship_boat0")
-                                casterUnit:SetOriginalModel("models/battleship_boat0")
+                                casterUnit:SetModel("models/battleship_boat0.vmdl")
+                                casterUnit:SetOriginalModel("models/battleship_boat0.vmdl")
                             end
                             if casterUnit:IsAlive() and hero:IsOwnedByAnyPlayer() then
                                 if casterUnit:GetHealthPercent() < 7 and g_HeroHP[casterUnit:GetPlayerID()] > 6 then
-                                    casterUnit:SetModel("models/battleship_boat4")
-                                    casterUnit:SetOriginalModel("models/battleship_boat4")
+                                    casterUnit:SetModel("models/battleship_boat4.vmdl")
+                                    casterUnit:SetOriginalModel("models/battleship_boat4.vmdl")
                                     -- ----print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
                                 elseif casterUnit:GetHealthPercent() < 25 and g_HeroHP[casterUnit:GetPlayerID()] > 24 then
-                                    casterUnit:SetModel("models/battleship_boat3")
-                                    casterUnit:SetOriginalModel("models/battleship_boat3")
+                                    casterUnit:SetModel("models/battleship_boat3.vmdl")
+                                    casterUnit:SetOriginalModel("models/battleship_boat3.vmdl")
                                     -- ----print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
                                 elseif casterUnit:GetHealthPercent() < 50 and g_HeroHP[casterUnit:GetPlayerID()] > 49 then
-                                    casterUnit:SetModel("models/battleship_boat2")
-                                    casterUnit:SetOriginalModel("models/battleship_boat2")
+                                    casterUnit:SetModel("models/battleship_boat2.vmdl")
+                                    casterUnit:SetOriginalModel("models/battleship_boat2.vmdl")
                                     -- ----print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
                                 elseif casterUnit:GetHealthPercent() < 75 and g_HeroHP[casterUnit:GetPlayerID()] > 74 then
-                                    casterUnit:SetModel("models/battleship_boat1")
-                                    casterUnit:SetOriginalModel("models/battleship_boat1")
+                                    casterUnit:SetModel("models/battleship_boat1.vmdl")
+                                    casterUnit:SetOriginalModel("models/battleship_boat1.vmdl")
                                     -- ----print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
                                 elseif casterUnit:GetHealthPercent() > 74 and g_HeroHP[casterUnit:GetPlayerID()] < 75 then
-                                    casterUnit:SetModel("models/battleship_boat0")
-                                    casterUnit:SetOriginalModel("models/battleship_boat0")
+                                    casterUnit:SetModel("models/battleship_boat0.vmdl")
+                                    casterUnit:SetOriginalModel("models/battleship_boat0.vmdl")
                                     -- ----print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
                                     -- ----print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
                                 end
@@ -2640,7 +2634,13 @@ function AttachCosmetics(hero)
     if hero.particleHAT == nil then
         for playerSteamId, hatname in pairs(g_PlayerHatList) do
             print(playerSteamId .. hatname)
-            if string.match(steamID32, playerSteamId) and not string.match(hatname, "specHat") then
+            if string.match(steamID32, playerSteamId) and string.match(hatname, "noHat") then
+            -- hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/hat.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+            -- ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
+            -- uncomment for santa hat
+            end
+
+            if string.match(steamID32, playerSteamId) and not string.match(hatname, "specHat") and not string.match(hatname, "noHat") then
                 hero.particleHAT = ParticleManager:CreateParticle(
                     "particles/basic_projectile/" .. hatname .. ".vpcf",
                     PATTACH_ABSORIGIN_FOLLOW,
@@ -2658,8 +2658,8 @@ function AttachCosmetics(hero)
             end
         end
     end
+
     if hero.particleHAT == nil then
-        -- if steamID32 == g_zentrix then
         if steamID32 == g_zentrix then
             hero.particleHAT = ParticleManager:CreateParticle(
                 "particles/basic_projectile/zentrix.vpcf",
@@ -2841,8 +2841,8 @@ function AttachCosmetics(hero)
                 true
             )
 
-            -- else
-            -- 	hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/genericHat.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+            -- else uncomment for santa hat
+            -- 	hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/hat.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
             -- 	ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
         end
     end
@@ -3975,6 +3975,34 @@ function CBattleship8D:OnDisconnect(keys)
     })
 
 end
+
+function addTowerParticles()
+    for _, tower in pairs(Entities:FindAllByClassname("npc_dota_tow*")) do
+    if tower ~= nil and string.match(tower:GetName(), "tower") then
+        if tower:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+            local rangeParticle = ParticleManager:CreateParticle(
+                "particles/basic_projectile/tower_range_display.vpcf",
+                PATTACH_ABSORIGIN,
+                tower
+            )
+            ParticleManager:SetParticleControl(rangeParticle, 0, tower:GetAbsOrigin())
+            ParticleManager:SetParticleControl(rangeParticle, 1, Vector(1170, 0, 0))
+        elseif tower:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+            local rangeParticle = ParticleManager:CreateParticle(
+                "particles/basic_projectile/tower_range_display.vpcf",
+                PATTACH_ABSORIGIN,
+                tower
+            )
+            ParticleManager:SetParticleControl(rangeParticle, 0, tower:GetAbsOrigin())
+            ParticleManager:SetParticleControl(rangeParticle, 1, Vector(1170, 0, 0))
+        end
+    end
+end
+end
+
+function CBattleship8D:OnReconnect(keys)
+    addTowerParticles()
+end
 function CBattleship8D:OnConnectFull(keys)
     print('[BAREBONES] OnConnectFull')
     PrintTable(keys)
@@ -3987,6 +4015,7 @@ function CBattleship8D:OnConnectFull(keys)
         function()
             local data = {}
             CustomGameEventManager:Send_ServerToAllClients("Boat_Spawned", data)
+            addTowerParticles()
         end
     )
 
@@ -4067,7 +4096,7 @@ function CBattleship8D:OnEntityHurt(keys)
 end
 
 function CBattleship8D:OnEntityKilled(keys)
-
+    GameRules:GetGameModeEntity():SetCustomDireScore(GetTeamHeroKills(DOTA_TEAM_BADGUYS))
     local killedUnit = EntIndexToHScript(keys.entindex_killed)
 
     -- handle tower gold

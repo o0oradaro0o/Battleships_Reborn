@@ -932,8 +932,8 @@ function submerge(args) -- keys is the information sent by the ability
 	-- ----print('[ItemFunctions] gunning_it started! ')
 	local casterUnit = args.caster
 	 ----print("[ItemFunctions]  sub down " .. tostring(casterUnit:GetMana()))
-	casterUnit:SetModel("models/sub_boat_down")
-	casterUnit:SetOriginalModel("models/sub_boat_down")
+	casterUnit:SetModel("models/sub_boat_down.vmdl")
+	casterUnit:SetOriginalModel("models/sub_boat_down.vmdl")
 	if casterUnit:GetMana() < 10 then
 		local damageTable = {
 			victim = casterUnit,
@@ -964,8 +964,8 @@ function rise(args) -- keys is the information sent by the ability
 	local casterUnit = args.caster
 	args.ability:GetName()
 	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
-	casterUnit:SetModel("models/sub_boat")
-	casterUnit:SetOriginalModel("models/sub_boat")
+	casterUnit:SetModel("models/sub_boat.vmdl")
+	casterUnit:SetOriginalModel("models/sub_boat.vmdl")
 	args.ability:StartCooldown(1.0)
 end
 

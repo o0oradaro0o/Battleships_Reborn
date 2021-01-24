@@ -1831,7 +1831,7 @@
 	"item_recipe_poison_ult_bow"
 	{
 		"ID"							"2301"
-		"Model"							"models/props_gameplay/recipe.mdl"
+		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_recipe_arcane_boots"
 		
 		// Item Info
@@ -1856,7 +1856,7 @@
 		"ID"							"2302"
 
 		"BaseClass"						"item_recipe_arcane_boots"
-		"Model"							"models/props_gameplay/recipe.mdl"
+		"Model"							"models/props_gameplay/recipe.vmdl"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1880,7 +1880,7 @@
 		"ID"							"2303"
 
 		"BaseClass"						"item_recipe_arcane_boots"
-		"Model"							"models/props_gameplay/recipe.mdl"
+		"Model"							"models/props_gameplay/recipe.vmdl"
 		
 		
 		// Item Info
@@ -1905,7 +1905,7 @@
 		"ID"							"2304"
 
 		"BaseClass"						"item_recipe_arcane_boots"
-		"Model"							"models/props_gameplay/recipe.mdl"
+		"Model"							"models/props_gameplay/recipe.vmdl"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1929,7 +1929,7 @@
 		"ID"							"2305"
 
 		"BaseClass"						"item_recipe_arcane_boots"
-		"Model"							"models/props_gameplay/recipe.mdl"
+		"Model"							"models/props_gameplay/recipe.vmdl"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1953,7 +1953,7 @@
 		"ID"							"2306"
 
 		"BaseClass"						"item_recipe_arcane_boots"
-		"Model"							"models/props_gameplay/recipe.mdl"
+		"Model"							"models/props_gameplay/recipe.vmdl"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"3500"	
@@ -1976,7 +1976,7 @@
 		"ID"							"2307"
 
 		"BaseClass"						"item_recipe_arcane_boots"
-		"Model"							"models/props_gameplay/recipe.mdl"
+		"Model"							"models/props_gameplay/recipe.vmdl"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"3700"	
@@ -2000,7 +2000,7 @@
 		"ID"							"2308"
 
 		"BaseClass"						"item_recipe_arcane_boots"
-		"Model"							"models/props_gameplay/recipe.mdl"
+		"Model"							"models/props_gameplay/recipe.vmdl"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"3700"	
@@ -2024,7 +2024,7 @@
 		"ID"							"2309"
 
 		"BaseClass"						"item_recipe_arcane_boots"
-		"Model"							"models/props_gameplay/recipe.mdl"
+		"Model"							"models/props_gameplay/recipe.vmdl"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"3700"	
@@ -2048,7 +2048,7 @@
 		"ID"							"2310"
 
 		"BaseClass"						"item_recipe_arcane_boots"
-		"Model"							"models/props_gameplay/recipe.mdl"
+		"Model"							"models/props_gameplay/recipe.vmdl"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"3700"	
@@ -2072,7 +2072,7 @@
 		"ID"							"2311"
 
 		"BaseClass"						"item_recipe_arcane_boots"
-		"Model"							"models/props_gameplay/recipe.mdl"
+		"Model"							"models/props_gameplay/recipe.vmdl"
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"3700"	

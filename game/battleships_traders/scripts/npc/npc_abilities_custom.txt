@@ -13980,7 +13980,7 @@
       "particle"  "particles/units/heroes/hero_shredder/shredder_timberchain.vpcf"
     }
 
-    "AbilityCastRange"        "1000"
+    "AbilityCastRange"        "1600"
     "AbilityCastPoint"        "0.3"
 
     "AbilityCharges"           "3"
@@ -13999,12 +13999,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"range"				"1200"
+				"range"				"1600"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"speed"		"1200"
+				"speed"		"1800"
 			}
     }
   }	

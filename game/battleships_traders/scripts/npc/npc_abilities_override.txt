@@ -1156,4 +1156,120 @@
 	{
 		"ItemPurchasable" "0"
 	}
+	"item_nullifier"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_aghanims_shard"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_overwhelming_blink"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_swift_blink"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_arcane_blink"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_recipe_arcane_blink"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_recipe_swift_blink"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_recipe_overwhelming_blink"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_fluffy_hat"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_recipe_grandmasters_glaive"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_grandmasters_glaive"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_recipe_witch_blade"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_witch_blade"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_satchel"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_recipe_wind_waker"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_wind_waker"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_recipe_eternal_shroud"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_eternal_shroud"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_recipe_helm_of_the_dominator_2"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_helm_of_the_dominator_2"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_recipe_gungir"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_gungir"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_recipe_orb_of_corrosion"	
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_orb_of_corrosion"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_recipe_falcon_blade"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_falcon_blade"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_recipe_mage_slayer"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_mage_slayer"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_wind_lace"
+	{
+		"ItemPurchasable" "0"
+	}
 }

@@ -308,6 +308,7 @@ function fixUI() {
 	newCenterUI.FindChildTraverse("stats_container").style.visibility = "visible";
 	//that bar that grows from level 1 to 25 is annoying
 	newCenterUI.FindChildTraverse("AbilitiesAndStatBranch").FindChildTraverse("StatBranch").style.visibility = "collapse";
+	newCenterUI.FindChildTraverse("AbilitiesAndStatBranch").FindChildTraverse("AghsStatusContainer").style.visibility = "collapse";
 	//fuck backpack UI
 	newCenterUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("inventory_backpack_list").style.visibility = "collapse";
 	//--------------bot right -----------------
