@@ -4448,7 +4448,7 @@ function CBattleship8D:OnEntityKilled(keys)
                 Notifications:BottomToTeam(
                     DOTA_TEAM_GOODGUYS,
                     {
-                        text = killedName .. " ",
+                        text = killedName .. ".",
                         duration = 10.0,
                         style = {color = "#66FF66", fontSize = "18px;"},
                         continue = true
@@ -4460,7 +4460,7 @@ function CBattleship8D:OnEntityKilled(keys)
                         text = "#got_kill_two",
                         duration = 10.0,
                         style = {color = "#8888FF", fontSize = "18px;"},
-                        continue = true
+                        continue = false
                     }
                 )
                 Notifications:BottomToTeam(
@@ -4544,7 +4544,7 @@ function CBattleship8D:OnEntityKilled(keys)
                 Notifications:BottomToTeam(
                     DOTA_TEAM_BADGUYS,
                     {
-                        text = killedName .. " ",
+                        text = killedName .. ".",
                         duration = 10.0,
                         style = {color = "#AA3333", fontSize = "18px;"},
                         continue = true
@@ -4557,7 +4557,7 @@ function CBattleship8D:OnEntityKilled(keys)
                         text = "#got_kill_two",
                         duration = 10.0,
                         style = {color = "#8888FF", fontSize = "18px;"},
-                        continue = true
+                        continue = false
                     }
                 )
 
@@ -4644,7 +4644,7 @@ function CBattleship8D:OnEntityKilled(keys)
                 Notifications:BottomToTeam(
                     DOTA_TEAM_BADGUYS,
                     {
-                        text = killedName .. " ",
+                        text = killedName .. ".",
                         duration = 10.0,
                         style = {color = "#66FF66", fontSize = "18px;"},
                         continue = true
@@ -4657,7 +4657,7 @@ function CBattleship8D:OnEntityKilled(keys)
                         text = "#got_kill_two",
                         duration = 10.0,
                         style = {color = "#8888FF", fontSize = "18px;"},
-                        continue = true
+                        continue = false
                     }
                 )
 
@@ -4744,7 +4744,7 @@ function CBattleship8D:OnEntityKilled(keys)
                 Notifications:BottomToTeam(
                     DOTA_TEAM_GOODGUYS,
                     {
-                        text = killedName .. " ",
+                        text = killedName .. ".",
                         duration = 10.0,
                         style = {color = "#AA3333", fontSize = "18px;"},
                         continue = true
@@ -4757,7 +4757,7 @@ function CBattleship8D:OnEntityKilled(keys)
                         text = "#got_kill_two",
                         duration = 10.0,
                         style = {color = "#8888FF", fontSize = "18px;"},
-                        continue = true
+                        continue = false
                     }
                 )
 

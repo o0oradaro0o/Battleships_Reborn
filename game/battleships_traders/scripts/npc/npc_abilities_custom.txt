@@ -1570,7 +1570,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"200 350 500 650"
+		"AbilityDamage"					"200 300 400 500"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -1608,6 +1608,12 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"delay"						"1.6 1.6 1.6 1.6"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"torrent_damage"			"200 300 400 500"
+				"LinkedSpecialBonus"		"special_bonus_unique_kunkka_2"
 			}
 		}		
 	}
@@ -5505,11 +5511,11 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"15.0 14.0 13.0 12.0"
-		"AbilityChannelTime"			"0.5 0.5 0.5 0.5"
+		"AbilityChannelTime"			"1.0 1.0 1.0 1.0"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"150 300 450 600"
+		"AbilityDamage"					"110 210 310 410"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -5522,13 +5528,14 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"powershot_damage"		"150 300 450 600"
+				"powershot_damage"		"110 210 310 410"
 				"LinkedSpecialBonus"	"special_bonus_unique_windranger_3"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_reduction"		"0.1 0.1 0.1 0.1"
+				"var_type"				"FIELD_INTEGER"
+				"damage_reduction"		"20"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
@@ -13275,7 +13282,7 @@
 			"08"
 			{
 				"var_type"              				"FIELD_FLOAT"
-				"armor_debuff"   		"1 1.3 1.6 2"
+				"armor_debuff"   		"0 0 0 0"
 			}
 		}
 	}
@@ -13772,7 +13779,7 @@
     "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
     "AbilityTextureName"      "storm_spirit_ball_lightning"
     "AbilityCooldown"        "6 5 4 3"
-    "AbilityManaCost"        "200"
+    "AbilityManaCost"        "250"
 
     "AbilityCastPoint"        "0.3"
 

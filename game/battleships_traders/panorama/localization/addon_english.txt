@@ -329,10 +329,10 @@
 	//has killed
 	
 	"got_kill_one" " killed "
-	"got_kill_two" " for "
+	"got_kill_two" "Earning "
 	
 	"got_kill_three" " gold & "
-	"got_kill_four" "gold split.."
+	"got_kill_four" "gold split amoung allies."
 	
 	//has died
 	"died_one" " has has died. "
