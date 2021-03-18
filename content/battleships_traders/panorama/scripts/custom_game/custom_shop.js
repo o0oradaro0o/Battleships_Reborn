@@ -8,7 +8,7 @@ var starttime = 0;
 var yaw = 0;
 var NewShopUI = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("shop");
 var scoreBoardGoodCont = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar").FindChildTraverse("TopBarRadiantTeam").FindChildTraverse("TopBarRadiantPlayers").FindChildTraverse("RadiantTeamScorePlayers").FindChildTraverse("TopBarRadiantPlayersContainer");
-
+var nearistShop;
 var topBarBadCont = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements").FindChildTraverse("topbar").FindChildTraverse("TopBarDireTeam").FindChildTraverse("TopBarDirePlayers").FindChildTraverse("DireTeamScorePlayers").FindChildTraverse("TopBarDirePlayersContainer");
 
 var buttontext = ""
@@ -696,30 +696,35 @@ function FadeShop() {
 	}
 
 }
-function fillAndShow() {
-	$.Msg("inside fillAndShow");
-	closeShipShop()
+
+function isCloseEnough()
+{
 	var heroloc = Entities.GetAbsOrigin(Players.GetPlayerHeroEntityIndex(Players.GetLocalPlayer()));
-	var closeEnough = false;
-	var nearistShop;
-	var i = 0;
 	var buildings = Entities.GetAllEntitiesByClassname('npc_dota_building')
 	for (var i = 0; i < buildings.length; i++) {
-
 		if (!Entities.IsTower(buildings[i])) {
-
 			var bldgloc = Entities.GetAbsOrigin((buildings[i]));
 			if (bldgloc) {
-
 				var dist = Math.sqrt(Math.pow(heroloc[0] - bldgloc[0], 2) + Math.pow(heroloc[1] - bldgloc[1], 2))
 				if (dist < 600) {
 					$.Msg("building + " + Entities.IsDisarmed((buildings[i])))
-					closeEnough = true;
 					nearistShop = buildings[i];
+					return true;
+					
 				}
 			}
 		}
 	}
+	return false;
+}
+
+function fillAndShow() {
+	$.Msg("inside fillAndShow");
+	closeShipShop()
+	var heroloc = Entities.GetAbsOrigin(Players.GetPlayerHeroEntityIndex(Players.GetLocalPlayer()));
+	var closeEnough = isCloseEnough();
+	
+
 	var hide = true;
 	if (Math.abs(heroloc[1]) < 5000 && Math.abs(heroloc[0]) > 1000 && Math.abs(heroloc[0]) < 4000 && closeEnough && $("#side_shop").style.visibility != "visible") {
 		$("#side_shop").style.visibility = "visible";
@@ -1094,7 +1099,15 @@ function OnBsuiTimer(eventData) {
 
 function buyItem(itemName, cost) {
 	if (showMission[Players.GetLocalPlayer()] > -1 || itemName == "spys" || itemName == "heals") {
-		GameEvents.SendCustomGameEventToServer("buyItem", { "text": itemName, "cost": cost });
+		var heroloc = Entities.GetAbsOrigin(Players.GetPlayerHeroEntityIndex(Players.GetLocalPlayer()));
+		if (Math.abs(heroloc[1]) < 5000 && Math.abs(heroloc[0]) > 1000 && Math.abs(heroloc[0]) < 4000 && isCloseEnough()) {
+			GameEvents.SendCustomGameEventToServer("buyItem", { "text": itemName, "cost": cost });
+		}
+		else{
+
+			$("#side_shop").style.visibility = "collapse";
+		}
+
 	}
 }
 

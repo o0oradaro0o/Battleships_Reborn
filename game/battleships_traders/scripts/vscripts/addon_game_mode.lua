@@ -2629,7 +2629,6 @@ function AttachCosmetics(hero)
     -- print("player" .. hero:GetPlayerOwnerID())
     if hero:GetPlayerOwnerID() ~= nil then
         steamID32 = PlayerResource:GetSteamAccountID(hero:GetPlayerOwnerID())
-
     end
     if hero.particleHAT == nil then
         for playerSteamId, hatname in pairs(g_PlayerHatList) do
@@ -2656,196 +2655,197 @@ function AttachCosmetics(hero)
                     true
                 )
             end
+            if hero.particleHAT == nil and not string.match(hatname, "noHat") then
+            if steamID32 == g_zentrix then
+                hero.particleHAT = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/zentrix.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particleHAT,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "HatPoint",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+            elseif steamID32 == g_quincy then
+                hero.particleHAT = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/quincy.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particleHAT,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "HatPoint",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+            elseif steamID32 == g_rere then
+                hero.particleHAT = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/rere.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particleHAT,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "HatPoint",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+            elseif steamID32 == g_penrose then
+                hero.particleHAT = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/penrose.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particleHAT,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "HatPoint",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+            elseif steamID32 == g_brit then
+                hero.particleHAT = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/brit.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particleHAT,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "HatPoint",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+            elseif steamID32 == g_radar then
+                hero.particleHAT = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/radar.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particleHAT,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "HatPoint",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+            elseif steamID32 == g_cat then
+                hero.particleHAT = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/cat.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particleHAT,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "HatPoint",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+            elseif steamID32 == g_frood then
+                hero.particleHAT = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/frood.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particleHAT,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "HatPoint",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+            elseif steamID32 == g_vic then
+                hero.particleHAT = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/radar.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particleHAT,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "HatPoint",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+            elseif steamID32 == g_josh then
+                hero.particleHAT = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/josh.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particleHAT,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "HatPoint",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+            elseif steamID32 == g_borgel then
+                hero.particleHAT = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/borgel.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particleHAT,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "HatPoint",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+            elseif steamID32 == g_planit then
+                hero.particleHAT = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/planit.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particleHAT,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "HatPoint",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+    
+                -- else uncomment for santa hat
+                -- 	hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/hat.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+                -- 	ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
+            end
+        end
         end
     end
 
-    if hero.particleHAT == nil then
-        if steamID32 == g_zentrix then
-            hero.particleHAT = ParticleManager:CreateParticle(
-                "particles/basic_projectile/zentrix.vpcf",
-                PATTACH_ABSORIGIN_FOLLOW,
-                hero
-            )
-            ParticleManager:SetParticleControlEnt(
-                hero.particleHAT,
-                0,
-                hero,
-                PATTACH_POINT_FOLLOW,
-                "HatPoint",
-                hero:GetAbsOrigin(),
-                true
-            )
-        elseif steamID32 == g_quincy then
-            hero.particleHAT = ParticleManager:CreateParticle(
-                "particles/basic_projectile/quincy.vpcf",
-                PATTACH_ABSORIGIN_FOLLOW,
-                hero
-            )
-            ParticleManager:SetParticleControlEnt(
-                hero.particleHAT,
-                0,
-                hero,
-                PATTACH_POINT_FOLLOW,
-                "HatPoint",
-                hero:GetAbsOrigin(),
-                true
-            )
-        elseif steamID32 == g_rere then
-            hero.particleHAT = ParticleManager:CreateParticle(
-                "particles/basic_projectile/rere.vpcf",
-                PATTACH_ABSORIGIN_FOLLOW,
-                hero
-            )
-            ParticleManager:SetParticleControlEnt(
-                hero.particleHAT,
-                0,
-                hero,
-                PATTACH_POINT_FOLLOW,
-                "HatPoint",
-                hero:GetAbsOrigin(),
-                true
-            )
-        elseif steamID32 == g_penrose then
-            hero.particleHAT = ParticleManager:CreateParticle(
-                "particles/basic_projectile/penrose.vpcf",
-                PATTACH_ABSORIGIN_FOLLOW,
-                hero
-            )
-            ParticleManager:SetParticleControlEnt(
-                hero.particleHAT,
-                0,
-                hero,
-                PATTACH_POINT_FOLLOW,
-                "HatPoint",
-                hero:GetAbsOrigin(),
-                true
-            )
-        elseif steamID32 == g_brit then
-            hero.particleHAT = ParticleManager:CreateParticle(
-                "particles/basic_projectile/brit.vpcf",
-                PATTACH_ABSORIGIN_FOLLOW,
-                hero
-            )
-            ParticleManager:SetParticleControlEnt(
-                hero.particleHAT,
-                0,
-                hero,
-                PATTACH_POINT_FOLLOW,
-                "HatPoint",
-                hero:GetAbsOrigin(),
-                true
-            )
-        elseif steamID32 == g_radar then
-            hero.particleHAT = ParticleManager:CreateParticle(
-                "particles/basic_projectile/radar.vpcf",
-                PATTACH_ABSORIGIN_FOLLOW,
-                hero
-            )
-            ParticleManager:SetParticleControlEnt(
-                hero.particleHAT,
-                0,
-                hero,
-                PATTACH_POINT_FOLLOW,
-                "HatPoint",
-                hero:GetAbsOrigin(),
-                true
-            )
-        elseif steamID32 == g_cat then
-            hero.particleHAT = ParticleManager:CreateParticle(
-                "particles/basic_projectile/cat.vpcf",
-                PATTACH_ABSORIGIN_FOLLOW,
-                hero
-            )
-            ParticleManager:SetParticleControlEnt(
-                hero.particleHAT,
-                0,
-                hero,
-                PATTACH_POINT_FOLLOW,
-                "HatPoint",
-                hero:GetAbsOrigin(),
-                true
-            )
-        elseif steamID32 == g_frood then
-            hero.particleHAT = ParticleManager:CreateParticle(
-                "particles/basic_projectile/frood.vpcf",
-                PATTACH_ABSORIGIN_FOLLOW,
-                hero
-            )
-            ParticleManager:SetParticleControlEnt(
-                hero.particleHAT,
-                0,
-                hero,
-                PATTACH_POINT_FOLLOW,
-                "HatPoint",
-                hero:GetAbsOrigin(),
-                true
-            )
-        elseif steamID32 == g_vic then
-            hero.particleHAT = ParticleManager:CreateParticle(
-                "particles/basic_projectile/radar.vpcf",
-                PATTACH_ABSORIGIN_FOLLOW,
-                hero
-            )
-            ParticleManager:SetParticleControlEnt(
-                hero.particleHAT,
-                0,
-                hero,
-                PATTACH_POINT_FOLLOW,
-                "HatPoint",
-                hero:GetAbsOrigin(),
-                true
-            )
-        elseif steamID32 == g_josh then
-            hero.particleHAT = ParticleManager:CreateParticle(
-                "particles/basic_projectile/josh.vpcf",
-                PATTACH_ABSORIGIN_FOLLOW,
-                hero
-            )
-            ParticleManager:SetParticleControlEnt(
-                hero.particleHAT,
-                0,
-                hero,
-                PATTACH_POINT_FOLLOW,
-                "HatPoint",
-                hero:GetAbsOrigin(),
-                true
-            )
-        elseif steamID32 == g_borgel then
-            hero.particleHAT = ParticleManager:CreateParticle(
-                "particles/basic_projectile/borgel.vpcf",
-                PATTACH_ABSORIGIN_FOLLOW,
-                hero
-            )
-            ParticleManager:SetParticleControlEnt(
-                hero.particleHAT,
-                0,
-                hero,
-                PATTACH_POINT_FOLLOW,
-                "HatPoint",
-                hero:GetAbsOrigin(),
-                true
-            )
-        elseif steamID32 == g_planit then
-            hero.particleHAT = ParticleManager:CreateParticle(
-                "particles/basic_projectile/planit.vpcf",
-                PATTACH_ABSORIGIN_FOLLOW,
-                hero
-            )
-            ParticleManager:SetParticleControlEnt(
-                hero.particleHAT,
-                0,
-                hero,
-                PATTACH_POINT_FOLLOW,
-                "HatPoint",
-                hero:GetAbsOrigin(),
-                true
-            )
-
-            -- else uncomment for santa hat
-            -- 	hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/hat.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
-            -- 	ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
-        end
-    end
+   
     if string.match(hero:GetName(), "apparition") then
         if hero.particleR == nil then
             hero.particleR = ParticleManager:CreateParticle(

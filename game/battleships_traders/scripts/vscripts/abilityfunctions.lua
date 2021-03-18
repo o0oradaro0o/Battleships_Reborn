@@ -131,7 +131,7 @@ function peak(keys) -- keys is the information sent by the ability
 
 	for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
 		 ----print("[ItemFunctions] peak found a hero!")
-		if hero ~= nil and hero:IsRealHero() then
+		if hero ~= nil and hero:IsRealHero() and casterUnit:GetTeam() ~= hero:GetTeam() then
 			local casterPosition = casterUnit:GetAbsOrigin()
 			local heroPosition = hero:GetAbsOrigin()
 			local distance = (casterPosition - heroPosition):Length()
@@ -2123,8 +2123,10 @@ function maintainNoFireZone(keys)
 							if gotNoBows[hero] ~= nil and heroDist:Length() > radius then
 								reapplyAllBowsIfRemoved(hero)
 								gotNoBows[hero] = 0
+								hero:RemoveModifierByName("modifier_disarmed")
 							elseif heroDist:Length() <= radius and (gotNoBows[hero] == nil or gotNoBows[hero] == 0) then
 								removeAllBows(hero)
+								hero:AddNewModifier(casterUnit, nil, "modifier_disarmed", {duration = 1})
 								gotNoBows[hero] = 1
 							end
 						end
