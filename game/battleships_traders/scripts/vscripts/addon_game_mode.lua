@@ -5773,9 +5773,11 @@ function become_boat(casterUnit, heroname)
                 for b = 0, 15, 1 do
                     local newItem = CreateItem(itemlist[b], hero, hero)
                     if newItem ~= nil then -- makes sure that the item exists and making sure it is the correct item
-                        if string.match(heroname, "pugna") and b == 4 then
-                            local shard = CreateItem("item_aghanims_shard", hero, hero)
-                            hero:AddItem(shard)
+                        if string.match(heroname, "pugna") then
+                            if b == 14 then
+                                local shard = CreateItem("item_aghanims_shard", hero, hero)
+                                hero:AddItem(shard)
+                            end
                         end
                     
                         if string.match(heroname, "vengefulspirit") or string.match(heroname, "enigma") or string.match(heroname, "bane") then
@@ -5841,7 +5843,7 @@ function become_boat(casterUnit, heroname)
                             CustomGameEventManager:Send_ServerToAllClients("Team_Cannot_Buy", data)
                         end
 
-                        if (string.match(heroname, "vengefulspirit") or string.match(heroname, "enigma") or string.match(heroname, "bane")) and (b == 13 or b == 14) and not string.match(itemlist[b], "fluff") then
+                        if (string.match(heroname, "vengefulspirit") or string.match(heroname, "pugna") or string.match(heroname, "enigma") or string.match(heroname, "bane")) and (b == 13 or b == 14) and not string.match(itemlist[b], "fluff") then
                             CreateItemOnPositionSync(hero:GetOrigin(), newItem)
                             ----print("ejecting")
                         end
@@ -5858,6 +5860,7 @@ function become_boat(casterUnit, heroname)
                         if itemstacks[b] then newItem:SetCurrentCharges(itemstacks[b]) end
                     end
                 end
+
                 if hero:IsHero() or hero:HasInventory() then
                     for itemSlot = 0, 15, 1 do
                         if hero ~= nil then
@@ -5869,6 +5872,7 @@ function become_boat(casterUnit, heroname)
                             elseif activateItem ~= nil and string.match(activateItem:GetName(), "fluff") then
                                 RemoveAndDeleteItem(hero, activateItem)
                             end
+                            
                         end
                     end
                 end
