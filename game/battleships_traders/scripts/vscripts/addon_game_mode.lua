@@ -1744,7 +1744,7 @@ function CBattleship8D:OnPlayerChat(keys)
         steamID32 = PlayerResource:GetSteamAccountID(playerID)
         local text = keys.text
         if (steamID32 == g_radar or steamID32 == g_zentrix or steamID32 == 5879425 or steamID32 == 93116118) and string.match(text, "TUG MODE ACTIVATE!") and GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then g_TugMode = 1 end
-        if teamonly == 0 and string.match(text, "Forget to zoom") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
+        if teamonly == 0 and string.match(text, "forget to zoom") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
             Notifications:TopToAll({
                 text = "Thank you David!",
                 duration = 5.0,
@@ -1752,6 +1752,37 @@ function CBattleship8D:OnPlayerChat(keys)
             })
 
         end
+
+        if teamonly == 0 and string.match(text, "bigger boat") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
+        print( "bigger boat")
+        Notifications:TopToAll({
+                text = "Now is not the time to use that!",
+                duration = 5.0,
+                style = {color = "#444499", fontSize = "70px;"}
+            })
+        -- print( "player id" .. playerID)
+        -- for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
+        --     if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+        --         if hero:IsRealHero() then
+        --         print( "found a hero")
+        --             if hero:GetPlayerID() == playerID then
+        --             local size = hero:GetModelScale();
+        --                 if RandomInt(1, 4) == 2 then
+        --                 print( "rolled a 2")
+        --                     Timers:CreateTimer(7, function() hero:SetModelScale(size)  end)
+        --                 else
+        --                     print( "rolled not a 2")
+        --                     hero:SetModelScale(2.5)
+        --                     Timers:CreateTimer(7, function() hero:SetModelScale(size) end)
+        --                 end
+        --             end
+        --         end
+        --     end
+        -- end
+
+        end
+
+
         if string.match(text, "rip david") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
             Notifications:TopToAll({
                 text = "Don't Forget to Zoom!",
@@ -1780,6 +1811,8 @@ function CBattleship8D:OnPlayerChat(keys)
         end
     end
 end
+
+
 
 function CBattleship8D:BountyRuneFilter(filterTable)
     -- Check if the order is the glyph type
@@ -2584,6 +2617,7 @@ function CBattleship8D:OnNPCSpawned(keys)
 
                 npc:AddNewModifier(npc, nil, "modifier_movespeed_cap", nil)
                 npc:AddNewModifier(npc, nil, "modifier_no_block", nil)
+               
 
                 npc:SetBaseStrength(1)
                 ----print("hero level is" .. npc:GetLevel())
@@ -2591,6 +2625,13 @@ function CBattleship8D:OnNPCSpawned(keys)
                     0.1,
                     function()
                         if npc:IsHero() or npc:HasInventory() then
+                        for itemSlot = 0, 15, 1 do
+                            if casterUnit ~= nil then
+                                local Item = casterUnit:GetItemInSlot(itemSlot)
+                                if Item ~= nil and string.match(Item:GetName(), "tpscroll") then RemoveAndDeleteItem(casterUnit, Item) end
+                            end
+                        end
+
                             for itemSlot = 6, 11, 1 do
                                 if npc ~= nil then
                                     local Item = npc:GetItemInSlot(itemSlot)
@@ -5739,7 +5780,11 @@ function become_boat(casterUnit, heroname)
                 for b = 0, 15, 1 do
                     local newItem = CreateItem(itemlist[b], hero, hero)
                     if newItem ~= nil then -- makes sure that the item exists and making sure it is the correct item
-
+                        if string.match(heroname, "pugna") and b == 4 then
+                            local newItem3 = CreateItem("item_aghanims_shard", hero, hero)
+                            print("I did the thing!!!!!!!!!!!!!!!!!!!!!! item_aghanims_shard")
+                        end
+                    
                         if string.match(heroname, "vengefulspirit") or string.match(heroname, "enigma") or string.match(heroname, "bane") then
                             if b == 4 then
 

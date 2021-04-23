@@ -3223,16 +3223,13 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"Trade_Desc"			"Adds a special class of ship with limited inventory slots can take on profitable trading contracts and buy powerful consumable items. These ships drop high bounties if hunted down!"
 		"discord"			"Click to join us on discord!"
 		"News_Title"		"News!"
-		"News_Content"		"Please play this game more, it's pretty good
+		"News_Content"		"Bet you didnt think I'd ever update this area again!
 
-Recent Balance Changes 4/16/2020
-   • Airboat: Decreased Swamp Gas Cast Range and Damage
-   • Airboat: Increased Fan Blast Slow Duration and Damage
-   • Canoe: Increased War Drums Move Speed Duration
-   • Paddlewheel Diver: Decreased Dive Cooldown
-   • River Boat: Decreased max cherries 3 -> 2
-   • River Boat: Some other stuff is stronger
-   • Fixed Tide not using weapons
+Recent Balance Changes 4/22/2021
+   • Catamaran: Increase jump range, remove a jump charge
+   • Catamaran: Lower powershot damage
+   • Icebreaker: You can now move while channeling the ultimate
+   • No longer gain a TP upon death
 "
 		
 		"port_cannons"                                               "Port Cannons"
