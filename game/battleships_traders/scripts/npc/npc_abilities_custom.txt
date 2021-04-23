@@ -8698,21 +8698,28 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"2"
+		"AbilitySound"					"hero_Crystal.freezingField.wind"
+
+		"HasScepterUpgrade"			"1"
+    "HasShardUpgrade"               "1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityChannelTime"			"7.0 7.0 7.0"
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityChannelTime"			"10"
+		"AbilityCastPoint"				"0"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"40.0 35.0 30.0"
-		"AbilityDuration"				"7.0"
+		"AbilityCooldown"				"110 100 90"
+		"AbilityDuration"				"10.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0 0 0"
+		"AbilityManaCost"				"0"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -8725,13 +8732,17 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"685 685 685"
-			}
-		
+				"radius"			"685"
+			}		
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"explosion_radius"	"330 330 330"
+				"explosion_radius"	"330"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"0"
 			}
 			"04"
 			{
@@ -8746,7 +8757,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_slow"	"-30"
+				"attack_slow"	"-60"
 			}
 			"07"
 			{
@@ -8767,21 +8778,13 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"damage"			"205 270 350"
+				"LinkedSpecialBonus"	"special_bonus_unique_crystal_maiden_3"
 			}
 			"11"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_scepter"	"170 250 310"
-			}
-			"12"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"movespeed_slow_scepter" "-50"
-			}
-			"13"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"attack_slow_scepter"	"-50"
+				"var_type"				"FIELD_FLOAT"
+				"scepter_delay"	"1.75"
+				"RequiresScepter"		"1"
 			}
 		}
 	}

@@ -1754,12 +1754,11 @@ function CBattleship8D:OnPlayerChat(keys)
         end
 
         if teamonly == 0 and string.match(text, "bigger boat") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
-        print( "bigger boat")
-        Notifications:TopToAll({
-                text = "Now is not the time to use that!",
-                duration = 5.0,
-                style = {color = "#444499", fontSize = "70px;"}
-            })
+        -- Notifications:TopToAll({
+        --         text = "Now is not the time to use that!",
+        --         duration = 5.0,
+        --         style = {color = "#444499", fontSize = "70px;"}
+        --     })
         -- print( "player id" .. playerID)
         -- for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
         --     if hero ~= nil and hero:IsOwnedByAnyPlayer() then
@@ -1799,9 +1798,7 @@ function CBattleship8D:OnPlayerChat(keys)
                 colorchoice = colorchoice+100000
             end
             local color = "#" .. colorchoice
-            print(color)
-            Notifications:TopToAll({
-                
+            Notifications:TopToAll({                
                 text = "Nice build ".. PlayerResource:GetPlayerName(HeroList:GetAllHeroes()[rand]:GetPlayerOwnerID()) .."!",
                 duration = 5.0,
                 
@@ -2673,7 +2670,6 @@ function AttachCosmetics(hero)
     end
     if hero.particleHAT == nil then
         for playerSteamId, hatname in pairs(g_PlayerHatList) do
-            print(playerSteamId .. hatname)
             if string.match(steamID32, playerSteamId) and string.match(hatname, "noHat") then
             -- hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/hat.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
             -- ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
@@ -3959,7 +3955,6 @@ function reapplyWP()
 
                         g_ConfusedCreeps[creep] = creep:GetOrigin() * Vector(-1, 1, 1)
                     elseif g_ConfusedCreeps[creep] ~= nil then
-                        print(g_ConfusedCreeps[creep])
                         creep:MoveToPositionAggressive(g_ConfusedCreeps[creep])
 
                     end
@@ -3987,7 +3982,6 @@ end
 
 function CBattleship8D:OnDisconnect(keys)
     ----print('[BAREBONES] Player Disconnected ' .. tostring(keys.userid))
-    PrintTable(keys)
     local plyID
     for ind = 0, 20, 1 do
         if string.match(keys.name, g_PlayerIdsToNames[ind]) then plyID = ind end
@@ -4046,7 +4040,6 @@ function CBattleship8D:OnReconnect(keys)
 end
 function CBattleship8D:OnConnectFull(keys)
     print('[BAREBONES] OnConnectFull')
-    PrintTable(keys)
     local entIndex = keys.index + 1
     local ply = EntIndexToHScript(entIndex)
     local playerID = ply:GetPlayerID()
@@ -5781,8 +5774,8 @@ function become_boat(casterUnit, heroname)
                     local newItem = CreateItem(itemlist[b], hero, hero)
                     if newItem ~= nil then -- makes sure that the item exists and making sure it is the correct item
                         if string.match(heroname, "pugna") and b == 4 then
-                            local newItem3 = CreateItem("item_aghanims_shard", hero, hero)
-                            print("I did the thing!!!!!!!!!!!!!!!!!!!!!! item_aghanims_shard")
+                            local shard = CreateItem("item_aghanims_shard", hero, hero)
+                            hero:AddItem(shard)
                         end
                     
                         if string.match(heroname, "vengefulspirit") or string.match(heroname, "enigma") or string.match(heroname, "bane") then
@@ -5881,7 +5874,6 @@ function become_boat(casterUnit, heroname)
                 end
 
                 for itemnum = 0, #droppeditemlist, 1 do
-                    PrintTable(droppeditemlist)
                     if droppeditemlist[itemnum] ~= nil then
                         local DroppedItem = droppeditemlist[itemnum]
                         if not DroppedItem:IsNull() and not hero:IsNull() then DroppedItem:SetPurchaser(hero) end
@@ -6222,7 +6214,6 @@ function buyBoat(eventSourceIndex, args)
 
     local teamNum = PlayerResource:GetTeam(pID)
     local casterUnit
-    PrintTable(args)
     -- get list of heroes on this team
     local i = 0
     for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
@@ -6363,7 +6354,6 @@ function buyItem(eventSourceIndex, args)
     local pID = args.PlayerID
     local teamNum = PlayerResource:GetTeam(pID)
     local heroBuying
-    PrintTable(args)
     -- get list of heroes on this team
     local i = 0
     for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
@@ -6447,7 +6437,6 @@ function GiveEasy(eventSourceIndex, args)
             local missionPool
             if heroBuying:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                 ----print(nearestShop:GetUnitName())
-                PrintTable(g_EasyMissionsSouth[nearestShop:GetUnitName()])
                 missionPool = g_EasyMissionsSouth[nearestShop:GetUnitName()]
             else
                 missionPool = g_EasyMissionsNorth[nearestShop:GetUnitName()]
@@ -6995,7 +6984,6 @@ function SetHat(eventSourceIndex, args)
     request:SetHTTPRequestRawPostBody("application/json", json.encode(data))
     request:SetHTTPRequestHeaderValue("x-api-key", GetDedicatedServerKeyV2(SERVER_KEY))
     request:Send(function(res)
-        print(res.StatusCode)
         if res.StatusCode ~= 200 then end
     end)
     ----print(g_TradeMode)
@@ -7012,11 +7000,9 @@ function BuyHat(eventSourceIndex, args)
     local data = {}
     data.points = args.cost
     data.hat = args.text
-    print(data)
     request:SetHTTPRequestRawPostBody("application/json", json.encode(data))
     request:SetHTTPRequestHeaderValue("x-api-key", GetDedicatedServerKeyV2(SERVER_KEY))
     request:Send(function(res)
-        print(res.StatusCode)
         if res.StatusCode ~= 200 then end
     end)
     ----print(g_TradeMode)
@@ -7040,7 +7026,6 @@ function AddPoints(eventSourceIndex, args)
     request:SetHTTPRequestRawPostBody("application/json", json.encode(data))
     request:SetHTTPRequestHeaderValue("x-api-key", GetDedicatedServerKeyV2(SERVER_KEY))
     request:Send(function(res)
-        print(res.StatusCode)
         if res.StatusCode ~= 200 then end
     end)
 end
@@ -7498,8 +7483,6 @@ function setupWin(winner)
     if #g_PlayerMMRList > 5 then
         winnerRank = winnerRank / #winners
         loserRank = loserRank / #losers
-        print("winnerRank " .. winnerRank)
-        print("loserRank " .. loserRank)
         local mmrChange = GetEloRatingChange(winnerRank, loserRank, 50)
         for _, winner in pairs(winners) do AddMMR(mmrChange, winner) end
         for _, loser in pairs(losers) do AddMMR(0 - mmrChange, loser) end
@@ -7507,7 +7490,6 @@ function setupWin(winner)
 end
 
 function AddMMR(mmrchange, playerSteamId)
-    print(mmrchange .. " added to player id " .. playerSteamId)
     local request = CreateHTTPRequestScriptVM(
         "POST",
         "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/" .. playerSteamId .. "/alter-player"
@@ -7518,7 +7500,6 @@ function AddMMR(mmrchange, playerSteamId)
 
     request:SetHTTPRequestHeaderValue("x-api-key", GetDedicatedServerKeyV2(SERVER_KEY))
     request:Send(function(res)
-        print(res.StatusCode)
         if res.StatusCode ~= 200 then end
     end)
     ----print(g_TradeMode)
@@ -7538,7 +7519,6 @@ function SendMMRsToServer(eventSourceIndex, args)
     )
     -- request:SetHTTPRequestGetOrPostParameter("server_key", GetDedicatedServerKeyV2(SERVER_KEY));
     request:Send(function(res)
-        print(res.StatusCode)
         local mmr = 1000
 
         if res.StatusCode == 200 then
@@ -7549,7 +7529,6 @@ function SendMMRsToServer(eventSourceIndex, args)
 
         local playerData = {playerSteamID = args.playerSteamId, mmr = mmr,}
         table.insert(g_PlayerMMRList, playerData)
-        print("table.getn(g_PlayerMMRList):" .. TableCount(g_PlayerMMRList) .. "  PlayerResource:GetPlayerCount():" .. PlayerResource:GetPlayerCount())
         if g_PlayerMMRList and TableCount(g_PlayerMMRList) == PlayerResource:GetPlayerCount() then
             CustomGameEventManager:Send_ServerToAllClients("MMRData", g_PlayerMMRList)
         end
