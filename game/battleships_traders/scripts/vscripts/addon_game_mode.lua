@@ -359,6 +359,11 @@ function Precache(context)
         "particles/units/heroes/hero_terrorblade/terrorblade_sunder.vpcf",
         context
     )
+    PrecacheResource(
+        "particle",
+        "particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf",
+        context
+    )
     PrecacheResource("model", "models/battleship_boat0.vmdl", context)
     PrecacheResource("model", "models/battleship_boat1.vmdl", context)
     PrecacheResource("model", "models/battleship_boat2.vmdl", context)
