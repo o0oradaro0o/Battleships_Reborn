@@ -1156,10 +1156,6 @@
 	{
 		"ItemPurchasable" "0"
 	}
-	"item_nullifier"
-	{
-		"ItemPurchasable" "0"
-	}
 	"item_aghanims_shard"
 	{
 		"ItemPurchasable" "0"
@@ -1272,4 +1268,21 @@
 	{
 		"ItemPurchasable" "0"
 	}
+	"item_blitz_knuckles"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_voodoo_mask"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_helm_of_the_overlord"
+	{
+		"ItemPurchasable" "0"
+	}
+	"item_ultimate_scepter_2"
+	{
+		"ItemPurchasable" "0"
+	}
+	
 }
