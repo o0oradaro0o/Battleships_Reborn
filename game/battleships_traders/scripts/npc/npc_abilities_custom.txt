@@ -1295,8 +1295,6 @@
 	//=================================================================================================================
 	"pistols_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"AbilityTextureName"			"pistols"
@@ -1304,16 +1302,10 @@
 		"AbilityCastRange"				"600"
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25.0 25.0 25.0 25.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		"OnSpellStart"
@@ -1371,8 +1363,6 @@
                         
                 }
 		
-		
-		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -1407,28 +1397,16 @@
 	//=================================================================================================================
 	"bail_water"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"			"bail"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20.0 20.0 20.0 20.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
-		
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -1485,14 +1463,10 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"hoops"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
 		"AbilityManaCost"				"0"
-		
-		
 		"OnUpgrade"
 		{
 			"RemoveModifier"
@@ -1553,27 +1527,19 @@
 	//=================================================================================================================
 	"kunkka_torrent_bships"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"1"
 		"BaseClass" 					"kunkka_torrent"
 		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1500"
 		"AbilityCastPoint"				"0.05 0.05 0.05 0.05"
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25.0 22.0 19.0 16.0"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDamage"					"100 150 200 250"
 	
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 
 		// Stats
@@ -1623,8 +1589,6 @@
 	//=================================================================================================================
 	"kunkka_x_marks_the_spot_bships"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -1632,17 +1596,11 @@
 		"FightRecapLevel"				"1"
 		"BaseClass" 					"kunkka_x_marks_the_spot"
 		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800 900 1000 1100"
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25.0 22.0 19.0 16.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 
 		// Special
@@ -1682,20 +1640,12 @@
 	//=================================================================================================================
 	"kunkka_return_bships"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"BaseClass" 					"kunkka_return"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"5.0 5.0 5.0 5.0"
 	
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 	}
 	
@@ -1704,29 +1654,21 @@
 	//=================================================================================================================
 	"kunkka_ghostship_bships"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"2"
 		"BaseClass" 					"kunkka_ghostship"
 		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000 1100 1200"
 		"AbilityCastPoint"				"0.0 0.0 0.0"
 		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"45.0 35.0 25.0"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDamage"					"250 300 350"
 	
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0"
 
 		// Special
@@ -1778,25 +1720,15 @@
 	//=================================================================================================================
 	"discoship_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"keeper_of_the_light_chakra_magic"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		"OnSpellStart"
@@ -1874,8 +1806,6 @@
 		}
 
 		
-		
-		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -1898,25 +1828,15 @@
 	//=================================================================================================================
 	"fun_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"meepo_divided_we_stand"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 800 1000 1600"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		"OnUpgrade"
@@ -1984,27 +1904,17 @@
 	//=================================================================================================================
 	"dive_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 
 		
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"			"dive_battleship_puck"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0 0 0 0"
 		
 		"AbilityChannelTime"			"0.6 0.8 1.0 1.2"
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"14.0 12.0 10.0 8.0"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"		
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 
 		"OnSpellStart"
@@ -2127,31 +2037,19 @@
 	//=================================================================================================================
 	"dive_battleship_puck"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 
 		
 		"BaseClass" 					"puck_phase_shift"
 			"AbilityTextureName"			"dive_battleship_puck"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0 0 0 0"
 		
 		"AbilityChannelTime"			"0.6 0.8 1.0 1.2"
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25.0 20.0 13.0 10.0"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"		
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 
-		
-		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -2169,19 +2067,11 @@
 	//=================================================================================================================
 	"ramming_speed_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"ramming_speed_battleship"
-
-		// Stats		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25.0 22.0 19.0 16.0"
 		"AbilityCastPoint"				"0 0 0 0"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"							"0 0 0 0"
 
 		"OnSpellStart"
@@ -2227,8 +2117,7 @@
 				}
 			}
 		}
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -2244,16 +2133,24 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"base_speed"				"300.0 350.0 400.5 450.0"
-			
+				"base_speed"				"300.0 350.0 400.5 450.0"			
 			}
-			"03"
+			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"accel_boost"				"100"
 			}
-		}
-	
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_radius"				"250"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"100 150 200 250"
+			}
+		}	
 	}
 	
 	//=================================================================================================================
@@ -2261,27 +2158,17 @@
 	//=================================================================================================================
 	"head_above_water_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 
 		
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"			"head_above_water_battleship"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0 0 0 0"
 		
 		"AbilityChannelTime"			"4.0 5.0 6.0 7.0"
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30.0 25.0 20.0 13.0"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"		
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 
 		"OnSpellStart"
@@ -2384,8 +2271,6 @@
 			
 			}
 		}
-		
-		
 	}
 	
 	//=================================================================================================================
@@ -2393,23 +2278,15 @@
 	//=================================================================================================================
 	"meepo_earthbind_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass" 					"meepo_earthbind"												// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass" 					"meepo_earthbind"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"FightRecapLevel"				"1"
 		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1050 1150 1250 1350"
 		"AbilityCastPoint"				"0.1"
 		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20 16 12 8"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 
 		// Special
@@ -2451,13 +2328,9 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1800"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 		"AbilityCharges"				"3"
 		"AbilityChargeRestoreTime"		"30 25 20 18"
@@ -2465,8 +2338,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDamage"					"50 60 70 80"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 
 		// Stats
@@ -2527,9 +2398,7 @@
 	"sniper_assassinate_battleship"
 	{
 	
-		"BaseClass" 					"sniper_assassinate"
-		// General
-		//-------------------------------------------------------------------------------------------------------------												
+		"BaseClass" 					"sniper_assassinate"												
 		// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityTextureName"			"sniper_headshot"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
@@ -2545,22 +2414,16 @@
 
 
 		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1400"
 		"AbilityCastRangeBuffer"		"600"
 		"AbilityCastPoint"				"2.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"18.0 16.0 14.0"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDamage"					"700 1000 1300"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0"
 		
 		// Stats
@@ -2589,9 +2452,7 @@
 	// Ability: Pudge Meat Hook
 	//=================================================================================================================
 	"pudge_meat_hook_battleship"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------												
+	{												
 		// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
@@ -2599,21 +2460,15 @@
 		"FightRecapLevel"				"1"
 		"BaseClass" 					"pudge_meat_hook"
 		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700 900 1100 1300"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25.0 23.0 21.0 19.0"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDamage"					"200 300 400 500"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 
 		// Special
@@ -2648,7 +2503,17 @@
 		}
 	}
 	
-	// Rewrite of the Pudge Meat Hook ability
+	"ability_shard_giver"
+	{
+		// General
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"pudge_meat_hook"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ScriptFile"					"heroes/ability_shard_giver.lua"
+		"MaxLevel"   "1"
+	}
+
+// Rewrite of the Pudge Meat Hook ability
 // Author: Valve
 // Date: 25.09.2015.
 "pudge_meat_hook_lua"
@@ -2733,28 +2598,20 @@
 	//=================================================================================================================
 	"morphling_waveform_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"1"
 		"BaseClass" 					"morphling_waveform"
 		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200"
 		"AbilityCastPoint"				"0.1"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25.0 23.0 21.0 19.0"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDamage"					"200 250 300 350"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 
 		
@@ -2781,23 +2638,15 @@
 	//=================================================================================================================
 	"tidehunter_gush_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"			"tidehunter_gush"
-		
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700 800 900 1000"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 		"AbilityManaCost"				"0 0 0 0"
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"24.0 20.0 16.0 12.0"
 		"OnSpellStart"
 		{
@@ -2882,8 +2731,6 @@
 	//=================================================================================================================
 	"riki_blink_strike_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------												// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
@@ -2898,21 +2745,15 @@
 
 
 		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700 800 900"
 		"AbilityCastPoint"				"0.4 0.4 0.4"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20 18 16"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDamage"					"400 500 600"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0"
 		
 		// Special
@@ -2949,9 +2790,7 @@
 	//=================================================================================================================
 	"batrider_flaming_lasso_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass" 					"batrider_flaming_lasso"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass" 					"batrider_flaming_lasso"	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -2964,17 +2803,11 @@
 
 
 		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"400 400 400"
 		"AbilityCooldown"				"30.0 27.0 24.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		"AbilitySpecial"
 		{
@@ -3015,25 +2848,17 @@
 	//=================================================================================================================
 	"spirit_breaker_charge_of_darkness_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass" 					"spirit_breaker_charge_of_darkness"															// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass" 					"spirit_breaker_charge_of_darkness"			
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_ALERT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"FightRecapLevel"				"1"
 		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
 		"AbilityCastRange"				"0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"35 30 25 20"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 
 		// Stats
@@ -3076,28 +2901,16 @@
 	//=================================================================================================================
 	"gun_it"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"overcharge"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"12"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
-		
 		"OnToggleOn"
 		{
 			"ApplyModifier"
@@ -3233,25 +3046,15 @@
 	//=================================================================================================================
 	"launch_craft"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"gyrocopter_homing_missile"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"60 55 45 35"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		"OnSpellStart"
@@ -3345,25 +3148,15 @@
 	//=================================================================================================================
 	"launch_all"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"gyrocopter_flak_cannon"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"80 75 70 60"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		"OnSpellStart"
@@ -3400,8 +3193,6 @@
 	//=================================================================================================================
 	"gyrocopter_call_down_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass" 					"gyrocopter_call_down"
 		// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
@@ -3415,16 +3206,10 @@
 
 
 		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"10000"
 		"AbilityCastPoint"				"0.3 0.3 0.3"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"35 30 25"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0"
 		
 		// Special
@@ -3482,8 +3267,7 @@
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityTextureName"			"keeper_of_the_light_chakra_magic"		
-		
+		"AbilityTextureName"			"keeper_of_the_light_chakra_magic"
 		"BaseClass" 					"ability_datadriven"
 
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
@@ -3540,8 +3324,7 @@
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityTextureName"			"keeper_of_the_light_chakra_magic"		
-		
+		"AbilityTextureName"			"keeper_of_the_light_chakra_magic"
 		"BaseClass" 					"ability_datadriven"
 
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
@@ -3596,17 +3379,13 @@
 		}
 
 		
-		
-		
 
 	}
 
 
 	"raven_heal"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
@@ -3616,17 +3395,11 @@
 
 		
 		"BaseClass" 					"ability_datadriven"	
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
 		"AbilityCooldown"				"3"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 		"OnSpellStart"
 		{
@@ -3666,30 +3439,16 @@
 	//=================================================================================================================
 	"aircraft_bomb"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"keeper_of_the_light_chakra_magic"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
-		
 		"Modifiers"
 		{
 			"fx_test_modifier"
@@ -3819,24 +3578,14 @@
 	//=================================================================================================================
 	"repair_aura"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"meepo_divided_we_stand"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 
@@ -3874,8 +3623,6 @@
 	//=================================================================================================================
 	"Pillage"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BUILDING"
@@ -3884,20 +3631,12 @@
 		"AbilityCastRange"				"600"
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 		"AbilityCastRange"				"300"
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30 25 20 15"
 		"AbilityChannelTime"			"4 5 6 7"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
-		
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -3929,10 +3668,7 @@
 				"Target" "TARGET"
 				"ModifierName" "building_dearmor"
 			}
-
 		}
-		
-		
 
 		"Modifiers"
 		{
@@ -3960,11 +3696,7 @@
 						"ProvidesVision" "0"
 						"EffectName"    "particles/basic_projectile/pistol_projectile.vpcf" 
 					}
-					
-					
-					
 				}
-				
 			}
 			"building_dearmor"
 			{
@@ -3992,13 +3724,9 @@
 						"Type"                                  "DAMAGE_TYPE_MAGICAL"
 						"Damage"                                "10 20 30 40"
 						"Target"                                "TARGET"
-				}
-				
+				}				
 		}
 
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -4012,9 +3740,6 @@
 				"damage_per_second"			"-3 -6 -9 -12"
 			}
 		}
-		
-		
-
 	}
 	
 	//=================================================================================================================
@@ -4022,8 +3747,6 @@
 	//=================================================================================================================
 	"big_boom"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"AbilityTextureName"			"brewmaster_storm_wind_walk"
@@ -4031,21 +3754,10 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"MaxLevel"						"3"
 		"LevelsBetweenUpgrades"					"3"
-		"RequiredLevel"						"2"
-
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
+		"RequiredLevel"						"2"		
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"50 40 30 20"
-
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
 		
 		"OnSpellStart"
 		{
@@ -4064,7 +3776,6 @@
 					"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
 					"Function"			"vahSound"
 				}
-
 		}
 		"OnOwnerDied"
 		{
@@ -4075,13 +3786,8 @@
 				}
 		}
 
-		
-		
-
 		"Modifiers"
 		{
-			
-			
 			"big_boom"
 			{
 				"Properties"
@@ -4133,8 +3839,6 @@
 							"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
 							"Function"			"vahBoomSound"
 						}
-						
-					
 				}
 				"OnCreated"
 				{
@@ -4158,11 +3862,10 @@
 							"Target" "CASTER"
 							"EffectName"		  "particles/basic_projectile/big_boom_explode_effect.vpcf" 
 							"EffectAttachType"	"follow_origin"
-						}
-					
-				}
-					
+						}					
+				}					
 			}
+
 			"big_boom_recover"
 			{
 				"Duration" "8.0"
@@ -4171,8 +3874,6 @@
 						"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%vah_regen"
 				}
 			}
-			
-				
 		}
 		
 		"AbilitySpecial"
@@ -4196,43 +3897,26 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"armor"			"6 7 8"
-			}
-			
+			}			
 		}
-		
-
 	}
-
 	
 	//=================================================================================================================
 	// Launch craft
 	//=================================================================================================================
 	"drop_craft"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"drop_craft"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"MaxLevel"						"3"
 		"LevelsBetweenUpgrades"					"3"
-		"RequiredLevel"						"2"
-
-
-		
+		"RequiredLevel"						"2"		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30 25 20"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		"OnSpellStart"
@@ -4250,13 +3934,7 @@
 					"Function"			"dropCraftSound"
 				}
 		}
-		
 
-		
-		
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 						"01"
@@ -4272,29 +3950,17 @@
 	//=================================================================================================================
 	"doom_bringer_scorched_earth_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass" 					"doom_bringer_scorched_earth"		
-		"AbilityTextureName"				"doom_bringer_scorched_earth_battleship"									// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityTextureName"				"doom_bringer_scorched_earth_battleship"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"1"
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 		"AbilityCastRange"				"600 600 600 600"
 		"AbilityCooldown"				"18.0 17.0 16.0 15.0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -4326,26 +3992,15 @@
 	//=================================================================================================================
 	"miss_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"faceless_void_backtrack"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 800 1000 1600"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
+
 		"OnUpgrade"
 		{
 			"RemoveModifier"
@@ -4394,30 +4049,18 @@
         }
 	}
 	
-		//=================================================================================================================
+	//=================================================================================================================
 	// hit
 	//=================================================================================================================
 	"hit_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"			"gyrocopter_homing_missile"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30.0 25.0 20.0 15.0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		"OnSpellStart"
@@ -4479,25 +4122,16 @@
 	//=================================================================================================================
 	"peak_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"			"sonar"
 		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
-	"OnUpgrade"
+		"OnUpgrade"
 		{
 			"RemoveModifier"
 			{
@@ -4551,8 +4185,6 @@
 			}
 			
 		}
-		
-		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -4572,23 +4204,15 @@
 	//=================================================================================================================
 	"terrorblade_conjure_image_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass" 					"terrorblade_conjure_image"
 
 		// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.5"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"16.0"
 	
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 
 		// Special
@@ -4625,25 +4249,15 @@
 	//=================================================================================================================
 	"rainbow_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"rainbow"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 800 1000 1200"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		"OnOwnerDied"
@@ -4684,25 +4298,15 @@
 	//=================================================================================================================
 	"rainbow_cast_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"keeper_of_the_light_chakra_magic"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		"Modifiers"
 		{
@@ -4783,11 +4387,6 @@
                                 "Target"                                "TARGET"
                         }
                 }
-
-
-		
-		
-
 	}
 	
 
@@ -4796,8 +4395,6 @@
 	//=================================================================================================================
 	"mountain_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"			"greevil_ice_wall"
@@ -4805,25 +4402,13 @@
 		"MaxLevel"						"3"
 		"LevelsBetweenUpgrades"					"3"
 		"RequiredLevel"						"2"
-
-
-		
 		
 		"BaseClass" 					"ability_datadriven"
 		"AbilityCastRange"				"1000 1000 1000 1000"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"50.0 45.0 40.0 35.0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
-		
+
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -4841,8 +4426,7 @@
 					{
 						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
 						"Function"			"mountainSound"
-					}
-			
+					}			
 		}
 
 		 "Modifiers"
@@ -4874,11 +4458,6 @@
                
         }
 
-		
-		
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -4900,26 +4479,16 @@
 	//=================================================================================================================
 	"plane_fly_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 
 		
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"			"batrider_firefly"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0 0 0 0"
 		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30.0 27.0 24.0 20.0"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"		
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 
 		"OnSpellStart"
@@ -4934,7 +4503,6 @@
 				"Function"			"CallBatFly"
 				"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 			}
-
 		}
 	
 		 "Modifiers"
@@ -4999,6 +4567,7 @@
 					}
 				}
 			}
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -5031,8 +4600,7 @@
 				"var_type"				"FIELD_INTEGER"
 				"speed_bonus"			"150 150 150 150"
 			}
-		}
-		
+		}		
 	}
 	
 	//=================================================================================================================
@@ -5040,22 +4608,14 @@
 	//=================================================================================================================
 	"batrider_firefly_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass" 					"batrider_firefly"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass" 					"batrider_firefly"	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30.0 25.0 20.0 15.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 
 		// Special
@@ -5095,25 +4655,15 @@
 	//=================================================================================================================
 	"sputt_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"riki_smoke_screen"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"325 325 325 325"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"10"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		"OnSpellStart"
@@ -5128,8 +4678,6 @@
 				"Target" "CASTER"
 				"ModifierName" "smoke_effect"
 			}
-		
-
 		}
 
 		 "Modifiers"
@@ -5206,8 +4754,6 @@
 	//=================================================================================================================
 	"mayday_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
@@ -5218,14 +4764,10 @@
 		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
 
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		"OnUpgrade"
@@ -5311,8 +4853,6 @@
 	//=================================================================================================================
 	"go_home_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"MaxLevel"						"3"
@@ -5321,20 +4861,12 @@
 
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"			"chen_test_of_faith_teleport_battleship"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0 0 0"
 		
 		"AbilityChannelTime"			"4.5 4.5 4.5"
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"50.0 40.0 30.0"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"		
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0"
 		"OnSpellStart"
 		{
@@ -5434,27 +4966,17 @@
 	//=================================================================================================================
 	"mirana_leap_battlsehip"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass" 					"mirana_leap"												// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass" 					"mirana_leap"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityTextureName"				"mirana_leap_battlsehip"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0.75 0.75 0.75 0.75"
 		"AbilityCharges"				"2"
 		"AbilityChargeRestoreTime"		"20 18 16 14"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -5496,33 +5018,19 @@
 	//=================================================================================================================
 	"windrunner_powershot_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass" 					"windrunner_powershot"																// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass" 					"windrunner_powershot"				
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"1"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"2325"
 		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
 		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"15.0 14.0 13.0 12.0"
 		"AbilityChannelTime"			"1.0 1.0 1.0 1.0"
-
-		// Damage.
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDamage"					"110 190 270 350"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -5575,8 +5083,6 @@
 	//=================================================================================================================
 	"swim_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityTextureName"			"swimbreak"
 		"AbilityCastRange"				"600"
@@ -5585,20 +5091,12 @@
 		"MaxLevel"						"3"
 		"LevelsBetweenUpgrades"					"3"
 		"RequiredLevel"						"2"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0"
 		"AbilityCastRange"				"300"
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30 30 30"
 		"AbilityChannelTime"			"500 500 500"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
-		
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -5625,9 +5123,7 @@
 							"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
 							"Function"			"swimSoundStop"
 						}
-		}
-		
-		
+		}		
 
 		"Modifiers"
 		{
@@ -5659,15 +5155,8 @@
 					"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
 				}         
 			}
-			
-
 		}
 		
-
-		
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -5681,9 +5170,6 @@
 				"stun_time"			"3"
 			}
 		}
-		
-		
-
 	}
 	
 	//=================================================================================================================
@@ -5691,25 +5177,13 @@
 	//=================================================================================================================
 	"antimage_blink_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 					"BaseClass" 					"antimage_blink"									// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20.0 20.0 20.0 20.0"
-		
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20.0 20.0 20.0 20.0"		
 		"AbilityManaCost"				"0 0 0 0"
 		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -5724,36 +5198,26 @@
 				"min_blink_range"		"200"
 			}
 		}
-
 	}
+
 	//=================================================================================================================
 	// keeping up with the joanses
 	//=================================================================================================================
 	"keeping_up_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
 		"AbilityTextureName"				"joanses_up"
 
-
-		
 		"BaseClass" 					"ability_datadriven"	
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"450 550 650 750"
 		"AbilityCooldown"				"22.0 20.0 18.0 15.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 		"OnSpellStart"
 		{
@@ -5856,10 +5320,7 @@
 	// monkey buisness
 	//=================================================================================================================
 	"monkey_buisness"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+	{	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
@@ -5867,17 +5328,11 @@
 		"AbilityTextureName"				"monkey_buisness"
 		
 		"BaseClass" 					"ability_datadriven"	
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 700 800 900"
 		"AbilityCooldown"				"24.0 22.0 20.0 18.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 		"OnSpellStart"
 		{
@@ -5892,7 +5347,7 @@
 						"MaxTargets" "1"
 						"Random" "1"
 					}
-				"MoveSpeed" "522"
+				"MoveSpeed" "700"
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/monkey_buisness_effect.vpcf" 
 			}
@@ -5907,7 +5362,7 @@
 						"MaxTargets" "1"
 						"Random" "1"
 					}
-				"MoveSpeed" "522"
+				"MoveSpeed" "700"
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/monkey_buisness_effect.vpcf" 
 			}
@@ -5922,7 +5377,7 @@
 						"MaxTargets" "1"
 						"Random" "1"
 					}
-				"MoveSpeed" "522"
+				"MoveSpeed" "700"
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/monkey_buisness_effect.vpcf" 
 			}
@@ -5937,7 +5392,7 @@
 						"MaxTargets" "1"
 						"Random" "1"
 					}
-				"MoveSpeed" "522"
+				"MoveSpeed" "700"
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/monkey_buisness_effect.vpcf" 
 			}
@@ -5952,7 +5407,7 @@
 						"MaxTargets" "1"
 						"Random" "1"
 					}
-				"MoveSpeed" "522"
+				"MoveSpeed" "700"
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/monkey_buisness_effect.vpcf" 
 			}
@@ -5967,7 +5422,7 @@
 						"MaxTargets" "1"
 						"Random" "1"
 					}
-				"MoveSpeed" "522"
+				"MoveSpeed" "700"
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/monkey_buisness_effect.vpcf" 
 			}
@@ -5982,7 +5437,7 @@
 						"MaxTargets" "1"
 						"Random" "1"
 					}
-				"MoveSpeed" "522"
+				"MoveSpeed" "700"
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/monkey_buisness_effect.vpcf" 
 			}
@@ -5997,7 +5452,7 @@
 						"MaxTargets" "1"
 						"Random" "1"
 					}
-				"MoveSpeed" "522"
+				"MoveSpeed" "700"
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/monkey_buisness_effect.vpcf" 
 			}
@@ -6012,7 +5467,7 @@
 						"MaxTargets" "1"
 						"Random" "1"
 					}
-				"MoveSpeed" "522"
+				"MoveSpeed" "700"
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/monkey_buisness_effect.vpcf" 
 			}
@@ -6027,7 +5482,7 @@
 						"MaxTargets" "1"
 						"Random" "1"
 					}
-				"MoveSpeed" "522"
+				"MoveSpeed" "700"
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/monkey_buisness_effect.vpcf" 
 			}
@@ -6035,8 +5490,7 @@
 			{
 				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
 				"Function"			"monkeySound"
-			}	
-			
+			}				
 		}
 		
 		"Modifiers"
@@ -6080,10 +5534,7 @@
 					}
 			}
 		}
-		
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -6091,10 +5542,10 @@
 				"var_type"				"FIELD_FLOAT"
 				"spread_range"	"600 700 800 900"
 			}
-			"01"
+			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"monkey_damage"	"100 120 140 160"
+				"monkey_damage"	"70 90 110 130"
 			}
 		}
 	}
@@ -6104,9 +5555,7 @@
 	//=================================================================================================================
 	"elephant_intimidate"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
@@ -6114,17 +5563,11 @@
 		"AbilityTextureName"				"elephant_intimidate"
 		
 		"BaseClass" 					"ability_datadriven"	
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 700 800 900"
 		"AbilityCooldown"				"24.0 22.0 20.0 18.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 		"OnSpellStart"
 		{
@@ -6147,8 +5590,7 @@
 		"Modifiers"
 		{
 			"elephant_intimidation"
-			{
-			
+			{			
 				"Duration"	"%duration"
 				"Properties"
 				{
@@ -6160,14 +5602,9 @@
 					"EffectName" 			"particles/basic_projectile/ele_effect.vpcf"
 					"EffectAttachType" 		"follow_origin"
 				}
-
 			}
-
 		}
 		
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -6334,8 +5771,6 @@
 	//=================================================================================================================
 	"submerge_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"submerge"
@@ -6346,16 +5781,10 @@
 		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		"OnSpellStart"
@@ -6468,8 +5897,6 @@
 	//=================================================================================================================
 	"abaddon_aphotic_shield_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass" 							"abaddon_aphotic_shield"	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 			"AbilityTextureName"	"abaddon_aphotic_shield"
@@ -6478,17 +5905,11 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
 		"FightRecapLevel"				"1"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500"
 		"AbilityCastPoint"				"0.452 0.452 0.452 0.452"
 		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20.0 19.0 18.0 17.0"
 		
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 
 		
@@ -6518,27 +5939,17 @@
 	//=================================================================================================================
 	"into_the_hold"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass" 					"ability_datadriven"			
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
 		"AbilityTextureName"				"into_the_hold"
-		
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300 300 300 300"
 		"AbilityCooldown"				"20.0 18.0 16.0 14.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 		"OnSpellStart"
 		{
@@ -6636,26 +6047,16 @@
 	//=================================================================================================================
 	"salvage_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"mayday"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
 
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
-		
 		"Modifiers"
 		{
 			"salvager"
@@ -6698,27 +6099,19 @@
 	//=================================================================================================================
 	"turret_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"TurretIcon"
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"35.0 30.0 25.0 20.0"
 		"AbilityCastRange"				"400 500 600 700"
 		"BaseClass" 					"ability_datadriven"
 	"AbilityDamage"					"500"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
 
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		"OnSpellStart"
 		{
@@ -6743,27 +6136,19 @@
 	//=================================================================================================================
 	"raven_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"rainbow"
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"50.0 45.0 40.0 35.0"
 		"AbilityCastRange"				"400 500 600 700"
 		"BaseClass" 					"ability_datadriven"
 	"AbilityDamage"					"500"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
 
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		"OnSpellStart"
 		{
@@ -6790,25 +6175,15 @@
 	//=================================================================================================================
 	"root_turret"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"TurretIcon"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 
@@ -6837,8 +6212,6 @@
 		}
 
 		
-		
-		
 
 	}
 	//=================================================================================================================
@@ -6846,8 +6219,6 @@
 	//=================================================================================================================
 	"batten_hatches"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"icon_zodiac_ability4"
@@ -6857,11 +6228,7 @@
 		"MaxLevel"						"3"
 		"LevelsBetweenUpgrades"					"3"
 		"RequiredLevel"						"2"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		"OnUpgrade"
 		{
@@ -6949,9 +6316,7 @@
 				"Function"			"shoveSound"
 			}	
 		}
-			
-		
-
+	
 		"Modifiers"
 		{
 			"push_back"
@@ -7018,8 +6383,7 @@
 				}
 			}
 		}
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -7043,25 +6407,15 @@
 	//=================================================================================================================
 	"creep_buff"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"TurretIcon"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 
@@ -7106,34 +6460,21 @@
 		}
 	}
 	//=================================================================================================================
-	// Puck: Waning Rift
+	// Disruptor: Kinetic Field
 	//=================================================================================================================
 	"disruptor_kinetic_field_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass" 					"disruptor_kinetic_field"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass" 					"disruptor_kinetic_field"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"1"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"13 12 11 10"
-
-		// Damage.
-		//-------------------------------------------------------------------------------------------------------------
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"35 32 28 25"
 		"AbilityManaCost"				"0 0 0 0"		
 		"AbilityCastRange"				"900 1000 1100 1200"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -7155,14 +6496,12 @@
 	}
 	
 	
-		//=================================================================================================================
+	//=================================================================================================================
 	// Shadow Shaman: Shackles
 	//=================================================================================================================
 	"shadow_shaman_shackles_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass" 					"shadow_shaman_shackles"																// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass" 					"shadow_shaman_shackles"				
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -7173,13 +6512,9 @@
 		"LevelsBetweenUpgrades"					"3"
 		"RequiredLevel"						"2"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.3 0.3 0.3"
 		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityChannelTime"			"2.75 3.0 3.25"
 		"AbilityCooldown"				"16.0 16.0 16.0 16.0"
 
@@ -7187,8 +6522,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDamage"					"200 200 200"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 		
 		// Special
@@ -7211,32 +6544,23 @@
 				"total_damage"		"250 300 350"
 			}
 		}
-	}
-	
+	}	
 	
 	//=================================================================================================================
 	// ruse
 	//=================================================================================================================
 	"ruse_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"			"ruse"
-		
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"500 550 600 650"
 		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
 		"AbilityManaCost"				"0 0 0 0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30.0 28.0 26.0 24.0"
 
 		
@@ -7283,8 +6607,7 @@
 			}		
 		}
 
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -7305,8 +6628,6 @@
 	//=================================================================================================================
 	"gag_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -7314,15 +6635,9 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"			"silencer_last_word"
-		
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"550 600 650"
 		"AbilityCastPoint"				"0.1 0.1 0.1"
 		"AbilityManaCost"				"0 0 0 0"
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"23.0 21.0 19.0"
 
 		
@@ -7336,9 +6651,7 @@
 			}
 			
 		}
-			
-		
-
+	
 		"Modifiers"
 		{
 			"gag_order"
@@ -7356,8 +6669,7 @@
 			}
 			
 		}
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -7373,8 +6685,6 @@
 	//=================================================================================================================
 	"war_drumbs_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"			"drumb"
@@ -7385,8 +6695,6 @@
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 		"AbilityCooldown"				"18.0"
 		"AbilityManaCost"				"0"
-		
-		
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -7457,8 +6765,6 @@
 
 	"might_battleship_two"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 	"BaseClass" 					"grimstroke_spirit_walk"
 			
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -7475,13 +6781,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20 18 16 14"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000 1000 1000 1000"
 		"AbilityCastPoint"				"0.15"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 
 		// Stats
@@ -7547,26 +6849,16 @@
 	//=================================================================================================================
 	"might_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"			"earthshaker_enchant_totem"
 		"BaseClass" 					"ability_datadriven"
 		"AbilityCastRange"				"600 675 750 825"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"15.0 13.0 11.0 9.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
-		
 		"OnSpellStart"
 		{
 			"RemoveModifier"
@@ -7633,8 +6925,6 @@
         }
 		
 
-		
-		
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -7838,8 +7128,6 @@
 	//=================================================================================================================
 	"dragon_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -7848,19 +7136,11 @@
 
 		"BaseClass" 					"ability_datadriven"
 		"AbilityCastRange"				"2000 2000 2000 2000"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"18.0 17.0 16.0 15.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
-		
 		"OnSpellStart"
 		{
 			"CreateThinker"
@@ -7907,11 +7187,7 @@
 					"Target"                                "TARGET"
 			}	
 		}
-		
-		
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		
 
 		// Special
@@ -7942,27 +7218,19 @@
 	//=================================================================================================================
 	"firework_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"puck_illusory_orb_merry"
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"35.0 30.0 25.0 20.0"
 		"AbilityCastRange"				"1500 2000 3000 5000"
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
 
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		"OnSpellStart"
 		{
@@ -7983,8 +7251,6 @@
 		}
 		
 
-		
-		
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -8007,8 +7273,6 @@
 	
 	"nav_hack_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
@@ -8021,17 +7285,11 @@
 		"RequiredLevel"						"2"
 
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200"
 		"AbilityCooldown"				"35.0 30.0 25.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 		"OnSpellStart"
 		{
@@ -8046,8 +7304,6 @@
 				"Function"			"navHackSound"
 			}
 		}
-		
-		
 		"Modifiers"
 		{
 
@@ -8108,24 +7364,14 @@
 	//=================================================================================================================
 	"kill_rng_on_death"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"meepo_divided_we_stand"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 
@@ -8175,27 +7421,19 @@
 	//=================================================================================================================
 	"iceberg_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"invoker_ice_wall"
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20.0 14.0 10.0 6.0"
 		"AbilityCastRange"				"400 500 600 700"
 		"BaseClass" 					"ability_datadriven"
 		"AbilityDamage"					"1000"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
 
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		"OnSpellStart"
 		{
@@ -8234,21 +7472,15 @@
 	//=================================================================================================================
 	"jakiro_ice_path_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass" 					"jakiro_ice_path"								// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"FightRecapLevel"				"1"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1600"
 		"AbilityCastPoint"				"0.65 0.65 0.65 0.65"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"18.0 17.0 16.0 15.0"
 		"AbilityDuration"				"1.0 1.33 1.66 2.0"
 
@@ -8256,8 +7488,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDamage"					"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"		
 
 		// Special
@@ -8692,9 +7922,7 @@
 	//=================================================================================================================
 	"crystal_maiden_freezing_field_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"crystal_maiden_freezing_field"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"				"crystal_maiden_freezing_field"		
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -8705,20 +7933,14 @@
 		"HasScepterUpgrade"			"1"
     "HasShardUpgrade"               "1"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityChannelTime"			"10"
 		"AbilityCastPoint"				"0"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"40.0 35.0 30.0"
 		"AbilityDuration"				"10.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 
 		// Stats
@@ -8793,25 +8015,15 @@
 	//=================================================================================================================
 	"root_iceberg"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"TurretIcon"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 
@@ -8918,8 +8130,6 @@
 		
 
 		
-		
-		
 
 	}
 	
@@ -8928,25 +8138,15 @@
 	//=================================================================================================================
 	"icy_waters_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"tusk_ice_shards"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		"OnUpgrade"
@@ -9011,25 +8211,15 @@
 	//=================================================================================================================
 	"armor_remover"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"slardar_amplify_damage"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		"OnUpgrade"
@@ -9091,29 +8281,21 @@
 	//=================================================================================================================
 	"tidehunter_ravage_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass" 					"tidehunter_ravage"										// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"2"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0.3 0.3 0.3"
 		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20.0 20.0 20.0"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDamage"					"100 300 500"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0"
 
 		// Special
@@ -9139,28 +8321,20 @@
 	}
 	"pudge_meat_hook_battleship_tide"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------												// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"FightRecapLevel"				"1"
 		"BaseClass" 					"pudge_meat_hook"
 		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1600 1600 1600 1600"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"5.0 5.0 5.0 5.0"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDamage"					"400 400 400 400"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 
 		// Special
@@ -9200,25 +8374,15 @@
 	//=================================================================================================================
 	"tide_wep_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"tusk_ice_shards"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1250"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		"OnUpgrade"
@@ -9320,20 +8484,12 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"keeper_of_the_light_chakra_magic"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"4"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		"OnSpellStart"
@@ -9481,24 +8637,16 @@
 	//=================================================================================================================
 	"panic_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"			"ramming_speed_battleship"
 		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"12 10 8 6"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		"OnSpellStart"
@@ -9554,27 +8702,17 @@
 	//=================================================================================================================
 	"estab_route"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityTextureName"		"windrunner_windrun_sylvan"
 
 		"BaseClass" 				"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"			"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"			"20.0 20.0 20.0 20.0"
 		"AbilityCastRange"			"20000"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"			"0"
-		
-		
 		"OnSpellStart"
 		{
 
@@ -9648,28 +8786,16 @@
 	//=================================================================================================================
 	"cease_fire"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"oracle_fates_edict"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20.0 20.0 20.0 20.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
-		
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -9715,8 +8841,6 @@
 			
 		}
 		
-		
-		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -9732,26 +8856,16 @@
 
 	"Trade_hide_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 
 		
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"			"slark_shadow_dance"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0 0 0 0"
 		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"35 32 29 26"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"		
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 
 		"OnSpellStart"
@@ -9811,20 +8925,14 @@
 	//=================================================================================================================
 	"slark_shadow_dance_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 			"BaseClass" 					"slark_shadow_dance"					// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"MaxLevel"						"4"
 		"LevelsBetweenUpgrades"					"2"
 		"RequiredLevel"						"1"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 			"AbilityCooldown"				"35 32 29 26"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"			
 
 		// Special
@@ -9874,24 +8982,14 @@
 	//=================================================================================================================
 	"building_frozen"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"phantom_assassin_blur"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 
@@ -9923,24 +9021,14 @@
 	//=================================================================================================================
 	"building_hexed"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"phantom_assassin_blur"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 
@@ -9971,25 +9059,15 @@
 	//=================================================================================================================
 	"root_trap"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"TurretIcon"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 
@@ -10084,28 +9162,16 @@
 	//=================================================================================================================
 	"swap_mission"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"chaos_knight_chaos_strike"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30.0 25.0 20.0 15.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
-		
 		"OnSpellStart"
 		{
 
@@ -10125,28 +9191,16 @@
 	//=================================================================================================================
 	"go_daralect"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"naga_siren_mirror_image"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30.0 25.0 20.0 15.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
-		
 		"OnSpellStart"
 		{
 
@@ -10179,8 +9233,6 @@
 
 	"ghost_ship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"modifier_illusion"
@@ -10190,17 +9242,11 @@
 		"MaxLevel"						"3"
 		"LevelsBetweenUpgrades"					"3"
 		"RequiredLevel"						"2"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0"
 
 
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
-		
 		"OnUpgrade"
 		{
 			"RemoveModifier"
@@ -10287,19 +9333,13 @@
 	
 	"ghost_ship_creep"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"hatches"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		
 		"BaseClass" 					"ability_datadriven"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		"Modifiers"
@@ -10339,8 +9379,6 @@
 		}
 
 		
-		
-		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -10362,9 +9400,7 @@
 
 	"instill_terror"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
@@ -10374,17 +9410,11 @@
 
 		
 		"BaseClass" 					"ability_datadriven"	
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700 800 900 1000"
 		"AbilityCooldown"				"28.0 26.0 24.0 22.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0"
 		"OnSpellStart"
 		{
@@ -10418,9 +9448,7 @@
 					}
 				}
 			}
-			
-		
-			
+				
 		}
 		
 
@@ -10438,8 +9466,6 @@
 
 "harpoon_battleship"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"				"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -10448,31 +9474,18 @@
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"harpoon"
 
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
 	"precache"
 	{
 		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts"
 		"particle"		"particles/units/heroes/hero_chaos_knight/chaos_knight_reality_rift.vpcf"
 		"particle"		"particles/units/heroes/hero_chaos_knight/chaos_knight_reality_rift_buff.vpcf"
 	}
-	
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
+
 	"AbilityCastRange"				"1000 1150 1300 1450"
 	"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
-
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"12 11 10 9"
-
-
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"				"0 0 0 0"
 	
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
 	{
 		"01"
@@ -10483,7 +9496,7 @@
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_damage"				"100 180 220 300"
+			"bonus_damage"				"100 150 200 250"
 		}
 		"03"
 		{
@@ -10496,9 +9509,6 @@
 			"range"					"1.0 0.95 0.9 0.85"
 		}
 	}
-
-
-	
 
 	"OnSpellStart"
 	{
@@ -10514,8 +9524,7 @@
 				"MoveSpeed" "1300"
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/harpoon_attack.vpcf" 
-			}
-			
+			}			
 	}
 
 	"OnProjectileHitUnit"
@@ -10599,25 +9608,15 @@
 
 	"root_whale"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"TurretIcon"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 
@@ -10688,16 +9687,12 @@
 		}
 
 		
-		
-		
 
 	}
 
 
 	"dump_cargo"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"drop_item"
@@ -10727,9 +9722,7 @@
 				"Function"			"dumpingItem"
 			}
 		}
-			
-		
-
+	
 		"Modifiers"
 		{
 			"ramming_speed"
@@ -10754,8 +9747,7 @@
 				}
 			}
 		}
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -10805,8 +9797,6 @@
 
 		"gamble_spin1"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"spin"
@@ -10816,11 +9806,7 @@
 		"MaxLevel"						"4"
 		"LevelsBetweenUpgrades"					"2"
 		"RequiredLevel"						"2"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 
 		// Special
@@ -10829,8 +9815,6 @@
 	}
 	"gamble_spin2"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"spin2"
@@ -10840,11 +9824,7 @@
 		"MaxLevel"						"4"
 		"LevelsBetweenUpgrades"					"2"
 		"RequiredLevel"						"2"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 
 		// Special
@@ -10853,8 +9833,6 @@
 	}
 	"gamble_spin3"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"spin3"
@@ -10864,11 +9842,7 @@
 		"MaxLevel"						"4"
 		"LevelsBetweenUpgrades"					"2"
 		"RequiredLevel"						"2"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 
 		// Special
@@ -11005,25 +9979,15 @@
 	
 	"root_chain"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"TurretIcon"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 
@@ -11213,17 +10177,11 @@
 		"AbilityTextureName"			"monkey_buisness"
 		
 		"BaseClass" 					"ability_datadriven"	
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 700 800 900"
 		"AbilityCooldown"				"24.0 22.0 20.0 18.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 		"OnSpellStart"
 		{
@@ -11275,26 +10233,16 @@
 	//=================================================================================================================
 	"give_all_vision"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"tinker_rearm"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
 
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
-		
 		"OnUpgrade"
 		{
 			"RemoveModifier"
@@ -11338,8 +10286,6 @@
 		}
 
 		
-		
-		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -11361,25 +10307,15 @@
 	
 	"battle_effect"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"alchemist_goblins_greed"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		"OnUpgrade"
@@ -11437,28 +10373,16 @@
 	
 		"battle_effect"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"alchemist_goblins_greed"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
-		
 		 "Modifiers"
         {
                        
@@ -11500,8 +10424,6 @@
 	
 	"no_fire_zone"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 			"AbilityTextureName"				"nofire"
@@ -11510,19 +10432,13 @@
 				"MaxLevel"						"3"
 		"LevelsBetweenUpgrades"					"3"
 		"RequiredLevel"						"2"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30 17 14 11"
 		"AOERadius"						"%radius"
 		// Damage.
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 
 		// Stats
@@ -11562,23 +10478,15 @@
 	//=================================================================================================================
 	"coast_heal_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"				"rescue"
-		
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700 800 900 1000"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 		"AbilityManaCost"				"0 0 0 0"
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"14.0 13.0 12.0 11.0"
 		"OnSpellStart"
 		{
@@ -11593,8 +10501,6 @@
 			
 			
 		}
-		
-		
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"                           "false"
@@ -11604,11 +10510,7 @@
 					"Target"                                "TARGET"
 			}
 		}
-		
-		
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		
 
 		// Special
@@ -11629,25 +10531,15 @@
 	//=================================================================================================================
 	"anti_backdoor"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"keeper_of_the_light_chakra_magic"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		"Modifiers"
 		{
@@ -11674,8 +10566,6 @@
 	
 	"gamble_heart_three"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"heart"
@@ -11685,11 +10575,7 @@
 		"MaxLevel"						"4"
 		"LevelsBetweenUpgrades"					"2"
 		"RequiredLevel"						"2"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		"OnUpgrade"
 		{
@@ -11740,8 +10626,6 @@
 	}
     "gamble_bar_three"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"bar"
@@ -11751,8 +10635,6 @@
 		"MaxLevel"						"4"
 		"LevelsBetweenUpgrades"					"2"
 		"RequiredLevel"						"2"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0"
 		
 		"AbilityManaCost"				"0"
@@ -11928,16 +10810,12 @@
 
 	"gamble_bell_three"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"				"bells"
-		
-		
 		"AbilityCastRange"				"700 800 900 1000"
 		"AbilityCastPoint"				"0.3"
 		"AbilityManaCost"				"0"
@@ -11973,8 +10851,6 @@
 				} 
 			}
 		}
-		
-		
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"                           "false"
@@ -12003,25 +10879,17 @@
 
   "gamble_cherry_three"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"				"cherries"
 	
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"950 1050 1150 1250"
 		"AbilityCastPoint"				"0.1"
 		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"999"
 		"AOERadius" 	"%radius"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		"OnSpellStart"
 		{
@@ -12072,16 +10940,12 @@
 
   "gamble_seven_three"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"				"seven"
-		
-		
 		"AbilityCastRange"				"777"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
     "AbilityChannelTime"			"3.5"
@@ -12171,8 +11035,6 @@
 	
 	"gamble_heart_two"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"heart"
@@ -12182,11 +11044,7 @@
 		"MaxLevel"						"4"
 		"LevelsBetweenUpgrades"					"2"
 		"RequiredLevel"						"2"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		"OnUpgrade"
 		{
@@ -12237,8 +11095,6 @@
 	}
     "gamble_bar_two"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"bar"
@@ -12248,8 +11104,6 @@
 		"MaxLevel"						"4"
 		"LevelsBetweenUpgrades"					"2"
 		"RequiredLevel"						"2"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0"
 		
 		"AbilityManaCost"				"0"
@@ -12424,16 +11278,12 @@
 
 	"gamble_bell_two"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"				"bells"
-		
-		
 		"AbilityCastRange"				"700 800 900 1000"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 		"AbilityManaCost"				"0 0 0 0"
@@ -12471,8 +11321,6 @@
 				} 
 			}
 		}
-		
-		
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"                           "false"
@@ -12487,11 +11335,7 @@
 				"Function"			"bellHitSound"
 			}
 		}
-		
-		
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		
 
 		// Special
@@ -12510,25 +11354,17 @@
 
     "gamble_cherry_two"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"				"cherries"
 	
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"950 1050 1150 1250"
 		"AbilityCastPoint"				"0.1"
 		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"999"
 		"AOERadius" 	"%radius"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		"OnSpellStart"
 		{
@@ -12546,8 +11382,6 @@
 			
 		}
 			
-		
-		
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"                           "false"
@@ -12563,11 +11397,7 @@
 						"Function"			"cherryExplodeSound"
 					}
 		}
-		
-		
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		
 
 		// Special
@@ -12591,16 +11421,12 @@
 
     "gamble_seven_two"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"				"seven"
-		
-		
 		"AbilityCastRange"				"777"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
         "AbilityChannelTime"			"3.5"
@@ -12662,8 +11488,6 @@
 				
 			}
 		}
-		
-		
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"                           "false"
@@ -12694,8 +11518,6 @@
 	
 	"gamble_heart_one"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"heart"
@@ -12705,11 +11527,7 @@
 		"MaxLevel"						"4"
 		"LevelsBetweenUpgrades"					"2"
 		"RequiredLevel"						"2"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		"OnUpgrade"
 		{
@@ -12760,8 +11578,6 @@
 	}
     "gamble_bar_one"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"bar"
@@ -12771,8 +11587,6 @@
 		"MaxLevel"						"4"
 		"LevelsBetweenUpgrades"					"2"
 		"RequiredLevel"						"2"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0"
 		
 		"AbilityManaCost"				"0"
@@ -12947,16 +11761,12 @@
 
 	"gamble_bell_one"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"				"bells"
-		
-		
 		"AbilityCastRange"				"700 800 900 1000"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 		"AbilityManaCost"				"0 0 0 0"
@@ -12994,8 +11804,6 @@
 				} 
 			}
 		}
-		
-		
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"                           "false"
@@ -13010,11 +11818,7 @@
 				"Function"			"bellHitSound"
 			}
 		}
-		
-		
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		
 
 		// Special
@@ -13033,25 +11837,17 @@
 
     "gamble_cherry_one"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"				"cherries"
 	
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"950 1050 1150 1250"
 		"AbilityCastPoint"				"0.1"
 		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"999"
 		"AOERadius" 	"%radius"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		"OnSpellStart"
 		{
@@ -13069,8 +11865,6 @@
 			
 		}
 			
-		
-		
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"                           "false"
@@ -13086,11 +11880,7 @@
 						"Function"			"cherryExplodeSound"
 					}
 		}
-		
-		
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		
 
 		// Special
@@ -13114,16 +11904,12 @@
 
     "gamble_seven_one"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"				"seven"
-		
-		
 		"AbilityCastRange"				"777"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
         "AbilityChannelTime"			"3.5"
@@ -13395,6 +12181,7 @@
 			}
 		}
 	}
+	
 	"bow_cannon"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -13459,6 +12246,7 @@
 			}
 		}
 	}
+
 	"starboard_cannon"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -13644,11 +12432,11 @@
 						}
         }
 	}
+
 	"ironclad_weapon_fire"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityTextureName"			"ironclad_fire_ammo"		
-		
+		"AbilityTextureName"			"ironclad_fire_ammo"
 		"BaseClass" 					"ability_datadriven"
 
 		"AbilityCooldown"				"0"
@@ -13680,11 +12468,11 @@
             }
         }
 	}
+
 	"ironclad_weapon_ice"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityTextureName"			"ironclad_ice_ammo"		
-		
+		"AbilityTextureName"			"ironclad_ice_ammo"
 		"BaseClass" 					"ability_datadriven"
 
 		"AbilityCooldown"				"0"
@@ -13732,8 +12520,7 @@
 	"ironclad_weapon_splash"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityTextureName"			"ironclad_splash_ammo"		
-		
+		"AbilityTextureName"			"ironclad_splash_ammo"
 		"BaseClass" 					"ability_datadriven"
 
 		"AbilityCooldown"				"0"
@@ -13844,18 +12631,19 @@
 
   "speed_boat_wave"
   {
-    "BaseClass"           "ability_lua"
-    "ScriptFile"          "heroes/speed_boat_wave.lua"
-    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING" 
-	"AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
-    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
-    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-	"SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
-    "AbilityTextureName"      "morphling_waveform"
-    "AbilityManaCost"               "0"
-	"AbilityCooldown"				"25.0 23.0 21.0 19.0"
-    "AbilityCastPoint"        "0"
-	"AbilityCastRange"				"1200"
+		"BaseClass"           "ability_lua"
+		"ScriptFile"          "heroes/speed_boat_wave.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING" 
+		"AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
+		"AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"      "morphling_waveform"
+		"AbilityManaCost"               "0"
+		"AbilityCooldown"				"25.0 23.0 21.0 19.0"
+		"AbilityCastPoint"        "0"
+		"AbilityCastRange"				"1200"
+
     "precache"
     {
       "soundfile"         "soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
@@ -13875,7 +12663,7 @@
         "var_type"          "FIELD_INTEGER"
         "damage_radius"     "200"
       }
-	  "03"
+      "03"
       {
         "var_type"          "FIELD_INTEGER"
         "damage_base"  "200 300 400 500"
@@ -13883,7 +12671,7 @@
     }
   }
 
-  	//=================================================================================================================
+  //=================================================================================================================
 	// miss
 	//=================================================================================================================
 	"miss_lua"
@@ -13894,56 +12682,38 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"precache"
 		{           
-		"particle"          "particles/units/heroes/hero_invoker/invoker_invoke.vpcf"
-		"particle"          "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
-		"soundfile"         "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+			"particle"          "particles/units/heroes/hero_invoker/invoker_invoke.vpcf"
+			"particle"          "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+			"soundfile"         "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
 		}
 
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-        "AbilitySpecial"
-        {
-                "01"
-                {
-                        "var_type"                                      "FIELD_FLOAT"
-                        "evasion"                          "4.0 6.0 8.0 10.0"
-                }
 
-        }
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"                                      "FIELD_FLOAT"
+				"evasion"                          "4.0 6.0 8.0 10.0"
+			}
+		}
 	}
 
 	"aoe_shot"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"tusk_ice_shards"
-		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
-		 "Modifiers"
-        {
-              "aoe_shot_modifier"
+		"Modifiers"
+		{
+			"aoe_shot_modifier"
 			{
 				"ThinkInterval"		"1.5"
 				"Passive"	 "1"
@@ -13959,20 +12729,14 @@
 			}
 		}
 		"OnProjectileHitUnit"
-                {
-                       "DeleteOnHit"		"false"
-                       "RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
-						"Function"			"aoeTowerHit"
-					}
-                        
-                }
-       
-        "AbilitySpecial"
-        {
-               
-        }
+		{
+			"DeleteOnHit"		"false"
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"aoeTowerHit"
+			}
+		}
 	
 	}
 	

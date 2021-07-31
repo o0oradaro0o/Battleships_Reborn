@@ -1753,34 +1753,55 @@ function CBattleship8D:OnPlayerChat(keys)
 
         end
 
-        if teamonly == 0 and string.match(text, "bigger boat") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
+        if teamonly == 0 and string.match(text, "bigger") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
         -- Notifications:TopToAll({
         --         text = "Now is not the time to use that!",
         --         duration = 5.0,
         --         style = {color = "#444499", fontSize = "70px;"}
         --     })
         -- print( "player id" .. playerID)
-        -- for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
-        --     if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-        --         if hero:IsRealHero() then
-        --         print( "found a hero")
-        --             if hero:GetPlayerID() == playerID then
-        --             local size = hero:GetModelScale();
-        --                 if RandomInt(1, 4) == 2 then
-        --                 print( "rolled a 2")
-        --                     Timers:CreateTimer(7, function() hero:SetModelScale(size)  end)
-        --                 else
-        --                     print( "rolled not a 2")
-        --                     hero:SetModelScale(2.5)
-        --                     Timers:CreateTimer(7, function() hero:SetModelScale(size) end)
-        --                 end
-        --             end
-        --         end
-        --     end
-        -- end
+            for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
+                if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+                    if hero:IsRealHero() then
+                        if hero:GetPlayerID() == playerID then
+                            local size = hero.original_size                        
 
+                            if size and not hero.bigger then
+                                local scale = 2.5
+                                if RandomInt(1, 4) == 2 then scale = 0.5 end
+
+                                hero:SetModelScale(size * scale)
+                                Timers:CreateTimer(7, function()
+                                    hero:SetModelScale(size)
+                                    hero.bigger = false
+                                end)
+                            end
+                        end
+                    end
+                end
+            end
         end
 
+        if teamonly == 0 and steamID32 == g_rere and text == "?" then
+            for _,hero in pairs(HeroList:GetAllHeroes()) do
+                if hero:IsAlive() and hero:GetPlayerOwnerID() == playerID then                    
+                    local explosion_radius = 100
+
+                    local particleName = "particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf"
+                    local particle = ParticleManager:CreateParticle(particleName, PATTACH_WORLDORIGIN, hero)
+                    ParticleManager:SetParticleControl(particle, 0, hero:GetAbsOrigin())
+                    ParticleManager:SetParticleControl(particle, 1, hero:GetAbsOrigin())
+                    ParticleManager:SetParticleControl(particle, 2, Vector(explosion_radius, 1, 1))
+                    ParticleManager:ReleaseParticleIndex(particle)
+
+                    hero:EmitSound("Hero_Techies.LandMine.Detonate")
+
+                    ScreenShake(hero:GetAbsOrigin(), 10, 0.3, 0.5, 1000, 0, true)
+
+                    hero:ForceKill(true)
+                end
+            end
+        end
 
         if string.match(text, "rip david") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
             Notifications:TopToAll({
@@ -2591,10 +2612,23 @@ function CBattleship8D:OnThink()
 end
 
 function CBattleship8D:OnNPCSpawned(keys)
-    if g_BoatJustBaught == 0 then
-        local npc = EntIndexToHScript(keys.entindex)
+    local npc = EntIndexToHScript(keys.entindex)
 
-        -- VicFrank
+    if npc:IsRealHero() then
+        Timers:CreateTimer(.03, function()
+            print(npc:GetUnitName())
+            for i=0,21 do
+                local item = npc:GetItemInSlot(i)
+                if item then
+                    if item:GetAbilityName() == "item_tpscroll" then
+                        item:RemoveSelf()
+                    end
+                end
+            end
+        end)
+    end
+
+    if g_BoatJustBaught == 0 then
         local npcName = npc:GetUnitName()
 
         if not g_heroCache[npcName] then
@@ -2614,13 +2648,10 @@ function CBattleship8D:OnNPCSpawned(keys)
 
                 npc:AddNewModifier(npc, nil, "modifier_movespeed_cap", nil)
                 npc:AddNewModifier(npc, nil, "modifier_no_block", nil)
-               
 
-                npc:SetBaseStrength(1)
-                ----print("hero level is" .. npc:GetLevel())
                 Timers:CreateTimer(
                     0.1,
-                    function()
+                    function()                        
                         if npc:IsHero() or npc:HasInventory() then
                         for itemSlot = 0, 15, 1 do
                             if casterUnit ~= nil then
@@ -5748,13 +5779,10 @@ function become_boat(casterUnit, heroname)
                 AttachCosmetics(hero)
                 fixAbilities(hero)
                 if string.match(heroname, "razor") then hero:SetMana(500) end
-                print(heroname)
                 if string.match(heroname, "brewmaster") then 
-                    print(heroname .. "inside")
                     for abilitySlot = 0, 5, 1 do
                         local ability = hero:GetAbilityByIndex(abilitySlot)
                         if not string.match(ability:GetName(), "_") then 
-                            print(ability:GetName() .. " " .. abilitySlot)
                             ability:SetLevel(1) 
                         end
                     end
@@ -5772,14 +5800,7 @@ function become_boat(casterUnit, heroname)
                 end
                 for b = 0, 15, 1 do
                     local newItem = CreateItem(itemlist[b], hero, hero)
-                    if newItem ~= nil then -- makes sure that the item exists and making sure it is the correct item
-                        if string.match(heroname, "pugna") then
-                            if b == 14 then
-                                local shard = CreateItem("item_aghanims_shard", hero, hero)
-                                hero:AddItem(shard)
-                            end
-                        end
-                    
+                    if newItem ~= nil then -- makes sure that the item exists and making sure it is the correct item                    
                         if string.match(heroname, "vengefulspirit") or string.match(heroname, "enigma") or string.match(heroname, "bane") then
                             if b == 4 then
 

@@ -3223,13 +3223,18 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"Trade_Desc"			"Adds a special class of ship with limited inventory slots can take on profitable trading contracts and buy powerful consumable items. These ships drop high bounties if hunted down!"
 		"discord"			"Click to join us on discord!"
 		"News_Title"		"News!"
-		"News_Content"		"Bet you didnt think I'd ever update this area again!
-
-Recent Balance Changes 4/22/2021
-   • Catamaran: Increase jump range, remove a jump charge
-   • Catamaran: Lower powershot damage
-   • Icebreaker: You can now move while channeling the ultimate
-   • No longer gain a TP upon death
+		"News_Content"		"7/31/2021
+- Reduced Catamaran Health by 100
+- Whaling Dingy hook now does 100/150/200/250 Magic Damage
+- Paddlewheel Diver Reckless Speed now applies knockback to enemies hit, and deals 100/150/200/250 Magic Damage
+- Ruse now has a min damage of 0 (lol)
+- Battleship Peg Circle cooldown 13/12/11/10 -> 35/32/28/25
+- Noah Monkey Business damage reduced by 30 per Monkey
+- Noah Monkey Business speed 522 -> 650
+- Increased fire rate of light from 0.22 -> 0.2 (~10%% increase in damage)
+- Fixed boats having 1 strength after death
+- Fixed boats getting a tp scroll after death
+- Icebreaker no longer needs to use Aghanim's shard
 "
 		
 		"port_cannons"                                               "Port Cannons"

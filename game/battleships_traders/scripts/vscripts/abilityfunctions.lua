@@ -154,41 +154,80 @@ function peak(keys) -- keys is the information sent by the ability
 	end
 end
 
-function startGunningIt(args) -- keys is the information sent by the ability
-	-- ----print('[ItemFunctions] gunning_it started! ')
+function startGunningIt(args)
 	local casterUnit = args.caster
 	GunTicks[casterUnit:GetOwner():GetPlayerID()] = 1
 end
 
-function rammingIt(args) -- keys is the information sent by the ability
-	-- ----print('[ItemFunctions] gunning_it started! ')
+function rammingIt(args)
 	local casterUnit = args.caster
-	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	local ability = args.ability
 	if not IsPhysicsUnit(casterUnit) then
 		Physics:Unit(casterUnit)
 	end
-	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+
+	local radius = ability:GetSpecialValueFor("knockback_radius")
+	local damage = ability:GetSpecialValueFor("damage")
+	local duration = 0.5
+	local knockback_duration = 0.5
+	local knockback_distance = 143
+	local knockback_height = 50
+
 	local direction = casterUnit:GetForwardVector()
-	local abil = casterUnit:GetAbilityByIndex(2)
-	local level = abil:GetLevel()
+	local level = ability:GetLevel()
 	local vec = direction:Normalized() * (15 * level + 95)
 	casterUnit:AddPhysicsVelocity(vec)
+
+
+	local enemies = FindUnitsInRadius(
+		casterUnit:GetTeam(),
+		casterUnit:GetAbsOrigin(),
+		nil,
+		radius,
+		DOTA_UNIT_TARGET_TEAM_ENEMY,
+		DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+		0,
+		0,
+		false)
+
+	knockback_properties = {
+		center_x = casterUnit:GetAbsOrigin().x,
+		center_y = casterUnit:GetAbsOrigin().y,
+		center_z = casterUnit:GetAbsOrigin().z,
+		duration = duration,
+		knockback_duration = knockback_duration,
+		knockback_distance = knockback_distance,
+		knockback_height 	= knockback_height,
+	}
+
+	for _,enemy in pairs(enemies) do
+		if not ability.pushed_units[enemy:GetEntityIndex()] then
+			enemy:AddNewModifier(casterUnit, ability, "modifier_knockback", knockback_properties)
+
+			ApplyDamage({
+				victim = enemy,
+				attacker = casterUnit,
+				damage = damage,
+				damage_type = DAMAGE_TYPE_MAGICAL
+			})
+
+			ability.pushed_units[enemy:GetEntityIndex()] = true
+		end
+	end
 end
 
-function startRammingIt(args) -- keys is the information sent by the ability
-	-- ----print('[ItemFunctions] gunning_it started! ')
+function startRammingIt(args)
 	local casterUnit = args.caster
-	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+	local ability = args.ability
+	local level = ability:GetLevel()
 
-	local abil = casterUnit:GetAbilityByIndex(2)
-	local level = abil:GetLevel()
+	ability.pushed_units = {}
+
 	StartAnimation(casterUnit, {duration = 2.2, activity = ACT_SCRIPT_CUSTOM_1, rate = (level + 2) / 4})
 end
 
-function DrumbAnimate(args) -- keys is the information sent by the ability
-	-- ----print('[ItemFunctions] gunning_it started! ')
+function DrumbAnimate(args)
 	local casterUnit = args.caster
-	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
 
 	local abil = casterUnit:GetAbilityByIndex(2)
 	local level = abil:GetLevel()
@@ -196,18 +235,16 @@ function DrumbAnimate(args) -- keys is the information sent by the ability
 end
 
 dumpingItDir = {}
-function dumpingIt(args) -- keys is the information sent by the ability
-	-- ----print('[ItemFunctions] gunning_it started! ')
-
+function dumpingIt(args) 
 	local casterUnit = args.caster
 	if dumpingItDir[casterUnit] == nil or dumpingItDir[casterUnit] == 0 then
 		dumpingItDir[casterUnit] = casterUnit:GetForwardVector()
 	end
-	-- ----print('[ItemFunctions] wind_ult_buffet end loaction ' .. tostring(targetPos))
+
 	if not IsPhysicsUnit(casterUnit) then
 		Physics:Unit(casterUnit)
 	end
-	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
+
 	local direction = casterUnit:GetForwardVector()
 	local abil = casterUnit:GetAbilityByIndex(3)
 	local level = abil:GetLevel()
@@ -1079,17 +1116,14 @@ end
 
 -- Deals damage to the enemy and heals self.
 function reflect(args)
-	 ----print("[ItemFunctions] Start reflection return.")
-
 	-- Set up ability, get HP from cast time.
 	local caster = args.caster
 	local abil = caster:GetAbilityByIndex(2)
 	local startHP = herohp[caster:GetOwner():GetPlayerID()]
-	 ----print("[ItemFunctions] Starting HP is:" .. startHP)
 
 	-- Calculate the amount of damage to be reflected / healed
 	local ruseDmg = (startHP - caster:GetHealth()) * abil:GetLevelSpecialValueFor("dmg", abil:GetLevel() - 1)
-	 ----print("[ItemFunctions] Current HP IS:" .. caster:GetHealth() .. ". Will deal " .. ruseDmg .. "to target.")
+	ruseDmg = math.max(ruseDmg, 0)
 
 	-- Deal reflected damage to the enemy
 	local target = args.target
@@ -1105,7 +1139,6 @@ function reflect(args)
 
     -- Add back reflected damage as health
     caster:SetHealth(caster:GetHealth() + ruseDmg)
-    ----print("[ItemFunctions] New HP IS:" .. caster:GetHealth() .. ". Should have healed " .. ruseDmg .. ".")
 
     local sound = "Hero_Terrorblade.Sunder.Target"
     target:EmitSound(sound)
@@ -2273,6 +2306,7 @@ function RealityRift( keys )
 	local ability_level = ability:GetLevel() - 1
 	EmitSoundOn("Hero_ChaosKnight.RealityRift.Target", target)
 	-- Ability variables
+	local damage = ability:GetSpecialValueFor("bonus_damage")
 
 	-- Set the positions to be one on each side of the rift
 	FindClearSpaceForUnit(target, ability.reality_rift_location + ability.reality_rift_direction * 50, true)
@@ -2286,6 +2320,14 @@ function RealityRift( keys )
 	-- Add the phased modifier to prevent getting stuck
 	target:AddNewModifier(caster, nil, "modifier_phased", {duration = 0.03})
 	caster:AddNewModifier(caster, nil, "modifier_phased", {duration = 0.03})
+
+	-- Deal damage
+	ApplyDamage({
+		victim = target,
+		attacker = caster,
+		damage = damage,
+		damage_type = DAMAGE_TYPE_MAGICAL
+	})
 end
 
 function WhaleBait(args)
@@ -2302,7 +2344,6 @@ end
 
 function CherryLaunch(args)
 	--print("IN CherryLaunch")
-	PrintTable(args)
 	local targetPos = args.target_points[1]
 	local caster = args.caster
 	
@@ -2331,7 +2372,6 @@ end
 
 function CherryExplode(args)
 	--print("IN CherryExplode")
-	PrintTable(args)
 	local targetUnit = args.target
 	local newTarget
 	local caster = args.caster

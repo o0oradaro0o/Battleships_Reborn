@@ -4284,7 +4284,7 @@
 			"02"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"0.22"
+				"fire_rate"		"0.2"
 			}
 			"03"
 			{
@@ -4299,7 +4299,7 @@
 			"05"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"27"
+				"dps"			"30"
 			}
 		}
 	}
@@ -5490,7 +5490,7 @@
 			"02"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"0.22"
+				"fire_rate"		"0.2"
 			}
 			"03"
 			{
@@ -5505,7 +5505,7 @@
 			"05"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"55"
+				"dps"			"60"
 			}
 		}
 	}
@@ -6657,7 +6657,7 @@
 			"02"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"0.22"
+				"fire_rate"		"0.2"
 			}
 			"03"
 			{
@@ -6672,7 +6672,7 @@
 			"05"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"109"
+				"dps"			"120"
 			}
 		}
 	}
@@ -7893,7 +7893,7 @@
 			"02"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"0.22"
+				"fire_rate"		"0.2"
 			}
 			"03"
 			{
@@ -7908,7 +7908,7 @@
 			"05"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"27"
+				"dps"			"30"
 			}
 		}
 	}
@@ -9135,7 +9135,7 @@
 			"02"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"0.22"
+				"fire_rate"		"0.2"
 			}
 			"03"
 			{
@@ -9150,7 +9150,7 @@
 			"05"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"109"
+				"dps"			"120"
 			}
 		}
 	}
@@ -9921,7 +9921,7 @@
 			"06"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"dps"	"124"
+				"dps"	"240"
 			}
 		}
 	}
@@ -10376,7 +10376,7 @@
 			"02"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"0.22"
+				"fire_rate"		"0.2"
 			}
 			"03"
 			{
@@ -10391,7 +10391,7 @@
 			"05"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"218"
+				"dps"			"240"
 			}
 		}
 	}
@@ -11645,7 +11645,7 @@
 			"02"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"fire_rate"		"0.22"
+				"fire_rate"		"0.2"
 			}
 			"03"
 			{
@@ -11660,7 +11660,7 @@
 			"05"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"dps"			"436"
+				"dps"			"480"
 			}
 		}
 	}
