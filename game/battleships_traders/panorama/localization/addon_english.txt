@@ -3223,7 +3223,7 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"Trade_Desc"			"Adds a special class of ship with limited inventory slots can take on profitable trading contracts and buy powerful consumable items. These ships drop high bounties if hunted down!"
 		"discord"			"Click to join us on discord!"
 		"News_Title"		"News!"
-		"News_Content"		"7/31/2021
+		"News_Content"		"7/31/2021 - Brought to you by VicFrank
 - Reduced Catamaran Health by 100
 - Whaling Dingy hook now does 100/150/200/250 Magic Damage
 - Paddlewheel Diver Reckless Speed now applies knockback to enemies hit, and deals 100/150/200/250 Magic Damage
@@ -3235,6 +3235,7 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 - Fixed boats having 1 strength after death
 - Fixed boats getting a tp scroll after death
 - Icebreaker no longer needs to use Aghanim's shard
+- Variability of chaos damage increased (range was -.5x to 2.7x dmg now -1x to 3.5x)
 "
 		
 		"port_cannons"                                               "Port Cannons"

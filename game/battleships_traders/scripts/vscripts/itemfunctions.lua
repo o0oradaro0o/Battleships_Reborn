@@ -913,7 +913,7 @@ function fireChaosWeapon(args)
   if not casterUnit:IsAlive() then
     return
   end
-  local dmgMult = RandomFloat( -0.5, 2.7 ) *0.2
+  local dmgMult = RandomFloat( -1, 3.5 ) *0.2
   -- Get a random float within a range
 
 
@@ -927,7 +927,7 @@ function fireChaosWeapon(args)
     if #fuckers>0 then
 
       if string.match(itemName, "ult") then
-        if dmgMult<0.4 and dmgMult>0.0 then
+        if dmgMult<0.5 and dmgMult>0.0 then
           local tracking_projectile =
           {
             EffectName = "particles/basic_projectile/chaos_ult_projectile_weak.vpcf",
@@ -979,7 +979,7 @@ function fireChaosWeapon(args)
         end
 
       elseif string.match(itemName, "two") then
-        if dmgMult<0.4 and dmgMult>0.0 then
+        if dmgMult<0.5 and dmgMult>0.0 then
           local tracking_projectile =
           {
             EffectName = "particles/basic_projectile/chaos_two_projectile_weak.vpcf",
@@ -1084,7 +1084,7 @@ function fireChaosWeapon(args)
         end
 
       elseif string.match(itemName, "three") then
-        if dmgMult<0.4 and dmgMult>0.0 then
+        if dmgMult<0.5 and dmgMult>0.0 then
           local tracking_projectile =
           {
             EffectName = "particles/basic_projectile/chaos_three_projectile_weak.vpcf",
@@ -1190,7 +1190,7 @@ function fireChaosWeapon(args)
 
       else
 
-        if dmgMult<0.4 and dmgMult>0.0 then
+        if dmgMult<0.5 and dmgMult>0.0 then
           local tracking_projectile =
           {
             EffectName = "particles/basic_projectile/chaos_one_projectile_weak.vpcf",

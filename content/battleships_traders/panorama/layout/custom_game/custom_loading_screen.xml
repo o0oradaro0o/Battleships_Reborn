@@ -115,7 +115,7 @@
 			</Panel>
 			
 			
-			<Label class="NewsTitle" text="#News" />
+			<Label class="NewsTitle" text="#News_Title" />
 			<Panel id="NewsHolder">
 				<Label class="NewsContent" text="#News_Content" />
 			</Panel>
