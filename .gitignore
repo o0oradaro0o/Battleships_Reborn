@@ -139,6 +139,21 @@ UpgradeLog*.htm
 App_Data/*.mdf
 App_Data/*.ldf
 
+# Cache
+*.cfg
+*.soc
+
+# Compiled formats
+*.vmat_c
+*.vagrp_c
+*.vmesh_c
+
+# Map files
+*.vpk
+
+# Map overviews
+resource/overviews/*
+
 #Dota Folders
 bin/
 dota/

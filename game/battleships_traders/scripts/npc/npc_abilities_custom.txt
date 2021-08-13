@@ -2505,7 +2505,6 @@
 	
 	"ability_shard_giver"
 	{
-		// General
 		"BaseClass"						"ability_lua"
 		"AbilityTextureName"			"pudge_meat_hook"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
