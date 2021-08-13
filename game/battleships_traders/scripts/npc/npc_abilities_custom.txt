@@ -5028,7 +5028,7 @@
 		
 		"AbilityCooldown"				"15.0 14.0 13.0 12.0"
 		"AbilityChannelTime"			"1.0 1.0 1.0 1.0"
-		"AbilityDamage"					"110 190 270 350"
+		"AbilityDamage"					"110 210 310 410"
 		"AbilityManaCost"				"0 0 0 0"
 
 		"AbilitySpecial"
@@ -5036,7 +5036,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"powershot_damage"		"110 190 270 350"
+				"powershot_damage"		"110 210 310 410"
 				"LinkedSpecialBonus"	"special_bonus_unique_windranger_3"
 			}
 			"02"

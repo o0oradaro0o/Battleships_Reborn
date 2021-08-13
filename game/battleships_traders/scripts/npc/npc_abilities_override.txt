@@ -1156,6 +1156,10 @@
 	{
 		"ItemPurchasable" "0"
 	}
+	"item_nullifier"
+	{
+		"ItemPurchasable" "0"
+	}
 	"item_aghanims_shard"
 	{
 		"ItemPurchasable" "0"
