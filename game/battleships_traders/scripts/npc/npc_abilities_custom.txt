@@ -8720,7 +8720,7 @@
 		"AbilitySound"					"hero_Crystal.freezingField.wind"
 
 		"HasScepterUpgrade"			"1"
-    "HasShardUpgrade"               "1"
+    "HasShardUpgrade"       "1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
