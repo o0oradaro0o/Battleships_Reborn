@@ -2128,12 +2128,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.5 1.5 1.5 1.5"
+				"duration"				"1.0 1.2 1.4 1.6"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"base_speed"				"300.0 350.0 400.5 450.0"			
+				"base_speed"				"450.0"			
 			}
 			"04"
 			{
@@ -2143,7 +2143,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"knockback_radius"				"250"
+				"knockback_radius"				"270"
 			}
 			"06"
 			{
