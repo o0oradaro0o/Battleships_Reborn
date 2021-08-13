@@ -1758,18 +1758,18 @@ function CBattleship8D:OnPlayerChat(keys)
 
         end
 
-        if teamonly == 0 and string.match(text, "bigger") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
+        if string.match(text, "bigger") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
         -- Notifications:TopToAll({
         --         text = "Now is not the time to use that!",
         --         duration = 5.0,
         --         style = {color = "#444499", fontSize = "70px;"}
         --     })
         -- print( "player id" .. playerID)
-            for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
+            for _, hero in pairs(HeroList:GetAllHeroes()) do
                 if hero ~= nil and hero:IsOwnedByAnyPlayer() then
                     if hero:IsRealHero() then
                         if hero:GetPlayerID() == playerID then
-                            local size = hero.original_size                        
+                            local size = hero.original_size
 
                             if size and not hero.bigger then
                                 local scale = 2.5
@@ -1787,7 +1787,7 @@ function CBattleship8D:OnPlayerChat(keys)
             end
         end
 
-        if teamonly == 0 and steamID32 == g_rere and text == "?" then
+        if teamonly == 0 and steamID32 == g_rere and string.match(text, "bigger") then
             for _,hero in pairs(HeroList:GetAllHeroes()) do
                 if hero:IsAlive() and hero:GetPlayerOwnerID() == playerID then                    
                     local explosion_radius = 100
@@ -2621,7 +2621,7 @@ function CBattleship8D:OnNPCSpawned(keys)
 
     if npc:IsRealHero() then
         Timers:CreateTimer(.03, function()
-            print(npc:GetUnitName())
+            npc.original_size = npc:GetModelScale()            
             for i=0,21 do
                 local item = npc:GetItemInSlot(i)
                 if item then
