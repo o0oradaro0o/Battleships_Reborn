@@ -2224,8 +2224,9 @@
 "DOTA_Tooltip_ability_swap_mission_Description" "Alter your contract to show a different destionation.  Don't worry you'll still get paid in full.\n\nHigher levels decrease cooldown."
 
     "DOTA_Tooltip_ability_harpoon_battleship"                 "Harpoon"
-    "DOTA_Tooltip_ability_harpoon_battleship_Description"           "Launch a harpoon at an enemy ship. When it connects, the two of you will be pulled together (mostly you). \n \nHigher levels pull the target closer to your original position."
+    "DOTA_Tooltip_ability_harpoon_battleship_Description"           "Launch a harpoon at an enemy ship. When it connects, the two of you will be pulled together (mostly you), and the enemy will take damage. \n \nHigher levels pull the target closer to your original position."
     "DOTA_Tooltip_ability_harpoon_battleship_cast_range"  "RANGE:"
+    "DOTA_Tooltip_ability_harpoon_battleship_bonus_damage"  "DAMAGE:"
     "DOTA_Tooltip_ability_harpoon_battleship_range" "FRACTION OF DISTANCE YOU MOVE:"
 
     "DOTA_Tooltip_ability_wale_bait_battleship"                 "Bait the whale"
@@ -3042,9 +3043,6 @@
     "DOTA_Tooltip_ability_ghost_ship_creep_Description"                               ""
     "DOTA_Tooltip_ability_ghost_ship_creep_hoop_bonus_armor"                          "HOOP BONUS ARMOR:"
     "DOTA_Tooltip_ability_ghost_ship_creep_health_regen"                              "HEALTH REGEN:"
-
-    "DOTA_Tooltip_ability_harpoon_battleship_bonus_damage"                            "BONUS DAMAGE:"
-    "DOTA_Tooltip_ability_harpoon_battleship_bonus_duration"                          "BONUS DURATION:"
 
     "DOTA_Tooltip_ability_wale_bait_battleship_range"                                 "RANGE:"
 
@@ -4052,8 +4050,6 @@
 		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_hook_width"                 "HOOK WIDTH:"
 		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_vision_radius"              "VISION RADIUS:"
 		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_vision_duration"            "VISION DURATION:"
-
-		"DOTA_Tooltip_ability_harpoon_battleship_illusion_search_radius"                  "ILLUSION SEARCH RADIUS:"
 
 		"DOTA_Tooltip_ability_wale_bait_battleship_dps"                                   "DPS:"
 		"DOTA_Tooltip_ability_wale_bait_battleship_dps_tooltip"                           "DPS TOOLTIP:"
