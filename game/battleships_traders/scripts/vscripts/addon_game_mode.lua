@@ -1919,7 +1919,9 @@ function CBattleship8D:OnThink()
     
     if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
         if GameRules:GetGameTime() ~= g_PreviousTickCount then
-
+            if g_MainTimerTickCount == 1 then
+                GameRules:SetTimeOfDay(0.25)
+            end
             if g_MainTimerTickCount == 5 then
                 storage:SetGameSettings({
                     battle = g_BattleMode,
@@ -3080,6 +3082,7 @@ function AttachCosmetics(hero)
 end
 
 function CBattleship8D:HandleEmpGold()
+    
     GameRules:SetTimeOfDay(0.25)
     if g_CoOpMode == 0 then
         g_TicksSinceEmpireGold = 0
