@@ -1792,7 +1792,7 @@ function CBattleship8D:OnPlayerChat(keys)
             for _,hero in pairs(HeroList:GetAllHeroes()) do
                 local heroPlayerOwnerID = hero:GetPlayerOwnerID()
                 local heroPlayerOwnerSteamID = PlayerResource:GetSteamAccountID(heroPlayerOwnerID)
-                if hero:IsAlive() and heroPlayerOwnerSteamID == g_rere then                    
+                if hero:IsAlive() and heroPlayerOwnerSteamID == g_frood then                    
                     local explosion_radius = 100
 
                     local particleName = "particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf"
