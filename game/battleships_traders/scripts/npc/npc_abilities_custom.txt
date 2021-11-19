@@ -2191,6 +2191,11 @@
 				"Target" "CASTER"
 				"ModifierName" "ramming_speed"
 			}
+			"ApplyModifier"
+			{
+				"Target" "CASTER"
+				"ModifierName" "ramming_speed_knockback"
+			}
 			"RunScript"
 					{
 						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
@@ -2226,9 +2231,22 @@
 					}
 				}
 			}
+			"ramming_speed_knockback"
+			{
+				"Duration"  "%knocback_modifier_duration"
+				"IsHidden"  "1"
+				"ThinkInterval"		"0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"rammingSpeedKnockback"
+					}
+				}
+			}
 		}
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
+		
 		"AbilitySpecial"
 		{
 			"01"
@@ -2260,6 +2278,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"damage"				"100 150 200 250"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knocback_modifier_duration"				"1.2 1.4 1.6 1.8"
 			}
 		}	
 	}
@@ -3102,16 +3125,8 @@
 		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"12"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		
@@ -3141,11 +3156,6 @@
 		}
 		"OnToggleOff"
 		{
-			"ApplyModifier"
-			{
-					"Target" "CASTER"
-					"ModifierName" "remove_wreaking_it"
-			}
 			"RemoveModifier"
 			{
 					"Target" "CASTER"
@@ -3163,10 +3173,9 @@
 				"Function"			"gunItSoundOff"
 			}
 		}
+
 		"Modifiers"
 		{
-			
-			
 			"Gunning_it"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
@@ -3179,12 +3188,6 @@
 						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 						"Function"			"gunningIt"
 					}
-					"ApplyModifier"
-					{
-							"Target" "CASTER"
-							"ModifierName" "wreaking_it"
-					}
-					
 				}
 				"States"
 					{
@@ -3193,37 +3196,19 @@
 			}
 			"wreaking_it"
 			{
-				"IsHidden"                              "1"
-				"ThinkInterval"		".1"
+				"IsHidden"         "1"
+				"ThinkInterval"    ".1"
 				"OnIntervalThink"
-				{
-					
+				{					
 					"RunScript"
 					{
 						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 						"Function"			"gunningItDamage"
-					}
-					
-				}
-			}
-			"remove_wreaking_it"
-			{
-			"IsHidden"                              "1"
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-				"ThinkInterval"		".03"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
-						"Function"			"gunningItDamageRemove"
-					}
+					}					
 				}
 			}
 		}
 		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -10456,8 +10441,6 @@
 
 "harpoon_battleship"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"				"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -10466,8 +10449,6 @@
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"harpoon"
 
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
 	"precache"
 	{
 		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts"
@@ -10475,22 +10456,11 @@
 		"particle"		"particles/units/heroes/hero_chaos_knight/chaos_knight_reality_rift_buff.vpcf"
 	}
 	
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"1000 1150 1300 1450"
 	"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
-
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"12 11 10 9"
-
-
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"				"0 0 0 0"
 	
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
 	"AbilitySpecial"
 	{
 		"01"
@@ -10501,7 +10471,7 @@
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_damage"				"100 180 220 300"
+			"bonus_damage"				"150 225 300 350"
 		}
 		"03"
 		{
@@ -10513,10 +10483,7 @@
 			"var_type"					"FIELD_FLOAT"
 			"range"					"1.0 0.95 0.9 0.85"
 		}
-	}
-
-
-	
+	}	
 
 	"OnSpellStart"
 	{
@@ -10532,13 +10499,11 @@
 				"MoveSpeed" "1300"
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/harpoon_attack.vpcf" 
-			}
-			
+			}			
 	}
 
 	"OnProjectileHitUnit"
 	{
-
 		"FireSound"
 		{
 			"EffectName"	"Hero_ChaosKnight.RealityRift"
@@ -13873,11 +13838,9 @@
     "AbilityManaCost"               "0"
 	"AbilityCooldown"				"25.0 23.0 21.0 19.0"
     "AbilityCastPoint"        "0"
-	"AbilityCastRange"				"1200"
+	"AbilityCastRange"				"1300"
     "precache"
     {
-      "soundfile"         "soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
-      "soundfile"         "soundevents/game_sounds_heroes/game_sounds_vo_stormspirit.vsndevts"
       "particle"          "particles/units/heroes/hero_morphling/morphling_waveform.vpcf"
     }
 

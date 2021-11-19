@@ -38,7 +38,7 @@
 	"bs_HowToWeapons"			"For each weapon type (row), there are 4 tiers of weapons: <font color='#11ff11'>T1, T2, T3, and ULTIMATE</font> <br /><br />Increase in <font color='#ff1111'>damage</font> from left to right <br /><br />Increase in <font color='#ffcc66'>range</font> from top to bottom."
 	"bs_HowToShips"				"<br /><br />You can upgrade to new ships by heading to the Ships vendor, and purchasing from one of four classes of ships. You'll start with nothing more than a barrel, so upgrade to get bigger boats and better abilities!"
 	"bs_HowToWeapons2"			"If you buy two of the same <font color='#11ff11'>weapon</font>, it will stack, saving inventory space. <br /><br />Once you own <font color='#db9200'>doubled weapons</font> from each tier of weapon (T1, T2, and T3), purchase a <font color='#66aaff'>recipe</font> (4th tier weapon) to combine them all into an  <font color='#ff1111'>ultimate weapon.</font>"
-	"bs_HowToTowers"			"Towers are powerful defensive structures. <br /><br />Destroying an enemy tower increases your team’s passive income. <br /><br /> Only short range weapons can damage towers.  <br /><br /> Side shops provide means of repairing your towers and Dearmoring enemy towers."
+	"bs_HowToTowers"			"Towers are powerful defensive structures. <br /><br />Destroying an enemy tower increases your team’s passive income. <br /><br /> Only short range weapons can damage towers. <br /><br /> Side shops provide means of repairing your towers and Dearmoring enemy towers."
 	"bs_HowToTide"				"Tidehunter is a boss unit that roams the left region of the map.<br /><br />Slaying Tidehunter will grant your team a gold reward and spawn a monster to fight for your team until death."
 	"bs_HowToUpgrade"			"<br />Upgrade items add additional utility to your ship.<br /><br />Each utility item has 4 levels of effectiveness.<br /><br />These items can be found in the 'Upgrades' tab of the shop."
 	"bs_HowToCombat"			"Creeps can provide cover because weapons autotarget.<br /><br />Positioning yourself among creeps will keep you safe.<br /><br />Isolating Enemies in your weapon's range will focus your fire."
@@ -153,7 +153,7 @@
 	"bane_desc"					"The strongest, fastest trader in the seas. Might be radioactive... nobody's sure."			
 	
 	"enigma"					"Ghost Trader"
-	"enigma_desc"				"The SS Baychimo was lost and abandoned in 1931.  This ghost ship was last seen in 1969..."
+	"enigma_desc"				"The SS Baychimo was lost and abandoned in 1931. This ghost ship was last seen in 1969..."
 
 		
 	
@@ -324,7 +324,7 @@
 	"kill_self_two"	"distributed evenly "
 	
 	//hey dummy
-	"too_many_hulls" "Only one hull can be active at a time.  You should sell a hull."
+	"too_many_hulls" "Only one hull can be active at a time. You should sell a hull."
 	
 	//has killed
 	
@@ -381,7 +381,7 @@ ARMOR: 2 4 6
 HEALTH REGEN: 6.0 8.0 10.0"
 
 "panic_battleship"							"Panic!"
-"panic_battleship_Description"				"Your panic drives you.  Gain move speed for every 10 percent of your health you are missing.\n Higher levels increase move speed bonus range.
+"panic_battleship_Description"				"Your panic drives you. Gain move speed for every 10 percent of your health you are missing.\n Higher levels increase move speed bonus range.
 BONUS SPEED: 20 25 30 35"
 
 "ramming_speed_battleship"								"Reckless Speed!"
@@ -441,7 +441,7 @@ FRACTION OF DISTANCE YOU MOVE: .9 .8 .7 .6"
 "wale_bait_battleship_Description"						"Lure an old foe to the target location. the whale creates a wherl pool, sucking in and damaging friends and foes alike (nonlethal 20dps). \n \nHigher levels increase cast range and lower cooldown.
 DURATION: 7"
 "gamble"                                                     "Gamble"
-"gamble_Description"                                         "Rolls 3 random new abilities and resets cooldowns on all other abilities.  Gain small gold bonus if abilities match
+"gamble_Description"                                         "Rolls 3 random new abilities and resets cooldowns on all other abilities. Gain small gold bonus if abilities match
 LESSER REWARD: 3 4 5
 GREATER REWARD: 10 20 30"
 "gamble_heart_one"                                           "Heart"
@@ -469,7 +469,7 @@ DAMAGE: 66 99 121 154"
 
 
 	"thunder_storm"                                              "Thunder Storm"
-		"thunder_storm_Description"                                  "Passivly rain lightniong around you striking your foes and building up your charge as you damage enemies.  the more charge you amass the faster the liughtning comes. \n higher levels increase damage"
+		"thunder_storm_Description"                                  "Passivly rain lightniong around you striking your foes and building up your charge as you damage enemies. the more charge you amass the faster the liughtning comes. \n higher levels increase damage"
 		"thunder_storm_lightning_radius"                             "LIGHTNING RADIUS:"
 		"thunder_storm_lightning_tick_interval_min"                  "LIGHTNING TICK INTERVAL MIN:"
 		"thunder_storm_lightning_tick_interval_max"                  "LIGHTNING TICK INTERVAL MAX:"
@@ -508,7 +508,7 @@ VISION DURATION: 1.3 1.3 1.3 1.3
 DAMAGE: 120 180 240 300"
 
 "kunkka_torrent_bships"								"Restricted Area"
-"kunkka_torrent_bships_Description"					"Designate an area as restricted. Any enemies remaining in the restricted area units are launched upward on a torrent of water after a short delay, dealing damage, slowing them and applying a mini stun.  \n\n
+"kunkka_torrent_bships_Description"					"Designate an area as restricted. Any enemies remaining in the restricted area units are launched upward on a torrent of water after a short delay, dealing damage, slowing them and applying a mini stun. \n\n
 SLOW DURATION: 1.0 2.0 3.0 4.0
 STUN: .75 1.25 1.75 2.25
 DELAY: 1.6 1.6 1.6 1.6
@@ -611,7 +611,7 @@ RANGE: 700 800 900
 DAMAGE: 200 300 400"
 
 "sniper_shrapnel_battleship"								"Fire Mortars"
-"sniper_shrapnel_battleship_Description"					"Rain mortars down on target area, dealing damage and providing vision.  \n\nHigher levels increase duration and damage.
+"sniper_shrapnel_battleship_Description"					"Rain mortars down on target area, dealing damage and providing vision. \n\nHigher levels increase duration and damage.
 MOVEMENT SLOW: -15 -20 -25 -30
 AREA: 400
 DURATION: 3.0
@@ -669,7 +669,7 @@ DAMAGE: 600 650 700 750
 DURATION: 2.0"
 
 "submerge_battleship"							"Submerge"
-"submerge_battleship_Description"					"Dive into the comforting embrace of the sea! Let the water shield you from harm, granting you an armor bonus. Fully submerge your propeller, granting you a move speed bonus. \n\nAlas, you need to breathe keep an eye on your air (mana) or you may start to drown.  Quickly... \n\nHigher levels increase all bonuses.
+"submerge_battleship_Description"					"Dive into the comforting embrace of the sea! Let the water shield you from harm, granting you an armor bonus. Fully submerge your propeller, granting you a move speed bonus. \n\nAlas, you need to breathe keep an eye on your air (mana) or you may start to drown. Quickly... \n\nHigher levels increase all bonuses.
 MOVE SPEED BONUS: 100 120 140
 ARMOR BONUS: 9 11 13
 MANA DRAIN: -50.0"
@@ -694,7 +694,7 @@ DURATION: 3.0 4.0 5.0"
 
 
 "monkey_buisness"									"Monkey Business"
-"monkey_buisness_Description"					"Your monkeys jump to a nearby enemy ship, do as much damage as they can, then escape to an allied ship.  Monkeys continue until they have nowhere to jump, alternating between allies and enemies.\n\nHigher levels increase damage and jump range.
+"monkey_buisness_Description"					"Your monkeys jump to a nearby enemy ship, do as much damage as they can, then escape to an allied ship. Monkeys continue until they have nowhere to jump, alternating between allies and enemies.\n\nHigher levels increase damage and jump range.
 MONKEY JUMP RANGE: 600 700 800 900
 MONKEY ATTACK DAMAGE: 200 300 400 500"
 
@@ -744,7 +744,7 @@ MAX DAMAGE ABSORBED: 500.0 600.0 700.0 800.0
 BURST RADIUS: 1000"
 
 "into_the_hold"			"Into The Hold"				
-"into_the_hold_Description" "Construct an empire ship and carry it in your hold while constructing it and shielding it.  this ship will divide fire. \n\nHigher levels increase time in hold, armor bonus and ally regen speed
+"into_the_hold_Description" "Construct an empire ship and carry it in your hold while constructing it and shielding it. this ship will divide fire. \n\nHigher levels increase time in hold, armor bonus and ally regen speed
 DURATION: 5.0 6.0 7.0 8.0
 RANGE: 2 3 4 5
 HEALTH REGEN: 50 60 70 80"
@@ -782,7 +782,7 @@ DAMAGE: 200
 RANGE: 1600"
 
 "crystal_maiden_freezing_field_battleship"							"Freezing Field"
-"crystal_maiden_freezing_field_battleship_Description"				"Summons forth the frozen north and all it's random icy explosions that slow enemies and deal massive damage.  Lasts %duration_tooltip% seconds.\n Higher levels increase damage and stun duration and decrease cooldown.
+"crystal_maiden_freezing_field_battleship_Description"				"Summons forth the frozen north and all it's random icy explosions that slow enemies and deal massive damage. Lasts %duration_tooltip% seconds.\n Higher levels increase damage and stun duration and decrease cooldown.
 The slow is applied on all enemies in the radius, even if they aren't hit by an explosion (lasts 1 second). 685 685 685
 RADIUS: 685 685 685
 EXPLOSION RADIUS: 685 685 685
@@ -3218,24 +3218,17 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"Coop_Title"		"Co-Op Challenge Mode"
 		"Coop_Desc"			"An assault challenge against waves of bots. Kill their base before you are overrun."
 		"Battle_Title"		"Battle Mode"
-		"Battle_Desc"		"Every 4 minutes a king of the hill style battle occurs.  All participants get gold and the winning team gets extra gold."
+		"Battle_Desc"		"Every 4 minutes a king of the hill style battle occurs. All participants get gold and the winning team gets extra gold."
 		"New_Title"			"New Title"
 		"Trade_Desc"			"Adds a special class of ship with limited inventory slots can take on profitable trading contracts and buy powerful consumable items. These ships drop high bounties if hunted down!"
 		"discord"			"Click to join us on discord!"
 		"News_Title"		"News!"
-		"News_Content"		"7/31/2021 - Brought to you by VicFrank
-- Reduced Catamaran Health by 100
-- Whaling Dingy hook now does 100/150/200/250 Magic Damage
-- Paddlewheel Diver Reckless Speed now applies knockback to enemies hit, and deals 100/150/200/250 Magic Damage
-- Ruse now has a min damage of 0 (lol)
-- Battleship Peg Circle cooldown 13/12/11/10 -> 35/32/28/25
-- Noah Monkey Business damage reduced by 30 per Monkey
-- Noah Monkey Business speed 522 -> 650
-- Increased fire rate of light from 0.22 -> 0.2 (~10%% increase in damage)
-- Fixed boats having 1 strength after death
-- Fixed boats getting a tp scroll after death
-- Icebreaker no longer needs to use Aghanim's shard
-- Variability of chaos damage increased (range was -.5x to 2.7x dmg now -1x to 3.5x)
+		"News_Content"		"11/18/2021
+- Reduced price of tier 2 and tier 3 Ice
+- Whaling Dingy Hook Damage increased to 150/225/300/350 Damage
+- Whaling Dingy Hook Damage type changed to Physical
+- Paddlewheel Diver Reckless Speed knockback now lasts slightly longer
+- Speedboat now stops damaging you immediately
 "
 		
 		"port_cannons"                                               "Port Cannons"

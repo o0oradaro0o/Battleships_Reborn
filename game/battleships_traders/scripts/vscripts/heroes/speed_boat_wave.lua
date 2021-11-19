@@ -92,8 +92,7 @@ function speed_boat_wave:OnProjectileThink_ExtraData(location, ExtraData)
 end
 
 function speed_boat_wave:OnProjectileHit_ExtraData(target, location, ExtraData)
-    if IsServer() then
-      --print("inProjHit")
+  if IsServer() then
     if target then
       local caster = self:GetCaster()
       local damage_flags = DOTA_DAMAGE_FLAG_NONE
@@ -105,8 +104,7 @@ function speed_boat_wave:OnProjectileHit_ExtraData(target, location, ExtraData)
         ability = self.ability
       }
     
-      local damageDealt = ApplyDamage(damageTable)
-     
+      local damageDealt = ApplyDamage(damageTable)     
     end
   end
 end
@@ -120,13 +118,9 @@ function modifier_wave_form:IsHidden()  return false end
 function modifier_wave_form:IsPurgable() return false end
 
 
-
 function modifier_wave_form:DeclareFunctions()
   local funcs = {
     MODIFIER_PROPERTY_OVERRIDE_ANIMATION,
-    -- MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL,
-    -- MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL,
-    -- MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE,
   }
   return funcs
 end

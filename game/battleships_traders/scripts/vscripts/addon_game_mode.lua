@@ -1787,9 +1787,12 @@ function CBattleship8D:OnPlayerChat(keys)
             end
         end
 
-        if teamonly == 0 and steamID32 == g_rere and string.match(text, "bigger") then
+        -- kill ryan every time someone question marks
+        if teamonly == 0 and text == "?" then
             for _,hero in pairs(HeroList:GetAllHeroes()) do
-                if hero:IsAlive() and hero:GetPlayerOwnerID() == playerID then                    
+                local heroPlayerOwnerID = hero:GetPlayerOwnerID()
+                local heroPlayerOwnerSteamID = PlayerResource:GetSteamAccountID(heroPlayerOwnerID)
+                if hero:IsAlive() and heroPlayerOwnerSteamID == g_rere then                    
                     local explosion_radius = 100
 
                     local particleName = "particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf"

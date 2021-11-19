@@ -154,11 +154,6 @@ function peak(keys) -- keys is the information sent by the ability
 	end
 end
 
-function startGunningIt(args)
-	local casterUnit = args.caster
-	GunTicks[casterUnit:GetOwner():GetPlayerID()] = 1
-end
-
 function rammingIt(args)
 	local casterUnit = args.caster
 	local ability = args.ability
@@ -166,19 +161,24 @@ function rammingIt(args)
 		Physics:Unit(casterUnit)
 	end
 
+	-- Accelerate
+	local direction = casterUnit:GetForwardVector()
+	local level = ability:GetLevel()
+	local vec = direction:Normalized() * (15 * level + 95)
+	casterUnit:AddPhysicsVelocity(vec)
+end
+
+function rammingSpeedKnockback(args)
+	local casterUnit = args.caster
+	local ability = args.ability
+
 	local radius = ability:GetSpecialValueFor("knockback_radius")
 	local damage = ability:GetSpecialValueFor("damage")
 	local duration = 0.5
 	local knockback_duration = 0.5
 	local knockback_distance = 143
 	local knockback_height = 50
-
-	local direction = casterUnit:GetForwardVector()
-	local level = ability:GetLevel()
-	local vec = direction:Normalized() * (15 * level + 95)
-	casterUnit:AddPhysicsVelocity(vec)
-
-
+	-- Apply Knockback and damage
 	local enemies = FindUnitsInRadius(
 		casterUnit:GetTeam(),
 		casterUnit:GetAbsOrigin(),
@@ -327,6 +327,23 @@ function gunningIt(args) -- keys is the information sent by the ability
 	end
 end
 
+function startGunningIt(args)
+	local casterUnit = args.caster
+	GunTicks[casterUnit:GetOwner():GetPlayerID()] = 1
+end
+
+function stopGunningIt(args) -- keys is the information sent by the ability
+	-- ----print('[ItemFunctions] gunning_it started! ')
+	local casterUnit = args.caster
+	local direction = casterUnit:GetForwardVector()
+	local vec = direction:Normalized() * 0.0
+
+	Physics:Unit(casterUnit)
+
+	casterUnit:SetPhysicsAcceleration(vec)
+	casterUnit:RemoveModifierByName("wreaking_it")
+end
+
 function gunningItDamage(args) -- keys is the information sent by the ability
 	-- ----print('[ItemFunctions] gunning_it started! ')
 
@@ -348,13 +365,6 @@ function gunningItDamage(args) -- keys is the information sent by the ability
 	else
 		casterUnit:RemoveModifierByName("wreaking_it")
 		casterUnit:RemoveModifierByName("remove_wreaking_it")
-	end
-end
-function gunningItDamageRemove(args) -- keys is the information sent by the ability
-	-- ----print('[ItemFunctions] gunning_it started! ')
-	local casterUnit = args.caster
-	if GunTicks[casterUnit:GetOwner():GetPlayerID()] ~= nil and GunTicks[casterUnit:GetOwner():GetPlayerID()] > 0 then
-		GunTicks[casterUnit:GetOwner():GetPlayerID()] = GunTicks[casterUnit:GetOwner():GetPlayerID()] - 1
 	end
 end
 
@@ -684,35 +694,6 @@ function CallPuckDive(args) -- keys is the information sent by the ability
 	StartAnimation(casterUnit, {duration = .3 + .2 * level, activity = ACT_SCRIPT_CUSTOM_0, rate = 2 / (.3 + .1 * level)})
 end
 
-function stopGunningIt(args) -- keys is the information sent by the ability
-	-- ----print('[ItemFunctions] gunning_it started! ')
-	local casterUnit = args.caster
-	local direction = casterUnit:GetForwardVector()
-	local vec = direction:Normalized() * 0.0
-
-	Physics:Unit(casterUnit)
-
-	casterUnit:SetPhysicsAcceleration(vec)
-end
-
-function stopGunningItAbility(args) -- keys is the information sent by the ability
-	-- ----print('[ItemFunctions] gunning_it started! ')
-	local casterUnit = args.caster
-	local direction = casterUnit:GetForwardVector()
-	local vec = direction:Normalized() * 0.0
-	local abil = casterUnit:GetAbilityByIndex(2)
-	 ----print(GunTicks[casterUnit:GetOwner():GetPlayerID()])
-	if
-		abil:GetLevel() ~= 0 and not casterUnit:HasModifier("remove_wreaking_it") and
-			GunTicks[casterUnit:GetOwner():GetPlayerID()] ~= nil and
-			GunTicks[casterUnit:GetOwner():GetPlayerID()] > 2
-	 then
-		abil:ToggleAbility()
-	end
-	Physics:Unit(casterUnit)
-
-	casterUnit:SetPhysicsAcceleration(vec)
-end
 function SwimBrakDamageTaken(args) 
 	PrintTable(args)
 	local targetUnit = args.caster
@@ -721,7 +702,6 @@ function SwimBrakDamageTaken(args)
 	
 	end
 end
-
 
 function RainbowDied(args)
 	 ----print("[ability] rainbow died started! ")
@@ -2284,14 +2264,7 @@ function RealityRiftPosition( keys )
 	ability.reality_rift_location = target_point_vector
 	ability.reality_rift_direction = direction
 
-
-	Timers:CreateTimer(
-		0.1,
-		function()
-		-- --print("trigger")
-		RealityRift(keys)
-		end
-	)
+	Timers:CreateTimer(0.1, function() RealityRift(keys)	end)
 end
 
 --[[Author: Pizzalol
@@ -2322,11 +2295,11 @@ function RealityRift( keys )
 	caster:AddNewModifier(caster, nil, "modifier_phased", {duration = 0.03})
 
 	-- Deal damage
-	ApplyDamage({
+	local damage = ApplyDamage({
 		victim = target,
 		attacker = caster,
 		damage = damage,
-		damage_type = DAMAGE_TYPE_MAGICAL
+		damage_type = DAMAGE_TYPE_PHYSICAL
 	})
 end
 
