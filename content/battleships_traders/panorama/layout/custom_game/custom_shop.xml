@@ -1988,14 +1988,13 @@
 	</Panel>
 
 	<Panel hittest="false" id="bane">	
-		<Panel hittest="false" class="ship_details_holder" >
-		
-		<Panel hittest="false" class="closeButtonholder">
-			<Button class="close" onactivate="showDetails('hide')">
-					<Label  text="X" class="closeX"/>		
-			</Button>
-		</Panel>
-		<Label hittest="false" class="boat_title" text="#bane" />
+		<Panel hittest="false" class="ship_details_holder">
+			<Panel hittest="false" class="closeButtonholder">
+				<Button class="close" onactivate="showDetails('hide')">
+					<Label text="X" class="closeX"/>		
+				</Button>
+			</Panel>
+			<Label hittest="false" class="boat_title" text="#bane" />
 			<Panel hittest="false" class="boat_row">
 				<Image class="boat_img" src="file://{images}/custom_game/boats/bane.png" />
 				<Panel hittest="false" class="ship_desc_holder" >
@@ -2024,19 +2023,19 @@
 			
 					<Panel hittest="false" class="ability" onmouseover="showText('bane','pistols_battleship')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" onmouseover="DOTAShowAbilityTooltip('pistols_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>
+						<Label hittest="false" class="ability_name" text="#pistols_battleship"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('bane','estab_route')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/windrunner_windrun_sylvan.png" onmouseover="DOTAShowAbilityTooltip('estab_route')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#estab_route"/>
+						<Label hittest="false" class="ability_name" text="#estab_route"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('bane','swap_mission')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/chaos_knight_chaos_strike.png" onmouseover="DOTAShowAbilityTooltip('swap_mission')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#swap_mission"/>
+						<Label hittest="false" class="ability_name" text="#swap_mission"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('bane','dump_cargo')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/drop_item.png" onmouseover="DOTAShowAbilityTooltip('dump_cargo')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#dump_cargo"/>
+						<Label hittest="false" class="ability_name" text="#dump_cargo"/>
 					</Panel>
 				</Panel>
 				<Panel hittest="false" class="boat_row">
@@ -2045,18 +2044,16 @@
 						<Label hittest="false" class="boat_stat_label" text=" "  id="bane_ability_desc"/>
 					</Panel>
 			</Panel>
-					<Panel hittest="false" class="buy_box" >
-						<Button class="buy_ship_button" onactivate="buyBoat('bane', 4000)" oncontextmenu="buyBoat('bane', 4000)">
-							<Label hittest="false" class="buy_text" text="#buy" />
-							<Label hittest="false" class="buy_text_g" text="4000" />
-							<Image id="GoldImage" src="s2r://panorama/images/hud/reborn/gold_small_psd.vtex" />
-						</Button>
-					</Panel>
+				<Panel hittest="false" class="buy_box" >
+					<Button class="buy_ship_button" onactivate="buyBoat('bane', 4000)" oncontextmenu="buyBoat('bane', 4000)">
+						<Label hittest="false" class="buy_text" text="#buy" />
+						<Label hittest="false" class="buy_text_g" text="4000" />
+						<Image id="GoldImage" src="s2r://panorama/images/hud/reborn/gold_small_psd.vtex" />
+					</Button>
+				</Panel>
 		</Panel>	
 	</Panel>
 
-	
-		/* ship shop */
 		<Panel hittest="false" id="ship_shop" class="ship_shop_guts">
 			  <Image class="ship_bkg_image" src="file://{images}/custom_game/Kunkka.png" />
                 <Panel id="ship_shop_content_holder">
@@ -2255,7 +2252,7 @@
 	 
 	 <Panel hittest="false" id="custom_shop" oncancel="hideShop()">
 		
-            /* left_bot_shop */
+            <!--  left_bot_shop  -->
             <Panel hittest="false" id="left_bot_shop" class="shop_guts">
                 <Image class="bkg_image" src="file://{images}/custom_game/bot_left.png" />
                 <Panel class="shop_content_holder">
@@ -2297,7 +2294,7 @@
             </Panel>
 			
 			
-			 /* left_mid_shop */
+			 <!--  left_mid_shop  -->
             <Panel hittest="false" id="left_mid_shop" class="shop_guts">
                 <Image class="bkg_image" src="file://{images}/custom_game/mid_left.png" />
                 <Panel class="shop_content_holder">
@@ -2339,7 +2336,7 @@
                     </Panel>
                 </Panel>
             </Panel>
-			 /* left_top_shop */
+			 <!--  left_top_shop  -->
             <Panel hittest="false" id="left_top_shop" class="shop_guts">
                 <Image class="bkg_image" src="file://{images}/custom_game/left_top.png" />
                 <Panel class="shop_content_holder">
@@ -2379,7 +2376,7 @@
                     </Panel>
                 </Panel>
             </Panel>
-			/* mid_bot_shop */
+			<!--  mid_bot_shop  -->
             <Panel hittest="false" id="mid_bot_shop" class="shop_guts">
                 <Image class="bkg_image" src="file://{images}/custom_game/mid_bot.png" />
                 <Panel class="shop_content_holder">
@@ -2420,7 +2417,7 @@
                 </Panel>
 				
             </Panel>
-			/* mid_mid_shop */
+			<!--  mid_mid_shop  -->
             <Panel hittest="false" id="mid_mid_shop" class="shop_guts">
                 <Image class="bkg_image" src="file://{images}/custom_game/mid_mid.png" />
                 <Panel class="shop_content_holder">
@@ -2463,7 +2460,7 @@
                     </Panel>
                 </Panel>
             </Panel>
-			/* mid_top_shop */
+			<!--  mid_top_shop  -->
             <Panel hittest="false" id="mid_top_shop" class="shop_guts">
                 <Image class="bkg_image" src="file://{images}/custom_game/mid_top.png" />
                 <Panel class="shop_content_holder">
@@ -2503,7 +2500,7 @@
                     </Panel>
                 </Panel>
             </Panel>
-			/* right_bot_shop */
+			<!--  right_bot_shop  -->
             <Panel hittest="false" id="right_bot_shop" class="shop_guts">
                 <Image class="bkg_image" src="file://{images}/custom_game/Bot_right.png" />
                 <Panel class="shop_content_holder">
@@ -2543,7 +2540,7 @@
                     </Panel>
                 </Panel>
             </Panel>
-			/* right_mid_shop */
+			<!--  right_mid_shop  -->
             <Panel hittest="false" id="right_mid_shop" class="shop_guts">
                 <Image class="bkg_image" src="file://{images}/custom_game/mid_right.png" />
                 <Panel class="shop_content_holder">
@@ -2583,7 +2580,7 @@
                     </Panel>
                 </Panel>
             </Panel>
-			/* right_top_shop */
+			<!--  right_top_shop  -->
             <Panel hittest="false" id="right_top_shop" class="shop_guts">
                 <Image class="bkg_image" src="file://{images}/custom_game/right_top.png" />
                 <Panel class="shop_content_holder">
@@ -2624,7 +2621,7 @@
                     </Panel>
                 </Panel>
             </Panel>
-		/* side_shop */
+		<!--  side_shop  -->
             <Panel hittest="false" id="side_shop">
                 <Image class="bkg_image" src="file://{images}/custom_game/left_top.png" />
                 <Panel class="shop_content_holder">
@@ -2740,7 +2737,7 @@
 <Image class="Toggled" src="file://{images}/items/breach_ult_bow.png"  />
 <Image class="Toggled" src="file://{images}/items/ice_ult_bow.png"  />
 <Image class="Toggled" src="file://{images}/items/wind_ult_bow.png"  />
-<Image class="Toggled" src="file://{images}/items/nut_spawner" />
+<Image class="Toggled" src="file://{images}/items/nut_spawner.png" />
 	<Image class="Toggled" src="file://{images}/custom_game/boats/zuus.png" />
 	<Image class="Toggled" src="file://{images}/custom_game/boats/winter_wyvern.png" />
 	<Image class="Toggled" src="file://{images}/items/hull_one.png" />
