@@ -61,6 +61,7 @@ g_vic = 70585706
 g_josh = 40159914
 g_borgel = 13375544
 g_planit = 5879425
+g_siege = 138997389
 -- creep spawn and level counters
 g_CreepLevel = 0
 g_NumSmallCreeps = 6
@@ -1792,8 +1793,8 @@ function CBattleship8D:OnPlayerChat(keys)
             for _,hero in pairs(HeroList:GetAllHeroes()) do
                 local heroPlayerOwnerID = hero:GetPlayerOwnerID()
                 local heroPlayerOwnerSteamID = PlayerResource:GetSteamAccountID(heroPlayerOwnerID)
-                if hero:IsAlive() and heroPlayerOwnerSteamID == g_frood then                    
-                    local explosion_radius = 100
+                if hero:IsAlive() and heroPlayerOwnerSteamID == g_rere then                    
+                    local explosion_radius = 200
 
                     local particleName = "particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf"
                     local particle = ParticleManager:CreateParticle(particleName, PATTACH_WORLDORIGIN, hero)
@@ -1806,7 +1807,7 @@ function CBattleship8D:OnPlayerChat(keys)
 
                     ScreenShake(hero:GetAbsOrigin(), 10, 0.3, 0.5, 1000, 0, true)
 
-                    hero:ForceKill(true)
+                    --hero:ForceKill(true)
                 end
             end
         end
@@ -2794,6 +2795,21 @@ function AttachCosmetics(hero)
                     hero:GetAbsOrigin(),
                     true
                 )
+            elseif steamID32 == g_siege then
+            hero.particleHAT = ParticleManager:CreateParticle(
+                "particles/basic_projectile/siege.vpcf",
+                PATTACH_ABSORIGIN_FOLLOW,
+                hero
+            )
+            ParticleManager:SetParticleControlEnt(
+                hero.particleHAT,
+                0,
+                hero,
+                PATTACH_POINT_FOLLOW,
+                "HatPoint",
+                hero:GetAbsOrigin(),
+                true
+            )
             elseif steamID32 == g_brit then
                 hero.particleHAT = ParticleManager:CreateParticle(
                     "particles/basic_projectile/brit.vpcf",
