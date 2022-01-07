@@ -2712,11 +2712,11 @@ function AttachCosmetics(hero)
     end
     if hero.particleHAT == nil then
         for playerSteamId, hatname in pairs(g_PlayerHatList) do
-            if string.match(steamID32, playerSteamId) and string.match(hatname, "noHat") then
-            -- hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/hat.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
-            -- ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
-            -- uncomment for santa hat
-            end
+        --     if string.match(steamID32, playerSteamId) and string.match(hatname, "noHat") then
+        --     hero.particleHAT = ParticleManager:CreateParticle( "particles/basic_projectile/hat.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+        --     ParticleManager:SetParticleControlEnt(hero.particleHAT, 0, hero, PATTACH_POINT_FOLLOW, "HatPoint", hero:GetAbsOrigin(), true)
+        --    -- uncomment for santa hat
+        --     end
 
             if string.match(steamID32, playerSteamId) and not string.match(hatname, "specHat") and not string.match(hatname, "noHat") then
                 hero.particleHAT = ParticleManager:CreateParticle(

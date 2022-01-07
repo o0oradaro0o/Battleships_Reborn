@@ -1741,7 +1741,7 @@
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		
-		"MovementSpeed"				"400"									// Speed.
+		"MovementSpeed"				"375"									// Speed.
 		"MovementTurnRate"			"0.6"									// Turning rate.
 		
 		"StatusHealth"				"10000"		// Base health.
@@ -1935,12 +1935,10 @@
         "AttributeAgilityGain"      "0"
 		 "StatusMana"                "1000"
         "StatusManaRegen"           "10.0"
-
-
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		
-		"MovementSpeed"				"425"									// Speed.
+		"MovementSpeed"				"300"									// Speed.
 		"MovementTurnRate"			"0.5"									// Turning rate.
 		
 		"StatusHealth"				"8900"		// Base health.
