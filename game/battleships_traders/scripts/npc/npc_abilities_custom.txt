@@ -13293,7 +13293,7 @@
       "particle"  "particles/units/heroes/hero_razor/razor_static_link.vpcf"
     }
 
-    "AbilityCastRange"        "700"
+    "AbilityCastRange"        "600"
     "AbilityCastPoint"        "0.3"
 
     "AbilityCooldown"       "8"
@@ -13314,7 +13314,7 @@
       "03"
       {
         "var_type"        "FIELD_INTEGER"
-        "drain_range_buffer"  "300"
+        "drain_range_buffer"  "250"
       }
     }
   }
