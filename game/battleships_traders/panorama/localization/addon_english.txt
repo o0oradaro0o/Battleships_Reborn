@@ -97,6 +97,9 @@
 	"ursa"						"Aircraft Carrier"
 	"ursa_desc"					"Strong tanky ship that dispatches fighters and bombers."
 	
+	"ursa"						"UFO"
+	"ursa_desc"					"Who knows man... It's Unidentified"
+	
 	"slark"						"Viking Warship"
 	"slark_desc"				"Scour the fjords in this quick, heavy-hitting berserker. Neither you nor your enemies will last long."		
 	

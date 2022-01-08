@@ -2210,6 +2210,12 @@
 									 <Label hittest="false" class="boat_name_text" text="#ursa" />
 								</Button>
 							</Panel>
+							<Panel hittest="false" class="supply_row">
+							   <Button class="boat_btn_item"  onactivate="showDetails('wisp')" oncontextmenu="buyBoat('wisp', 12000)">
+								   <Image class="boat_image" src="file://{images}/custom_game/boats/wisp.png" />
+									<Label hittest="false" class="boat_name_text" text="#wisp" />
+							   </Button>
+						   </Panel>
 						</Panel>
 						
 						<Panel id="traders_tab" class="ship_shop_tier_tab" onactivate="showtraders()">
