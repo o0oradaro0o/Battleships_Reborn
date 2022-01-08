@@ -2624,6 +2624,7 @@
     "npc_dota_hero_enigma_battleship8d"                                               "Dota Hero Enigma Battleship8d"
     "npc_dota_hero_bane_battleship8d"                                                 "Dota Hero Bane Battleship8d"
     "npc_dota_hero_tide_coOp"                                                         "Dota Hero Tide CoOp"
+    "crab_ship"                                                                       "The Crab"
 
     // ******************** ABILITY MODIFIERS ********************
     "DOTA_Tooltip_start_fire"                                                         "Start Fire"
