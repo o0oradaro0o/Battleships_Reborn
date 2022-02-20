@@ -4190,5 +4190,15 @@
         "DOTA_Tooltip_ability_timber_chain_lua"  "Grappling Hook"
         "DOTA_Tooltip_ability_timber_chain_lua_Description"  "Shoots a hook that latches onto the first target it finds, dragging the Tug Boat to it."
         "DOTA_Tooltip_ability_timber_chain_lua_range"  "Chain Range"
+
+        "DOTA_Tooltip_ability_speed_shift"  "Speed Shift"
+        "DOTA_Tooltip_ability_speed_shift_Description"  "Sometimes you fail faster. sometimes you even fail at that. Gain up to the listed move speed or lose up to half the listed movespeed randomly all of the time."
+        "DOTA_Tooltip_ability_speed_shift_ms_range"  "Move Speed"
+
+        "DOTA_Tooltip_ability_vengefulspirit_nether_swap_datadriven"                                        "Siwtcharoo"
+		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_datadriven_Description"                            "Swap places with the target in hopes of becoming less of a failure.  Fails to pick the right target 50% of the time."
+		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_datadriven_tooltip_range"                               "Range:"
+
+        
   }
 }

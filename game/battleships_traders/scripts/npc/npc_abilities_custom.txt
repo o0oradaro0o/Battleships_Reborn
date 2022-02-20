@@ -13561,7 +13561,7 @@
     "precache"
     {
       "soundfile"         "soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
-      "soundfile"         "soundevents/game_sounds_heroes/game_sounds_vo_stormspirit.vsndevts"
+      "soundfile"         "soundevents/game_sounds_heroes/game_sounds_vo_stormspirit.vsndevts"			
       "particle"          "particles/units/heroes/hero_stormspirit/stormspirit_ball_lightning.vpcf"
     }
 
@@ -13788,4 +13788,109 @@
 			}
 		}
 	}
+
+"vengefulspirit_nether_swap_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"vengefulspirit_nether_swap"
+	"CastFilterRejectCaster" 		"1"
+
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts"
+		"soundfile"			"sounds/misc/soundboard/slide.vsnd"
+		"soundfile"			"sounds/misc/soundboard/sad_bone.vsnd"
+		"soundfile"			"sounds/misc/soundboard/uh_oh.vsnd"
+		"soundfile"         "soundevents/game_sounds_heroes/game_sounds_vo_marci.vsndevts"
+		"particle"			"particles/units/heroes/hero_vengeful/vengeful_nether_swap.vpcf"
+		"particle"  		"particles/units/heroes/hero_vengeful/vengeful_nether_swap_pink.vpcf"
+						
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"700 950 1200"
+	"AbilityCastPoint"				"0.3 0.3 0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"20"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"tooltip_range"					"700 950 1200"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"nether_swap_cooldown_scepter"	"10"
+		}
+		// Extra
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"tree_radius"					"300"
+		}
+	}
+
+
+	"OnSpellStart"
+	{
+		
+			"FireSound"
+			{
+				"EffectName"	"Hero_VengefulSpirit.NetherSwap"
+				"Target" 		"TARGET"
+			}
+			
+			"FireSound"
+			{
+				"EffectName"	"Hero_VengefulSpirit.NetherSwap"
+				"Target" 		"CASTER"
+			}
+		"RunScript"
+		{
+			"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+			"Function"		"NetherSwap"
+		}						
+	}	
+}
+
+	"speed_shift"
+	{
+		"BaseClass"           "ability_lua"
+		"ScriptFile"          "heroes/fail_boat/speedshift.lua"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"  "dark_seer_surge"
+		"AbilitySpecial"
+		{
+
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"ms_range"		"100 150 200 250"
+			}
+		}
+	}
+
 }

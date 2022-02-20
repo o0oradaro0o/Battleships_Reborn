@@ -2847,3 +2847,120 @@ function sevenCheck(args)
 		end
 	end
 end
+
+
+
+function NetherSwap( keys )
+	local a = RandomInt(1, 2)
+	local caster = keys.caster
+	local target = keys.target
+	if a == 1 then
+		Swap( keys )
+
+	else
+		failboatFail(keys)
+			local enemies =
+			FindUnitsInRadius(
+				caster:GetTeamNumber(),
+				caster:GetOrigin(),
+			nil,
+			2000,
+			DOTA_UNIT_TARGET_TEAM_ENEMY,
+			DOTA_UNIT_TARGET_HERO,
+			0,
+			0,
+			false
+		)
+		if #enemies == 0 then
+		local enemies =
+				FindUnitsInRadius(
+					caster:GetTeamNumber(),
+					caster:GetOrigin(),
+				nil,
+				2000,
+				DOTA_UNIT_TARGET_TEAM_ENEMY,
+				DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+				0,
+				0,
+				false
+			)
+		end
+		if #enemies > 0 then
+			local index = RandomInt(1, #enemies)
+			keys.target = enemies[index]
+			Swap( keys )
+		end
+	end
+end
+
+function Swap( keys )
+	local caster = keys.caster
+	local target = keys.target
+local particleName = "particles/units/heroes/hero_vengeful/vengeful_nether_swap.vpcf"  
+local particle = ParticleManager:CreateParticle( particleName, PATTACH_POINT_FOLLOW, caster )
+ParticleManager:SetParticleControl(particle, 0, target:GetAbsOrigin())
+ParticleManager:SetParticleControl(particle, 1, caster:GetAbsOrigin())
+
+local particleName = "particles/units/heroes/hero_vengeful/vengeful_nether_swap_pink.vpcf"  
+local particle = ParticleManager:CreateParticle( particleName, PATTACH_POINT_FOLLOW, target )
+ParticleManager:SetParticleControl(particle, 0, caster:GetAbsOrigin())
+ParticleManager:SetParticleControl(particle, 1, target:GetAbsOrigin())
+	
+	local ability = keys.ability
+	local tree_radius = ability:GetLevelSpecialValueFor("tree_radius", ability:GetLevel() - 1)
+
+	local caster_position = caster:GetAbsOrigin()
+	local target_position = target:GetAbsOrigin()
+
+	-- Destroy trees around the caster and target
+	GridNav:DestroyTreesAroundPoint( caster_position, tree_radius, false )
+	GridNav:DestroyTreesAroundPoint( target_position, tree_radius, false )
+
+	-- Swap their positions
+	caster:SetAbsOrigin(target_position)
+	target:SetAbsOrigin(caster_position)
+
+	-- Make sure that they dont get stuck
+	FindClearSpaceForUnit( caster, target_position, true )
+	FindClearSpaceForUnit( target, caster_position, true )
+
+	-- Stops the current action of the target
+	target:Interrupt()
+end
+
+function failboatFail( keys )
+	local caster = keys.caster
+	local explosion_radius = 200
+
+	local particleName = "particles/econ/events/ti10/hot_potato/hot_potato_explode_ball_explosion.vpcf"
+	local particle = ParticleManager:CreateParticle(particleName, PATTACH_WORLDORIGIN, caster)
+	ParticleManager:SetParticleControl(particle, 0, caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(particle, 1, caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(particle, 2, Vector(explosion_radius, 1, 1))
+	ParticleManager:ReleaseParticleIndex(particle)
+
+	local a = RandomInt(1, 4)
+
+	if a == 1 then
+		caster:EmitSound("soundboard.sad_bone")
+	elseif a == 2 then
+		caster:EmitSound("soundboard.2021.uh_oh")
+	elseif a == 3 then
+		caster:EmitSound("marci_marci_sad")
+	else
+		caster:EmitSound("soundboard.2021.slide")
+	end
+	
+	caster:AddNewModifier(caster, nil, "modifier_stunned", {duration = 0.1})
+	
+	SendOverheadEventMessage(
+					PlayerResource:GetPlayer(caster:GetPlayerID()),
+					OVERHEAD_ALERT_MISS,
+					caster,
+					1,
+					PlayerResource:GetPlayer(caster:GetPlayerID()))
+end
+
+function SpeedShift( keys )
+
+end

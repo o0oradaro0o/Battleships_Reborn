@@ -3461,6 +3461,7 @@ function UpdateCoOpTables()
         table.insert(g_CoOpUnitPool, "npc_dota_hero_tidehunter")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_rattletrap")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_batrider")
+        table.insert(g_CoOpUnitPool, "npc_dota_hero_nyx_assassin")
     end
 
     if g_CoOpDiffLevel == 10 - g_CoOpDiffSetting * 2 then
@@ -3474,6 +3475,7 @@ function UpdateCoOpTables()
         table.insert(g_CoOpItemPool, "item_breach_bow_doubled")
         table.insert(g_CoOpItemPool, "item_chaos_bow_doubled")
         table.insert(g_CoOpItemPool, "item_caulk_bow_doubled")
+        
     end
 
     if g_CoOpDiffLevel == 20 - g_CoOpDiffSetting * 3 then
@@ -3484,6 +3486,7 @@ function UpdateCoOpTables()
         table.insert(g_CoOpUnitPool, "npc_dota_hero_brewmaster")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_nevermore")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_lion")
+        table.insert(g_CoOpUnitPool, "npc_dota_hero_dragon_knight")
 
         table.insert(g_CoOpItemPool, "item_coal_two_bow")
         table.insert(g_CoOpItemPool, "item_fire_two_bow")
@@ -6390,6 +6393,10 @@ function buyBoat(eventSourceIndex, args)
                         become_boat(casterUnit, "npc_dota_hero_bane")
                     elseif string.match(itemName, "wisp") then
                         become_boat(casterUnit, "npc_dota_hero_wisp")
+                    elseif string.match(itemName, "nyx") then
+                        become_boat(casterUnit, "npc_dota_hero_nyx_assassin")
+                    elseif string.match(itemName, "dragon") then
+                        become_boat(casterUnit, "npc_dota_hero_dragon_knight")
                     end
 
                 end
@@ -7493,18 +7500,33 @@ function setupWin(winner)
     if winner == DOTA_TEAM_BADGUYS then
         GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
         storage:SetWinner("North")
-        GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
-        GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
+        
+        Timers:CreateTimer(
+            10,
+            function()
+                GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
+                GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
+                GameRules:SetSafeToLeave(true)
+            end
+        )
+        
         papa_place = Vector(-244, 4349, 5)
-        GameRules:SetSafeToLeave(true)
+        
     elseif winner == DOTA_TEAM_GOODGUYS then
 
         GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
         storage:SetWinner("South")
-        GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
-        GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
+        Timers:CreateTimer(
+            10,
+            function()
+                GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+                GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
+                GameRules:SetSafeToLeave(true)
+            end
+        )
+        
 
-        GameRules:SetSafeToLeave(true)
+        
     end
     local winnerData = {team_number = winner}
     CustomGameEventManager:Send_ServerToAllClients("team_win", winnerData)
