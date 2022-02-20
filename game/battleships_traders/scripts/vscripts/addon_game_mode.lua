@@ -325,6 +325,7 @@ g_ModelLookUp["npc_dota_hero_visage"] = "models/noah_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_ursa"] = "models/Aircraft_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_pugna"] = "models/ice_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_razor"] = "models/stormchaser_boat.vmdl"
+g_ModelLookUp["npc_dota_hero_wisp"] = "models/ufo.vmdl"
 
 g_ModelLookUp["npc_dota_hero_windrunner"] = "models/const_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_tusk"] = "models/battleship_boat0.vmdl"
@@ -3051,6 +3052,26 @@ function AttachCosmetics(hero)
                 true
             )
         end
+    elseif string.match(hero:GetName(), "wisp") then
+    if hero.particleM == nil then
+        -- print("placing particle")
+        hero.particleM = ParticleManager:CreateParticle(
+            "particles/ufo_ring.vpcf",
+            PATTACH_ABSORIGIN_FOLLOW,
+            hero
+        )
+        hero.particleM = ParticleManager:CreateParticle(
+            "particles/ufo_ring2.vpcf",
+            PATTACH_ABSORIGIN_FOLLOW,
+            hero
+        )
+        hero.particleM = ParticleManager:CreateParticle(
+            "particles/ufo_ring3.vpcf",
+            PATTACH_ABSORIGIN_FOLLOW,
+            hero
+        )
+
+    end
     elseif string.match(hero:GetName(), "razor") then
         if hero.particleR == nil then
             hero.particleR = ParticleManager:CreateParticle(
@@ -3606,6 +3627,7 @@ function UpdateCoOpTables()
         table.insert(g_CoOpUnitPool, "npc_dota_hero_ember_spirit")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_pugna")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_razor")
+        table.insert(g_CoOpUnitPool, "npc_dota_hero_wisp")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_spirit_breaker")
 
         if g_CoOpDiffSetting == 3 or g_CoOpDiffSetting == 2 then
@@ -6366,6 +6388,8 @@ function buyBoat(eventSourceIndex, args)
                         become_boat(casterUnit, "npc_dota_hero_enigma")
                     elseif string.match(itemName, "bane") then
                         become_boat(casterUnit, "npc_dota_hero_bane")
+                    elseif string.match(itemName, "wisp") then
+                        become_boat(casterUnit, "npc_dota_hero_wisp")
                     end
 
                 end

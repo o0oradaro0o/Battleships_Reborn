@@ -406,7 +406,7 @@ function show1ks() {
 
 	}
 	else {
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("one_ks").style.height = "240px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("one_ks").style.height = "320px";
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("three_ks").style.height = "0px";
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("six_ks").style.height = "0px";
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("ten_ks").style.height = "0px";
@@ -422,7 +422,7 @@ function show3ks() {
 
 	}
 	else {
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("three_ks").style.height = "240px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("three_ks").style.height = "320px";
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("one_ks").style.height = "0px";
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("six_ks").style.height = "0px";
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("ten_ks").style.height = "0px";
@@ -436,7 +436,7 @@ function show6ks() {
 
 	}
 	else {
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("six_ks").style.height = "240px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("six_ks").style.height = "320px";
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("one_ks").style.height = "0px";
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("three_ks").style.height = "0px";
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("ten_ks").style.height = "0px";
@@ -450,7 +450,7 @@ function show10ks() {
 
 	}
 	else {
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("ten_ks").style.height = "240px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("ten_ks").style.height = "290px";
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("one_ks").style.height = "0px";
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("three_ks").style.height = "0px";
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("six_ks").style.height = "0px";
@@ -465,7 +465,7 @@ function showtraders() {
 
 	}
 	else if (!tradeHidden) {
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("trader_ships").style.height = "240px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("trader_ships").style.height = "320px";
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("one_ks").style.height = "0px";
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("three_ks").style.height = "0px";
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("six_ks").style.height = "0px";

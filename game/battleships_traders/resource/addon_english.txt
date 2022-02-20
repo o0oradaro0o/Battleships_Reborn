@@ -1677,6 +1677,7 @@
     "npc_dota_hero_spirit_breaker"          "Tidehunter"
     
     "npc_dota_hero_razor"           "Stormchaser Hydrofoil"
+    "npc_dota_hero_wisp"           "UFO"
   
 
 
@@ -3719,6 +3720,8 @@
 
     // ******************** UNITS ********************
     "npc_dota_hero_razor_battleship8d"                                                "Stormchaser Hydrofoil"
+     "npc_dota_hero_wisp2_battleship8d"           "UFO"
+  
     // ******************** ABILITY MODIFIERS ********************
 
     // ******************** ITEM MODIFIERS ********************
