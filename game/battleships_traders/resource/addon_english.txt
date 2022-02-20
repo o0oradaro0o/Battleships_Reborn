@@ -4186,6 +4186,17 @@
 
         "DOTA_Tooltip_ability_timber_chain_lua"  "Grappling Hook"
         "DOTA_Tooltip_ability_timber_chain_lua_Description"  "Shoots a hook that latches onto the first target it finds, dragging the Tug Boat to it."
-        "DOTA_Tooltip_ability_timber_chain_lua_range"  "Chain Range"
+        "DOTA_Tooltip_ability_timber_chain_lua_range"  "CHAIN RANGE:"
+
+        "DOTA_Tooltip_ability_crab_walk"  "Skuttle"
+        "DOTA_Tooltip_ability_crab_walk_Description"  "Embrace your crabby powers, and begin to skuttle, moving faster and gaining the ability to walk over walls."
+        "DOTA_Tooltip_ability_crab_walk_duration"  "DURATION:"
+        "DOTA_Tooltip_ability_crab_walk_move_speed_pct"  "%MOVE SPEED:"
+
+        "DOTA_Tooltip_ability_crab_grab"  "Claw Grab"
+        "DOTA_Tooltip_ability_crab_grab_Description"  "Grab a target with your claws, attaching yourself to them, slowing them down and repeatedly clawing them to deal damage."
+        "DOTA_Tooltip_ability_crab_grab_duration"  "DURATION:"
+        "DOTA_Tooltip_ability_crab_grab_damage_per_tick"  "DPS:"
+        "DOTA_Tooltip_ability_crab_grab_slow"  "%SLOW:"
   }
 }

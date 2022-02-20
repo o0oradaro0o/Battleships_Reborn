@@ -8916,14 +8916,6 @@
                         }
 					
                 }
-			
-
-		
-
-		
-		
-		
-
 	}
 	
 	//=================================================================================================================
@@ -8935,21 +8927,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"AbilityTextureName"				"tusk_ice_shards"
-		
-		
+		"AbilityTextureName"				"tusk_ice_shards"		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		
 		"OnUpgrade"
@@ -8966,50 +8948,43 @@
 			}
 		}
 		
-		 "Modifiers"
-        {
-                "aura_ice"
-                {
-                   
-                        "Passive"                               "1"
-                       
-                        "Aura"                                  "ice_aura"
-                        "Aura_Radius"                   "700"
-                        "Aura_Teams"                    "DOTA_UNIT_TARGET_TEAM_ENEMY"
-                        "Aura_Types"                    "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-                        "Aura_ApplyToCaster"    "0"
-                }
-                       
-                "ice_aura"
-                {
-                        "Properties"
-                        {
-                          
-								"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%fun_bonus_move_speed"
-                        }
+		"Modifiers"
+		{
+			"aura_ice"
+			{
+				"Passive"                               "1"
 
-							"EffectName"		 "particles/basic_projectile/ice_aura.vpcf" 
-							"EffectAttachType"	"follow_origin"
-                }
-               
-        }
-       
-        "AbilitySpecial"
-        {
-               
-				"01"
+				"Aura"                                  "ice_aura"
+				"Aura_Radius"                   "700"
+				"Aura_Teams"                    "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"                    "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"Aura_ApplyToCaster"    "0"
+			}
+
+			"ice_aura"
+			{
+				"Properties"
 				{
-					"var_type"				"FIELD_INTEGER"
-					"fun_bonus_move_speed"	"-30 -40 -50 -60"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%fun_bonus_move_speed"
 				}
-        }
-	
-		
 
+				"EffectName"		 "particles/basic_projectile/ice_aura.vpcf" 
+				"EffectAttachType"	"follow_origin"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fun_bonus_move_speed"	"-30 -40 -50 -60"
+			}
+		}
 	}
 	
 	
-		//=================================================================================================================
+	//=================================================================================================================
 	// icy waters
 	//=================================================================================================================
 	"armor_remover"
@@ -13769,22 +13744,63 @@
 		"ScriptFile"          "heroes/crab_ship/crab_walk.lua"
 		"AbilityTextureName"  "nyx_assassin_spiked_carapace"
 
-		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 
-		"AbilityCooldown"          "15"
+		"AbilityCooldown"          "20 16 12 8"
 		"AbilityManaCost"          "0"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"		"3"
+				"var_type"			"FIELD_FLOAT"
+				"duration"		"3.0"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"move_speed_pct"		"20"
+				"move_speed_pct"		"20 25 30 35"
+			}
+		}
+	}
+
+	"crab_grab"
+	{
+		"BaseClass"           "ability_lua"
+		"ScriptFile"          "heroes/crab_ship/crab_grab.lua"
+		"AbilityTextureName"  "sandking_caustic_finale"
+
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+
+		"AbilityCooldown"          "16"
+		"AbilityManaCost"          "0"
+		"AbilityCastRange"         "150"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"tick_rate"		"1.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"		"4.0"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_per_tick"		"60 70 80 90"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"slow"		"-20 -30 -40 -50"
 			}
 		}
 	}
