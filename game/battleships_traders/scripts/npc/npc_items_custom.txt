@@ -4314,7 +4314,7 @@
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"				"item_coal_bow"
-		"AbilityCastRange"              "600"
+		"AbilityCastRange"              "800"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
 		"ItemCost"                      "250" 
@@ -4400,7 +4400,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"range"		"600"
+				"range"		"800"
 			}
 			"06"
 			{
@@ -4420,7 +4420,7 @@
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"				"item_plasma_bow"
-		"AbilityCastRange"              "800"
+		"AbilityCastRange"              "600"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
 		"ItemCost"                      "300" 
@@ -4504,7 +4504,7 @@
 			"03"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"range"			"800"
+				"range"			"600"
 			}
 			"04"
 			{
@@ -5520,7 +5520,7 @@
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"				"item_coal_two_bow"
-		"AbilityCastRange"              "600"
+		"AbilityCastRange"              "800"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
 		"ItemCost"                      "800" 
@@ -5613,7 +5613,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"range"		"600"
+				"range"		"800"
 			}
 			"06"
 			{
@@ -5634,7 +5634,7 @@
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"				"item_plasma_two_bow"
-		"AbilityCastRange"              "800"
+		"AbilityCastRange"              "600"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
 		"ItemCost"                      "825" 
@@ -5717,7 +5717,7 @@
 			"03"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"range"			"800"
+				"range"			"600"
 			}
 			"04"
 			{
@@ -6686,7 +6686,7 @@
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"				"item_coal_three_bow"
-		"AbilityCastRange"              "600"
+		"AbilityCastRange"              "800"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
 		"ItemCost"                      "1800" 
@@ -6775,7 +6775,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"range"		"600"
+				"range"		"800"
 			}
 			"06"
 			{
@@ -6796,7 +6796,7 @@
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"				"item_plasma_three_bow"
-		"AbilityCastRange"              "800"
+		"AbilityCastRange"              "600"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
 		"ItemCost"                      "2000" 
@@ -6876,7 +6876,7 @@
 			"03"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"range"			"800"
+				"range"			"600"
 			}
 			"04"
 			{
@@ -7922,7 +7922,7 @@
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"				"item_coal_bow_doubled"
-		"AbilityCastRange"              "600"
+		"AbilityCastRange"              "800"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
 		"ItemCost"                      "500" 
@@ -8024,7 +8024,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"range"		"600"
+				"range"		"800"
 			}
 			"06"
 			{
@@ -8044,7 +8044,7 @@
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"				"item_plasma_bow_doubled"
-		"AbilityCastRange"              "800"
+		"AbilityCastRange"              "600"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
 		"ItemCost"                      "600" 
@@ -8136,7 +8136,7 @@
 			"03"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"range"			"800"
+				"range"			"600"
 			}
 			"04"
 			{
@@ -9164,7 +9164,7 @@
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"				"item_coal_two_bow_doubled"
-		"AbilityCastRange"              "600"
+		"AbilityCastRange"              "800"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
 		"ItemCost"                      "1600" 
@@ -9268,7 +9268,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"range"		"600"
+				"range"		"800"
 			}
 			"06"
 			{
@@ -9287,7 +9287,7 @@
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"				"item_plasma_two_bow_doubled"
-		"AbilityCastRange"              "800"
+		"AbilityCastRange"              "600"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
 		"ItemCost"                      "1650" 
@@ -9381,7 +9381,7 @@
 			"03"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"range"			"800"
+				"range"			"600"
 			}
 			"04"
 			{
@@ -10406,7 +10406,7 @@
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"				"item_coal_three_bow_doubled"
-		"AbilityCastRange"              "600"
+		"AbilityCastRange"              "800"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
 		"ItemCost"                      "3600" 
@@ -10510,7 +10510,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"range"		"600"
+				"range"		"800"
 			}
 			"06"
 			{
@@ -10529,7 +10529,7 @@
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"				"item_plasma_three_bow_doubled"
-		"AbilityCastRange"              "800"
+		"AbilityCastRange"              "600"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
 		"ItemCost"                      "4000" 
@@ -10622,7 +10622,7 @@
 			"03"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"range"			"800"
+				"range"			"600"
 			}
 			"04"
 			{
@@ -11675,7 +11675,7 @@
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"				"item_coal_ult_bow"
-		"AbilityCastRange"              "600"
+		"AbilityCastRange"              "800"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
 		"ItemCost"                      "9200" 
@@ -11779,7 +11779,7 @@
 			"05"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"range"		"600"
+				"range"		"800"
 			}
 			"06"
 			{
@@ -11800,7 +11800,7 @@
 		"BaseClass"                     "item_datadriven"
 		"Model"								"models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"				"item_plasma_ult_bow_final"
-		"AbilityCastRange"              "800"
+		"AbilityCastRange"              "600"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
 		"ItemCost"                      "9950" 
@@ -11888,7 +11888,7 @@
 			"03"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"range"			"800"
+				"range"			"600"
 			}
 			"04"
 			{

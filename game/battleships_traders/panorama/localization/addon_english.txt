@@ -101,7 +101,7 @@
 	"wisp_desc"					"Who knows man... It's Unidentified"
 	
 	"nyx"						"Crab"
-	"nyx_desc"					"seems friendly to you, hop on what could go wrong!"
+	"nyx_desc"					"Seems friendly to you... hop on what could go wrong!"
 	
 	"dragon"						"Fail Boat"
 	"dragon_desc"					"This is not a good boat. its abilities dont work half the time, its move speed is inconsistant, and your team will hate you if you buy it. you have been warned."
@@ -3278,5 +3278,9 @@ Continue"
 		"score_Name" "radar"
 		"score_Points" "0"
 
-		"vengefulspirit_nether_swap_datadriven"									"Over and Out"
+		"vengefulspirit_nether_swap_datadriven"									"Switcharoo"
+		"crab_walk"  "Skuttle"
+		"crab_grab"  "Claw Grab"
+		"speed_shift" "Speed Shift"
+		"transform" "Transform"
 }

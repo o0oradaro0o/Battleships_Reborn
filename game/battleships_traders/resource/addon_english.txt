@@ -1678,8 +1678,8 @@
     
     "npc_dota_hero_razor"           "Stormchaser Hydrofoil"
     "npc_dota_hero_wisp"           "UFO"
-  
-
+    "npc_dota_hero_nyx_assassin"    "The Crab"
+    "npc_dota_hero_dragon_knight" "Fail Boat"
 
     "npc_dota_boat_south_one"           "Small South Boat"
     "npc_dota_boat_south_two"             "Medium South Boat"
@@ -4192,7 +4192,7 @@
         "DOTA_Tooltip_ability_timber_chain_lua_range"  "Chain Range"
 
         "DOTA_Tooltip_ability_speed_shift"  "Speed Shift"
-        "DOTA_Tooltip_ability_speed_shift_Description"  "Sometimes you fail faster. sometimes you even fail at that. Gain up to the listed move speed or lose up to half the listed movespeed randomly all of the time."
+        "DOTA_Tooltip_ability_speed_shift_Description"  "Sometimes you fail fast. Sometimes you even fail at that. Gain up to the listed move speed or lose up to half the listed movespeed oscillating randomly all of the time."
         "DOTA_Tooltip_ability_speed_shift_ms_range"  "Move Speed"
 
         "DOTA_Tooltip_ability_vengefulspirit_nether_swap_datadriven"                                        "Siwtcharoo"
@@ -4200,5 +4200,24 @@
 		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_datadriven_tooltip_range"                               "Range:"
 
         
+        "DOTA_Tooltip_ability_timber_chain_lua_range"  "CHAIN RANGE:"
+
+        "DOTA_Tooltip_ability_crab_walk"  "Skuttle"
+        "DOTA_Tooltip_ability_crab_walk_Description"  "Embrace your crabby powers, and begin to skuttle, moving faster and gaining the ability to walk over walls."
+        "DOTA_Tooltip_ability_crab_walk_duration"  "DURATION:"
+        "DOTA_Tooltip_ability_crab_walk_move_speed_pct"  "%MOVE SPEED:"
+
+        "DOTA_Tooltip_ability_crab_grab"  "Claw Grab"
+        "DOTA_Tooltip_ability_crab_grab_Description"  "Grab a target with your claws, attaching yourself to them, slowing them down and repeatedly clawing them to deal damage."
+        "DOTA_Tooltip_ability_crab_grab_duration"  "DURATION:"
+        "DOTA_Tooltip_ability_crab_grab_damage_per_tick"  "DPS:"
+        "DOTA_Tooltip_ability_crab_grab_slow"  "%SLOW:"
+
+
+         "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven"  "Transform"
+        "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_Description"  "Maybe you'll fail less as someone else. (note that some forms have a regular unit attack)"
+        "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_duration"  "DURATION:"
+         "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_bonus_damage"  "ATTACK DAMAGE: 35+"
+         "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_base_attack_time"  "ATTACK COOL DOWN:"
   }
 }

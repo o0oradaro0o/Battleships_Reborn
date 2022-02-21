@@ -2939,14 +2939,14 @@ function failboatFail( keys )
 	ParticleManager:SetParticleControl(particle, 2, Vector(explosion_radius, 1, 1))
 	ParticleManager:ReleaseParticleIndex(particle)
 
-	local a = RandomInt(1, 4)
+	local a = RandomInt(1, 3)
 
 	if a == 1 then
 		caster:EmitSound("soundboard.sad_bone")
 	elseif a == 2 then
 		caster:EmitSound("soundboard.2021.uh_oh")
-	elseif a == 3 then
-		caster:EmitSound("marci_marci_sad")
+	-- elseif a == 3 then
+	-- 	caster:EmitSound("marci_marci_sad")
 	else
 		caster:EmitSound("soundboard.2021.slide")
 	end
@@ -2961,6 +2961,59 @@ function failboatFail( keys )
 					PlayerResource:GetPlayer(caster:GetPlayerID()))
 end
 
-function SpeedShift( keys )
+function Transform( keys )
 
+	local caster = keys.caster
+	local a = RandomInt(1, 3)
+	local model= "models/items/venomancer/ward/venomancer_hydra_snakeward/venomancer_hydra_snakeward.vmdl"
+	 local attack = DOTA_UNIT_CAP_RANGED_ATTACK
+
+	if a == 1  then
+		model= "models/props_gameplay/frog.vmdl"
+		attack = DOTA_UNIT_CAP_NO_ATTACK
+		failboatFail(keys)
+		caster:SetModelScale(1)
+		caster:RemoveModifierByName("modifier_metamorphosis_range")
+		caster:AddNewModifier(creature, nil, "modifier_stunned", {duration = 2.0})
+	elseif a == 2 then
+	model= "models/creeps/lane_creeps/ti9_crocodilian_dire/ti9_crocodilian_dire_melee.vmdl"
+		attack = DOTA_UNIT_CAP_MELEE_ATTACK
+		caster:SetModelScale(1.5)
+		caster:RemoveModifierByName("modifier_metamorphosis_range")
+	else
+		caster:SetModelScale(1.8)
+	
+		
+	end
+
+		local projectile_model = 	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
+
+
+
+	-- Saves the original model and attack capability
+	if caster.caster_model == nil then 
+		caster.caster_model = caster:GetModelName()
+	end
+	
+	-- Sets the new model and projectile
+	caster:SetOriginalModel(model)
+	caster:SetRangedProjectileName(projectile_model)
+	
+	-- Sets the new attack type
+	caster:SetAttackCapability(attack)
+	
+end
+
+--[[Author: Pizzalol/Noya
+	Date: 10.01.2015.
+	Reverts back to the original model and attack type
+]]
+function ModelSwapEnd( keys )
+	local caster = keys.caster
+
+	caster:SetModel(caster.caster_model)
+	caster:SetModelScale(2.2)
+	caster:SetOriginalModel(caster.caster_model)
+	caster:SetAttackCapability(DOTA_UNIT_CAP_NO_ATTACK)
+	caster:SetMoveCapability(DOTA_UNIT_CAP_MOVE_GROUND)
 end

@@ -527,6 +527,12 @@ function Precache(context)
     )
     PrecacheResource(
         "soundfile",
+        "soundevents/game_sounds_heroes/game_sounds_vo_marci.vsndevts",
+        context
+    )
+    
+    PrecacheResource(
+        "soundfile",
         "soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts",
         context
     )

@@ -1725,7 +1725,7 @@
 				<Image class="boat_img" src="file://{images}/custom_game/boats/nyx_assassin.png" />
 				<Panel hittest="false" class="ship_desc_holder" >
 					<Label hittest="false" class="ship_desc_title" text="#description" />
-					<Label hittest="false" class="boat_stat_label" text="#nyx" />
+					<Label hittest="false" class="boat_stat_label" text="#nyx_desc" />
 				</Panel>
 				<Panel hittest="false" class="ship_stats_holder" >
 				<Panel hittest="false" class="boat_row">
@@ -1747,21 +1747,21 @@
 			</Panel>	
 			<Panel hittest="false" class="boat_row">
 				
-					<Panel hittest="false" class="ability" onmouseover="showText('ursa','turret_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/TurretIcon.png" onmouseover="DOTAShowAbilityTooltip('turret_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#turret_battleship"/>
-					</Panel>
+				<Panel hittest="false" class="ability" onmouseover="showText('vengefulspirit','pistols_battleship')" >
+					<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" onmouseover="DOTAShowAbilityTooltip('pistols_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
+				   <Label hittest="false" class="ability_name" text="#pistols_battleship"/>
+				</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('ursa','launch_craft')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/gyrocopter_homing_missile.png" onmouseover="DOTAShowAbilityTooltip('launch_craft')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#launch_craft"/>
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/nyx_assassin_spiked_carapace.png" onmouseover="DOTAShowAbilityTooltip('crab_walk')" onmouseout="DOTAHideAbilityTooltip()" />
+                       <Label hittest="false" class="ability_name" text="#crab_walk"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('ursa','launch_all')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/gyrocopter_flak_cannon.png" onmouseover="DOTAShowAbilityTooltip('launch_all')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#launch_all"/>
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sandking_caustic_finale.png" onmouseover="DOTAShowAbilityTooltip('crab_grab')" onmouseout="DOTAHideAbilityTooltip()" />
+                       <Label hittest="false" class="ability_name" text="#crab_grab"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('ursa','Over_And_Out')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/over_and_out.png" onmouseover="DOTAShowAbilityTooltip('Over_And_Out')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#Over_And_Out"/>
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/hatches.png" onmouseover="DOTAShowAbilityTooltip('batten_hatches')" onmouseout="DOTAHideAbilityTooltip()" />
+						<Label hittest="false" class="ability_name" text="#batten_hatches"/>
 					</Panel>
 				</Panel>
 				<Panel hittest="false" class="boat_row">
@@ -1793,7 +1793,7 @@
 				<Image class="boat_img" src="file://{images}/custom_game/boats/dragon.png" />
 				<Panel hittest="false" class="ship_desc_holder" >
 					<Label hittest="false" class="ship_desc_title" text="#description" />
-					<Label hittest="false" class="boat_stat_label" text="#dragon" />
+					<Label hittest="false" class="boat_stat_label" text="#dragon_desc" />
 				</Panel>
 				<Panel hittest="false" class="ship_stats_holder" >
 				<Panel hittest="false" class="boat_row">
@@ -1815,21 +1815,21 @@
 			</Panel>	
 			<Panel hittest="false" class="boat_row">
 				
-					<Panel hittest="false" class="ability" onmouseover="showText('ursa','turret_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/TurretIcon.png" onmouseover="DOTAShowAbilityTooltip('turret_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#turret_battleship"/>
-					</Panel>
+				<Panel hittest="false" class="ability" onmouseover="showText('vengefulspirit','pistols_battleship')" >
+					<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" onmouseover="DOTAShowAbilityTooltip('pistols_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
+				   <Label hittest="false" class="ability_name" text="#pistols_battleship"/>
+				</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('ursa','launch_craft')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/gyrocopter_homing_missile.png" onmouseover="DOTAShowAbilityTooltip('launch_craft')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#launch_craft"/>
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/terrorblade_metamorphosis.png" onmouseover="DOTAShowAbilityTooltip('terrorblade_metamorphosis_datadriven')" onmouseout="DOTAHideAbilityTooltip()" />
+                       <Label hittest="false" class="ability_name" text="#transform"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('ursa','launch_all')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/gyrocopter_flak_cannon.png" onmouseover="DOTAShowAbilityTooltip('launch_all')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#launch_all"/>
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/dark_seer_surge.png" onmouseover="DOTAShowAbilityTooltip('speed_shift')" onmouseout="DOTAHideAbilityTooltip()" />
+                       <Label hittest="false" class="ability_name" text="#speed_shift"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('ursa','Over_And_Out')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/over_and_out.png" onmouseover="DOTAShowAbilityTooltip('Over_And_Out')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#Over_And_Out"/>
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/vengefulspirit_nether_swap.png" onmouseover="DOTAShowAbilityTooltip('vengefulspirit_nether_swap_datadriven')" onmouseout="DOTAHideAbilityTooltip()" />
+                       <Label hittest="false" class="ability_name" text="#vengefulspirit_nether_swap_datadriven"/>
 					</Panel>
 				</Panel>
 				<Panel hittest="false" class="boat_row">
