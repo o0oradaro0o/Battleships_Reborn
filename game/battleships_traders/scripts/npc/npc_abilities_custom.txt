@@ -13805,6 +13805,9 @@
 		}
 	}
 
+
+	
+
 "vengefulspirit_nether_swap_datadriven"
 {
 	// General
@@ -13828,7 +13831,10 @@
 		"soundfile"			"sounds/misc/soundboard/slide.vsnd"
 		"soundfile"			"sounds/misc/soundboard/sad_bone.vsnd"
 		"soundfile"			"sounds/misc/soundboard/uh_oh.vsnd"
-		"soundfile"       "soundevents/game_sounds_heroes/game_sounds_vo_marci.vsndevts"
+		"soundfile"       "soundevents/game_sounds_heroes/game_sounds_marci.vsndevts"
+		"soundfile"       "soundevents/voscripts/game_sounds_vo_marci.vsndevts"
+	
+
 		"particle"			"particles/units/heroes/hero_vengeful/vengeful_nether_swap.vpcf"
 		"particle"  		"particles/units/heroes/hero_vengeful/vengeful_nether_swap_pink.vpcf"
 						
@@ -13980,8 +13986,6 @@
 		"model"		"models/items/pugna/ward/tentaclesofnetherreach/tentaclesofnetherreach.vmdl"
 		"model"		"models/props_gameplay/frog.vmdl"
 		"model"		"models/creeps/lane_creeps/ti9_crocodilian_dire/ti9_crocodilian_dire_melee.vmdl"
-		
-		
 	}
 
 	"OnSpellStart"
@@ -14066,5 +14070,56 @@
 		}
 	}
 }
+
+//=================================================================================================================
+	// mayday
+	//=================================================================================================================
+	"science_ship_link"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityTextureName"				"mayday"
+		"MaxLevel"						"3"
+		"LevelsBetweenUpgrades"					"3"
+		"RequiredLevel"					"2"
+		
+		"BaseClass" 					"ability_datadriven"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+
+		
+		"Modifiers"
+		{
+			"link"
+			{
+					"Passive" "1"
+					"IsHidden" "1"
+					"ThinkInterval"		".001"
+					"OnIntervalThink"
+					{
+						"RunScript"
+						{
+							"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+							"Function"			"updateLink"
+						}
+						
+					}
+			}
+			
+		}
+		
+	}
 
 }

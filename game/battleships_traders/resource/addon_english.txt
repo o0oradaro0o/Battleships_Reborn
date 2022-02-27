@@ -1677,7 +1677,7 @@
     "npc_dota_hero_spirit_breaker"          "Tidehunter"
     
     "npc_dota_hero_razor"           "Stormchaser Hydrofoil"
-    "npc_dota_hero_wisp"           "UFO"
+    "npc_dota_hero_"           "UFO"
     "npc_dota_hero_nyx_assassin"    "The Crab"
     "npc_dota_hero_dragon_knight" "Fail Boat"
 

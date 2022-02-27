@@ -1272,6 +1272,16 @@ border-radius: 10.0px;
 	border-radius: 10.0px;
  background-color: gradient( linear, 0% 0%, 0% 100%, from( #40354555 ), color-stop( 0.25, #22292e77 ), color-stop( 0.5, #5A454588 ), color-stop( 0.75, #22246e99 ), to( #504545aa ) );
 }
+#marci
+{
+	height: 0.0px;
+	width: 650.0px;
+	horizontal-align: center;
+	vertical-align: center;
+	transition: height 0.5s ease-in-out 0.0s, perspective-origin 0.0s ease-in-out 0.0s;
+	border-radius: 10.0px;
+ background-color: gradient( linear, 0% 0%, 0% 100%, from( #40354555 ), color-stop( 0.25, #22292e77 ), color-stop( 0.5, #5A454588 ), color-stop( 0.75, #22246e99 ), to( #504545aa ) );
+}
 #visage
 {
 	height: 0.0px;

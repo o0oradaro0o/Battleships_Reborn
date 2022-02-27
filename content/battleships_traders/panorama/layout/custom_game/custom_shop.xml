@@ -1150,6 +1150,75 @@
 		</Panel>	
 	</Panel>
 
+
+	<Panel hittest="false" id="marci">	
+		<Panel hittest="false" class="ship_details_holder" >
+		
+		<Panel hittest="false" class="closeButtonholder">
+			<Button class="close" onactivate="showDetails('hide')">
+					<Label  text="X" class="closeX"/>		
+			</Button>
+		</Panel>
+		<Label hittest="false" class="boat_title" text="#marci" />
+			<Panel hittest="false" class="boat_row">
+				<Image class="boat_img" src="file://{images}/custom_game/boats/marci.png" />
+				<Panel hittest="false" class="ship_desc_holder" >
+					<Label hittest="false" class="ship_desc_title" text="#description" />
+					<Label hittest="false" class="boat_stat_label" text="#marci_desc" />
+				</Panel>
+				<Panel hittest="false" class="ship_stats_holder" >
+				<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#hp" />
+							<Label hittest="false" class="boat_stat_label_val" text="5000" />
+					</Panel>	
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#ms" />
+							<Label hittest="false" class="boat_stat_label_val" text="360" />
+					</Panel>
+					<Panel hittest="false" class="boat_row">
+							<Label hittest="false" class="boat_stat_label" text="#regen" />
+							<Label hittest="false" class="boat_stat_label_val" text="25" />
+					</Panel>
+				</Panel>	
+			</Panel>	
+			<Panel hittest="false" class="boat_row">
+				
+					<Panel hittest="false" class="ability" onmouseover="showText('jakiro','pistols_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" onmouseover="DOTAShowAbilityTooltip('pistols_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
+                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('jakiro','sniper_shrapnel_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_shrapnel.png" onmouseover="DOTAShowAbilityTooltip('sniper_shrapnel_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
+                       <Label hittest="false" class="ability_name" text="#sniper_shrapnel_battleship"/>
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('jakiro','hit_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/gyrocopter_homing_missile.png" onmouseover="DOTAShowAbilityTooltip('hit_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
+                       <Label hittest="false" class="ability_name" text="#hit_battleship"/>
+					</Panel>
+					<Panel hittest="false" class="ability" onmouseover="showText('jakiro','sniper_assassinate_battleship')" >
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_headshot.png" onmouseover="DOTAShowAbilityTooltip('sniper_assassinate_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
+                       <Label hittest="false" class="ability_name" text="#sniper_assassinate_battleship"/>
+					</Panel>
+				</Panel>
+				<Panel hittest="false" class="boat_row">
+					<Panel hittest="false" class="abilities_details_holder"  >
+						<Label hittest="false" class="ship_desc_title" text=" "  id="jakiro_ability"/>
+						<Label hittest="false" class="boat_stat_label" text=" "  id="jakiro_ability_desc"/>
+					</Panel>
+			</Panel>
+					<Panel hittest="false" class="buy_box" >
+						<Button class="buy_ship_button" onactivate="buyBoat('marci', 6000)" oncontextmenu="buyBoat('marci', 6000)">
+							<Label hittest="false" class="buy_text" text="#buy" />
+							<Label hittest="false" class="buy_text_g" text="6000" />
+							<Image id="GoldImage" src="s2r://panorama/images/hud/reborn/gold_small_psd.vtex" />
+						</Button>
+					</Panel>
+		</Panel>	
+	</Panel>
+
 	<Panel hittest="false" id="ember_spirit">	
 		<Panel hittest="false" class="ship_details_holder" >
 		
@@ -2458,6 +2527,12 @@
 									 <Label hittest="false" class="boat_name_text" text="#sniper" />
 								</Button>
 							</Panel>
+							<Panel hittest="false" class="supply_row">
+								<Button class="boat_btn_item"  onactivate="showDetails('marci')" oncontextmenu="buyBoat('marci', 6000)">
+								   <Image class="boat_image" src="file://{images}/custom_game/boats/marci.png" />
+									<Label hittest="false" class="boat_name_text" text="#marci" />
+							   </Button>
+						   </Panel>
 						</Panel> 
 						<Panel id="ten_ks_tab" class="ship_shop_tier_tab" onactivate="show10ks()">
 					<Label hittest="false" class="shop_btn_text" text="#ten_ks"/>

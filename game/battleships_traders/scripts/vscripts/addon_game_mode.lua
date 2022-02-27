@@ -296,6 +296,8 @@ g_ItemCodeLookUp["item_crystal_maiden_replacement_boat"] = "BN"
 g_ItemCodeLookUp["item_storm_spirit_replacement_boat"] = "BJ"
 -- Junk
 g_ItemCodeLookUp["npc_dota_hero_brewmaster"] = "BK"
+
+g_ItemCodeLookUp["npc_dota_hero_marci"] = "BZ"
 -- riveer
 g_heroCache = {}
 
@@ -326,6 +328,7 @@ g_ModelLookUp["npc_dota_hero_ursa"] = "models/Aircraft_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_pugna"] = "models/ice_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_razor"] = "models/stormchaser_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_wisp"] = "models/ufo.vmdl"
+g_ModelLookUp["npc_dota_hero_marci"] = "models/scienceship.vmdl"
 
 g_ModelLookUp["npc_dota_hero_windrunner"] = "models/const_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_tusk"] = "models/battleship_boat0.vmdl"
@@ -502,7 +505,7 @@ function Precache(context)
     )
     PrecacheResource(
         "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts",
+        "soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts",
         context
     )
     PrecacheResource(
@@ -742,7 +745,7 @@ function Precache(context)
     )
     PrecacheResource(
         "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts",
+        "soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts",
         context
     )
     PrecacheResource(
@@ -3123,6 +3126,35 @@ function AttachCosmetics(hero)
                 true
             )
         end
+
+        elseif string.match(hero:GetName(), "marci") then
+            if hero.particleR == nil then
+                hero.particleR = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/science_vroom.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particleR,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "vroom",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+
+                local unit = CreateUnitByName(
+                    "npc_dota_science_tower", 
+                    hero:GetAttachmentOrigin(1), 
+                    true, 
+                    hero, 
+                    hero, 
+                    hero:GetTeam()
+                    )
+                    unit.owner = hero
+                    unit:CreatureLevelUp(10)
+        end
     end
 
 end
@@ -3414,6 +3446,14 @@ function GetBoatValue(hero)
         return 12000
     elseif string.match(hero:GetName(), "razor") then
         return 12000
+    elseif string.match(hero:GetName(), "marci") then
+        return 6000
+    elseif string.match(hero:GetName(), "wisp") then
+        return 12000
+    elseif string.match(hero:GetName(), "dragon") then
+        return 3000
+    elseif string.match(hero:GetName(), "nyx") then
+        return 1000
     else
         return 0
     end
@@ -3538,6 +3578,7 @@ function UpdateCoOpTables()
     if g_CoOpDiffLevel == 40 - g_CoOpDiffSetting * 5 then
         table.insert(g_CoOpUnitPool, "npc_dota_hero_meepo")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_jakiro")
+        table.insert(g_CoOpUnitPool, "npc_dota_hero_marci")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_ember_spirit")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_slark")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_sniper")
@@ -3559,6 +3600,7 @@ function UpdateCoOpTables()
         g_CoOpUnitPool = {}
         table.insert(g_CoOpUnitPool, "npc_dota_hero_meepo")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_jakiro")
+        table.insert(g_CoOpUnitPool, "npc_dota_hero_marci")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_ember_spirit")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_slark")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_sniper")
@@ -3605,6 +3647,7 @@ function UpdateCoOpTables()
         g_CoOpUnitPool = {}
         table.insert(g_CoOpUnitPool, "npc_dota_hero_meepo")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_jakiro")
+        table.insert(g_CoOpUnitPool, "npc_dota_hero_marci")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_windrunner")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_slark")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_sniper")
@@ -4049,7 +4092,6 @@ function reapplyWP()
                     end
                 end
 
-                if height:Length() > 110 and false == creep:HasModifier("modifier_kunkka_torrent") then creep:ForceKill(true) end
             end
         end
     end
@@ -4128,10 +4170,28 @@ function CBattleship8D:OnReconnect(keys)
     addTowerParticles()
 end
 function CBattleship8D:OnConnectFull(keys)
-    print('[BAREBONES] OnConnectFull')
+
+    if not GameRules.playerIDs then
+        GameRules.playerIDs = {}
+    end
+
+    local playerID
+    local ply
+    for i=0,24 do
+        local player = PlayerResource:GetPlayer(i)
+        if player and not TableContainsValue(GameRules.playerIDs, playerID) then
+        playerID = i
+        ply = player
+        break
+        end
+    end
+
+  if not ply then return end
+
+  if not TableContainsValue(GameRules.playerIDs, playerID) then
+    table.insert(GameRules.playerIDs, playerID)
+  end
     local entIndex = keys.index + 1
-    local ply = EntIndexToHScript(entIndex)
-    local playerID = ply:GetPlayerID()
     self.vUserIds[keys.userid] = ply
     Timers:CreateTimer(
         5,
@@ -6403,6 +6463,8 @@ function buyBoat(eventSourceIndex, args)
                         become_boat(casterUnit, "npc_dota_hero_nyx_assassin")
                     elseif string.match(itemName, "dragon") then
                         become_boat(casterUnit, "npc_dota_hero_dragon_knight")
+                    elseif string.match(itemName, "marci") then
+                        become_boat(casterUnit, "npc_dota_hero_marci")
                     end
 
                 end

@@ -37,8 +37,10 @@ function modifier_crab_grab_caster:OnIntervalThink()
 
   local position = targetPosition - targetForwardVector * 50
 
-  self:GetParent():SetAbsOrigin(position)
-  self:GetParent():SetForwardVector(targetForwardVector)
+  if not self.target:HasModifier("modifier_crab_grab_caster") then
+    self:GetParent():SetAbsOrigin(position)
+    self:GetParent():SetForwardVector(targetForwardVector)
+  end
 end
 
 function modifier_crab_grab_caster:OnDestroy()
@@ -51,7 +53,7 @@ end
 
 function modifier_crab_grab_caster:CheckState()
   return {
-    -- [MODIFIER_STATE_STUNNED] = true,
+    [MODIFIER_STATE_STUNNED] = true,
     [MODIFIER_STATE_NO_UNIT_COLLISION] = true,
   }
 end

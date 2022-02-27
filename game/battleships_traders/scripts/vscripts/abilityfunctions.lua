@@ -2940,13 +2940,12 @@ function failboatFail( keys )
 	ParticleManager:ReleaseParticleIndex(particle)
 
 	local a = RandomInt(1, 3)
-
 	if a == 1 then
 		caster:EmitSound("soundboard.sad_bone")
 	elseif a == 2 then
 		caster:EmitSound("soundboard.2021.uh_oh")
 	-- elseif a == 3 then
-	-- 	caster:EmitSound("marci_marci_sad")
+	--  	caster:EmitSound("marci_marci_sad")
 	else
 		caster:EmitSound("soundboard.2021.slide")
 	end
@@ -3016,4 +3015,11 @@ function ModelSwapEnd( keys )
 	caster:SetOriginalModel(caster.caster_model)
 	caster:SetAttackCapability(DOTA_UNIT_CAP_NO_ATTACK)
 	caster:SetMoveCapability(DOTA_UNIT_CAP_MOVE_GROUND)
+end
+
+function updateLink( keys )
+	local casterUnit = keys.caster
+	casterUnit:SetForwardVector(casterUnit.owner:GetForwardVector())
+	casterUnit:SetOrigin(casterUnit.owner:GetAttachmentOrigin(1))
+	
 end

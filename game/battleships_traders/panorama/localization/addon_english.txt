@@ -3282,5 +3282,5 @@ Continue"
 		"crab_walk"  "Skuttle"
 		"crab_grab"  "Claw Grab"
 		"speed_shift" "Speed Shift"
-		"transform" "Transform"
+		"ransform" "Transform"
 }

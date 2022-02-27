@@ -516,6 +516,7 @@ function showDetails(BoatName) {
 		$("#wisp").style.height = "0px";
 		$("#nyx").style.height = "0px";
 		$("#dragon").style.height = "0px";
+		$("#marci").style.height = "0px";
 	}
 	else {
 		$("#ancient_apparition").style.height = "0px";
