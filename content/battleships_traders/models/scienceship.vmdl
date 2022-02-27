@@ -63,8 +63,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "Bone"
-								m_vMinBounds = [ -682.373352, 29.945374, -240.234558 ]
-								m_vMaxBounds = [ 298.929626, 408.53772, 235.597412 ]
+								m_vMinBounds = [ -145.371002, 239.154007, 20.684999 ]
+								m_vMaxBounds = [ 187.711166, 504.168945, 394.227325 ]
 								m_flShapeRadius = 0.0
 								m_nShapeType = "VHITBOX_SHAPE_BOX"
 								m_bTranslationOnly = false
@@ -105,6 +105,84 @@
 							{
 								m_influenceName = "Bone"
 								m_vTranslationOffset = [ 25.220148, 293.073364, -305.356628 ]
+								m_vRotationOffset = [ 0.0, 0.000001, -0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "vroom2"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Bone"
+								m_vTranslationOffset = [ 21.095312, 248.321564, 76.356308 ]
+								m_vRotationOffset = [ 0.0, 0.000001, -0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "vroom3"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Bone"
+								m_vTranslationOffset = [ 88.41172, 251.189209, -59.722294 ]
+								m_vRotationOffset = [ 0.0, 0.000001, -0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "vroom4"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Bone"
+								m_vTranslationOffset = [ -49.843536, 249.885635, -64.593811 ]
+								m_vRotationOffset = [ 0.0, 0.000001, -0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "vroom5"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Bone"
+								m_vTranslationOffset = [ 87.314903, 249.72995, -186.177673 ]
+								m_vRotationOffset = [ 0.0, 0.000001, -0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "vroom6"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Bone"
+								m_vTranslationOffset = [ -51.460953, 248.225555, -186.543198 ]
+								m_vRotationOffset = [ 0.0, 0.000001, -0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "attach_hitloc"
+						m_influences = 
+						[
+							{
+								m_influenceName = "Bone"
+								m_vTranslationOffset = [ -0.0, 386.736267, 0.0 ]
 								m_vRotationOffset = [ 0.0, 0.000001, -0.0 ]
 								m_flWeight = 1.0
 								m_bRoot = false

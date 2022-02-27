@@ -1351,9 +1351,9 @@
 		"AbilityLayout"				"3"
 
 		"Ability1"					"pistols_battleship"
-		"Ability2"					"sniper_shrapnel_battleship"
-		"Ability3"					"hit_battleship"
-		"Ability4"					"sniper_assassinate_battleship"
+		"Ability2"					"deadline_battleship"
+		"Ability3"					"abaddon_aphotic_shield_battleship"
+		"Ability4"					"deploy_science_tower"
 "Ability6"					"bships_empty"
 				"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
@@ -1364,7 +1364,7 @@
 		"Ability16"					"bships_empty"
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
-        "ModelScale"        ".6"
+        "ModelScale"        ".5"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{

@@ -129,7 +129,7 @@
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
-			m_flStartScale = 0.03
+			m_flStartScale = 0.02
 			m_flBias = 0.75
 			m_flEndScale = 0.001
 			m_flEndTime = 1.3

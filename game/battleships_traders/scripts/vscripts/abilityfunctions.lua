@@ -3017,9 +3017,74 @@ function ModelSwapEnd( keys )
 	caster:SetMoveCapability(DOTA_UNIT_CAP_MOVE_GROUND)
 end
 
-function updateLink( keys )
+function UpdateLink( keys )
 	local casterUnit = keys.caster
-	casterUnit:SetForwardVector(casterUnit.owner:GetForwardVector())
-	casterUnit:SetOrigin(casterUnit.owner:GetAttachmentOrigin(1))
+
 	
+	if casterUnit.deploied == nil or casterUnit.deploied == false then
+		casterUnit:SetForwardVector(casterUnit.owner:GetForwardVector())
+		casterUnit:SetOrigin(casterUnit.owner:GetAttachmentOrigin(1))
+		casterUnit:AddNewModifier(creature, nil, "modifier_invulnerable", {})
+		casterUnit:AddNewModifier(creature, nil, "modifier_attack_immune", {})
+	else
+		casterUnit:RemoveModifierByName("modifier_invulnerable")
+		casterUnit:RemoveModifierByName("modifier_attack_immune")
+	end
+	
+end
+
+function RespawnLinkedTower( keys )
+	local casterUnit = keys.caster
+	local unit = CreateUnitByName(
+                    "npc_dota_science_tower", 
+                    casterUnit.owner:GetAttachmentOrigin(1), 
+                    true, 
+                    casterUnit.owner, 
+                    casterUnit.owner, 
+                    casterUnit.owner:GetTeam()
+                    )
+                    unit.owner = casterUnit.owner
+										unit:CreatureLevelUp(10)
+										casterUnit.owner.myTower = unit
+end
+
+function dropTower( keys )
+	local ability = keys.ability
+	local casterUnit = keys.caster
+	local point = keys.target_points[1]
+	casterUnit.myTower:SetOrigin(point)
+	casterUnit.myTower.deploied=true;
+
+	for itemSlot = 0, 15, 1 do
+			if 	casterUnit.myTower ~= nil then
+					local Item = 	casterUnit.myTower:GetItemInSlot(itemSlot)
+					if Item ~= nil then Item:RemoveSelf() end
+			end
+	end
+
+	for itemSlot = 9, 8+ability:GetSpecialValueFor("slots"), 1 do
+			if casterUnit ~= nil then
+					local Item = casterUnit:GetItemInSlot(itemSlot)
+					if Item ~= nil then
+							local newItem = CreateItem(Item:GetName(), casterUnit.myTower, casterUnit.myTower)
+							casterUnit.myTower:AddItem(newItem)
+					end
+				end
+		end
+end
+
+function ResetCoolDowns(args)
+	local target = args.target
+	
+	for abilitynum = 0, 15, 1 do
+		if target:GetAbilityByIndex(abilitynum) then
+		target:GetAbilityByIndex(abilitynum):EndCooldown()
+		end
+	end
+	abil1 = args.caster:GetAbilityByIndex(1)
+	local cooldown = abil1:GetCooldown(abil1:GetLevel())
+
+	abil1:StartCooldown(cooldown)
+	
+
 end

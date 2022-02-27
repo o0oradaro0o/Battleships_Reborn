@@ -1185,22 +1185,22 @@
 				</Panel>	
 			</Panel>	
 			<Panel hittest="false" class="boat_row">
-				
+
 					<Panel hittest="false" class="ability" onmouseover="showText('jakiro','pistols_battleship')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" onmouseover="DOTAShowAbilityTooltip('pistols_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
                        <Label hittest="false" class="ability_name" text="#pistols_battleship"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('jakiro','sniper_shrapnel_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_shrapnel.png" onmouseover="DOTAShowAbilityTooltip('sniper_shrapnel_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#sniper_shrapnel_battleship"/>
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/invoker_invoke.png" onmouseover="DOTAShowAbilityTooltip('deadline_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
+                       <Label hittest="false" class="ability_name" text="#deadline"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('jakiro','hit_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/gyrocopter_homing_missile.png" onmouseover="DOTAShowAbilityTooltip('hit_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#hit_battleship"/>
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/abaddon_aphotic_shield.png" onmouseover="DOTAShowAbilityTooltip('abaddon_aphotic_shield_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
+                       <Label hittest="false" class="ability_name" text="#abaddon_aphotic_shield_battleship"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('jakiro','sniper_assassinate_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_headshot.png" onmouseover="DOTAShowAbilityTooltip('sniper_assassinate_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#sniper_assassinate_battleship"/>
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/tinker_march_of_the_machines.png" onmouseover="DOTAShowAbilityTooltip('deploy_science_tower')" onmouseout="DOTAHideAbilityTooltip()" />
+                       <Label hittest="false" class="ability_name" text="#deploy_science_tower"/>
 					</Panel>
 				</Panel>
 				<Panel hittest="false" class="boat_row">

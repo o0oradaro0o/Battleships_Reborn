@@ -3143,7 +3143,77 @@ function AttachCosmetics(hero)
                     hero:GetAbsOrigin(),
                     true
                 )
-
+                hero.particle2 = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/science_vrooms.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particle2,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "vroom2",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+                hero.particle3 = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/science_vrooms.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particle3,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "vroom3",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+                hero.particle4 = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/science_vrooms.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particle4,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "vroom4",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+                hero.particle5 = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/science_vrooms.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particle5,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "vroom5",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+                hero.particle6 = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/science_vrooms.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particle6,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "vroom6",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+                if hero.myTower == nil then
                 local unit = CreateUnitByName(
                     "npc_dota_science_tower", 
                     hero:GetAttachmentOrigin(1), 
@@ -3153,7 +3223,9 @@ function AttachCosmetics(hero)
                     hero:GetTeam()
                     )
                     unit.owner = hero
+                    hero.myTower = unit
                     unit:CreatureLevelUp(10)
+                end
         end
     end
 
@@ -5844,6 +5916,10 @@ function become_boat(casterUnit, heroname)
             local Item = casterUnit:GetItemInSlot(itemSlot)
             if Item ~= nil and string.match(Item:GetName(), "scroll") then RemoveAndDeleteItem(casterUnit, Item) end
         end
+    end
+
+    if casterUnit.myTower~= nil then
+        casterUnit.myTower:RemoveSelf()
     end
 
     if (casterUnit:IsHero() or casterUnit:HasInventory()) and heroname ~= casterUnit:GetName() then

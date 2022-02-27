@@ -1677,7 +1677,7 @@
     "npc_dota_hero_spirit_breaker"          "Tidehunter"
     
     "npc_dota_hero_razor"           "Stormchaser Hydrofoil"
-    "npc_dota_hero_"           "UFO"
+    "npc_dota_hero_marci"           "Science Vessle"
     "npc_dota_hero_nyx_assassin"    "The Crab"
     "npc_dota_hero_dragon_knight" "Fail Boat"
 
@@ -2066,8 +2066,8 @@
     "DOTA_Tooltip_Ability_into_the_hold_duration"         "DURATION:"
     "DOTA_Tooltip_Ability_into_the_hold_health_regen"         "HEALTH REGEN:"
     
-    "DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship"              "Scrap Armor"
-    "DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship_Description"  "Creates junk armor around an ally unit, forming a shield that absorbs a set amount of damage before expiring. When the shield is destroyed it will burst, dealing damage equal to the amount it could absorb to an area around it. Removes certain types of negative buffs and stuns on cast."
+    "DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship"              "Force Field"
+    "DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship_Description"  "Creates super science armor around an ally unit, forming a shield that absorbs a set amount of damage before expiring. When the shield is destroyed it will burst, dealing damage equal to the amount it could absorb to an area around it. Removes certain types of negative buffs and stuns on cast."
     "DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship_duration"   "DURATION:"
     "DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship_damage_absorb"  "MAX DAMAGE ABSORBED:"
     "DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship_radius"   "BURST RADIUS:"
@@ -4219,5 +4219,14 @@
         "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_duration"  "DURATION:"
          "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_bonus_damage"  "ATTACK DAMAGE: 35+"
          "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_base_attack_time"  "ATTACK COOL DOWN:"
+
+    "DOTA_Tooltip_ability_deploy_science_tower"  "Deploy Reaserch Platform"
+        "DOTA_Tooltip_ability_deploy_science_tower_Description"  "Drop your reaserch platform at the target location.  Platform remains until killed or deployed elsewhere and uses items stored in the first %slots% slots of your stash."
+        "DOTA_Tooltip_ability_deploy_science_tower_slots"  "SLOTS:"
+          "DOTA_Tooltip_ability_deadline_battleship"  "Reaserch Deadline"
+
+        "DOTA_Tooltip_ability_deadline_battleship_Description"  "You know how to work around deadlines and help your firends do the same.  Reset all cooldowns on target ship."
+        "DOTA_Tooltip_ability_deadline_battleship_cast_range"  "Range:"
+         
   }
 }

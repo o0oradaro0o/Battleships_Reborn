@@ -106,6 +106,8 @@
 	"dragon"						"Fail Boat"
 	"dragon_desc"					"This is not a good boat. its abilities dont work half the time, its move speed is inconsistant, and your team will hate you if you buy it. you have been warned."
 	
+	"marci"						"Science Vessle"
+	"marci_desc"					"A support ship with the ability to deploy a playform that can abosrb samage and fire weapons from the owner's stash."
 
 	"slark"						"Viking Warship"
 	"slark_desc"				"Scour the fjords in this quick, heavy-hitting berserker. Neither you nor your enemies will last long."		
@@ -3277,10 +3279,15 @@ Continue"
 		"BestDamageDealt" "Damage Dealt"
 		"score_Name" "radar"
 		"score_Points" "0"
+		"deadline"			"Reaserch Deadline"
 
 		"vengefulspirit_nether_swap_datadriven"									"Switcharoo"
 		"crab_walk"  "Skuttle"
 		"crab_grab"  "Claw Grab"
 		"speed_shift" "Speed Shift"
 		"ransform" "Transform"
+
+
+		"abaddon_aphotic_shield_battleship"  "Force Field"
+		"deploy_science_tower" "Deploy Reaserch Platform"
 }
