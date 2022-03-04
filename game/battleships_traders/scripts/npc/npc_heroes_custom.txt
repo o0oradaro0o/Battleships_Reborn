@@ -571,6 +571,134 @@
 		
 	}
 
+	//=================================================================================================================
+	// HERO: Crab Shipo
+	//=================================================================================================================
+	"crab_ship"
+	{
+		"override_hero"             "npc_dota_hero_nyx_assassin"
+
+		"Model" 	"models/items/courier/hermit_crab/hermit_crab.vmdl"
+		"SoundSet"          "Hero_NyxAssassin"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
+
+		"MovementSpeed"         "300"
+		"MovementTurnRate"      "0.7"
+
+		"StatusHealth"				"1000"
+		"StatusHealthRegen"			"5.0"
+
+		"ArmorPhysical"       "0"
+		"MagicalResistance"   "0"
+
+		"AbilityLayout"				"3"
+		"Ability1"					"pistols_battleship"
+		"Ability2"					"crab_walk"
+		"Ability3"					"crab_grab"
+		"Ability4"					"batten_hatches"
+		"Ability5"					""
+		"Ability6"					""
+		"Ability7"					""
+		"Ability10"					""
+		"Ability11"					""
+		"Ability12"					""
+		"Ability13"					""
+		"Ability14"					""
+		"Ability15"					""
+		"Ability16"					""
+		"Ability17"					""
+		"Ability18"					""
+		"ModelScale"        "1.6"
+		"RingRadius"				"100"
+		"AttachWearables"
+		{
+			"Wearable1" { "ItemDef" "0" }
+			"Wearable2" { "ItemDef" "0" }
+			"Wearable3" { "ItemDef" "0" }
+			"Wearable4" { "ItemDef" "0" }
+			"Wearable5" { "ItemDef" "0" }
+		}
+		"BountyGoldMin"				"124"
+		"BountyGoldMax"				"126"
+		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+	}
+
+
+	//=================================================================================================================
+	// HERO: fail Boat
+	//=================================================================================================================
+	"fail_ship"
+	{
+		"override_hero"             "npc_dota_hero_dragon_knight"
+
+		"Model" 	"models/items/courier/corsair_ship/corsair_ship.vmdl"
+		"SoundSet"          "Hero_NyxAssassin"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
+
+		"MovementSpeed"         "300"
+		"MovementTurnRate"      "0.7"
+
+		"StatusHealth"				"2500"
+		"StatusHealthRegen"			"18.0"
+		"ArmorPhysical"       "0"
+		"MagicalResistance"   "0"
+		"AttackAcquisitionRange"	"900"
+		"AbilityLayout"				"3"
+		"Ability1"					"pistols_battleship"
+		"Ability2"					"terrorblade_metamorphosis_datadriven"
+		"Ability3"					"speed_shift"
+		"Ability4"					"vengefulspirit_nether_swap_datadriven"
+		"Ability5"					""
+		"Ability6"					""
+		"Ability7"					""
+		"Ability10"					""
+		"Ability11"					""
+		"Ability12"					""
+		"Ability13"					""
+		"Ability14"					""
+		"Ability15"					""
+		"Ability16"					""
+		"Ability17"					""
+		"Ability18"					""
+		"ModelScale"        "2.2"
+		"RingRadius"				"100"
+		"AttachWearables"
+		{
+			"Wearable1" { "ItemDef" "0" }
+			"Wearable2" { "ItemDef" "0" }
+			"Wearable3" { "ItemDef" "0" }
+			"Wearable4" { "ItemDef" "0" }
+			"Wearable5" { "ItemDef" "0" }
+		}
+		"BountyGoldMin"				"124"
+		"BountyGoldMax"				"126"
+		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+	}
+
 
 	//=================================================================================================================
     // HERO: KUNKKA smuggler
@@ -1157,6 +1285,86 @@
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
         "ModelScale"        ".6"
+		"RingRadius"				"100"
+		"AttachWearables"
+		{
+			"Wearable1"
+			{
+				"ItemDef" "0"
+			}
+			"Wearable2"
+			{
+				"ItemDef" "0"
+			}
+			"Wearable3"
+			{
+				"ItemDef" "0"
+			}
+			"Wearable4"
+			{
+				"ItemDef" "0"
+			}
+			"Wearable5"
+			{
+				"ItemDef" "0"
+			}
+		}
+		"ItemSlots" {}
+		"BountyGoldMin"				"524"		// Gold earned min.
+		"BountyGoldMax"				"526"		// Gold earned max.
+		"DisableWearables" "1"
+		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+	}
+
+	//=================================================================================================================
+    // HERO: jakiro
+    //=================================================================================================================
+	 "npc_dota_hero_marci_battleship8d" 
+    {
+
+        "override_hero"             "npc_dota_hero_marci"          // Hero to override
+
+        "Model" "models/scienceship.vmdl"  // Model.
+		
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		
+	   "AttributeBaseStrength"     "0"
+        "AttributeStrengthGain"     "0"
+        "AttributeBaseIntelligence" "0"
+        "AttributeIntelligenceGain" "0"
+        "AttributeBaseAgility"      "0"
+        "AttributeAgilityGain"      "0"
+		 "StatusMana"                "0"
+        "StatusManaRegen"           "0.0"
+
+
+		"MovementSpeed"				"360"									// Speed.
+		"MovementTurnRate"			"0.5"									// Turning rate.
+		
+		"StatusHealth"				"5000"		// Base health.
+		"StatusHealthRegen"			"25.0"		// Health regeneration rate.
+		
+		"ArmorPhysical"				"0"
+		"MagicalResistance"				"0"
+		
+		"AbilityLayout"				"3"
+
+		"Ability1"					"pistols_battleship"
+		"Ability2"					"deadline_battleship"
+		"Ability3"					"abaddon_aphotic_shield_battleship"
+		"Ability4"					"deploy_science_tower"
+"Ability6"					"bships_empty"
+				"Ability10"					"bships_empty"
+		"Ability11"					"bships_empty"
+		"Ability12"					"bships_empty"
+		"Ability13"					"bships_empty"
+		"Ability14"					"bships_empty"
+		"Ability15"					"bships_empty"
+		"Ability16"					"bships_empty"
+		"Ability17"					"bships_empty"
+		"Ability18"					"bships_empty"
+        "ModelScale"        ".5"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
@@ -2002,11 +2210,11 @@
 		"MagicalResistance"				"0"
 		"Ability1"					"jakiro_ice_path_battleship"
 		"Ability2"					"iceberg_battleship"
-		"Ability3"					"icy_waters_battleship"
-		"Ability4"		"generic_hidden"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"crystal_maiden_freezing_field_battleship"
-		"Ability7"		"ability_shard_giver"
+		"Ability3"					"phoenix_sun_ray_datadriven"
+		"Ability4"		"phoenix_sun_ray_toggle_move_datadriven"
+		"Ability5"		"phoenix_sun_ray_stop_datadriven"
+		"Ability6"		""
+		"Ability7"		""
 		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
@@ -2092,69 +2300,7 @@
 		"VisionNighttimeRange"		"800"
 	}
 
-	//=================================================================================================================
-	// HERO: Crab Ship
-	//=================================================================================================================
-	"crab_ship"
-	{
-		"override_hero"             "npc_dota_hero_nyx_assassin"
-
-		"Model" 	"models/items/courier/hermit_crab/hermit_crab.vmdl"
-		"SoundSet"          "Hero_NyxAssassin"
-
-		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-
-		"AttributeBaseStrength"     "0"
-		"AttributeStrengthGain"     "0"
-		"AttributeBaseIntelligence" "0"
-		"AttributeIntelligenceGain" "0"
-		"AttributeBaseAgility"      "0"
-		"AttributeAgilityGain"      "0"
-		"StatusMana"                "0"
-		"StatusManaRegen"           "0.0"
-
-		"MovementSpeed"         "300"
-		"MovementTurnRate"      "0.7"
-
-		"StatusHealth"				"1000"
-		"StatusHealthRegen"			"5.0"
-
-		"ArmorPhysical"       "0"
-		"MagicalResistance"   "0"
-
-		"AbilityLayout"				"3"
-		"Ability1"					"pistols_battleship"
-		"Ability2"					"crab_walk"
-		"Ability3"					"crab_grab"
-		"Ability4"					""
-		"Ability5"					""
-		"Ability6"					""
-		"Ability7"					""
-		"Ability10"					""
-		"Ability11"					""
-		"Ability12"					""
-		"Ability13"					""
-		"Ability14"					""
-		"Ability15"					""
-		"Ability16"					""
-		"Ability17"					""
-		"Ability18"					""
-		"ModelScale"        "1.6"
-		"RingRadius"				"100"
-		"AttachWearables"
-		{
-			"Wearable1" { "ItemDef" "0" }
-			"Wearable2" { "ItemDef" "0" }
-			"Wearable3" { "ItemDef" "0" }
-			"Wearable4" { "ItemDef" "0" }
-			"Wearable5" { "ItemDef" "0" }
-		}
-		"BountyGoldMin"				"124"
-		"BountyGoldMax"				"126"
-		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"
-		"VisionNighttimeRange"		"800"
-	}
+	
 	
 		//=================================================================================================================
     // HERO: ghost

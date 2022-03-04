@@ -32,6 +32,41 @@
     "VisionNighttimeRange"      "500"
   }
 
+  "npc_dota_science_tower"
+  {
+    "BaseClass"                 "npc_dota_creature"
+    "Model"                     "models/items/rattletrap/clock_soul_of_steam_cogs/clock_soul_of_steam_cogs.vmdl"
+    "Level"                     "1"
+    "VisbibleInPortraitOnly"    "0"
+    "HasInventory"                "1"
+    "Ability1"                  "science_ship_link"
+    "Ability2"                  ""
+    "Ability3"                  ""
+    "Ability4"                  ""
+    "Ability5"                  ""
+    "Ability6"                  ""
+    "Ability7"                  ""
+    "Ability8"                  ""
+
+    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"             "0"
+    "MovementTurnRate"          "1"
+	"HealthBarOffset"			"170"
+	"StatusHealth"				"650"		// Base health.
+	"StatusHealthRegen"			"10.0"		// Health regeneration rate.
+	"StatusMana"				"0"			// Base mana.
+	"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+    "VisionDaytimeRange"        "500"
+    "VisionNighttimeRange"      "500"
+  }
+
+  
+
 	//=================================================================================	
 	// Creature: small south boat
 	//=================================================================================

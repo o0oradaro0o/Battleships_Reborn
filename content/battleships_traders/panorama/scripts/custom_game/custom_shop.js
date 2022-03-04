@@ -401,7 +401,7 @@ function showShipsNoHide() {
 function show1ks() {
 
 
-	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("one_ks").style.height == "240.0px") {
+	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("one_ks").style.height == "310.0px") {
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("one_ks").style.height = "0px";
 
 	}
@@ -417,7 +417,7 @@ function show1ks() {
 
 function show3ks() {
 
-	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("three_ks").style.height == "240.0px") {
+	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("three_ks").style.height == "310.0px") {
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("three_ks").style.height = "0px";
 
 	}
@@ -431,7 +431,7 @@ function show3ks() {
 }
 function show6ks() {
 
-	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("six_ks").style.height == "240.0px") {
+	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("six_ks").style.height == "310.0px") {
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("six_ks").style.height = "0px";
 
 	}
@@ -445,12 +445,12 @@ function show6ks() {
 }
 function show10ks() {
 
-	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("ten_ks").style.height == "240.0px") {
+	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("ten_ks").style.height == "310.0px") {
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("ten_ks").style.height = "0px";
 
 	}
 	else {
-		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("ten_ks").style.height = "290px";
+		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("ten_ks").style.height = "320px";
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("one_ks").style.height = "0px";
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("three_ks").style.height = "0px";
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("six_ks").style.height = "0px";
@@ -460,7 +460,7 @@ function show10ks() {
 
 function showtraders() {
 
-	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("trader_ships").style.height == "240.0px") {
+	if (NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("trader_ships").style.height == "310.0px") {
 		NewShopUI.FindChildTraverse("Main").FindChildTraverse("HeightLimiter").FindChildTraverse("ship_shop_content_holder").FindChildTraverse("trader_ships").style.height = "0px";
 
 	}
@@ -513,6 +513,10 @@ function showDetails(BoatName) {
 		$("#vengefulspirit").style.height = "0px";
 		$("#bane").style.height = "0px";
 		$("#enigma").style.height = "0px";
+		$("#wisp").style.height = "0px";
+		$("#nyx").style.height = "0px";
+		$("#dragon").style.height = "0px";
+		$("#marci").style.height = "0px";
 	}
 	else {
 		$("#ancient_apparition").style.height = "0px";
@@ -543,6 +547,9 @@ function showDetails(BoatName) {
 		$("#vengefulspirit").style.height = "0px";
 		$("#bane").style.height = "0px";
 		$("#enigma").style.height = "0px";
+		$("#nyx").style.height = "0px";
+		$("#dragon").style.height = "0px";
+		$("#wisp").style.height = "0px";
 		if (BoatName == "shredder") {
 			$("#" + BoatName).style.height = "490px";
 		}
@@ -1187,9 +1194,12 @@ function CannotBuy(data) {
 
 }
 function PingLoc(data) {
-	if (data.player_id == Players.GetLocalPlayer()) {
-		var v = [data.x, data.y, data.z]
+	$.Msg("pinging ");
+		$.Msg(data);
+		var v = [data.x, data.y, 128]
 		GameUI.PingMinimapAtLocation(v);
+	if (data.player_id == Players.GetLocalPlayer()) {
+		
 	}
 }
 

@@ -296,6 +296,8 @@ g_ItemCodeLookUp["item_crystal_maiden_replacement_boat"] = "BN"
 g_ItemCodeLookUp["item_storm_spirit_replacement_boat"] = "BJ"
 -- Junk
 g_ItemCodeLookUp["npc_dota_hero_brewmaster"] = "BK"
+
+g_ItemCodeLookUp["npc_dota_hero_marci"] = "BZ"
 -- riveer
 g_heroCache = {}
 
@@ -326,6 +328,7 @@ g_ModelLookUp["npc_dota_hero_ursa"] = "models/Aircraft_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_pugna"] = "models/ice_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_razor"] = "models/stormchaser_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_wisp"] = "models/ufo.vmdl"
+g_ModelLookUp["npc_dota_hero_marci"] = "models/scienceship.vmdl"
 
 g_ModelLookUp["npc_dota_hero_windrunner"] = "models/const_boat.vmdl"
 g_ModelLookUp["npc_dota_hero_tusk"] = "models/battleship_boat0.vmdl"
@@ -502,7 +505,7 @@ function Precache(context)
     )
     PrecacheResource(
         "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts",
+        "soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts",
         context
     )
     PrecacheResource(
@@ -525,6 +528,12 @@ function Precache(context)
         "soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts",
         context
     )
+    PrecacheResource(
+        "soundfile",
+        "soundevents/game_sounds_heroes/game_sounds_vo_marci.vsndevts",
+        context
+    )
+    
     PrecacheResource(
         "soundfile",
         "soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts",
@@ -736,7 +745,7 @@ function Precache(context)
     )
     PrecacheResource(
         "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts",
+        "soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts",
         context
     )
     PrecacheResource(
@@ -3117,6 +3126,107 @@ function AttachCosmetics(hero)
                 true
             )
         end
+
+        elseif string.match(hero:GetName(), "marci") then
+            if hero.particleR == nil then
+                hero.particleR = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/science_vroom.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particleR,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "vroom",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+                hero.particle2 = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/science_vrooms.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particle2,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "vroom2",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+                hero.particle3 = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/science_vrooms.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particle3,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "vroom3",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+                hero.particle4 = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/science_vrooms.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particle4,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "vroom4",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+                hero.particle5 = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/science_vrooms.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particle5,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "vroom5",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+                hero.particle6 = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/science_vrooms.vpcf",
+                    PATTACH_ABSORIGIN_FOLLOW,
+                    hero
+                )
+                ParticleManager:SetParticleControlEnt(
+                    hero.particle6,
+                    0,
+                    hero,
+                    PATTACH_POINT_FOLLOW,
+                    "vroom6",
+                    hero:GetAbsOrigin(),
+                    true
+                )
+                if hero.myTower == nil then
+                local unit = CreateUnitByName(
+                    "npc_dota_science_tower", 
+                    hero:GetAttachmentOrigin(1), 
+                    true, 
+                    hero, 
+                    hero, 
+                    hero:GetTeam()
+                    )
+                    unit.owner = hero
+                    hero.myTower = unit
+                    unit:CreatureLevelUp(10)
+                end
+        end
     end
 
 end
@@ -3408,6 +3518,14 @@ function GetBoatValue(hero)
         return 12000
     elseif string.match(hero:GetName(), "razor") then
         return 12000
+    elseif string.match(hero:GetName(), "marci") then
+        return 6000
+    elseif string.match(hero:GetName(), "wisp") then
+        return 12000
+    elseif string.match(hero:GetName(), "dragon") then
+        return 3000
+    elseif string.match(hero:GetName(), "nyx") then
+        return 1000
     else
         return 0
     end
@@ -3461,6 +3579,7 @@ function UpdateCoOpTables()
         table.insert(g_CoOpUnitPool, "npc_dota_hero_tidehunter")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_rattletrap")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_batrider")
+        table.insert(g_CoOpUnitPool, "npc_dota_hero_nyx_assassin")
     end
 
     if g_CoOpDiffLevel == 10 - g_CoOpDiffSetting * 2 then
@@ -3474,6 +3593,7 @@ function UpdateCoOpTables()
         table.insert(g_CoOpItemPool, "item_breach_bow_doubled")
         table.insert(g_CoOpItemPool, "item_chaos_bow_doubled")
         table.insert(g_CoOpItemPool, "item_caulk_bow_doubled")
+        
     end
 
     if g_CoOpDiffLevel == 20 - g_CoOpDiffSetting * 3 then
@@ -3484,6 +3604,7 @@ function UpdateCoOpTables()
         table.insert(g_CoOpUnitPool, "npc_dota_hero_brewmaster")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_nevermore")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_lion")
+        table.insert(g_CoOpUnitPool, "npc_dota_hero_dragon_knight")
 
         table.insert(g_CoOpItemPool, "item_coal_two_bow")
         table.insert(g_CoOpItemPool, "item_fire_two_bow")
@@ -3529,6 +3650,7 @@ function UpdateCoOpTables()
     if g_CoOpDiffLevel == 40 - g_CoOpDiffSetting * 5 then
         table.insert(g_CoOpUnitPool, "npc_dota_hero_meepo")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_jakiro")
+        table.insert(g_CoOpUnitPool, "npc_dota_hero_marci")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_ember_spirit")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_slark")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_sniper")
@@ -3550,6 +3672,7 @@ function UpdateCoOpTables()
         g_CoOpUnitPool = {}
         table.insert(g_CoOpUnitPool, "npc_dota_hero_meepo")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_jakiro")
+        table.insert(g_CoOpUnitPool, "npc_dota_hero_marci")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_ember_spirit")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_slark")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_sniper")
@@ -3596,6 +3719,7 @@ function UpdateCoOpTables()
         g_CoOpUnitPool = {}
         table.insert(g_CoOpUnitPool, "npc_dota_hero_meepo")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_jakiro")
+        table.insert(g_CoOpUnitPool, "npc_dota_hero_marci")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_windrunner")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_slark")
         table.insert(g_CoOpUnitPool, "npc_dota_hero_sniper")
@@ -4040,7 +4164,6 @@ function reapplyWP()
                     end
                 end
 
-                if height:Length() > 110 and false == creep:HasModifier("modifier_kunkka_torrent") then creep:ForceKill(true) end
             end
         end
     end
@@ -5734,6 +5857,10 @@ function become_boat(casterUnit, heroname)
         end
     end
 
+    if casterUnit.myTower~= nil then
+        casterUnit.myTower:RemoveSelf()
+    end
+
     if (casterUnit:IsHero() or casterUnit:HasInventory()) and heroname ~= casterUnit:GetName() then
         for itemSlot = 0, 15, 1 do
             if casterUnit ~= nil then
@@ -6347,6 +6474,12 @@ function buyBoat(eventSourceIndex, args)
                         become_boat(casterUnit, "npc_dota_hero_bane")
                     elseif string.match(itemName, "wisp") then
                         become_boat(casterUnit, "npc_dota_hero_wisp")
+                    elseif string.match(itemName, "nyx") then
+                        become_boat(casterUnit, "npc_dota_hero_nyx_assassin")
+                    elseif string.match(itemName, "dragon") then
+                        become_boat(casterUnit, "npc_dota_hero_dragon_knight")
+                    elseif string.match(itemName, "marci") then
+                        become_boat(casterUnit, "npc_dota_hero_marci")
                     end
 
                 end
@@ -7450,18 +7583,33 @@ function setupWin(winner)
     if winner == DOTA_TEAM_BADGUYS then
         GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
         storage:SetWinner("North")
-        GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
-        GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
+        
+        Timers:CreateTimer(
+            10,
+            function()
+                GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
+                GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
+                GameRules:SetSafeToLeave(true)
+            end
+        )
+        
         papa_place = Vector(-244, 4349, 5)
-        GameRules:SetSafeToLeave(true)
+        
     elseif winner == DOTA_TEAM_GOODGUYS then
 
         GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
         storage:SetWinner("South")
-        GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
-        GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
+        Timers:CreateTimer(
+            10,
+            function()
+                GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+                GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
+                GameRules:SetSafeToLeave(true)
+            end
+        )
+        
 
-        GameRules:SetSafeToLeave(true)
+        
     end
     local winnerData = {team_number = winner}
     CustomGameEventManager:Send_ServerToAllClients("team_win", winnerData)

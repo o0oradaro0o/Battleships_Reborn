@@ -2847,3 +2847,244 @@ function sevenCheck(args)
 		end
 	end
 end
+
+
+
+function NetherSwap( keys )
+	local a = RandomInt(1, 2)
+	local caster = keys.caster
+	local target = keys.target
+	if a == 1 then
+		Swap( keys )
+
+	else
+		failboatFail(keys)
+			local enemies =
+			FindUnitsInRadius(
+				caster:GetTeamNumber(),
+				caster:GetOrigin(),
+			nil,
+			2000,
+			DOTA_UNIT_TARGET_TEAM_ENEMY,
+			DOTA_UNIT_TARGET_HERO,
+			0,
+			0,
+			false
+		)
+		if #enemies == 0 then
+		local enemies =
+				FindUnitsInRadius(
+					caster:GetTeamNumber(),
+					caster:GetOrigin(),
+				nil,
+				2000,
+				DOTA_UNIT_TARGET_TEAM_ENEMY,
+				DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+				0,
+				0,
+				false
+			)
+		end
+		if #enemies > 0 then
+			local index = RandomInt(1, #enemies)
+			keys.target = enemies[index]
+			Swap( keys )
+		end
+	end
+end
+
+function Swap( keys )
+	local caster = keys.caster
+	local target = keys.target
+local particleName = "particles/units/heroes/hero_vengeful/vengeful_nether_swap.vpcf"  
+local particle = ParticleManager:CreateParticle( particleName, PATTACH_POINT_FOLLOW, caster )
+ParticleManager:SetParticleControl(particle, 0, target:GetAbsOrigin())
+ParticleManager:SetParticleControl(particle, 1, caster:GetAbsOrigin())
+
+local particleName = "particles/units/heroes/hero_vengeful/vengeful_nether_swap_pink.vpcf"  
+local particle = ParticleManager:CreateParticle( particleName, PATTACH_POINT_FOLLOW, target )
+ParticleManager:SetParticleControl(particle, 0, caster:GetAbsOrigin())
+ParticleManager:SetParticleControl(particle, 1, target:GetAbsOrigin())
+	
+	local ability = keys.ability
+	local tree_radius = ability:GetLevelSpecialValueFor("tree_radius", ability:GetLevel() - 1)
+
+	local caster_position = caster:GetAbsOrigin()
+	local target_position = target:GetAbsOrigin()
+
+	-- Destroy trees around the caster and target
+	GridNav:DestroyTreesAroundPoint( caster_position, tree_radius, false )
+	GridNav:DestroyTreesAroundPoint( target_position, tree_radius, false )
+
+	-- Swap their positions
+	caster:SetAbsOrigin(target_position)
+	target:SetAbsOrigin(caster_position)
+
+	-- Make sure that they dont get stuck
+	FindClearSpaceForUnit( caster, target_position, true )
+	FindClearSpaceForUnit( target, caster_position, true )
+
+	-- Stops the current action of the target
+	target:Interrupt()
+end
+
+function failboatFail( keys )
+	local caster = keys.caster
+	local explosion_radius = 200
+
+	local particleName = "particles/econ/events/ti10/hot_potato/hot_potato_explode_ball_explosion.vpcf"
+	local particle = ParticleManager:CreateParticle(particleName, PATTACH_WORLDORIGIN, caster)
+	ParticleManager:SetParticleControl(particle, 0, caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(particle, 1, caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(particle, 2, Vector(explosion_radius, 1, 1))
+	ParticleManager:ReleaseParticleIndex(particle)
+
+	local a = RandomInt(1, 3)
+	if a == 1 then
+		caster:EmitSound("soundboard.sad_bone")
+	elseif a == 2 then
+		caster:EmitSound("soundboard.2021.uh_oh")
+	-- elseif a == 3 then
+	--  	caster:EmitSound("marci_marci_sad")
+	else
+		caster:EmitSound("soundboard.2021.slide")
+	end
+	
+	caster:AddNewModifier(caster, nil, "modifier_stunned", {duration = 0.1})
+	
+	SendOverheadEventMessage(
+					PlayerResource:GetPlayer(caster:GetPlayerID()),
+					OVERHEAD_ALERT_MISS,
+					caster,
+					1,
+					PlayerResource:GetPlayer(caster:GetPlayerID()))
+end
+
+function Transform( keys )
+
+	local caster = keys.caster
+	local a = RandomInt(1, 3)
+	local model= "models/items/venomancer/ward/venomancer_hydra_snakeward/venomancer_hydra_snakeward.vmdl"
+	 local attack = DOTA_UNIT_CAP_RANGED_ATTACK
+
+	if a == 1  then
+		model= "models/props_gameplay/frog.vmdl"
+		attack = DOTA_UNIT_CAP_NO_ATTACK
+		failboatFail(keys)
+		caster:SetModelScale(1)
+		caster:RemoveModifierByName("modifier_metamorphosis_range")
+		caster:AddNewModifier(creature, nil, "modifier_stunned", {duration = 2.0})
+	elseif a == 2 then
+	model= "models/creeps/lane_creeps/ti9_crocodilian_dire/ti9_crocodilian_dire_melee.vmdl"
+		attack = DOTA_UNIT_CAP_MELEE_ATTACK
+		caster:SetModelScale(1.5)
+		caster:RemoveModifierByName("modifier_metamorphosis_range")
+	else
+		caster:SetModelScale(1.8)
+	
+		
+	end
+
+		local projectile_model = 	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
+
+
+
+	-- Saves the original model and attack capability
+	if caster.caster_model == nil then 
+		caster.caster_model = caster:GetModelName()
+	end
+	
+	-- Sets the new model and projectile
+	caster:SetOriginalModel(model)
+	caster:SetRangedProjectileName(projectile_model)
+	
+	-- Sets the new attack type
+	caster:SetAttackCapability(attack)
+	
+end
+
+--[[Author: Pizzalol/Noya
+	Date: 10.01.2015.
+	Reverts back to the original model and attack type
+]]
+function ModelSwapEnd( keys )
+	local caster = keys.caster
+
+	caster:SetModel(caster.caster_model)
+	caster:SetModelScale(2.2)
+	caster:SetOriginalModel(caster.caster_model)
+	caster:SetAttackCapability(DOTA_UNIT_CAP_NO_ATTACK)
+	caster:SetMoveCapability(DOTA_UNIT_CAP_MOVE_GROUND)
+end
+
+function UpdateLink( keys )
+	local casterUnit = keys.caster
+
+	
+	if casterUnit.deploied == nil or casterUnit.deploied == false then
+		casterUnit:SetForwardVector(casterUnit.owner:GetForwardVector())
+		casterUnit:SetOrigin(casterUnit.owner:GetAttachmentOrigin(1))
+		casterUnit:AddNewModifier(creature, nil, "modifier_invulnerable", {})
+		casterUnit:AddNewModifier(creature, nil, "modifier_attack_immune", {})
+	else
+		casterUnit:RemoveModifierByName("modifier_invulnerable")
+		casterUnit:RemoveModifierByName("modifier_attack_immune")
+	end
+	
+end
+
+function RespawnLinkedTower( keys )
+	local casterUnit = keys.caster
+	local unit = CreateUnitByName(
+                    "npc_dota_science_tower", 
+                    casterUnit.owner:GetAttachmentOrigin(1), 
+                    true, 
+                    casterUnit.owner, 
+                    casterUnit.owner, 
+                    casterUnit.owner:GetTeam()
+                    )
+                    unit.owner = casterUnit.owner
+										unit:CreatureLevelUp(10)
+										casterUnit.owner.myTower = unit
+end
+
+function dropTower( keys )
+	local ability = keys.ability
+	local casterUnit = keys.caster
+	local point = keys.target_points[1]
+	casterUnit.myTower:SetOrigin(point)
+	casterUnit.myTower.deploied=true;
+
+	for itemSlot = 0, 15, 1 do
+			if 	casterUnit.myTower ~= nil then
+					local Item = 	casterUnit.myTower:GetItemInSlot(itemSlot)
+					if Item ~= nil then Item:RemoveSelf() end
+			end
+	end
+
+	for itemSlot = 9, 8+ability:GetSpecialValueFor("slots"), 1 do
+			if casterUnit ~= nil then
+					local Item = casterUnit:GetItemInSlot(itemSlot)
+					if Item ~= nil then
+							local newItem = CreateItem(Item:GetName(), casterUnit.myTower, casterUnit.myTower)
+							casterUnit.myTower:AddItem(newItem)
+					end
+				end
+		end
+end
+
+function ResetCoolDowns(args)
+	local target = args.target
+	
+	for abilitynum = 0, 15, 1 do
+		if target:GetAbilityByIndex(abilitynum) then
+		target:GetAbilityByIndex(abilitynum):EndCooldown()
+		end
+	end
+	abil1 = args.caster:GetAbilityByIndex(1)
+	local cooldown = abil1:GetCooldown(abil1:GetLevel())
+
+	abil1:StartCooldown(cooldown)
+	
+
+end

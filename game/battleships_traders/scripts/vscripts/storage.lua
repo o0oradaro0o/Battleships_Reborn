@@ -63,6 +63,9 @@ name_lookup["npc_dota_hero_vengefulspirit"] = "Phoenician"
 name_lookup["npc_dota_hero_enigma"] = "Ghost"
 name_lookup["npc_dota_hero_bane"] = "Cargo"
 name_lookup["npc_dota_hero_brewmaster"] = "Riverboat"
+name_lookup["npc_dota_hero_nyx_assassin"] = "Crab"
+name_lookup["npc_dota_hero_dragon_knight"] = "Fail Boat"
+name_lookup["npc_dota_hero_marci"] = "Science Ship"
 
 
 
