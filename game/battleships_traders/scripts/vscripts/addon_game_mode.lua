@@ -1745,8 +1745,7 @@ end
 
 function CBattleship8D:OnPlayerChat(keys)
     local teamonly = keys.teamonly
-    local userID = keys.userid
-    local playerID = self.vUserIds[userID] and self.vUserIds[userID]:GetPlayerID()
+    local playerID = keys.playerid
     if playerID ~= nil then
         steamID32 = PlayerResource:GetSteamAccountID(playerID)
         local text = keys.text
@@ -1926,6 +1925,7 @@ function CBattleship8D:OnThink()
         if GameRules:GetGameTime() ~= g_PreviousTickCount then
             if g_MainTimerTickCount == 1 then
                 GameRules:SetTimeOfDay(0.25)
+                addTowerParticles()
             end
             if g_MainTimerTickCount == 5 then
                 storage:SetGameSettings({
@@ -4061,7 +4061,6 @@ function sellBoat(hero)
 end
 
 function CBattleship8D:OnDisconnect(keys)
-    ----print('[BAREBONES] Player Disconnected ' .. tostring(keys.userid))
     local plyID
     for ind = 0, 20, 1 do
         if string.match(keys.name, g_PlayerIdsToNames[ind]) then plyID = ind end
@@ -4070,9 +4069,7 @@ function CBattleship8D:OnDisconnect(keys)
     for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
         if hero ~= nil then
             local id = hero:GetPlayerOwnerID()
-            ----print("this hero's id" .. tostring(hero:GetPlayerOwnerID()))
             if id == plyID then
-                ----print("this is the DCd hero")
                 g_IsHeroDisconnected[hero] = 1
             end
         end
@@ -4093,26 +4090,26 @@ end
 
 function addTowerParticles()
     for _, tower in pairs(Entities:FindAllByClassname("npc_dota_tow*")) do
-    if tower ~= nil and string.match(tower:GetName(), "tower") then
-        if tower:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-            local rangeParticle = ParticleManager:CreateParticle(
-                "particles/basic_projectile/tower_range_display.vpcf",
-                PATTACH_ABSORIGIN,
-                tower
-            )
-            ParticleManager:SetParticleControl(rangeParticle, 0, tower:GetAbsOrigin())
-            ParticleManager:SetParticleControl(rangeParticle, 1, Vector(1170, 0, 0))
-        elseif tower:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-            local rangeParticle = ParticleManager:CreateParticle(
-                "particles/basic_projectile/tower_range_display.vpcf",
-                PATTACH_ABSORIGIN,
-                tower
-            )
-            ParticleManager:SetParticleControl(rangeParticle, 0, tower:GetAbsOrigin())
-            ParticleManager:SetParticleControl(rangeParticle, 1, Vector(1170, 0, 0))
+        if tower ~= nil and string.match(tower:GetName(), "tower") then
+            if tower:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+                local rangeParticle = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/tower_range_display.vpcf",
+                    PATTACH_ABSORIGIN,
+                    tower
+                )
+                ParticleManager:SetParticleControl(rangeParticle, 0, tower:GetAbsOrigin())
+                ParticleManager:SetParticleControl(rangeParticle, 1, Vector(1170, 0, 0))
+            elseif tower:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+                local rangeParticle = ParticleManager:CreateParticle(
+                    "particles/basic_projectile/tower_range_display.vpcf",
+                    PATTACH_ABSORIGIN,
+                    tower
+                )
+                ParticleManager:SetParticleControl(rangeParticle, 0, tower:GetAbsOrigin())
+                ParticleManager:SetParticleControl(rangeParticle, 1, Vector(1170, 0, 0))
+            end
         end
     end
-end
 end
 
 function CBattleship8D:OnReconnect(keys)
@@ -4120,52 +4117,12 @@ function CBattleship8D:OnReconnect(keys)
 end
 function CBattleship8D:OnConnectFull(keys)
     print('[BAREBONES] OnConnectFull')
-    local entIndex = keys.index + 1
-    local ply = EntIndexToHScript(entIndex)
-    local playerID = ply:GetPlayerID()
-    self.vUserIds[keys.userid] = ply
     Timers:CreateTimer(
         5,
         function()
-            local data = {}
-            CustomGameEventManager:Send_ServerToAllClients("Boat_Spawned", data)
             addTowerParticles()
         end
     )
-
-    for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
-
-        local id = hero:GetPlayerOwnerID()
-        ----print("this hero's id" .. tostring(hero:GetPlayerOwnerID()))
-        if id == keys.index then
-            ----print("this is the DCd hero reconnecting")
-            if hero ~= nil then
-                for itemSlot = 0, 5, 1 do
-                    if hero ~= nil then
-                        local Item = hero:GetItemInSlot(itemSlot)
-                        if Item ~= nil then
-                            if string.match(Item:GetName(), "contract") then
-                                RemoveAndDeleteItem(hero, Item)
-                                local allyteamnumber = hero:GetPlayerID()
-                                local data = {
-                                    Player_ID = hero:GetPlayerID(),
-                                    Ally_ID = allyteamnumber,
-                                }
-                                CustomGameEventManager:Send_ServerToAllClients("Team_Can_Buy", data)
-                                EmitSoundOnClient(
-                                    "ui.npe_objective_complete",
-                                    PlayerResource:GetPlayer(hero:GetPlayerID())
-                                )
-                            end
-                        end
-                    end
-                end
-            end
-
-            g_IsHeroDisconnected[hero] = 0
-            g_DisconnectTime[hero] = 0
-        end
-    end
 end
 
 -- g_CreepsKilled={}
