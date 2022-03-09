@@ -4213,6 +4213,13 @@
         "DOTA_Tooltip_ability_crab_grab_damage_per_tick"  "DPS:"
         "DOTA_Tooltip_ability_crab_grab_slow"  "%SLOW:"
 
+        "DOTA_Tooltip_ability_ufo_invis"  "Cloaking"
+        "DOTA_Tooltip_ability_ufo_invis_Description"  "While the UFO is at least %radius% range away from an enemy, it's cloaking technology activates, becoming invisible after %cooldown% seconds."
+        "DOTA_Tooltip_ability_ufo_invis_radius"  "RADIUS:"
+
+        "DOTA_Tooltip_modifier_ufo_invis"  "Cloaked"
+        "DOTA_Tooltip_modifier_ufo_invis_description"  "The UFO has engaged its cloaking"
+
 
          "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven"  "Transform"
         "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_Description"  "Maybe you'll fail less as someone else. (note that some forms have a regular unit attack)"
