@@ -2208,7 +2208,7 @@
 		"StatusHealthRegen"			"20.0"
 		"ArmorPhysical"				"2"
 		"MagicalResistance"				"0"
-		"Ability1"					"jakiro_ice_path_battleship"
+		"Ability1"					"ufo_invis"
 		"Ability2"					"iceberg_battleship"
 		"Ability3"					"phoenix_sun_ray_datadriven"
 		"Ability4"		"phoenix_sun_ray_toggle_move_datadriven"

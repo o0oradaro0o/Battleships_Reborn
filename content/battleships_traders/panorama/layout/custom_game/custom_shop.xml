@@ -1191,7 +1191,7 @@
                        <Label hittest="false" class="ability_name" text="#pistols_battleship"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('jakiro','sniper_shrapnel_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/invoker_invoke.png" onmouseover="DOTAShowAbilityTooltip('deadline_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/clocksci.png" onmouseover="DOTAShowAbilityTooltip('deadline_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
                        <Label hittest="false" class="ability_name" text="#deadline"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('jakiro','hit_battleship')" >
