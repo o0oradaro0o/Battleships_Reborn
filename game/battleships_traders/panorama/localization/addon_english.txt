@@ -648,6 +648,9 @@ HOOK SPEED: 1600.0
 RANGE: 700 900 1100 1300
 DAMAGE: 200 300 400 500"
 
+"grappling_hook"								"Grappling Hook"
+
+
 "batrider_flaming_lasso_battleship"								"Tug!"
 "batrider_flaming_lasso_battleship_Description"					"Snag an enemy unit and pull them along with you while dealing damage. \n\nHigher levels increase duration.
 DURATION: 1.0 2.0 3.0

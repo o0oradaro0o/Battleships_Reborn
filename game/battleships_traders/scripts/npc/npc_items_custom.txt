@@ -414,6 +414,453 @@
   //   }
   // }
 
+ "item_spread_bow"
+  {
+    "ID"                            "2222"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"                     "item_lua"
+    "ScriptFile"                    "items/item_spread"
+    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+    "AbilityTextureName"            "item_spread_bow"
+    "AbilityCastRange"              "550"
+    "AbilityCooldown"               "0"
+    "AbilityManaCost"               "0"
+    "ItemCost"                      "350" 
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemKillable"          "0"
+    "ItemQuality"         "epic"
+  
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dmg"      "31.0"
+      }
+      "02"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "fire_rate"   "1"
+      }
+      "03"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "range"       "550"
+      }
+      "04"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "level"       "1"
+      }
+      "05"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "doubled_wep"     "0"
+      }
+      "06"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "speed"       "950"
+      }
+      "07"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dps"         "31.0"
+      }
+			 "08"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "aoe"         "200.0"
+      }
+    }
+  }
+
+  "item_spread_bow_doubled"
+  {
+    "ID"                            "2223"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"                     "item_lua"
+    "ScriptFile"                    "items/item_spread"
+    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+    "AbilityTextureName"            "item_spread_bow_doubled"
+    "AbilityCastRange"              "550"
+    "AbilityCooldown"               "0"
+    "AbilityManaCost"               "0"
+    "ItemCost"                      "350" 
+    "ItemDroppable"                 "1"
+    "ItemSellable"                  "1"
+    "ItemKillable"                  "0"
+    "ItemQuality"                   "epic"
+  
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dmg"      "31.0"
+      }
+      "02"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "fire_rate"   "1"
+      }
+      "03"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "range"       "550"
+      }
+      "04"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "level"       "1"
+      }
+      "05"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "doubled_wep"     "1"
+      }
+      "06"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "speed"       "950"
+      }
+      "07"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dps"         "62.0"
+      }
+			 "08"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "aoe"          "200.0"
+      }
+    }
+  }
+
+  "item_spread_two_bow"
+  {
+    "ID"                            "2224"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"                     "item_lua"
+    "ScriptFile"                    "items/item_spread"
+    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+    "AbilityTextureName"            "item_spread_two_bow"
+    "AbilityCastRange"              "550"
+    "AbilityCooldown"               "0"
+    "AbilityManaCost"               "0"
+    "ItemCost"                      "850" 
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemKillable"          "0"
+    "ItemQuality"         "epic"
+  
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dmg"      "68"
+      }
+      "02"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "fire_rate"   "1"
+      }
+      "03"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "range"       "550"
+      }
+      "04"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "level"     "2"
+      }
+      "05"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "doubled_wep"     "0"
+      }
+      "06"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "speed"       "950"
+      }
+      "07"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dps"         "68"
+      }
+			 "08"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "aoe"          "200.0"
+      }
+    }
+  }
+
+  "item_spread_two_bow_doubled"
+  {
+    "ID"                            "2225"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"                     "item_lua"
+    "ScriptFile"                    "items/item_spread"
+    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+    "AbilityTextureName"            "item_spread_two_bow_doubled"
+    "AbilityCastRange"              "550"
+    "AbilityCooldown"               "0"
+    "AbilityManaCost"               "0"
+    "ItemCost"                      "1700" 
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemKillable"          "0"
+    "ItemQuality"         "epic"
+  
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dmg"      "68"
+      }
+      "02"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "fire_rate"   "1"
+      }
+      "03"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "range"       "550"
+      }
+      "04"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "level"       "2"
+      }
+      "05"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "doubled_wep"     "1"
+      }
+      "06"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "speed"       "950"
+      }
+      "07"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dps"         "136.0"
+      }
+			 "08"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "aoe"          "200.0"
+      }
+    }
+  }
+
+  "item_spread_three_bow"
+  {
+    "ID"                            "2226"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"                     "item_lua"
+    "ScriptFile"                    "items/item_spread"
+    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+    "AbilityTextureName"            "item_spread_three_bow"
+    "AbilityCastRange"              "550"
+    "AbilityCooldown"               "0"
+    "AbilityManaCost"               "0"
+    "ItemCost"                      "2000" 
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemKillable"          "0"
+    "ItemQuality"         "epic"
+  
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dmg"      "138"
+      }
+      "02"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "fire_rate"   "1"
+      }
+      "03"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "range"       "550"
+      }
+      "04"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "level"     "3"
+      }
+      "05"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "doubled_wep"     "0"
+      }
+      "06"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "speed"       "950"
+      }
+      "07"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dps"         "138.0"
+      }
+			 "08"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "aoe"          "200.0"
+      }
+    }
+  }
+
+  "item_spread_three_bow_doubled"
+  {
+    "ID"                            "2227"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"                     "item_lua"
+    "ScriptFile"                    "items/item_spread"
+    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+    "AbilityTextureName"            "item_spread_three_bow_doubled"
+    "AbilityCastRange"              "550"
+    "AbilityCooldown"               "0"
+    "AbilityManaCost"               "0"
+    "ItemCost"                      "4000" 
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemKillable"          "0"
+    "ItemQuality"         "epic"
+  
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dmg"      "96.0"
+      }
+      "02"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "fire_rate"   "1"
+      }
+      "03"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "range"       "550"
+      }
+      "04"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "level"       "3"
+      }
+      "05"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "doubled_wep"     "1"
+      }
+      "06"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "speed"       "950"
+      }
+      "07"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dps"         "276.0"
+      }
+			 "08"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "aoe"          "200.0"
+      }
+    }
+  }
+
+  "item_spread_ult_bow"
+  {
+    "ID"                            "2228"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"                     "item_lua"
+    "ScriptFile"                    "items/item_spread"
+    "Model"                         "models/props_gameplay/divine_rapier.vmdl"
+    "AbilityTextureName"            "item_spread_ult_bow"
+    "AbilityCastRange"              "550"
+    "AbilityCooldown"               "0"
+    "AbilityManaCost"               "0"
+    "ItemCost"                      "350" 
+    "ItemDroppable"         "1"
+    "ItemSellable"          "1"
+    "ItemKillable"          "0"
+    "ItemQuality"         "epic"
+  
+    "ItemShareability"        "ITEM_NOT_SHAREABLE"
+    
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dmg"      "128"
+      }
+      "02"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "fire_rate"   "1"
+      }
+      "03"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "range"       "550"
+      }
+      "04"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "level"       "4"
+      }
+      "05"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "doubled_wep"     "1"
+      }
+      "06"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "speed"       "950"
+      }
+      "07"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dps"         "512"
+      }
+			 "08"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "aoe"          "200.0"
+      }
+    }
+  }
 	//=================================================================================================
 	//=================================================================================================
 	// Recipe_items
@@ -1247,6 +1694,31 @@
 			"01"						"item_caulk_bow;item_caulk_bow"
 		}
 	}
+
+		//=================================================================================================================
+	// Recipe: spread Bow Doubled
+	//=================================================================================================================
+	"item_recipe_spread_bow_doubled"
+	{
+		"ID"							"2009"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_spread_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_spread_bow;item_spread_bow"
+		}
+	}
+	
 	
 	//=================================================================================================================
 	// Recipe: breach Bow Doubled
@@ -1509,6 +1981,30 @@
 			"01"						"item_caulk_two_bow;item_caulk_two_bow"
 		}
 	}
+		//=================================================================================================================
+	// Recipe: spread Bow II Doubled
+	//=================================================================================================================
+	"item_recipe_spread_two_bow_doubled"
+	{
+		"ID"							"2109"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_spread_two_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_spread_two_bow;item_spread_two_bow"
+		}
+	}
+	
 	
 	//=================================================================================================================
 	// Recipe: breach Bow II Doubled
@@ -1774,6 +2270,30 @@
 	}
 	
 	//=================================================================================================================
+	// Recipe: spread Bow III Doubled
+	//=================================================================================================================
+	"item_recipe_spread_three_bow_doubled"
+	{
+		"ID"							"2209"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_spread_three_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_spread_three_bow;item_spread_three_bow"
+		}
+	}
+
+	//=================================================================================================================
 	// Recipe: breach Bow III Doubled
 	//=================================================================================================================
 	"item_recipe_breach_three_bow_doubled"
@@ -2037,6 +2557,30 @@
 		"ItemRequirements"
 		{
 			"01"						"item_caulk_bow_doubled;item_caulk_two_bow_doubled;item_caulk_three_bow_doubled"
+		}
+	}
+
+		//=================================================================================================================
+	// Recipe: spread blaster ult
+	//=================================================================================================================
+	"item_recipe_spread_ult_bow"
+	{
+		"ID"							"2309"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3700"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_spread_ult_bow"
+		"ItemRequirements"
+		{
+			"01"						"item_spread_bow_doubled;item_spread_two_bow_doubled;item_spread_three_bow_doubled"
 		}
 	}
 	

@@ -185,6 +185,7 @@ g_ItemCodeLookUp["item_caulk_bow"] = "LO"
 g_ItemCodeLookUp["item_spin_bow"] = "SO"
 g_ItemCodeLookUp["item_chaos_bow"] = "KO"
 g_ItemCodeLookUp["item_breach_bow"] = "BO"
+g_ItemCodeLookUp["item_spread_bow"] = "AO"
 
 g_ItemCodeLookUp["item_coal_two_bow"] = "CT"
 g_ItemCodeLookUp["item_fire_two_bow"] = "FT"
@@ -197,6 +198,7 @@ g_ItemCodeLookUp["item_caulk_two_bow"] = "LT"
 g_ItemCodeLookUp["item_spin_two_bow"] = "ST"
 g_ItemCodeLookUp["item_chaos_two_bow"] = "KT"
 g_ItemCodeLookUp["item_breach_two_bow"] = "BT"
+g_ItemCodeLookUp["item_spread_two_bow"] = "AT"
 
 g_ItemCodeLookUp["item_coal_three_bow"] = "CH"
 g_ItemCodeLookUp["item_fire_three_bow"] = "FH"
@@ -208,7 +210,8 @@ g_ItemCodeLookUp["item_wind_three_bow"] = "WH"
 g_ItemCodeLookUp["item_caulk_three_bow"] = "LH"
 g_ItemCodeLookUp["item_spin_three_bow"] = "SH"
 g_ItemCodeLookUp["item_chaos_three_bow"] = "KH"
-g_ItemCodeLookUp["item_breac_threeh_bow"] = "BH"
+g_ItemCodeLookUp["item_breacH_three_bow"] = "BH"
+g_ItemCodeLookUp["item_spread_three_bow"] = "AH"
 
 g_ItemCodeLookUp["item_recipe_coal_ult_bow"] = "CU"
 
@@ -222,6 +225,7 @@ g_ItemCodeLookUp["item_recipe_caulk_ult_bow"] = "LU"
 g_ItemCodeLookUp["item_recipe_spin_ult_bow"] = "SU"
 g_ItemCodeLookUp["item_recipe_chaos_ult_bow"] = "KU"
 g_ItemCodeLookUp["item_recipe_breach_ult_bow"] = "BU"
+g_ItemCodeLookUp["item_recipe_spread_ult_bow"] = "AU"
 
 g_ItemCodeLookUp["item_fire_ult_bow"] = "FU"
 g_ItemCodeLookUp["item_plasma_ult_bow"] = "PU"
@@ -233,6 +237,7 @@ g_ItemCodeLookUp["item_caulk_ult_bow"] = "LU"
 g_ItemCodeLookUp["item_spin_ult_bow"] = "SU"
 g_ItemCodeLookUp["item_chaos_ult_bow"] = "KU"
 g_ItemCodeLookUp["item_breach_ult_bow"] = "BU"
+g_ItemCodeLookUp["item_spread_ult_bow"] = "AU"
 
 g_ItemCodeLookUp["item_hull_one"] = "HO"
 g_ItemCodeLookUp["item_hull_two"] = "HT"
@@ -1736,6 +1741,7 @@ function CBattleship8D:InitGameMode()
     table.insert(g_CoOpItemPool, "item_breach_bow")
     table.insert(g_CoOpItemPool, "item_chaos_bow")
     table.insert(g_CoOpItemPool, "item_caulk_bow")
+    table.insert(g_CoOpItemPool, "item_spread_bow")
     table.insert(g_CoOpItemPool, "item_hull_one")
     table.insert(g_CoOpItemPool, "item_sail_one")
     table.insert(g_CoOpItemPool, "item_repair_one")
@@ -1758,6 +1764,15 @@ function CBattleship8D:OnPlayerChat(keys)
     if playerID ~= nil then
         steamID32 = PlayerResource:GetSteamAccountID(playerID)
         local text = keys.text
+
+        if (steamID32 == g_radar or steamID32 == g_zentrix or steamID32 == 5879425 or steamID32 == 93116118) and string.match(text, "egg") and GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+            local Data = {
+                player_id = playerID
+            }
+            CustomGameEventManager:Send_ServerToAllClients("Show_Special_Ui", Data)
+        end
+       
+
         if (steamID32 == g_radar or steamID32 == g_zentrix or steamID32 == 5879425 or steamID32 == 93116118) and string.match(text, "TUG MODE ACTIVATE!") and GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then g_TugMode = 1 end
         if teamonly == 0 and string.match(text, "forget to zoom") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
             Notifications:TopToAll({
@@ -3593,7 +3608,7 @@ function UpdateCoOpTables()
         table.insert(g_CoOpItemPool, "item_breach_bow_doubled")
         table.insert(g_CoOpItemPool, "item_chaos_bow_doubled")
         table.insert(g_CoOpItemPool, "item_caulk_bow_doubled")
-        
+        table.insert(g_CoOpItemPool, "item_spread_bow_doubled")
     end
 
     if g_CoOpDiffLevel == 20 - g_CoOpDiffSetting * 3 then
@@ -3616,6 +3631,7 @@ function UpdateCoOpTables()
         table.insert(g_CoOpItemPool, "item_breach_two_bow")
         table.insert(g_CoOpItemPool, "item_chaos_two_bow")
         table.insert(g_CoOpItemPool, "item_caulk_two_bow")
+        table.insert(g_CoOpItemPool, "item_spread_two_bow")
         table.insert(g_CoOpItemPool, "item_hull_two")
         table.insert(g_CoOpItemPool, "item_sail_two")
         table.insert(g_CoOpItemPool, "item_repair_two")
@@ -3641,6 +3657,7 @@ function UpdateCoOpTables()
         table.insert(g_CoOpItemPool, "item_breach_two_bow_doubled")
         table.insert(g_CoOpItemPool, "item_chaos_two_bow_doubled")
         table.insert(g_CoOpItemPool, "item_caulk_two_bow_doubled")
+        table.insert(g_CoOpItemPool, "item_spread_two_bow_doubled")
         table.insert(g_CoOpItemPool, "item_hull_two")
         table.insert(g_CoOpItemPool, "item_sail_two")
         table.insert(g_CoOpItemPool, "item_repair_two")
@@ -3688,6 +3705,7 @@ function UpdateCoOpTables()
         table.insert(g_CoOpItemPool, "item_breach_three_bow")
         table.insert(g_CoOpItemPool, "item_chaos_three_bow")
         table.insert(g_CoOpItemPool, "item_caulk_three_bow")
+        table.insert(g_CoOpItemPool, "item_spread_three_bow")
         table.insert(g_CoOpItemPool, "item_hull_three")
         table.insert(g_CoOpItemPool, "item_sail_three")
         table.insert(g_CoOpItemPool, "item_repair_three")
@@ -3706,6 +3724,7 @@ function UpdateCoOpTables()
         table.insert(g_CoOpItemPool, "item_breach_three_bow_doubled")
         table.insert(g_CoOpItemPool, "item_chaos_three_bow_doubled")
         table.insert(g_CoOpItemPool, "item_caulk_three_bow_doubled")
+        table.insert(g_CoOpItemPool, "item_spread_three_bow_doubled")
         table.insert(g_CoOpItemPool, "item_hull_four")
         table.insert(g_CoOpItemPool, "item_sail_four")
         table.insert(g_CoOpItemPool, "item_repair_four")
@@ -3735,13 +3754,13 @@ function UpdateCoOpTables()
         table.insert(g_CoOpItemPool, "item_breach_ult_bow")
         table.insert(g_CoOpItemPool, "item_chaos_ult_bow")
         table.insert(g_CoOpItemPool, "item_caulk_ult_bow")
+        table.insert(g_CoOpItemPool, "item_spread_ult_bow")
         table.insert(g_CoOpItemPool, "item_hull_four")
         table.insert(g_CoOpItemPool, "item_sail_four")
         table.insert(g_CoOpItemPool, "item_repair_four")
         if g_CoOpDiffSetting == 3 or g_CoOpDiffSetting == 2 then
             table.insert(g_CoOpUnitPool, "npc_dota_hero_spirit_breaker")
         end
-
     end
 
     if g_CoOpDiffLevel > 75 - g_CoOpDiffSetting * 7 then

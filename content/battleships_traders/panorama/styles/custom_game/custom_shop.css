@@ -1019,6 +1019,21 @@ horizontal-align: center;
 		 border-radius: 10.0px;
 }
 
+#HiddenUI
+{
+	flow-children: down;
+	width: 500.0px;
+	height: 480.0px;
+	border: 0.0px solid black;
+   background-color: gradient( linear, 0% 0%, 0% 100%, from( #90858500 ), color-stop( 0.25, #62696e44 ), color-stop( 0.5, #AA959566 ), color-stop( 0.75, #62696e ), to( #908585 ) );
+	horizontal-align: right;
+	visibility: collapse;
+	margin-right: -10.0px;
+		 border-radius: 10.0px;
+}
+
+
+
 .ship_shop_guts
 {
 	flow-children: down;
