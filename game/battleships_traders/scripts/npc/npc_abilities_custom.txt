@@ -14256,10 +14256,7 @@
 	{
 		"BaseClass"                     "ability_lua"
     "ScriptFile"          "heroes/ufo_ship/tractor_beam.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT"
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"tractor_beam"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
@@ -14268,6 +14265,7 @@
     "AbilityCooldown"				"21.0 18.0 15.0"
 		"AbilityChannelTime"			"3 3.5 4"
     "AbilityManaCost"               "0"
+		"AbilityCastRange"    "800"
     
     "AbilitySpecial"
     {
@@ -14279,22 +14277,22 @@
       "02"
       {
         "var_type"              "FIELD_INTEGER"
-        "end_radius"            "600"
+        "end_radius"            "800"
       }
       "03"
       {
         "var_type"              "FIELD_INTEGER"
-        "speed"                 "20"
+        "range"           			"800"
       }
-      "04"
+			"04"
       {
         "var_type"              "FIELD_INTEGER"
-        "range"           			"1000"
+        "duration"           			"3 3.5 4"
       }
 			"05"
       {
         "var_type"              "FIELD_INTEGER"
-        "duration"           			"3 3.5 4"
+        "suck_speed"           			"20"
       }
     }
 	}
