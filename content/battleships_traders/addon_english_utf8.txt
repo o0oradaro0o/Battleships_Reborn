@@ -26,8 +26,7 @@
     "DOTA_Tooltip_ability_item_poison_bow_doubled_fire_rate"      "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_poison_bow_doubled_dmg"          "DAMAGE (x2):"
     "DOTA_Tooltip_ability_item_poison_bow_doubled_range"        "RANGE:"
-    "DOTA_Tooltip_ability_item_poison_bow_doubled_dps"          "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
-
+    "DOTA_Tooltip_ability_item_poison_bow_doubled_dps"          "\n<font  size= '3' color='#cc6400'>DPS:</font>"
 
     "DOTA_Tooltip_ability_item_poison_two_bow"              "Poison Jugs"
     "DOTA_Tooltip_ability_item_poison_two_bow_Description"            "<h1>Weapon: Poison Level 2</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Poisons targets, dealing %damage% damage per half-second for %psn_dur% seconds."
@@ -42,8 +41,7 @@
     "DOTA_Tooltip_ability_item_poison_two_bow_doubled_fire_rate"    "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_poison_two_bow_doubled_dmg"        "DAMAGE (x2):"
     "DOTA_Tooltip_ability_item_poison_two_bow_doubled_range"      "RANGE:"
-    "DOTA_Tooltip_ability_item_poison_two_bow_doubled_dps"        "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
-
+    "DOTA_Tooltip_ability_item_poison_two_bow_doubled_dps"        "\n<font  size= '3' color='#cc6400'>DPS:</font>"
 
     "DOTA_Tooltip_ability_item_poison_three_bow"            "Poison Grenades"
     "DOTA_Tooltip_ability_item_poison_three_bow_Description"          "<h1>Weapon: Poison Level 3</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Poisons targets, dealing %damage% damage per half-second for %psn_dur% seconds."
@@ -779,76 +777,140 @@
     //-0112---CHAOS--------------------------------
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     "DOTA_Tooltip_ability_item_chaos_bow"               "Unstable Cannon"
-    "DOTA_Tooltip_ability_item_chaos_bow_Description"             "<h1>Weapon: Chaos Level 1</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>%bonus_rate%%% of all %max_rate% second shots deal an additional %dmg_bonus%%% bonus damage."
+    "DOTA_Tooltip_ability_item_chaos_bow_Description"             "<h1>Weapon: Chaos Level 1</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Shots do between -0.5 and 2.5 x Damage listed"
     "DOTA_Tooltip_ability_item_chaos_bow_Note1"             "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
-    "DOTA_Tooltip_ability_item_chaos_bow_dmg"             "DAMAGE AT FULL CHARGE:"
-    "DOTA_Tooltip_ability_item_chaos_bow_fire_rate"           "MIN RELOAD DELAY (s):"
-    "DOTA_Tooltip_ability_item_chaos_bow_max_rate"            "MAX RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_bow_dmg"             "BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_chaos_bow_fire_rate"           "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_chaos_bow_range"             "RANGE:"
     "DOTA_Tooltip_ability_item_chaos_bow_dps"             "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_chaos_bow_doubled"           "Double Unstable Cannon"
-    "DOTA_Tooltip_ability_item_chaos_bow_doubled_Description"     "<h1>Weapon: Chaos Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>%bonus_rate%%% of all %max_rate% second shots deal an additional %dmg_bonus%%% bonus damage."
-    "DOTA_Tooltip_ability_item_chaos_bow_doubled_dmg"         "DAMAGE AT FULL CHARGE (x2):"
-    "DOTA_Tooltip_ability_item_chaos_bow_doubled_fire_rate"       "MIN RELOAD DELAY (s):"
-    "DOTA_Tooltip_ability_item_chaos_bow_doubled_max_rate"        "MAX RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_bow_doubled_Description"     "<h1>Weapon: Chaos Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do between -0.5 and 2.5 x Damage listed"
+    "DOTA_Tooltip_ability_item_chaos_bow_doubled_dmg"         "BASE DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_chaos_bow_doubled_fire_rate"       "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_chaos_bow_doubled_range"         "RANGE:"
     "DOTA_Tooltip_ability_item_chaos_bow_doubled_dps"         "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
 
     "DOTA_Tooltip_ability_item_chaos_two_bow"             "Chaos Magnum"
-    "DOTA_Tooltip_ability_item_chaos_two_bow_Description"           "<h1>Weapon: Chaos Level 2</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>%bonus_rate%%% of all %max_rate% second shots deal an additional %dmg_bonus%%% bonus damage."
+    "DOTA_Tooltip_ability_item_chaos_two_bow_Description"           "<h1>Weapon: Chaos Level 2</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Shots do between -0.5 and 2.5 x Damage listed"
     "DOTA_Tooltip_ability_item_chaos_two_bow_Note1"           "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
-    "DOTA_Tooltip_ability_item_chaos_two_bow_dmg"           "DAMAGE AT FULL CHARGE:"
-    "DOTA_Tooltip_ability_item_chaos_two_bow_fire_rate"         "MIN RELOAD DELAY (s):"
-    "DOTA_Tooltip_ability_item_chaos_two_bow_max_rate"          "MAX RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_two_bow_dmg"           "BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_chaos_two_bow_fire_rate"         "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_chaos_two_bow_range"           "RANGE:"
     "DOTA_Tooltip_ability_item_chaos_two_bow_dps"           "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_chaos_two_bow_doubled"         "Double Chaos Magnum"
-    "DOTA_Tooltip_ability_item_chaos_two_bow_doubled_Description"   "<h1>Weapon: Chaos Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>%bonus_rate%%% of all %max_rate% second shots deal an additional %dmg_bonus%%% bonus damage."
-    "DOTA_Tooltip_ability_item_chaos_two_bow_doubled_dmg"       "DAMAGE AT FULL CHARGE (x2):"
-    "DOTA_Tooltip_ability_item_chaos_two_bow_doubled_fire_rate"     "MIN RELOAD DELAY (s):"
-    "DOTA_Tooltip_ability_item_chaos_two_bow_doubled_max_rate"      "MAX RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_two_bow_doubled_Description"   "<h1>Weapon: Chaos Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do between -0.5 and 2.5 x Damage listed"
+    "DOTA_Tooltip_ability_item_chaos_two_bow_doubled_dmg"       "BASE DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_chaos_two_bow_doubled_fire_rate"     "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_chaos_two_bow_doubled_range"       "RANGE:"
     "DOTA_Tooltip_ability_item_chaos_two_bow_doubled_dps"       "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
 
     "DOTA_Tooltip_ability_item_chaos_three_bow"             "Entropy Ray"
-    "DOTA_Tooltip_ability_item_chaos_three_bow_Description"           "<h1>Weapon: Chaos Level 3</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>%bonus_rate%%% of all %max_rate% second shots deal an additional %dmg_bonus%%% bonus damage."
+    "DOTA_Tooltip_ability_item_chaos_three_bow_Description"           "<h1>Weapon: Chaos Level 3</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Shots do between -0.5 and 2.5 x Damage listed"
     "DOTA_Tooltip_ability_item_chaos_three_bow_Note1"         "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
-    "DOTA_Tooltip_ability_item_chaos_three_bow_dmg"           "DAMAGE AT FULL CHARGE:"
-    "DOTA_Tooltip_ability_item_chaos_three_bow_fire_rate"       "MIN RELOAD DELAY (s):"
-    "DOTA_Tooltip_ability_item_chaos_three_bow_max_rate"        "MAX RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_three_bow_dmg"           "BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_chaos_three_bow_fire_rate"       "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_chaos_three_bow_range"         "RANGE:"
     "DOTA_Tooltip_ability_item_chaos_three_bow_dps"           "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     
     "DOTA_Tooltip_ability_item_chaos_three_bow_doubled"         "Double Entropy Ray"
-    "DOTA_Tooltip_ability_item_chaos_three_bow_doubled_Description"   "<h1>Weapon: Chaos Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>%bonus_rate%%% of all %max_rate% second shots deal an additional %dmg_bonus%%% bonus damage."
-    "DOTA_Tooltip_ability_item_chaos_three_bow_doubled_dmg"       "DAMAGE AT FULL CHARGE (x2):"
-    "DOTA_Tooltip_ability_item_chaos_three_bow_doubled_fire_rate"   "MIN RELOAD DELAY (s):"
-    "DOTA_Tooltip_ability_item_chaos_three_bow_doubled_max_rate"    "MAX RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_three_bow_doubled_Description"   "<h1>Weapon: Chaos Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do between -0.5 and 2.5 x Damage listed"
+    "DOTA_Tooltip_ability_item_chaos_three_bow_doubled_dmg"       "BASE DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_chaos_three_bow_doubled_fire_rate"   "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_chaos_three_bow_doubled_range"     "RANGE:"
     "DOTA_Tooltip_ability_item_chaos_three_bow_doubled_dps"       "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
 
     
     "DOTA_Tooltip_ability_item_chaos_ult_bow"             "The 5th Horseman"
-    "DOTA_Tooltip_ability_item_chaos_ult_bow_Description"           "<h1>Weapon: Ultimate Chaos</h1>%bonus_rate%%% of all %max_rate% second shots deal an additional %dmg_bonus%%% bonus damage."
-    "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_dmg"         "DAMAGE AT FULL CHARGE:"
-    "DOTA_Tooltip_ability_item_chaos_ult_bow_fire_rate"         "MIN RELOAD DELAY (s):"
-    "DOTA_Tooltip_ability_item_chaos_ult_bow_max_rate"          "MAX RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_ult_bow_Description"           "<h1>Weapon: Ultimate Chaos</h1>Shots do between -0.5 and 2.5 x Damage listed"
+    "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_dmg"         "BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_chaos_ult_bow_fire_rate"         "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_chaos_ult_bow_range"           "RANGE:"
     "DOTA_Tooltip_ability_item_chaos_ult_bow_dps"           "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     "DOTA_Tooltip_ability_item_chaos_ult_bow_Lore"            "Guaranteed to show up in every apocalypse 20% of the time."
 
     "DOTA_Tooltip_ability_item_chaos_ult_bow_rec"           "The 5th Horseman"
-    "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_Description"     "<h1>Weapon: Ultimate Chaos</h1>%bonus_rate%%% of all %max_rate% second shots deal an additional %dmg_bonus%%% bonus damage." 
-    "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_dmg"         "DAMAGE AT FULL CHARGE:"
-    "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_fire_rate"       "MIN RELOAD DELAY (s):"
-    "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_max_rate"        "MAX RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_Description"     "<h1>Weapon: Ultimate Chaos</h1>Shots do between -0.5 and 2.5 x Damage listed" 
+    "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_dmg"         "BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_fire_rate"       "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_range"         "RANGE:"  
     "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_dps"         "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_Lore"          "Guaranteed to show up in every apocalypse 20% of the time."
+
+
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //-0112---spread--------------------------------
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    "DOTA_Tooltip_ability_item_spread_bow"               "Hatchet"
+    "DOTA_Tooltip_ability_item_spread_bow_Description"             "<h1>Weapon: spread Level 1</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings)"
+    "DOTA_Tooltip_ability_item_spread_bow_Note1"             "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
+    "DOTA_Tooltip_ability_item_spread_bow_dmg"             "BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_spread_bow_fire_rate"           "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_bow_range"             "RANGE:"
+    "DOTA_Tooltip_ability_item_spread_bow_dps"             "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_spread_bow_aoe"         "AOE:"
+
+    "DOTA_Tooltip_ability_item_spread_bow_doubled"           "Double Hatchet"
+    "DOTA_Tooltip_ability_item_spread_bow_doubled_Description"     "<h1>Weapon: spread Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings)"
+    "DOTA_Tooltip_ability_item_spread_bow_doubled_dmg"         "BASE DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_spread_bow_doubled_fire_rate"       "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_bow_doubled_range"         "RANGE:"
+    "DOTA_Tooltip_ability_item_spread_bow_doubled_dps"         "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_spread_bow_doubled_aoe"         "AOE:"
+
+    "DOTA_Tooltip_ability_item_spread_two_bow"             "Axe"
+    "DOTA_Tooltip_ability_item_spread_two_bow_Description"           "<h1>Weapon: spread Level 2</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings)"
+    "DOTA_Tooltip_ability_item_spread_two_bow_Note1"           "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
+    "DOTA_Tooltip_ability_item_spread_two_bow_dmg"           "BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_spread_two_bow_fire_rate"         "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_two_bow_range"           "RANGE:"
+    "DOTA_Tooltip_ability_item_spread_two_bow_dps"           "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+     "DOTA_Tooltip_ability_item_spread_two_bow_aoe"         "AOE:"
+
+    "DOTA_Tooltip_ability_item_spread_two_bow_doubled"         "Double Axe"
+    "DOTA_Tooltip_ability_item_spread_two_bow_doubled_Description"   "<h1>Weapon: spread Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings)"
+    "DOTA_Tooltip_ability_item_spread_two_bow_doubled_dmg"       "BASE DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_spread_two_bow_doubled_fire_rate"     "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_two_bow_doubled_range"       "RANGE:"
+    "DOTA_Tooltip_ability_item_spread_two_bow_doubled_dps"       "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_spread_two_bow_doubled_aoe"         "AOE:"
+
+    "DOTA_Tooltip_ability_item_spread_three_bow"             "Battle-Axe"
+    "DOTA_Tooltip_ability_item_spread_three_bow_Description"           "<h1>Weapon: spread Level 3</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings)"
+    "DOTA_Tooltip_ability_item_spread_three_bow_Note1"         "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
+    "DOTA_Tooltip_ability_item_spread_three_bow_dmg"           "BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_spread_three_bow_fire_rate"       "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_three_bow_range"         "RANGE:"
+     "DOTA_Tooltip_ability_item_spread_three_bow_aoe"         "AOE:"
+    "DOTA_Tooltip_ability_item_spread_three_bow_dps"           "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    
+    "DOTA_Tooltip_ability_item_spread_three_bow_doubled"         "Double Battle-Axe"
+    "DOTA_Tooltip_ability_item_spread_three_bow_doubled_Description"   "<h1>Weapon: spread Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings)"
+    "DOTA_Tooltip_ability_item_spread_three_bow_doubled_dmg"       "BASE DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_spread_three_bow_doubled_fire_rate"   "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_three_bow_doubled_range"     "RANGE:"
+    "DOTA_Tooltip_ability_item_spread_three_bow_doubled_dps"       "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_spread_three_bow_doubled_aoe"         "AOE:"
+    
+    "DOTA_Tooltip_ability_item_spread_ult_bow"             "Blades of the Sea"
+    "DOTA_Tooltip_ability_item_spread_ult_bow_Description"           "<h1>Weapon: Ultimate spread</h1>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings)"
+    "DOTA_Tooltip_ability_item_spread_ult_bow_rec_dmg"         "BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_spread_ult_bow_fire_rate"         "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_ult_bow_range"           "RANGE:"
+    "DOTA_Tooltip_ability_item_spread_ult_bow_dps"           "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_spread_ult_bow_Lore"            "Maybe Axe wont be here next time."
+    "DOTA_Tooltip_ability_item_spread_ult_bow_aoe"         "AOE:"
+
+    "DOTA_Tooltip_ability_item_spread_ult_bow_rec"           "Blades of the Sea"
+    "DOTA_Tooltip_ability_item_spread_ult_bow_rec_Description"     "<h1>Weapon: Ultimate spread</h1>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings)" 
+    "DOTA_Tooltip_ability_item_spread_ult_bow_rec_dmg"         "BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_spread_ult_bow_rec_fire_rate"       "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_ult_bow_rec_range"         "RANGE:"  
+    "DOTA_Tooltip_ability_item_spread_ult_bow_rec_dps"         "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_spread_ult_bow_rec_Lore"          "Guaranteed to show up in every apocalypse 20% of the time."
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //-0113---STARTING LINE------------------------
@@ -1687,8 +1749,9 @@
     "npc_dota_hero_spirit_breaker"          "Tidehunter"
     
     "npc_dota_hero_razor"           "Stormchaser Hydrofoil"
-  
-
+    "npc_dota_hero_marci"           "Science Vessle"
+    "npc_dota_hero_nyx_assassin"    "The Crab"
+    "npc_dota_hero_dragon_knight" "Fail Boat"
 
     "npc_dota_boat_south_one"           "Small South Boat"
     "npc_dota_boat_south_two"             "Medium South Boat"
@@ -1719,7 +1782,9 @@
     "npc_dota_tower_south_weaker"         "Tower"
     "npc_dota_tower_north_weaker"         "Tower"
     "npc_dota_tower_north_stronger"         "Harbor Tower"
+    "npc_dota_tower_north_strongest"        "Harbor Tower"
     "npc_dota_tower_south_stronger"         "Harbor Tower"  
+    "npc_dota_tower_south_strongest"        "Harbor Tower"  
     
 
     "npc_dota_creature_cop"             "Officer Chelle"
@@ -1787,10 +1852,11 @@
     "DOTA_Tooltip_ability_brewmaster_drunken_haze_bships_Description"         "Shares booze with the targeted area, slowing the ships and causing them to occasionally miss \n\nHigher levels increase target area and slowing effect."
     
     "DOTA_Tooltip_Ability_ramming_speed_battleship"               "Reckless Speed!"
-    "DOTA_Tooltip_ability_ramming_speed_battleship_Description"         "Vastly increases movement speed, but decreases maneuverability. Momentum continues through stuns and holds. \n\nHigher levels increases duration and max speed."
+    "DOTA_Tooltip_ability_ramming_speed_battleship_Description"         "Charges forward at great speed, at the cost of manueverability. Enemies hit while ramming will be knocked back and take damage. Momentum continues through stuns and holds."
     "DOTA_Tooltip_ability_ramming_speed_battleship_duration"          "DURATION:"
     "DOTA_Tooltip_ability_ramming_speed_battleship_base_speed"          "BASE SPEED:"
     "DOTA_Tooltip_ability_ramming_speed_battleship_accel_boost"         "ACCELERATION:"
+    "DOTA_Tooltip_ability_ramming_speed_battleship_damage"         "DAMAGE:"
 
     "DOTA_Tooltip_Ability_kunkka_return_bships_battleship"                "Return"
     "DOTA_Tooltip_ability_kunkka_return_bships_battleship_Description"          "Returns the target of Stop Right There back to the original cast point."
@@ -1921,7 +1987,7 @@
     "DOTA_Tooltip_Ability_Pillage_bonus_armor"            "ARMOR REDUCTION:"
     "DOTA_Tooltip_Ability_Pillage_bonus_damage_per_second"      "DPS:"
     
-      
+    
     "DOTA_Tooltip_Ability_big_boom"                 "Visions of Valhalla!"
     "DOTA_Tooltip_Ability_big_boom_Description"         "Valhalla awaits! Activate to deal damage to yourself and all nearby boats, friend and foe, after a delay. If you survive you are briefly graced with extra regen. \n \n Higher levels decrease the cooldown."
     "DOTA_Tooltip_Ability_big_boom_vah_dmg"           "DAMAGE:"
@@ -2004,12 +2070,10 @@
     "DOTA_Tooltip_Ability_mayday_battleship_Description"          "The control tower knows where you are. They'll send you care packages to keep you alive at sea. \n \n Higher levels increase health gained per package."
     "DOTA_Tooltip_Ability_mayday_battleship_heal_amount"          "HEAL AMOUNT:"
     "DOTA_Tooltip_Ability_mayday_battleship_delay"          "DELAY:"
-
     
     "DOTA_Tooltip_Ability_chen_test_of_faith_teleport_battleship"                 "Call for Extraction Jets"
     "DOTA_Tooltip_Ability_chen_test_of_faith_teleport_battleship_Description"         "Send an extraction team for target ally that transports them back to base. \n \n Higher levels decrease extraction team's response time."
-    "DOTA_Tooltip_Ability_chen_test_of_faith_teleport_battleship_hero_teleport_delay"     "TELEPORT DELAY:"
-    
+    "DOTA_Tooltip_Ability_chen_test_of_faith_teleport_battleship_hero_teleport_delay"     "TELEPORT DELAY:"    
     
     "DOTA_Tooltip_Ability_windrunner_powershot_battleship"                  "Steady Shot"
     "DOTA_Tooltip_Ability_windrunner_powershot_battleship_Description"          "The Catamaran's pontoons steady it on the open ocean. After channeling, release a long-range arrow that does damage to each target it passes through. Damage diminishes as it passes through each target. Steady Shot can be fired early for reduced damage. \n\nHigher levels increase damage."
@@ -2017,20 +2081,16 @@
     "DOTA_Tooltip_Ability_windrunner_powershot_battleship_vision_radius"          "VISION RADIUS:"
     "DOTA_Tooltip_Ability_windrunner_powershot_battleship_vision_duration"          "VISION DURATION:"
       "DOTA_Tooltip_Ability_windrunner_powershot_battleship_vision_arrow_width"         "ARROW WIDTH:"
-
     
     "DOTA_Tooltip_Ability_mirana_leap_battlsehip"                 "Gusted"
     "DOTA_Tooltip_Ability_mirana_leap_battlsehip_Description"         "Tilt your sails to take advantage of the wind! The Catamaran leaps in the direction it is facing, airborn for a moment. Nearby allies receive a small movement speed boost.\n\nHigher levels increase leap distance and speed bonus."
     "DOTA_Tooltip_Ability_mirana_leap_battlsehip_leap_distance"         "LEAP DISTANCE:"
-    "DOTA_Tooltip_Ability_mirana_leap_battlsehip_leap_speedbonus"         "LEAP ALLIED SPEED BOOST:"
-
-    
+    "DOTA_Tooltip_Ability_mirana_leap_battlsehip_leap_speedbonus"         "LEAP ALLIED SPEED BOOST:"    
     
     "DOTA_Tooltip_Ability_swim_battleship"                  "Swim Break!"
     "DOTA_Tooltip_Ability_swim_battleship_Description"          "Relax, take a dip, enjoy the water, and freshen up. Quickly heals your ship as long as you do not take damage and remain still. Any damage taken will leave you stranded in the water, stunned for 3 seconds.\n\nHigher levels increase percentage healing rate."
     "DOTA_Tooltip_Ability_swim_battleship_regen"          "REGEN PERCENTAGE:"
     "DOTA_Tooltip_Ability_swim_battleship_stun_time"          "STUN DURATION:"
-
         
     "DOTA_Tooltip_ability_antimage_blink_battleship"                      "Cheat"
     "DOTA_Tooltip_ability_antimage_blink_battleship_Description"                "Short distance teleportation that allows the battleship to jump around the board."
@@ -2048,19 +2108,15 @@
     "DOTA_Tooltip_Ability_elephant_intimidate_ele_range"          "NOISE RANGE:"
     "DOTA_Tooltip_Ability_elephant_intimidate_ele_armor_reduction"          "ARMOR RESUCTION:"
     "DOTA_Tooltip_Ability_elephant_intimidate_duration"         "INTIMIDATION DURATION:"
-
     
     "DOTA_Tooltip_Ability_Over_And_Out"                 "Over and Out"
     "DOTA_Tooltip_Ability_Over_And_Out_Description"         "The aircraft carrier shoots forward even over terrain and grabs any units encountered and pulls them with you as you rocket into the air. \n\n Higher levels increase duration."
-    "DOTA_Tooltip_Ability_Over_And_Out_pull_duration"         "DURATION:"
-    
+    "DOTA_Tooltip_Ability_Over_And_Out_pull_duration"         "DURATION:"    
     
     "DOTA_Tooltip_Ability_keeping_up_battleship"                  "Keeping up with the Joneses"
     "DOTA_Tooltip_Ability_keeping_up_battleship_Description"          "Link yourself to a unit and steal their move speed."
     "DOTA_Tooltip_Ability_keeping_up_battleship_duration"         "DURATION:"
-"DOTA_Tooltip_Ability_keeping_up_battleship_movment"          "STOLEN MS:"
-
-    
+    "DOTA_Tooltip_Ability_keeping_up_battleship_movment"          "STOLEN MS:"    
     
     "DOTA_Tooltip_Ability_submerge_battleship"              "Submerge"
     "DOTA_Tooltip_Ability_submerge_battleship_Description"          "Dive into the comforting embrace of the sea! Let the water shield you from harm, granting you an armor bonus. Fully submerge your propeller, granting you a move speed bonus. \n\nAlas, you need to breathe, so keep your air (mana) above 0 or you will die. \n\nHigher levels increase all bonuses."
@@ -2082,8 +2138,8 @@
     "DOTA_Tooltip_Ability_into_the_hold_duration"         "DURATION:"
     "DOTA_Tooltip_Ability_into_the_hold_health_regen"         "HEALTH REGEN:"
     
-    "DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship"              "Scrap Armor"
-    "DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship_Description"  "Creates junk armor around an ally unit, forming a shield that absorbs a set amount of damage before expiring. When the shield is destroyed it will burst, dealing damage equal to the amount it could absorb to an area around it. Removes certain types of negative buffs and stuns on cast."
+    "DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship"              "Force Field"
+    "DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship_Description"  "Creates super science armor around an ally unit, forming a shield that absorbs a set amount of damage before expiring. When the shield is destroyed it will burst, dealing damage equal to the amount it could absorb to an area around it. Removes certain types of negative buffs and stuns on cast."
     "DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship_duration"   "DURATION:"
     "DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship_damage_absorb"  "MAX DAMAGE ABSORBED:"
     "DOTA_Tooltip_ability_abaddon_aphotic_shield_battleship_radius"   "BURST RADIUS:"
@@ -2097,10 +2153,11 @@
     "DOTA_Tooltip_ability_shove_battleship_Description"         "Stuns a unit and pushes it away from the tugboat. \n\nHigher levels increase push distance and duration of stun."
     "DOTA_Tooltip_Ability_shove_battleship_duration"      "DURATION:"
     
-    "DOTA_Tooltip_Ability_puck_waning_rift_battleship"                "Hack their system!"
-    "DOTA_Tooltip_ability_puck_waning_rift_battleship_Description"          "Disables the use of abilities on all units in the area and deals damage to them. \n\nHigher levels increase damage and duration."
-    "DOTA_Tooltip_Ability_puck_waning_rift_battleship_silence_duration"     "DURATION:"
-    
+    	"DOTA_Tooltip_Ability_disruptor_kinetic_field_battleship"								"Peg Circle!"
+		"DOTA_Tooltip_ability_disruptor_kinetic_field_battleship_Description"					"After a short formation time, creates a circular barrier of pegs energy that enemies can't pass. \n\nHigher levels increase range and duration."
+		"DOTA_Tooltip_Ability_disruptor_kinetic_field_battleship_duration"			"DURATION:"
+		"DOTA_Tooltip_Ability_disruptor_kinetic_field_battleship_formation_time"			"Formation Time:"
+		
     "DOTA_Tooltip_Ability_turret_battleship"                "Deploy Turret!"
     "DOTA_Tooltip_ability_turret_battleship_Description"          "Deploy a turret that deals 500 damage per attack in a very short range. \n\nHigher levels decrease cooldown."
 
@@ -2147,29 +2204,24 @@
     "DOTA_Tooltip_ability_go_home_battleship"                 "Go Home"
     "DOTA_Tooltip_ability_go_home_battleship_Description"           "Teleports you home after a short channel time. If channel is interrupted you will not go home. \n \nHigher levels decrease cooldown."
       "DOTA_Tooltip_ability_go_home_battleship_duration"      "CHANNEL TIME:"
-
     
     "DOTA_Tooltip_ability_dragon_battleship"                  "Cloud Dragon"
     "DOTA_Tooltip_ability_dragon_battleship_Description"        "Flying a red flag is said to bring the favor of the dragon who lives in the clouds. Mark his target and he will attack nearby ships for a time. \n \nHigher levels decrease cooldown."
     "DOTA_Tooltip_ability_dragon_battleship_duration"     "DURATION:"
 "DOTA_Tooltip_ability_dragon_battleship_damage"     "DAMAGE:"
-
     
     "DOTA_Tooltip_ability_firework_battleship"                  "Firework Flare"
     "DOTA_Tooltip_ability_firework_battleship_Description"            "Launch fireworks over an area to give vision of it for a short time. \n \nHigher levels decrease cooldown."
     "DOTA_Tooltip_ability_firework_battleship_duration"     "DURATION:"
-
     
   "DOTA_Tooltip_ability_nav_hack_battleship"                  "Compass disruption"
   "DOTA_Tooltip_ability_nav_hack_battleship_Description"            "The Junk ship is equipped with a superior compass. Activate the compass disruption, and all enemy ships in the area will be forced to face away from you for a moment. \n \nHigher levels decrease cooldown."
   "DOTA_Tooltip_ability_nav_hack_battleship_duration"     "DURATION:"
-
   
     "DOTA_Tooltip_ability_iceberg_battleship"                 "Iceberg"
   "DOTA_Tooltip_ability_iceberg_battleship_Description"           "Hide an iceberg (invisible to enemy team). The first enemy ship to run into it will take considerable damage. \n \nHigher levels decrease cooldown."
   "DOTA_Tooltip_ability_iceberg_battleship_duration"      "DURATION:"
-  "DOTA_Tooltip_ability_iceberg_battleship_damage"      "DAMAGE:"
-  
+  "DOTA_Tooltip_ability_iceberg_battleship_damage"      "DAMAGE:"  
   
   "DOTA_Tooltip_ability_iceberg_battleship"                 "Iceberg"
   "DOTA_Tooltip_ability_iceberg_battleship_Description"           "Hide an iceberg (invisible to enemy team). The first enemy ship to run into it will take considerable damage. \n \nHigher levels decrease cooldown."
@@ -2183,11 +2235,7 @@
   
   "DOTA_Tooltip_ability_coast_heal_battleship"                  "Rescue Mission"
   "DOTA_Tooltip_ability_coast_heal_battleship_Description"            "Shoot a healing projectile at target unit."
-  "DOTA_Tooltip_ability_coast_heal_battleship_damage"     "HEAL AMOUNT:"
-
-  
-
-  
+  "DOTA_Tooltip_ability_coast_heal_battleship_damage"     "HEAL AMOUNT:"  
   
   "DOTA_Tooltip_ability_instill_terror"                 "Instill Terror"
   "DOTA_Tooltip_ability_instill_terror_Description"           "Silence target ship and throw them into a panic where their ship moves erratically. \n \nHigher levels increase duration."
@@ -2199,9 +2247,6 @@
   
   "DOTA_Tooltip_ability_go_daralect"                  "Go Derelict "
   "DOTA_Tooltip_ability_go_daralect_Description"            "If you have a Derelict already, swap locations with it, leaving a Derelict vessel where you were.\n\n If you do not, this ability drops one at your current location.\n\n The Derelict ship will automatically float between trade posts, and will not draw fire.\n \nHigher levels decrease cooldown."
-
-  
-  
   
   "DOTA_Tooltip_ability_cease_fire"                 "Cease Fire"
   "DOTA_Tooltip_ability_cease_fire_Description"           "Stop firing and stop being fired at for the duration. \n \nHigher levels increase duration."
@@ -2210,10 +2255,9 @@
   "DOTA_Tooltip_ability_estab_route"                  "Established Route"
   "DOTA_Tooltip_ability_estab_route_Description"            "Gain significant move speed speed for the duration or until a new order is given. \n \nHigher levels increase speed effect."
   "DOTA_Tooltip_ability_estab_route_path_duration"      "DURATION:"
-  "DOTA_Tooltip_ability_estab_route_path_bonus_move_speed"      "BONUS SPEED:"
-  
+  "DOTA_Tooltip_ability_estab_route_path_bonus_move_speed"      "BONUS SPEED:"  
     
-    "DOTA_Tooltip_ability_bships_talent1" "Gain 300 hp"
+  "DOTA_Tooltip_ability_bships_talent1" "Gain 300 hp"
     
   "DOTA_Tooltip_ability_dump_cargo"                 "Dump Cargo"
   "DOTA_Tooltip_ability_dump_cargo_Description"           "Toss Goods off the back of your ship to gain massive short lived speed boost.\nDrops a random consumable item or gold piecein your wake. \n \nHigher levels increase duration."
@@ -2221,53 +2265,49 @@
   "DOTA_Tooltip_ability_dump_base_speed"      "SPEED BOOST:"
   
   "DOTA_Tooltip_ability_swap_mission" "Swap Mission"
-"DOTA_Tooltip_ability_swap_mission_Description" "Alter your contract to show a different destionation.  Don't worry you'll still get paid in full.\n\nHigher levels decrease cooldown."
+  "DOTA_Tooltip_ability_swap_mission_Description" "Alter your contract to show a different destionation.  Don't worry you'll still get paid in full.\n\nHigher levels decrease cooldown."
 
-    "DOTA_Tooltip_ability_harpoon_battleship"                 "Harpoon"
-    "DOTA_Tooltip_ability_harpoon_battleship_Description"           "Launch a harpoon at an enemy ship. When it connects, the two of you will be pulled together (mostly you), and the enemy will take damage. \n \nHigher levels pull the target closer to your original position."
-    "DOTA_Tooltip_ability_harpoon_battleship_cast_range"  "RANGE:"
-    "DOTA_Tooltip_ability_harpoon_battleship_bonus_damage"  "DAMAGE:"
-    "DOTA_Tooltip_ability_harpoon_battleship_range" "FRACTION OF DISTANCE YOU MOVE:"
+  "DOTA_Tooltip_ability_harpoon_battleship"                 "Harpoon"
+  "DOTA_Tooltip_ability_harpoon_battleship_Description"           "Launch a harpoon at an enemy ship. When it connects, the two of you will be pulled together (mostly you). \n \nHigher levels pull the target closer to your original position."
+  "DOTA_Tooltip_ability_harpoon_battleship_cast_range"  "RANGE:"
+  "DOTA_Tooltip_ability_harpoon_battleship_range" "FRACTION OF DISTANCE YOU MOVE:"
 
-    "DOTA_Tooltip_ability_wale_bait_battleship"                 "Bait the whale"
-    "DOTA_Tooltip_ability_wale_bait_battleship_Description"           "Lure an old foe to the target location. The whale creates a whirlpool, sucking in and damaging friends and foes alike. \nDamage is non-lethal. \n \nHigher levels increase cast range and lower cooldown."
-    "DOTA_Tooltip_ability_wale_bait_battleship_duration"  "DURATION:"
-    "DOTA_Tooltip_ability_wale_bait_dps_tooltip"          "DPS:"
+  "DOTA_Tooltip_ability_wale_bait_battleship"                 "Bait the whale"
+  "DOTA_Tooltip_ability_wale_bait_battleship_Description"           "Lure an old foe to the target location. The whale creates a whirlpool, sucking in and damaging friends and foes alike. \nDamage is non-lethal. \n \nHigher levels increase cast range and lower cooldown."
+  "DOTA_Tooltip_ability_wale_bait_battleship_duration"  "DURATION:"
+  "DOTA_Tooltip_ability_wale_bait_dps_tooltip"          "DPS:"
 
-
+  "DOTA_Tooltip_ability_jakiro_ice_path_battleship"               "Ice Path"
+  "DOTA_Tooltip_ability_jakiro_ice_path_battleship_Description"         "Creates a path of ice that stuns and damages enemies that touch it. \n Higher levels increase damage and stun duration and decrease cooldown"
+  "DOTA_Tooltip_ability_jakiro_ice_path_battleship_Note0"           "It takes 0.5 seconds for the path_battleship to reach its full extent."
+  "DOTA_Tooltip_ability_jakiro_ice_path_battleship_duration"            "DURATION:" 
+  "DOTA_Tooltip_ability_jakiro_ice_path_battleship_path_battleship_delay"         "FORMATION DELAY:"
+  "DOTA_Tooltip_ability_jakiro_ice_path_battleship_path_battleship_radius"          "RADIUS:"
+  "DOTA_Tooltip_ability_jakiro_ice_path_battleship_damage"            "DAMAGE:"
+  "DOTA_Tooltip_ability_jakiro_ice_path_battleship_range"           "RANGE:"
   
-    "DOTA_Tooltip_ability_jakiro_ice_path_battleship"               "Ice Path"
-    "DOTA_Tooltip_ability_jakiro_ice_path_battleship_Description"         "Creates a path of ice that stuns and damages enemies that touch it. \n Higher levels increase damage and stun duration and decrease cooldown"
-    "DOTA_Tooltip_ability_jakiro_ice_path_battleship_Note0"           "It takes 0.5 seconds for the path_battleship to reach its full extent."
-    "DOTA_Tooltip_ability_jakiro_ice_path_battleship_duration"            "DURATION:" 
-    "DOTA_Tooltip_ability_jakiro_ice_path_battleship_path_battleship_delay"         "FORMATION DELAY:"
-    "DOTA_Tooltip_ability_jakiro_ice_path_battleship_path_battleship_radius"          "RADIUS:"
-    "DOTA_Tooltip_ability_jakiro_ice_path_battleship_damage"            "DAMAGE:"
-    "DOTA_Tooltip_ability_jakiro_ice_path_battleship_range"           "RANGE:"
-    
-    "DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship"             "Freezing Field"
-    "DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_Description"       "Summons forth the frozen north and all its random icy explosions that slow enemies and deal massive damage.  Lasts %duration_tooltip% seconds.\n Higher levels increase damage and stun duration and decrease cooldown."
-    "DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_Lore"            "Once the place of her exile, Icewrack has become an anchor for Rylai's frigid onslaught."
-    "DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_Note0"           "The slow is applied on all enemies in the radius, even if they aren't hit by an explosion (lasts 1 second)."
-    "DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_Note1"           "Every 0.1 second an explosion occurs, for a total of 100 explosions."
-    "DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_movespeed_slow"        "%MOVEMENT SLOW:"
-    "DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_radius"            "RADIUS:"
-    "DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_explosion_radius"      "EXPLOSION RADIUS:"
-    "DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_damage"            "DAMAGE:"
-    
-    "DOTA_Tooltip_ability_engine_burst"             "Engine Burst"
-    "DOTA_Tooltip_ability_engine_burst_Description"       "Overheat your engine to push it beyond its maximum movement. This ability does more damage the longer you use it, and the engine will not cool off until 2 seconds after you stop. \n Higher levels increase speed boost."
-    "DOTA_Tooltip_ability_engine_burst_base_speed"        "SPEED BONUS:"
-    "DOTA_Tooltip_ability_engine_burst_damage"            "DAMAGE:"
-    
-        "DOTA_Tooltip_ability_panic_battleship"             "Panic!"
-    "DOTA_Tooltip_ability_panic_battleship_Description"       "Your panic drives you. Gain move speed for every 10 percent of your health you are missing.\n Higher levels increase move speed bonus range."
-    "DOTA_Tooltip_ability_panic_battleship_bail_bonus_move_speed"       "BONUS SPEED:"
-    
-    "DOTA_Tooltip_ability_icy_waters_battleship"                  "Icy Waters"
-    "DOTA_Tooltip_ability_icy_waters_battleship_Description"            "All nearby Enemy ships are slowed. \n \nHigher levels increase slowing effect."
-    "DOTA_Tooltip_ability_icy_waters_battleship_fun_bonus_move_speed" "SLOW:"
-
+  "DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship"             "Freezing Field"
+  "DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_Description"       "Summons forth the frozen north and all its random icy explosions that slow enemies and deal massive damage.  Lasts %duration_tooltip% seconds.\n Higher levels increase damage and stun duration and decrease cooldown."
+  "DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_Lore"            "Once the place of her exile, Icewrack has become an anchor for Rylai's frigid onslaught."
+  "DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_Note0"           "The slow is applied on all enemies in the radius, even if they aren't hit by an explosion (lasts 1 second)."
+  "DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_Note1"           "Every 0.1 second an explosion occurs, for a total of 100 explosions."
+  "DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_movespeed_slow"        "%MOVEMENT SLOW:"
+  "DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_radius"            "RADIUS:"
+  "DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_explosion_radius"      "EXPLOSION RADIUS:"
+  "DOTA_Tooltip_ability_crystal_maiden_freezing_field_battleship_damage"            "DAMAGE:"
+  
+  "DOTA_Tooltip_ability_engine_burst"             "Engine Burst"
+  "DOTA_Tooltip_ability_engine_burst_Description"       "Overheat your engine to push it beyond its maximum movement. This ability does more damage the longer you use it, and the engine will not cool off until 2 seconds after you stop. \n Higher levels increase speed boost."
+  "DOTA_Tooltip_ability_engine_burst_base_speed"        "SPEED BONUS:"
+  "DOTA_Tooltip_ability_engine_burst_damage"            "DAMAGE:"
+  
+  "DOTA_Tooltip_ability_panic_battleship"             "Panic!"
+  "DOTA_Tooltip_ability_panic_battleship_Description"       "Your panic drives you. Gain move speed for every 10 percent of your health you are missing.\n Higher levels increase move speed bonus range."
+  "DOTA_Tooltip_ability_panic_battleship_bail_bonus_move_speed"       "BONUS SPEED:"
+  
+  "DOTA_Tooltip_ability_icy_waters_battleship"                  "Icy Waters"
+  "DOTA_Tooltip_ability_icy_waters_battleship_Description"            "All nearby Enemy ships are slowed. \n \nHigher levels increase slowing effect."
+  "DOTA_Tooltip_ability_icy_waters_battleship_fun_bonus_move_speed" "SLOW:"
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //-0503---BUILDINGS----------------------------
@@ -2657,6 +2697,7 @@
     "npc_dota_hero_enigma_battleship8d"                                               "Dota Hero Enigma Battleship8d"
     "npc_dota_hero_bane_battleship8d"                                                 "Dota Hero Bane Battleship8d"
     "npc_dota_hero_tide_coOp"                                                         "Dota Hero Tide CoOp"
+    "crab_ship"                                                                       "The Crab"
 
     // ******************** ABILITY MODIFIERS ********************
     "DOTA_Tooltip_start_fire"                                                         "Start Fire"
@@ -2966,7 +3007,6 @@
     "DOTA_Tooltip_ability_mirana_leap_battlsehip_charge_restore_time"                 "CHARGE RESTORE TIME:"
 
     "DOTA_Tooltip_ability_windrunner_powershot_battleship_powershot_damage"           "DAMAGE:"
-    "DOTA_Tooltip_ability_windrunner_powershot_battleship_damage_reduction"           "DAMAGE REDUCTION:"
 
     "DOTA_Tooltip_ability_antimage_blink_battleship_min_blink_range"                  "MIN BLINK RANGE:"
 
@@ -3043,6 +3083,9 @@
     "DOTA_Tooltip_ability_ghost_ship_creep_Description"                               ""
     "DOTA_Tooltip_ability_ghost_ship_creep_hoop_bonus_armor"                          "HOOP BONUS ARMOR:"
     "DOTA_Tooltip_ability_ghost_ship_creep_health_regen"                              "HEALTH REGEN:"
+
+    "DOTA_Tooltip_ability_harpoon_battleship_bonus_damage"                            "BONUS DAMAGE:"
+    "DOTA_Tooltip_ability_harpoon_battleship_bonus_duration"                          "BONUS DURATION:"
 
     "DOTA_Tooltip_ability_wale_bait_battleship_range"                                 "RANGE:"
 
@@ -3354,10 +3397,7 @@
 
     "DOTA_Tooltip_ability_item_chaos_bow_dmg_bonus"                                   "DAMAGE BONUS:"
     "DOTA_Tooltip_ability_item_chaos_bow_bonus_rate"                                  "BONUS RATE:"
-
-    "DOTA_Tooltip_ability_item_poison_two_bow_damage"                                 "DAMAGE:"
-    "DOTA_Tooltip_ability_item_poison_two_bow_psn_dur"                                "POISON DURATION:"
-
+    
     "DOTA_Tooltip_ability_item_fire_two_bow_damage"                                   "DAMAGE:"
 
     "DOTA_Tooltip_ability_item_ice_two_bow_slow_amt"                                  "SLOW AMMOUNT:"
@@ -3752,13 +3792,15 @@
 
     // ******************** UNITS ********************
     "npc_dota_hero_razor_battleship8d"                                                "Stormchaser Hydrofoil"
+     "npc_dota_hero_wisp2_battleship8d"           "UFO"
+  
     // ******************** ABILITY MODIFIERS ********************
 
     // ******************** ITEM MODIFIERS ********************
 
     // ******************** ABILITIES ********************
     "DOTA_Tooltip_ability_thunder_storm"                                              "Thunder Storm"
-    "DOTA_Tooltip_ability_thunder_storm_Description"                                  "Passively rains lightning around you, striking foes and building up charge as you damage enemies. The more charge you amass, the faster the lightning comes. \n Higher levels increase damage."
+    "DOTA_Tooltip_ability_thunder_storm_Description"                                  "Rains lightning around you for the duration, striking foes and slowing their ships. \n Higher levels increase damage."
     "DOTA_Tooltip_ability_thunder_storm_lightning_radius"                             "LIGHTNING RADIUS:"
     "DOTA_Tooltip_ability_thunder_storm_damage"                                       "DAMAGE:"
 
@@ -4020,17 +4062,6 @@
 
 		"DOTA_Tooltip_ability_terrorblade_conjure_image_battleship_illusion_outgoing_damage"		"ILLUSION OUTGOING DAMAGE:"
 
-		"DOTA_Tooltip_ability_mirana_leap_battlsehip_leap_speed"                          "LEAP SPEED:"
-		"DOTA_Tooltip_ability_mirana_leap_battlsehip_leap_acceleration"                   "LEAP ACCELERATION:"
-		"DOTA_Tooltip_ability_mirana_leap_battlsehip_leap_speedbonus_as"                  "LEAP SPEEDBONUS AS:"
-		"DOTA_Tooltip_ability_mirana_leap_battlsehip_LinkedSpecialBonus"                  "LINKEDSPECIALBONUS:"
-		"DOTA_Tooltip_ability_mirana_leap_battlsehip_leap_bonus_duration"                 "LEAP BONUS DURATION:"
-
-		"DOTA_Tooltip_ability_windrunner_powershot_battleship_LinkedSpecialBonus"         "LINKEDSPECIALBONUS:"
-		"DOTA_Tooltip_ability_windrunner_powershot_battleship_arrow_width"                "ARROW WIDTH:"
-		"DOTA_Tooltip_ability_windrunner_powershot_battleship_arrow_speed"                "ARROW SPEED:"
-		"DOTA_Tooltip_ability_windrunner_powershot_battleship_tree_width"                 "TREE WIDTH:"
-
 		"DOTA_Tooltip_ability_submerge_battleship_mana_bonus"                             "MANA BONUS:"
 
 		"DOTA_Tooltip_ability_might_battleship_two_LinkedSpecialBonus"                    "LINKEDSPECIALBONUS:"
@@ -4051,15 +4082,16 @@
 		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_vision_radius"              "VISION RADIUS:"
 		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_tide_vision_duration"            "VISION DURATION:"
 
+		"DOTA_Tooltip_ability_harpoon_battleship_illusion_search_radius"                  "ILLUSION SEARCH RADIUS:"
+
 		"DOTA_Tooltip_ability_wale_bait_battleship_dps"                                   "DPS:"
 		"DOTA_Tooltip_ability_wale_bait_battleship_dps_tooltip"                           "DPS TOOLTIP:"
 
-		"DOTA_Tooltip_ability_thunder_storm_lightning_tick_interval_min"                  "LIGHTNING TICK INTERVAL MIN:"
-		"DOTA_Tooltip_ability_thunder_storm_lightning_tick_interval_max"                  "LIGHTNING TICK INTERVAL MAX:"
 		"DOTA_Tooltip_ability_thunder_storm_sight_radius"                                 "SIGHT RADIUS:"
 		"DOTA_Tooltip_ability_thunder_storm_sight_duration"                               "SIGHT DURATION:"
 		"DOTA_Tooltip_ability_thunder_storm_lightning_bolt_search_radius"                 "LIGHTNING BOLT SEARCH RADIUS:"
-		"DOTA_Tooltip_ability_thunder_storm_percent_health_as_damage"                     "PERCENT HEALTH AS DAMAGE:"
+		"DOTA_Tooltip_ability_thunder_storm_percent_slow"                                  "SLOW AMOUNT:"
+        "DOTA_Tooltip_ability_thunder_storm_armor_debuff"                                  "ARMOR DEBUFF:"
 		"DOTA_Tooltip_ability_thunder_storm_duration"                                     "DURATION:"
 
 		"DOTA_Tooltip_ability_ball_lightning_lua_damage_radius"                           "DAMAGE RADIUS:"
@@ -4134,15 +4166,15 @@
 		"DOTA_Tooltip_ability_doom_bringer_scorched_earth_battleship_LinkedSpecialBonus"		"LINKEDSPECIALBONUS:"
 
 		"DOTA_Tooltip_ability_port_cannons"                                               "Port Cannons"
-        "DOTA_Tooltip_ability_port_cannons_Description"                                   "Fire the three cannons on the left side of your ship once each second until you select a new direction.\n\n Increasing levels lowers cooldown."
+        "DOTA_Tooltip_ability_port_cannons_Description"                                    "Fire the three cannons each side of your ship.\n\n Increasing levels lowers cooldown."
         "DOTA_Tooltip_ability_port_cannons_damage_tooltip"                            "DAMAGE:"
 
         "DOTA_Tooltip_ability_bow_cannon"                                                 "Bow Cannons"
-        "DOTA_Tooltip_ability_bow_cannon_Description"                                     "Fire the two cannons on the front of your ship once each second until you select a new direction.\n\n Increasing levels lowers cooldown."
+        "DOTA_Tooltip_ability_bow_cannon_Description"                                     "Fire the two cannons on the front of your ship twice in rapid succession.\n\n Increasing levels lowers cooldown."
         "DOTA_Tooltip_ability_bow_cannon_damage_tooltip"                                  "DAMAGE:"
 
         "DOTA_Tooltip_ability_starboard_cannon"                                           "Starboard Cannons"
-        "DOTA_Tooltip_ability_starboard_cannon_Description"                                "Fire the three cannons on the right side of your ship once each second until you select a new direction.\n\n Increasing levels lowers cooldown."
+        "DOTA_Tooltip_ability_starboard_cannon_Description"                                "Fire the three cannons each side of your ship.\n\n Increasing levels lowers cooldown."
         "DOTA_Tooltip_ability_starboard_cannon_damage_tooltip"                            "DAMAGE:"
 
         "DOTA_Tooltip_ability_explosive_shells"                                           "Load Concussive shells!"
@@ -4161,6 +4193,119 @@
 
 		"DOTA_Tooltip_ability_aoe_shot"                                                   "Aoe Shot"
 		"DOTA_Tooltip_ability_aoe_shot_Description"                                       ""
+        
+        // --------------------------------------------------------
+        		// DOTA 2 MODKIT GENERATED TOOLTIPS FOR: battleships_traders
+		// Keys already defined in addon_english.txt are not listed, nor are Modifiers with the property "IsHidden" "1".
 
+		// ******************** HEROES ********************
+
+		// ******************** UNITS ********************
+
+		// ******************** ABILITY MODIFIERS ********************
+		"DOTA_Tooltip_modifier_cannon_barrage"                                            "Cannon Barrage"
+		"DOTA_Tooltip_modifier_cannon_barrage_Description"                                "Fire all cannons once each second for the duration."
+
+		"DOTA_Tooltip_cannon_fire_buff"                                                   "Cannon Fire Buff"
+		"DOTA_Tooltip_cannon_fire_buff_Description"                                       "Shots provide vision and do extra damage."
+
+		"DOTA_Tooltip_cannon_ice_buff"                                                    "Cannon Ice Buff"
+		"DOTA_Tooltip_cannon_ice_buff_Description"                                        "Shots slow ships hit by them."
+
+		"DOTA_Tooltip_cannon_ice_slow"                                                    "Cannon Ice Slow"
+		"DOTA_Tooltip_cannon_ice_slow_Description"                                        "Slowed from cannon hit."
+
+		"DOTA_Tooltip_cannon_splash_buff"                                                 "Cannon Splash Buff"
+		"DOTA_Tooltip_cannon_splash_buff_Description"                                     "Shots deal damage to an area around the primary target."
+
+
+		// ******************** ITEM MODIFIERS ********************
+
+		// ******************** ABILITIES ********************
+		
+		"DOTA_Tooltip_ability_port_cannons_range"                                         "RANGE:"
+
+		"DOTA_Tooltip_ability_bow_cannon_num_shots"                                       "NUM SHOTS:"
+		"DOTA_Tooltip_ability_bow_cannon_range"                                           "RANGE:"
+
+		"DOTA_Tooltip_ability_starboard_cannon_range"                                     "RANGE:"
+
+		"DOTA_Tooltip_ability_ironclad_heavy_armor"                                       "Heavy Armor"
+		"DOTA_Tooltip_ability_ironclad_heavy_armor_Description"                           "The ironclad has thick armor, espically in the rear where it has no cannons.  Take reduced physical damage from the rear."
+		"DOTA_Tooltip_ability_ironclad_heavy_armor_physical_damage_reduction"             "PHYSICAL DAMAGE REDUCTION:"
+		"DOTA_Tooltip_ability_ironclad_heavy_armor_forward_angle"                         "REAR ANGLE:"
+		"DOTA_Tooltip_ability_ironclad_heavy_armor_physical_damage_reduction_side"        "PHYSICAL DAMAGE REDUCTION SIDE:"
+		"DOTA_Tooltip_ability_ironclad_heavy_armor_side_angle"                            "SIDE ANGLE:"
+
+		"DOTA_Tooltip_ability_ironclad_cannon_barrage"                                    "Cannon Barrage"
+		"DOTA_Tooltip_ability_ironclad_cannon_barrage_Description"                        "Fire all cannons once each second for the duration."
+		"DOTA_Tooltip_ability_ironclad_cannon_barrage_duration"                           "DURATION:"
+		"DOTA_Tooltip_ability_ironclad_cannon_barrage_fire_interval"                      "FIRE INTERVAL:"
+		"DOTA_Tooltip_ability_ironclad_cannon_barrage_range"                              "RANGE:"
+
+		"DOTA_Tooltip_ability_ironclad_weapon_fire"                                       "Incendiary Rounds"
+		"DOTA_Tooltip_ability_ironclad_weapon_fire_Description"                           "Cannons fire ammo that grants vision of it's path and deals extra damage.\nCasting this ability will swap to Crippling Rounds"
+		"DOTA_Tooltip_ability_ironclad_weapon_fire_dmg_buff"                              "DMG BUFF:"
+
+		"DOTA_Tooltip_ability_ironclad_weapon_ice"                                        "Crippling Rounds"
+		"DOTA_Tooltip_ability_ironclad_weapon_ice_Description"                            "Cannons fire ammo that slow any ships hit.\nCasting this ability will swap to Explosive Rounds"
+		"DOTA_Tooltip_ability_ironclad_weapon_ice_slow_pct"                               "SLOW PCT:"
+		"DOTA_Tooltip_ability_ironclad_weapon_ice_duration"                               "DURATION:"
+
+		"DOTA_Tooltip_ability_ironclad_weapon_splash"                                     "Explosive Rounds"
+		"DOTA_Tooltip_ability_ironclad_weapon_splash_Description"                         "Cannons fire ammo that explod on impact, also delaing damage around their target.\nCasting this ability will swap to Incendiary Rounds"
+		"DOTA_Tooltip_ability_ironclad_weapon_splash_splash_pct"                          "SPLASH PCT:"
+		"DOTA_Tooltip_ability_ironclad_weapon_splash_aoe"                                 "AOE:"
+
+		"DOTA_Tooltip_ability_electric_bounce_lua_chance"                                 "CHANCE:"
+
+        "DOTA_Tooltip_ability_timber_chain_lua"  "Grappling Hook"
+        "DOTA_Tooltip_ability_timber_chain_lua_Description"  "Shoots a hook that latches onto the first target it finds, dragging the Tug Boat to it."
+        "DOTA_Tooltip_ability_timber_chain_lua_range"  "Chain Range"
+
+        "DOTA_Tooltip_ability_speed_shift"  "Speed Shift"
+        "DOTA_Tooltip_ability_speed_shift_Description"  "Sometimes you fail fast. Sometimes you even fail at that. Gain up to the listed move speed or lose up to half the listed movespeed oscillating randomly all of the time."
+        "DOTA_Tooltip_ability_speed_shift_ms_range"  "Move Speed"
+
+        "DOTA_Tooltip_ability_vengefulspirit_nether_swap_datadriven"                                        "Siwtcharoo"
+		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_datadriven_Description"                            "Swap places with the target in hopes of becoming less of a failure.  Fails to pick the right target 50% of the time."
+		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_datadriven_tooltip_range"                               "Range:"
+
+        
+        "DOTA_Tooltip_ability_timber_chain_lua_range"  "CHAIN RANGE:"
+
+        "DOTA_Tooltip_ability_crab_walk"  "Skuttle"
+        "DOTA_Tooltip_ability_crab_walk_Description"  "Embrace your crabby powers, and begin to skuttle, moving faster and gaining the ability to walk over walls."
+        "DOTA_Tooltip_ability_crab_walk_duration"  "DURATION:"
+        "DOTA_Tooltip_ability_crab_walk_move_speed_pct"  "%MOVE SPEED:"
+
+        "DOTA_Tooltip_ability_crab_grab"  "Claw Grab"
+        "DOTA_Tooltip_ability_crab_grab_Description"  "Grab a target with your claws, attaching yourself to them, slowing them down and repeatedly clawing them to deal damage."
+        "DOTA_Tooltip_ability_crab_grab_duration"  "DURATION:"
+        "DOTA_Tooltip_ability_crab_grab_damage_per_tick"  "DPS:"
+        "DOTA_Tooltip_ability_crab_grab_slow"  "%SLOW:"
+
+        "DOTA_Tooltip_ability_ufo_invis"  "Cloaking"
+        "DOTA_Tooltip_ability_ufo_invis_Description"  "While the UFO is at least %radius% range away from an enemy, it's cloaking technology activates, becoming invisible after %cooldown% seconds."
+        "DOTA_Tooltip_ability_ufo_invis_radius"  "RADIUS:"
+
+        "DOTA_Tooltip_modifier_ufo_invis"  "Cloaked"
+        "DOTA_Tooltip_modifier_ufo_invis_description"  "The UFO has engaged its cloaking"
+
+
+         "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven"  "Transform"
+        "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_Description"  "Maybe you'll fail less as someone else. (note that some forms have a regular unit attack)"
+        "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_duration"  "DURATION:"
+         "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_bonus_damage"  "ATTACK DAMAGE: 35+"
+         "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_base_attack_time"  "ATTACK COOL DOWN:"
+
+    "DOTA_Tooltip_ability_deploy_science_tower"  "Deploy Reaserch Platform"
+        "DOTA_Tooltip_ability_deploy_science_tower_Description"  "Drop your reaserch platform at the target location.  Platform remains until killed or deployed elsewhere and uses items stored in the first %slots% slots of your stash."
+        "DOTA_Tooltip_ability_deploy_science_tower_slots"  "SLOTS:"
+          "DOTA_Tooltip_ability_deadline_battleship"  "Reaserch Deadline"
+
+        "DOTA_Tooltip_ability_deadline_battleship_Description"  "You know how to work around deadlines and help your firends do the same.  Reset all cooldowns on target ship."
+        "DOTA_Tooltip_ability_deadline_battleship_cast_range"  "Range:"
+         
   }
 }

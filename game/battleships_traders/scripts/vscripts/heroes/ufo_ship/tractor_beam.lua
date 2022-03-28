@@ -46,8 +46,8 @@ function modifier_tractor_beam:OnCreated(keys)
 
   local particleName = "particles/ufo_pull.vpcf"
   self.particle = ParticleManager:CreateParticle(particleName, PATTACH_WORLDORIGIN, self.caster)
-  ParticleManager:SetParticleControl(self.particle, 0, self.caster:GetAbsOrigin())
-  ParticleManager:SetParticleControl(self.particle, 1, target)
+  ParticleManager:SetParticleControl(self.particle, 0, self.caster:GetAbsOrigin()+Vector(0,0,200))
+  ParticleManager:SetParticleControl(self.particle, 1, target+Vector(0,0,50)-self.direction*300)
 end
 
 
@@ -84,7 +84,7 @@ function modifier_tractor_beam:OnIntervalThink()
     local angle = math.deg(math.acos(enemyDirection:Dot(self.direction)))
 
     -- pull the enemy towards the caster
-    if angle < 45 then
+    if angle < 45 or distance<150 then
       local newPosition = enemyPosition + enemyDirection * (distance - range) * (1 - angle / 90) * suck_speed * FrameTime()
       FindClearSpaceForUnit(enemy, newPosition, false)
     end
