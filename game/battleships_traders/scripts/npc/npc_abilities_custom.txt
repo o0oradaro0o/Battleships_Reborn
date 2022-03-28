@@ -14201,6 +14201,103 @@
 		}
 		
 	}
+	
+	"death_beam_fire_lua"
+	{
+		"BaseClass"                     "ability_lua"
+    "ScriptFile"          "heroes/ufo_ship/death_beam_fire.lua"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"death_beam"
+
+    "AbilityCastPoint"              "0"
+    "AbilityCooldown"				"35.0 30.0 25.0 20.0"
+    "AbilityManaCost"               "0"
+    
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"              "FIELD_INTEGER"
+        "start_radius"          "90"
+      }
+      "02"
+      {
+        "var_type"              "FIELD_INTEGER"
+        "end_radius"            "90"
+      }
+      "03"
+      {
+        "var_type"              "FIELD_INTEGER"
+        "speed"                 "2600"
+      }
+      "04"
+      {
+        "var_type"              "FIELD_INTEGER"
+        "damage"           			"100 125 150 175"
+      }
+      "05"
+      {
+        "var_type"              "FIELD_INTEGER"
+        "range"           			"600"
+      }
+			"06"
+      {
+        "var_type"              "FIELD_INTEGER"
+        "duration"           			"3 4 5 6"
+      }
+    }
+	}
+
+	"tractor_beam"
+	{
+		"BaseClass"                     "ability_lua"
+    "ScriptFile"          "heroes/ufo_ship/tractor_beam.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"tractor_beam"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+
+    "AbilityCastPoint"              "0"
+    "AbilityCooldown"				"21.0 18.0 15.0"
+		"AbilityChannelTime"			"3 3.5 4"
+    "AbilityManaCost"               "0"
+    
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"              "FIELD_INTEGER"
+        "start_radius"          "90"
+      }
+      "02"
+      {
+        "var_type"              "FIELD_INTEGER"
+        "end_radius"            "600"
+      }
+      "03"
+      {
+        "var_type"              "FIELD_INTEGER"
+        "speed"                 "20"
+      }
+      "04"
+      {
+        "var_type"              "FIELD_INTEGER"
+        "range"           			"1000"
+      }
+			"05"
+      {
+        "var_type"              "FIELD_INTEGER"
+        "duration"           			"3 3.5 4"
+      }
+    }
+	}
 
 
 "deadline_battleship"
@@ -14220,7 +14317,7 @@
 	
 	"AbilityCastRange"				"1000 1150 1300 1450"
 	"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
-	"AbilityCooldown"				"12 11 10 9"
+	"AbilityCooldown"				"30 28 26 24"
 	"AbilityManaCost"				"0 0 0 0"
 	
 	"AbilitySpecial"

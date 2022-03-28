@@ -266,6 +266,11 @@
 		{
 			_class = "C_OP_BasicMovement"
 		},
+		{
+			_class = "C_OP_RemapControlPointOrientationToRotation"
+			m_nCP = 1
+			m_nFieldOutput = 20
+		},
 	]
 	m_ForceGenerators = 
 	[
