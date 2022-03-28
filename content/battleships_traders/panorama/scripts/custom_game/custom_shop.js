@@ -1428,6 +1428,14 @@ function hideShop() {
   Game.EmitSound("ui.chat_close");
 }
 
+function hideSecret() {
+  hidden = true;
+  $.Msg("hideSecret");
+  $("#HiddenUI").style.visibility = "collapse";
+  Game.EmitSound("ui.chat_close");
+}
+
+
 function hideShipShop() {
   $.Msg("---hideShipShop--------");
   if (NewShopUI.BHasClass("ShopOpen")) {
@@ -1797,6 +1805,15 @@ function PingLoc(data) {
   GameUI.PingMinimapAtLocation(v);
   if (data.player_id == Players.GetLocalPlayer()) {
   }
+}
+
+
+function showSpecialUi(data) {
+  if (data.player_id == Players.GetLocalPlayer()) {
+
+    $("#HiddenUI").style.visibility = "visible";
+  }
+
 }
 
 function TopNotification(msg) {
@@ -2411,5 +2428,8 @@ GameUI.SetMouseCallback(function (eventName, arg) {
   GameEvents.Subscribe("bottom_notification", BottomNotification);
   GameEvents.Subscribe("top_remove_notification", TopRemoveNotification);
   GameEvents.Subscribe("bottom_remove_notification", BottomRemoveNotification);
+
+  GameEvents.Subscribe("Show_Special_Ui", showSpecialUi);
+
   $.Msg("done subscribe");
 })();

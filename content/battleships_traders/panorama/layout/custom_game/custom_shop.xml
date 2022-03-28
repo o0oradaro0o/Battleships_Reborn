@@ -127,6 +127,19 @@
 	</Panel>
 	
 
+	<Panel hittest="false" id="HiddenUI">
+		<Image class="bkg_image" src="file://{images}/custom_game/left_top.png" />
+		<Panel class="shop_content_holder">
+		<Panel hittest="false" class="closeButtonholder">
+		<Button class="close" onactivate="hideSecret()">
+				<Label  text="X" class="closeX"/>		
+		</Button>
+	</Panel>
+			  <Label hittest="false" class="trade_text_subtitle" text="Only you can see this" />
+			  <Label hittest="false"  text="Only you can see this" />
+		</Panel>
+	</Panel>
+
 
 	
 	
@@ -1254,10 +1267,10 @@
 			</Panel>	
 			<Panel hittest="false" class="boat_row">
 				
-					<Panel hittest="false" class="ability" onmouseover="showText('ember_spirit','pistols_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" onmouseover="DOTAShowAbilityTooltip('pistols_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#pistols_battleship"/>
-					</Panel>
+				<Panel hittest="false" class="ability" onmouseover="showText('ember_spirit','grappling_hook')" >
+					<Image class="ability_image" src="file://{images}/custom_game/Abilities/shredder_timber_chain.png" onmouseover="DOTAShowAbilityTooltip('timber_chain_lua')" onmouseout="DOTAHideAbilityTooltip()" />
+				   <Label hittest="false" class="ability_name" text="#grappling_hook"/>
+				</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('ember_spirit','pudge_meat_hook_battleship')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/pudge_meat_hook.png" onmouseover="DOTAShowAbilityTooltip('pudge_meat_hook_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
                        <Label hittest="false" class="ability_name" text="#pudge_meat_hook_battleship"/>
@@ -2019,14 +2032,13 @@
 				</Panel>	
 			</Panel>	
 			<Panel hittest="false" class="boat_row">
-				
+				<Panel hittest="false" class="ability" onmouseover="showText('vengefulspirit','pistols_battleship')" >
+					<Image class="ability_image" src="file://{images}/custom_game/Abilities/sniper_assassinate.png" onmouseover="DOTAShowAbilityTooltip('pistols_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
+				   <Label hittest="false" class="ability_name" text="#pistols_battleship"/>
+				</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('windrunner','into_the_hold')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/into_the_hold.png" onmouseover="DOTAShowAbilityTooltip('into_the_hold')" onmouseout="DOTAHideAbilityTooltip()" />
                        <Label hittest="false" class="ability_name" text="#into_the_hold"/>
-					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('windrunner','abaddon_aphotic_shield_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/abaddon_aphotic_shield.png" onmouseover="DOTAShowAbilityTooltip('abaddon_aphotic_shield_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#abaddon_aphotic_shield_battleship"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('windrunner','salvage_battleship')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/mayday.png" onmouseover="DOTAShowAbilityTooltip('salvage_battleship')" onmouseout="DOTAHideAbilityTooltip()" />

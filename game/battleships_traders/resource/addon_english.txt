@@ -840,6 +840,78 @@
     "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_dps"         "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_Lore"          "Guaranteed to show up in every apocalypse 20% of the time."
 
+
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //-0112---spread--------------------------------
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    "DOTA_Tooltip_ability_item_spread_bow"               "Hatchet"
+    "DOTA_Tooltip_ability_item_spread_bow_Description"             "<h1>Weapon: spread Level 1</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings)"
+    "DOTA_Tooltip_ability_item_spread_bow_Note1"             "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
+    "DOTA_Tooltip_ability_item_spread_bow_dmg"             "BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_spread_bow_fire_rate"           "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_bow_range"             "RANGE:"
+    "DOTA_Tooltip_ability_item_spread_bow_dps"             "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_spread_bow_aoe"         "AOE:"
+
+    "DOTA_Tooltip_ability_item_spread_bow_doubled"           "Double Hatchet"
+    "DOTA_Tooltip_ability_item_spread_bow_doubled_Description"     "<h1>Weapon: spread Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings)"
+    "DOTA_Tooltip_ability_item_spread_bow_doubled_dmg"         "BASE DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_spread_bow_doubled_fire_rate"       "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_bow_doubled_range"         "RANGE:"
+    "DOTA_Tooltip_ability_item_spread_bow_doubled_dps"         "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_spread_bow_doubled_aoe"         "AOE:"
+
+    "DOTA_Tooltip_ability_item_spread_two_bow"             "Axe"
+    "DOTA_Tooltip_ability_item_spread_two_bow_Description"           "<h1>Weapon: spread Level 2</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings)"
+    "DOTA_Tooltip_ability_item_spread_two_bow_Note1"           "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
+    "DOTA_Tooltip_ability_item_spread_two_bow_dmg"           "BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_spread_two_bow_fire_rate"         "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_two_bow_range"           "RANGE:"
+    "DOTA_Tooltip_ability_item_spread_two_bow_dps"           "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+     "DOTA_Tooltip_ability_item_spread_two_bow_aoe"         "AOE:"
+
+    "DOTA_Tooltip_ability_item_spread_two_bow_doubled"         "Double Axe"
+    "DOTA_Tooltip_ability_item_spread_two_bow_doubled_Description"   "<h1>Weapon: spread Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings)"
+    "DOTA_Tooltip_ability_item_spread_two_bow_doubled_dmg"       "BASE DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_spread_two_bow_doubled_fire_rate"     "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_two_bow_doubled_range"       "RANGE:"
+    "DOTA_Tooltip_ability_item_spread_two_bow_doubled_dps"       "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_spread_two_bow_doubled_aoe"         "AOE:"
+
+    "DOTA_Tooltip_ability_item_spread_three_bow"             "Battle-Axe"
+    "DOTA_Tooltip_ability_item_spread_three_bow_Description"           "<h1>Weapon: spread Level 3</h1><b>Doubles Bonus <font color='#770000'>Inactive</font></b><br>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings)"
+    "DOTA_Tooltip_ability_item_spread_three_bow_Note1"         "Buy <font color='#dddddd'>2</font> to collapse to one slot and activate the bonus."
+    "DOTA_Tooltip_ability_item_spread_three_bow_dmg"           "BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_spread_three_bow_fire_rate"       "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_three_bow_range"         "RANGE:"
+     "DOTA_Tooltip_ability_item_spread_three_bow_aoe"         "AOE:"
+    "DOTA_Tooltip_ability_item_spread_three_bow_dps"           "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    
+    "DOTA_Tooltip_ability_item_spread_three_bow_doubled"         "Double Battle-Axe"
+    "DOTA_Tooltip_ability_item_spread_three_bow_doubled_Description"   "<h1>Weapon: spread Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings)"
+    "DOTA_Tooltip_ability_item_spread_three_bow_doubled_dmg"       "BASE DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_spread_three_bow_doubled_fire_rate"   "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_three_bow_doubled_range"     "RANGE:"
+    "DOTA_Tooltip_ability_item_spread_three_bow_doubled_dps"       "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_spread_three_bow_doubled_aoe"         "AOE:"
+    
+    "DOTA_Tooltip_ability_item_spread_ult_bow"             "Blades of the Sea"
+    "DOTA_Tooltip_ability_item_spread_ult_bow_Description"           "<h1>Weapon: Ultimate spread</h1>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings)"
+    "DOTA_Tooltip_ability_item_spread_ult_bow_rec_dmg"         "BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_spread_ult_bow_fire_rate"         "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_ult_bow_range"           "RANGE:"
+    "DOTA_Tooltip_ability_item_spread_ult_bow_dps"           "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_spread_ult_bow_Lore"            "Maybe Axe wont be here next time."
+    "DOTA_Tooltip_ability_item_spread_ult_bow_aoe"         "AOE:"
+
+    "DOTA_Tooltip_ability_item_spread_ult_bow_rec"           "Blades of the Sea"
+    "DOTA_Tooltip_ability_item_spread_ult_bow_rec_Description"     "<h1>Weapon: Ultimate spread</h1>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings)" 
+    "DOTA_Tooltip_ability_item_spread_ult_bow_rec_dmg"         "BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_spread_ult_bow_rec_fire_rate"       "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_ult_bow_rec_range"         "RANGE:"  
+    "DOTA_Tooltip_ability_item_spread_ult_bow_rec_dps"         "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_spread_ult_bow_rec_Lore"          "Guaranteed to show up in every apocalypse 20% of the time."
+
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //-0113---STARTING LINE------------------------
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

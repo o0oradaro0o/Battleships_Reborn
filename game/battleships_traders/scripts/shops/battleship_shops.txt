@@ -2,6 +2,7 @@
 {
 	"consumables"
 	{
+		 "item" "item_spread_bow"
 		 "item" "item_plasma_bow"
 		 
  "item" "item_fire_bow"
@@ -18,6 +19,7 @@
 	}
 	"attributes"
 	{
+		"item" "item_spread_two_bow"
 		 "item" "item_plasma_two_bow"
 		 
  "item" "item_fire_two_bow"
@@ -35,6 +37,7 @@
 	}
 	"weapons_armor"
 	{
+		"item" "item_spread_three_bow"
 		 "item" "item_plasma_three_bow"
 		
  "item" "item_fire_three_bow"
@@ -50,6 +53,7 @@
 	}
 	"misc"
 	{
+		"item" "item_spread_ult_bow"
 "item"  "item_plasma_ult_bow"
 
  "item"  "item_fire_ult_bow"
