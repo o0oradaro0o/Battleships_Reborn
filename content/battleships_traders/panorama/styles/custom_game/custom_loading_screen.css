@@ -291,14 +291,14 @@
 #HowToShips {
     flow-children: right;
     text-align: left;
-    width: 34%;
+    width: 55%;
     margin-top: 5px;
     margin-left:10px;
     margin-right:20px;
 }
 
 #ShipsChart {
-	width: 60%;
+	width: 50%;
 	height:75%;
 	vertical-align: center;
 }

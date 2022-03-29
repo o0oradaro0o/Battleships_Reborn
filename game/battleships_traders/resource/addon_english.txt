@@ -1752,6 +1752,7 @@
     "npc_dota_hero_marci"           "Science Vessle"
     "npc_dota_hero_nyx_assassin"    "The Crab"
     "npc_dota_hero_dragon_knight" "Fail Boat"
+        "npc_dota_hero_wisp"           "UFO"
 
     "npc_dota_boat_south_one"           "Small South Boat"
     "npc_dota_boat_south_two"             "Medium South Boat"

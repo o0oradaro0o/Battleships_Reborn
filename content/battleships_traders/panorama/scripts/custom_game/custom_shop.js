@@ -1151,6 +1151,10 @@ function buyBoat(BoatName, cost) {
 
   if (BoatName == "sniper") {
     newCenterUI
+    .FindChildTraverse("health_mana")
+    .FindChildTraverse("HealthManaContainer")
+    .FindChildTraverse("HealthContainer").style.paddingTop = "0px";
+    newCenterUI
       .FindChildTraverse("health_mana")
       .FindChildTraverse("HealthManaContainer")
       .FindChildTraverse("ManaContainer").style.visibility = "visible";
@@ -1171,6 +1175,10 @@ function buyBoat(BoatName, cost) {
       .FindChildTraverse("HealthContainer").style.height = "20px";
   } else if (BoatName == "crystal_maiden") {
     newCenterUI
+    .FindChildTraverse("health_mana")
+    .FindChildTraverse("HealthManaContainer")
+    .FindChildTraverse("HealthContainer").style.paddingTop = "0px";
+    newCenterUI
       .FindChildTraverse("health_mana")
       .FindChildTraverse("HealthManaContainer")
       .FindChildTraverse("ManaContainer").style.visibility = "visible";
@@ -1190,6 +1198,10 @@ function buyBoat(BoatName, cost) {
       .FindChildTraverse("HealthManaContainer")
       .FindChildTraverse("HealthContainer").style.height = "20px";
   } else if (BoatName == "razor") {
+    newCenterUI
+    .FindChildTraverse("health_mana")
+    .FindChildTraverse("HealthManaContainer")
+    .FindChildTraverse("HealthContainer").style.paddingTop = "0px";
     newCenterUI
       .FindChildTraverse("health_mana")
       .FindChildTraverse("HealthManaContainer")
@@ -1214,6 +1226,10 @@ function buyBoat(BoatName, cost) {
       .FindChildTraverse("health_mana")
       .FindChildTraverse("HealthManaContainer")
       .FindChildTraverse("HealthContainer").style.height = "40px";
+      newCenterUI
+      .FindChildTraverse("health_mana")
+      .FindChildTraverse("HealthManaContainer")
+      .FindChildTraverse("HealthContainer").style.paddingTop = "15px";
   }
 
   GameEvents.SendCustomGameEventToServer("buyBoat", {
