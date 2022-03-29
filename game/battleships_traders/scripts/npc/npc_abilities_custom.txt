@@ -14362,4 +14362,93 @@
 }
 
 
+
+	"we_come_in_peace_battleship"
+	{
+			"BaseClass"				"ability_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+			"FightRecapLevel"				"1"
+			"AbilityTextureName"			"peace"
+
+			"precache"
+			{
+				"soundfile"		"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+			}
+			
+			"AbilityCastRange"				"650 750 850 950"
+			"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+			"AbilityCooldown"				"20 18 16 14"
+			"AbilityManaCost"				"0 0 0 0"
+			
+
+			"OnSpellStart"
+			{
+					"ApplyModifier"
+					{
+						"Target" "TARGET"
+						"ModifierName" "modifier_peace"
+					}
+			}
+
+			"Modifiers"
+			{
+				"modifier_peace"
+				{
+					"Duration" "%peace_duration"
+					"IsDebuff"			"1"
+
+					"OnCreated"
+					{
+						"FireSound"
+						{
+							"EffectName"	"Hero_ShadowShaman.Shackles"
+							"Target" 		"TARGET"
+						}
+						"RunScript"
+						{
+							"ScriptFile"	"scripts/vscripts/abilityfunctions.lua"
+							"Function"		"StartPeace"
+						}
+						
+						"AttachEffect"
+						{
+							"EffectName"		"particles/econ/items/wisp/wisp_tether_ti7.vpcf"
+							"EffectAttachType"	"attach_hitloc"
+							"Target"			"TARGET"
+							
+							"ControlPointEntities"
+							{
+								"CASTER"	"attach_hitloc"
+								"TARGET"	"attach_hitloc"
+							}
+						}
+
+					"OnDestroy"
+					{
+						"RunScript"
+						{
+							"ScriptFile"	"scripts/vscripts/abilityfunctions.lua"
+							"Function"		"StopPeace"
+						}
+					}
+				}
+			}
+		}
+
+			"AbilitySpecial"
+			{
+				"01"
+				{
+						"var_type"				"FIELD_FLOAT"
+						"peace_duration"			"1.5 2.0 2.5 3.0"
+				}
+			}	
+
+	}
+
+
+
 }

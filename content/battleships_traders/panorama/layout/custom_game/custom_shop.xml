@@ -1697,8 +1697,8 @@
                        <Label hittest="false" class="ability_name" text="#death_beam_fire_lua"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('ursa','launch_craft')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/gyrocopter_homing_missile.png" onmouseover="DOTAShowAbilityTooltip('launch_craft')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#launch_craft"/>
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/peace.png" onmouseover="DOTAShowAbilityTooltip('launch_craft')" onmouseout="DOTAHideAbilityTooltip()" />
+                       <Label hittest="false" class="ability_name" text="#we_come_in_peace"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('ursa','launch_all')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/stealth_sci.png" onmouseover="DOTAShowAbilityTooltip('launch_all')" onmouseout="DOTAHideAbilityTooltip()" />
@@ -1716,7 +1716,7 @@
 					</Panel>
 			</Panel>
 					<Panel hittest="false" class="buy_box" >
-						<Button class="buy_ship_button" onactivate="buyBoat('ursa', 12000)" oncontextmenu="buyBoat('ursa', 12000)">
+						<Button class="buy_ship_button" onactivate="buyBoat('wisp', 12000)" oncontextmenu="buyBoat('wisp', 12000)">
 							<Label hittest="false" class="buy_text" text="#buy" />
 							<Label hittest="false" class="buy_text_g" text="12000" />
 							<Image id="GoldImage" src="s2r://panorama/images/hud/reborn/gold_small_psd.vtex" />

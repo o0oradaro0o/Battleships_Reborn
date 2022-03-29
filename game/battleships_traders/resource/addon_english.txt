@@ -4304,6 +4304,10 @@
         "DOTA_Tooltip_ability_tractor_beam_duration"  "DURATION:"
         "DOTA_Tooltip_ability_tractor_beam_range"  "RANGE:"
 
+        "DOTA_Tooltip_ability_we_come_in_peace_battleship"  "We Come In Peace"
+        "DOTA_Tooltip_ability_we_come_in_peace_battleship_Description"  "Our intentions are totally peaceful! Look we've turned off our weapons... now you stop fireing too."
+        "DOTA_Tooltip_ability_we_come_in_peace_battleship_peace_duration"  "DURATION:"
+
 
          "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven"  "Transform"
         "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_Description"  "Maybe you'll fail less as someone else. (note that some forms have a regular unit attack)"

@@ -3273,7 +3273,8 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
         "cannon_dmg"                                                 "Improved shells"
         "cannon_dmg_Description"                                     "Increase the damage dealt by cannon abilities."
         "cannon_dmg_dmg_buff"                                        "DAMAGE BONUS:"
-
+		 "we_come_in_peace"  "We Come In Peace"
+        
         "cannon_range"                                               "Improved Spotters"
 		"heavy_armor"                                       "Heavy Armor"
 		"change_ammo"										"Change Ammo"

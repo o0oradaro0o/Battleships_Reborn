@@ -3088,3 +3088,13 @@ function ResetCoolDowns(args)
 	
 
 end
+
+function StartPeace(args)
+	removeAllBows(args.target)
+	removeAllBows(args.caster)
+end
+
+function StopPeace(args)
+	reapplyAllBowsIfRemoved(args.target)
+	reapplyAllBowsIfRemoved(args.caster)
+end
