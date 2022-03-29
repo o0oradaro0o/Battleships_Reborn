@@ -14249,6 +14249,11 @@
         "var_type"              "FIELD_INTEGER"
         "duration"           			"3 4 5 6"
       }
+			"07"
+      {
+        "var_type"              "FIELD_INTEGER"
+        "beem_rof"           			"3 4 5 6"
+      }
     }
 	}
 

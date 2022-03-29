@@ -4292,6 +4292,17 @@
         "DOTA_Tooltip_modifier_ufo_invis"  "Cloaked"
         "DOTA_Tooltip_modifier_ufo_invis_description"  "The UFO has engaged its cloaking"
 
+         "DOTA_Tooltip_ability_death_beam_fire_lua"  "Spiney Death Beam"
+        "DOTA_Tooltip_ability_death_beam_fire_lua_Description"  "Three deadly beams shoot our of your ship and rotate at a fixed speed blasting enemies!"
+        "DOTA_Tooltip_ability_death_beam_fire_lua_duration"  "DURATION:"
+        "DOTA_Tooltip_ability_death_beam_fire_lua_start_radius"  "BEEM WIDTH:"
+        "DOTA_Tooltip_ability_death_beam_fire_lua_damage"  "DAMAGE:"
+
+        "DOTA_Tooltip_ability_tractor_beam"  "Tractor Beem"
+        "DOTA_Tooltip_ability_tractor_beam_Description"  "Sucks all ships in wide cone toward you and holds them close."
+        "DOTA_Tooltip_ability_tractor_beam_duration"  "DURATION:"
+        "DOTA_Tooltip_ability_tractor_beam_range"  "RANGE:"
+
 
          "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven"  "Transform"
         "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_Description"  "Maybe you'll fail less as someone else. (note that some forms have a regular unit attack)"
@@ -4299,7 +4310,7 @@
          "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_bonus_damage"  "ATTACK DAMAGE: 35+"
          "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_base_attack_time"  "ATTACK COOL DOWN:"
 
-    "DOTA_Tooltip_ability_deploy_science_tower"  "Deploy Reaserch Platform"
+        "DOTA_Tooltip_ability_deploy_science_tower"  "Deploy Reaserch Platform"
         "DOTA_Tooltip_ability_deploy_science_tower_Description"  "Drop your reaserch platform at the target location.  Platform remains until killed or deployed elsewhere and uses items stored in the first %slots% slots of your stash."
         "DOTA_Tooltip_ability_deploy_science_tower_slots"  "SLOTS:"
           "DOTA_Tooltip_ability_deadline_battleship"  "Reaserch Deadline"

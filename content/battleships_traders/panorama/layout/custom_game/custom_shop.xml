@@ -1693,20 +1693,20 @@
 			<Panel hittest="false" class="boat_row">
 				
 					<Panel hittest="false" class="ability" onmouseover="showText('ursa','turret_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/TurretIcon.png" onmouseover="DOTAShowAbilityTooltip('turret_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#turret_battleship"/>
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/death_beam.png" onmouseover="DOTAShowAbilityTooltip('turret_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
+                       <Label hittest="false" class="ability_name" text="#death_beam_fire_lua"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('ursa','launch_craft')" >
 						<Image class="ability_image" src="file://{images}/custom_game/Abilities/gyrocopter_homing_missile.png" onmouseover="DOTAShowAbilityTooltip('launch_craft')" onmouseout="DOTAHideAbilityTooltip()" />
                        <Label hittest="false" class="ability_name" text="#launch_craft"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('ursa','launch_all')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/gyrocopter_flak_cannon.png" onmouseover="DOTAShowAbilityTooltip('launch_all')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#launch_all"/>
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/stealth_sci.png" onmouseover="DOTAShowAbilityTooltip('launch_all')" onmouseout="DOTAHideAbilityTooltip()" />
+                       <Label hittest="false" class="ability_name" text="#ufo_invis"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('ursa','Over_And_Out')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/over_and_out.png" onmouseover="DOTAShowAbilityTooltip('Over_And_Out')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#Over_And_Out"/>
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/tractor_beam.png" onmouseover="DOTAShowAbilityTooltip('Over_And_Out')" onmouseout="DOTAHideAbilityTooltip()" />
+                       <Label hittest="false" class="ability_name" text="#tractor_beam"/>
 					</Panel>
 				</Panel>
 				<Panel hittest="false" class="boat_row">
@@ -1725,74 +1725,7 @@
 		</Panel>	
 	</Panel>
 
-	<Panel hittest="false" id="wisp">	
-		<Panel hittest="false" class="ship_details_holder" >
-		
-		<Panel hittest="false" class="closeButtonholder">
-			<Button class="close" onactivate="showDetails('hide')">
-					<Label  text="X" class="closeX"/>		
-			</Button>
-		</Panel>
-		<Label hittest="false" class="boat_title" text="#wisp" />
-			<Panel hittest="false" class="boat_row">
-				<Image class="boat_img" src="file://{images}/custom_game/boats/wisp.png" />
-				<Panel hittest="false" class="ship_desc_holder" >
-					<Label hittest="false" class="ship_desc_title" text="#description" />
-					<Label hittest="false" class="boat_stat_label" text="#wisp" />
-				</Panel>
-				<Panel hittest="false" class="ship_stats_holder" >
-				<Panel hittest="false" class="boat_row">
-							<Label hittest="false" class="ship_desc_title" text="#ship_stats" />
-					</Panel>	
-					<Panel hittest="false" class="boat_row">
-							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="12000" />
-					</Panel>	
-					<Panel hittest="false" class="boat_row">
-							<Label hittest="false" class="boat_stat_label" text="#ms" />
-							<Label hittest="false" class="boat_stat_label_val" text="360" />
-					</Panel>
-					<Panel hittest="false" class="boat_row">
-							<Label hittest="false" class="boat_stat_label" text="#regen" />
-							<Label hittest="false" class="boat_stat_label_val" text="20" />
-					</Panel>
-				</Panel>	
-			</Panel>	
-			<Panel hittest="false" class="boat_row">
-				
-					<Panel hittest="false" class="ability" onmouseover="showText('ursa','turret_battleship')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/TurretIcon.png" onmouseover="DOTAShowAbilityTooltip('turret_battleship')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#turret_battleship"/>
-					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('ursa','launch_craft')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/gyrocopter_homing_missile.png" onmouseover="DOTAShowAbilityTooltip('launch_craft')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#launch_craft"/>
-					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('ursa','launch_all')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/gyrocopter_flak_cannon.png" onmouseover="DOTAShowAbilityTooltip('launch_all')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#launch_all"/>
-					</Panel>
-					<Panel hittest="false" class="ability" onmouseover="showText('ursa','Over_And_Out')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/over_and_out.png" onmouseover="DOTAShowAbilityTooltip('Over_And_Out')" onmouseout="DOTAHideAbilityTooltip()" />
-                       <Label hittest="false" class="ability_name" text="#Over_And_Out"/>
-					</Panel>
-				</Panel>
-				<Panel hittest="false" class="boat_row">
-					<Panel hittest="false" class="abilities_details_holder"  >
-						<Label hittest="false" class="ship_desc_title" text=" "  id="ursa_ability"/>
-						<Label hittest="false" class="boat_stat_label" text=" "  id="ursa_ability_desc"/>
-					</Panel>
-			</Panel>
-					<Panel hittest="false" class="buy_box" >
-						<Button class="buy_ship_button" onactivate="buyBoat('wisp', 12000)" oncontextmenu="buyBoat('ursa', 12000)">
-							<Label hittest="false" class="buy_text" text="#buy" />
-							<Label hittest="false" class="buy_text_g" text="12000" />
-							<Image id="GoldImage" src="s2r://panorama/images/hud/reborn/gold_small_psd.vtex" />
-						</Button>
-					</Panel>
-		</Panel>	
-	</Panel>
-	
+
 
 	<Panel hittest="false" id="nyx">	
 		<Panel hittest="false" class="ship_details_holder" >

@@ -1127,6 +1127,7 @@ function showDetails(BoatName) {
     $("#nyx").style.height = "0px";
     $("#dragon").style.height = "0px";
     $("#wisp").style.height = "0px";
+    $("#marci").style.height = "0px";
     if (BoatName == "shredder") {
       $("#" + BoatName).style.height = "490px";
     } else {

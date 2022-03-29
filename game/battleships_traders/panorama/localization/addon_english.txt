@@ -3203,6 +3203,14 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"DOTA_Tooltip_ability_Trade_hide_battleship_duration"						"DURATION:"
 
 
+
+         "death_beam_fire_lua"  "Spiney Death Beam"
+
+ 		"ufo_invis"  "Cloaking"
+        
+        "tractor_beam"  "Tractor Beem"
+
+
 		// ******************** ABILITIES ********************
 		"DOTA_Tooltip_ability_building_unselectable"                                      "Building Unselectable"
 		"DOTA_Tooltip_ability_building_unselectable_Description"                          ""
@@ -3238,12 +3246,12 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"Trade_Desc"			"Adds a special class of ship with limited inventory slots can take on profitable trading contracts and buy powerful consumable items. These ships drop high bounties if hunted down!"
 		"discord"			"Click to join us on discord!"
 		"News_Title"		"News!"
-		"News_Content"		"11/18/2021
-- Reduced price of tier 2 and tier 3 Ice
-- Whaling Dingy Hook Damage increased to 150/225/300/350 Damage
-- Whaling Dingy Hook Damage type changed to Physical
-- Paddlewheel Diver Reckless Speed knockback now lasts slightly longer
-- Speedboat now stops damaging you immediately
+		"News_Content"		"3/31/2022
+- Added new short range weapon tree Axes.  Doubled effect deals aoe damage around target.
+- Added new 1k boat: Crab 
+- Added new 3k boat: Failboat
+- Added new 6k boat: Science Vessle
+- Added new 12k boat: UFO
 "
 		
 		"port_cannons"                                               "Port Cannons"
