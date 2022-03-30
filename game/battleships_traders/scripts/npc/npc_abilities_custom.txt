@@ -10659,12 +10659,12 @@
 		"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"	"8 9 10 11"
+				"bonus_armor"	"12 13 14 15"
 			}
 			"04"
 			{
 					"var_type"                                      "FIELD_FLOAT"
-					"health_regen"                          "100 120 130 140"
+					"health_regen"                          "150 170 190 210"
 			}
 	}
 
@@ -13967,7 +13967,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"				"4"
+			"duration"				"5"
 		}
 		"02"
 		{
@@ -14004,10 +14004,6 @@
 	"precache"
 	{
 		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
-		"particle"  "particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis.vpcf"
-		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_transform.vpcf"
-		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_base_attack.vpcf"
-		"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_ambient.vpcf"
 		"model"		"models/items/pugna/ward/tentaclesofnetherreach/tentaclesofnetherreach.vmdl"
 		"model"		"models/props_gameplay/frog.vmdl"
 		"model"		"models/creeps/lane_creeps/ti9_crocodilian_dire/ti9_crocodilian_dire_melee.vmdl"
@@ -14323,7 +14319,7 @@
 		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
 	}
 	
-	"AbilityCastRange"				"1000 1150 1300 1450"
+	"AbilityCastRange"				"1000"
 	"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
 	"AbilityCooldown"				"30 28 26 24"
 	"AbilityManaCost"				"0 0 0 0"
@@ -14333,7 +14329,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"cast_range"				"1000 1150 1300 1450"
+			"cast_range"				"1000"
 		}
 	}	
 

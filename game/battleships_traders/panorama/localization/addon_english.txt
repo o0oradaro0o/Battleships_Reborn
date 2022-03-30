@@ -55,11 +55,11 @@
 	
 	"unstick"						"Unstick"
 	
-	"game" "Game:"
-	"emp_gold_in" "Emp Gold:"
-	"creep_spawn_in" "Creeps:"
-	"north_gold_each" "North Emp Gold Each:"
-	"south_gold_each" "South Emp Gold Each:"
+	"game" "Game"
+	"emp_gold_in" "Emp Gold"
+	"creep_spawn_in" "Creeps"
+	"north_gold_each" "North Emp Gold"
+	"south_gold_each" "South Emp Gold"
 	"zoom_lbl"	"Zoom"
 	
 
@@ -842,7 +842,7 @@ SIGHTING RANGE: 2000 1500 1000"
 DURATION: 2.5 3.0 3.5 4.0"
 
 	"go_daralect"									"Go Derelict "
-	"go_daralect_Description"						"If you have a Derelict already, swap locations with it leaving a Derelict vessle where you were. If you do not, this ability drops one at your current location.\n The Derelict ship will float between trade posts and will not draw fire.  \n \nHigher levels decrease cooldown."
+	"go_daralect_Description"						"If you have a Derelict already, swap locations with it leaving a Derelict vessel where you were. If you do not, this ability drops one at your current location.\n The Derelict ship will float between trade posts and will not draw fire.  \n \nHigher levels decrease cooldown."
 
 "swap_mission"	"Swap Mission"
 "swap_mission_Description" "Alter your contract to show a different destionation.  Don't worry you'll still get paid in full."
@@ -2750,7 +2750,7 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 	"DOTA_Tooltip_ability_ghost_ship_radius"			"SIGHTING RANGE:"
 	
 	"DOTA_Tooltip_ability_go_daralect"									"Go Derelict "
-	"DOTA_Tooltip_ability_go_daralect_Description"						"If you have a Derelict already, swap locations with it leaving a Derelict vessle where you were.\n\n If you do not, this ability drops one at your current location.\n\n The Derelict ship will float between trade posts and will not draw fire.  \n \nHigher levels decrease cooldown."
+	"DOTA_Tooltip_ability_go_daralect_Description"						"If you have a Derelict already, swap locations with it leaving a Derelict vessel where you were.\n\n If you do not, this ability drops one at your current location.\n\n The Derelict ship will float between trade posts and will not draw fire.  \n \nHigher levels decrease cooldown."
 
 	
 	
@@ -3247,11 +3247,11 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"discord"			"Click to join us on discord!"
 		"News_Title"		"News!"
 		"News_Content"		"3/31/2022
-- Added new short range weapon tree Axes.  Doubled effect deals aoe damage around target.
-- Added new 1k boat: Crab 
-- Added new 3k boat: Failboat
-- Added new 6k boat: Science Vessle
-- Added new 12k boat: UFO
+- Added new weapon, Axes - Has splash damage
+- Added new 1k: The Crab 
+- Added new 3k: Failboat
+- Added new 6k: Science Vessel
+- Added new 12k: UFO
 "
 		
 		"port_cannons"                                               "Port Cannons"
@@ -3291,7 +3291,7 @@ Continue"
 		"BestDamageDealt" "Damage Dealt"
 		"score_Name" "radar"
 		"score_Points" "0"
-		"deadline"			"Reaserch Deadline"
+		"deadline"			"research Deadline"
 
 		"vengefulspirit_nether_swap_datadriven"									"Switcharoo"
 		"crab_walk"  "Skuttle"
@@ -3301,5 +3301,5 @@ Continue"
 
 
 		"abaddon_aphotic_shield_battleship"  "Force Field"
-		"deploy_science_tower" "Deploy Reaserch Platform"
+		"deploy_science_tower" "Deploy research Platform"
 }
