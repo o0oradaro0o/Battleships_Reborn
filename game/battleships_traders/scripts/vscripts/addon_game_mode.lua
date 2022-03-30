@@ -356,508 +356,22 @@ function Precache(context)
     end
     for ind = 0, 20, 1 do g_PlayerIdsToNames[ind] = 0 end
 
-    -- 	for k, v in pairs( g_ModelLookUp ) do
-    --     PrecacheResource( "model", v, context )
-    --   end
-    PrecacheResource(
-        "particle_folder",
-        "particles/basic_projectile",
-        context
-    )
-    PrecacheResource(
-        "particle",
-        "particles/units/heroes/hero_terrorblade/terrorblade_sunder.vpcf",
-        context
-    )
-    PrecacheResource(
-        "particle",
-        "particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf",
-        context
-    )
-    PrecacheResource("model", "models/battleship_boat0.vmdl", context)
-    PrecacheResource("model", "models/battleship_boat1.vmdl", context)
-    PrecacheResource("model", "models/battleship_boat2.vmdl", context)
-    PrecacheResource("model", "models/battleship_boat3.vmdl", context)
-    PrecacheResource("model", "models/battleship_boat4.vmdl", context)
-    PrecacheResource("model", "models/Aircraft_boat_e.vmdl", context)
-    PrecacheResource("model", "models/Aircraft_boat2.vmdl", context)
-    PrecacheResource("model", "models/sub_boat_down.vmdl", context)
-    PrecacheResource("model", "models/rng_ind.vmdl", context)
-    PrecacheResource("model", "models/battle_ind.vmdl", context)
-    PrecacheResource("model", "models/battle_ind.vmdl", context)
-    PrecacheResource(
-        "model",
-        "models/bad_ancient_ambient_blast",
-        context
-    )
-    PrecacheResource(
-        "model",
-        "models/heroes/tidehunter/tidehunter.vmdl",
-        context
-    )
-    PrecacheResource(
-        "model",
-        "models/props_wildlife/wildlife_birdlarge001.vmdl",
-        context
-    )
-    PrecacheResource(
-        "model",
-        "models/items/courier/nexon_turtle_15_red/nexon_turtle_15_red_flying.vmdl",
-        context
-    )
+    local precache = require('tables/precache_files')
 
-    PrecacheResource("model", "models/spin_one.vmdl", context)
-    PrecacheResource("model", "models/spin_two.vmdl", context)
-
-    PrecacheResource("model", "models/spin_three.vmdl", context)
-
-    PrecacheResource("model", "models/no_model.vmdl", context)
-    PrecacheResource("model", "models/monkey.vmdl", context)
-
-    PrecacheResource("model", "models/jet.vmdl", context)
-    PrecacheResource("model", "models/iceberg.vmdl", context)
-    PrecacheResource(
-        "model",
-        "models/building_north_tower.vmdl",
-        context
-    )
-    PrecacheResource(
-        "model",
-        "models/building_south_tower.vmdl",
-        context
-    )
-
+    PrecacheResource("particle_folder", "particles/basic_projectile", context)
     PrecacheResource("materials", "materials/", context)
-    PrecacheUnitByNameSync("npc_dota_hero_rubick", context)
-    PrecacheUnitByNameSync("npc_dota_hero_brewmaster", context)
-
-    PrecacheUnitByNameSync("npc_dota_vision_granter", context)
-
-    PrecacheUnitByNameSync("npc_dota_boat_south_one", context)
-    PrecacheUnitByNameSync("npc_dota_boat_south_two", context)
-    PrecacheUnitByNameSync("npc_dota_boat_south_three", context)
-    PrecacheUnitByNameSync("npc_dota_boat_north_three", context)
-
-    PrecacheUnitByNameSync("npc_dota_battle_ind", context)
-
-    PrecacheUnitByNameSync("npc_dota_boat_south_four", context)
-    PrecacheUnitByNameSync("npc_dota_boat_north_one", context)
-    PrecacheUnitByNameSync("npc_dota_boat_north_two", context)
-    PrecacheUnitByNameSync("npc_dota_air_craft", context)
-    PrecacheUnitByNameSync("npc_dota_air_craft_bomber", context)
-    PrecacheUnitByNameSync("npc_dota_boat_pleasure_craft", context)
-    PrecacheResource(
-        "model",
-        "models/courier/donkey_unicorn/donkey_unicorn.vmdl",
-        context
-    )
-
-    PrecacheResource(
-        "model",
-        "models/courier/sw_donkey/sw_donkey.vmdl",
-        context
-    )
-    PrecacheResource(
-        "model",
-        "models/items/courier/jumo/jumo.vmdl",
-        context
-    )
-    PrecacheResource(
-        "model",
-        "models/heroes/shopkeeper/shopkeeper.vmdl",
-        context
-    )
-
-    PrecacheResource(
-        "model",
-        "models/items/courier/blotto_and_stick/blotto.vmdl",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_death_prophet.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_puck.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_viper.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_bane.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_vo_marci.vsndevts",
-        context
-    )
-    
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_ancient_apparition.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_disruptor.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_lion.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_naga_siren.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_slardar.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_visage.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_razor.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts",
-        context
-    )
-
-    PrecacheResource(
-        "soundfile",
-        "soundevents/voscripts/game_sounds_vo_techies.vsndevts",
-        context
-    )
-
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_items.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/voscripts/game_sounds_vo_tusk.vsndevts",
-        context
-    )
-
-    PrecacheResource(
-        "soundfile",
-        "soundevents/voscripts/game_sounds_vo_announcer_dlc_bastion.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/voscripts/game_sounds_vo_announcer_dlc_axe.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/voscripts/game_sounds_vo_announcer_dlc_lina.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/voscripts/game_sounds_vo_announcer_dlc_bristleback.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/voscripts/game_sounds_vo_announcer_dlc_stormspirit.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/voscripts/game_sounds_vo_announcer_dlc_workshop_pirate.vsndevts",
-        context
-    )
-
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_witchdoctor.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_death_prophet.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_slark.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_troll_warlord.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_shredder.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_rattletrap.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts",
-        context
-    )
-    PrecacheResource(
-        "soundfile",
-        "soundevents/game_sounds_heroes/game_sounds_drowranger.vsndevts",
-        context
-    )
-
-    PrecacheResource(
-        "soundfile",
-        "soundevents/music/dsadowski_01/soundevents_music.vsndevts",
-        context
-    )
-    PrecacheUnitByNameSync("npc_dota_shop_right_mid", context)
-    PrecacheUnitByNameSync("npc_dota_shop_right_top", context)
-    PrecacheUnitByNameSync("npc_dota_shop_right_bot", context)
-    PrecacheUnitByNameSync("npc_dota_shop_left_mid", context)
-    PrecacheUnitByNameSync("npc_dota_shop_left_top", context)
-    PrecacheUnitByNameSync("npc_dota_shop_left_bot", context)
-    PrecacheUnitByNameSync("npc_dota_shop_mid_mid", context)
-    PrecacheUnitByNameSync("npc_dota_shop_mid_top", context)
-    PrecacheUnitByNameSync("npc_dota_shop_mid_bot", context)
-    PrecacheUnitByNameSync("npc_dota_trap", context)
-    PrecacheUnitByNameSync("npc_dota_chain", context)
-    PrecacheUnitByNameSync("npc_dota_booey", context)
-
-    PrecacheResource(
-        "soundfile",
-        "soundevents/custom_sounds.vsndevts",
-        context
-    )
-
+    for _,particleName in pairs(precache.particles) do
+        PrecacheResource("particle", particleName, context)
+    end
+    for _,modelName in pairs(precache.models) do
+        PrecacheResource("model", modelName, context)
+    end
+    for _,unitName in pairs(precache.units) do
+        PrecacheUnitByNameSync(unitName, context)
+    end
+    for _,soundfile in pairs(precache.units) do
+        PrecacheResource("soundfile", soundfile, context)
+    end
 end
 
 -- Create the game mode when we activate
@@ -972,42 +486,24 @@ function CBattleship8D:InitGameMode()
         LUA_MODIFIER_MOTION_NONE
     )
 
-    g_EasyMissionsNorth["npc_dota_shop_left_bot"] = {}
-    g_EasyMissionsNorth["npc_dota_shop_right_bot"] = {}
-    g_EasyMissionsNorth["npc_dota_shop_right_mid"] = {}
-    g_EasyMissionsNorth["npc_dota_shop_left_mid"] = {}
-    g_EasyMissionsNorth["npc_dota_shop_left_top"] = {}
-    g_EasyMissionsNorth["npc_dota_shop_mid_bot"] = {}
-    g_EasyMissionsNorth["npc_dota_shop_mid_mid"] = {}
-    g_EasyMissionsNorth["npc_dota_shop_mid_top"] = {}
-    g_EasyMissionsNorth["npc_dota_shop_right_top"] = {}
-    g_HardMissionsNorth["npc_dota_shop_left_bot"] = {}
-    g_HardMissionsNorth["npc_dota_shop_right_bot"] = {}
-    g_HardMissionsNorth["npc_dota_shop_right_mid"] = {}
-    g_HardMissionsNorth["npc_dota_shop_left_mid"] = {}
-    g_HardMissionsNorth["npc_dota_shop_left_top"] = {}
-    g_HardMissionsNorth["npc_dota_shop_mid_bot"] = {}
-    g_HardMissionsNorth["npc_dota_shop_mid_mid"] = {}
-    g_HardMissionsNorth["npc_dota_shop_mid_top"] = {}
-    g_HardMissionsNorth["npc_dota_shop_right_top"] = {}
-    g_EasyMissionsSouth["npc_dota_shop_left_bot"] = {}
-    g_EasyMissionsSouth["npc_dota_shop_right_bot"] = {}
-    g_EasyMissionsSouth["npc_dota_shop_right_mid"] = {}
-    g_EasyMissionsSouth["npc_dota_shop_left_mid"] = {}
-    g_EasyMissionsSouth["npc_dota_shop_left_top"] = {}
-    g_EasyMissionsSouth["npc_dota_shop_mid_bot"] = {}
-    g_EasyMissionsSouth["npc_dota_shop_mid_mid"] = {}
-    g_EasyMissionsSouth["npc_dota_shop_mid_top"] = {}
-    g_EasyMissionsSouth["npc_dota_shop_right_top"] = {}
-    g_HardMissionsSouth["npc_dota_shop_left_bot"] = {}
-    g_HardMissionsSouth["npc_dota_shop_right_bot"] = {}
-    g_HardMissionsSouth["npc_dota_shop_right_mid"] = {}
-    g_HardMissionsSouth["npc_dota_shop_left_mid"] = {}
-    g_HardMissionsSouth["npc_dota_shop_left_top"] = {}
-    g_HardMissionsSouth["npc_dota_shop_mid_bot"] = {}
-    g_HardMissionsSouth["npc_dota_shop_mid_mid"] = {}
-    g_HardMissionsSouth["npc_dota_shop_mid_top"] = {}
-    g_HardMissionsSouth["npc_dota_shop_right_top"] = {}
+    local shopLocations = {
+        "npc_dota_shop_left_bot",
+        "npc_dota_shop_right_bot",
+        "npc_dota_shop_right_mid",
+        "npc_dota_shop_left_mid",
+        "npc_dota_shop_left_top",
+        "npc_dota_shop_mid_bot",
+        "npc_dota_shop_mid_mid",
+        "npc_dota_shop_mid_top",
+        "npc_dota_shop_right_top",
+    }
+
+    for _, shop in pairs(shopLocations) do
+        g_EasyMissionsNorth[shop] = {}
+        g_EasyMissionsSouth[shop] = {}
+        g_HardMissionsNorth[shop] = {}
+        g_HardMissionsSouth[shop] = {}
+    end
 
     table.insert(
         g_EasyMissionsNorth["npc_dota_shop_left_top"],
@@ -1863,8 +1359,6 @@ function CBattleship8D:OnPlayerChat(keys)
     end
 end
 
-
-
 function CBattleship8D:BountyRuneFilter(filterTable)
     -- Check if the order is the glyph type
     ----print("i'm in BountyRuneFilter!!!!!!!!!!!!!!!!!!!")
@@ -2244,6 +1738,12 @@ function CBattleship8D:OnThink()
                             hero:SetOriginalModel("models/noah_boat.vmdl")
                         end
 
+                        local size = hero.original_size            
+                        if size then
+                            local scale = 1 + GameRules:GetGameTime() * 0.0005
+                            hero:SetModelScale(size * scale)
+                        end
+
                         if string.match(hero:GetName(), "crystal_maiden") then hero:SetMana((hero:GetStrength() - 1) / 3) end
                         if string.match(hero:GetName(), "tusk") then
                             local casterUnit = hero
@@ -2258,24 +1758,18 @@ function CBattleship8D:OnThink()
                                 if casterUnit:GetHealthPercent() < 7 and g_HeroHP[casterUnit:GetPlayerID()] > 6 then
                                     casterUnit:SetModel("models/battleship_boat4.vmdl")
                                     casterUnit:SetOriginalModel("models/battleship_boat4.vmdl")
-                                    -- ----print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
                                 elseif casterUnit:GetHealthPercent() < 25 and g_HeroHP[casterUnit:GetPlayerID()] > 24 then
                                     casterUnit:SetModel("models/battleship_boat3.vmdl")
                                     casterUnit:SetOriginalModel("models/battleship_boat3.vmdl")
-                                    -- ----print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
                                 elseif casterUnit:GetHealthPercent() < 50 and g_HeroHP[casterUnit:GetPlayerID()] > 49 then
                                     casterUnit:SetModel("models/battleship_boat2.vmdl")
                                     casterUnit:SetOriginalModel("models/battleship_boat2.vmdl")
-                                    -- ----print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
                                 elseif casterUnit:GetHealthPercent() < 75 and g_HeroHP[casterUnit:GetPlayerID()] > 74 then
                                     casterUnit:SetModel("models/battleship_boat1.vmdl")
                                     casterUnit:SetOriginalModel("models/battleship_boat1.vmdl")
-                                    -- ----print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
                                 elseif casterUnit:GetHealthPercent() > 74 and g_HeroHP[casterUnit:GetPlayerID()] < 75 then
                                     casterUnit:SetModel("models/battleship_boat0.vmdl")
                                     casterUnit:SetOriginalModel("models/battleship_boat0.vmdl")
-                                    -- ----print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
-                                    -- ----print('[AbilityFunctions] battleshipHealth found hp to be' .. casterUnit:GetHealthPercent())
                                 end
                                 g_HeroHP[casterUnit:GetPlayerID()] = casterUnit:GetHealthPercent()
                             end
@@ -2288,10 +1782,8 @@ function CBattleship8D:OnThink()
                         local directionTwo = casterPos - targetUnitTwo:GetAbsOrigin()
 
                         if PlayerResource:GetConnectionState(hero:GetPlayerID()) ~= 2 or hero:HasOwnerAbandoned() or hero:HasModifier("pergatory_perm") then
-                            ----print('inside disconnect')
                             if g_DisconnectTime[hero] ~= nil then
                                 g_DisconnectTime[hero] = g_DisconnectTime[hero] + 2
-                                ----print('disconnect time: ' .. g_DisconnectTime[hero])
                             else
                                 g_DisconnectTime[hero] = 1
                             end
@@ -2304,7 +1796,6 @@ function CBattleship8D:OnThink()
                                 })
                             end
                             if g_DisconnectTime[hero] > 180 or hero:HasOwnerAbandoned() then
-                                ----print('bigger than 180')
                                 local casterPos = hero:GetAbsOrigin()
                                 local targetUnitOne = Entities:FindByName(nil, "south_kicker")
                                 local targetUnitTwo = Entities:FindByName(nil, "north_kicker")
