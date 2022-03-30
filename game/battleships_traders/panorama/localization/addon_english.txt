@@ -3204,7 +3204,7 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 
 
 
-         "death_beam_fire_lua"  "Spiney Death Beam"
+         "death_beam_fire_lua"  "Spinney Death Beam"
 
  		"ufo_invis"  "Cloaking"
         
