@@ -55,11 +55,11 @@
 	
 	"unstick"						"Unstick"
 	
-	"game" "Game:"
-	"emp_gold_in" "Emp Gold:"
-	"creep_spawn_in" "Creeps:"
-	"north_gold_each" "North Emp Gold Each:"
-	"south_gold_each" "South Emp Gold Each:"
+	"game" "Game"
+	"emp_gold_in" "Emp Gold"
+	"creep_spawn_in" "Creeps"
+	"north_gold_each" "North Emp Gold"
+	"south_gold_each" "South Emp Gold"
 	"zoom_lbl"	"Zoom"
 	
 
@@ -3291,7 +3291,7 @@ Continue"
 		"BestDamageDealt" "Damage Dealt"
 		"score_Name" "radar"
 		"score_Points" "0"
-		"deadline"			"Reaserch Deadline"
+		"deadline"			"research Deadline"
 
 		"vengefulspirit_nether_swap_datadriven"									"Switcharoo"
 		"crab_walk"  "Skuttle"
@@ -3301,5 +3301,5 @@ Continue"
 
 
 		"abaddon_aphotic_shield_battleship"  "Force Field"
-		"deploy_science_tower" "Deploy Reaserch Platform"
+		"deploy_science_tower" "Deploy research Platform"
 }

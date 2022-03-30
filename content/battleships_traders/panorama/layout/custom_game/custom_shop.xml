@@ -62,27 +62,27 @@
 		<Panel class="timersHolder">
 		<Panel class="timerRowTop">
 				<Label id="GameTime" text="#game" class="timerLabelt"/>
-				<Label id="GameTimeVal" text="" class="timerLabelValt"/>
+				<Label id="GameTimeVal" text="0:00" class="timerLabelVal"/>
 			</Panel>
 			<Panel class="timerRow">
 				<Label id="CreepSpawn" text="#creep_spawn_in" class="timerLabel"/>
-				<Label id="CreepSpawnVal" text="" class="timerLabelVal"/>
+				<Label id="CreepSpawnVal" text="0:00" class="timerLabelVal"/>
 			</Panel>
 			<Panel class="timerRow">
 				<Label id="EmpireGold" text="#emp_gold_in" class="timerLabel" />
-				<Label id="EmpireGoldVal" text="" class="timerLabelVal"/>
+				<Label id="EmpireGoldVal" text="0:00" class="timerLabelVal"/>
 			</Panel>
 		</Panel>
 	</Panel>
-	<Panel class="empireRight" id="empirePanel">
+	<Panel id="empirePanel">
 		<Panel class="empireRight">
 			<Panel class="timerRowEmpL">
 				<Label id="SouthEmp" text="#south_gold_each" class="timerLabelEmp"/>
 				<Label id="SouthEmpVal"  class="empLabelVal" text=""/>
 			</Panel>
 			<Panel class="timerRowEmpR">
-				<Label id="NorthEmp" text="#north_gold_each" class="timerLabelEmp"/>
 				<Label id="NorthEmpVal"  class="empLabelVal" text=""/>
+				<Label id="NorthEmp" text="#north_gold_each" class="timerLabelEmp"/>
 			</Panel>
 		</Panel>
 	</Panel>

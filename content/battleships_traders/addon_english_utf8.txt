@@ -4299,10 +4299,10 @@
          "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_bonus_damage"  "ATTACK DAMAGE: 35+"
          "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_base_attack_time"  "ATTACK COOL DOWN:"
 
-    "DOTA_Tooltip_ability_deploy_science_tower"  "Deploy Reaserch Platform"
-        "DOTA_Tooltip_ability_deploy_science_tower_Description"  "Drop your reaserch platform at the target location.  Platform remains until killed or deployed elsewhere and uses items stored in the first %slots% slots of your stash."
+    "DOTA_Tooltip_ability_deploy_science_tower"  "Deploy research Platform"
+        "DOTA_Tooltip_ability_deploy_science_tower_Description"  "Drop your research platform at the target location.  Platform remains until killed or deployed elsewhere and uses items stored in the first %slots% slots of your stash."
         "DOTA_Tooltip_ability_deploy_science_tower_slots"  "SLOTS:"
-          "DOTA_Tooltip_ability_deadline_battleship"  "Reaserch Deadline"
+          "DOTA_Tooltip_ability_deadline_battleship"  "research Deadline"
 
         "DOTA_Tooltip_ability_deadline_battleship_Description"  "You know how to work around deadlines and help your firends do the same.  Reset all cooldowns on target ship."
         "DOTA_Tooltip_ability_deadline_battleship_cast_range"  "Range:"

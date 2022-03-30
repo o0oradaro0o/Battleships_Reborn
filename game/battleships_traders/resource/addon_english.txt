@@ -4254,7 +4254,7 @@
 		"DOTA_Tooltip_ability_ironclad_weapon_ice_duration"                               "DURATION:"
 
 		"DOTA_Tooltip_ability_ironclad_weapon_splash"                                     "Explosive Rounds"
-		"DOTA_Tooltip_ability_ironclad_weapon_splash_Description"                         "Cannons fire ammo that explod on impact, also delaing damage around their target.\nCasting this ability will swap to Incendiary Rounds"
+		"DOTA_Tooltip_ability_ironclad_weapon_splash_Description"                         "Cannons fire ammo that explod on impact, also delaing damage around their target.\nCasting this ability will swap to Incendiary Rounds."
 		"DOTA_Tooltip_ability_ironclad_weapon_splash_splash_pct"                          "SPLASH PCT:"
 		"DOTA_Tooltip_ability_ironclad_weapon_splash_aoe"                                 "AOE:"
 
@@ -4287,40 +4287,40 @@
         "DOTA_Tooltip_ability_crab_grab_slow"  "%SLOW:"
 
         "DOTA_Tooltip_ability_ufo_invis"  "Cloaking"
-        "DOTA_Tooltip_ability_ufo_invis_Description"  "While the UFO is at least %radius% range away from an enemy, it's cloaking technology activates, becoming invisible after %cooldown% seconds."
+        "DOTA_Tooltip_ability_ufo_invis_Description"  "While the UFO is at least %radius% range away from an enemy, its cloaking technology activates, becoming invisible after %cooldown% seconds."
         "DOTA_Tooltip_ability_ufo_invis_radius"  "RADIUS:"
 
         "DOTA_Tooltip_modifier_ufo_invis"  "Cloaked"
-        "DOTA_Tooltip_modifier_ufo_invis_description"  "The UFO has engaged its cloaking"
+        "DOTA_Tooltip_modifier_ufo_invis_description"  "The UFO has engaged its cloaking technology, becoming invisible."
 
-         "DOTA_Tooltip_ability_death_beam_fire_lua"  "Spiney Death Beam"
-        "DOTA_Tooltip_ability_death_beam_fire_lua_Description"  "Three deadly beams shoot our of your ship and rotate at a fixed speed blasting enemies!"
+         "DOTA_Tooltip_ability_death_beam_fire_lua"  "Spinney Death Beam"
+        "DOTA_Tooltip_ability_death_beam_fire_lua_Description"  "Three deadly beams shoot out of your ship and rotate at a fixed speed blasting enemies!"
         "DOTA_Tooltip_ability_death_beam_fire_lua_duration"  "DURATION:"
-        "DOTA_Tooltip_ability_death_beam_fire_lua_start_radius"  "BEEM WIDTH:"
+        "DOTA_Tooltip_ability_death_beam_fire_lua_start_radius"  "BEAM WIDTH:"
         "DOTA_Tooltip_ability_death_beam_fire_lua_damage"  "DAMAGE:"
 
-        "DOTA_Tooltip_ability_tractor_beam"  "Tractor Beem"
-        "DOTA_Tooltip_ability_tractor_beam_Description"  "Sucks all ships in wide cone toward you and holds them close."
+        "DOTA_Tooltip_ability_tractor_beam"  "Tractor Beam"
+        "DOTA_Tooltip_ability_tractor_beam_Description"  "Engage your Tractor Beam, pulling enemies caught in it towards you."
         "DOTA_Tooltip_ability_tractor_beam_duration"  "DURATION:"
         "DOTA_Tooltip_ability_tractor_beam_range"  "RANGE:"
 
         "DOTA_Tooltip_ability_we_come_in_peace_battleship"  "We Come In Peace"
-        "DOTA_Tooltip_ability_we_come_in_peace_battleship_Description"  "Our intentions are totally peaceful! Look we've turned off our weapons... now you stop fireing too."
+        "DOTA_Tooltip_ability_we_come_in_peace_battleship_Description"  "Our intentions are totally peaceful! Look we've turned off our weapons... now you stop firing too."
         "DOTA_Tooltip_ability_we_come_in_peace_battleship_peace_duration"  "DURATION:"
 
 
-         "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven"  "Transform"
-        "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_Description"  "Maybe you'll fail less as someone else. (note that some forms have a regular unit attack)"
+        "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven"  "Transform"
+        "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_Description"  "Maybe you'll fail less as someone else. Maybe you'll succeed more as someone else. Either way, you'll be different."
         "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_duration"  "DURATION:"
-         "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_bonus_damage"  "ATTACK DAMAGE: 35+"
-         "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_base_attack_time"  "ATTACK COOL DOWN:"
+        "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_bonus_damage"  "ATTACK DAMAGE: 35+"
+        "DOTA_Tooltip_ability_terrorblade_metamorphosis_datadriven_base_attack_time"  "ATTACK COOL DOWN:"
 
-        "DOTA_Tooltip_ability_deploy_science_tower"  "Deploy Reaserch Platform"
-        "DOTA_Tooltip_ability_deploy_science_tower_Description"  "Drop your reaserch platform at the target location.  Platform remains until killed or deployed elsewhere and uses items stored in the first %slots% slots of your stash."
+        "DOTA_Tooltip_ability_deploy_science_tower"  "Research Platform"
+        "DOTA_Tooltip_ability_deploy_science_tower_Description"  "Drop your research platform at the target location. Platform remains until killed or deployed elsewhere, and uses items stored in the first %slots% slots of your stash."
         "DOTA_Tooltip_ability_deploy_science_tower_slots"  "SLOTS:"
-          "DOTA_Tooltip_ability_deadline_battleship"  "Reaserch Deadline"
-
-        "DOTA_Tooltip_ability_deadline_battleship_Description"  "You know how to work around deadlines and help your firends do the same.  Reset all cooldowns on target ship."
+    
+        "DOTA_Tooltip_ability_deadline_battleship"  "Research Deadline"
+        "DOTA_Tooltip_ability_deadline_battleship_Description"  "You know how to work around deadlines, and help your friends do the same. Reset all cooldowns on target ship."
         "DOTA_Tooltip_ability_deadline_battleship_cast_range"  "Range:"
          
   }
