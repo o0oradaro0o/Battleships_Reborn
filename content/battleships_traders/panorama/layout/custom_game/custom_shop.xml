@@ -1835,15 +1835,15 @@
 				   <Label hittest="false" class="ability_name" text="#pistols_battleship"/>
 				</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('ursa','launch_craft')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/terrorblade_metamorphosis.png" onmouseover="DOTAShowAbilityTooltip('terrorblade_metamorphosis_datadriven')" onmouseout="DOTAHideAbilityTooltip()" />
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/transform.png" onmouseover="DOTAShowAbilityTooltip('terrorblade_metamorphosis_datadriven')" onmouseout="DOTAHideAbilityTooltip()" />
                        <Label hittest="false" class="ability_name" text="#transform"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('ursa','launch_all')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/dark_seer_surge.png" onmouseover="DOTAShowAbilityTooltip('speed_shift')" onmouseout="DOTAHideAbilityTooltip()" />
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/speed_shift.png" onmouseover="DOTAShowAbilityTooltip('speed_shift')" onmouseout="DOTAHideAbilityTooltip()" />
                        <Label hittest="false" class="ability_name" text="#speed_shift"/>
 					</Panel>
 					<Panel hittest="false" class="ability" onmouseover="showText('ursa','Over_And_Out')" >
-						<Image class="ability_image" src="file://{images}/custom_game/Abilities/vengefulspirit_nether_swap.png" onmouseover="DOTAShowAbilityTooltip('vengefulspirit_nether_swap_datadriven')" onmouseout="DOTAHideAbilityTooltip()" />
+						<Image class="ability_image" src="file://{images}/custom_game/Abilities/swap.png" onmouseover="DOTAShowAbilityTooltip('vengefulspirit_nether_swap_datadriven')" onmouseout="DOTAHideAbilityTooltip()" />
                        <Label hittest="false" class="ability_name" text="#vengefulspirit_nether_swap_datadriven"/>
 					</Panel>
 				</Panel>

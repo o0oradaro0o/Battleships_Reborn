@@ -13844,7 +13844,7 @@
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"FightRecapLevel"				"2"
-	"AbilityTextureName"			"vengefulspirit_nether_swap"
+	"AbilityTextureName"			"swap"
 	"CastFilterRejectCaster" 		"1"
 
 
@@ -13928,7 +13928,7 @@
 		"BaseClass"           "ability_lua"
 		"ScriptFile"          "heroes/fail_boat/speedshift.lua"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"  "dark_seer_surge"
+		"AbilityTextureName"  "speed_shift"
 		"AbilitySpecial"
 		{
 
@@ -13946,7 +13946,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"				"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	"AbilityTextureName"			"terrorblade_metamorphosis"
+	"AbilityTextureName"			"transform"
 
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
@@ -14237,7 +14237,7 @@
       "04"
       {
         "var_type"              "FIELD_INTEGER"
-        "damage"           			"25 50 75 100"
+        "damage"           			"20 30 40 50"
       }
       "05"
       {
@@ -14253,6 +14253,11 @@
       {
         "var_type"              "FIELD_INTEGER"
         "beem_rof"           			"3 4 5 6"
+      }
+			"08"
+      {
+        "var_type"              "FIELD_INTEGER"
+        "dps"           			"200 300 400 500"
       }
     }
 	}
