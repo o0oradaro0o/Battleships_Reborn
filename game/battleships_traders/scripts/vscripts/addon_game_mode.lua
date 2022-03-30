@@ -346,6 +346,8 @@ g_HardMissionsNorth = {}
 g_EasyMissionsSouth = {}
 g_HardMissionsSouth = {}
 
+g_endsize=0
+
 function Precache(context)
     for ind = 0, 11, 1 do
         g_IsHeroDisconnected[ind] = 0
@@ -1261,11 +1263,8 @@ function CBattleship8D:OnPlayerChat(keys)
         steamID32 = PlayerResource:GetSteamAccountID(playerID)
         local text = keys.text
 
-        if (steamID32 == g_radar or steamID32 == g_zentrix or steamID32 == 5879425 or steamID32 == 93116118) and string.match(text, "egg") and GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-            local Data = {
-                player_id = playerID
-            }
-            CustomGameEventManager:Send_ServerToAllClients("Show_Special_Ui", Data)
+        if (steamID32 == g_radar or steamID32 == g_zentrix or steamID32 == 5879425 or steamID32 == 93116118) and string.match(text, "endsize") and GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+        g_endsize=1
         end
        
 
@@ -1295,7 +1294,7 @@ function CBattleship8D:OnPlayerChat(keys)
                             if size and not hero.bigger then
                                 local scale = 2.5
                                 if RandomInt(1, 4) == 2 then scale = 0.5 end
-
+                                
                                 hero:SetModelScale(size * scale)
                                 Timers:CreateTimer(7, function()
                                     hero:SetModelScale(size)
@@ -1739,9 +1738,11 @@ function CBattleship8D:OnThink()
                         end
 
                         local size = hero.original_size            
-                        if size then
+                        if size and g_endsize==0 then
                             local scale = 1 + GameRules:GetGameTime() * 0.0005
                             hero:SetModelScale(size * scale)
+                        elseif g_endsize==1 then
+                            hero:SetModelScale(size)
                         end
 
                         if string.match(hero:GetName(), "crystal_maiden") then hero:SetMana((hero:GetStrength() - 1) / 3) end

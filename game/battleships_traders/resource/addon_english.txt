@@ -4298,6 +4298,7 @@
         "DOTA_Tooltip_ability_death_beam_fire_lua_duration"  "DURATION:"
         "DOTA_Tooltip_ability_death_beam_fire_lua_start_radius"  "BEAM WIDTH:"
         "DOTA_Tooltip_ability_death_beam_fire_lua_damage"  "DAMAGE:"
+        "DOTA_Tooltip_ability_death_beam_fire_lua_dps"  "DPS:"
 
         "DOTA_Tooltip_ability_tractor_beam"  "Tractor Beam"
         "DOTA_Tooltip_ability_tractor_beam_Description"  "Engage your Tractor Beam, pulling enemies caught in it towards you."
