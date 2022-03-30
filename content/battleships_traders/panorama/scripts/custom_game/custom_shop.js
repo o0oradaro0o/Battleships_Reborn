@@ -772,61 +772,6 @@ function fixUI() {
     .FindChildTraverse("quickbuy")
     .FindChildTraverse("QuickBuyRows")
     .FindChildTraverse("StickyItemSlotContainer").style.visibility = "collapse";
-
-  newCenterUI
-    .FindChildTraverse("health_mana")
-    .FindChildTraverse("HealthManaContainer")
-    .FindChildTraverse("ManaContainer").style.visibility = "collapse";
-
-  newCenterUI
-    .FindChildTraverse("health_mana")
-    .FindChildTraverse("HealthManaContainer")
-    .FindChildTraverse("HealthContainer").style.height = "40px";
-
-  if (g_BoatName == "sniper") {
-    newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("ManaContainer").style.visibility = "visible";
-    newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("ManaContainer")
-      .FindChildTraverse("ManaLabel").style.visibility = "collapse";
-    newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("ManaContainer")
-      .FindChildTraverse("ManaRegenLabel").style.visibility = "collapse";
-
-    newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("HealthContainer").style.height = "20px";
-  }
-  // else if (g_BoatName == "crystal_maiden") {
-  // 	newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("ManaContainer").style.visibility = "visible";
-  // 	newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("ManaContainer").FindChildTraverse("ManaLabel").style.visibility = "visible";
-  // 	newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("ManaContainer").FindChildTraverse("ManaRegenLabel").style.visibility = "collapse";
-
-  // 	newCenterUI.FindChildTraverse("health_mana").FindChildTraverse("HealthManaContainer").FindChildTraverse("HealthContainer").style.height = "20px"
-  // }
-  else if (g_BoatName == "razor") {
-    newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("ManaContainer").style.visibility = "visible";
-    newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("ManaContainer")
-      .FindChildTraverse("ManaRegenLabel").style.visibility = "collapse";
-
-    newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("HealthContainer").style.height = "20px";
-  }
 }
 function fillShop() {
   fixUI();
@@ -1140,97 +1085,6 @@ var FadeTrade = true;
 var ticksOfFade = 0;
 function buyBoat(BoatName, cost) {
   g_BoatName = BoatName;
-  var newCenterUI = $.GetContextPanel()
-    .GetParent()
-    .GetParent()
-    .GetParent()
-    .FindChildTraverse("HUDElements")
-    .FindChildTraverse("lower_hud")
-    .FindChildTraverse("center_with_stats")
-    .FindChildTraverse("center_block");
-
-  if (BoatName == "sniper") {
-    newCenterUI
-    .FindChildTraverse("health_mana")
-    .FindChildTraverse("HealthManaContainer")
-    .FindChildTraverse("HealthContainer").style.paddingTop = "0px";
-    newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("ManaContainer").style.visibility = "visible";
-    newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("ManaContainer")
-      .FindChildTraverse("ManaLabel").style.visibility = "collapse";
-    newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("ManaContainer")
-      .FindChildTraverse("ManaRegenLabel").style.visibility = "collapse";
-
-    newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("HealthContainer").style.height = "20px";
-  } else if (BoatName == "crystal_maiden") {
-    newCenterUI
-    .FindChildTraverse("health_mana")
-    .FindChildTraverse("HealthManaContainer")
-    .FindChildTraverse("HealthContainer").style.paddingTop = "0px";
-    newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("ManaContainer").style.visibility = "visible";
-    newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("ManaContainer")
-      .FindChildTraverse("ManaLabel").style.visibility = "visible";
-    newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("ManaContainer")
-      .FindChildTraverse("ManaRegenLabel").style.visibility = "collapse";
-
-    newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("HealthContainer").style.height = "20px";
-  } else if (BoatName == "razor") {
-    newCenterUI
-    .FindChildTraverse("health_mana")
-    .FindChildTraverse("HealthManaContainer")
-    .FindChildTraverse("HealthContainer").style.paddingTop = "0px";
-    newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("ManaContainer").style.visibility = "visible";
-    newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("ManaContainer")
-      .FindChildTraverse("ManaRegenLabel").style.visibility = "collapse";
-
-    newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("HealthContainer").style.height = "20px";
-  } else {
-    newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("ManaContainer").style.visibility = "collapse";
-
-    newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("HealthContainer").style.height = "40px";
-      newCenterUI
-      .FindChildTraverse("health_mana")
-      .FindChildTraverse("HealthManaContainer")
-      .FindChildTraverse("HealthContainer").style.paddingTop = "15px";
-  }
 
   GameEvents.SendCustomGameEventToServer("buyBoat", {
     text: BoatName,
@@ -1451,7 +1305,6 @@ function hideSecret() {
   $("#HiddenUI").style.visibility = "collapse";
   Game.EmitSound("ui.chat_close");
 }
-
 
 function hideShipShop() {
   $.Msg("---hideShipShop--------");
@@ -1824,13 +1677,10 @@ function PingLoc(data) {
   }
 }
 
-
 function showSpecialUi(data) {
   if (data.player_id == Players.GetLocalPlayer()) {
-
     $("#HiddenUI").style.visibility = "visible";
   }
-
 }
 
 function TopNotification(msg) {
