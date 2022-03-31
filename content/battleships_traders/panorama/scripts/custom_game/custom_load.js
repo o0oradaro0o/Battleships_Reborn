@@ -1,43 +1,31 @@
 "use strict";
 var hidden = true;
 
-var currentlearn=1;
-var maxpages=12;
+var currentlearn = 1;
+var maxpages = 12;
 
-
-
-	$.Schedule(10, next);
+$.Schedule(10, next);
 
 function prev() {
-	$("#learn"+currentlearn).style.width = "0%";
-if(currentlearn==1)
-{
-	currentlearn=maxpages
-}
-else
-{
-	currentlearn--;
-}
+  $("#learn" + currentlearn).style.width = "0%";
+  if (currentlearn == 1) {
+    currentlearn = maxpages;
+  } else {
+    currentlearn--;
+  }
 
-		$("#learn"+currentlearn).style.width = "100%";
+  $("#learn" + currentlearn).style.width = "100%";
 
-	$("#pageCountLabel").text = currentlearn+"/"+maxpages
-
+  $("#pageCountLabel").text = currentlearn + "/" + maxpages;
 }
 function next() {
-	$("#learn"+currentlearn).style.width = "0%";
-	if(currentlearn==maxpages)
-	{
-		currentlearn=1
-	}
-	else
-	{
-		currentlearn++;
-	}
+  $("#learn" + currentlearn).style.width = "0%";
+  if (currentlearn == maxpages) {
+    currentlearn = 1;
+  } else {
+    currentlearn++;
+  }
 
-	$("#learn"+currentlearn).style.width = "100%";
-	$("#pageCountLabel").text = currentlearn+"/"+maxpages
+  $("#learn" + currentlearn).style.width = "100%";
+  $("#pageCountLabel").text = currentlearn + "/" + maxpages;
 }
-
-
-

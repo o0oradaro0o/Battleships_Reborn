@@ -3061,16 +3061,29 @@ function dropTower( keys )
 					if Item ~= nil then Item:RemoveSelf() end
 			end
 	end
-
+	local hpmod = 0
 	for itemSlot = 9, 8+ability:GetSpecialValueFor("slots"), 1 do
 			if casterUnit ~= nil then
 					local Item = casterUnit:GetItemInSlot(itemSlot)
 					if Item ~= nil then
 							local newItem = CreateItem(Item:GetName(), casterUnit.myTower, casterUnit.myTower)
 							casterUnit.myTower:AddItem(newItem)
+							
+							if string.match( Item:GetName(),"hull_one" ) then
+									hpmod = 500
+							elseif string.match( Item:GetName(),"hull_two" ) then
+									hpmod = 800
+							elseif string.match( Item:GetName(),"hull_three" ) then
+									hpmod = 1500
+							elseif string.match( Item:GetName(),"hull_four" ) then
+									hpmod = 2400
+							end
 					end
 				end
 		end
+		casterUnit.myTower:SetBaseMaxHealth(650+hpmod)
+		casterUnit.myTower:SetMaxHealth(650+hpmod)
+		casterUnit.myTower:SetHealth(650+hpmod)
 end
 
 function ResetCoolDowns(args)
