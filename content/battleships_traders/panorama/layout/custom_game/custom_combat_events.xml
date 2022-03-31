@@ -1,0 +1,56 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/custom_game/custom_combat_events.css" />
+		</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/custom_combat_events.js" />
+	</scripts>
+	 
+  <Panel id="CombatEventsRoot">
+  <Panel id="CombatEvents" class="RevealCollapsed" hittest="false">
+    <Panel id="ToastLinesWrapper" hittest="false">
+      <Panel id="ToastManager" class="RevealCollapsed" hittest="false">
+
+        <!-- <Panel class="DOTACombatEventRow ToastPanel AllyEvent LocalPlayerInvolved LocalPlayerVictim event_dota_player_kill">
+          <Panel id="SlashContainer">
+            <Panel id="TeamColorBar" />
+          </Panel>
+          <Label id="EventLabel" class="EventListLabel" text="Northern Alliance VicFrank [SHIPS] 74 shared bounty">
+            <Panel class="CombatEventKillIcon" />
+            <Image class="InlineImage CombatEventHeroIcon" src="file://{images}/custom_game/heroes/npc_dota_hero_zuus.png" scaling="stretch-to-fit-preserve-aspect" />
+            <Panel class="CombatEventGoldIcon" />
+          </Label>
+        </Panel>
+
+        <Panel class="DOTACombatEventRow ToastPanel EnemyEvent LocalPlayerInvolved LocalPlayerVictim event_dota_player_kill Collapse">
+          <Panel id="SlashContainer">
+            <Panel id="TeamColorBar" />
+          </Panel>
+          <Label id="EventLabel" class="EventListLabel" text="Northern Alliance VicFrank [SHIPS] 74 shared bounty">
+            <Image class="InlineImage CombatEventHeroIcon" src="file://{images}/custom_game/heroes/npc_dota_hero_zuus.png" scaling="stretch-to-fit-preserve-aspect" />
+            <Panel class="CombatEventKillIcon" />
+            <Image class="InlineImage CombatEventHeroIcon" src="file://{images}/custom_game/heroes/npc_dota_hero_zuus.png" scaling="stretch-to-fit-preserve-aspect" />
+            <Panel class="CombatEventGoldIcon" />
+          </Label>
+          <Panel id="EventIcon" />
+        </Panel>
+
+        <Panel class="DOTACombatEventRow ToastPanel AllyEvent LocalPlayerInvolved LocalPlayerKiller event_dota_player_kill Collapse" hittest="false" hittestchildren="false" require-composition-layer="true" always-cache-composition-layer="true"  >
+          <Panel id="SlashContainer">
+            <Panel id="TeamColorBar" />
+          </Panel>
+          <Label id="EventLabel" class="EventListLabel" text="VicFrank [SHIPS] Neutral Creep Xpiotiva 0">
+            <Image class="InlineImage CombatEventHeroIcon" src="file://{images}/custom_game/heroes/npc_dota_hero_zuus.png" scaling="stretch-to-fit-preserve-aspect" />
+            <Panel class="CombatEventKillIcon" />
+            <Image class="InlineImage CombatEventHeroIcon" src="file://{images}/custom_game/heroes/npc_dota_hero_zuus.png" scaling="stretch-to-fit-preserve-aspect" />
+            <Panel class="CombatEventGoldIcon" />
+          </Label>
+          <Panel id="EventIcon" />
+        </Panel> -->
+
+      </Panel>
+    </Panel>
+  </Panel>
+  </Panel>
+</root>

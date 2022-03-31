@@ -1791,10 +1791,8 @@ function AddNotification(msg, panel) {
 function AddNotificationbot(msg, panel) {
   var newNotification = true;
   var lastNotification = panel.GetChild(panel.GetChildCount() - 1);
-  //$.Msg(msg)
 
   msg.continue = msg.continue || false;
-  //msg.continue = true;
 
   if (lastNotification != null && msg.continue) newNotification = false;
 
@@ -1817,13 +1815,11 @@ function AddNotificationbot(msg, panel) {
   else notification = $.CreatePanel("Label", lastNotification, "");
 
   if (typeof msg.duration != "number") {
-    //$.Msg("[Notifications] Notification Duration is not a number!");
     msg.duration = 3;
   }
 
   if (newNotification) {
     $.Schedule(msg.duration, function () {
-      //$.Msg('callback')
       if (lastNotification.deleted) return;
 
       lastNotification.DeleteAsync(0);
@@ -1861,6 +1857,7 @@ function AddNotificationbot(msg, panel) {
     }
   }
 }
+
 function GetSteamID32(playerID) {
   var playerInfo = Game.GetPlayerInfo(playerID);
 
