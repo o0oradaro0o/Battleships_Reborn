@@ -1292,8 +1292,8 @@ function CBattleship8D:OnPlayerChat(keys)
                             local size = hero.original_size
 
                             if size and not hero.bigger then
-                                local scale = 2.5
-                                if RandomInt(1, 4) == 2 then scale = 0.5 end
+                                local scale = 0.5
+                                -- if RandomInt(1, 4) == 2 then scale = 0.5 end
                                 
                                 hero:SetModelScale(size * scale)
                                 Timers:CreateTimer(7, function()
@@ -1308,11 +1308,11 @@ function CBattleship8D:OnPlayerChat(keys)
         end
 
         -- kill ryan every time someone question marks
-        if teamonly == 0 and text == "?" and steamID32 ~= g_rere then
+        if teamonly == 0 and text == "?" then
             for _,hero in pairs(HeroList:GetAllHeroes()) do
                 local heroPlayerOwnerID = hero:GetPlayerOwnerID()
                 local heroPlayerOwnerSteamID = PlayerResource:GetSteamAccountID(heroPlayerOwnerID)
-                if hero:IsAlive() and heroPlayerOwnerSteamID == g_rere then                    
+                if hero:IsAlive() and hero:GetPlayerID() == playerID then                    
                     local explosion_radius = 200
 
                     local particleName = "particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf"
@@ -1326,7 +1326,7 @@ function CBattleship8D:OnPlayerChat(keys)
 
                     ScreenShake(hero:GetAbsOrigin(), 10, 0.3, 0.5, 1000, 0, true)
 
-                    --hero:ForceKill(true)
+                    hero:ForceKill(true)
                 end
             end
         end
@@ -2144,7 +2144,9 @@ function CBattleship8D:OnNPCSpawned(keys)
 
     if npc:IsRealHero() then
         Timers:CreateTimer(.03, function()
-            npc.original_size = npc:GetModelScale()            
+            npc.original_size = npc:GetModelScale()       
+            local scale = 1 + GameRules:GetGameTime() * 0.0005
+            npc:SetModelScale(npc:GetModelScale()   * scale)     
             for i=0,21 do
                 local item = npc:GetItemInSlot(i)
                 if item then
