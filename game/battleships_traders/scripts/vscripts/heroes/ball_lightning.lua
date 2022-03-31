@@ -16,9 +16,9 @@ function ball_lightning_lua:OnSpellStart()
     local target_loc = self:GetCursorPosition()
     local caster_loc = caster:GetAbsOrigin()
     -- Ability parameters
-    local speed       = self:GetSpecialValueFor("ball_speed")
-    local vision      =   self:GetSpecialValueFor("ball_vision_radius")
-    local tree_radius     =   100
+    local speed = self:GetSpecialValueFor("ball_speed")
+    local vision =  self:GetSpecialValueFor("ball_vision_radius")
+    local tree_radius = 100
     local max_distance = self:GetSpecialValueFor("max_distance")
 
     -- Motion control properties
@@ -30,15 +30,14 @@ function ball_lightning_lua:OnSpellStart()
     caster:EmitSound("Hero_StormSpirit.BallLightning")
     caster:EmitSound("Hero_StormSpirit.BallLightning.Loop")
 
-    -- Fire the ball of death!
     local projectile =
     {
       Ability       = self,
       EffectName      = "particles/basic_projectile/no_particle_particle.vpcf",
       vSpawnOrigin    = caster_loc,
       fDistance     = self.distance,
-      fStartRadius    = damage_radius,
-      fEndRadius      = damage_radius,
+      fStartRadius    = tree_radius,
+      fEndRadius      = tree_radius,
       Source        = caster,
       bHasFrontalCone   = false,
       bReplaceExisting  = false,
@@ -50,8 +49,7 @@ function ball_lightning_lua:OnSpellStart()
       bProvidesVision   = true,
       iVisionRadius     = vision,
       iVisionTeamNumber   = caster:GetTeamNumber(),
-      ExtraData     = {damage = damage,
-        damagePerUnit = damagePerUnit,
+      ExtraData     = {
         tree_radius = tree_radius,
         speed = speed * FrameTime()
       }
@@ -59,9 +57,7 @@ function ball_lightning_lua:OnSpellStart()
 
     self.projectileID = ProjectileManager:CreateLinearProjectile(projectile)
 
-    -- Add Motion-Controller Modifier
     caster:AddNewModifier(caster, self, "modifier_ball_lightning", {})
---    StartAnimation(self:GetCaster(), {duration=10.0, activity=ACT_DOTA_OVERRIDE_ABILITY_4, rate=1.0})
   end
 end
 
@@ -100,18 +96,6 @@ function ball_lightning_lua:OnProjectileThink_ExtraData(location, ExtraData)
   end
 end
 
-function ball_lightning_lua:OnProjectileHit_ExtraData(target, location, ExtraData)
-    if IsServer() then
-    if target then
-      local caster = self:GetCaster()
-      local damage = ExtraData.damage + ExtraData.damagePerUnit * math.floor(self.traveled * 0.01)
-      local damage_flags = DOTA_DAMAGE_FLAG_NONE
-
-     
-    end
-  end
-end
-
 --- BALL LIGHTNING MODIFIER
 modifier_ball_lightning = modifier_ball_lightning or class({})
 
@@ -136,22 +120,12 @@ function modifier_ball_lightning:OnDestroy()
   ParticleManager:DestroyParticle(self.particle, true)
 end
 
-
--- function modifier_ball_lightning:GetEffectName()
---   return "particles/units/heroes/hero_stormspirit/stormspirit_ball_lightning.vpcf"
--- end
-
 function modifier_ball_lightning:CheckState()
   local state = {
    [MODIFIER_STATE_MAGIC_IMMUNE] = true
   }
   return state
 end
-
--- function modifier_ball_lightning:GetEffectAttachType()
---   -- Yep, this is a thing.
---   return PATTACH_ROOTBONE_FOLLOW
--- end
 
 function modifier_ball_lightning:DeclareFunctions()
   local funcs = {
@@ -162,10 +136,6 @@ function modifier_ball_lightning:DeclareFunctions()
   }
   return funcs
 end
-
--- function modifier_ball_lightning:GetOverrideAnimation()
---   return ACT_DOTA_OVERRIDE_ABILITY_4
--- end
 
 function modifier_ball_lightning:GetAbsoluteNoDamagePhysical()
   return 1
