@@ -70,6 +70,8 @@ end
 function item_spread:OnProjectileHit(ability, caster, target, location)
   if not IsServer() then return end
 
+  if target == nil then return end
+
   local damage = ability:GetSpecialValueFor( "dmg" )
 
   local hit_sounds = {

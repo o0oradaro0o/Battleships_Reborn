@@ -1263,7 +1263,7 @@ function CBattleship8D:OnPlayerChat(keys)
         steamID32 = PlayerResource:GetSteamAccountID(playerID)
         local text = keys.text
 
-        if (steamID32 == g_radar or steamID32 == g_zentrix or steamID32 == 5879425 or steamID32 == 93116118) and string.match(text, "endsize") and GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+        if (steamID32 == g_radar) and string.match(text, "done") and GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
         g_endsize=1
         end
        

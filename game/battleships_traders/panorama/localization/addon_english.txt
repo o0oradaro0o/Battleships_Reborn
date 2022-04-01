@@ -3247,6 +3247,7 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"discord"			"Click to join us on discord!"
 		"News_Title"		"News!"
 		"News_Content"		"3/31/2022
+- Fixed health bars
 - Added new weapon, Axes - Has splash damage
 - Added new 1k: The Crab 
 - Added new 3k: Failboat
