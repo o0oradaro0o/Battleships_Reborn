@@ -14,7 +14,7 @@
 	</script>
 	<Panel>
 		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/custom_shop.xml" />
-		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/custom_combat_events.xml" />
+		<!-- <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/custom_combat_events.xml" /> -->
 		<CustomUIElement type="GameInfo" layoutfile="file://{resources}/layout/custom_game/overthrow_game_info.xml" />
 		<CustomUIElement type="GameSetup" layoutfile="file://{resources}/layout/custom_game/team_select.xml" />
 	</Panel>
