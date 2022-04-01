@@ -2667,7 +2667,7 @@
     "dummy_vision3000"                                                                "Dummy Vision3000"
     "dummy_vision800"                                                                 "Dummy Vision800"
     "dummy_unit_cluster"                                                              "Dummy Unit Cluster"
-    "daralect_vessle"                                                                 "Daralect Vessle"
+    "daralect_vessle"                                                                 "Daralect Vessel"
     "npc_dota_battle_ind"                                                             "Dota Battle Ind"
     "npc_dota_booey"                                                                  "Dota Booey"
     "npc_dota_hero_tiny_battleship8d"                                                 "Dota Hero Tiny Battleship8d"

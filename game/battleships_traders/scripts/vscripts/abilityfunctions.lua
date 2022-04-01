@@ -3105,6 +3105,9 @@ end
 function StartPeace(args)
 	removeAllBows(args.target)
 	removeAllBows(args.caster)
+	Timers:CreateTimer(3,function()
+		StopPeace(args)
+	end)
 end
 
 function StopPeace(args)

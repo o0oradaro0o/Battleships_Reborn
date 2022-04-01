@@ -21,7 +21,6 @@ function modifier_ufo_invis:CheckState()
 	  [MODIFIER_STATE_FLYING] = canfly,
 	}
   end
-  
 
 function modifier_ufo_invis:OnIntervalThink()
 	if not IsServer() then return end
