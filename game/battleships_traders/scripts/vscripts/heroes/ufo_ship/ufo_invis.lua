@@ -4,21 +4,23 @@ LinkLuaModifier( "modifier_ufo_invis", "heroes/ufo_ship/ufo_invis.lua", LUA_MODI
 function ufo_invis:GetIntrinsicModifierName() return "modifier_ufo_invis" end
 
 modifier_ufo_invis = class({})
+array={}
 function modifier_ufo_invis:IsHidden() return not self:GetParent():HasModifier("modifier_invisible") end
 function modifier_ufo_invis:IsDebuff() return false end
 function modifier_ufo_invis:IsPurgable() return false end
 
 function modifier_ufo_invis:OnCreated()
 	if not IsServer() then return end
-
-	self.canFly = false
+	array[self:GetCaster()]=false
 	self:StartIntervalThink(0.1)
 	self:OnIntervalThink()
 end
 
--- function modifier_ufo_invis:CheckState()
--- 	return { [MODIFIER_STATE_FLYING] = self.canfly }
--- end
+function modifier_ufo_invis:CheckState()
+	return {
+	  [MODIFIER_STATE_FLYING] = array[self:GetCaster()],
+	}
+end
 
 function modifier_ufo_invis:OnIntervalThink()
 	if not IsServer() then return end
@@ -40,7 +42,7 @@ function modifier_ufo_invis:OnIntervalThink()
 
 	if #enemies > 0 then
 		if caster:HasModifier("modifier_invisible") then
-			self.canFly = false
+		array[self:GetCaster()]=false
 			caster:RemoveModifierByName("modifier_invisible")
 		end
 		if ability:IsActivated() then
@@ -56,7 +58,7 @@ function modifier_ufo_invis:OnIntervalThink()
 
 	if ability:IsCooldownReady() and ability:IsActivated() and not caster:HasModifier("modifier_invisible") then
 		caster:AddNewModifier(self:GetCaster(), self, "modifier_invisible", {})
-		self.canfly = true
+		array[self:GetCaster()]=true
 	end
 end
 

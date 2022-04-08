@@ -14173,7 +14173,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-
+		"LevelsBetweenUpgrades"					"3"
+		"RequiredLevel"						"2"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -14266,7 +14267,8 @@
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"tractor_beam"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-
+		"LevelsBetweenUpgrades"					"3"
+		"RequiredLevel"						"2"
     "AbilityCastPoint"              "0"
     "AbilityCooldown"				"21.0 18.0 15.0"
 		"AbilityChannelTime"			"3 3.5 4"

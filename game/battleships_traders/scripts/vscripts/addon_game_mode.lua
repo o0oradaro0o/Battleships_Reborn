@@ -346,7 +346,7 @@ g_HardMissionsNorth = {}
 g_EasyMissionsSouth = {}
 g_HardMissionsSouth = {}
 
-g_endsize=0
+g_endsize=1
 
 function Precache(context)
     for ind = 0, 11, 1 do
@@ -1263,7 +1263,11 @@ function CBattleship8D:OnPlayerChat(keys)
         steamID32 = PlayerResource:GetSteamAccountID(playerID)
         local text = keys.text
 
-        if (steamID32 == g_radar) and string.match(text, "done") and GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+        if (steamID32 == g_radar) and string.match(text, "grow") and GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+        g_endsize=0
+        end
+        
+        if (steamID32 == g_radar) and string.match(text, "nogrow") and GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
         g_endsize=1
         end
        
@@ -2144,7 +2148,9 @@ function CBattleship8D:OnNPCSpawned(keys)
 
     if npc:IsRealHero() then
         Timers:CreateTimer(.03, function()
-            npc.original_size = npc:GetModelScale()       
+        if npc.original_size == nil then
+            npc.original_size = npc:GetModelScale() 
+        end
             local scale = 1 + GameRules:GetGameTime() * 0.0005
             npc:SetModelScale(npc:GetModelScale()   * scale)     
             for i=0,21 do
@@ -5562,9 +5568,10 @@ function become_boat(casterUnit, heroname)
                     if Item ~= nil and string.match(Item:GetName(), "boat") then RemoveAndDeleteItem(casterUnit, Item) end
                 end
             end
+             
         end
     end
-
+   
     Timers:CreateTimer(
         1,
         function()
@@ -5577,7 +5584,7 @@ function become_boat(casterUnit, heroname)
                 }
             )
             ----print(storage:GetHeroName(plyID) .. math.floor(GameRules:GetGameTime()/60+0.5))
-
+            
             CustomGameEventManager:Send_ServerToAllClients("Boat_Spawned", data)
         end
     )
