@@ -371,7 +371,7 @@ function Precache(context)
     for _,unitName in pairs(precache.units) do
         PrecacheUnitByNameSync(unitName, context)
     end
-    for _,soundfile in pairs(precache.units) do
+    for _,soundfile in pairs(precache.sounds) do
         PrecacheResource("soundfile", soundfile, context)
     end
 end
@@ -2144,9 +2144,9 @@ function CBattleship8D:OnNPCSpawned(keys)
 
     if npc:IsRealHero() then
         Timers:CreateTimer(.03, function()
-            npc.original_size = npc:GetModelScale()       
+            npc.original_size = npc:GetModelScale()
             local scale = 1 + GameRules:GetGameTime() * 0.0005
-            npc:SetModelScale(npc:GetModelScale()   * scale)     
+            npc:SetModelScale(npc:GetModelScale() * scale)     
             for i=0,21 do
                 local item = npc:GetItemInSlot(i)
                 if item then
