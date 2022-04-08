@@ -13846,7 +13846,9 @@
 	"FightRecapLevel"				"2"
 	"AbilityTextureName"			"swap"
 	"CastFilterRejectCaster" 		"1"
-
+		"MaxLevel"						"3"
+		"LevelsBetweenUpgrades"					"3"
+		"RequiredLevel"					"2"
 
 	// Precache
 	//-------------------------------------------------------------------------------------------------------------
