@@ -605,7 +605,8 @@ function fixUI() {
   NewShopUI.FindChildTraverse("Main")
     .FindChildTraverse("HeightLimiter")
     .FindChildTraverse("GridMainShop").style.visibility = "visible";
-  $("#ship_shop_content_holder").style.visibility = "collapse";
+  if ($("#ship_shop_content_holder"))
+    $("#ship_shop_content_holder").style.visibility = "collapse";
   NewShopUI.FindChildTraverse("Main")
     .FindChildTraverse("HeightLimiter")
     .FindChildTraverse("GridMainShop")
@@ -1094,7 +1095,6 @@ function buyBoat(BoatName, cost) {
     .FindChildTraverse("center_with_stats")
     .FindChildTraverse("center_block");
 
-
   if (BoatName == "sniper") {
     newCenterUI
       .FindChildTraverse("health_mana")
@@ -1106,19 +1106,17 @@ function buyBoat(BoatName, cost) {
       .FindChildTraverse("HealthManaContainer")
       .FindChildTraverse("ManaContainer")
       .FindChildTraverse("ManaRegenLabel").style.visibility = "collapse";
-
   } else if (BoatName == "crystal_maiden") {
     newCenterUI
-    .FindChildTraverse("health_mana")
-    .FindChildTraverse("HealthManaContainer")
-    .FindChildTraverse("ManaContainer")
-    .FindChildTraverse("ManaLabel").style.visibility = "collapse";
+      .FindChildTraverse("health_mana")
+      .FindChildTraverse("HealthManaContainer")
+      .FindChildTraverse("ManaContainer")
+      .FindChildTraverse("ManaLabel").style.visibility = "collapse";
     newCenterUI
       .FindChildTraverse("health_mana")
       .FindChildTraverse("HealthManaContainer")
       .FindChildTraverse("ManaContainer")
       .FindChildTraverse("ManaRegenLabel").style.visibility = "collapse";
-
   } else if (BoatName == "razor") {
     newCenterUI
       .FindChildTraverse("health_mana")
@@ -1130,8 +1128,7 @@ function buyBoat(BoatName, cost) {
       .FindChildTraverse("HealthManaContainer")
       .FindChildTraverse("ManaContainer")
       .FindChildTraverse("ManaRegenLabel").style.visibility = "collapse";
-
-  } 
+  }
 
   GameEvents.SendCustomGameEventToServer("buyBoat", {
     text: BoatName,

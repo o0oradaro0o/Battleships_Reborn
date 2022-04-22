@@ -346,8 +346,6 @@ g_HardMissionsNorth = {}
 g_EasyMissionsSouth = {}
 g_HardMissionsSouth = {}
 
-g_endsize=1
-
 function Precache(context)
     for ind = 0, 11, 1 do
         g_IsHeroDisconnected[ind] = 0
@@ -1263,15 +1261,6 @@ function CBattleship8D:OnPlayerChat(keys)
         steamID32 = PlayerResource:GetSteamAccountID(playerID)
         local text = keys.text
 
-        if (steamID32 == g_radar) and string.match(text, "grow") and GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-        g_endsize=0
-        end
-        
-        if (steamID32 == g_radar) and string.match(text, "nogrow") and GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-        g_endsize=1
-        end
-       
-
         if (steamID32 == g_radar or steamID32 == g_zentrix or steamID32 == 5879425 or steamID32 == 93116118) and string.match(text, "TUG MODE ACTIVATE!") and GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then g_TugMode = 1 end
         if teamonly == 0 and string.match(text, "forget to zoom") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
             Notifications:TopToAll({
@@ -1280,35 +1269,6 @@ function CBattleship8D:OnPlayerChat(keys)
                 style = {color = "#888888", fontSize = "70px;"}
             })
 
-        end
-
-        if string.match(text, "bigger") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
-        -- Notifications:TopToAll({
-        --         text = "Now is not the time to use that!",
-        --         duration = 5.0,
-        --         style = {color = "#444499", fontSize = "70px;"}
-        --     })
-        -- print( "player id" .. playerID)
-            for _, hero in pairs(HeroList:GetAllHeroes()) do
-                if hero ~= nil and hero:IsOwnedByAnyPlayer() then
-                    if hero:IsRealHero() then
-                        if hero:GetPlayerID() == playerID then
-                            local size = hero.original_size
-
-                            if size and not hero.bigger then
-                                local scale = 0.5
-                                -- if RandomInt(1, 4) == 2 then scale = 0.5 end
-                                
-                                hero:SetModelScale(size * scale)
-                                Timers:CreateTimer(7, function()
-                                    hero:SetModelScale(size)
-                                    hero.bigger = false
-                                end)
-                            end
-                        end
-                    end
-                end
-            end
         end
 
         -- kill ryan every time someone question marks
@@ -1741,14 +1701,6 @@ function CBattleship8D:OnThink()
                             hero:SetOriginalModel("models/noah_boat.vmdl")
                         end
 
-                        local size = hero.original_size            
-                        if size and g_endsize==0 then
-                            local scale = 1 + GameRules:GetGameTime() * 0.0005
-                            hero:SetModelScale(size * scale)
-                        elseif g_endsize==1 then
-                            hero:SetModelScale(size)
-                        end
-
                         if string.match(hero:GetName(), "crystal_maiden") then hero:SetMana((hero:GetStrength() - 1) / 3) end
                         if string.match(hero:GetName(), "tusk") then
                             local casterUnit = hero
@@ -2148,11 +2100,6 @@ function CBattleship8D:OnNPCSpawned(keys)
 
     if npc:IsRealHero() then
         Timers:CreateTimer(.03, function()
-        if npc.original_size == nil then
-            npc.original_size = npc:GetModelScale() 
-        end
-            local scale = 1 + GameRules:GetGameTime() * 0.0005
-            npc:SetModelScale(npc:GetModelScale() * scale)     
             for i=0,21 do
                 local item = npc:GetItemInSlot(i)
                 if item then

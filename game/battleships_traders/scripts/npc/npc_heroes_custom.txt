@@ -8,13 +8,10 @@
     //=================================================================================================================
     "npc_dota_hero_tiny_battleship8d" 
     {
-
         "override_hero"             "npc_dota_hero_zuus"          // Hero to override
 	
        "Model" "models/start_boat.vmdl"    // Model.
         "SoundSet"          "Hero_Kunkka"  	
-		//"VoiceFile"			"scripts/voscripts/game_sounds_vo_kunkka.txt"		// Name of sound set.
-		
 		 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
@@ -428,16 +425,11 @@
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 	}
 
-	
-	
-	
 		//=================================================================================================================
     // HERO: npc_dota_hero_rubick cat
     //=================================================================================================================
 	 "npc_dota_hero_rubick_battleship8d" 
     {
-
-
         "override_hero"             "npc_dota_hero_rattletrap"          // Hero to override
 
 		 "Model" "models/catamaran.vmdl"   // Model.
@@ -572,7 +564,7 @@
 	}
 
 	//=================================================================================================================
-	// HERO: Crab Shipo
+	// HERO: Crab Ship
 	//=================================================================================================================
 	"crab_ship"
 	{
@@ -592,10 +584,10 @@
 		"StatusMana"                "0"
 		"StatusManaRegen"           "0.0"
 
-		"MovementSpeed"         "300"
+		"MovementSpeed"         "280"
 		"MovementTurnRate"      "0.7"
 
-		"StatusHealth"				"1000"
+		"StatusHealth"				"900"
 		"StatusHealthRegen"			"5.0"
 
 		"ArmorPhysical"       "0"
