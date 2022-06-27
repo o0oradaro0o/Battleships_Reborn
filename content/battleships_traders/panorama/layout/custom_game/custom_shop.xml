@@ -98,8 +98,8 @@
 				<Label hittest="false" id="zoomLbl" text="#zoom_lbl" class="ZoomLabel"/>
 				<Label hittest="false" id="zoomLblVal" text="" class="ZoomLabelVal"/>
 			</Panel>
-			<DOTASettingsSlider hittest="false" id="ZoomSlider" >
-			</DOTASettingsSlider>
+
+			<DOTASettingsSlider  id="ZoomSlider" convar="dota_camera_distance" min="1000" max="2000" text="Camera distance" />
 		</Button>
 	</Panel>
 	
@@ -209,7 +209,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#hp" />
-							<Label hittest="false" class="boat_stat_label_val" text="825" />
+							<Label hittest="false" class="boat_stat_label_val" text="925" />
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
@@ -3228,4 +3228,3 @@
 
     </Panel>
 </root>
-

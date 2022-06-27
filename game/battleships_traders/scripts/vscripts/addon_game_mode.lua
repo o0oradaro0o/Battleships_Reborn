@@ -1291,7 +1291,19 @@ function CBattleship8D:OnPlayerChat(keys)
                     ScreenShake(hero:GetAbsOrigin(), 10, 0.3, 0.5, 1000, 0, true)
 
                     hero:ForceKill(true)
+                    -- if hero is dead add to respawn time
+                elseif hero:IsAlive() == false and hero:GetPlayerID() == playerID then
+                    --show a message to all players
+                    Notifications:TopToAll({
+                        text = "Ryan's '?' cost him 10 additional seconds to respawn",
+                        duration = 5.0,
+                        style = {color = "#ff8888", fontSize = "70px;"}
+                    })
+                    local respawnTime = hero:GetRespawnTime()
+                    hero:SetTimeUntilRespawn(respawnTime + 10)
+                    
                 end
+                
             end
         end
 

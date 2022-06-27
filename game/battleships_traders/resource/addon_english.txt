@@ -2169,7 +2169,7 @@
     "DOTA_Tooltip_ability_shadow_shaman_shackles_battleship_total_damage" "TOTAL DAMAGE:"
     
     "DOTA_Tooltip_ability_ruse_battleship"                  "It's a ruse"
-    "DOTA_Tooltip_ability_ruse_battleship_Description"            "Select a target and after 2 seconds deal a percentage of the damage that you took to the target, while healing for the same amount. \nDamage is not dealt if you are dead. \n \nHigher levels decrease cooldown. and increase damage percentage"
+    "DOTA_Tooltip_ability_ruse_battleship_Description"            "Select a target and after 2 seconds deal a percentage of the damage that you took to the target, while healing for the same amount. \nDamage is not dealt if you are dead. Damage is reduced the farther you are from the target starting at 600 units away from the target. \n \nHigher levels decrease cooldown. and increase damage percentage"
     "DOTA_Tooltip_ability_ruse_battleship_duration"     "DURATION:"
     "DOTA_Tooltip_ability_ruse_battleship_dmg"      "PRECENT DAMAGE REFLECTED:"
     

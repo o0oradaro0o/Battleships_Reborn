@@ -459,9 +459,6 @@
 }
 #ZoomSlider {
   margin-top: -20px;
-  margin-right: 20px;
-  margin-left: 20px;
-  z-index: 1;
 }
 #ZoomSliderBox {
   visibility: collapse;

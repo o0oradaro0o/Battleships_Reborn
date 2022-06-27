@@ -1096,6 +1096,8 @@ end
 
 -- Deals damage to the enemy and heals self.
 function reflect(args)
+	-- check how far caster is from target
+
 	-- Set up ability, get HP from cast time.
 	local caster = args.caster
 	local abil = caster:GetAbilityByIndex(2)
@@ -1107,10 +1109,16 @@ function reflect(args)
 
 	-- Deal reflected damage to the enemy
 	local target = args.target
+	local distance = (caster:GetAbsOrigin() - target:GetAbsOrigin()):Length2D()
+	local damage = ruseDmg
+	if distance > 600 then
+		local damage = ruseDmg*600 / (distance)
+	end
+
 	local damageTable = {
 		victim = target,
 		attacker = caster,
-		damage = ruseDmg,
+		damage = damage,
 		damage_type = DAMAGE_TYPE_PURE
 	}
 
