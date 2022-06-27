@@ -1272,7 +1272,7 @@ function CBattleship8D:OnPlayerChat(keys)
         end
 
         -- kill ryan every time someone question marks
-        if teamonly == 0 and text == "?" then
+        if teamonly == 0 and text == "?" || steamID32 == g_rere then
             for _,hero in pairs(HeroList:GetAllHeroes()) do
                 local heroPlayerOwnerID = hero:GetPlayerOwnerID()
                 local heroPlayerOwnerSteamID = PlayerResource:GetSteamAccountID(heroPlayerOwnerID)
