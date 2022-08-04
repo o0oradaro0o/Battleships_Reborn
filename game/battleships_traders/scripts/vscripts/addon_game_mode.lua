@@ -2688,17 +2688,17 @@ function AttachCosmetics(hero)
                     true
                 )
                 if hero.myTower == nil then
-                local unit = CreateUnitByName(
-                    "npc_dota_science_tower", 
-                    hero:GetAttachmentOrigin(1), 
-                    true, 
-                    hero, 
-                    hero, 
-                    hero:GetTeam()
-                    )
+                    local unit = CreateUnitByName(
+                        "npc_dota_science_tower", 
+                        hero:GetAttachmentOrigin(1), 
+                        true, 
+                        hero, 
+                        hero, 
+                        hero:GetTeam())
                     unit.owner = hero
                     hero.myTower = unit
                     unit:CreatureLevelUp(10)
+                    unit:SetControllableByPlayer(hero:GetPlayerID(), true)
                 end
         end
     end
@@ -4706,14 +4706,16 @@ function CBattleship8D:OnEntityKilled(keys)
     end
 
     if killedUnit:GetGoldBounty() and killerEntity:IsOwnedByAnyPlayer() and killedUnit ~= killerEntity and  killedUnit:GetTeam() ~= killerEntity:GetTeam()  then
-        if g_CreepsKilled[killerEntity:GetPlayerID()] == nil then g_CreepsKilled[killerEntity:GetPlayerID()] = 0 end
-        g_CreepsKilled[killerEntity:GetPlayerID()] = g_CreepsKilled[killerEntity:GetPlayerID()] + 1
+        local killerPlayerId = killerEntity:GetPlayerOwnerID()
+        local killerHero = PlayerResource:GetSelectedHeroEntity(killerPlayerId)
+        if g_CreepsKilled[killerPlayerId] == nil then g_CreepsKilled[killerPlayerId] = 0 end
+        g_CreepsKilled[killerPlayerId] = g_CreepsKilled[killerPlayerId] + 1
 
         local deathEffect = ParticleManager:CreateParticleForPlayer(
             "particles/basic_projectile/last_hit.vpcf",
             PATTACH_ABSORIGIN_FOLLOW,
             killedUnit,
-            PlayerResource:GetPlayer(killerEntity:GetPlayerID())
+            PlayerResource:GetPlayer(killerPlayerId)
         )
         Timers:CreateTimer(
             1,
@@ -4722,11 +4724,11 @@ function CBattleship8D:OnEntityKilled(keys)
             end
         )
         SendOverheadEventMessage(
-            PlayerResource:GetPlayer(killerEntity:GetPlayerID()),
+            PlayerResource:GetPlayer(killerPlayerId),
             OVERHEAD_ALERT_GOLD,
             killedUnit,
             killedUnit:GetGoldBounty() / 2,
-            PlayerResource:GetPlayer(killerEntity:GetPlayerID())
+            PlayerResource:GetPlayer(killerPlayerId)
         )
 
         for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
@@ -4753,20 +4755,20 @@ function CBattleship8D:OnEntityKilled(keys)
         elseif killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
             g_TotalGoldCollectedByNorth = g_TotalGoldCollectedByNorth + killedUnit:GetGoldBounty()
         end
-        killerEntity:SetGold(
-            killerEntity:GetGold() + killedUnit:GetGoldBounty() / 2,
+        killerHero:SetGold(
+            killerHero:GetGold() + killedUnit:GetGoldBounty() / 2,
             true
         )
-        killerEntity:SetGold(0, false)
+        killerHero:SetGold(0, false)
        
         if killedUnit:IsRealHero() then
-            killerEntity:SetGold(
-                killerEntity:GetGold() + killedUnit:GetGoldBounty() / 2,
+            killerHero:SetGold(
+                killerHero:GetGold() + killedUnit:GetGoldBounty() / 2,
                 true
             )
         else
-            killerEntity:SetGold(
-            killerEntity:GetGold() - killedUnit:GetGoldBounty() / 2,
+            killerHero:SetGold(
+            killerHero:GetGold() - killedUnit:GetGoldBounty() / 2,
             true
         )
         end
