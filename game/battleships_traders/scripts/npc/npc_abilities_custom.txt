@@ -13762,9 +13762,7 @@
 			}
 		}
 	}
-
-
-
+	
 	"crab_grab"
 	{
 		"BaseClass"           "ability_lua"

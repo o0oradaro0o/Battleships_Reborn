@@ -3060,12 +3060,13 @@ function dropTower( keys )
 	local ability = keys.ability
 	local casterUnit = keys.caster
 	local point = keys.target_points[1]
-	casterUnit.myTower:SetOrigin(point)
-	casterUnit.myTower.deploied=true;
+	local tower = casterUnit.myTower
+	FindClearSpaceForUnit(tower, point, true)
+	tower.deploied=true;
 
 	for itemSlot = 0, 15, 1 do
-			if 	casterUnit.myTower ~= nil then
-					local Item = 	casterUnit.myTower:GetItemInSlot(itemSlot)
+			if 	tower ~= nil then
+					local Item = 	tower:GetItemInSlot(itemSlot)
 					if Item ~= nil then Item:RemoveSelf() end
 			end
 	end
@@ -3074,8 +3075,8 @@ function dropTower( keys )
 			if casterUnit ~= nil then
 					local Item = casterUnit:GetItemInSlot(itemSlot)
 					if Item ~= nil then
-							local newItem = CreateItem(Item:GetName(), casterUnit.myTower, casterUnit.myTower)
-							casterUnit.myTower:AddItem(newItem)
+							local newItem = CreateItem(Item:GetName(), tower, tower)
+							tower:AddItem(newItem)
 							
 							if string.match( Item:GetName(),"hull_one" ) then
 									hpmod = 500
@@ -3089,9 +3090,9 @@ function dropTower( keys )
 					end
 				end
 		end
-		casterUnit.myTower:SetBaseMaxHealth(650+hpmod)
-		casterUnit.myTower:SetMaxHealth(650+hpmod)
-		casterUnit.myTower:SetHealth(650+hpmod)
+		tower:SetBaseMaxHealth(650+hpmod)
+		tower:SetMaxHealth(650+hpmod)
+		tower:SetHealth(650+hpmod)
 end
 
 function ResetCoolDowns(args)

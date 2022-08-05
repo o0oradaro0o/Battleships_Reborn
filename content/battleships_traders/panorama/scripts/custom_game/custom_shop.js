@@ -2217,7 +2217,7 @@ function OnLeftButtonPressed() {
 // Handle Right Button events
 // Find any entities right-clicked on
 // if the units are invuln, modify the right-click behaviour
-function OnRightButtonPressed() {
+function OnMouseClicked(button) {
   //$.Msg("RIGHT BUTTON CAST")
   try {
     var localHeroIndex = Players.GetPlayerHeroEntityIndex(
@@ -2238,7 +2238,7 @@ function OnRightButtonPressed() {
           Entities.NoHealthBar(e.entityIndex)
         ) {
           //$.Msg("INVULNERABLE UNIT CLICKED")
-          fillAndShow();
+          if (button == "left") fillAndShow();
           return CONSUME_EVENT;
         }
         if (
@@ -2289,12 +2289,12 @@ GameUI.SetMouseCallback(function (eventName, arg) {
     //$.Msg("MOUSE: ", eventName, " -- ", arg, " -- ", GameUI.GetClickBehaviors())
     if (arg === 0) {
       //$.Msg("RIGHT BUTTON CAST")
-      return OnRightButtonPressed();
+      return OnMouseClicked("left");
     }
     // on right click, call the right-click function
     if (arg === 1) {
       //$.Msg("RIGHT BUTTON CAST")
-      return OnRightButtonPressed();
+      return OnMouseClicked("right");
     }
   }
   return CONTINUE_PROCESSING_EVENT;
