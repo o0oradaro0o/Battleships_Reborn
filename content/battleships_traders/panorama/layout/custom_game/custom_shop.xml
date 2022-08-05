@@ -2022,7 +2022,7 @@
 					</Panel>	
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#ms" />
-							<Label hittest="false" class="boat_stat_label_val" text="30" />
+							<Label hittest="false" class="boat_stat_label_val" text="380" />
 					</Panel>
 					<Panel hittest="false" class="boat_row">
 							<Label hittest="false" class="boat_stat_label" text="#regen" />

@@ -1272,7 +1272,7 @@ function CBattleship8D:OnPlayerChat(keys)
         end
 
         -- kill ryan every time someone question marks
-        if teamonly == 0 and text == "?" or steamID32 == g_rere then
+        if teamonly == 0 and text == "?" and steamID32 ~= g_rere then
             for _,hero in pairs(HeroList:GetAllHeroes()) do
                 local heroPlayerOwnerID = hero:GetPlayerOwnerID()
                 local heroPlayerOwnerSteamID = PlayerResource:GetSteamAccountID(heroPlayerOwnerID)
@@ -1295,15 +1295,13 @@ function CBattleship8D:OnPlayerChat(keys)
                 elseif hero:IsAlive() == false and hero:GetPlayerID() == playerID then
                     --show a message to all players
                     Notifications:TopToAll({
-                        text = "Ryan's '?' cost him 10 additional seconds to respawn",
+                        text = "your '?' cost him 10 additional seconds to respawn",
                         duration = 5.0,
                         style = {color = "#ff8888", fontSize = "70px;"}
                     })
                     local respawnTime = hero:GetRespawnTime()
                     hero:SetTimeUntilRespawn(respawnTime + 10)
-                    
                 end
-                
             end
         end
 
