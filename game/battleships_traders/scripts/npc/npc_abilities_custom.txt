@@ -1553,28 +1553,29 @@
 	//=================================================================================================================
 	"kunkka_torrent_bships"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"FightRecapLevel"				"1"
 		"BaseClass" 					"kunkka_torrent"
 		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Ability.Torrent"
+		"HasScepterUpgrade"			"1"
+		"AbilityDraftScepterAbility"    "kunkka_torrent_storm"
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1500"
-		"AbilityCastPoint"				"0.05 0.05 0.05 0.05"
+		"AbilityCastRange"				"1300"
+		"AbilityCastPoint"				"0.4"
+		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"25.0 22.0 19.0 16.0"
-
-		// Damage.
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"100 150 200 250"
+		"AbilityCooldown"				"25 22 19 16"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0 0 0 0"
+		"AbilityManaCost"				"0"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -1582,40 +1583,26 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"radius"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"320"
+				"value"					"320"
 			}
-			"02"
+			"movespeed_bonus"			"-35"
+			"slow_duration"				"0.5 1.0 1.5 2.0"
+			"stun_duration"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"movespeed_bonus"			"-35"
+				"value"								"1.6"
 			}
-			"03"
+			"delay"						"1.6 1.6 1.6 1.6"
+			"torrent_damage"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"0.5 1.0 1.5 2.0"
+				"value"			"100 150 200 250"
 			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				".75 1.25 1.75 2.25"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"delay"						"1.6 1.6 1.6 1.6"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"torrent_damage"			"100 150 200 250"
-				"LinkedSpecialBonus"		"special_bonus_unique_kunkka_2"
-			}
+			"damage_tick_interval"				"0.2"
 		}		
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 	
 	//=================================================================================================================
@@ -4062,11 +4049,10 @@
 				"ModifierName" "big_boom_explode"
 			}
 			"RunScript"
-				{
-					"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
-					"Function"			"vahSound"
-				}
-
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"vahSound"
+			}
 		}
 		"OnOwnerDied"
 		{
@@ -4077,66 +4063,64 @@
 				}
 		}
 
-		
-		
-
 		"Modifiers"
 		{
-			
-			
 			"big_boom"
 			{
 				"Properties"
 				{
-						"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"             "%armor"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"             "%armor"
 				}
 				"ThinkInterval"		"4.0"
 				"Duration" "4.1"
 				"OnIntervalThink"
 				{
 					"Damage"
-                        {
-                                "Type"                                  "DAMAGE_TYPE_MAGICAL"
-                                "Damage"                                "%vah_dmg"
-                                "Target"
-								{
-									"Center" "CASTER"
-									"Radius" "600"
-									"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-									"Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					{
+						"Type"                                  "DAMAGE_TYPE_MAGICAL"
+						"Damage"                                "%vah_dmg"
+						"Target"
+						{
+							"Center" "CASTER"
+							"Radius" "600"
+							"Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+							"Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						}
+					}
 
-								}
-                        }
-						"TrackingProjectile"
-						{
-							"Target" "CASTER"
-							"MoveSpeed" "700"
-							"ProvidesVision" "1"
-							"EffectName"    "particles/basic_projectile/big_boom_explode_effect.vpcf" 
-						}
-						
-						"ApplyModifier"
-						{
-							"Target" "CASTER"
-							"ModifierName" "big_boom_recover"
-						}
-						"RemoveModifier"
-						{
-							"Target" "TARGET"
-							"ModifierName" "big_boom"
-						}
-						"RemoveModifier"
-						{
-							"Target" "TARGET"
-							"ModifierName" "big_boom_explode"
-						}
-						"RunScript"
-						{
-							"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
-							"Function"			"vahBoomSound"
-						}
-						
+					"TrackingProjectile"
+					{
+						"Target" "CASTER"
+						"MoveSpeed" "700"
+						"ProvidesVision" "1"
+						"EffectName"    "particles/basic_projectile/big_boom_explode_effect.vpcf" 
+					}
 					
+					"ApplyModifier"
+					{
+						"Target" "CASTER"
+						"ModifierName" "big_boom_recover"
+					}
+					"RemoveModifier"
+					{
+						"Target" "TARGET"
+						"ModifierName" "big_boom"
+					}
+					"RemoveModifier"
+					{
+						"Target" "TARGET"
+						"ModifierName" "big_boom_explode"
+					}
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+						"Function"			"vahBoomSound"
+					}
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+						"Function"			"stopVahSound"
+					}
 				}
 				"OnCreated"
 				{
@@ -4146,8 +4130,7 @@
 						"EffectName"		  "particles/basic_projectile/big_boom_charge_effect.vpcf" 
 						"EffectAttachType"	"follow_overhead"
 					}
-				}
-					
+				}					
 			}
 			"big_boom_explode"
 			{
@@ -4155,26 +4138,22 @@
 				"ThinkInterval"		"3.8"
 				"OnIntervalThink"
 				{
-						"AttachEffect"
-						{
-							"Target" "CASTER"
-							"EffectName"		  "particles/basic_projectile/big_boom_explode_effect.vpcf" 
-							"EffectAttachType"	"follow_origin"
-						}
-					
-				}
-					
+					"AttachEffect"
+					{
+						"Target" "CASTER"
+						"EffectName"		  "particles/basic_projectile/big_boom_explode_effect.vpcf" 
+						"EffectAttachType"	"follow_origin"
+					}
+				}					
 			}
 			"big_boom_recover"
 			{
 				"Duration" "8.0"
 				"Properties"
 				{
-						"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%vah_regen"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%vah_regen"
 				}
 			}
-			
-				
 		}
 		
 		"AbilitySpecial"
@@ -4286,17 +4265,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600 600 600 600"
 		"AbilityCooldown"				"18.0 17.0 16.0 15.0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -4319,6 +4292,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"10.0 12.0 14.0 16.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_hero"		"0"
 			}
 		}
 	}
@@ -5695,23 +5673,13 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-					"BaseClass" 					"antimage_blink"									// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass" 					"antimage_blink"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
 		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20.0 20.0 20.0 20.0"
-		
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0 0 0 0"
+		"AbilitySound"					"Hero_Antimage.Blink_out"
 		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 				"AbilityCooldown"				
@@ -8235,64 +8203,43 @@
 	//=================================================================================================================
 	"jakiro_ice_path_battleship"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass" 					"jakiro_ice_path"								// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Jakiro.IcePath"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1600"
-		"AbilityCastPoint"				"0.65 0.65 0.65 0.65"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"18.0 17.0 16.0 15.0"
-		"AbilityDuration"				"1.0 1.33 1.66 2.0"
-
-		// Damage.
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.65"
 		"AbilityDamage"					"0"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"		
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"path_delay"				"0.5"
+			"stun_duration"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"path_delay"				"0.3"
+				"value"					"1.6 1.9 2.2 2.5"
+				"special_bonus_unique_jakiro"		"+0.5"
 			}
-			"02"
+			"path_duration"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"1.0 1.4 1.8 2.2"
-			}
-			"03"
+				"value"					"2.6 2.9 3.2 3.5"
+				"special_bonus_unique_jakiro"		"+0.5"
+			}			
+			"path_radius"				"150"
+			"damage"					"300"
+			"AbilityCooldown"				
 			{
-				"var_type"					"FIELD_INTEGER"
-				"path_radius"				"150"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"300"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"RANGE"					"1600"
-			}
-			
-			
-		}		
+				"value"								"18 15 12 9"
+				"special_bonus_unique_jakiro_6"		"-2.5"
+			}	
+		}
 	}
 	//=================================================================================================================
 	// Ancient Apparition: Ice Blast
@@ -8702,90 +8649,62 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"hero_Crystal.freezingField.wind"
-
-		"HasScepterUpgrade"			"1"
-    "HasShardUpgrade"       "1"
+		"HasScepterUpgrade"               "1"
+		"HasShardUpgrade"               "1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityChannelTime"			"10"
-		"AbilityCastPoint"				"0"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"40.0 35.0 30.0"
-		"AbilityDuration"				"10.0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0"
-
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportValue"	"0.35"	// Primarily about the damage
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"AbilityChannelTime"			"10"
+			"AbilityCastPoint"				"0"
+			"AbilityCooldown"				"40.0 35.0 30.0"
+			"AbilityDuration"				"10.0"
+			"AbilityManaCost"				"0"
+			"radius"						"685"
+			"explosion_radius"				"320"
+			"bonus_armor"					"0"
+			"explosion_interval"			"0.1"
+			"movespeed_slow"				"-30"
+			"attack_slow"					"-60"
+			"slow_duration"					"1.0"
+			"explosion_min_dist"			"195"
+			"explosion_max_dist"			"635"
+			"damage"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"685"
-			}		
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"explosion_radius"	"330"
+				"value"										"205 270 350"
+				"special_bonus_unique_crystal_maiden_3"		"+50"
 			}
-			"03"
+			"frostbite_delay" // negative means don't apply.
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"0"
+				"value"						"-1"
+				"special_bonus_scepter"		"+2.75"
+				"RequiresScepter"			"1"
 			}
-			"04"
+			"shard_bonus_explosion"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"explosion_interval"	"0.1"
+				"shard_bonus_explosion"		"0"
+				"special_bonus_shard"		"+20"
+				"RequiresShard"				"1"
 			}
-			"05"
+			"shard_self_movement_speed_slow_pct"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"movespeed_slow"	"-30"
+				"value"						"0"
+				"special_bonus_shard"		"-75"
+				"RequiresShard"				"1"
 			}
-			"06"
+			"can_move"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"attack_slow"	"-60"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow_duration"		"1.0"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"explosion_min_dist"	"195"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"explosion_max_dist"	"635"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"205 270 350"
-				"LinkedSpecialBonus"	"special_bonus_unique_crystal_maiden_3"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"scepter_delay"	"1.75"
-				"RequiresScepter"		"1"
+				"value"						"1"
 			}
 		}
 	}
@@ -14404,11 +14323,6 @@
 
 					"OnCreated"
 					{
-						"FireSound"
-						{
-							"EffectName"	"Hero_ShadowShaman.Shackles"
-							"Target" 		"TARGET"
-						}
 						"RunScript"
 						{
 							"ScriptFile"	"scripts/vscripts/abilityfunctions.lua"

@@ -4293,7 +4293,7 @@
         "DOTA_Tooltip_modifier_ufo_invis"  "Cloaked"
         "DOTA_Tooltip_modifier_ufo_invis_description"  "The UFO has engaged its cloaking technology, becoming invisible."
 
-         "DOTA_Tooltip_ability_death_beam_fire_lua"  "Spinney Death Beam"
+        "DOTA_Tooltip_ability_death_beam_fire_lua"  "Spinney Death Beam"
         "DOTA_Tooltip_ability_death_beam_fire_lua_Description"  "Three deadly beams shoot out of your ship and rotate at a fixed speed blasting enemies!"
         "DOTA_Tooltip_ability_death_beam_fire_lua_duration"  "DURATION:"
         "DOTA_Tooltip_ability_death_beam_fire_lua_start_radius"  "BEAM WIDTH:"

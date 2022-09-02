@@ -136,6 +136,7 @@ return {
     "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts",
     "soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts",
     "soundevents/game_sounds_heroes/game_sounds_drowranger.vsndevts",
+    "soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts",
     "soundevents/music/dsadowski_01/soundevents_music.vsndevts",
     "soundevents/custom_sounds.vsndevts",
   }
