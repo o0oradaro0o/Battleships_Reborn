@@ -85,12 +85,12 @@ function vahSound(keys)
 end
 function stopVahSound(keys)
 	local casterUnit = keys.caster
-	StopSoundOn("Hero_LegionCommander.Duel.FP", casterUnit)
+	casterUnit:StopSound("Hero_LegionCommander.Duel.FP")
 end
 function vahBoomSound(keys)
 	 ----print("launchSound")
 	local casterUnit = keys.caster
-	EmitSoundOn("Hero_Phoenix.SuperNova.Explode", casterUnit)
+	casterUnit:EmitSound("Hero_Phoenix.SuperNova.Explode")
 end
 function dropCraftSound(keys)
 	 ----print("launchSound")
