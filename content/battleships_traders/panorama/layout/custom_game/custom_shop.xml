@@ -2954,11 +2954,6 @@
                     </Panel>
                 </Panel>
             </Panel>
-
-
-		
-
-
 		<Panel hittest="false" id="empty_guts">
             <Panel hittest="false" id="empty_guts_content" oncancel="hideShop()" onmouseover="NoFadeMap()" onmouseout="okayToFade()">
                 <Label hittest="false" id="no_trade_text" text="#no_trade" />
@@ -2966,7 +2961,9 @@
 								
             </Panel>
 		 </Panel>
+
 		 
+
 		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_ancient_apparition.png"  />
 		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_bane.png"  />
 		 <Image class="Toggled" src="file://{images}/heroes/npc_dota_hero_crystal_maiden.png"  />
@@ -3054,7 +3051,10 @@
 	<Image class="Toggled" src="file://{images}/items/hull_three.png" />
 	<Image class="Toggled" src="file://{images}/items/hull_four.png" />
 	<Image class="Toggled" src="file://{images}/items/hull_sail_one_combo_bow.png" />	 
+	<Image class="Toggled" src="file://{images}/custom_game/game_info/weapon_layout_bkg.png" />
 		 
+	
+
         </Panel>
 			<Panel hittest="false" id="ScoreBoardFinalholder" class="ScoreboardHidden" >
 				

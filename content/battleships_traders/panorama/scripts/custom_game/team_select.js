@@ -410,6 +410,7 @@ function handleShuffledTeamResult(data) {
 
   $.Schedule(0.1, joinTeamSouth);
 }
+
 function joinTeamNorth() {
   Game.PlayerJoinTeam(DOTATeam_t.DOTA_TEAM_BADGUYS);
 }
@@ -423,6 +424,7 @@ function joinTeamSouth() {
 (function () {
   GameEvents.Subscribe("MMRData", UseMMRData);
   GameEvents.Subscribe("ShuffledTeamResult", handleShuffledTeamResult);
+  GameEvents.Subscribe("PlayerHatInfo", handlePlayerHatInfo);
 
   hostToggle = false;
   myToggle = false;
@@ -487,10 +489,14 @@ function joinTeamSouth() {
 
   // Start updating the timer, this function will schedule itself to be called periodically
   UpdateTimer();
-  $.Schedule(2.0, GetLocalPlayerHats);
+
   GameEvents.SendCustomGameEventToServer("SendMMRsToServer", {
     playerSteamId: GetSteamID32(),
   });
+  $.Schedule(2.0, GetLocalPlayerHats);
+
+
+  
 
   // Register a listener for the event which is brodcast when the team assignment of a player is actually assigned
   $.RegisterForUnhandledEvent(
@@ -592,28 +598,25 @@ function GetSteamID32() {
 var url = "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships";
 var LocalPlayerHatInfo = {};
 function GetLocalPlayerHats() {
-  var request = url + "/battleships_players/" + GetSteamID32();
-  $.AsyncWebRequest(request, {
-    type: "GET",
-    headers: {
-      "x-api-key": "FX5Tqd1joL2CC3p1tjCoF7hJCIoRrNDv4m0tqmvo",
-    },
-    success: function (data) {
-      LocalPlayerHatInfo = data;
-      g_myPts = data.Content[0].points;
+  GameEvents.SendCustomGameEventToServer("getPlayerHatData", {
+    playerSteamId: GetSteamID32(),
+  });
+}
+function handlePlayerHatInfo(data)
+{
+  $.Msg("-------------------- In Hat!!!!")
+  $.Msg(data)
+  LocalPlayerHatInfo = data;
+  $.Msg(LocalPlayerHatInfo.hats)
+      g_myPts = LocalPlayerHatInfo.points;
       $("#PointTracker").text = "My Points: " + g_myPts;
-      data.Content[0].hats.forEach(function (hat) {
+      Object.values(LocalPlayerHatInfo.hats).forEach(function (hat) {
         if ($("#" + hat).BHasClass("locked")) {
           $("#" + hat).RemoveClass("locked");
           $("#" + hat).GetChild(0).style.visibility = "collapse";
         }
       });
-      if ("undefined" !== typeof data.Content[0].CurHat) {
-        PickHat(0, data.Content[0].CurHat);
+      if ("undefined" !== typeof LocalPlayerHatInfo.CurHat) {
+        PickHat(0, LocalPlayerHatInfo.CurHat);
       }
-    },
-    error: function () {
-      $.Schedule(1.0, GetLocalPlayerHats);
-    },
-  });
 }

@@ -467,7 +467,8 @@ function CBattleship8D:InitGameMode()
     CustomGameEventManager:RegisterListener("AddPoints", AddPoints)
     CustomGameEventManager:RegisterListener("SendMMRsToServer", SendMMRsToServer)
     CustomGameEventManager:RegisterListener("CreateEvenTeams", CreateEvenTeams)
-
+    CustomGameEventManager:RegisterListener("getPlayerHatData", getPlayerHatInfo)
+  
     mode = GameRules:GetGameModeEntity()
     mode:SetHUDVisible(12, false)
     LinkLuaModifier(
@@ -6672,6 +6673,42 @@ function AddPoints(eventSourceIndex, args)
     request:SetHTTPRequestHeaderValue("x-api-key", GetDedicatedServerKeyV2(SERVER_KEY))
     request:Send(function(res)
         if res.StatusCode ~= 200 then end
+    end)
+end
+
+function getPlayerHatInfo(eventSourceIndex, args)
+    ----print(args.text)
+    local steamid = args.playerSteamId
+    local request = CreateHTTPRequestScriptVM(
+        "GET",
+        "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/" .. args.playerSteamId
+    )
+    local data = {}
+    request:SetHTTPRequestHeaderValue(
+        "x-api-key",
+        "FX5Tqd1joL2CC3p1tjCoF7hJCIoRrNDv4m0tqmvo"
+    )
+    -- request:SetHTTPRequestGetOrPostParameter("server_key", GetDedicatedServerKeyV2(SERVER_KEY));
+    request:Send(function(res)
+        local points = 0
+        local hats = {}
+        local CurHat = ''
+
+        if res.StatusCode == 200 then
+            local body = json.decode(res.Body)
+
+            if body and body.Content[1] and body.Content[1].points then points = body.Content[1].points end
+            if body and body.Content[1] and body.Content[1].hats then 
+                for k, v in pairs(body.Content[1].hats) do
+                    hats[k] = v
+                end
+            end
+            if body and body.Content[1] and body.Content[1].CurHat then CurHat = body.Content[1].CurHat end
+            
+        end
+
+        local playerData = {playerSteamID = args.playerSteamId, points = points, hats = hats, CurHat = CurHat}
+        CustomGameEventManager:Send_ServerToAllClients("PlayerHatInfo", playerData)
     end)
 end
 

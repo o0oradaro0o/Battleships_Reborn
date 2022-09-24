@@ -1093,6 +1093,26 @@
   border-radius: 10px;
 }
 
+#item_shop {
+  flow-children: down;
+  width: 500px;
+  height: 480px;
+  border: 0px solid black;
+  background-color: gradient(
+    linear,
+    0% 0%,
+    0% 100%,
+    from(#90858500),
+    color-stop(0.25, #62696e44),
+    color-stop(0.5, #aa959566),
+    color-stop(0.75, #62696e),
+    to(#908585)
+  );
+  horizontal-align: right;
+  margin-right: -10px;
+  border-radius: 10px;
+}
+
 #HiddenUI {
   flow-children: down;
   width: 500px;
