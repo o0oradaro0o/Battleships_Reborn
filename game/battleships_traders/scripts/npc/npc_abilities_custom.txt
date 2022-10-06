@@ -14365,6 +14365,20 @@
 
 	}
 
+	"weapon_passive"
+	{
+		"BaseClass"                     "ability_lua"
+    "ScriptFile"          "heroes/weapon_passive.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"tractor_beam"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"LevelsBetweenUpgrades"					"3"
+		"RequiredLevel"						"0"
+    "AbilityCastPoint"              "0"
+    
+	}
+
 
 
 }

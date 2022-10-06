@@ -2341,8 +2341,809 @@
 			"01"						"item_chaos_three_bow;item_chaos_three_bow"
 		}
 	}
-	
-	
+
+	"item_recipe_spread_plasma_mix_bow_doubled"
+	{
+		"ID"							"3001"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_spread_plasma_mix_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_spread_bow;item_plasma_bow"
+		}
+	}
+	"item_recipe_plasma_fire_mix_bow_doubled"
+	{
+		"ID"							"3002"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_plasma_fire_mix_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_plasma_bow;item_fire_bow"
+		}
+	}
+	"item_recipe_fire_coal_mix_bow_doubled"
+	{
+		"ID"							"3003"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_fire_coal_mix_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_fire_bow;item_coal_bow"
+		}
+	}
+	"item_recipe_coal_chaos_mix_bow_doubled"
+	{
+		"ID"							"3004"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_coal_chaos_mix_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_coal_bow;item_chaos_bow"
+		}
+	}
+	"item_recipe_chaos_poison_mix_bow_doubled"
+	{
+		"ID"							"3005"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_chaos_poison_mix_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_chaos_bow;item_poison_bow"
+		}
+	}
+	"item_recipe_poison_light_mix_bow_doubled"
+	{
+		"ID"							"3006"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_poison_light_mix_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_poison_bow;item_light_bow"
+		}
+	}
+	"item_recipe_light_iron_mix_bow_doubled"
+	{
+		"ID"							"3007"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_light_iron_mix_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_light_bow;item_iron_bow"
+		}
+	}
+	"item_recipe_iron_breach_mix_bow_doubled"
+	{
+		"ID"							"3008"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_iron_breach_mix_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_iron_bow;item_breach_bow"
+		}
+	}
+	"item_recipe_breach_ice_mix_bow_doubled"
+	{
+		"ID"							"3009"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_breach_ice_mix_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_breach_bow;item_ice_bow"
+		}
+	}
+	"item_recipe_ice_wind_mix_bow_doubled"
+	{
+		"ID"							"3010"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ice_wind_mix_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_ice_bow;item_wind_bow"
+		}
+	}
+	"item_recipe_spread_plasma_mix_two_bow_doubled"
+	{
+		"ID"							"3101"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_spread_plasma_mix_two_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_spread_two_bow;item_plasma_two_bow"
+		}
+	}
+	"item_recipe_plasma_fire_mix_two_bow_doubled"
+	{
+		"ID"							"3102"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_plasma_fire_mix_two_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_plasma_two_bow;item_fire_two_bow"
+		}
+	}
+	"item_recipe_fire_coal_mix_two_bow_doubled"
+	{
+		"ID"							"3103"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_fire_coal_mix_two_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_fire_two_bow;item_coal_two_bow"
+		}
+	}
+	"item_recipe_coal_chaos_mix_two_bow_doubled"
+	{
+		"ID"							"3104"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_coal_chaos_mix_two_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_coal_two_bow;item_chaos_two_bow"
+		}
+	}
+	"item_recipe_chaos_poison_mix_two_bow_doubled"
+	{
+		"ID"							"3105"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_chaos_poison_mix_two_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_chaos_two_bow;item_poison_two_bow"
+		}
+	}
+	"item_recipe_poison_light_mix_two_bow_doubled"
+	{
+		"ID"							"3106"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_poison_light_mix_two_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_poison_two_bow;item_light_two_bow"
+		}
+	}
+	"item_recipe_light_iron_mix_two_bow_doubled"
+	{
+		"ID"							"3107"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_light_iron_mix_two_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_light_two_bow;item_iron_two_bow"
+		}
+	}
+	"item_recipe_iron_breach_mix_two_bow_doubled"
+	{
+		"ID"							"3108"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_iron_breach_mix_two_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_iron_two_bow;item_breach_two_bow"
+		}
+	}
+	"item_recipe_breach_ice_mix_two_bow_doubled"
+	{
+		"ID"							"3109"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_breach_ice_mix_two_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_breach_two_bow;item_ice_two_bow"
+		}
+	}
+	"item_recipe_ice_wind_mix_two_bow_doubled"
+	{
+		"ID"							"3110"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ice_wind_mix_two_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_ice_two_bow;item_wind_two_bow"
+		}
+	}
+	"item_recipe_spread_plasma_mix_three_bow_doubled"
+	{
+		"ID"							"3200"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_spread_plasma_mix_three_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_spread_three_bow;item_plasma_three_bow"
+		}
+	}
+	"item_recipe_plasma_fire_mix_three_bow_doubled"
+	{
+		"ID"							"3201"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_plasma_fire_mix_three_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_plasma_three_bow;item_fire_three_bow"
+		}
+	}
+	"item_recipe_fire_coal_mix_three_bow_doubled"
+	{
+		"ID"							"3202"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_fire_coal_mix_three_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_fire_three_bow;item_coal_three_bow"
+		}
+	}
+	"item_recipe_coal_chaos_mix_three_bow_doubled"
+	{
+		"ID"							"3203"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_coal_chaos_mix_three_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_coal_three_bow;item_chaos_three_bow"
+		}
+	}
+	"item_recipe_chaos_poison_mix_three_bow_doubled"
+	{
+		"ID"							"3204"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_chaos_poison_mix_three_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_chaos_three_bow;item_poison_three_bow"
+		}
+	}
+	"item_recipe_poison_light_mix_three_bow_doubled"
+	{
+		"ID"							"3205"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_poison_light_mix_three_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_poison_three_bow;item_light_three_bow"
+		}
+	}
+	"item_recipe_light_iron_mix_three_bow_doubled"
+	{
+		"ID"							"3206"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_light_iron_mix_three_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_light_three_bow;item_iron_three_bow"
+		}
+	}
+	"item_recipe_iron_breach_mix_three_bow_doubled"
+	{
+		"ID"							"3207"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_iron_breach_mix_three_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_iron_three_bow;item_breach_three_bow"
+		}
+	}
+	"item_recipe_breach_ice_mix_three_bow_doubled"
+	{
+		"ID"							"3208"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_breach_ice_mix_three_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_breach_three_bow;item_ice_three_bow"
+		}
+	}
+	"item_recipe_ice_wind_mix_three_bow_doubled"
+	{
+		"ID"							"3209"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ice_wind_mix_three_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_ice_three_bow;item_wind_three_bow"
+		}
+	}
+
+
+	"item_recipe_spread_plasma_mix_ult_bow"
+	{
+		"ID"							"3300"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3500"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_spread_plasma_mix_ult_bow"
+		"ItemRequirements"
+		{
+			"01"						"item_spread_plasma_mix_bow_doubled;item_spread_plasma_mix_two_bow_doubled;item_spread_plasma_mix_three_bow_doubled"
+		}
+	}
+	"item_recipe_plasma_fire_mix_ult_bow"
+	{
+		"ID"							"3301"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3500"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_plasma_fire_mix_ult_bow"
+		"ItemRequirements"
+		{
+			"01"						"item_plasma_fire_mix_bow_doubled;item_plasma_fire_mix_two_bow_doubled;item_plasma_fire_mix_three_bow_doubled"
+		}
+	}
+	"item_recipe_fire_coal_mix_ult_bow"
+	{
+		"ID"							"3302"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3500"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_fire_coal_mix_ult_bow"
+		"ItemRequirements"
+		{
+			"01"						"item_fire_coal_mix_bow_doubled;item_fire_coal_mix_two_bow_doubled;item_fire_coal_mix_three_bow_doubled"
+		}
+	}
+	"item_recipe_coal_chaos_mix_ult_bow"
+	{
+		"ID"							"3303"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3500"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_coal_chaos_mix_ult_bow"
+		"ItemRequirements"
+		{
+			"01"						"item_coal_chaos_mix_bow_doubled;item_coal_chaos_mix_two_bow_doubled;item_coal_chaos_mix_three_bow_doubled"
+		}
+	}
+	"item_recipe_chaos_poison_mix_ult_bow"
+	{
+		"ID"							"3304"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3500"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_chaos_poison_mix_ult_bow"
+		"ItemRequirements"
+		{
+			"01"						"item_chaos_poison_mix_bow_doubled;item_chaos_poison_mix_two_bow_doubled;item_chaos_poison_mix_three_bow_doubled"
+		}
+	}
+	"item_recipe_poison_light_mix_ult_bow"
+	{
+		"ID"							"3305"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3500"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_poison_light_mix_ult_bow"
+		"ItemRequirements"
+		{
+			"01"						"item_poison_light_mix_bow_doubled;item_poison_light_mix_two_bow_doubled;item_poison_light_mix_three_bow_doubled"
+		}
+	}
+	"item_recipe_light_iron_mix_ult_bow"
+	{
+		"ID"							"3306"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3500"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_light_iron_mix_ult_bow"
+		"ItemRequirements"
+		{
+			"01"						"item_light_iron_mix_bow_doubled;item_light_iron_mix_two_bow_doubled;item_light_iron_mix_three_bow_doubled"
+		}
+	}
+	"item_recipe_iron_breach_mix_ult_bow"
+	{
+		"ID"							"3307"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3500"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_iron_breach_mix_ult_bow"
+		"ItemRequirements"
+		{
+			"01"						"item_iron_breach_mix_bow_doubled;item_iron_breach_mix_two_bow_doubled;item_iron_breach_mix_three_bow_doubled"
+		}
+	}
+	"item_recipe_breach_ice_mix_ult_bow"
+	{
+		"ID"							"3308"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3500"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_breach_ice_mix_ult_bow"
+		"ItemRequirements"
+		{
+			"01"						"item_breach_ice_mix_bow_doubled;item_breach_ice_mix_two_bow_doubled;item_breach_ice_mix_three_bow_doubled"
+		}
+	}
+	"item_recipe_ice_wind_mix_ult_bow"
+	{
+		"ID"							"3209"
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ice_wind_mix_ult_bow"
+		"ItemRequirements"
+		{
+			"01"						"item_ice_three_bow;item_wind_three_bow"
+		}
+	}
 	
 	
 	//=================================================================================================================
@@ -9082,6 +9883,105 @@
 			}
 		}
 	}
+
+	"item_spread_plasma_mix_bow_doubled"
+	{
+		"ID"                            "1512"
+		 "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_spread_plasma_mix"
+		"Model"                         "models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"            "item_spread_plasma_bow"
+		"AbilityCastRange"              "550"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "350" 
+		"ItemDroppable"         "1"
+		"ItemSellable"          "1"
+		"ItemKillable"          "0"
+		"ItemQuality"         "epic"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"    "FIELD_FLOAT"
+				"dmg"      "31.0"
+			}
+			"02"
+			{
+				"var_type"    "FIELD_FLOAT"
+				"fire_rate"   "1"
+			}
+			"03"
+			{
+				"var_type"    "FIELD_INTEGER"
+				"range"       "550"
+			}
+			"04"
+			{
+				"var_type"    "FIELD_INTEGER"
+				"level"       "1"
+			}
+			"05"
+			{
+				"var_type"    "FIELD_INTEGER"
+				"doubled_wep"     "0"
+			}
+			"06"
+			{
+				"var_type"    "FIELD_INTEGER"
+				"speed"       "950"
+			}
+			"07"
+			{
+				"var_type"    "FIELD_FLOAT"
+				"dps"         "31.0"
+			}
+			"08"
+			{
+				"var_type"    "FIELD_FLOAT"
+				"aoe"         "200.0"
+			}
+			"09"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_2"			"90"
+			}
+			"10"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate_2"		"3.0"
+			}
+			"11"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"range_2"			"600"
+			}
+			"12"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"armor_down_2"	"1"
+			}
+			"13"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"armor_dur_2"		"0.5"
+			}
+			"14"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps_2"			"30"
+			}
+			"15"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"speed_2"			"1450"
+			}
+		}
+	}
+
+	
 	
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// level twos doubled l2d
@@ -9127,7 +10027,7 @@
             "Function"      "startWeaponCooldown"
           }
 
-"RunScript"
+			"RunScript"
 			{
 				"ScriptFile"			"scripts/vscripts/itemfunctions.lua"
 				"Function"			"fire_weapon"
@@ -10326,6 +11226,102 @@
 		}
 	}	
 	
+	"item_spread_plasma_mix_two_bow_doubled"
+	{
+		"ID"                            "1612"
+		 "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_spread_plasma_mix"
+		"Model"                         "models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"            "spread_plasma_two_bow"
+		"AbilityCastRange"              "550"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "350" 
+		"ItemDroppable"         "1"
+		"ItemSellable"          "1"
+		"ItemKillable"          "0"
+		"ItemQuality"         "epic"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilitySpecial"
+		{
+			"01"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dmg"      "68"
+      }
+      "02"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "fire_rate"   "1"
+      }
+      "03"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "range"       "550"
+      }
+      "04"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "level"     "2"
+      }
+      "05"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "doubled_wep"     "0"
+      }
+      "06"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "speed"       "950"
+      }
+      "07"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dps"         "68"
+      }
+			 "08"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "aoe"          "200.0"
+      }
+"09"
+		{
+			"var_type"		"FIELD_FLOAT"
+			"dmg_2"			"195"
+		}
+		"10"
+		{
+			"var_type"		"FIELD_FLOAT"
+			"fire_rate_2"		"3.0"
+		}
+		"11"
+		{
+			"var_type"		"FIELD_FLOAT"
+			"range_2"			"600"
+		}
+		"12"
+		{
+			"var_type"		"FIELD_FLOAT"
+			"armor_down_2"	"1.0"
+		}
+		"13"
+		{
+			"var_type"		"FIELD_FLOAT"
+			"armor_dur_2"		"1.0"
+		}
+		"14"
+		{
+			"var_type"		"FIELD_FLOAT"
+			"dps_2"			"65"
+		}
+		"15"
+		{
+			"var_type"		"FIELD_FLOAT"
+			"speed_2"			"1450"
+		}
+		}
+	}
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// level threes l3d
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -11563,6 +12559,103 @@
 				"var_type"	"FIELD_FLOAT"
 				"dps"	"250"
 			}
+		}
+	}
+
+	"item_spread_plasma_mix_three_bow_doubled"
+	{
+		"ID"                            "1712"
+		 "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_spread_plasma_mix"
+		"Model"                         "models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"            "spread_plasma_three_bow"
+		"AbilityCastRange"              "550"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "350" 
+		"ItemDroppable"         "1"
+		"ItemSellable"          "1"
+		"ItemKillable"          "0"
+		"ItemQuality"         "epic"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilitySpecial"
+		{
+			"01"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dmg"      "138"
+      }
+      "02"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "fire_rate"   "1"
+      }
+      "03"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "range"       "550"
+      }
+      "04"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "level"     "3"
+      }
+      "05"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "doubled_wep"     "0"
+      }
+      "06"
+      {
+        "var_type"    "FIELD_INTEGER"
+        "speed"       "950"
+      }
+      "07"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "dps"         "138.0"
+      }
+			 "08"
+      {
+        "var_type"    "FIELD_FLOAT"
+        "aoe"          "200.0"
+      }
+					"09"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dmg_2"			"390"
+			}
+			"10"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"fire_rate_2"		"3.0"
+			}
+			"11"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"range_2"			"600"
+			}
+			"12"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"armor_down_2"	"2"
+			}
+			"13"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"armor_dur_2"		"1.5"
+			}
+			"14"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"dps_2"			"130"
+			}
+		"15"
+		{
+			"var_type"		"FIELD_FLOAT"
+			"speed_2"			"1450"
+		}
 		}
 	}
 	
@@ -12829,6 +13922,73 @@
 			}
 		}
 	}
+
+	 "item_spread_plasma_mix_ult_bow"
+	{
+		"ID"                            "1312"
+		 "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_spread_plasma_mix_ult"
+		"Model"                         "models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"            "spread_plasma_mix_ult_bow"
+		"AbilityCastRange"              "575"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemDroppable"         "1"
+		"ItemSellable"          "1"
+		"ItemKillable"          "0"
+		"ItemQuality"         "epic"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"    "FIELD_FLOAT"
+				"dmg"      "1200"
+			}
+			"02"
+			{
+				"var_type"    "FIELD_FLOAT"
+				"fire_rate"   "2"
+			}
+			"03"
+			{
+				"var_type"    "FIELD_INTEGER"
+				"range"       "550"
+			}
+			"04"
+			{
+				"var_type"    "FIELD_INTEGER"
+				"speed"       "950"
+			}
+			"05"
+			{
+				"var_type"    "FIELD_FLOAT"
+				"dps"         "600"
+			}
+			"06"
+			{
+				"var_type"    "FIELD_FLOAT"
+				"aoe_dmg"          "400.0"
+			}
+			"07"
+			{
+				"var_type"    "FIELD_FLOAT"
+				"aoe_dearmor"          "600.0"
+			}
+			"08"
+			{
+				"var_type"    "FIELD_FLOAT"
+				"aoe_dearmor_amount"          "1.0"
+			}
+			"09"
+			{
+				"var_type"    "FIELD_FLOAT"
+				"dearmor_duration"          "4"
+			}
+		}
+	}
+	
 	
 	//=================================================================================================
 	//=================================================================================================

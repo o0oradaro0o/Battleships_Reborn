@@ -3,6 +3,7 @@
 	"consumables"
 	{
 		 "item" "item_spread_bow"
+
 		 "item" "item_plasma_bow"
 		 
  "item" "item_fire_bow"
@@ -54,6 +55,8 @@
 	"misc"
 	{
 		"item" "item_spread_ult_bow"
+		"item" "item_spread_plasma_mix_ult_bow"
+		
 "item"  "item_plasma_ult_bow"
 
  "item"  "item_fire_ult_bow"
@@ -67,6 +70,7 @@
  "item" "item_breach_ult_bow"
  "item"  "item_ice_ult_bow"
  "item"  "item_wind_ult_bow"
+ "item"		"item_lorne"
 	}
 	// Level 1 - Green Recipes
 	"basics"

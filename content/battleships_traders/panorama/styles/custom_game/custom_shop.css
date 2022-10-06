@@ -47,6 +47,14 @@
   border-radius: 10px;
 }
 
+.ShopItemsRows
+{
+ width: 40px;
+ height: width-percentage(72.5%); 
+ margin: 3px;
+
+}
+
 #battleTimerPanel {
   visibility: collapse;
   horizontal-align: Left;

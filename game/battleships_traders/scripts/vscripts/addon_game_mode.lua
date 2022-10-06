@@ -1328,7 +1328,6 @@ function CBattleship8D:OnPlayerChat(keys)
                 
                 style = {color = color, fontSize = "70px;"}
             })
-
         end
     end
 end
@@ -6678,10 +6677,11 @@ end
 
 function getPlayerHatInfo(eventSourceIndex, args)
     ----print(args.text)
-    local steamid = args.playerSteamId
+    local playerId = args.PlayerID
+    local steamid = PlayerResource:GetSteamAccountID(playerId)
     local request = CreateHTTPRequestScriptVM(
         "GET",
-        "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/" .. args.playerSteamId
+        "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/" .. steamid
     )
     local data = {}
     request:SetHTTPRequestHeaderValue(
@@ -6707,8 +6707,8 @@ function getPlayerHatInfo(eventSourceIndex, args)
             
         end
 
-        local playerData = {playerSteamID = args.playerSteamId, points = points, hats = hats, CurHat = CurHat}
-        CustomGameEventManager:Send_ServerToAllClients("PlayerHatInfo", playerData)
+        local playerData = {playerSteamID = steamid, points = points, hats = hats, CurHat = CurHat}
+        CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerId), "PlayerHatInfo", playerData)
     end)
 end
 

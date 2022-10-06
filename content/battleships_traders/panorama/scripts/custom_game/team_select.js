@@ -604,19 +604,19 @@ function GetLocalPlayerHats() {
 }
 function handlePlayerHatInfo(data)
 {
-  $.Msg("-------------------- In Hat!!!!")
-  $.Msg(data)
-  LocalPlayerHatInfo = data;
-  $.Msg(LocalPlayerHatInfo.hats)
-      g_myPts = LocalPlayerHatInfo.points;
-      $("#PointTracker").text = "My Points: " + g_myPts;
-      Object.values(LocalPlayerHatInfo.hats).forEach(function (hat) {
-        if ($("#" + hat).BHasClass("locked")) {
-          $("#" + hat).RemoveClass("locked");
-          $("#" + hat).GetChild(0).style.visibility = "collapse";
-        }
-      });
-      if ("undefined" !== typeof LocalPlayerHatInfo.CurHat) {
-        PickHat(0, LocalPlayerHatInfo.CurHat);
+    $.Msg("-------------------- In Hat!!!!")
+    $.Msg(data)
+    LocalPlayerHatInfo = data;
+    $.Msg(LocalPlayerHatInfo.hats)
+    g_myPts = LocalPlayerHatInfo.points;
+    $("#PointTracker").text = "My Points: " + g_myPts;
+    Object.values(LocalPlayerHatInfo.hats).forEach(function (hat) {
+      if ($("#" + hat).BHasClass("locked")) {
+        $("#" + hat).RemoveClass("locked");
+        $("#" + hat).GetChild(0).style.visibility = "collapse";
       }
+    });
+    if ("undefined" !== typeof LocalPlayerHatInfo.CurHat) {
+      PickHat(0, LocalPlayerHatInfo.CurHat);
+    }
 }

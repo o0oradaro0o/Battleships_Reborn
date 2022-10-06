@@ -912,6 +912,49 @@
     "DOTA_Tooltip_ability_item_spread_ult_bow_rec_dps"         "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
     "DOTA_Tooltip_ability_item_spread_ult_bow_rec_Lore"          "Guaranteed to show up in every apocalypse 20% of the time."
 
+
+ //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //-0113---spread-plasma-------------------------------
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_bow_doubled"               "Hatchet/Plasma Gun"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_bow_doubled_Description"             "<h1>Weapon: spread Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings) <h1>Weapon: Plasma Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Reduces target's armor by %armor_down% for %armor_dur% seconds."
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_bow_doubled_dmg"             "Hatchet BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_bow_doubled_fire_rate"           "Hatchet RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_bow_doubled_range"             "Hatchet RANGE:"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_bow_doubled_dps"             "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_bow_doubled_aoe"         "Hatchet AOE:"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_bow_doubled_Note0"        "Multiple hits extend duration, not increase armor lost."
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_bow_doubled_fire_rate_2"      "Plasma Gun RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_bow_doubled_dmg_2"          "Plasma Gun DAMAGE:"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_bow_doubled_range_2"        "Plasma Gun RANGE:"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_bow_doubled_dps_2"          "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_two_bow_doubled"            "Axe/Railgun"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_two_bow_doubled_Description"          "<h1>Weapon: spread Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings) <h1>Weapon: Plasma Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Reduces target's armor by %armor_down% for %armor_dur% seconds."
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_two_bow_doubled_dmg"          "Axe BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_two_bow_doubled_fire_rate"        "Axe RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_two_bow_doubled_range"          "Axe RANGE:"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_two_bow_doubled_dps"          "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_two_bow_doubled_aoe"        "Axe AOE:"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_two_bow_doubled_Note0"       "Multiple hits extend duration, not increase armor lost."
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_two_bow_doubled_fire_rate_2"       "Railgun RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_two_bow_doubled_dmg_2"       "Railgun DAMAGE:"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_two_bow_doubled_range_2"     "Railgun RANGE:"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_two_bow_doubled_dps_2"       "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+    
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_three_bow_doubled"          "Battle-Axe/Ion Cannon"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_three_bow_doubled_Description"        "<h1>Weapon: spread Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings) <h1>Weapon: Plasma Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Reduces target's armor by %armor_down% for %armor_dur% seconds."
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_three_bow_doubled_dmg"        "Battle-Axe BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_three_bow_doubled_fire_rate"      "Battle-Axe RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_three_bow_doubled_range"        "Battle-Axe RANGE:"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_three_bow_doubled_dps"        "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_three_bow_doubled_aoe"      "Battle-Axe AOE:"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_three_bow_doubled_Note0"     "Multiple hits extend duration, not increase armor lost."
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_three_bow_doubled_fire_rate_2"      "Ion Cannon RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_three_bow_doubled_dmg_2"      "Ion Cannon DAMAGE:"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_three_bow_doubled_range_2"    "Ion Cannon RANGE:"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_three_bow_doubled_dps_2"      "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //-0113---STARTING LINE------------------------
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
