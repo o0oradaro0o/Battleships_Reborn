@@ -852,9 +852,9 @@ function showMainItems()
   //iterate through all children of x and set their margin to 3
   for(var i=0;i<x.GetChildCount();i++)
   {
-    if(i==0)
+    if(i==1)
     {
-      x.GetChild(i).style.margin =  "3.0px 3.0px 38px 3.0px";
+          x.GetChild(i).style.margin =  "5.0px 1.0px 4.0px 15.0px";
     }
     else
     {
@@ -877,9 +877,9 @@ function showMainItems()
   //iterate through all children of x and set their margin to 3
   for(var i=0;i<x.GetChildCount();i++)
   {
-    if(i==0)
+    if(i==1)
     {
-      x.GetChild(i).style.margin =  "3.0px 3.0px 38px 3.0px";
+          x.GetChild(i).style.margin =  "5.0px 1.0px 4.0px 15.0px";
     }
     else
     {
@@ -903,9 +903,9 @@ function showMainItems()
   //iterate through all children of x and set their margin to 3
   for(var i=0;i<x.GetChildCount();i++)
   {
-    if(i==0)
+    if(i==1)
     {
-      x.GetChild(i).style.margin =  "3.0px 3.0px 38px 3.0px";
+          x.GetChild(i).style.margin =  "5.0px 1.0px 4.0px 15.0px";
     }
     else
     {
@@ -2098,9 +2098,7 @@ function PingLoc(data) {
 }
 
 function showSpecialUi(data) {
-  if (data.player_id == Players.GetLocalPlayer()) {
     $("#HiddenUI").style.visibility = "visible";
-  }
 }
 
 function TopNotification(msg) {
@@ -2606,9 +2604,41 @@ function OnMouseClicked(button) {
   .FindChildTraverse("AbilitiesAndStatBranch")
   .FindChildTraverse("abilities")
     .FindChildTraverse("Ability4")
-  if (x) {
+    var checkformore =  $.GetContextPanel()
+    .GetParent()
+    .GetParent()
+    .GetParent()
+    .FindChildTraverse("HUDElements")
+    .FindChildTraverse("lower_hud")
+    .FindChildTraverse("center_with_stats")
+    .FindChildTraverse("center_block")
+    .FindChildTraverse("AbilitiesAndStatBranch")
+    .FindChildTraverse("abilities")
+      .FindChildTraverse("Ability5")
+  if (x && checkformore== null) {
     x.style.visibility = "collapse";
   }
+  if(checkformore)
+  {
+    $.Msg("more")
+    var z =  $.GetContextPanel()
+  .GetParent()
+  .GetParent()
+  .GetParent()
+  .FindChildTraverse("HUDElements")
+  .FindChildTraverse("lower_hud")
+  .FindChildTraverse("center_with_stats")
+  .FindChildTraverse("center_block")
+  .FindChildTraverse("AbilitiesAndStatBranch")
+  .FindChildTraverse("abilities")
+    .FindChildTraverse("Ability6")
+    x.style.visibility = "visible";
+    if (z) {
+      z.style.visibility = "collapse";
+    }
+  }
+
+  
   //$.Msg("RIGHT BUTTON CAST")
   try {
     var localHeroIndex = Players.GetPlayerHeroEntityIndex(
@@ -2729,6 +2759,7 @@ GameUI.SetMouseCallback(function (eventName, arg) {
   GameEvents.Subscribe("bottom_remove_notification", BottomRemoveNotification);
 
   GameEvents.Subscribe("Show_Special_Ui", showSpecialUi);
+
 
   $.Msg("done subscribe");
 })();

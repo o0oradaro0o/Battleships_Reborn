@@ -285,7 +285,6 @@ function modifier_item_spread_plasma_mix_2:OnIntervalThink()
           ModifierDuration = self.armor_dur_2
         }
       }
-      print(self.armor_dur_2)
       --print(self.ability:GetAbilityName())
       -- check if the caster has the weapon_passive ability, add it if they Don't
       if not self.parent:HasAbility("weapon_passive") then
@@ -321,7 +320,6 @@ function modifier_item_spread_plasma_mix_2:OnRefresh(keys)
   local hit_sound = hit_sounds[keys.extradata.ModifierLevel]
 
  
-    print("we know we're plasma")
     local damageTable = {
       victim = keys.target,
       attacker = keys.caster,
@@ -330,7 +328,6 @@ function modifier_item_spread_plasma_mix_2:OnRefresh(keys)
       ability = self:GetAbility()
     }
     ApplyDamage(damageTable)
-    print(keys.extradata.ModifierDuration)
     local modname = "modifier_item_spread_plasma_mix_dearmor"
     if  keys.extradata.ModifierLevel == 2 then
       modname = "modifier_item_spread_plasma_mix_dearmor_2"

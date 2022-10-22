@@ -1640,6 +1640,21 @@ function moveToRandomTradePost(args)
 	end
 end
 
+function moveEggToRandomTradePost(args)
+	local casterUnit = args.caster
+	local missionPool = Entities:FindAllByName("npc_dota_buil*")
+	local chosenMission
+
+	while chosenMission == nil do
+		local i = RandomInt(1, #missionPool)
+		if not string.match(missionPool[i]:GetUnitName(), "ship") then
+			chosenMission = missionPool[i]
+			 ----print(chosenMission:GetOrigin())
+		end
+	end
+	casterUnit:MoveToPosition(chosenMission:GetOrigin())
+end
+
 function Blur(keys)
 	local caster = keys.caster
 	local ability = keys.ability
@@ -2086,6 +2101,9 @@ function DropEmptyOnDeath(keys) -- keys is the information sent by the ability
 	}
 	CustomGameEventManager:Send_ServerToAllClients("Team_Can_Buy", data)
 end
+
+
+
 
 function CreateNoFireZone(keys)
 	local casterUnit = keys.caster

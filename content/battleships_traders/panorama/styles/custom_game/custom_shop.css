@@ -1124,7 +1124,7 @@
 #HiddenUI {
   flow-children: down;
   width: 500px;
-  height: 480px;
+  height: 680px;
   border: 0px solid black;
   background-color: gradient(
     linear,
@@ -1196,6 +1196,14 @@
   width: 490px;
   height: 500px;
 }
+.egg_image {
+  horizontal-align: right;
+
+  margin-top: 0px;
+  margin-right: 0px;
+  width: 490px;
+  height: 500px;
+}
 .ship_bkg_image {
   horizontal-align: right;
 
@@ -1206,6 +1214,24 @@
   height: 200px;
   border-radius: 10px;
 }
+.secret_content_holder {
+  flow-children: down;
+  width: 500px;
+  height: 300px;
+  border: 0px solid black;
+
+  horizontal-align: right;
+  background-color: gradient(
+    linear,
+    0% 50%,
+    0% 100%,
+    from(#42494ecc),
+    to(#252525ff)
+  );
+  border-radius: 10px;
+  margin: 5px;
+}
+
 .shop_content_holder {
   flow-children: down;
   width: 500px;

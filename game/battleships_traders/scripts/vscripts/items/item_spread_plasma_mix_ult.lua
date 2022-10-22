@@ -33,15 +33,6 @@ function item_spread_plasma_mix_ult_bow:OnProjectileHit(target, location)
     return
   end
 
-  local hit_sound = "Hero_VengefulSpirit.ProjectileImpact"
-
-  local particleName = "particles/econ/items/kunkka/kunkka_immortal/kunkka_immortal_ghost_ship_impact.vpcf"
-  local explosion_radius = 200
-  local particle = ParticleManager:CreateParticle(particleName, PATTACH_WORLDORIGIN, hero)
-  ParticleManager:SetParticleControl(particle, 0, target:GetAbsOrigin())
-  ParticleManager:SetParticleControl(particle, 1, target:GetAbsOrigin())
-  ParticleManager:ReleaseParticleIndex(particle)
-
   local enemies =
     FindUnitsInRadius(
     self:GetCaster():GetTeam(),
@@ -95,7 +86,7 @@ function item_spread_plasma_mix_ult_bow:OnProjectileHit(target, location)
 
   local modifier =
     target:AddNewModifier(
-    caster,
+      self:GetCaster(),
     self,
     "modifier_item_spread_plasma_mix_ult_bow_aoe_dearmor",
     {duration = self:GetSpecialValueFor("dearmor_duration")}

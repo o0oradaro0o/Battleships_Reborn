@@ -3,6 +3,7 @@
 	"consumables"
 	{
 		 "item" "item_spread_bow"
+		 "item" "item_spread_plasma_mix_bow_doubled"
 
 		 "item" "item_plasma_bow"
 		 
@@ -21,6 +22,8 @@
 	"attributes"
 	{
 		"item" "item_spread_two_bow"
+		"item" "item_spread_plasma_mix_two_bow_doubled"
+		
 		 "item" "item_plasma_two_bow"
 		 
  "item" "item_fire_two_bow"
@@ -39,6 +42,8 @@
 	"weapons_armor"
 	{
 		"item" "item_spread_three_bow"
+		"item" "item_spread_plasma_mix_three_bow_doubled"
+
 		 "item" "item_plasma_three_bow"
 		
  "item" "item_fire_three_bow"
@@ -70,7 +75,6 @@
  "item" "item_breach_ult_bow"
  "item"  "item_ice_ult_bow"
  "item"  "item_wind_ult_bow"
- "item"		"item_lorne"
 	}
 	// Level 1 - Green Recipes
 	"basics"

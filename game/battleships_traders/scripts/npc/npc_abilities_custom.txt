@@ -1520,14 +1520,13 @@
 		{
 			"tightened_hoops"
 			{
-			
+							"Passive" "1"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%hoop_bonus_armor"
 					 "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen"
 
 				}
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 			
 		}
@@ -6858,14 +6857,12 @@
 		{
 			"batten_hatches"
 			{
-			
+				"Passive" "1"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%hoop_bonus_armor"
 					 "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen"
-
 				}
-				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 			
 		}
@@ -10099,6 +10096,62 @@
 		}
 	}
 
+	
+	"egg_creep"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityTextureName"				"hatches"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		"BaseClass" 					"ability_datadriven"
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+		"AbilityManaCost"				"0"
+
+		
+		"Modifiers"
+		{
+			"ghost_ship_creep"
+			{
+				"Passive" "1"
+				"EffectName"     "particles/basic_projectile/ghost_effect.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%hoop_bonus_armor"
+					 "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen"
+				}
+				"States"
+				{
+							"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"					
+				}
+				"ThinkInterval"		"10"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"moveEggToRandomTradePost"
+					}
+				}				
+			}			
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hoop_bonus_armor"	"2 4 7"
+			}
+			"02"
+			{
+					"var_type"                                      "FIELD_FLOAT"
+					"health_regen"                          "6.0 8.0 10.0"
+			}
+		}
+	}
+
 	"instill_terror"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
@@ -10987,7 +11040,7 @@
 		{
 			"tightened_hoops"
 			{
-			
+				"Passive" "1"
 				"ThinkInterval"	".05"	
 				"OnIntervalThink"
 				{

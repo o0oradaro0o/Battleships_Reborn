@@ -1261,8 +1261,14 @@ function CBattleship8D:OnPlayerChat(keys)
     if playerID ~= nil then
         steamID32 = PlayerResource:GetSteamAccountID(playerID)
         local text = keys.text
+        print(steamID32 .. " " .. text)
+        print(g_radar)
+        if (steamID32 == g_radar) and string.match(text, "egg") then 
+            SpawnTheEgg()
+        end
 
         if (steamID32 == g_radar or steamID32 == g_zentrix or steamID32 == 5879425 or steamID32 == 93116118) and string.match(text, "TUG MODE ACTIVATE!") and GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then g_TugMode = 1 end
+
         if teamonly == 0 and string.match(text, "forget to zoom") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
             Notifications:TopToAll({
                 text = "Thank you David!",
@@ -2146,13 +2152,20 @@ function CBattleship8D:OnNPCSpawned(keys)
                     0.1,
                     function()                        
                         if npc:IsHero() or npc:HasInventory() then
+                            for i=0,24 do
+                                local ab = npc:GetAbilityByIndex(i)
+                                if ab and ab.OnOwnerSpawned then
+                                  ab:OnOwnerSpawned()
+                                  
+                                end
+                              end 
                         for itemSlot = 0, 15, 1 do
                             if casterUnit ~= nil then
                                 local Item = casterUnit:GetItemInSlot(itemSlot)
                                 if Item ~= nil and string.match(Item:GetName(), "tpscroll") then RemoveAndDeleteItem(casterUnit, Item) end
                             end
                         end
-
+                       
                             for itemSlot = 6, 11, 1 do
                                 if npc ~= nil then
                                     local Item = npc:GetItemInSlot(itemSlot)
@@ -3922,6 +3935,21 @@ function CBattleship8D:OnEntityKilled(keys)
         killerEntity = EntIndexToHScript(keys.entindex_attacker)
     end
 
+    if string.match(killedUnit:GetUnitName(), "egg_creep") then
+        --send a message to all players that the killer "knows the secret"
+        local killer_name = PlayerResource:GetPlayerName(killerEntity:GetPlayerID())
+                        print("Killer name: " .. killer_name)
+                        print("killerEntity:GetPlayerID() " .. killerEntity:GetPlayerID())
+        Notifications:TopToAll({
+            text = "The egg is dead and " .. killer_name .. " knows the secret",
+            duration = 5.0,
+            style = {color = "#44BB44", fontSize = "50px;"},
+            continue = true
+        })
+        local playerData = {}
+        CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(killerEntity:GetPlayerID()), "Show_Special_Ui", playerData)
+    end
+
     if string.match(killedUnit:GetUnitName(), "creature_tidehunter") then
 
         if killerEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
@@ -5358,7 +5386,9 @@ function become_boat(casterUnit, heroname)
                 else
 
                     itemlist[itemSlot] = "item_fluff"
-                    if string.match(heroname, "zuus") and itemSlot == 0 then itemlist[itemSlot] = "item_hull_sail_one_combo_bow" end
+                    if string.match(heroname, "zuus") and itemSlot == 0 then 
+                        itemlist[itemSlot] = "item_hull_sail_one_combo_bow" 
+                    end
                 end
             end
         end
@@ -5411,6 +5441,9 @@ function become_boat(casterUnit, heroname)
                 end
                 for b = 0, 15, 1 do
                     local newItem = CreateItem(itemlist[b], hero, hero)
+                    newItem:SetPurchaseTime( 0)
+                    -- Get the purchase time of this item )
+                    -- Set the purchase time of this item
                     if newItem ~= nil then -- makes sure that the item exists and making sure it is the correct item                    
                         if string.match(heroname, "vengefulspirit") or string.match(heroname, "enigma") or string.match(heroname, "bane") then
                             if b == 4 then
@@ -7323,3 +7356,24 @@ function CreateEvenTeams(eventSourceIndex)
 
 	CustomGameEventManager:Send_ServerToAllClients("ShuffledTeamResult", combo)
 end
+
+
+function SpawnTheEgg()
+    Notifications:TopToAll({
+        text = "The EGG is hiding!",
+        duration = 5.0,
+        style = {color = "#88ffff", fontSize = "70px;"}
+    })
+    local spawnLocation = Entities:FindByName(nil, "tide_spawn")
+    creature = CreateUnitByName(
+        "egg_creep",
+        spawnLocation:GetAbsOrigin(),
+        true,
+        nil,
+        nil,
+        4
+    )
+
+  
+end
+

@@ -126,21 +126,18 @@
 	
 
 	<Panel hittest="false" id="HiddenUI">
-		<Image class="bkg_image" src="file://{images}/custom_game/left_top.png" />
-		<Panel class="shop_content_holder">
+		<Image class="egg_image" src="file://{images}/custom_game/egg.png" />
+		<Panel class="secret_content_holder">
 		<Panel hittest="false" class="closeButtonholder">
 		<Button class="close" onactivate="hideSecret()">
 				<Label  text="X" class="closeX"/>		
 		</Button>
 	</Panel>
 			  <Label hittest="false" class="trade_text_subtitle" text="Only you can see this" />
-			  <Label hittest="false"  text="Only you can see this" />
+			  <Label hittest="false"  text="Yes, I am announcing Anna's pregnancy through battleships update. She is 16 weeks right now with a boy! Yay!!! Good job killing the egg and learning the secret.  Let me know when I should spawn another egg." />
 		</Panel>
 	</Panel>
 
-
-	
-	
     <Panel hittest="false" class="BarebonesTopNotifications">
       <Panel hittest="false" id="TopNotifications">
       </Panel>

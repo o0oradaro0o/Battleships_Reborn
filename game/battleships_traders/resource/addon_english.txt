@@ -955,6 +955,17 @@
     "DOTA_Tooltip_ability_item_spread_plasma_mix_three_bow_doubled_range_2"    "Ion Cannon RANGE:"
     "DOTA_Tooltip_ability_item_spread_plasma_mix_three_bow_doubled_dps_2"      "\n<font  size= '3' color='#cc6400'>DPS:</font>"
 
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_ult_bow"           "Atom Splitter"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_ult_bow_Description"         "<h1>Weapon: Ultimate spread-plasma mix</h1> fires singular shots that do damage in a large aoe around the target. damage is reduced for creeps and buildings. also leaves radiation that spreads from the target, dearmoring allies for a period after the hit."
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_ult_bow_dmg"         "Atom Splitter BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_ult_bow_fire_rate"       "Atom Splitter RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_ult_bow_range"         "Atom Splitter RANGE:"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_ult_bow_dps"         "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+    "DOTA_Tooltip_ability_item_spread_plasma_mix_ult_bow_aoe"       "Atom Splitter AOE:"
+     "DOTA_Tooltip_ability_item_spread_plasma_mix_ult_aoe_dearmor"       "Atom Splitter Debuff AOE:"
+     "DOTA_Tooltip_ability_item_spread_plasma_mix_ult_dearmor_duration"       "Atom Splitter Debuff Duration:"
+    
+
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //-0113---STARTING LINE------------------------
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
