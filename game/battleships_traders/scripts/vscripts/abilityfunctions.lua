@@ -2330,8 +2330,24 @@ function RealityRift( keys )
 end
 
 function WhaleBait(args)
+		
 	local targetPos = args.target:GetAbsOrigin()
 	local targetUnit = args.target
+	if targetUnit.Batecounter == nil then
+		targetUnit.Batecounter = 0
+	end
+	targetUnit.Batecounter = targetUnit.Batecounter+1
+	if targetUnit.Batecounter > 45 then
+		targetUnit.Batecounter = 0
+		--apply 15 damage to the target
+		local damageTable = {
+			victim = targetUnit,
+			attacker = args.caster,
+			damage = 15,
+			damage_type = DAMAGE_TYPE_MAGICAL,
+		}
+		ApplyDamage(damageTable)
+	end
 	-- --print('[WhaleBait]')
 	local casterPos = args.caster:GetAbsOrigin()
 	-- ----print('[ItemFunctions] wind_ult_buffet start loaction ' .. tostring(casterPos))
@@ -3045,15 +3061,18 @@ end
 
 function UpdateLink( keys )
 	local casterUnit = keys.caster
+	local ability = keys.ability
 
 	
 	if casterUnit.deploied == nil or casterUnit.deploied == false then
 		casterUnit:SetForwardVector(casterUnit.owner:GetForwardVector())
 		casterUnit:SetOrigin(casterUnit.owner:GetAttachmentOrigin(1))
-		casterUnit:AddNewModifier(creature, nil, "modifier_invulnerable", {})
-		casterUnit:AddNewModifier(creature, nil, "modifier_attack_immune", {})
+		casterUnit:AddNewModifier(casterUnit, nil, "modifier_invulnerable", {})
+		casterUnit:AddNewModifier(casterUnit, nil, "modifier_attack_immune", {})
+		ability:ApplyDataDrivenModifier(casterUnit, casterUnit, "docked", nil)
 	else
 		casterUnit:RemoveModifierByName("modifier_invulnerable")
+		casterUnit:RemoveModifierByName("docked")
 		casterUnit:RemoveModifierByName("modifier_attack_immune")
 	end
 	
@@ -3061,6 +3080,7 @@ end
 
 function RespawnLinkedTower( keys )
 	local casterUnit = keys.caster
+	casterUnit.deploied = false
 	local unit = CreateUnitByName(
                     "npc_dota_science_tower", 
                     casterUnit.owner:GetAttachmentOrigin(1), 
@@ -3119,6 +3139,25 @@ function ResetCoolDowns(args)
 	for abilitynum = 0, 15, 1 do
 		if target:GetAbilityByIndex(abilitynum) then
 		target:GetAbilityByIndex(abilitynum):EndCooldown()
+		end
+	end
+	abil1 = args.caster:GetAbilityByIndex(1)
+	local cooldown = abil1:GetCooldown(abil1:GetLevel())
+
+	abil1:StartCooldown(cooldown)
+	
+
+end
+
+function ResetCoolDownsSaveForUlt(args)
+	local target = args.target
+	
+	for abilitynum = 0, 15, 1 do
+		if target:GetAbilityByIndex(abilitynum) then
+			-- check if the ability is an ultimate
+			if target:GetAbilityByIndex(abilitynum):GetAbilityType() ~= 1 then
+				target:GetAbilityByIndex(abilitynum):EndCooldown()
+			end
 		end
 	end
 	abil1 = args.caster:GetAbilityByIndex(1)

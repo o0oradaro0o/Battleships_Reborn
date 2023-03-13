@@ -4,6 +4,7 @@ require('libraries/physics')
 require('notifications')
 require('storage')
 require('StatCollection/init')
+require('statcollection/schema')
 -- This library can be used for starting customized animations on units from lua
 require('libraries/animations')
 
@@ -104,7 +105,7 @@ g_TotalGoldCollectedBySouth = 0
 g_BoatJustBaught = 0
 
 -- ceat item counter
-g_LorneItemBuyers = 0
+g_setLorneMode = 0
 
 --	player counter
 g_PlayerCount = 0
@@ -1266,6 +1267,11 @@ function CBattleship8D:OnPlayerChat(keys)
         if (steamID32 == g_radar) and string.match(text, "egg") then 
             SpawnTheEgg()
         end
+        if ((steamID32 == g_radar) or  (steamID32 == g_vic)) and string.match(text, "lornecheat") then 
+            g_setLorneMode=1
+        end
+
+        
 
         if (steamID32 == g_radar or steamID32 == g_zentrix or steamID32 == 5879425 or steamID32 == 93116118) and string.match(text, "TUG MODE ACTIVATE!") and GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then g_TugMode = 1 end
 
@@ -3906,25 +3912,6 @@ function CBattleship8D:OnEntityKilled(keys)
         end
 
         -- handle ending game
-        if string.match(killedUnit:GetUnitName(), "base") then
-            ----print( "MATCHED BASE IS TRUE" )
-            if killedUnit:GetTeam() == DOTA_TEAM_BADGUYS then
-                storage:SetWinner("South")
-                GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
-                GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
-                GameRules:MakeTeamLose(DOTA_TEAM_BADGUYS)
-
-                GameRules:SetSafeToLeave(true)
-            elseif killedUnit:GetTeam() == DOTA_TEAM_GOODGUYS then
-
-                storage:SetWinner("North")
-                GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
-                GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
-                GameRules:MakeTeamLose(DOTA_TEAM_GOODGUYS)
-
-                GameRules:SetSafeToLeave(true)
-            end
-        end
 
     end
 
@@ -5286,21 +5273,8 @@ function CBattleship8D:OnItemPurchased(keys)
         fixBackpack(casterUnit)
     end
 
-    if GameRules:GetGameTime() < 300 and string.match(itemName, "lorne") then
-        g_LorneItemBuyers = g_LorneItemBuyers + 1
-        if casterUnit:IsHero() or casterUnit:HasInventory() then -- In order to make sure that the unit that died actually has items, it checks if it is either a hero or if it has an inventory.
-            for itemSlot = 0, 15, 1 do -- a For loop is needed to loop through each slot and check if it is the item that it needs to drop
-                if casterUnit ~= nil then -- checks to make sure the killed unit is not nonexistent.
-                    local Item = casterUnit:GetItemInSlot(itemSlot) -- uses a variable which gets the actual item in the slot specified starting at 0, 1st slot, and ending at 5,the 6th slot.
-                    if Item ~= nil and Item:GetName() == itemName then -- makes sure that the item exists and making sure it is the correct item
-                        RemoveAndDeleteItem(casterUnit, Item)
-                    end
-                end
-            end
-        end
-    end
 
-    if g_LorneItemBuyers == g_PlayerCount and g_PlayerCount ~= 0 then
+    if g_setLorneMode == 1 then
         for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
             if hero ~= nil and hero:IsOwnedByAnyPlayer() then
                 hero:SetGold(80000, true)
@@ -5347,7 +5321,7 @@ function fixBackpack(casterUnit)
 end
 
 function become_boat(casterUnit, heroname)
-    ----print('[ItemFunctions] become_bristleback started!')
+    print('[ItemFunctions] become_bristleback started!')
 
     local a = 0
     local plyID = casterUnit:GetPlayerOwnerID()
@@ -5433,7 +5407,7 @@ function become_boat(casterUnit, heroname)
                 hero:SetGold(gold, true)
                 hero:SetGold(0, false)
                 hero:AddExperience(xp, false, false)
-                if hero:GetLevel() >= 15 and g_LorneItemBuyers ~= g_PlayerCount then
+                if hero:GetLevel() >= 15 and g_setLorneMode ~= 1 then
                     for abilitySlot = 0, 5, 1 do
                         local ability = hero:GetAbilityByIndex(abilitySlot)
                         if ability then ability:SetLevel(ability:GetMaxLevel()) end
@@ -5575,7 +5549,7 @@ function become_boat(casterUnit, heroname)
                     time = math.floor(GameRules:GetGameTime() / 60 + 0.5)
                 }
             )
-            ----print(storage:GetHeroName(plyID) .. math.floor(GameRules:GetGameTime()/60+0.5))
+           print(storage:GetHeroName(plyID) .. math.floor(GameRules:GetGameTime()/60+0.5))
             
             CustomGameEventManager:Send_ServerToAllClients("Boat_Spawned", data)
         end
@@ -5920,7 +5894,7 @@ function buyBoat(eventSourceIndex, args)
         local directionTwo = casterPos - targetUnitTwo:GetAbsOrigin()
 
         ----print(itemName .. " vs " .. casterUnit:GetName())
-        if (directionOne:Length() < 1800 and casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS or directionTwo:Length() < 1800 and casterUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS) and herogold > cost - 1 and not string.match(casterUnit:GetName(), itemName) and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or g_LorneItemBuyers == g_PlayerCount) then
+        if (directionOne:Length() < 1800 and casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS or directionTwo:Length() < 1800 and casterUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS) and herogold > cost - 1 and not string.match(casterUnit:GetName(), itemName) and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or g_setLorneMode == 1) then
             boat = true
             casterUnit:SetGold(herogold - cost, true)
             casterUnit:SetGold(0, false)
@@ -7132,7 +7106,15 @@ function setupWin(winner)
     if winner == DOTA_TEAM_BADGUYS then
         GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
         storage:SetWinner("North")
-        
+        statCollection.winner = DOTA_TEAM_GOODGUYS
+        local game = BuildGameArray()
+
+        -- Build players array
+        local players = BuildPlayersArray()
+
+        statCollection:sendStage3(statCollection:calcWinnersByTeam(), true)
+        statCollection:sendCustom({game=game, players=players})
+
         Timers:CreateTimer(
             10,
             function()
@@ -7148,6 +7130,15 @@ function setupWin(winner)
 
         GameRules:SendCustomMessage("#wrap_up", DOTA_TEAM_GOODGUYS, 0)
         storage:SetWinner("South")
+        statCollection.winner = DOTA_TEAM_GOODGUYS
+        local game = BuildGameArray()
+
+        -- Build players array
+        local players = BuildPlayersArray()
+
+        statCollection:sendStage3(statCollection:calcWinnersByTeam(), true)
+        statCollection:sendCustom({game=game, players=players})
+
         Timers:CreateTimer(
             10,
             function()
@@ -7156,9 +7147,7 @@ function setupWin(winner)
                 GameRules:SetSafeToLeave(true)
             end
         )
-        
 
-        
     end
     local winnerData = {team_number = winner}
     CustomGameEventManager:Send_ServerToAllClients("team_win", winnerData)
@@ -7179,6 +7168,7 @@ function setupWin(winner)
             PlayerResource:SetCameraTarget(hero:GetPlayerID(), hero)
             hero:SetOrigin(papa_place + Vector(-500 + i * 250, 200, 0))
             hero:SetForwardVector(papa_place - hero:GetOrigin())
+            hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 10})
         elseif hero ~= nil and hero:IsOwnedByAnyPlayer() and hero:GetPlayerOwnerID() ~= -1 and hero:IsRealHero() and hero:GetTeamNumber() ~= winner then
             for _, playerData in pairs(g_PlayerMMRList) do
                 if tonumber(PlayerResource:GetSteamAccountID(hero:GetPlayerOwnerID())) == tonumber(playerData.playerSteamID) then
@@ -7190,6 +7180,7 @@ function setupWin(winner)
             PlayerResource:SetCameraTarget(hero:GetPlayerID(), hero)
             hero:SetOrigin(papa_place + Vector(-500 + j * 250, -400, 0))
             hero:SetForwardVector(papa_place - hero:GetOrigin())
+            hero:AddNewModifier(hero, nil, "modifier_stunned", {duration = 10})
             if hero:IsHero() or hero:HasInventory() then
                 for itemSlot = 0, 15, 1 do
                     if hero ~= nil then
@@ -7377,3 +7368,66 @@ function SpawnTheEgg()
   
 end
 
+function BuildGameArray()
+    local game = {}
+
+    -- Add game values here as game.someValue = GetSomeGameValue()
+    game.eh=""
+    game.empGoldHist=storage:GetEmpGoldHist()		-- Team advantage history
+    game.wn=storage:getWinner()			-- Team winner
+    game.settings=storage:getGameSettings()
+    game.combatLog=storage:GetCombatLog()
+    game.mapVersion=8
+    game.gameDuration = math.floor(GameRules:GetGameTime()+0.5)
+    --game.th=storage:GetTideKillers()
+
+    return game
+end
+
+-- Returns a table containing data for every player in the game
+function BuildPlayersArray()
+    local players = {}
+    for playerID = 0, DOTA_MAX_PLAYERS do
+        if PlayerResource:IsValidPlayerID(playerID) then
+            if not PlayerResource:IsBroadcaster(playerID) then
+
+                local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+                
+                local teamname="North"
+                if hero:GetTeamNumber()==DOTA_TEAM_GOODGUYS then
+                	teamname="South"
+                end
+                
+                local kickStatus="Active"
+                if storage:GetDisconnectState(playerID)~=0 then
+                	kickStatus="Kicked"
+                end
+
+                table.insert(players, {
+                    -- steamID32 required in here
+                    steamID32 = PlayerResource:GetSteamAccountID(playerID),
+
+                    -- Example functions for generic stats are defined in statcollection/lib/utilities.lua
+                    -- Add player values here as someValue = GetSomePlayerValue(),
+                    tm=teamname,
+                    shp = storage:GetHeroName(playerID), 	--Hero by its short name
+                    kls  = hero:GetKills(),   			--Player Kills
+                    dth  = hero:GetDeaths(),  			--Player Deaths
+                    lvl = hero:GetLevel(),			--Player Levels
+                    afk = kickStatus,				--Custom Player status
+                    lh = PlayerResource:GetLastHits(playerID),
+                    -- Item List
+                    bo="",
+                    damageTanked = storage:GetTanked(playerID),
+                    buildingDamage = storage:GetBuildingDamage(playerID),
+                    HeroDamage = storage:GetHeroDmg(playerID),
+                    buildOrder = storage:GetPlayerHist(playerID),
+                    saleOrder = storage:GetPlayerSaleHist(playerID),
+                    boatOrder = storage:GetPlayerBoatHist(playerID)
+                })
+            end
+        end
+    end
+
+    return players
+end

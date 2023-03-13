@@ -122,7 +122,7 @@
 		</Panel>
 		<Panel id="DiscordHolder">
 			<Label id="DiscordHeader" html="true" text="Click to join us on Discord!" />
-			<Button id="DiscordButton"  onactivate="ExternalBrowserGoToURL('https://discord.gg/DFc8MBt');" >
+			<Button id="DiscordButton"  onactivate="ExternalBrowserGoToURL('https://discord.gg/Q7pRggksam');" >
 			
 						<Image id="DiscordImage" src="file://{images}/custom_game/game_info/Discord.png" />
 			</Button>

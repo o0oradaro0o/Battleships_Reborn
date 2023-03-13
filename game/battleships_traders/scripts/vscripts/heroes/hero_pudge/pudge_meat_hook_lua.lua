@@ -80,7 +80,7 @@ function pudge_meat_hook_lua:OnSpellStart()
 		Source = self:GetCaster(),
 		iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_BOTH,
 		iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-		iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS + DOTA_UNIT_TARGET_FLAG_INVULNERABLE,
+		iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS,
 	}
 
 	ProjectileManager:CreateLinearProjectile( info )
