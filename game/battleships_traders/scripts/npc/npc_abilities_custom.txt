@@ -13771,6 +13771,16 @@
 		}
 	}
 
+	"tower_animator"
+	{
+		"BaseClass"           "ability_lua"
+		"ScriptFile"          "modifiers/tower_animator.lua"
+		"AbilityTextureName"  "sandking_caustic_finale"
+
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	}
+
 "ufo_invis"
 	{
 		"BaseClass"           "ability_lua"

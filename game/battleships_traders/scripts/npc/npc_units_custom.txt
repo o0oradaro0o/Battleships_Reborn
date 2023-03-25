@@ -762,13 +762,15 @@
 			// General
 			//
 			"BaseClass"					"npc_dota_tower"	// Class of entity of link to.
-			"Model"						"models/building_south_tower.vmdl"// Model.
+			"Model"						"models/items/world/towers/radiant_tower_2022/radiant_tower_2022.vmdl"// Model.
 			"SoundSet"					"Tower.Water"		// Name of sound set.
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
 			"Level"						"1"
 			"Ability1"					"aoe_shot"			// Ability 1
 			"Ability2"					"armor_remover"
+			"Ability3"					"tower_animator"
+			
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"12"		// Physical protection.
@@ -835,7 +837,7 @@
 			// General
 			//
 			"BaseClass"					"npc_dota_tower"	// Class of entity of link to.
-			"Model"						"models/building_south_tower.vmdl"// Model.
+			"Model"						"models/items/world/towers/radiant_tower_2022/radiant_tower_2022.vmdl"// Model.
 			"SoundSet"					"Tower.Water"		// Name of sound set.
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
@@ -843,6 +845,7 @@
 			"Ability1"					"aoe_shot"			// Ability 1
 			"Ability2"					"armor_remover"
 			"Ability3"					"anti_backdoor"
+			"Ability4"					"tower_animator"
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"18"		// Physical protection.
@@ -910,7 +913,7 @@
 			// General
 			//
 			"BaseClass"					"npc_dota_tower"	// Class of entity of link to.
-			"Model"						"models/building_south_tower.vmdl"// Model.
+			"Model"						"models/items/world/towers/radiant_tower_2022/radiant_tower_2022.vmdl"// Model.
 			"SoundSet"					"Tower.Water"		// Name of sound set.
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
@@ -918,6 +921,7 @@
 			"Ability1"					"aoe_shot"			// Ability 1
 			"Ability2"					"armor_remover"
 			"Ability3"					"anti_backdoor"
+			"Ability4"					"tower_animator"
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"18"		// Physical protection.
@@ -983,13 +987,14 @@
 			// General
 			//
 			"BaseClass"					"npc_dota_tower"	// Class of entity of link to.
-			"Model"						"models/building_north_tower.vmdl"// Model.
+			"Model"						"models/items/world/towers/dire_tower_2022/dire_tower_2022.vmdl"// Model.
 			"SoundSet"					"Tower.Fire"		// Name of sound set.
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
 			"Level"						"1"
 			"Ability1"					"aoe_shot"			// Ability 1
 			"Ability2"					"armor_remover"
+			"Ability3"					"tower_animator"
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"12"		// Physical protection.
@@ -1056,7 +1061,7 @@
 			// General
 			//
 			"BaseClass"					"npc_dota_tower"	// Class of entity of link to.
-			"Model"						"models/building_north_tower.vmdl"// Model.
+			"Model"						"models/items/world/towers/dire_tower_2022/dire_tower_2022.vmdl"// Model.
 			"SoundSet"					"Tower.Fire"		// Name of sound set.
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
@@ -1066,6 +1071,7 @@
 			"Ability1"					"aoe_shot"			// Ability 1
 			"Ability2"					"armor_remover"
 			"Ability3"					"anti_backdoor"
+			"Ability4"					"tower_animator"
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"18"		// Physical protection.
@@ -1132,7 +1138,7 @@
 			// General
 			//
 			"BaseClass"					"npc_dota_tower"	// Class of entity of link to.
-			"Model"						"models/building_north_tower.vmdl"// Model.
+			"Model"						"models/items/world/towers/dire_tower_2022/dire_tower_2022.vmdl"// Model.
 			"SoundSet"					"Tower.Fire"		// Name of sound set.
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
@@ -1142,6 +1148,7 @@
 			"Ability1"					"aoe_shot"			// Ability 1
 			"Ability2"					"armor_remover"
 			"Ability3"					"anti_backdoor"
+			"Ability4"					"tower_animator"
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"18"		// Physical protection.
@@ -1275,7 +1282,7 @@
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
 			"Level"						"1"
-			"Ability2"					"armor_remover"
+			"Ability2"					"modifier_tower_animator"
 			"Ability3"					"anti_backdoor"
 			// Armor
 			//----------------------------------------------------------------
@@ -1339,7 +1346,7 @@
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
 			"Level"						"1"
-			"Ability2"					"armor_remover"
+			"Ability2"					"modifier_tower_animator"
 			"Ability3"					"anti_backdoor"
 			
 			// Armor
@@ -1403,7 +1410,7 @@
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
 			"Level"						"1"
-			"Ability2"					"armor_remover"
+			"Ability2"					"modifier_tower_animator"
 			"Ability3"					"anti_backdoor"
 			// Armor
 			//----------------------------------------------------------------
@@ -1481,7 +1488,7 @@
 								// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"repair_aura"			// Ability 1
-		"Ability2"					"armor_remover"
+		"Ability2"					"modifier_tower_animator"
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 			
@@ -1554,7 +1561,7 @@
 					// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"repair_aura"			// Ability 1
-		"Ability2"					"armor_remover"
+		"Ability2"					"modifier_tower_animator"
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 			
@@ -1613,7 +1620,7 @@
 			"MinimapIcon"				""
 			"MinimapIconSize"			"0"
 			"Level"						"1"
-			"Ability2"					"armor_remover"
+			"Ability2"					"modifier_tower_animator"
 				"ModelScale" 				"1.0"
 			
 			// Armor
@@ -1680,7 +1687,7 @@
 			"Level"						"1"
 			
 			"ModelScale" 				"1.0"
-			"Ability2"					"armor_remover"
+			"Ability2"					"modifier_tower_animator"
 			// Armor
 			//----------------------------------------------------------------
 			"ArmorPhysical"				"18"		// Physical protection.
