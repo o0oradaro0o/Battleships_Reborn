@@ -3117,13 +3117,13 @@ function dropTower( keys )
 							tower:AddItem(newItem)
 							
 							if string.match( Item:GetName(),"hull_one" ) then
-									hpmod = 500
+									hpmod = 1000
 							elseif string.match( Item:GetName(),"hull_two" ) then
-									hpmod = 800
+									hpmod = 1800
 							elseif string.match( Item:GetName(),"hull_three" ) then
-									hpmod = 1500
+									hpmod = 2600
 							elseif string.match( Item:GetName(),"hull_four" ) then
-									hpmod = 2400
+									hpmod = 3400
 							end
 					end
 				end
