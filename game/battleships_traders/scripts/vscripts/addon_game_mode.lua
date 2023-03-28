@@ -1292,7 +1292,7 @@ function CBattleship8D:OnPlayerChat(keys)
         })
     end
 
-    if text == "-crabs" and steamID32 == g_vic then
+    if text == "-crabs" and (steamID32 == g_vic or steamID32 == g_radar) then
         ToggleCrabMode()
     end
 
@@ -3941,6 +3941,19 @@ function CBattleship8D:OnEntityKilled(keys)
         })
         local playerData = {}
         CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(killerEntity:GetPlayerID()), "Show_Special_Ui", playerData)
+    end
+    if string.match(killedUnit:GetUnitName(), "npc_dota_creature_crab") then
+        -- iterate through all the heros and if they have 10 stacks of modifier_carcinisation make them a crab boat
+        for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
+            if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+                if hero:HasModifier("modifier_carcinisation") then
+                    local crabDebuff = hero:FindModifierByName("modifier_carcinisation")
+                    if crabDebuff:GetStackCount() >= 10 then
+                        become_boat(hero, "npc_dota_hero_nyx_assassin")
+                    end
+                end
+            end
+        end
     end
 
     if string.match(killedUnit:GetUnitName(), "creature_tidehunter") then
