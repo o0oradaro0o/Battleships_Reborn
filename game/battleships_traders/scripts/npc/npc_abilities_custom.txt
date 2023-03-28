@@ -13777,8 +13777,7 @@
 		"ScriptFile"          "modifiers/tower_animator.lua"
 		"AbilityTextureName"  "sandking_caustic_finale"
 
-		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
+		"AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	}
 
 "ufo_invis"
@@ -14446,16 +14445,19 @@
 	{
 		"BaseClass"                     "ability_lua"
     "ScriptFile"          "heroes/weapon_passive.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"FightRecapLevel"				"1"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName"			"tractor_beam"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"LevelsBetweenUpgrades"					"3"
 		"RequiredLevel"						"0"
     "AbilityCastPoint"              "0"
-    
 	}
 
-
-
+	"crab_passive"
+	{
+		"AbilityTextureName"			"nyx_assassin_spiked_carapace"
+		"BaseClass"           "ability_lua"
+    "ScriptFile"          "heroes/crab_passive.lua"
+    "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"    
+	}
 }

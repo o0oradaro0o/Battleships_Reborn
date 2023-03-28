@@ -1,0 +1,6 @@
+<root>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/sounds.js" /> 
+    </scripts>
+    <Panel></Panel>
+</root>

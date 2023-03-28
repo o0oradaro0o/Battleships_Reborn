@@ -11,7 +11,6 @@ modifier_tower_animator = class({})
 function modifier_tower_animator:DeclareFunctions()
   local funcs = {
     MODIFIER_EVENT_ON_ATTACK_START,
-    MODIFIER_PROPERTY_OVERRIDE_ANIMATION,
     MODIFIER_EVENT_ON_DEATH,
   }
   return funcs
@@ -21,17 +20,16 @@ function modifier_tower_animator:GetEffectAttachType()
   return PATTACH_ABSORIGIN_FOLLOW
 end
 
-function modifier_tower_animator:GetOverrideAnimation()
-  return ACT_DOTA_CUSTOM_TOWER_IDLE
-end
-
 function modifier_tower_animator:OnCreated()
   if not IsServer() then return end
 
   self.rotating = false
   self.target = nil
 
-
+  Timers:CreateTimer(5, function()
+    self:GetParent():StartGesture(ACT_DOTA_CUSTOM_TOWER_IDLE)
+    return
+  end)
 end
 
 function sign(value)

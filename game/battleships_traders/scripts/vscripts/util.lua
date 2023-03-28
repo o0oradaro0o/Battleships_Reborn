@@ -32,6 +32,10 @@ function TableCount( t )
   return n
 end
 
+function IsValidAlive(unit)
+  return (IsValidEntity(unit) and unit:IsAlive())
+end
+
 function maxValue(a)
 	local values = {}
 

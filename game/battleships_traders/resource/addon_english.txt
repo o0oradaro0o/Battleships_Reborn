@@ -1464,6 +1464,9 @@
 
     "DOTA_Tooltip_fx_test_modifier"           "Flying… sorta"
     "DOTA_Tooltip_fx_test_modifier_Description"     "Flying, falling… Whatever you're doing, it's happening fast."
+    
+    "DOTA_Tooltip_modifier_carcinisation"           "Carcinisation"
+    "DOTA_Tooltip_modifier_carcinisation_Description"     "Become Crab"
 
     "DOTA_Tooltip_evasion_aura_sputt"           "Obscured"
     "DOTA_Tooltip_evasion_aura_sputt_Description"     "Hard to see and likely to be missed."
@@ -1844,6 +1847,7 @@
 
     "npc_dota_creature_cop"             "Officer Chelle"
     "npc_dota_creature_tidehunter"          "Tide Hunter" 
+    "npc_dota_creature_crab"          "Crab" 
     
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -786,7 +786,7 @@
 			"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
 			"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 			"AttackRange"				"1000"		// Range within a target can be attacked.
-			"ProjectileModel"			"particles\basic_projectile\ranged_tower_good.vpcf"		// Particle system model for projectile.
+			"ProjectileModel"			"particles/econ/world/towers/radiant_tower_2022/radiant_tower_2022_attack.vpcf"		// Particle system model for projectile.
 			"ProjectileSpeed"			"1250"		// Speed of projectile.
 	
 				
@@ -861,7 +861,7 @@
 			"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
 			"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 			"AttackRange"				"1000"		// Range within a target can be attacked.
-			"ProjectileModel"			"particles\basic_projectile\ranged_tower_good.vpcf"		// Particle system model for projectile.
+			"ProjectileModel"			"particles/econ/world/towers/radiant_tower_2022/radiant_tower_2022_attack.vpcf"		// Particle system model for projectile.
 			"ProjectileSpeed"			"1250"		// Speed of projectile.
 	
 				
@@ -937,7 +937,7 @@
 			"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
 			"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 			"AttackRange"				"1000"		// Range within a target can be attacked.
-			"ProjectileModel"			"particles\basic_projectile\ranged_tower_good.vpcf"		// Particle system model for projectile.
+			"ProjectileModel"			"particles/econ/world/towers/radiant_tower_2022/radiant_tower_2022_attack.vpcf"		// Particle system model for projectile.
 			"ProjectileSpeed"			"1250"		// Speed of projectile.
 			"ModelScale" 				"1.5"
 				
@@ -1010,7 +1010,7 @@
 			"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
 			"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 			"AttackRange"				"1000"		// Range within a target can be attacked.
-			"ProjectileModel"			"particles/basic_projectile/ranged_tower_bad.vpcf"		// Particle system model for projectile. 
+			"ProjectileModel"			"particles/econ/world/towers/dire_tower_2022/dire_tower_2022_attack.vpcf"		// Particle system model for projectile. 
 			"ProjectileSpeed"			"1250"		// Speed of projectile.
 	
 				
@@ -1087,7 +1087,7 @@
 			"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
 			"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 			"AttackRange"				"1000"		// Range within a target can be attacked.
-			"ProjectileModel"			"particles/basic_projectile/ranged_tower_bad.vpcf"		// Particle system model for projectile. 
+			"ProjectileModel"			"particles/econ/world/towers/dire_tower_2022/dire_tower_2022_attack.vpcf"		// Particle system model for projectile. 
 			"ProjectileSpeed"			"1250"		// Speed of projectile.
 	
 				
@@ -1164,7 +1164,7 @@
 			"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
 			"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 			"AttackRange"				"1000"		// Range within a target can be attacked.
-			"ProjectileModel"			"particles/basic_projectile/ranged_tower_bad.vpcf"		// Particle system model for projectile. 
+			"ProjectileModel"			"particles/econ/world/towers/dire_tower_2022/dire_tower_2022_attack.vpcf"		// Particle system model for projectile. 
 			"ProjectileSpeed"			"1250"		// Speed of projectile.
 	
 				
@@ -2720,7 +2720,7 @@
 			"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
 			"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 			"AttackRange"				"1000"		// Range within a target can be attacked.
-			"ProjectileModel"			"particles\basic_projectile\ranged_tower_good.vpcf"		// Particle system model for projectile.
+			"ProjectileModel"			"particles/econ/world/towers/radiant_tower_2022/radiant_tower_2022_attack.vpcf"		// Particle system model for projectile.
 			"ProjectileSpeed"			"1250"		// Speed of projectile.
 	
 				
@@ -2796,7 +2796,7 @@
 			"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
 			"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 			"AttackRange"				"1000"		// Range within a target can be attacked.
-			"ProjectileModel"			"particles\basic_projectile\ranged_tower_good.vpcf"		// Particle system model for projectile.
+			"ProjectileModel"			"particles/econ/world/towers/radiant_tower_2022/radiant_tower_2022_attack.vpcf"		// Particle system model for projectile.
 			"ProjectileSpeed"			"1250"		// Speed of projectile.
 	
 				
@@ -2869,7 +2869,7 @@
 			"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
 			"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 			"AttackRange"				"1000"		// Range within a target can be attacked.
-			"ProjectileModel"			"particles\basic_projectile\ranged_tower_good.vpcf"		// Particle system model for projectile.
+			"ProjectileModel"			"particles/econ/world/towers/radiant_tower_2022/radiant_tower_2022_attack.vpcf"		// Particle system model for projectile.
 			"ProjectileSpeed"			"1250"		// Speed of projectile.
 	
 				
@@ -2941,7 +2941,7 @@
 			"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
 			"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 			"AttackRange"				"1000"		// Range within a target can be attacked.
-			"ProjectileModel"			"particles\basic_projectile\ranged_tower_good.vpcf"		// Particle system model for projectile.
+			"ProjectileModel"			"particles/econ/world/towers/radiant_tower_2022/radiant_tower_2022_attack.vpcf"		// Particle system model for projectile.
 			"ProjectileSpeed"			"1250"		// Speed of projectile.
 	
 				
@@ -3013,7 +3013,7 @@
 			"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
 			"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 			"AttackRange"				"1000"		// Range within a target can be attacked.
-			"ProjectileModel"			"particles\basic_projectile\ranged_tower_good.vpcf"		// Particle system model for projectile.
+			"ProjectileModel"			"particles/econ/world/towers/radiant_tower_2022/radiant_tower_2022_attack.vpcf"		// Particle system model for projectile.
 			"ProjectileSpeed"			"1250"		// Speed of projectile.
 	
 				
@@ -3085,7 +3085,7 @@
 			"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
 			"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 			"AttackRange"				"1000"		// Range within a target can be attacked.
-			"ProjectileModel"			"particles\basic_projectile\ranged_tower_good.vpcf"		// Particle system model for projectile.
+			"ProjectileModel"			"particles/econ/world/towers/radiant_tower_2022/radiant_tower_2022_attack.vpcf"		// Particle system model for projectile.
 			"ProjectileSpeed"			"1250"		// Speed of projectile.
 	
 				
@@ -3158,7 +3158,7 @@
 			"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
 			"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 			"AttackRange"				"1000"		// Range within a target can be attacked.
-			"ProjectileModel"			"particles\basic_projectile\ranged_tower_good.vpcf"		// Particle system model for projectile.
+			"ProjectileModel"			"particles/econ/world/towers/radiant_tower_2022/radiant_tower_2022_attack.vpcf"		// Particle system model for projectile.
 			"ProjectileSpeed"			"1250"		// Speed of projectile.
 	
 				
@@ -3230,7 +3230,7 @@
 			"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
 			"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 			"AttackRange"				"1000"		// Range within a target can be attacked.
-			"ProjectileModel"			"particles\basic_projectile\ranged_tower_good.vpcf"		// Particle system model for projectile.
+			"ProjectileModel"			"particles/econ/world/towers/radiant_tower_2022/radiant_tower_2022_attack.vpcf"		// Particle system model for projectile.
 			"ProjectileSpeed"			"1250"		// Speed of projectile.
 	
 				
@@ -3302,7 +3302,7 @@
 			"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
 			"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 			"AttackRange"				"1000"		// Range within a target can be attacked.
-			"ProjectileModel"			"particles\basic_projectile\ranged_tower_good.vpcf"		// Particle system model for projectile.
+			"ProjectileModel"			"particles/econ/world/towers/radiant_tower_2022/radiant_tower_2022_attack.vpcf"		// Particle system model for projectile.
 			"ProjectileSpeed"			"1250"		// Speed of projectile.
 	
 				
@@ -3372,7 +3372,7 @@
 			"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
 			"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 			"AttackRange"				"1000"		// Range within a target can be attacked.
-			"ProjectileModel"			"particles\basic_projectile\ranged_tower_good.vpcf"		// Particle system model for projectile.
+			"ProjectileModel"			"particles/econ/world/towers/radiant_tower_2022/radiant_tower_2022_attack.vpcf"		// Particle system model for projectile.
 			"ProjectileSpeed"			"1250"		// Speed of projectile.
 	
 				
@@ -3623,7 +3623,7 @@
 			"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
 			"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 			"AttackRange"				"1000"		// Range within a target can be attacked.
-			"ProjectileModel"			"particles\basic_projectile\ranged_tower_good.vpcf"		// Particle system model for projectile.
+			"ProjectileModel"			"particles/econ/world/towers/radiant_tower_2022/radiant_tower_2022_attack.vpcf"		// Particle system model for projectile.
 			"ProjectileSpeed"			"1250"		// Speed of projectile.
 	
 				
@@ -4156,12 +4156,57 @@
 			"BountyGain"				"100"
 			"XPGain"					"50"			
 		}
-		// Creature Data
-		//----------------------------------------------------------------
-
-		
-		
 	}
+
+	"npc_dota_creature_crab"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"				"models/items/courier/hermit_crab/hermit_crab.vmdl"
+		"SoundSet"					"Creep_Good_Melee"
+		"ModelScale"				"1.0"
+		"Level"						"1"
+		
+		"Ability1"					"crab_passive"
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		"Ability5"					""
+		"Ability6"					""
+		"Ability7"					""
+		"Ability8"					""
+
+		"ArmorPhysical"				"0"
+		"MagicalResistance"			"0"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackRange"				"50"
+		"AttackDamageMin"			"1"		// Damage range min.
+		"AttackDamageMax"			"1"		// Damage range max.
+
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+		"HealthBarOffset"			"380"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"450"		// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+
+		"StatusHealth"				"1"		// Base health.
+		"StatusHealthRegen"			"0"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+		
+		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		"vscripts"				"crab_ai.lua"
+	}
+
 	"npc_dummy_unit"
 {
 	// General
