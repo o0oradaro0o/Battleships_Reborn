@@ -86,18 +86,12 @@ function modifier_crab_passive:BlowUp(heroes)
     for _, hero in pairs(heroes) do
         self:AttachCrabPart(hero)
         
-        hero:AddNewModifier(parent, nil, "modifier_carcinisation", {})
-        local debuff = hero:FindModifierByName("modifier_carcinisation")
-        debuff:SetStackCount(debuff:GetStackCount() + 1)        
+        local crabDebuff = hero:AddNewModifier(hero, nil, "modifier_carcinisation", {})
+        crabDebuff:SetStackCount(crabDebuff:GetStackCount() + 1)        
         
-        -- if the hero has 10 crab parts, turn them into a crab
-        if (debuff:GetStackCount() >= 10) then
-            -- I want people to turn into the crab boat, but it isn't working
+        -- -- if the hero has 10 crab parts, turn them into a crab
+        if (crabDebuff:GetStackCount() >= 10) then
             -- become_boat(hero, "npc_dota_hero_nyx_assassin")
-
-            -- for now I'll just remove the debuff and kill them
-            hero:RemoveModifierByName("modifier_carcinisation")
-            hero:ForceKill(true)
         end
         
         break
@@ -108,14 +102,16 @@ end
 
 function modifier_crab_passive:AttachCrabPart(hero)
     local crabParts = {
-        "models/items/sand_king/anuxi_cerci_tail/anuxi_cerci_tail.vmdl",
+        "models/crabparts/anuxi_cerci_tail.vmdl",
         "models/items/sand_king/defiledstinger_back/defiledstinger_back.vmdl",
         "models/items/sand_king/sand_king_immortal_arms_ti7/sand_king_ti7_immortal_arms.vmdl",
         "models/items/sand_king/sandking_shrimp_king_arms_v2/sandking_shrimp_king_arms_v2.vmdl",
     }
 
     local model = GetRandomTableElement(crabParts)
-    local attachment = Attachments:AttachProp(hero, "attach_hitloc", model, RandomFloat(1, 3), {
+    local size = RandomFloat(1, 3) * (1 / hero:GetModelScale())
+    print(hero:GetModelScale())
+    local attachment = Attachments:AttachProp(hero, "attach_hitloc", model, size, {
         pitch = RandomInt(0, 360),
         yaw = RandomInt(0, 360),
         roll = RandomInt(0, 360),
@@ -140,6 +136,10 @@ end
 
 function modifier_carcinisation:IsDebuff()
     return true
+end
+
+function modifier_carcinisation:GetTexture()
+    return "nyx_assassin_spiked_carapace"
 end
 
 function modifier_carcinisation:OnDestroy()

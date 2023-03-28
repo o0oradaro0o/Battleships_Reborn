@@ -361,7 +361,7 @@ function Precache(context)
     local precache = require('tables/precache_files')
 
     PrecacheResource("model", "models/items/lion/hellclaw_of_maelrawn/hellclaw_of_maelrawn.vmdl", context)
-    PrecacheResource("model", "models/items/sand_king/anuxi_cerci_tail/anuxi_cerci_tail.vmdl", context)
+    PrecacheResource("model", "models/crabparts/anuxi_cerci_tail.vmdl", context)
     PrecacheResource("model", "models/items/sand_king/defiledstinger_back/defiledstinger_back.vmdl", context)
     PrecacheResource("model", "models/items/sand_king/sand_king_immortal_arms_ti7/sand_king_ti7_immortal_arms.vmdl", context)
     PrecacheResource("model", "models/items/sand_king/sandking_shrimp_king_arms_v2/sandking_shrimp_king_arms_v2.vmdl", context)
