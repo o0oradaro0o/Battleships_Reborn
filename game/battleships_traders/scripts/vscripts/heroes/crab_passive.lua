@@ -103,21 +103,19 @@ end
 function modifier_crab_passive:AttachCrabPart(hero)
     local crabParts = {
         "models/crabparts/anuxi_cerci_tail.vmdl",
-        "models/items/sand_king/defiledstinger_back/defiledstinger_back.vmdl",
-        "models/items/sand_king/sand_king_immortal_arms_ti7/sand_king_ti7_immortal_arms.vmdl",
-        "models/items/sand_king/sandking_shrimp_king_arms_v2/sandking_shrimp_king_arms_v2.vmdl",
+        "models/crabparts/defiledstinger_back.vmdl",
+        "models/crabparts/sand_king_ti7_immortal_arms.vmdl",
+        "models/crabparts/sandking_shrimp_king_arms_v2.vmdl",
     }
 
     local model = GetRandomTableElement(crabParts)
     local size = RandomFloat(1, 3) * (1 / hero:GetModelScale())
-    print(hero:GetModelScale())
     local attachment = Attachments:AttachProp(hero, "attach_hitloc", model, size, {
         pitch = RandomInt(0, 360),
         yaw = RandomInt(0, 360),
         roll = RandomInt(0, 360),
         YPos = 0,
     })
-    print("attached crab part " .. model)
     hero.crab_parts = hero.crab_parts or {}
     table.insert(hero.crab_parts, attachment)
 end

@@ -49,7 +49,6 @@ function StopCrabMode()
     Timers:RemoveTimer(GameRules.DanceTimer)
     GameRules.DanceTimer = nil
   end
-  Timers:RemoveTimer(GameRules.DanceTimer)
   if GameRules.KillTimer then
     Timers:RemoveTimer(GameRules.KillTimer)
     GameRules.KillTimer = nil
@@ -64,6 +63,9 @@ function StopCrabMode()
   -- make the towers stop dancing
   local allTowers = Entities:FindAllByClassname("npc_dota_tower")
   for _,tower in pairs(allTowers) do
+    if tower.lastGesture then
+      tower:RemoveGesture(tower.lastGesture)
+    end
     tower:RemoveGesture(ACT_DOTA_CUSTOM_TOWER_IDLE_RARE)
   end
 end
@@ -130,8 +132,18 @@ end
 
 function MakeTowersDance()
   local allTowers = Entities:FindAllByClassname("npc_dota_tower")
+  local animations = {
+    ACT_DOTA_CUSTOM_TOWER_IDLE_RARE,
+    ACT_DOTA_CUSTOM_TOWER_TAUNT,
+    ACT_DOTA_CUSTOM_TOWER_HIGH_FIVE,
+  }
   for _,tower in pairs(allTowers) do
-    tower:StartGestureWithPlaybackRate(ACT_DOTA_CUSTOM_TOWER_IDLE_RARE, 1)
+    if tower.lastGesture then
+      tower:RemoveGesture(tower.lastGesture)
+    end
+    local animation = GetRandomTableElement(animations)
+    tower.lastGesture = animation
+    tower:StartGestureWithPlaybackRate(animation, 0.75)
   end
 end
 
