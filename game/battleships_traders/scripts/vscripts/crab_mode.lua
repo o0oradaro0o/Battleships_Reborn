@@ -164,10 +164,7 @@ function StartCrabMode()
     return 1
   end)
 
-  GameRules.DanceTimer = Timers:CreateTimer(function()
-    MakeTowersDance()
-    return 5
-  end)
+  MakeTowersDance()
 
   -- end crab mode after 1:49 if it's still going, along with the music
   GameRules.KilLTimer = Timers:CreateTimer(109, function()
