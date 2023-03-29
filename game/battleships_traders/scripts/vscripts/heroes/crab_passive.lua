@@ -18,7 +18,7 @@ end
 
 function modifier_crab_passive:OnCreated()
     if not IsServer() then return end
-    self:StartIntervalThink(1)
+    self:StartIntervalThink(1/30)
 end
 
 function modifier_crab_passive:CheckState()
@@ -56,21 +56,29 @@ function modifier_crab_passive:OnIntervalThink()
         parent:GetTeamNumber(),
         parent:GetOrigin(),
         nil,
-        150,
+        100,
         DOTA_UNIT_TARGET_TEAM_ENEMY,
         DOTA_UNIT_TARGET_HERO,
         DOTA_UNIT_TARGET_FLAG_INVULNERABLE,
         FIND_CLOSEST,
         false)
 
-    if #enemyHeroes > 0 then
-        self:BlowUp(enemyHeroes)
+    local enemies = {}
+    for _, enemy in pairs(enemyHeroes) do
+        if enemy:GetUnitName() ~= "npc_dota_hero_nyx_assassin" then
+            table.insert(enemies, enemy)
+        end
+    end
+
+    if #enemies > 0 then
+        self:BlowUp(enemies)
     end
 end
 
 function modifier_crab_passive:BlowUp(heroes)
     local parent = self:GetParent()
-    local explosion_radius = 150
+
+    local explosion_radius = 100
 
     local particleName = "particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf"
     local particle = ParticleManager:CreateParticle(particleName, PATTACH_WORLDORIGIN, parent)
@@ -79,15 +87,14 @@ function modifier_crab_passive:BlowUp(heroes)
     ParticleManager:SetParticleControl(particle, 2, Vector(explosion_radius, 1, 1))
     ParticleManager:ReleaseParticleIndex(particle)
 
-    -- parent:EmitSound("Hero_Techies.LandMine.Detonate")
-    
-    -- ScreenShake(parent:GetAbsOrigin(), 10, 0.3, 0.5, 1000, 0, true)
+    -- play a sound
+    EmitSoundOnLocationWithCaster(parent:GetAbsOrigin(), "Hero_NyxAssassin.Impale.Target", parent)
     
     for _, hero in pairs(heroes) do
         self:AttachCrabPart(hero)
         
         local crabDebuff = hero:AddNewModifier(hero, nil, "modifier_carcinisation", {})
-        crabDebuff:SetStackCount(crabDebuff:GetStackCount() + 1)        
+        crabDebuff:SetStackCount(crabDebuff:GetStackCount() + 1)
         
         -- -- if the hero has 10 crab parts, turn them into a crab
         if (crabDebuff:GetStackCount() >= 10) then
@@ -96,28 +103,27 @@ function modifier_crab_passive:BlowUp(heroes)
         
         break
     end
-    
+
+    parent:AddNoDraw()
     parent:ForceKill(true)
 end
 
 function modifier_crab_passive:AttachCrabPart(hero)
     local crabParts = {
         "models/crabparts/anuxi_cerci_tail.vmdl",
-        "models/items/sand_king/defiledstinger_back/defiledstinger_back.vmdl",
-        "models/items/sand_king/sand_king_immortal_arms_ti7/sand_king_ti7_immortal_arms.vmdl",
-        "models/items/sand_king/sandking_shrimp_king_arms_v2/sandking_shrimp_king_arms_v2.vmdl",
+        "models/crabparts/defiledstinger_back.vmdl",
+        "models/crabparts/sand_king_ti7_immortal_arms.vmdl",
+        "models/crabparts/sandking_shrimp_king_arms_v2.vmdl",
     }
 
     local model = GetRandomTableElement(crabParts)
     local size = RandomFloat(1, 3) * (1 / hero:GetModelScale())
-    print(hero:GetModelScale())
     local attachment = Attachments:AttachProp(hero, "attach_hitloc", model, size, {
         pitch = RandomInt(0, 360),
         yaw = RandomInt(0, 360),
         roll = RandomInt(0, 360),
         YPos = 0,
     })
-    print("attached crab part " .. model)
     hero.crab_parts = hero.crab_parts or {}
     table.insert(hero.crab_parts, attachment)
 end

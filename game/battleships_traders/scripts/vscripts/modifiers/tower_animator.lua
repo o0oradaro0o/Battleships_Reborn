@@ -121,6 +121,10 @@ function modifier_tower_animator:OnDeath(keys)
   if not IsServer() then return end
 
   if keys.unit == self:GetParent() then
-    self:GetParent():StartGestureWithPlaybackRate(ACT_DOTA_CUSTOM_TOWER_DIE, 0.75)
+    self:GetParent():StartGestureWithPlaybackRate(ACT_DOTA_CUSTOM_TOWER_DIE, 0.5)
+    -- hide the model once the animation is done
+    Timers:CreateTimer(1.5, function()
+      self:GetParent():AddNoDraw()
+    end)
   end
 end

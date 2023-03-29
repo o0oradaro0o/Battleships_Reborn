@@ -20,6 +20,8 @@ function AIThink()
 	end
 
 	if not IsValidAlive(thisEntity.target) then
+		thisEntity:Stop()
+		thisEntity:StartGesture(ACT_DOTA_SPAWN)
 		return 0.25
 	end
 
@@ -29,7 +31,7 @@ function AIThink()
 end
 
 -- Choose the closest enemy hero, and go for them
-function ChooseTarget(unit)
+function ChooseTarget()
 	local enemyHeroes = FindUnitsInRadius(
 		DOTA_TEAM_NEUTRALS,
 		thisEntity:GetOrigin(),
@@ -41,7 +43,17 @@ function ChooseTarget(unit)
 		FIND_CLOSEST,
 		false)
 
-	local target = enemyHeroes[RandomInt(1, #enemyHeroes)]
+	-- filter out any crabs
+	local enemies = {}
+	for _, enemy in pairs(enemyHeroes) do
+		if enemy:GetUnitName() ~= "npc_dota_hero_nyx_assassin" then
+			table.insert(enemies, enemy)
+		end
+	end
 
-	return target
+	if #enemies == 0 then
+		return nil
+	end
+
+	return GetRandomTableElement(enemies)
 end
