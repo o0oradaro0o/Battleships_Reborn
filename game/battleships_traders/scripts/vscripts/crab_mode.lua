@@ -79,12 +79,12 @@ function SpawnRandomCrab()
   -- Give the crab a random size/speed. Bigger crabs are slower, have more health
   local size = RandomFloat(1, 100)
 
-  local minSpeed = 100
-  local maxSpeed = 400
+  local minSpeed = 175
+  local maxSpeed = 420
   local minSize = 1
   local maxSize = 5
-  local minHealth = 300
-  local maxHealth = 1000
+  local minHealth = 100
+  local maxHealth = 600
 
   local baseBounty = 20
   local ratio = size / 100
@@ -94,11 +94,11 @@ function SpawnRandomCrab()
   local health = minHealth + ((maxHealth - minHealth) * ratio)
 
   -- increase the health as the game goes on
-  -- increase by 10% every 240 seconds
-  local game_time = GameRules:GetDOTATime(false, false)
-  local health_increase = 1 + (game_time / 240) * 0.05
 
-  local health = health * health_increase
+  local game_time = GameRules:GetDOTATime(false, false)
+  local health_increase = 20 + (game_time / 240) * 250
+
+  local health = health + health_increase * ratio
 
   -- bounty must be at least 1
   local bounty = math.max(1, baseBounty * size / 2)
@@ -131,20 +131,48 @@ function SpawnRandomCrab()
 end
 
 function MakeTowersDance()
+
   local allTowers = Entities:FindAllByClassname("npc_dota_tower")
   local animations = {
-    ACT_DOTA_CUSTOM_TOWER_IDLE_RARE,
     ACT_DOTA_CUSTOM_TOWER_TAUNT,
     ACT_DOTA_CUSTOM_TOWER_HIGH_FIVE,
   }
+  local animationRate = 0.75
+  local TimeTillNextDance = 2.2*animationRate
+  local animation = GetRandomTableElement(animations)
+  
   for _,tower in pairs(allTowers) do
+    tower:RemoveGesture(ACT_DOTA_CUSTOM_TOWER_IDLE)
+    tower.lastGesture = animation
     if tower.lastGesture then
       tower:RemoveGesture(tower.lastGesture)
     end
-    local animation = GetRandomTableElement(animations)
-    tower.lastGesture = animation
-    tower:StartGestureWithPlaybackRate(animation, 0.75)
+    tower:StartGestureWithPlaybackRate(animation, animationRate)
   end
+  if animation == ACT_DOTA_CUSTOM_TOWER_HIGH_FIVE then
+    TimeTillNextDance = 1.03* animationRate
+  elseif animation == ACT_DOTA_CUSTOM_TOWER_TAUNT then
+    TimeTillNextDance = 3.1 * animationRate
+  end
+
+
+  
+  Timers:CreateTimer(TimeTillNextDance, function()
+    local crabMode = GetCrabModeTimer()
+    if crabMode then  
+      MakeTowersDance() 
+    else
+      local allTowers = Entities:FindAllByClassname("npc_dota_tower")
+      for _,tower in pairs(allTowers) do
+        tower:RemoveGesture(ACT_DOTA_CUSTOM_TOWER_IDLE_RARE)
+        tower:RemoveGesture(ACT_DOTA_CUSTOM_TOWER_TAUNT)
+        tower:RemoveGesture(ACT_DOTA_CUSTOM_TOWER_HIGH_FIVE)
+        tower:StartGesture(ACT_DOTA_CUSTOM_TOWER_IDLE)
+      end
+    end
+
+
+  end)
 end
 
 function StartCrabMode()
@@ -167,7 +195,7 @@ function StartCrabMode()
   MakeTowersDance()
 
   -- end crab mode after 1:49 if it's still going, along with the music
-  GameRules.KilLTimer = Timers:CreateTimer(109, function()
+  GameRules.KillTimer = Timers:CreateTimer(109, function()
     StopCrabMode()
   end)
 end

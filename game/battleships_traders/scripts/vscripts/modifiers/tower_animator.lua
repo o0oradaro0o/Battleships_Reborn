@@ -98,8 +98,15 @@ function modifier_tower_animator:OnAttackStart(keys)
   if not IsServer() then return end
 
   if keys.attacker == self:GetParent() then
+    self:GetParent():RemoveGesture(ACT_DOTA_CUSTOM_TOWER_IDLE)
+    self:GetParent():RemoveGesture(ACT_DOTA_CUSTOM_TOWER_IDLE_RARE)
+    self:GetParent():RemoveGesture(ACT_DOTA_CUSTOM_TOWER_TAUNT)
+    self:GetParent():RemoveGesture(ACT_DOTA_CUSTOM_TOWER_HIGH_FIVE)
     self:GetParent():StartGestureWithPlaybackRate(ACT_DOTA_CUSTOM_TOWER_ATTACK, self:GetParent():GetAttacksPerSecond())
-
+    Timers:CreateTimer(0.751, function()
+      self:GetParent():StartGesture(ACT_DOTA_CUSTOM_TOWER_IDLE)
+      return
+    end)
     -- If no track target, setup target and start tracking
     -- Do first update now, the rest on demand
     -- Else only update target
