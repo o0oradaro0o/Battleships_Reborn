@@ -466,6 +466,8 @@ function CBattleship8D:InitGameMode()
     CustomGameEventManager:RegisterListener("DiffSelection", ChooseDiff)
     CustomGameEventManager:RegisterListener("buyBoat", buyBoat)
 
+    CustomGameEventManager:RegisterListener("toggleCrab", toggleCrab)
+
     CustomGameEventManager:RegisterListener("BattleMode", battleMode)
     CustomGameEventManager:RegisterListener("TugMode", tugmode)
     CustomGameEventManager:RegisterListener("TradeMode", tradeMode)
@@ -1292,10 +1294,6 @@ function CBattleship8D:OnPlayerChat(keys)
         })
     end
 
-    if text == "-crabs" and (steamID32 == g_vic or steamID32 == g_radar) then
-        ToggleCrabMode()
-    end
-
     -- explode if you question mark
     if teamonly == 0 and text == "?" then
         for _,hero in pairs(HeroList:GetAllHeroes()) do
@@ -1409,6 +1407,12 @@ function CBattleship8D:OnThink()
                 g_CreepsKilled[hero:GetPlayerID()] = 0
                 g_HeroDamage[hero:GetPlayerID()] = 0
                 g_BuildingDamage[hero:GetPlayerID()] = 0
+                steamID32 = PlayerResource:GetSteamAccountID(hero:GetPlayerID())
+                if PlayerResource:GetPlayer(hero:GetPlayerID()) ~= nil and  (steamID32 == g_radar or steamID32 == g_vic) then 
+                    playerData = {}
+                    CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(hero:GetPlayerID()), "show_crab_ui", playerData)
+                end
+                
                 if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                     g_PlayerCountSouth = g_PlayerCountSouth + 1
                 elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
@@ -1417,6 +1421,7 @@ function CBattleship8D:OnThink()
                 g_PlayerCount = g_PlayerCount + 1
                 if g_TugMode == 0 then
                     become_boat(hero, "npc_dota_hero_zuus")
+                    
                 else
                     hero:SetGold(6000, true)
                     hero:SetGold(0, false)
@@ -3949,6 +3954,7 @@ function CBattleship8D:OnEntityKilled(keys)
                 if hero:HasModifier("modifier_carcinisation") then
                     local crabDebuff = hero:FindModifierByName("modifier_carcinisation")
                     if crabDebuff:GetStackCount() >= 10 then
+                        sellBoat(hero)
                         become_boat(hero, "npc_dota_hero_nyx_assassin")
                     end
                 end
@@ -5869,6 +5875,11 @@ function HasQuest(hero)
         end
     end
     return false
+end
+
+function toggleCrab(eventSourceIndex, args)
+    print("in toggle crab calling toggle mode!")
+    ToggleCrabMode()
 end
 
 function buyBoat(eventSourceIndex, args)
