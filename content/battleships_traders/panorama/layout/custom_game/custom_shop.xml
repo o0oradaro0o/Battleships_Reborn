@@ -125,7 +125,7 @@
 	</Panel>
 	<Panel hittest="false" id="CrabUI">
 		<Button class="crab" onactivate="sendToggleCrab()">
-				<Label  text="crab" />		
+				<Image class="egg_image" src="file://{images}/custom_game/mrcrab.png" />
 		</Button>
 	</Panel>
 

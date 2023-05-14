@@ -345,8 +345,8 @@
 .crab {
   margin-left: 300px;
   margin-top: 1px;
-  width: 100px;
-  height: 23px;
+  width: 40px;
+  height: 40px;
   flow-children: down;
   border: 0px solid black;
   background-color: gradient(

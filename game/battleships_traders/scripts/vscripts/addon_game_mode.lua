@@ -3954,8 +3954,31 @@ function CBattleship8D:OnEntityKilled(keys)
                 if hero:HasModifier("modifier_carcinisation") then
                     local crabDebuff = hero:FindModifierByName("modifier_carcinisation")
                     if crabDebuff:GetStackCount() >= 10 then
+                        local player_name = PlayerResource:GetPlayerName(hero:GetPlayerID())
+                        -- randomly choose between 2 spellings of carcinisation
+                        if RandomInt(0, 1) == 0 then
+                            Notifications:TopToAll({
+                                text = "Carcinisation of " .. player_name .. " complete. They have become ",
+                                duration = 5.0,
+                                style = {color = "#bc5a4c", fontSize = "50px;"},
+                                continue = false
+                            })
+                        else
+                            Notifications:TopToAll({
+                                text = "Carcinization of " .. player_name .. " complete. They have become ",
+                                duration = 5.0,
+                                style = {color = "#bc5a4c", fontSize = "50px;"},
+                                continue = false
+                            })
+                        end
+                        Notifications:TopToAll({
+                            image="file://{images}/custom_game/mrcrab.png",
+                            duration = 5.0,
+                            continue = true
+                        })
                         sellBoat(hero)
                         become_boat(hero, "npc_dota_hero_nyx_assassin")
+                        
                     end
                 end
             end

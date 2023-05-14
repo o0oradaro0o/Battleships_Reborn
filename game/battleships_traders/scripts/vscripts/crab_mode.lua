@@ -79,12 +79,12 @@ function SpawnRandomCrab()
   -- Give the crab a random size/speed. Bigger crabs are slower, have more health
   local size = RandomFloat(1, 100)
 
-  local minSpeed = 175
-  local maxSpeed = 420
+  local minSpeed = 220
+  local maxSpeed = 440
   local minSize = 1
   local maxSize = 5
-  local minHealth = 100
-  local maxHealth = 600
+  local minHealth = 300
+  local maxHealth = 1200
 
   local baseBounty = 20
   local ratio = size / 100
@@ -96,7 +96,7 @@ function SpawnRandomCrab()
   -- increase the health as the game goes on
 
   local game_time = GameRules:GetDOTATime(false, false)
-  local health_increase = 20 + (game_time / 240) * 250
+  local health_increase = 40 + (game_time / 240) * 700
 
   local health = health + health_increase * ratio
 
