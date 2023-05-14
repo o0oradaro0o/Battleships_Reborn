@@ -1,12 +1,13 @@
 -- Generated from template
-require("libraries/timers")
+require('libraries/timers')
 require('libraries/physics')
 require('notifications')
 require('storage')
 require('StatCollection/init')
 require('statcollection/schema')
--- This library can be used for starting customized animations on units from lua
 require('libraries/animations')
+require('crab_mode')
+require('libraries/attachments')
 
 require('util')
 
@@ -359,6 +360,12 @@ function Precache(context)
 
     local precache = require('tables/precache_files')
 
+    PrecacheResource("model", "models/items/lion/hellclaw_of_maelrawn/hellclaw_of_maelrawn.vmdl", context)
+    PrecacheResource("model", "models/crabparts/anuxi_cerci_tail.vmdl", context)
+    PrecacheResource("model", "models/crabparts/defiledstinger_back.vmdl", context)
+    PrecacheResource("model", "models/crabparts/sand_king_ti7_immortal_arms.vmdl", context)
+    PrecacheResource("model", "models/crabparts/sandking_shrimp_king_arms_v2.vmdl", context)
+
     PrecacheResource("particle_folder", "particles/basic_projectile", context)
     PrecacheResource("materials", "materials/", context)
     for _,particleName in pairs(precache.particles) do
@@ -452,11 +459,14 @@ function CBattleship8D:InitGameMode()
         Dynamic_Wrap(CBattleship8D, 'OnPlayerChat'),
         self
     )
+
     CustomGameEventManager:RegisterListener("GiveEasy", GiveEasy)
     CustomGameEventManager:RegisterListener("GiveMedium", GiveMedium)
     CustomGameEventManager:RegisterListener("buyItem", buyItem)
     CustomGameEventManager:RegisterListener("DiffSelection", ChooseDiff)
     CustomGameEventManager:RegisterListener("buyBoat", buyBoat)
+
+    CustomGameEventManager:RegisterListener("toggleCrab", toggleCrab)
 
     CustomGameEventManager:RegisterListener("BattleMode", battleMode)
     CustomGameEventManager:RegisterListener("TugMode", tugmode)
@@ -1259,95 +1269,92 @@ end
 function CBattleship8D:OnPlayerChat(keys)
     local teamonly = keys.teamonly
     local playerID = keys.playerid
-    if playerID ~= nil then
-        steamID32 = PlayerResource:GetSteamAccountID(playerID)
-        local text = keys.text
-        print(steamID32 .. " " .. text)
-        print(g_radar)
-        if (steamID32 == g_radar) and string.match(text, "egg") then 
-            SpawnTheEgg()
-        end
-        if ((steamID32 == g_radar) or  (steamID32 == g_vic)) and string.match(text, "lornecheat") then 
-            g_setLorneMode=1
-        end
+    if playerID == nil then return end
 
-        
+    steamID32 = PlayerResource:GetSteamAccountID(playerID)
+    local text = keys.text
 
-        if (steamID32 == g_radar or steamID32 == g_zentrix or steamID32 == 5879425 or steamID32 == 93116118) and string.match(text, "TUG MODE ACTIVATE!") and GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then g_TugMode = 1 end
+    if (steamID32 == g_radar) and string.match(text, "egg") then 
+        SpawnTheEgg()
+    end
+    if ((steamID32 == g_radar) or  (steamID32 == g_vic)) and string.match(text, "lornecheat") then 
+        g_setLorneMode = 1
+    end
+    
 
-        if teamonly == 0 and string.match(text, "forget to zoom") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
-            Notifications:TopToAll({
-                text = "Thank you David!",
-                duration = 5.0,
-                style = {color = "#888888", fontSize = "70px;"}
-            })
+    if (steamID32 == g_radar or steamID32 == g_zentrix or steamID32 == 5879425 or steamID32 == 93116118) and string.match(text, "TUG MODE ACTIVATE!") and GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+        g_TugMode = 1
+    end
 
-        end
+    if teamonly == 0 and string.match(text, "forget to zoom") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
+        Notifications:TopToAll({
+            text = "Thank you David!",
+            duration = 5.0,
+            style = {color = "#888888", fontSize = "70px;"}
+        })
+    end
 
-        -- kill ryan every time someone question marks
-        if teamonly == 0 and text == "?" and steamID32 ~= g_rere then
-            for _,hero in pairs(HeroList:GetAllHeroes()) do
-                local heroPlayerOwnerID = hero:GetPlayerOwnerID()
-                local heroPlayerOwnerSteamID = PlayerResource:GetSteamAccountID(heroPlayerOwnerID)
-                if hero:IsAlive() and hero:GetPlayerID() == playerID then                    
-                    local explosion_radius = 200
+    -- explode if you question mark
+    if teamonly == 0 and text == "?" then
+        for _,hero in pairs(HeroList:GetAllHeroes()) do
+            local heroPlayerOwnerID = hero:GetPlayerOwnerID()
+            local heroPlayerOwnerSteamID = PlayerResource:GetSteamAccountID(heroPlayerOwnerID)
+            if hero:IsAlive() and hero:GetPlayerID() == playerID then                    
+                local explosion_radius = 200
 
-                    local particleName = "particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf"
-                    local particle = ParticleManager:CreateParticle(particleName, PATTACH_WORLDORIGIN, hero)
-                    ParticleManager:SetParticleControl(particle, 0, hero:GetAbsOrigin())
-                    ParticleManager:SetParticleControl(particle, 1, hero:GetAbsOrigin())
-                    ParticleManager:SetParticleControl(particle, 2, Vector(explosion_radius, 1, 1))
-                    ParticleManager:ReleaseParticleIndex(particle)
+                local particleName = "particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf"
+                local particle = ParticleManager:CreateParticle(particleName, PATTACH_WORLDORIGIN, hero)
+                ParticleManager:SetParticleControl(particle, 0, hero:GetAbsOrigin())
+                ParticleManager:SetParticleControl(particle, 1, hero:GetAbsOrigin())
+                ParticleManager:SetParticleControl(particle, 2, Vector(explosion_radius, 1, 1))
+                ParticleManager:ReleaseParticleIndex(particle)
 
-                    hero:EmitSound("Hero_Techies.LandMine.Detonate")
+                hero:EmitSound("Hero_Techies.LandMine.Detonate")
 
-                    ScreenShake(hero:GetAbsOrigin(), 10, 0.3, 0.5, 1000, 0, true)
+                ScreenShake(hero:GetAbsOrigin(), 10, 0.3, 0.5, 1000, 0, true)
 
-                    hero:ForceKill(true)
-                    -- if hero is dead add to respawn time
-                elseif hero:IsAlive() == false and hero:GetPlayerID() == playerID then
-                    --show a message to all players
-                    Notifications:TopToAll({
-                        text = "your '?' cost him 10 additional seconds to respawn",
-                        duration = 5.0,
-                        style = {color = "#ff8888", fontSize = "70px;"}
-                    })
-                    local respawnTime = hero:GetRespawnTime()
-                    hero:SetTimeUntilRespawn(respawnTime + 10)
-                end
+                hero:ForceKill(true)
+                -- if hero is dead add to respawn time
+            elseif hero:IsAlive() == false and hero:GetPlayerID() == playerID then
+                --show a message to all players
+                Notifications:TopToAll({
+                    text = "your '?' cost him 10 additional seconds to respawn",
+                    duration = 5.0,
+                    style = {color = "#ff8888", fontSize = "70px;"}
+                })
+                local respawnTime = hero:GetRespawnTime()
+                hero:SetTimeUntilRespawn(respawnTime + 10)
             end
         end
+    end
 
-        if string.match(text, "rip david") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
-            Notifications:TopToAll({
-                text = "Don't Forget to Zoom!",
-                duration = 5.0,
-                style = {color = "#88FF88", fontSize = "70px;"}
-            })
+    if string.match(text, "rip david") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
+        Notifications:TopToAll({
+            text = "Don't Forget to Zoom!",
+            duration = 5.0,
+            style = {color = "#88FF88", fontSize = "70px;"}
+        })
 
+    end
+    if string.match(text, "nice build") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
+        local rand = RandomInt(1, #HeroList:GetAllHeroes())
+        math.randomseed(rand)
+        local colorchoice = math.floor(math.random()*1000000)
+        if colorchoice < 100000 then
+            colorchoice = colorchoice+100000
         end
-        if string.match(text, "nice build") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
-            local rand = RandomInt(1, #HeroList:GetAllHeroes())
-            math.randomseed(rand)
-            local colorchoice = math.floor(math.random()*1000000)
-            if colorchoice < 100000 then
-                colorchoice = colorchoice+100000
-            end
-            local color = "#" .. colorchoice
-            Notifications:TopToAll({                
-                text = "Nice build ".. PlayerResource:GetPlayerName(HeroList:GetAllHeroes()[rand]:GetPlayerOwnerID()) .."!",
-                duration = 5.0,
-                
-                style = {color = color, fontSize = "70px;"}
-            })
-        end
+        local color = "#" .. colorchoice
+        Notifications:TopToAll({                
+            text = "Nice build ".. PlayerResource:GetPlayerName(HeroList:GetAllHeroes()[rand]:GetPlayerOwnerID()) .."!",
+            duration = 5.0,
+            
+            style = {color = color, fontSize = "70px;"}
+        })
     end
 end
 
 function CBattleship8D:BountyRuneFilter(filterTable)
     -- Check if the order is the glyph type
-    ----print("i'm in BountyRuneFilter!!!!!!!!!!!!!!!!!!!")
-
     for k, v in pairs(filterTable) do
         ----print("rune spawn: " .. k .. " " .. tostring(v) )
     end
@@ -1362,9 +1369,6 @@ function CBattleship8D:BountyRuneFilter(filterTable)
 end
 
 function CBattleship8D:FilterRuneSpawn(filterTable)
-    for k, v in pairs(filterTable) do
-        ----print("rune spawn: " .. k .. " " .. tostring(v) )
-    end
     return true
 end
 
@@ -1385,7 +1389,7 @@ function CBattleship8D:OrderExecutionFilter(keys)
         EmitSoundOnClient(
             "battleships_traders.wooden_ship_creaking_waterslosh",
             player
-        ) -- PlayerResource:GetPlayer(playerID))
+        )
     end
 
     return true
@@ -1403,6 +1407,12 @@ function CBattleship8D:OnThink()
                 g_CreepsKilled[hero:GetPlayerID()] = 0
                 g_HeroDamage[hero:GetPlayerID()] = 0
                 g_BuildingDamage[hero:GetPlayerID()] = 0
+                steamID32 = PlayerResource:GetSteamAccountID(hero:GetPlayerID())
+                if PlayerResource:GetPlayer(hero:GetPlayerID()) ~= nil and  (steamID32 == g_radar or steamID32 == g_vic) then 
+                    playerData = {}
+                    CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(hero:GetPlayerID()), "show_crab_ui", playerData)
+                end
+                
                 if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
                     g_PlayerCountSouth = g_PlayerCountSouth + 1
                 elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS then
@@ -1411,6 +1421,7 @@ function CBattleship8D:OnThink()
                 g_PlayerCount = g_PlayerCount + 1
                 if g_TugMode == 0 then
                     become_boat(hero, "npc_dota_hero_zuus")
+                    
                 else
                     hero:SetGold(6000, true)
                     hero:SetGold(0, false)
@@ -3936,6 +3947,43 @@ function CBattleship8D:OnEntityKilled(keys)
         local playerData = {}
         CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(killerEntity:GetPlayerID()), "Show_Special_Ui", playerData)
     end
+    if string.match(killedUnit:GetUnitName(), "npc_dota_creature_crab") then
+        -- iterate through all the heros and if they have 10 stacks of modifier_carcinisation make them a crab boat
+        for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
+            if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+                if hero:HasModifier("modifier_carcinisation") then
+                    local crabDebuff = hero:FindModifierByName("modifier_carcinisation")
+                    if crabDebuff:GetStackCount() >= 10 then
+                        local player_name = PlayerResource:GetPlayerName(hero:GetPlayerID())
+                        -- randomly choose between 2 spellings of carcinisation
+                        if RandomInt(0, 1) == 0 then
+                            Notifications:TopToAll({
+                                text = "Carcinisation of " .. player_name .. " complete. They have become ",
+                                duration = 5.0,
+                                style = {color = "#bc5a4c", fontSize = "50px;"},
+                                continue = false
+                            })
+                        else
+                            Notifications:TopToAll({
+                                text = "Carcinization of " .. player_name .. " complete. They have become ",
+                                duration = 5.0,
+                                style = {color = "#bc5a4c", fontSize = "50px;"},
+                                continue = false
+                            })
+                        end
+                        Notifications:TopToAll({
+                            image="file://{images}/custom_game/mrcrab.png",
+                            duration = 5.0,
+                            continue = true
+                        })
+                        sellBoat(hero)
+                        become_boat(hero, "npc_dota_hero_nyx_assassin")
+                        
+                    end
+                end
+            end
+        end
+    end
 
     if string.match(killedUnit:GetUnitName(), "creature_tidehunter") then
 
@@ -5852,6 +5900,11 @@ function HasQuest(hero)
     return false
 end
 
+function toggleCrab(eventSourceIndex, args)
+    print("in toggle crab calling toggle mode!")
+    ToggleCrabMode()
+end
+
 function buyBoat(eventSourceIndex, args)
 
     local pID = args.PlayerID
@@ -5893,7 +5946,6 @@ function buyBoat(eventSourceIndex, args)
         local directionOne = casterPos - targetUnitOne:GetAbsOrigin()
         local directionTwo = casterPos - targetUnitTwo:GetAbsOrigin()
 
-        ----print(itemName .. " vs " .. casterUnit:GetName())
         if (directionOne:Length() < 1800 and casterUnit:GetTeamNumber() == DOTA_TEAM_GOODGUYS or directionTwo:Length() < 1800 and casterUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS) and herogold > cost - 1 and not string.match(casterUnit:GetName(), itemName) and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or g_setLorneMode == 1) then
             boat = true
             casterUnit:SetGold(herogold - cost, true)

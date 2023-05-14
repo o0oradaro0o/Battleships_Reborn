@@ -123,7 +123,11 @@
 			</Panel>
 		</Button>
 	</Panel>
-	
+	<Panel hittest="false" id="CrabUI">
+		<Button class="crab" onactivate="sendToggleCrab()">
+				<Image class="egg_image" src="file://{images}/custom_game/mrcrab.png" />
+		</Button>
+	</Panel>
 
 	<Panel hittest="false" id="HiddenUI">
 		<Image class="egg_image" src="file://{images}/custom_game/egg.png" />

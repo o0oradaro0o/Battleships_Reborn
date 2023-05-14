@@ -342,6 +342,23 @@
   border-radius: 5px;
 }
 
+.crab {
+  margin-left: 300px;
+  margin-top: 1px;
+  width: 40px;
+  height: 40px;
+  flow-children: down;
+  border: 0px solid black;
+  background-color: gradient(
+    linear,
+    0% 50%,
+    0% 100%,
+    from(#92494ecc),
+    to(#752525ff)
+  );
+  border-radius: 5px;
+}
+
 .close:hover {
   margin-left: 1px;
   margin-top: 1px;
@@ -1119,6 +1136,10 @@
   horizontal-align: right;
   margin-right: -10px;
   border-radius: 10px;
+}
+
+#CrabUI {
+  visibility: collapse;
 }
 
 #HiddenUI {

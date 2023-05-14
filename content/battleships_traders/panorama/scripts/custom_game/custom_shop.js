@@ -2101,6 +2101,17 @@ function showSpecialUi(data) {
     $("#HiddenUI").style.visibility = "visible";
 }
 
+function sendToggleCrab() {
+  $.Msg("toggling crabs! ");
+  GameEvents.SendCustomGameEventToServer("toggleCrab", {
+    text: "fooBar",
+  });
+}
+
+function showCrabUi(data) {
+  $("#CrabUI").style.visibility = "visible";
+}
+
 function TopNotification(msg) {
   AddNotification(msg, $("#TopNotifications"));
 }
@@ -2759,7 +2770,7 @@ GameUI.SetMouseCallback(function (eventName, arg) {
   GameEvents.Subscribe("bottom_remove_notification", BottomRemoveNotification);
 
   GameEvents.Subscribe("Show_Special_Ui", showSpecialUi);
-
+  GameEvents.Subscribe("show_crab_ui", showCrabUi);
 
   $.Msg("done subscribe");
 })();
