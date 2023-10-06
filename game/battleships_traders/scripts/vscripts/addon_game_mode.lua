@@ -2920,7 +2920,7 @@ function GetEmpGoldForTeam(team)
 
         if team_gold < other_team_gold then
             local balanceAmount = (other_team_gold - team_gold)
-            goldEach = goldEach + balanceAmount * (g_DockAliveNorthLeft + g_DockAliveNorthRight) / 2 * (0.1 + 0.65 * (1 / math.sqrt(g_EmpireGoldCount)))
+            goldEach = goldEach + balanceAmount * (g_DockAliveNorthLeft + g_DockAliveNorthRight) / 2 * (0.1 + 0.8 * (1 / math.sqrt(g_EmpireGoldCount)))
         end
         return goldEach / team_players
     end

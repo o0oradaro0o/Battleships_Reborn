@@ -1422,7 +1422,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20.0 17.0 14.0 11.0"
+		"AbilityCooldown"				"20.0 20.0 20.0 20.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -1472,7 +1472,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bail_duration"			"6.0 6.5 7 7.5"
+				"bail_duration"			"6.0 6.0 6.0 6.0"
 			}
 		}
 }
@@ -1565,7 +1565,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1500"
+		"AbilityCastRange"				"1300"
 		"AbilityCastPoint"				"0.4"
 		
 		// Time		
@@ -1586,10 +1586,10 @@
 		{
 			"radius"
 			{
-				"value"					"340"
+				"value"					"320"
 			}
 			"movespeed_bonus"			"-35"
-			"slow_duration"				"1.0 1.5 2.0 2.5"
+			"slow_duration"				"0.5 1.0 1.5 2.0"
 			"stun_duration"
 			{
 				"value"								"1.6"
@@ -1981,7 +1981,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0 0 0 0"
 		
-		"AbilityChannelTime"			"0.8 1.0 1.2 1.4"
+		"AbilityChannelTime"			"0.6 0.8 1.0 1.2"
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"14.0 12.0 10.0 8.0"
@@ -2497,7 +2497,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"slow_movement_speed"	"-10 -15 -20 -25"
+				"slow_movement_speed"	"-15 -20 -25 -30"
 				"LinkedSpecialBonus"	"special_bonus_unique_sniper_5"
 			}
 			"02"
@@ -2570,7 +2570,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"21.0 19.0 17.0"
+		"AbilityCooldown"				"18.0 16.0 14.0"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -3211,7 +3211,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"accel_boost"				"200"
+				"accel_boost"				"100"
 			
 			}
 		}
@@ -3437,7 +3437,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_second"				"700 900 1100"
+				"damage_second"				"400 600 800"
 			}
 			"05"
 			{
@@ -5304,10 +5304,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0 0 0"
 		
-		"AbilityChannelTime"			"4.0 2.5 1.5"
+		"AbilityChannelTime"			"4.5 4.5 4.5"
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"40.0 30.0 20.0"
+		"AbilityCooldown"				"50.0 40.0 30.0"
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"		
@@ -5570,7 +5570,7 @@
 		"AbilityCastRange"				"300"
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30 25 20"
+		"AbilityCooldown"				"30 30 30"
 		"AbilityChannelTime"			"500 500 500"
 
 		// Cost
@@ -5652,7 +5652,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"regen"			"4.5 6.0 7.5"
+				"regen"			"4.5 5.0 5.5"
 			}
 			"03"
 			{
@@ -6421,7 +6421,7 @@
             "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_armor"			"5 7 9"
+                "bonus_armor"			"9 11 13"
             }
 			"04"
 			{
@@ -6448,7 +6448,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1000"
+		"AbilityCastRange"				"500"
 		"AbilityCastPoint"				"0.452 0.452 0.452 0.452"
 		
 		// Time		
@@ -6472,7 +6472,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_absorb"			"400.0 500.0 600.0 700.0"
+				"damage_absorb"			"300.0 350.0 400.0 450.0"
 			}
 			"03"
 			{
@@ -6972,7 +6972,7 @@
 			"undo_push"
 			{	
 				"IsHidden"                              "1"
-				"Duration" "0.5 0.6 0.7 0.8"
+				"Duration" "0.9 1.0 1.1 1.2"
 				"ThinkInterval"		"0.86 .96 1.06 1.16"
 				"OnIntervalThink"
 				{
@@ -7146,12 +7146,12 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityChannelTime"			"2.5 2.75 3.00"
+		"AbilityChannelTime"			"2.75 3.0 3.25"
 		"AbilityCooldown"				"16.0 16.0 16.0 16.0"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"200 250 300"
+		"AbilityDamage"					"200 200 200"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -7169,12 +7169,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"channel_time"		"3.00 3.25 3.50"
+				"channel_time"		"3.25 3.5 3.75"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"total_damage"		"250 400 550"
+				"total_damage"		"250 300 350"
 			}
 		}
 	}
@@ -7653,7 +7653,7 @@
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 		"AbilityManaCost"				"0 0 0 0"
 
-		"AbilityCooldown"				"14.0 12.0 10.0 8.0"
+		"AbilityCooldown"				"16.0 14.0 12.0 10.0"
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -7707,12 +7707,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			  "10 15 20 25"
+				"damage"			  "20 30 40 50"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"8.0"
+				"duration"				"4.0"
 			}
 			"03"
 			{
@@ -7734,7 +7734,7 @@
 		"BaseClass" 					"ability_datadriven"
 		"AbilityCastRange"				"1500"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"15.0 13.0 11.0 9.0"
+		"AbilityCooldown"				"15.0 14.0 13.0 12.0"
 		"AbilityManaCost"				"0"
 		
 		"OnSpellStart"
@@ -7789,7 +7789,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"		"80 130 180 230"
+				"damage"		"80 120 160 200"
 			}
 			"03"
 			{
@@ -10241,7 +10241,7 @@
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_damage"				"90 120 150 180"
+			"bonus_damage"				"60 80 100 120"
 		}
 		"03"
 		{
@@ -10251,7 +10251,7 @@
 		"04"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"range"						"0.9 0.83 0.76 0.69"
+			"range"					"1.0 0.95 0.9 0.85"
 		}
 	}	
 
@@ -10266,7 +10266,7 @@
 			{
 				"Target" "TARGET"
 					
-				"MoveSpeed" "1800"
+				"MoveSpeed" "1300"
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/harpoon_attack.vpcf" 
 			}			
@@ -10615,7 +10615,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"duration"					"3.0 3.33 3.66 4.0"
+			"duration"					"2.0 2.33 2.66 3.0"
 		}
 		"02"
 		{
@@ -11230,7 +11230,7 @@
 
 		// Time		
 
-		"AbilityCooldown"				"25 17 14 11"
+		"AbilityCooldown"				"30 17 14 11"
 		"AOERadius"						"%radius"
 		// Damage.
 
@@ -11262,7 +11262,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"duration"					"4 5 6"
+				"duration"					"3 4 5"
 			}
 		}
 	
@@ -13389,7 +13389,7 @@
             "01"
             {
                 "var_type"                          "FIELD_INTEGER"
-                "dmg_buff"                          "60 90 120 150"
+                "dmg_buff"                          "50 75 100 125"
             }
         }
 	}
@@ -13433,12 +13433,12 @@
             "01"
             {
                 "var_type"                          "FIELD_INTEGER"
-                "slow_pct"                          "-10 -13 -16 -20"
+                "slow_pct"                          "-10 -15 -20 -25"
             }
             "02"
             {
                 "var_type"                          "FIELD_INTEGER"
-                "duration"                          "2"
+                "duration"                          "3"
             }
         }
 	}
@@ -13568,7 +13568,7 @@
     "AbilityManaCost"               "0"
 	"AbilityCooldown"				"25.0 23.0 21.0 19.0"
     "AbilityCastPoint"        "0"
-	"AbilityCastRange"				"1200"
+	"AbilityCastRange"				"1300"
     "precache"
     {
       "particle"          "particles/units/heroes/hero_morphling/morphling_waveform.vpcf"
@@ -14267,7 +14267,7 @@
     "AbilityCooldown"				"21.0 18.0 15.0"
 		"AbilityChannelTime"			"3 3.5 4"
     "AbilityManaCost"               "0"
-		"AbilityCastRange"    "1500"
+		"AbilityCastRange"    "800"
     
     "AbilitySpecial"
     {
@@ -14279,12 +14279,12 @@
       "02"
       {
         "var_type"              "FIELD_INTEGER"
-        "end_radius"            "1000"
+        "end_radius"            "800"
       }
       "03"
       {
         "var_type"              "FIELD_INTEGER"
-        "range"           			"1500"
+        "range"           			"800"
       }
 			"04"
       {
@@ -14435,7 +14435,7 @@
 				"01"
 				{
 						"var_type"				"FIELD_FLOAT"
-						"peace_duration"			"2.5 3.0 3.5 4.0"
+						"peace_duration"			"1.5 2.0 2.5 3.0"
 				}
 			}	
 
