@@ -1,204 +1,116 @@
-<!-- schema text {7e125a45-3d83-4043-b292-9e24f8ef27b4} generic {198980d8-3a93-4919-b4c6-dd1fb07a3a4b} -->
-CVModel CVModel_0
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc32:version{c5dcef98-b629-46ab-88e3-a17c005c935e} -->
 {
-	CVmeshList m_meshList = CVmeshList
+	rootNode = 
 	{
-		CVmesh[] m_meshList = 
+		_class = "RootNode"
+		children = 
 		[
-			CVmesh
 			{
-				string m_meshName = "creep_boat_north"
-				string m_meshFile = "models/creep_boat_north.smd"
-				string m_materialSearchPath = ""
-				bool m_bSkinParentedObjects = true
-				bool m_bExpensiveTangents = false
-				bool m_bExpensiveVertices = false
-				CVmorphInfo* m_pMorphInfo = NULL
-			}
-		]
-	}
-	CVClothProxyMeshList m_clothProxyMeshList = CVClothProxyMeshList
-	{
-		CVClothProxyMesh[] m_clothProxyMeshList = 
-		[
-			
-		]
-		float m_flClothEnableThreshold = 0.050000
-		bool m_bCreateStaticBone = false
-		int m_nMaxBonesPerVertex = 4
-		bool m_bRemoveUnusedBonesEnabled = false
-		bool m_bUseOnlyRealMeshBones = false
-		float m_flMatchProxiesToMeshes = 1.000000
-		float m_flReservedFloat = 0.000000
-		int m_nReservedInt = 0
-		bool m_bReservedBool1 = false
-		bool m_bReservedBool2 = false
-		bool m_bReservedBool3 = false
-		bool m_bReservedBool4 = false
-	}
-	CVphysicsMeshList m_physicsMeshList = CVphysicsMeshList
-	{
-		CVphysicsMesh[] m_meshList = 
-		[
-			CVphysicsMesh
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsHullFile"
+						name = "creep_boat_south"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						recenter_on_parent_bone = false
+						offset_origin = [ 0.0, 0.0, 0.0 ]
+						offset_angles = [ 0.0, 0.0, 0.0 ]
+						filename = "models/creep_boat_south.smd"
+						import_scale = 1.0
+						faceMergeAngle = 5.0
+						maxHullVertices = 0
+						import_mode = "SingleHull"
+						small_element_threshold = 0.0
+						thin_element_threshold = 0.0
+						optimization_algorithm = "QEM"
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+				leave_body_collision_unmodified = false
+			},
 			{
-				string m_meshName = "creep_boat_south"
-				string m_meshFile = "models/creep_boat_south.smd"
-				bool m_bConvexify = true
-				bool m_bMultiplePieces = false
-				symbol m_collisionType = KEYFRAMED
-				bool m_bUseExactGeometry = false
-				bool m_bAutoMass = true
-				float m_flMassOverride = 100.000000
-				bool m_bOneConvexPiece = true
-				bool m_bConcavePerJoint = false
-				bool m_bSelfCollisions = false
-				bool m_bForceKinematic = false
-				bool m_bIgnoreScale = false
-				bool m_bIgnoreSkeleton = false
-			}
+				_class = "AttachmentList"
+				children = 
+				[
+					{
+						_class = "Attachment"
+						name = "attach_attack1"
+						parent_bone = "root"
+						relative_origin = [ -0.00002, -2.242843, 76.333786 ]
+						relative_angles = [ -0.0, -0.00002, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "attach_hitloc"
+						parent_bone = "root"
+						relative_origin = [ -0.000014, -17.594728, 71.191544 ]
+						relative_angles = [ -0.0, -0.00002, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+				]
+			},
+			{
+				_class = "HitboxSetList"
+				children = 
+				[
+					{
+						_class = "HitboxSet"
+						name = "default"
+						children = 
+						[
+							{
+								_class = "Hitbox"
+								parent_bone = "root"
+								surface_property = "rubber"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -25.853325, 13.289513, -57.259804 ]
+								hitbox_maxs = [ 24.866192, 113.337036, 64.627922 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "root"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -30.751682, -74.854752, 8.422165 ]
+								hitbox_maxs = [ 29.395706, 69.689713, 127.066772 ]
+							},
+						]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						name = "creep_boat_north"
+						filename = "models/creep_boat_north.smd"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
 		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+		importer_notes = "Imported from VMDL"
 	}
-	CVmodelInfo* m_pModelInfo = NULL
-	CVBoneFlagListReference m_pBoneFlagList = CVBoneFlagListReference
-	{
-		CVBoneFlagList* m_pObject = NULL
-		string m_sFileName = ""
-	}
-	CVhitBoxSetListReference[] m_pHitBoxSetLists = 
-	[
-		CVhitBoxSetListReference
-		{
-			CVhitBoxSetList* m_pObject = &CVhitBoxSetList_0
-			string m_sFileName = ""
-		}
-	]
-	CVattachmentListReference[] m_pAttachmentLists = 
-	[
-		CVattachmentListReference
-		{
-			CVattachmentList* m_pObject = &CVattachmentList_0
-			string m_sFileName = ""
-		}
-	]
-	CVanimGroupReference[] m_pAnimGroups = 
-	[
-		
-	]
-	CVNodeMaterialGroupListReference m_pMaterialGroupList = CVNodeMaterialGroupListReference
-	{
-		NodeMaterialGroupList_t* m_pObject = NULL
-		string m_sFileName = ""
-	}
-	CVMeshGroupListReference m_pMeshGroupList = CVMeshGroupListReference
-	{
-		MeshGroupList_t* m_pObject = NULL
-		string m_sFileName = ""
-	}
-	CVLODGroupListReference m_pLodGroupList = CVLODGroupListReference
-	{
-		LODGroupList_t* m_pObject = NULL
-		string m_sFileName = ""
-	}
-	CVpropBreakableListReference m_pPropBreakableList = CVpropBreakableListReference
-	{
-		CVpropBreakableList* m_pObject = NULL
-		string m_sFileName = ""
-	}
-	CVpropDataListReference m_pPropDataList = CVpropDataListReference
-	{
-		CVpropDataList* m_pObject = NULL
-		string m_sFileName = ""
-	}
-	CVConstraintListReference[] m_pConstraintLists = 
-	[
-		
-	]
-	string m_collision = ""
-	string m_sMDLFilename = ""
-	string[] m_scriptFiles = 
-	[
-		
-	]
-	CVMaterialRemapList* m_pMaterialRemapList = NULL
-	float m_flFbxScale = 1.000000
-	float m_flQCScale = 1.000000
-	CVPsf* m_pvPsf = NULL
-	string m_keyValueText = ""
-	bool m_bStaticProp = false
-	bool m_bEnableClothProcessing = true
-	float m_flClothEnableThreshold = 0.050000
-	int m_nMaxClothVertsPerMesh = 2048
-}
-
-CVhitBoxSetList CVhitBoxSetList_0
-{
-	CVhitBoxSet[] m_HitBoxSets = 
-	[
-		CVhitBoxSet
-		{
-			string m_name = "default"
-			CVhitBox[] m_HitBoxes = 
-			[
-				CVhitBox
-				{
-					string m_name = "root"
-					string m_sSurfaceProperty = "rubber"
-					int m_nGroupId = 0
-					string m_sBoneName = "root"
-					float(3) m_vMinBounds = ( -25.853325, 13.289513, -57.259804 )
-					float(3) m_vMaxBounds = ( 24.866192, 113.337036, 64.627922 )
-					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
-				},
-				CVhitBox
-				{
-					string m_name = "root"
-					string m_sSurfaceProperty = ""
-					int m_nGroupId = 0
-					string m_sBoneName = "root"
-					float(3) m_vMinBounds = ( -30.751682, -74.854752, 8.422165 )
-					float(3) m_vMaxBounds = ( 29.395706, 69.689713, 127.066772 )
-					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
-				}
-			]
-		}
-	]
-}
-
-CVattachmentList CVattachmentList_0
-{
-	string m_name = ""
-	CVattachment[] m_attachments = 
-	[
-		CVattachment
-		{
-			string m_name = "attach_attack1"
-			CVattachmentInfluence[] m_influences = 
-			[
-				CVattachmentInfluence
-				{
-					string m_influenceName = "root"
-					float(3) m_vTranslationOffset = ( -0.000020, -2.242843, 76.333786 )
-					float(3) m_vRotationOffset = ( 0.000000, -0.000000, -0.000020 )
-					float m_flWeight = 1.000000
-					bool m_bRoot = false
-				}
-			]
-		},
-		CVattachment
-		{
-			string m_name = "attach_hitloc"
-			CVattachmentInfluence[] m_influences = 
-			[
-				CVattachmentInfluence
-				{
-					string m_influenceName = "root"
-					float(3) m_vTranslationOffset = ( -0.000014, -17.594728, 71.191544 )
-					float(3) m_vRotationOffset = ( 0.000000, -0.000000, -0.000020 )
-					float m_flWeight = 1.000000
-					bool m_bRoot = false
-				}
-			]
-		}
-	]
 }

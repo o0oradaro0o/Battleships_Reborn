@@ -1,295 +1,154 @@
-<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc32:version{c5dcef98-b629-46ab-88e3-a17c005c935e} -->
 {
-	m_meshList = 
+	rootNode = 
 	{
-		m_meshList = 
+		_class = "RootNode"
+		children = 
 		[
 			{
-				m_meshName = "const_boat"
-				m_meshFile = "models/const_boat.smd"
-				m_materialSearchPath = ""
-				m_bSkinParentedObjects = true
-				m_bLegacySkinParentedTransforms = false
-				m_bExpensiveTangents = false
-				m_bHighPrecisionTexCoords = false
-				m_bPerVertexCurvature = false
-				m_bBentNormals = false
-				m_bIgnoreCloth = false
-				m_bGetSkinningFromLod0 = false
-				m_bPreferHighDensityTrianglesInUvDensityCalculation = false
-				m_pMorphInfo = null
+				_class = "AttachmentList"
+				children = 
+				[
+					{
+						_class = "Attachment"
+						name = "attach_attack1"
+						parent_bone = "root"
+						relative_origin = [ -8.963748, 24.015314, 86.507828 ]
+						relative_angles = [ -0.0, -0.00002, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "attach_hitloc"
+						parent_bone = "root"
+						relative_origin = [ -0.000009, 26.927155, 81.970337 ]
+						relative_angles = [ -0.0, -0.00002, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "HatPoint"
+						parent_bone = "root"
+						relative_origin = [ -86.019585, -74.259399, 165.322006 ]
+						relative_angles = [ -0.0, -0.000089, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+				]
+			},
+			{
+				_class = "HitboxSetList"
+				children = 
+				[
+					{
+						_class = "HitboxSet"
+						name = "default"
+						children = 
+						[
+							{
+								_class = "Hitbox"
+								parent_bone = "root"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -86.26593, 13.392197, -97.896225 ]
+								hitbox_maxs = [ 84.153824, 170.057434, 100.446671 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "root"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -107.028877, -115.360947, 17.068268 ]
+								hitbox_maxs = [ 108.120369, 135.040237, 214.852753 ]
+							},
+						]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						name = "const_boat"
+						filename = "models/const_boat.smd"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "AnimationList"
+				children = 
+				[
+					{
+						_class = "AnimFile"
+						name = "main"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						source_filename = "models/const_boat.smd"
+						import_bone_scales = false
+						start_frame = 0
+						end_frame = 0
+						framerate = 30.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "const_boat"
+						children = 
+						[
+							{
+								_class = "AnimOffset"
+								translation = [ -300.0, 75.0, 260.0 ]
+								rotation_xyz = [ 20.0, 40.0, 20.0 ]
+							},
+						]
+						activity_name = "ACT_DOTA_CAPTURE"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						source_filename = "models/const_boat.smd"
+						import_bone_scales = false
+						start_frame = 0
+						end_frame = 0
+						framerate = 30.0
+						reverse = false
+					},
+				]
+				default_root_bone_name = ""
 			},
 		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+		importer_notes = "Imported from VMDL"
 	}
-	m_clothProxyMeshList = 
-	{
-		_class = "CVClothProxyMeshList"
-		m_flClothEnableThreshold = 0.05
-		m_bCreateStaticBone = false
-		m_nMaxBonesPerVertex = 4
-		m_bRemoveUnusedBonesEnabled = false
-		m_bDriveMeshesWithBacksolvedJointsOnly = true
-		m_flMatchProxiesToMeshes = 1.0
-		m_flFallbackEnvelope = 1.0
-		m_nReservedInt = 0
-		m_bSoftSkinAnimation = false
-		m_bReservedBool2 = false
-		m_bReservedBool3 = false
-		m_bReservedBool4 = false
-		m_clothProxyMeshList = [  ]
-	}
-	m_physicsMeshList = 
-	{
-		m_meshList = [  ]
-	}
-	m_pModelInfo = null
-	m_pBoneFlagList = 
-	{
-		m_pObject = null
-	}
-	m_pHitBoxSetLists = 
-	[
-		{
-			m_pObject = 
-			{
-				m_HitBoxSets = 
-				[
-					{
-						m_name = "default"
-						m_HitBoxes = 
-						[
-							{
-								m_name = "root"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "root"
-								m_vMinBounds = [ -86.26593, 13.392197, -97.896225 ]
-								m_vMaxBounds = [ 84.153824, 170.057434, 100.446671 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "root"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "root"
-								m_vMinBounds = [ -107.028877, -115.360947, 17.068268 ]
-								m_vMaxBounds = [ 108.120369, 135.040237, 214.852753 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-						]
-					},
-				]
-				m_AutoCreateSetName = ""
-			}
-		},
-	]
-	m_pAttachmentLists = 
-	[
-		{
-			m_pObject = 
-			{
-				m_name = ""
-				m_attachments = 
-				[
-					{
-						m_name = "attach_attack1"
-						m_influences = 
-						[
-							{
-								m_influenceName = "root"
-								m_vTranslationOffset = [ -8.963748, 24.015314, 86.507828 ]
-								m_vRotationOffset = [ 0.0, -0.0, -0.00002 ]
-								m_flWeight = 1.0
-								m_bRoot = false
-							},
-						]
-					},
-					{
-						m_name = "attach_hitloc"
-						m_influences = 
-						[
-							{
-								m_influenceName = "root"
-								m_vTranslationOffset = [ -0.000009, 26.927155, 81.970337 ]
-								m_vRotationOffset = [ 0.0, -0.0, -0.00002 ]
-								m_flWeight = 1.0
-								m_bRoot = false
-							},
-						]
-					},
-					{
-						m_name = "HatPoint"
-						m_influences = 
-						[
-							{
-								m_influenceName = "root"
-								m_vTranslationOffset = [ -86.019585, -74.259399, 165.322006 ]
-								m_vRotationOffset = [ 0.0, -0.0, -0.000089 ]
-								m_flWeight = 1.0
-								m_bRoot = false
-							},
-						]
-					},
-				]
-			}
-		},
-	]
-	m_pAnimGroup = 
-	{
-		m_pObject = 
-		{
-			m_Name = ""
-			m_pReferenceSkeleton = 
-			{
-				m_pObject = null
-			}
-			m_pBoneFlagList = 
-			{
-				m_pObject = null
-			}
-			m_pSeqGroup = 
-			{
-				m_pObject = null
-			}
-			m_pAnimGroups = [  ]
-			m_Vanim = 
-			[
-				{
-					m_Animationname = "main"
-					m_Filepath = "models/const_boat.smd"
-					m_nStartframe = 0
-					m_nEndframe = 0
-					m_flFps = 30.0
-					m_Loop = 
-					{
-						m_bLoop = false
-						m_bSmoothLoop = false
-						m_nSmoothLoopStart = 0
-						m_nSmoothLoopEnd = 0
-						m_StartLoop = 
-						{
-							_class = "CVAnimCmdStartLoop"
-							m_bEnabled = false
-							m_nLoopRestart = 0
-						}
-					}
-					m_bHidden = false
-					m_bDisable = false
-					m_Activities = [  ]
-					m_AnimationEvents = [  ]
-					m_MotionFrames = [  ]
-					m_pIkRules = [  ]
-					m_pAlignAnimation = null
-					m_adjustAnimation = 
-					{
-						m_translation = [ 0.0, 0.0, 0.0 ]
-						m_rotation = [ 0.0, 0.0, 0.0 ]
-					}
-					m_Keywords = [  ]
-					m_sequenceParams = 
-					{
-						m_flFadeInTime = 0.2
-						m_flFadeOutTime = 0.2
-					}
-					m_folderName = ""
-					m_MotionFramesRootBone = ""
-				},
-				{
-					m_Animationname = "const_boat"
-					m_Filepath = "models/const_boat.smd"
-					m_nStartframe = 0
-					m_nEndframe = 0
-					m_flFps = 30.0
-					m_Loop = 
-					{
-						m_bLoop = false
-						m_bSmoothLoop = false
-						m_nSmoothLoopStart = 0
-						m_nSmoothLoopEnd = 0
-						m_StartLoop = 
-						{
-							_class = "CVAnimCmdStartLoop"
-							m_bEnabled = false
-							m_nLoopRestart = 0
-						}
-					}
-					m_bHidden = false
-					m_bDisable = false
-					m_Activities = 
-					[
-						{
-							m_Name = "ACT_DOTA_CAPTURE"
-							m_nWeight = 1
-						},
-					]
-					m_AnimationEvents = [  ]
-					m_MotionFrames = [  ]
-					m_pIkRules = [  ]
-					m_pAlignAnimation = null
-					m_adjustAnimation = 
-					{
-						m_translation = [ -300.0, 75.0, 260.0 ]
-						m_rotation = [ 20.0, 40.0, 20.0 ]
-					}
-					m_Keywords = [  ]
-					m_sequenceParams = 
-					{
-						m_flFadeInTime = 0.2
-						m_flFadeOutTime = 0.2
-					}
-					m_folderName = ""
-					m_MotionFramesRootBone = ""
-				},
-			]
-			m_sScripts = [  ]
-			m_folderNames = [  ]
-			m_sCompileScripts = [  ]
-		}
-	}
-	m_pMaterialGroupList = 
-	{
-		m_pObject = null
-	}
-	m_pMeshGroupList = 
-	{
-		m_pObject = null
-	}
-	m_pLodGroupList = 
-	{
-		m_pObject = null
-	}
-	m_pPropBreakableList = 
-	{
-		m_pObject = null
-	}
-	m_pPropDataList = 
-	{
-		m_pObject = null
-	}
-	m_pConstraintLists = [  ]
-	m_collision = ""
-	m_softbody = ""
-	m_sMDLFilename = ""
-	m_sOffsetHitboxSets = [  ]
-	m_vHitboxSetOffset = [ 0.0, 0.0, 0.0 ]
-	m_scriptFiles = [  ]
-	m_pMaterialRemapList = null
-	m_flFbxScale = 1.0
-	m_flQCScale = 1.0
-	m_vOrigin = [ 0.0, 0.0, 0.0 ]
-	m_pPsfList = null
-	m_keyValueText = ""
-	m_bStaticProp = false
-	m_bEnableClothProcessing = true
-	m_flClothEnableThreshold = 0.05
-	m_nMaxClothVertsPerMesh = 2048
-	m_bBuildClothBoneHierarchy = false
-	m_nNavType = "AUTH_NAV_MESH"
-	m_bMakeUniqueVMeshes = false
-	m_bMakeImplicitBindPoseSequence = false
-	m_bAdjustSkeletonFromBoneFlags = false
-	m_bHiddenAssetFlag = false
-	m_pAnimGroups = [  ]
 }

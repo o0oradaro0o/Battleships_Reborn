@@ -1650,7 +1650,7 @@
 		"StatusMana"				"737"			// Base mana.
 		
 		"AbilityLayout"				"3"
-		"Ability1"					"dive_battleship"
+		"Ability1"					"pistols_battleship"
 		"Ability2"					"tidehunter_gush_battleship"
 		"Ability3"					"peak_battleship"
 		"Ability4"					"submerge_battleship"

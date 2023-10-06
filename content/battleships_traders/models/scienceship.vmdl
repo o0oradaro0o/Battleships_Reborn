@@ -1,245 +1,131 @@
-<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc32:version{c5dcef98-b629-46ab-88e3-a17c005c935e} -->
 {
-	m_meshList = 
+	rootNode = 
 	{
-		m_meshList = 
+		_class = "RootNode"
+		children = 
 		[
 			{
-				m_meshName = "scienceship"
-				m_meshFile = "models/scienceship.fbx"
-				m_materialSearchPath = ""
-				m_bSkinParentedObjects = true
-				m_bLegacySkinParentedTransforms = false
-				m_bExpensiveTangents = false
-				m_bHighPrecisionTexCoords = false
-				m_bPerVertexCurvature = false
-				m_bBentNormals = false
-				m_bIgnoreCloth = false
-				m_bGetSkinningFromLod0 = false
-				m_bPreferHighDensityTrianglesInUvDensityCalculation = false
-				m_pMorphInfo = null
+				_class = "AttachmentList"
+				children = 
+				[
+					{
+						_class = "Attachment"
+						name = "tower"
+						parent_bone = "Bone"
+						relative_origin = [ 72.254631, 330.38739, -165.323242 ]
+						relative_angles = [ 0.000001, -0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "vroom"
+						parent_bone = "Bone"
+						relative_origin = [ 25.220148, 293.073364, -305.356628 ]
+						relative_angles = [ 0.000001, -0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "vroom2"
+						parent_bone = "Bone"
+						relative_origin = [ 21.095312, 248.321564, 76.356308 ]
+						relative_angles = [ 0.000001, -0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "vroom3"
+						parent_bone = "Bone"
+						relative_origin = [ 88.41172, 251.189209, -59.722294 ]
+						relative_angles = [ 0.000001, -0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "vroom4"
+						parent_bone = "Bone"
+						relative_origin = [ -49.843536, 249.885635, -64.593811 ]
+						relative_angles = [ 0.000001, -0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "vroom5"
+						parent_bone = "Bone"
+						relative_origin = [ 87.314903, 249.72995, -186.177673 ]
+						relative_angles = [ 0.000001, -0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "vroom6"
+						parent_bone = "Bone"
+						relative_origin = [ -51.460953, 248.225555, -186.543198 ]
+						relative_angles = [ 0.000001, -0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "attach_hitloc"
+						parent_bone = "Bone"
+						relative_origin = [ -0.0, 386.736267, 0.0 ]
+						relative_angles = [ 0.000001, -0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+				]
+			},
+			{
+				_class = "HitboxSetList"
+				children = 
+				[
+					{
+						_class = "HitboxSet"
+						name = "default"
+						children = 
+						[
+							{
+								_class = "Hitbox"
+								parent_bone = "Bone"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -145.371002, 239.154007, 20.684999 ]
+								hitbox_maxs = [ 187.711166, 504.168945, 394.227325 ]
+							},
+						]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						name = "scienceship"
+						filename = "models/scienceship.fbx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
 			},
 		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+		importer_notes = "Imported from VMDL"
 	}
-	m_clothProxyMeshList = 
-	{
-		_class = "CVClothProxyMeshList"
-		m_flClothEnableThreshold = 0.05
-		m_bCreateStaticBone = false
-		m_nMaxBonesPerVertex = 4
-		m_bRemoveUnusedBonesEnabled = false
-		m_bDriveMeshesWithBacksolvedJointsOnly = true
-		m_flMatchProxiesToMeshes = 1.0
-		m_flFallbackEnvelope = 1.0
-		m_nReservedInt = 0
-		m_bSoftSkinAnimation = false
-		m_bReservedBool2 = false
-		m_bReservedBool3 = false
-		m_bReservedBool4 = false
-		m_clothProxyMeshList = [  ]
-	}
-	m_physicsMeshList = 
-	{
-		m_meshList = [  ]
-	}
-	m_pModelInfo = null
-	m_pBoneFlagList = 
-	{
-		m_pObject = null
-	}
-	m_pHitBoxSetLists = 
-	[
-		{
-			m_pObject = 
-			{
-				m_HitBoxSets = 
-				[
-					{
-						m_name = "default"
-						m_HitBoxes = 
-						[
-							{
-								m_name = "Bone"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Bone"
-								m_vMinBounds = [ -145.371002, 239.154007, 20.684999 ]
-								m_vMaxBounds = [ 187.711166, 504.168945, 394.227325 ]
-								m_flShapeRadius = 0.0
-								m_nShapeType = "VHITBOX_SHAPE_BOX"
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-						]
-					},
-				]
-				m_AutoCreateSetName = ""
-			}
-		},
-	]
-	m_pAttachmentLists = 
-	[
-		{
-			m_pObject = 
-			{
-				m_name = ""
-				m_attachments = 
-				[
-					{
-						m_name = "tower"
-						m_influences = 
-						[
-							{
-								m_influenceName = "Bone"
-								m_vTranslationOffset = [ 72.254631, 330.38739, -165.323242 ]
-								m_vRotationOffset = [ 0.0, 0.000001, -0.0 ]
-								m_flWeight = 1.0
-								m_bRoot = false
-							},
-						]
-					},
-					{
-						m_name = "vroom"
-						m_influences = 
-						[
-							{
-								m_influenceName = "Bone"
-								m_vTranslationOffset = [ 25.220148, 293.073364, -305.356628 ]
-								m_vRotationOffset = [ 0.0, 0.000001, -0.0 ]
-								m_flWeight = 1.0
-								m_bRoot = false
-							},
-						]
-					},
-					{
-						m_name = "vroom2"
-						m_influences = 
-						[
-							{
-								m_influenceName = "Bone"
-								m_vTranslationOffset = [ 21.095312, 248.321564, 76.356308 ]
-								m_vRotationOffset = [ 0.0, 0.000001, -0.0 ]
-								m_flWeight = 1.0
-								m_bRoot = false
-							},
-						]
-					},
-					{
-						m_name = "vroom3"
-						m_influences = 
-						[
-							{
-								m_influenceName = "Bone"
-								m_vTranslationOffset = [ 88.41172, 251.189209, -59.722294 ]
-								m_vRotationOffset = [ 0.0, 0.000001, -0.0 ]
-								m_flWeight = 1.0
-								m_bRoot = false
-							},
-						]
-					},
-					{
-						m_name = "vroom4"
-						m_influences = 
-						[
-							{
-								m_influenceName = "Bone"
-								m_vTranslationOffset = [ -49.843536, 249.885635, -64.593811 ]
-								m_vRotationOffset = [ 0.0, 0.000001, -0.0 ]
-								m_flWeight = 1.0
-								m_bRoot = false
-							},
-						]
-					},
-					{
-						m_name = "vroom5"
-						m_influences = 
-						[
-							{
-								m_influenceName = "Bone"
-								m_vTranslationOffset = [ 87.314903, 249.72995, -186.177673 ]
-								m_vRotationOffset = [ 0.0, 0.000001, -0.0 ]
-								m_flWeight = 1.0
-								m_bRoot = false
-							},
-						]
-					},
-					{
-						m_name = "vroom6"
-						m_influences = 
-						[
-							{
-								m_influenceName = "Bone"
-								m_vTranslationOffset = [ -51.460953, 248.225555, -186.543198 ]
-								m_vRotationOffset = [ 0.0, 0.000001, -0.0 ]
-								m_flWeight = 1.0
-								m_bRoot = false
-							},
-						]
-					},
-					{
-						m_name = "attach_hitloc"
-						m_influences = 
-						[
-							{
-								m_influenceName = "Bone"
-								m_vTranslationOffset = [ -0.0, 386.736267, 0.0 ]
-								m_vRotationOffset = [ 0.0, 0.000001, -0.0 ]
-								m_flWeight = 1.0
-								m_bRoot = false
-							},
-						]
-					},
-				]
-			}
-		},
-	]
-	m_pAnimGroup = 
-	{
-		m_pObject = null
-	}
-	m_pMaterialGroupList = 
-	{
-		m_pObject = null
-	}
-	m_pMeshGroupList = 
-	{
-		m_pObject = null
-	}
-	m_pLodGroupList = 
-	{
-		m_pObject = null
-	}
-	m_pPropBreakableList = 
-	{
-		m_pObject = null
-	}
-	m_pPropDataList = 
-	{
-		m_pObject = null
-	}
-	m_pConstraintLists = [  ]
-	m_collision = ""
-	m_softbody = ""
-	m_sMDLFilename = ""
-	m_sOffsetHitboxSets = [  ]
-	m_vHitboxSetOffset = [ 0.0, 0.0, 0.0 ]
-	m_scriptFiles = [  ]
-	m_pMaterialRemapList = null
-	m_flFbxScale = 1.0
-	m_flQCScale = 1.0
-	m_vOrigin = [ 0.0, 0.0, 0.0 ]
-	m_bEmbedAnimsInAnimGroup = false
-	m_pPsfList = null
-	m_keyValueText = ""
-	m_bStaticProp = false
-	m_bEnableClothProcessing = true
-	m_flClothEnableThreshold = 0.05
-	m_nMaxClothVertsPerMesh = 2048
-	m_bBuildClothBoneHierarchy = false
-	m_nNavType = "AUTH_NAV_MESH"
-	m_bMakeUniqueVMeshes = false
-	m_bMakeImplicitBindPoseSequence = false
-	m_bAdjustSkeletonFromBoneFlags = false
-	m_bHiddenAssetFlag = false
-	m_pAnimGroups = [  ]
 }

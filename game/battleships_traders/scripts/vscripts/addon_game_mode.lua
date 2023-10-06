@@ -64,6 +64,7 @@ g_josh = 40159914
 g_borgel = 13375544
 g_planit = 5879425
 g_siege = 138997389
+g_ollie = 50082152
 -- creep spawn and level counters
 g_CreepLevel = 0
 g_NumSmallCreeps = 6
@@ -1408,7 +1409,7 @@ function CBattleship8D:OnThink()
                 g_HeroDamage[hero:GetPlayerID()] = 0
                 g_BuildingDamage[hero:GetPlayerID()] = 0
                 steamID32 = PlayerResource:GetSteamAccountID(hero:GetPlayerID())
-                if PlayerResource:GetPlayer(hero:GetPlayerID()) ~= nil and  (steamID32 == g_radar or steamID32 == g_vic) then 
+                if PlayerResource:GetPlayer(hero:GetPlayerID()) ~= nil and  (steamID32 == g_radar or steamID32 == g_vic or steamID32 == g_ollie) then 
                     playerData = {}
                     CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(hero:GetPlayerID()), "show_crab_ui", playerData)
                 end

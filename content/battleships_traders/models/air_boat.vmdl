@@ -1,1128 +1,882 @@
-<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc32:version{c5dcef98-b629-46ab-88e3-a17c005c935e} -->
 {
-	m_meshList = 
+	rootNode = 
 	{
-		m_meshList = 
+		_class = "RootNode"
+		children = 
 		[
 			{
-				m_meshName = "anim_airboat_idle"
-				m_meshFile = "models/airboat/anim_airboat_idle.fbx"
-				m_materialSearchPath = ""
-				m_bSkinParentedObjects = true
-				m_bLegacySkinParentedTransforms = false
-				m_bExpensiveTangents = false
-				m_bHighPrecisionTexCoords = false
-				m_bPerVertexCurvature = false
-				m_bBentNormals = false
-				m_bIgnoreCloth = false
-				m_bGetSkinningFromLod0 = false
-				m_bPreferHighDensityTrianglesInUvDensityCalculation = false
-				m_pMorphInfo = null
-			},
-		]
-	}
-	m_clothProxyMeshList = 
-	{
-		_class = "CVClothProxyMeshList"
-		m_flClothEnableThreshold = 0.05
-		m_bCreateStaticBone = false
-		m_nMaxBonesPerVertex = 4
-		m_bRemoveUnusedBonesEnabled = false
-		m_bDriveMeshesWithBacksolvedJointsOnly = true
-		m_flMatchProxiesToMeshes = 1.0
-		m_flFallbackEnvelope = 1.0
-		m_nReservedInt = 0
-		m_bSoftSkinAnimation = false
-		m_bReservedBool2 = false
-		m_bReservedBool3 = false
-		m_bReservedBool4 = false
-		m_clothProxyMeshList = [  ]
-	}
-	m_physicsMeshList = 
-	{
-		m_meshList = [  ]
-	}
-	m_pModelInfo = null
-	m_pBoneFlagList = 
-	{
-		m_pObject = null
-	}
-	m_pHitBoxSetLists = 
-	[
-		{
-			m_pObject = 
-			{
-				m_HitBoxSets = 
+				_class = "MaterialGroupList"
+				children = 
 				[
 					{
-						m_name = "default"
-						m_HitBoxes = 
+						_class = "DefaultMaterialGroup"
+						remaps = [  ]
+						use_global_default = true
+						global_default_material = "air_boat.vmat"
+					},
+				]
+			},
+			{
+				_class = "AttachmentList"
+				children = 
+				[
+					{
+						_class = "Attachment"
+						name = "attach_attack1"
+						parent_bone = "boat_base"
+						relative_origin = [ 25.139755, 36.873611, 59.119789 ]
+						relative_angles = [ 0.0, -0.000017, -0.000009 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "attach_hitloc"
+						parent_bone = "boat_base"
+						relative_origin = [ 26.302284, 30.028231, -11.780689 ]
+						relative_angles = [ 0.000007, -0.000018, -0.000015 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "attach_attack2"
+						parent_bone = "Cannon_emiter"
+						relative_origin = [ 0.0, 0.0, 0.0 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "pipe_emitter"
+						parent_bone = "Pipe_emitter"
+						relative_origin = [ 0.0, 0.0, 0.0 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "HatPoint"
+						parent_bone = "boat_base"
+						relative_origin = [ 33.516708, 32.84359, 56.257835 ]
+						relative_angles = [ -0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+				]
+			},
+			{
+				_class = "HitboxSetList"
+				children = 
+				[
+					{
+						_class = "HitboxSet"
+						name = "default"
+						children = 
 						[
 							{
-								m_name = "root"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "root"
-								m_vMinBounds = [ -35.899426, -90.019661, -2.558029 ]
-								m_vMaxBounds = [ 37.717876, 81.86071, 113.605812 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "boat_base"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "boat_base"
-								m_vMinBounds = [ -53.752113, -21.785051, -127.358528 ]
-								m_vMaxBounds = [ 73.874313, 73.135101, 101.822914 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Turret_rotator"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Turret_rotator"
-								m_vMinBounds = [ -18.840618, -1.118111, -27.290672 ]
-								m_vMaxBounds = [ 19.40443, 33.263973, 22.627068 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Cannon1"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Cannon1"
-								m_vMinBounds = [ -5.359135, -14.601212, -18.280628 ]
-								m_vMaxBounds = [ 12.332237, 8.195454, 13.5639 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Cannon_emiter"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Cannon_emiter"
-								m_vMinBounds = [ -6.484367, -6.132248, -14.44281 ]
-								m_vMaxBounds = [ 6.368696, 7.396641, 9.090942 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Cannon2"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Cannon2"
-								m_vMinBounds = [ -7.19735, -7.377224, -8.204697 ]
-								m_vMaxBounds = [ 5.896402, 4.093472, 2.341423 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Boiler"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Boiler"
-								m_vMinBounds = [ -15.370064, -11.77, -9.587563 ]
-								m_vMaxBounds = [ 13.214357, 17.132587, 14.300686 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Furnace1"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Furnace1"
-								m_vMinBounds = [ -11.951777, -7.001072, -9.864866 ]
-								m_vMaxBounds = [ 13.900152, 9.293159, 3.846183 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings13"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings13"
-								m_vMinBounds = [ -6.660648, -7.77507, -2.050556 ]
-								m_vMaxBounds = [ 8.097015, 8.240578, 5.79401 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings17"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings17"
-								m_vMinBounds = [ -5.789415, -7.754635, -1.890999 ]
-								m_vMaxBounds = [ 8.027073, 7.115845, 2.406223 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings21"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings21"
-								m_vMinBounds = [ -4.980486, -7.735699, -1.795849 ]
-								m_vMaxBounds = [ 8.077515, 6.07151, 3.049049 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings9"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings9"
-								m_vMinBounds = [ -6.412422, -7.894081, -3.023209 ]
-								m_vMaxBounds = [ 6.523403, 5.768173, 1.854671 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings5"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings5"
-								m_vMinBounds = [ -6.414272, -7.913036, -0.798519 ]
-								m_vMaxBounds = [ 7.3458, 6.801331, 1.46471 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings1"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings1"
-								m_vMinBounds = [ -6.526119, -7.933453, -1.859901 ]
-								m_vMaxBounds = [ 8.231544, 7.914063, 5.131474 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Cannon3"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Cannon3"
-								m_vMinBounds = [ -0.889706, -7.25243, -6.119949 ]
-								m_vMaxBounds = [ 3.854641, 4.093472, 2.181671 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Cannon4"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Cannon4"
-								m_vMinBounds = [ -3.808859, -4.158939, -6.130989 ]
-								m_vMaxBounds = [ 2.737989, -1.566467, 2.167801 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Cannon5"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Cannon5"
-								m_vMinBounds = [ -5.754656, -7.37722, -5.610786 ]
-								m_vMaxBounds = [ -0.904779, 3.968681, 2.341431 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Cannon6"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Cannon6"
-								m_vMinBounds = [ -4.330252, -1.717262, -6.952934 ]
-								m_vMaxBounds = [ 2.923784, 4.121799, 1.242798 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Cannon7"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Cannon7"
-								m_vMinBounds = [ -3.158165, -4.798717, -4.546799 ]
-								m_vMaxBounds = [ 3.268396, -0.92215, 6.485962 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Cannon8"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Cannon8"
-								m_vMinBounds = [ -5.034962, -6.132252, -9.088409 ]
-								m_vMaxBounds = [ -0.312006, 5.005093, 6.573158 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Cannon9"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Cannon9"
-								m_vMinBounds = [ -5.68878, -10.162582, -16.657093 ]
-								m_vMaxBounds = [ 6.049538, 4.695644, 5.737038 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Cannon10"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Cannon10"
-								m_vMinBounds = [ -0.297211, -6.009747, -9.578384 ]
-								m_vMaxBounds = [ 3.580807, 5.127602, 3.352905 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Acid_distribution2"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Acid_distribution2"
-								m_vMinBounds = [ -9.141579, -28.213436, -9.587559 ]
-								m_vMaxBounds = [ 13.214354, 0.534355, 9.659954 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Acid_distribution4"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Acid_distribution4"
-								m_vMinBounds = [ -1.721249, -5.775234, -5.643715 ]
-								m_vMaxBounds = [ 10.413223, 3.428574, 9.559471 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Acid_distribution5"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Acid_distribution5"
-								m_vMinBounds = [ 1.476036, 0.344406, -2.850044 ]
-								m_vMaxBounds = [ 3.812901, 6.034325, -0.634113 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Acid_distribution7"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Acid_distribution7"
-								m_vMinBounds = [ 0.716282, -0.166874, -1.075672 ]
-								m_vMaxBounds = [ 6.445194, 4.204441, 0.972332 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Acid_distribution8"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Acid_distribution8"
-								m_vMinBounds = [ -1.84903, -5.696861, -1.981579 ]
-								m_vMaxBounds = [ 3.879883, 0.392342, 0.066425 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Acid_distribution10"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Acid_distribution10"
-								m_vMinBounds = [ -2.500286, -2.915176, -2.450649 ]
-								m_vMaxBounds = [ 15.659279, 2.414734, 5.390808 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Acid_distribution11"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Acid_distribution11"
-								m_vMinBounds = [ -0.887371, 0.340027, -1.491997 ]
-								m_vMaxBounds = [ 2.828445, 4.121803, 1.978378 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Turret_plate"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Turret_plate"
-								m_vMinBounds = [ -5.180798, -0.227638, -0.127808 ]
-								m_vMaxBounds = [ 3.8034, 2.415398, 0.755005 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Furnace_gear"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Furnace_gear"
-								m_vMinBounds = [ -24.693438, -5.26297, -25.80423 ]
-								m_vMaxBounds = [ 25.899614, 0.215149, 25.589172 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Furnace2"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Furnace2"
-								m_vMinBounds = [ -8.337606, -9.509586, -9.605103 ]
-								m_vMaxBounds = [ 0.302691, 9.122765, 3.846185 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Furnace3"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Furnace3"
-								m_vMinBounds = [ -9.474023, -5.355064, -7.109651 ]
-								m_vMaxBounds = [ 11.704223, 0.278397, 3.375566 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Furnace4"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Furnace4"
-								m_vMinBounds = [ 1.201526, -9.130444, -9.608904 ]
-								m_vMaxBounds = [ 10.334333, 9.293159, 3.842892 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Furnace5"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Furnace5"
-								m_vMinBounds = [ -10.196028, -0.102665, -8.772472 ]
-								m_vMaxBounds = [ 11.945391, 4.805092, 2.073758 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Furnace_side_gear1"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Furnace_side_gear1"
-								m_vMinBounds = [ -13.54487, -13.6008, -12.860991 ]
-								m_vMaxBounds = [ 0.681843, 11.311058, 12.967278 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Furnace_side_gear2"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Furnace_side_gear2"
-								m_vMinBounds = [ 0.941425, -12.627728, -12.764893 ]
-								m_vMaxBounds = [ 14.259619, 12.663242, 12.95153 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings14"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings14"
-								m_vMinBounds = [ -3.605373, -11.008896, -4.247425 ]
-								m_vMaxBounds = [ 5.358006, -1.351746, 5.784508 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings15"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings15"
-								m_vMinBounds = [ -9.389858, -7.775063, -2.786442 ]
-								m_vMaxBounds = [ -0.103058, 4.889992, 5.779633 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings16"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings16"
-								m_vMinBounds = [ 1.70215, -7.60693, -2.115173 ]
-								m_vMaxBounds = [ 4.756838, -0.569283, 2.574505 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings18"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings18"
-								m_vMinBounds = [ -4.0686, -7.275551, -6.759125 ]
-								m_vMaxBounds = [ 0.965984, 5.389503, 7.068161 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings19"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings19"
-								m_vMinBounds = [ -3.605385, -4.652306, -6.751873 ]
-								m_vMaxBounds = [ 5.369858, 1.254028, 7.106422 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings20"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings20"
-								m_vMinBounds = [ -0.087164, -7.107403, -6.763996 ]
-								m_vMaxBounds = [ 5.354223, 0.07251, 7.065063 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings22"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings22"
-								m_vMinBounds = [ -6.253315, -6.7817, -2.597786 ]
-								m_vMaxBounds = [ 1.111267, 5.933769, 4.349899 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings23"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings23"
-								m_vMinBounds = [ -2.346512, -5.954987, -1.79258 ]
-								m_vMaxBounds = [ 8.077518, 0.543549, 3.082035 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings24"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings24"
-								m_vMinBounds = [ 0.777237, -6.627407, 0.178692 ]
-								m_vMaxBounds = [ 2.805151, -0.560211, 4.347992 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_gear1"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_gear1"
-								m_vMinBounds = [ -14.430946, -15.63303, -5.056114 ]
-								m_vMaxBounds = [ 14.373825, 13.921726, 0.656521 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings10"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings10"
-								m_vMinBounds = [ 0.574818, -5.386723, -2.613083 ]
-								m_vMaxBounds = [ 7.905655, 7.344444, 4.332832 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings11"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings11"
-								m_vMinBounds = [ -5.577808, -7.172455, -3.023197 ]
-								m_vMaxBounds = [ 4.790829, 1.273346, 3.989079 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings12"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings12"
-								m_vMinBounds = [ -1.447554, -5.54282, 0.165173 ]
-								m_vMaxBounds = [ 0.786669, 0.47187, 4.33474 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings6"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings6"
-								m_vMinBounds = [ 1.469971, -5.053394, -6.636227 ]
-								m_vMaxBounds = [ 6.565201, 7.667313, 7.188938 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings7"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings7"
-								m_vMinBounds = [ -3.565254, -4.980858, -4.907944 ]
-								m_vMaxBounds = [ 5.479813, -0.081261, 6.129536 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings8"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings8"
-								m_vMinBounds = [ -3.761326, -5.221527, -6.639309 ]
-								m_vMaxBounds = [ 1.666519, 4.821739, 7.192032 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings2"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings2"
-								m_vMinBounds = [ 0.461113, -5.416744, -2.803707 ]
-								m_vMaxBounds = [ 9.751751, 7.303963, 5.778687 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings3"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings3"
-								m_vMinBounds = [ -3.519783, -8.040123, -2.712933 ]
-								m_vMaxBounds = [ 5.479805, -0.633652, 5.130314 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_rings4"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_rings4"
-								m_vMinBounds = [ -0.797207, -5.584885, -2.128441 ]
-								m_vMaxBounds = [ 2.49481, 1.368088, 2.562572 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_gear2"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_gear2"
-								m_vMinBounds = [ -13.483683, -14.092609, -5.07143 ]
-								m_vMaxBounds = [ 15.907396, 15.042274, 0.641689 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_fan2"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_fan2"
-								m_vMinBounds = [ -15.70555, -16.822506, -3.93821 ]
-								m_vMaxBounds = [ 16.85881, 15.062073, 45.942261 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Engine_fan1"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Engine_fan1"
-								m_vMinBounds = [ -14.693649, -16.206799, -3.923912 ]
-								m_vMaxBounds = [ 17.548294, 16.139511, 45.956711 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Pipe2"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Pipe2"
-								m_vMinBounds = [ 1.321716, -7.783752, -10.186562 ]
-								m_vMaxBounds = [ 10.0321, 12.747284, 11.370914 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Pipe3"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Pipe3"
-								m_vMinBounds = [ -10.800633, -12.445671, -12.203371 ]
-								m_vMaxBounds = [ 12.952657, 14.803848, 6.278141 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Pipe4"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Pipe4"
-								m_vMinBounds = [ -13.047588, -8.532806, -10.182106 ]
-								m_vMaxBounds = [ 0.777688, 12.393211, 11.373793 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Pipe5"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Pipe5"
-								m_vMinBounds = [ -10.853315, -5.189026, -4.690758 ]
-								m_vMaxBounds = [ 12.899975, 10.983688, 12.754902 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Pipe7"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Pipe7"
-								m_vMinBounds = [ -9.176684, -14.151146, -9.24015 ]
-								m_vMaxBounds = [ 12.059886, 8.365974, 10.802929 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Pipe8"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Pipe8"
-								m_vMinBounds = [ -0.541655, -14.898018, -9.698948 ]
-								m_vMaxBounds = [ 6.708676, 10.698738, 15.330994 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Pipe9"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Pipe9"
-								m_vMinBounds = [ -9.177883, -11.915672, -5.830372 ]
-								m_vMaxBounds = [ 12.058687, 7.034813, 9.687176 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Pipe10"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Pipe10"
-								m_vMinBounds = [ -8.806274, -15.078003, -9.622192 ]
-								m_vMaxBounds = [ 3.367307, 10.183708, 15.252846 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Pipe11"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Pipe11"
-								m_vMinBounds = [ -7.572208, -13.997787, -9.714745 ]
-								m_vMaxBounds = [ 10.92482, 3.979584, 12.006603 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Pipe12"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Pipe12"
-								m_vMinBounds = [ -0.071336, -12.63842, -9.467674 ]
-								m_vMaxBounds = [ 8.266721, 10.399559, 14.282303 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Pipe13"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Pipe13"
-								m_vMinBounds = [ -8.253986, -9.217979, -4.089027 ]
-								m_vMaxBounds = [ 12.403227, 11.226555, 13.675797 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Pipe14"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Pipe14"
-								m_vMinBounds = [ -8.664999, -12.976341, -10.171638 ]
-								m_vMaxBounds = [ 2.687962, 11.671303, 14.214718 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
-							},
-							{
-								m_name = "Steer1"
-								m_sSurfaceProperty = ""
-								m_nGroupId = 0
-								m_sBoneName = "Steer1"
-								m_vMinBounds = [ -8.579558, -21.072357, -32.751038 ]
-								m_vMaxBounds = [ 6.898591, 17.629078, 8.321297 ]
-								m_bTranslationOnly = false
-								m_cRenderColor = [ 0, 0, 0, 0 ]
+								_class = "Hitbox"
+								parent_bone = "root"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -35.899426, -90.019661, -2.558029 ]
+								hitbox_maxs = [ 37.717876, 81.86071, 113.605812 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "boat_base"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -53.752113, -21.785051, -127.358528 ]
+								hitbox_maxs = [ 73.874313, 73.135101, 101.822914 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Turret_rotator"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -18.840618, -1.118111, -27.290672 ]
+								hitbox_maxs = [ 19.40443, 33.263973, 22.627068 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Cannon1"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -5.359135, -14.601212, -18.280628 ]
+								hitbox_maxs = [ 12.332237, 8.195454, 13.5639 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Cannon_emiter"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -6.484367, -6.132248, -14.44281 ]
+								hitbox_maxs = [ 6.368696, 7.396641, 9.090942 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Cannon2"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -7.19735, -7.377224, -8.204697 ]
+								hitbox_maxs = [ 5.896402, 4.093472, 2.341423 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Boiler"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -15.370064, -11.77, -9.587563 ]
+								hitbox_maxs = [ 13.214357, 17.132587, 14.300686 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Furnace1"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -11.951777, -7.001072, -9.864866 ]
+								hitbox_maxs = [ 13.900152, 9.293159, 3.846183 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings13"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -6.660648, -7.77507, -2.050556 ]
+								hitbox_maxs = [ 8.097015, 8.240578, 5.79401 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings17"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -5.789415, -7.754635, -1.890999 ]
+								hitbox_maxs = [ 8.027073, 7.115845, 2.406223 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings21"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -4.980486, -7.735699, -1.795849 ]
+								hitbox_maxs = [ 8.077515, 6.07151, 3.049049 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings9"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -6.412422, -7.894081, -3.023209 ]
+								hitbox_maxs = [ 6.523403, 5.768173, 1.854671 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings5"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -6.414272, -7.913036, -0.798519 ]
+								hitbox_maxs = [ 7.3458, 6.801331, 1.46471 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings1"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -6.526119, -7.933453, -1.859901 ]
+								hitbox_maxs = [ 8.231544, 7.914063, 5.131474 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Cannon3"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.889706, -7.25243, -6.119949 ]
+								hitbox_maxs = [ 3.854641, 4.093472, 2.181671 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Cannon4"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -3.808859, -4.158939, -6.130989 ]
+								hitbox_maxs = [ 2.737989, -1.566467, 2.167801 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Cannon5"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -5.754656, -7.37722, -5.610786 ]
+								hitbox_maxs = [ -0.904779, 3.968681, 2.341431 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Cannon6"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -4.330252, -1.717262, -6.952934 ]
+								hitbox_maxs = [ 2.923784, 4.121799, 1.242798 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Cannon7"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -3.158165, -4.798717, -4.546799 ]
+								hitbox_maxs = [ 3.268396, -0.92215, 6.485962 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Cannon8"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -5.034962, -6.132252, -9.088409 ]
+								hitbox_maxs = [ -0.312006, 5.005093, 6.573158 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Cannon9"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -5.68878, -10.162582, -16.657093 ]
+								hitbox_maxs = [ 6.049538, 4.695644, 5.737038 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Cannon10"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.297211, -6.009747, -9.578384 ]
+								hitbox_maxs = [ 3.580807, 5.127602, 3.352905 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Acid_distribution2"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -9.141579, -28.213436, -9.587559 ]
+								hitbox_maxs = [ 13.214354, 0.534355, 9.659954 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Acid_distribution4"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.721249, -5.775234, -5.643715 ]
+								hitbox_maxs = [ 10.413223, 3.428574, 9.559471 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Acid_distribution5"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ 1.476036, 0.344406, -2.850044 ]
+								hitbox_maxs = [ 3.812901, 6.034325, -0.634113 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Acid_distribution7"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ 0.716282, -0.166874, -1.075672 ]
+								hitbox_maxs = [ 6.445194, 4.204441, 0.972332 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Acid_distribution8"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.84903, -5.696861, -1.981579 ]
+								hitbox_maxs = [ 3.879883, 0.392342, 0.066425 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Acid_distribution10"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -2.500286, -2.915176, -2.450649 ]
+								hitbox_maxs = [ 15.659279, 2.414734, 5.390808 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Acid_distribution11"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.887371, 0.340027, -1.491997 ]
+								hitbox_maxs = [ 2.828445, 4.121803, 1.978378 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Turret_plate"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -5.180798, -0.227638, -0.127808 ]
+								hitbox_maxs = [ 3.8034, 2.415398, 0.755005 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Furnace_gear"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -24.693438, -5.26297, -25.80423 ]
+								hitbox_maxs = [ 25.899614, 0.215149, 25.589172 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Furnace2"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -8.337606, -9.509586, -9.605103 ]
+								hitbox_maxs = [ 0.302691, 9.122765, 3.846185 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Furnace3"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -9.474023, -5.355064, -7.109651 ]
+								hitbox_maxs = [ 11.704223, 0.278397, 3.375566 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Furnace4"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ 1.201526, -9.130444, -9.608904 ]
+								hitbox_maxs = [ 10.334333, 9.293159, 3.842892 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Furnace5"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -10.196028, -0.102665, -8.772472 ]
+								hitbox_maxs = [ 11.945391, 4.805092, 2.073758 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Furnace_side_gear1"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -13.54487, -13.6008, -12.860991 ]
+								hitbox_maxs = [ 0.681843, 11.311058, 12.967278 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Furnace_side_gear2"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ 0.941425, -12.627728, -12.764893 ]
+								hitbox_maxs = [ 14.259619, 12.663242, 12.95153 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings14"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -3.605373, -11.008896, -4.247425 ]
+								hitbox_maxs = [ 5.358006, -1.351746, 5.784508 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings15"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -9.389858, -7.775063, -2.786442 ]
+								hitbox_maxs = [ -0.103058, 4.889992, 5.779633 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings16"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ 1.70215, -7.60693, -2.115173 ]
+								hitbox_maxs = [ 4.756838, -0.569283, 2.574505 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings18"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -4.0686, -7.275551, -6.759125 ]
+								hitbox_maxs = [ 0.965984, 5.389503, 7.068161 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings19"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -3.605385, -4.652306, -6.751873 ]
+								hitbox_maxs = [ 5.369858, 1.254028, 7.106422 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings20"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.087164, -7.107403, -6.763996 ]
+								hitbox_maxs = [ 5.354223, 0.07251, 7.065063 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings22"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -6.253315, -6.7817, -2.597786 ]
+								hitbox_maxs = [ 1.111267, 5.933769, 4.349899 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings23"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -2.346512, -5.954987, -1.79258 ]
+								hitbox_maxs = [ 8.077518, 0.543549, 3.082035 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings24"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ 0.777237, -6.627407, 0.178692 ]
+								hitbox_maxs = [ 2.805151, -0.560211, 4.347992 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_gear1"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -14.430946, -15.63303, -5.056114 ]
+								hitbox_maxs = [ 14.373825, 13.921726, 0.656521 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings10"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ 0.574818, -5.386723, -2.613083 ]
+								hitbox_maxs = [ 7.905655, 7.344444, 4.332832 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings11"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -5.577808, -7.172455, -3.023197 ]
+								hitbox_maxs = [ 4.790829, 1.273346, 3.989079 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings12"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.447554, -5.54282, 0.165173 ]
+								hitbox_maxs = [ 0.786669, 0.47187, 4.33474 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings6"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ 1.469971, -5.053394, -6.636227 ]
+								hitbox_maxs = [ 6.565201, 7.667313, 7.188938 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings7"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -3.565254, -4.980858, -4.907944 ]
+								hitbox_maxs = [ 5.479813, -0.081261, 6.129536 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings8"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -3.761326, -5.221527, -6.639309 ]
+								hitbox_maxs = [ 1.666519, 4.821739, 7.192032 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings2"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ 0.461113, -5.416744, -2.803707 ]
+								hitbox_maxs = [ 9.751751, 7.303963, 5.778687 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings3"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -3.519783, -8.040123, -2.712933 ]
+								hitbox_maxs = [ 5.479805, -0.633652, 5.130314 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_rings4"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.797207, -5.584885, -2.128441 ]
+								hitbox_maxs = [ 2.49481, 1.368088, 2.562572 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_gear2"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -13.483683, -14.092609, -5.07143 ]
+								hitbox_maxs = [ 15.907396, 15.042274, 0.641689 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_fan2"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -15.70555, -16.822506, -3.93821 ]
+								hitbox_maxs = [ 16.85881, 15.062073, 45.942261 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Engine_fan1"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -14.693649, -16.206799, -3.923912 ]
+								hitbox_maxs = [ 17.548294, 16.139511, 45.956711 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Pipe2"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ 1.321716, -7.783752, -10.186562 ]
+								hitbox_maxs = [ 10.0321, 12.747284, 11.370914 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Pipe3"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -10.800633, -12.445671, -12.203371 ]
+								hitbox_maxs = [ 12.952657, 14.803848, 6.278141 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Pipe4"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -13.047588, -8.532806, -10.182106 ]
+								hitbox_maxs = [ 0.777688, 12.393211, 11.373793 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Pipe5"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -10.853315, -5.189026, -4.690758 ]
+								hitbox_maxs = [ 12.899975, 10.983688, 12.754902 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Pipe7"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -9.176684, -14.151146, -9.24015 ]
+								hitbox_maxs = [ 12.059886, 8.365974, 10.802929 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Pipe8"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.541655, -14.898018, -9.698948 ]
+								hitbox_maxs = [ 6.708676, 10.698738, 15.330994 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Pipe9"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -9.177883, -11.915672, -5.830372 ]
+								hitbox_maxs = [ 12.058687, 7.034813, 9.687176 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Pipe10"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -8.806274, -15.078003, -9.622192 ]
+								hitbox_maxs = [ 3.367307, 10.183708, 15.252846 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Pipe11"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -7.572208, -13.997787, -9.714745 ]
+								hitbox_maxs = [ 10.92482, 3.979584, 12.006603 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Pipe12"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.071336, -12.63842, -9.467674 ]
+								hitbox_maxs = [ 8.266721, 10.399559, 14.282303 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Pipe13"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -8.253986, -9.217979, -4.089027 ]
+								hitbox_maxs = [ 12.403227, 11.226555, 13.675797 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Pipe14"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -8.664999, -12.976341, -10.171638 ]
+								hitbox_maxs = [ 2.687962, 11.671303, 14.214718 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "Steer1"
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -8.579558, -21.072357, -32.751038 ]
+								hitbox_maxs = [ 6.898591, 17.629078, 8.321297 ]
 							},
 						]
 					},
 				]
-				m_AutoCreateSetName = ""
-			}
-		},
-	]
-	m_pAttachmentLists = 
-	[
-		{
-			m_pObject = 
+			},
 			{
-				m_name = ""
-				m_attachments = 
+				_class = "RenderMeshList"
+				children = 
 				[
 					{
-						m_name = "attach_attack1"
-						m_influences = 
-						[
-							{
-								m_influenceName = "boat_base"
-								m_vTranslationOffset = [ 25.139755, 36.873611, 59.119789 ]
-								m_vRotationOffset = [ -0.000009, 0.0, -0.000017 ]
-								m_flWeight = 1.0
-								m_bRoot = false
-							},
-						]
-					},
-					{
-						m_name = "attach_hitloc"
-						m_influences = 
-						[
-							{
-								m_influenceName = "boat_base"
-								m_vTranslationOffset = [ 26.302284, 30.028231, -11.780689 ]
-								m_vRotationOffset = [ -0.000015, 0.000007, -0.000018 ]
-								m_flWeight = 1.0
-								m_bRoot = false
-							},
-						]
-					},
-					{
-						m_name = "attach_attack2"
-						m_influences = 
-						[
-							{
-								m_influenceName = "Cannon_emiter"
-								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
-								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
-								m_flWeight = 1.0
-								m_bRoot = false
-							},
-						]
-					},
-					{
-						m_name = "pipe_emitter"
-						m_influences = 
-						[
-							{
-								m_influenceName = "Pipe_emitter"
-								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
-								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
-								m_flWeight = 1.0
-								m_bRoot = false
-							},
-						]
-					},
-					{
-						m_name = "HatPoint"
-						m_influences = 
-						[
-							{
-								m_influenceName = "boat_base"
-								m_vTranslationOffset = [ 33.516708, 32.84359, 56.257835 ]
-								m_vRotationOffset = [ 0.0, -0.0, 0.0 ]
-								m_flWeight = 1.0
-								m_bRoot = false
-							},
-						]
+						_class = "RenderMeshFile"
+						name = "anim_airboat_idle"
+						filename = "models/airboat/anim_airboat_idle.fbx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
 					},
 				]
-			}
-		},
-	]
-	m_pAnimGroup = 
-	{
-		m_pObject = 
-		{
-			m_Name = ""
-			m_pReferenceSkeleton = 
+			},
 			{
-				m_pObject = null
-			}
-			m_pBoneFlagList = 
-			{
-				m_pObject = null
-			}
-			m_pSeqGroup = 
-			{
-				m_pObject = null
-			}
-			m_pAnimGroups = [  ]
-			m_Vanim = 
-			[
-				{
-					m_Animationname = "anim_airboat_idle"
-					m_Filepath = "models/airboat/anim_airboat_idle.fbx"
-					m_nStartframe = 0
-					m_nEndframe = 59
-					m_flFps = 30.0
-					m_Loop = 
+				_class = "AnimationList"
+				children = 
+				[
 					{
-						m_bLoop = true
-						m_bSmoothLoop = false
-						m_nSmoothLoopStart = 0
-						m_nSmoothLoopEnd = 0
-						m_StartLoop = 
-						{
-							_class = "CVAnimCmdStartLoop"
-							m_bEnabled = false
-							m_nLoopRestart = 0
-						}
-					}
-					m_bHidden = false
-					m_bDisable = false
-					m_Activities = 
-					[
-						{
-							m_Name = "ACT_DOTA_IDLE"
-							m_nWeight = 1
-						},
-					]
-					m_AnimationEvents = [  ]
-					m_MotionFrames = [  ]
-					m_pIkRules = [  ]
-					m_pAlignAnimation = null
-					m_adjustAnimation = 
+						_class = "AnimFile"
+						name = "anim_airboat_idle"
+						children = 
+						[
+							{
+								_class = "AnimOffset"
+								translation = [ 0.0, 0.0, 15.0 ]
+								rotation_xyz = [ 0.0, 0.0, 0.0 ]
+							},
+						]
+						activity_name = "ACT_DOTA_IDLE"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						source_filename = "models/airboat/anim_airboat_idle.fbx"
+						import_bone_scales = false
+						start_frame = 0
+						end_frame = 59
+						framerate = 30.0
+						reverse = false
+					},
 					{
-						m_translation = [ 0.0, 0.0, 15.0 ]
-						m_rotation = [ 0.0, 0.0, 0.0 ]
-					}
-					m_Keywords = [  ]
-					m_sequenceParams = 
+						_class = "AnimFile"
+						name = "anim_airboat_move"
+						children = 
+						[
+							{
+								_class = "AnimOffset"
+								translation = [ 0.0, 0.0, 15.0 ]
+								rotation_xyz = [ 0.0, 0.0, 0.0 ]
+							},
+						]
+						activity_name = "ACT_DOTA_RUN"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						source_filename = "models/airboat/anim_airboat_move.fbx"
+						import_bone_scales = false
+						start_frame = 0
+						end_frame = 59
+						framerate = 40.0
+						reverse = false
+					},
 					{
-						m_flFadeInTime = 0.2
-						m_flFadeOutTime = 0.2
-					}
-					m_folderName = ""
-					m_MotionFramesRootBone = ""
-				},
-				{
-					m_Animationname = "anim_airboat_move"
-					m_Filepath = "models/airboat/anim_airboat_move.fbx"
-					m_nStartframe = 0
-					m_nEndframe = 59
-					m_flFps = 40.0
-					m_Loop = 
+						_class = "AnimFile"
+						name = "anim_airboat_shoot2"
+						children = 
+						[
+							{
+								_class = "AnimSmoothLoop"
+								frames_from_start = 0
+								frames_from_end = 30
+							},
+						]
+						activity_name = "ACT_DOTA_CAST_ABILITY_2"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						source_filename = "models/airboat/anim_airboat_shoot2.fbx"
+						import_bone_scales = false
+						start_frame = 0
+						end_frame = 29
+						framerate = 30.0
+						reverse = false
+					},
 					{
-						m_bLoop = true
-						m_bSmoothLoop = false
-						m_nSmoothLoopStart = 0
-						m_nSmoothLoopEnd = 0
-						m_StartLoop = 
-						{
-							_class = "CVAnimCmdStartLoop"
-							m_bEnabled = false
-							m_nLoopRestart = 0
-						}
-					}
-					m_bHidden = false
-					m_bDisable = false
-					m_Activities = 
-					[
-						{
-							m_Name = "ACT_DOTA_RUN"
-							m_nWeight = 1
-						},
-					]
-					m_AnimationEvents = [  ]
-					m_MotionFrames = [  ]
-					m_pIkRules = [  ]
-					m_pAlignAnimation = null
-					m_adjustAnimation = 
-					{
-						m_translation = [ 0.0, 0.0, 15.0 ]
-						m_rotation = [ 0.0, 0.0, 0.0 ]
-					}
-					m_Keywords = [  ]
-					m_sequenceParams = 
-					{
-						m_flFadeInTime = 0.2
-						m_flFadeOutTime = 0.2
-					}
-					m_folderName = ""
-					m_MotionFramesRootBone = ""
-				},
-				{
-					m_Animationname = "anim_airboat_shoot2"
-					m_Filepath = "models/airboat/anim_airboat_shoot2.fbx"
-					m_nStartframe = 0
-					m_nEndframe = 29
-					m_flFps = 30.0
-					m_Loop = 
-					{
-						m_bLoop = false
-						m_bSmoothLoop = true
-						m_nSmoothLoopStart = 0
-						m_nSmoothLoopEnd = 30
-						m_StartLoop = 
-						{
-							_class = "CVAnimCmdStartLoop"
-							m_bEnabled = false
-							m_nLoopRestart = 0
-						}
-					}
-					m_bHidden = false
-					m_bDisable = false
-					m_Activities = 
-					[
-						{
-							m_Name = "ACT_DOTA_CAST_ABILITY_2"
-							m_nWeight = 1
-						},
-					]
-					m_AnimationEvents = [  ]
-					m_MotionFrames = [  ]
-					m_pIkRules = [  ]
-					m_pAlignAnimation = null
-					m_adjustAnimation = 
-					{
-						m_translation = [ 0.0, 0.0, 0.0 ]
-						m_rotation = [ 0.0, 0.0, 0.0 ]
-					}
-					m_Keywords = [  ]
-					m_sequenceParams = 
-					{
-						m_flFadeInTime = 0.2
-						m_flFadeOutTime = 0.2
-					}
-					m_folderName = ""
-					m_MotionFramesRootBone = ""
-				},
-				{
-					m_Animationname = "anim_airboat_capture"
-					m_Filepath = "models/airboat/anim_airboat_idle.fbx"
-					m_nStartframe = 0
-					m_nEndframe = 59
-					m_flFps = 30.0
-					m_Loop = 
-					{
-						m_bLoop = false
-						m_bSmoothLoop = false
-						m_nSmoothLoopStart = 0
-						m_nSmoothLoopEnd = 0
-						m_StartLoop = 
-						{
-							_class = "CVAnimCmdStartLoop"
-							m_bEnabled = false
-							m_nLoopRestart = 0
-						}
-					}
-					m_bHidden = false
-					m_bDisable = false
-					m_Activities = 
-					[
-						{
-							m_Name = "ACT_DOTA_CAPTURE"
-							m_nWeight = 1
-						},
-					]
-					m_AnimationEvents = [  ]
-					m_MotionFrames = [  ]
-					m_pIkRules = [  ]
-					m_pAlignAnimation = null
-					m_adjustAnimation = 
-					{
-						m_translation = [ -300.0, 90.0, 280.0 ]
-						m_rotation = [ -20.0, 40.0, -45.0 ]
-					}
-					m_Keywords = [  ]
-					m_sequenceParams = 
-					{
-						m_flFadeInTime = 0.2
-						m_flFadeOutTime = 0.2
-					}
-					m_folderName = ""
-					m_MotionFramesRootBone = ""
-				},
-			]
-			m_sScripts = [  ]
-			m_folderNames = [  ]
-			m_sCompileScripts = [  ]
-		}
-	}
-	m_pMaterialGroupList = 
-	{
-		m_pObject = null
-	}
-	m_pMeshGroupList = 
-	{
-		m_pObject = null
-	}
-	m_pLodGroupList = 
-	{
-		m_pObject = null
-	}
-	m_pPropBreakableList = 
-	{
-		m_pObject = null
-	}
-	m_pPropDataList = 
-	{
-		m_pObject = null
-	}
-	m_pConstraintLists = [  ]
-	m_collision = ""
-	m_softbody = ""
-	m_sMDLFilename = ""
-	m_sOffsetHitboxSets = [  ]
-	m_vHitboxSetOffset = [ 0.0, 0.0, 0.0 ]
-	m_scriptFiles = [  ]
-	m_pMaterialRemapList = 
-	{
-		m_vMaterialRemapList = 
-		[
-			{
-				m_sSearchMaterial = "*"
-				m_sReplaceMaterial = "air_boat.vmat"
+						_class = "AnimFile"
+						name = "anim_airboat_capture"
+						children = 
+						[
+							{
+								_class = "AnimOffset"
+								translation = [ -300.0, 90.0, 280.0 ]
+								rotation_xyz = [ -20.0, 40.0, -45.0 ]
+							},
+						]
+						activity_name = "ACT_DOTA_CAPTURE"
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						animgraph_additive = false
+						source_filename = "models/airboat/anim_airboat_idle.fbx"
+						import_bone_scales = false
+						start_frame = 0
+						end_frame = 59
+						framerate = 30.0
+						reverse = false
+					},
+				]
+				default_root_bone_name = ""
 			},
 		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+		importer_notes = "Imported from VMDL"
 	}
-	m_flFbxScale = 1.0
-	m_flQCScale = 1.0
-	m_vOrigin = [ 0.0, 0.0, 0.0 ]
-	m_pPsfList = null
-	m_keyValueText = ""
-	m_bStaticProp = false
-	m_bEnableClothProcessing = true
-	m_flClothEnableThreshold = 0.05
-	m_nMaxClothVertsPerMesh = 2048
-	m_bBuildClothBoneHierarchy = false
-	m_nNavType = "AUTH_NAV_MESH"
-	m_bMakeUniqueVMeshes = false
-	m_bMakeImplicitBindPoseSequence = false
-	m_bAdjustSkeletonFromBoneFlags = false
-	m_bHiddenAssetFlag = false
-	m_pAnimGroups = [  ]
 }
