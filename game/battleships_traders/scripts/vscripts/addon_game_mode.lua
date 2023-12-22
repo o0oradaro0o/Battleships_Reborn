@@ -1277,10 +1277,9 @@ function CBattleship8D:OnPlayerChat(keys)
     if (steamID32 == g_radar) and string.match(text, "egg") then 
         SpawnTheEgg()
     end
-    if ((steamID32 == g_radar) or  (steamID32 == g_vic)) and string.match(text, "lornecheat") then 
+    if ((steamID32 == g_radar) or (steamID32 == g_vic)) and string.match(text, "lornecheat") then 
         g_setLorneMode = 1
     end
-    
 
     if (steamID32 == g_radar or steamID32 == g_zentrix or steamID32 == 5879425 or steamID32 == 93116118) and string.match(text, "TUG MODE ACTIVATE!") and GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
         g_TugMode = 1
@@ -1296,36 +1295,36 @@ function CBattleship8D:OnPlayerChat(keys)
 
     -- explode if you question mark
     if teamonly == 0 and text == "?" then
-        for _,hero in pairs(HeroList:GetAllHeroes()) do
-            local heroPlayerOwnerID = hero:GetPlayerOwnerID()
-            local heroPlayerOwnerSteamID = PlayerResource:GetSteamAccountID(heroPlayerOwnerID)
-            if hero:IsAlive() and hero:GetPlayerID() == playerID then                    
-                local explosion_radius = 200
+        -- for _,hero in pairs(HeroList:GetAllHeroes()) do
+        --     local heroPlayerOwnerID = hero:GetPlayerOwnerID()
+        --     local heroPlayerOwnerSteamID = PlayerResource:GetSteamAccountID(heroPlayerOwnerID)
+        --     if hero:IsAlive() and hero:GetPlayerID() == playerID then                    
+        --         local explosion_radius = 200
 
-                local particleName = "particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf"
-                local particle = ParticleManager:CreateParticle(particleName, PATTACH_WORLDORIGIN, hero)
-                ParticleManager:SetParticleControl(particle, 0, hero:GetAbsOrigin())
-                ParticleManager:SetParticleControl(particle, 1, hero:GetAbsOrigin())
-                ParticleManager:SetParticleControl(particle, 2, Vector(explosion_radius, 1, 1))
-                ParticleManager:ReleaseParticleIndex(particle)
+        --         local particleName = "particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf"
+        --         local particle = ParticleManager:CreateParticle(particleName, PATTACH_WORLDORIGIN, hero)
+        --         ParticleManager:SetParticleControl(particle, 0, hero:GetAbsOrigin())
+        --         ParticleManager:SetParticleControl(particle, 1, hero:GetAbsOrigin())
+        --         ParticleManager:SetParticleControl(particle, 2, Vector(explosion_radius, 1, 1))
+        --         ParticleManager:ReleaseParticleIndex(particle)
 
-                hero:EmitSound("Hero_Techies.LandMine.Detonate")
+        --         hero:EmitSound("Hero_Techies.LandMine.Detonate")
 
-                ScreenShake(hero:GetAbsOrigin(), 10, 0.3, 0.5, 1000, 0, true)
+        --         ScreenShake(hero:GetAbsOrigin(), 10, 0.3, 0.5, 1000, 0, true)
 
-                hero:ForceKill(true)
-                -- if hero is dead add to respawn time
-            elseif hero:IsAlive() == false and hero:GetPlayerID() == playerID then
-                --show a message to all players
-                Notifications:TopToAll({
-                    text = "your '?' cost him 10 additional seconds to respawn",
-                    duration = 5.0,
-                    style = {color = "#ff8888", fontSize = "70px;"}
-                })
-                local respawnTime = hero:GetRespawnTime()
-                hero:SetTimeUntilRespawn(respawnTime + 10)
-            end
-        end
+        --         hero:ForceKill(true)
+        --         -- if hero is dead add to respawn time
+        --     elseif hero:IsAlive() == false and hero:GetPlayerID() == playerID then
+        --         --show a message to all players
+        --         Notifications:TopToAll({
+        --             text = "your '?' cost him 10 additional seconds to respawn",
+        --             duration = 5.0,
+        --             style = {color = "#ff8888", fontSize = "70px;"}
+        --         })
+        --         local respawnTime = hero:GetRespawnTime()
+        --         hero:SetTimeUntilRespawn(respawnTime + 10)
+        --     end
+        -- end
     end
 
     if string.match(text, "rip david") and (GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
@@ -3798,6 +3797,7 @@ end
 function CBattleship8D:OnEntityKilled(keys)
     GameRules:GetGameModeEntity():SetCustomDireScore(GetTeamHeroKills(DOTA_TEAM_BADGUYS))
     local killedUnit = EntIndexToHScript(keys.entindex_killed)
+    local inflictor = keys.entindex_inflictor
 
     -- handle tower gold
     if killedUnit:IsTower() then
@@ -5126,6 +5126,15 @@ function CBattleship8D:OnEntityKilled(keys)
                 })
             end
 
+        end
+    end
+
+    if inflictor then
+        local killerAbility = EntIndexToHScript(inflictor)
+        if killerAbility:GetAbilityName() == "sniper_assassinate_battleship" then
+            Timers:CreateTimer(function()
+                killerAbility:StartCooldown(killerAbility:GetCooldown(killerAbility:GetLevel() - 1))
+            end)
         end
     end
 end

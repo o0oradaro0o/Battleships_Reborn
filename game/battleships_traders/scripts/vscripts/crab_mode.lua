@@ -189,7 +189,7 @@ function StartCrabMode()
 
   GameRules.CrabModeTimer = Timers:CreateTimer(function()
     SpawnRandomCrab()
-    return 1
+    return 0.5
   end)
 
   MakeTowersDance()
