@@ -102,7 +102,7 @@ function modifier_tower_animator:OnAttackStart(keys)
     self:GetParent():RemoveGesture(ACT_DOTA_CUSTOM_TOWER_IDLE_RARE)
     self:GetParent():RemoveGesture(ACT_DOTA_CUSTOM_TOWER_TAUNT)
     self:GetParent():RemoveGesture(ACT_DOTA_CUSTOM_TOWER_HIGH_FIVE)
-    self:GetParent():StartGestureWithPlaybackRate(ACT_DOTA_CUSTOM_TOWER_ATTACK, self:GetParent():GetAttacksPerSecond())
+    self:GetParent():StartGestureWithPlaybackRate(ACT_DOTA_CUSTOM_TOWER_ATTACK, self:GetParent():GetAttacksPerSecond(true))
     Timers:CreateTimer(0.751, function()
       self:GetParent():StartGesture(ACT_DOTA_CUSTOM_TOWER_IDLE)
       return
