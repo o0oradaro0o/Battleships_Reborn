@@ -2693,3 +2693,73 @@
   horizontal-align: center;
   max-width: 200px;
 }
+#rollCostAmount {
+  color: #ffcc33;
+  font-weight: bold;
+}
+
+.OpenTreasureLabel {
+  color: #FFFFFF;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #000000;
+  margin-right: 10px; /* Add some space between the labels */
+}
+.buttonZone
+{
+  flow-children: right;
+  horizontal-align: center;
+  vertical-align: center;
+
+}
+#rollCostheader
+{
+  color: #FFFFFF;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #000000;
+}
+.rebateHeader
+{
+  color: #FFFFFF;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #000000;
+}
+.rebateHolder
+{
+  flow-children: down;
+  horizontal-align: center;
+  vertical-align: center;
+  margin-top: -65px;
+}
+#rebate1
+{
+  horizontal-align: center;
+  color: #ffcc33;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #000000;
+}
+#rebate2
+{
+  horizontal-align: center;
+  color: #ffcc33;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #000000;
+}
+#rebate3
+{
+  horizontal-align: center;
+  color: #ffcc33;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #000000;
+}
+#rebateHolder1
+{
+  visibility: collapse;
+}
+#rebateHolder2
+{
+  visibility: collapse;
+}
+#rebateHolder3
+{
+  visibility: collapse;
+}

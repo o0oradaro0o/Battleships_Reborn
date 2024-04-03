@@ -2733,12 +2733,12 @@ const heroToWaifu = {
   npc_dota_hero_dragon_knight: "file://{images}/waifus/3ks/failboat.png",
   npc_dota_hero_nevermore: "file://{images}/waifus/3ks/seaplane.png",
   npc_dota_hero_disruptor: "file://{images}/waifus/3ks/shoreguard.png",
-  npc_dota_hero_morphling: "file://{images}/waifus/3ks/speedboat.png",
+  npc_dota_hero_winter_wyvern: "file://{images}/waifus/3ks/speedboat.png",
   npc_dota_hero_storm_spirit: "file://{images}/waifus/3ks/junk.png",
   npc_dota_hero_brewmaster: "file://{images}/waifus/3ks/river.png",
   npc_dota_hero_lion: "file://{images}/waifus/3ks/yacht.png",
 
-  npc_dota_hero_treant: "file://{images}/waifus/6ks/construction_ship.png",
+  npc_dota_hero_windrunner: "file://{images}/waifus/6ks/construction_ship.png",
   npc_dota_hero_meepo: "file://{images}/waifus/6ks/house.png",
   npc_dota_hero_jakiro: "file://{images}/waifus/6ks/galleon.png",
   npc_dota_hero_slark: "file://{images}/waifus/6ks/viking.png",
@@ -2758,12 +2758,30 @@ const heroToWaifu = {
 const heroesToRoll = Object.keys(heroToWaifu);
 
 var currentTier = 1;
+var tierRolled = 1;
 function showDraws(tier) {
+  const tierToGold = {
+    1: 1000,
+    2: 3000,
+    3: 6000,
+    4: 12000,
+  };
+
   currentTier = tier;
-  $("#GachaSlot1").SetImage("file://{images}/waifus/empty.png");
-  $("#GachaSlot2").SetImage("file://{images}/waifus/empty.png");
-  $("#GachaSlot3").SetImage("file://{images}/waifus/empty.png");
-  $("#DrawWindow").style.visibility = "visible";
+  $.Msg($("#DrawWindow").style.visibility)
+  if ($("#DrawWindow").style.visibility == "collapse" || $("#DrawWindow").style.visibility==null) {
+    $("#GachaSlot1").SetImage("file://{images}/waifus/empty.png");
+    $("#GachaSlot2").SetImage("file://{images}/waifus/empty.png");
+    $("#GachaSlot3").SetImage("file://{images}/waifus/empty.png");
+    $("#DrawWindow").style.visibility = "visible";
+    $("#rebateHolder1").style.visibility = "collapse";
+    $("#rebateHolder2").style.visibility = "collapse";
+    $("#rebateHolder3").style.visibility = "collapse";
+    $("#RollButton").style.visibility = "visible";
+    
+  }
+  
+  $("#rollCostAmount").text = tierToGold[tier];
 }
 
 function hideDraws() {
@@ -2793,6 +2811,42 @@ function rollSlot(sourcePanel, index, duration) {
       const heroName = data["boat" + index];
 
       sourcePanel.SetImage(heroToWaifu[heroName]);
+      if(getRebateForImage(heroToWaifu[heroName])>0 && index == 1)
+      {
+        $("#rebateHolder1").style.visibility = "visible";
+        $("#rebate1").text = getRebateForImage(heroToWaifu[heroName]);
+      }
+      else if(index == 1)
+      {
+        $("#rebateHolder1").style.visibility = "collapse";
+      }
+      if(getRebateForImage(heroToWaifu[heroName])>0 && index == 2)
+      {
+        $("#rebateHolder2").style.visibility = "visible";
+        $("#rebate2").text = getRebateForImage(heroToWaifu[heroName]);
+      }
+      else if(index == 2)
+      {
+        const tierToGold = {
+          1: 1000,
+          2: 3000,
+          3: 6000,
+          4: 12000,
+        };
+        $("#rebateHolder2").style.visibility = "visible";
+        $("#rebate2").text = tierToGold[tierRolled]*.1;
+      }
+      if(getRebateForImage(heroToWaifu[heroName])>0 && index == 3)
+      {
+        $("#rebateHolder3").style.visibility = "visible";
+        $("#rebate3").text = getRebateForImage(heroToWaifu[heroName]);
+      }
+      else if(index == 3)
+      {
+        $("#rebateHolder3").style.visibility = "collapse";
+      }
+
+      rollSlot
 
       if (index == 3) rolling = false;
       return;
@@ -2806,6 +2860,11 @@ function rollSlot(sourcePanel, index, duration) {
 
 var rolling = false;
 function doRoll() {
+ 
+  $("#rebateHolder1").style.visibility = "collapse";
+  $("#rebateHolder2").style.visibility = "collapse";
+  $("#rebateHolder3").style.visibility = "collapse";
+
   if (isTooFarFromShop()) {
     GameUI.SendCustomHUDError(
       "Too far from ship shop!",
@@ -2825,7 +2884,8 @@ function doRoll() {
     GameUI.SendCustomHUDError("Not enough gold!", "General.CastFail_NoMana");
     return;
   }
-
+  $("#RollButton").style.visibility = "collapse";
+  tierRolled = currentTier;
   const tier = currentTier;
   if (rolling) return;
 
@@ -2868,9 +2928,78 @@ function UpdateGachaRolls() {
 
   if (!rolling) {
     $("#GachaSlot1").SetImage(heroToWaifu[boat1]);
+    
     $("#GachaSlot2").SetImage(heroToWaifu[boat2]);
+    
     $("#GachaSlot3").SetImage(heroToWaifu[boat3]);
+    if(getRebateForImage(heroToWaifu[boat1])>0)
+    {
+      $("#rebateHolder1").style.visibility = "visible";
+      $("#rebate1").text = getRebateForImage(heroToWaifu[boat1]);
+    }
+    if(getRebateForImage(heroToWaifu[boat2])>0)
+    {
+      $("#rebateHolder2").style.visibility = "visible";
+      $("#rebate2").text = getRebateForImage(heroToWaifu[boat2]);
+    }
+    else
+    {
+      const tierToGold = {
+        1: 1000,
+        2: 3000,
+        3: 6000,
+        4: 12000,
+      };
+      $("#rebateHolder2").style.visibility = "visible";
+      $("#rebate2").text = tierToGold*.1;
+    }
+    if(getRebateForImage(heroToWaifu[boat3])>0)
+    {
+      $("#rebateHolder3").style.visibility = "visible";
+      $("#rebate3").text = getRebateForImage(heroToWaifu[boat3]);
+    }
   }
+}
+
+
+
+function getRebateForImage(image1) {
+  //if the ship they rolled is of a lower tier then what they payed for, they get a rebate
+  //start iwth gotcha slot 1 and check if the tier is lower than the tier rolled
+  //get the image name contained in the slot
+  //if the name contains barrel than the tier is 0
+  $.Msg(image1);
+
+  var tier = 0;
+  var rebate = 0;
+  //if the name contains 1ks, then the tier is 1
+  if (image1.includes("1ks")) {
+    tier = 1;
+  }
+  //if the name contains 3ks, then the tier is 2
+  else if (image1.includes("3ks")) {
+    tier = 2;
+  }
+  //if the name contains 6ks, then the tier is 3
+  else if (image1.includes("6ks")) {
+    tier = 3;
+  }
+  //if the name contains 12ks, then the tier is 4
+  else if (image1.includes("12ks")) {
+    tier = 4;
+  }
+  const tierToGold = {
+    0: 0,
+    1: 1000,
+    2: 3000,
+    3: 6000,
+    4: 12000,
+  };
+  if(tier < tierRolled){
+    rebate = tierToGold[tierRolled] - tierToGold[tier]*0.9;
+  }
+  $.Msg(rebate);
+  return rebate;
 }
 
 function SelectGacha(index) {
@@ -2886,6 +3015,8 @@ function SelectGacha(index) {
   const heroName = data["boat" + index];
   GameEvents.SendCustomGameEventToServer("chooseGacha", {
     heroName,
+    tierRolled,
+    index,
   });
 
   // play purchase sound

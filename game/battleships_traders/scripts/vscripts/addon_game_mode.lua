@@ -7513,13 +7513,13 @@ local boatTiers = {
         "npc_dota_hero_dragon_knight",
         "npc_dota_hero_nevermore",
         "npc_dota_hero_disruptor",
-        "npc_dota_hero_morphling",
+        "npc_dota_hero_winter_wyvern",
         "npc_dota_hero_storm_spirit",
         "npc_dota_hero_brewmaster",
         "npc_dota_hero_lion",
     },
     tier3 = {
-        "npc_dota_hero_treant",
+        "npc_dota_hero_windrunner",
         "npc_dota_hero_meepo",
         "npc_dota_hero_jakiro",
         "npc_dota_hero_slark",
@@ -7528,13 +7528,13 @@ local boatTiers = {
         "npc_dota_hero_marci",
     },
     tier4 = {
-        "npc_dota_hero_treant",
-        "npc_dota_hero_meepo",
-        "npc_dota_hero_jakiro",
-        "npc_dota_hero_slark",
-        "npc_dota_hero_shredder",
-        "npc_dota_hero_sniper",
-        "npc_dota_hero_marci",
+        "npc_dota_hero_tusk",
+        "npc_dota_hero_visage",
+        "npc_dota_hero_ember_spirit",
+        "npc_dota_hero_ursa",
+        "npc_dota_hero_pugna",
+        "npc_dota_hero_razor",
+        "npc_dota_hero_wisp",
     },
 }
 
@@ -7609,9 +7609,11 @@ end
 function chooseGacha(eventSourceIndex, args)    
     local pID = args.PlayerID
     local heroName = args.heroName
+    local tierRolled = args.tierRolled
     local teamNum = PlayerResource:GetTeam(pID)
     local casterUnit
-
+    local rebateAmount = getRebateAmount(tierRolled, args.index, heroName)
+    
     for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
         if hero ~= nil and hero:IsOwnedByAnyPlayer() then
             if hero:GetPlayerID() == pID then
@@ -7621,6 +7623,8 @@ function chooseGacha(eventSourceIndex, args)
     end
 
     if casterUnit == nil then return end
+    casterUnit:SetGold(casterUnit:GetGold() + rebateAmount, true)
+
 
     local casterPos = casterUnit:GetAbsOrigin()
 
@@ -7629,7 +7633,8 @@ function chooseGacha(eventSourceIndex, args)
     Timers:CreateTimer(.15, function()
         become_boat(casterUnit, heroName)
     end)
-
+    -- give the player their rebate
+    
     CustomNetTables:SetTableValue("gacha_rolls", "player" .. pID, {
         boat1 = nil,
         boat2 = nil,
@@ -7638,3 +7643,34 @@ function chooseGacha(eventSourceIndex, args)
         tier = tier
     })
 end
+
+function getRebateAmount(tierRolled, index, heroName)
+    local rebateAmount = 0
+    local tierToGold = {
+        [0] = 0,
+        [1] = 1000,
+        [2] = 3000,
+        [3] = 6000,
+        [4] = 12000,
+    }
+    -- check if the hero they are getting is from the tier list they rolled for
+    -- if boatTiers[tierRolled] has the heroName, then they dont get a rebate
+    if not table_contains(boatTiers["tier" .. tierRolled], heroName) then
+        rebateAmount = tierToGold[tierRolled] - tierToGold[tierRolled-1]*0.9;
+    end
+    -- if the index is 2 amd the hero is from the same tier, they get a 10% rebate
+    if index == 2 and table_contains(boatTiers["tier" .. tierRolled], heroName) then
+        rebateAmount = tierToGold[tierRolled]*0.1
+    end
+
+    return rebateAmount
+end
+
+function table_contains(table, val)
+    for i=1,#table do
+       if table[i] == val then 
+          return true
+       end
+    end
+    return false
+ end
