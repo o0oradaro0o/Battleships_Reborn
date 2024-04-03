@@ -2699,67 +2699,60 @@
 }
 
 .OpenTreasureLabel {
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: bold;
   text-shadow: 2px 2px 2px #000000;
   margin-right: 10px; /* Add some space between the labels */
 }
-.buttonZone
-{
+.buttonZone {
   flow-children: right;
   horizontal-align: center;
   vertical-align: center;
-
 }
-#rollCostheader
-{
-  color: #FFFFFF;
+#rollCostheader {
+  color: #ffffff;
   font-weight: bold;
   text-shadow: 2px 2px 2px #000000;
 }
-.rebateHeader
-{
-  color: #FFFFFF;
+.rebateHeader {
+  color: #ffffff;
   font-weight: bold;
   text-shadow: 2px 2px 2px #000000;
 }
-.rebateHolder
-{
+.rebateHolder {
   flow-children: down;
   horizontal-align: center;
   vertical-align: center;
   margin-top: -65px;
 }
-#rebate1
-{
+#rebate1 {
   horizontal-align: center;
   color: #ffcc33;
   font-weight: bold;
   text-shadow: 2px 2px 2px #000000;
 }
-#rebate2
-{
+#rebate2 {
   horizontal-align: center;
   color: #ffcc33;
   font-weight: bold;
   text-shadow: 2px 2px 2px #000000;
 }
-#rebate3
-{
+#rebate3 {
   horizontal-align: center;
   color: #ffcc33;
   font-weight: bold;
   text-shadow: 2px 2px 2px #000000;
 }
-#rebateHolder1
-{
+#rebateHolder1 {
   visibility: collapse;
 }
-#rebateHolder2
-{
+#rebateHolder2 {
   visibility: collapse;
 }
-#rebateHolder3
-{
+#rebateHolder3 {
   visibility: collapse;
+}
+
+#WaifuImage {
+  z-index: 100;
 }

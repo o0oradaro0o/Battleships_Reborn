@@ -2768,8 +2768,11 @@ function showDraws(tier) {
   };
 
   currentTier = tier;
-  $.Msg($("#DrawWindow").style.visibility)
-  if ($("#DrawWindow").style.visibility == "collapse" || $("#DrawWindow").style.visibility==null) {
+  $.Msg($("#DrawWindow").style.visibility);
+  if (
+    $("#DrawWindow").style.visibility == "collapse" ||
+    $("#DrawWindow").style.visibility == null
+  ) {
     $("#GachaSlot1").SetImage("file://{images}/waifus/empty.png");
     $("#GachaSlot2").SetImage("file://{images}/waifus/empty.png");
     $("#GachaSlot3").SetImage("file://{images}/waifus/empty.png");
@@ -2778,9 +2781,8 @@ function showDraws(tier) {
     $("#rebateHolder2").style.visibility = "collapse";
     $("#rebateHolder3").style.visibility = "collapse";
     $("#RollButton").style.visibility = "visible";
-    
   }
-  
+
   $("#rollCostAmount").text = tierToGold[tier];
 }
 
@@ -2811,22 +2813,16 @@ function rollSlot(sourcePanel, index, duration) {
       const heroName = data["boat" + index];
 
       sourcePanel.SetImage(heroToWaifu[heroName]);
-      if(getRebateForImage(heroToWaifu[heroName])>0 && index == 1)
-      {
+      if (getRebateForImage(heroToWaifu[heroName]) > 0 && index == 1) {
         $("#rebateHolder1").style.visibility = "visible";
         $("#rebate1").text = getRebateForImage(heroToWaifu[heroName]);
-      }
-      else if(index == 1)
-      {
+      } else if (index == 1) {
         $("#rebateHolder1").style.visibility = "collapse";
       }
-      if(getRebateForImage(heroToWaifu[heroName])>0 && index == 2)
-      {
+      if (getRebateForImage(heroToWaifu[heroName]) > 0 && index == 2) {
         $("#rebateHolder2").style.visibility = "visible";
         $("#rebate2").text = getRebateForImage(heroToWaifu[heroName]);
-      }
-      else if(index == 2)
-      {
+      } else if (index == 2) {
         const tierToGold = {
           1: 1000,
           2: 3000,
@@ -2834,19 +2830,16 @@ function rollSlot(sourcePanel, index, duration) {
           4: 12000,
         };
         $("#rebateHolder2").style.visibility = "visible";
-        $("#rebate2").text = tierToGold[tierRolled]*.1;
+        $("#rebate2").text = tierToGold[tierRolled] * 0.1;
       }
-      if(getRebateForImage(heroToWaifu[heroName])>0 && index == 3)
-      {
+      if (getRebateForImage(heroToWaifu[heroName]) > 0 && index == 3) {
         $("#rebateHolder3").style.visibility = "visible";
         $("#rebate3").text = getRebateForImage(heroToWaifu[heroName]);
-      }
-      else if(index == 3)
-      {
+      } else if (index == 3) {
         $("#rebateHolder3").style.visibility = "collapse";
       }
 
-      rollSlot
+      rollSlot;
 
       if (index == 3) rolling = false;
       return;
@@ -2860,7 +2853,6 @@ function rollSlot(sourcePanel, index, duration) {
 
 var rolling = false;
 function doRoll() {
- 
   $("#rebateHolder1").style.visibility = "collapse";
   $("#rebateHolder2").style.visibility = "collapse";
   $("#rebateHolder3").style.visibility = "collapse";
@@ -2928,22 +2920,18 @@ function UpdateGachaRolls() {
 
   if (!rolling) {
     $("#GachaSlot1").SetImage(heroToWaifu[boat1]);
-    
+
     $("#GachaSlot2").SetImage(heroToWaifu[boat2]);
-    
+
     $("#GachaSlot3").SetImage(heroToWaifu[boat3]);
-    if(getRebateForImage(heroToWaifu[boat1])>0)
-    {
+    if (getRebateForImage(heroToWaifu[boat1]) > 0) {
       $("#rebateHolder1").style.visibility = "visible";
       $("#rebate1").text = getRebateForImage(heroToWaifu[boat1]);
     }
-    if(getRebateForImage(heroToWaifu[boat2])>0)
-    {
+    if (getRebateForImage(heroToWaifu[boat2]) > 0) {
       $("#rebateHolder2").style.visibility = "visible";
       $("#rebate2").text = getRebateForImage(heroToWaifu[boat2]);
-    }
-    else
-    {
+    } else {
       const tierToGold = {
         1: 1000,
         2: 3000,
@@ -2951,17 +2939,14 @@ function UpdateGachaRolls() {
         4: 12000,
       };
       $("#rebateHolder2").style.visibility = "visible";
-      $("#rebate2").text = tierToGold*.1;
+      $("#rebate2").text = tierToGold * 0.1;
     }
-    if(getRebateForImage(heroToWaifu[boat3])>0)
-    {
+    if (getRebateForImage(heroToWaifu[boat3]) > 0) {
       $("#rebateHolder3").style.visibility = "visible";
       $("#rebate3").text = getRebateForImage(heroToWaifu[boat3]);
     }
   }
 }
-
-
 
 function getRebateForImage(image1) {
   //if the ship they rolled is of a lower tier then what they payed for, they get a rebate
@@ -2972,20 +2957,13 @@ function getRebateForImage(image1) {
 
   var tier = 0;
   var rebate = 0;
-  //if the name contains 1ks, then the tier is 1
   if (image1.includes("1ks")) {
     tier = 1;
-  }
-  //if the name contains 3ks, then the tier is 2
-  else if (image1.includes("3ks")) {
+  } else if (image1.includes("3ks")) {
     tier = 2;
-  }
-  //if the name contains 6ks, then the tier is 3
-  else if (image1.includes("6ks")) {
+  } else if (image1.includes("6ks")) {
     tier = 3;
-  }
-  //if the name contains 12ks, then the tier is 4
-  else if (image1.includes("12ks")) {
+  } else if (image1.includes("12ks")) {
     tier = 4;
   }
   const tierToGold = {
@@ -2995,10 +2973,9 @@ function getRebateForImage(image1) {
     3: 6000,
     4: 12000,
   };
-  if(tier < tierRolled){
-    rebate = tierToGold[tierRolled] - tierToGold[tier]*0.9;
+  if (tier < tierRolled) {
+    rebate = tierToGold[tierRolled] - tierToGold[tier] * 0.9;
   }
-  $.Msg(rebate);
   return rebate;
 }
 
@@ -3023,6 +3000,60 @@ function SelectGacha(index) {
   Game.EmitSound("General.Buy");
 
   hideDraws();
+}
+
+function isTooFarFromShop() {
+  const playerID = Players.GetLocalPlayer();
+  const playerHero = Players.GetPlayerHeroEntityIndex(playerID);
+  const playerPos = Entities.GetAbsOrigin(playerHero);
+
+  // position as an absolute vector
+  const northShopPos = [725.05, -4821.09, 0];
+  const southShopPos = [724, 4395, 0];
+
+  const distanceToNorth = Game.Length2D(playerPos, northShopPos);
+  const distanceToSouth = Game.Length2D(playerPos, southShopPos);
+
+  return distanceToNorth > 1800 && distanceToSouth > 1800;
+}
+
+function overwriteHeroImage() {
+  const portraitContainer = $.GetContextPanel()
+    .GetParent()
+    .GetParent()
+    .GetParent()
+    .FindChildTraverse("HUDElements")
+    .FindChildTraverse("lower_hud")
+    .FindChildTraverse("center_with_stats")
+    .FindChildTraverse("center_block")
+    .FindChildTraverse("PortraitGroup")
+    .FindChildTraverse("PortraitContainer");
+  $.Msg(portraitContainer);
+  if (!portraitContainer) return;
+
+  // create or update a hero image
+  let heroImage = portraitContainer.FindChildTraverse("WaifuImage");
+  if (!heroImage) {
+    heroImage = $.CreatePanel("Image", portraitContainer, "WaifuImage");
+  }
+
+  const selectedUnit = Players.GetLocalPlayerPortraitUnit();
+  const unitName = Entities.GetUnitName(selectedUnit);
+
+  const waifuImage = heroToWaifu[unitName];
+
+  if (waifuImage) {
+    heroImage.SetImage(waifuImage);
+    heroImage.SetHasClass("Invisible", false);
+    heroImage.style.visibility = "visible";
+  } else {
+    heroImage.SetHasClass("Invisible", true);
+    heroImage.style.visibility = "collapse";
+  }
+
+  heroImage.style.zIndex = "999";
+
+  $.Schedule(1 / 30, overwriteHeroImage);
 }
 
 (function () {
@@ -3062,19 +3093,5 @@ function SelectGacha(index) {
   // listen to nettable changes
   CustomNetTables.SubscribeNetTableListener("gacha_rolls", UpdateGachaRolls);
   UpdateGachaRolls();
+  overwriteHeroImage();
 })();
-
-function isTooFarFromShop() {
-  const playerID = Players.GetLocalPlayer();
-  const playerHero = Players.GetPlayerHeroEntityIndex(playerID);
-  const playerPos = Entities.GetAbsOrigin(playerHero);
-
-  // position as an absolute vector
-  const northShopPos = [725.05, -4821.09, 0];
-  const southShopPos = [724, 4395, 0];
-
-  const distanceToNorth = Game.Length2D(playerPos, northShopPos);
-  const distanceToSouth = Game.Length2D(playerPos, southShopPos);
-
-  return distanceToNorth > 1800 && distanceToSouth > 1800;
-}
