@@ -466,6 +466,8 @@ function CBattleship8D:InitGameMode()
     CustomGameEventManager:RegisterListener("buyItem", buyItem)
     CustomGameEventManager:RegisterListener("DiffSelection", ChooseDiff)
     CustomGameEventManager:RegisterListener("buyBoat", buyBoat)
+    CustomGameEventManager:RegisterListener("doRoll", doRoll)
+    CustomGameEventManager:RegisterListener("chooseGacha", chooseGacha)
 
     CustomGameEventManager:RegisterListener("toggleCrab", toggleCrab)
 
@@ -7492,4 +7494,147 @@ function BuildPlayersArray()
     end
 
     return players
+end
+
+local boatTiers = {
+    tier0 = {
+        "npc_dota_hero_zuus"
+    },
+    tier1 = {
+        "npc_dota_hero_phantom_lancer",
+        "npc_dota_hero_crystal_maiden",
+        "npc_dota_hero_rattletrap",
+        "npc_dota_hero_ancient_apparition",
+        "npc_dota_hero_nyx_assassin",
+        "npc_dota_hero_tidehunter",
+        "npc_dota_hero_batrider",
+    },
+    tier2 = {
+        "npc_dota_hero_dragon_knight",
+        "npc_dota_hero_nevermore",
+        "npc_dota_hero_disruptor",
+        "npc_dota_hero_morphling",
+        "npc_dota_hero_storm_spirit",
+        "npc_dota_hero_brewmaster",
+        "npc_dota_hero_lion",
+    },
+    tier3 = {
+        "npc_dota_hero_treant",
+        "npc_dota_hero_meepo",
+        "npc_dota_hero_jakiro",
+        "npc_dota_hero_slark",
+        "npc_dota_hero_shredder",
+        "npc_dota_hero_sniper",
+        "npc_dota_hero_marci",
+    },
+    tier4 = {
+        "npc_dota_hero_treant",
+        "npc_dota_hero_meepo",
+        "npc_dota_hero_jakiro",
+        "npc_dota_hero_slark",
+        "npc_dota_hero_shredder",
+        "npc_dota_hero_sniper",
+        "npc_dota_hero_marci",
+    },
+}
+
+function getRandomHero(tier)
+    local tierName = "tier" .. tier
+    local chosenTier = boatTiers[tierName]
+    return chosenTier[RandomInt(1, #chosenTier)]
+end
+
+function getRandomLowerTier(tier)
+    local randomLowerTier = RandomInt(1, tier)
+    local chosenTier = boatTiers["tier" .. randomLowerTier]
+    return chosenTier[RandomInt(1, #chosenTier)]
+end
+
+function gachRoll(tier, chosenBoats, attempts)
+    attempts = (attempts or 0) + 1
+    -- 30% chance to roll a lower tier
+    if RandomInt(1, 100) <= 30 then
+        local boat = getRandomLowerTier(tier, chosenBoats)
+        if (chosenBoats[boat] and attempts < 100) then
+            return gachRoll(tier, chosenBoats)
+        end
+        chosenBoats[boat] = true
+        return boat
+    else
+        local boat = getRandomHero(tier, chosenBoats)
+        if (chosenBoats[boat] and attempts < 100) then
+            return getRandomHero(tier, chosenBoats)
+        end
+        chosenBoats[boat] = true
+        return boat
+    end
+end
+
+function doRoll(eventSourceIndex, args)
+    local pID = args.PlayerID
+    local tier = args.tier
+
+    local tierToGold = {
+        [0] = 0,
+        [1] = 1000,
+        [2] = 3000,
+        [3] = 6000,
+        [4] = 12000,
+    }
+    local priceToBuy = tierToGold[tier]
+
+    if PlayerResource:GetGold(pID) < priceToBuy then
+        print("Not enough gold", PlayerResource:GetGold(pID), priceToBuy)
+        return
+    else
+        PlayerResource:SpendGold(pID, priceToBuy, 0)
+    end
+
+    for k,v in pairs(args) do
+        print(k,v)
+    end
+
+    local chosenBoats = {}
+
+    -- set the nettable values
+    CustomNetTables:SetTableValue("gacha_rolls", "player" .. pID, {
+        boat1 = gachRoll(tier, chosenBoats),
+        boat2 = gachRoll(tier, chosenBoats),
+        boat3 = gachRoll(tier, chosenBoats),
+        playerID = pID,
+        tier = tier
+    })
+end
+
+function chooseGacha(eventSourceIndex, args)    
+    local pID = args.PlayerID
+    local heroName = args.heroName
+    local teamNum = PlayerResource:GetTeam(pID)
+    local casterUnit
+
+    for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
+        if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+            if hero:GetPlayerID() == pID then
+                casterUnit = hero
+            end
+        end
+    end
+
+    if casterUnit == nil then return end
+
+    local casterPos = casterUnit:GetAbsOrigin()
+
+    sellBoat(casterUnit)
+    EmitSoundOnClient("General.Buy", PlayerResource:GetPlayer(pID))
+    Timers:CreateTimer(.15, function()
+        become_boat(casterUnit, heroName)
+    end)
+
+    CustomNetTables:SetTableValue("gacha_rolls", "player" .. pID, {
+        boat1 = nil,
+        boat2 = nil,
+        boat3 = nil,
+        playerID = pID,
+        tier = tier
+    })
 end

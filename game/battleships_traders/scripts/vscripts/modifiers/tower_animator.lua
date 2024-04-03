@@ -1,3 +1,5 @@
+require('libraries/timers')
+
 tower_animator = class({})
 
 LinkLuaModifier("modifier_tower_animator", "modifiers/tower_animator", LUA_MODIFIER_MOTION_NONE)

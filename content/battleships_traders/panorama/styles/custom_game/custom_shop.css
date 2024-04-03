@@ -47,12 +47,10 @@
   border-radius: 10px;
 }
 
-.ShopItemsRows
-{
- width: 40px;
- height: width-percentage(72.5%); 
- margin: 3px;
-
+.ShopItemsRows {
+  width: 40px;
+  height: width-percentage(72.5%);
+  margin: 3px;
 }
 
 #battleTimerPanel {
@@ -1049,7 +1047,7 @@
   color: white;
   font-size: 20px;
   font-weight: bold;
-  margin: 3px;
+  margin: 10px 3px;
   text-shadow: 4px 4px 4px #121212;
 }
 .trade_text_footer_gold {
@@ -1294,6 +1292,7 @@
   );
   background-image: url("s2r://panorama/images/hud/reborn/bg_tooltip_psd.vtex");
   border-radius: 10px;
+  margin-bottom: 10px;
 }
 .ship_shop_tier_tab:hover {
   horizontal-align: center;
@@ -2644,4 +2643,53 @@
   height: 32px;
   vertical-align: center;
   horizontal-align: right;
+}
+
+#DrawWindow {
+  visibility: collapse;
+  flow-children: down;
+  horizontal-align: center;
+  vertical-align: center;
+  width: 800px;
+  height: 450px;
+  padding: 20px;
+  background-color: #000000aa;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+}
+
+#ResultsPanel {
+  flow-children: right;
+  horizontal-align: center;
+  text-align: center;
+  width: 660px;
+  height: 350px;
+}
+
+.RollContainer {
+  flow-children: down;
+  height: 350px;
+}
+
+.GachaSlot {
+  width: 200px;
+  height: 325px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #000000aa;
+  border: 1px solid #ffffff;
+  transition-property: transform, opacity;
+  transition-duration: 0.15s;
+  transform: scaleX(1) scaleY(1);
+}
+
+.GachaSlot:hover {
+  border: 2px solid #ffcc33;
+  transform: scaleX(1.05) scaleY(1.05);
+}
+
+.RollButton {
+  vertical-align: bottom;
+  horizontal-align: center;
+  max-width: 200px;
 }
