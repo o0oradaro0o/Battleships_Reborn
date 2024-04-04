@@ -2988,6 +2988,14 @@ function getRebateForImage(image1) {
 }
 
 function SelectGacha(index) {
+  if (isTooFarFromShop()) {
+    GameUI.SendCustomHUDError(
+      "Too far from ship shop!",
+      "General.CastFail_NoMana"
+    );
+    return;
+  }
+  
   const data = CustomNetTables.GetTableValue(
     "gacha_rolls",
     "player" + Game.GetLocalPlayerID()
