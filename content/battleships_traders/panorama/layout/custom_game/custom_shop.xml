@@ -2344,6 +2344,7 @@
 	<Panel class="Invisible">
 		<Image src="file://{images}/waifus/barrel.png" />
 		<Image src="file://{images}/waifus/empty.png" />
+
 		<Image src="file://{images}/waifus/chibi/shoreguard.png" />
 		<Image src="file://{images}/waifus/chibi/batrider.png" />
 		<Image src="file://{images}/waifus/chibi/brewmaster.png" />
@@ -2365,7 +2366,7 @@
 		<Image src="file://{images}/waifus/chibi/shadow_shaman.png" />
 		<Image src="file://{images}/waifus/chibi/shoreguard.png" />
 		<Image src="file://{images}/waifus/chibi/shredder.png" />
-		<Image src="file://{images}/waifus/chibi/sub_result.png" />
+			<Image src="file://{images}/waifus/chibi/sub_result.png" />
 		<Image src="file://{images}/waifus/chibi/tidehunter.png" />
 		<Image src="file://{images}/waifus/chibi/tusk.png" />
 		<Image src="file://{images}/waifus/chibi/ursa.png" />
@@ -2375,6 +2376,7 @@
 		<Image src="file://{images}/waifus/chibi/wisp.png" />
 		<Image src="file://{images}/waifus/chibi/zuus.png" />
 		<Image src="file://{images}/waifus/chibi/ancient_apparition.png" />
+
 
  
 		<Image src="file://{images}/waifus/1ks/airboat.png" />

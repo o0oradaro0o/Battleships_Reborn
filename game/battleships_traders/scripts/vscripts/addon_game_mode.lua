@@ -2134,7 +2134,16 @@ function CBattleship8D:OnNPCSpawned(keys)
     local npc = EntIndexToHScript(keys.entindex)
 
     if npc:IsRealHero() then
-        local particle = ParticleManager:CreateParticle("particles/overhead_fx/visage_soul_overhead.vpcf", PATTACH_OVERHEAD_FOLLOW, npc)
+        --get the hero name
+        local heroName = npc:GetUnitName()
+        --strip off the npc_dota_hero_ prefix
+        local shortName = string.sub(heroName, 15)
+        -- add _overhead.vpcf to the name
+        local particleName = "particles/overhead_fx/" .. shortName .. "_overhead.vpcf"
+        --print the name of the particle
+        print(particleName)
+
+        local particle = ParticleManager:CreateParticle(particleName, PATTACH_OVERHEAD_FOLLOW, npc)
 
         Timers:CreateTimer(.03, function()
             for i=0,21 do
