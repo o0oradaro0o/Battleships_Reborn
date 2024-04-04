@@ -2134,6 +2134,8 @@ function CBattleship8D:OnNPCSpawned(keys)
     local npc = EntIndexToHScript(keys.entindex)
 
     if npc:IsRealHero() then
+        local particle = ParticleManager:CreateParticle("particles/overhead_fx/visage_soul_overhead.vpcf", PATTACH_OVERHEAD_FOLLOW, npc)
+
         Timers:CreateTimer(.03, function()
             for i=0,21 do
                 local item = npc:GetItemInSlot(i)
@@ -4132,9 +4134,17 @@ function CBattleship8D:OnEntityKilled(keys)
         if killerEntity:IsRealHero() and killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber() then
             if killerEntity:GetPlayerID() ~= nil then
                 PlayerResource:SetCameraTarget(killedUnit:GetPlayerID(), killerEntity)
+                -- send playerkilledplayer to server
+                playerData = {}
+                print("sending player killed player event to server for player " .. killedUnit:GetPlayerID() .. " killed by " .. killerEntity:GetPlayerID())
+                CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(killedUnit:GetPlayerID()), "player_killed_player", playerData)
+                
                 Timers:CreateTimer(
                 5,
                     function()
+                        playerData = {}
+                        CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(killedUnit:GetPlayerID()), "stop_spin", playerData)
+            
                         PlayerResource:SetCameraTarget(killedUnit:GetPlayerID(), nil)
                     end
                 )

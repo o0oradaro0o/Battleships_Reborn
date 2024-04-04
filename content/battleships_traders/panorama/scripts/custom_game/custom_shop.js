@@ -3053,6 +3053,40 @@ function overwriteHeroImage() {
 
   $.Schedule(1 / 30, overwriteHeroImage);
 }
+var doSpin=false;
+var yawStart = 0;
+function playerKilledPlayer() {
+  yawStart = GameUI.GetCameraYaw()
+  $.Msg("Player killed player");
+  GameUI.SetCameraDistance(900);
+  GameUI.SetCameraPitchMin(40);
+  GameUI.SetCameraPitchMax(41);
+  doSpin=true;
+  $.Schedule(0.01, spinCamDeath);
+}
+function stopSpin() {
+  var zoomPer = Math.floor($("#ZoomSlider").GetChild(1).value * 100);
+  GameUI.SetCameraDistance((zoomPer / 100) * 1600 + 1600);
+  GameUI.SetCameraPitchMin(15);
+  GameUI.SetCameraPitchMax(70);
+  GameUI.SetCameraYaw(yawStart);
+  doSpin=false;
+}
+
+
+function spinCamDeath() {
+  yaw = yaw + 0.8;
+  GameUI.SetCameraYaw(yaw);
+  if(doSpin)
+  {
+    $.Schedule(0.01, spinCamDeath);
+  }
+  else
+  {
+    GameUI.SetCameraYaw(yawStart);
+  }
+}
+
 
 (function () {
   hideTrade();
@@ -3087,6 +3121,9 @@ function overwriteHeroImage() {
 
   GameEvents.Subscribe("Show_Special_Ui", showSpecialUi);
   GameEvents.Subscribe("show_crab_ui", showCrabUi);
+
+  GameEvents.Subscribe("player_killed_player", playerKilledPlayer);
+  GameEvents.Subscribe("stop_spin", stopSpin);
 
   // listen to nettable changes
   CustomNetTables.SubscribeNetTableListener("gacha_rolls", UpdateGachaRolls);
