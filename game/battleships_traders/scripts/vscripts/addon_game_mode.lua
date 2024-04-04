@@ -4131,6 +4131,13 @@ function CBattleship8D:OnEntityKilled(keys)
 
         if killerEntity:IsRealHero() and killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber() then
             if killerEntity:GetPlayerID() ~= nil then
+                PlayerResource:SetCameraTarget(killedUnit:GetPlayerID(), killerEntity)
+                Timers:CreateTimer(
+                5,
+                    function()
+                        PlayerResource:SetCameraTarget(killedUnit:GetPlayerID(), nil)
+                    end
+                )
                 killerName = PlayerResource:GetPlayerName(killerEntity:GetPlayerID())
                 table.insert(
                     g_combatLogArray,

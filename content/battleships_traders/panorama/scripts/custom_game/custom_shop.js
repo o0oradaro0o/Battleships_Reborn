@@ -2768,7 +2768,6 @@ function showDraws(tier) {
   };
 
   currentTier = tier;
-  $.Msg($("#DrawWindow").style.visibility);
   if (
     $("#DrawWindow").style.visibility == "collapse" ||
     $("#DrawWindow").style.visibility == null
@@ -2953,7 +2952,7 @@ function getRebateForImage(image1) {
   //start iwth gotcha slot 1 and check if the tier is lower than the tier rolled
   //get the image name contained in the slot
   //if the name contains barrel than the tier is 0
-  $.Msg(image1);
+
 
   var tier = 0;
   var rebate = 0;
@@ -3028,7 +3027,6 @@ function overwriteHeroImage() {
     .FindChildTraverse("center_block")
     .FindChildTraverse("PortraitGroup")
     .FindChildTraverse("PortraitContainer");
-  $.Msg(portraitContainer);
   if (!portraitContainer) return;
 
   // create or update a hero image
