@@ -2780,6 +2780,7 @@ function showDraws(tier) {
     $("#rebateHolder2").style.visibility = "collapse";
     $("#rebateHolder3").style.visibility = "collapse";
     $("#RollButton").style.visibility = "visible";
+    $("#shipRollClose").style.visibility = "visible";
   }
 
   $("#rollCostAmount").text = tierToGold[tier];
@@ -2850,11 +2851,18 @@ function rollSlot(sourcePanel, index, duration) {
   rollImage();
 }
 
+function closeShipRoll() {
+  $("#DrawWindow").style.visibility = "collapse";
+
+}
+
 var rolling = false;
 function doRoll() {
   $("#rebateHolder1").style.visibility = "collapse";
   $("#rebateHolder2").style.visibility = "collapse";
   $("#rebateHolder3").style.visibility = "collapse";
+
+  
 
   if (isTooFarFromShop()) {
     GameUI.SendCustomHUDError(
@@ -2876,6 +2884,7 @@ function doRoll() {
     return;
   }
   $("#RollButton").style.visibility = "collapse";
+  $("#shipRollClose").style.visibility = "collapse";
   tierRolled = currentTier;
   const tier = currentTier;
   if (rolling) return;

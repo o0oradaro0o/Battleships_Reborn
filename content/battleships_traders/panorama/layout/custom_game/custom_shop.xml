@@ -2380,27 +2380,31 @@
 	</Panel>
 
 	<Panel hittest="false" id="DrawWindow">
+		<Button id = "shipRollClose" class="closeRoll" onactivate="closeShipRoll()">
+					<Label  text="X" class="closeX"/>	
+		</Button>
 		<Panel class="buttonZone">
 			<Label hittest="false" id="rollCostheader" class="" text="Roll Cost" /> 
 			<Label hittest="false" id="rollCostAmount" class="" text="0" /> 
 		</Panel>	
+		
 		<Panel id="ResultsPanel">
-			<Panel class="RollContainer">
-				<Image id="GachaSlot1" class="GachaSlot" src="file://{images}/waifus/empty.png" onactivate="SelectGacha(1)" />
+			<Panel class="RollContainer GachaSlot">
+				<Image id="GachaSlot1" class="" src="file://{images}/waifus/empty.png" onactivate="SelectGacha(1)" />
 				<Panel id="rebateHolder1" class="rebateHolder">
 					<Label hittest="false" class="rebateHeader" text="Instant Rebate:" />
 					<Label hittest="false" id="rebate1" class="" text="0" />
 				</Panel>
 			</Panel>
-			<Panel class="RollContainer">
-				<Image id="GachaSlot2" class="GachaSlot" src="file://{images}/waifus/empty.png" onactivate="SelectGacha(2)" />
+			<Panel class="RollContainer GachaSlot">
+				<Image id="GachaSlot2" class="" src="file://{images}/waifus/empty.png" onactivate="SelectGacha(2)" />
 				<Panel id="rebateHolder2" class="rebateHolder">
 					<Label hittest="false" class="rebateHeader" text="Instant Rebate:" />
 					<Label hittest="false" id="rebate2" class="" text="0" />
 				</Panel>
 			</Panel>
-			<Panel class="RollContainer">
-				<Image id="GachaSlot3" class="GachaSlot" src="file://{images}/waifus/empty.png" onactivate="SelectGacha(3)" />
+			<Panel class="RollContainer GachaSlot">
+				<Image id="GachaSlot3" class="" src="file://{images}/waifus/empty.png" onactivate="SelectGacha(3)" />
 				<Panel id="rebateHolder3" class="rebateHolder">
 					<Label hittest="false" class="rebateHeader" text="Instant Rebate:" />
 					<Label hittest="false" id="rebate3" class="" text="0" />

@@ -2756,3 +2756,32 @@
 #WaifuImage {
   z-index: 100;
 }
+.closeRoll
+{
+  visibility: visible;
+  horizontal-align: right;
+  vertical-align: top;
+  width: 25px;
+  height: 25px;
+  background-color: gradient(
+    linear,
+    0% 50%,
+    0% 100%,
+    from(#954545ff),
+    to(rgb(99, 39, 39))
+  );
+  margin-right: 8px;
+  margin-bottom: -33px;
+  z-index: 5;
+  border-radius: 5px;
+}
+.closeRoll:hover {
+
+  background-color: gradient(
+    linear,
+    0% 50%,
+    0% 100%,
+    from(#a2696ecc),
+    to(#954545ff)
+  );
+}
