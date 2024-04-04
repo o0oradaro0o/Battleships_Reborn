@@ -2344,7 +2344,8 @@
 	<Panel class="Invisible">
 		<Image src="file://{images}/waifus/barrel.png" />
 		<Image src="file://{images}/waifus/empty.png" />
-
+		<Image src="file://{images}/waifus/chibi/shoreguard.png" />
+ 
 		<Image src="file://{images}/waifus/1ks/airboat.png" />
 		<Image src="file://{images}/waifus/1ks/canoe.png" />
 		<Image src="file://{images}/waifus/1ks/catamaran.png" />

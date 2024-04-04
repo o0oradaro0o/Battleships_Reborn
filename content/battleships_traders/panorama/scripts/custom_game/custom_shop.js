@@ -3028,7 +3028,6 @@ function overwriteHeroImage() {
     .FindChildTraverse("center_block")
     .FindChildTraverse("PortraitGroup")
     .FindChildTraverse("PortraitContainer");
-  $.Msg(portraitContainer);
   if (!portraitContainer) return;
 
   // create or update a hero image
