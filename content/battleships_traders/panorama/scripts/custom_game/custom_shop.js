@@ -790,6 +790,11 @@ function fixUI() {
   newCenterUI
     .FindChildTraverse("AbilitiesAndStatBranch")
     .FindChildTraverse("AghsStatusContainer").style.visibility = "collapse";
+
+    newCenterUI
+    .FindChildTraverse("AbilitiesAndStatBranch")
+    .FindChildTraverse("ContentsContainer").style.visibility = "collapse";
+
   //fuck backpack UI
   newCenterUI
     .FindChildTraverse("inventory")
