@@ -103,6 +103,8 @@
 	"nyx"						"Crab"
 	"nyx_desc"					"Seems friendly to you... hop on what could go wrong!"
 	
+	"random"					"Random"
+
 	"dragon"						"Fail Boat"
 	"dragon_desc"					"This is not a good boat. its abilities dont work half the time, its move speed is inconsistant, and your team will hate you if you buy it. you have been warned."
 	

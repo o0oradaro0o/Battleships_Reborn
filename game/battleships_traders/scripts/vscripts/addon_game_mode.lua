@@ -368,6 +368,7 @@ function Precache(context)
     PrecacheResource("model", "models/crabparts/sandking_shrimp_king_arms_v2.vmdl", context)
 
     PrecacheResource("particle_folder", "particles/basic_projectile", context)
+    PrecacheResource("particle_folder", "particles/overhead_fx", context)
     PrecacheResource("materials", "materials/", context)
     for _,particleName in pairs(precache.particles) do
         PrecacheResource("particle", particleName, context)

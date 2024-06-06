@@ -421,17 +421,17 @@ function modifier_animation:DeclareFunctions()
   return funcs
 end
 
-function modifier_animation:GetOverrideAnimation(...)
-  return self.activity
-end
+-- function modifier_animation:GetOverrideAnimation(...)
+--   return self.activity
+-- end
 
-function modifier_animation:GetOverrideAnimationRate(...)
-  return self.rate
-end
+-- function modifier_animation:GetOverrideAnimationRate(...)
+--   return self.rate
+-- end
 
-function modifier_animation:GetOverrideAnimationWeight(...)
-  return 1
-end
+-- function modifier_animation:GetOverrideAnimationWeight(...)
+--   return 1
+-- end
 
 function modifier_animation:GetActivityTranslationModifiers(...)
   -- ----print('MA: ', self.translate, IsServer())

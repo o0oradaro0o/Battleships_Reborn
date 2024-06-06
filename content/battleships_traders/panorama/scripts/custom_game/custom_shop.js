@@ -44,7 +44,7 @@ var catigoriesUI;
 var shipShopShow = false;
 function hideTrade() {
   $("#missionButton").style.visibility = "collapse";
-  // $("#traders_tab").style.height = "0px";
+ $("#traders_tab").style.height = "0px";
   tradeHidden = true;
 }
 
@@ -3092,7 +3092,7 @@ function stopSpin() {
 
 
 function spinCamDeath() {
-  yaw = yaw + 0.8;
+  yaw = yaw + 0.5;
   GameUI.SetCameraYaw(yaw);
   if(doSpin)
   {

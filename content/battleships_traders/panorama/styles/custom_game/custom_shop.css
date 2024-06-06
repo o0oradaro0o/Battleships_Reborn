@@ -1045,7 +1045,7 @@
 .trade_text_footer {
   horizontal-align: center;
   color: white;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: bold;
   margin: 10px 3px;
   text-shadow: 4px 4px 4px #121212;
@@ -1053,7 +1053,7 @@
 .trade_text_footer_gold {
   horizontal-align: center;
   color: rgb(255, 200, 48);
-  font-size: 20px;
+  font-size: 14px;
   font-weight: bold;
   margin: 3px;
   text-shadow: 4px 4px 4px #121212;

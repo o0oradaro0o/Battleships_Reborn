@@ -2461,13 +2461,13 @@
 							<Label  text="#back_to_items" class="closeXship"/>		
 					</Button>
 					<Label hittest="false" class="trade_text_footer" text="#left_click" /> 
-					<!-- <Panel id="SellValueHoplder" class="Row">
+					<Panel id="SellValueHoplder" class="Row">
 						<Label hittest="false" id="SellValueName" class="trade_text_footer" text="#sellBack" /> 
 						<Label hittest="false" id="SellValue" class="trade_text_footer_gold" text="0" /> 
-					</Panel> -->
+					</Panel>
 
 					<!-- Gacha tiers -->
-					<Panel class="ship_shop_tier_tab" onactivate="showDraws(1)">
+					<!-- <Panel class="ship_shop_tier_tab" onactivate="showDraws(1)">
 						<Label hittest="false" class="shop_btn_text" text="#one_ks"/>
 					</Panel>
 					<Panel class="ship_shop_tier_tab" onactivate="showDraws(2)">
@@ -2478,9 +2478,9 @@
 					</Panel>
 					<Panel class="ship_shop_tier_tab" onactivate="showDraws(4)">
 						<Label hittest="false" class="shop_btn_text" text="#ten_ks"/>
-					</Panel>
+					</Panel> -->
 
-					<!-- <Panel id="one_ks_tab" class="ship_shop_tier_tab" onactivate="show1ks()">
+					<Panel id="one_ks_tab" class="ship_shop_tier_tab" onactivate="show1ks()">
 						<Label hittest="false" class="shop_btn_text" text="#one_ks"/>
 					</Panel>
 					<Panel id="one_ks" class="supply_guts">
@@ -2518,6 +2518,10 @@
 								<Button class="boat_btn_item"  onactivate="showDetails('nyx')" oncontextmenu="buyBoat('nyx', 1000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/nyx.png" />
 									 <Label hittest="false" class="boat_name_text" text="#nyx" />
+								</Button>
+								<Button class="boat_btn_item"  onactivate="showDraws(1)" oncontextmenu="showDraws(1)">
+									<Image class="boat_image" src="file://{images}/waifus/empty.png" />
+									 <Label hittest="false" class="boat_name_text" text="#random" />
 								</Button>
 							</Panel>
 						</Panel>
@@ -2560,6 +2564,10 @@
 								<Button class="boat_btn_item"  onactivate="showDetails('dragon')" oncontextmenu="buyBoat('dragon', 3000)">
 									<Image class="boat_image" src="file://{images}/custom_game/boats/dragon.png" />
 									 <Label hittest="false" class="boat_name_text" text="#dragon" />
+								</Button>
+								<Button class="boat_btn_item"  onactivate="showDraws(2)" oncontextmenu="showDraws(2)">
+									<Image class="boat_image" src="file://{images}/waifus/empty.png" />
+									 <Label hittest="false" class="boat_name_text" text="#random" />
 								</Button>
 							</Panel>
 						</Panel>
@@ -2605,6 +2613,10 @@
 								   <Image class="boat_image" src="file://{images}/custom_game/boats/marci.png" />
 									<Label hittest="false" class="boat_name_text" text="#marci" />
 							   </Button>
+							   <Button class="boat_btn_item"  onactivate="showDraws(3)" oncontextmenu="showDraws(3)">
+									<Image class="boat_image" src="file://{images}/waifus/empty.png" />
+									 <Label hittest="false" class="boat_name_text" text="#random" />
+								</Button>
 						   </Panel>
 						</Panel> 
 						<Panel id="ten_ks_tab" class="ship_shop_tier_tab" onactivate="show10ks()">
@@ -2648,6 +2660,10 @@
 								   <Image class="boat_image" src="file://{images}/custom_game/boats/wisp.png" />
 									<Label hittest="false" class="boat_name_text" text="#wisp" />
 							   </Button>
+							   <Button class="boat_btn_item"  onactivate="showDraws(4)" oncontextmenu="showDraws(4)">
+									<Image class="boat_image" src="file://{images}/waifus/empty.png" />
+									 <Label hittest="false" class="boat_name_text" text="#random" />
+								</Button>
 						   </Panel>
 						</Panel>
 						
@@ -2683,7 +2699,7 @@
 								</Button>
 							</Panel>
 						</Panel>
-						 -->
+						
 			 </Panel>
 		</Panel>
 		
