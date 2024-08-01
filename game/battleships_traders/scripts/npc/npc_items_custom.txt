@@ -20,43 +20,15 @@
   
   //   "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-  //   "AbilitySpecial"
+  //   "AbilityValues"
   //   {
-  //     "01"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "dmg"      "18.0"
-  //     }
-  //     "02"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "fire_rate"   "1.2"
-  //     }
-  //     "03"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "range"       "650"
-  //     }
-  //     "04"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "level"       "1"
-  //     }
-  //     "05"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "doubled_wep"     "0"
-  //     }
-  //     "06"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "speed"       "950"
-  //     }
-  //     "07"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "dps"         "15.0"
-  //     }
   //   }
   // }
 
@@ -79,43 +51,15 @@
   
   //   "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-  //   "AbilitySpecial"
+  //   "AbilityValues"
   //   {
-  //     "01"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "dmg"      "18.0"
-  //     }
-  //     "02"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "fire_rate"   "1.2"
-  //     }
-  //     "03"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "range"       "650"
-  //     }
-  //     "04"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "level"       "1"
-  //     }
-  //     "05"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "doubled_wep"     "1"
-  //     }
-  //     "06"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "speed"       "950"
-  //     }
-  //     "07"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "dps"         "30.0"
-  //     }
   //   }
   // }
 
@@ -138,43 +82,15 @@
   
   //   "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-  //   "AbilitySpecial"
+  //   "AbilityValues"
   //   {
-  //     "01"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "dmg"      "39.0"
-  //     }
-  //     "02"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "fire_rate"   "1.2"
-  //     }
-  //     "03"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "range"       "650"
-  //     }
-  //     "04"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "level"     "2"
-  //     }
-  //     "05"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "doubled_wep"     "0"
-  //     }
-  //     "06"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "speed"       "950"
-  //     }
-  //     "07"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "dps"         "32.0"
-  //     }
   //   }
   // }
 
@@ -197,43 +113,15 @@
   
   //   "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-  //   "AbilitySpecial"
+  //   "AbilityValues"
   //   {
-  //     "01"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "dmg"      "39.0"
-  //     }
-  //     "02"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "fire_rate"   "1.2"
-  //     }
-  //     "03"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "range"       "650"
-  //     }
-  //     "04"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "level"       "2"
-  //     }
-  //     "05"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "doubled_wep"     "1"
-  //     }
-  //     "06"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "speed"       "950"
-  //     }
-  //     "07"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "dps"         "65.0"
-  //     }
   //   }
   // }
 
@@ -256,43 +144,15 @@
   
   //   "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-  //   "AbilitySpecial"
+  //   "AbilityValues"
   //   {
-  //     "01"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "dmg"      "96.0"
-  //     }
-  //     "02"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "fire_rate"   "1.2"
-  //     }
-  //     "03"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "range"       "650"
-  //     }
-  //     "04"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "level"     "3"
-  //     }
-  //     "05"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "doubled_wep"     "0"
-  //     }
-  //     "06"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "speed"       "950"
-  //     }
-  //     "07"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "dps"         "80.0"
-  //     }
   //   }
   // }
 
@@ -315,43 +175,15 @@
   
   //   "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-  //   "AbilitySpecial"
+  //   "AbilityValues"
   //   {
-  //     "01"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "dmg"      "96.0"
-  //     }
-  //     "02"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "fire_rate"   "1.2"
-  //     }
-  //     "03"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "range"       "650"
-  //     }
-  //     "04"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "level"       "3"
-  //     }
-  //     "05"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "doubled_wep"     "1"
-  //     }
-  //     "06"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "speed"       "950"
-  //     }
-  //     "07"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "dps"         "160.0"
-  //     }
   //   }
   // }
 
@@ -374,43 +206,15 @@
   
   //   "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-  //   "AbilitySpecial"
+  //   "AbilityValues"
   //   {
-  //     "01"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "dmg"      "96.0"
-  //     }
-  //     "02"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "fire_rate"   "1.2"
-  //     }
-  //     "03"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "range"       "650"
-  //     }
-  //     "04"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "level"       "4"
-  //     }
-  //     "05"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "doubled_wep"     "1"
-  //     }
-  //     "06"
-  //     {
-  //       "var_type"    "FIELD_INTEGER"
   //       "speed"       "950"
-  //     }
-  //     "07"
-  //     {
-  //       "var_type"    "FIELD_FLOAT"
   //       "dps"         "320.0"
-  //     }
   //   }
   // }
 
@@ -433,48 +237,16 @@
   
     "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-    "AbilitySpecial"
+    "AbilityValues"
     {
-      "01"
-      {
-        "var_type"    "FIELD_FLOAT"
         "dmg"      "31.0"
-      }
-      "02"
-      {
-        "var_type"    "FIELD_FLOAT"
         "fire_rate"   "1"
-      }
-      "03"
-      {
-        "var_type"    "FIELD_INTEGER"
         "range"       "550"
-      }
-      "04"
-      {
-        "var_type"    "FIELD_INTEGER"
         "level"       "1"
-      }
-      "05"
-      {
-        "var_type"    "FIELD_INTEGER"
         "doubled_wep"     "0"
-      }
-      "06"
-      {
-        "var_type"    "FIELD_INTEGER"
         "speed"       "950"
-      }
-      "07"
-      {
-        "var_type"    "FIELD_FLOAT"
         "dps"         "31.0"
-      }
-			 "08"
-      {
-        "var_type"    "FIELD_FLOAT"
         "aoe"         "200.0"
-      }
     }
   }
 
@@ -497,48 +269,16 @@
   
     "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-    "AbilitySpecial"
+    "AbilityValues"
     {
-      "01"
-      {
-        "var_type"    "FIELD_FLOAT"
         "dmg"      "31.0"
-      }
-      "02"
-      {
-        "var_type"    "FIELD_FLOAT"
         "fire_rate"   "1"
-      }
-      "03"
-      {
-        "var_type"    "FIELD_INTEGER"
         "range"       "550"
-      }
-      "04"
-      {
-        "var_type"    "FIELD_INTEGER"
         "level"       "1"
-      }
-      "05"
-      {
-        "var_type"    "FIELD_INTEGER"
         "doubled_wep"     "1"
-      }
-      "06"
-      {
-        "var_type"    "FIELD_INTEGER"
         "speed"       "950"
-      }
-      "07"
-      {
-        "var_type"    "FIELD_FLOAT"
         "dps"         "62.0"
-      }
-			 "08"
-      {
-        "var_type"    "FIELD_FLOAT"
         "aoe"          "200.0"
-      }
     }
   }
 
@@ -561,48 +301,16 @@
   
     "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-    "AbilitySpecial"
+    "AbilityValues"
     {
-      "01"
-      {
-        "var_type"    "FIELD_FLOAT"
         "dmg"      "68"
-      }
-      "02"
-      {
-        "var_type"    "FIELD_FLOAT"
         "fire_rate"   "1"
-      }
-      "03"
-      {
-        "var_type"    "FIELD_INTEGER"
         "range"       "550"
-      }
-      "04"
-      {
-        "var_type"    "FIELD_INTEGER"
         "level"     "2"
-      }
-      "05"
-      {
-        "var_type"    "FIELD_INTEGER"
         "doubled_wep"     "0"
-      }
-      "06"
-      {
-        "var_type"    "FIELD_INTEGER"
         "speed"       "950"
-      }
-      "07"
-      {
-        "var_type"    "FIELD_FLOAT"
         "dps"         "68"
-      }
-			 "08"
-      {
-        "var_type"    "FIELD_FLOAT"
         "aoe"          "200.0"
-      }
     }
   }
 
@@ -625,48 +333,16 @@
   
     "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-    "AbilitySpecial"
+    "AbilityValues"
     {
-      "01"
-      {
-        "var_type"    "FIELD_FLOAT"
         "dmg"      "68"
-      }
-      "02"
-      {
-        "var_type"    "FIELD_FLOAT"
         "fire_rate"   "1"
-      }
-      "03"
-      {
-        "var_type"    "FIELD_INTEGER"
         "range"       "550"
-      }
-      "04"
-      {
-        "var_type"    "FIELD_INTEGER"
         "level"       "2"
-      }
-      "05"
-      {
-        "var_type"    "FIELD_INTEGER"
         "doubled_wep"     "1"
-      }
-      "06"
-      {
-        "var_type"    "FIELD_INTEGER"
         "speed"       "950"
-      }
-      "07"
-      {
-        "var_type"    "FIELD_FLOAT"
         "dps"         "136.0"
-      }
-			 "08"
-      {
-        "var_type"    "FIELD_FLOAT"
         "aoe"          "200.0"
-      }
     }
   }
 
@@ -689,48 +365,16 @@
   
     "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-    "AbilitySpecial"
+    "AbilityValues"
     {
-      "01"
-      {
-        "var_type"    "FIELD_FLOAT"
         "dmg"      "138"
-      }
-      "02"
-      {
-        "var_type"    "FIELD_FLOAT"
         "fire_rate"   "1"
-      }
-      "03"
-      {
-        "var_type"    "FIELD_INTEGER"
         "range"       "550"
-      }
-      "04"
-      {
-        "var_type"    "FIELD_INTEGER"
         "level"     "3"
-      }
-      "05"
-      {
-        "var_type"    "FIELD_INTEGER"
         "doubled_wep"     "0"
-      }
-      "06"
-      {
-        "var_type"    "FIELD_INTEGER"
         "speed"       "950"
-      }
-      "07"
-      {
-        "var_type"    "FIELD_FLOAT"
         "dps"         "138.0"
-      }
-			 "08"
-      {
-        "var_type"    "FIELD_FLOAT"
         "aoe"          "200.0"
-      }
     }
   }
 
@@ -753,48 +397,16 @@
   
     "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-    "AbilitySpecial"
+    "AbilityValues"
     {
-      "01"
-      {
-        "var_type"    "FIELD_FLOAT"
         "dmg"      "96.0"
-      }
-      "02"
-      {
-        "var_type"    "FIELD_FLOAT"
         "fire_rate"   "1"
-      }
-      "03"
-      {
-        "var_type"    "FIELD_INTEGER"
         "range"       "550"
-      }
-      "04"
-      {
-        "var_type"    "FIELD_INTEGER"
         "level"       "3"
-      }
-      "05"
-      {
-        "var_type"    "FIELD_INTEGER"
         "doubled_wep"     "1"
-      }
-      "06"
-      {
-        "var_type"    "FIELD_INTEGER"
         "speed"       "950"
-      }
-      "07"
-      {
-        "var_type"    "FIELD_FLOAT"
         "dps"         "276.0"
-      }
-			 "08"
-      {
-        "var_type"    "FIELD_FLOAT"
         "aoe"          "200.0"
-      }
     }
   }
 
@@ -817,48 +429,16 @@
   
     "ItemShareability"        "ITEM_NOT_SHAREABLE"
     
-    "AbilitySpecial"
+    "AbilityValues"
     {
-      "01"
-      {
-        "var_type"    "FIELD_FLOAT"
         "dmg"      "128"
-      }
-      "02"
-      {
-        "var_type"    "FIELD_FLOAT"
         "fire_rate"   "1"
-      }
-      "03"
-      {
-        "var_type"    "FIELD_INTEGER"
         "range"       "550"
-      }
-      "04"
-      {
-        "var_type"    "FIELD_INTEGER"
         "level"       "4"
-      }
-      "05"
-      {
-        "var_type"    "FIELD_INTEGER"
         "doubled_wep"     "1"
-      }
-      "06"
-      {
-        "var_type"    "FIELD_INTEGER"
         "speed"       "950"
-      }
-      "07"
-      {
-        "var_type"    "FIELD_FLOAT"
         "dps"         "512"
-      }
-			 "08"
-      {
-        "var_type"    "FIELD_FLOAT"
         "aoe"          "200.0"
-      }
     }
   }
 	//=================================================================================================
@@ -3504,23 +3084,11 @@
 		}
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_movement"		"40"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"remove"				"3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_speed"			"40"
-			}
 		}
 	}
 
@@ -3589,23 +3157,11 @@
 		}
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_movement"		"60"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"remove"				"3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_speed"			"60"
-			}
 		}
 	}
 	//=================================================================================================================
@@ -3673,23 +3229,11 @@
 		}
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_movement"		"85"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"remove"				"3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_speed"			"85"
-			}
 		}
 	}
 	
@@ -3758,23 +3302,11 @@
 		}
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_movement"		"110"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"remove"				"3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_speed"			"110"
-			}
 		}
 	}
 	
@@ -3842,23 +3374,11 @@
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_hp"				"500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_armor"			"2"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"remove"				"3"
-			}
 		}
 	}
 	//=================================================================================================================
@@ -3924,23 +3444,11 @@
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_hp"				"800"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_armor"			"3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"remove"				"3"
-			}
 		}
 	}
 	//=================================================================================================================
@@ -4006,23 +3514,11 @@
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_hp"				"1500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_armor"			"3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"remove"				"3"
-			}
 		}
 	}
 
@@ -4089,28 +3585,12 @@
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_movement"		"0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_hp"				"2400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_armor"			"4"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"remove"				"3"
-			}
 		}
 	}
 	
@@ -4156,23 +3636,11 @@
 		
 //        // Special	
 //        //-------------------------------------------------------------------------------------------------------------
-//        "AbilitySpecial"
+//        "AbilityValues"
 //        {
-//            "01"
-//            {
-//                "var_type"				"FIELD_INTEGER"
 //                "bonus_movement"		"75"
-//            }
-//            "02"
-//            {
-//                "var_type"				"FIELD_INTEGER"
 //                "bonus_hp"				"500"
-//            }
-//            "03"
-//            {
-//                "var_type"				"FIELD_INTEGER"
 //                "bonus_armor"			"3"
-//            }
 //        }
 //    }
 	
@@ -4218,23 +3686,11 @@
 		
 //        // Special	
 //        //-------------------------------------------------------------------------------------------------------------
-//        "AbilitySpecial"
+//        "AbilityValues"
 //        {
-//            "01"
-//            {
-//                "var_type"				"FIELD_INTEGER"
 //                "bonus_movement"		"120"
-//            }
-//            "02"
-//            {
-//                "var_type"				"FIELD_INTEGER"
 //                "bonus_hp"				"1200"
-//            }
-//            "03"
-//            {
-//                "var_type"				"FIELD_INTEGER"
 //                "bonus_armor"			"5"
-//            }
 //        }
 //    }
 	
@@ -4280,23 +3736,11 @@
 		
 //        // Special	
 //        //-------------------------------------------------------------------------------------------------------------
-//        "AbilitySpecial"
+//        "AbilityValues"
 //        {
-//            "01"
-//            {
-//                "var_type"				"FIELD_INTEGER"
 //                "bonus_movement"		"175"
-//            }
-//            "02"
-//            {
-//                "var_type"				"FIELD_INTEGER"
 //                "bonus_hp"				"2000"
-//            }
-//            "03"
-//            {
-//                "var_type"				"FIELD_INTEGER"
 //                "bonus_armor"			"8"
-//            }
 //        }
 //    }
 	
@@ -4341,23 +3785,11 @@
 	//	
        // // Special	
 //        ////-------------------------------------------------------------------------------------------------------------
-   //     "AbilitySpecial"
+   //     "AbilityValues"
      //   {
-     //       "01"
-     //       {
-     //           "var_type"				"FIELD_INTEGER"
      //           "bonus_movement"		"120"
-     //      }
-     //       "02"
-      //      {
-      //          "var_type"				"FIELD_INTEGER"
      //           "bonus_hp"				"8000"
-     //       }
-     //       "03"
-     //       {
-     //           "var_type"				"FIELD_INTEGER"
     //            "bonus_armor"			"11"
-    //        }
     //    }
   //  }
   
@@ -4442,33 +3874,13 @@
 		
         // Special	
         //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
                 "bonus_movement"		"30"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
                 "bonus_hp"				"250"
-            }
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	"0.3"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"dmg"	"12"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"range"	"650"
-			}
 
         }
     }
@@ -4516,13 +3928,9 @@
 			}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"heal_amount"	"400"
-			}
 		}
 	}
 	
@@ -4567,13 +3975,9 @@
 			}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"heal_amount"	"1000"
-			}
 		}
 	}
 	//=================================================================================================================
@@ -4617,13 +4021,9 @@
 			}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"heal_amount"	"3500"
-			}
 		}
 	}
 	//=================================================================================================================
@@ -4667,13 +4067,9 @@
 			}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"heal_amount"	"7000"
-			}
 		}
 	}
 	//=================================================================================================================
@@ -4719,18 +4115,10 @@
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"bonus_regen"		".6"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"health_regen"		"13.0"
-			}
 		}
 	}
 	//=================================================================================================================
@@ -4775,18 +4163,10 @@
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"bonus_regen"		".75"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"health_regen"		"26"
-			}
 		}
 	}
 	//=================================================================================================================
@@ -4832,18 +4212,10 @@
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"bonus_regen"		"1.125"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"health_regen"		"60"
-			}
 		}
 		
 	}
@@ -4890,18 +4262,10 @@
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"bonus_regen"		"1.25"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"health_regen"		"120"
-			}
 		}
 	}
 	
@@ -4964,13 +4328,9 @@
 		
 //        // Special	
 //        //-------------------------------------------------------------------------------------------------------------
-//        "AbilitySpecial"
+//        "AbilityValues"
 //        {
-//            "01"
-//            {
-//                "var_type"				"FIELD_INTEGER"
 //                "bonus_regen"		"7.0"
-//            }
 //        }
 //    }
 	
@@ -5033,13 +4393,9 @@
 		
 //        // Special	
 //        //-------------------------------------------------------------------------------------------------------------
-//        "AbilitySpecial"
+//        "AbilityValues"
 //        {
-//            "01"
-//            {
-//                "var_type"				"FIELD_INTEGER"
 //                "bonus_regen"		"15.0"
-//            }
 //        }
 //    }
 	
@@ -5102,13 +4458,9 @@
 		
 //        // Special	
 //        //-------------------------------------------------------------------------------------------------------------
-//        "AbilitySpecial"
+//        "AbilityValues"
 //        {
-//            "01"
-//            {
-//                "var_type"				"FIELD_INTEGER"
 //                "bonus_regen"		"35.0"
-//            }
 //        }
 //    }
 	
@@ -5190,38 +4542,14 @@
 				"Function"			"poisonSoundImpact"
 			}                        
 		}				
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dmg"		"42"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"fire_rate"	"1.5"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"900"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"damage"	"1"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"psn_dur"	"5"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"28"
-			}
 		}
 	}
 	//===============================================
@@ -5294,33 +4622,13 @@
 			}						
 				
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"12"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	".4"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"damage"	"2"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"700"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"30"
-			}
 
 		}
 	}
@@ -5397,38 +4705,14 @@
 			}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dmg"		"48"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"fire_rate"	"2.1"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"1250"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"slow_amt"	"2"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"slow_dur"	"1"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"23"
-			}
 		}
 	}	
 	
@@ -5503,48 +4787,16 @@
 			}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"dmg"				"20"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"fire_rate"			"1.0"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"range"				"1300"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"max_range"			"1600"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"min_range"			"600"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"bonus_dmg"			"8"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"min_range_dmg_pct"	"50"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"dps"				"20"	
-			}
 		}
 	}
 	//===============================================
@@ -5619,33 +4871,13 @@
 			}				
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"6"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		"0.2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"1000"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"vision_rad"	"600"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"30"
-			}
 		}
 	}
 
@@ -5720,38 +4952,14 @@
 			}
 				
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"60"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	"1.8"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"stun_pct"	"6.67"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"stun_dur"	"0.55"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"800"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"33"
-			}
 		}
 	}
 	
@@ -5834,38 +5042,14 @@
 			}
 				
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"90"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		"3.0"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"600"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"armor_down"	"1"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"armor_dur"		"0.5"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"30"
-			}
 
 		}
 	}
@@ -5948,43 +5132,15 @@
 			}
 				
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"13"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		".5"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"1050"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounces"		"1"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounce_dmg"	"5"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounce_range"	"600"
-			}
-			"07"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"26"
-			}
 
 		}
 	}
@@ -6136,43 +5292,15 @@
 			
 				
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"21"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	".8"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"delay"	"2.5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"remove"	"3"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"1200"
-			}
-			"06"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"pure_pct"	"20"
-			}
-			"07"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"26"
-			}
 		
 		}
 	}
@@ -6239,43 +5367,15 @@
 			"DeleteOnHit"                           "false"
 				
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"29"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		".2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"max_rate"		"1"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"850"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg_bonus"		"20"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bonus_rate"	"50"
-			}
-			"07"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dps"	"29"
-			}
 
 		}
 	}
@@ -6363,38 +5463,14 @@
 			}          
 				
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dmg"		"90"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"fire_rate"	"1.5"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"900"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"damage"	"2"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"psn_dur"	"5"
-			}
-			"06"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dps"	"60"
-			}
 
 		}
 	}
@@ -6478,33 +5554,13 @@
 			}						
 				
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"26"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	".4"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"damage"	"4"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"700"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"65"
-			}
 
 		}
 	}
@@ -6589,38 +5645,14 @@
 					"Target"                                "TARGET"
 			}                        
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dmg"		"100"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"fire_rate"	"2.1"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"1250"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"slow_amt"	"3"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"slow_dur"	"1"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"47"
-			}
 
 		}
 	}
@@ -6702,48 +5734,16 @@
 				}
 					
 			}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"dmg"				"40"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"fire_rate"			"1.0"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"range"				"1300"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"max_range"			"1600"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"min_range"			"600"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"bonus_dmg"			"16"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"min_range_dmg_pct"	"50"
-			}
-			"08"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"40"
-			}
 		}
 	}
 	//===============================================
@@ -6825,33 +5825,13 @@
 					"Target"                                "TARGET"
 			}			
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"12"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		"0.2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"1000"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"vision_rad"	"600"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"60"
-			}
 		}
 	}
 	
@@ -6933,38 +5913,14 @@
 					"Target"                                "TARGET"
 			}			
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"126"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	"1.8"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"stun_pct"	"6.67"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"stun_dur"	"0.75"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"800"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"70"
-			}
 
 
 		}
@@ -7047,38 +6003,14 @@
 			}
 				
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"195"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		"3.0"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"600"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"armor_down"	"1"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"armor_dur"		"1"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"65"
-			}
 		}
 	}
 	
@@ -7161,43 +6093,15 @@
 			}
 				
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"26"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	".5"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"1050"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounces"		"2"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounce_dmg"	"7"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounce_range"	"600"
-			}
-			"07"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"52"
-			}
 		}
 	}		
 	//===============================================
@@ -7343,43 +6247,15 @@
 			}
 				
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"41"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	".8"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"delay"	"2.5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"remove"	"3"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"1200"
-			}
-			"06"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"pure_pct"	"20"
-			}
-			"07"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"52"
-			}
 
 
 		}
@@ -7443,43 +6319,15 @@
 			"DeleteOnHit"                           "false"
 				
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"63"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		".2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"max_rate"		"1"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"850"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg_bonus"		"20"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bonus_rate"	"50"
-			}
-			"07"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dps"	"63"
-			}
 		}
 	}
 	
@@ -7557,38 +6405,14 @@
 			}        
 				
 		}
-			"AbilitySpecial"
+			"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dmg"		"180"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"fire_rate"	"1.5"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"900"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"damage"	"3"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"psn_dur"	"5"
-			}
-			"06"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dps"	"120"
-			}
 
 		}
 	}
@@ -7663,33 +6487,13 @@
 				"Function"			"fireSoundImpact"
 			}			               
 		}
-				"AbilitySpecial"
+				"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"52"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	".4"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"damage"	"6"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"700"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"130"
-			}
 
 		}
 	}
@@ -7769,38 +6573,14 @@
 			}
                         
 		}
-				"AbilitySpecial"
+				"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dmg"		"200"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"fire_rate"	"2.1"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"1250"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"slow_amt"	"4"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"slow_dur"	"3.5"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"96"
-			}
 		}
 	}
 	
@@ -7874,48 +6654,16 @@
 			}
 				
 		}
-				"AbilitySpecial"
+				"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"dmg"				"80"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"fire_rate"			"1.0"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"range"				"1300"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"max_range"			"1600"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"min_range"			"600"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"bonus_dmg"			"32"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"min_range_dmg_pct"	"50"
-			}
-			"08"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"80"
-			}
 		}
 	}
 	
@@ -7992,33 +6740,13 @@
 			}			
         }
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"24"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		"0.2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"1000"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"vision_rad"	"600"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"120"
-			}
 		}
 	}
 	//===============================================
@@ -8095,38 +6823,14 @@
 			}
 				
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"252"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	"1.8"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"stun_pct"	"6.67"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"stun_dur"	"1"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"800"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"140"
-			}
 
 		}
 	}
@@ -8206,38 +6910,14 @@
 			}
 				
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"390"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		"3.0"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"600"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"armor_down"	"2"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"armor_dur"		"1.5"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"130"
-			}
 		}
 	}
 	
@@ -8316,43 +6996,15 @@
 			}
 				
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"52"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	".5"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"1050"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounces"		"3"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounce_dmg"	"11"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounce_range"	"600"
-			}
-			"07"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"104"
-			}
 
 
 		}
@@ -8483,43 +7135,15 @@
 				"ModifierName" "item_breach_three_bow_dmg"
 			}
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"64"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	".8"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"delay"	"2.5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"remove"	"3"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"1200"
-			}
-			"06"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"pure_pct"	"20"
-			}
-			"07"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"115"
-			}
 		}
 	}
 	
@@ -8582,43 +7206,15 @@
 			"DeleteOnHit"                           "false"
 				
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"125"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		".2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"max_rate"		"1"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"850"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg_bonus"		"20"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bonus_rate"	"50"
-			}
-			"07"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dps"	"125"
-			}
 		}
 	}
 	
@@ -8741,38 +7337,14 @@
 						"ModifierName" "item_poison_ult_bow_pleagued_1"
 					}
                 }
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dmg"	"42"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"fire_rate"	"1.5"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"damage"	"1"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"900"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"psn_dur"	"5"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"56"
-			}
 
 		}
 	}
@@ -8871,33 +7443,13 @@
 			}
 				
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"12"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	".4"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"damage"	"2"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"700"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"60"
-			}
 		}
 		
 	}
@@ -9004,38 +7556,14 @@
 			}
 
 		}
-				"AbilitySpecial"
+				"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dmg"		"48"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"fire_rate"	"2.1"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"1250"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"slow_amt"	"2"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"slow_dur"	"1"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"46"
-			}
 
 		}
 	}
@@ -9113,48 +7641,16 @@
 			}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"dmg"				"20"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"fire_rate"			"1.0"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"range"				"1300"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"max_range"			"1600"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"min_range"			"600"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"bonus_dmg"			"8"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"min_range_dmg_pct"	"50"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"dps"				"40"
-			}
 		}
 	}
 	//===============================================
@@ -9233,33 +7729,13 @@
 			}			
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"6"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		"0.2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"1000"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"vision_rad"	"200"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"30"
-			}
 		}
 	}
 	//===============================================
@@ -9350,38 +7826,14 @@
 				}
 			}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"60"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	"1.8"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"stun_pct"	"6.67"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"stun_dur"	"0.25"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"800"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"66"
-			}
 
 		}
 	}
@@ -9473,38 +7925,14 @@
 			}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"90"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		"3.0"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"600"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"armor_down"	"1"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"armor_dur"		"0.5"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"60"
-			}
 		}
 	}
 	//===============================================
@@ -9578,43 +8006,15 @@
 			}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		".5"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"12"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"1050"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounces"		"1"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounce_dmg"	"5"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounce_range"	"600"
-			}
-			"07"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"52"
-			}
 		}
 	}
 	
@@ -9754,43 +8154,15 @@
 			}				
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"17"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	".8"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"delay"	"2.5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"remove"	"3"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"1200"
-			}
-			"06"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"pure_pct"	"20"
-			}
-			"07"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"52"
-			}
 		}
 	}
 	
@@ -9854,43 +8226,15 @@
 			"DeleteOnHit"                           "false"
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"29"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		".2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"max_rate"		"1"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"850"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg_bonus"		"20"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bonus_rate"	"50"
-			}
-			"07"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dps"	"58"
-			}
 		}
 	}
 
@@ -9912,83 +8256,23 @@
 		"ItemKillable"          "0"
 		"ItemQuality"         "epic"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"    "FIELD_FLOAT"
 				"dmg"      "31.0"
-			}
-			"02"
-			{
-				"var_type"    "FIELD_FLOAT"
 				"fire_rate"   "1"
-			}
-			"03"
-			{
-				"var_type"    "FIELD_INTEGER"
 				"range"       "550"
-			}
-			"04"
-			{
-				"var_type"    "FIELD_INTEGER"
 				"level"       "1"
-			}
-			"05"
-			{
-				"var_type"    "FIELD_INTEGER"
 				"doubled_wep"     "0"
-			}
-			"06"
-			{
-				"var_type"    "FIELD_INTEGER"
 				"speed"       "950"
-			}
-			"07"
-			{
-				"var_type"    "FIELD_FLOAT"
 				"dps"         "31.0"
-			}
-			"08"
-			{
-				"var_type"    "FIELD_FLOAT"
 				"aoe"         "200.0"
-			}
-			"09"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg_2"			"90"
-			}
-			"10"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate_2"		"3.0"
-			}
-			"11"
-			{
-				"var_type"		"FIELD_INTEGER"
 				"range_2"			"600"
-			}
-			"12"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"armor_down_2"	"1"
-			}
-			"13"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"armor_dur_2"		"0.5"
-			}
-			"14"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps_2"			"30"
-			}
-			"15"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"speed_2"			"1450"
-			}
 		}
 	}
 
@@ -10107,38 +8391,14 @@
 			}
     }
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dmg"		"90"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"fire_rate"	"1.5"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"damage"	"2"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"	"900"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"psn_dur"	"5"
-			}
-			"06"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dps"	"120"
-			}
 		}
 	}
 	//===============================================
@@ -10230,33 +8490,13 @@
 			}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"26"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	".4"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"damage"	"4"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"700"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"130"
-			}
 		}
 	}
 	
@@ -10360,38 +8600,14 @@
 			}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dmg"		"100"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"fire_rate"	"2.1"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"1250"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"slow_amt"	"3"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"slow_dur"	"1"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"94"
-			}
 		}
 	}
 	//===============================================
@@ -10466,48 +8682,16 @@
 			}					
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"dmg"				"40"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"fire_rate"			"1.0"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"range"				"1300"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"max_range"			"1600"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"min_range"			"600"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"bonus_dmg"			"16"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"min_range_dmg_pct"	"50"
-			}
-			"08"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"80"
-			}
 		}
 	}
 	//===============================================
@@ -10585,33 +8769,13 @@
 			}                        
     }
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"12"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		"0.2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"1000"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"vision_rad"	"600"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"120"
-			}
 		}
 	}
 	//===============================================
@@ -10704,38 +8868,14 @@
 
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"126"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	"1.8"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"stun_pct"	"6.67"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"stun_dur"	"0.55"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"800"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"140"
-			}
 		}
 	}
 	//===============================================
@@ -10828,38 +8968,14 @@
 			}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"195"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		"3.0"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"600"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"armor_down"	"1"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"armor_dur"		"1"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"130"
-			}
 		}
 	}
 	
@@ -10934,43 +9050,15 @@
 			}		
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"26"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	".5"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"1050"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounces"		"2"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounce_dmg"	"7"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounce_range"	"600"
-			}
-			"07"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"104"
-			}
 		}
 	}
 	
@@ -11107,43 +9195,15 @@
 			}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"41"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	".8"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"delay"	"2.5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"remove"	"3"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"1200"
-			}
-			"06"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"pure_pct"	"20"
-			}
-			"07"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"104"
-			}
 		}
 	}
 	
@@ -11207,43 +9267,15 @@
 			"DeleteOnHit"                           "false"
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"63"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		".2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"max_rate"		"1"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"850"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg_bonus"		"20"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bonus_rate"	"50"
-			}
-			"07"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"260"
-			}
 		}
 	}	
 	
@@ -11265,83 +9297,23 @@
 		"ItemKillable"          "0"
 		"ItemQuality"         "epic"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-      {
-        "var_type"    "FIELD_FLOAT"
         "dmg"      "68"
-      }
-      "02"
-      {
-        "var_type"    "FIELD_FLOAT"
         "fire_rate"   "1"
-      }
-      "03"
-      {
-        "var_type"    "FIELD_INTEGER"
         "range"       "550"
-      }
-      "04"
-      {
-        "var_type"    "FIELD_INTEGER"
         "level"     "2"
-      }
-      "05"
-      {
-        "var_type"    "FIELD_INTEGER"
         "doubled_wep"     "0"
-      }
-      "06"
-      {
-        "var_type"    "FIELD_INTEGER"
         "speed"       "950"
-      }
-      "07"
-      {
-        "var_type"    "FIELD_FLOAT"
         "dps"         "68"
-      }
-			 "08"
-      {
-        "var_type"    "FIELD_FLOAT"
         "aoe"          "200.0"
-      }
-"09"
-		{
-			"var_type"		"FIELD_FLOAT"
 			"dmg_2"			"195"
-		}
-		"10"
-		{
-			"var_type"		"FIELD_FLOAT"
 			"fire_rate_2"		"3.0"
-		}
-		"11"
-		{
-			"var_type"		"FIELD_FLOAT"
 			"range_2"			"600"
-		}
-		"12"
-		{
-			"var_type"		"FIELD_FLOAT"
 			"armor_down_2"	"1.0"
-		}
-		"13"
-		{
-			"var_type"		"FIELD_FLOAT"
 			"armor_dur_2"		"1.0"
-		}
-		"14"
-		{
-			"var_type"		"FIELD_FLOAT"
 			"dps_2"			"65"
-		}
-		"15"
-		{
-			"var_type"		"FIELD_FLOAT"
 			"speed_2"			"1450"
-		}
 		}
 	}
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -11454,38 +9426,14 @@
 					}
     }
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dmg"		"180"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"fire_rate"	"1.5"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"damage"	"3"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"900"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"psn_dur"	"5"
-			}
-			"06"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dps"	"240"
-			}
 		}
 	}
 	//===============================================
@@ -11582,33 +9530,13 @@
 			}	
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"52"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	".4"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"damage"	"6"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"700"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"260"
-			}
 		}
 	}
 	//===============================================
@@ -11712,38 +9640,14 @@
 			}		  
 		}
 		
-    "AbilitySpecial"
+    "AbilityValues"
 		{
-			"01"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dmg"		"200"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"fire_rate"	"2.1"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"1250"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"slow_amt"	"4"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"slow_dur"	"3.5"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"182"
-			}
 		}
 	}
 	
@@ -11819,48 +9723,16 @@
 			}					
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"dmg"				"80"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"fire_rate"			"1.0"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"range"				"1300"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"max_range"			"1600"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"min_range"			"600"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"bonus_dmg"			"32"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"min_range_dmg_pct"	"50"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"dps"				"160"
-			}
 		}
 	}
 	
@@ -11933,33 +9805,13 @@
 			}			
 		}
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"24"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		"0.2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"1000"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"vision_rad"	"600"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"240"
-			}
 		}
 	}
 	
@@ -12053,38 +9905,14 @@
 			}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"252"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	"1.8"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"stun_pct"	"6.67"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"stun_dur"	"1"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"800"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"280"
-			}
 		}
 	}
 	//===============================================
@@ -12176,38 +10004,14 @@
 			}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"390"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		"3.0"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"600"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"armor_down"	"2"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"armor_dur"		"1.5"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"260"
-			}
 		}
 	}
 	
@@ -12282,43 +10086,15 @@
 			}				
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"52"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	".5"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"1050"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounces"		"3"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounce_dmg"	"11"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounce_range"	"600"
-			}
-			"07"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"208"
-			}
 		}
 	}
 	
@@ -12460,43 +10236,15 @@
 			}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"64"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	".8"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"delay"	"2.5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"remove"	"3"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"1200"
-			}
-			"06"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"pure_pct"	"20"
-			}
-			"07"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"230"
-			}
 		}
 	}
 	
@@ -12554,43 +10302,15 @@
 			"DeleteOnHit"                           "false"				
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"125"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		".2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"max_rate"		"1"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"850"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg_bonus"		"20"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bonus_rate"	"50"
-			}
-			"07"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dps"	"250"
-			}
 		}
 	}
 
@@ -12612,83 +10332,23 @@
 		"ItemKillable"          "0"
 		"ItemQuality"         "epic"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-      {
-        "var_type"    "FIELD_FLOAT"
         "dmg"      "138"
-      }
-      "02"
-      {
-        "var_type"    "FIELD_FLOAT"
         "fire_rate"   "1"
-      }
-      "03"
-      {
-        "var_type"    "FIELD_INTEGER"
         "range"       "550"
-      }
-      "04"
-      {
-        "var_type"    "FIELD_INTEGER"
         "level"     "3"
-      }
-      "05"
-      {
-        "var_type"    "FIELD_INTEGER"
         "doubled_wep"     "0"
-      }
-      "06"
-      {
-        "var_type"    "FIELD_INTEGER"
         "speed"       "950"
-      }
-      "07"
-      {
-        "var_type"    "FIELD_FLOAT"
         "dps"         "138.0"
-      }
-			 "08"
-      {
-        "var_type"    "FIELD_FLOAT"
         "aoe"          "200.0"
-      }
-					"09"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg_2"			"390"
-			}
-			"10"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate_2"		"3.0"
-			}
-			"11"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range_2"			"600"
-			}
-			"12"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"armor_down_2"	"2"
-			}
-			"13"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"armor_dur_2"		"1.5"
-			}
-			"14"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps_2"			"130"
-			}
-		"15"
-		{
-			"var_type"		"FIELD_FLOAT"
 			"speed_2"			"1450"
-		}
 		}
 	}
 	
@@ -12807,38 +10467,14 @@
 					}
     }
 		
-    "AbilitySpecial"
+    "AbilityValues"
 		{
-			"01"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"fire_rate"	"1.5"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_INTEGER"
 				"dmg"		"163"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_INTEGER"
 				"damage"	"5"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"900"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"psn_dur"	"5"
-			}
-			"06"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dps"	"467"
-			}
 		}
 	}
 	//===============================================
@@ -12939,43 +10575,15 @@
 			}		
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"	"FIELD_INTEGER"
 				"dmg"		"50"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"duration"	"4.0"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_INTEGER"
 				"radius"	"700"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_INTEGER"
 				"damage"	"20"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"fire_rate"	"0.4"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"500"
-			}
-			"07"
-			{
-				"var_type"	"FIELD_INTEGER"
 				"range"	"700"
-			}
 		}
 	}
 	
@@ -13080,38 +10688,14 @@
 			}		  
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dmg"		"205"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"fire_rate"	"2.1"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"1250"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"slow_amt"	"4"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"slow_dur"	"2"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"390"
-			}
 		}
 	}
 	//===============================================
@@ -13187,48 +10771,16 @@
 					
 			}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"dmg"				"97.5"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"fire_rate"			"1.0"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"range"				"1300"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"max_range"			"1600"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"min_range"			"600"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"bonus_dmg"			"35"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"min_range_dmg_pct"	"50"
-			}
-			"08"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"390"
-			}
 		}
 	}
 
@@ -13307,33 +10859,13 @@
   		}		
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"48"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		"0.2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"1000"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"vision_rad"	"600"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"480"
-			}
 		}
 	}
 	
@@ -13427,38 +10959,14 @@
 			}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dmg"		"242"
-			}
-			"02"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"fire_rate"	"1.8"
-			}
-			"03"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"stun_pct"	"10"
-			}
-			"04"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"stun_dur"	"1"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"800"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"537"
-			}
 
 		}
 	}
@@ -13547,38 +11055,14 @@
 			}
 		}
 
-			"AbilitySpecial"
+			"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"360"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		"3.0"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"600"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"armor_down"	"4"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"armor_dur"		"3"
-			}
-			"07"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"480"
-			}
 		}
 	}
 	
@@ -13649,43 +11133,15 @@
 			"DeleteOnHit"                           "false"
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"55"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		".5"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"1050"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounces"		"4"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounce_dmg"	"11"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bounce_range"	"600"
-			}
-			"07"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"220"
-			}
 		}
 	}
 
@@ -13823,43 +11279,15 @@
 			}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"dmg"	"65"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"fire_rate"	".8"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"delay"	"2.5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"remove"	"3"
-			}
-			"05"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"range"		"1200"
-			}
-			"06"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"pure_pct"	"20"
-			}
-			"07"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dps"			"400"
-			}
 		}
 	}
 	
@@ -13923,43 +11351,15 @@
 			"DeleteOnHit"                           "false"
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg"			"457"
-			}
-			"02"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"fire_rate"		".2"
-			}
-			"03"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"max_rate"		"1"
-			}
-			"04"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"range"			"850"
-			}
-			"05"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"dmg_bonus"		"20"
-			}
-			"06"
-			{
-				"var_type"		"FIELD_FLOAT"
 				"bonus_rate"	"50"
-			}
-			"07"
-			{
-				"var_type"	"FIELD_FLOAT"
 				"dps"	"457"
-			}
 		}
 	}
 
@@ -13980,53 +11380,17 @@
 		"ItemKillable"          "0"
 		"ItemQuality"         "epic"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"    "FIELD_FLOAT"
 				"dmg"      "1500"
-			}
-			"02"
-			{
-				"var_type"    "FIELD_FLOAT"
 				"fire_rate"   "3.5"
-			}
-			"03"
-			{
-				"var_type"    "FIELD_INTEGER"
 				"range"       "550"
-			}
-			"04"
-			{
-				"var_type"    "FIELD_INTEGER"
 				"speed"       "950"
-			}
-			"05"
-			{
-				"var_type"    "FIELD_FLOAT"
 				"dps"         "428"
-			}
-			"06"
-			{
-				"var_type"    "FIELD_FLOAT"
 				"aoe_dmg"          "400.0"
-			}
-			"07"
-			{
-				"var_type"    "FIELD_FLOAT"
 				"aoe_dearmor"          "600.0"
-			}
-			"08"
-			{
-				"var_type"    "FIELD_FLOAT"
 				"aoe_dearmor_amount"          "1.0"
-			}
-			"09"
-			{
-				"var_type"    "FIELD_FLOAT"
 				"dearmor_duration"          "4"
-			}
 		}
 	}
 	
@@ -17019,23 +14383,11 @@
 		"ItemDroppable"					"0"
 		"ItemSellable"					"0"
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
 				"movement_speed"	"-80"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
 				"damage"		"20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"duration"				"3.0"
-			}
 		}
 	}
 	
@@ -17112,23 +14464,11 @@
 				}
     }
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
 				"damage"			"5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"duration"				"6.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"total_damage"			"30"
-			}
 		}
 	}
 
@@ -17189,14 +14529,10 @@
 			}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
 
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"duration"				"3.0"
-			}
 
 		}
 	}	
@@ -17274,13 +14610,9 @@
       "SpendCharge" {}
     }
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"duration"				"3.0"
-			}
 		}
 	}
 	
@@ -17324,14 +14656,10 @@
 			"SpendCharge" {}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
 
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"duration"				"3.0"
-			}
 
 		}
 	}
@@ -17395,13 +14723,9 @@
 				"SpendCharge" {}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"duration"				"3.0"
-			}
 		}
 	}
 
@@ -17446,14 +14770,10 @@
 			"SpendCharge" {}
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
 
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"duration"				"3.0"
-			}
 		}
 	}
 	
@@ -17548,19 +14868,11 @@
 						"SpendCharge" {}		
                 }
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
 
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"duration"				"8.0"
-			}
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"stun_duration"				".5"
-			}
 
 		}
 	}
@@ -17631,13 +14943,9 @@
 			}			
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"duration"				"5.0"
-			}
 		}
 	}
 	//=================================================================================================================
@@ -17700,18 +15008,10 @@
                 }
         }
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"duration"				"4.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"slow"				"-150"
-			}
 		}       
 	}
 	
@@ -17793,13 +15093,9 @@
 						"SpendCharge" {}		
                 }
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"duration"				".0"
-			}
 		}
 	}
 	
@@ -17856,13 +15152,9 @@
 			}			
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"duration"				"3.0"
-			}
 		}
 	}
 	"item_oneshot_sun_screen"
@@ -17918,14 +15210,10 @@
 			}			
 		}
 	
-		"AbilitySpecial"
+		"AbilityValues"
 		{
 
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"duration"				"4.0"
-			}
 
 		}
 	}	
@@ -17999,13 +15287,9 @@
 						"SpendCharge" {}		
                 }
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"duration"				"5.0"
-			}
 		}
 	}
 	
@@ -18070,13 +15354,9 @@
                 }               
         }
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"duration"				"3.0"
-			}
 		}       
 	}
 	
@@ -18140,7 +15420,7 @@
 			}			
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
 		}
 	}
@@ -18212,13 +15492,9 @@
 			}			
 		}
 	
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"duration"				"5.0"
-			}
 		}
 	}
 	
@@ -18303,19 +15579,11 @@
 			}
 			"SpendCharge" {}
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
 				"duration"			"120"
-			}
 		
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
 				"damage"	"1000"
-			}
 		}
 	}
 	
@@ -18380,13 +15648,9 @@
 						"SpendCharge" {}		
                 }
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"duration"				"5.0"
-			}
 		}
 	}
 	
@@ -18460,13 +15724,9 @@
 			
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"duration"				"4.0"
-			}
 		}
   }
 	
@@ -18524,13 +15784,9 @@
 			}			
 		}
 	
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"duration"				"6.0"
-			}
 		}
 	}
 
