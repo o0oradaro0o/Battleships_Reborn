@@ -1350,9 +1350,6 @@
 			"pistol_hp_dmg"			"0.075 0.15 0.225 0.3"
 			"tooltip_range"			"600"
 		}
-			
-			
-		}
 	}
 
 	//=================================================================================================================
@@ -1818,7 +1815,7 @@
 		"AbilityValues"
 		{
 			"health_regen"                          "9.0 18.0 27.0 36.0"
-			fun_bonus_move_speed"	"8 12 16 20"
+			"fun_bonus_move_speed"	"8 12 16 20"
 		}
 
 	}
@@ -1954,7 +1951,7 @@
 					}
 		}
 
-		AbilityValues
+		"AbilityValues"
 		{
 			"duration"		"0.4 0.5 0.6 0.7"
 		}
@@ -1993,7 +1990,7 @@
 
 		
 
-		AbilityValues
+		"AbilityValues"
 		{
 			"duration"		"0.6 0.8 1.0 1.2"
 		}
