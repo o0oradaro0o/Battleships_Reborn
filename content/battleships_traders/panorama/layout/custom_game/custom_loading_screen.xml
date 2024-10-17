@@ -118,6 +118,12 @@
 			<Label class="NewsTitle" text="#News_Title" />
 			<Panel id="NewsHolder">
 				<Label class="NewsContent" text="#News_Content" />
+				<Button id="revertButton"  onactivate="ExternalBrowserGoToURL('https://store.steampowered.com/app/3008280/Revert/');" >
+			
+						<Image id="revertImage" src="file://{images}/custom_game/game_info/revert.png" />
+				</Button>
+				
+				
 			</Panel>
 		</Panel>
 		<Panel id="DiscordHolder">

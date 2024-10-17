@@ -3248,10 +3248,10 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"Trade_Desc"			"Adds a special class of ship with limited inventory slots can take on profitable trading contracts and buy powerful consumable items. These ships drop high bounties if hunted down!"
 		"discord"			"Click to join us on discord!"
 		"News_Title"		"News!"
-		"News_Content"		"6/6/2024
+		"News_Content"		"10/17/2024
 - Update the news feed
-- Put the April fools day gag in as a random button
-- Maybe fixed some crashes
+- We launched our first standalone steam game!
+- Try out the Demo!
 "
 		
 		"port_cannons"                                               "Port Cannons"

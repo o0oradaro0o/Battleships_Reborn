@@ -2249,8 +2249,7 @@
 
 		"BaseClass" 					"sniper_shrapnel"
 
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		
 		// Casting
@@ -2279,13 +2278,48 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"slow_movement_speed"	"-15 -20 -25 -30"
-			"radius"				"450"
-			"shrapnel_damage"		"20 40 60 80"
-			"duration"				"10.0"
-			"damage_delay"			"1.2"
-			"slow_duration"			"2.0 2.0 2.0 2.0"
-			"AbilityCharges"		""
+			"AbilityChargeRestoreTime"    
+			{
+			"value"       "35"
+			"special_bonus_unique_sniper_2" "-30"
+			}
+			"slow_movement_speed" 
+			{
+			"value"   "-15 -20 -25 -30"
+			"special_bonus_facet_sniper_scattershot"  "=-30 =-45 =-60 =-75"
+			"special_bonus_unique_sniper_5" "-10"
+			}
+			"radius"      
+			{
+			"value"   "450"
+			"affected_by_aoe_increase"  "1"
+			}
+			"shrapnel_damage"   
+			{
+			"value"     "20 40 60 80"
+			"special_bonus_facet_sniper_scattershot"  "x4"
+			"special_bonus_unique_sniper_shrapnel_damage"   "+30%"
+
+			}
+			"duration"        
+			{
+			"value"   "10.0"
+			"special_bonus_facet_sniper_scattershot"  "=1"
+			}
+			"damage_delay"      
+			{
+			"value"   "1.2"
+			"special_bonus_facet_sniper_scattershot"  "=0.8"
+			}       
+			"slow_duration"     
+			{
+			"value"   "2"
+			"special_bonus_facet_sniper_scattershot"  "=2"
+			}
+			"AbilityCharges"    
+			{
+			"value" "3"
+			}
 		}
 	}
 	

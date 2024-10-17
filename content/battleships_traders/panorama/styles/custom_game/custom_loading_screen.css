@@ -497,6 +497,30 @@ Label
 	text-align: center;
 	width: 70%;
 }
+#revertButton
+{
+	width: 325px;
+	height: 150px;
+    horizontal-align: center;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #5b0077 ), to( #6b54a4 ) );
+	border-top: 1px solid #2C2F33;
+	border-bottom: 1px solid #2C2F33;
+	border-left: 1px solid #2C2F33;
+	border-right: 1px solid #2C2F33;
+	border-radius: 8px;
+	animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: 5;
+}
+
+#revertButton:hover
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #a01fc8 ), to( #6d42d9 ) );
+	pre-transform-scale2d: 1.2;
+    box-shadow: #000000ff 0px 0px 16px 0px;
+}
+
 #DiscordButton
 {
 	width: 325px;
