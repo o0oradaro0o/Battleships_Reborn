@@ -2520,7 +2520,7 @@
 									 <Label hittest="false" class="boat_name_text" text="#nyx" />
 								</Button>
 								<Button class="boat_btn_item"  onactivate="showDraws(1)" oncontextmenu="showDraws(1)">
-									<Image class="boat_image" src="file://{images}/waifus/empty.png" />
+									<Image class="boat_image" src="file://{images}/waifus/empty_button.png" />
 									 <Label hittest="false" class="boat_name_text" text="#random" />
 								</Button>
 							</Panel>
@@ -2566,7 +2566,7 @@
 									 <Label hittest="false" class="boat_name_text" text="#dragon" />
 								</Button>
 								<Button class="boat_btn_item"  onactivate="showDraws(2)" oncontextmenu="showDraws(2)">
-									<Image class="boat_image" src="file://{images}/waifus/empty.png" />
+									<Image class="boat_image" src="file://{images}/waifus/empty_button.png" />
 									 <Label hittest="false" class="boat_name_text" text="#random" />
 								</Button>
 							</Panel>
@@ -2614,7 +2614,7 @@
 									<Label hittest="false" class="boat_name_text" text="#marci" />
 							   </Button>
 							   <Button class="boat_btn_item"  onactivate="showDraws(3)" oncontextmenu="showDraws(3)">
-									<Image class="boat_image" src="file://{images}/waifus/empty.png" />
+									<Image class="boat_image" src="file://{images}/waifus/empty_button.png" />
 									 <Label hittest="false" class="boat_name_text" text="#random" />
 								</Button>
 						   </Panel>
@@ -2661,7 +2661,7 @@
 									<Label hittest="false" class="boat_name_text" text="#wisp" />
 							   </Button>
 							   <Button class="boat_btn_item"  onactivate="showDraws(4)" oncontextmenu="showDraws(4)">
-									<Image class="boat_image" src="file://{images}/waifus/empty.png" />
+									<Image class="boat_image" src="file://{images}/waifus/empty_button.png" />
 									 <Label hittest="false" class="boat_name_text" text="#random" />
 								</Button>
 						   </Panel>

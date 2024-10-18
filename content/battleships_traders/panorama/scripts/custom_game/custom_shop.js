@@ -44,7 +44,7 @@ var catigoriesUI;
 var shipShopShow = false;
 function hideTrade() {
   $("#missionButton").style.visibility = "collapse";
- $("#traders_tab").style.height = "0px";
+  $("#traders_tab").style.height = "0px";
   tradeHidden = true;
 }
 
@@ -791,7 +791,7 @@ function fixUI() {
     .FindChildTraverse("AbilitiesAndStatBranch")
     .FindChildTraverse("AghsStatusContainer").style.visibility = "collapse";
 
-    newCenterUI
+  newCenterUI
     .FindChildTraverse("AbilitiesAndStatBranch")
     .FindChildTraverse("ContentsContainer").style.visibility = "collapse";
 
@@ -1145,7 +1145,6 @@ function hideUpgradeItems() {
 }
 
 function showShips() {
-  $.Msg("--------------------- shop opening!!!!!!---------------------");
   if (shipShopShow == false) {
     if (!NewShopUI.BHasClass("ShopOpen")) {
       $.DispatchEvent("DOTAHUDToggleShop");
@@ -2792,7 +2791,6 @@ function showDraws(tier) {
 }
 
 function hideDraws() {
-  if (rolling) return;
   $("#DrawWindow").style.visibility = "collapse";
 }
 
@@ -2844,8 +2842,6 @@ function rollSlot(sourcePanel, index, duration) {
         $("#rebateHolder3").style.visibility = "collapse";
       }
 
-      rollSlot;
-
       if (index == 3) rolling = false;
       return;
     }
@@ -2858,7 +2854,6 @@ function rollSlot(sourcePanel, index, duration) {
 
 function closeShipRoll() {
   $("#DrawWindow").style.visibility = "collapse";
-
 }
 
 var rolling = false;
@@ -2867,7 +2862,17 @@ function doRoll() {
   $("#rebateHolder2").style.visibility = "collapse";
   $("#rebateHolder3").style.visibility = "collapse";
 
-  
+  const playerID = Players.GetLocalPlayer();
+  const playerHero = Players.GetPlayerHeroEntityIndex(playerID);
+
+  // If the player is dead, treat them as being in the shop
+  if (!Entities.IsAlive(playerHero)) {
+    GameUI.SendCustomHUDError(
+      "Can't purchase while dead",
+      "General.CastFail_NoMana"
+    );
+    return;
+  }
 
   if (isTooFarFromShop()) {
     GameUI.SendCustomHUDError(
@@ -2895,7 +2900,6 @@ function doRoll() {
   if (rolling) return;
 
   rolling = true;
-  $.Msg("Send doRoll");
   GameEvents.SendCustomGameEventToServer("doRoll", {
     tier,
   });
@@ -2921,11 +2925,18 @@ function UpdateGachaRolls() {
     "player" + Game.GetLocalPlayerID()
   );
 
-  if (!data) return;
+  if (!data) {
+    hideDraws();
+    return;
+  }
 
   const { boat1, boat2, boat3, tier } = data;
 
-  if (!boat1) return;
+  if (!boat1 || !boat2 || !boat3) {
+    hideDraws();
+    return;
+  }
+
   showDraws(tier);
   gachaRoll1 = boat1;
   gachaRoll2 = boat2;
@@ -2967,6 +2978,7 @@ function getRebateForImage(image1) {
   //get the image name contained in the slot
   //if the name contains barrel than the tier is 0
 
+  if (!image1) return "";
 
   var tier = 0;
   var rebate = 0;
@@ -2993,6 +3005,9 @@ function getRebateForImage(image1) {
 }
 
 function SelectGacha(index) {
+  if (rolling) return;
+  if (Game.IsGamePaused()) return;
+
   if (isTooFarFromShop()) {
     GameUI.SendCustomHUDError(
       "Too far from ship shop!",
@@ -3000,7 +3015,7 @@ function SelectGacha(index) {
     );
     return;
   }
-  
+
   const data = CustomNetTables.GetTableValue(
     "gacha_rolls",
     "player" + Game.GetLocalPlayerID()
@@ -3075,15 +3090,15 @@ function overwriteHeroImage() {
 
   $.Schedule(1 / 30, overwriteHeroImage);
 }
-var doSpin=false;
+var doSpin = false;
 var yawStart = 0;
 function playerKilledPlayer() {
-  yawStart = GameUI.GetCameraYaw()
+  yawStart = GameUI.GetCameraYaw();
   $.Msg("Player killed player");
   GameUI.SetCameraDistance(900);
   GameUI.SetCameraPitchMin(40);
   GameUI.SetCameraPitchMax(41);
-  doSpin=true;
+  doSpin = true;
   $.Schedule(0.01, spinCamDeath);
 }
 function stopSpin() {
@@ -3092,23 +3107,18 @@ function stopSpin() {
   GameUI.SetCameraPitchMin(15);
   GameUI.SetCameraPitchMax(70);
   GameUI.SetCameraYaw(yawStart);
-  doSpin=false;
+  doSpin = false;
 }
-
 
 function spinCamDeath() {
   yaw = yaw + 0.5;
   GameUI.SetCameraYaw(yaw);
-  if(doSpin)
-  {
+  if (doSpin) {
     $.Schedule(0.01, spinCamDeath);
-  }
-  else
-  {
+  } else {
     GameUI.SetCameraYaw(yawStart);
   }
 }
-
 
 (function () {
   hideTrade();

@@ -2881,6 +2881,10 @@ function sevenCheck(args)
 
 	local breakDistance = 1500
 
+	if not caster:IsChanneling() then
+		target:RemoveModifierByName("seven_shot")
+	end
+
 	if target and target:IsAlive() then
 		local distance = (caster:GetAbsOrigin() - target:GetAbsOrigin()):Length2D()
 
@@ -2889,8 +2893,6 @@ function sevenCheck(args)
 		end
 	end
 end
-
-
 
 function NetherSwap( keys )
 	local a = RandomInt(1, 2)

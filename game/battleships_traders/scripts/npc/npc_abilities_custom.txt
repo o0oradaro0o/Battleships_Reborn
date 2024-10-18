@@ -3460,7 +3460,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BUILDING"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -3495,33 +3495,29 @@
 				"ModifierName" "building_dearmor"
 			}
 			"RunScript"
-				{
-					"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
-					"Function"			"pillageSound"
-				}
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"pillageSound"
+			}
 		}
+
 		"OnChannelInterrupted"
 		{
-		
 			"RemoveModifier"
 			{
 				"Target" "CASTER"
 				"ModifierName" "Pillage_Guns"
 			}
+
 			"RemoveModifier"
 			{
 				"Target" "TARGET"
 				"ModifierName" "building_dearmor"
 			}
-
 		}
 		
-		
-
 		"Modifiers"
 		{
-			
-			
 			"Pillage_Guns"
 			{
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
@@ -3544,14 +3540,12 @@
 						"ProvidesVision" "0"
 						"EffectName"    "particles/basic_projectile/pistol_projectile.vpcf" 
 					}
-					
-					
-					
 				}
-				
 			}
+
 			"building_dearmor"
 			{
+				"Duration" "4"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
@@ -3570,16 +3564,14 @@
 		
 		"OnProjectileHitUnit"
 		{
-				"DeleteOnHit"                           "false"
-				"Damage"
-				{
-						"Type"                                  "DAMAGE_TYPE_MAGICAL"
-						"Damage"                                "10 20 30 40"
-						"Target"                                "TARGET"
-				}
-				
+			"DeleteOnHit"                           "false"
+			"Damage"
+			{
+				"Type"                                  "DAMAGE_TYPE_MAGICAL"
+				"Damage"                                "10 20 30 40"
+				"Target"                                "TARGET"
+			}
 		}
-
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -3588,9 +3580,6 @@
 			"bonus_armor"			"-3 -6 -9 -12"
 			"damage_per_second"			"-3 -6 -9 -12"
 		}
-		
-		
-
 	}
 	
 	//=================================================================================================================
@@ -10094,8 +10083,6 @@
 				"ProvidesVision" "0"
 				"EffectName"    "particles/basic_projectile/coast_heal_proj.vpcf" 
 			}
-			
-			
 		}
 		
 		
@@ -10108,23 +10095,14 @@
 					"Target"                                "TARGET"
 			}
 		}
-		
-		
-
-		// Cost
-
-		
-
-		// Special
 
 		"AbilityValues"
 		{
 			"damage"		"250 400 550 700"
-
 		}
 	}
 
-		//=================================================================================================================
+	//=================================================================================================================
 	// anti-backdoor
 	//=================================================================================================================
 	"anti_backdoor"
@@ -10559,6 +10537,7 @@
     "AbilityChannelTime"			"3.5"
 		"AbilityManaCost"				"0 0 0 0"
 		"AbilityCooldown"				"999"
+
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -10567,16 +10546,17 @@
 				"ModifierName" "seven_shot"
 			}
 		}
-        "OnChannelInterrupted"
+
+		"OnChannelInterrupted"
 		{
-		
 			"RemoveModifier"
 			{
 				"Target" "TARGET"
 				"ModifierName" "seven_shot"
 			}
 		}
-        "OnChannelFinish"
+
+		"OnChannelFinish"
 		{
 			"RemoveModifier"
 			{
@@ -10593,6 +10573,11 @@
 				"ThinkInterval"		".49"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"sevenCheck"
+					}
 					"TrackingProjectile"
 					{
 						"Target"  "TARGET"
@@ -10606,11 +10591,6 @@
 						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
 						"Function"			"sevenSound"
 					}
-					"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
-						"Function"			"sevenCheck"
-					}
 				}
 			}
 		}
@@ -10620,9 +10600,9 @@
 			"DeleteOnHit"                           "false"
 			"Damage"
 			{
-					"Type"		"DAMAGE_TYPE_PHYSICAL"
-					"Damage"	"%damage"
-					"Target"	"TARGET"
+				"Type"		"DAMAGE_TYPE_PHYSICAL"
+				"Damage"	"%damage"
+				"Target"	"TARGET"
 			}
 			"RunScript"
 			{
@@ -11043,7 +11023,7 @@
 		
 		"AbilityCastRange"				"777"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-        "AbilityChannelTime"			"3.5"
+		"AbilityChannelTime"			"3.5"
 		"AbilityManaCost"				"0 0 0 0"
 		"AbilityCooldown"				"999"
 		"OnSpellStart"
@@ -11054,16 +11034,17 @@
 				"ModifierName" "seven_shot"
 			}
 		}
-        "OnChannelInterrupted"
+
+		"OnChannelInterrupted"
 		{
-		
 			"RemoveModifier"
 			{
 				"Target" "TARGET"
 				"ModifierName" "seven_shot"
 			}
 		}
-        "OnChannelFinish"
+
+		"OnChannelFinish"
 		{
 			"RemoveModifier"
 			{
@@ -11080,6 +11061,11 @@
 				"ThinkInterval"		".49"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"sevenCheck"
+					}
 					"TrackingProjectile"
 					{
 						"Target"  "TARGET"
@@ -11093,11 +11079,6 @@
 						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
 						"Function"			"sevenSound"
 					}
-					"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
-						"Function"			"sevenCheck"
-					}
 				}
 				
 			}
@@ -11109,15 +11090,15 @@
 			"DeleteOnHit"                           "false"
 			"Damage"
 			{
-					"Type"		"DAMAGE_TYPE_PHYSICAL"
-					"Damage"	"%damage"
-					"Target"	"TARGET"
+				"Type"		"DAMAGE_TYPE_PHYSICAL"
+				"Damage"	"%damage"
+				"Target"	"TARGET"
 			}
 			"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
-						"Function"			"sevenSoundhit"
-					}
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"sevenSoundhit"
+			}
 		}
 		
 		// Special
@@ -11126,7 +11107,7 @@
 		{
 			"damage"		"77 112 135 147"
 		}
-    }
+	}
 	
 	"gamble_heart_one"
 	{
@@ -11520,7 +11501,7 @@
 	}
 
 
-    "gamble_seven_one"
+	"gamble_seven_one"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -11534,9 +11515,10 @@
 		
 		"AbilityCastRange"				"777"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-        "AbilityChannelTime"			"3.5"
+		"AbilityChannelTime"			"3.5"
 		"AbilityManaCost"				"0 0 0 0"
 		"AbilityCooldown"				"999"
+
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -11545,16 +11527,17 @@
 				"ModifierName" "seven_shot"
 			}
 		}
-        "OnChannelInterrupted"
+
+		"OnChannelInterrupted"
 		{
-		
 			"RemoveModifier"
 			{
 				"Target" "TARGET"
 				"ModifierName" "seven_shot"
 			}
 		}
-        "OnChannelFinish"
+
+		"OnChannelFinish"
 		{
 			"RemoveModifier"
 			{
@@ -11571,6 +11554,11 @@
 				"ThinkInterval"		".49"
 				"OnIntervalThink"
 				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"sevenCheck"
+					}
 					"TrackingProjectile"
 					{
 						"Target"  "TARGET"
@@ -11584,11 +11572,6 @@
 						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
 						"Function"			"sevenSound"
 					}
-					"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
-						"Function"			"sevenCheck"
-					}
 				}
 			}
 		}
@@ -11598,15 +11581,15 @@
 			"DeleteOnHit"                           "false"
 			"Damage"
 			{
-					"Type"		"DAMAGE_TYPE_PHYSICAL"
-					"Damage"	"%damage"
-					"Target"	"TARGET"
+				"Type"		"DAMAGE_TYPE_PHYSICAL"
+				"Damage"	"%damage"
+				"Target"	"TARGET"
 			}
 			"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
-						"Function"			"sevenSoundhit"
-					}
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"sevenSoundhit"
+			}
 		}
 		
 		"AbilityValues"
