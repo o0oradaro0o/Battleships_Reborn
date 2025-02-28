@@ -2364,6 +2364,10 @@
 
 		"AbilityValues"
 		{
+				"damage"
+				{
+					"value"								"700 1000 1300"
+				}
 				"projectile_speed"			"2500 2500 2500"
 				"scepter_stun_duration"			
 				{
