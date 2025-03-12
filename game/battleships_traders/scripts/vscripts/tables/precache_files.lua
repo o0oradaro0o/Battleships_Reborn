@@ -26,6 +26,7 @@ return {
     "particles/econ/items/wisp/wisp_tether_ti7.vpcf",
     "particles/units/heroes/hero_shredder/shredder_timberchain.vpcf",
     "particles/units/heroes/hero_jakiro/jakiro_icepath_debuff.vpcf",
+    "particles/ui_mouseactions/range_display.vpcf"
   },
 
   abilities = {
