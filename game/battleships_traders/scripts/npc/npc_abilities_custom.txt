@@ -9008,7 +9008,6 @@
 		"BaseClass" 					"ability_datadriven"
 		"AbilityCastPoint"				"0.0 0.0 0.0"
 		"AbilityManaCost"				"0"
-
 		
 		"Modifiers"
 		{
@@ -9098,6 +9097,34 @@
 		}
 	}
 
+	"harpoon_blast"
+	{
+		"BaseClass"				"ability_lua"
+		"ScriptFile"				"heroes/harpoon_blast.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"			"rattletrap_hookshot"
+
+		"precache"
+		{
+
+		}
+
+		"AbilityCastRange"				"900 1000 1100 1200"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"22 20 18 16"
+		"AbilityManaCost"				"0 0 0 0"
+
+		"AbilityValues"
+		{
+			"damage"				"100 200 300 400"
+			"knockback_duration"			"0.5"
+			"knockback_distance"			"300"
+			"speed"				"1200"
+			"spear_width"			"125"
+			"spear_vision"			"300"
+		}
+	}
+
 "harpoon_battleship"
 {
 	"BaseClass"				"ability_datadriven"
@@ -9131,18 +9158,18 @@
 	"OnSpellStart"
 	{
 		"RunScript"
-			{
-				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
-				"Function"			"harpoonFireSound"
-			}
+		{
+			"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+			"Function"			"harpoonFireSound"
+		}
 		"TrackingProjectile"
-			{
-				"Target" "TARGET"
-					
-				"MoveSpeed" "1300"
-				"ProvidesVision" "0"
-				"EffectName"    "particles/basic_projectile/harpoon_attack.vpcf" 
-			}			
+		{
+			"Target" "TARGET"
+				
+			"MoveSpeed" "1300"
+			"ProvidesVision" "0"
+			"EffectName"    "particles/basic_projectile/harpoon_attack.vpcf" 
+		}			
 	}
 
 	"OnProjectileHitUnit"
@@ -9159,34 +9186,25 @@
 			"Function"		"RealityRiftPosition"
 			"reality_rift_particle"	"particles/basic_projectile/harpoon_effect.vpcf"
 		}
-		
 	}
 }
 
 "wale_bait_battleship"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"				"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 	"FightRecapLevel"				"1"
 	"AbilityTextureName"			"bait"
 	
-	// Unit Targeting
-	//-------------------------------------------------------------------------------------------------------------
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
 
-	// Stats
-	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"800 900 1000 1100"
 	"AbilityCastPoint"				"0.35 0.35 0.35 0.35"
 	"AbilityCooldown"				"15 14 13 12"
 	"AbilityManaCost"				"0 0 0 0"
 	
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
 	"AbilityValues"
 	{
 		"range"			"800 900 1000 1100"
@@ -9198,103 +9216,88 @@
 	"OnSpellStart"
 	{
 		"SpawnUnit"
-			{
-				"Target"            "POINT"
-				"UnitName"              "dummy_whale"
-				"UnitCount"             "1"
-				"Duration"				"7"
-			}
+		{
+			"Target"            "POINT"
+			"UnitName"              "dummy_whale"
+			"UnitCount"             "1"
+			"Duration"				"7"
+		}
 	}
 }
 
 	"root_whale"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"TurretIcon"
 		
-		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
-
 
 		"Modifiers"
 		{
-			
 			"whale_effect"
-                {
-					 "Passive" "1"
-                       "OnCreated"
-						{
-						"AttachEffect"
-							{
-								"Target" "CASTER"
-								"EffectName"		 "particles/basic_projectile/whale_model.vpcf" 
-								"EffectAttachType"	"follow_origin"
-							}
-						}
+			{
+				"Passive" "1"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "CASTER"
+						"EffectName"		 "particles/basic_projectile/whale_model.vpcf" 
+						"EffectAttachType"	"follow_origin"
+					}
+				}
 
-						"States"
-						{
-							"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
-							"MODIFIER_STATE_COMMAND_RESTRICTED"	"MODIFIER_STATE_VALUE_ENABLED"
-							"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
-							"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
-							"MODIFIER_STATE_NOT_ON_MINIMAP"	"MODIFIER_STATE_VALUE_ENABLED"
-							"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
-							"MODIFIER_STATE_NO_HEALTH_BAR"		   "MODIFIER_STATE_VALUE_ENABLED"
-						}
-                }
-			 "whale_mess"
-                {
-                        "Passive" "1"
-                        "Aura"                          "messed_whale"
-                        "Aura_Radius"                   "300"
-                        "Aura_Teams"                    "DOTA_UNIT_TARGET_TEAM_FRIENDLY | DOTA_UNIT_TARGET_TEAM_ENEMY"
-                        "Aura_Types"                    "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-                        "Aura_ApplyToCaster"    "1"
-					"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-                }
-         
-                "messed_whale"
-                {
-					"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
-						"ThinkInterval"	".015"	
-						"OnIntervalThink"
-						{
-							"RunScript"
-							{
-								"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
-								"Function"			"WhaleBait"
-							}
-							
-						}
-						"States"
-						{
-							"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
-						}
-                }
+				"States"
+				{
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_COMMAND_RESTRICTED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		   "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"whale_mess"
+			{
+				"Passive" "1"
+				"Aura"                          "messed_whale"
+				"Aura_Radius"                   "300"
+				"Aura_Teams"                    "DOTA_UNIT_TARGET_TEAM_FRIENDLY | DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"                    "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"Aura_ApplyToCaster"    "1"
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+
+			"messed_whale"
+			{
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			"ThinkInterval"	".015"	
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
+					"Function"			"WhaleBait"
+				}
+
+				}
+				"States"
+				{
+					"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
 		}
 	}
 
 	"dump_cargo"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"drop_item"
@@ -9302,13 +9305,9 @@
 		"MaxLevel"						"3"
 		"LevelsBetweenUpgrades"			"3"
 		"RequiredLevel"					"2"
-		// Stats		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"21.0 17.0 13.0"
 		"AbilityCastPoint"				"0 0 0"
 		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"							"0 0 0"
 
 		"OnSpellStart"
@@ -9349,14 +9348,12 @@
 				}
 			}
 		}
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
+
 		"AbilityValues"
 		{
 			"duration"				"0.6 0.7 0.8"
 			"base_speed"			"350.0 400.5 450.0"			
-		}
-	
+		}	
 	}
 
 	"gamble"
@@ -9410,8 +9407,6 @@
 	}
 	"gamble_spin3"
 	{
-		// General
-
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"spin3"
@@ -9421,19 +9416,13 @@
 		"MaxLevel"						"4"
 		"LevelsBetweenUpgrades"					"2"
 		"RequiredLevel"						"2"
-		// Casting
 
 		"AbilityCastPoint"				"0.0"
-		// Cost
 
 		"AbilityManaCost"				"0"
-
-		// Special
-
-		
 	}
 
-	"noah_guardian_angel_datadriven"
+"noah_guardian_angel_datadriven"
 {
 	// General
 	"BaseClass"				"ability_datadriven"
@@ -9538,13 +9527,9 @@
 		}
 	}
 }
-	
-	
-	
+
 	"root_chain"
 	{
-		// General
-
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"TurretIcon"
@@ -9552,18 +9537,10 @@
 		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-
 		"AbilityCooldown"				"0"
-
-		// Cost
-
 		"AbilityManaCost"				"0"
-		
 
 
 		"Modifiers"
@@ -9575,59 +9552,51 @@
 				{
 					"MODIFIER_STATE_ROOTED" "MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
-					
-				} 
+				}
 				"OnCreated"
-					{
+				{
 					"ApplyModifier"
-						{
-							"Target" "CASTER"
-							"ModifierName" "trap_chain"
-						}
-						
+					{
+						"Target" "CASTER"
+						"ModifierName" "trap_chain"
 					}
+				}
 			}
 			
-			 "chain_slow_aura"
-                {		
-						"Passive" "1"
-                        "Aura"                                  "chain_slow"
-                        "Aura_Radius"                   "100"
-                        "Aura_Teams"                    "DOTA_UNIT_TARGET_TEAM_ENEMY"
-                        "Aura_Types"                    "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-						"EffectName"     "particles/basic_projectile/fish_effect.vpcf"
-					"EffectAttachType"	"follow_overhead"
-                }
+			"chain_slow_aura"
+			{		
+				"Passive" "1"
+				"Aura"                                  "chain_slow"
+				"Aura_Radius"                   "100"
+				"Aura_Teams"                    "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"                    "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"EffectName"     "particles/basic_projectile/fish_effect.vpcf"
+				"EffectAttachType"	"follow_overhead"
+			}
                        
-                "chain_slow"
-                {
-					
-                        "Properties"
-                        {
-                               	"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"-200"
-                        }
-						
-							
-                }
+			"chain_slow"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"-200"
+				}
+			}
+
 			"trap_chain"
-			{	
-				
+			{
 				"ThinkInterval"		"0.03"
 				"OnIntervalThink"
 				{
-					
-						"RunScript"
+					"RunScript"
 					{
 						"ScriptFile"			"scripts/vscripts/abilityFunctions.lua"
 						"Function"			"latchOn"
 					}
-					
 				}
-				
 			}
 		}
-		
 	}
+
 	"dummy_passive_fly"
 	{
 		"BaseClass" 		"ability_datadriven"
@@ -9656,7 +9625,7 @@
 	}
 	
 	
-		"dummy_passive_fly"
+	"dummy_passive_fly"
 	{
 		"BaseClass" 		"ability_datadriven"
 		"AbilityBehavior" 	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -9693,20 +9662,19 @@
 			"dummy_modifier"
 			{
 				"Passive"	"1"
-				
-					"States"
-					{
-						"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
-						"MODIFIER_STATE_NO_TEAM_MOVE_TO"	"MODIFIER_STATE_VALUE_ENABLED"
-						"MODIFIER_STATE_NO_TEAM_SELECT"		"MODIFIER_STATE_VALUE_ENABLED"
-						"MODIFIER_STATE_COMMAND_RESTRICTED"	"MODIFIER_STATE_VALUE_ENABLED"
-						"MODIFIER_STATE_ATTACK_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
-						"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
-						"MODIFIER_STATE_FLYING"				"MODIFIER_STATE_VALUE_ENABLED"
-						"MODIFIER_STATE_NOT_ON_MINIMAP"		"MODIFIER_STATE_VALUE_ENABLED"
-						"MODIFIER_STATE_UNSELECTABLE"		"MODIFIER_STATE_VALUE_ENABLED"
-						"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
-					}
+				"States"
+				{
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_TEAM_MOVE_TO"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_TEAM_SELECT"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_COMMAND_RESTRICTED"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FLYING"				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
 			}
 		}
 		"OnProjectileHitUnit"
@@ -9720,9 +9688,9 @@
 			"DeleteOnHit"		"false"
 			"Damage"
 			{
-					"Type"		"DAMAGE_TYPE_PHYSICAL"
-					"Damage"	"%dmg"
-					"Target"	"TARGET"
+				"Type"		"DAMAGE_TYPE_PHYSICAL"
+				"Damage"	"%dmg"
+				"Target"	"TARGET"
 			}
 				
 		}
@@ -9730,7 +9698,6 @@
 		{
 			"fire_rate"		".5"
 			"dmg"			"10"
-
 		}
 	}
 	
@@ -9743,27 +9710,20 @@
 		"AbilityTextureName"			"monkey_buisness"
 		
 		"BaseClass" 					"ability_datadriven"	
-		// Casting
 
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-
-		// Time		
 
 		"AbilityCastRange"				"600 700 800 900"
 		"AbilityCooldown"				"24.0 22.0 20.0 18.0"
 
-		// Cost
-
 		"AbilityManaCost"				"0 0 0 0"
 		"OnSpellStart"
 		{
-			
-	"RunScript"
+			"RunScript"
 			{
 				"ScriptFile"	"scripts/vscripts/itemfunctions.lua"
 				"Function"		"clusterBoom"
 			}
-			
 		}
 
 		"OnProjectileHitUnit"
@@ -9777,43 +9737,30 @@
 			"DeleteOnHit"		"false"
 			"Damage"
 			{
-					"Type"		"DAMAGE_TYPE_PHYSICAL"
-					"Damage"	"%dmg"
-					"Target"	"TARGET"
+				"Type"		"DAMAGE_TYPE_PHYSICAL"
+				"Damage"	"%dmg"
+				"Target"	"TARGET"
 			}
-				
 		}
 		"AbilityValues"
 		{
 			"fire_rate"		".5"
 			"dmg"			"5 7 11 80"
-
 		}
 	}
-	
 	
 	//=================================================================================================================
 	// tighten_hoop
 	//=================================================================================================================
 	"give_all_vision"
 	{
-		// General
-
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"tinker_rearm"
 		
 		
 		"BaseClass" 					"ability_datadriven"
-
-		// Casting
-
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-
-
-
-		// Cost
-
 		"AbilityManaCost"				"0"
 		
 		
@@ -9853,46 +9800,28 @@
 						"ScriptFile"			"scripts/vscripts/abilityfunctions.lua"
 						"Function"			"visionGrant"
 					}
-					
 				}
 			}
-			
 		}
-
-		
-		
-		
-		// Special
 
 		"AbilityValues"
 		{
 			"hoop_bonus_armor"	"1 2 3 4"
-				"health_regen"                          "4.0 6.0 8.0 10.0"
+			"health_regen"                          "4.0 6.0 8.0 10.0"
 		}
-
 	}
-	
 	
 	"battle_effect"
 	{
-		// General
-
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"alchemist_goblins_greed"
 		
 		
 		"BaseClass" 					"ability_datadriven"
-
-		// Casting
-
 		"AbilityCastRange"				"1000"
 
-		// Time		
-
 		"AbilityCooldown"				"0"
-
-		// Cost
 
 		"AbilityManaCost"				"0"
 		
@@ -9910,76 +9839,55 @@
 			}
 		}
 		
-		 "Modifiers"
-        {
-                "aura_fight_effect"
-                {
-                        "IsHidden"                              "1"
-                        "Passive"                               "1"
-                       
-                        "Aura"                                  "fight_effect"
-                        "Aura_Radius"                   "1000"
-                        "Aura_Teams"                    "DOTA_UNIT_TARGET_TEAM_ENEMY"
-                        "Aura_Types"                    "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-                        "Aura_ApplyToCaster"    "1"
-                }
-                       
-                "fight_effect"
-                {
-                        "ThinkInterval"		"1"
-						"OnIntervalThink"
-						{
-							
-							
-							"AttachEffect"
-								{
-									"Target"				"TARGET"
-									"EffectName" 			"particles/basic_projectile/battle_gold.vpcf"
-									"EffectAttachType" 		"follow_overhead"
-								}
-							
-						}
-                }
-               
-        }
-       
-  
-	
-		
+		"Modifiers"
+		{
+			"aura_fight_effect"
+			{
+				"IsHidden"                              "1"
+				"Passive"                               "1"
 
+				"Aura"                                  "fight_effect"
+				"Aura_Radius"                   "1000"
+				"Aura_Teams"                    "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"                    "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"Aura_ApplyToCaster"    "1"
+			}
+
+			"fight_effect"
+			{
+				"ThinkInterval"		"1"
+				"OnIntervalThink"
+				{
+					"AttachEffect"
+					{
+						"Target"				"TARGET"
+						"EffectName" 			"particles/basic_projectile/battle_gold.vpcf"
+						"EffectAttachType" 		"follow_overhead"
+					}
+				}
+			}
+		}
 	}
 	
-		"battle_effect"
+	"battle_effect"
 	{
-		// General
-
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"alchemist_goblins_greed"
 		
-		
 		"BaseClass" 					"ability_datadriven"
-
-		// Casting
 
 		"AbilityCastRange"				"1000"
 
-		// Time		
-
 		"AbilityCooldown"				"0"
 
-		// Cost
-
 		"AbilityManaCost"				"0"
-		
-		
-		 "Modifiers"
-        {
-                       
-            "battle_show_effect"
-            {
+		"Modifiers"
+		{
+			"battle_show_effect"
+			{
 				"Passive"                               "1"
-                "ThinkInterval"		".5"
+				"ThinkInterval"		".5"
 				"OnIntervalThink"
 				{
 					"RunScript"
@@ -9988,8 +9896,8 @@
 						"Function"			"startDisco"
 					}
 				}
-            }               
-        }
+			}
+		}
 	}
 	
 	"bships_talent1"
@@ -10014,62 +9922,42 @@
 	
 	"no_fire_zone"
 	{
-		// General
-
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-			"AbilityTextureName"				"nofire"
-			"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"				"nofire"
+		"BaseClass" 					"ability_datadriven"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-				"MaxLevel"						"3"
+		"MaxLevel"						"3"
 		"LevelsBetweenUpgrades"					"3"
 		"RequiredLevel"						"2"
-		// Casting
 
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 
-		// Time		
-
 		"AbilityCooldown"				"30 17 14 11"
 		"AOERadius"						"%radius"
-		// Damage.
-
-		// Cost
 
 		"AbilityManaCost"				"0"
-
-		// Stats
-
 		
 		 "OnSpellStart"
 		{
-			
 			"RunScript"
 			{
 				"ScriptFile"		"scripts/vscripts/abilityFunctions.lua"
 				"Function"			"CreateNoFireZone"
 				"Target"		"POINT"
 			}
-			
 		}
-       	"AbilityValues"
+		"AbilityValues"
 		{
 			"radius"					"350 350 350"
 			"duration"					"3 4 5"
 		}
-	
-		
-
 	}
-
-	
 	
 	//=================================================================================================================
 	"coast_heal_battleship"
 	{
-		// General
-
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -10077,13 +9965,9 @@
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"				"rescue"
 		
-		
-		// Casting
-
 		"AbilityCastRange"				"700 800 900 1000"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 		"AbilityManaCost"				"0 0 0 0"
-		// Time		
 
 		"AbilityCooldown"				"14.0 13.0 12.0 11.0"
 		"OnSpellStart"
@@ -10102,10 +9986,10 @@
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"                           "false"
-				"Heal"
+			"Heal"
 			{
-					"HealAmount"                                "%damage"
-					"Target"                                "TARGET"
+				"HealAmount"                                "%damage"
+				"Target"                                "TARGET"
 			}
 		}
 
@@ -10126,18 +10010,11 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"keeper_of_the_light_chakra_magic"
 		
-		
 		"BaseClass" 					"ability_datadriven"
-
-		// Casting
 
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		// Time		
-
 		"AbilityCooldown"				"0"
-
-		// Cost
 
 		"AbilityManaCost"				"0"
 		"Modifiers"
@@ -10149,24 +10026,18 @@
 				"ThinkInterval"		"0.5"
 				"OnIntervalThink"
 				{
-					    "RunScript"
+					"RunScript"
 					{
 						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
 						"Function"			"AntiBackdoor"
 					}
 				}
-				
 			}
-			
-
 		}
-
 	}
 	
 	"gamble_heart_three"
 	{
-		// General
-
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"heart"
@@ -10179,8 +10050,6 @@
 		// Casting
 
 		"AbilityCastPoint"				"0.0 0.0 0.0"
-		// Cost
-
 		"AbilityManaCost"				"0"
 		"OnUpgrade"
 		{
@@ -10208,27 +10077,22 @@
 		{
 			"gamble_heart_hatches_three"
 			{
-			
 				"Properties"
 				{
-					 "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen"
-
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen"
 				}
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
-			
 		}
 		// Special
 
 		"AbilityValues"
 		{
-				"health_regen"                          "14.0 18.0 22.0 26.0"
+			"health_regen"                          "14.0 18.0 22.0 26.0"
 		}
 	}
-    "gamble_bar_three"
+	"gamble_bar_three"
 	{
-		// General
-
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"bar"
@@ -10238,7 +10102,6 @@
 		"MaxLevel"						"4"
 		"LevelsBetweenUpgrades"					"2"
 		"RequiredLevel"						"2"
-		// Casting
 
 		"AbilityCastPoint"				"0.0 0.0 0.0"
 		
@@ -10269,11 +10132,9 @@
 		{
 			"gamble_bar_hp_three"
 			{
-			
 				"Properties"
 				{
-					 "MODIFIER_PROPERTY_HEALTH_BONUS"             "%health_bonus"
-
+					"MODIFIER_PROPERTY_HEALTH_BONUS"             "%health_bonus"
 				}
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
@@ -10281,13 +10142,12 @@
 	
 		"AbilityValues"
 		{
-				"health_bonus"                          "400 600 800 1000"
+			"health_bonus"                          "400 600 800 1000"
 		}
 	}
 
   "gamble_diamond_three"
 	{
-		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityTextureName"				"diamond"
@@ -10327,11 +10187,9 @@
 		{
 			"gamble_diamond_armor_three"
 			{
-			
 				"Properties"
 				{
-					 "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"             "%armor_bonus"
-
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"             "%armor_bonus"
 				}
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
@@ -10339,11 +10197,11 @@
 		
 		"AbilityValues"
 		{
-				"armor_bonus"                          "2 3 4 5"
+			"armor_bonus"                          "2 3 4 5"
 		}
 	}
 
-    "gamble_horseshoe_three"
+	"gamble_horseshoe_three"
 	{
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -10385,11 +10243,9 @@
 		{
 			"gamble_shoe_speed_three"
 			{
-			
 				"Properties"
 				{
-					 "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"             "%move_bonus"
-
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"             "%move_bonus"
 				}
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
@@ -10397,7 +10253,7 @@
 	
 		"AbilityValues"
 		{
-				"move_bonus"                          "35 50 65 80"
+			"move_bonus"                          "35 50 65 80"
 		}
 	}
 
@@ -10468,21 +10324,16 @@
 		"AbilityValues"
 		{
 			"duration"		"3 3.75 4.5 5.25"
-
 		}
 	}
 
   "gamble_cherry_three"
 	{
-		// General
-
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"				"cherries"
-	
-		// Casting
 
 		"AbilityCastRange"				"950 1050 1150 1250"
 		"AbilityCastPoint"				"0.1"
@@ -10503,10 +10354,10 @@
 				"Target"		"POINT"
 			}
 			"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
-						"Function"			"cherryLaunchSound"
-					}
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"cherryLaunchSound"
+			}
 		}
 		
 		"OnProjectileHitUnit"
@@ -10516,20 +10367,18 @@
 			{
 				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"CherryExplode"
-				
 			}
 			"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
-						"Function"			"cherryExplodeSound"
-					}
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"cherryExplodeSound"
+			}
 		}		
 
 		"AbilityValues"
 		{
 			"radius"					"275 275 275 275"
 			"dmg"					"200 300 400 500"
-			
 		}
 	}
 
@@ -10543,7 +10392,6 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"				"seven"
-		
 		
 		"AbilityCastRange"				"777"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
@@ -10675,24 +10523,20 @@
 		{
 			"gamble_heart_hatches_two"
 			{
-			
 				"Properties"
 				{
-					 "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen"
-
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen"
 				}
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
-			
 		}
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"health_regen"                          "14.0 18.0 22.0 26.0"
+			"health_regen"                          "14.0 18.0 22.0 26.0"
 		}
 	}
-    "gamble_bar_two"
+
+	"gamble_bar_two"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -10748,10 +10592,11 @@
 	
 		"AbilityValues"
 		{
-				"health_bonus"                          "400 600 800 1000"
+			"health_bonus"                          "400 600 800 1000"
 		}
 	}
-     "gamble_diamond_two"
+
+	"gamble_diamond_two"
 	{
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -10793,11 +10638,9 @@
 		{
 			"gamble_diamond_armor_two"
 			{
-			
 				"Properties"
 				{
-					 "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"             "%armor_bonus"
-
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"             "%armor_bonus"
 				}
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
@@ -10805,11 +10648,11 @@
 		
 		"AbilityValues"
 		{
-				"armor_bonus"                          "2 3 4 5"
+			"armor_bonus"                          "2 3 4 5"
 		}
 	}
 
-    "gamble_horseshoe_two"
+	"gamble_horseshoe_two"
 	{
 		
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -10851,11 +10694,9 @@
 		{
 			"gamble_shoe_speed_two"
 			{
-			
 				"Properties"
 				{
-					 "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"             "%move_bonus"
-
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"             "%move_bonus"
 				}
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
@@ -10863,21 +10704,18 @@
 	
 		"AbilityValues"
 		{
-				"move_bonus"                          "35 50 65 80"
+			"move_bonus"                          "35 50 65 80"
 		}
 	}
 
 	"gamble_bell_two"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"				"bells"
-		
 		
 		"AbilityCastRange"				"700 800 900 1000"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
@@ -10898,8 +10736,6 @@
 				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
 				"Function"			"bellLaunchSound"
 			}
-			
-			
 		}
 			
 		"Modifiers"
@@ -10917,7 +10753,6 @@
 			}
 		}
 		
-		
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"                           "false"
@@ -10932,24 +10767,14 @@
 				"Function"			"bellHitSound"
 			}
 		}
-		
-		
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 			"duration"		"3 3.75 4.5 5.25"
-
 		}
 	}
 
-
-    "gamble_cherry_two"
+	"gamble_cherry_two"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -10961,7 +10786,7 @@
 	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"950 1050 1150 1250"
+		"AbilityCastRange"				"950 1050 1150 1250"
 		"AbilityCastPoint"				"0.1"
 		
 		// Time		
@@ -10980,14 +10805,11 @@
 				"Target"		"POINT"
 			}
 			"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
-						"Function"			"cherryLaunchSound"
-					}
-			
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"cherryLaunchSound"
+			}
 		}
-			
-		
 		
 		"OnProjectileHitUnit"
 		{
@@ -10996,24 +10818,15 @@
 			{
 				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"CherryExplode"
-				
 			}
 			"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
-						"Function"			"cherryExplodeSound"
-					}
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"cherryExplodeSound"
+			}
 		}
 		
-		
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityValues"
+		"AbilityValues"
 		{
 			"radius"					"275 275 275 275"
 			"dmg"					"200 300 400 500"
@@ -11022,7 +10835,7 @@
 	}
 
 
-    "gamble_seven_two"
+	"gamble_seven_two"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -11114,8 +10927,6 @@
 			}
 		}
 		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 			"damage"		"77 112 135 147"
@@ -11167,24 +10978,20 @@
 		{
 			"gamble_heart_hatches_one"
 			{
-			
 				"Properties"
 				{
-					 "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen"
-
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"             "%health_regen"
 				}
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
-			
 		}
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 				"health_regen"                          "14.0 18.0 22.0 26.0"
 		}
 	}
-    "gamble_bar_one"
+
+	"gamble_bar_one"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -11228,11 +11035,9 @@
 		{
 			"gamble_bar_hp_one"
 			{
-			
 				"Properties"
 				{
-					 "MODIFIER_PROPERTY_HEALTH_BONUS"             "%health_bonus"
-
+					"MODIFIER_PROPERTY_HEALTH_BONUS"             "%health_bonus"
 				}
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
@@ -11240,7 +11045,7 @@
 	
 		"AbilityValues"
 		{
-				"health_bonus"                          "400 600 800 1000"
+			"health_bonus"                          "400 600 800 1000"
 		}
 	}
      "gamble_diamond_one"
@@ -11288,8 +11093,7 @@
 			
 				"Properties"
 				{
-					 "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"             "%armor_bonus"
-
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"             "%armor_bonus"
 				}
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
@@ -11297,7 +11101,7 @@
 		
 		"AbilityValues"
 		{
-				"armor_bonus"                          "2 3 4 5"
+			"armor_bonus"                          "2 3 4 5"
 		}
 	}
 
@@ -11343,11 +11147,9 @@
 		{
 			"gamble_shoe_speed_one"
 			{
-			
 				"Properties"
 				{
-					 "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"             "%move_bonus"
-
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"             "%move_bonus"
 				}
 				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
@@ -11355,7 +11157,7 @@
 	
 		"AbilityValues"
 		{
-				"move_bonus"                          "35 50 65 80"
+			"move_bonus"                          "35 50 65 80"
 		}
 	}
 
@@ -11369,7 +11171,6 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"				"bells"
-		
 		
 		"AbilityCastRange"				"700 800 900 1000"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
@@ -11390,8 +11191,6 @@
 				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
 				"Function"			"bellLaunchSound"
 			}
-			
-			
 		}
 			
 		"Modifiers"
@@ -11409,7 +11208,6 @@
 			}
 		}
 		
-		
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"                           "false"
@@ -11424,24 +11222,15 @@
 				"Function"			"bellHitSound"
 			}
 		}
-		
-		
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
 			"duration"		"3 3.75 4.5 5.25"
-
 		}
 	}
 
 
-    "gamble_cherry_one"
+	"gamble_cherry_one"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -11451,17 +11240,11 @@
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"				"cherries"
 	
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"950 1050 1150 1250"
+		"AbilityCastRange"				"950 1050 1150 1250"
 		"AbilityCastPoint"				"0.1"
 		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"999"
 		"AOERadius" 	"%radius"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
 		"OnSpellStart"
 		{
@@ -11472,13 +11255,11 @@
 				"Target"		"POINT"
 			}
 			"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
-						"Function"			"cherryLaunchSound"
-					}
-			
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"cherryLaunchSound"
+			}
 		}
-			
 		
 		
 		"OnProjectileHitUnit"
@@ -11488,28 +11269,18 @@
 			{
 				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
 				"Function"			"CherryExplode"
-				
 			}
 			"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
-						"Function"			"cherryExplodeSound"
-					}
+			{
+				"ScriptFile"		"scripts/vscripts/ability_sound_functions.lua"
+				"Function"			"cherryExplodeSound"
+			}
 		}
 		
-		
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-			"AbilityValues"
+		"AbilityValues"
 		{
 			"radius"					"275 275 275 275"
 			"dmg"					"200 300 400 500"
-			
 		}
 	}
 
@@ -11731,6 +11502,7 @@
 			"range"				"1600"
 		}
 	}
+
 	"bow_cannon"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -11783,6 +11555,7 @@
 			"range"				"1600"
 		}
 	}
+
 	"starboard_cannon"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -11925,13 +11698,14 @@
 			}
 		}
 		
-        "AbilityValues"
-        {
-							"duration"                          "3 4 5"
-							"fire_interval"                     "1"
-						"range"				"1600"
-        }
+		"AbilityValues"
+		{
+			"duration"                          "3 4 5"
+			"fire_interval"                     "1"
+			"range"				"1600"
+		}
 	}
+
 	"ironclad_weapon_fire"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -11952,18 +11726,19 @@
 		}
 
 		"Modifiers"
-        {
-            "cannon_fire_buff"
-            {
-                "Passive"                               "1"					
-            }
-        }
-		
-        "AbilityValues"
-        {
-							"dmg_buff"                          "50 75 100 125"
-        }
+		{
+			"cannon_fire_buff"
+			{
+				"Passive"                               "1"					
+			}
+		}
+
+		"AbilityValues"
+		{
+			"dmg_buff"                          "50 75 100 125"
+		}
 	}
+
 	"ironclad_weapon_ice"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -11984,26 +11759,26 @@
 		}
 
 		"Modifiers"
-        {
-            "cannon_ice_buff"
-            {
-                "Passive"          "1"					
-            }
-            "cannon_ice_slow"
-            {
-            	"Duration"	"%duration"
+		{
+			"cannon_ice_buff"
+			{
+					"Passive"          "1"					
+			}
+			"cannon_ice_slow"
+			{
+				"Duration"	"%duration"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_pct"
 				}
-            }
-        }
-		
-        "AbilityValues"
-        {
-							"slow_pct"                          "-10 -15 -20 -25"
-							"duration"                          "3"
-        }
+			}
+		}
+
+		"AbilityValues"
+		{
+			"slow_pct"                          "-10 -15 -20 -25"
+			"duration"                          "3"
+		}
 	}
 	"ironclad_weapon_splash"
 	{
@@ -12025,18 +11800,18 @@
 		}
 
 		"Modifiers"
-        {
-            "cannon_splash_buff"
-            {
-                "Passive"                               "1"					
-            }
-        }
-		
-        "AbilityValues"
-        {
-							"splash_pct"                 "30 40 50 60"
-							"aoe"                 		 "200"
-        }
+		{
+			"cannon_splash_buff"
+			{
+				"Passive"                               "1"					
+			}
+		}
+
+		"AbilityValues"
+		{
+			"splash_pct"                 "30 40 50 60"
+			"aoe"                 		 "200"
+		}
 	}
 	
   "ball_lightning_lua"
@@ -12096,18 +11871,18 @@
 
   "speed_boat_wave"
   {
-    "BaseClass"           "ability_lua"
-    "ScriptFile"          "heroes/speed_boat_wave.lua"
-    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING" 
-	"AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
-    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
-    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-	"SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
-    "AbilityTextureName"      "morphling_waveform"
-    "AbilityManaCost"               "0"
-	"AbilityCooldown"				"25.0 23.0 21.0 19.0"
-    "AbilityCastPoint"        "0"
-	"AbilityCastRange"				"1300"
+		"BaseClass"           "ability_lua"
+		"ScriptFile"          "heroes/speed_boat_wave.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING" 
+		"AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
+		"AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"      "morphling_waveform"
+		"AbilityManaCost"               "0"
+		"AbilityCooldown"				"25.0 23.0 21.0 19.0"
+		"AbilityCastPoint"        "0"
+		"AbilityCastRange"				"1300"
     "precache"
     {
       "particle"          "particles/units/heroes/hero_morphling/morphling_waveform.vpcf"
@@ -12487,7 +12262,7 @@
 				}
 			}
 		}
-			"modifier_metamorphosis_range"
+		"modifier_metamorphosis_range"
 		{
 			"IsHidden"          "1"    
 			"Duration"	"%duration"
@@ -12496,14 +12271,13 @@
 				"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"			"%bonus_range"
 				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" 	"-550"
 			}
-			
 		}
 	}
 }
 
 //=================================================================================================================
-	// mayday
-	//=================================================================================================================
+// mayday
+//=================================================================================================================
 	"science_ship_link"
 	{
 		// General
@@ -12518,17 +12292,9 @@
 		
 		"BaseClass" 					"ability_datadriven"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		
-
 		
 		"Modifiers"
 		{
@@ -12548,11 +12314,11 @@
 					}
 					"OnDeath"
 				{
-					"RunScript"
-						{
-							"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
-							"Function"			"RespawnLinkedTower"
-						}
+				"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+						"Function"			"RespawnLinkedTower"
+					}
 				}
 			}
 			"docked"
@@ -12574,13 +12340,10 @@
 					"MODIFIER_STATE_BLIND"                  "MODIFIER_STATE_VALUE_ENABLED"
 					}
 			}
-			
 		}
-		
 	}
 
-
-		//=================================================================================================================
+	//=================================================================================================================
 	// turret
 	//=================================================================================================================
 	"deploy_science_tower"
@@ -12610,11 +12373,11 @@
 		"OnSpellStart"
 		{
 			"RunScript"
-						{
-							"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
-							"Function"			"dropTower"
-							"Target"		"POINT"
-						}
+			{
+				"ScriptFile"		"scripts/vscripts/abilityfunctions.lua"
+				"Function"			"dropTower"
+				"Target"		"POINT"
+			}
 		}
 		"AbilityValues"
 		{
@@ -12711,13 +12474,13 @@
 	"OnSpellStart"
 	{
 		"TrackingProjectile"
-			{
-				"Target" "TARGET"
-					
-				"MoveSpeed" "1300"
-				"ProvidesVision" "0"
-				"EffectName"    "particles/basic_projectile/deadline_projectile.vpcf" 
-			}			
+		{
+			"Target" "TARGET"
+				
+			"MoveSpeed" "1300"
+			"ProvidesVision" "0"
+			"EffectName"    "particles/basic_projectile/deadline_projectile.vpcf" 
+		}
 	}
 
 	"OnProjectileHitUnit"
@@ -12763,11 +12526,11 @@
 
 			"OnSpellStart"
 			{
-					"ApplyModifier"
-					{
-						"Target" "TARGET"
-						"ModifierName" "modifier_peace"
-					}
+				"ApplyModifier"
+				{
+					"Target" "TARGET"
+					"ModifierName" "modifier_peace"
+				}
 			}
 
 			"Modifiers"

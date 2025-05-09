@@ -1686,45 +1686,45 @@ function CBattleship8D:OnThink()
             if g_MainTimerTickCount % 2 == 0 then
                 if g_MainTimerTickCount % 4 == 0 and g_SpyAnnouncmentFlag == 1 then
                     g_SpyAnnouncmentFlag = 0
-                    Notifications:TopToAll({
-                        text = "#buy_spy_header",
-                        duration = 4.0,
-                        style = {color = "#58ACFA", fontSize = "30px;"}
-                    })
-                    Notifications:TopToAll({
-                        text = "#spys_south_start",
-                        duration = 4.0,
-                        style = {color = "#CC33FF", fontSize = "30px;"}
-                    })
-                    Notifications:TopToAll({
-                        text = tostring(g_SpyCountSouth) .. " ",
-                        duration = 4.0,
-                        style = {color = "#CC3300", fontSize = "30px;"},
-                        continue = true
-                    })
-                    Notifications:TopToAll({
-                        text = "#spys_end",
-                        duration = 4.0,
-                        style = {color = "#CC33FF", fontSize = "30px;"},
-                        continue = true
-                    })
-                    Notifications:TopToAll({
-                        text = "#spys_north_start",
-                        duration = 4.0,
-                        style = {color = "#CC33FF", fontSize = "30px;"}
-                    })
-                    Notifications:TopToAll({
-                        text = tostring(g_SpyCountNorth) .. " ",
-                        duration = 4.0,
-                        style = {color = "#CC3300", fontSize = "30px;"},
-                        continue = true
-                    })
-                    Notifications:TopToAll({
-                        text = "#spys_end",
-                        duration = 4.0,
-                        style = {color = "#CC33FF", fontSize = "30px;"},
-                        continue = true
-                    })
+                    -- Notifications:TopToAll({
+                    --     text = "#buy_spy_header",
+                    --     duration = 4.0,
+                    --     style = {color = "#58ACFA", fontSize = "30px;"}
+                    -- })
+                    -- Notifications:TopToAll({
+                    --     text = "#spys_south_start",
+                    --     duration = 4.0,
+                    --     style = {color = "#CC33FF", fontSize = "30px;"}
+                    -- })
+                    -- Notifications:TopToAll({
+                    --     text = tostring(g_SpyCountSouth) .. " ",
+                    --     duration = 4.0,
+                    --     style = {color = "#CC3300", fontSize = "30px;"},
+                    --     continue = true
+                    -- })
+                    -- Notifications:TopToAll({
+                    --     text = "#spys_end",
+                    --     duration = 4.0,
+                    --     style = {color = "#CC33FF", fontSize = "30px;"},
+                    --     continue = true
+                    -- })
+                    -- Notifications:TopToAll({
+                    --     text = "#spys_north_start",
+                    --     duration = 4.0,
+                    --     style = {color = "#CC33FF", fontSize = "30px;"}
+                    -- })
+                    -- Notifications:TopToAll({
+                    --     text = tostring(g_SpyCountNorth) .. " ",
+                    --     duration = 4.0,
+                    --     style = {color = "#CC3300", fontSize = "30px;"},
+                    --     continue = true
+                    -- })
+                    -- Notifications:TopToAll({
+                    --     text = "#spys_end",
+                    --     duration = 4.0,
+                    --     style = {color = "#CC33FF", fontSize = "30px;"},
+                    --     continue = true
+                    -- })
 
                 end
                 local goodDisconnected = 0
@@ -4925,18 +4925,18 @@ function CBattleship8D:OnEntityKilled(keys)
                             Notifications:BottomToAll({
                                 text = "#streak_end_one_s",
                                 duration = 5.0,
-                                style = {color = "#A70606", fontSize = "30px;"}
+                                style = {color = "#A70606", fontSize = "18px;"}
                             })
                             Notifications:BottomToAll({
                                 text = tostring(killerEntity:GetStreak() * 100) .. " ",
                                 duration = 5.0,
-                                style = {color = "#FFD700", fontSize = "30px;"},
+                                style = {color = "#FFD700", fontSize = "18px;"},
                                 continue = true
                             })
                             Notifications:BottomToAll({
                                 text = "#streak_end_two_s",
                                 duration = 5.0,
-                                style = {color = "#A70606", fontSize = "30px;"},
+                                style = {color = "#A70606", fontSize = "18px;"},
                                 continue = true
                             })
 
@@ -4945,18 +4945,18 @@ function CBattleship8D:OnEntityKilled(keys)
                             Notifications:BottomToAll({
                                 text = "#streak_end_one_n",
                                 duration = 5.0,
-                                style = {color = "#A70606", fontSize = "30px;"}
+                                style = {color = "#A70606", fontSize = "18px;"}
                             })
                             Notifications:BottomToAll({
                                 text = tostring(killerEntity:GetStreak() * 100) .. " ",
                                 duration = 5.0,
-                                style = {color = "#FFD700", fontSize = "30px;"},
+                                style = {color = "#FFD700", fontSize = "18px;"},
                                 continue = true
                             })
                             Notifications:BottomToAll({
                                 text = "#streak_end_two_n",
                                 duration = 5.0,
-                                style = {color = "#A70606", fontSize = "30px;"},
+                                style = {color = "#A70606", fontSize = "18px;"},
                                 continue = true
                             })
 

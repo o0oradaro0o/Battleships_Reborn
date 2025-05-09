@@ -1,8 +1,3 @@
-const localHeroIndex = Players.GetPlayerHeroEntityIndex(
-  Players.GetLocalPlayer()
-);
-const localHero = Players.GetLocalPlayerPortraitUnit();
-
 const particles = {};
 
 // check if the alt key is pressed
@@ -19,6 +14,11 @@ function checkAltPressed() {
     $.Schedule(1 / 30, checkAltPressed);
     return;
   }
+
+  const localHeroIndex = Players.GetPlayerHeroEntityIndex(
+    Players.GetLocalPlayer()
+  );
+  const localHero = Players.GetLocalPlayerPortraitUnit();
 
   // get the cast range of all items
   for (let i = 0; i < 10; i++) {
