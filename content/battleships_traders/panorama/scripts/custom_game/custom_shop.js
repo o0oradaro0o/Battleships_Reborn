@@ -783,6 +783,8 @@ function fixUI() {
   $.Msg("movecalled");
   //------------------------------hero panel stuff--------------------------------
 
+  newCenterUI.FindChildTraverse("level_stats_frame").style.visibility =
+    "collapse";
   //try the neat way to remove the tree itself
   newCenterUI.FindChildTraverse("stats_container").style.visibility = "visible";
   //that bar that grows from level 1 to 25 is annoying
