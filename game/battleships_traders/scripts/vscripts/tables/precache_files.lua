@@ -7,6 +7,7 @@ return {
     "particles/units/heroes/hero_antimage/antimage_blink_end.vpcf",
     "particles/units/heroes/hero_sniper/sniper_shrapnel.vpcf",
     "particles/units/heroes/hero_sniper/sniper_shrapnel_launch.vpcf",
+    "particles/units/heroes/hero_sniper/sniper_assassinate.vpcf",
     "particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_explosion.vpcf",
     "particles/events/crownfall/survivors/abilities/kunkka/kunkka_torrent_splash.vpcf",
     "particles/units/heroes/hero_shadowshaman/shadowshaman_shackle.vpcf",
@@ -40,6 +41,7 @@ return {
     "ball_lightning_lua",
 
     "sniper_shrapnel",
+    "sniper_assassinate",
     "crystal_maiden_freezing_field",
     "kunkka_torrent",
     "shadow_shaman_shackles",
