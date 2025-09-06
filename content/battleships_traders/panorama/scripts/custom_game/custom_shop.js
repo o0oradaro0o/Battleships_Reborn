@@ -532,15 +532,15 @@ function fixUI() {
   NewShopUI.FindChildTraverse("Main")
     .FindChildTraverse("HeightLimiter")
     .FindChildTraverse("GridMainShop")
-    .FindChildTraverse("GridShopHeaders")
-    .FindChildTraverse("SearchAndButtonsContainer")
-    .FindChildTraverse("ToggleMinimalShop").style.visibility = "collapse";
+    .FindChildTraverse("GridMainContent")
+    .FindChildTraverse("MainShopContentsVersionContainer")
+    .FindChildTraverse("FilterContainer")
+    .style.visibility = "collapse";
   NewShopUI.FindChildTraverse("Main")
     .FindChildTraverse("HeightLimiter")
     .FindChildTraverse("GridMainShop")
     .FindChildTraverse("GridShopHeaders")
-    .FindChildTraverse("GridMainTabs")
-    .FindChildTraverse("GridNeutralsTab").style.visibility = "collapse";
+    .FindChildTraverse("GridMainTabs").GetChild(3).style.visibility = "collapse";
   NewShopUI.FindChildTraverse("Main").FindChildTraverse(
     "CommonItems"
   ).style.visibility = "collapse";
@@ -683,40 +683,38 @@ function fixUI() {
     });
   NewShopUI.FindChildTraverse("Main")
     .FindChildTraverse("ItemCombinesAndBasicItemsContainer")
-    .FindChildTraverse("NewPlayerShopConsumables").style.visibility =
+    .FindChildTraverse("ItemListContainer")
+    .FindChildTraverse("TeamItems").style.visibility =
     "collapse";
   NewShopUI.FindChildTraverse("Main")
     .FindChildTraverse("ItemCombinesAndBasicItemsContainer")
     .FindChildTraverse("ItemCombines").style.visibility = "visible";
-
   NewShopUI.FindChildTraverse("Main")
-    .FindChildTraverse("HeightLimiter")
-    .FindChildTraverse("GridMainShop")
-    .FindChildTraverse("GridShopHeaders")
-    .FindChildTraverse("SearchAndButtonsContainer")
-    .FindChildTraverse("PopularItems").style.visibility = "collapse";
-  NewShopUI.FindChildTraverse("Main")
-    .FindChildTraverse("HeightLimiter")
-    .FindChildTraverse("GridMainShop")
-    .FindChildTraverse("GridShopHeaders")
-    .FindChildTraverse("SearchAndButtonsContainer")
-    .FindChildTraverse("SearchContainer").style.visibility = "collapse";
-  NewShopUI.FindChildTraverse("Main")
-    .FindChildTraverse("HeightLimiter")
-    .FindChildTraverse("GridMainShop")
-    .FindChildTraverse("GridShopHeaders")
-    .FindChildTraverse("SearchAndButtonsContainer")
-    .FindChildTraverse("SearchContainer").style.visibility = "collapse";
-  NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("ItemCombinesAndBasicItemsContainer")
+    .FindChildTraverse("NewPlayerShopConsumables").style.visibility =
+    "collapse";
+  // NewShopUI.FindChildTraverse("Main")
+  //   .FindChildTraverse("HeightLimiter")
+  //   .FindChildTraverse("GridMainShop")
+  //   .FindChildTraverse("GridShopHeaders")
+  //   .FindChildTraverse("SearchAndButtonsContainer")
+  //   .FindChildTraverse("PopularItems").style.visibility = "collapse";
+  // NewShopUI.FindChildTraverse("Main")
+  //   .FindChildTraverse("HeightLimiter")
+  //   .FindChildTraverse("GridMainShop")
+  //   .FindChildTraverse("GridShopHeaders")
+  //   .FindChildTraverse("SearchAndButtonsContainer")
+  //   .FindChildTraverse("SearchContainer").style.visibility = "collapse";
+    NewShopUI.FindChildTraverse("Main")
     .FindChildTraverse("HeightLimiter")
     .FindChildTraverse("GridMainShop")
     .FindChildTraverse("GridShopHeaders").style.minHeight = "0px";
   NewShopUI.FindChildTraverse("Main")
     .FindChildTraverse("HeightLimiter")
     .FindChildTraverse("GridMainShop")
-    .FindChildTraverse("GridShopHeaders")
     .FindChildTraverse("SearchAndButtonsContainer").style.visibility =
     "collapse";
+
 
   NewShopUI.FindChildTraverse("Main")
     .FindChildTraverse("HeightLimiter")

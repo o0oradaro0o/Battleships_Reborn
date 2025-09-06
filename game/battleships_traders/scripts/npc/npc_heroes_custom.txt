@@ -34,7 +34,7 @@
 		"MagicalResistance"				"0"
 		
 		"AbilityLayout"				"3"
-		"Ability1"					"harpoon_blast"
+		"Ability1"					"pistols_battleship"
 		"Ability2"					"bail_water"
 		"Ability3"					"tighten_hoop"
 		"Ability4"					"go_home_battleship"
