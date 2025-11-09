@@ -876,7 +876,7 @@ function showMainItems() {
     .GetChild(1);
   //iterate through all children of x and set their margin to 3
   for (var i = 0; i < x.GetChildCount(); i++) {
-    if (i == 1 || i == 3) {
+    if (i == 1 || i == 3 || i == 5) {
       x.GetChild(i).style.margin = "5.0px 1.0px 4.0px 15.0px";
     } else {
       x.GetChild(i).style.margin = "3.0px 3.0px 3.0px 3.0px";
@@ -898,7 +898,7 @@ function showMainItems() {
     .GetChild(1);
   //iterate through all children of x and set their margin to 3
   for (var i = 0; i < x.GetChildCount(); i++) {
-    if (i == 1 || i == 3) {
+    if (i == 1 || i == 3 || i == 5) {
       x.GetChild(i).style.margin = "5.0px 1.0px 4.0px 15.0px";
     } else {
       x.GetChild(i).style.margin = "3.0px 3.0px 3.0px 3.0px";
@@ -921,7 +921,7 @@ function showMainItems() {
     .GetChild(1);
   //iterate through all children of x and set their margin to 3
   for (var i = 0; i < x.GetChildCount(); i++) {
-    if (i == 1 || i == 3) {
+    if (i == 1 || i == 3 || i == 5) {
       x.GetChild(i).style.margin = "5.0px 1.0px 4.0px 15.0px";
     } else {
       x.GetChild(i).style.margin = "3.0px 3.0px 3.0px 3.0px";
@@ -943,7 +943,11 @@ function showMainItems() {
     .GetChild(1);
   //iterate through all children of x and set their margin to 3
   for (var i = 0; i < x.GetChildCount(); i++) {
-    x.GetChild(i).style.margin = "3px";
+    if (i == 1 || i == 3 || i == 5) {
+      x.GetChild(i).style.margin = "5.0px 1.0px 4.0px 15.0px";
+    } else {
+      x.GetChild(i).style.margin = "3.0px 3.0px 3.0px 3.0px";
+    }
   }
 
   NewShopUI.FindChildTraverse("Main")

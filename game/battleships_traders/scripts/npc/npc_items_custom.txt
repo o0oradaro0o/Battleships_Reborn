@@ -7660,6 +7660,44 @@
 		}
 	}
 	//===============================================
+	// fire_coal_mix-bow doubled
+	//===============================================
+	"item_fire_coal_mix_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_fire_coal_mix"
+		"Model"                         "models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"            "fire_coal_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "700"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "500" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityValues"
+		{
+				"dmg"			"12"
+				"fire_rate"		"0.4"
+				"range"			"700"
+				"level"			"1"
+				"speed"			"1450"
+				"dps"			"60"
+				"damage_2"		"2"
+				"dmg_2"			"60"
+				"fire_rate_2"	"1.8"
+				"range_2"		"800"
+				"speed_2"		"1200"
+				"dps_2"			"66"
+				"stun_pct"		"6.67"
+				"stun_dur"		"0.25"
+		}
+	}
+	//===============================================
 	// plasma-bow doubled
 	//===============================================
   "item_plasma_bow_doubled"
@@ -8727,6 +8765,44 @@
 		}
 	}
 	//===============================================
+	// fire_coal_mix-bow 2 doubled
+	//===============================================
+	"item_fire_coal_mix_two_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_fire_coal_mix"
+		"Model"                         "models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"            "fire_coal_two_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "700"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "1600" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityValues"
+		{
+				"dmg"			"26"
+				"fire_rate"		"0.4"
+				"range"			"700"
+				"level"			"2"
+				"speed"			"1450"
+				"dps"			"130"
+				"damage_2"		"4"
+				"dmg_2"			"126"
+				"fire_rate_2"	"1.8"
+				"range_2"		"800"
+				"speed_2"		"1200"
+				"dps_2"			"140"
+				"stun_pct"		"6.67"
+				"stun_dur"		"0.55"
+		}
+	}
+	//===============================================
 	// plasma-bow 2 doubled
 	//===============================================
   "item_plasma_two_bow_doubled"
@@ -9788,6 +9864,44 @@
 				"stun_dur"	"1"
 				"range"		"800"
 				"dps"			"280"
+		}
+	}
+	//===============================================
+	// fire_coal_mix-bow 3 doubled
+	//===============================================
+	"item_fire_coal_mix_three_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_fire_coal_mix"
+		"Model"                         "models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"            "fire_coal_three_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "700"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "3600" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityValues"
+		{
+				"dmg"			"52"
+				"fire_rate"		"0.4"
+				"range"			"700"
+				"level"			"3"
+				"speed"			"1450"
+				"dps"			"260"
+				"damage_2"		"6"
+				"dmg_2"			"252"
+				"fire_rate_2"	"1.8"
+				"range_2"		"800"
+				"speed_2"		"1200"
+				"dps_2"			"280"
+				"stun_pct"		"6.67"
+				"stun_dur"		"1"
 		}
 	}
 	//===============================================
@@ -10869,6 +10983,44 @@
 				"range"		"800"
 				"dps"			"537"
 
+		}
+	}
+
+	//===============================================
+	// fire_coal_mix-bow ult
+	//===============================================
+	"item_fire_coal_mix_ult_bow"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_fire_coal_mix_ult"
+		"Model"                         "models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"            "fire_coal_ult_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "700"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "9200" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityValues"
+		{
+				"dmg"			"50"
+				"fire_rate"		"0.4"
+				"range"			"700"
+				"speed"			"1450"
+				"dps"			"250"
+				"damage_2"		"20"
+				"dmg_2"			"242"
+				"fire_rate_2"	"1.8"
+				"range_2"		"800"
+				"speed_2"		"1200"
+				"dps_2"			"537"
+				"stun_pct"		"10"
+				"stun_dur"		"1"
 		}
 	}
 
