@@ -1,0 +1,280 @@
+=== FIRE_COAL_MIX WEAPON CREATION PROMPT ===
+
+CONTEXT:
+I'm working on a Dota 2 custom game mod called Battleships_Reborn. I need to create a complete set of hybrid weapons called "item_fire_coal_mix" that combines fire weapons with coal weapons. This follows the same pattern as the recently completed item_plasma_fire_mix weapons.
+
+WORKSPACE STRUCTURE:
+- Root: c:\Users\Lorne\Desktop\dota2Modding\Battleships_Reborn
+- Lua scripts: game/battleships_traders/scripts/vscripts/items/
+- Item definitions: game/battleships_traders/scripts/npc/npc_items_custom.txt
+- Shop definitions: game/battleships_traders/scripts/shops/battleship_shops.txt
+- Localization: game/battleships_traders/resource/addon_english.txt
+- Images: content/battleships_traders/panorama/images/items/
+
+HYBRID WEAPON SYSTEM:
+Hybrid weapons fire TWO independent weapons simultaneously:
+- Main weapon (modifier 1): Fires tracking projectiles with primary damage/mechanics
+- Secondary weapon (modifier 2): Fires tracking projectiles with secondary damage/mechanics
+- Both weapons share the same item, both have separate stats (dmg, fire_rate, range, etc.)
+- Primary stats use: dmg, fire_rate, range, speed, level, doubled_wep, dps
+- Secondary stats use: dmg_2, fire_rate_2, range_2, speed_2, (and weapon-specific stats like damage_2 for DoT)
+
+TASK: Create item_fire_coal_mix weapons with these 4 items:
+1. item_fire_coal_mix_bow_doubled (Level 1)
+2. item_fire_coal_mix_two_bow_doubled (Level 2)
+3. item_fire_coal_mix_three_bow_doubled (Level 3)
+4. item_fire_coal_mix_ult_bow (Ultimate)
+
+REFERENCE WEAPONS TO USE AS BASE:
+Fire weapons (for primary weapon mechanics):
+- item_fire_bow_doubled (Level 1): 12 dmg, 0.4s reload, 700 range, 2 burn damage, 1450 speed
+- item_fire_two_bow_doubled (Level 2): 26 dmg, 0.4s reload, 700 range, 4 burn damage, 1450 speed
+- item_fire_three_bow_doubled (Level 3): 52 dmg, 0.4s reload, 700 range, 6 burn damage, 1450 speed
+- item_fire_ult_bow (Ultimate): 50 dmg, 0.4s reload, 700 range, 20 burn damage, 1450 speed
+
+Coal weapons (for secondary weapon mechanics):
+- Search for item_coal_bow_doubled, item_coal_two_bow_doubled, item_coal_three_bow_doubled, item_coal_ult_bow
+- Coal weapons apply a slow debuff to targets hit
+
+LOCALIZATION NAMES (CRITICAL - USE EXACT NAMES):
+Fire weapon names (search addon_english.txt for exact names):
+- Level 1: "Double Flimsy Torches"
+- Level 2: "Double Roman Candles"
+- Level 3: "Double Molotov Cocktails"
+- Ultimate: "Flamethrower"
+
+Coal weapon names (search addon_english.txt for exact names):
+- Use grep_search to find "item_coal_bow_doubled", "item_coal_two_bow_doubled", etc. in addon_english.txt
+- Extract the exact display names from the localization entries
+
+REQUIRED STEPS (Follow this order):
+
+1. RESEARCH PHASE:
+   a. Search for item_coal_bow_doubled in npc_items_custom.txt to get stats
+   b. Search for item_coal_two_bow_doubled, item_coal_three_bow_doubled, item_coal_ult_bow
+   c. Read the coal weapon Lua file (likely items/item_coal_bow.lua or similar)
+   d. Search addon_english.txt for coal weapon display names
+   e. Understand coal weapon mechanics (likely applies slow debuff)
+
+2. LUA FILE CREATION:
+   a. Create game/battleships_traders/scripts/vscripts/items/item_fire_coal_mix.lua
+      - Fire weapon = modifier_item_fire_coal_mix (primary with fire aura mechanics)
+      - Coal weapon = modifier_item_fire_coal_mix_2 (secondary with coal slow mechanics)
+      - Fire uses aura system: IsAura(), GetModifierAura() = "modifier_item_fire_coal_mix_aura_debuff"
+      - Fire aura debuff ticks every 0.5s applying damage_2 as burn damage
+      - Coal fires projectiles and applies slow debuff on hit
+      - Include all 3 level classes: item_fire_coal_mix_bow_doubled, item_fire_coal_mix_two_bow_doubled, item_fire_coal_mix_three_bow_doubled
+      
+   b. Create game/battleships_traders/scripts/vscripts/items/item_fire_coal_mix_ult.lua
+      - Fire weapon = modifier_item_fire_coal_mix_ult_bow (with enhanced fire aura)
+      - Coal weapon = modifier_item_fire_coal_mix_ult_bow_2 (with coal projectiles and slow)
+      - Ultimate version has enhanced mechanics similar to item_fire_ult_bow and item_coal_ult_bow
+
+3. ITEM DEFINITIONS (npc_items_custom.txt):
+   Add 4 item definitions with proper structure:
+   - "AbilityTextureName" should be "fire_coal_bow", "fire_coal_two_bow", "fire_coal_three_bow", "fire_coal_ult_bow"
+   - ScriptFile = "items/item_fire_coal_mix" (for levels 1-3)
+   - ScriptFile = "items/item_fire_coal_mix_ult" (for ultimate)
+   - Include both fire stats (dmg, fire_rate, range, speed, damage_2) and coal stats (dmg_2, fire_rate_2, range_2, speed_2, slow_amount, slow_duration)
+   - Use "_2" suffix for secondary (coal) weapon stats
+   - Fire damage_2 = burn damage applied by aura
+   - Search for existing similar items to find the correct insertion points
+
+4. SHOP ADDITIONS (battleship_shops.txt):
+   Add all 4 items to appropriate shop tabs IN THE CORRECT POSITION:
+   
+   CRITICAL: Items must be placed in specific positions relative to existing weapons.
+   Follow this pattern (from plasma_fire_mix placement):
+   
+   "consumables" tab - Add after item_plasma_bow:
+   ```
+   "item" "item_spread_bow"
+   "item" "item_spread_plasma_mix_bow_doubled"
+   "item" "item_plasma_bow"
+   "item" "item_plasma_fire_mix_bow_doubled"  <- ADD HERE (after plasma, before fire)
+   "item" "item_fire_bow"
+   ```
+   
+   "attributes" tab - Add after item_plasma_two_bow:
+   ```
+   "item" "item_plasma_two_bow"
+   "item" "item_plasma_fire_mix_two_bow_doubled"  <- ADD HERE
+   "item" "item_fire_two_bow"
+   ```
+   
+   "weapons_armor" tab - Add after item_plasma_three_bow:
+   ```
+   "item" "item_plasma_three_bow"
+   "item" "item_plasma_fire_mix_three_bow_doubled"  <- ADD HERE
+   "item" "item_fire_three_bow"
+   ```
+   
+   "misc" tab - Add after item_plasma_ult_bow:
+   ```
+   "item" "item_spread_plasma_mix_ult_bow"
+   "item" "item_plasma_ult_bow"
+   "item" "item_plasma_fire_mix_ult_bow"  <- ADD HERE
+   "item" "item_fire_ult_bow"
+   ```
+   
+   For fire_coal_mix: Place items BETWEEN fire and coal weapons in each tab
+
+5. LOCALIZATION (addon_english.txt):
+   Add complete tooltip strings around line 960+ area:
+   - Main name: "DOTA_Tooltip_ability_item_fire_coal_mix_bow_doubled" = "[Coal Weapon Name]/Double Flimsy Torches"
+   - Description with both weapon mechanics explained
+   - All stat labels: dmg, fire_rate, range, dps (for fire), dmg_2, fire_rate_2, range_2, dps_2 (for coal)
+   - Fire weapon stat labels should use actual fire weapon names (e.g., "Flimsy Torches RELOAD DELAY (s):")
+   - Coal weapon stat labels should use actual coal weapon names
+   - Include Note0 explaining mechanics: "Fire damage over time does not stack. Multiple coal hits may extend slow duration."
+   - Repeat for all 4 levels with proper names
+
+6. IMAGE CREATION:
+   Create composite images using Python script in content/battleships_traders/panorama/images/items/:
+   
+   Python script requirements:
+   - Use Pillow (PIL) library
+   - Source images: fire_bow_doubled.png + coal_bow_doubled.png (and variants for other levels)
+   - Output names: fire_coal_bow.png, fire_coal_two_bow.png, fire_coal_three_bow.png, fire_coal_ult_bow.png
+   - Composite method: DIAGONAL SPLIT from top-right to bottom-left
+   - Fire image visible in TOP-LEFT area
+   - Coal image visible in BOTTOM-RIGHT area
+   - Use getbbox() to find actual content area (ignore transparent padding)
+   - Diagonal line equation: y * content_width <= height * (content_width - x)
+   - Both images maintain original size, resized to match if needed
+   
+   IMPORTANT: After creating images in content/battleships_traders/panorama/images/items/,
+   you must MANUALLY copy them to: game/battleships_traders/resource/flash3/images/items/
+   (The game uses images from the flash3 location, not panorama location)
+
+7. CUSTOM_SHOP.JS PADDING FIX:
+   Location: content/battleships_traders/panorama/scripts/custom_game/custom_shop.js
+   
+   CRITICAL MANUAL CHANGE: Update margin/padding for hybrid weapon positioning in 3 locations.
+   
+   Search for these three functions and update them:
+   
+   Function 1: showMainItems() - around line 876-883
+   Find: if (i == 1) {
+   Change to: if (i == 1 || i == 3) {
+   
+   Function 2: showMainItems() - around line 898-905  
+   Find: if (i == 1) {
+   Change to: if (i == 1 || i == 3) {
+   
+   Function 3: showMainItems() - around line 921-928
+   Find: if (i == 1) {
+   Change to: if (i == 1 || i == 3) {
+   
+   Context of the change:
+   ```javascript
+   for (var i = 0; i < x.GetChildCount(); i++) {
+     if (i == 1 || i == 3) {  // <-- ADD || i == 3
+       x.GetChild(i).style.margin = "5.0px 1.0px 4.0px 15.0px";
+     } else {
+       x.GetChild(i).style.margin = "3.0px 3.0px 3.0px 3.0px";
+     }
+   }
+   ```
+   
+   This adds left padding (15.0px) to the 4th item (index 3) in weapon groups,
+   creating visual separation for hybrid weapons in the shop UI.
+
+LESSONS LEARNED FROM PLASMA_FIRE_MIX IMPLEMENTATION:
+
+1. SHOP POSITIONING IS CRITICAL:
+   - Don't just add items at the end of lists
+   - Hybrid weapons should be positioned between their component weapons
+   - For fire_coal_mix: Place BETWEEN fire and coal in each tab
+   - This creates logical grouping and makes shopping intuitive
+
+2. IMAGE LOCATIONS ARE DUAL:
+   - Images must exist in TWO locations (not just one):
+     * content/battleships_traders/panorama/images/items/ (source)
+     * game/battleships_traders/resource/flash3/images/items/ (used by game)
+   - The game reads from flash3, not panorama
+   - Manual copy is required (or create script to do both)
+
+3. CUSTOM_SHOP.JS PADDING:
+   - Hybrid weapons need special CSS margins for visual separation
+   - The pattern is index-based: i == 1 (first hybrid), i == 3 (second hybrid)
+   - Without this fix, hybrid weapons don't have proper visual spacing
+   - Must update in THREE locations in showMainItems() function
+
+4. DIAGONAL IMAGE COMPOSITION:
+   - Must use getbbox() to find actual content area
+   - Can't use full image dimensions (includes transparent padding)
+   - Diagonal formula: y * content_width <= height * (content_width - x)
+   - This ensures line goes from top-right corner to bottom-left corner
+
+5. WEAPON NAME ACCURACY:
+   - NEVER guess weapon names
+   - ALWAYS search addon_english.txt for exact localization strings
+   - Fire weapons: "Double Flimsy Torches", "Double Roman Candles", etc.
+   - Using wrong names creates confusion for players
+
+6. AURA VS PROJECTILE MECHANICS:
+   - Fire weapons use AURA system (IsAura() returns true)
+   - Fire aura applies debuff that ticks damage every 0.5s
+   - Don't implement fire as just projectiles - it needs the aura component
+   - Check existing fire weapon implementation for exact pattern
+
+7. STAT NAMING CONVENTION:
+   - Primary weapon: dmg, fire_rate, range, speed, etc.
+   - Secondary weapon: dmg_2, fire_rate_2, range_2, speed_2, etc.
+   - Special stats: damage_2 for fire burn, slow_amount/slow_duration for coal
+   - Be consistent with "_2" suffix
+
+GIT DIFF REFERENCE:
+The following files were modified in plasma_fire_mix implementation:
+- content/battleships_traders/panorama/scripts/custom_game/custom_shop.js (3 padding changes)
+- game/battleships_traders/resource/addon_english.txt (52 lines of localization added)
+- game/battleships_traders/scripts/npc/npc_items_custom.txt (4 item definitions)
+- game/battleships_traders/scripts/shops/battleship_shops.txt (4 items positioned correctly)
+
+New files created:
+- game/battleships_traders/scripts/vscripts/items/item_plasma_fire_mix.lua
+- game/battleships_traders/scripts/vscripts/items/item_plasma_fire_mix_ult.lua
+- content/battleships_traders/panorama/images/items/create_plasma_fire_mix.py
+- content/battleships_traders/panorama/images/items/plasma_fire_*.png (4 images)
+- game/battleships_traders/resource/flash3/images/items/plasma_fire_*.png (4 images - copied)
+
+EFFICIENCY TIPS:
+1. Do ALL research upfront before creating any files
+2. Create Lua files first (they're the most complex)
+3. Use existing hybrid weapons as templates (spread_plasma_mix, plasma_fire_mix)
+4. Create Python script once, run multiple times if tweaking diagonal algorithm
+5. Add items to npc_items_custom.txt in the correct sections (grouped by level)
+6. Test localization strings match tooltip format of existing weapons
+7. Remember: The AI can't manually copy files or edit custom_shop.js padding - remind user!
+
+CRITICAL REMINDERS:
+- ALWAYS search for existing weapon stats - never guess values
+- ALWAYS use exact weapon names from addon_english.txt localization
+- Fire weapons use AURA system (IsAura, GetModifierAura) not just projectiles
+- Fire aura applies burn damage every 0.5 seconds (damage_2 stat)
+- Coal weapons apply slow debuff on projectile hit
+- Use "_2" suffix for ALL secondary weapon stats (dmg_2, fire_rate_2, range_2, speed_2, etc.)
+- Image composite must use diagonal split based on CONTENT AREA, not full image dimensions
+- Test each file for errors after creation using get_errors tool
+
+VERIFICATION CHECKLIST:
+[ ] item_fire_coal_mix.lua created with fire aura + coal projectile mechanics
+[ ] item_fire_coal_mix_ult.lua created with enhanced versions
+[ ] 4 item definitions added to npc_items_custom.txt with correct stats
+[ ] 4 items added to all shop tabs in battleship_shops.txt IN CORRECT POSITIONS (between fire and coal)
+[ ] Complete localization strings added to addon_english.txt with exact weapon names
+[ ] 4 composite PNG images created in content/battleships_traders/panorama/images/items/
+[ ] Images MANUALLY copied to game/battleships_traders/resource/flash3/images/items/
+[ ] custom_shop.js updated with padding fix (|| i == 3) in THREE locations
+[ ] All files checked for errors
+[ ] Fire weapon uses correct aura implementation
+[ ] Coal weapon uses correct projectile + slow debuff implementation
+
+MANUAL STEPS REQUIRED (Cannot be automated):
+1. Copy PNG images from content/battleships_traders/panorama/images/items/ to game/battleships_traders/resource/flash3/images/items/
+2. Update custom_shop.js to add "|| i == 3" condition in three places for hybrid weapon padding
+3. Verify shop layout looks correct with proper spacing
+
+EXPECTED OUTCOME:
+Four fully functional hybrid weapons that fire both fire and coal weapons simultaneously, with proper stats, tooltips, shop availability, and visual icons. The fire component creates a burning aura around the ship, while the coal component fires slowing projectiles.

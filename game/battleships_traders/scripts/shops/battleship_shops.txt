@@ -4,9 +4,8 @@
 	{
 		 "item" "item_spread_bow"
 		 "item" "item_spread_plasma_mix_bow_doubled"
-
 		 "item" "item_plasma_bow"
-		 
+		"item" "item_plasma_fire_mix_bow_doubled"
  "item" "item_fire_bow"
  // "item" "item_caulk_bow"
 "item" "item_coal_bow"
@@ -25,7 +24,7 @@
 		"item" "item_spread_plasma_mix_two_bow_doubled"
 		
 		 "item" "item_plasma_two_bow"
-		 
+		 		"item" "item_plasma_fire_mix_two_bow_doubled"
  "item" "item_fire_two_bow"
    //"item" "item_caulk_two_bow"
 "item" "item_coal_two_bow"
@@ -45,7 +44,7 @@
 		"item" "item_spread_plasma_mix_three_bow_doubled"
 
 		 "item" "item_plasma_three_bow"
-		
+		"item" "item_plasma_fire_mix_three_bow_doubled"
  "item" "item_fire_three_bow"
 // "item" "item_caulk_three_bow"
  "item" "item_coal_three_bow"
@@ -60,10 +59,9 @@
 	"misc"
 	{
 		"item" "item_spread_ult_bow"
-		"item" "item_spread_plasma_mix_ult_bow"
-		
-"item"  "item_plasma_ult_bow"
-
+		"item" "item_spread_plasma_mix_ult_bow"	
+	"item"  "item_plasma_ult_bow"
+		"item" "item_plasma_fire_mix_ult_bow"
  "item"  "item_fire_ult_bow"
   // "item" "item_caulk_ult_bow"
  "item"  "item_coal_ult_bow"

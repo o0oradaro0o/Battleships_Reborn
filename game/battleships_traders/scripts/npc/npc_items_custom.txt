@@ -8093,6 +8093,43 @@
 		}
 	}
 
+	"item_plasma_fire_mix_bow_doubled"
+	{
+		 "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_plasma_fire_mix"
+		"Model"                         "models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"            "plasma_fire_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "700"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "350" 
+		"ItemDroppable"         "1"
+		"ItemSellable"          "1"
+		"ItemKillable"          "0"
+		"ItemQuality"         "epic"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityValues"
+		{
+				"dmg"      "90"
+				"fire_rate"   "3.0"
+				"range"       "600"
+				"level"       "1"
+				"doubled_wep"     "0"
+				"speed"       "1450"
+				"dps"         "30"
+				"armor_down"	"1"
+				"armor_dur"		"0.5"
+				"dmg_2"			"12"
+				"fire_rate_2"		"0.4"
+				"range_2"			"700"
+				"damage_2"	"2"
+				"dps_2"			"60"
+				"speed_2"			"1000"
+		}
+	}
+
 	
 	
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -9122,6 +9159,44 @@
 			"speed_2"			"1450"
 		}
 	}
+
+	"item_plasma_fire_mix_two_bow_doubled"
+	{
+		 "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_plasma_fire_mix"
+		"Model"                         "models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"            "plasma_fire_two_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "700"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "350" 
+		"ItemDroppable"         "1"
+		"ItemSellable"          "1"
+		"ItemKillable"          "0"
+		"ItemQuality"         "epic"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityValues"
+		{
+				"dmg"      "195"
+				"fire_rate"   "3.0"
+				"range"       "600"
+				"level"       "2"
+				"doubled_wep"     "0"
+				"speed"       "1450"
+				"dps"         "65"
+				"armor_down"	"1.0"
+				"armor_dur"		"1.0"
+				"dmg_2"			"26"
+				"fire_rate_2"		"0.4"
+				"range_2"			"700"
+				"damage_2"	"4"
+				"dps_2"			"130"
+				"speed_2"			"1000"
+		}
+	}
+
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// level threes l3d
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -10144,6 +10219,43 @@
 				"armor_dur_2"		"1.5"
 				"dps_2"			"130"
 			"speed_2"			"1450"
+		}
+	}
+
+	"item_plasma_fire_mix_three_bow_doubled"
+	{
+		 "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_plasma_fire_mix"
+		"Model"                         "models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"            "plasma_fire_three_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "700"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "350" 
+		"ItemDroppable"         "1"
+		"ItemSellable"          "1"
+		"ItemKillable"          "0"
+		"ItemQuality"         "epic"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityValues"
+		{
+				"dmg"      "390"
+				"fire_rate"   "3.0"
+				"range"       "600"
+				"level"       "3"
+				"doubled_wep"     "0"
+				"speed"       "1450"
+				"dps"         "130"
+				"armor_down"	"2"
+				"armor_dur"		"1.5"
+				"dmg_2"			"52"
+				"fire_rate_2"		"0.4"
+				"range_2"			"700"
+				"damage_2"	"6"
+				"dps_2"			"260"
+				"speed_2"			"1000"
 		}
 	}
 	
@@ -11175,6 +11287,42 @@
 				"aoe_dearmor"          "600.0"
 				"aoe_dearmor_amount"          "1.0"
 				"dearmor_duration"          "4"
+		}
+	}
+
+	 "item_plasma_fire_mix_ult_bow"
+	{
+		 "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_plasma_fire_mix_ult"
+		"Model"                         "models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"            "plasma_fire_mix_ult_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "700"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "13500" 
+		"ItemDroppable"         "1"
+		"ItemSellable"          "1"
+		"ItemKillable"          "0"
+		"ItemQuality"         "epic"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityValues"
+		{
+				"dmg"      "3600"
+				"fire_rate"   "3.5"
+				"range"       "600"
+				"speed"       "1450"
+				"dps"         "1028"
+				"aoe_dearmor"          "600.0"
+				"aoe_dearmor_amount"          "2.0"
+				"dearmor_duration"          "4"
+				"dmg_2"			"50"
+				"fire_rate_2"		"0.4"
+				"range_2"			"700"
+				"damage_2"	"20"
+				"dps_2"			"500"
+				"speed_2"			"1000"
 		}
 	}
 	
