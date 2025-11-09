@@ -724,7 +724,7 @@ function fixUI() {
   NewShopUI.FindChildTraverse("Main")
     .FindChildTraverse("HeightLimiter")
     .FindChildTraverse("GridMainShop")
-    .FindChildTraverse("GridBasicItemsCategory").style.height = "523px";
+    .FindChildTraverse("GridBasicItemsCategory").style.height = "670px";
   hideUpgradeItems();
 
   NewShopUI.FindChildTraverse("Main")
@@ -813,12 +813,25 @@ function fixUI() {
     .FindChildTraverse("lower_hud")
     .FindChildTraverse("shop_launcher_block");
 
-  newBotRightUI.FindChildTraverse("shop_launcher_bg").style.width = "300px";
+  try {
+    newBotRightUI.FindChildTraverse("shop_launcher_bg").style.width = "300px";
+    
+    newBotRightUI
+      .FindChildTraverse("quickbuy")
+      .FindChildTraverse("ShopCourierControls")
+          .FindChildTraverse("ShopButtonContainer").style.marginBottom = "8px";
+    newBotRightUI
+      .FindChildTraverse("quickbuy")
+      .FindChildTraverse("ShopCourierControls")
+      .FindChildTraverse("ShopButtonContainer").style.marginLeft= "20px";
 
-  newBotRightUI
-    .FindChildTraverse("quickbuy")
-    .FindChildTraverse("ShopCourierControls")
-    .FindChildTraverse("courier").style.visibility = "collapse";
+    newBotRightUI
+      .FindChildTraverse("quickbuy")
+      .FindChildTraverse("ShopCourierControls")
+      .FindChildTraverse("courier").style.visibility = "collapse";
+  } catch (error) {
+    $.Msg("Error in shop UI setup: " + error);
+  }
   newBotRightUI
     .FindChildTraverse("quickbuy")
     .FindChildTraverse("ShopCourierControls")
@@ -840,6 +853,7 @@ function fixUI() {
     .FindChildTraverse("quickbuy")
     .FindChildTraverse("QuickBuyRows")
     .FindChildTraverse("StickyItemSlotContainer").style.visibility = "collapse";
+    
 }
 function fillShop() {
   fixUI();

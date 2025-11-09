@@ -111,6 +111,8 @@ return {
   },
 
   models = {
+    "models/items/world/towers/dire_tower_2022/dire_tower_2022.vmdl",
+    "models/items/world/towers/radiant_tower_2022/radiant_tower_2022.vmdl",
     "models/start_boat.vmdl",
     "models/battleship_boat0.vmdl",
     "models/battleship_boat1.vmdl",

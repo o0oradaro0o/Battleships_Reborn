@@ -1960,6 +1960,40 @@ function CBattleship8D:OnThink()
                     setupWin(DOTA_TEAM_GOODGUYS)
                 end
             end
+            
+            -- Backup check: scan for living dock entities to trigger win setup if needed
+            if g_GameOver == 0 then
+                local northDocksAlive = 0
+                local southDocksAlive = 0
+                
+                -- Count living north docks
+                local northLeftDock = Entities:FindByName(nil, "npc_dota_dock_north_left")
+                local northRightDock = Entities:FindByName(nil, "npc_dota_dock_north_right")
+                if northLeftDock ~= nil and northLeftDock:IsAlive() then
+                    northDocksAlive = northDocksAlive + 1
+                end
+                if northRightDock ~= nil and northRightDock:IsAlive() then
+                    northDocksAlive = northDocksAlive + 1
+                end
+                
+                -- Count living south docks
+                local southLeftDock = Entities:FindByName(nil, "npc_dota_dock_south_left")
+                local southRightDock = Entities:FindByName(nil, "npc_dota_dock_south_right")
+                if southLeftDock ~= nil and southLeftDock:IsAlive() then
+                    southDocksAlive = southDocksAlive + 1
+                end
+                if southRightDock ~= nil and southRightDock:IsAlive() then
+                    southDocksAlive = southDocksAlive + 1
+                end
+                
+                -- Check for win conditions
+                if northDocksAlive == 0 then
+                    setupWin(DOTA_TEAM_GOODGUYS)
+                elseif southDocksAlive == 0 then
+                    setupWin(DOTA_TEAM_BADGUYS)
+                end
+            end
+            
             HandleTideAbil()
 
             if g_MainTimerTickCount % 2 == 0 then reapplyWP() end

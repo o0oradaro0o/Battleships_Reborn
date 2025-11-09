@@ -1,0 +1,7 @@
+"DOTANeutralItems"
+{
+	"Version"		"1"
+	
+	// This file intentionally contains no neutral items
+	// to disable the neutral item system for this custom game
+}

@@ -1,4 +1,4 @@
-"lang"
+﻿"lang"
 {
   "Language"    "English"
   "Tokens"
@@ -198,7 +198,6 @@
     "DOTA_Tooltip_ability_item_spin_three_bow_doubled_Description"    "<h1>Weapon: Iron Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Fragments on impact, hitting up to %bounces% nearby enemy unit within %bounce_range% range for %bounce_dmg% damage. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_spin_three_bow_doubled_fire_rate"    "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_spin_three_bow_doubled_dmg"        "DAMAGE (x2):"
-    "DOTA_Tooltip_ability_item_spin_three_bow_doubled_range"      "RANGE:"
     "DOTA_Tooltip_ability_item_spin_three_bow_doubled_dps"        "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
 
     
@@ -399,8 +398,6 @@
 
     "DOTA_Tooltip_ability_item_caulk_two_bow_doubled"         "Double Super Glue"
     "DOTA_Tooltip_ability_item_caulk_two_bow_doubled_Description"   "<h1>Support: Caulk Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Can target enemies do deal damage as well as healing allies."
-    "DOTA_Tooltip_ability_item_caulk_two_bow_Note0"           "Heals allied units."
-    "DOTA_Tooltip_ability_item_caulk_two_bow_Note1"           "Does not heal structures."
     "DOTA_Tooltip_ability_item_caulk_two_bow_doubled_fire_rate"     "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_caulk_two_bow_doubled_dmg"       "HEAL (x2):"
     "DOTA_Tooltip_ability_item_caulk_two_bow_doubled_range"       "RANGE:"
@@ -419,8 +416,6 @@
     
     "DOTA_Tooltip_ability_item_caulk_three_bow_doubled"         "Double Tar and Pitch"
     "DOTA_Tooltip_ability_item_caulk_three_bow_doubled_Description"   "<h1>Support: Caulk Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Can target enemies do deal damage as well as healing allies."
-    "DOTA_Tooltip_ability_item_caulk_three_bow_Note0"         "Heals allied units."
-    "DOTA_Tooltip_ability_item_caulk_three_bow_Note1"         "Does not heal structures."
     "DOTA_Tooltip_ability_item_caulk_three_bow_doubled_fire_rate"   "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_caulk_three_bow_doubled_dmg"       "HEAL (x2):"
     "DOTA_Tooltip_ability_item_caulk_three_bow_doubled_range"     "RANGE:"
@@ -834,7 +829,6 @@
 
     "DOTA_Tooltip_ability_item_chaos_ult_bow_rec"           "The 5th Horseman"
     "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_Description"     "<h1>Weapon: Ultimate Chaos</h1>Shots do between -0.5 and 2.5 x Damage listed" 
-    "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_dmg"         "BASE DAMAGE:"
     "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_fire_rate"       "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_range"         "RANGE:"  
     "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_dps"         "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
@@ -906,7 +900,6 @@
 
     "DOTA_Tooltip_ability_item_spread_ult_bow_rec"           "Blades of the Sea"
     "DOTA_Tooltip_ability_item_spread_ult_bow_rec_Description"     "<h1>Weapon: Ultimate spread</h1>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings)" 
-    "DOTA_Tooltip_ability_item_spread_ult_bow_rec_dmg"         "BASE DAMAGE:"
     "DOTA_Tooltip_ability_item_spread_ult_bow_rec_fire_rate"       "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_spread_ult_bow_rec_range"         "RANGE:"  
     "DOTA_Tooltip_ability_item_spread_ult_bow_rec_dps"         "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
@@ -1122,7 +1115,6 @@
     "DOTA_Tooltip_item_poison_ult_bow_shooting_Description"       "Shots from this gun poison enemies, dealing damage over time."
     
     "DOTA_Tooltip_item_poison_ult_bow_shooting_rec"           "Jar O' Plagues"
-    "DOTA_Tooltip_item_poison_ult_bow_shooting_Description"       "Shots from this gun poison enemies, dealing damage over time."
 
     
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2239,7 +2231,6 @@
     "DOTA_Tooltip_ability_might_battleship_Description"           "The Canoe gains strength from nearby allies, increasing its maximum health and regeneration for a short time. Gains more strengh from heroes. \n Releases any stored energy as damage and a ministun when used again. Damage is split evenly among enemies. \n \nHigher levels decrease cooldown."
     "DOTA_Tooltip_ability_might_battleship_duration"                 "DURATION:"
     "DOTA_Tooltip_ability_might_battleship_strength_bonus_creep"     "CREEP STRENGTH BONUS:"
-    "DOTA_Tooltip_ability_might_battleship_strength_bonus_creep"     "HERO STRENGTH BONUS:"
     "DOTA_Tooltip_ability_might_battleship_damage_tooltip"           "DAMAGE/STRENGTH GAINED:"
     "DOTA_Tooltip_ability_might_battleship_ministun_duration"        "MINISTUN DURATION/STRENGTH GAINED:"
     
@@ -2282,10 +2273,6 @@
   "DOTA_Tooltip_ability_iceberg_battleship_duration"      "DURATION:"
   "DOTA_Tooltip_ability_iceberg_battleship_damage"      "DAMAGE:"  
   
-  "DOTA_Tooltip_ability_iceberg_battleship"                 "Iceberg"
-  "DOTA_Tooltip_ability_iceberg_battleship_Description"           "Hide an iceberg (invisible to enemy team). The first enemy ship to run into it will take considerable damage. \n \nHigher levels decrease cooldown."
-  "DOTA_Tooltip_ability_iceberg_battleship_duration"      "DURATION:"
-  "DOTA_Tooltip_ability_iceberg_battleship_damage"      "DAMAGE:"
   
     "DOTA_Tooltip_ability_no_fire_zone"                 "No Fire Zone"
   "DOTA_Tooltip_ability_no_fire_zone_Description"           "Establish a no fire zone where both ally and enemy ships cannot use their weapons."
@@ -2600,8 +2587,6 @@
     "DOTA_Tooltip_cant_select"                                                        "Can't Select"
     "DOTA_Tooltip_cant_select_Description"                                            ""
 
-    "DOTA_Tooltip_root_self"                                                          "Root Self"
-    "DOTA_Tooltip_root_self_Description"                                              ""
 
     "DOTA_Tooltip_trap"                                                               "Trap"
     "DOTA_Tooltip_trap_Description"                                                   ""
@@ -2650,8 +2635,6 @@
     "DOTA_Tooltip_wounded"                                                            "Wounded"
     "DOTA_Tooltip_wounded_Description"                                                ""
 
-    "DOTA_Tooltip_gas_mod"                                                            "Gas Mod"
-    "DOTA_Tooltip_gas_mod_Description"                                                ""
 
     "DOTA_Tooltip_bashed"                                                             "Bashed"
     "DOTA_Tooltip_bashed_Description"                                                 ""
@@ -2983,8 +2966,6 @@
     "DOTA_Tooltip_pergatory_perm"                                                     "Pergatory"
     "DOTA_Tooltip_pergatory_perm_Description"                                         ""
 
-    "DOTA_Tooltip_cease_fire_mod"                                                     "Cease Fire Mod"
-    "DOTA_Tooltip_cease_fire_mod_Description"                                         ""
 
 
     // ******************** ABILITIES ********************
@@ -3190,8 +3171,6 @@
     "DOTA_Tooltip_ability_dummy_passive_fly"                                          "Dummy Passive Fly"
     "DOTA_Tooltip_ability_dummy_passive_fly_Description"                              ""
 
-    "DOTA_Tooltip_ability_dummy_passive_fly"                                          "Dummy Passive Fly"
-    "DOTA_Tooltip_ability_dummy_passive_fly_Description"                              ""
 
     "DOTA_Tooltip_ability_dummy_explode"                                              "Dummy Explode"
     "DOTA_Tooltip_ability_dummy_explode_Description"                                  ""
@@ -3211,8 +3190,6 @@
     "DOTA_Tooltip_ability_battle_effect"                                              "Battle Effect"
     "DOTA_Tooltip_ability_battle_effect_Description"                                  ""
 
-    "DOTA_Tooltip_ability_battle_effect"                                              "Battle Effect"
-    "DOTA_Tooltip_ability_battle_effect_Description"                                  ""
 
     "DOTA_Tooltip_ability_anti_backdoor"                                              "Anti Backdoor"
     "DOTA_Tooltip_ability_anti_backdoor_Description"                                  ""
@@ -3249,8 +3226,6 @@
     "DOTA_Tooltip_ability_SideShop"                                                   "SideShop"
     "DOTA_Tooltip_ability_SideShop_Description"                                       ""
 
-    "DOTA_Tooltip_ability_SideShop"                                                   "SideShop"
-    "DOTA_Tooltip_ability_SideShop_Description"                                       ""
 
     "DOTA_Tooltip_ability_item_recipe_poison_bow_doubled"                             "Recipe Poison Bow Doubled"
     "DOTA_Tooltip_ability_item_recipe_poison_bow_doubled_Description"                 ""
@@ -4101,7 +4076,6 @@
 
 		"DOTA_Tooltip_ability_sniper_shrapnel_battleship_LinkedSpecialBonus"              "LINKEDSPECIALBONUS:"
 		"DOTA_Tooltip_ability_sniper_shrapnel_battleship_damage_delay"                    "DAMAGE DELAY:"
-		"DOTA_Tooltip_ability_sniper_shrapnel_battleship_LinkedSpecialBonus"              "LINKEDSPECIALBONUS:"
 
 		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_hook_width"                      "HOOK WIDTH:"
 		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_vision_radius"                   "VISION RADIUS:"
@@ -4331,7 +4305,6 @@
 		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_datadriven_tooltip_range"                               "Range:"
 
         
-        "DOTA_Tooltip_ability_timber_chain_lua_range"  "CHAIN RANGE:"
 
         "DOTA_Tooltip_ability_crab_walk"  "Skuttle"
         "DOTA_Tooltip_ability_crab_walk_Description"  "Embrace your crabby powers, and begin to skuttle, moving faster and gaining the ability to walk over walls."
