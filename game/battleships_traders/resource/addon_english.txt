@@ -1116,6 +1116,57 @@
     "DOTA_Tooltip_ability_item_coal_chaos_mix_ult_bow_dps_2"          "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //---- CHAOS_POISON_MIX WEAPONS ----------------
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled"  "Unstable Cannon/Poison Vials"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled_Description"  "<h1>Weapon: Chaos Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do between -0.5 and 2.5 x Damage listed<h1>Weapon: Poison Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Poisons targets, dealing %damage_2% damage per half-second for %psn_dur% seconds."
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled_dmg"  "Unstable Cannon BASE DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled_fire_rate"  "Unstable Cannon RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled_range"  "Unstable Cannon RANGE:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled_Note0"  "Chaos effects vary randomly. Poison stacks refresh duration."
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled_fire_rate_2"  "Poison Vials RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled_dmg_2"  "Poison Vials DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled_range_2"  "Poison Vials RANGE:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled"  "Chaos Magnum/Poison Jugs"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled_Description"  "<h1>Weapon: Chaos Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do between -0.5 and 2.5 x Damage listed<h1>Weapon: Poison Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Poisons targets, dealing %damage_2% damage per half-second for %psn_dur% seconds."
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled_dmg"  "Chaos Magnum BASE DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled_fire_rate"  "Chaos Magnum RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled_range"  "Chaos Magnum RANGE:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled_Note0"  "Chaos effects vary randomly. Poison stacks refresh duration."
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled_fire_rate_2"  "Poison Jugs RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled_dmg_2"  "Poison Jugs DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled_range_2"  "Poison Jugs RANGE:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled"  "Entropy Ray/Poison Grenades"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled_Description"  "<h1>Weapon: Chaos Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do between -0.5 and 2.5 x Damage listed<h1>Weapon: Poison Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Poisons targets, dealing %damage_2% damage per half-second for %psn_dur% seconds."
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled_dmg"  "Entropy Ray BASE DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled_fire_rate"  "Entropy Ray RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled_range"  "Entropy Ray RANGE:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled_Note0"  "Chaos effects vary randomly. Poison stacks refresh duration."
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled_fire_rate_2"  "Poison Grenades RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled_dmg_2"  "Poison Grenades DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled_range_2"  "Poison Grenades RANGE:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow"  "The 5th Horseman/Jar o' Plagues"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_Description"  "<h1>Weapon: Ultimate Chaos</h1>Shots do between -0.5 and 2.5 x Damage listed<h1>Weapon: Ultimate Poison</h1>Poisons targets, dealing %damage_2% damage per half-second for %psn_dur% seconds."
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_dmg"  "The 5th Horseman BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_fire_rate"  "The 5th Horseman RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_range"  "The 5th Horseman RANGE:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_dps"  "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_Note0"  "Chaos effects vary randomly. Poison stacks refresh duration."
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_fire_rate_2"  "Jar o' Plagues RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_dmg_2"  "Jar o' Plagues DAMAGE/4:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_range_2"  "Jar o' Plagues RANGE:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_dps_2"  "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //-0113---STARTING LINE------------------------
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     "DOTA_Tooltip_ability_item_hull_sail_one_combo_bow"           "Hand Of the Empire"

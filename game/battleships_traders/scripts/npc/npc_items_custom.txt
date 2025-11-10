@@ -8130,6 +8130,44 @@
 		}
 	}
 
+	"item_chaos_poison_mix_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_chaos_poison_mix"
+		"Model"                         "models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"            "chaos_poison_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "850"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "1200"
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+
+		"AbilityValues"
+		{
+			"dmg"			"29"
+			"fire_rate"		".2"
+			"range"			"850"
+			"speed"			"950"
+			"level"			"1"
+			"doubled_wep"	"1"
+			"dps"			"58"
+			
+			"dmg_2"			"30"
+			"fire_rate_2"	"1.5"
+			"range_2"		"900"
+			"speed_2"		"1200"
+			"damage_2"		"1"
+			"psn_dur"		"5"
+			"dps_2"			"40"
+		}
+	}
+
 	"item_spread_plasma_mix_bow_doubled"
 	{
 		 "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -9271,6 +9309,44 @@
 		}
 	}	
 	
+	"item_chaos_poison_mix_two_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_chaos_poison_mix"
+		"Model"                         "models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"            "chaos_poison_two_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "850"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "3300"
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+
+		"AbilityValues"
+		{
+			"dmg"			"63"
+			"fire_rate"		".2"
+			"range"			"850"
+			"speed"			"950"
+			"level"			"2"
+			"doubled_wep"	"1"
+			"dps"			"260"
+			
+			"dmg_2"			"70"
+			"fire_rate_2"	"1.5"
+			"range_2"		"900"
+			"speed_2"		"1200"
+			"damage_2"		"2"
+			"psn_dur"		"5"
+			"dps_2"			"100"
+		}
+	}
+	
 	"item_spread_plasma_mix_two_bow_doubled"
 	{
 		 "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -10404,6 +10480,44 @@
 				"dmg_bonus"		"20"
 				"bonus_rate"	"50"
 				"dps"	"250"
+		}
+	}
+
+	"item_chaos_poison_mix_three_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_chaos_poison_mix"
+		"Model"                         "models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"            "chaos_poison_three_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "850"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "8000"
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+
+		"AbilityValues"
+		{
+			"dmg"			"125"
+			"fire_rate"		".2"
+			"range"			"850"
+			"speed"			"950"
+			"level"			"3"
+			"doubled_wep"	"1"
+			"dps"			"250"
+			
+			"dmg_2"			"180"
+			"fire_rate_2"	"1.5"
+			"range_2"		"900"
+			"speed_2"		"1200"
+			"damage_2"		"3"
+			"psn_dur"		"5"
+			"dps_2"			"240"
 		}
 	}
 
@@ -11553,6 +11667,42 @@
 				"dmg_bonus"		"20"
 				"bonus_rate"	"50"
 				"dps"	"457"
+		}
+	}
+
+	"item_chaos_poison_mix_ult_bow"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"                    "items/item_chaos_poison_mix_ult"
+		"Model"                         "models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"            "chaos_poison_ult_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "850"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "19900"
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+
+		"AbilityValues"
+		{
+			"dmg"			"457"
+			"fire_rate"		".2"
+			"range"			"850"
+			"speed"			"950"
+			"dps"			"457"
+			
+			"dmg_2"			"163"
+			"fire_rate_2"	"1.5"
+			"range_2"		"900"
+			"speed_2"		"1200"
+			"damage_2"		"5"
+			"psn_dur"		"5"
+			"dps_2"			"467"
 		}
 	}
 

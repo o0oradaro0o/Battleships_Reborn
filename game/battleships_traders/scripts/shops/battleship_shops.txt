@@ -12,6 +12,7 @@
 "item" "item_coal_bow"
  "item" "item_coal_chaos_mix_bow_doubled"
  "item" "item_chaos_bow"
+ "item" "item_chaos_poison_mix_bow_doubled"
  "item" "item_poison_bow"
 
  "item" "item_light_bow"
@@ -33,6 +34,7 @@
 "item" "item_coal_two_bow"
  "item" "item_coal_chaos_mix_two_bow_doubled"
  "item" "item_chaos_two_bow"
+ "item" "item_chaos_poison_mix_two_bow_doubled"
  "item" "item_poison_two_bow"
 
  "item" "item_light_two_bow"
@@ -55,6 +57,7 @@
  "item" "item_coal_three_bow"
  "item" "item_coal_chaos_mix_three_bow_doubled"
  "item" "item_chaos_three_bow"
+ "item" "item_chaos_poison_mix_three_bow_doubled"
  "item" "item_poison_three_bow"
  "item" "item_light_three_bow"
  "item" "item_spin_three_bow"
@@ -74,6 +77,7 @@
  "item"  "item_coal_ult_bow"
  "item" "item_coal_chaos_mix_ult_bow"
  "item" "item_chaos_ult_bow"
+ "item" "item_chaos_poison_mix_ult_bow"
  "item" "item_poison_ult_bow"
 
  "item"  "item_light_ult_bow"
