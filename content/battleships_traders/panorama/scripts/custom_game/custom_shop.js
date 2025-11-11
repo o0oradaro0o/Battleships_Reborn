@@ -914,7 +914,7 @@ function showMainItems() {
         var newRowContainer = $.CreatePanel("Panel", newRow, newRowNames[rowIndex] + "_container");
         newRowContainer.AddClass("ShopItemRowContainer");
         newRowContainer.AddClass("LeftRow");
-        newRowContainer.style.marginTop = "50px";
+        newRowContainer.style.marginTop = "55px";
 
       }
     }
@@ -923,7 +923,7 @@ function showMainItems() {
     for (var rowIndex = 0; rowIndex < originalRowNames.length; rowIndex++) {
       var originalRow = gridBasicItems.FindChildTraverse(originalRowNames[rowIndex]);
       var newRow = gridBasicItems.FindChildTraverse(newRowNames[rowIndex]);
-      originalRow.style.marginTop = "35px";
+      originalRow.style.marginTop = "40px";
 
       if (originalRow && newRow) {
         var originalContainer = originalRow.GetChild(1);

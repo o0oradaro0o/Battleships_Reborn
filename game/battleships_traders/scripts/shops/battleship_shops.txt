@@ -22,6 +22,7 @@
  "item" "item_breach_bow"
  "item" "item_breach_ice_mix_bow_doubled"
  "item" "item_ice_bow"
+ "item" "item_ice_wind_mix_bow_doubled"
  "item" "item_wind_bow"
 	}
 	"attributes"
@@ -47,6 +48,7 @@
  "item" "item_breach_two_bow"
  "item" "item_breach_ice_mix_two_bow_doubled"
  "item" "item_ice_two_bow"
+ "item" "item_ice_wind_mix_two_bow_doubled"
  "item" "item_wind_two_bow"	
 		
 	}
@@ -73,6 +75,7 @@
  "item" "item_breach_three_bow"
  "item" "item_breach_ice_mix_three_bow_doubled"
  "item" "item_ice_three_bow"
+ "item" "item_ice_wind_mix_three_bow_doubled"
  "item" "item_wind_three_bow"
 	}
 	"misc"
@@ -97,6 +100,7 @@
  "item" "item_breach_ult_bow"
  "item" "item_breach_ice_mix_ult_bow"
  "item"  "item_ice_ult_bow"
+ "item" "item_ice_wind_mix_ult_bow"
  "item"  "item_wind_ult_bow"
 	}
 	// Level 1 - Green Recipes

@@ -1421,6 +1421,87 @@
     "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_slow_dur"  "SLOW DURATION:"
     "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_Note0"  "Breach damage is delayed with pure component. Ice projectiles slow enemies."
 
+    //===============================================
+    // ice wind mix level 1
+    //===============================================
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled"  "Snowflakes/Stiff Breeze"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_Description"  "<h1>Hybrid Weapon: Ice/Wind Level 1</h1>Fires both Ice and Wind weapons simultaneously.<br><br><b>Snowflakes:</b> Slows enemy movement by %slow_pct%%% for %slow_dur% second. Does not hit structures.<br><b>Stiff Breeze:</b> Heals %bonus_dmg% to friendly units within 400 radius when hitting enemies. Knockback on impact."
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_fire_rate"  "Snowflakes RELOAD (s):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_dmg"  "Snowflakes DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_range"  "Snowflakes RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>Snowflakes DPS:</font>"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_slow_pct"  "SLOW PERCENT:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_slow_dur"  "SLOW DURATION:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_fire_rate_2"  "Stiff Breeze RELOAD (s):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_dmg_2"  "Stiff Breeze DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_range_2"  "Stiff Breeze RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>Stiff Breeze DPS:</font>"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_bonus_dmg"  "ALLY HEAL:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_min_range"  "MINIMUM HIT RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_min_range_dmg_pct"  "MIN RANGE DAMAGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_Note0"  "Ice projectiles slow enemies. Wind projectiles knock back and can hit structures. Damage reduced when enemies are too close."
+
+    //===============================================
+    // ice wind mix level 2
+    //===============================================
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled"  "Snowfall/Squall"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_Description"  "<h1>Hybrid Weapon: Ice/Wind Level 2</h1>Fires both Ice and Wind weapons simultaneously.<br><br><b>Snowfall:</b> Slows enemy movement by %slow_pct%%% for %slow_dur% second. Does not hit structures.<br><b>Squall:</b> Heals %bonus_dmg% to friendly units within 400 radius when hitting enemies. Knockback on impact."
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_fire_rate"  "Snowfall RELOAD (s):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_dmg"  "Snowfall DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_range"  "Snowfall RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>Snowfall DPS:</font>"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_slow_pct"  "SLOW PERCENT:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_slow_dur"  "SLOW DURATION:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_fire_rate_2"  "Squall RELOAD (s):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_dmg_2"  "Squall DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_range_2"  "Squall RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>Squall DPS:</font>"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_bonus_dmg"  "ALLY HEAL:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_min_range"  "MINIMUM HIT RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_min_range_dmg_pct"  "MIN RANGE DAMAGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_Note0"  "Ice projectiles slow enemies. Wind projectiles knock back and can hit structures. Damage reduced when enemies are too close."
+
+    //===============================================
+    // ice wind mix level 3
+    //===============================================
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled"  "Snowstorm/Monsoon"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_Description"  "<h1>Hybrid Weapon: Ice/Wind Level 3</h1>Fires both Ice and Wind weapons simultaneously.<br><br><b>Snowstorm:</b> Slows enemy movement by %slow_pct%%% for %slow_dur% seconds. Does not hit structures.<br><b>Monsoon:</b> Heals %bonus_dmg% to friendly units within 400 radius when hitting enemies. Knockback on impact."
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_fire_rate"  "Snowstorm RELOAD (s):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_dmg"  "Snowstorm DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_range"  "Snowstorm RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>Snowstorm DPS:</font>"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_slow_pct"  "SLOW PERCENT:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_slow_dur"  "SLOW DURATION:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_fire_rate_2"  "Monsoon RELOAD (s):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_dmg_2"  "Monsoon DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_range_2"  "Monsoon RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>Monsoon DPS:</font>"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_bonus_dmg"  "ALLY HEAL:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_min_range"  "MINIMUM HIT RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_min_range_dmg_pct"  "MIN RANGE DAMAGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_Note0"  "Ice projectiles slow enemies. Wind projectiles knock back and can hit structures. Damage reduced when enemies are too close."
+
+    //===============================================
+    // ice wind mix ultimate
+    //===============================================
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow"  "Blizzard/Tornado"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_Description"  "<h1>Hybrid Weapon: Ultimate Ice/Wind</h1>Fires both Ice and Wind weapons simultaneously.<br><br><b>Blizzard:</b> Slows enemy movement by %slow_pct%%% for %slow_dur% seconds. Does not hit structures.<br><b>Tornado:</b> Heals %bonus_dmg% to friendly units within 400 radius when hitting enemies. Knockback on impact."
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_fire_rate"  "Blizzard RELOAD (s):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_dmg"  "Blizzard DAMAGE (x4):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_range"  "Blizzard RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_dps"  "\n<font  size= '3' color='#cc6400'>Blizzard DPS:</font>"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_slow_pct"  "SLOW PERCENT:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_slow_dur"  "SLOW DURATION:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_fire_rate_2"  "Tornado RELOAD (s):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_dmg_2"  "Tornado DAMAGE (x4):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_range_2"  "Tornado RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_dps_2"  "\n<font  size= '3' color='#cc6400'>Tornado DPS:</font>"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_bonus_dmg"  "ALLY HEAL:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_min_range"  "MINIMUM HIT RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_min_range_dmg_pct"  "MIN RANGE DAMAGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_Note0"  "Ice projectiles slow enemies. Wind projectiles knock back and can hit structures. Damage reduced when enemies are too close."
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_Lore"  "When freezing winds meet howling gales, even the bravest sailors turn back."
+
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //-0113---STARTING LINE------------------------
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

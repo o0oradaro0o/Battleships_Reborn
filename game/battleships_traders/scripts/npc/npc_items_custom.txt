@@ -2773,6 +2773,85 @@
 			"01"						"item_breach_ice_mix_bow_doubled;item_breach_ice_mix_two_bow_doubled;item_breach_ice_mix_three_bow_doubled"
 		}
 	}
+	//===============================================
+	// ice wind mix recipes
+	//===============================================
+	"item_recipe_ice_wind_mix_bow_doubled"
+	{
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ice_wind_mix_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_ice_bow;item_wind_bow"
+		}
+	}
+	"item_recipe_ice_wind_mix_two_bow_doubled"
+	{
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ice_wind_mix_two_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_ice_two_bow;item_wind_two_bow"
+		}
+	}
+	"item_recipe_ice_wind_mix_three_bow_doubled"
+	{
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ice_wind_mix_three_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_ice_three_bow;item_wind_three_bow"
+		}
+	}
+	"item_recipe_ice_wind_mix_ult_bow"
+	{
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3500"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ice_wind_mix_ult_bow"
+		"ItemRequirements"
+		{
+			"01"						"item_ice_wind_mix_bow_doubled;item_ice_wind_mix_two_bow_doubled;item_ice_wind_mix_three_bow_doubled"
+		}
+	}
 	"item_recipe_light_iron_mix_ult_bow"
 	{
 
@@ -11978,6 +12057,198 @@
 			"slow_pct"		"4"
 			"slow_dur"		"2"
 			"dps_2"			"97"
+		}
+	}
+
+	//===============================================
+	// ice-wind mix level 1
+	//===============================================
+  "item_ice_wind_mix_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_ice_wind_mix"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"AbilityTextureName"			"ice_wind_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "1300"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "500" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"ice wind mix bow doubled"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"AbilityValues"
+		{
+			"level"			"1"
+			
+			// Ice weapon (primary)
+			"dmg"			"48"
+			"fire_rate"		"2.1"
+			"range"			"1250"
+			"speed"			"1200"
+			"slow_pct"		"2"
+			"slow_dur"		"1"
+			"dps"			"23"
+			
+			// Wind weapon (secondary)
+			"dmg_2"			"20"
+			"fire_rate_2"	"1.0"
+			"range_2"		"1300"
+			"speed_2"		"900"
+			"bonus_dmg"		"8"
+			"min_range"		"600"
+			"min_range_dmg_pct"	"50"
+			"dps_2"			"20"
+		}
+	}
+
+	//===============================================
+	// ice-wind mix level 2
+	//===============================================
+  "item_ice_wind_mix_two_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_ice_wind_mix"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"AbilityTextureName"			"ice_wind_two_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "1300"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "1575" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"ice wind mix two bow doubled"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"AbilityValues"
+		{
+			"level"			"2"
+			
+			// Ice weapon (primary)
+			"dmg"			"100"
+			"fire_rate"		"2.1"
+			"range"			"1250"
+			"speed"			"1200"
+			"slow_pct"		"3"
+			"slow_dur"		"1"
+			"dps"			"47"
+			
+			// Wind weapon (secondary)
+			"dmg_2"			"40"
+			"fire_rate_2"	"1.0"
+			"range_2"		"1300"
+			"speed_2"		"900"
+			"bonus_dmg"		"16"
+			"min_range"		"600"
+			"min_range_dmg_pct"	"50"
+			"dps_2"			"40"
+		}
+	}
+
+	//===============================================
+	// ice-wind mix level 3
+	//===============================================
+  "item_ice_wind_mix_three_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_ice_wind_mix"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"AbilityTextureName"			"ice_wind_three_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "1300"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "3850" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"ice wind mix three bow doubled"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"AbilityValues"
+		{
+			"level"			"3"
+			
+			// Ice weapon (primary)
+			"dmg"			"200"
+			"fire_rate"		"2.1"
+			"range"			"1250"
+			"speed"			"1200"
+			"slow_pct"		"4"
+			"slow_dur"		"3.5"
+			"dps"			"96"
+			
+			// Wind weapon (secondary)
+			"dmg_2"			"80"
+			"fire_rate_2"	"1.0"
+			"range_2"		"1300"
+			"speed_2"		"900"
+			"bonus_dmg"		"32"
+			"min_range"		"600"
+			"min_range_dmg_pct"	"50"
+			"dps_2"			"80"
+		}
+	}
+
+	//===============================================
+	// ice-wind mix ultimate
+	//===============================================
+  "item_ice_wind_mix_ult_bow"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_ice_wind_mix_ult"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"AbilityTextureName"			"ice_wind_ult_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "1300"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "23600" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"ice wind mix ult"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"AbilityValues"
+		{
+			"level"			"4"
+			
+			// Ice weapon (primary)
+			"dmg"			"205"
+			"fire_rate"		"2.1"
+			"range"			"1250"
+			"speed"			"1200"
+			"slow_pct"		"4"
+			"slow_dur"		"2"
+			"dps"			"390"
+			
+			// Wind weapon (secondary)
+			"dmg_2"			"97.5"
+			"fire_rate_2"	"1.0"
+			"range_2"		"1300"
+			"speed_2"		"900"
+			"bonus_dmg"		"35"
+			"min_range"		"600"
+			"min_range_dmg_pct"	"50"
+			"dps_2"			"390"
 		}
 	}
 
