@@ -1349,6 +1349,78 @@
     "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_pure_pct"  "PURE PERCENT:"
     "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_Note0"  "Spin projectiles fragment to nearby enemies. Breach damage is delayed with pure component."
 
+    //===============================================
+    // breach_ice_mix weapons
+    //===============================================
+    
+    // Level 1
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled"  "Hull Breaching Mines/Snowflakes"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_Description"  "<h1>Hybrid Weapon: Breach/Ice Level 1</h1>Fires both Breach and Ice weapons simultaneously.<br><br><b>Hull Breaching Mines:</b> %pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. Does not hit structures.<br><b>Snowflakes:</b> Slows enemy movement by %slow_pct%%% for %slow_dur% second."
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_fire_rate"  "Hull Breaching Mines RELOAD (s):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_dmg"  "Hull Breaching Mines DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_range"  "Hull Breaching Mines RANGE:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_delay"  "Hull Breaching Mines DAMAGE DELAY:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>Hull Breaching Mines DPS:</font>"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_pure_pct"  "PURE PERCENT:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_fire_rate_2"  "Snowflakes RELOAD (s):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_dmg_2"  "Snowflakes DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_range_2"  "Snowflakes RANGE:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>Snowflakes DPS:</font>"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_slow_pct"  "SLOW PERCENT:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_slow_dur"  "SLOW DURATION:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_Note0"  "Breach damage is delayed with pure component. Ice projectiles slow enemies."
+    
+    // Level 2
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled"  "Tactical Torpedoes/Snowfall"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_Description"  "<h1>Hybrid Weapon: Breach/Ice Level 2</h1>Fires both Breach and Ice weapons simultaneously.<br><br><b>Tactical Torpedoes:</b> %pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. Does not hit structures.<br><b>Snowfall:</b> Slows enemy movement by %slow_pct%%% for %slow_dur% second."
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_fire_rate"  "Tactical Torpedoes RELOAD (s):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_dmg"  "Tactical Torpedoes DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_range"  "Tactical Torpedoes RANGE:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_delay"  "Tactical Torpedoes DAMAGE DELAY:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>Tactical Torpedoes DPS:</font>"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_pure_pct"  "PURE PERCENT:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_fire_rate_2"  "Snowfall RELOAD (s):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_dmg_2"  "Snowfall DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_range_2"  "Snowfall RANGE:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>Snowfall DPS:</font>"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_slow_pct"  "SLOW PERCENT:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_slow_dur"  "SLOW DURATION:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_Note0"  "Breach damage is delayed with pure component. Ice projectiles slow enemies."
+    
+    // Level 3
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled"  "Charging Depth Charges/Snowstorm"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_Description"  "<h1>Hybrid Weapon: Breach/Ice Level 3</h1>Fires both Breach and Ice weapons simultaneously.<br><br><b>Charging Depth Charges:</b> %pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. Does not hit structures.<br><b>Snowstorm:</b> Slows enemy movement by %slow_pct%%% for %slow_dur% seconds."
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_fire_rate"  "Charging Depth Charges RELOAD (s):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_dmg"  "Charging Depth Charges DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_range"  "Charging Depth Charges RANGE:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_delay"  "Charging Depth Charges DAMAGE DELAY:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>Charging Depth Charges DPS:</font>"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_pure_pct"  "PURE PERCENT:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_fire_rate_2"  "Snowstorm RELOAD (s):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_dmg_2"  "Snowstorm DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_range_2"  "Snowstorm RANGE:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>Snowstorm DPS:</font>"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_slow_pct"  "SLOW PERCENT:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_slow_dur"  "SLOW DURATION:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_Note0"  "Breach damage is delayed with pure component. Ice projectiles slow enemies."
+    
+    // Ultimate
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow"  "Missle of Impending Doom/Blizzard"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_Description"  "<h1>Hybrid Weapon: Ultimate Breach/Ice</h1>Fires both Breach and Ice weapons simultaneously.<br><br><b>Missle of Impending Doom:</b> %pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. Does not hit structures.<br><b>Blizzard:</b> Slows enemy movement by %slow_pct%%% for %slow_dur% seconds."
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_fire_rate"  "Missle of Impending Doom RELOAD (s):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_dmg"  "Missle of Impending Doom DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_range"  "Missle of Impending Doom RANGE:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_delay"  "Missle of Impending Doom DAMAGE DELAY:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_dps"  "\n<font  size= '3' color='#cc6400'>Missle of Impending Doom DPS:</font>"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_pure_pct"  "PURE PERCENT:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_fire_rate_2"  "Blizzard RELOAD (s):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_dmg_2"  "Blizzard DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_range_2"  "Blizzard RANGE:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_dps_2"  "\n<font  size= '3' color='#cc6400'>Blizzard DPS:</font>"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_slow_pct"  "SLOW PERCENT:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_slow_dur"  "SLOW DURATION:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_Note0"  "Breach damage is delayed with pure component. Ice projectiles slow enemies."
+
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //-0113---STARTING LINE------------------------
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

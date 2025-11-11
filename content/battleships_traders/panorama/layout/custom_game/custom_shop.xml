@@ -3203,6 +3203,7 @@
 	
 
         </Panel>
+
 			<Panel hittest="false" id="ScoreBoardFinalholder" class="ScoreboardHidden" >
 				
 			<Panel hittest="false" class="ScoreboardFinal" >
@@ -3369,9 +3370,11 @@
 					 <!-- For some reason I need a blank label here for alignment to work properly -->
 					<Label text="" />
 				</Panel>
-
 		</Panel>
 	</Panel>
-
-    </Panel>
+	<!-- temporary panel to hold shop items that i will re-parent from javascript -->
+	<Panel id="ShopItemsPanel">
+	
+	</Panel>
+	</Panel>
 </root>

@@ -20,6 +20,7 @@
  "item" "item_spin_bow"
  "item" "item_spin_breach_mix_bow_doubled"
  "item" "item_breach_bow"
+ "item" "item_breach_ice_mix_bow_doubled"
  "item" "item_ice_bow"
  "item" "item_wind_bow"
 	}
@@ -44,6 +45,7 @@
  "item" "item_spin_two_bow"
  "item" "item_spin_breach_mix_two_bow_doubled"
  "item" "item_breach_two_bow"
+ "item" "item_breach_ice_mix_two_bow_doubled"
  "item" "item_ice_two_bow"
  "item" "item_wind_two_bow"	
 		
@@ -69,6 +71,7 @@
  "item" "item_spin_three_bow"
  "item" "item_spin_breach_mix_three_bow_doubled"
  "item" "item_breach_three_bow"
+ "item" "item_breach_ice_mix_three_bow_doubled"
  "item" "item_ice_three_bow"
  "item" "item_wind_three_bow"
 	}
@@ -92,6 +95,7 @@
  "item"  "item_spin_ult_bow"
  "item" "item_spin_breach_mix_ult_bow"
  "item" "item_breach_ult_bow"
+ "item" "item_breach_ice_mix_ult_bow"
  "item"  "item_ice_ult_bow"
  "item"  "item_wind_ult_bow"
 	}

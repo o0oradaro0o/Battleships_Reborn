@@ -2694,6 +2694,85 @@
 			"01"						"item_spin_breach_mix_bow_doubled;item_spin_breach_mix_two_bow_doubled;item_spin_breach_mix_three_bow_doubled"
 		}
 	}
+	//===============================================
+	// breach ice mix recipes
+	//===============================================
+	"item_recipe_breach_ice_mix_bow_doubled"
+	{
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_breach_ice_mix_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_breach_bow;item_ice_bow"
+		}
+	}
+	"item_recipe_breach_ice_mix_two_bow_doubled"
+	{
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_breach_ice_mix_two_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_breach_two_bow;item_ice_two_bow"
+		}
+	}
+	"item_recipe_breach_ice_mix_three_bow_doubled"
+	{
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_breach_ice_mix_three_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_breach_three_bow;item_ice_three_bow"
+		}
+	}
+	"item_recipe_breach_ice_mix_ult_bow"
+	{
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3500"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_breach_ice_mix_ult_bow"
+		"ItemRequirements"
+		{
+			"01"						"item_breach_ice_mix_bow_doubled;item_breach_ice_mix_two_bow_doubled;item_breach_ice_mix_three_bow_doubled"
+		}
+	}
 	"item_recipe_light_iron_mix_ult_bow"
 	{
 
@@ -11709,6 +11788,196 @@
 			"remove"		"3"
 			"pure_pct"		"20"
 			"dps_2"			"81"
+		}
+	}
+
+	//===============================================
+	// breach-ice mix level 1
+	//===============================================
+  "item_breach_ice_mix_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_breach_ice_mix"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"AbilityTextureName"			"breach_ice_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "1200"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "550" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"breach ice mix doubled"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"AbilityValues"
+		{
+			"level"			"1"
+			
+			// Breach weapon (primary)
+			"dmg"			"21"
+			"fire_rate"		"0.8"
+			"range"			"1200"
+			"speed"			"875"
+			"delay"			"2.5"
+			"remove"		"3"
+			"pure_pct"		"20"
+			"dps"			"26"
+			
+			// Ice weapon (secondary)
+			"dmg_2"			"48"
+			"fire_rate_2"	"2.1"
+			"range_2"		"1250"
+			"speed_2"		"1450"
+			"slow_pct"		"2"
+			"slow_dur"		"1"
+			"dps_2"			"23"
+		}
+	}
+	
+	//===============================================
+	// breach-ice mix level 2
+	//===============================================
+  "item_breach_ice_mix_two_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_breach_ice_mix"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"AbilityTextureName"			"breach_ice_two_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "1200"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "1525" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"breach ice mix doubled"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"AbilityValues"
+		{
+			"level"			"2"
+			
+			// Breach weapon (primary)
+			"dmg"			"41"
+			"fire_rate"		"0.8"
+			"range"			"1200"
+			"speed"			"875"
+			"delay"			"2.5"
+			"remove"		"3"
+			"pure_pct"		"20"
+			"dps"			"52"
+			
+			// Ice weapon (secondary)
+			"dmg_2"			"100"
+			"fire_rate_2"	"2.1"
+			"range_2"		"1250"
+			"speed_2"		"1450"
+			"slow_pct"		"3"
+			"slow_dur"		"1"
+			"dps_2"			"47"
+		}
+	}
+	
+	//===============================================
+	// breach-ice mix level 3
+	//===============================================
+  "item_breach_ice_mix_three_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_breach_ice_mix"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"AbilityTextureName"			"breach_ice_three_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "1200"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "3800" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"breach ice mix doubled"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"AbilityValues"
+		{
+			"level"			"3"
+			
+			// Breach weapon (primary)
+			"dmg"			"64"
+			"fire_rate"		"0.8"
+			"range"			"1200"
+			"speed"			"875"
+			"delay"			"2.5"
+			"remove"		"3"
+			"pure_pct"		"20"
+			"dps"			"80"
+			
+			// Ice weapon (secondary)
+			"dmg_2"			"200"
+			"fire_rate_2"	"2.1"
+			"range_2"		"1250"
+			"speed_2"		"1450"
+			"slow_pct"		"4"
+			"slow_dur"		"3.5"
+			"dps_2"			"96"
+		}
+	}
+	
+	//===============================================
+	// breach-ice mix ultimate
+	//===============================================
+  "item_breach_ice_mix_ult_bow"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_breach_ice_mix_ult"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"AbilityTextureName"			"breach_ice_ult_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "1200"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "9350" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"breach ice mix ult"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"AbilityValues"
+		{
+			// Breach weapon (primary)
+			"dmg"			"65"
+			"fire_rate"		"0.8"
+			"range"			"1200"
+			"speed"			"875"
+			"delay"			"2.5"
+			"remove"		"3"
+			"pure_pct"		"20"
+			"dps"			"81"
+			
+			// Ice weapon (secondary)
+			"dmg_2"			"205"
+			"fire_rate_2"	"2.1"
+			"range_2"		"1250"
+			"speed_2"		"1450"
+			"slow_pct"		"4"
+			"slow_dur"		"2"
+			"dps_2"			"97"
 		}
 	}
 

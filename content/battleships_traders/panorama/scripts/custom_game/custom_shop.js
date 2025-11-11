@@ -865,107 +865,130 @@ function fillShop() {
 }
 
 function showMainItems() {
-  NewShopUI.FindChildTraverse("Main")
+  var gridBasicItems = NewShopUI.FindChildTraverse("Main")
     .FindChildTraverse("HeightLimiter")
     .FindChildTraverse("GridMainShop")
     .FindChildTraverse("GridBasicItemsCategory")
-    .FindChildTraverse("GridBasicItems")
-    .FindChildTraverse("ShopItems_consumables").style.visibility = "visible";
-  var x = NewShopUI.FindChildTraverse("Main")
-    .FindChildTraverse("HeightLimiter")
-    .FindChildTraverse("GridMainShop")
-    .FindChildTraverse("GridBasicItemsCategory")
-    .FindChildTraverse("GridBasicItems")
-    .FindChildTraverse("ShopItems_consumables")
-    .GetChild(1);
-  //iterate through all children of x and set their margin to 3
-  for (var i = 0; i < x.GetChildCount(); i++) {
-    if (i % 2 == 1) {
-      x.GetChild(i).style.margin = "5.0px 1.0px 4.0px 15.0px";
-      x.GetChild(i).style.width = "30px"
-    } else {
-      x.GetChild(i).style.margin = "3.0px 3.0px 3.0px 3.0px";
-          x.GetChild(i).style.width = "38px"
+    .FindChildTraverse("GridBasicItems");
+
+
+
+  // Create 4 new shop item rows to hold the split items
+  var newRowNames = [
+    "ShopItems_consumables_alt",
+    "ShopItems_attributes_alt", 
+    "ShopItems_weapons_armor_alt",
+    "ShopItems_misc_alt"
+  ];
+
+  var originalRowNames = [
+    "ShopItems_consumables",
+    "ShopItems_attributes",
+    "ShopItems_weapons_armor",
+    "ShopItems_misc"
+  ];
+
+  gridBasicItems.style.width = "100%";
+
+  // Check if new rows exist and have items (if so, we've already split)
+  var firstNewRow = gridBasicItems.FindChildTraverse(newRowNames[0]);
+  var alreadySplit = false;
+  
+  if (firstNewRow) {
+    var firstNewContainer = firstNewRow.GetChild(0);
+    if (firstNewContainer && firstNewContainer.GetChildCount() > 0) {
+      alreadySplit = true;
     }
   }
+  
+  // Only create rows and move items if we haven't done it yet
+  if (!alreadySplit) {
+    // Create new rows if they don't exist
+    for (var rowIndex = 0; rowIndex < newRowNames.length; rowIndex++) {
+      if (!gridBasicItems.FindChildTraverse(newRowNames[rowIndex])) {
+        var newRow = $.CreatePanel("Panel", gridBasicItems, newRowNames[rowIndex]);
+        newRow.AddClass("ShopItemRowContainer");
+        newRow.AddClass("LeftRow");
+        
+        // Create the container for items
+        var newRowContainer = $.CreatePanel("Panel", newRow, newRowNames[rowIndex] + "_container");
+        newRowContainer.AddClass("ShopItemRowContainer");
+        newRowContainer.AddClass("LeftRow");
+        newRowContainer.style.marginTop = "50px";
 
-  NewShopUI.FindChildTraverse("Main")
-    .FindChildTraverse("HeightLimiter")
-    .FindChildTraverse("GridMainShop")
-    .FindChildTraverse("GridBasicItemsCategory")
-    .FindChildTraverse("GridBasicItems")
-    .FindChildTraverse("ShopItems_attributes").style.visibility = "visible";
-  var x = NewShopUI.FindChildTraverse("Main")
-    .FindChildTraverse("HeightLimiter")
-    .FindChildTraverse("GridMainShop")
-    .FindChildTraverse("GridBasicItemsCategory")
-    .FindChildTraverse("GridBasicItems")
-    .FindChildTraverse("ShopItems_attributes")
-    .GetChild(1);
-  //iterate through all children of x and set their margin to 3
-  for (var i = 0; i < x.GetChildCount(); i++) {
-    if (i % 2 == 1) {
-      x.GetChild(i).style.margin = "5.0px 1.0px 4.0px 15.0px";
-      x.GetChild(i).style.width = "30px"
-    } else {
-      x.GetChild(i).style.margin = "3.0px 3.0px 3.0px 3.0px";
-          x.GetChild(i).style.width = "38px"
+      }
     }
 
-  }
+    // Process each original row
+    for (var rowIndex = 0; rowIndex < originalRowNames.length; rowIndex++) {
+      var originalRow = gridBasicItems.FindChildTraverse(originalRowNames[rowIndex]);
+      var newRow = gridBasicItems.FindChildTraverse(newRowNames[rowIndex]);
+      originalRow.style.marginTop = "35px";
 
-  NewShopUI.FindChildTraverse("Main")
-    .FindChildTraverse("HeightLimiter")
-    .FindChildTraverse("GridMainShop")
-    .FindChildTraverse("GridBasicItemsCategory")
-    .FindChildTraverse("GridBasicItems")
-    .FindChildTraverse("ShopItems_weapons_armor").style.visibility = "visible";
+      if (originalRow && newRow) {
+        var originalContainer = originalRow.GetChild(1);
+        var newContainer = newRow.GetChild(0);
+        
+        if (!newContainer) {
+          newContainer = $.CreatePanel("Panel", newRow, newRowNames[rowIndex] + "_container");
+          newContainer.AddClass("ShopItemRowContainer");
+          newContainer.AddClass("LeftRow");
+        }
+        
+        // Get total item count
+        var totalItems = originalContainer.GetChildCount();
+        
+        // Move every other item (odd indices) to new row
+        // Start from the end and work backwards to avoid index shifting issues
+        // Move items at odd indices (1, 3, 5, 7, etc.)
+        for (var i = totalItems - 1; i >= 0; i--) {
+          if (i % 2 == 1) {
+            var itemToMove = originalContainer.GetChild(i);
+            itemToMove.SetParent(newContainer);
+            // Move to the beginning of the new container to maintain order
+            if (newContainer.GetChildCount() > 1) {
+              newContainer.MoveChildBefore(itemToMove, newContainer.GetChild(0));
+            }
+            itemToMove.style.margin = "2.0px 2.0px 2.0px 2.0px";
 
-  var x = NewShopUI.FindChildTraverse("Main")
-    .FindChildTraverse("HeightLimiter")
-    .FindChildTraverse("GridMainShop")
-    .FindChildTraverse("GridBasicItemsCategory")
-    .FindChildTraverse("GridBasicItems")
-    .FindChildTraverse("ShopItems_weapons_armor")
-    .GetChild(1);
-  //iterate through all children of x and set their margin to 3
-  for (var i = 0; i < x.GetChildCount(); i++) {
-    if (i % 2 == 1) {
-      x.GetChild(i).style.margin = "5.0px 1.0px 4.0px 15.0px";
-          x.GetChild(i).style.width = "30px"
-    } else {
-      x.GetChild(i).style.margin = "3.0px 3.0px 3.0px 3.0px";
-          x.GetChild(i).style.width = "38px"
-    }
 
-  }
+          }
+        }
+        
+        // Style remaining items in original row
+        for (var i = 0; i < originalContainer.GetChildCount(); i++) {
+          originalContainer.GetChild(i).style.margin = "2.0px 2.0px 2.0px 2.0px";
 
-  NewShopUI.FindChildTraverse("Main")
-    .FindChildTraverse("HeightLimiter")
-    .FindChildTraverse("GridMainShop")
-    .FindChildTraverse("GridBasicItemsCategory")
-    .FindChildTraverse("GridBasicItems")
-    .FindChildTraverse("ShopItems_misc").style.visibility = "visible";
-  var x = NewShopUI.FindChildTraverse("Main")
-    .FindChildTraverse("HeightLimiter")
-    .FindChildTraverse("GridMainShop")
-    .FindChildTraverse("GridBasicItemsCategory")
-    .FindChildTraverse("GridBasicItems")
-    .FindChildTraverse("ShopItems_misc")
-    .GetChild(1);
-  //iterate through all children of x and set their margin to 3
-  for (var i = 0; i < x.GetChildCount(); i++) {
-    if (i % 2 == 1) {
-      x.GetChild(i).style.margin = "5.0px 1.0px 4.0px 15.0px";
-          x.GetChild(i).style.width = "30px"
-    } else {
-      x.GetChild(i).style.margin = "3.0px 3.0px 3.0px 3.0px";
-          x.GetChild(i).style.width = "38px"
+        }
+      }
     }
     
+    // Position all alt rows after all original rows
+    // Find the last original row
+    var lastOriginalRow = gridBasicItems.FindChildTraverse(originalRowNames[originalRowNames.length - 1]);
+    
+    // Move each alt row after the last original row in order
+    for (var rowIndex = 0; rowIndex < newRowNames.length; rowIndex++) {
+      var newRow = gridBasicItems.FindChildTraverse(newRowNames[rowIndex]);
+      if (newRow && lastOriginalRow) {
+        gridBasicItems.MoveChildAfter(newRow, lastOriginalRow);
+        lastOriginalRow = newRow; // Update reference so next row goes after this one
+      }
+    }
   }
-
-  NewShopUI.FindChildTraverse("Main")
+  
+  // Always show all rows when this function is called
+  for (var rowIndex = 0; rowIndex < originalRowNames.length; rowIndex++) {
+    var originalRow = gridBasicItems.FindChildTraverse(originalRowNames[rowIndex]);
+    var newRow = gridBasicItems.FindChildTraverse(newRowNames[rowIndex]);
+    
+    if (originalRow) {
+      originalRow.style.visibility = "visible";
+    }
+    if (newRow) {
+      newRow.style.visibility = "visible";
+    }
+  }  NewShopUI.FindChildTraverse("Main")
     .FindChildTraverse("HeightLimiter")
     .FindChildTraverse("GridMainShop")
     .FindChildTraverse("GridBasicItemsCategory").style.backgroundImage =
@@ -1006,7 +1029,7 @@ function showUpgradeItems() {
   //iterate through all children of x and set their margin to 3
   for (var i = 0; i < x.GetChildCount(); i++) {
     x.GetChild(i).style.margin = "3px";
-    x.GetChild(i).style.width = "38px"
+
   }
 
   NewShopUI.FindChildTraverse("Main")
@@ -1027,7 +1050,7 @@ function showUpgradeItems() {
   //iterate through all children of x and set their margin to 3
   for (var i = 0; i < x.GetChildCount(); i++) {
     x.GetChild(i).style.margin = "3px";
-    x.GetChild(i).style.width = "38px"
+
   }
 
   NewShopUI.FindChildTraverse("Main")
@@ -1048,7 +1071,7 @@ function showUpgradeItems() {
   //iterate through all children of x and set their margin to 3
   for (var i = 0; i < x.GetChildCount(); i++) {
     x.GetChild(i).style.margin = "3px";
-    x.GetChild(i).style.width = "38px"
+
   }
   NewShopUI.FindChildTraverse("Main")
     .FindChildTraverse("HeightLimiter")
@@ -1068,7 +1091,7 @@ function showUpgradeItems() {
   //iterate through all children of x and set their margin to 3
   for (var i = 0; i < x.GetChildCount(); i++) {
     x.GetChild(i).style.margin = "3px";
-    x.GetChild(i).style.width = "38px"
+
   }
 
   NewShopUI.FindChildTraverse("Main")
@@ -1089,7 +1112,7 @@ function showUpgradeItems() {
   //iterate through all children of x and set their margin to 3
   for (var i = 0; i < x.GetChildCount(); i++) {
     x.GetChild(i).style.margin = "3px";
-    x.GetChild(i).style.width = "38px"
+
   }
 
   NewShopUI.FindChildTraverse("Main")
@@ -1110,35 +1133,39 @@ function showUpgradeItems() {
   //iterate through all children of x and set their margin to 3
   for (var i = 0; i < x.GetChildCount(); i++) {
     x.GetChild(i).style.margin = "3px";
-    x.GetChild(i).style.width = "38px"
+
   }
+
+    NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridBasicItemsCategory").style.maxWidth = "100%";
 }
 
 function hideMainItems() {
-  NewShopUI.FindChildTraverse("Main")
+  var gridBasicItems = NewShopUI.FindChildTraverse("Main")
     .FindChildTraverse("HeightLimiter")
     .FindChildTraverse("GridMainShop")
     .FindChildTraverse("GridBasicItemsCategory")
-    .FindChildTraverse("GridBasicItems")
-    .FindChildTraverse("ShopItems_consumables").style.visibility = "collapse";
-  NewShopUI.FindChildTraverse("Main")
-    .FindChildTraverse("HeightLimiter")
-    .FindChildTraverse("GridMainShop")
-    .FindChildTraverse("GridBasicItemsCategory")
-    .FindChildTraverse("GridBasicItems")
-    .FindChildTraverse("ShopItems_attributes").style.visibility = "collapse";
-  NewShopUI.FindChildTraverse("Main")
-    .FindChildTraverse("HeightLimiter")
-    .FindChildTraverse("GridMainShop")
-    .FindChildTraverse("GridBasicItemsCategory")
-    .FindChildTraverse("GridBasicItems")
-    .FindChildTraverse("ShopItems_weapons_armor").style.visibility = "collapse";
-  NewShopUI.FindChildTraverse("Main")
-    .FindChildTraverse("HeightLimiter")
-    .FindChildTraverse("GridMainShop")
-    .FindChildTraverse("GridBasicItemsCategory")
-    .FindChildTraverse("GridBasicItems")
-    .FindChildTraverse("ShopItems_misc").style.visibility = "collapse";
+    .FindChildTraverse("GridBasicItems");
+
+  var allRowNames = [
+    "ShopItems_consumables",
+    "ShopItems_attributes",
+    "ShopItems_weapons_armor",
+    "ShopItems_misc",
+    "ShopItems_consumables_alt",
+    "ShopItems_attributes_alt",
+    "ShopItems_weapons_armor_alt",
+    "ShopItems_misc_alt"
+  ];
+
+  for (var i = 0; i < allRowNames.length; i++) {
+    var row = gridBasicItems.FindChildTraverse(allRowNames[i]);
+    if (row) {
+      row.style.visibility = "collapse";
+    }
+  }
 }
 
 function hideUpgradeItems() {

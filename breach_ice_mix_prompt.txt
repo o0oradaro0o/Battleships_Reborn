@@ -1,0 +1,560 @@
+================================================================================
+BREACH/ICE MIX HYBRID WEAPONS - COMPLETE IMPLEMENTATION GUIDE
+================================================================================
+
+OBJECTIVE:
+Create a complete set of hybrid weapons called "item_breach_ice_mix" that combines 
+breach weapons (delayed damage with pure damage component) with ice weapons (slow effect).
+Follow the same pattern as the recently completed item_spin_breach_mix and 
+item_light_spin_mix weapons.
+
+================================================================================
+CRITICAL NAMING RULES (LEARNED FROM PREVIOUS IMPLEMENTATIONS):
+================================================================================
+1. DO NOT use "Double" prefix in weapon names for hybrid weapons
+2. Item internal names use "_bow_doubled" suffix (e.g., item_breach_ice_mix_bow_doubled)
+3. Ultimate uses "_ult_bow" suffix (e.g., item_breach_ice_mix_ult_bow)
+4. Display names combine both weapon names with "/" (e.g., "Hull Breaching Mines/Frost Bolt")
+
+================================================================================
+TARGETING RULES (CRITICAL - LEARNED FROM THIS SESSION):
+================================================================================
+1. BREACH weapons should NOT hit towers/structures
+   - Remove DOTA_UNIT_TARGET_BUILDING from FindUnitsInRadius
+   - Use: DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC (only)
+   
+2. ICE weapons CAN hit towers/structures (default behavior)
+   - Keep: DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING
+
+================================================================================
+REQUIRED ITEMS TO CREATE:
+================================================================================
+Level 1: item_breach_ice_mix_bow_doubled
+Level 2: item_breach_ice_mix_two_bow_doubled  
+Level 3: item_breach_ice_mix_three_bow_doubled
+Ultimate: item_breach_ice_mix_ult_bow
+
+================================================================================
+STEP 1: RESEARCH PHASE
+================================================================================
+
+EXTRACT STATS FROM: game/battleships_traders/scripts/npc/npc_items_custom.txt
+
+A. BREACH WEAPON STATS (Primary Weapon):
+   Search for: "item_breach_one_bow", "item_breach_two_bow", "item_breach_three_bow", "item_breach_ult_bow"
+   
+   Extract these stats for each level:
+   - dmg (damage)
+   - fire_rate (reload time)
+   - range
+   - speed (projectile speed)
+   - delay (damage delay in seconds, typically 2.5)
+   - remove (debuff duration)
+   - pure_pct (percentage of pure damage, typically 20)
+   - level (1, 2, 3, or 4 for ultimate)
+
+B. ICE WEAPON STATS (Secondary Weapon - use "_2" suffix):
+   Search for: "item_ice_one_bow", "item_ice_two_bow", "item_ice_three_bow", "item_ice_ult_bow"
+   
+   Extract these stats for each level:
+   - dmg_2 (damage)
+   - fire_rate_2 (reload time)
+   - range_2
+   - speed_2 (projectile speed)
+   - slow_pct (slow percentage)
+   - slow_dur (slow duration)
+   - level (should match breach weapon level)
+
+C. RECIPE COSTS:
+   Calculate combination costs:
+   - Level 1: breach_one + ice_one costs
+   - Level 2: breach_ice_mix_1 + breach_two + ice_two costs
+   - Level 3: breach_ice_mix_2 + breach_three + ice_three costs
+   - Ultimate: breach_ice_mix_3 + breach_ult + ice_ult costs
+
+================================================================================
+STEP 2: EXTRACT WEAPON NAMES
+================================================================================
+
+FROM: game/battleships_traders/resource/addon_english.txt
+
+A. BREACH WEAPON NAMES:
+   Search for tooltip names:
+   - "DOTA_Tooltip_ability_item_breach_one_bow"
+   - "DOTA_Tooltip_ability_item_breach_two_bow"
+   - "DOTA_Tooltip_ability_item_breach_three_bow"
+   - "DOTA_Tooltip_ability_item_breach_ult_bow"
+
+B. ICE WEAPON NAMES:
+   Search for tooltip names:
+   - "DOTA_Tooltip_ability_item_ice_one_bow"
+   - "DOTA_Tooltip_ability_item_ice_two_bow"
+   - "DOTA_Tooltip_ability_item_ice_three_bow"
+   - "DOTA_Tooltip_ability_item_ice_ult_bow"
+
+C. CREATE COMBINED NAMES:
+   Format: "[Breach Name]/[Ice Name]"
+   Example: "Hull Breaching Mines/Frost Bolt"
+   REMEMBER: NO "Double" prefix!
+
+================================================================================
+STEP 3: CREATE LUA SCRIPTS
+================================================================================
+
+A. CREATE: game/battleships_traders/scripts/vscripts/items/item_breach_ice_mix.lua
+
+STRUCTURE (Levels 1-3):
+```lua
+item_breach_ice_mix = class({})
+LinkLuaModifier("modifier_item_breach_ice_mix", "items/item_breach_ice_mix.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_breach_ice_mix_2", "items/item_breach_ice_mix.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_breach_ice_mix_breach_debuff", "items/item_breach_ice_mix.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_breach_ice_mix_ice_slow", "items/item_breach_ice_mix.lua", LUA_MODIFIER_MOTION_NONE)
+
+-- Class definitions for each level
+item_breach_ice_mix_bow_doubled = class({})
+item_breach_ice_mix_two_bow_doubled = class({})
+item_breach_ice_mix_three_bow_doubled = class({})
+
+-- GetIntrinsicModifierName functions for each class
+-- Each returns "modifier_item_breach_ice_mix"
+
+----------------------------------------------------------------------
+-- Primary Weapon: Breach (Projectile with delayed damage)
+----------------------------------------------------------------------
+modifier_item_breach_ice_mix = class({})
+
+KEY FEATURES:
+- OnCreated: Initialize breach stats (dmg, fire_rate, range, speed, delay, remove, pure_pct, level)
+- Set num_attacks = 1 (fires one projectile)
+- Use particles: "particles/basic_projectile/breach_one/two/three_projectile.vpcf"
+- Use sound: "Hero_Tinker.Attack"
+- OnIntervalThink: FindUnitsInRadius with HERO + BASIC only (NO BUILDING!)
+- OnRefresh: Apply modifier_item_breach_ice_mix_breach_debuff with damage and delay
+- OnDestroy: Remove modifier_item_breach_ice_mix_2
+- Add secondary modifier in OnCreated: self.parent:AddNewModifier(..., "modifier_item_breach_ice_mix_2", {})
+
+----------------------------------------------------------------------
+-- Breach Debuff (Delayed Damage)
+----------------------------------------------------------------------
+modifier_item_breach_ice_mix_breach_debuff = class({})
+
+KEY FEATURES:
+- IsHidden = true
+- OnCreated: Store damage, delay, pure_pct
+- OnIntervalThink (after delay): Apply physical + pure damage split
+- Visual: "particles/basic_projectile/breach_boom.vpcf" and "breach_ind.vpcf"
+
+----------------------------------------------------------------------
+-- Secondary Weapon: Ice (Projectile with slow)
+----------------------------------------------------------------------
+modifier_item_breach_ice_mix_2 = class({})
+
+KEY FEATURES:
+- OnCreated: Initialize ice stats (dmg_2, fire_rate_2, range_2, speed_2, slow_pct, slow_dur, level)
+- Set num_attacks = 1 (fires one projectile)
+- Use particles: "particles/basic_projectile/ice_one/two/three_projectile.vpcf"
+- Use sound: "Hero_Crystal.Attack"
+- OnIntervalThink: FindUnitsInRadius with HERO + BASIC + BUILDING (can hit towers!)
+- OnRefresh: Apply damage and modifier_item_breach_ice_mix_ice_slow
+- Visual: "particles/basic_projectile/ice_debuff.vpcf"
+
+----------------------------------------------------------------------
+-- Ice Slow Debuff
+----------------------------------------------------------------------
+modifier_item_breach_ice_mix_ice_slow = class({})
+
+KEY FEATURES:
+- DeclareFunctions: MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
+- GetModifierMoveSpeedBonus_Percentage: Return negative slow_pct
+- GetEffectName: Return ice debuff particle
+```
+
+B. CREATE: game/battleships_traders/scripts/vscripts/items/item_breach_ice_mix_ult.lua
+
+STRUCTURE (Ultimate):
+```lua
+item_breach_ice_mix_ult_bow = class({})
+LinkLuaModifier("modifier_item_breach_ice_mix_ult_bow", "items/item_breach_ice_mix_ult.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_breach_ice_mix_ult_bow_2", "items/item_breach_ice_mix_ult.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_breach_ice_mix_ult_bow_breach_debuff", "items/item_breach_ice_mix_ult.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_breach_ice_mix_ult_bow_ice_slow", "items/item_breach_ice_mix_ult.lua", LUA_MODIFIER_MOTION_NONE)
+
+-- Similar structure to base version but:
+-- - Use level = 4
+-- - Use "breach_ult_projectile.vpcf" and "ice_ult_projectile.vpcf"
+-- - All modifier names include "_ult_bow"
+-- - Breach still CANNOT hit towers (HERO + BASIC only)
+-- - Ice CAN hit towers (HERO + BASIC + BUILDING)
+```
+
+================================================================================
+STEP 4: ADD RECIPES TO npc_items_custom.txt
+================================================================================
+
+LOCATION: After existing breach/ice recipes, before item definitions section
+
+FORMAT:
+```
+//===============================================
+// breach ice mix recipes
+//===============================================
+
+"Recipe_item_breach_ice_mix_bow_doubled"
+{
+    "ID" "[NEXT_AVAILABLE_ID]"
+    "ItemRecipe" "1"
+    "ItemResult" "item_breach_ice_mix_bow_doubled"
+    "ItemRequirements"
+    {
+        "01" "item_breach_one_bow;item_ice_one_bow"
+    }
+}
+
+[Repeat for _two_bow_doubled, _three_bow_doubled, and _ult_bow]
+```
+
+POSITIONING: Insert after the last recipe definition, typically around line 2700-2800
+
+================================================================================
+STEP 5: ADD ITEM DEFINITIONS TO npc_items_custom.txt
+================================================================================
+
+LOCATION: After light_spin_mix ultimate item definition (around line 11700+)
+
+FORMAT FOR EACH ITEM:
+```
+//===============================================
+// breach-ice mix level 1
+//===============================================
+
+"item_breach_ice_mix_bow_doubled"
+{
+    "ID" "[NEXT_AVAILABLE_ID]"
+    "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass" "item_lua"
+    "ScriptFile" "items/item_breach_ice_mix"
+    "AbilityTextureName" "breach_ice_bow"
+    "Model" "models/props_gameplay/red_box.vmdl"
+    
+    "ItemCost" "[CALCULATED_COST]"
+    "ItemShopTags" ""
+    "ItemQuality" "rare"
+    "ItemAliases" "breach ice mix doubled"
+    "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_NEVER"
+    "ItemDeclarations" "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+    
+    "AbilityValues"
+    {
+        "level" "1"
+        
+        // Breach weapon (primary)
+        "dmg" "[BREACH_DAMAGE]"
+        "fire_rate" "[BREACH_FIRE_RATE]"
+        "range" "[BREACH_RANGE]"
+        "speed" "[BREACH_SPEED]"
+        "delay" "[BREACH_DELAY]"
+        "remove" "[BREACH_REMOVE]"
+        "pure_pct" "[BREACH_PURE_PCT]"
+        
+        // Ice weapon (secondary - note "_2" suffix)
+        "dmg_2" "[ICE_DAMAGE]"
+        "fire_rate_2" "[ICE_FIRE_RATE]"
+        "range_2" "[ICE_RANGE]"
+        "speed_2" "[ICE_SPEED]"
+        "slow_pct" "[ICE_SLOW_PCT]"
+        "slow_dur" "[ICE_SLOW_DUR]"
+    }
+}
+
+[Repeat for _two_bow_doubled, _three_bow_doubled, and _ult_bow with level 2, 3, 4]
+```
+
+IMPORTANT: Use replace_string_in_file tool with unique anchor text from the previous item definition
+
+================================================================================
+STEP 6: ADD TO SHOPS (battleship_shops.txt)
+================================================================================
+
+LOCATION: Insert between breach and ice weapons in each shop tab
+
+TABS TO UPDATE:
+1. "consumables" tab (around line 20)
+2. "attributes" tab (around line 44)
+3. "weapons_armor" tab (around line 69)
+4. "misc" tab (around line 92)
+
+FORMAT:
+```
+"item" "item_breach_ice_mix_bow_doubled"
+"item" "item_breach_ice_mix_two_bow_doubled"
+"item" "item_breach_ice_mix_three_bow_doubled"
+"item" "item_breach_ice_mix_ult_bow"
+```
+
+================================================================================
+STEP 7: ADD LOCALIZATION STRINGS (addon_english.txt)
+================================================================================
+
+LOCATION: After light_spin_mix ultimate localization section (around line 1350+)
+
+REQUIRED STRINGS FOR EACH ITEM (19 strings × 4 items = 76 strings):
+
+```
+"DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled"  "[Breach Name]/[Ice Name]"
+"DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_Description"  "<h1>Hybrid Weapon: Breach/Ice Level 1</h1>Fires both Breach and Ice weapons simultaneously.<br><br><b>[Breach Name]:</b> %pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. Does not hit structures.<br><b>[Ice Name]:</b> Slows enemy movement by %slow_pct%%% for %slow_dur% seconds."
+
+// Breach weapon stats
+"DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_fire_rate"  "[Breach Name] RELOAD (s):"
+"DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_dmg"  "[Breach Name] DAMAGE (x2):"
+"DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_range"  "[Breach Name] RANGE:"
+"DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_delay"  "[Breach Name] DAMAGE DELAY:"
+"DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>[Breach Name] DPS:</font>"
+"DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_pure_pct"  "PURE PERCENT:"
+
+// Ice weapon stats (with "_2" suffix)
+"DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_fire_rate_2"  "[Ice Name] RELOAD (s):"
+"DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_dmg_2"  "[Ice Name] DAMAGE (x2):"
+"DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_range_2"  "[Ice Name] RANGE:"
+"DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>[Ice Name] DPS:</font>"
+"DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_slow_pct"  "SLOW PERCENT:"
+"DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_slow_dur"  "SLOW DURATION:"
+
+// Note
+"DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_Note0"  "Breach damage is delayed with pure component. Ice projectiles slow enemies."
+
+// Lore
+"DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_Lore"  "[Optional flavor text]"
+
+[Repeat pattern for _two_bow_doubled, _three_bow_doubled, and _ult_bow]
+```
+
+================================================================================
+STEP 8: CREATE WEAPON ICONS
+================================================================================
+
+A. CREATE PYTHON SCRIPT: content/battleships_traders/panorama/images/items/create_breach_ice_mix.py
+
+```python
+from PIL import Image
+import os
+
+def create_hybrid_image(breach_path, ice_path, output_path):
+    """
+    Create hybrid weapon icon with diagonal split.
+    Top-right: breach weapon
+    Bottom-left: ice weapon
+    """
+    breach = Image.open(breach_path).convert("RGBA")
+    ice = Image.open(ice_path).convert("RGBA")
+    
+    width = breach.width
+    height = breach.height
+    result = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+    
+    # Get content areas (non-transparent regions)
+    breach_bbox = breach.getbbox()
+    ice_bbox = ice.getbbox()
+    
+    if breach_bbox and ice_bbox:
+        breach_left, breach_top, breach_right, breach_bottom = breach_bbox
+        ice_left, ice_top, ice_right, ice_bottom = ice_bbox
+        
+        content_width = max(breach_right - breach_left, ice_right - ice_left)
+        content_height = max(breach_bottom - breach_top, ice_bottom - ice_top)
+        
+        for y in range(height):
+            for x in range(width):
+                x_rel = x - min(breach_left, ice_left)
+                
+                # Diagonal split formula: top-right = breach, bottom-left = ice
+                if y * content_width <= content_height * (content_width - x_rel):
+                    pixel = breach.getpixel((x, y))
+                else:
+                    pixel = ice.getpixel((x, y))
+                
+                result.putpixel((x, y), pixel)
+    
+    result.save(output_path, "PNG")
+    print(f"Created: {output_path}")
+
+# Image pairs
+images = [
+    ("breach_one_bow.png", "ice_one_bow.png", "breach_ice_bow.png"),
+    ("breach_two_bow.png", "ice_two_bow.png", "breach_ice_two_bow.png"),
+    ("breach_three_bow.png", "ice_three_bow.png", "breach_ice_three_bow.png"),
+    ("breach_ult_bow.png", "ice_ult_bow.png", "breach_ice_ult_bow.png")
+]
+
+for breach_img, ice_img, output_img in images:
+    create_hybrid_image(breach_img, ice_img, output_img)
+
+print("All images created successfully!")
+```
+
+B. RUN THE SCRIPT:
+```powershell
+cd content/battleships_traders/panorama/images/items
+python create_breach_ice_mix.py
+```
+
+C. COPY IMAGES TO FLASH3 DIRECTORY:
+```powershell
+Copy-Item breach_ice_*.png -Destination ../../../../../../game/battleships_traders/resource/flash3/images/items/
+```
+
+EXPECTED OUTPUT:
+- breach_ice_bow.png
+- breach_ice_two_bow.png
+- breach_ice_three_bow.png
+- breach_ice_ult_bow.png
+
+================================================================================
+STEP 9: VERIFICATION CHECKLIST
+================================================================================
+
+1. LUA FILES:
+   ✓ item_breach_ice_mix.lua created with 4 modifiers
+   ✓ item_breach_ice_mix_ult.lua created with 4 modifiers
+   ✓ Breach weapons exclude DOTA_UNIT_TARGET_BUILDING
+   ✓ Ice weapons include DOTA_UNIT_TARGET_BUILDING
+   ✓ No syntax errors (use get_errors tool)
+
+2. RECIPES (npc_items_custom.txt):
+   ✓ 4 recipes added with correct ItemResult and ItemRequirements
+   ✓ Recipe IDs are sequential and unique
+
+3. ITEM DEFINITIONS (npc_items_custom.txt):
+   ✓ 4 complete item definitions added
+   ✓ AbilityBehavior = "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+   ✓ BaseClass = "item_lua"
+   ✓ ScriptFile = "items/item_breach_ice_mix"
+   ✓ All stats present with "_2" suffix for ice weapon
+   ✓ Costs calculated correctly
+
+4. SHOPS (battleship_shops.txt):
+   ✓ 4 items added to all 4 shop tabs
+   ✓ Positioned between breach and ice weapons
+
+5. LOCALIZATION (addon_english.txt):
+   ✓ 76 total strings added (19 per item × 4 items)
+   ✓ Weapon names use "/" separator, no "Double" prefix
+   ✓ Description mentions both weapons and "Does not hit structures" for breach
+
+6. IMAGES:
+   ✓ 4 PNG files created with diagonal split
+   ✓ Images copied to flash3/images/items/ directory
+   ✓ Filenames match AbilityTextureName values
+
+================================================================================
+TECHNICAL NOTES & LEARNINGS
+================================================================================
+
+1. MODIFIER STRUCTURE:
+   - Primary weapon adds secondary modifier in OnCreated
+   - Primary weapon removes secondary modifier in OnDestroy
+   - Each weapon fires independently based on its own fire_rate
+   - Both weapons use num_attacks = 1 (single projectile per shot)
+
+2. TARGETING RULES:
+   - Use FindUnitsInRadius with appropriate DOTA_UNIT_TARGET flags
+   - Breach weapons: HERO + BASIC only (no towers)
+   - Ice weapons: HERO + BASIC + BUILDING (can hit towers)
+   - Always include: FLAG_NO_INVIS + FLAG_FOW_VISIBLE + FLAG_NOT_ATTACK_IMMUNE
+
+3. STAT NAMING:
+   - Primary weapon: dmg, fire_rate, range, speed, etc.
+   - Secondary weapon: dmg_2, fire_rate_2, range_2, speed_2, etc.
+   - Always use "_2" suffix for secondary weapon stats
+
+4. PROJECTILE SYSTEM:
+   - Use weapon_passive ability's FireProjectile method
+   - Check if ability exists, add if not: if not self.parent:HasAbility("weapon_passive")
+   - ExtraData carries ModifierName, ModifierLevel, ModifierDamage
+
+5. BREACH MECHANICS:
+   - Apply debuff modifier on projectile hit (OnRefresh)
+   - Debuff uses StartIntervalThink with delay parameter
+   - Damage split: pure_pct% pure, rest physical
+   - Visual indicators: breach_ind.vpcf on apply, breach_boom.vpcf on damage
+
+6. ICE MECHANICS:
+   - Apply damage and slow modifier on projectile hit
+   - Slow modifier uses DeclareFunctions for MOVESPEED_BONUS_PERCENTAGE
+   - Return negative value for slow effect
+   - Visual: ice_debuff.vpcf particle effect
+
+7. FILE EDITING BEST PRACTICES:
+   - Use replace_string_in_file with unique anchor text (3-5 lines context)
+   - Verify with grep_search after adding to large files
+   - Use get_errors to check Lua syntax
+   - For large insertions, prefer replace_string_in_file over insert_edit_into_file
+
+8. IMAGE COMPOSITION:
+   - Diagonal split formula: y * content_width <= content_height * (content_width - x_rel)
+   - Top-right: First weapon (breach)
+   - Bottom-left: Second weapon (ice)
+   - Use getbbox() to find content area for better split positioning
+
+================================================================================
+WEAPON MECHANICS REFERENCE
+================================================================================
+
+BREACH WEAPONS:
+- Delayed damage (2.5 second delay typically)
+- Split damage: 20% pure, 80% physical (default pure_pct = 20)
+- Visual indicator on target while waiting
+- Explosion effect when damage triggers
+- Cannot target structures/towers
+
+ICE WEAPONS:
+- Instant damage on hit
+- Applies movement speed slow debuff
+- Slow percentage varies by level (slow_pct)
+- Slow duration varies by level (slow_dur)
+- Can target structures/towers
+- Visual frost effect on slowed units
+
+HYBRID BEHAVIOR:
+- Both weapons fire independently at their own fire rates
+- Player gets damage from both weapons simultaneously
+- Each weapon maintains its own mechanics (delay vs instant, slow vs pure damage)
+- Total DPS = (Breach DPS) + (Ice DPS)
+
+================================================================================
+COMMON ISSUES & SOLUTIONS
+================================================================================
+
+1. ISSUE: Item definitions not appearing in game
+   SOLUTION: Verify AbilityBehavior is present and correct, check ItemCost is valid
+
+2. ISSUE: Weapons not firing
+   SOLUTION: Check weapon_passive ability exists, verify fire_rate values are correct
+
+3. ISSUE: Targeting wrong units
+   SOLUTION: Review DOTA_UNIT_TARGET flags in FindUnitsInRadius calls
+
+4. ISSUE: Localization not showing
+   SOLUTION: Verify exact key names match item names, check for typos in tooltip keys
+
+5. ISSUE: Images not appearing
+   SOLUTION: Verify PNG files in flash3 directory, check AbilityTextureName matches filename
+
+6. ISSUE: Lua errors on load
+   SOLUTION: Run get_errors tool, check LinkLuaModifier paths match file locations
+
+7. ISSUE: Secondary weapon not firing
+   SOLUTION: Verify AddNewModifier call in primary weapon's OnCreated
+   Verify RemoveModifierByName in primary weapon's OnDestroy
+
+8. ISSUE: Stats not showing in tooltip
+   SOLUTION: Check "_2" suffix on all secondary weapon stat keys in both AbilityValues 
+   and addon_english.txt
+
+================================================================================
+END OF PROMPT
+================================================================================
+
+This prompt incorporates all learnings from the spin_breach_mix and light_spin_mix 
+implementations. Follow each step carefully, verify at each stage, and you'll have 
+fully functional breach/ice hybrid weapons ready for testing!
