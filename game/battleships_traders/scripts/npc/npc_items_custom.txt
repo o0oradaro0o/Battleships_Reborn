@@ -1970,6 +1970,25 @@
 			"01"						"item_poison_bow;item_light_bow"
 		}
 	}
+	"item_recipe_light_spin_mix_bow_doubled"
+	{
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_light_spin_mix_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_light_bow;item_spin_bow"
+		}
+	}
 	"item_recipe_light_iron_mix_bow_doubled"
 	{
 
@@ -2158,6 +2177,25 @@
 		"ItemRequirements"
 		{
 			"01"						"item_poison_two_bow;item_light_two_bow"
+		}
+	}
+	"item_recipe_light_spin_mix_two_bow_doubled"
+	{
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_light_spin_mix_two_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_light_two_bow;item_spin_two_bow"
 		}
 	}
 	"item_recipe_light_iron_mix_two_bow_doubled"
@@ -2350,6 +2388,25 @@
 			"01"						"item_poison_three_bow;item_light_three_bow"
 		}
 	}
+	"item_recipe_light_spin_mix_three_bow_doubled"
+	{
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_light_spin_mix_three_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_light_three_bow;item_spin_three_bow"
+		}
+	}
 	"item_recipe_light_iron_mix_three_bow_doubled"
 	{
 
@@ -2540,6 +2597,101 @@
 		"ItemRequirements"
 		{
 			"01"						"item_poison_light_mix_bow_doubled;item_poison_light_mix_two_bow_doubled;item_poison_light_mix_three_bow_doubled"
+		}
+	}
+	"item_recipe_light_spin_mix_ult_bow"
+	{
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3500"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_light_spin_mix_ult_bow"
+		"ItemRequirements"
+		{
+			"01"						"item_light_spin_mix_bow_doubled;item_light_spin_mix_two_bow_doubled;item_light_spin_mix_three_bow_doubled"
+		}
+	}
+	"item_recipe_spin_breach_mix_bow_doubled"
+	{
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_spin_breach_mix_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_spin_bow;item_breach_bow"
+		}
+	}
+	"item_recipe_spin_breach_mix_two_bow_doubled"
+	{
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_spin_breach_mix_two_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_spin_two_bow;item_breach_two_bow"
+		}
+	}
+	"item_recipe_spin_breach_mix_three_bow_doubled"
+	{
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_spin_breach_mix_three_bow_doubled"
+		"ItemRequirements"
+		{
+			"01"						"item_spin_three_bow;item_breach_three_bow"
+		}
+	}
+	"item_recipe_spin_breach_mix_ult_bow"
+	{
+
+		"BaseClass"						"item_recipe_arcane_boots"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3500"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_spin_breach_mix_ult_bow"
+		"ItemRequirements"
+		{
+			"01"						"item_spin_breach_mix_bow_doubled;item_spin_breach_mix_two_bow_doubled;item_spin_breach_mix_three_bow_doubled"
 		}
 	}
 	"item_recipe_light_iron_mix_ult_bow"
@@ -7478,6 +7630,93 @@
 		}
 	}
 	//===============================================
+	// poison_light_mix-bow_doubled
+	//===============================================
+  "item_poison_light_mix_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_poison_light_mix"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"			"poison_light_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "900"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "1200" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+
+		"AbilityValues"
+		{
+			// Primary weapon (Poison) stats
+			"dmg"			"42"
+			"fire_rate"		"1.5"
+			"damage"		"1"
+			"range"			"900"
+			"psn_dur"		"5"
+			"speed"			"1200"
+			"level"			"1"
+			"dps"			"56"
+			
+			// Secondary weapon (Light) stats
+			"dmg_2"			"6"
+			"fire_rate_2"	"0.2"
+			"range_2"		"1000"
+			"speed_2"		"1500"
+			"vision_rad"	"200"
+			"dps_2"			"30"
+		}
+	}
+	//===============================================
+	// light_spin_mix-bow_doubled (Level 1)
+	//===============================================
+  "item_light_spin_mix_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_light_spin_mix"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"			"light_spin_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "1050"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "1300" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+
+		"AbilityValues"
+		{
+			// Primary weapon (Light) stats
+			"dmg"			"10"
+			"fire_rate"		"0.2"
+			"range"			"1000"
+			"speed"			"1500"
+			"vision_rad"	"200"
+			"level"			"1"
+			"dps"			"50"
+			
+			// Secondary weapon (Spin) stats
+			"dmg_2"			"12"
+			"fire_rate_2"	"0.5"
+			"range_2"		"1050"
+			"speed_2"		"1525"
+			"bounces"		"1"
+			"bounce_dmg"	"5"
+			"bounce_range"	"600"
+			"dps_2"			"24"
+		}
+	}
+	//===============================================
 	// light-bow_doubled
 	//===============================================
   "item_light_bow_doubled"
@@ -8654,6 +8893,93 @@
 				"bonus_dmg"			"16"
 				"min_range_dmg_pct"	"50"
 				"dps"			"80"
+		}
+	}
+	//===============================================
+	// poison_light_mix-bow_doubled 2
+	//===============================================
+  "item_poison_light_mix_two_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_poison_light_mix"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"			"poison_light_two_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "900"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "3300" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+
+		"AbilityValues"
+		{
+			// Primary weapon (Poison) stats
+			"dmg"			"90"
+			"fire_rate"		"1.5"
+			"damage"		"2"
+			"range"			"900"
+			"psn_dur"		"5"
+			"speed"			"1200"
+			"level"			"2"
+			"dps"			"120"
+			
+			// Secondary weapon (Light) stats
+			"dmg_2"			"12"
+			"fire_rate_2"	"0.2"
+			"range_2"		"1000"
+			"speed_2"		"1500"
+			"vision_rad"	"400"
+			"dps_2"			"120"
+		}
+	}
+	//===============================================
+	// light_spin_mix-two_bow_doubled (Level 2)
+	//===============================================
+  "item_light_spin_mix_two_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_light_spin_mix"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"			"light_spin_two_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "1050"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "3550" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+
+		"AbilityValues"
+		{
+			// Primary weapon (Light) stats
+			"dmg"			"12"
+			"fire_rate"		"0.2"
+			"range"			"1000"
+			"speed"			"1500"
+			"vision_rad"	"400"
+			"level"			"2"
+			"dps"			"120"
+			
+			// Secondary weapon (Spin) stats
+			"dmg_2"			"26"
+			"fire_rate_2"	"0.5"
+			"range_2"		"1050"
+			"speed_2"		"1525"
+			"bounces"		"2"
+			"bounce_dmg"	"7"
+			"bounce_range"	"600"
+			"dps_2"			"52"
 		}
 	}
 	//===============================================
@@ -9834,6 +10160,95 @@
 				"bonus_dmg"			"32"
 				"min_range_dmg_pct"	"50"
 				"dps"				"160"
+		}
+	}
+	
+	//===============================================
+	// poison_light_mix-bow_doubled 3
+	//===============================================
+  "item_poison_light_mix_three_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_poison_light_mix"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"			"poison_light_three_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "900"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "8000" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+
+		"AbilityValues"
+		{
+			// Primary weapon (Poison) stats
+			"dmg"			"180"
+			"fire_rate"		"1.5"
+			"damage"		"3"
+			"range"			"900"
+			"psn_dur"		"5"
+			"speed"			"1200"
+			"level"			"3"
+			"dps"			"240"
+			
+			// Secondary weapon (Light) stats
+			"dmg_2"			"24"
+			"fire_rate_2"	"0.2"
+			"range_2"		"1000"
+			"speed_2"		"1500"
+			"vision_rad"	"600"
+			"dps_2"			"240"
+		}
+	}
+	
+	//===============================================
+	// light_spin_mix-three_bow_doubled (Level 3)
+	//===============================================
+  "item_light_spin_mix_three_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_light_spin_mix"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"			"light_spin_three_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "1050"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "8400" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+
+		"AbilityValues"
+		{
+			// Primary weapon (Light) stats
+			"dmg"			"24"
+			"fire_rate"		"0.2"
+			"range"			"1000"
+			"speed"			"1500"
+			"vision_rad"	"600"
+			"level"			"3"
+			"dps"			"240"
+			
+			// Secondary weapon (Spin) stats
+			"dmg_2"			"52"
+			"fire_rate_2"	"0.5"
+			"range_2"		"1050"
+			"speed_2"		"1525"
+			"bounces"		"3"
+			"bounce_dmg"	"11"
+			"bounce_range"	"600"
+			"dps_2"			"104"
 		}
 	}
 	
@@ -11020,6 +11435,280 @@
 				"bonus_dmg"			"35"
 				"min_range_dmg_pct"	"50"
 				"dps"			"390"
+		}
+	}
+
+	//===============================================
+	// poison_light_mix-bow ult
+	//===============================================
+  "item_poison_light_mix_ult_bow"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_poison_light_mix_ult"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"			"poison_light_ult_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "900"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "19900" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+
+		"AbilityValues"
+		{
+			// Primary weapon (Poison) stats
+			"dmg"			"163"
+			"fire_rate"		"1.5"
+			"damage"		"5"
+			"range"			"900"
+			"psn_dur"		"5"
+			"speed"			"1200"
+			"dps"			"467"
+			
+			// Secondary weapon (Light) stats
+			"dmg_2"			"48"
+			"fire_rate_2"	"0.2"
+			"range_2"		"1000"
+			"speed_2"		"800"
+			"vision_rad"	"800"
+			"dps_2"			"480"
+		}
+	}
+
+	//===============================================
+	// light_spin_mix-ult_bow (Ultimate)
+	//===============================================
+  "item_light_spin_mix_ult_bow"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_light_spin_mix_ult"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"			"light_spin_ult_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "1050"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "19950" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+
+		"AbilityValues"
+		{
+			// Primary weapon (Light) stats
+			"dmg"			"48"
+			"fire_rate"		"0.2"
+			"range"			"1000"
+			"speed"			"800"
+			"vision_rad"	"800"
+			"dps"			"480"
+			
+			// Secondary weapon (Spin) stats
+			"dmg_2"			"55"
+			"fire_rate_2"	"0.5"
+			"range_2"		"1050"
+			"speed_2"		"1525"
+			"bounces"		"4"
+			"bounce_dmg"	"11"
+			"bounce_range"	"600"
+			"dps_2"			"110"
+		}
+	}
+
+	//===============================================
+	// spin_breach_mix-bow_doubled (Level 1)
+	//===============================================
+  "item_spin_breach_mix_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_spin_breach_mix"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"			"spin_breach_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "1200"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "1400" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+
+		"AbilityValues"
+		{
+			// Primary weapon (Spin) stats
+			"dmg"			"12"
+			"fire_rate"		"0.5"
+			"range"			"1050"
+			"speed"			"1525"
+			"bounces"		"1"
+			"bounce_dmg"	"5"
+			"bounce_range"	"600"
+			"level"			"1"
+			"dps"			"24"
+			
+			// Secondary weapon (Breach) stats
+			"dmg_2"			"17"
+			"fire_rate_2"	"0.8"
+			"range_2"		"1200"
+			"speed_2"		"875"
+			"delay"			"2.5"
+			"remove"		"3"
+			"pure_pct"		"20"
+			"dps_2"			"21"
+		}
+	}
+	
+	//===============================================
+	// spin_breach_mix-two_bow_doubled (Level 2)
+	//===============================================
+  "item_spin_breach_mix_two_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_spin_breach_mix"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"			"spin_breach_two_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "1200"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "3550" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+
+		"AbilityValues"
+		{
+			// Primary weapon (Spin) stats
+			"dmg"			"26"
+			"fire_rate"		"0.5"
+			"range"			"1050"
+			"speed"			"1525"
+			"bounces"		"2"
+			"bounce_dmg"	"7"
+			"bounce_range"	"600"
+			"level"			"2"
+			"dps"			"52"
+			
+			// Secondary weapon (Breach) stats
+			"dmg_2"			"41"
+			"fire_rate_2"	"0.8"
+			"range_2"		"1200"
+			"speed_2"		"875"
+			"delay"			"2.5"
+			"remove"		"3"
+			"pure_pct"		"20"
+			"dps_2"			"51"
+		}
+	}
+	
+	//===============================================
+	// spin_breach_mix-three_bow_doubled (Level 3)
+	//===============================================
+  "item_spin_breach_mix_three_bow_doubled"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_spin_breach_mix"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"			"spin_breach_three_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "1200"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "8500" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+
+		"AbilityValues"
+		{
+			// Primary weapon (Spin) stats
+			"dmg"			"52"
+			"fire_rate"		"0.5"
+			"range"			"1050"
+			"speed"			"1525"
+			"bounces"		"3"
+			"bounce_dmg"	"11"
+			"bounce_range"	"600"
+			"level"			"3"
+			"dps"			"104"
+			
+			// Secondary weapon (Breach) stats
+			"dmg_2"			"64"
+			"fire_rate_2"	"0.8"
+			"range_2"		"1200"
+			"speed_2"		"875"
+			"delay"			"2.5"
+			"remove"		"3"
+			"pure_pct"		"20"
+			"dps_2"			"80"
+		}
+	}
+	
+	//===============================================
+	// spin_breach_mix-ult_bow (Ultimate)
+	//===============================================
+  "item_spin_breach_mix_ult_bow"
+	{
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"                     "item_lua"
+		"ScriptFile"					"items/item_spin_breach_mix_ult"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityTextureName"			"spin_breach_ult_bow"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"              "1200"
+		"AbilityCooldown"               "0"
+		"AbilityManaCost"               "0"
+		"ItemCost"                      "20100" 
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"0"
+		"ItemQuality"					"epic"
+	
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+
+		"AbilityValues"
+		{
+			// Primary weapon (Spin) stats
+			"dmg"			"55"
+			"fire_rate"		"0.5"
+			"range"			"1050"
+			"speed"			"1525"
+			"bounces"		"4"
+			"bounce_dmg"	"11"
+			"bounce_range"	"600"
+			"dps"			"110"
+			
+			// Secondary weapon (Breach) stats
+			"dmg_2"			"65"
+			"fire_rate_2"	"0.8"
+			"range_2"		"1200"
+			"speed_2"		"875"
+			"delay"			"2.5"
+			"remove"		"3"
+			"pure_pct"		"20"
+			"dps_2"			"81"
 		}
 	}
 
