@@ -3377,7 +3377,7 @@ function HandleTideAbil()
                 if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS and (hero:GetOrigin() * Vector(0, 1, 0) - Vector(0, 6100, 0)):Length() < 200 or g_ConfusedCreeps[hero] == 1 then
                     ExecuteOrderFromTable({
                         UnitIndex = hero:entindex(),
-                        OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+                        OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
                         Position = Vector(-58, 5390, 0),
                         Queue = false,
                     })
@@ -3385,7 +3385,7 @@ function HandleTideAbil()
                 elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS and (hero:GetOrigin() * Vector(0, 1, 0) + Vector(0, 6100, 0)):Length() < 200 or g_ConfusedCreeps[hero] == 1 then
                     ExecuteOrderFromTable({
                         UnitIndex = hero:entindex(),
-                        OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+                        OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
                         Position = Vector(60, -5568, 0),
                         Queue = false,
                     })
@@ -3683,7 +3683,7 @@ function HandleCoOp()
         else
             ExecuteOrderFromTable({
                 UnitIndex = creature:entindex(),
-                OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+                OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
                 Position = Vector(60, -5568, 0),
                 Queue = false,
             })
@@ -3720,7 +3720,7 @@ function reapplyWP()
 
                             ExecuteOrderFromTable({
                                 UnitIndex = creep:entindex(),
-                                OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+                                OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
                                 Position = waypoint2:GetOrigin() - wpShift,
                                 Queue = false,
                             })
@@ -3738,7 +3738,7 @@ function reapplyWP()
                     elseif g_ConfusedCreeps[creep] ~= nil then
                         ExecuteOrderFromTable({
                             UnitIndex = creep:entindex(),
-                            OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+                            OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
                             Position = g_ConfusedCreeps[creep],
                             Queue = false,
                         })
