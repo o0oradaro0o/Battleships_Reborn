@@ -3375,10 +3375,20 @@ function HandleTideAbil()
                     ----print("othermove")
                 end
                 if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS and (hero:GetOrigin() * Vector(0, 1, 0) - Vector(0, 6100, 0)):Length() < 200 or g_ConfusedCreeps[hero] == 1 then
-                    hero:MoveToPositionAggressive(Vector(-58, 5390, 0))
+                    ExecuteOrderFromTable({
+                        UnitIndex = hero:entindex(),
+                        OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+                        Position = Vector(-58, 5390, 0),
+                        Queue = false,
+                    })
                     g_ConfusedCreeps[hero] = 1
                 elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS and (hero:GetOrigin() * Vector(0, 1, 0) + Vector(0, 6100, 0)):Length() < 200 or g_ConfusedCreeps[hero] == 1 then
-                    hero:MoveToPositionAggressive(Vector(60, -5568, 0))
+                    ExecuteOrderFromTable({
+                        UnitIndex = hero:entindex(),
+                        OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+                        Position = Vector(60, -5568, 0),
+                        Queue = false,
+                    })
                     g_ConfusedCreeps[hero] = 1
                 end
             else
@@ -3671,7 +3681,12 @@ function HandleCoOp()
             creature:SetRespawnsDisabled(true)
             creature:MoveToPosition(Vector(60, -5568, 0))
         else
-            creature:MoveToPositionAggressive(Vector(60, -5568, 0))
+            ExecuteOrderFromTable({
+                UnitIndex = creature:entindex(),
+                OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+                Position = Vector(60, -5568, 0),
+                Queue = false,
+            })
         end
 
     end
@@ -3703,7 +3718,12 @@ function reapplyWP()
 
                             local wpShift = (waypoint:GetOrigin() - creep:GetOrigin()) * Vector(1, 0, 0)
 
-                            creep:MoveToPositionAggressive(waypoint2:GetOrigin() - wpShift)
+                            ExecuteOrderFromTable({
+                                UnitIndex = creep:entindex(),
+                                OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+                                Position = waypoint2:GetOrigin() - wpShift,
+                                Queue = false,
+                            })
                         end
                     end
                 end
@@ -3716,7 +3736,12 @@ function reapplyWP()
 
                         g_ConfusedCreeps[creep] = creep:GetOrigin() * Vector(-1, 1, 1)
                     elseif g_ConfusedCreeps[creep] ~= nil then
-                        creep:MoveToPositionAggressive(g_ConfusedCreeps[creep])
+                        ExecuteOrderFromTable({
+                            UnitIndex = creep:entindex(),
+                            OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+                            Position = g_ConfusedCreeps[creep],
+                            Queue = false,
+                        })
 
                     end
                 end

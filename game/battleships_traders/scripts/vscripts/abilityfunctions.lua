@@ -19,7 +19,12 @@ function battleshipHealth(args)
 end
 
 function route(args)
-	args.caster:MoveToPositionAggressive(args.target_points[1])
+	ExecuteOrderFromTable({
+		UnitIndex = args.caster:entindex(),
+		OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+		Position = args.target_points[1],
+		Queue = false,
+	})
 end
 
 function removeAircrafts(keys)
@@ -449,7 +454,12 @@ function fly3(args) -- keys is the information sent by the ability
 		end
 	elseif RandomInt(1,15)==5 then
 		local hero = PlayerResource:GetSelectedHeroEntity(casterUnit:GetPlayerOwnerID())
-		casterUnit:MoveToPositionAggressive(hero:GetOrigin())
+		ExecuteOrderFromTable({
+			UnitIndex = casterUnit:entindex(),
+			OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+			Position = hero:GetOrigin(),
+			Queue = false,
+		})
 	end
 end
 
@@ -1729,7 +1739,12 @@ function DropOrGo(args)
 		Timers:CreateTimer(
 			0.03,
 			function()
-				creature:MoveToPositionAggressive(chosenMission:GetOrigin())
+				ExecuteOrderFromTable({
+					UnitIndex = creature:entindex(),
+					OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+					Position = chosenMission:GetOrigin(),
+					Queue = false,
+				})
 				 ----print(chosenMission:GetOrigin())
 			end
 		)
@@ -1748,7 +1763,12 @@ function DropOrGo(args)
 		Timers:CreateTimer(
 			0.03,
 			function()
-				creature:MoveToPositionAggressive(chosenMission:GetOrigin())
+				ExecuteOrderFromTable({
+					UnitIndex = creature:entindex(),
+					OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+					Position = chosenMission:GetOrigin(),
+					Queue = false,
+				})
 				 ----print(chosenMission:GetOrigin())
 			end
 		)

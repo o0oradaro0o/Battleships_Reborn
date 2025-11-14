@@ -997,19 +997,14 @@
     "DOTA_Tooltip_ability_item_plasma_fire_mix_three_bow_doubled_dps_2"      "\n<font  size= '3' color='#cc6400'>DPS:</font>"
     "DOTA_Tooltip_ability_item_plasma_fire_mix_three_bow_doubled_damage_2"      "Molotov Cocktails BURN DAMAGE:"
 
-    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow"           "Plasma Flamethrower"
-    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_Description"         "<h1>Weapon: Ultimate plasma-fire mix</h1>Plasma gun fires powerful shots that leave radiation zones that dearmor enemies. Flamethrower shoots rapidly and creates a massive burning aura around the ship that damages nearby enemies over time."
-    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_dmg"         "Plasma Gun BASE DAMAGE:"
-    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_fire_rate"       "Plasma Gun RELOAD DELAY (s):"
-    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_range"         "Plasma Gun RANGE:"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow"           "Supernova Cannon"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_Description"         "<h1>Weapon: Supernova Cannon</h1>Fires devastating plasma-fire projectiles that create supernova explosions on impact. Each explosion deals massive damage to the primary target and creates a shockwave that pushes all nearby enemies away from the impact point. The push force diminishes based on the number of units caught in the blast - fewer units means stronger knockback!"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_dmg"         "BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_fire_rate"       "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_range"         "RANGE:"
     "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_dps"         "\n<font  size= '3' color='#cc6400'>DPS:</font>"
-    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_aoe_dearmor"       "Plasma Debuff AOE:"
-    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_dearmor_duration"       "Plasma Debuff Duration:"
-    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_fire_rate_2"      "Flamethrower RELOAD DELAY (s):"
-    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_dmg_2"          "Flamethrower DAMAGE/4:"
-    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_range_2"        "Flamethrower RANGE:"
-    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_dps_2"          "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
-    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_damage_2"          "Flamethrower BURN DAMAGE:"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_push_radius"       "SUPERNOVA BLAST RADIUS:"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_push_distance"       "MAX KNOCKBACK DISTANCE:"
     
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

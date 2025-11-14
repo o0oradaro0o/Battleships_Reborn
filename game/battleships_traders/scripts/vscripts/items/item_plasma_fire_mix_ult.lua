@@ -1,34 +1,20 @@
+-- Supernova Cannon: Plasma/Fire Mix Ultimate Weapon
+-- Fires powerful projectiles that create supernova explosions on impact
+-- Pushes nearby units away from the impact point with diminishing force
+
 item_plasma_fire_mix_ult_bow = class({})
 LinkLuaModifier(
   "modifier_item_plasma_fire_mix_ult_bow",
   "items/item_plasma_fire_mix_ult.lua",
   LUA_MODIFIER_MOTION_NONE
 )
-LinkLuaModifier(
-  "modifier_item_plasma_fire_mix_ult_bow_2",
-  "items/item_plasma_fire_mix_ult.lua",
-  LUA_MODIFIER_MOTION_NONE
-)
-LinkLuaModifier(
-  "modifier_item_plasma_fire_mix_ult_bow_aoe_dearmor",
-  "items/item_plasma_fire_mix_ult.lua",
-  LUA_MODIFIER_MOTION_NONE
-)
-LinkLuaModifier(
-  "modifier_item_plasma_fire_mix_ult_bow_aoe_dearmor_debuff",
-  "items/item_plasma_fire_mix_ult.lua",
-  LUA_MODIFIER_MOTION_NONE
-)
-LinkLuaModifier(
-  "modifier_item_plasma_fire_mix_ult_bow_fire_aura",
-  "items/item_plasma_fire_mix_ult.lua",
-  LUA_MODIFIER_MOTION_NONE
-)
-LinkLuaModifier(
-  "modifier_item_plasma_fire_mix_ult_bow_fire_aura_debuff",
-  "items/item_plasma_fire_mix_ult.lua",
-  LUA_MODIFIER_MOTION_NONE
-)
+
+function item_plasma_fire_mix_ult_bow:Precache(context)
+  PrecacheResource("particle", "particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf", context)
+  PrecacheResource("particle", "particles/econ/items/invoker/invoker_ti6/invoker_sun_strike_ti6.vpcf", context)
+  PrecacheResource("particle", "particles/basic_projectile/supernova_cannon_projectile.vpcf", context)
+  PrecacheResource("particle", "particles/basic_projectile/fire_burn_effect_small.vpcf", context)
+end
 
 function item_plasma_fire_mix_ult_bow:GetIntrinsicModifierName()
   return "modifier_item_plasma_fire_mix_ult_bow"
@@ -43,48 +29,101 @@ function item_plasma_fire_mix_ult_bow:OnProjectileHit(target, location)
     return
   end
 
+  local caster = self:GetCaster()
+  local impact_point = target:GetAbsOrigin()
+  local push_radius = self:GetSpecialValueFor("push_radius")
+  local base_push_distance = self:GetSpecialValueFor("push_distance")
+  
+  -- Deal damage to primary target
   local damageTable = {
     victim = target,
-    attacker = self:GetCaster(),
+    attacker = caster,
     damage = self:GetSpecialValueFor("dmg"),
     damage_type = DAMAGE_TYPE_PHYSICAL,
     ability = self
   }
   ApplyDamage(damageTable)
 
-  -- create modifier_item_plasma_fire_mix_ult_bow_aoe_dearmor at location for duration
-  local particle_cast = "particles/radiation_battleship.vpcf"
-  local sound_cast = "Hero_Alchemist.AcidSpray"
+  -- Create supernova explosion particle effect
+  local particle_explosion = "particles/econ/items/invoker/invoker_ti6/invoker_sun_strike_ti6.vpcf"
+  local effect_explosion = ParticleManager:CreateParticle(particle_explosion, PATTACH_WORLDORIGIN, nil)
+  ParticleManager:SetParticleControl(effect_explosion, 0, impact_point)
+  ParticleManager:SetParticleControl(effect_explosion, 1, Vector(push_radius, 0, 0))
+  ParticleManager:ReleaseParticleIndex(effect_explosion)
 
-  -- Create Particle
-  local effect_cast = ParticleManager:CreateParticle(particle_cast, PATTACH_ABSORIGIN_FOLLOW, target)
-  ParticleManager:SetParticleControl(effect_cast, 0, target:GetOrigin())
-  ParticleManager:SetParticleControl(effect_cast, 3, target:GetOrigin())
-  ParticleManager:SetParticleControl(effect_cast, 4, target:GetOrigin())
-  ParticleManager:SetParticleControl(effect_cast, 5, target:GetOrigin())
-  ParticleManager:SetParticleControl(effect_cast, 6, target:GetOrigin())
-  ParticleManager:SetParticleControl(effect_cast, 7, target:GetOrigin())
-  ParticleManager:SetParticleControl(effect_cast, 1, Vector(self:GetSpecialValueFor("aoe_dearmor"), 1, 1))
-  -- destroy the particle after the duration
-  Timers:CreateTimer(
-    self:GetSpecialValueFor("dearmor_duration"),
-    function()
-      ParticleManager:DestroyParticle(effect_cast, false)
-      ParticleManager:ReleaseParticleIndex(effect_cast)
+  -- Create Phoenix Supernova death flash at impact
+  local particle_flash = "particles/nova_cannon_explosion.vpcf"
+  local effect_flash = ParticleManager:CreateParticle(particle_flash, PATTACH_WORLDORIGIN, nil)
+  ParticleManager:SetParticleControl(effect_flash, 0, impact_point)
+  ParticleManager:ReleaseParticleIndex(effect_flash)
+
+  -- Play explosion sound
+  EmitSoundOn("Hero_Phoenix.SunRay.Cast", target)
+  
+  -- Find all enemy units near the impact point
+  local enemies = FindUnitsInRadius(
+    caster:GetTeam(),
+    impact_point,
+    nil,
+    push_radius,
+    DOTA_UNIT_TARGET_TEAM_ENEMY,
+    DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING,
+    DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE,
+    FIND_ANY_ORDER,
+    false
+  )
+  
+  -- Calculate push velocity based on number of units (diminishing with more units)
+  local num_enemies = #enemies
+  local push_velocity = base_push_distance
+  
+  if num_enemies > 1 then
+    -- Diminishing formula: push_velocity = base / sqrt(num_enemies)
+    push_velocity = base_push_distance / math.sqrt(num_enemies)
+  end
+  
+  -- Push all affected units away from impact point using physics
+  for _, enemy in pairs(enemies) do
+    if enemy ~= target then
+      -- Calculate push direction (away from impact point)
+      local push_direction = (enemy:GetAbsOrigin() - impact_point):Normalized()
+      
+      -- Apply the physics-based knockback (like Force Staff)
+      if not enemy:IsBuilding() then
+        -- Initialize physics if not already active
+        if not IsPhysicsUnit(enemy) then
+          Physics:Unit(enemy)
+        end
+        
+        -- Apply velocity in the push direction
+        -- Velocity is scaled to create smooth movement similar to Force Staff
+        local velocity_vector = push_direction * push_velocity * 3
+        enemy:SetPhysicsVelocity(velocity_vector)
+        enemy:SetPhysicsFriction(0.1)
+        enemy:StartPhysicsSimulation()
+        
+        -- Stop physics after a short duration
+        Timers:CreateTimer(0.5, function()
+          if enemy and not enemy:IsNull() then
+            enemy:OnPhysicsFrame(nil)
+            enemy:SetPhysicsVelocity(Vector(0, 0, 0))
+          end
+        end)
+        
+        -- Add visual effect to pushed units
+        local particle_push = "particles/basic_projectile/fire_burn_effect_small.vpcf"
+        local effect_push = ParticleManager:CreateParticle(particle_push, PATTACH_ABSORIGIN_FOLLOW, enemy)
+        ParticleManager:ReleaseParticleIndex(effect_push)
+      end
     end
-  )
-
-  local modifier =
-    target:AddNewModifier(
-      self:GetCaster(),
-    self,
-    "modifier_item_plasma_fire_mix_ult_bow_aoe_dearmor",
-    {duration = self:GetSpecialValueFor("dearmor_duration")}
-  )
+  end
+  
+  -- Play impact sound at location
+  EmitSoundOnLocationWithCaster(impact_point, "Hero_Phoenix.SunRay.Stop", caster)
 end
 
 ----------------------------------------------------------------------
--- Modifier 1: Plasma Gun (main weapon)
+-- Supernova Cannon Modifier
 ----------------------------------------------------------------------
 
 modifier_item_plasma_fire_mix_ult_bow = class({})
@@ -98,25 +137,31 @@ function modifier_item_plasma_fire_mix_ult_bow:GetAttributes()
   return MODIFIER_ATTRIBUTE_MULTIPLE
 end
 
+function modifier_item_plasma_fire_mix_ult_bow:IsHidden()
+  return true
+end
+
+function modifier_item_plasma_fire_mix_ult_bow:IsPurgable()
+  return false
+end
+
 function modifier_item_plasma_fire_mix_ult_bow:OnCreated(kv)
   if IsServer() then
     self.ability = self:GetAbility()
     self.parent = self:GetParent()
     self.caster = self.ability:GetCaster()
 
-    -- Add the second weapon modifier (Fire)
-    self.parent:AddNewModifier(self.parent, self.ability, "modifier_item_plasma_fire_mix_ult_bow_2", {})
-
     self.fire_rate = self.ability:GetSpecialValueFor("fire_rate")
     self.damage = self.ability:GetSpecialValueFor("dmg")
     self.range = self.ability:GetSpecialValueFor("range")
     self.speed = self.ability:GetSpecialValueFor("speed")
 
-    self.num_attacks = 1
+    self.num_attacks = 2
 
-    self.particle = "particles/basic_projectile/plasma_ult_projectile.vpcf"
+    -- Supernova Cannon projectile - combines Phoenix fire and plasma energy
+    self.particle = "particles/basic_projectile/supernova_cannon_projectile.vpcf"
 
-    self.fire_sound = "Hero_Zuus.ArcLightning.Attack"
+    self.fire_sound = "Hero_Phoenix.LaunchFire"
 
     self:StartIntervalThink(self.fire_rate)
   end
@@ -124,8 +169,7 @@ end
 
 function modifier_item_plasma_fire_mix_ult_bow:OnIntervalThink()
   if IsServer() then
-    local enemies =
-      FindUnitsInRadius(
+    local enemies = FindUnitsInRadius(
       self.parent:GetTeam(),
       self.parent:GetAbsOrigin(),
       nil,
@@ -136,7 +180,8 @@ function modifier_item_plasma_fire_mix_ult_bow:OnIntervalThink()
       FIND_ANY_ORDER,
       false
     )
-    -- Fire the weapon
+    
+    -- Fire the Supernova Cannon
     for i = 1, self.num_attacks do
       local target
 
@@ -146,15 +191,11 @@ function modifier_item_plasma_fire_mix_ult_bow:OnIntervalThink()
         return
       end
 
-      local particleName
-
-      particleName = self.particle
-
       local projectile = {
         Target = target,
         Source = self.parent,
         Ability = self.ability,
-        EffectName = particleName,
+        EffectName = self.particle,
         iMoveSpeed = self.speed,
         bDodgeable = true,
         bVisibleToEnemies = true,
@@ -171,227 +212,8 @@ end
 
 function modifier_item_plasma_fire_mix_ult_bow:OnDestroy()
   if IsServer() then
-    self.parent:RemoveModifierByName("modifier_item_plasma_fire_mix_ult_bow_2")
+    -- Cleanup if needed
   end
 end
 
-----------------------------------------------------------------------
--- Modifier 2: Fire Gun (secondary weapon with aura)
-----------------------------------------------------------------------
 
-modifier_item_plasma_fire_mix_ult_bow_2 = class({})
-
-function modifier_item_plasma_fire_mix_ult_bow_2:GetAbilityTextureName()
-  local abilityName = self.ability:GetAbilityName()
-  return abilityName
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_2:GetAttributes()
-  return MODIFIER_ATTRIBUTE_MULTIPLE
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_2:IsAura()
-  return true
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_2:GetModifierAura()
-  return "modifier_item_plasma_fire_mix_ult_bow_fire_aura_debuff"
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_2:GetAuraRadius()
-  return self:GetAbility():GetSpecialValueFor("range_2")
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_2:GetAuraDuration()
-  return 0.5
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_2:GetAuraSearchTeam()
-  return DOTA_UNIT_TARGET_TEAM_ENEMY
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_2:GetAuraSearchType()
-  return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_2:GetAuraSearchFlags()
-  return DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_2:OnCreated(kv)
-  if IsServer() then
-    self.ability = self:GetAbility()
-    self.parent = self:GetParent()
-    self.caster = self.ability:GetCaster()
-
-    self.fire_rate_2 = self.ability:GetSpecialValueFor("fire_rate_2")
-    self.damage_2 = self.ability:GetSpecialValueFor("dmg_2")
-    self.range_2 = self.ability:GetSpecialValueFor("range_2")
-    self.speed_2 = self.ability:GetSpecialValueFor("speed_2")
-
-    self.num_attacks = 1
-
-    self.particle = "particles/basic_projectile/fire_ult_projectile.vpcf"
-
-    self.fire_sound = "Hero_Zuus.ArcLightning.Attack"
-
-    self:StartIntervalThink(self.fire_rate_2)
-  end
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_2:OnIntervalThink()
-  if IsServer() then
-    local enemies =
-      FindUnitsInRadius(
-      self.parent:GetTeam(),
-      self.parent:GetAbsOrigin(),
-      nil,
-      self.range_2,
-      DOTA_UNIT_TARGET_TEAM_ENEMY,
-      DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING,
-      DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE,
-      FIND_ANY_ORDER,
-      false
-    )
-    -- Fire the weapon
-    for i = 1, self.num_attacks do
-      local target
-
-      if TableCount(enemies) > 0 then
-        target = GetRandomTableElement(enemies)
-      else
-        return
-      end
-
-      local particleName = self.particle
-
-      local projectile = {
-        Target = target,
-        Source = self.parent,
-        Ability = self.ability,
-        EffectName = particleName,
-        iMoveSpeed = self.speed_2,
-        bDodgeable = true,
-        bVisibleToEnemies = true,
-        bReplaceExisting = false,
-        bProvidesVision = false,
-        iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION,
-        ExtraData = {
-          ModifierName = "modifier_item_plasma_fire_mix_ult_bow_2",
-          ModifierDamage = self.damage_2
-        }
-      }
-      -- check if the caster has the weapon_passive ability, add it if they Don't
-      if not self.parent:HasAbility("weapon_passive") then
-        self.parent:AddAbility("weapon_passive")
-      end
-      -- send the projectile to the FireProjectile of the weapon_passive
-      self.parent:FindAbilityByName("weapon_passive"):FireProjectile(projectile)
-
-      EmitSoundOn(self.fire_sound, self.caster)
-    end
-  end
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_2:OnRefresh(keys)
-  if not IsServer() then
-    return
-  end
-
-  if keys.target == nil then
-    return
-  end
-
-  local damageTable = {
-    victim = keys.target,
-    attacker = keys.caster,
-    damage = keys.extradata.ModifierDamage,
-    damage_type = DAMAGE_TYPE_PHYSICAL,
-    ability = self:GetAbility()
-  }
-  ApplyDamage(damageTable)
-end
-
-----------------------------------------------------------------------
--- Plasma AOE Dearmor Zone
-----------------------------------------------------------------------
-
-modifier_item_plasma_fire_mix_ult_bow_aoe_dearmor = class({})
-
-function modifier_item_plasma_fire_mix_ult_bow_aoe_dearmor:IsAura()
-  return true
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_aoe_dearmor:GetModifierAura()
-  return "modifier_item_plasma_fire_mix_ult_bow_aoe_dearmor_debuff"
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_aoe_dearmor:GetAuraRadius()
-  return self:GetAbility():GetSpecialValueFor("aoe_dearmor")
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_aoe_dearmor:GetAuraDuration()
-  return 0.5
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_aoe_dearmor:GetAuraSearchTeam()
-  return DOTA_UNIT_TARGET_TEAM_ENEMY
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_aoe_dearmor:GetAuraSearchType()
-  return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_BUILDING
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_aoe_dearmor:GetAuraSearchFlags()
-  return 0
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_aoe_dearmor:GetEffectName()
-  return "particles/units/heroes/hero_alchemist/alchemist_acid_spray_debuff.vpcf"
-end
-
-modifier_item_plasma_fire_mix_ult_bow_aoe_dearmor_debuff = class({})
-
-function modifier_item_plasma_fire_mix_ult_bow_aoe_dearmor_debuff:DeclareFunctions()
-  local funcs = {
-    MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS
-  }
-  return funcs
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_aoe_dearmor_debuff:GetModifierPhysicalArmorBonus()
-  return (-1 * self:GetAbility():GetSpecialValueFor("aoe_dearmor_amount"))
-end
-
-----------------------------------------------------------------------
--- Fire Aura Damage Debuff
-----------------------------------------------------------------------
-
-modifier_item_plasma_fire_mix_ult_bow_fire_aura_debuff = class({})
-
-function modifier_item_plasma_fire_mix_ult_bow_fire_aura_debuff:IsDebuff()
-  return true
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_fire_aura_debuff:GetEffectName()
-  return "particles/basic_projectile/fire_burn_effect_small.vpcf"
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_fire_aura_debuff:OnCreated()
-  if IsServer() then
-    self:StartIntervalThink(0.5)
-  end
-end
-
-function modifier_item_plasma_fire_mix_ult_bow_fire_aura_debuff:OnIntervalThink()
-  if IsServer() then
-    local damageTable = {
-      victim = self:GetParent(),
-      attacker = self:GetCaster(),
-      damage = self:GetAbility():GetSpecialValueFor("damage_2"),
-      damage_type = DAMAGE_TYPE_PURE,
-      ability = self:GetAbility()
-    }
-    ApplyDamage(damageTable)
-  end
-end

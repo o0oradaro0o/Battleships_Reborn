@@ -981,14 +981,15 @@ function showMainItems() {
   for (var rowIndex = 0; rowIndex < originalRowNames.length; rowIndex++) {
     var originalRow = gridBasicItems.FindChildTraverse(originalRowNames[rowIndex]);
     var newRow = gridBasicItems.FindChildTraverse(newRowNames[rowIndex]);
-    
+
     if (originalRow) {
       originalRow.style.visibility = "visible";
     }
     if (newRow) {
       newRow.style.visibility = "visible";
     }
-  }  NewShopUI.FindChildTraverse("Main")
+  } 
+  NewShopUI.FindChildTraverse("Main")
     .FindChildTraverse("HeightLimiter")
     .FindChildTraverse("GridMainShop")
     .FindChildTraverse("GridBasicItemsCategory").style.backgroundImage =
@@ -998,6 +999,10 @@ function showMainItems() {
     .FindChildTraverse("GridMainShop")
     .FindChildTraverse("GridBasicItemsCategory").style.backgroundSize =
     "100% 100%";
+    NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridBasicItemsCategory").style.maxWidth = "100%"
 }
 
 function showUpgradeItems() {

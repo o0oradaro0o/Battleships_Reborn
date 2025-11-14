@@ -1,0 +1,110 @@
+===================================================================
+SUPERNOVA CANNON - PLASMA/FIRE MIX ULTIMATE WEAPON
+===================================================================
+
+WEAPON NAME: Supernova Cannon
+ITEM CODE: item_plasma_fire_mix_ult_bow
+
+CONCEPT:
+--------
+The Supernova Cannon is a unique ultimate weapon that replaces the previous dual-weapon system (plasma gun + fire gun) with a single devastating cannon that creates supernova explosions on impact.
+
+UNIQUE MECHANICS:
+-----------------
+1. DUAL PROJECTILES: Fires 2 projectiles per volley, each dealing 860 damage (1720 total per target if both hit)
+2. PRIMARY DAMAGE: Each projectile deals 860 damage to the direct target hit
+3. SUPERNOVA EXPLOSION: Creates a blast radius of 500 units around the impact point for each projectile
+4. PHYSICS-BASED KNOCKBACK: Pushes all enemies (except the primary target) away from the impact using smooth physics simulation (like Force Staff)
+5. DIMINISHING PUSH: The knockback velocity scales inversely with the number of units affected
+   - Formula: push_velocity = base_push_distance / sqrt(num_enemies)
+   - Example: 1 enemy = 200 velocity, 4 enemies = 100 velocity, 9 enemies = 67 velocity
+6. BUILDINGS: Buildings are not pushed back (only non-building units)
+7. SMOOTH MOVEMENT: Units are pushed with physics velocity over 0.5 seconds, not instant teleportation
+
+WEAPON STATS:
+-------------
+- Base Damage: 860 (per projectile)
+- Projectiles per Volley: 2
+- Total Damage per Volley: 1720
+- Fire Rate: 3.5 seconds
+- Range: 600
+- Projectile Speed: 1450
+- DPS: 491 (860 × 2 / 3.5)
+- Push Radius: 500 units
+- Max Push Distance: 200 units (diminishes with more units)
+
+VISUAL & AUDIO EFFECTS:
+-----------------------
+- Projectile: Plasma ultimate projectile (existing)
+- Explosion: Invoker Sun Strike particle effect
+- Push Effect: Small fire burn effect on pushed units
+- Fire Sound: Phoenix Launch Fire
+- Impact Sound: Phoenix Sun Ray Cast and Stop
+
+KEY CHANGES FROM ORIGINAL:
+---------------------------
+1. REMOVED: Dual weapon system (plasma gun + fire gun)
+2. REMOVED: Fire aura debuff that damaged nearby enemies over time
+3. REMOVED: Radiation zone with armor debuff
+4. REMOVED: Secondary weapon modifier
+5. REMOVED: Instant teleport-style knockback using FindClearSpaceForUnit
+
+6. ADDED: Supernova explosion on impact
+7. ADDED: Physics-based knockback system with diminishing returns
+8. ADDED: Smooth Force Staff-style push using Physics:Unit system
+9. ADDED: Area denial through displacement
+10. ADDED: 0.5 second push duration with friction simulation
+
+TECHNICAL IMPLEMENTATION:
+-------------------------
+The knockback system uses the game's Physics:Unit framework:
+- Physics:Unit(enemy) initializes physics simulation on the target
+- SetPhysicsVelocity(vector) applies initial push velocity
+- SetPhysicsFriction(0.1) creates smooth deceleration
+- StartPhysicsSimulation() begins the movement
+- Timer stops physics after 0.5 seconds
+- This creates smooth, arc-like movement instead of instant displacement
+
+DESIGN PHILOSOPHY:
+------------------
+The Supernova Cannon focuses on:
+- Burst damage to a single target
+- Tactical displacement of enemy groups
+- Risk/reward: More enemies = less effective displacement
+- Zone control through forced repositioning
+- Matches power scale of other ultimate weapons (similar DPS to Atom Splitter)
+
+FILES MODIFIED:
+---------------
+1. game/battleships_traders/scripts/vscripts/items/item_plasma_fire_mix_ult.lua
+   - Complete rewrite of weapon mechanics
+   - Simplified from ~400 lines to ~200 lines
+   - Single weapon system instead of dual
+
+2. game/battleships_traders/scripts/npc/npc_items_custom.txt
+   - Updated ability values
+   - Removed: aoe_dearmor, aoe_dearmor_amount, dearmor_duration, dmg_2, fire_rate_2, range_2, damage_2, dps_2, speed_2
+   - Added: push_radius (500), push_distance (400)
+
+3. game/battleships_traders/resource/addon_english.txt
+   - Updated weapon name to "Supernova Cannon"
+   - New description explaining unique mechanics
+   - Updated tooltip entries for new stats
+
+BALANCE CONSIDERATIONS:
+-----------------------
+- DPS of 491 is moderate for an ultimate weapon (balanced, not overpowered)
+- Fires 2 projectiles per volley for reliability against moving targets
+- Knockback provides utility without excessive displacement (200 base distance)
+- Diminishing returns prevent it from being OP against large groups
+- Buildings immune to knockback prevents exploit against structures
+- 3.5s fire rate creates meaningful windows of vulnerability
+- Total burst damage of 1720 per target (if both projectiles hit) provides good kill potential
+
+TACTICAL USAGE:
+---------------
+- Best against clustered enemies (creates space and splits groups)
+- Strong for peeling enemies off allies
+- Can disrupt enemy formations and positioning
+- Less effective against spread-out targets
+- Strategic for controlling choke points and objectives

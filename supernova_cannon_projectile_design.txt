@@ -1,0 +1,98 @@
+===================================================================
+SUPERNOVA CANNON PROJECTILE DESIGN
+===================================================================
+
+FILE: supernova_cannon_projectile.vpcf
+LOCATION: content/battleships_traders/particles/basic_projectile/
+
+DESIGN CONCEPT:
+---------------
+The Supernova Cannon projectile combines the visual elements of a miniature sun 
+with plasma energy trails, creating a devastating solar-themed missile effect 
+that matches the weapon's explosive power and theme.
+
+VISUAL ELEMENTS:
+----------------
+The projectile is composed of 8 layered trail particle effects from Dota 2 heroes.
+All effects are trail-based to ensure they fade properly when the projectile hits:
+
+1. **Jakiro Base Attack Fire Trail** (Primary Fire Layer)
+   - Creates the core fiery trail effect
+   - Provides the primary orange/yellow fire streaks
+
+2. **Invoker Chaos Meteor Fire Trail B** (Meteor Fire)
+   - Adds the meteor-like burning trail
+   - Intense orange/red fire effect that streams behind
+
+3. **Lina Laguna Blade Sparks Trail** (Electric Energy)
+   - Adds crackling lightning/energy sparks
+   - Creates the bright white-yellow electrical energy
+
+4. **Ember Spirit Remnant Dash Embers** (Floating Embers)
+   - Adds floating fire ember particles trailing behind
+   - Creates depth and particle dispersion
+
+5. **Abaddon Death Coil Alliance Trail B** (Plasma Energy)
+   - Adds the purple/blue plasma energy trails
+   - Combines the "plasma" element with the "fire" element
+
+6. **Phoenix Base Attack Trail** (Solar Fire)
+   - Phoenix's core attack trail for authentic solar theme
+   - Bright fiery trail that screams "sun magic"
+
+7. **Batrider Flamebreak Trail 3** (Intense Fire Trail)
+   - Heavy fire trail effect for visual weight
+   - Deep orange flames that add density
+
+8. **Necronomicon Archer Projectile Launch** (Magic Glow)
+   - Magical energy glow at the projectile core
+   - Adds mystical element to the weapon
+
+COLOR SCHEME:
+-------------
+- Primary: Bright orange/yellow (solar fire)
+- Secondary: White/bright yellow (intense heat/energy)
+- Accent: Purple/blue plasma trails
+- Overall: Looks like a miniature sun or supernova traveling through space
+
+SIZE & SCALE:
+-------------
+- Constant Radius: 64.0 (larger than standard projectiles at 48.0)
+- This makes the projectile more imposing and befitting an ultimate weapon
+
+THEMATIC FIT:
+-------------
+The projectile perfectly captures the "Supernova Cannon" theme:
+- Solar/sun imagery (Phoenix, Invoker sun strike)
+- Explosive fire energy (Lina, Batrider, Ember)
+- Plasma/energy trails (Abaddon's purple coils)
+- Meteor/cosmic element (Chaos Meteor)
+- Ultimate weapon scale and impact
+
+TECHNICAL NOTES:
+----------------
+- Uses standard projectile framework (velocity, tracking, etc.)
+- Compatible with existing weapon systems
+- All particle effects are from official Dota 2 heroes
+- No custom particles needed - all references are to existing game files
+
+VISUAL IMPACT:
+--------------
+When fired, the projectile will appear as a blazing comet of fire and plasma
+energy, with multiple layered trails creating a thick, intense stream of flame
+and magical energy. The combination of fire trails (orange/red), plasma energy
+(purple/blue), and electric sparks (white/yellow) creates a unique visual
+signature that immediately identifies this as the Supernova Cannon.
+
+This creates a cohesive visual story:
+1. Launch: Explosive burst of fire and plasma energy
+2. Flight: Thick, multi-layered trail of fire, embers, plasma, and sparks
+3. Impact: Supernova explosion (Invoker sun strike particle)
+4. Result: Enemies pushed away by the physics-based shockwave
+
+KEY IMPROVEMENTS OVER ORIGINAL:
+- All trail-based effects ensure proper fade on impact
+- No hero models or ground effects that would linger
+- Combines fire (Phoenix, Jakiro, Batrider) + plasma (Abaddon) + energy (Lina)
+- Thick, visible projectile appropriate for an ultimate weapon
+- Clear visual distinction from other weapons in the game
