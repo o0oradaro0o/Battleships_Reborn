@@ -21,7 +21,7 @@ end
 function route(args)
 	ExecuteOrderFromTable({
 		UnitIndex = args.caster:entindex(),
-		OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+		OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 		Position = args.target_points[1],
 		Queue = false,
 	})
@@ -456,7 +456,7 @@ function fly3(args) -- keys is the information sent by the ability
 		local hero = PlayerResource:GetSelectedHeroEntity(casterUnit:GetPlayerOwnerID())
 		ExecuteOrderFromTable({
 			UnitIndex = casterUnit:entindex(),
-			OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+			OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 			Position = hero:GetOrigin(),
 			Queue = false,
 		})
@@ -1741,7 +1741,7 @@ function DropOrGo(args)
 			function()
 				ExecuteOrderFromTable({
 					UnitIndex = creature:entindex(),
-					OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+					OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 					Position = chosenMission:GetOrigin(),
 					Queue = false,
 				})
@@ -1765,7 +1765,7 @@ function DropOrGo(args)
 			function()
 				ExecuteOrderFromTable({
 					UnitIndex = creature:entindex(),
-					OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+					OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 					Position = chosenMission:GetOrigin(),
 					Queue = false,
 				})

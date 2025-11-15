@@ -27,7 +27,8 @@ return {
     "particles/econ/items/wisp/wisp_tether_ti7.vpcf",
     "particles/units/heroes/hero_shredder/shredder_timberchain.vpcf",
     "particles/units/heroes/hero_jakiro/jakiro_icepath_debuff.vpcf",
-    "particles/ui_mouseactions/range_display.vpcf"
+    "particles/ui_mouseactions/range_display.vpcf",
+    "particles/darkness_chaos_ult.vpcf"
   },
 
   abilities = {
@@ -126,6 +127,7 @@ return {
     "models/battle_ind.vmdl",
     "models/battle_ind.vmdl",
     "models/heroes/tidehunter/tidehunter.vmdl",
+    "models/heroes/shadow_demon/shadow_demon.vmdl",
     "models/props_wildlife/wildlife_birdlarge001.vmdl",
     "models/items/courier/nexon_turtle_15_red/nexon_turtle_15_red_flying.vmdl",
     "models/spin_one.vmdl",

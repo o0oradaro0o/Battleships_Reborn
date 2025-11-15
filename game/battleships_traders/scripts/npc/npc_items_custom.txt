@@ -12474,7 +12474,7 @@
 	}
 
 	//===============================================
-	// coal_chaos_mix-bow ult
+	// Abyssal Rift Cannon (coal_chaos_mix-bow ult)
 	//===============================================
 	"item_coal_chaos_mix_ult_bow"
 	{
@@ -12484,10 +12484,10 @@
 		"Model"                         "models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"            "coal_chaos_ult_bow"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilityCastRange"              "800"
+		"AbilityCastRange"              "650"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "19150" 
+		"ItemCost"                      "13500" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
@@ -12495,17 +12495,16 @@
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityValues"
 		{
-				"dmg"			"242"
-				"fire_rate"		"1.8"
-				"range"			"800"
-				"speed"			"1200"
-				"dps"			"537"
-				"stun_pct"		"10"
-				"stun_dur"		"1"
-				"dmg_2"			"457"
-				"fire_rate_2"	"0.2"
-				"range_2"		"850"
-				"dps_2"			"457"
+				"dmg"					"150"
+				"fire_rate"				"0.3"
+				"range"					"825"
+				"speed"					"750"
+				"dps"					"500"
+				"portal_chance"			"8"
+				"spirit_count_min"		"1"
+				"spirit_count_max"		"5"
+				"spirit_hp"				"200"
+				"spirit_speed"			"400"
 		}
 	}
 

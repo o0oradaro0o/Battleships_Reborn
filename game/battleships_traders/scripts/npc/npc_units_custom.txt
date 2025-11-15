@@ -4329,6 +4329,68 @@
 		"Ability1"					"dummy_passive_fly"
 	}
 
+	//=================================================================================	
+	// Abyssal Spirit - Summoned by Abyssal Rift Cannon
+	//=================================================================================
+	"npc_abyssal_spirit"
+	{
+		"precache"
+		{
+			"model"						"models/heroes/shadow_demon/shadow_demon.vmdl"
+		}
+		
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/shadow_demon/shadow_demon.vmdl"
+		"ModelScale"				"0.5"
+		"Level"						"1"
+		"IsNeutralUnitType"			"1"
+		
+		// Health/Mana
+		//----------------------------------------------------------------
+		"StatusHealth"				"200"
+		"StatusHealthRegen"			"0"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+		
+		// Armor/Resistance
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"
+		"MagicalResistance"			"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"1"
+		"AttackDamageMax"			"1"
+		"AttackRate"				"0.5"
+		"AttackAnimationPoint"		"0.3"
+		"AttackAcquisitionRange"	"150"
+		"AttackRange"				"20"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+		"MovementSpeed"				"400"
+		"MovementTurnRate"			"1.0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"400"
+		"VisionNighttimeRange"		"400"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_CUSTOM_1"
+		"UnitLabel"					"abyssal_spirit"
+	}
 	
 	
 }
