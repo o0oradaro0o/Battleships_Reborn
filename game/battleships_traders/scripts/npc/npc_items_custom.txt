@@ -11597,7 +11597,9 @@
 	}
 
 	//===============================================
-	// poison_light_mix-bow ult
+	//===============================================
+	// poison_light_mix-bow ult - RADIOACTIVE DECAY ENHANCER
+	// Applies stacking debuff that amplifies ALL damage
 	//===============================================
   "item_poison_light_mix_ult_bow"
 	{
@@ -11607,10 +11609,10 @@
 		"Model"							"models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"			"poison_light_ult_bow"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilityCastRange"              "900"
+		"AbilityCastRange"              "650"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "19900" 
+		"ItemCost"                      "13500" 
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
@@ -11620,22 +11622,14 @@
 
 		"AbilityValues"
 		{
-			// Primary weapon (Poison) stats
-			"dmg"			"163"
-			"fire_rate"		"1.5"
-			"damage"		"5"
-			"range"			"900"
-			"psn_dur"		"5"
-			"speed"			"1200"
-			"dps"			"467"
-			
-			// Secondary weapon (Light) stats
-			"dmg_2"			"48"
-			"fire_rate_2"	"0.2"
-			"range_2"		"1000"
-			"speed_2"		"800"
-			"vision_rad"	"800"
-			"dps_2"			"480"
+			// Radioactive Decay Enhancer stats
+			"dmg"						"125"		// Base damage per projectile
+			"fire_rate"					"0.3"		// Fire rate in seconds
+			"range"						"950"		// Attack range
+			"speed"						"1200"		// Projectile speed
+			"decay_damage_per_stack"	"25"		// Additional damage per stack from ANY source
+			"decay_max_stacks"			"10"		// Maximum stacks of Radioactive Decay
+			"decay_duration"			"5.0"		// Duration per stack
 		}
 	}
 
@@ -12904,10 +12898,10 @@
 		"Model"                         "models/props_gameplay/divine_rapier.vmdl"
 		"AbilityTextureName"            "chaos_poison_ult_bow"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilityCastRange"              "850"
+		"AbilityCastRange"              "650"
 		"AbilityCooldown"               "0"
 		"AbilityManaCost"               "0"
-		"ItemCost"                      "19900"
+		"ItemCost"                      "13500"
 		"ItemDroppable"					"1"
 		"ItemSellable"					"1"
 		"ItemKillable"					"0"
@@ -12916,19 +12910,21 @@
 
 		"AbilityValues"
 		{
-			"dmg"			"457"
-			"fire_rate"		".2"
-			"range"			"850"
-			"speed"			"950"
-			"dps"			"457"
-			
-			"dmg_2"			"163"
-			"fire_rate_2"	"1.5"
-			"range_2"		"900"
-			"speed_2"		"1200"
-			"damage_2"		"5"
-			"psn_dur"		"5"
-			"dps_2"			"467"
+			"fire_rate"				"0.3"
+			"dmg"					"150"
+			"range"					"875"
+			"speed"					"1200"
+			"cloud_chance"			"15"
+			"cloud_count_min"		"2"
+			"cloud_count_max"		"4"
+			"cloud_lifetime"		"8.0"
+			"cloud_radius"			"200"
+			"poison_damage_min"		"40"
+			"poison_damage_max"		"60"
+			"poison_max_stacks"		"5"
+			"poison_duration"		"3.0"
+			"poison_tick_rate"		"0.5"
+			"dps"					"500"
 		}
 	}
 

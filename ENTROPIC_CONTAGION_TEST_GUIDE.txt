@@ -1,0 +1,292 @@
+=== ENTROPIC CONTAGION - TESTING GUIDE ===
+
+Quick guide for testing the newly implemented Entropic Contagion weapon in-game.
+
+=== IN-GAME TESTING COMMANDS ===
+
+1. **Start Dota 2 and load Battleships Reborn custom game**
+   - Tools → Workshop Tools → Launch Dota 2
+   - Play → Custom Games → Battleships Reborn
+
+2. **Enable cheats** (type in console):
+   ```
+   sv_cheats 1
+   dota_force_gamemode 1
+   ```
+
+3. **Get the weapon**:
+   ```
+   -gold 99999
+   -item item_chaos_poison_mix_ult_bow
+   ```
+
+4. **Spawn test enemies**:
+   ```
+   -createhero tusk enemy
+   -createhero axe enemy
+   -createhero sven enemy
+   ```
+
+=== WHAT TO LOOK FOR ===
+
+**✅ Basic Functionality:**
+- [ ] Weapon fires green-purple projectiles every 0.3 seconds
+- [ ] Projectiles track and hit enemies
+- [ ] Damage numbers appear (150 damage per hit)
+- [ ] Sound effects play on fire and impact
+
+**✅ Cloud Spawning (15% chance):**
+- [ ] Watch for clouds spawning at impact points
+- [ ] Should see 2-4 clouds appear together
+- [ ] Clouds have green particle effects (Venomancer-style)
+- [ ] Sound plays when clouds spawn
+
+**✅ Cloud Drift:**
+- [ ] Clouds move in random directions
+- [ ] Movement speed looks right (100-200 units/sec)
+- [ ] Clouds don't move too fast or too slow
+- [ ] Each cloud drifts independently
+
+**✅ Cloud Lifetime:**
+- [ ] Clouds disappear after ~8 seconds
+- [ ] No lingering particles after cloud expires
+- [ ] No console errors when clouds despawn
+
+**✅ Poison Application:**
+- [ ] Green poison debuff appears on enemies in clouds
+- [ ] Damage numbers tick every 0.5 seconds
+- [ ] Poison debuff shows stack count (1-5)
+- [ ] Poison damage increases with more stacks
+
+**✅ Poison Stacking:**
+- [ ] Walking into multiple clouds adds stacks
+- [ ] Maximum of 5 stacks
+- [ ] Re-entering cloud refreshes duration (3 seconds)
+- [ ] Poison wears off after leaving clouds
+
+**✅ Multiple Clouds:**
+- [ ] Multiple clouds can exist simultaneously
+- [ ] Clouds can overlap
+- [ ] Overlapping clouds apply poison independently
+- [ ] Maximum ~12 clouds active at once
+
+=== STRESS TESTS ===
+
+**Test 1: Single Target Sustained DPS**
+```
+-createhero target_dummy enemy
+```
+- Fire at dummy for 30 seconds
+- Check if clouds spawn regularly (~15% of hits)
+- Verify poison stacks accumulate
+- Calculate approximate DPS
+
+**Test 2: Multiple Targets**
+```
+-createhero tusk enemy
+-createhero axe enemy
+-createhero sven enemy
+-createhero centaur enemy
+-createhero pudge enemy
+```
+- Fire at group of enemies
+- Check if clouds affect all nearby enemies
+- Verify poison spreads correctly
+- Confirm no lag or framerate drops
+
+**Test 3: Cloud Lifetime and Cleanup**
+```
+-createhero axe enemy
+```
+- Trigger ~10 cloud spawns (keep shooting until you see many clouds)
+- Watch clouds expire after 8 seconds
+- Check console for errors
+- Verify particles clean up properly
+
+**Test 4: Movement and Drift**
+```
+-createhero tusk enemy
+-createhero axe enemy
+```
+- Spawn clouds, then watch enemies move through them
+- Verify poison applies when entering cloud AoE
+- Check that drifting clouds still apply poison
+- Confirm clouds drift in different directions
+
+=== EXPECTED BEHAVIOR ===
+
+**Firing Pattern:**
+- Constant stream of projectiles (0.3s intervals)
+- Green-purple chaos energy visual
+- Venomancer attack sound
+
+**Cloud Appearance:**
+- Appears ~every 6-7 hits (15% chance)
+- 2-4 clouds per trigger
+- Slight offset from impact point
+- Green toxic smoke with particles
+
+**Cloud Movement:**
+- Smooth drift in random directions
+- Speed: about 1 cloud radius per second
+- Clouds spread out naturally
+- No jittering or teleporting
+
+**Poison Effect:**
+- Green poison particles on affected units
+- Damage ticks visible every 0.5 seconds
+- Stack count displayed on debuff icon
+- Duration: 3 seconds (refreshes on re-entry)
+
+**Damage Numbers:**
+- Base hit: 150 damage
+- Poison per stack: 40-60 damage per 0.5s
+- Max poison DPS: 240-600 (5 stacks × 2 ticks/sec)
+
+=== COMMON ISSUES AND FIXES ===
+
+**Issue: Weapon doesn't fire**
+- Check console for Lua errors
+- Verify item is in inventory
+- Reload map: `map dota`
+
+**Issue: Clouds don't spawn**
+- RNG might be unlucky (15% chance)
+- Fire 50-100 shots to see spawns
+- Check console for errors in OnProjectileHit
+
+**Issue: Clouds don't move**
+- Check if drift_velocity is calculated correctly
+- Verify OnIntervalThink is running (0.1s)
+- Look for IsNull() errors in console
+
+**Issue: Poison doesn't apply**
+- Check if enemies are in cloud radius (200 units)
+- Verify FindUnitsInRadius targeting is correct
+- Check for modifier application errors
+
+**Issue: Particles don't show**
+- Venomancer particles might not be precached
+- Check Precache() function execution
+- Try reloading map after code changes
+
+**Issue: Console spam/errors**
+- Look for "attempt to index nil value" errors
+- Check entity validity (IsNull() checks)
+- Verify modifier names match LinkLuaModifier calls
+
+**Issue: Clouds never despawn**
+- Check if lifetime timer is working
+- Verify DestroyCloud() is called in OnDestroy
+- Look for ForceKill() errors on dummy units
+
+=== PERFORMANCE MONITORING ===
+
+Watch for these performance indicators:
+
+1. **FPS drops** when many clouds spawn
+   - If FPS < 60: Reduce cloud_count_max or cloud_lifetime
+
+2. **Console lag** from too many particles
+   - Verify particles are destroyed properly
+   - Check ParticleManager:ReleaseParticleIndex calls
+
+3. **Unit count** in entities list
+   - Press F7 to see entity count
+   - Should not exceed +50 from cloud dummy units
+
+4. **Memory leaks** after extended play
+   - Play for 5+ minutes continuously
+   - Check if game slows down over time
+   - Verify all modifiers clean up in OnDestroy()
+
+=== BALANCE TESTING ===
+
+**DPS Calculation:**
+```
+Base DPS = 150 damage / 0.3s = 500 DPS
+Cloud Bonus = 15% chance × avg 3 clouds × avg 50 damage × 2 ticks/sec
+Cloud Bonus ≈ 0.15 × 3 × 50 × 2 = 45 DPS (rough average)
+Total DPS ≈ 545 DPS (without stacking)
+
+With Max Stacks:
+Max Poison DPS = 60 damage × 5 stacks × 2 ticks/sec = 600 DPS
+Total Max DPS = 500 + 600 = 1100 DPS (situational)
+```
+
+**Compare to other ultimate weapons:**
+- If too weak: Increase cloud_chance from 15% to 20%
+- If too strong: Reduce poison damage or cloud lifetime
+- If clouds too rare: Increase spawn chance
+- If too chaotic: Reduce clouds per trigger
+
+=== DEBUG CONSOLE COMMANDS ===
+
+If you need to debug, temporarily add these lines in OnIntervalThink:
+
+```lua
+-- In modifier_entropic_cloud_thinker:OnIntervalThink()
+print("Cloud position:", new_pos)
+print("Units in cloud:", #units_in_cloud)
+
+-- In modifier_entropic_poison_debuff:OnIntervalThink()
+print("Poison stacks:", self:GetStackCount())
+print("Poison damage:", total_damage)
+```
+
+Remember to remove debug prints after testing!
+
+=== FINAL CHECKLIST ===
+
+Before declaring implementation successful:
+
+✅ All 3 modifiers load without errors
+✅ Weapon fires continuously at correct rate
+✅ Clouds spawn at correct chance (~15%)
+✅ Clouds drift in random directions
+✅ Poison applies and stacks correctly
+✅ Poison duration refreshes on re-entry
+✅ Clouds despawn after 8 seconds
+✅ No memory leaks (particles/units cleaned up)
+✅ No console errors during extended play
+✅ Performance is acceptable (>60 FPS)
+✅ Tooltips display correctly in item shop
+✅ Weapon name shows as "Entropic Contagion"
+
+=== SUCCESS CRITERIA ===
+
+The weapon is working correctly when:
+
+1. ✅ You can fire continuously without errors
+2. ✅ Clouds spawn occasionally (visible ~1-2 per 10 shots)
+3. ✅ Clouds drift across the map smoothly
+4. ✅ Enemies take poison damage when entering clouds
+5. ✅ Poison stacks up to 5 times
+6. ✅ Everything feels smooth and responsive
+7. ✅ No lag, crashes, or console spam
+
+If all checks pass: **IMPLEMENTATION SUCCESSFUL!** 🎉
+
+=== TROUBLESHOOTING TIPS ===
+
+**Can't find weapon in shop:**
+- Check ItemCost in npc_items_custom.txt
+- Verify ScriptFile path is correct
+- Reload item schema: `dota_combine_models 0`
+
+**Weapon exists but does nothing:**
+- Check GetIntrinsicModifierName() returns correct modifier
+- Verify LinkLuaModifier() paths are correct
+- Look for "Failed to create modifier" errors
+
+**Clouds spawn but don't poison:**
+- Check DOTA_UNIT_TARGET_TEAM_ENEMY targeting
+- Verify FindUnitsInRadius() parameters
+- Check if AddNewModifier() succeeds
+
+**Performance issues:**
+- Reduce cloud lifetime from 8s to 6s
+- Lower cloud_count_max from 4 to 3
+- Increase OnIntervalThink from 0.1s to 0.15s
+
+Good luck testing! 🧪☠️

@@ -1,0 +1,218 @@
+===============================================================================
+RADIOACTIVE DECAY ENHANCER - POISON/LIGHT HYBRID ULTIMATE WEAPON
+Comprehensive Implementation Prompt
+===============================================================================
+
+WEAPON OVERVIEW:
+----------------
+The Radioactive Decay Enhancer is a poison/light hybrid ultimate weapon that applies stacking "Radioactive Decay" debuffs to enemies. The key mechanic is that units affected by Radioactive Decay take ADDITIONAL FLAT DAMAGE from ALL damage sources while the debuff is active. This creates a multiplicative damage amplification effect that synergizes with all other weapons.
+
+CORE MECHANICS:
+---------------
+1. PRIMARY WEAPON BEHAVIOR:
+   - Fires tracking projectiles at enemies (similar to other ultimate weapons)
+   - Fire rate: 0.3 seconds
+   - Base damage: 125 physical damage
+   - Range: 650 units
+   - Projectile speed: 1200
+   - Each projectile applies 1 stack of Radioactive Decay on hit
+
+2. RADIOACTIVE DECAY DEBUFF:
+   - Stacks: 1-10 stacks (applied one per hit)
+   - Duration: 5 seconds per stack (refreshes independently)
+   - Visual: Green-yellow glowing corrosive aura on affected unit
+   
+   DAMAGE AMPLIFICATION MECHANIC:
+   - For each stack of Radioactive Decay, the affected unit takes +25 flat damage 
+     whenever they take damage from ANY source
+   - Example: Enemy has 3 stacks of Radioactive Decay
+     * They take 100 damage from another weapon
+     * Radioactive Decay triggers: 3 stacks × 25 = 75 additional damage
+     * Total damage dealt: 100 + 75 = 175 damage
+   
+   - This additional damage should be:
+     * MAGICAL damage type
+     * Triggered on ANY damage instance (physical, magical, pure)
+     * Does NOT stack with itself (Radioactive Decay damage won't trigger more Decay damage)
+     * Applies to damage from: other weapons, abilities, environmental damage, etc.
+
+3. VISUAL DESIGN:
+   - Weapon projectile should have a radioactive/toxic appearance
+   - Color scheme: Sickly green-yellow with hints of bright light/energy
+   - Particle effects to consider:
+     * Projectile: Green-yellow energy with corrosive drips/sparks
+     * Trail: Toxic vapor trail with glowing particles
+     * Impact: Small corrosive explosion with radiation burst
+     * Debuff effect: Glowing green aura with decay particles around unit
+
+TECHNICAL IMPLEMENTATION:
+--------------------------
+
+FILE STRUCTURE:
+- Create: game/battleships_traders/scripts/vscripts/items/item_poison_light_mix_ult.lua
+- Update: game/battleships_traders/scripts/npc/npc_items_custom.txt (add item definition)
+- Update: game/battleships_traders/resource/addon_english.txt (add localization)
+
+ITEM STATS (npc_items_custom.txt):
+-----------------------------------
+"item_poison_light_mix_ult_bow"
+{
+  "ID"                     "TBD" // Find next available ID
+  "BaseClass"              "item_datadriven"
+  "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  "Model"                  "models/props_gameplay/red_box.vmdl"
+  "Effect"                 "particles/generic_gameplay/dropped_item.vpcf"
+  "ItemCost"               "13500"
+  "ItemShopTags"           "damage;unique"
+  "ItemQuality"            "epic"
+  "ItemAliases"            "radioactive decay enhancer"
+  "ItemDeclarations"       "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+  
+  "AbilitySpecial"
+  {
+    "01"  { "var_type" "FIELD_FLOAT"    "fire_rate"              "0.3" }
+    "02"  { "var_type" "FIELD_INTEGER"  "dmg"                    "125" }
+    "03"  { "var_type" "FIELD_INTEGER"  "range"                  "650" }
+    "04"  { "var_type" "FIELD_INTEGER"  "speed"                  "1200" }
+    "05"  { "var_type" "FIELD_INTEGER"  "decay_damage_per_stack" "25" }
+    "06"  { "var_type" "FIELD_INTEGER"  "decay_max_stacks"       "10" }
+    "07"  { "var_type" "FIELD_FLOAT"    "decay_duration"         "5.0" }
+  }
+}
+
+LOCALIZATION (addon_english.txt):
+----------------------------------
+"DOTA_Tooltip_ability_item_poison_light_mix_ult_bow"                   "Radioactive Decay Enhancer"
+"DOTA_Tooltip_ability_item_poison_light_mix_ult_bow_Description"       "Fires radioactive projectiles that inflict <font color='#00ff00'>Radioactive Decay</font> on enemies. Units with Radioactive Decay take <font color='#ffff00'>+%decay_damage_per_stack% additional damage</font> per stack from ALL damage sources."
+"DOTA_Tooltip_ability_item_poison_light_mix_ult_bow_Lore"             "A prototype energy weapon that destabilizes molecular bonds, causing catastrophic chain reactions when the target suffers additional trauma."
+"DOTA_Tooltip_ability_item_poison_light_mix_ult_bow_Note0"            "Fire Rate: %fire_rate%s"
+"DOTA_Tooltip_ability_item_poison_light_mix_ult_bow_Note1"            "Direct Damage: %dmg%"
+"DOTA_Tooltip_ability_item_poison_light_mix_ult_bow_Note2"            "Range: %range%"
+"DOTA_Tooltip_ability_item_poison_light_mix_ult_bow_Note3"            "Max Decay Stacks: %decay_max_stacks%"
+"DOTA_Tooltip_ability_item_poison_light_mix_ult_bow_Note4"            "Decay Duration: %decay_duration%s per stack"
+
+LUA IMPLEMENTATION STRUCTURE:
+------------------------------
+
+MODIFIERS NEEDED:
+1. modifier_item_poison_light_mix_ult_bow
+   - Hidden, passive modifier on wielder
+   - Handles weapon firing logic (OnIntervalThink)
+   - Creates tracking projectiles every 0.3 seconds
+
+2. modifier_radioactive_decay_debuff
+   - Visible debuff on enemies
+   - Stacking (1-10 stacks)
+   - Duration: 5 seconds per stack
+   - Implements DeclareFunctions: MODIFIER_EVENT_ON_TAKEDAMAGE
+   - On damage event: Check if damaged unit has this modifier
+     * Calculate: bonus_damage = stack_count × decay_damage_per_stack
+     * Apply bonus_damage as magical damage to victim
+     * Ensure bonus damage doesn't trigger itself (use flag or check damage type)
+
+KEY FUNCTIONS:
+--------------
+
+item_poison_light_mix_ult_bow:OnProjectileHit(target, location)
+  - Deal base damage to target
+  - Add or refresh one stack of modifier_radioactive_decay_debuff
+  - Play impact sound/particle
+
+modifier_radioactive_decay_debuff:OnTakeDamage(params)
+  - Check if params.unit == self:GetParent()
+  - Check if damage is not from Radioactive Decay itself (prevent infinite loop)
+  - Calculate bonus damage: params.original_damage * 0 + (self:GetStackCount() * decay_damage_per_stack)
+  - Apply bonus magical damage to unit
+
+PARTICLE SUGGESTIONS:
+---------------------
+Available particles that could work well:
+
+PROJECTILE OPTIONS:
+- "particles/units/heroes/hero_alchemist/alchemist_corrosive_weaponry.vpcf"
+- "particles/units/heroes/hero_viper/viper_corrosive_debuff.vpcf"
+- "particles/dire_fx/dire_tower_decay.vpcf"
+- Custom particle combining green poison with yellow light/energy
+
+TRAIL OPTIONS:
+- "particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_corrosive_trail_1.vpcf"
+- "particles/econ/items/pudge/pudge_immortal_arm/pudge_immortal_arm_rot_body_decay_cloud.vpcf"
+
+DEBUFF EFFECT:
+- "particles/units/heroes/hero_alchemist/alchemist_corrosive_weaponry_ground.vpcf"
+- "particles/status_fx/status_effect_alchemist_corrosive_weaponry.vpcf"
+- "particles/dire_fx/dire_tower_decay_sparks.vpcf"
+- "particles/econ/items/pudge/pudge_immortal_arm/pudge_immortal_arm_rot_body_decay_light.vpcf"
+
+IMPACT:
+- "particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_corrosive_explosion.vpcf"
+- "particles/units/heroes/hero_alchemist/alchemist_corrosive_weaponry_splash.vpcf"
+
+GLOW EFFECTS (for debuff aura):
+- "particles/base_attacks/ranged_badguy_persistent_glow_green.vpcf"
+- "particles/addons_gameplay/fire_torch_glow_light.vpcf"
+
+SOUND SUGGESTIONS:
+------------------
+- Fire sound: "Hero_Alchemist.UnstableConcoction.Fuse" or "Hero_Viper.CorrosiveSkin"
+- Impact sound: "Hero_Alchemist.AcidSpray" or "Hero_Viper.NetherToxin"
+- Decay tick sound: Subtle "Hero_Venomancer.PoisonNova" variant
+
+IMPORTANT TECHNICAL NOTES:
+---------------------------
+1. DAMAGE EVENT HANDLING:
+   - Use MODIFIER_EVENT_ON_TAKEDAMAGE in DeclareFunctions
+   - In OnTakeDamage(params):
+     * params.unit = unit taking damage
+     * params.attacker = unit dealing damage
+     * params.damage = actual damage dealt
+     * params.damage_type = type of damage
+   
+2. PREVENT INFINITE LOOP:
+   - When applying bonus decay damage, mark it somehow to prevent triggering itself
+   - Option 1: Use params.inflictor to check if damage source is this ability
+   - Option 2: Add a flag to the damage table: damage_flags with DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
+
+3. STACK MANAGEMENT:
+   - Each hit adds 1 stack (up to 10 max)
+   - Each stack has independent 5-second duration
+   - Use :SetStackCount() and :GetStackCount()
+   - On refresh, increment stacks but don't reset all durations
+
+4. PERFORMANCE CONSIDERATION:
+   - OnTakeDamage fires for EVERY damage instance
+   - Keep logic lightweight
+   - Cache values (stack count, damage per stack) rather than recalculating
+
+TESTING CHECKLIST:
+------------------
+□ Weapon fires projectiles at correct rate (0.3s)
+□ Projectiles track and hit enemies correctly
+□ Each hit applies 1 stack of Radioactive Decay
+□ Stacks increment correctly (1-10 max)
+□ Stacks have correct duration (5s per stack)
+□ When enemy takes damage from other source, bonus damage is applied
+□ Bonus damage = stacks × 25 per hit
+□ Bonus damage doesn't trigger itself (no infinite loop)
+□ Multiple stacks work correctly (test with 1, 5, 10 stacks)
+□ Visual effects display correctly (projectile, trail, debuff aura)
+□ Sounds play at appropriate times
+
+SYNERGY EXAMPLES:
+-----------------
+- Rapid-fire weapons: Each hit triggers decay bonus, massive DPS increase
+- High-damage single-shot weapons: Amplified by all accumulated stacks
+- AOE weapons: All enemies in area take bonus damage if they have stacks
+- Other debuff weapons: Decay amplifies all their damage ticks
+
+BALANCE CONSIDERATIONS:
+-----------------------
+- Base damage is modest (125) to focus on the amplification mechanic
+- Stack cap of 10 prevents infinite scaling (max +250 damage per hit)
+- 5-second duration means stacks naturally decay in prolonged fights
+- Weapon excels at sustained focus fire on single targets
+- Less effective against rapidly spawning enemies (stacks don't transfer)
+
+===============================================================================
+END OF PROMPT
+===============================================================================
