@@ -11634,7 +11634,8 @@
 	}
 
 	//===============================================
-	// light_spin_mix-ult_bow (Ultimate)
+	// light_spin_mix-ult_bow (Ultimate) - REFLECTION BEAM
+	// Fires projectile that creates beam back to caster, damaging units in between
 	//===============================================
   "item_light_spin_mix_ult_bow"
 	{
@@ -11657,23 +11658,14 @@
 
 		"AbilityValues"
 		{
-			// Primary weapon (Light) stats
-			"dmg"			"48"
-			"fire_rate"		"0.2"
-			"range"			"1000"
-			"speed"			"800"
-			"vision_rad"	"800"
-			"dps"			"480"
-			
-			// Secondary weapon (Spin) stats
-			"dmg_2"			"55"
-			"fire_rate_2"	"0.5"
-			"range_2"		"1050"
-			"speed_2"		"1525"
-			"bounces"		"4"
-			"bounce_dmg"	"11"
-			"bounce_range"	"600"
-			"dps_2"			"110"
+			// Reflection Beam stats
+			"dmg"				"180"		// Direct projectile damage
+			"fire_rate"			"0.4"		// Fire rate in seconds
+			"range"				"1050"		// Attack range
+			"speed"				"1100"		// Projectile speed
+			"beam_damage"		"90"		// Damage to units in beam path
+			"beam_width"		"150"		// Width of the damage beam
+			"dps"				"450"		// Base DPS (180 / 0.4)
 		}
 	}
 

@@ -1259,17 +1259,15 @@
     "DOTA_Tooltip_ability_item_light_spin_mix_three_bow_doubled_Note0"  "Light projectiles grant vision. Spin projectiles fragment to nearby enemies."
     
     // Ultimate
-    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow"  "Radiance/Cluster Shuriken"
-    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_Description"  "<h1>Hybrid Weapon: Ultimate Light/Iron</h1>Fires both Light and Spin weapons simultaneously.<br><br><b>Radiance:</b> Projectiles grant vision in a %vision_rad% unit radius.<br><b>Cluster Shuriken:</b> Fragments on impact, hitting up to %bounces% nearby enemy units within %bounce_range% range for %bounce_dmg% damage. Does not hit structures."
-    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_fire_rate"  "Radiance RELOAD (s):"
-    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_dmg"  "Radiance DAMAGE (x2):"
-    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_range"  "Radiance RANGE:"
-    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_dps"  "\n<font  size= '3' color='#cc6400'>Radiance DPS:</font>"
-    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_fire_rate_2"  "Cluster Shuriken RELOAD (s):"
-    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_dmg_2"  "Cluster Shuriken DAMAGE (x2):"
-    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_range_2"  "Cluster Shuriken RANGE:"
-    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_dps_2"  "\n<font  size= '3' color='#cc6400'>Cluster Shuriken DPS:</font>"
-    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_Note0"  "Light projectiles grant vision. Spin projectiles fragment to nearby enemies."
+    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow"  "Reflection Beam"
+    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_Description"  "<h1>Ultimate Weapon: Light + Spin</h1>Fires a spinning light projectile that creates a <font color='#ffff00'>reflection beam</font> linking the target back to the caster. The beam deals <font color='#00ffff'>%beam_damage% magical damage</font> to all enemies caught in its path.<br><br><i>By bending light through rapidly spinning crystals, this weapon creates a devastating energy bridge that punishes clustered formations.</i>"
+    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_Note0"  "Fire Rate: %fire_rate%s | Beam Width: %beam_width% units"
+    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_fire_rate"  "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_dmg"  "DIRECT DAMAGE:"
+    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_range"  "RANGE:"
+    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_beam_damage"  "BEAM DAMAGE:"
+    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_beam_width"  "BEAM WIDTH:"
+    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_dps"  "\n<font  size= '3' color='#cc6400'>Base DPS:</font>"
 
     //===============================================
     // spin_breach_mix weapons

@@ -28,7 +28,12 @@ return {
     "particles/units/heroes/hero_shredder/shredder_timberchain.vpcf",
     "particles/units/heroes/hero_jakiro/jakiro_icepath_debuff.vpcf",
     "particles/ui_mouseactions/range_display.vpcf",
-    "particles/darkness_chaos_ult.vpcf"
+    "particles/darkness_chaos_ult.vpcf",
+    "particles/light_spin_ult_beam.vpcf",
+    "particles/units/heroes/hero_phoenix/phoenix_sunray_beam_enemy.vpcf",
+    "particles/units/heroes/hero_phoenix/phoenix_sunray_beam_enemy_flash.vpcf",
+    "particles/units/heroes/hero_wisp/wisp_guardian_explosion_sparks.vpcf",
+    "particles/light_spin_ult.vpcf"
   },
 
   abilities = {
