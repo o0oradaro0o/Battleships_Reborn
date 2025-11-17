@@ -2909,25 +2909,6 @@
 			"01"						"item_breach_ice_mix_bow_doubled;item_breach_ice_mix_two_bow_doubled;item_breach_ice_mix_three_bow_doubled"
 		}
 	}
-	"item_recipe_ice_wind_mix_ult_bow"
-	{
-
-		"BaseClass"						"item_recipe_arcane_boots"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_ice_wind_mix_ult_bow"
-		"ItemRequirements"
-		{
-			"01"						"item_ice_three_bow;item_wind_three_bow"
-		}
-	}
 	
 	
 	//=================================================================================================================
@@ -12206,24 +12187,28 @@
 		{
 			"level"			"4"
 			
-			// Ice weapon (primary)
-			"dmg"			"205"
-			"fire_rate"		"2.1"
-			"range"			"1250"
-			"speed"			"1200"
-			"slow_pct"		"4"
-			"slow_dur"		"2"
-			"dps"			"390"
+			// Swine Storm - Tornado parameters
+			"fire_rate"				"1.2"		// Time between tornado launches
+			"range"					"1250"		// Detection range for enemies
+			"tornado_speed"			"800"		// Tornado movement speed
+			"tornado_duration"		"6"			// Max lifetime of tornado
 			
-			// Wind weapon (secondary)
-			"dmg_2"			"97.5"
-			"fire_rate_2"	"1.0"
-			"range_2"		"1300"
-			"speed_2"		"900"
-			"bonus_dmg"		"35"
-			"min_range"		"600"
-			"min_range_dmg_pct"	"50"
-			"dps_2"			"390"
+			// Pig parameters
+			"pig_count_min"			"1"			// Minimum pigs per tornado
+			"pig_count_max"			"3"			// Maximum pigs per tornado
+			"pig_collision_radius"	"80"		// Collision detection radius
+			
+			// Pig effects on enemies
+			"pig_damage"			"120"		// Damage per pig hit on enemy
+			"slow_pct"				"30"		// Movement speed slow %
+			"slow_dur"				"2"			// Slow duration in seconds
+			
+			// Pig effects on allies
+			"pig_heal"				"120"		// Heal per pig hit on ally
+			"speed_pct"				"30"		// Movement speed boost %
+			"speed_dur"				"3"			// Speed boost duration in seconds
+			
+			"dps"					"400"		// Approximate DPS (120 * 2.5 pigs avg / 1.2 fire rate / 0.6 hit rate)
 		}
 	}
 

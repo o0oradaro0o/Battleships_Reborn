@@ -40,7 +40,10 @@ return {
     "particles/basic_projectile/spin_breach_ult_projectile.vpcf",
     "particles/neutral_fx/icefire_bomb.vpcf",
     "particles/generic_gameplay/generic_slowed_cold.vpcf",
-    "particles/econ/courier/courier_trail_divine/courier_divine_ambient.vpcf"
+    "particles/econ/courier/courier_trail_divine/courier_divine_ambient.vpcf",
+    "particles/basic_projectile/swine_storm_tornado.vpcf",
+    "particles/econ/items/windrunner/windranger_arcana/windranger_arcana_windrun.vpcf",
+    "particles/units/heroes/hero_brewmaster/brewmaster_windwalk.vpcf"
   },
 
   abilities = {
@@ -71,6 +74,8 @@ return {
     "npc_dota_vision_granter",
     "npc_tower_tosser_tower",
     "npc_ice_bomb",
+    "npc_swine_storm_tornado",
+    "npc_swine_storm_pig",
     "npc_dota_boat_south_one",
     "npc_dota_boat_south_two",
     "npc_dota_boat_south_three",
@@ -143,6 +148,13 @@ return {
     "models/heroes/tidehunter/tidehunter.vmdl",
     "models/heroes/shadow_demon/shadow_demon.vmdl",
     "models/props_wildlife/wildlife_birdlarge001.vmdl",
+    "models/pets/poogie/poogie.vmdl",
+    "models/pets/poogie/poogie_apprentice.vmdl",
+    "models/pets/poogie/poogie_bee.vmdl",
+    "models/pets/poogie/poogie_emperor.vmdl",
+    "models/pets/poogie/poogie_pink.vmdl",
+    "models/pets/poogie/poogie_pumpkin.vmdl",
+    "models/items/windrunner/windrunner_arcana/windranger_arcana_fx_model_tornado_sml.vmdl",
     "models/items/courier/nexon_turtle_15_red/nexon_turtle_15_red_flying.vmdl",
     "models/spin_one.vmdl",
     "models/spin_two.vmdl",
