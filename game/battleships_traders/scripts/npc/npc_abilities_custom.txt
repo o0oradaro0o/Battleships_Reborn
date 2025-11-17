@@ -12599,4 +12599,25 @@
     "ScriptFile"          "heroes/crab_passive.lua"
     "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"    
 	}
+
+	//=================================================================================================================
+	// Tower Tosser Attack - Ability for spawned towers
+	//=================================================================================================================
+	"tower_tosser_attack"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/tower_tosser_attack.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"rattletrap_power_cogs"
+		"MaxLevel"						"1"
+
+		"AbilityValues"
+		{
+			"damage"					"135"
+			"fire_rate"					"0.3"
+			"range"						"800"
+			"max_shots"					"10"
+			"speed"						"1200"
+		}
+	}
 }

@@ -1328,22 +1328,18 @@
     "DOTA_Tooltip_ability_item_spin_breach_mix_three_bow_doubled_Note0"  "Spin projectiles fragment to nearby enemies. Breach damage is delayed with pure component."
     
     // Ultimate
-    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow"  "Cluster Shuriken/Missle of Impending Doom"
-    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_Description"  "<h1>Hybrid Weapon: Ultimate Spin/Breach</h1>Fires both Spin and Breach weapons simultaneously.<br><br><b>Cluster Shuriken:</b> Fragments on impact, hitting up to %bounces% nearby enemy units within %bounce_range% range for %bounce_dmg% damage. Does not hit structures.<br><b>Missle of Impending Doom:</b> %pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. Does not hit structures."
-    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_fire_rate"  "Cluster Shuriken RELOAD (s):"
-    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_dmg"  "Cluster Shuriken DAMAGE (x2):"
-    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_range"  "Cluster Shuriken RANGE:"
-    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_dps"  "\n<font  size= '3' color='#cc6400'>Cluster Shuriken DPS:</font>"
-    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_bounces"  "Cluster Shuriken BOUNCES:"
-    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_bounce_dmg"  "Cluster Shuriken BOUNCE DAMAGE:"
-    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_bounce_range"  "Cluster Shuriken BOUNCE RANGE:"
-    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_fire_rate_2"  "Missle of Impending Doom RELOAD (s):"
-    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_dmg_2"  "Missle of Impending Doom DAMAGE (x2):"
-    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_range_2"  "Missle of Impending Doom RANGE:"
-    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_delay"  "Missle of Impending Doom DAMAGE DELAY:"
-    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_dps_2"  "\n<font  size= '3' color='#cc6400'>Missle of Impending Doom DPS:</font>"
-    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_pure_pct"  "PURE PERCENT:"
-    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_Note0"  "Spin projectiles fragment to nearby enemies. Breach damage is delayed with pure component."
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow"  "Temporary Tower Tosser"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_Description"  "<h1>Ultimate Weapon: Spin + Breach</h1>Fires a projectile at the target that spawns a <font color='#ffaa00'>stationary defensive tower</font> at the impact location. The tower automatically attacks nearby enemies within <font color='#00ffff'>%tower_range%</font> range, dealing <font color='#ff0000'>%tower_damage% physical damage</font> every <font color='#00ff00'>%tower_fire_rate%s</font>. The tower lasts for up to <font color='#ffff00'>%tower_duration% seconds</font> or until it fires <font color='#ffff00'>%tower_shots% shots</font>, whichever comes first.<br><br><i>Combining spinning momentum with precision breach tactics, this weapon deploys autonomous sentries that guard strategic positions.</i>"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_fire_rate"  "TOWER PLACEMENT COOLDOWN (s):"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_range"  "PROJECTILE RANGE:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_speed"  "PROJECTILE SPEED:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_tower_duration"  "TOWER DURATION (s):"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_tower_shots"  "MAX TOWER SHOTS:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_tower_damage"  "TOWER DAMAGE PER SHOT:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_tower_fire_rate"  "TOWER FIRE RATE (s):"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_tower_range"  "TOWER ATTACK RANGE:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_dps"  "\n<font  size= '3' color='#cc6400'>Equivalent DPS:</font>"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_Note0"  "Tower does not deal damage on projectile impact. Tower disappears after duration or max shots."
 
     //===============================================
     // breach_ice_mix weapons
@@ -2374,6 +2370,7 @@
     "npc_dota_tower_north_strongest"        "Harbor Tower"
     "npc_dota_tower_south_stronger"         "Harbor Tower"  
     "npc_dota_tower_south_strongest"        "Harbor Tower"  
+    "npc_tower_tosser_tower"          "Temporary Sentry Tower"
     
 
     "npc_dota_creature_cop"             "Officer Chelle"

@@ -11811,7 +11811,7 @@
 	}
 	
 	//===============================================
-	// spin_breach_mix-ult_bow (Ultimate)
+	// spin_breach_mix-ult_bow (Ultimate) - TEMPORARY TOWER TOSSER
 	//===============================================
   "item_spin_breach_mix_ult_bow"
 	{
@@ -11834,25 +11834,18 @@
 
 		"AbilityValues"
 		{
-			// Primary weapon (Spin) stats
-			"dmg"			"55"
-			"fire_rate"		"0.5"
-			"range"			"1050"
-			"speed"			"1525"
-			"bounces"		"4"
-			"bounce_dmg"	"11"
-			"bounce_range"	"600"
-			"dps"			"110"
+			// Tower Tosser projectile stats
+			"fire_rate"			"3.0"		// Time between tower placements
+			"range"				"1100"		// Range to fire projectile
+			"speed"				"1400"		// Projectile speed
+			"dps"				"450"		// Equivalent DPS (for display)
 			
-			// Secondary weapon (Breach) stats
-			"dmg_2"			"65"
-			"fire_rate_2"	"0.8"
-			"range_2"		"1200"
-			"speed_2"		"875"
-			"delay"			"2.5"
-			"remove"		"3"
-			"pure_pct"		"20"
-			"dps_2"			"81"
+			// Tower stats
+			"tower_duration"	"15"		// How long tower lasts (seconds)
+			"tower_shots"		"10"		// Max number of shots before tower despawns
+			"tower_damage"		"135"		// Damage per tower shot
+			"tower_fire_rate"	"0.3"		// Time between tower shots
+			"tower_range"		"800"		// Tower attack range
 		}
 	}
 

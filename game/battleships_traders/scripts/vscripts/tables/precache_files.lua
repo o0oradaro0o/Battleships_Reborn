@@ -33,7 +33,11 @@ return {
     "particles/units/heroes/hero_phoenix/phoenix_sunray_beam_enemy.vpcf",
     "particles/units/heroes/hero_phoenix/phoenix_sunray_beam_enemy_flash.vpcf",
     "particles/units/heroes/hero_wisp/wisp_guardian_explosion_sparks.vpcf",
-    "particles/light_spin_ult.vpcf"
+    "particles/light_spin_ult.vpcf",
+    "particles/units/heroes/hero_rattletrap/rattletrap_cog_attack.vpcf",
+    "particles/econ/courier/courier_axolotl_ambient/courier_axolotl_ambient_trail_steam.vpcf",
+    "particles/base_attacks/ranged_tower_good_glow.vpcf",
+    "particles/basic_projectile/spin_breach_ult_projectile.vpcf"
   },
 
   abilities = {
@@ -62,6 +66,7 @@ return {
     "npc_dota_hero_rubick",
     "npc_dota_hero_brewmaster",
     "npc_dota_vision_granter",
+    "npc_tower_tosser_tower",
     "npc_dota_boat_south_one",
     "npc_dota_boat_south_two",
     "npc_dota_boat_south_three",

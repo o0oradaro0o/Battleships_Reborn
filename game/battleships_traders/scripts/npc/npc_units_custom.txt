@@ -32,6 +32,48 @@
     "VisionNighttimeRange"      "500"
   }
 
+  "npc_tower_tosser_tower"
+  {
+    "BaseClass"                 "npc_dota_creature"
+    "Model"                     "models/items/rattletrap/mechanised_pilgrim_cog/mechanised_pilgrim_cog.vmdl"
+    "Level"                     "1"
+    "VisbibleInPortraitOnly"    "0"
+    "IsSummoned"                "1"
+	"ModelScale" 				"1.5"
+    
+    "Ability1"                  "tower_tosser_attack"
+    "Ability2"                  ""
+    "Ability3"                  ""
+    "Ability4"                  ""
+    "Ability5"                  ""
+    "Ability6"                  ""
+    "Ability7"                  ""
+    "Ability8"                  "ability_hide_healthbar"
+
+    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"
+    "MovementSpeed"             "0"
+    "MovementTurnRate"          "0"
+    
+    "HealthBarOffset"           "150"
+    "StatusHealth"              "400"
+    "StatusHealthRegen"         "0"
+    "StatusMana"                "0"
+    "StatusManaRegen"           "0"
+    "ArmorPhysical"             "5"
+    "MagicalResistance"         "25"
+    
+    "BountyXP"                  "0"
+    "BountyGoldMin"             "0"
+    "BountyGoldMax"             "0"
+    
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+    "VisionDaytimeRange"        "800"
+    "VisionNighttimeRange"      "800"
+    
+    "IsAncient"                 "1"
+  }
+
   "npc_dota_science_tower"
   {
     "BaseClass"                 "npc_dota_creature"
