@@ -1,0 +1,58 @@
+================================================================================
+ICE/WIND MIX ULTIMATE WEAPON CONVERSION PROMPT
+================================================================================
+
+I have recently implemented mix weapons in my Battleships mod that are combinations of 2 different weapons. Right now the ultimate weapon of each of these mixes simply combines the ultimates of the weapons it is based on, but this is not how I want it to work. I would like the ultimates to be wholly original and to match roughly the power scale of a single ultimate weapon but to have fun and unique effects.
+
+We have already successfully converted many such weapons including the spread/plasma mix, plasma/fire mix, fire/coal mix, coal/chaos mix, chaos/poison mix, poison/light mix, light/spin mix (Reflection Beam), spin/breach mix (Temporary Tower Tosser), and breach/ice mix (Creeping Cold).
+
+Please examine the current ultimate weapons thoroughly including their associated vpcf files, npc_items_custom entries, their own lua files, and the language resource files.
+
+The next weapon we intend to convert is the Ice/Wind mix weapon which we will convert to the "Swine Storm".
+
+NEW WEAPON MECHANICS:
+------------------------------------------
+The weapon fires large tornado projectiles at enemies. The tornados travel at 800 speed and waver side to side as they travel, not taking a direct path to their target. Each tornado contains 1-3 flying pig units swirling within the storm. As the tornado travels, if any of these pig units collide with a ship, they should:
+- Deal damage and apply a slow debuff if the ship is an enemy
+- Heal and apply a speed boost buff if the ship is an ally
+
+The tornado itself should continue toward its original target even after pig collisions occur. The pigs should be visually spinning/orbiting within the tornado effect as it moves.
+
+TECHNICAL IMPLEMENTATION:
+------------------------------------------
+- Modify the existing ice_wind mix ultimate lua file or create a new one
+- Create tornado projectiles that use sine wave motion for side-to-side wavering (modify position each think interval)
+- Spawn 1-3 dummy pig units per tornado that follow the projectile and orbit around it
+- Use pig models randomly selected from: models/pets/poogie/poogie.vmdl, models/pets/poogie/poogie_apprentice.vmdl, models/pets/poogie/poogie_bee.vmdl, models/pets/poogie/poogie_emperor.vmdl, models/pets/poogie/poogie_pink.vmdl, models/pets/poogie/poogie_pumpkin.vmdl
+- Pigs should use FindUnitsInRadius each think interval to check for collision with ships
+- On collision with enemy: deal damage, apply slow modifier, remove pig from tornado
+- On collision with ally: heal, apply speed boost modifier, remove pig from tornado
+- Use tornado/wind particle effects for the main projectile visual
+- Update npc_units_custom.txt if creating dummy pig units
+- Update npc_abilities_custom.txt if creating new abilities (use AbilityValues format)
+- Update npc_items_custom.txt with new stats in AbilityValues section
+- Update addon_english.txt with weapon name and description
+
+IMPORTANT NOTES:
+------------------------------------------
+- Do not create any summary or testing guides, just implement the changes needed to convert the current mix weapon into the desired mix weapon
+- I'm using Git for version control, so don't worry about backups
+- You can see all compiled particle effects in the native game by using the terminal to explore this folder: C:\Users\Lorne\Desktop\dota2Modding\dota files\particles
+- ALL particle files used MUST be added to precache_files.lua (in tables/ folder)
+- When particles need height offset, use Vector(0, 0, 50) added to position
+- Always properly destroy particles when units die or effects end:
+  ```lua
+  Timers:CreateTimer(duration, function()
+    ParticleManager:DestroyParticle(particle_index, false)
+    ParticleManager:ReleaseParticleIndex(particle_index)
+  end)
+  ```
+- Use AbilityValues format in npc files (NOT AbilitySpecial with var_type)
+- Power balance should be comparable to other ultimate weapons (~400-450 DPS equivalent)
+- When passing parameters to modifiers, use tonumber() conversions for all numeric values from kv tables
+- For dummy units, use modifier states: MODIFIER_STATE_INVULNERABLE, MODIFIER_STATE_NO_COLLISION, MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY
+- Don't use GetIntrinsicModifierName() if the modifier needs parameters - apply it manually with AddNewModifier instead
+- Use CreateLinearProjectile for projectiles with custom pathing, or create dummy units that move with SetOrigin/SetAbsOrigin
+- Use ForceKill(false) to destroy units when their lifecycle ends
+- Particle references should use actual Dota 2 vpcf files - test in console with "particle_create" command if unsure
+- For wavering motion, use math.sin with incrementing angle value multiplied by waver amplitude

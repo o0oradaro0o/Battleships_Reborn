@@ -12018,24 +12018,20 @@
 
 		"AbilityValues"
 		{
-			// Breach weapon (primary)
-			"dmg"			"65"
-			"fire_rate"		"0.8"
-			"range"			"1200"
-			"speed"			"875"
-			"delay"			"2.5"
-			"remove"		"3"
-			"pure_pct"		"20"
-			"dps"			"81"
-			
-			// Ice weapon (secondary)
-			"dmg_2"			"205"
-			"fire_rate_2"	"2.1"
-			"range_2"		"1250"
-			"speed_2"		"1450"
-			"slow_pct"		"4"
-			"slow_dur"		"2"
-			"dps_2"			"97"
+			// Creeping Cold - Orbiting Ice Bomb
+			"fire_rate"				"1.5"
+			"range"					"1200"
+			"speed"					"1200"
+			"projectile_count"		"4"			// Number of projectiles fired per volley
+			"bomb_damage"			"150"		// Damage when bomb hits ally (400 DPS: 150 * 4 / 1.5)
+			"explosion_damage"		"188"		// Damage when bomb times out (25% more than bomb_damage)
+			"orbit_duration"		"5.0"		// How long bomb orbits before exploding
+			"orbit_radius"			"300"		// Orbit distance from target
+			"orbit_speed"			"90"		// Degrees per second (1 rotation every 4 seconds)
+			"slow_radius"			"250"		// Aura radius for slow
+			"slow_pct"				"30"		// Movement speed slow percentage
+			"collision_radius"		"80"		// Collision detection radius
+			"dps"					"400"		// DPS when hitting allies (bomb_damage * projectile_count / fire_rate)
 		}
 	}
 

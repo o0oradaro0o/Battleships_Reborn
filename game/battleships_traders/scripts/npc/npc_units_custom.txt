@@ -74,6 +74,48 @@
     "IsAncient"                 "1"
   }
 
+  "npc_ice_bomb"
+  {
+    "BaseClass"                 "npc_dota_creature"
+    "Model" "models/development/invisiblebox.vmdl" // Model.
+    "Level"                     "1"
+    "VisbibleInPortraitOnly"    "0"
+    "IsSummoned"                "1"
+    "ModelScale"                "1.0"
+    
+    "Ability1"                  "breach_ice_orbit"
+    "Ability2"                  ""
+    "Ability3"                  ""
+    "Ability4"                  ""
+    "Ability5"                  ""
+    "Ability6"                  ""
+    "Ability7"                  ""
+    "Ability8"                  "ability_hide_healthbar"
+
+    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"
+    "MovementSpeed"             "0"
+    "MovementTurnRate"          "0"
+    
+    "HealthBarOffset"           "150"
+    "StatusHealth"              "1"
+    "StatusHealthRegen"         "0"
+    "StatusMana"                "0"
+    "StatusManaRegen"           "0"
+    "ArmorPhysical"             "0"
+    "MagicalResistance"         "0"
+    
+    "BountyXP"                  "0"
+    "BountyGoldMin"             "0"
+    "BountyGoldMax"             "0"
+    
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+    "VisionDaytimeRange"        "0"
+    "VisionNighttimeRange"      "0"
+    
+    "IsAncient"                 "1"
+  }
+
   "npc_dota_science_tower"
   {
     "BaseClass"                 "npc_dota_creature"

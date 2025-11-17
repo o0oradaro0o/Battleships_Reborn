@@ -12620,4 +12620,25 @@
 			"speed"						"1200"
 		}
 	}
+
+	"breach_ice_orbit"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/breach_ice_orbit.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"crystal_maiden_freezing_field"
+		"MaxLevel"						"1"
+
+		"AbilityValues"
+		{
+			"bomb_damage"				"150"
+			"explosion_damage"			"188"
+			"orbit_duration"			"5.0"
+			"orbit_radius"				"300"
+			"orbit_speed"				"90"
+			"slow_radius"				"250"
+			"slow_pct"					"30"
+			"collision_radius"			"80"
+		}
+	}
 }

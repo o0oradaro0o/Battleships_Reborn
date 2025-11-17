@@ -8,7 +8,7 @@ return {
     "particles/units/heroes/hero_sniper/sniper_shrapnel.vpcf",
     "particles/units/heroes/hero_sniper/sniper_shrapnel_launch.vpcf",
     "particles/units/heroes/hero_sniper/sniper_assassinate.vpcf",
-    "particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_explosion.vpcf",
+    "models/items/faceless_void/faceless_void_arcana/debut/particles/drow_frost_arrow_explosion_b.vpcf",
     "particles/events/crownfall/survivors/abilities/kunkka/kunkka_torrent_splash.vpcf",
     "particles/units/heroes/hero_shadowshaman/shadowshaman_shackle.vpcf",
     "particles/units/heroes/hero_gyrocopter/gyro_calldown_marker.vpcf",
@@ -37,7 +37,10 @@ return {
     "particles/units/heroes/hero_rattletrap/rattletrap_cog_attack.vpcf",
     "particles/econ/courier/courier_axolotl_ambient/courier_axolotl_ambient_trail_steam.vpcf",
     "particles/base_attacks/ranged_tower_good_glow.vpcf",
-    "particles/basic_projectile/spin_breach_ult_projectile.vpcf"
+    "particles/basic_projectile/spin_breach_ult_projectile.vpcf",
+    "particles/neutral_fx/icefire_bomb.vpcf",
+    "particles/generic_gameplay/generic_slowed_cold.vpcf",
+    "particles/econ/courier/courier_trail_divine/courier_divine_ambient.vpcf"
   },
 
   abilities = {
@@ -67,6 +70,7 @@ return {
     "npc_dota_hero_brewmaster",
     "npc_dota_vision_granter",
     "npc_tower_tosser_tower",
+    "npc_ice_bomb",
     "npc_dota_boat_south_one",
     "npc_dota_boat_south_two",
     "npc_dota_boat_south_three",

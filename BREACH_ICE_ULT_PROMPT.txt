@@ -1,0 +1,50 @@
+================================================================================
+BREACH/ICE MIX ULTIMATE WEAPON CONVERSION PROMPT
+================================================================================
+
+I have recently implemented mix weapons in my Battleships mod that are combinations of 2 different weapons. Right now the ultimate weapon of each of these mixes simply combines the ultimates of the weapons it is based on, but this is not how I want it to work. I would like the ultimates to be wholly original and to match roughly the power scale of a single ultimate weapon but to have fun and unique effects.
+
+We have already successfully converted many such weapons including the spread/plasma mix, plasma/fire mix, fire/coal mix, coal/chaos mix, chaos/poison mix, poison/light mix, light/spin mix (Reflection Beam), and spin/breach mix (Temporary Tower Tosser).
+
+Please examine the current ultimate weapons thoroughly including their associated vpcf files, npc_items_custom entries, their own lua files, and the language resource files.
+
+The next weapon we intend to convert is the Breach/Ice mix weapon which we will convert to the "Creeping Cold".
+
+NEW WEAPON MECHANICS:
+------------------------------------------
+The weapon will fire a projectile at the target. Upon hitting the target, the projectile will NOT deal damage but will instead spawn an ice bomb that orbits the target. If the bomb comes into contact with any unit on the same team as the target, it explodes dealing damage to that unit. If the bomb does not hit anything after 3 seconds, it explodes dealing extra damage to the original target. While orbiting, the bomb creates a slowing aura that affects enemies near the target.
+
+TECHNICAL IMPLEMENTATION:
+------------------------------------------
+- Create a new ability file for the orbiting ice bomb behavior (breach_ice_orbit.lua)
+- The ice bomb should be an invisible dummy unit that orbits the target
+- Use modifier states: MODIFIER_STATE_INVULNERABLE, MODIFIER_STATE_UNSELECTABLE, MODIFIER_STATE_NO_HEALTH_BAR, MODIFIER_STATE_NOT_ON_MINIMAP, MODIFIER_STATE_NO_UNIT_COLLISION
+- Attach particle effects to the dummy unit for visual representation
+- Use ThinkInterval to check for collision with nearby enemy units
+- Apply a debuff modifier to enemies near the orbiting bomb for the slow aura
+- On explosion (contact or timeout), deal damage and destroy the bomb unit
+- Update npc_units_custom.txt to define the ice bomb dummy unit
+- Update npc_abilities_custom.txt to define the orbit ability using AbilityValues format (not AbilitySpecial)
+- Update npc_items_custom.txt with new stats in AbilityValues section
+- Update addon_english.txt with new weapon name and description
+
+IMPORTANT NOTES:
+------------------------------------------
+- Do not create any summary or testing guides, just implement the changes needed to convert the current mix weapon into the desired mix weapon
+- I'm using Git for version control, so don't worry about backups
+- You can see all compiled particle effects in the native game by using the terminal to explore this folder: C:\Users\Lorne\Desktop\dota2Modding\dota files\particles
+- ALL particle files used MUST be added to precache_files.lua (in tables/ folder)
+- When particles need height offset, use Vector(0, 0, 50) added to position
+- Always properly destroy particles when units die or effects end:
+  ```lua
+  Timers:CreateTimer(duration, function()
+    ParticleManager:DestroyParticle(particle_index, false)
+    ParticleManager:ReleaseParticleIndex(particle_index)
+  end)
+  ```
+- Use AbilityValues format in npc files (NOT AbilitySpecial with var_type)
+- Power balance should be comparable to other ultimate weapons (~450-500 DPS equivalent)
+- For dummy units that should not be visible/selectable, add ability_hide_healthbar to Ability8
+- When creating projectiles, use CreateTrackingProjectile for homing or CreateLinearProjectile for straight paths
+- Use ForceKill(false) to destroy units when their lifecycle ends
+- Particle references should use actual Dota 2 vpcf files - test in console with "particle_create" command if unsure
