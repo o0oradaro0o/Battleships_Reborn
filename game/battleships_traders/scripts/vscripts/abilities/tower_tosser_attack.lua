@@ -6,6 +6,10 @@
 tower_tosser_attack = class({})
 LinkLuaModifier("modifier_tower_tosser_attack", "abilities/tower_tosser_attack.lua", LUA_MODIFIER_MOTION_NONE)
 
+function tower_tosser_attack:Precache(context)
+  PrecacheResource("particle", "particles/light_spin_tower_proj.vpcf", context)
+end
+
 function tower_tosser_attack:GetIntrinsicModifierName()
   return "modifier_tower_tosser_attack"
 end

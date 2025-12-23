@@ -41,9 +41,14 @@ return {
     "particles/neutral_fx/icefire_bomb.vpcf",
     "particles/generic_gameplay/generic_slowed_cold.vpcf",
     "particles/econ/courier/courier_trail_divine/courier_divine_ambient.vpcf",
+    "particles/nova_cannon_explosion.vpcf",
     "particles/basic_projectile/swine_storm_tornado.vpcf",
     "particles/econ/items/windrunner/windranger_arcana/windranger_arcana_windrun.vpcf",
-    "particles/units/heroes/hero_brewmaster/brewmaster_windwalk.vpcf"
+    "particles/units/heroes/hero_brewmaster/brewmaster_windwalk.vpcf",
+    "particles/units/heroes/hero_lina/lina_overheat_explosion.vpcf",
+    "particles/poison_light_ult.vpcf",
+    "particles/poison_light_ult_debuff.vpcf",
+    "particles/light_spin_tower_proj.vpcf"
   },
 
   abilities = {

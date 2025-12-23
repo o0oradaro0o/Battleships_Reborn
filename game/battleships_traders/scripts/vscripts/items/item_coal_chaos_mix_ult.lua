@@ -206,13 +206,6 @@ function item_coal_chaos_mix_ult_bow:CreateSpirit(caster, location)
     -- Scale model
     spirit:SetModelScale(RandomFloat(0.4, 0.6))
 
-    -- Add trail particle
-    local particle_trail = ParticleManager:CreateParticle(
-      "particles/units/heroes/hero_shadow_demon/shadow_demon_demonic_purge_debuff.vpcf",
-      PATTACH_ABSORIGIN_FOLLOW,
-      spirit
-    )
-    ParticleManager:SetParticleControl(particle_trail, 0, spirit:GetAbsOrigin())
 
     -- Play spawn sound
     EmitSoundOn("Hero_ShadowDemon.ShadowPoison.Cast", spirit)

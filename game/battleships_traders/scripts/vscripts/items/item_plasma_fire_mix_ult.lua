@@ -14,6 +14,9 @@ function item_plasma_fire_mix_ult_bow:Precache(context)
   PrecacheResource("particle", "particles/econ/items/invoker/invoker_ti6/invoker_sun_strike_ti6.vpcf", context)
   PrecacheResource("particle", "particles/basic_projectile/supernova_cannon_projectile.vpcf", context)
   PrecacheResource("particle", "particles/basic_projectile/fire_burn_effect_small.vpcf", context)
+  PrecacheResource("particle", "particles/nova_cannon_explosion.vpcf", context)
+  PrecacheResource("particle", "particles/poison_light_ult.vpcf", context)
+  PrecacheResource("particle", "particles/poison_light_ult_debuff.vpcf", context)
 end
 
 function item_plasma_fire_mix_ult_bow:GetIntrinsicModifierName()
@@ -43,13 +46,6 @@ function item_plasma_fire_mix_ult_bow:OnProjectileHit(target, location)
     ability = self
   }
   ApplyDamage(damageTable)
-
-  -- Create supernova explosion particle effect
-  local particle_explosion = "particles/econ/items/invoker/invoker_ti6/invoker_sun_strike_ti6.vpcf"
-  local effect_explosion = ParticleManager:CreateParticle(particle_explosion, PATTACH_WORLDORIGIN, nil)
-  ParticleManager:SetParticleControl(effect_explosion, 0, impact_point)
-  ParticleManager:SetParticleControl(effect_explosion, 1, Vector(push_radius, 0, 0))
-  ParticleManager:ReleaseParticleIndex(effect_explosion)
 
   -- Create Phoenix Supernova death flash at impact
   local particle_flash = "particles/nova_cannon_explosion.vpcf"

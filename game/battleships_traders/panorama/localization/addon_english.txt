@@ -3249,8 +3249,9 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"discord"			"Click to join us on discord!"
 		"News_Title"		"News!"
 		"News_Content"		"11/8/2025
-- Attempt to fix bug where team does not win when killing enemay harbors
-- UI fixes
+	- Attempt to fix bug where team does not win when killing enemay harbors
+	- UI fixes
+	- 8 new mix weapons with unique ultimates
 - Try out the Demo of our new game Revert click below!
 "
 		
@@ -3302,13 +3303,5 @@ Continue"
 
 		"abaddon_aphotic_shield_battleship"  "Force Field"
 		"deploy_science_tower" "Deploy research Platform"
-
-		// Breach/Ice Mix Ultimate - Creeping Cold
-		"DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow"								"Creeping Cold"
-		"DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_Description"					"\nBreach/Ice Mix Ultimate\n\nFires ice projectiles that spawn orbiting bombs around targets. Bombs explode when contacting an ally of the target, or after 3 seconds dealing extra damage to the original target. Creates a slowing aura while orbiting.\n\nRange: 1200\nDPS: ~267\n\nBomb Damage (on contact): 250\nExplosion Damage (on timeout): 400\nOrbit Duration: 3.0s\nSlow: 30%\nSlow Radius: 250"
-		"DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_fire_rate"					"Reload Delay(S):"
-		"DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_bomb_damage"					"Bomb Damage:"
-		"DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_explosion_damage"			"Explosion Damage:"
-		"DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_slow_pct"					"Movement Slow:"
 }
 

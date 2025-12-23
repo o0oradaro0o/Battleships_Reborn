@@ -9,7 +9,7 @@ LinkLuaModifier("modifier_burning_pitch_trail_thinker_aura", "items/item_fire_co
 LinkLuaModifier("modifier_burning_pitch_trail_aura_debuff", "items/item_fire_coal_mix_ult.lua", LUA_MODIFIER_MOTION_NONE)
 
 function item_fire_coal_mix_ult_bow:Precache(context)
-  PrecacheResource("particle", "particles/units/heroes/hero_lina/lina_spell_dragon_slave.vpcf", context)
+  PrecacheResource("particle", "particles/units/heroes/hero_lina/lina_overheat_explosion.vpcf", context)
   PrecacheResource("particle", "particles/burning_pitch_trail.vpcf", context)
   PrecacheResource("particle", "particles/basic_projectile/burning_pitch_launcher_projectile.vpcf", context)
   PrecacheResource("particle", "particles/units/heroes/hero_ember_spirit/ember_spirit_searing_chains_debuff.vpcf", context)
@@ -43,7 +43,7 @@ function item_fire_coal_mix_ult_bow:OnProjectileHit(target, location)
   ApplyDamage(damageTable)
 
   -- Create impact explosion particle effect (lava/fire explosion)
-  local particle_explosion = "particles/units/heroes/hero_lina/lina_spell_dragon_slave.vpcf"
+  local particle_explosion = "particles/units/heroes/hero_lina/lina_overheat_explosion.vpcf"
   local effect_explosion = ParticleManager:CreateParticle(particle_explosion, PATTACH_WORLDORIGIN, nil)
   ParticleManager:SetParticleControl(effect_explosion, 0, impact_point)
   ParticleManager:SetParticleControl(effect_explosion, 1, impact_point + Vector(0, 0, 200))

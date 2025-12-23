@@ -11608,7 +11608,7 @@
 			"fire_rate"					"0.3"		// Fire rate in seconds
 			"range"						"950"		// Attack range
 			"speed"						"1200"		// Projectile speed
-			"decay_damage_per_stack"	"25"		// Additional damage per stack from ANY source
+			"decay_damage_per_stack"	"5"		// Additional damage per stack from ANY source
 			"decay_max_stacks"			"10"		// Maximum stacks of Radioactive Decay
 			"decay_duration"			"5.0"		// Duration per stack
 		}
