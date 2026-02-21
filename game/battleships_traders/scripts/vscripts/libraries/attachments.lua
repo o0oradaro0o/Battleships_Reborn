@@ -138,7 +138,7 @@ end
 
 function Attachments:start()
 
-  local src = debug.getinfo(1).source
+  -- local src = debug.getinfo(1).source
   --print(src)
 
   self.gameDir = ""
@@ -146,32 +146,32 @@ function Attachments:start()
 
   if IsInToolsMode() then
 
-    if src:sub(2):find("(.*dota 2 beta[\\/]game[\\/]dota_addons[\\/])([^\\/]+)[\\/]") then
+    -- if src:sub(2):find("(.*dota 2 beta[\\/]game[\\/]dota_addons[\\/])([^\\/]+)[\\/]") then
 
-      self.gameDir, self.addonName = string.match(src:sub(2), "(.*dota 2 beta[\\/]game[\\/]dota_addons[\\/])([^\\/]+)[\\/]")
-      --print('[attachments] ', self.gameDir)
-      --print('[attachments] ', self.addonName)
+    --   self.gameDir, self.addonName = string.match(src:sub(2), "(.*dota 2 beta[\\/]game[\\/]dota_addons[\\/])([^\\/]+)[\\/]")
+    --   --print('[attachments] ', self.gameDir)
+    --   --print('[attachments] ', self.addonName)
 
-      self.initialized = true
+    --   self.initialized = true
 
-      self.activated = false
-      self.dbFilePath = nil
-      self.currentAttach = {}
-      self.hiddenCosmetics = {}
-      self.doAttach = true
-      self.doSphere = false
-      self.attachDB = LoadKeyValues("scripts/attachments.txt")
+    --   self.activated = false
+    --   self.dbFilePath = nil
+    --   self.currentAttach = {}
+    --   self.hiddenCosmetics = {}
+    --   self.doAttach = true
+    --   self.doSphere = false
+    --   self.attachDB = LoadKeyValues("scripts/attachments.txt")
 
 
-      if IsInToolsMode() then
-        print('[attachments] Tools Mode')
-        SendToServerConsole("dota_combine_models 0")
-        Convars:RegisterCommand( "attachment_configure", Dynamic_Wrap(Attachments, 'ActivateAttachmentSetup'), "Activate Attachment Setup", FCVAR_CHEAT )
-      end
-    else
-      print("[attachments] RELOADING")
-      SendToServerConsole("script_reload_code " .. src:sub(2))
-    end
+    --   if IsInToolsMode() then
+    --     print('[attachments] Tools Mode')
+    --     SendToServerConsole("dota_combine_models 0")
+    --     Convars:RegisterCommand( "attachment_configure", Dynamic_Wrap(Attachments, 'ActivateAttachmentSetup'), "Activate Attachment Setup", FCVAR_CHEAT )
+    --   end
+    -- else
+    --   print("[attachments] RELOADING")
+    --   SendToServerConsole("script_reload_code " .. src:sub(2))
+    -- end
   else
     self.initialized = true
 

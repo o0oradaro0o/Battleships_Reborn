@@ -443,25 +443,25 @@ function Containers:start()
       end
     })
 
-    debug.sethook(function(...)
-      local info = debug.getinfo(2)
-      local src = tostring(info.short_src)
-      local name = tostring(info.name)
-      if name ~= "__index" then
-        if string.find(src, "addon_game_mode") then
-          if GameRules:GetGameModeEntity() then
-            for _, func in ipairs(__ACTIVATE_HOOK.funcs) do
-              local status, err = pcall(func)
-              if not status then
-                 ----print("__ACTIVATE_HOOK callback error: " .. err)
-              end
-            end
+    -- debug.sethook(function(...)
+    --   local info = debug.getinfo(2)
+    --   local src = tostring(info.short_src)
+    --   local name = tostring(info.name)
+    --   if name ~= "__index" then
+    --     if string.find(src, "addon_game_mode") then
+    --       if GameRules:GetGameModeEntity() then
+    --         for _, func in ipairs(__ACTIVATE_HOOK.funcs) do
+    --           local status, err = pcall(func)
+    --           if not status then
+    --              ----print("__ACTIVATE_HOOK callback error: " .. err)
+    --           end
+    --         end
 
-            debug.sethook(nil, "c")
-          end
-        end
-      end
-    end, "c")
+    --         debug.sethook(nil, "c")
+    --       end
+    --     end
+    --   end
+    -- end, "c")
   end
 
   __ACTIVATE_HOOK(function()
