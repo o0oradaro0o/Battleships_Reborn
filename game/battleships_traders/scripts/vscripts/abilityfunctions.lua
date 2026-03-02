@@ -19,7 +19,12 @@ function battleshipHealth(args)
 end
 
 function route(args)
-	args.caster:MoveToPositionAggressive(args.target_points[1])
+	ExecuteOrderFromTable({
+		UnitIndex = args.caster:entindex(),
+		OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+		Position = args.ability:GetCursorPosition(),
+		Queue = false,
+	})
 end
 
 function removeAircrafts(keys)
@@ -449,7 +454,12 @@ function fly3(args) -- keys is the information sent by the ability
 		end
 	elseif RandomInt(1,15)==5 then
 		local hero = PlayerResource:GetSelectedHeroEntity(casterUnit:GetPlayerOwnerID())
-		casterUnit:MoveToPositionAggressive(hero:GetOrigin())
+		ExecuteOrderFromTable({
+			UnitIndex = casterUnit:entindex(),
+			OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+			Position = hero:GetOrigin(),
+			Queue = false,
+		})
 	end
 end
 
@@ -695,11 +705,9 @@ function CallPuckDive(args) -- keys is the information sent by the ability
 end
 
 function SwimBrakDamageTaken(args) 
-	PrintTable(args)
 	local targetUnit = args.caster
 	if args.dmg>10 then
 		targetUnit:AddNewModifier(creature, nil, "modifier_stunned", {duration = 3.0})
-	
 	end
 end
 
@@ -1731,7 +1739,12 @@ function DropOrGo(args)
 		Timers:CreateTimer(
 			0.03,
 			function()
-				creature:MoveToPositionAggressive(chosenMission:GetOrigin())
+				ExecuteOrderFromTable({
+					UnitIndex = creature:entindex(),
+					OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+					Position = chosenMission:GetOrigin(),
+					Queue = false,
+				})
 				 ----print(chosenMission:GetOrigin())
 			end
 		)
@@ -1750,7 +1763,12 @@ function DropOrGo(args)
 		Timers:CreateTimer(
 			0.03,
 			function()
-				creature:MoveToPositionAggressive(chosenMission:GetOrigin())
+				ExecuteOrderFromTable({
+					UnitIndex = creature:entindex(),
+					OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+					Position = chosenMission:GetOrigin(),
+					Queue = false,
+				})
 				 ----print(chosenMission:GetOrigin())
 			end
 		)
@@ -1901,54 +1919,234 @@ function RemoveWeps(args) -- keys is the information sent by the ability
 end
 
 function removeAllBows(hero)
+	print("[removeAllBows] =================================================================")
+	print("[removeAllBows] Called for hero: " .. (hero and hero:GetUnitName() or "nil"))
+	if hero == nil then
+		print("[removeAllBows] ERROR: Hero is nil")
+		return
+	end
+	
+	-- First pass: Log entire inventory
+	print("[removeAllBows] Current inventory:")
 	for itemSlot = 0, 5, 1 do
-		if hero ~= nil then
-			local Item = hero:GetItemInSlot(itemSlot)
-			if Item ~= nil and string.match(Item:GetName(), "doubled") then -- makes sure that the item exists and making sure it is the correct item
-				local doubledstring = string.gsub(Item:GetName(), "_doubled", "_doubled_shooting")
-				while hero:HasModifier(doubledstring) do
-					hero:RemoveModifierByName(doubledstring)
+		local Item = hero:GetItemInSlot(itemSlot)
+		if Item ~= nil then
+			print("[removeAllBows]   Slot " .. itemSlot .. ": " .. Item:GetName())
+		else
+			print("[removeAllBows]   Slot " .. itemSlot .. ": [empty]")
+		end
+	end
+	
+	-- Second pass: Remove weapon modifiers
+	local foundItems = false
+	local removedWeapons = {}
+	
+	for itemSlot = 0, 5, 1 do
+		local Item = hero:GetItemInSlot(itemSlot)
+		if Item ~= nil then
+			local itemName = Item:GetName()
+			
+			-- Check if it's a weapon (bow, doubled, or mix)
+			if string.match(itemName, "bow") or string.match(itemName, "doubled") or string.match(itemName, "mix") then
+				foundItems = true
+				local modifiersToRemove = {}
+				local weaponType = ""
+				
+				-- Determine the modifier name(s) based on weapon type
+				if string.match(itemName, "mix_ult_bow") then
+					weaponType = "Mix Ult"
+					table.insert(modifiersToRemove, "modifier_" .. itemName)
+				elseif string.match(itemName, "mix") and (string.match(itemName, "bow_doubled") or string.match(itemName, "two_bow_doubled") or string.match(itemName, "three_bow_doubled")) then
+					weaponType = "Mix Doubled"
+					-- Remove all doubled variants and the _two/_three prefixes
+					-- e.g., item_plasma_fire_mix_two_bow_doubled -> item_plasma_fire_mix
+					local baseName = string.gsub(itemName, "_three_bow_doubled", "")
+					baseName = string.gsub(baseName, "_two_bow_doubled", "")
+					baseName = string.gsub(baseName, "_bow_doubled", "")
+					-- All mix doubled weapons use the base modifier name (no _two or _three)
+					table.insert(modifiersToRemove, "modifier_" .. baseName)
+					table.insert(modifiersToRemove, "modifier_" .. baseName .. "_2")
+				elseif string.match(itemName, "doubled") then
+					weaponType = "Regular Doubled"
+					table.insert(modifiersToRemove, string.gsub(itemName, "_doubled", "_doubled_shooting"))
+				elseif string.match(itemName, "bow") then
+					weaponType = "Regular Bow"
+					table.insert(modifiersToRemove, itemName .. "_shooting")
 				end
-			elseif Item ~= nil and string.match(Item:GetName(), "bow") then -- makes sure that the item exists and making sure it is the correct item
-				while hero:HasModifier(Item:GetName() .. "_shooting") do
-					hero:RemoveModifierByName(Item:GetName() .. "_shooting")
+				
+				-- Remove all modifiers for this weapon
+				local modifiersRemoved = 0
+				local modifiersChecked = {}
+				for _, modifierName in pairs(modifiersToRemove) do
+					local hasIt = hero:HasModifier(modifierName)
+					table.insert(modifiersChecked, {name = modifierName, found = hasIt})
+					if hasIt then
+						hero:RemoveModifierByName(modifierName)
+						modifiersRemoved = modifiersRemoved + 1
+					end
 				end
-				 ----print("bow found.")
+				
+				table.insert(removedWeapons, {name = itemName, type = weaponType, count = modifiersRemoved, checked = modifiersChecked})
 			end
 		end
 	end
+	
+	-- Summary
+	if #removedWeapons > 0 then
+		print("[removeAllBows] Removed modifiers from " .. #removedWeapons .. " weapon(s):")
+		for _, weapon in ipairs(removedWeapons) do
+			print("[removeAllBows]   - " .. weapon.name .. " (" .. weapon.type .. "): " .. weapon.count .. " modifier(s)")
+			-- Show which modifiers we checked and whether they were found
+			for _, mod in ipairs(weapon.checked) do
+				local status = mod.found and "✓ FOUND" or "✗ NOT FOUND"
+				print("[removeAllBows]     " .. status .. ": " .. mod.name)
+			end
+		end
+	else
+		print("[removeAllBows] No weapons found")
+	end
+	print("[removeAllBows] =================================================================")
 end
 
+reapplyAllBowsProcessing = reapplyAllBowsProcessing or {}
+
 function reapplyAllBowsIfRemoved(hero)
+	print("[reapplyAllBowsIfRemoved] =================================================================")
+	print("[reapplyAllBowsIfRemoved] Called for hero: " .. (hero and hero:GetUnitName() or "nil"))
+	if hero == nil then
+		print("[reapplyAllBowsIfRemoved] ERROR: Hero is nil")
+		return
+	end
+	
+	-- Prevent recursive calls
+	local heroIndex = hero:GetEntityIndex()
+	if reapplyAllBowsProcessing[heroIndex] then
+		print("[reapplyAllBowsIfRemoved] Already processing, skipping")
+		return
+	end
+	reapplyAllBowsProcessing[heroIndex] = true
+	
+	-- First collect all bow items and check if they have modifiers
+	local bowItems = {}
+	local allHaveModifiers = true
+	
 	for itemSlot = 0, 5, 1 do
 		if hero ~= nil then
 			local Item = hero:GetItemInSlot(itemSlot)
-			if Item ~= nil and string.match(Item:GetName(), "doubled") then -- makes sure that the item exists and making sure it is the correct item
-				local doubledstring = string.gsub(Item:GetName(), "_doubled", "_doubled_shooting")
-				if hero:HasModifier(doubledstring) then
-					return
+			if Item ~= nil then
+				local itemName = Item:GetName()
+				local modifiersNeeded = {}
+				local weaponType = nil
+				
+				-- Determine the modifier name(s) and type based on weapon pattern
+				if string.match(itemName, "mix_ult_bow") then
+					table.insert(modifiersNeeded, "modifier_" .. itemName)
+					weaponType = "Mix Ult"
+				elseif string.match(itemName, "mix") and (string.match(itemName, "bow_doubled") or string.match(itemName, "two_bow_doubled") or string.match(itemName, "three_bow_doubled")) then
+					-- Remove all doubled variants and the _two/_three prefixes
+					-- e.g., item_plasma_fire_mix_two_bow_doubled -> item_plasma_fire_mix
+					local baseName = string.gsub(itemName, "_three_bow_doubled", "")
+					baseName = string.gsub(baseName, "_two_bow_doubled", "")
+					baseName = string.gsub(baseName, "_bow_doubled", "")
+					-- All mix doubled weapons use the base modifier name (no _two or _three)
+					table.insert(modifiersNeeded, "modifier_" .. baseName)
+					table.insert(modifiersNeeded, "modifier_" .. baseName .. "_2")
+					weaponType = "Mix Doubled"
+				elseif string.match(itemName, "doubled") then
+					table.insert(modifiersNeeded, string.gsub(itemName, "_doubled", "_doubled_shooting"))
+					weaponType = "Regular Doubled"
+				elseif string.match(itemName, "bow") then
+					table.insert(modifiersNeeded, itemName .. "_shooting")
+					weaponType = "Regular Bow"
 				end
-			elseif Item ~= nil and string.match(Item:GetName(), "bow") then -- makes sure that the item exists and making sure it is the correct item
-				if hero:HasModifier(Item:GetName() .. "_shooting") then
-					return
+				
+				if #modifiersNeeded > 0 then
+					-- Check if all modifiers for this weapon are present
+					for _, modName in pairs(modifiersNeeded) do
+						if not hero:HasModifier(modName) then
+							allHaveModifiers = false
+						end
+					end
+					
+					bowItems[#bowItems + 1] = {item = Item, modifiers = modifiersNeeded, type = weaponType, itemName = itemName}
 				end
-				 ----print("bow found.")
 			end
 		end
+	end
+	
+	if #bowItems == 0 then
+		print("No bow items found")
+		reapplyAllBowsProcessing[heroIndex] = nil
+		return
+	end
+	
+	-- If all weapons have modifiers, nothing to do
+	if allHaveModifiers then
+		print("All weapons already have modifiers, nothing to reapply")
+		reapplyAllBowsProcessing[heroIndex] = nil
+		return
 	end
 
-	for itemSlot = 0, 5, 1 do
-		if hero ~= nil then
-			local Item = hero:GetItemInSlot(itemSlot)
-			if Item ~= nil and string.match(Item:GetName(), "doubled") then -- makes sure that the item exists and making sure it is the correct item
-				local doubledstring = string.gsub(Item:GetName(), "_doubled", "_doubled_shooting")
-				Item:ApplyDataDrivenModifier(hero, hero, doubledstring, nil)
-			elseif Item ~= nil and string.match(Item:GetName(), "bow") then -- makes sure that the item exists and making sure it is the correct item
-				Item:ApplyDataDrivenModifier(hero, hero, Item:GetName() .. "_shooting", nil)
-				 ----print("bow found.")
+	-- ===== PASS 2: Reapply missing modifiers =====
+	local reappliedCount = 0
+	for i = 1, #bowItems do
+		local bowData = bowItems[i]
+		
+		-- Check if any modifier is missing
+		local needsReapply = false
+		for _, modName in pairs(bowData.modifiers) do
+			if not hero:HasModifier(modName) then
+				needsReapply = true
+				break
+			end
+		end
+		
+		if needsReapply then
+			reappliedCount = reappliedCount + 1
+			
+			if bowData.type == "Mix Ult" or bowData.type == "Mix Doubled" then
+				-- Mix weapons: Add intrinsic modifiers directly
+				for _, modName in pairs(bowData.modifiers) do
+					if not hero:HasModifier(modName) then
+						pcall(function()
+							hero:AddNewModifier(hero, bowData.item, modName, {})
+						end)
+					end
+				end
+			else
+				-- Regular weapons: Use ApplyDataDrivenModifier
+				for _, modName in pairs(bowData.modifiers) do
+					if not hero:HasModifier(modName) then
+						pcall(function()
+							bowData.item:ApplyDataDrivenModifier(hero, hero, modName, nil)
+						end)
+					end
+				end
 			end
 		end
 	end
+	
+	-- ===== SUMMARY =====
+	if reappliedCount > 0 then
+		print("✓ Reapplied modifiers for " .. reappliedCount .. " weapon(s):")
+		for i = 1, #bowItems do
+			local bowData = bowItems[i]
+			local needsReapply = false
+			for _, modName in pairs(bowData.modifiers) do
+				if not hero:HasModifier(modName) then
+					needsReapply = true
+					break
+				end
+			end
+			if needsReapply then
+				print("  - " .. bowData.type .. ": " .. bowData.itemName)
+			end
+		end
+	end
+	print("===============================================")
+	
+	-- Clear the processing flag
+	reapplyAllBowsProcessing[heroIndex] = nil
 end
 
 function ApplyStun(args) -- keys is the information sent by the ability
@@ -2106,10 +2304,14 @@ end
 
 
 function CreateNoFireZone(keys)
+	print("[CreateNoFireZone] Creating no-fire zone")
 	local casterUnit = keys.caster
 	local ability = keys.ability
-	local point = keys.target_points[1]
+	local point = ability:GetCursorPosition()
 	local radius = ability:GetLevelSpecialValueFor("radius", (ability:GetLevel() - 1))
+	print("[CreateNoFireZone] Caster: " .. casterUnit:GetUnitName())
+	print("[CreateNoFireZone] Position: " .. tostring(point))
+	print("[CreateNoFireZone] Radius: " .. radius)
 	local rand = RandomInt(1, 40)
 	 ----print(rand)
 	local by = 40
@@ -2128,6 +2330,10 @@ function CreateNoFireZone(keys)
 		creature2:SetOrigin(point + Vector(math.cos(math.rad(i + rand)) * radius, math.sin(math.rad(i + rand)) * radius, -30))
 		creature2:AddNewModifier(creature, nil, "modifier_kill", {duration = 6})
 	end
+	-- Store the position in keys so it persists across timer calls
+	keys.noFireZonePosition = point
+	keys.noFireZoneRadius = radius
+	
 	Timers:CreateTimer(
 		.05,
 		function()
@@ -2144,26 +2350,42 @@ end
 
 gotNoBows = {}
 function maintainNoFireZone(keys)
+	print("[maintainNoFireZone] Called")
 	local casterUnit = keys.caster
 	local ability = keys.ability
-	local point = keys.target_points[1]
-	local radius = ability:GetLevelSpecialValueFor("radius", (ability:GetLevel() - 1))
+	
+	-- Use stored position instead of getting cursor position again
+	local point = keys.noFireZonePosition
+	local radius = keys.noFireZoneRadius
+	
+	if point == nil then
+		print("[maintainNoFireZone] ERROR: No stored position found, falling back to cursor position")
+		point = ability:GetCursorPosition()
+		radius = ability:GetLevelSpecialValueFor("radius", (ability:GetLevel() - 1))
+	end
+	
+	print("[maintainNoFireZone] Point: " .. tostring(point) .. ", Radius: " .. radius)
 
 	local allUnits2 = Entities:FindAllInSphere(point, 1000)
+	print("[maintainNoFireZone] Found " .. #allUnits2 .. " units in sphere")
 	if #allUnits2 > 0 then
 		for _, boo in pairs(allUnits2) do
 			if boo:HasModifier("dummy_modifier") then
 				if boo:GetOwner() ~= nil and boo:GetOwner():GetPlayerID() ~= nil then
-					 ----print(tostring(boo:GetUnitName()) .. tostring(boo:GetOwner():GetPlayerID()))
+					print("[maintainNoFireZone] Checking unit: " .. tostring(boo:GetUnitName()) .. " PlayerID: " .. tostring(boo:GetOwner():GetPlayerID()))
 					if string.match(boo:GetUnitName(), "booey") and boo:GetOwner():GetPlayerID() == casterUnit:GetOwner():GetPlayerID() then
+						print("[maintainNoFireZone] Found valid booey, checking heroes")
 						for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
 							local heroDist = hero:GetAbsOrigin() - point
+							print("[maintainNoFireZone] Checking hero: " .. hero:GetUnitName() .. " Distance: " .. heroDist:Length())
 
 							if gotNoBows[hero] ~= nil and heroDist:Length() > radius then
+								print("[maintainNoFireZone] Hero " .. hero:GetUnitName() .. " outside radius, reapplying bows")
 								reapplyAllBowsIfRemoved(hero)
 								gotNoBows[hero] = 0
 								hero:RemoveModifierByName("modifier_disarmed")
 							elseif heroDist:Length() <= radius and (gotNoBows[hero] == nil or gotNoBows[hero] == 0) then
+								print("[maintainNoFireZone] Hero " .. hero:GetUnitName() .. " inside radius (" .. heroDist:Length() .. " <= " .. radius .. "), removing bows")
 								removeAllBows(hero)
 								hero:AddNewModifier(casterUnit, nil, "modifier_disarmed", {duration = 1})
 								gotNoBows[hero] = 1
@@ -2176,11 +2398,20 @@ function maintainNoFireZone(keys)
 							end
 						)
 						return
+					else
+						print("[maintainNoFireZone] Booey unit not valid or wrong owner")
 					end
+				else
+					print("[maintainNoFireZone] Unit has no owner or player ID")
 				end
+			else
+				print("[maintainNoFireZone] Unit " .. boo:GetUnitName() .. " does not have dummy_modifier")
 			end
 		end
+	else
+		print("[maintainNoFireZone] No units found in sphere - stopping")
 	end
+	print("[maintainNoFireZone] Exiting without scheduling next timer")
 end
 function AntiBackdoor(keys)
 	local casterUnit = keys.caster
@@ -2228,7 +2459,7 @@ end
 function killNoFireZone(keys)
 	local casterUnit = keys.caster
 	local ability = keys.ability
-	local point = keys.target_points[1]
+	local point = ability:GetCursorPosition()
 	local radius = ability:GetLevelSpecialValueFor("radius", (ability:GetLevel() - 1))
 
 	for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
@@ -2359,7 +2590,7 @@ end
 
 function CherryLaunch(args)
 	--print("IN CherryLaunch")
-	local targetPos = args.target_points[1]
+	local targetPos = args.ability:GetCursorPosition()
 	local caster = args.caster
 	
 	dummy = CreateUnitByName("dummy_vision10", targetPos, true, nil, nil, caster:GetTeam())
@@ -2881,6 +3112,10 @@ function sevenCheck(args)
 
 	local breakDistance = 1500
 
+	if not caster:IsChanneling() then
+		target:RemoveModifierByName("seven_shot")
+	end
+
 	if target and target:IsAlive() then
 		local distance = (caster:GetAbsOrigin() - target:GetAbsOrigin()):Length2D()
 
@@ -2889,8 +3124,6 @@ function sevenCheck(args)
 		end
 	end
 end
-
-
 
 function NetherSwap( keys )
 	local a = RandomInt(1, 2)
@@ -3097,7 +3330,7 @@ end
 function dropTower( keys )
 	local ability = keys.ability
 	local casterUnit = keys.caster
-	local point = keys.target_points[1]
+	local point = ability:GetCursorPosition()
 	local tower = casterUnit.myTower
 	FindClearSpaceForUnit(tower, point, true)
 	tower.deploied=true;
@@ -3169,14 +3402,21 @@ function ResetCoolDownsSaveForUlt(args)
 end
 
 function StartPeace(args)
+	print("[StartPeace] Called - removing bows from target and caster")
+	print("[StartPeace] Target: " .. (args.target and args.target:GetUnitName() or "nil"))
+	print("[StartPeace] Caster: " .. (args.caster and args.caster:GetUnitName() or "nil"))
 	removeAllBows(args.target)
 	removeAllBows(args.caster)
 	Timers:CreateTimer(3,function()
+		print("[StartPeace] Timer expired, calling StopPeace")
 		StopPeace(args)
 	end)
 end
 
 function StopPeace(args)
+	print("[StopPeace] Called - reapplying bows to target and caster")
+	print("[StopPeace] Target: " .. (args.target and args.target:GetUnitName() or "nil"))
+	print("[StopPeace] Caster: " .. (args.caster and args.caster:GetUnitName() or "nil"))
 	reapplyAllBowsIfRemoved(args.target)
 	reapplyAllBowsIfRemoved(args.caster)
 end

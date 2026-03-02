@@ -516,9 +516,7 @@ function SetImageForPanel(topBarHeroPanel) {
   heroimage.SetImage(heroImageName);
 }
 
-function replaceShopUI() {
- 
-}
+function replaceShopUI() {}
 
 function fixUI() {
   resetHeroIcons();
@@ -526,6 +524,51 @@ function fixUI() {
     DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY,
     false
   );
+  var HUD = $.GetContextPanel().GetParent().GetParent();
+
+  // Simplified HUDElements discovery with safe fallbacks (no verbose logging)
+  var HUDElements = null;
+  try {
+    if (HUD) HUDElements = HUD.FindChildTraverse("HUDElements");
+  } catch (e) {
+    /* ignore */
+  }
+  if (!HUDElements) {
+    var node = $.GetContextPanel();
+    for (var i = 0; i < 10 && node; i++) {
+      try {
+        var candidate = node.FindChildTraverse("HUDElements");
+        if (candidate) {
+          HUDElements = candidate;
+          break;
+        }
+      } catch (e) {
+        /* ignore */
+      }
+      node = node.GetParent();
+    }
+  }
+
+  if (HUDElements) {
+    var minimapContainer = null;
+    try {
+      minimapContainer = HUDElements.FindChildTraverse("minimap_container");
+    } catch (e) {
+      minimapContainer = null;
+    }
+
+    if (minimapContainer) {
+      try {
+        var roshanTimer = minimapContainer.FindChildTraverse("RoshanTimerContainer");
+        if (roshanTimer) roshanTimer.style.visibility = "collapse";
+      } catch (e) {}
+      try {
+        var tormentorTimer = minimapContainer.FindChildTraverse("TormentorTimerContainer");
+        if (tormentorTimer) tormentorTimer.style.visibility = "collapse";
+      } catch (e) {}
+    }
+  }
+
   NewShopUI.FindChildTraverse("Main")
     .FindChildTraverse("HeightLimiter")
     .FindChildTraverse("GridMainShop").style.visibility = "visible";
@@ -534,15 +577,15 @@ function fixUI() {
   NewShopUI.FindChildTraverse("Main")
     .FindChildTraverse("HeightLimiter")
     .FindChildTraverse("GridMainShop")
-    .FindChildTraverse("GridShopHeaders")
-    .FindChildTraverse("SearchAndButtonsContainer")
-    .FindChildTraverse("ToggleMinimalShop").style.visibility = "collapse";
+    .FindChildTraverse("GridMainContent")
+    .FindChildTraverse("MainShopContentsVersionContainer")
+    .FindChildTraverse("FilterContainer")
+    .style.visibility = "collapse";
   NewShopUI.FindChildTraverse("Main")
     .FindChildTraverse("HeightLimiter")
     .FindChildTraverse("GridMainShop")
     .FindChildTraverse("GridShopHeaders")
-    .FindChildTraverse("GridMainTabs")
-    .FindChildTraverse("GridNeutralsTab").style.visibility = "collapse";
+    .FindChildTraverse("GridMainTabs").GetChild(3).style.visibility = "collapse";
   NewShopUI.FindChildTraverse("Main").FindChildTraverse(
     "CommonItems"
   ).style.visibility = "collapse";
@@ -578,11 +621,15 @@ function fixUI() {
     .FindChildTraverse("center_with_stats")
     .FindChildTraverse("center_block");
 
+
   newCenterUI
     .FindChildTraverse("death_panel_buyback")
     .FindChildTraverse("BuybackButton").style.visibility = "collapse";
   newCenterUI.FindChildTraverse(
     "inventory_tpscroll_container"
+  ).style.visibility = "collapse";
+  newCenterUI.FindChildTraverse(
+    "inventory_neutral_craft_holder"
   ).style.visibility = "collapse";
   newCenterUI.FindChildTraverse(
     "inventory_neutral_slot_container"
@@ -602,135 +649,139 @@ function fixUI() {
   NewShopUI.FindChildTraverse("GuidesButton").style.visibility = "collapse";
   NewShopUI.FindChildTraverse("GuideFlyout").style.visibility = "collapse";
   NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridNewShopCategory").style.visibility = "collapse";
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridNewShopCategory").style.visibility = "collapse";
   NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridBasicItemsCategory").style.opacity = "1.0";
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridUpgradesCategory").style.opacity = "1.0";
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridBasicItemsCategory")
-      .FindChildTraverse("GridBasicItems")
-      .FindChildTraverse("ShopItems_consumables")
-      .FindChildTraverse("ShopItemsContainer").style.width = "100%";
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridBasicItemsCategory")
-      .FindChildTraverse("GridBasicItems")
-      .FindChildTraverse("ShopItems_consumables")
-      .FindChildTraverse("ShopItemsContainer").style.flowChildren = "down";
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridShopHeaders")
-      .FindChildTraverse("GridMainTabs")
-      .FindChildTraverse("GridBasicsTab").style.visibility = "visible";
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridShopHeaders")
-      .FindChildTraverse("GridMainTabs")
-      .FindChildTraverse("GridBasicsTab").GetChild(0).text = "Weapons";
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridShopHeaders")
-      .FindChildTraverse("GridMainTabs")
-      .FindChildTraverse("GridUpgradesTab").style.visibility = "visible";
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridShopHeaders")
-      .FindChildTraverse("GridMainTabs")
-      .FindChildTraverse("GridUpgradesTab").GetChild(0).text = "Equipment";
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridShopHeaders")
-      .FindChildTraverse("GridMainTabs")
-      .FindChildTraverse("GridNewShopTab").style.visibility = "Collapse";
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridBasicItemsCategory").style.opacity = "1.0";
+  NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridUpgradesCategory").style.opacity = "1.0";
+  NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridBasicItemsCategory")
+    .FindChildTraverse("GridBasicItems")
+    .FindChildTraverse("ShopItems_consumables")
+    .FindChildTraverse("ShopItemsContainer").style.width = "100%";
+  NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridBasicItemsCategory")
+    .FindChildTraverse("GridBasicItems")
+    .FindChildTraverse("ShopItems_consumables")
+    .FindChildTraverse("ShopItemsContainer").style.flowChildren = "down";
+  NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridShopHeaders")
+    .FindChildTraverse("GridMainTabs")
+    .FindChildTraverse("GridBasicsTab").style.visibility = "visible";
+  NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridShopHeaders")
+    .FindChildTraverse("GridMainTabs")
+    .FindChildTraverse("GridBasicsTab")
+    .GetChild(0).text = "Weapons";
+  NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridShopHeaders")
+    .FindChildTraverse("GridMainTabs")
+    .FindChildTraverse("GridUpgradesTab").style.visibility = "visible";
+  NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridShopHeaders")
+    .FindChildTraverse("GridMainTabs")
+    .FindChildTraverse("GridUpgradesTab")
+    .GetChild(0).text = "Equipment";
+  NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridShopHeaders")
+    .FindChildTraverse("GridMainTabs")
+    .FindChildTraverse("GridNewShopTab").style.visibility = "Collapse";
+  showMainItems();
+  NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridShopHeaders")
+    .FindChildTraverse("GridMainTabs")
+    .FindChildTraverse("GridBasicsTab")
+    .SetPanelEvent("onactivate", () => {
       showMainItems();
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridShopHeaders")
-      .FindChildTraverse("GridMainTabs")
-      .FindChildTraverse("GridBasicsTab").SetPanelEvent("onactivate", () => {
-        showMainItems();
-        hideUpgradeItems();
-      })
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridShopHeaders")
-      .FindChildTraverse("GridMainTabs")
-      .FindChildTraverse("GridUpgradesTab").SetPanelEvent("onactivate", () => {
-        hideMainItems();
-        showUpgradeItems();
-      })
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("ItemCombinesAndBasicItemsContainer")
-      .FindChildTraverse("NewPlayerShopConsumables").style.visibility = "collapse";
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("ItemCombinesAndBasicItemsContainer")
-      .FindChildTraverse("ItemCombines").style.visibility = "visible";
-
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridShopHeaders")
-      .FindChildTraverse("SearchAndButtonsContainer")
-      .FindChildTraverse("PopularItems").style.visibility = "collapse";
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridShopHeaders")
-      .FindChildTraverse("SearchAndButtonsContainer")
-      .FindChildTraverse("SearchContainer").style.visibility = "collapse";
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridShopHeaders")
-      .FindChildTraverse("SearchAndButtonsContainer")
-      .FindChildTraverse("SearchContainer").style.visibility = "collapse";
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridShopHeaders").style.minHeight = "0px";
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridShopHeaders")
-      .FindChildTraverse("SearchAndButtonsContainer").style.visibility = "collapse";
-
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridMainShopContents").style.marginTop = "35px";
-
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridBasicItemsCategory").style.height = "523px";
       hideUpgradeItems();
+    });
+  NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridShopHeaders")
+    .FindChildTraverse("GridMainTabs")
+    .FindChildTraverse("GridUpgradesTab")
+    .SetPanelEvent("onactivate", () => {
+      hideMainItems();
+      showUpgradeItems();
+    });
+  NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("ItemCombinesAndBasicItemsContainer")
+    .FindChildTraverse("ItemListContainer")
+    .FindChildTraverse("TeamItems").style.visibility =
+    "collapse";
+  NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("ItemCombinesAndBasicItemsContainer")
+    .FindChildTraverse("ItemCombines").style.visibility = "visible";
+  NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("ItemCombinesAndBasicItemsContainer")
+    .FindChildTraverse("NewPlayerShopConsumables").style.visibility =
+    "collapse";
+  // NewShopUI.FindChildTraverse("Main")
+  //   .FindChildTraverse("HeightLimiter")
+  //   .FindChildTraverse("GridMainShop")
+  //   .FindChildTraverse("GridShopHeaders")
+  //   .FindChildTraverse("SearchAndButtonsContainer")
+  //   .FindChildTraverse("PopularItems").style.visibility = "collapse";
+  // NewShopUI.FindChildTraverse("Main")
+  //   .FindChildTraverse("HeightLimiter")
+  //   .FindChildTraverse("GridMainShop")
+  //   .FindChildTraverse("GridShopHeaders")
+  //   .FindChildTraverse("SearchAndButtonsContainer")
+  //   .FindChildTraverse("SearchContainer").style.visibility = "collapse";
+    NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridShopHeaders").style.minHeight = "0px";
+  NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("SearchAndButtonsContainer").style.visibility =
+    "collapse";
 
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridBasicItemsCategory").style.marginTop = "10px";
 
-      NewShopUI.FindChildTraverse("Main")
-      .FindChildTraverse("HeightLimiter")
-      .FindChildTraverse("GridMainShop")
-      .FindChildTraverse("GridUpgradesCategory").style.marginTop = "10px";
+  NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridMainShopContents").style.marginTop = "35px";
+
+  NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridBasicItemsCategory").style.height = "670px";
+  hideUpgradeItems();
+
+  NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridBasicItemsCategory").style.marginTop = "10px";
+
+  NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridUpgradesCategory").style.marginTop = "10px";
 
   //--------------------------scoreboard stuff\------------------------
 
@@ -776,6 +827,8 @@ function fixUI() {
   $.Msg("movecalled");
   //------------------------------hero panel stuff--------------------------------
 
+  newCenterUI.FindChildTraverse("level_stats_frame").style.visibility =
+    "collapse";
   //try the neat way to remove the tree itself
   newCenterUI.FindChildTraverse("stats_container").style.visibility = "visible";
   //that bar that grows from level 1 to 25 is annoying
@@ -786,6 +839,11 @@ function fixUI() {
   newCenterUI
     .FindChildTraverse("AbilitiesAndStatBranch")
     .FindChildTraverse("AghsStatusContainer").style.visibility = "collapse";
+
+  newCenterUI
+    .FindChildTraverse("AbilitiesAndStatBranch")
+    .FindChildTraverse("ContentsContainer").style.visibility = "collapse";
+
   //fuck backpack UI
   newCenterUI
     .FindChildTraverse("inventory")
@@ -801,7 +859,25 @@ function fixUI() {
     .FindChildTraverse("lower_hud")
     .FindChildTraverse("shop_launcher_block");
 
-  newBotRightUI.FindChildTraverse("shop_launcher_bg").style.width = "300px";
+  try {
+    newBotRightUI.FindChildTraverse("shop_launcher_bg").style.width = "300px";
+    
+    newBotRightUI
+      .FindChildTraverse("quickbuy")
+      .FindChildTraverse("ShopCourierControls")
+          .FindChildTraverse("ShopButtonContainer").style.marginBottom = "8px";
+    newBotRightUI
+      .FindChildTraverse("quickbuy")
+      .FindChildTraverse("ShopCourierControls")
+      .FindChildTraverse("ShopButtonContainer").style.marginLeft= "20px";
+
+    newBotRightUI
+      .FindChildTraverse("quickbuy")
+      .FindChildTraverse("ShopCourierControls")
+      .FindChildTraverse("courier").style.visibility = "collapse";
+  } catch (error) {
+    $.Msg("Error in shop UI setup: " + error);
+  }
 
   newBotRightUI
     .FindChildTraverse("quickbuy")
@@ -834,329 +910,361 @@ function fillShop() {
   //closeShipShop()
 }
 
-function showMainItems()
-{
+function showMainItems() {
+  var gridBasicItems = NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridBasicItemsCategory")
+    .FindChildTraverse("GridBasicItems");
+
+
+
+  // Create 4 new shop item rows to hold the split items
+  var newRowNames = [
+    "ShopItems_consumables_alt",
+    "ShopItems_attributes_alt", 
+    "ShopItems_weapons_armor_alt",
+    "ShopItems_misc_alt"
+  ];
+
+  var originalRowNames = [
+    "ShopItems_consumables",
+    "ShopItems_attributes",
+    "ShopItems_weapons_armor",
+    "ShopItems_misc"
+  ];
+
+  gridBasicItems.style.width = "100%";
+
+  // Check if new rows exist and have items (if so, we've already split)
+  var firstNewRow = gridBasicItems.FindChildTraverse(newRowNames[0]);
+  var alreadySplit = false;
   
-  NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridBasicItemsCategory")
-  .FindChildTraverse("GridBasicItems")
-  .FindChildTraverse("ShopItems_consumables").style.visibility = "visible";
-  var x= NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridBasicItemsCategory")
-  .FindChildTraverse("GridBasicItems")
-  .FindChildTraverse("ShopItems_consumables").GetChild(1);
-  //iterate through all children of x and set their margin to 3
-  for(var i=0;i<x.GetChildCount();i++)
-  {
-    if(i==1)
-    {
-          x.GetChild(i).style.margin =  "5.0px 1.0px 4.0px 15.0px";
-    }
-    else
-    {
-    x.GetChild(i).style.margin = "3.0px 3.0px 3.0px 3.0px";
-    }
-  }
- 
-  NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridBasicItemsCategory")
-  .FindChildTraverse("GridBasicItems")
-  .FindChildTraverse("ShopItems_attributes").style.visibility = "visible";
-  var x= NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridBasicItemsCategory")
-  .FindChildTraverse("GridBasicItems")
-  .FindChildTraverse("ShopItems_attributes").GetChild(1);
-  //iterate through all children of x and set their margin to 3
-  for(var i=0;i<x.GetChildCount();i++)
-  {
-    if(i==1)
-    {
-          x.GetChild(i).style.margin =  "5.0px 1.0px 4.0px 15.0px";
-    }
-    else
-    {
-    x.GetChild(i).style.margin = "3.0px 3.0px 3.0px 3.0px";
-    }
-  }
-
-  NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridBasicItemsCategory")
-  .FindChildTraverse("GridBasicItems")
-  .FindChildTraverse("ShopItems_weapons_armor").style.visibility = "visible";
-
-  var x= NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridBasicItemsCategory")
-  .FindChildTraverse("GridBasicItems")
-  .FindChildTraverse("ShopItems_weapons_armor").GetChild(1);
-  //iterate through all children of x and set their margin to 3
-  for(var i=0;i<x.GetChildCount();i++)
-  {
-    if(i==1)
-    {
-          x.GetChild(i).style.margin =  "5.0px 1.0px 4.0px 15.0px";
-    }
-    else
-    {
-    x.GetChild(i).style.margin = "3.0px 3.0px 3.0px 3.0px";
+  if (firstNewRow) {
+    var firstNewContainer = firstNewRow.GetChild(0);
+    if (firstNewContainer && firstNewContainer.GetChildCount() > 0) {
+      alreadySplit = true;
     }
   }
   
-  NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridBasicItemsCategory")
-  .FindChildTraverse("GridBasicItems")
-  .FindChildTraverse("ShopItems_misc").style.visibility = "visible";
-  var x= NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridBasicItemsCategory")
-  .FindChildTraverse("GridBasicItems")
-  .FindChildTraverse("ShopItems_misc").GetChild(1);
-  //iterate through all children of x and set their margin to 3
-  for(var i=0;i<x.GetChildCount();i++)
-  {
+  // Only create rows and move items if we haven't done it yet
+  if (!alreadySplit) {
+    // Create new rows if they don't exist
+    for (var rowIndex = 0; rowIndex < newRowNames.length; rowIndex++) {
+      if (!gridBasicItems.FindChildTraverse(newRowNames[rowIndex])) {
+        var newRow = $.CreatePanel("Panel", gridBasicItems, newRowNames[rowIndex]);
+        newRow.AddClass("ShopItemRowContainer");
+        newRow.AddClass("LeftRow");
+        
+        // Create the container for items
+        var newRowContainer = $.CreatePanel("Panel", newRow, newRowNames[rowIndex] + "_container");
+        newRowContainer.AddClass("ShopItemRowContainer");
+        newRowContainer.AddClass("LeftRow");
+        newRowContainer.style.marginTop = "55px";
 
-    x.GetChild(i).style.margin = "3px";
+      }
+    }
+
+    // Process each original row
+    for (var rowIndex = 0; rowIndex < originalRowNames.length; rowIndex++) {
+      var originalRow = gridBasicItems.FindChildTraverse(originalRowNames[rowIndex]);
+      var newRow = gridBasicItems.FindChildTraverse(newRowNames[rowIndex]);
+      originalRow.style.marginTop = "40px";
+
+      if (originalRow && newRow) {
+        var originalContainer = originalRow.GetChild(1);
+        var newContainer = newRow.GetChild(0);
+        
+        if (!newContainer) {
+          newContainer = $.CreatePanel("Panel", newRow, newRowNames[rowIndex] + "_container");
+          newContainer.AddClass("ShopItemRowContainer");
+          newContainer.AddClass("LeftRow");
+        }
+        
+        // Get total item count
+        var totalItems = originalContainer.GetChildCount();
+        
+        // Move every other item (odd indices) to new row
+        // Start from the end and work backwards to avoid index shifting issues
+        // Move items at odd indices (1, 3, 5, 7, etc.)
+        for (var i = totalItems - 1; i >= 0; i--) {
+          if (i % 2 == 1) {
+            var itemToMove = originalContainer.GetChild(i);
+            itemToMove.SetParent(newContainer);
+            // Move to the beginning of the new container to maintain order
+            if (newContainer.GetChildCount() > 1) {
+              newContainer.MoveChildBefore(itemToMove, newContainer.GetChild(0));
+            }
+            itemToMove.style.margin = "2.0px 2.0px 2.0px 2.0px";
+
+
+          }
+        }
+        
+        // Style remaining items in original row
+        for (var i = 0; i < originalContainer.GetChildCount(); i++) {
+          originalContainer.GetChild(i).style.margin = "2.0px 2.0px 2.0px 2.0px";
+
+        }
+      }
+    }
+    
+    // Position all alt rows after all original rows
+    // Find the last original row
+    var lastOriginalRow = gridBasicItems.FindChildTraverse(originalRowNames[originalRowNames.length - 1]);
+    
+    // Move each alt row after the last original row in order
+    for (var rowIndex = 0; rowIndex < newRowNames.length; rowIndex++) {
+      var newRow = gridBasicItems.FindChildTraverse(newRowNames[rowIndex]);
+      if (newRow && lastOriginalRow) {
+        gridBasicItems.MoveChildAfter(newRow, lastOriginalRow);
+        lastOriginalRow = newRow; // Update reference so next row goes after this one
+      }
+    }
   }
+  
+  // Always show all rows when this function is called
+  for (var rowIndex = 0; rowIndex < originalRowNames.length; rowIndex++) {
+    var originalRow = gridBasicItems.FindChildTraverse(originalRowNames[rowIndex]);
+    var newRow = gridBasicItems.FindChildTraverse(newRowNames[rowIndex]);
 
-
+    if (originalRow) {
+      originalRow.style.visibility = "visible";
+    }
+    if (newRow) {
+      newRow.style.visibility = "visible";
+    }
+  } 
   NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridBasicItemsCategory").style.backgroundImage= 'url("s2r://panorama/images/custom_game/game_info/weapon_layout_bkg_png.vtex")'
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridBasicItemsCategory").style.backgroundImage =
+    'url("s2r://panorama/images/custom_game/game_info/weapon_layout_bkg_png.vtex")';
   NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridBasicItemsCategory").style.backgroundSize= '100% 100%'
-
-
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridBasicItemsCategory").style.backgroundSize =
+    "100% 100%";
+    NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridBasicItemsCategory").style.maxWidth = "100%"
 }
 
-function showUpgradeItems()
-{
+function showUpgradeItems() {
   NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridBasicItemsCategory").style.backgroundImage= "none"
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridBasicItemsCategory").style.backgroundImage = "none";
   NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridBasicItemsCategory").style.backgroundSize= '100% 100%'
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridBasicItemsCategory").style.backgroundSize =
+    "100% 100%";
 
-
   NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridMainShopContents")
-  .FindChildTraverse("GridUpgradesCategory")
-  .FindChildTraverse("GridUpgradeItems")
-  .FindChildTraverse("ShopItems_basics").style.visibility = "visible";
-  var x= NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridMainShopContents")
-  .FindChildTraverse("GridUpgradesCategory")
-  .FindChildTraverse("GridUpgradeItems")
-  .FindChildTraverse("ShopItems_basics").GetChild(1);
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridMainShopContents")
+    .FindChildTraverse("GridUpgradesCategory")
+    .FindChildTraverse("GridUpgradeItems")
+    .FindChildTraverse("ShopItems_basics").style.visibility = "visible";
+  var x = NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridMainShopContents")
+    .FindChildTraverse("GridUpgradesCategory")
+    .FindChildTraverse("GridUpgradeItems")
+    .FindChildTraverse("ShopItems_basics")
+    .GetChild(1);
   //iterate through all children of x and set their margin to 3
-  for(var i=0;i<x.GetChildCount();i++)
-  {
+  for (var i = 0; i < x.GetChildCount(); i++) {
     x.GetChild(i).style.margin = "3px";
+
   }
 
   NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridMainShopContents")
-  .FindChildTraverse("GridUpgradesCategory")
-  .FindChildTraverse("GridUpgradeItems")
-  .FindChildTraverse("ShopItems_support").style.visibility = "visible";
-  var x= NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridMainShopContents")
-  .FindChildTraverse("GridUpgradesCategory")
-  .FindChildTraverse("GridUpgradeItems")
-  .FindChildTraverse("ShopItems_support").GetChild(1);
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridMainShopContents")
+    .FindChildTraverse("GridUpgradesCategory")
+    .FindChildTraverse("GridUpgradeItems")
+    .FindChildTraverse("ShopItems_support").style.visibility = "visible";
+  var x = NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridMainShopContents")
+    .FindChildTraverse("GridUpgradesCategory")
+    .FindChildTraverse("GridUpgradeItems")
+    .FindChildTraverse("ShopItems_support")
+    .GetChild(1);
   //iterate through all children of x and set their margin to 3
-  for(var i=0;i<x.GetChildCount();i++)
-  {
+  for (var i = 0; i < x.GetChildCount(); i++) {
     x.GetChild(i).style.margin = "3px";
+
   }
 
   NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridMainShopContents")
-  .FindChildTraverse("GridUpgradesCategory")
-  .FindChildTraverse("GridUpgradeItems")
-  .FindChildTraverse("ShopItems_magics").style.visibility = "visible";
-  var x= NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridMainShopContents")
-  .FindChildTraverse("GridUpgradesCategory")
-  .FindChildTraverse("GridUpgradeItems")
-  .FindChildTraverse("ShopItems_magics").GetChild(1);
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridMainShopContents")
+    .FindChildTraverse("GridUpgradesCategory")
+    .FindChildTraverse("GridUpgradeItems")
+    .FindChildTraverse("ShopItems_magics").style.visibility = "visible";
+  var x = NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridMainShopContents")
+    .FindChildTraverse("GridUpgradesCategory")
+    .FindChildTraverse("GridUpgradeItems")
+    .FindChildTraverse("ShopItems_magics")
+    .GetChild(1);
   //iterate through all children of x and set their margin to 3
-  for(var i=0;i<x.GetChildCount();i++)
-  {
+  for (var i = 0; i < x.GetChildCount(); i++) {
     x.GetChild(i).style.margin = "3px";
+
   }
   NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridMainShopContents")
-  .FindChildTraverse("GridUpgradesCategory")
-  .FindChildTraverse("GridUpgradeItems")
-  .FindChildTraverse("ShopItems_defense").style.visibility = "visible";
-  var x= NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridMainShopContents")
-  .FindChildTraverse("GridUpgradesCategory")
-  .FindChildTraverse("GridUpgradeItems")
-  .FindChildTraverse("ShopItems_defense").GetChild(1);
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridMainShopContents")
+    .FindChildTraverse("GridUpgradesCategory")
+    .FindChildTraverse("GridUpgradeItems")
+    .FindChildTraverse("ShopItems_defense").style.visibility = "visible";
+  var x = NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridMainShopContents")
+    .FindChildTraverse("GridUpgradesCategory")
+    .FindChildTraverse("GridUpgradeItems")
+    .FindChildTraverse("ShopItems_defense")
+    .GetChild(1);
   //iterate through all children of x and set their margin to 3
-  for(var i=0;i<x.GetChildCount();i++)
-  {
-
+  for (var i = 0; i < x.GetChildCount(); i++) {
     x.GetChild(i).style.margin = "3px";
-  }
 
-  NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridMainShopContents")
-  .FindChildTraverse("GridUpgradesCategory")
-  .FindChildTraverse("GridUpgradeItems")
-  .FindChildTraverse("ShopItems_weapons").style.visibility = "visible";
-  var x= NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridMainShopContents")
-  .FindChildTraverse("GridUpgradesCategory")
-  .FindChildTraverse("GridUpgradeItems")
-  .FindChildTraverse("ShopItems_weapons").GetChild(1);
-  //iterate through all children of x and set their margin to 3
-  for(var i=0;i<x.GetChildCount();i++)
-  {
-    x.GetChild(i).style.margin = "3px";
   }
 
   NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridMainShopContents")
-  .FindChildTraverse("GridUpgradesCategory")
-  .FindChildTraverse("GridUpgradeItems")
-  .FindChildTraverse("ShopItems_artifacts").style.visibility = "collapse";
-  var x= NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridMainShopContents")
-  .FindChildTraverse("GridUpgradesCategory")
-  .FindChildTraverse("GridUpgradeItems")
-  .FindChildTraverse("ShopItems_artifacts").GetChild(1);
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridMainShopContents")
+    .FindChildTraverse("GridUpgradesCategory")
+    .FindChildTraverse("GridUpgradeItems")
+    .FindChildTraverse("ShopItems_weapons").style.visibility = "visible";
+  var x = NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridMainShopContents")
+    .FindChildTraverse("GridUpgradesCategory")
+    .FindChildTraverse("GridUpgradeItems")
+    .FindChildTraverse("ShopItems_weapons")
+    .GetChild(1);
   //iterate through all children of x and set their margin to 3
-  for(var i=0;i<x.GetChildCount();i++)
-  {
+  for (var i = 0; i < x.GetChildCount(); i++) {
     x.GetChild(i).style.margin = "3px";
+
   }
 
+  NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridMainShopContents")
+    .FindChildTraverse("GridUpgradesCategory")
+    .FindChildTraverse("GridUpgradeItems")
+    .FindChildTraverse("ShopItems_artifacts").style.visibility = "collapse";
+  var x = NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridMainShopContents")
+    .FindChildTraverse("GridUpgradesCategory")
+    .FindChildTraverse("GridUpgradeItems")
+    .FindChildTraverse("ShopItems_artifacts")
+    .GetChild(1);
+  //iterate through all children of x and set their margin to 3
+  for (var i = 0; i < x.GetChildCount(); i++) {
+    x.GetChild(i).style.margin = "3px";
+
+  }
+
+    NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridBasicItemsCategory").style.maxWidth = "100%";
 }
 
-function hideMainItems()
-{
-  
-  NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridBasicItemsCategory")
-  .FindChildTraverse("GridBasicItems")
-  .FindChildTraverse("ShopItems_consumables").style.visibility = "collapse";
-  NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridBasicItemsCategory")
-  .FindChildTraverse("GridBasicItems")
-  .FindChildTraverse("ShopItems_attributes").style.visibility = "collapse";
-  NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridBasicItemsCategory")
-  .FindChildTraverse("GridBasicItems")
-  .FindChildTraverse("ShopItems_weapons_armor").style.visibility = "collapse";
-  NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridBasicItemsCategory")
-  .FindChildTraverse("GridBasicItems")
-  .FindChildTraverse("ShopItems_misc").style.visibility = "collapse";
+function hideMainItems() {
+  var gridBasicItems = NewShopUI.FindChildTraverse("Main")
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridBasicItemsCategory")
+    .FindChildTraverse("GridBasicItems");
+
+  var allRowNames = [
+    "ShopItems_consumables",
+    "ShopItems_attributes",
+    "ShopItems_weapons_armor",
+    "ShopItems_misc",
+    "ShopItems_consumables_alt",
+    "ShopItems_attributes_alt",
+    "ShopItems_weapons_armor_alt",
+    "ShopItems_misc_alt"
+  ];
+
+  for (var i = 0; i < allRowNames.length; i++) {
+    var row = gridBasicItems.FindChildTraverse(allRowNames[i]);
+    if (row) {
+      row.style.visibility = "collapse";
+    }
+  }
 }
 
-function hideUpgradeItems()
-{
-  
+function hideUpgradeItems() {
   NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridMainShopContents")
-  .FindChildTraverse("GridUpgradesCategory")
-  .FindChildTraverse("GridUpgradeItems")
-  .FindChildTraverse("ShopItems_basics").style.visibility = "collapse";
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridMainShopContents")
+    .FindChildTraverse("GridUpgradesCategory")
+    .FindChildTraverse("GridUpgradeItems")
+    .FindChildTraverse("ShopItems_basics").style.visibility = "collapse";
   NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridMainShopContents")
-  .FindChildTraverse("GridUpgradesCategory")
-  .FindChildTraverse("GridUpgradeItems")
-  .FindChildTraverse("ShopItems_support").style.visibility = "collapse";
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridMainShopContents")
+    .FindChildTraverse("GridUpgradesCategory")
+    .FindChildTraverse("GridUpgradeItems")
+    .FindChildTraverse("ShopItems_support").style.visibility = "collapse";
   NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridMainShopContents")
-  .FindChildTraverse("GridUpgradesCategory")
-  .FindChildTraverse("GridUpgradeItems")
-  .FindChildTraverse("ShopItems_magics").style.visibility = "collapse";
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridMainShopContents")
+    .FindChildTraverse("GridUpgradesCategory")
+    .FindChildTraverse("GridUpgradeItems")
+    .FindChildTraverse("ShopItems_magics").style.visibility = "collapse";
   NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridMainShopContents")
-  .FindChildTraverse("GridUpgradesCategory")
-  .FindChildTraverse("GridUpgradeItems")
-  .FindChildTraverse("ShopItems_defense").style.visibility = "collapse";
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridMainShopContents")
+    .FindChildTraverse("GridUpgradesCategory")
+    .FindChildTraverse("GridUpgradeItems")
+    .FindChildTraverse("ShopItems_defense").style.visibility = "collapse";
   NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridMainShopContents")
-  .FindChildTraverse("GridUpgradesCategory")
-  .FindChildTraverse("GridUpgradeItems")
-  .FindChildTraverse("ShopItems_weapons").style.visibility = "collapse";
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridMainShopContents")
+    .FindChildTraverse("GridUpgradesCategory")
+    .FindChildTraverse("GridUpgradeItems")
+    .FindChildTraverse("ShopItems_weapons").style.visibility = "collapse";
   NewShopUI.FindChildTraverse("Main")
-  .FindChildTraverse("HeightLimiter")
-  .FindChildTraverse("GridMainShop")
-  .FindChildTraverse("GridMainShopContents")
-  .FindChildTraverse("GridUpgradesCategory")
-  .FindChildTraverse("GridUpgradeItems")
-  .FindChildTraverse("ShopItems_artifacts").style.visibility = "collapse";
+    .FindChildTraverse("HeightLimiter")
+    .FindChildTraverse("GridMainShop")
+    .FindChildTraverse("GridMainShopContents")
+    .FindChildTraverse("GridUpgradesCategory")
+    .FindChildTraverse("GridUpgradeItems")
+    .FindChildTraverse("ShopItems_artifacts").style.visibility = "collapse";
 }
 
 function showShips() {
-  $.Msg("--------------------- shop opening!!!!!!---------------------");
   if (shipShopShow == false) {
     if (!NewShopUI.BHasClass("ShopOpen")) {
       $.DispatchEvent("DOTAHUDToggleShop");
@@ -1757,6 +1865,7 @@ function closeShipShop() {
         .FindChildTraverse("ship_shop_content_holder")
     );
     NewShopUI.FindChildTraverse("Main")
+     
       .FindChildTraverse("HeightLimiter")
       .FindChildTraverse("ship_shop_content_holder").style.visibility =
       "collapse";
@@ -2098,7 +2207,7 @@ function PingLoc(data) {
 }
 
 function showSpecialUi(data) {
-    $("#HiddenUI").style.visibility = "visible";
+  $("#HiddenUI").style.visibility = "visible";
 }
 
 function sendToggleCrab() {
@@ -2469,7 +2578,6 @@ function spinCam() {
   yaw = yaw + 0.3;
   GameUI.SetCameraYaw(yaw);
   $.Schedule(0.01, spinCam);
-
 }
 
 function SetSouth() {
@@ -2604,18 +2712,7 @@ function OnLeftButtonPressed() {
 // Find any entities right-clicked on
 // if the units are invuln, modify the right-click behaviour
 function OnMouseClicked(button) {
- var x =  $.GetContextPanel()
-  .GetParent()
-  .GetParent()
-  .GetParent()
-  .FindChildTraverse("HUDElements")
-  .FindChildTraverse("lower_hud")
-  .FindChildTraverse("center_with_stats")
-  .FindChildTraverse("center_block")
-  .FindChildTraverse("AbilitiesAndStatBranch")
-  .FindChildTraverse("abilities")
-    .FindChildTraverse("Ability4")
-    var checkformore =  $.GetContextPanel()
+  var x = $.GetContextPanel()
     .GetParent()
     .GetParent()
     .GetParent()
@@ -2625,31 +2722,40 @@ function OnMouseClicked(button) {
     .FindChildTraverse("center_block")
     .FindChildTraverse("AbilitiesAndStatBranch")
     .FindChildTraverse("abilities")
-      .FindChildTraverse("Ability5")
-  if (x && checkformore== null) {
+    .FindChildTraverse("Ability4");
+  var checkformore = $.GetContextPanel()
+    .GetParent()
+    .GetParent()
+    .GetParent()
+    .FindChildTraverse("HUDElements")
+    .FindChildTraverse("lower_hud")
+    .FindChildTraverse("center_with_stats")
+    .FindChildTraverse("center_block")
+    .FindChildTraverse("AbilitiesAndStatBranch")
+    .FindChildTraverse("abilities")
+    .FindChildTraverse("Ability5");
+  if (x && checkformore == null) {
     x.style.visibility = "collapse";
   }
-  if(checkformore)
-  {
-    $.Msg("more")
-    var z =  $.GetContextPanel()
-  .GetParent()
-  .GetParent()
-  .GetParent()
-  .FindChildTraverse("HUDElements")
-  .FindChildTraverse("lower_hud")
-  .FindChildTraverse("center_with_stats")
-  .FindChildTraverse("center_block")
-  .FindChildTraverse("AbilitiesAndStatBranch")
-  .FindChildTraverse("abilities")
-    .FindChildTraverse("Ability6")
+  if (checkformore) {
+    $.Msg("more");
+    var z = $.GetContextPanel()
+      .GetParent()
+      .GetParent()
+      .GetParent()
+      .FindChildTraverse("HUDElements")
+      .FindChildTraverse("lower_hud")
+      .FindChildTraverse("center_with_stats")
+      .FindChildTraverse("center_block")
+      .FindChildTraverse("AbilitiesAndStatBranch")
+      .FindChildTraverse("abilities")
+      .FindChildTraverse("Ability6");
     x.style.visibility = "visible";
     if (z) {
       z.style.visibility = "collapse";
     }
   }
 
-  
   //$.Msg("RIGHT BUTTON CAST")
   try {
     var localHeroIndex = Players.GetPlayerHeroEntityIndex(
@@ -2737,11 +2843,408 @@ GameUI.SetMouseCallback(function (eventName, arg) {
     $.Msg("Right Click Override JS Loaded.");
 })();
 
+const heroToWaifu = {
+  npc_dota_hero_zuus: "file://{images}/waifus/barrel.png",
+
+  npc_dota_hero_phantom_lancer: "file://{images}/waifus/1ks/airboat.png",
+  npc_dota_hero_crystal_maiden: "file://{images}/waifus/1ks/canoe.png",
+  npc_dota_hero_rattletrap: "file://{images}/waifus/1ks/catamaran.png",
+  npc_dota_hero_ancient_apparition:
+    "file://{images}/waifus/1ks/paddlewheel.png",
+  npc_dota_hero_nyx_assassin: "file://{images}/waifus/1ks/crab.png",
+  npc_dota_hero_tidehunter: "file://{images}/waifus/1ks/pontoon.png",
+  npc_dota_hero_batrider: "file://{images}/waifus/1ks/whaling.png",
+
+  npc_dota_hero_dragon_knight: "file://{images}/waifus/3ks/failboat.png",
+  npc_dota_hero_nevermore: "file://{images}/waifus/3ks/seaplane.png",
+  npc_dota_hero_disruptor: "file://{images}/waifus/3ks/shoreguard.png",
+  npc_dota_hero_winter_wyvern: "file://{images}/waifus/3ks/speedboat.png",
+  npc_dota_hero_storm_spirit: "file://{images}/waifus/3ks/junk.png",
+  npc_dota_hero_brewmaster: "file://{images}/waifus/3ks/river.png",
+  npc_dota_hero_lion: "file://{images}/waifus/3ks/yacht.png",
+
+  npc_dota_hero_windrunner: "file://{images}/waifus/6ks/construction_ship.png",
+  npc_dota_hero_meepo: "file://{images}/waifus/6ks/house.png",
+  npc_dota_hero_jakiro: "file://{images}/waifus/6ks/galleon.png",
+  npc_dota_hero_slark: "file://{images}/waifus/6ks/viking.png",
+  npc_dota_hero_shredder: "file://{images}/waifus/6ks/gunship.png",
+  npc_dota_hero_sniper: "file://{images}/waifus/6ks/submarine.png",
+  npc_dota_hero_marci: "file://{images}/waifus/6ks/science_vessel.png",
+
+  npc_dota_hero_tusk: "file://{images}/waifus/12ks/battleship.png",
+  npc_dota_hero_visage: "file://{images}/waifus/12ks/noah.png",
+  npc_dota_hero_ember_spirit: "file://{images}/waifus/12ks/tug.png",
+  npc_dota_hero_ursa: "file://{images}/waifus/12ks/aircraft_carrier.png",
+  npc_dota_hero_pugna: "file://{images}/waifus/12ks/icebreaker.png",
+  npc_dota_hero_razor: "file://{images}/waifus/12ks/stormchaser.png",
+  npc_dota_hero_wisp: "file://{images}/waifus/12ks/ufo.png",
+};
+
+const heroesToRoll = Object.keys(heroToWaifu);
+
+var currentTier = 1;
+var tierRolled = 1;
+function showDraws(tier) {
+  const tierToGold = {
+    1: 1000,
+    2: 3000,
+    3: 6000,
+    4: 12000,
+  };
+
+  currentTier = tier;
+  if (
+    $("#DrawWindow").style.visibility == "collapse" ||
+    $("#DrawWindow").style.visibility == null
+  ) {
+    $("#GachaSlot1").SetImage("file://{images}/waifus/empty.png");
+    $("#GachaSlot2").SetImage("file://{images}/waifus/empty.png");
+    $("#GachaSlot3").SetImage("file://{images}/waifus/empty.png");
+    $("#DrawWindow").style.visibility = "visible";
+    $("#rebateHolder1").style.visibility = "collapse";
+    $("#rebateHolder2").style.visibility = "collapse";
+    $("#rebateHolder3").style.visibility = "collapse";
+    $("#RollButton").style.visibility = "visible";
+    $("#shipRollClose").style.visibility = "visible";
+  }
+
+  $("#rollCostAmount").text = tierToGold[tier];
+}
+
+function hideDraws() {
+  $("#DrawWindow").style.visibility = "collapse";
+}
+
+function rollSlot(sourcePanel, index, duration) {
+  let count = 0;
+  let rollTime = 0.05;
+
+  function rollImage() {
+    const randomIndex = Math.floor(Math.random() * heroesToRoll.length);
+    const fileName = heroToWaifu[heroesToRoll[randomIndex]];
+    sourcePanel.SetImage(fileName);
+
+    count += rollTime;
+    if (count >= duration) {
+      Game.EmitSound("underdraft_reroll");
+
+      const data = CustomNetTables.GetTableValue(
+        "gacha_rolls",
+        "player" + Game.GetLocalPlayerID()
+      );
+
+      if (!data) sourcePanel.SetImage("file://{images}/waifus/empty.png");
+      const heroName = data["boat" + index];
+
+      sourcePanel.SetImage(heroToWaifu[heroName]);
+      if (getRebateForImage(heroToWaifu[heroName]) > 0 && index == 1) {
+        $("#rebateHolder1").style.visibility = "visible";
+        $("#rebate1").text = getRebateForImage(heroToWaifu[heroName]);
+      } else if (index == 1) {
+        $("#rebateHolder1").style.visibility = "collapse";
+      }
+      if (getRebateForImage(heroToWaifu[heroName]) > 0 && index == 2) {
+        $("#rebateHolder2").style.visibility = "visible";
+        $("#rebate2").text = getRebateForImage(heroToWaifu[heroName]);
+      } else if (index == 2) {
+        const tierToGold = {
+          1: 1000,
+          2: 3000,
+          3: 6000,
+          4: 12000,
+        };
+        $("#rebateHolder2").style.visibility = "visible";
+        $("#rebate2").text = tierToGold * 0.1;
+      }
+      if (getRebateForImage(heroToWaifu[heroName]) > 0 && index == 3) {
+        $("#rebateHolder3").style.visibility = "visible";
+        $("#rebate3").text = getRebateForImage(heroToWaifu[heroName]);
+      } else if (index == 3) {
+        $("#rebateHolder3").style.visibility = "collapse";
+      }
+
+      if (index == 3) rolling = false;
+      return;
+    }
+    $.Schedule(rollTime, rollImage);
+  }
+
+  // play an animation for the roll, where we cycle between all the possibilities
+  rollImage();
+}
+
+function closeShipRoll() {
+  $("#DrawWindow").style.visibility = "collapse";
+}
+
+var rolling = false;
+function doRoll() {
+  $("#rebateHolder1").style.visibility = "collapse";
+  $("#rebateHolder2").style.visibility = "collapse";
+  $("#rebateHolder3").style.visibility = "collapse";
+
+  const playerID = Players.GetLocalPlayer();
+  const playerHero = Players.GetPlayerHeroEntityIndex(playerID);
+
+  // If the player is dead, treat them as being in the shop
+  if (!Entities.IsAlive(playerHero)) {
+    GameUI.SendCustomHUDError(
+      "Can't purchase while dead",
+      "General.CastFail_NoMana"
+    );
+    return;
+  }
+
+  if (isTooFarFromShop()) {
+    GameUI.SendCustomHUDError(
+      "Too far from ship shop!",
+      "General.CastFail_NoMana"
+    );
+    return;
+  }
+  // check if the player has enough gold
+  const tierToGold = {
+    1: 1000,
+    2: 3000,
+    3: 6000,
+    4: 12000,
+  };
+  const price = tierToGold[currentTier];
+  if (Players.GetGold(Game.GetLocalPlayerID()) < price) {
+    GameUI.SendCustomHUDError("Not enough gold!", "General.CastFail_NoMana");
+    return;
+  }
+  $("#RollButton").style.visibility = "collapse";
+  $("#shipRollClose").style.visibility = "collapse";
+  tierRolled = currentTier;
+  const tier = currentTier;
+  if (rolling) return;
+
+  rolling = true;
+  GameEvents.SendCustomGameEventToServer("doRoll", {
+    tier,
+  });
+
+  const image1 = $("#GachaSlot1");
+  const image2 = $("#GachaSlot2");
+  const image3 = $("#GachaSlot3");
+
+  Game.EmitSound("soundboard.drum_roll");
+
+  rollSlot(image1, 1, 0.6);
+  rollSlot(image2, 2, 1.6);
+  rollSlot(image3, 3, 2.63);
+}
+
+var gachaRoll1;
+var gachaRoll2;
+var gachaRoll3;
+
+function UpdateGachaRolls() {
+  const data = CustomNetTables.GetTableValue(
+    "gacha_rolls",
+    "player" + Game.GetLocalPlayerID()
+  );
+
+  if (!data) {
+    hideDraws();
+    return;
+  }
+
+  const { boat1, boat2, boat3, tier } = data;
+
+  if (!boat1 || !boat2 || !boat3) {
+    hideDraws();
+    return;
+  }
+
+  showDraws(tier);
+  gachaRoll1 = boat1;
+  gachaRoll2 = boat2;
+  gachaRoll3 = boat3;
+
+  if (!rolling) {
+    $("#GachaSlot1").SetImage(heroToWaifu[boat1]);
+
+    $("#GachaSlot2").SetImage(heroToWaifu[boat2]);
+
+    $("#GachaSlot3").SetImage(heroToWaifu[boat3]);
+    if (getRebateForImage(heroToWaifu[boat1]) > 0) {
+      $("#rebateHolder1").style.visibility = "visible";
+      $("#rebate1").text = getRebateForImage(heroToWaifu[boat1]);
+    }
+    if (getRebateForImage(heroToWaifu[boat2]) > 0) {
+      $("#rebateHolder2").style.visibility = "visible";
+      $("#rebate2").text = getRebateForImage(heroToWaifu[boat2]);
+    } else {
+      const tierToGold = {
+        1: 1000,
+        2: 3000,
+        3: 6000,
+        4: 12000,
+      };
+      $("#rebateHolder2").style.visibility = "visible";
+      $("#rebate2").text = tierToGold * 0.1;
+    }
+    if (getRebateForImage(heroToWaifu[boat3]) > 0) {
+      $("#rebateHolder3").style.visibility = "visible";
+      $("#rebate3").text = getRebateForImage(heroToWaifu[boat3]);
+    }
+  }
+}
+
+function getRebateForImage(image1) {
+  //if the ship they rolled is of a lower tier then what they payed for, they get a rebate
+  //start iwth gotcha slot 1 and check if the tier is lower than the tier rolled
+  //get the image name contained in the slot
+  //if the name contains barrel than the tier is 0
+
+  if (!image1) return "";
+
+  var tier = 0;
+  var rebate = 0;
+  if (image1.includes("1ks")) {
+    tier = 1;
+  } else if (image1.includes("3ks")) {
+    tier = 2;
+  } else if (image1.includes("6ks")) {
+    tier = 3;
+  } else if (image1.includes("12ks")) {
+    tier = 4;
+  }
+  const tierToGold = {
+    0: 0,
+    1: 1000,
+    2: 3000,
+    3: 6000,
+    4: 12000,
+  };
+  if (tier < tierRolled) {
+    rebate = tierToGold[tierRolled] - tierToGold[tier] * 0.9;
+  }
+  return rebate;
+}
+
+function SelectGacha(index) {
+  if (rolling) return;
+  if (Game.IsGamePaused()) return;
+
+  if (isTooFarFromShop()) {
+    GameUI.SendCustomHUDError(
+      "Too far from ship shop!",
+      "General.CastFail_NoMana"
+    );
+    return;
+  }
+
+  const data = CustomNetTables.GetTableValue(
+    "gacha_rolls",
+    "player" + Game.GetLocalPlayerID()
+  );
+
+  if (!data || !data["boat" + index]) {
+    return;
+  }
+
+  const heroName = data["boat" + index];
+  GameEvents.SendCustomGameEventToServer("chooseGacha", {
+    heroName,
+    tierRolled,
+    index,
+  });
+
+  // play purchase sound
+  Game.EmitSound("General.Buy");
+
+  hideDraws();
+}
+
+function isTooFarFromShop() {
+  const playerID = Players.GetLocalPlayer();
+  const playerHero = Players.GetPlayerHeroEntityIndex(playerID);
+  const playerPos = Entities.GetAbsOrigin(playerHero);
+
+  // position as an absolute vector
+  const northShopPos = [725.05, -4821.09, 0];
+  const southShopPos = [724, 4395, 0];
+
+  const distanceToNorth = Game.Length2D(playerPos, northShopPos);
+  const distanceToSouth = Game.Length2D(playerPos, southShopPos);
+
+  return distanceToNorth > 1800 && distanceToSouth > 1800;
+}
+
+function overwriteHeroImage() {
+  const portraitContainer = $.GetContextPanel()
+    .GetParent()
+    .GetParent()
+    .GetParent()
+    .FindChildTraverse("HUDElements")
+    .FindChildTraverse("lower_hud")
+    .FindChildTraverse("center_with_stats")
+    .FindChildTraverse("center_block")
+    .FindChildTraverse("PortraitGroup")
+    .FindChildTraverse("PortraitContainer");
+  if (!portraitContainer) return;
+
+  // create or update a hero image
+  let heroImage = portraitContainer.FindChildTraverse("WaifuImage");
+  if (!heroImage) {
+    heroImage = $.CreatePanel("Image", portraitContainer, "WaifuImage");
+  }
+
+  const selectedUnit = Players.GetLocalPlayerPortraitUnit();
+  const unitName = Entities.GetUnitName(selectedUnit);
+
+  const waifuImage = heroToWaifu[unitName];
+
+  if (waifuImage) {
+    heroImage.SetImage(waifuImage);
+    heroImage.SetHasClass("Invisible", false);
+    heroImage.style.visibility = "visible";
+  } else {
+    heroImage.SetHasClass("Invisible", true);
+    heroImage.style.visibility = "collapse";
+  }
+
+  heroImage.style.zIndex = "999";
+
+  $.Schedule(1 / 30, overwriteHeroImage);
+}
+var doSpin = false;
+var yawStart = 0;
+function playerKilledPlayer() {
+  yawStart = GameUI.GetCameraYaw();
+  $.Msg("Player killed player");
+  GameUI.SetCameraDistance(900);
+  GameUI.SetCameraPitchMin(40);
+  GameUI.SetCameraPitchMax(41);
+  doSpin = true;
+  $.Schedule(0.01, spinCamDeath);
+}
+function stopSpin() {
+  var zoomPer = Math.floor($("#ZoomSlider").GetChild(1).value * 100);
+  GameUI.SetCameraDistance((zoomPer / 100) * 1600 + 1600);
+  GameUI.SetCameraPitchMin(15);
+  GameUI.SetCameraPitchMax(70);
+  GameUI.SetCameraYaw(yawStart);
+  doSpin = false;
+}
+
+function spinCamDeath() {
+  yaw = yaw + 0.5;
+  GameUI.SetCameraYaw(yaw);
+  if (doSpin) {
+    $.Schedule(0.01, spinCamDeath);
+  } else {
+    GameUI.SetCameraYaw(yawStart);
+  }
+}
+
 (function () {
   hideTrade();
   resetHeroIcons();
   fixUI();
-  $.Msg("in subscribe");
 
   GameEvents.Subscribe("Boat_Spawned", fillShop);
   GameEvents.Subscribe("Trade_Mode_Enabled", showTrade);
@@ -2772,5 +3275,11 @@ GameUI.SetMouseCallback(function (eventName, arg) {
   GameEvents.Subscribe("Show_Special_Ui", showSpecialUi);
   GameEvents.Subscribe("show_crab_ui", showCrabUi);
 
-  $.Msg("done subscribe");
+  GameEvents.Subscribe("player_killed_player", playerKilledPlayer);
+  GameEvents.Subscribe("stop_spin", stopSpin);
+
+  // listen to nettable changes
+  CustomNetTables.SubscribeNetTableListener("gacha_rolls", UpdateGachaRolls);
+  UpdateGachaRolls();
+  overwriteHeroImage();
 })();

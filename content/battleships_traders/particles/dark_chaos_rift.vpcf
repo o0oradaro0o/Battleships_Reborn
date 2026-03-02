@@ -1,0 +1,69 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf63:version{a6e6a69e-52d3-4527-8b9c-ff3bb91aca3e} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 0
+	m_flConstantRadius = 72.0
+	m_ConstantColor = [ 255, 96, 96, 255 ]
+	m_nBehaviorVersion = 12
+	m_nFirstMultipleOverride_BackwardCompat = 5
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
+			m_previewState = 
+			{
+				m_previewModel = "models/heroes/abyssal_underlord/abyssal_underlord_portal_model.vmdl"
+				m_sequenceName = "au_portal_chanelling"
+				m_hitboxSetName = "select_high"
+			}
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/underlord/underlord_2021_immortal/underlord_2021_immortal_portal_ground_shadow.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/underlord/underlord_2021_immortal/underlord_2021_immortal_portal_galaxies.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/underlord/underlord_2021_immortal/underlord_2021_immortal_portal_dark_swirl_01.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/underlord/underlord_2021_immortal/underlord_2021_immortal_portal_dark_swirl_02.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/underlord/underlord_2021_immortal/underlord_2021_immortal_portal_dark_swirl_03.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/underlord/underlord_2021_immortal/underlord_2021_immortal_portal_ambient_light.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/underlord/underlord_2021_immortal/underlord_2021_immortal_portal_outer_swirl.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/underlord/underlord_2021_immortal/underlord_2021_immortal_portal_nebula_gas.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/underlord/underlord_2021_immortal/underlord_2021_immortal_portal_electric.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/underlord/underlord_2021_immortal/underlord_2021_immortal_portal_warp.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/underlord/underlord_2021_immortal/underlord_2021_immortal_portal_ring_outer.vpcf"
+			m_flDelay = 0.5
+		},
+		{
+			m_ChildRef = resource:"particles/econ/items/underlord/underlord_2021_immortal/underlord_2021_immortal_portal_core_dark.vpcf"
+		},
+	]
+}

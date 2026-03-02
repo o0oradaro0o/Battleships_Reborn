@@ -128,13 +128,14 @@ function Timers:Think()
       
       -- Run the callback
       local status, nextCall
+      local errHandler = debug and debug.traceback or tostring
       if v.context then
         status, nextCall = xpcall(function() return v.callback(v.context, v) end, function (msg)
-                                    return msg..'\n'..debug.traceback()..'\n'
+                                    return msg..'\n'..errHandler()..'\n'
                                   end)
       else
         status, nextCall = xpcall(function() return v.callback(v) end, function (msg)
-                                    return msg..'\n'..debug.traceback()..'\n'
+                                    return msg..'\n'..errHandler()..'\n'
                                   end)
       end
 

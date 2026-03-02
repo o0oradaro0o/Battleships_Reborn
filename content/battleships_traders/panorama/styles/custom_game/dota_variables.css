@@ -1,0 +1,57 @@
+/*
+ * Dota 2 Panorama CSS Variables and Fallbacks
+ * This file defines custom CSS variables that are used in Dota 2's Panorama UI
+ * to prevent parsing warnings in development environments.
+ */
+
+:root {
+  /* Color Variables */
+  --darkColor: #1a1a1a;
+  --ultraDarkColor: #0a0a0a;
+  --accentColor: #ff6600;
+  --accentColorBright: #ff8833;
+  --baseText: #ffffff;
+  --textAccentColor: #ffcc33;
+  --bluegreyTextBright: #8ac7e6;
+  
+  /* Dota Plus Colors */
+  --dotaPlusBrown: #8b4513;
+  --dotaPlusGold: #ffd700;
+  --dotaPlusLightGold: #ffea7f;
+  
+  /* Game State Colors */
+  --winnerGreen: #90ee90;
+  --loserRed: #ff6b6b;
+  
+  /* Background Images */
+  --bp_point_log_pass_activated: url("s2r://panorama/images/battle_pass/bp_point_log_pass_activated.vtex");
+  --dotaPlusCurrencySmallIcon: url("s2r://panorama/images/dota_plus/dota_plus_currency_small.vtex");
+  --dotaPlusCurrencyIcon: url("s2r://panorama/images/dota_plus/dota_plus_currency.vtex");
+}
+
+/* 
+ * Panorama-specific gradient function compatibility
+ * These are placeholders for the Panorama gradient function
+ */
+.panorama-gradient-fallback {
+  /* Standard CSS gradient fallback */
+  background: linear-gradient(to right, #1a1a1a, #0a0a0a);
+}
+
+/*
+ * HSV Transform Function Fallbacks
+ * Panorama supports hsv-transform() but standard CSS does not
+ */
+.hsv-transform-fallback {
+  /* Use filter functions as fallback for hsv-transform */
+  filter: hue-rotate(0deg) saturate(100%) brightness(100%);
+}
+
+/*
+ * Wash-color property fallback
+ * This is a Panorama-specific property for image tinting
+ */
+.wash-color-fallback {
+  /* Use CSS filters as fallback */
+  filter: sepia(100%) saturate(150%) hue-rotate(90deg);
+}

@@ -64,6 +64,7 @@ g_josh = 40159914
 g_borgel = 13375544
 g_planit = 5879425
 g_siege = 138997389
+g_ollie = 50082152
 -- creep spawn and level counters
 g_CreepLevel = 0
 g_NumSmallCreeps = 6
@@ -360,6 +361,21 @@ function Precache(context)
 
     local precache = require('tables/precache_files')
 
+    for _,abilityName in pairs(precache.abilities) do
+        PrecacheItemByNameSync(abilityName, context)
+    end
+    for _,particleName in pairs(precache.particles) do
+        PrecacheResource("particle", particleName, context)
+    end
+    for _,modelName in pairs(precache.models) do
+        PrecacheResource("model", modelName, context)
+    end
+    for _,soundfile in pairs(precache.sounds) do
+        PrecacheResource("soundfile", soundfile, context)
+    end
+    for _,unitName in pairs(precache.units) do
+        PrecacheUnitByNameSync(unitName, context)
+    end
     PrecacheResource("model", "models/items/lion/hellclaw_of_maelrawn/hellclaw_of_maelrawn.vmdl", context)
     PrecacheResource("model", "models/crabparts/anuxi_cerci_tail.vmdl", context)
     PrecacheResource("model", "models/crabparts/defiledstinger_back.vmdl", context)
@@ -367,19 +383,8 @@ function Precache(context)
     PrecacheResource("model", "models/crabparts/sandking_shrimp_king_arms_v2.vmdl", context)
 
     PrecacheResource("particle_folder", "particles/basic_projectile", context)
+    PrecacheResource("particle_folder", "particles/overhead_fx", context)
     PrecacheResource("materials", "materials/", context)
-    for _,particleName in pairs(precache.particles) do
-        PrecacheResource("particle", particleName, context)
-    end
-    for _,modelName in pairs(precache.models) do
-        PrecacheResource("model", modelName, context)
-    end
-    for _,unitName in pairs(precache.units) do
-        PrecacheUnitByNameSync(unitName, context)
-    end
-    for _,soundfile in pairs(precache.sounds) do
-        PrecacheResource("soundfile", soundfile, context)
-    end
 end
 
 -- Create the game mode when we activate
@@ -465,6 +470,8 @@ function CBattleship8D:InitGameMode()
     CustomGameEventManager:RegisterListener("buyItem", buyItem)
     CustomGameEventManager:RegisterListener("DiffSelection", ChooseDiff)
     CustomGameEventManager:RegisterListener("buyBoat", buyBoat)
+    CustomGameEventManager:RegisterListener("doRoll", doRoll)
+    CustomGameEventManager:RegisterListener("chooseGacha", chooseGacha)
 
     CustomGameEventManager:RegisterListener("toggleCrab", toggleCrab)
 
@@ -1407,7 +1414,7 @@ function CBattleship8D:OnThink()
                 g_HeroDamage[hero:GetPlayerID()] = 0
                 g_BuildingDamage[hero:GetPlayerID()] = 0
                 steamID32 = PlayerResource:GetSteamAccountID(hero:GetPlayerID())
-                if PlayerResource:GetPlayer(hero:GetPlayerID()) ~= nil and  (steamID32 == g_radar or steamID32 == g_vic) then 
+                if PlayerResource:GetPlayer(hero:GetPlayerID()) ~= nil and  (steamID32 == g_radar or steamID32 == g_vic or steamID32 == g_ollie) then 
                     playerData = {}
                     CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(hero:GetPlayerID()), "show_crab_ui", playerData)
                 end
@@ -1679,45 +1686,45 @@ function CBattleship8D:OnThink()
             if g_MainTimerTickCount % 2 == 0 then
                 if g_MainTimerTickCount % 4 == 0 and g_SpyAnnouncmentFlag == 1 then
                     g_SpyAnnouncmentFlag = 0
-                    Notifications:TopToAll({
-                        text = "#buy_spy_header",
-                        duration = 4.0,
-                        style = {color = "#58ACFA", fontSize = "30px;"}
-                    })
-                    Notifications:TopToAll({
-                        text = "#spys_south_start",
-                        duration = 4.0,
-                        style = {color = "#CC33FF", fontSize = "30px;"}
-                    })
-                    Notifications:TopToAll({
-                        text = tostring(g_SpyCountSouth) .. " ",
-                        duration = 4.0,
-                        style = {color = "#CC3300", fontSize = "30px;"},
-                        continue = true
-                    })
-                    Notifications:TopToAll({
-                        text = "#spys_end",
-                        duration = 4.0,
-                        style = {color = "#CC33FF", fontSize = "30px;"},
-                        continue = true
-                    })
-                    Notifications:TopToAll({
-                        text = "#spys_north_start",
-                        duration = 4.0,
-                        style = {color = "#CC33FF", fontSize = "30px;"}
-                    })
-                    Notifications:TopToAll({
-                        text = tostring(g_SpyCountNorth) .. " ",
-                        duration = 4.0,
-                        style = {color = "#CC3300", fontSize = "30px;"},
-                        continue = true
-                    })
-                    Notifications:TopToAll({
-                        text = "#spys_end",
-                        duration = 4.0,
-                        style = {color = "#CC33FF", fontSize = "30px;"},
-                        continue = true
-                    })
+                    -- Notifications:TopToAll({
+                    --     text = "#buy_spy_header",
+                    --     duration = 4.0,
+                    --     style = {color = "#58ACFA", fontSize = "30px;"}
+                    -- })
+                    -- Notifications:TopToAll({
+                    --     text = "#spys_south_start",
+                    --     duration = 4.0,
+                    --     style = {color = "#CC33FF", fontSize = "30px;"}
+                    -- })
+                    -- Notifications:TopToAll({
+                    --     text = tostring(g_SpyCountSouth) .. " ",
+                    --     duration = 4.0,
+                    --     style = {color = "#CC3300", fontSize = "30px;"},
+                    --     continue = true
+                    -- })
+                    -- Notifications:TopToAll({
+                    --     text = "#spys_end",
+                    --     duration = 4.0,
+                    --     style = {color = "#CC33FF", fontSize = "30px;"},
+                    --     continue = true
+                    -- })
+                    -- Notifications:TopToAll({
+                    --     text = "#spys_north_start",
+                    --     duration = 4.0,
+                    --     style = {color = "#CC33FF", fontSize = "30px;"}
+                    -- })
+                    -- Notifications:TopToAll({
+                    --     text = tostring(g_SpyCountNorth) .. " ",
+                    --     duration = 4.0,
+                    --     style = {color = "#CC3300", fontSize = "30px;"},
+                    --     continue = true
+                    -- })
+                    -- Notifications:TopToAll({
+                    --     text = "#spys_end",
+                    --     duration = 4.0,
+                    --     style = {color = "#CC33FF", fontSize = "30px;"},
+                    --     continue = true
+                    -- })
 
                 end
                 local goodDisconnected = 0
@@ -1953,6 +1960,40 @@ function CBattleship8D:OnThink()
                     setupWin(DOTA_TEAM_GOODGUYS)
                 end
             end
+            
+            -- Backup check: scan for living dock entities to trigger win setup if needed
+            if g_GameOver == 0 then
+                local northDocksAlive = 0
+                local southDocksAlive = 0
+                
+                -- Count living north docks
+                local northLeftDock = Entities:FindByName(nil, "npc_dota_dock_north_left")
+                local northRightDock = Entities:FindByName(nil, "npc_dota_dock_north_right")
+                if northLeftDock ~= nil and northLeftDock:IsAlive() then
+                    northDocksAlive = northDocksAlive + 1
+                end
+                if northRightDock ~= nil and northRightDock:IsAlive() then
+                    northDocksAlive = northDocksAlive + 1
+                end
+                
+                -- Count living south docks
+                local southLeftDock = Entities:FindByName(nil, "npc_dota_dock_south_left")
+                local southRightDock = Entities:FindByName(nil, "npc_dota_dock_south_right")
+                if southLeftDock ~= nil and southLeftDock:IsAlive() then
+                    southDocksAlive = southDocksAlive + 1
+                end
+                if southRightDock ~= nil and southRightDock:IsAlive() then
+                    southDocksAlive = southDocksAlive + 1
+                end
+                
+                -- Check for win conditions
+                if northDocksAlive == 0 then
+                    setupWin(DOTA_TEAM_GOODGUYS)
+                elseif southDocksAlive == 0 then
+                    setupWin(DOTA_TEAM_BADGUYS)
+                end
+            end
+            
             HandleTideAbil()
 
             if g_MainTimerTickCount % 2 == 0 then reapplyWP() end
@@ -2131,6 +2172,17 @@ function CBattleship8D:OnNPCSpawned(keys)
     local npc = EntIndexToHScript(keys.entindex)
 
     if npc:IsRealHero() then
+        --get the hero name
+        local heroName = npc:GetUnitName()
+        --strip off the npc_dota_hero_ prefix
+        local shortName = string.sub(heroName, 15)
+        -- add _overhead.vpcf to the name
+        local particleName = "particles/overhead_fx/" .. shortName .. "_overhead.vpcf"
+        --print the name of the particle
+        print(particleName)
+
+        local particle = ParticleManager:CreateParticle(particleName, PATTACH_OVERHEAD_FOLLOW, npc)
+
         Timers:CreateTimer(.03, function()
             for i=0,21 do
                 local item = npc:GetItemInSlot(i)
@@ -3323,10 +3375,20 @@ function HandleTideAbil()
                     ----print("othermove")
                 end
                 if hero:GetTeamNumber() == DOTA_TEAM_GOODGUYS and (hero:GetOrigin() * Vector(0, 1, 0) - Vector(0, 6100, 0)):Length() < 200 or g_ConfusedCreeps[hero] == 1 then
-                    hero:MoveToPositionAggressive(Vector(-58, 5390, 0))
+                    ExecuteOrderFromTable({
+                        UnitIndex = hero:entindex(),
+                        OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+                        Position = Vector(-58, 5390, 0),
+                        Queue = false,
+                    })
                     g_ConfusedCreeps[hero] = 1
                 elseif hero:GetTeamNumber() == DOTA_TEAM_BADGUYS and (hero:GetOrigin() * Vector(0, 1, 0) + Vector(0, 6100, 0)):Length() < 200 or g_ConfusedCreeps[hero] == 1 then
-                    hero:MoveToPositionAggressive(Vector(60, -5568, 0))
+                    ExecuteOrderFromTable({
+                        UnitIndex = hero:entindex(),
+                        OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+                        Position = Vector(60, -5568, 0),
+                        Queue = false,
+                    })
                     g_ConfusedCreeps[hero] = 1
                 end
             else
@@ -3619,7 +3681,12 @@ function HandleCoOp()
             creature:SetRespawnsDisabled(true)
             creature:MoveToPosition(Vector(60, -5568, 0))
         else
-            creature:MoveToPositionAggressive(Vector(60, -5568, 0))
+            ExecuteOrderFromTable({
+                UnitIndex = creature:entindex(),
+                OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+                Position = Vector(60, -5568, 0),
+                Queue = false,
+            })
         end
 
     end
@@ -3651,7 +3718,12 @@ function reapplyWP()
 
                             local wpShift = (waypoint:GetOrigin() - creep:GetOrigin()) * Vector(1, 0, 0)
 
-                            creep:MoveToPositionAggressive(waypoint2:GetOrigin() - wpShift)
+                            ExecuteOrderFromTable({
+                                UnitIndex = creep:entindex(),
+                                OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+                                Position = waypoint2:GetOrigin() - wpShift,
+                                Queue = false,
+                            })
                         end
                     end
                 end
@@ -3664,7 +3736,12 @@ function reapplyWP()
 
                         g_ConfusedCreeps[creep] = creep:GetOrigin() * Vector(-1, 1, 1)
                     elseif g_ConfusedCreeps[creep] ~= nil then
-                        creep:MoveToPositionAggressive(g_ConfusedCreeps[creep])
+                        ExecuteOrderFromTable({
+                            UnitIndex = creep:entindex(),
+                            OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+                            Position = g_ConfusedCreeps[creep],
+                            Queue = false,
+                        })
 
                     end
                 end
@@ -4128,6 +4205,21 @@ function CBattleship8D:OnEntityKilled(keys)
 
         if killerEntity:IsRealHero() and killerEntity:GetTeamNumber() ~= killedUnit:GetTeamNumber() then
             if killerEntity:GetPlayerID() ~= nil then
+                -- PlayerResource:SetCameraTarget(killedUnit:GetPlayerID(), killerEntity)
+                -- send playerkilledplayer to server
+                playerData = {}
+                -- print("sending player killed player event to server for player " .. killedUnit:GetPlayerID() .. " killed by " .. killerEntity:GetPlayerID())
+                -- CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(killedUnit:GetPlayerID()), "player_killed_player", playerData)
+                
+                -- Timers:CreateTimer(
+                -- 5,
+                --     function()
+                --         playerData = {}
+                --         CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(killedUnit:GetPlayerID()), "stop_spin", playerData)
+            
+                --         PlayerResource:SetCameraTarget(killedUnit:GetPlayerID(), nil)
+                --     end
+                -- )
                 killerName = PlayerResource:GetPlayerName(killerEntity:GetPlayerID())
                 table.insert(
                     g_combatLogArray,
@@ -4892,18 +4984,18 @@ function CBattleship8D:OnEntityKilled(keys)
                             Notifications:BottomToAll({
                                 text = "#streak_end_one_s",
                                 duration = 5.0,
-                                style = {color = "#A70606", fontSize = "30px;"}
+                                style = {color = "#A70606", fontSize = "18px;"}
                             })
                             Notifications:BottomToAll({
                                 text = tostring(killerEntity:GetStreak() * 100) .. " ",
                                 duration = 5.0,
-                                style = {color = "#FFD700", fontSize = "30px;"},
+                                style = {color = "#FFD700", fontSize = "18px;"},
                                 continue = true
                             })
                             Notifications:BottomToAll({
                                 text = "#streak_end_two_s",
                                 duration = 5.0,
-                                style = {color = "#A70606", fontSize = "30px;"},
+                                style = {color = "#A70606", fontSize = "18px;"},
                                 continue = true
                             })
 
@@ -4912,18 +5004,18 @@ function CBattleship8D:OnEntityKilled(keys)
                             Notifications:BottomToAll({
                                 text = "#streak_end_one_n",
                                 duration = 5.0,
-                                style = {color = "#A70606", fontSize = "30px;"}
+                                style = {color = "#A70606", fontSize = "18px;"}
                             })
                             Notifications:BottomToAll({
                                 text = tostring(killerEntity:GetStreak() * 100) .. " ",
                                 duration = 5.0,
-                                style = {color = "#FFD700", fontSize = "30px;"},
+                                style = {color = "#FFD700", fontSize = "18px;"},
                                 continue = true
                             })
                             Notifications:BottomToAll({
                                 text = "#streak_end_two_n",
                                 duration = 5.0,
-                                style = {color = "#A70606", fontSize = "30px;"},
+                                style = {color = "#A70606", fontSize = "18px;"},
                                 continue = true
                             })
 
@@ -5378,7 +5470,7 @@ function fixBackpack(casterUnit)
 end
 
 function become_boat(casterUnit, heroname)
-    print('[ItemFunctions] become_bristleback started!')
+    print("Become boat " .. heroname)
 
     local a = 0
     local plyID = casterUnit:GetPlayerOwnerID()
@@ -5442,7 +5534,7 @@ function become_boat(casterUnit, heroname)
         g_BoatJustBaught = 1
         local hero = PlayerResource:ReplaceHeroWith(casterUnit:GetPlayerID(), heroname, 0, 0)
         SendToServerConsole("dota_combine_models 0")
-        casterUnit:RemoveSelf()
+        -- casterUnit:RemoveSelf()
         ----print("called replace hero")
         if hero ~= nil then
             local id = hero:GetPlayerOwnerID()
@@ -7492,3 +7584,182 @@ function BuildPlayersArray()
 
     return players
 end
+
+local boatTiers = {
+    tier0 = {
+        "npc_dota_hero_zuus"
+    },
+    tier1 = {
+        "npc_dota_hero_phantom_lancer",
+        "npc_dota_hero_crystal_maiden",
+        "npc_dota_hero_rattletrap",
+        "npc_dota_hero_ancient_apparition",
+        "npc_dota_hero_nyx_assassin",
+        "npc_dota_hero_tidehunter",
+        "npc_dota_hero_batrider",
+    },
+    tier2 = {
+        "npc_dota_hero_dragon_knight",
+        "npc_dota_hero_nevermore",
+        "npc_dota_hero_disruptor",
+        "npc_dota_hero_winter_wyvern",
+        "npc_dota_hero_storm_spirit",
+        "npc_dota_hero_brewmaster",
+        "npc_dota_hero_lion",
+    },
+    tier3 = {
+        "npc_dota_hero_windrunner",
+        "npc_dota_hero_meepo",
+        "npc_dota_hero_jakiro",
+        "npc_dota_hero_slark",
+        "npc_dota_hero_shredder",
+        "npc_dota_hero_sniper",
+        "npc_dota_hero_marci",
+    },
+    tier4 = {
+        "npc_dota_hero_tusk",
+        "npc_dota_hero_visage",
+        "npc_dota_hero_ember_spirit",
+        "npc_dota_hero_ursa",
+        "npc_dota_hero_pugna",
+        "npc_dota_hero_razor",
+        "npc_dota_hero_wisp",
+    },
+}
+
+function getRandomHero(tier)
+    local tierName = "tier" .. tier
+    local chosenTier = boatTiers[tierName]
+    return chosenTier[RandomInt(1, #chosenTier)]
+end
+
+function getRandomLowerTier(tier)
+    local randomLowerTier = RandomInt(1, tier)
+    local chosenTier = boatTiers["tier" .. randomLowerTier]
+    return chosenTier[RandomInt(1, #chosenTier)]
+end
+
+function gachRoll(tier, chosenBoats, attempts)
+    attempts = (attempts or 0) + 1
+    -- 30% chance to roll a lower tier
+    if RandomInt(1, 100) <= 30 then
+        local boat = getRandomLowerTier(tier, chosenBoats)
+        if (chosenBoats[boat] and attempts < 100) then
+            return gachRoll(tier, chosenBoats)
+        end
+        chosenBoats[boat] = true
+        return boat
+    else
+        local boat = getRandomHero(tier, chosenBoats)
+        if (chosenBoats[boat] and attempts < 100) then
+            return getRandomHero(tier, chosenBoats)
+        end
+        chosenBoats[boat] = true
+        return boat
+    end
+end
+
+function doRoll(eventSourceIndex, args)
+    local pID = args.PlayerID
+    local tier = args.tier
+
+    local tierToGold = {
+        [0] = 0,
+        [1] = 1000,
+        [2] = 3000,
+        [3] = 6000,
+        [4] = 12000,
+    }
+    local priceToBuy = tierToGold[tier]
+
+    if PlayerResource:GetGold(pID) < priceToBuy then
+        print("Not enough gold", PlayerResource:GetGold(pID), priceToBuy)
+        return
+    else
+        PlayerResource:SpendGold(pID, priceToBuy, 0)
+    end
+
+    for k,v in pairs(args) do
+        print(k,v)
+    end
+
+    local chosenBoats = {}
+
+    -- set the nettable values
+    CustomNetTables:SetTableValue("gacha_rolls", "player" .. pID, {
+        boat1 = gachRoll(tier, chosenBoats),
+        boat2 = gachRoll(tier, chosenBoats),
+        boat3 = gachRoll(tier, chosenBoats),
+        playerID = pID,
+        tier = tier
+    })
+end
+
+function chooseGacha(eventSourceIndex, args)    
+    local pID = args.PlayerID
+    local heroName = args.heroName
+    local tierRolled = args.tierRolled
+    local teamNum = PlayerResource:GetTeam(pID)
+    local casterUnit
+    local rebateAmount = getRebateAmount(tierRolled, args.index, heroName)
+    
+    for _, hero in pairs(Entities:FindAllByClassname("npc_dota_hero*")) do
+        if hero ~= nil and hero:IsOwnedByAnyPlayer() then
+            if hero:GetPlayerID() == pID then
+                casterUnit = hero
+            end
+        end
+    end
+
+    if casterUnit == nil then return end
+    casterUnit:SetGold(casterUnit:GetGold() + rebateAmount, true)
+
+
+    local casterPos = casterUnit:GetAbsOrigin()
+
+    sellBoat(casterUnit)
+    EmitSoundOnClient("General.Buy", PlayerResource:GetPlayer(pID))
+    Timers:CreateTimer(.15, function()
+        become_boat(casterUnit, heroName)
+    end)
+    -- give the player their rebate
+    
+    CustomNetTables:SetTableValue("gacha_rolls", "player" .. pID, {
+        boat1 = nil,
+        boat2 = nil,
+        boat3 = nil,
+        playerID = pID,
+        tier = tier
+    })
+end
+
+function getRebateAmount(tierRolled, index, heroName)
+    local rebateAmount = 0
+    local tierToGold = {
+        [0] = 0,
+        [1] = 1000,
+        [2] = 3000,
+        [3] = 6000,
+        [4] = 12000,
+    }
+    -- check if the hero they are getting is from the tier list they rolled for
+    -- if boatTiers[tierRolled] has the heroName, then they dont get a rebate
+    if not table_contains(boatTiers["tier" .. tierRolled], heroName) then
+        rebateAmount = tierToGold[tierRolled] - tierToGold[tierRolled-1]*0.9;
+    end
+    -- if the index is 2 amd the hero is from the same tier, they get a 10% rebate
+    if index == 2 and table_contains(boatTiers["tier" .. tierRolled], heroName) then
+        rebateAmount = tierToGold[tierRolled]*0.1
+    end
+
+    return rebateAmount
+end
+
+function table_contains(table, val)
+    for i=1,#table do
+       if table[i] == val then 
+          return true
+       end
+    end
+    return false
+ end

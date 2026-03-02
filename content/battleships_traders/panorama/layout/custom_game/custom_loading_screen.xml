@@ -7,7 +7,7 @@
 	</scripts>
 	<Panel class="BattleshipsLoadingRoot">
 		<Panel id="seq">
-			<Image id="seq_bg" class="SeqBg" src="file://{images}/custom_game/loading_screen/loading.png" />
+			<Image id="seq_bg" class="SeqBg" src="file://{images}/custom_game/loading_screen/scaled_loading.png"  />
 		</Panel>
 		<Panel class="MenuRoot">
 			<Label id="BattleshipsTitle" text="#addon_game_name" style="" />
@@ -118,6 +118,12 @@
 			<Label class="NewsTitle" text="#News_Title" />
 			<Panel id="NewsHolder">
 				<Label class="NewsContent" text="#News_Content" />
+				<Button id="revertButton"  onactivate="ExternalBrowserGoToURL('https://store.steampowered.com/app/3008280/Revert/');" >
+			
+						<Image id="revertImage" src="file://{images}/custom_game/game_info/revert.png" />
+				</Button>
+				
+				
 			</Panel>
 		</Panel>
 		<Panel id="DiscordHolder">

@@ -37,11 +37,11 @@ function modifier_meat_hook_lua:DeclareFunctions()
 	return funcs
 end
 
---------------------------------------------------------------------------------
+-- --------------------------------------------------------------------------------
 
-function modifier_meat_hook_lua:GetOverrideAnimation( params )
-	return ACT_DOTA_FLAIL
-end
+-- function modifier_meat_hook_lua:GetOverrideAnimation( params )
+-- 	return ACT_DOTA_FLAIL
+-- end
 
 --------------------------------------------------------------------------------
 

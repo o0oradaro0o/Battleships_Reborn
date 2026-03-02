@@ -1,0 +1,47 @@
+// Asset types configuration for Battleships custom game
+// This file tells the resource compiler how to handle various asset types
+
+// Particle files
+"ParticleSystemDefinition_t"
+{
+    "extension" "vpcf"
+    "compiler" "resourcecompiler.exe"
+    "input_container" "game"
+    "output_container" "game"
+}
+
+// Material files
+"Material_t"
+{
+    "extension" "vmat"
+    "compiler" "resourcecompiler.exe"
+    "input_container" "content"
+    "output_container" "game"
+}
+
+// Texture files
+"Texture_t"
+{
+    "extension" "vtex"
+    "compiler" "resourcecompiler.exe"
+    "input_container" "content"
+    "output_container" "game"
+}
+
+// Model files
+"Model_t"
+{
+    "extension" "vmdl"
+    "compiler" "resourcecompiler.exe"
+    "input_container" "content"
+    "output_container" "game"
+}
+
+// Sound files
+"SoundEventScript_t"
+{
+    "extension" "vsndevts"
+    "compiler" "resourcecompiler.exe"
+    "input_container" "game"
+    "output_container" "game"
+}

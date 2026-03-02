@@ -47,12 +47,10 @@
   border-radius: 10px;
 }
 
-.ShopItemsRows
-{
- width: 40px;
- height: width-percentage(72.5%); 
- margin: 3px;
-
+.ShopItemsRows {
+  width: 40px;
+  height: width-percentage(72.5%);
+  margin: 3px;
 }
 
 #battleTimerPanel {
@@ -763,7 +761,7 @@
     to(#6e2323)
   );
   margin-bottom: 11px;
-  margin-right: 143px;
+  margin-right: 13px;
   z-index: 50;
 }
 .shipPanelHiderHolder:hover {
@@ -781,7 +779,7 @@
     to(#aa0303)
   );
   margin-bottom: 11px;
-  margin-right: 143px;
+  margin-right: 13px;
   z-index: 50;
 }
 
@@ -799,7 +797,7 @@
     to(#8e2323)
   );
   margin-bottom: 11px;
-  margin-right: 143px;
+  margin-right: 13px;
   z-index: 50;
 }
 
@@ -1047,18 +1045,19 @@
 .trade_text_footer {
   horizontal-align: center;
   color: white;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: bold;
-  margin: 3px;
+  margin: 10px 3px;
   text-shadow: 4px 4px 4px #121212;
 }
 .trade_text_footer_gold {
   horizontal-align: center;
   color: rgb(255, 200, 48);
-  font-size: 20px;
+  font-size: 14px;
   font-weight: bold;
   margin: 3px;
   text-shadow: 4px 4px 4px #121212;
+  vertical-align: center;
 }
 .trade_text_subtitle {
   horizontal-align: center;
@@ -1294,6 +1293,7 @@
   );
   background-image: url("s2r://panorama/images/hud/reborn/bg_tooltip_psd.vtex");
   border-radius: 10px;
+  margin-bottom: 10px;
 }
 .ship_shop_tier_tab:hover {
   horizontal-align: center;
@@ -2644,4 +2644,233 @@
   height: 32px;
   vertical-align: center;
   horizontal-align: right;
+}
+
+#DrawWindow {
+  visibility: collapse;
+  flow-children: down;
+  horizontal-align: center;
+  vertical-align: center;
+  width: 800px;
+  height: 450px;
+  padding: 20px;
+  background-color: #000000aa;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+}
+
+#ResultsPanel {
+  flow-children: right;
+  horizontal-align: center;
+  text-align: center;
+  width: 660px;
+  height: 350px;
+}
+
+.RollContainer {
+  flow-children: down;
+  height: 350px;
+}
+
+.GachaSlot {
+  width: 200px;
+  height: 325px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #000000aa;
+  border: 1px solid #ffffff;
+  transition-property: transform, opacity;
+  transition-duration: 0.15s;
+  transform: scaleX(1) scaleY(1);
+}
+
+.GachaSlot:hover {
+  border: 2px solid #ffcc33;
+  transform: scaleX(1.05) scaleY(1.05);
+}
+
+.RollButton {
+  vertical-align: bottom;
+  horizontal-align: center;
+  max-width: 200px;
+}
+.ColoredButton {
+  border-top: 1px solid #ffffff11;
+  border-left: 1px solid #ffffff06;
+  border-right: 1px solid #00000044;
+  border-bottom: 1px solid #00000088;
+  height: 44px;
+}
+
+.ColoredButton.Hover:enabled,
+.ColoredButton:hover:enabled {
+  brightness: 1.5;
+}
+
+.ColoredButton:active {
+  brightness: 2;
+}
+.OpenTreasureButton {
+  width: fill-parent-flow(1);
+  padding: 8px 14px 6px 14px;
+  transition-property: background-color, box-shadow, brightness;
+  transition-duration: 0.2s;
+}
+
+@keyframes 'pulseglow' {
+  0% {
+    background-color: gradient(
+      linear,
+      0% 0%,
+      0% 100%,
+      from(#67aeff),
+      to(#3c608d44)
+    );
+  }
+
+  50% {
+    background-color: gradient(
+      linear,
+      0% 0%,
+      0% 100%,
+      from(#406a9f),
+      to(#3c608c44)
+    );
+  }
+
+  100% {
+    background-color: gradient(
+      linear,
+      0% 0%,
+      0% 100%,
+      from(#67aeff),
+      to(#3c608d44)
+    );
+  }
+}
+
+.OpenTreasureButton:enabled {
+  background-color: gradient(
+    linear,
+    0% 0%,
+    0% 100%,
+    from(#3484a7),
+    to(#245575)
+  );
+  animation-name: pulseglow;
+  animation-duration: 3.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  box-shadow: fill #00000044 1px -1px 8px 1px;
+}
+
+.OpenTreasureButton:disabled {
+  background-color: gradient(
+    linear,
+    0% 0%,
+    0% 100%,
+    from(#101010),
+    to(#202020)
+  );
+}
+
+.OpenTreasureButton:enabled:hover {
+  box-shadow: fill #3484a744 1px -1px 8px 1px;
+}
+.OpenTreasureButton Label {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  horizontal-align: center;
+}
+
+#rollCostAmount {
+  color: #ffcc33;
+  font-weight: bold;
+}
+
+.OpenTreasureLabel {
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #000000;
+  margin-right: 10px; /* Add some space between the labels */
+}
+.buttonZone {
+  flow-children: right;
+  horizontal-align: center;
+  vertical-align: center;
+}
+#rollCostheader {
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #000000;
+}
+.rebateHeader {
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #000000;
+}
+.rebateHolder {
+  flow-children: down;
+  horizontal-align: center;
+  vertical-align: center;
+  margin-top: -65px;
+}
+#rebate1 {
+  horizontal-align: center;
+  color: #ffcc33;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #000000;
+}
+#rebate2 {
+  horizontal-align: center;
+  color: #ffcc33;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #000000;
+}
+#rebate3 {
+  horizontal-align: center;
+  color: #ffcc33;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #000000;
+}
+#rebateHolder1 {
+  visibility: collapse;
+}
+#rebateHolder2 {
+  visibility: collapse;
+}
+#rebateHolder3 {
+  visibility: collapse;
+}
+
+#WaifuImage {
+  z-index: 100;
+}
+.closeRoll {
+  visibility: visible;
+  horizontal-align: right;
+  vertical-align: top;
+  width: 25px;
+  height: 25px;
+  background-color: gradient(
+    linear,
+    0% 50%,
+    0% 100%,
+    from(#954545ff),
+    to(rgb(99, 39, 39))
+  );
+  margin-right: 8px;
+  margin-bottom: -33px;
+  z-index: 5;
+  border-radius: 5px;
+}
+.closeRoll:hover {
+  background-color: gradient(
+    linear,
+    0% 50%,
+    0% 100%,
+    from(#a2696ecc),
+    to(#954545ff)
+  );
 }

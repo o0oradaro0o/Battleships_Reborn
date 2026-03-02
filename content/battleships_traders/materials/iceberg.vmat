@@ -34,4 +34,9 @@ Layer0
 
 	//---- Translucency ----
 	TextureTranslucency "[0.312000 0.312000 0.312000 0.000000]"
+
+
+	VariableState
+	{
+	}
 }

@@ -103,6 +103,8 @@
 	"nyx"						"Crab"
 	"nyx_desc"					"Seems friendly to you... hop on what could go wrong!"
 	
+	"random"					"Random"
+
 	"dragon"						"Fail Boat"
 	"dragon_desc"					"This is not a good boat. its abilities dont work half the time, its move speed is inconsistant, and your team will hate you if you buy it. you have been warned."
 	
@@ -173,7 +175,7 @@
 	
 	"Ships"					"Ships"
 	"ship_shop"					"Ship Shop"
-	"left_click"					"Left click for additional details. Right click to buy."
+	"left_click"					"Left click for details. Right click to buy."
 	"hp"	"Hit Points:"
 	"ms"	"Move Speed:"
 	"regen"	"HP Regen/s:"
@@ -3246,10 +3248,11 @@ Freezing Field: Summons forth the frozen north and all it's random icy explosion
 		"Trade_Desc"			"Adds a special class of ship with limited inventory slots can take on profitable trading contracts and buy powerful consumable items. These ships drop high bounties if hunted down!"
 		"discord"			"Click to join us on discord!"
 		"News_Title"		"News!"
-		"News_Content"		"4/21/2022
-- Reduced Crab Health by 100
-- Reduced Crab Move Speed by 20
-- Crab Grab total Damage from 60/70/80/90 to 40/60/80/100
+		"News_Content"		"11/8/2025
+	- Attempt to fix bug where team does not win when killing enemay harbors
+	- UI fixes
+	- 8 new mix weapons with unique ultimates
+- Try out the Demo of our new game Revert click below!
 "
 		
 		"port_cannons"                                               "Port Cannons"
@@ -3301,3 +3304,4 @@ Continue"
 		"abaddon_aphotic_shield_battleship"  "Force Field"
 		"deploy_science_tower" "Deploy research Platform"
 }
+

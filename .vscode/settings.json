@@ -1,0 +1,8 @@
+{
+  "css.validate": false,
+  "css.lint.enabled": false,
+  "files.associations": {
+    "*.css": "css"
+  },
+  "css.customData": []
+}

@@ -1,4 +1,4 @@
-"lang"
+﻿"lang"
 {
   "Language"    "English"
   "Tokens"
@@ -198,7 +198,6 @@
     "DOTA_Tooltip_ability_item_spin_three_bow_doubled_Description"    "<h1>Weapon: Iron Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Fragments on impact, hitting up to %bounces% nearby enemy unit within %bounce_range% range for %bounce_dmg% damage. \nDoes not hit structures."
     "DOTA_Tooltip_ability_item_spin_three_bow_doubled_fire_rate"    "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_spin_three_bow_doubled_dmg"        "DAMAGE (x2):"
-    "DOTA_Tooltip_ability_item_spin_three_bow_doubled_range"      "RANGE:"
     "DOTA_Tooltip_ability_item_spin_three_bow_doubled_dps"        "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
 
     
@@ -399,8 +398,6 @@
 
     "DOTA_Tooltip_ability_item_caulk_two_bow_doubled"         "Double Super Glue"
     "DOTA_Tooltip_ability_item_caulk_two_bow_doubled_Description"   "<h1>Support: Caulk Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Can target enemies do deal damage as well as healing allies."
-    "DOTA_Tooltip_ability_item_caulk_two_bow_Note0"           "Heals allied units."
-    "DOTA_Tooltip_ability_item_caulk_two_bow_Note1"           "Does not heal structures."
     "DOTA_Tooltip_ability_item_caulk_two_bow_doubled_fire_rate"     "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_caulk_two_bow_doubled_dmg"       "HEAL (x2):"
     "DOTA_Tooltip_ability_item_caulk_two_bow_doubled_range"       "RANGE:"
@@ -419,8 +416,6 @@
     
     "DOTA_Tooltip_ability_item_caulk_three_bow_doubled"         "Double Tar and Pitch"
     "DOTA_Tooltip_ability_item_caulk_three_bow_doubled_Description"   "<h1>Support: Caulk Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Can target enemies do deal damage as well as healing allies."
-    "DOTA_Tooltip_ability_item_caulk_three_bow_Note0"         "Heals allied units."
-    "DOTA_Tooltip_ability_item_caulk_three_bow_Note1"         "Does not heal structures."
     "DOTA_Tooltip_ability_item_caulk_three_bow_doubled_fire_rate"   "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_caulk_three_bow_doubled_dmg"       "HEAL (x2):"
     "DOTA_Tooltip_ability_item_caulk_three_bow_doubled_range"     "RANGE:"
@@ -834,7 +829,6 @@
 
     "DOTA_Tooltip_ability_item_chaos_ult_bow_rec"           "The 5th Horseman"
     "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_Description"     "<h1>Weapon: Ultimate Chaos</h1>Shots do between -0.5 and 2.5 x Damage listed" 
-    "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_dmg"         "BASE DAMAGE:"
     "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_fire_rate"       "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_range"         "RANGE:"  
     "DOTA_Tooltip_ability_item_chaos_ult_bow_rec_dps"         "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
@@ -906,7 +900,6 @@
 
     "DOTA_Tooltip_ability_item_spread_ult_bow_rec"           "Blades of the Sea"
     "DOTA_Tooltip_ability_item_spread_ult_bow_rec_Description"     "<h1>Weapon: Ultimate spread</h1>Shots do damage in a small area around target. (Splash damage is reduced for creeps and buildings)" 
-    "DOTA_Tooltip_ability_item_spread_ult_bow_rec_dmg"         "BASE DAMAGE:"
     "DOTA_Tooltip_ability_item_spread_ult_bow_rec_fire_rate"       "RELOAD DELAY (s):"
     "DOTA_Tooltip_ability_item_spread_ult_bow_rec_range"         "RANGE:"  
     "DOTA_Tooltip_ability_item_spread_ult_bow_rec_dps"         "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
@@ -964,7 +957,540 @@
     "DOTA_Tooltip_ability_item_spread_plasma_mix_ult_bow_aoe"       "Atom Splitter AOE:"
      "DOTA_Tooltip_ability_item_spread_plasma_mix_ult_aoe_dearmor"       "Atom Splitter Debuff AOE:"
      "DOTA_Tooltip_ability_item_spread_plasma_mix_ult_dearmor_duration"       "Atom Splitter Debuff Duration:"
+
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_bow_doubled"               "Plasma Gun/Flimsy Torches"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_bow_doubled_Description"             "<h1>Weapon: Plasma Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Reduces target's armor by %armor_down% for %armor_dur% seconds.<h1>Weapon: Fire Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Deals %damage_2% damage every 0.5 seconds to all ships in range."
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_bow_doubled_dmg"             "Plasma Gun BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_bow_doubled_fire_rate"           "Plasma Gun RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_bow_doubled_range"             "Plasma Gun RANGE:"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_bow_doubled_dps"             "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_bow_doubled_Note0"        "Multiple hits extend duration, not increase armor lost. Fire damage over time does not stack."
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_bow_doubled_fire_rate_2"      "Flimsy Torches RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_bow_doubled_dmg_2"          "Flimsy Torches DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_bow_doubled_range_2"        "Flimsy Torches RANGE:"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_bow_doubled_dps_2"          "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_bow_doubled_damage_2"          "Flimsy Torches BURN DAMAGE:"
+
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_two_bow_doubled"            "Railgun/Roman Candles"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_two_bow_doubled_Description"          "<h1>Weapon: Plasma Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Reduces target's armor by %armor_down% for %armor_dur% seconds.<h1>Weapon: Fire Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Deals %damage_2% damage every 0.5 seconds to all ships in range."
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_two_bow_doubled_dmg"          "Railgun BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_two_bow_doubled_fire_rate"        "Railgun RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_two_bow_doubled_range"          "Railgun RANGE:"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_two_bow_doubled_dps"          "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_two_bow_doubled_Note0"       "Multiple hits extend duration, not increase armor lost. Fire damage over time does not stack."
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_two_bow_doubled_fire_rate_2"       "Roman Candles RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_two_bow_doubled_dmg_2"       "Roman Candles DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_two_bow_doubled_range_2"     "Roman Candles RANGE:"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_two_bow_doubled_dps_2"       "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_two_bow_doubled_damage_2"       "Roman Candles BURN DAMAGE:"
     
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_three_bow_doubled"          "Ion Cannon/Molotov Cocktails"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_three_bow_doubled_Description"        "<h1>Weapon: Plasma Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Reduces target's armor by %armor_down% for %armor_dur% seconds.<h1>Weapon: Fire Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Deals %damage_2% damage every 0.5 seconds to all ships in range."
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_three_bow_doubled_dmg"        "Ion Cannon BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_three_bow_doubled_fire_rate"      "Ion Cannon RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_three_bow_doubled_range"        "Ion Cannon RANGE:"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_three_bow_doubled_dps"        "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_three_bow_doubled_Note0"     "Multiple hits extend duration, not increase armor lost. Fire damage over time does not stack."
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_three_bow_doubled_fire_rate_2"      "Molotov Cocktails RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_three_bow_doubled_dmg_2"      "Molotov Cocktails DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_three_bow_doubled_range_2"    "Molotov Cocktails RANGE:"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_three_bow_doubled_dps_2"      "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_three_bow_doubled_damage_2"      "Molotov Cocktails BURN DAMAGE:"
+
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow"           "Supernova Cannon"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_Description"         "<h1>Weapon: Supernova Cannon</h1>Fires devastating plasma-fire projectiles that create supernova explosions on impact. Each explosion deals massive damage to the primary target and creates a shockwave that pushes all nearby enemies away from the impact point. The push force diminishes based on the number of units caught in the blast - fewer units means stronger knockback!"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_dmg"         "BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_fire_rate"       "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_range"         "RANGE:"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_dps"         "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_push_radius"       "SUPERNOVA BLAST RADIUS:"
+    "DOTA_Tooltip_ability_item_plasma_fire_mix_ult_bow_push_distance"       "MAX KNOCKBACK DISTANCE:"
+    
+
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //-0112---FIRE_COAL_MIX HYBRID-----------------
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    "DOTA_Tooltip_ability_item_fire_coal_mix_bow_doubled"               "Smoke Bombs/Flimsy Torches"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_bow_doubled_Description"             "<h1>Weapon: Fire Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Deals %damage_2% damage every 0.5 seconds to all ships in range.<h1>Weapon: Coal Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots fired by this weapon have a %stun_pct%%% chance to stun the target for %stun_dur% seconds."
+    "DOTA_Tooltip_ability_item_fire_coal_mix_bow_doubled_dmg"             "Flimsy Torches DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_bow_doubled_fire_rate"           "Flimsy Torches RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_bow_doubled_range"             "Flimsy Torches RANGE:"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_bow_doubled_dps"             "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_fire_coal_mix_bow_doubled_Note0"        "Fire damage over time does not stack. Multiple coal hits may extend stun duration."
+    "DOTA_Tooltip_ability_item_fire_coal_mix_bow_doubled_fire_rate_2"      "Smoke Bombs RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_bow_doubled_dmg_2"          "Smoke Bombs DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_bow_doubled_range_2"        "Smoke Bombs RANGE:"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_bow_doubled_dps_2"          "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_fire_coal_mix_bow_doubled_damage_2"          "Flimsy Torches BURN DAMAGE:"
+
+    "DOTA_Tooltip_ability_item_fire_coal_mix_two_bow_doubled"               "Cherry Bombs/Roman Candles"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_two_bow_doubled_Description"             "<h1>Weapon: Fire Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Deals %damage_2% damage every 0.5 seconds to all ships in range.<h1>Weapon: Coal Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots fired by this weapon have a %stun_pct%%% chance to stun the target for %stun_dur% seconds."
+    "DOTA_Tooltip_ability_item_fire_coal_mix_two_bow_doubled_dmg"             "Roman Candles DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_two_bow_doubled_fire_rate"           "Roman Candles RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_two_bow_doubled_range"             "Roman Candles RANGE:"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_two_bow_doubled_dps"             "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_fire_coal_mix_two_bow_doubled_Note0"        "Fire damage over time does not stack. Multiple coal hits may extend stun duration."
+    "DOTA_Tooltip_ability_item_fire_coal_mix_two_bow_doubled_fire_rate_2"      "Cherry Bombs RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_two_bow_doubled_dmg_2"          "Cherry Bombs DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_two_bow_doubled_range_2"        "Cherry Bombs RANGE:"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_two_bow_doubled_dps_2"          "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_fire_coal_mix_two_bow_doubled_damage_2"          "Roman Candles BURN DAMAGE:"
+
+    "DOTA_Tooltip_ability_item_fire_coal_mix_three_bow_doubled"               "Coal Cannon/Molotov Cocktails"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_three_bow_doubled_Description"             "<h1>Weapon: Fire Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Deals %damage_2% damage every 0.5 seconds to all ships in range.<h1>Weapon: Coal Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots fired by this weapon have a %stun_pct%%% chance to stun the target for %stun_dur% seconds."
+    "DOTA_Tooltip_ability_item_fire_coal_mix_three_bow_doubled_dmg"             "Molotov Cocktails DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_three_bow_doubled_fire_rate"           "Molotov Cocktails RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_three_bow_doubled_range"             "Molotov Cocktails RANGE:"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_three_bow_doubled_dps"             "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_fire_coal_mix_three_bow_doubled_Note0"        "Fire damage over time does not stack. Multiple coal hits may extend stun duration."
+    "DOTA_Tooltip_ability_item_fire_coal_mix_three_bow_doubled_fire_rate_2"      "Coal Cannon RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_three_bow_doubled_dmg_2"          "Coal Cannon DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_three_bow_doubled_range_2"        "Coal Cannon RANGE:"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_three_bow_doubled_dps_2"          "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_fire_coal_mix_three_bow_doubled_damage_2"          "Molotov Cocktails BURN DAMAGE:"
+
+    "DOTA_Tooltip_ability_item_fire_coal_mix_ult_bow"               "Burning Pitch Launcher"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_ult_bow_Description"             "<h1>Weapon: Burning Pitch Launcher</h1>Fires devastating burning pitch projectiles that ignite targets with fiery tar. Units struck leave a scorching burning pitch trail wherever they move, creating zones of flaming terrain that damage and slow all enemies who dare to cross. The longer you stay in the burning pitch, the more it burns!"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_ult_bow_dmg"             "BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_ult_bow_fire_rate"           "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_ult_bow_range"             "RANGE:"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_ult_bow_dps"             "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_ult_bow_trail_duration"      "TRAIL DEBUFF DURATION (s):"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_ult_bow_trail_ground_duration"   "BURNING PITCH POOL DURATION (s):"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_ult_bow_trail_radius"        "BURNING PITCH TRAIL RADIUS:"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_ult_bow_trail_damage"        "TRAIL DAMAGE PER TICK:"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_ult_bow_trail_slow"          "TRAIL SLOW:"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_ult_bow_carrier_slow"        "CARRIER SLOW:"
+    "DOTA_Tooltip_ability_item_fire_coal_mix_ult_bow_Note0"        "Targets hit leave burning pitch trails as they move. Trails damage and slow enemies every 0.5 seconds. Multiple trails can affect the same unit."
+
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_bow_doubled"               "Smoke Bombs/Unstable Cannon"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_bow_doubled_Description"             "<h1>Weapon: Coal Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots fired by this weapon have a %stun_pct%%% chance to stun the target for %stun_dur% seconds.<h1>Weapon: Chaos Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do between -0.5 and 2.5 x Damage listed"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_bow_doubled_dmg"             "Smoke Bombs DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_bow_doubled_fire_rate"           "Smoke Bombs RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_bow_doubled_range"             "Smoke Bombs RANGE:"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_bow_doubled_dps"             "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_bow_doubled_Note0"        "Multiple coal hits may extend stun duration. Chaos effects vary independently."
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_bow_doubled_fire_rate_2"      "Unstable Cannon RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_bow_doubled_dmg_2"          "Unstable Cannon BASE DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_bow_doubled_range_2"        "Unstable Cannon RANGE:"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_bow_doubled_dps_2"          "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_two_bow_doubled"               "Cherry Bombs/Chaos Magnum"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_two_bow_doubled_Description"             "<h1>Weapon: Coal Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots fired by this weapon have a %stun_pct%%% chance to stun the target for %stun_dur% seconds.<h1>Weapon: Chaos Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do between -0.5 and 2.5 x Damage listed"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_two_bow_doubled_dmg"             "Cherry Bombs DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_two_bow_doubled_fire_rate"           "Cherry Bombs RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_two_bow_doubled_range"             "Cherry Bombs RANGE:"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_two_bow_doubled_dps"             "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_two_bow_doubled_Note0"        "Multiple coal hits may extend stun duration. Chaos effects vary independently."
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_two_bow_doubled_fire_rate_2"      "Chaos Magnum RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_two_bow_doubled_dmg_2"          "Chaos Magnum BASE DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_two_bow_doubled_range_2"        "Chaos Magnum RANGE:"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_two_bow_doubled_dps_2"          "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_three_bow_doubled"               "Coal Cannon/Entropy Ray"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_three_bow_doubled_Description"             "<h1>Weapon: Coal Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots fired by this weapon have a %stun_pct%%% chance to stun the target for %stun_dur% seconds.<h1>Weapon: Chaos Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do between -0.5 and 2.5 x Damage listed"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_three_bow_doubled_dmg"             "Coal Cannon DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_three_bow_doubled_fire_rate"           "Coal Cannon RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_three_bow_doubled_range"             "Coal Cannon RANGE:"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_three_bow_doubled_dps"             "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_three_bow_doubled_Note0"        "Multiple coal hits may extend stun duration. Chaos effects vary independently."
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_three_bow_doubled_fire_rate_2"      "Entropy Ray RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_three_bow_doubled_dmg_2"          "Entropy Ray BASE DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_three_bow_doubled_range_2"        "Entropy Ray RANGE:"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_three_bow_doubled_dps_2"          "\n<font  size= '3' color='#cc6400'>DPS:</font>"  
+
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_ult_bow"               "Abyssal Rift Cannon"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_ult_bow_Description"             "<h1>Weapon: Abyssal Rift Cannon</h1>Tears open portals to the abyss, releasing 1-5 ghostly spirits that seek out nearby units to kamikaze into. Spirits can damage, stun, or silence enemies - or even heal and buff allies! Each spirit can be destroyed before it reaches its target. The spirits of chaos serve no master but fate itself."
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_ult_bow_dmg"             "IMPACT DAMAGE:"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_ult_bow_fire_rate"           "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_ult_bow_range"             "RANGE:"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_ult_bow_dps"             "\n<font  size= '3' color='#cc6400'>DIRECT HIT DPS:</font>"  
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_ult_bow_portal_chance"        "PORTAL SPAWN CHANCE:"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_ult_bow_spirit_count_min"      "MIN SPIRITS PER PORTAL:"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_ult_bow_spirit_count_max"          "MAX SPIRITS PER PORTAL:"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_ult_bow_spirit_hp"        "SPIRIT HEALTH:"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_ult_bow_spirit_speed"          "SPIRIT MOVEMENT SPEED:"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_ult_bow_Note0"        "Spirits can be attacked and destroyed before reaching their targets."
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_ult_bow_Note1"      "ENEMY SPIRITS: Damage (40%), Stun (18%), Silence (12%)"
+    "DOTA_Tooltip_ability_item_coal_chaos_mix_ult_bow_Note2"          "ALLY SPIRITS: Heal (10%), Speed (8%), Regen (6%), Invuln (4%), Invis (2%)"  
+
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //---- CHAOS_POISON_MIX WEAPONS ----------------
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled"  "Unstable Cannon/Poison Vials"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled_Description"  "<h1>Weapon: Chaos Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do between -0.5 and 2.5 x Damage listed<h1>Weapon: Poison Level 1</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Poisons targets, dealing %damage_2% damage per half-second for %psn_dur% seconds."
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled_dmg"  "Unstable Cannon BASE DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled_fire_rate"  "Unstable Cannon RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled_range"  "Unstable Cannon RANGE:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled_Note0"  "Chaos effects vary randomly. Poison stacks refresh duration."
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled_fire_rate_2"  "Poison Vials RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled_dmg_2"  "Poison Vials DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled_range_2"  "Poison Vials RANGE:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled"  "Chaos Magnum/Poison Jugs"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled_Description"  "<h1>Weapon: Chaos Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do between -0.5 and 2.5 x Damage listed<h1>Weapon: Poison Level 2</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Poisons targets, dealing %damage_2% damage per half-second for %psn_dur% seconds."
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled_dmg"  "Chaos Magnum BASE DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled_fire_rate"  "Chaos Magnum RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled_range"  "Chaos Magnum RANGE:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled_Note0"  "Chaos effects vary randomly. Poison stacks refresh duration."
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled_fire_rate_2"  "Poison Jugs RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled_dmg_2"  "Poison Jugs DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled_range_2"  "Poison Jugs RANGE:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_two_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled"  "Entropy Ray/Poison Grenades"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled_Description"  "<h1>Weapon: Chaos Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Shots do between -0.5 and 2.5 x Damage listed<h1>Weapon: Poison Level 3</h1><b>Doubles Bonus <font color='#007700'>Active</font></b><br>Poisons targets, dealing %damage_2% damage per half-second for %psn_dur% seconds."
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled_dmg"  "Entropy Ray BASE DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled_fire_rate"  "Entropy Ray RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled_range"  "Entropy Ray RANGE:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled_Note0"  "Chaos effects vary randomly. Poison stacks refresh duration."
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled_fire_rate_2"  "Poison Grenades RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled_dmg_2"  "Poison Grenades DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled_range_2"  "Poison Grenades RANGE:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_three_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>DPS:</font>"
+
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow"  "Entropic Contagion"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_Description"  "<h1>Weapon: Entropic Contagion</h1>Fires infectious projectiles that spawn drifting toxic clouds on impact. Clouds poison any units that enter them, with poison damage stacking up to %poison_max_stacks% times. Clouds drift randomly across the battlefield for %cloud_lifetime% seconds."
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_dmg"  "BASE DAMAGE:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_fire_rate"  "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_range"  "RANGE:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_dps"  "\n<font size='3' color='#cc6400'>DPS:</font>"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_cloud_chance"  "CLOUD SPAWN CHANCE:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_cloud_radius"  "CLOUD RADIUS:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_poison_damage_min"  "POISON DAMAGE (per tick per stack):"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_poison_max_stacks"  "MAX POISON STACKS:"
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_Note0"  "Clouds drift randomly at 100-200 speed. Poison stacks refresh duration on re-entry. Multiple clouds can overlap."
+    "DOTA_Tooltip_ability_item_chaos_poison_mix_ult_bow_Lore"  "The corruption spreads like a living thing, consuming all in its path..."
+
+    //=============================================
+    // POISON_LIGHT_MIX WEAPONS
+    //=============================================
+    "DOTA_Tooltip_ability_item_poison_light_mix_bow_doubled"  "Poison Vials/Focused Light Lens"
+    "DOTA_Tooltip_ability_item_poison_light_mix_bow_doubled_Description"  "<h1>Hybrid Weapon: Poison + Light Level 1</h1>Fires two independent weapons simultaneously:<br><br><b>Poison Vials:</b> Poisons targets, dealing %damage% damage per half-second for %psn_dur% seconds.<br><br><b>Focused Light Lens:</b> Projectiles grant vision in a %vision_rad% unit radius."
+    "DOTA_Tooltip_ability_item_poison_light_mix_bow_doubled_Note0"  "Poison stacks refresh duration. Light projectiles provide vision."
+    "DOTA_Tooltip_ability_item_poison_light_mix_bow_doubled_fire_rate"  "Poison Vials RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_poison_light_mix_bow_doubled_dmg"  "Poison Vials DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_poison_light_mix_bow_doubled_range"  "Poison Vials RANGE:"
+    "DOTA_Tooltip_ability_item_poison_light_mix_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>Poison Vials DPS:</font>"
+    "DOTA_Tooltip_ability_item_poison_light_mix_bow_doubled_fire_rate_2"  "Focused Light Lens RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_poison_light_mix_bow_doubled_dmg_2"  "Focused Light Lens DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_poison_light_mix_bow_doubled_range_2"  "Focused Light Lens RANGE:"
+    "DOTA_Tooltip_ability_item_poison_light_mix_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>Focused Light Lens DPS:</font>"
+
+    "DOTA_Tooltip_ability_item_poison_light_mix_two_bow_doubled"  "Poison Jugs/High Beams"
+    "DOTA_Tooltip_ability_item_poison_light_mix_two_bow_doubled_Description"  "<h1>Hybrid Weapon: Poison + Light Level 2</h1>Fires two independent weapons simultaneously:<br><br><b>Poison Jugs:</b> Poisons targets, dealing %damage% damage per half-second for %psn_dur% seconds.<br><br><b>High Beams:</b> Projectiles grant vision in a %vision_rad% unit radius."
+    "DOTA_Tooltip_ability_item_poison_light_mix_two_bow_doubled_Note0"  "Poison stacks refresh duration. Light projectiles provide vision."
+    "DOTA_Tooltip_ability_item_poison_light_mix_two_bow_doubled_fire_rate"  "Poison Jugs RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_poison_light_mix_two_bow_doubled_dmg"  "Poison Jugs DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_poison_light_mix_two_bow_doubled_range"  "Poison Jugs RANGE:"
+    "DOTA_Tooltip_ability_item_poison_light_mix_two_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>Poison Jugs DPS:</font>"
+    "DOTA_Tooltip_ability_item_poison_light_mix_two_bow_doubled_fire_rate_2"  "High Beams RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_poison_light_mix_two_bow_doubled_dmg_2"  "High Beams DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_poison_light_mix_two_bow_doubled_range_2"  "High Beams RANGE:"
+    "DOTA_Tooltip_ability_item_poison_light_mix_two_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>High Beams DPS:</font>"
+
+    "DOTA_Tooltip_ability_item_poison_light_mix_three_bow_doubled"  "Poison Grenades/Solar Flare"
+    "DOTA_Tooltip_ability_item_poison_light_mix_three_bow_doubled_Description"  "<h1>Hybrid Weapon: Poison + Light Level 3</h1>Fires two independent weapons simultaneously:<br><br><b>Poison Grenades:</b> Poisons targets, dealing %damage% damage per half-second for %psn_dur% seconds.<br><br><b>Solar Flare:</b> Projectiles grant vision in a %vision_rad% unit radius."
+    "DOTA_Tooltip_ability_item_poison_light_mix_three_bow_doubled_Note0"  "Poison stacks refresh duration. Light projectiles provide vision."
+    "DOTA_Tooltip_ability_item_poison_light_mix_three_bow_doubled_fire_rate"  "Poison Grenades RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_poison_light_mix_three_bow_doubled_dmg"  "Poison Grenades DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_poison_light_mix_three_bow_doubled_range"  "Poison Grenades RANGE:"
+    "DOTA_Tooltip_ability_item_poison_light_mix_three_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>Poison Grenades DPS:</font>"
+    "DOTA_Tooltip_ability_item_poison_light_mix_three_bow_doubled_fire_rate_2"  "Solar Flare RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_poison_light_mix_three_bow_doubled_dmg_2"  "Solar Flare DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_poison_light_mix_three_bow_doubled_range_2"  "Solar Flare RANGE:"
+    "DOTA_Tooltip_ability_item_poison_light_mix_three_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>Solar Flare DPS:</font>"
+
+    "DOTA_Tooltip_ability_item_poison_light_mix_ult_bow"  "Radioactive Decay Enhancer"
+    "DOTA_Tooltip_ability_item_poison_light_mix_ult_bow_Description"  "<h1>Ultimate Weapon: Poison + Light</h1>Fires radioactive projectiles that inflict <font color='#00ff00'>Radioactive Decay</font> on enemies. Units with Radioactive Decay take <font color='#ffff00'>+%decay_damage_per_stack% additional damage</font> per stack from ALL damage sources.<br><br><i>A prototype energy weapon that destabilizes molecular bonds, causing catastrophic chain reactions when the target suffers additional trauma.</i>"
+    "DOTA_Tooltip_ability_item_poison_light_mix_ult_bow_Note0"  "Fire Rate: %fire_rate%s | Max Stacks: %decay_max_stacks% | Decay Duration: %decay_duration%s per stack"
+    "DOTA_Tooltip_ability_item_poison_light_mix_ult_bow_fire_rate"  "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_poison_light_mix_ult_bow_dmg"  "DIRECT DAMAGE:"
+    "DOTA_Tooltip_ability_item_poison_light_mix_ult_bow_range"  "RANGE:"
+    "DOTA_Tooltip_ability_item_poison_light_mix_ult_bow_decay_damage_per_stack"  "BONUS DAMAGE PER STACK:"
+    "DOTA_Tooltip_ability_item_poison_light_mix_ult_bow_decay_max_stacks"  "MAX DECAY STACKS:"
+    "DOTA_Tooltip_ability_item_poison_light_mix_ult_bow_decay_duration"  "DECAY DURATION (s):"
+
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //-LIGHT_SPIN_MIX------------------------------
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+    // Level 1
+    "DOTA_Tooltip_ability_item_light_spin_mix_bow_doubled"  "Focused Light Lens/Trick Shot"
+    "DOTA_Tooltip_ability_item_light_spin_mix_bow_doubled_Description"  "<h1>Hybrid Weapon: Light/Iron Level 1</h1>Fires both Light and Spin weapons simultaneously.<br><br><b>Focused Light Lens:</b> Projectiles grant vision in a %vision_rad% unit radius.<br><b>Trick Shot:</b> Ricochets on impact, hitting up to %bounces% nearby enemy unit within %bounce_range% range for %bounce_dmg% damage. Does not hit structures."
+    "DOTA_Tooltip_ability_item_light_spin_mix_bow_doubled_fire_rate"  "Focused Light Lens RELOAD (s):"
+    "DOTA_Tooltip_ability_item_light_spin_mix_bow_doubled_dmg"  "Focused Light Lens DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_light_spin_mix_bow_doubled_range"  "Focused Light Lens RANGE:"
+    "DOTA_Tooltip_ability_item_light_spin_mix_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>Focused Light Lens DPS:</font>"
+    "DOTA_Tooltip_ability_item_light_spin_mix_bow_doubled_fire_rate_2"  "Trick Shot RELOAD (s):"
+    "DOTA_Tooltip_ability_item_light_spin_mix_bow_doubled_dmg_2"  "Trick Shot DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_light_spin_mix_bow_doubled_range_2"  "Trick Shot RANGE:"
+    "DOTA_Tooltip_ability_item_light_spin_mix_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>Trick Shot DPS:</font>"
+    "DOTA_Tooltip_ability_item_light_spin_mix_bow_doubled_Note0"  "Light projectiles grant vision. Spin projectiles ricochet to nearby enemies."
+    
+    // Level 2
+    "DOTA_Tooltip_ability_item_light_spin_mix_two_bow_doubled"  "High Beams/Split Shot"
+    "DOTA_Tooltip_ability_item_light_spin_mix_two_bow_doubled_Description"  "<h1>Hybrid Weapon: Light/Iron Level 2</h1>Fires both Light and Spin weapons simultaneously.<br><br><b>High Beams:</b> Projectiles grant vision in a %vision_rad% unit radius.<br><b>Split Shot:</b> Fragments on impact, hitting up to %bounces% nearby enemy units within %bounce_range% range for %bounce_dmg% damage. Does not hit structures."
+    "DOTA_Tooltip_ability_item_light_spin_mix_two_bow_doubled_fire_rate"  "High Beams RELOAD (s):"
+    "DOTA_Tooltip_ability_item_light_spin_mix_two_bow_doubled_dmg"  "High Beams DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_light_spin_mix_two_bow_doubled_range"  "High Beams RANGE:"
+    "DOTA_Tooltip_ability_item_light_spin_mix_two_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>High Beams DPS:</font>"
+    "DOTA_Tooltip_ability_item_light_spin_mix_two_bow_doubled_fire_rate_2"  "Split Shot RELOAD (s):"
+    "DOTA_Tooltip_ability_item_light_spin_mix_two_bow_doubled_dmg_2"  "Split Shot DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_light_spin_mix_two_bow_doubled_range_2"  "Split Shot RANGE:"
+    "DOTA_Tooltip_ability_item_light_spin_mix_two_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>Split Shot DPS:</font>"
+    "DOTA_Tooltip_ability_item_light_spin_mix_two_bow_doubled_Note0"  "Light projectiles grant vision. Spin projectiles fragment to nearby enemies."
+    
+    // Level 3
+    "DOTA_Tooltip_ability_item_light_spin_mix_three_bow_doubled"  "Solar Flare/Flak Gun"
+    "DOTA_Tooltip_ability_item_light_spin_mix_three_bow_doubled_Description"  "<h1>Hybrid Weapon: Light/Iron Level 3</h1>Fires both Light and Spin weapons simultaneously.<br><br><b>Solar Flare:</b> Projectiles grant vision in a %vision_rad% unit radius.<br><b>Flak Gun:</b> Fragments on impact, hitting up to %bounces% nearby enemy units within %bounce_range% range for %bounce_dmg% damage. Does not hit structures."
+    "DOTA_Tooltip_ability_item_light_spin_mix_three_bow_doubled_fire_rate"  "Solar Flare RELOAD (s):"
+    "DOTA_Tooltip_ability_item_light_spin_mix_three_bow_doubled_dmg"  "Solar Flare DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_light_spin_mix_three_bow_doubled_range"  "Solar Flare RANGE:"
+    "DOTA_Tooltip_ability_item_light_spin_mix_three_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>Solar Flare DPS:</font>"
+    "DOTA_Tooltip_ability_item_light_spin_mix_three_bow_doubled_fire_rate_2"  "Flak Gun RELOAD (s):"
+    "DOTA_Tooltip_ability_item_light_spin_mix_three_bow_doubled_dmg_2"  "Flak Gun DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_light_spin_mix_three_bow_doubled_range_2"  "Flak Gun RANGE:"
+    "DOTA_Tooltip_ability_item_light_spin_mix_three_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>Flak Gun DPS:</font>"
+    "DOTA_Tooltip_ability_item_light_spin_mix_three_bow_doubled_Note0"  "Light projectiles grant vision. Spin projectiles fragment to nearby enemies."
+    
+    // Ultimate
+    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow"  "Reflection Beam"
+    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_Description"  "<h1>Ultimate Weapon: Light + Spin</h1>Fires a spinning light projectile that creates a <font color='#ffff00'>reflection beam</font> linking the target back to the caster. The beam deals <font color='#00ffff'>%beam_damage% magical damage</font> to all enemies caught in its path.<br><br><i>By bending light through rapidly spinning crystals, this weapon creates a devastating energy bridge that punishes clustered formations.</i>"
+    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_Note0"  "Fire Rate: %fire_rate%s | Beam Width: %beam_width% units"
+    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_fire_rate"  "RELOAD DELAY (s):"
+    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_dmg"  "DIRECT DAMAGE:"
+    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_range"  "RANGE:"
+    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_beam_damage"  "BEAM DAMAGE:"
+    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_beam_width"  "BEAM WIDTH:"
+    "DOTA_Tooltip_ability_item_light_spin_mix_ult_bow_dps"  "\n<font  size= '3' color='#cc6400'>Base DPS:</font>"
+
+    //===============================================
+    // spin_breach_mix weapons
+    //===============================================
+    
+    // Level 1
+    "DOTA_Tooltip_ability_item_spin_breach_mix_bow_doubled"  "Trick Shot/Hull Breaching Mines"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_bow_doubled_Description"  "<h1>Hybrid Weapon: Spin/Breach Level 1</h1>Fires both Spin and Breach weapons simultaneously.<br><br><b>Trick Shot:</b> Ricochets on impact, hitting up to %bounces% nearby enemy unit within %bounce_range% range for %bounce_dmg% damage. Does not hit structures.<br><b>Hull Breaching Mines:</b> %pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. Does not hit structures."
+    "DOTA_Tooltip_ability_item_spin_breach_mix_bow_doubled_fire_rate"  "Trick Shot RELOAD (s):"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_bow_doubled_dmg"  "Trick Shot DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_bow_doubled_range"  "Trick Shot RANGE:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>Trick Shot DPS:</font>"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_bow_doubled_bounces"  "Trick Shot BOUNCES:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_bow_doubled_bounce_dmg"  "Trick Shot BOUNCE DAMAGE:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_bow_doubled_bounce_range"  "Trick Shot BOUNCE RANGE:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_bow_doubled_fire_rate_2"  "Hull Breaching Mines RELOAD (s):"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_bow_doubled_dmg_2"  "Hull Breaching Mines DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_bow_doubled_range_2"  "Hull Breaching Mines RANGE:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_bow_doubled_delay"  "Hull Breaching Mines DAMAGE DELAY:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>Hull Breaching Mines DPS:</font>"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_bow_doubled_pure_pct"  "PURE PERCENT:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_bow_doubled_Note0"  "Spin projectiles ricochet to nearby enemies. Breach damage is delayed with pure component."
+    
+    // Level 2
+    "DOTA_Tooltip_ability_item_spin_breach_mix_two_bow_doubled"  "Split Shot/Tactical Torpedoes"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_two_bow_doubled_Description"  "<h1>Hybrid Weapon: Spin/Breach Level 2</h1>Fires both Spin and Breach weapons simultaneously.<br><br><b>Split Shot:</b> Fragments on impact, hitting up to %bounces% nearby enemy units within %bounce_range% range for %bounce_dmg% damage. Does not hit structures.<br><b>Tactical Torpedoes:</b> %pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. Does not hit structures."
+    "DOTA_Tooltip_ability_item_spin_breach_mix_two_bow_doubled_fire_rate"  "Split Shot RELOAD (s):"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_two_bow_doubled_dmg"  "Split Shot DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_two_bow_doubled_range"  "Split Shot RANGE:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_two_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>Split Shot DPS:</font>"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_two_bow_doubled_bounces"  "Split Shot BOUNCES:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_two_bow_doubled_bounce_dmg"  "Split Shot BOUNCE DAMAGE:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_two_bow_doubled_bounce_range"  "Split Shot BOUNCE RANGE:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_two_bow_doubled_fire_rate_2"  "Tactical Torpedoes RELOAD (s):"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_two_bow_doubled_dmg_2"  "Tactical Torpedoes DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_two_bow_doubled_range_2"  "Tactical Torpedoes RANGE:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_two_bow_doubled_delay"  "Tactical Torpedoes DAMAGE DELAY:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_two_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>Tactical Torpedoes DPS:</font>"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_two_bow_doubled_pure_pct"  "PURE PERCENT:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_two_bow_doubled_Note0"  "Spin projectiles fragment to nearby enemies. Breach damage is delayed with pure component."
+    
+    // Level 3
+    "DOTA_Tooltip_ability_item_spin_breach_mix_three_bow_doubled"  "Flak Gun/Charging Depth Charges"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_three_bow_doubled_Description"  "<h1>Hybrid Weapon: Spin/Breach Level 3</h1>Fires both Spin and Breach weapons simultaneously.<br><br><b>Flak Gun:</b> Fragments on impact, hitting up to %bounces% nearby enemy units within %bounce_range% range for %bounce_dmg% damage. Does not hit structures.<br><b>Charging Depth Charges:</b> %pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. Does not hit structures."
+    "DOTA_Tooltip_ability_item_spin_breach_mix_three_bow_doubled_fire_rate"  "Flak Gun RELOAD (s):"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_three_bow_doubled_dmg"  "Flak Gun DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_three_bow_doubled_range"  "Flak Gun RANGE:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_three_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>Flak Gun DPS:</font>"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_three_bow_doubled_bounces"  "Flak Gun BOUNCES:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_three_bow_doubled_bounce_dmg"  "Flak Gun BOUNCE DAMAGE:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_three_bow_doubled_bounce_range"  "Flak Gun BOUNCE RANGE:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_three_bow_doubled_fire_rate_2"  "Charging Depth Charges RELOAD (s):"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_three_bow_doubled_dmg_2"  "Charging Depth Charges DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_three_bow_doubled_range_2"  "Charging Depth Charges RANGE:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_three_bow_doubled_delay"  "Charging Depth Charges DAMAGE DELAY:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_three_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>Charging Depth Charges DPS:</font>"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_three_bow_doubled_pure_pct"  "PURE PERCENT:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_three_bow_doubled_Note0"  "Spin projectiles fragment to nearby enemies. Breach damage is delayed with pure component."
+    
+    // Ultimate
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow"  "Temporary Tower Tosser"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_Description"  "<h1>Ultimate Weapon: Spin + Breach</h1>Fires a projectile at the target that spawns a <font color='#ffaa00'>stationary defensive tower</font> at the impact location. The tower automatically attacks nearby enemies within <font color='#00ffff'>%tower_range%</font> range, dealing <font color='#ff0000'>%tower_damage% physical damage</font> every <font color='#00ff00'>%tower_fire_rate%s</font>. The tower lasts for up to <font color='#ffff00'>%tower_duration% seconds</font> or until it fires <font color='#ffff00'>%tower_shots% shots</font>, whichever comes first.<br><br><i>Combining spinning momentum with precision breach tactics, this weapon deploys autonomous sentries that guard strategic positions.</i>"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_fire_rate"  "TOWER PLACEMENT COOLDOWN (s):"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_range"  "PROJECTILE RANGE:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_speed"  "PROJECTILE SPEED:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_tower_duration"  "TOWER DURATION (s):"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_tower_shots"  "MAX TOWER SHOTS:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_tower_damage"  "TOWER DAMAGE PER SHOT:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_tower_fire_rate"  "TOWER FIRE RATE (s):"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_tower_range"  "TOWER ATTACK RANGE:"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_dps"  "\n<font  size= '3' color='#cc6400'>Equivalent DPS:</font>"
+    "DOTA_Tooltip_ability_item_spin_breach_mix_ult_bow_Note0"  "Tower does not deal damage on projectile impact. Tower disappears after duration or max shots."
+
+    //===============================================
+    // breach_ice_mix weapons
+    //===============================================
+    
+    // Level 1
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled"  "Hull Breaching Mines/Snowflakes"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_Description"  "<h1>Hybrid Weapon: Breach/Ice Level 1</h1>Fires both Breach and Ice weapons simultaneously.<br><br><b>Hull Breaching Mines:</b> %pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. Does not hit structures.<br><b>Snowflakes:</b> Slows enemy movement by %slow_pct%%% for %slow_dur% second."
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_fire_rate"  "Hull Breaching Mines RELOAD (s):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_dmg"  "Hull Breaching Mines DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_range"  "Hull Breaching Mines RANGE:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_delay"  "Hull Breaching Mines DAMAGE DELAY:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>Hull Breaching Mines DPS:</font>"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_pure_pct"  "PURE PERCENT:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_fire_rate_2"  "Snowflakes RELOAD (s):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_dmg_2"  "Snowflakes DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_range_2"  "Snowflakes RANGE:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>Snowflakes DPS:</font>"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_slow_pct"  "SLOW PERCENT:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_slow_dur"  "SLOW DURATION:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_bow_doubled_Note0"  "Breach damage is delayed with pure component. Ice projectiles slow enemies."
+    
+    // Level 2
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled"  "Tactical Torpedoes/Snowfall"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_Description"  "<h1>Hybrid Weapon: Breach/Ice Level 2</h1>Fires both Breach and Ice weapons simultaneously.<br><br><b>Tactical Torpedoes:</b> %pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. Does not hit structures.<br><b>Snowfall:</b> Slows enemy movement by %slow_pct%%% for %slow_dur% second."
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_fire_rate"  "Tactical Torpedoes RELOAD (s):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_dmg"  "Tactical Torpedoes DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_range"  "Tactical Torpedoes RANGE:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_delay"  "Tactical Torpedoes DAMAGE DELAY:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>Tactical Torpedoes DPS:</font>"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_pure_pct"  "PURE PERCENT:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_fire_rate_2"  "Snowfall RELOAD (s):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_dmg_2"  "Snowfall DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_range_2"  "Snowfall RANGE:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>Snowfall DPS:</font>"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_slow_pct"  "SLOW PERCENT:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_slow_dur"  "SLOW DURATION:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_two_bow_doubled_Note0"  "Breach damage is delayed with pure component. Ice projectiles slow enemies."
+    
+    // Level 3
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled"  "Charging Depth Charges/Snowstorm"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_Description"  "<h1>Hybrid Weapon: Breach/Ice Level 3</h1>Fires both Breach and Ice weapons simultaneously.<br><br><b>Charging Depth Charges:</b> %pure_pct%%% of missile damage is converted to <font color='purple'>pure</font> damage. Does not hit structures.<br><b>Snowstorm:</b> Slows enemy movement by %slow_pct%%% for %slow_dur% seconds."
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_fire_rate"  "Charging Depth Charges RELOAD (s):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_dmg"  "Charging Depth Charges DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_range"  "Charging Depth Charges RANGE:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_delay"  "Charging Depth Charges DAMAGE DELAY:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>Charging Depth Charges DPS:</font>"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_pure_pct"  "PURE PERCENT:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_fire_rate_2"  "Snowstorm RELOAD (s):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_dmg_2"  "Snowstorm DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_range_2"  "Snowstorm RANGE:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>Snowstorm DPS:</font>"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_slow_pct"  "SLOW PERCENT:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_slow_dur"  "SLOW DURATION:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_three_bow_doubled_Note0"  "Breach damage is delayed with pure component. Ice projectiles slow enemies."
+    
+    // Ultimate
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow"  "Creeping Cold"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_Description"  "<h1>Breach/Ice Mix Ultimate</h1>Fires ice projectiles that spawn orbiting bombs around targets. Bombs explode when contacting an ally of the target, dealing %bomb_damage% damage. If no collision occurs within %orbit_duration% seconds, the bomb explodes on the original target dealing %explosion_damage% damage (25%% more). While orbiting, creates a slowing aura that affects enemies within %slow_radius% units.<br><br><font color='#cc6400'>DPS (on ally hits): %dps%</font>"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_fire_rate"  "RELOAD (s):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_range"  "RANGE:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_projectile_count"  "PROJECTILES PER VOLLEY:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_bomb_damage"  "BOMB DAMAGE (on ally contact):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_explosion_damage"  "EXPLOSION DAMAGE (on timeout):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_orbit_duration"  "ORBIT DURATION:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_orbit_radius"  "ORBIT RADIUS:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_slow_radius"  "SLOW AURA RADIUS:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_slow_pct"  "MOVEMENT SLOW:"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_dps"  "DPS (when hitting allies):"
+    "DOTA_Tooltip_ability_item_breach_ice_mix_ult_bow_Note0"  "Bombs orbit targets and explode on ally contact or after timeout. Creates slowing aura for enemies."
+
+    //===============================================
+    // ice wind mix level 1
+    //===============================================
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled"  "Snowflakes/Stiff Breeze"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_Description"  "<h1>Hybrid Weapon: Ice/Wind Level 1</h1>Fires both Ice and Wind weapons simultaneously.<br><br><b>Snowflakes:</b> Slows enemy movement by %slow_pct%%% for %slow_dur% second. Does not hit structures.<br><b>Stiff Breeze:</b> Heals %bonus_dmg% to friendly units within 400 radius when hitting enemies. Knockback on impact."
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_fire_rate"  "Snowflakes RELOAD (s):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_dmg"  "Snowflakes DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_range"  "Snowflakes RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>Snowflakes DPS:</font>"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_slow_pct"  "SLOW PERCENT:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_slow_dur"  "SLOW DURATION:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_fire_rate_2"  "Stiff Breeze RELOAD (s):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_dmg_2"  "Stiff Breeze DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_range_2"  "Stiff Breeze RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>Stiff Breeze DPS:</font>"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_bonus_dmg"  "ALLY HEAL:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_min_range"  "MINIMUM HIT RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_min_range_dmg_pct"  "MIN RANGE DAMAGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_bow_doubled_Note0"  "Ice projectiles slow enemies. Wind projectiles knock back and can hit structures. Damage reduced when enemies are too close."
+
+    //===============================================
+    // ice wind mix level 2
+    //===============================================
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled"  "Snowfall/Squall"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_Description"  "<h1>Hybrid Weapon: Ice/Wind Level 2</h1>Fires both Ice and Wind weapons simultaneously.<br><br><b>Snowfall:</b> Slows enemy movement by %slow_pct%%% for %slow_dur% second. Does not hit structures.<br><b>Squall:</b> Heals %bonus_dmg% to friendly units within 400 radius when hitting enemies. Knockback on impact."
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_fire_rate"  "Snowfall RELOAD (s):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_dmg"  "Snowfall DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_range"  "Snowfall RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>Snowfall DPS:</font>"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_slow_pct"  "SLOW PERCENT:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_slow_dur"  "SLOW DURATION:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_fire_rate_2"  "Squall RELOAD (s):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_dmg_2"  "Squall DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_range_2"  "Squall RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>Squall DPS:</font>"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_bonus_dmg"  "ALLY HEAL:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_min_range"  "MINIMUM HIT RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_min_range_dmg_pct"  "MIN RANGE DAMAGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_two_bow_doubled_Note0"  "Ice projectiles slow enemies. Wind projectiles knock back and can hit structures. Damage reduced when enemies are too close."
+
+    //===============================================
+    // ice wind mix level 3
+    //===============================================
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled"  "Snowstorm/Monsoon"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_Description"  "<h1>Hybrid Weapon: Ice/Wind Level 3</h1>Fires both Ice and Wind weapons simultaneously.<br><br><b>Snowstorm:</b> Slows enemy movement by %slow_pct%%% for %slow_dur% seconds. Does not hit structures.<br><b>Monsoon:</b> Heals %bonus_dmg% to friendly units within 400 radius when hitting enemies. Knockback on impact."
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_fire_rate"  "Snowstorm RELOAD (s):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_dmg"  "Snowstorm DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_range"  "Snowstorm RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_dps"  "\n<font  size= '3' color='#cc6400'>Snowstorm DPS:</font>"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_slow_pct"  "SLOW PERCENT:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_slow_dur"  "SLOW DURATION:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_fire_rate_2"  "Monsoon RELOAD (s):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_dmg_2"  "Monsoon DAMAGE (x2):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_range_2"  "Monsoon RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_dps_2"  "\n<font  size= '3' color='#cc6400'>Monsoon DPS:</font>"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_bonus_dmg"  "ALLY HEAL:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_min_range"  "MINIMUM HIT RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_min_range_dmg_pct"  "MIN RANGE DAMAGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_three_bow_doubled_Note0"  "Ice projectiles slow enemies. Wind projectiles knock back and can hit structures. Damage reduced when enemies are too close."
+
+    //===============================================
+    // ice wind mix ultimate
+    //===============================================
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow"  "Swine Storm"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_Description"  "<h1>Hybrid Weapon: Ultimate Ice/Wind</h1>Fires large tornado projectiles that waver side to side as they travel. Each tornado contains 1-3 flying pig units swirling within. When pigs collide with ships:<br><br><font color='#ff6666'>• Enemies:</font> Take %pig_damage% damage and are slowed by %slow_pct%%% for %slow_dur% seconds<br><font color='#66ff66'>• Allies:</font> Healed for %pig_heal% HP and gain %speed_pct%%% movement speed for %speed_dur% seconds<br><br>The tornado continues toward its target even after pig collisions."
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_fire_rate"  "TORNADO RELOAD (s):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_range"  "DETECTION RANGE:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_dps"  "\n<font  size= '3' color='#cc6400'>APPROXIMATE DPS:</font>"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_tornado_speed"  "TORNADO SPEED:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_tornado_duration"  "MAX TORNADO LIFETIME:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_pig_count_min"  "MIN PIGS PER TORNADO:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_pig_count_max"  "MAX PIGS PER TORNADO:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_pig_damage"  "PIG DAMAGE (ENEMY):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_pig_heal"  "PIG HEAL (ALLY):"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_slow_pct"  "ENEMY SLOW %:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_slow_dur"  "SLOW DURATION:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_speed_pct"  "ALLY SPEED BOOST %:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_speed_dur"  "SPEED BOOST DURATION:"
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_Note0"  "Tornados waver side to side as they travel. Pigs orbit within the tornado until they collide with a ship."
+    "DOTA_Tooltip_ability_item_ice_wind_mix_ult_bow_Lore"  "When the storm is full of swine, sailors know to batten down the hatches... or enjoy the bacon."
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //-0113---STARTING LINE------------------------
@@ -1122,7 +1648,6 @@
     "DOTA_Tooltip_item_poison_ult_bow_shooting_Description"       "Shots from this gun poison enemies, dealing damage over time."
     
     "DOTA_Tooltip_item_poison_ult_bow_shooting_rec"           "Jar O' Plagues"
-    "DOTA_Tooltip_item_poison_ult_bow_shooting_Description"       "Shots from this gun poison enemies, dealing damage over time."
 
     
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1843,6 +2368,7 @@
     "npc_dota_tower_north_strongest"        "Harbor Tower"
     "npc_dota_tower_south_stronger"         "Harbor Tower"  
     "npc_dota_tower_south_strongest"        "Harbor Tower"  
+    "npc_tower_tosser_tower"          "Temporary Sentry Tower"
     
 
     "npc_dota_creature_cop"             "Officer Chelle"
@@ -2239,7 +2765,6 @@
     "DOTA_Tooltip_ability_might_battleship_Description"           "The Canoe gains strength from nearby allies, increasing its maximum health and regeneration for a short time. Gains more strengh from heroes. \n Releases any stored energy as damage and a ministun when used again. Damage is split evenly among enemies. \n \nHigher levels decrease cooldown."
     "DOTA_Tooltip_ability_might_battleship_duration"                 "DURATION:"
     "DOTA_Tooltip_ability_might_battleship_strength_bonus_creep"     "CREEP STRENGTH BONUS:"
-    "DOTA_Tooltip_ability_might_battleship_strength_bonus_creep"     "HERO STRENGTH BONUS:"
     "DOTA_Tooltip_ability_might_battleship_damage_tooltip"           "DAMAGE/STRENGTH GAINED:"
     "DOTA_Tooltip_ability_might_battleship_ministun_duration"        "MINISTUN DURATION/STRENGTH GAINED:"
     
@@ -2282,10 +2807,6 @@
   "DOTA_Tooltip_ability_iceberg_battleship_duration"      "DURATION:"
   "DOTA_Tooltip_ability_iceberg_battleship_damage"      "DAMAGE:"  
   
-  "DOTA_Tooltip_ability_iceberg_battleship"                 "Iceberg"
-  "DOTA_Tooltip_ability_iceberg_battleship_Description"           "Hide an iceberg (invisible to enemy team). The first enemy ship to run into it will take considerable damage. \n \nHigher levels decrease cooldown."
-  "DOTA_Tooltip_ability_iceberg_battleship_duration"      "DURATION:"
-  "DOTA_Tooltip_ability_iceberg_battleship_damage"      "DAMAGE:"
   
     "DOTA_Tooltip_ability_no_fire_zone"                 "No Fire Zone"
   "DOTA_Tooltip_ability_no_fire_zone_Description"           "Establish a no fire zone where both ally and enemy ships cannot use their weapons."
@@ -2600,8 +3121,6 @@
     "DOTA_Tooltip_cant_select"                                                        "Can't Select"
     "DOTA_Tooltip_cant_select_Description"                                            ""
 
-    "DOTA_Tooltip_root_self"                                                          "Root Self"
-    "DOTA_Tooltip_root_self_Description"                                              ""
 
     "DOTA_Tooltip_trap"                                                               "Trap"
     "DOTA_Tooltip_trap_Description"                                                   ""
@@ -2650,8 +3169,6 @@
     "DOTA_Tooltip_wounded"                                                            "Wounded"
     "DOTA_Tooltip_wounded_Description"                                                ""
 
-    "DOTA_Tooltip_gas_mod"                                                            "Gas Mod"
-    "DOTA_Tooltip_gas_mod_Description"                                                ""
 
     "DOTA_Tooltip_bashed"                                                             "Bashed"
     "DOTA_Tooltip_bashed_Description"                                                 ""
@@ -2750,7 +3267,7 @@
     "npc_dota_hero_visage_battleship8d"                                               "Dota Hero Visage Battleship8d"
     "npc_dota_hero_gyrocopter_battleship8d"                                           "Dota Hero Gyrocopter Battleship8d"
     "npc_dota_hero_spectre_battleship8d"                                              "Dota Hero Spectre Battleship8d"
-    "npc_dota_hero_treant_battleship8d"                                               "Dota Hero Treant Battleship8d"
+    "npc_dota_hero_windrunner_battleship8d"                                               "Dota Hero Treant Battleship8d"
     "npc_dota_hero_wisp_battleship8d"                                                 "Dota Hero Wisp Battleship8d"
     "npc_dota_hero_vengefulspirit_battleship8d"                                       "Dota Hero Vengefulspirit Battleship8d"
     "npc_dota_hero_enigma_battleship8d"                                               "Dota Hero Enigma Battleship8d"
@@ -2983,8 +3500,6 @@
     "DOTA_Tooltip_pergatory_perm"                                                     "Pergatory"
     "DOTA_Tooltip_pergatory_perm_Description"                                         ""
 
-    "DOTA_Tooltip_cease_fire_mod"                                                     "Cease Fire Mod"
-    "DOTA_Tooltip_cease_fire_mod_Description"                                         ""
 
 
     // ******************** ABILITIES ********************
@@ -3190,8 +3705,6 @@
     "DOTA_Tooltip_ability_dummy_passive_fly"                                          "Dummy Passive Fly"
     "DOTA_Tooltip_ability_dummy_passive_fly_Description"                              ""
 
-    "DOTA_Tooltip_ability_dummy_passive_fly"                                          "Dummy Passive Fly"
-    "DOTA_Tooltip_ability_dummy_passive_fly_Description"                              ""
 
     "DOTA_Tooltip_ability_dummy_explode"                                              "Dummy Explode"
     "DOTA_Tooltip_ability_dummy_explode_Description"                                  ""
@@ -3211,8 +3724,6 @@
     "DOTA_Tooltip_ability_battle_effect"                                              "Battle Effect"
     "DOTA_Tooltip_ability_battle_effect_Description"                                  ""
 
-    "DOTA_Tooltip_ability_battle_effect"                                              "Battle Effect"
-    "DOTA_Tooltip_ability_battle_effect_Description"                                  ""
 
     "DOTA_Tooltip_ability_anti_backdoor"                                              "Anti Backdoor"
     "DOTA_Tooltip_ability_anti_backdoor_Description"                                  ""
@@ -3249,8 +3760,6 @@
     "DOTA_Tooltip_ability_SideShop"                                                   "SideShop"
     "DOTA_Tooltip_ability_SideShop_Description"                                       ""
 
-    "DOTA_Tooltip_ability_SideShop"                                                   "SideShop"
-    "DOTA_Tooltip_ability_SideShop_Description"                                       ""
 
     "DOTA_Tooltip_ability_item_recipe_poison_bow_doubled"                             "Recipe Poison Bow Doubled"
     "DOTA_Tooltip_ability_item_recipe_poison_bow_doubled_Description"                 ""
@@ -4101,7 +4610,6 @@
 
 		"DOTA_Tooltip_ability_sniper_shrapnel_battleship_LinkedSpecialBonus"              "LINKEDSPECIALBONUS:"
 		"DOTA_Tooltip_ability_sniper_shrapnel_battleship_damage_delay"                    "DAMAGE DELAY:"
-		"DOTA_Tooltip_ability_sniper_shrapnel_battleship_LinkedSpecialBonus"              "LINKEDSPECIALBONUS:"
 
 		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_hook_width"                      "HOOK WIDTH:"
 		"DOTA_Tooltip_ability_pudge_meat_hook_battleship_vision_radius"                   "VISION RADIUS:"
@@ -4331,7 +4839,6 @@
 		"DOTA_Tooltip_ability_vengefulspirit_nether_swap_datadriven_tooltip_range"                               "Range:"
 
         
-        "DOTA_Tooltip_ability_timber_chain_lua_range"  "CHAIN RANGE:"
 
         "DOTA_Tooltip_ability_crab_walk"  "Skuttle"
         "DOTA_Tooltip_ability_crab_walk_Description"  "Embrace your crabby powers, and begin to skuttle, moving faster and gaining the ability to walk over walls."

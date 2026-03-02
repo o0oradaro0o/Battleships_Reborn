@@ -4,31 +4,31 @@
 "DOTAHeroes"
 {
 	//=================================================================================================================
-    // HERO: starting ship
-    //=================================================================================================================
-    "npc_dota_hero_tiny_battleship8d" 
-    {
-        "override_hero"             "npc_dota_hero_zuus"          // Hero to override
-	
-       "Model" "models/start_boat.vmdl"    // Model.
-        "SoundSet"          "Hero_Kunkka"  	
+	// HERO: starting ship
+	//=================================================================================================================
+	"npc_dota_hero_tiny_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_zuus"
+
+		"Model" "models/start_boat.vmdl"
+		"SoundSet"          "Hero_Kunkka"  	
 		 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	     "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
 
-		"MovementSpeed"				"225"									// Speed.
-		"MovementTurnRate"			"0.7"									// Turning rate.
+		"MovementSpeed"				"225"
+		"MovementTurnRate"			"0.7"
 		
-		"StatusHealth"				"300"		// Base health.
-		"StatusHealthRegen"			"1.0"		// Health regeneration rate.
+		"StatusHealth"				"300"
+		"StatusHealthRegen"			"1.0"
 		
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
@@ -48,51 +48,50 @@
 		"Ability16"					"bships_empty"
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
-        "ModelScale"        ".6"
+		"ModelScale"        ".6"
 		"RingRadius"				"100"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
-
-	"RenderablePortrait"
-	{
-		"Particles"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
 		{
 		}
-	}
+
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+			}
+		}
 		"DisableWearables" "1"
 		"ItemSlots" {}
-		
-				"BountyGoldMin"				"74"		// Gold earned min.
-		"BountyGoldMax"				"76"		// Gold earned max.
+
+		"BountyGoldMin"				"74"
+		"BountyGoldMax"				"76"
 	}
 
-	  "npc_dota_hero_abaddon_battleship8d" 
-    {
+	"npc_dota_hero_abaddon_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_abaddon"
+		"Model" "models/barrel_boat.vmdl"
+		"SoundSet"          "Hero_Kunkka"  	
+		//"VoiceFile"			"scripts/voscripts/game_sounds_vo_kunkka.txt"
 
-        "override_hero"             "npc_dota_hero_abaddon"          // Hero to override
-	
-       "Model" "models/barrel_boat.vmdl"    // Model.
-        "SoundSet"          "Hero_Kunkka"  	
-		//"VoiceFile"			"scripts/voscripts/game_sounds_vo_kunkka.txt"		// Name of sound set.
-		
-		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	    "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
 
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
 
-		"MovementSpeed"				"225"									// Speed.
-		"MovementTurnRate"			"0.7"									// Turning rate.
+		"MovementSpeed"				"225"
+		"MovementTurnRate"			"0.7"
 		
-		"StatusHealth"				"300"		// Base health.
-		"StatusHealthRegen"			"1.0"		// Health regeneration rate.
+		"StatusHealth"				"300"
+		"StatusHealthRegen"			"1.0"
 		
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
@@ -102,7 +101,7 @@
 		"Ability2"					"bail_water"
 		"Ability3"					"tighten_hoop"
 		"Ability4"					"go_home_battleship"
-        "ModelScale"        ".001"
+		"ModelScale"        ".001"
 		"RingRadius"				"100"
 		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
@@ -113,46 +112,46 @@
 		"Ability16"					"bships_empty"
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 		"ItemSlots" {}
 		
-		"BountyGoldMin"				"74"		// Gold earned min.
-		"BountyGoldMax"				"76"		// Gold earned max.
+		"BountyGoldMin"				"74"
+		"BountyGoldMax"				"76"
 		"DisableWearables" "1"
 	}
 	
 	//=================================================================================================================
-    // HERO: zodiac_boat ship
-    //=================================================================================================================
-    "npc_dota_hero_puck_battleship8d" 
-    {
+	// HERO: zodiac_boat ship
+	//=================================================================================================================
+	"npc_dota_hero_puck_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_ancient_apparition"
+		"Model" "models/zodiac/sm_zodiac.vmdl" 
+		"SoundSet"          "Hero_Kunkka"
 
-        "override_hero"             "npc_dota_hero_ancient_apparition"          // Hero to override
-
-
-       "Model" "models/zodiac/sm_zodiac.vmdl"     // Model.
-        "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
-		
 		"ModelScale"        "1.25"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	    "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
 
-		"MovementSpeed"				"290"									// Speed.
-		"MovementTurnRate"			"0.7"									// Turning rate.
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
+
+		"MovementSpeed"				"290"
+		"MovementTurnRate"			"0.7"
 		
-		"StatusHealth"				"925"		// Base health.
-		"StatusHealthRegen"			"6.0"		// Health regeneration rate.
+		"StatusHealth"				"925"
+		"StatusHealthRegen"			"6.0"
 		
-				"ArmorPhysical"				"0"
+		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		
 		"AbilityLayout"				"3"
@@ -170,49 +169,48 @@
 		"Ability16"					"ability_empty"
 		"Ability17"					"ability_empty"
 		"Ability18"					"ability_empty"
-        "ModelScale"        "0.6"
+		"ModelScale"        "0.6"
 		"RingRadius"				"100"
 		"DisableWearables" "1"
 		"ItemSlots" {}
 		"AttachWearables" {}
-		"BountyGoldMin"				"124"		// Gold earned min.
-		"BountyGoldMax"				"126"		// Gold earned max.
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"BountyGoldMin"				"124"
+		"BountyGoldMax"				"126"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 		
 	}
 	//=================================================================================================================
-    // HERO: canoe ship
-    //=================================================================================================================
-    "npc_dota_hero_crystal_maiden_battleship8d" 
-    {
-
-        "override_hero"             "npc_dota_hero_crystal_maiden"          // Hero to override
-
+	// HERO: canoe ship
+	//=================================================================================================================
+	"npc_dota_hero_crystal_maiden_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_crystal_maiden"
 
 		"Model" "models/canoe_boat.vmdl"  // Model.
-        "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
-		
+		"SoundSet"          "Hero_Kunkka"
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	   "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
 
-
-		"MovementSpeed"				"290"									// Speed.
-		"MovementTurnRate"			"0.7"									// Turning rate.
+		"MovementSpeed"				"290"
+		"MovementTurnRate"			"0.7"
 		
-		"StatusHealth"				"800"		// Base health.
-		"StatusHealthRegen"			"5.0"		// Health regeneration rate.
+		"StatusHealth"				"800"
+		"StatusHealthRegen"			"5.0"
 		
-				"ArmorPhysical"				"0"
+		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		
 		"AbilityLayout"				"3"
@@ -230,10 +228,13 @@
 		"Ability16"					"bships_empty"
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
-        "ModelScale"        "1.0"
+		"ModelScale"        "1.0"
 		"RingRadius"				"100"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 		"AttachWearables"
 		{
 			"Wearable1"
@@ -259,42 +260,38 @@
 		}
 		"ItemSlots" {}
 		"AttachWearables" {}
-		"BountyGoldMin"				"124"		// Gold earned min.
-		"BountyGoldMax"				"126"		// Gold earned max.
+		"BountyGoldMin"				"124"
+		"BountyGoldMax"				"126"
 		"DisableWearables" "1"
 	}
 	
-		//=================================================================================================================
-    // HERO: airboat ship
-    //=================================================================================================================
-    "npc_dota_hero_phantom_lancer_battleship8d" 
-    {
-
-        "override_hero"             "npc_dota_hero_phantom_lancer"          // Hero to override
-
-
-       "Model" "models/air_boat.vmdl"        // Model.
-        "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
-		
+	//=================================================================================================================
+	// HERO: airboat ship
+	//=================================================================================================================
+	"npc_dota_hero_phantom_lancer_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_phantom_lancer"
+		"Model" "models/air_boat.vmdl"    
+		"SoundSet"          "Hero_Kunkka"
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
 
-		"MovementSpeed"				"310"									// Speed.
-		"MovementTurnRate"			"0.7"									// Turning rate.
+		"MovementSpeed"				"310"
+		"MovementTurnRate"			"0.7"
 		
-		"StatusHealth"				"900"		// Base health.
-		"StatusHealthRegen"			"6.0"		// Health regeneration rate.
+		"StatusHealth"				"900"
+		"StatusHealthRegen"			"6.0"
 		
-				"ArmorPhysical"				"0"
+		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		"ModelScale"        ".9"
 		"AbilityLayout"				"3"
@@ -302,7 +299,7 @@
 		"Ability2"					"swamp_gas_battleship"
 		"Ability3"					"fan_blast_battleship"
 		"Ability4"					"batten_hatches"
-				"Ability10"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -312,8 +309,11 @@
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
 		"RingRadius"				"100"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 		"AttachWearables"
 		{
 			"Wearable1"
@@ -339,42 +339,39 @@
 		}
 		"ItemSlots" {}
 		"AttachWearables" {}
-		"BountyGoldMin"				"124"		// Gold earned min.
-		"BountyGoldMax"				"126"		// Gold earned max.
+		"BountyGoldMin"				"124"
+		"BountyGoldMax"				"126"
 		"DisableWearables" "1"
 	}
 	
 	
 	//=================================================================================================================
-    // HERO: tidehunter
-    //=================================================================================================================
-	 "npc_dota_hero_tidehunter_battleship8d" 
-    {
-
-        "override_hero"             "npc_dota_hero_tidehunter"          // Hero to override
-
-
-      "Model" "models/pontoon_boat.vmdl"   // Model.
-               "SoundSet"          "Hero_Kunkka"  
+	// HERO: tidehunter
+	//=================================================================================================================
+	"npc_dota_hero_tidehunter_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_tidehunter"
+		"Model" "models/pontoon_boat.vmdl"
+		"SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	    "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
 
 
-		"MovementSpeed"				"280"									// Speed.
-		"MovementTurnRate"			"0.3"									// Turning rate.
+		"MovementSpeed"				"280"
+		"MovementTurnRate"			"0.3"
 		
-		"StatusHealth"				"1150"		// Base health.
-		"StatusHealthRegen"			"6.0"		// Health regeneration rate.
+		"StatusHealth"				"1150"
+		"StatusHealthRegen"			"6.0"
 		
-				"ArmorPhysical"				"0"
+		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		
 		"AbilityLayout"				"3"
@@ -382,7 +379,8 @@
 		"Ability2"					"head_above_water_battleship"
 		"Ability3"					"meepo_earthbind_battleship"
 		"Ability4"					"batten_hatches"
-				"Ability10"					"bships_empty"
+		"Ability6"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -391,8 +389,7 @@
 		"Ability16"					"bships_empty"
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
-"Ability6"					"bships_empty"
-        "ModelScale"        ".15"
+		"ModelScale"        ".15"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
@@ -418,39 +415,42 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"124"		// Gold earned min.
-		"BountyGoldMax"				"126"		// Gold earned max.
+		"BountyGoldMin"				"124"
+		"BountyGoldMax"				"126"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 
-		//=================================================================================================================
-    // HERO: npc_dota_hero_rubick cat
-    //=================================================================================================================
-	 "npc_dota_hero_rubick_battleship8d" 
-    {
-        "override_hero"             "npc_dota_hero_rattletrap"          // Hero to override
+	//=================================================================================================================
+	// HERO: npc_dota_hero_rubick cat
+	//=================================================================================================================
+	"npc_dota_hero_rubick_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_rattletrap"
 
-		 "Model" "models/catamaran.vmdl"   // Model.
-		        "SoundSet"          "Hero_Kunkka"  
+		"Model" "models/catamaran.vmdl"
+		"SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
 	   "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
 
 
-		"MovementSpeed"				"285"									// Speed.
-		"MovementTurnRate"			"0.3"									// Turning rate.
+		"MovementSpeed"				"285"
+		"MovementTurnRate"			"0.3"
 		
-		"StatusHealth"				"600"		// Base health.
-		"StatusHealthRegen"			"8.0"		// Health regeneration rate.
+		"StatusHealth"				"600"
+		"StatusHealthRegen"			"8.0"
 		
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
@@ -464,7 +464,7 @@
 		"Ability6"					"bships_empty"
 		"Ability7"					"bships_empty"
 		"Ability8"					"bships_empty"
-				"Ability10"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -474,7 +474,7 @@
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
 
-        "ModelScale"        ".6"
+		"ModelScale"        ".6"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
@@ -500,39 +500,39 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"124"		// Gold earned min.
-		"BountyGoldMax"				"126"		// Gold earned max.
+		"BountyGoldMin"				"124"
+		"BountyGoldMax"				"126"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 
 	"npc_dota_hero_batrider_battleship8d" 
-    {
+	{
+		"override_hero"             "npc_dota_hero_batrider"
+		"Model" "models/dinghy_boat.vmdl" 
+		"SoundSet"          "Hero_Kunkka"
 
-        "override_hero"             "npc_dota_hero_batrider"          // Hero to override
-
-
-       "Model" "models/dinghy_boat.vmdl"     // Model.
-        "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
-		
 		"ModelScale"        "0.30"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	    "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
 
-		"MovementSpeed"				"300"									// Speed.
-		"MovementTurnRate"			"0.7"									// Turning rate.
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
+
+		"MovementSpeed"				"300"
+		"MovementTurnRate"			"0.7"
 		
-		"StatusHealth"				"1000"		// Base health.
-		"StatusHealthRegen"			"2.0"		// Health regeneration rate.
+		"StatusHealth"				"1000"
+		"StatusHealthRegen"			"2.0"
 		
 		"ArmorPhysical"				"0"
 		"MagicalResistance"			"0"
@@ -556,11 +556,13 @@
 		"DisableWearables" "1"
 		"ItemSlots" {}
 		"AttachWearables" {}
-		"BountyGoldMin"				"124"		// Gold earned min.
-		"BountyGoldMax"				"126"		// Gold earned max.
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
-		
+		"BountyGoldMin"				"124"
+		"BountyGoldMax"				"126"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 
 	//=================================================================================================================
@@ -593,7 +595,7 @@
 		"ArmorPhysical"       "0"
 		"MagicalResistance"   "0"
 
-		"AbilityLayout"				"3"
+		"AbilityLayout"				"4"
 		"Ability1"					"pistols_battleship"
 		"Ability2"					"crab_walk"
 		"Ability3"					"crab_grab"
@@ -625,8 +627,10 @@
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"
 		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
-
 
 	//=================================================================================================================
 	// HERO: fail Boat
@@ -689,49 +693,47 @@
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"
 		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 
-
 	//=================================================================================================================
-    // HERO: KUNKKA smuggler
-    //=================================================================================================================
-	 "npc_dota_hero_kunkka_bships" 
-    {
+	// HERO: KUNKKA smuggler
+	//=================================================================================================================
+	"npc_dota_hero_kunkka_bships" 
+	{
+		"override_hero"             "npc_dota_hero_disruptor"
+		"SoundSet"          "Hero_Kunkka"  
+		"Model" "models/coast_boat.vmdl"
 
-        "override_hero"             "npc_dota_hero_disruptor"          // Hero to override
-        "SoundSet"          "Hero_Kunkka"  
-
-		"Model" "models/coast_boat.vmdl"   // Model. // Model.
-		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	   "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
 
+		"MovementSpeed"				"300"
+		"MovementTurnRate"			"0.7"
 
-		"MovementSpeed"				"300"									// Speed.
-		"MovementTurnRate"			"0.7"									// Turning rate.
-		
-		"StatusHealth"				"2700"		// Base health.
-		"StatusHealthRegen"			"17.0"		// Health regeneration rate.
-		
-				"ArmorPhysical"				"0"
+		"StatusHealth"				"2700"
+		"StatusHealthRegen"			"17.0"
+
+		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
-		
+
 		"AbilityLayout"				"3"
 		"Ability1"					"pistols_battleship"
 		"Ability2"					"kunkka_torrent_bships"
 		"Ability3"					"coast_heal_battleship"
 		"Ability4"					"no_fire_zone"
 		"Ability6"					"bships_empty"
-"Ability6"					"bships_empty"
-				"Ability10"					"bships_empty"
+		"Ability6"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -740,7 +742,7 @@
 		"Ability16"					"bships_empty"
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
-        "ModelScale"        ".38"
+		"ModelScale"        ".38"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
@@ -766,37 +768,40 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"299"		// Gold earned min.
-		"BountyGoldMax"				"301"		// Gold earned max.
+		"BountyGoldMin"				"299"
+		"BountyGoldMax"				"301"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
-		//=================================================================================================================
-    // HERO: npc_dota_hero_winter_wyvern
-    //=================================================================================================================
-	 "npc_dota_hero_morphling_battleship8d" 
-    {
 
-        "override_hero"             "npc_dota_hero_winter_wyvern"          // Hero to override
-        "SoundSet"          "Hero_Kunkka"  
-        "Model" "models/speed_boat.vmdl"  // Model.
+	//=================================================================================================================
+	// HERO: npc_dota_hero_winter_wyvern
+	//=================================================================================================================
+	"npc_dota_hero_morphling_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_winter_wyvern"
+		"SoundSet"          "Hero_Kunkka"  
+		"Model" "models/speed_boat.vmdl"  // Model.
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	   "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
 
-		"MovementSpeed"				"350"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
+
+		"MovementSpeed"				"350"
+		"MovementTurnRate"			"0.5"
 		
-		"StatusHealth"				"2400"		// Base health.
-		"StatusHealthRegen"			"15.0"		// Health regeneration rate.
+		"StatusHealth"				"2400"
+		"StatusHealthRegen"			"15.0"
 		
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
@@ -808,7 +813,7 @@
 		"Ability4"					"swim_battleship"
 		"Ability5"					"bships_empty"
 		"Ability6"					"bships_empty"
-				"Ability10"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -818,7 +823,7 @@
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
 
-        "ModelScale"        ".8"
+		"ModelScale"        ".8"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
@@ -844,48 +849,50 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"299"		// Gold earned min.
-		"BountyGoldMax"				"301"		// Gold earned max.
+		"BountyGoldMin"				"299"
+		"BountyGoldMax"				"301"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 	
 	//=================================================================================================================
-    // HERO:npc_dota_hero_storm_spirit
-    //=================================================================================================================
-	 "npc_dota_hero_storm_spirit_battleship8d" 
-    {
-
-        "override_hero"             "npc_dota_hero_storm_spirit"          // Hero to override
-        "SoundSet"          "Hero_Kunkka"  
-        "Model" "models/junk_boat.vmdl"   // Model.
+	// HERO:npc_dota_hero_storm_spirit
+	//=================================================================================================================
+	"npc_dota_hero_storm_spirit_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_storm_spirit"
+		"SoundSet"          "Hero_Kunkka"  
+		"Model" "models/junk_boat.vmdl"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	   "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
 
-		"MovementSpeed"				"330"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
-		
-		"StatusHealth"				"2550"		// Base health.
-		"StatusHealthRegen"			"14.0"		// Health regeneration rate.
-		
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
+
+		"MovementSpeed"				"330"
+		"MovementTurnRate"			"0.5"
+
+		"StatusHealth"				"2550"
+		"StatusHealthRegen"			"14.0"
+
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
-		
+
 		"AbilityLayout"				"3"
 		"Ability1"					"pistols_battleship"
 		"Ability2"					"cloud_dragon_lua"
 		"Ability3"					"firework_battleship"
 		"Ability4"					"nav_hack_battleship"
-				"Ability10"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -895,7 +902,7 @@
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
 
-        "ModelScale"        ".6"
+		"ModelScale"        ".6"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
@@ -921,39 +928,39 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"299"		// Gold earned min.
-		"BountyGoldMax"				"301"		// Gold earned max.
+		"BountyGoldMin"				"299"
+		"BountyGoldMax"				"301"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 
 	"npc_dota_hero_brewmaster_battleship" 
-    {
+	{
+		"override_hero"             "npc_dota_hero_brewmaster"
+		"Model" "models/river_boat.vmdl" 
+		"SoundSet"          "Hero_Kunkka"
 
-        "override_hero"             "npc_dota_hero_brewmaster"          // Hero to override
-
-
-       "Model" "models/river_boat.vmdl"     // Model.
-        "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
-		
 		"ModelScale"        ".25"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	    "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
 
-		"MovementSpeed"				"290"									// Speed.
-		"MovementTurnRate"			"0.7"									// Turning rate.
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
+
+		"MovementSpeed"				"290"
+		"MovementTurnRate"			"0.7"
 		
-		"StatusHealth"				"2600"		// Base health.
-		"StatusHealthRegen"			"13.0"		// Health regeneration rate.
+		"StatusHealth"				"2600"
+		"StatusHealthRegen"			"13.0"
 		
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
@@ -977,48 +984,45 @@
 		"DisableWearables" "1"
 		"ItemSlots" {}
 		"AttachWearables" {}
-		"BountyGoldMin"				"124"		// Gold earned min.
-		"BountyGoldMax"				"126"		// Gold earned max.
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
-		
+		"BountyGoldMin"				"124"
+		"BountyGoldMax"				"126"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
-
-	
-	
 	
 	//=================================================================================================================
-    // HERO: npc_dota_hero_nevermore battleship
-    //=================================================================================================================
-	 "npc_dota_hero_nevermore_battleship8d" 
-    {
+	// HERO: npc_dota_hero_nevermore battleship
+	//=================================================================================================================
+	"npc_dota_hero_nevermore_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_nevermore"
 
-
-        "override_hero"             "npc_dota_hero_nevermore"          // Hero to override
-
-       "Model"             "models/plane_boat.vmdl"     // Model.
-		        "SoundSet"          "Hero_Kunkka"  
+		"Model"             "models/plane_boat.vmdl" 
+		"SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	   "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
+
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
 
 
-		"MovementSpeed"				"320"									// Speed.
-		"MovementTurnRate"			"0.3"									// Turning rate.
-		
-		"StatusHealth"				"2250"		// Base health.
-		"StatusHealthRegen"			"16.0"		// Health regeneration rate.
-		
+		"MovementSpeed"				"320"
+		"MovementTurnRate"			"0.3"
+
+		"StatusHealth"				"2250"
+		"StatusHealthRegen"			"16.0"
+
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
-		
+
 		"AbilityLayout"				"3"
 		"Ability1"					"pistols_battleship"
 		"Ability2"					"plane_fly_battleship"
@@ -1027,7 +1031,7 @@
 		"Ability5"					"bships_empty"
 		"Ability6"					"bships_empty"
 		"Ability8"					"bships_empty"
-				"Ability10"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -1037,7 +1041,7 @@
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
 
-        "ModelScale"        ".4"
+		"ModelScale"        ".4"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
@@ -1063,51 +1067,51 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"299"		// Gold earned min.
-		"BountyGoldMax"				"301"		// Gold earned max.
+		"BountyGoldMin"				"299"
+		"BountyGoldMax"				"301"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 	
 	//=================================================================================================================
-    // HERO: npc_dota_hero_lion
-    //=================================================================================================================
-	 "npc_dota_hero_lion_battleship8d" 
-    {
-
-        "override_hero"             "npc_dota_hero_lion"          // Hero to override
-
-        "Model" "models/yacht_boat.vmdl"   // Model.
-        "SoundSet"          "Hero_Kunkka"  
+	// HERO: npc_dota_hero_lion
+	//=================================================================================================================
+	"npc_dota_hero_lion_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_lion"
+		"Model" "models/yacht_boat.vmdl"
+		"SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	  "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
 
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
 
-		"MovementSpeed"				"330"									// Speed.
-		"MovementTurnRate"			"0.7"									// Turning rate.
-		
-		"StatusHealth"				"2800"		// Base health.
-		"StatusHealthRegen"			"12.0"		// Health regeneration rate.
-		
+		"MovementSpeed"				"330"
+		"MovementTurnRate"			"0.7"
+
+		"StatusHealth"				"2800"
+		"StatusHealthRegen"			"12.0"
+
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
-		
+
 		"AbilityLayout"				"3"
 		"Ability1"					"pistols_battleship"
 		"Ability2"					"doom_bringer_scorched_earth_battleship"
 		"Ability3"					"keeping_up_battleship"
 		"Ability4"					"drop_craft"
 		"Ability6"					"bships_empty"
-				"Ability10"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -1117,7 +1121,7 @@
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
 
-        "ModelScale"        ".4"
+		"ModelScale"        ".4"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
@@ -1143,51 +1147,53 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"299"		// Gold earned min.
-		"BountyGoldMax"				"301"		// Gold earned max.
+		"BountyGoldMin"				"299"
+		"BountyGoldMax"				"301"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 
 	
 	//=================================================================================================================
-    // HERO: Brewmaster
-    //=================================================================================================================
-	 "npc_dota_hero_brewmaster_battleship8d" 
+	// HERO: Brewmaster
+	//=================================================================================================================
+	"npc_dota_hero_brewmaster_battleship8d" 
     {
+		"override_hero"             "npc_dota_hero_meepo"
 
-        "override_hero"             "npc_dota_hero_meepo"          // Hero to override
-
-     "Model" "models/house_boat.vmdl"    // Model.	        "SoundSet"          "Hero_Kunkka"  
+		"Model" "models/house_boat.vmdl"
+		"SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	   "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
 
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
 
-		"MovementSpeed"				"350"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
-		
-		"StatusHealth"				"5600"		// Base health.
-		"StatusHealthRegen"			"20"		// Health regeneration rate.
-		
+		"MovementSpeed"				"350"
+		"MovementTurnRate"			"0.5"
+
+		"StatusHealth"				"5600"
+		"StatusHealthRegen"			"20"
+
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
-		
+
 		"AbilityLayout"				"3"
 		"Ability1"					"pistols_battleship"
 		"Ability2"					"discoship_battleship"
 		"Ability3"					"fun_battleship"
 		"Ability4"					"riki_blink_strike_battleship"
-"Ability6"					"bships_empty"
-				"Ability10"					"bships_empty"
+		"Ability6"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -1196,7 +1202,7 @@
 		"Ability16"					"bships_empty"
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
-        "ModelScale"        ".6"
+		"ModelScale"        ".6"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
@@ -1222,52 +1228,53 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"524"		// Gold earned min.
-		"BountyGoldMax"				"526"		// Gold earned max.
+		"BountyGoldMin"				"524"
+		"BountyGoldMax"				"526"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 	
 	//=================================================================================================================
-    // HERO: jakiro
-    //=================================================================================================================
-	 "npc_dota_hero_jakiro_battleship8d" 
-    {
+	// HERO: jakiro
+	//=================================================================================================================
+	"npc_dota_hero_jakiro_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_jakiro"
+		"Model" "models/galleon_boat.vmdl"  // Model.
 
-        "override_hero"             "npc_dota_hero_jakiro"          // Hero to override
-
-        "Model" "models/galleon_boat.vmdl"  // Model.
-		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	   "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
+
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
 
 
-		"MovementSpeed"				"360"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
-		
-		"StatusHealth"				"5700"		// Base health.
-		"StatusHealthRegen"			"20.0"		// Health regeneration rate.
-		
+		"MovementSpeed"				"360"
+		"MovementTurnRate"			"0.5"
+
+		"StatusHealth"				"5700"
+		"StatusHealthRegen"			"20.0"
+
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
-		
+
 		"AbilityLayout"				"3"
 
 		"Ability1"					"pistols_battleship"
 		"Ability2"					"sniper_shrapnel_battleship"
 		"Ability3"					"hit_battleship"
 		"Ability4"					"sniper_assassinate_battleship"
-"Ability6"					"bships_empty"
-				"Ability10"					"bships_empty"
+		"Ability6"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -1276,7 +1283,7 @@
 		"Ability16"					"bships_empty"
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
-        "ModelScale"        ".6"
+		"ModelScale"        ".6"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
@@ -1302,40 +1309,37 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"524"		// Gold earned min.
-		"BountyGoldMax"				"526"		// Gold earned max.
+		"BountyGoldMin"				"524"
+		"BountyGoldMax"				"526"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 
-	//=================================================================================================================
-    // HERO: jakiro
-    //=================================================================================================================
-	 "npc_dota_hero_marci_battleship8d" 
-    {
+	"npc_dota_hero_marci_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_marci"
+		"Model" "models/scienceship.vmdl"
 
-        "override_hero"             "npc_dota_hero_marci"          // Hero to override
-
-        "Model" "models/scienceship.vmdl"  // Model.
-		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	   "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
 
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
 
-		"MovementSpeed"				"360"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
+		"MovementSpeed"				"360"
+		"MovementTurnRate"			"0.5"
 		
-		"StatusHealth"				"5000"		// Base health.
-		"StatusHealthRegen"			"25.0"		// Health regeneration rate.
+		"StatusHealth"				"5000"
+		"StatusHealthRegen"			"25.0"
 		
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
@@ -1346,8 +1350,12 @@
 		"Ability2"					"deadline_battleship"
 		"Ability3"					"abaddon_aphotic_shield_battleship"
 		"Ability4"					"deploy_science_tower"
-"Ability6"					"bships_empty"
-				"Ability10"					"bships_empty"
+		"Ability5"					"bships_empty"
+		"Ability6"					"bships_empty"
+		"Ability7"					"bships_empty"
+		"Ability8"					"bships_empty"
+		"Ability9"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -1356,7 +1364,11 @@
 		"Ability16"					"bships_empty"
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
-        "ModelScale"        ".5"
+		"Ability19"					"bships_empty"
+		"Ability20"					"bships_empty"
+		"Ability21"					"bships_empty"
+		"Ability22"					"bships_empty"
+		"ModelScale"        ".5"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
@@ -1382,40 +1394,42 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"524"		// Gold earned min.
-		"BountyGoldMax"				"526"		// Gold earned max.
+		"BountyGoldMin"				"524"
+		"BountyGoldMax"				"526"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 	
 	//=================================================================================================================
-    // HERO: npc_dota_hero_zuus
-    //=================================================================================================================
+	// HERO: npc_dota_hero_zuus
+	//=================================================================================================================
 	 "npc_dota_hero_zuus_battleship8d" 
     {
+		"override_hero"             "npc_dota_hero_ember_spirit"
 
-        "override_hero"             "npc_dota_hero_ember_spirit"          // Hero to override
-
-       "Model" "models/tug_boat.vmdl"   // Model.
+		"Model" "models/tug_boat.vmdl"
 		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		
-	   "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
 
 
-		"MovementSpeed"				"380"									// Speed.
-		"MovementTurnRate"			"0.7"									// Turning rate.
+		"MovementSpeed"				"380"
+		"MovementTurnRate"			"0.7"
 		
-		"StatusHealth"				"9500"		// Base health.
-		"StatusHealthRegen"			"20.0"		// Health regeneration rate.
+		"StatusHealth"				"9500"
+		"StatusHealthRegen"			"20.0"
 		
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
@@ -1426,7 +1440,7 @@
 		"Ability3"					"shove_battleship"
 		"Ability4"					"batrider_flaming_lasso_battleship"
 		"Ability5"					"bships_empty"
-				"Ability10"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -1436,7 +1450,7 @@
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
 
-        "ModelScale"        "1.1"
+		"ModelScale"        "1.1"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
@@ -1462,49 +1476,51 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"524"		// Gold earned min.
-		"BountyGoldMax"				"526"		// Gold earned max.
+		"BountyGoldMin"				"524"
+		"BountyGoldMax"				"526"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 	
 	//=================================================================================================================
-    // HERO: npc_dota_hero_magnus viking
-    //=================================================================================================================
-	 "npc_dota_hero_magnus_battleship8d" 
+	// HERO: npc_dota_hero_magnus viking
+	//=================================================================================================================
+	"npc_dota_hero_magnus_battleship8d" 
     {
+		"override_hero"             "npc_dota_hero_slark"
 
-        "override_hero"             "npc_dota_hero_slark"          // Hero to override
+		"Model" "models/viking_boat.vmdl"
 
-  "Model" "models/viking_boat.vmdl"   // Model.
-		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	   "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
 
-		"MovementSpeed"				"350"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
-		
-		"StatusHealth"				"5500"		// Base health.
-		"StatusHealthRegen"			"100.0"		// Health regeneration rate.
-		
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
+
+		"MovementSpeed"				"350"
+		"MovementTurnRate"			"0.5"
+
+		"StatusHealth"				"5500"
+		"StatusHealthRegen"			"100.0"
+
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
-		
+
 		"AbilityLayout"				"3"
 		"Ability1"					"pistols_battleship"
 		"Ability2"					"spirit_breaker_charge_of_darkness_battleship"
 		"Ability3"					"Pillage"
 		"Ability4"					"big_boom"
-				"Ability10"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -1513,8 +1529,8 @@
 		"Ability16"					"bships_empty"
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
-"Ability6"					"bships_empty"
-        "ModelScale"        ".2"
+		"Ability6"					"bships_empty"
+		"ModelScale"        ".2"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
@@ -1540,38 +1556,39 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"524"		// Gold earned min.
-		"BountyGoldMax"				"526"		// Gold earned max.
+		"BountyGoldMin"				"524"
+		"BountyGoldMax"				"526"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
-		//=================================================================================================================
-    // HERO: npc_dota_hero_magnus viking
-    //=================================================================================================================
-	 "npc_dota_hero_shredder_forreal_battleship8d" 
-    {
 
-        "override_hero"             "npc_dota_hero_shredder"          // Hero to override
-
-  		"Model" "models/ironclad_final.vmdl"   // Model.
-		
+	//=================================================================================================================
+	// HERO: npc_dota_hero_magnus viking
+	//=================================================================================================================
+	"npc_dota_hero_shredder_forreal_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_shredder"
+		"Model" "models/ironclad_final.vmdl"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	   "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
 
-		"MovementSpeed"				"330"									// Speed.
-		"MovementTurnRate"			"0.3"									// Turning rate.
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
+
+		"MovementSpeed"				"330"
+		"MovementTurnRate"			"0.3"
 		
-		"StatusHealth"				"6200"		// Base health.
-		"StatusHealthRegen"			"60.0"		// Health regeneration rate.
+		"StatusHealth"				"6200"
+		"StatusHealthRegen"			"60.0"
 		
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
@@ -1584,7 +1601,7 @@
 		"Ability5"					"ironclad_heavy_armor"
 		"Ability6"					"ironclad_cannon_barrage"
 
-        "ModelScale"        "1"
+		"ModelScale"        "1"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
@@ -1610,51 +1627,53 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"524"		// Gold earned min.
-		"BountyGoldMax"				"526"		// Gold earned max.
+		"BountyGoldMin"				"524"
+		"BountyGoldMax"				"526"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 	//=================================================================================================================
-    // HERO: npc_dota_hero_sniper battleship
-    //=================================================================================================================
-	 "npc_dota_hero_shredder_battleship8d" 
-    {
+	// HERO: npc_dota_hero_sniper battleship
+	//=================================================================================================================
+	"npc_dota_hero_shredder_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_sniper"
 
-        "override_hero"             "npc_dota_hero_sniper"          // Hero to override
-
-        "Model" "models/sub_boat.vmdl"   // Model.
-		 "SoundSet"          "Hero_Kunkka"  
+		"Model" "models/sub_boat.vmdl"
+		"SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	   "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-        "StatusManaRegen"           "0.0"
+
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusManaRegen"           "0.0"
 
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
-		
-		"MovementSpeed"				"270"									// Speed.
-		"MovementTurnRate"			"0.6"									// Turning rate.
-		
-		"StatusHealth"				"4900"		// Base health.
-		"StatusHealthRegen"			"20.0"		// Health regeneration rate.
+
+		"MovementSpeed"				"270"
+		"MovementTurnRate"			"0.6"
+
+		"StatusHealth"				"4900"
+		"StatusHealthRegen"			"20.0"
 		"StatusManaRegen"			"50.0"
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		"StatusMana"				"737"			// Base mana.
-		
+
 		"AbilityLayout"				"3"
 		"Ability1"					"pistols_battleship"
 		"Ability2"					"tidehunter_gush_battleship"
 		"Ability3"					"peak_battleship"
 		"Ability4"					"submerge_battleship"
-				"Ability10"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -1664,7 +1683,7 @@
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
 
-        "ModelScale"        "0.7"
+		"ModelScale"        "0.7"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
@@ -1745,42 +1764,41 @@
 				"SlotName"	"misc"
 				"SlotText"	"#LoadoutSlot_Misc"			
 			}
-
 		}
-		"BountyGoldMin"				"524"		// Gold earned min.
-		"BountyGoldMax"				"526"		// Gold earned max.
+		"BountyGoldMin"				"524"
+		"BountyGoldMax"				"526"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
-
 	
 	//=================================================================================================================
-    // HERO: npc_dota_hero_visage battleship
-    //=================================================================================================================
-	 "npc_dota_hero_visage_battleship8d" 
-    {
+	// HERO: npc_dota_hero_visage battleship
+	//=================================================================================================================
+	"npc_dota_hero_visage_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_visage"
+		"Model" "models/noah_boat.vmdl"
 
-        "override_hero"             "npc_dota_hero_visage"          // Hero to override
-
-        "Model" "models/noah_boat.vmdl"    // Model.
-		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	   "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
 
-		"MovementSpeed"				"390"									// Speed.
-		"MovementTurnRate"			"0.3"									// Turning rate.
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
+
+		"MovementSpeed"				"390"
+		"MovementTurnRate"			"0.3"
 		
-		"StatusHealth"				"11000"		// Base health.
-		"StatusHealthRegen"			"20.0"		// Health regeneration rate.
+		"StatusHealth"				"11000"
+		"StatusHealthRegen"			"20.0"
 		
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
@@ -1791,7 +1809,7 @@
 		"Ability3"					"noah_guardian_angel_datadriven"
 		"Ability4"					"mountain_battleship"
 		"Ability6"					"bships_empty"
-				"Ability10"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -1801,7 +1819,7 @@
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
 
-        "ModelScale"        ".9"
+		"ModelScale"        ".9"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
@@ -1827,40 +1845,41 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"799"		// Gold earned min.
-		"BountyGoldMax"				"801"		// Gold earned max.
+		"BountyGoldMin"				"799"
+		"BountyGoldMax"				"801"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 	
-		//=================================================================================================================
-    // HERO: npc_dota_hero_gyrocopter airctraft carrier
-    //=================================================================================================================
-	 "npc_dota_hero_gyrocopter_battleship8d" 
-    {
+	//=================================================================================================================
+	// HERO: npc_dota_hero_gyrocopter airctraft carrier
+	//=================================================================================================================
+	"npc_dota_hero_gyrocopter_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_ursa"
 
-        "override_hero"             "npc_dota_hero_ursa"          // Hero to override
+		"Model" "models/Aircraft_boat.vmdl"
 
-       "Model" "models/Aircraft_boat.vmdl"   // Model.
-		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	   "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
 
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
 
-		"MovementSpeed"				"360"									// Speed.
-		"MovementTurnRate"			"0.3"									// Turning rate.
+		"MovementSpeed"				"360"
+		"MovementTurnRate"			"0.3"
 		
-		"StatusHealth"				"12000"		// Base health.
-		"StatusHealthRegen"			"20"		// Health regeneration rate.
+		"StatusHealth"				"12000"
+		"StatusHealthRegen"			"20"
 		
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
@@ -1871,7 +1890,7 @@
 		"Ability3"					"launch_all"
 		"Ability4"					"Over_And_Out"
 		"Ability6"					"bships_empty"
-				"Ability10"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -1881,7 +1900,7 @@
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
 
-        "ModelScale"        ".6"
+		"ModelScale"        ".6"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
@@ -1907,45 +1926,44 @@
 			}
 		}
 		"ItemSlots" {}
-		"BountyGoldMin"				"799"		// Gold earned min.
-		"BountyGoldMax"				"801"		// Gold earned max.
+		"BountyGoldMin"				"799"
+		"BountyGoldMax"				"801"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 	
-	
-	
 	//=================================================================================================================
-    // HERO: npc_dota_hero_spectre battleship
-    //=================================================================================================================
-	 "npc_dota_hero_spectre_battleship8d" 
-    {
+	// HERO: npc_dota_hero_spectre battleship
+	//=================================================================================================================
+	"npc_dota_hero_spectre_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_tusk"
+		"Model" "models/battleship_boat4.vmdl"
 
-        "override_hero"             "npc_dota_hero_tusk"          // Hero to override
-
-         "Model" "models/battleship_boat4.vmdl"    // Model.
-		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	   "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
+
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
 
 
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		
-		"MovementSpeed"				"375"									// Speed.
-		"MovementTurnRate"			"0.6"									// Turning rate.
+		"MovementSpeed"				"375"
+		"MovementTurnRate"			"0.6"
 		
-		"StatusHealth"				"10000"		// Base health.
-		"StatusHealthRegen"			"20.0"		// Health regeneration rate.
+		"StatusHealth"				"10000"
+		"StatusHealthRegen"			"20.0"
 		
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
@@ -1957,7 +1975,7 @@
 		"Ability4"					"gyrocopter_call_down_battleship"
 		"Ability6"					"bships_empty"
 
-				"Ability10"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -1966,7 +1984,7 @@
 		"Ability16"					"bships_empty"
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
-        "ModelScale"        "1.0"
+		"ModelScale"        "1.0"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
@@ -1993,43 +2011,41 @@
 		}
 		"ItemSlots" {}
 		"DisableWearables" "1"
-		"BountyGoldMin"				"799"		// Gold earned min.
-		"BountyGoldMax"				"801"		// Gold earned max.
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"BountyGoldMin"				"799"
+		"BountyGoldMax"				"801"
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 
 	
-	//=================================================================================================================
-    // HERO: npc_dota_hero_treant battleship
-    //=================================================================================================================
-	 "npc_dota_hero_treant_battleship8d" 
-    {
+	"npc_dota_hero_windrunner_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_windrunner"
 
-        "override_hero"             "npc_dota_hero_windrunner"          // Hero to override
-
-        "Model" "models/const_boat.vmdl"    // Model.
-		 "SoundSet"          "Hero_Kunkka"  
+		"Model" "models/const_boat.vmdl"
+		"SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	    "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
-
+	
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
 
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		
-		"MovementSpeed"				"350"									// Speed.
-		"MovementTurnRate"			"0.6"									// Turning rate.
+		"MovementSpeed"				"350"
+		"MovementTurnRate"			"0.6"
 		
-		"StatusHealth"				"5000"		// Base health.
-		"StatusHealthRegen"			"20.0"		// Health regeneration rate.
+		"StatusHealth"				"5000"
+		"StatusHealthRegen"			"20.0"
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		
@@ -2039,7 +2055,7 @@
 		"Ability3"					"salvage_battleship"
 		"Ability4"					"shadow_shaman_shackles_battleship"
 
-				"Ability10"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -2048,35 +2064,38 @@
 		"Ability16"					"bships_empty"
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
-        "ModelScale"        ".9"
+		"ModelScale"        ".9"
 		"RingRadius"				"100"
 		"ItemSlots"  {}
-		"BountyGoldMin"				"799"		// Gold earned min.
-		"BountyGoldMax"				"801"		// Gold earned max.
+		"BountyGoldMin"				"799"
+		"BountyGoldMax"				"801"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 	
 	//=================================================================================================================
-    // Ice Ship
-    //=================================================================================================================
+	// Ice Ship
+	//=================================================================================================================
 	"npc_dota_hero_wisp_battleship8d" 
     {
-        "override_hero"             "npc_dota_hero_pugna"
+		"override_hero"             "npc_dota_hero_pugna"
 
-      "Model" "models/ice_boat.vmdl"
-		 "SoundSet"          "Hero_Kunkka"  
+		"Model" "models/ice_boat.vmdl"
+		"SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	   "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
+
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
 		"StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
+		"StatusManaRegen"           "0.0"
 
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
@@ -2104,7 +2123,7 @@
 		"Ability16"					"bships_empty"
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
-        "ModelScale"        "0.8"
+		"ModelScale"        "0.8"
 		"RingRadius"				"100"
 		"ItemSlots"  {}
 		"BountyGoldMin"				"799"
@@ -2112,37 +2131,39 @@
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"
 		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 
-    //=================================================================================================================
-    // Stormchaser Hydrofoil
-    //=================================================================================================================
-	 "npc_dota_hero_razor_battleship8d" 
-    {
+	//=================================================================================================================
+	// Stormchaser Hydrofoil
+	//=================================================================================================================
+	"npc_dota_hero_razor_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_razor"
 
-        "override_hero"             "npc_dota_hero_razor"          // Hero to override
-
-      "Model" "models/stormchaser_boat.vmdl"    // Model.
-	  "ModelScale"        "0.4"
-		 "SoundSet"          "Hero_Kunkka"  
+		"Model" "models/stormchaser_boat.vmdl"
+		"ModelScale"        "0.4"
+		"SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	   "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "1000"
-        "StatusManaRegen"           "10.0"
+
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "1000"
+		"StatusManaRegen"           "10.0"
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		
-		"MovementSpeed"				"300"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
+		"MovementSpeed"				"300"
+		"MovementTurnRate"			"0.5"
 		
-		"StatusHealth"				"8900"		// Base health.
-		"StatusHealthRegen"			"20.0"		// Health regeneration rate.
+		"StatusHealth"				"8900"
+		"StatusHealthRegen"			"20.0"
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
 		
@@ -2163,11 +2184,14 @@
 		"Ability18"					"bships_empty"
 		"RingRadius"				"100"
 		"ItemSlots"  {}
-		"BountyGoldMin"				"799"		// Gold earned min.
-		"BountyGoldMax"				"801"		// Gold earned max.
+		"BountyGoldMin"				"799"
+		"BountyGoldMax"				"801"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 
 	//=================================================================================================================
@@ -2224,6 +2248,9 @@
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"
 		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 	
 	//=================================================================================================================
@@ -2288,49 +2315,47 @@
 		"DisableWearables" "1"
 		"VisionDaytimeRange"		"1800"
 		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
-
 	
-	
-		//=================================================================================================================
-    // HERO: ghost
-    //=================================================================================================================
-    "npc_dota_hero_enigma_battleship8d" 
-    {
+	//=================================================================================================================
+	// HERO: ghost
+	//=================================================================================================================
+	"npc_dota_hero_enigma_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_enigma"
 
-        "override_hero"             "npc_dota_hero_enigma"          // Hero to override
+		"Model" "models/trade_three_boat.vmdl" 
+		"SoundSet"          "Hero_Kunkka"
 
-
-       "Model" "models/trade_three_boat.vmdl"     // Model.
-        "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
-		
-		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		
-	   "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
-	
-		"MovementSpeed"				"360"									// Speed.
-		"MovementTurnRate"			"0.7"									// Turning rate.
-		
-		"StatusHealth"				"5500"		// Base health.
-		"StatusHealthRegen"			"18.0"		// Health regeneration rate.
-		
-				"ArmorPhysical"				"0"
+
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
+
+		"MovementSpeed"				"360"
+		"MovementTurnRate"			"0.7"
+
+		"StatusHealth"				"5500"
+		"StatusHealthRegen"			"18.0"
+
+		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
-		
+
 		"AbilityLayout"				"3"
 		"Ability1"					"instill_terror"
 		"Ability2"					"estab_route"
 		"Ability3"					"go_daralect"
 		"Ability4"					"ghost_ship"
-				"Ability10"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -2339,7 +2364,7 @@
 		"Ability16"					"bships_empty"
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
-        "ModelScale"        "1"
+		"ModelScale"        "1"
 		"RingRadius"				"100"
 		"AttachWearables"
 		{
@@ -2366,52 +2391,50 @@
 		}
 		"ItemSlots" {}
 		"AttachWearables" {}
-		"BountyGoldMin"				"599"		// Gold earned min.
-		"BountyGoldMax"				"601"		// Gold earned max.
+		"BountyGoldMin"				"599"
+		"BountyGoldMax"				"601"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
-		
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 	
-		//=================================================================================================================
-    // HERO: cargo
-    //=================================================================================================================
-    "npc_dota_hero_bane_battleship8d" 
-    {
+	//=================================================================================================================
+	// HERO: cargo
+	//=================================================================================================================
+	"npc_dota_hero_bane_battleship8d" 
+	{
+		"override_hero"             "npc_dota_hero_bane"
+		"Model" "models/trade_boat_two.vmdl" 
+		"SoundSet"          "Hero_Kunkka"
 
-        "override_hero"             "npc_dota_hero_bane"          // Hero to override
-
-
-       "Model" "models/trade_boat_two.vmdl"     // Model.
-        "SoundSet"          "Hero_Kunkka"                                        // Name of sound set.
-		
-		
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		"AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
 
-        "StatusManaRegen"           "0.0"
-		"MovementSpeed"				"325"									// Speed.
-		"MovementTurnRate"			"0.7"									// Turning rate.
-		
-		"StatusHealth"				"2200"		// Base health.
-		"StatusHealthRegen"			"10.0"		// Health regeneration rate.
-		
-				"ArmorPhysical"				"0"
+		"StatusManaRegen"           "0.0"
+		"MovementSpeed"				"325"
+		"MovementTurnRate"			"0.7"
+
+		"StatusHealth"				"2200"
+		"StatusHealthRegen"			"10.0"
+
+		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
-		
+
 		"AbilityLayout"				"3"
 		"Ability1"					"pistols_battleship"
 		"Ability2"					"estab_route"
 		"Ability3"					"swap_mission"
 		"Ability4"					"dump_cargo"
-				"Ability10"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -2446,25 +2469,25 @@
 		}
 		"ItemSlots" {}
 		"AttachWearables" {}
-		"BountyGoldMin"				"1490"		// Gold earned min.
-		"BountyGoldMax"				"1510"		// Gold earned max.
+		"BountyGoldMin"				"1490"
+		"BountyGoldMax"				"1510"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
-
-		
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 	
 	//=================================================================================================================
-    // HERO: npc_dota_hero_treant battleship
-    //=================================================================================================================
-	 "npc_dota_hero_tide_coOp" 
-    {
+	// HERO: npc_dota_hero_treant battleship
+	//=================================================================================================================
+	"npc_dota_hero_tide_coOp" 
+	{
+		"override_hero"             "npc_dota_hero_spirit_breaker"
 
-        "override_hero"             "npc_dota_hero_spirit_breaker"          // Hero to override
-
-       "Model"						"models/heroes/tidehunter/tidehunter.vmdl"	// Model.
-		 "SoundSet"          "Hero_Kunkka"  
+		"Model"						"models/heroes/tidehunter/tidehunter.vmdl"	// Model.
+		"SoundSet"          "Hero_Kunkka"  
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"90"		// Damage range min.
 		"AttackDamageMax"			"175"		// Damage range max.
@@ -2476,32 +2499,32 @@
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			""			// Speed of projectile.
 
-	    "AttributeBaseStrength"     "0"
-        "AttributeStrengthGain"     "0"
-        "AttributeBaseIntelligence" "0"
-        "AttributeIntelligenceGain" "0"
-        "AttributeBaseAgility"      "0"
-        "AttributeAgilityGain"      "0"
-		 "StatusMana"                "0"
-        "StatusManaRegen"           "0.0"
+		"AttributeBaseStrength"     "0"
+		"AttributeStrengthGain"     "0"
+		"AttributeBaseIntelligence" "0"
+		"AttributeIntelligenceGain" "0"
+		"AttributeBaseAgility"      "0"
+		"AttributeAgilityGain"      "0"
+		"StatusMana"                "0"
+		"StatusManaRegen"           "0.0"
 
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
-		
-		"MovementSpeed"				"300"									// Speed.
-		"MovementTurnRate"			"0.6"									// Turning rate.
-		
-		"StatusHealth"				"10000"		// Base health.
-		"StatusHealthRegen"			"20.0"		// Health regeneration rate.
+
+		"MovementSpeed"				"300"
+		"MovementTurnRate"			"0.6"
+
+		"StatusHealth"				"10000"
+		"StatusHealthRegen"			"20.0"
 		"ArmorPhysical"				"0"
 		"MagicalResistance"				"0"
-		
+
 		"AbilityLayout"				"3"
 		"Ability1"					"tidehunter_ravage_battleship"			// Ability 1.
 		"Ability2"					"tidehunter_gush_battleship"		// Ability 2.
 		"Ability3"					"pudge_meat_hook_battleship_tide"			// Ability 3.
 		"Ability4"					"tide_wep_battleship"			// Ability 4.
-				"Ability10"					"bships_empty"
+		"Ability10"					"bships_empty"
 		"Ability11"					"bships_empty"
 		"Ability12"					"bships_empty"
 		"Ability13"					"bships_empty"
@@ -2511,15 +2534,18 @@
 		"Ability17"					"bships_empty"
 		"Ability18"					"bships_empty"
 
-        "ModelScale"        "1.4"
+		"ModelScale"        "1.4"
 		"RingRadius"				"100"
 		"ItemSlots"  {}
 		"BountyXP"					"350"		// Experience earn.
-		"BountyGoldMin"				"300"		// Gold earned min.
-		"BountyGoldMax"				"305"		// Gold earned max.
+		"BountyGoldMin"				"300"
+		"BountyGoldMax"				"305"
 		"DisableWearables" "1"
-		"VisionDaytimeRange"		"1800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		"Facets"
+		{
+		}
 	}
 	
 }

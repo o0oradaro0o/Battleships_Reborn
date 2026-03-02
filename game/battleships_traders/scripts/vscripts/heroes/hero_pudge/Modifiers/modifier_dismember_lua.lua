@@ -78,10 +78,10 @@ function modifier_dismember_lua:DeclareFunctions()
 	return funcs
 end
 
---------------------------------------------------------------------------------
+-- --------------------------------------------------------------------------------
 
-function modifier_dismember_lua:GetOverrideAnimation( params )
-	return ACT_DOTA_DISABLED
-end
+-- function modifier_dismember_lua:GetOverrideAnimation( params )
+-- 	return ACT_DOTA_DISABLED
+-- end
 
---------------------------------------------------------------------------------
+-- --------------------------------------------------------------------------------
