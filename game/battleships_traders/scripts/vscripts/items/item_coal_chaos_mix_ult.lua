@@ -87,7 +87,7 @@ function item_coal_chaos_mix_ult_bow:OnProjectileHit(target, location)
     end)
 
     -- Play portal opening sound
-    EmitSoundOnLocationWithCaster(portal_position, "Hero_Enigma.Black_Hole.Cast", caster)
+    -- EmitSoundOnLocationWithCaster(portal_position, "Hero_Enigma.Black_Hole.Cast", caster)
 
     -- Spawn spirits from portal (at elevated position)
     self:SpawnSpiritsFromPortal(caster, portal_position)

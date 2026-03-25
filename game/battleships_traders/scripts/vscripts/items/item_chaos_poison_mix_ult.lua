@@ -122,7 +122,7 @@ function item_chaos_poison_mix_ult_bow:SpawnClouds(caster, location)
   end
   
   -- Play cloud spawn sound
-  EmitSoundOnLocationWithCaster(location, "Hero_Venomancer.PlagueWard", caster)
+  -- EmitSoundOnLocationWithCaster(location, "Hero_Venomancer.PlagueWard", caster)
 end
 
 ----------------------------------------------------------------------
