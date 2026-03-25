@@ -524,6 +524,51 @@ function fixUI() {
     DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY,
     false
   );
+  var HUD = $.GetContextPanel().GetParent().GetParent();
+
+  // Simplified HUDElements discovery with safe fallbacks (no verbose logging)
+  var HUDElements = null;
+  try {
+    if (HUD) HUDElements = HUD.FindChildTraverse("HUDElements");
+  } catch (e) {
+    /* ignore */
+  }
+  if (!HUDElements) {
+    var node = $.GetContextPanel();
+    for (var i = 0; i < 10 && node; i++) {
+      try {
+        var candidate = node.FindChildTraverse("HUDElements");
+        if (candidate) {
+          HUDElements = candidate;
+          break;
+        }
+      } catch (e) {
+        /* ignore */
+      }
+      node = node.GetParent();
+    }
+  }
+
+  if (HUDElements) {
+    var minimapContainer = null;
+    try {
+      minimapContainer = HUDElements.FindChildTraverse("minimap_container");
+    } catch (e) {
+      minimapContainer = null;
+    }
+
+    if (minimapContainer) {
+      try {
+        var roshanTimer = minimapContainer.FindChildTraverse("RoshanTimerContainer");
+        if (roshanTimer) roshanTimer.style.visibility = "collapse";
+      } catch (e) {}
+      try {
+        var tormentorTimer = minimapContainer.FindChildTraverse("TormentorTimerContainer");
+        if (tormentorTimer) tormentorTimer.style.visibility = "collapse";
+      } catch (e) {}
+    }
+  }
+
   NewShopUI.FindChildTraverse("Main")
     .FindChildTraverse("HeightLimiter")
     .FindChildTraverse("GridMainShop").style.visibility = "visible";
@@ -575,6 +620,7 @@ function fixUI() {
     .FindChildTraverse("lower_hud")
     .FindChildTraverse("center_with_stats")
     .FindChildTraverse("center_block");
+
 
   newCenterUI
     .FindChildTraverse("death_panel_buyback")
@@ -1819,6 +1865,7 @@ function closeShipShop() {
         .FindChildTraverse("ship_shop_content_holder")
     );
     NewShopUI.FindChildTraverse("Main")
+     
       .FindChildTraverse("HeightLimiter")
       .FindChildTraverse("ship_shop_content_holder").style.visibility =
       "collapse";
@@ -2907,7 +2954,7 @@ function rollSlot(sourcePanel, index, duration) {
           4: 12000,
         };
         $("#rebateHolder2").style.visibility = "visible";
-        $("#rebate2").text = tierToGold[tierRolled] * 0.1;
+        $("#rebate2").text = tierToGold * 0.1;
       }
       if (getRebateForImage(heroToWaifu[heroName]) > 0 && index == 3) {
         $("#rebateHolder3").style.visibility = "visible";
