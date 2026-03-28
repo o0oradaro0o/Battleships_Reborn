@@ -115,7 +115,7 @@ function item_plasma_fire_mix_ult_bow:OnProjectileHit(target, location)
   end
   
   -- Play impact sound at location
-  EmitSoundOnLocationWithCaster(impact_point, "Hero_Phoenix.SunRay.Stop", caster)
+  -- EmitSoundOnLocationWithCaster(impact_point, "Hero_Phoenix.SunRay.Stop", caster)
 end
 
 ----------------------------------------------------------------------

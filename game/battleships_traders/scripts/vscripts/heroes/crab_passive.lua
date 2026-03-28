@@ -88,7 +88,7 @@ function modifier_crab_passive:BlowUp(heroes)
     ParticleManager:ReleaseParticleIndex(particle)
 
     -- play a sound
-    EmitSoundOnLocationWithCaster(parent:GetAbsOrigin(), "Hero_NyxAssassin.Impale.Target", parent)
+    parent:EmitSound("Hero_NyxAssassin.Impale.Target")
     
     for _, hero in pairs(heroes) do
         self:AttachCrabPart(hero)

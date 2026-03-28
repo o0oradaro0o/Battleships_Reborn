@@ -1317,6 +1317,7 @@ function CBattleship8D:OnPlayerChat(keys)
 
         --         hero:EmitSound("Hero_Techies.LandMine.Detonate")
 
+        --         NOTE, as of 3/24/26, screenshake no longer works because of vectorws bullshit
         --         ScreenShake(hero:GetAbsOrigin(), 10, 0.3, 0.5, 1000, 0, true)
 
         --         hero:ForceKill(true)
