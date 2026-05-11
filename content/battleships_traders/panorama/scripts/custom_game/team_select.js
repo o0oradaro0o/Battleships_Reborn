@@ -595,7 +595,7 @@ function GetSteamID32() {
   return steamID32;
 }
 
-var url = "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships";
+var BATTLESHIPS_API_BASE_URL = "https://vanatta.xyz/boats-api/";
 var LocalPlayerHatInfo = {};
 function GetLocalPlayerHats() {
   GameEvents.SendCustomGameEventToServer("getPlayerHatData", {

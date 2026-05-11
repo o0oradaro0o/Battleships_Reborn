@@ -25,7 +25,7 @@ require('statcollection/schema')
 local statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
 
 -- Where stuff is posted to
-local postLocation = 'https://g9ai9j8ush.execute-api.us-east-1.amazonaws.com/alpha/test'
+local postLocation = 'https://vanatta.xyz/boats-api/'
 
 -- The schema version we are currently using
 local schemaVersion = 5
@@ -521,8 +521,6 @@ end
 -- Optional override_host can be added to reutilize this function for other sites
 function statCollection:sendStage(stageName, payload, callback, override_host)
     local host = override_host or postLocation
-    -- VicFrank Adding this here to try and avoid sending to getdotastats (server is dead)
-    host = "https://g9ai9j8ush.execute-api.us-east-1.amazonaws.com/alpha/test"
      --print("host: " .. host)
     -- Create the request
     local req = CreateHTTPRequestScriptVM('POST', host .. stageName)

@@ -1,5 +1,7 @@
 "use strict";
 
+var STAT_COLLECTION_BASE_URL = "https://vanatta.xyz/boats-api/";
+
 function OnClientCheckIn (args) {
 
     var payload = { 
@@ -11,7 +13,7 @@ function OnClientCheckIn (args) {
 
     $.Msg('Sending: ',payload)
 
-    $.AsyncWebRequest( 'http://getdotastats.com/s2/api/s2_check_in.php', 
+    $.AsyncWebRequest( STAT_COLLECTION_BASE_URL + 's2_check_in.php', 
     {
        type: 'POST',
        data: {payload: JSON.stringify(payload)},

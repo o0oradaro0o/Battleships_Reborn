@@ -6776,11 +6776,14 @@ function tradeMode(eventSourceIndex, args)
     ----print(g_TradeMode)
 end
 
+local battleshipsApiBaseUrl = "https://vanatta.xyz/boats-api/"
+local battleshipsPlayersBaseUrl = battleshipsApiBaseUrl .. "battleships_players/"
+
 function SetHat(eventSourceIndex, args)
     g_PlayerHatList[args.playerSteamId] = args.text
     local request = CreateHTTPRequestScriptVM(
         "POST",
-        "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/" .. args.playerSteamId
+        battleshipsPlayersBaseUrl .. args.playerSteamId
     )
     local data = {}
     local CurHat = {}
@@ -6801,7 +6804,7 @@ function BuyHat(eventSourceIndex, args)
 
     local request = CreateHTTPRequestScriptVM(
         "POST",
-        "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/" .. args.playerSteamId .. "/buy-hat"
+        battleshipsPlayersBaseUrl .. args.playerSteamId .. "/buy-hat"
     )
     local data = {}
     data.points = args.cost
@@ -6822,7 +6825,7 @@ function AddPoints(eventSourceIndex, args)
 
     local request = CreateHTTPRequestScriptVM(
         "POST",
-        "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/" .. args.playerSteamId
+        battleshipsPlayersBaseUrl .. args.playerSteamId
     )
     local data = {}
     local points = {}
@@ -6842,7 +6845,7 @@ function getPlayerHatInfo(eventSourceIndex, args)
     local steamid = PlayerResource:GetSteamAccountID(playerId)
     local request = CreateHTTPRequestScriptVM(
         "GET",
-        "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/" .. steamid
+        battleshipsPlayersBaseUrl .. steamid
     )
     local data = {}
     request:SetHTTPRequestHeaderValue(
@@ -7367,7 +7370,7 @@ end
 function AddMMR(mmrchange, playerSteamId)
     local request = CreateHTTPRequestScriptVM(
         "POST",
-        "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/" .. playerSteamId .. "/alter-player"
+        battleshipsPlayersBaseUrl .. playerSteamId .. "/alter-player"
     )
     local data = {}
     data.mmr = mmrchange
@@ -7385,7 +7388,7 @@ function SendMMRsToServer(eventSourceIndex, args)
     local steamid = args.playerSteamId
     local request = CreateHTTPRequestScriptVM(
         "GET",
-        "https://grdxgi2qm1.execute-api.us-east-1.amazonaws.com/battleships/battleships_players/" .. args.playerSteamId
+        battleshipsPlayersBaseUrl .. args.playerSteamId
     )
     local data = {}
     request:SetHTTPRequestHeaderValue(
